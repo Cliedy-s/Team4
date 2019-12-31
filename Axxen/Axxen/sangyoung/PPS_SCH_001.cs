@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Axxen.sangyoung
 {
-    public partial class PPS_SCH_001 : Form
+    public partial class PPS_SCH_001 : GridGridForm
     {
         public PPS_SCH_001()
         {
