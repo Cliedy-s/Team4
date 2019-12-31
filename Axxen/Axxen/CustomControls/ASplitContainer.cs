@@ -20,6 +20,7 @@ namespace Axxen.CustomControls
         protected override void OnPaint(PaintEventArgs pe)
         {
             base.OnPaint(pe);
+            this.SplitterWidth = 1;
         }
     }
 }
