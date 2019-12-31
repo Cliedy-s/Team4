@@ -51,12 +51,12 @@
             this.aPanel1.Controls.Add(this.aLabel1);
             this.aPanel1.Controls.Add(this.aButton2);
             this.aPanel1.Controls.Add(this.aButton1);
-            this.aPanel1.Size = new System.Drawing.Size(952, 74);
+            this.aPanel1.Size = new System.Drawing.Size(956, 74);
             // 
             // aSplitContainer1
             // 
-            this.aSplitContainer1.Size = new System.Drawing.Size(952, 485);
-            this.aSplitContainer1.SplitterDistance = 304;
+            this.aSplitContainer1.Size = new System.Drawing.Size(956, 457);
+            this.aSplitContainer1.SplitterDistance = 286;
             // 
             // aButton1
             // 
@@ -101,10 +101,10 @@
             // 
             this.aTextBox_Labeled1.FontSize = 9F;
             this.aTextBox_Labeled1.LabelText = "생산의뢰번호";
-            this.aTextBox_Labeled1.Location = new System.Drawing.Point(38, 42);
-            this.aTextBox_Labeled1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.aTextBox_Labeled1.Location = new System.Drawing.Point(38, 52);
+            this.aTextBox_Labeled1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.aTextBox_Labeled1.Name = "aTextBox_Labeled1";
-            this.aTextBox_Labeled1.Size = new System.Drawing.Size(257, 22);
+            this.aTextBox_Labeled1.Size = new System.Drawing.Size(257, 28);
             this.aTextBox_Labeled1.SplitDistance = 85;
             this.aTextBox_Labeled1.TabIndex = 3;
             this.aTextBox_Labeled1.TextBoxText = "";
@@ -122,10 +122,10 @@
             // 
             this.aTextBox_Labeled2.FontSize = 9F;
             this.aTextBox_Labeled2.LabelText = "프로젝트 명";
-            this.aTextBox_Labeled2.Location = new System.Drawing.Point(390, 40);
-            this.aTextBox_Labeled2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.aTextBox_Labeled2.Location = new System.Drawing.Point(390, 50);
+            this.aTextBox_Labeled2.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.aTextBox_Labeled2.Name = "aTextBox_Labeled2";
-            this.aTextBox_Labeled2.Size = new System.Drawing.Size(278, 28);
+            this.aTextBox_Labeled2.Size = new System.Drawing.Size(278, 35);
             this.aTextBox_Labeled2.SplitDistance = 92;
             this.aTextBox_Labeled2.TabIndex = 5;
             this.aTextBox_Labeled2.TextBoxText = "";
@@ -142,7 +142,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(976, 596);
+            this.ClientSize = new System.Drawing.Size(980, 568);
             this.Name = "PPS_SCH_001";
             this.Text = "PPS_SCH_001";
             this.aPanel1.ResumeLayout(false);
