@@ -16,5 +16,11 @@ namespace Axxen
         {
             InitializeComponent();
         }
+
+        private void 사용자그룹관리ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MSS_CON_001 frm = new MSS_CON_001();
+            frm.Show();
+        }
     }
 }
