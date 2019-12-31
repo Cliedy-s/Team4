@@ -76,6 +76,102 @@
     <Compile Include="FormTest.Designer.cs">
       <DependentUpon>FormTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="HwiSeok\PRM_PRF_001.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HwiSeok\PRM_PRF_001.Designer.cs">
+      <DependentUpon>PRM_PRF_001.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HwiSeok\PRM_PRF_002.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HwiSeok\PRM_PRF_002.Designer.cs">
+      <DependentUpon>PRM_PRF_002.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HwiSeok\PRM_PRF_003.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HwiSeok\PRM_PRF_003.Designer.cs">
+      <DependentUpon>PRM_PRF_003.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HwiSeok\PRM_PRF_004.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HwiSeok\PRM_PRF_004.Designer.cs">
+      <DependentUpon>PRM_PRF_004.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HwiSeok\PRM_PRF_005.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HwiSeok\PRM_PRF_005.Designer.cs">
+      <DependentUpon>PRM_PRF_005.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HwiSeok\PRM_PRF_006.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HwiSeok\PRM_PRF_006.Designer.cs">
+      <DependentUpon>PRM_PRF_006.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HwiSeok\PRM_PRF_007.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HwiSeok\PRM_PRF_007.Designer.cs">
+      <DependentUpon>PRM_PRF_007.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HwiSeok\PRM_PRF_008.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HwiSeok\PRM_PRF_008.Designer.cs">
+      <DependentUpon>PRM_PRF_008.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HwiSeok\PRM_PRF_009.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HwiSeok\PRM_PRF_009.Designer.cs">
+      <DependentUpon>PRM_PRF_009.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HwiSeok\PRM_PRF_010.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HwiSeok\PRM_PRF_010.Designer.cs">
+      <DependentUpon>PRM_PRF_010.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HwiSeok\QAM_SQC_001.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HwiSeok\QAM_SQC_001.Designer.cs">
+      <DependentUpon>QAM_SQC_001.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HwiSeok\QAM_SQC_002.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HwiSeok\QAM_SQC_002.Designer.cs">
+      <DependentUpon>QAM_SQC_002.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HwiSeok\QAM_SQC_003.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HwiSeok\QAM_SQC_003.Designer.cs">
+      <DependentUpon>QAM_SQC_003.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HwiSeok\QAM_SQC_004.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HwiSeok\QAM_SQC_004.Designer.cs">
+      <DependentUpon>QAM_SQC_004.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HwiSeok\QAM_SQC_005.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HwiSeok\QAM_SQC_005.Designer.cs">
+      <DependentUpon>QAM_SQC_005.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HwiSeok\QAM_SQC_006.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HwiSeok\QAM_SQC_006.Designer.cs">
+      <DependentUpon>QAM_SQC_006.cs</DependentUpon>
+    </Compile>
     <Compile Include="Templets\GridGridGridForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -300,11 +396,14 @@
     <EmbeddedResource Include="FormTest.resx">
       <DependentUpon>FormTest.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HwiSeok\PRM_PRF_001.resx">
+      <DependentUpon>PRM_PRF_001.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="sangyoung\PPS_SCH_001.resx">
       <DependentUpon>PPS_SCH_001.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Templets\FreeForm.resx">
-      <DependentUpon>FreeForm.cs</DependentUpon>
+    <EmbeddedResource Include="sangyoung\PPS_SCH_002.resx">
+      <DependentUpon>PPS_SCH_002.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Templets\GridGridGridForm.resx">
       <DependentUpon>GridGridGridForm.cs</DependentUpon>

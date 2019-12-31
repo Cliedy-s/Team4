@@ -58,6 +58,10 @@
             this.aSplitContainer1.Size = new System.Drawing.Size(956, 421);
             this.aSplitContainer1.SplitterDistance = 254;
             // 
+            // aHeaderBox1
+            // 
+            this.aHeaderBox1.HeaderBoxText = "생산의뢰";
+            // 
             // aButton1
             // 
             this.aButton1.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -83,7 +87,7 @@
             // aLabel1
             // 
             this.aLabel1.AutoSize = true;
-            this.aLabel1.Location = new System.Drawing.Point(40, 14);
+            this.aLabel1.Location = new System.Drawing.Point(45, 14);
             this.aLabel1.Name = "aLabel1";
             this.aLabel1.Size = new System.Drawing.Size(79, 15);
             this.aLabel1.TabIndex = 1;
@@ -92,7 +96,7 @@
             // aDateTimePicker1
             // 
             this.aDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.aDateTimePicker1.Location = new System.Drawing.Point(129, 9);
+            this.aDateTimePicker1.Location = new System.Drawing.Point(134, 9);
             this.aDateTimePicker1.Name = "aDateTimePicker1";
             this.aDateTimePicker1.Size = new System.Drawing.Size(119, 23);
             this.aDateTimePicker1.TabIndex = 2;
@@ -101,10 +105,10 @@
             // 
             this.aTextBox_Labeled1.FontSize = 9F;
             this.aTextBox_Labeled1.LabelText = "생산의뢰번호";
-            this.aTextBox_Labeled1.Location = new System.Drawing.Point(43, 41);
-            this.aTextBox_Labeled1.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.aTextBox_Labeled1.Location = new System.Drawing.Point(43, 42);
+            this.aTextBox_Labeled1.Margin = new System.Windows.Forms.Padding(3, 8, 3, 8);
             this.aTextBox_Labeled1.Name = "aTextBox_Labeled1";
-            this.aTextBox_Labeled1.Size = new System.Drawing.Size(257, 27);
+            this.aTextBox_Labeled1.Size = new System.Drawing.Size(257, 24);
             this.aTextBox_Labeled1.SplitDistance = 85;
             this.aTextBox_Labeled1.TabIndex = 3;
             this.aTextBox_Labeled1.TextBoxText = "";
@@ -112,7 +116,7 @@
             // aLabel2
             // 
             this.aLabel2.AutoSize = true;
-            this.aLabel2.Location = new System.Drawing.Point(254, 15);
+            this.aLabel2.Location = new System.Drawing.Point(259, 15);
             this.aLabel2.Name = "aLabel2";
             this.aLabel2.Size = new System.Drawing.Size(15, 15);
             this.aLabel2.TabIndex = 4;
@@ -122,10 +126,10 @@
             // 
             this.aTextBox_Labeled2.FontSize = 9F;
             this.aTextBox_Labeled2.LabelText = "프로젝트 명";
-            this.aTextBox_Labeled2.Location = new System.Drawing.Point(310, 41);
-            this.aTextBox_Labeled2.Margin = new System.Windows.Forms.Padding(3, 8, 3, 8);
+            this.aTextBox_Labeled2.Location = new System.Drawing.Point(394, 43);
+            this.aTextBox_Labeled2.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.aTextBox_Labeled2.Name = "aTextBox_Labeled2";
-            this.aTextBox_Labeled2.Size = new System.Drawing.Size(278, 25);
+            this.aTextBox_Labeled2.Size = new System.Drawing.Size(278, 24);
             this.aTextBox_Labeled2.SplitDistance = 92;
             this.aTextBox_Labeled2.TabIndex = 5;
             this.aTextBox_Labeled2.TextBoxText = "";
@@ -133,7 +137,7 @@
             // aDateTimePicker2
             // 
             this.aDateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.aDateTimePicker2.Location = new System.Drawing.Point(275, 10);
+            this.aDateTimePicker2.Location = new System.Drawing.Point(280, 10);
             this.aDateTimePicker2.Name = "aDateTimePicker2";
             this.aDateTimePicker2.Size = new System.Drawing.Size(119, 23);
             this.aDateTimePicker2.TabIndex = 6;
