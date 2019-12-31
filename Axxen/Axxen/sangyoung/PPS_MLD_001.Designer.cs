@@ -1,6 +1,6 @@
-﻿namespace Axxen
+﻿namespace Axxen.sangyoung
 {
-    partial class PPS_SCH_001
+    partial class PPS_MLD_001
     {
         /// <summary>
         /// Required designer variable.
@@ -28,18 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // PPS_SCH_001
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "PPS_SCH_001";
-            this.Text = "PPS_SCH_001";
-            this.ResumeLayout(false);
-
+            this.Text = "PPS_MLD_001";
         }
 
         #endregion
