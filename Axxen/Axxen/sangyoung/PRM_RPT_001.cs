@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Axxen
+namespace Axxen.sangyoung
 {
-    public partial class PPS_SCH_001 : GridManageForm
+    public partial class PRM_RPT_001 : Form
     {
-        public PPS_SCH_001()
+        public PRM_RPT_001()
         {
             InitializeComponent();
         }

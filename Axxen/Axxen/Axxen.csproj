@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomControls\AHeaderBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\AHeaderBox.Designer.cs">
+      <DependentUpon>AHeaderBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\AGroupBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\AGroupBox.Designer.cs">
+      <DependentUpon>AGroupBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomControls\APanel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -64,17 +76,125 @@
     <Compile Include="FormTest.Designer.cs">
       <DependentUpon>FormTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="Templets\GridGridGridForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Templets\GridGridGridForm.Designer.cs">
+      <DependentUpon>GridGridGridForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Templets\FreeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Templets\FreeForm.Designer.cs">
+      <DependentUpon>FreeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Templets\GridGridForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Templets\GridGridForm.Designer.cs">
+      <DependentUpon>GridGridForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PPS_SCH_001.cs">
+    <Compile Include="sangyoung\KPI_RPT_001.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PPS_SCH_001.Designer.cs">
+    <Compile Include="sangyoung\KPI_RPT_001.Designer.cs">
+      <DependentUpon>KPI_RPT_001.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sangyoung\KPI_RPT_002.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sangyoung\KPI_RPT_002.Designer.cs">
+      <DependentUpon>KPI_RPT_002.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sangyoung\KPI_RPT_003.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sangyoung\KPI_RPT_003.Designer.cs">
+      <DependentUpon>KPI_RPT_003.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sangyoung\KPI_RPT_004.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sangyoung\KPI_RPT_004.Designer.cs">
+      <DependentUpon>KPI_RPT_004.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sangyoung\KPI_RPT_005.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sangyoung\KPI_RPT_005.Designer.cs">
+      <DependentUpon>KPI_RPT_005.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sangyoung\PPS_MLD_001.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sangyoung\PPS_MLD_001.Designer.cs">
+      <DependentUpon>PPS_MLD_001.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sangyoung\PPS_MLD_002.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sangyoung\PPS_MLD_002.Designer.cs">
+      <DependentUpon>PPS_MLD_002.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sangyoung\PPS_SCH_001.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sangyoung\PPS_SCH_001.Designer.cs">
       <DependentUpon>PPS_SCH_001.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sangyoung\PPS_SCH_002.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sangyoung\PPS_SCH_002.Designer.cs">
+      <DependentUpon>PPS_SCH_002.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sangyoung\PPS_SCH_003.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sangyoung\PPS_SCH_003.Designer.cs">
+      <DependentUpon>PPS_SCH_003.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sangyoung\PPS_SCH_004.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sangyoung\PPS_SCH_004.Designer.cs">
+      <DependentUpon>PPS_SCH_004.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sangyoung\PRM_RPT_001.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sangyoung\PRM_RPT_001.Designer.cs">
+      <DependentUpon>PRM_RPT_001.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sangyoung\PRM_RPT_002.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sangyoung\PRM_RPT_002.Designer.cs">
+      <DependentUpon>PRM_RPT_002.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sangyoung\PRM_RPT_003.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sangyoung\PRM_RPT_003.Designer.cs">
+      <DependentUpon>PRM_RPT_003.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sangyoung\PRM_RPT_004.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sangyoung\PRM_RPT_004.Designer.cs">
+      <DependentUpon>PRM_RPT_004.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sangyoung\PRM_RPT_005.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sangyoung\PRM_RPT_005.Designer.cs">
+      <DependentUpon>PRM_RPT_005.cs</DependentUpon>
     </Compile>
     <Compile Include="Templets\GridForm.cs">
       <SubType>Form</SubType>
@@ -174,14 +294,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CustomControls\AHeaderBox.resx">
+      <DependentUpon>AHeaderBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormTest.resx">
       <DependentUpon>FormTest.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="sangyoung\PPS_SCH_001.resx">
+      <DependentUpon>PPS_SCH_001.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Templets\GridGridGridForm.resx">
+      <DependentUpon>GridGridGridForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Templets\GridGridForm.resx">
+      <DependentUpon>GridGridForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PPS_SCH_001.resx">
-      <DependentUpon>PPS_SCH_001.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Templets\GridForm.resx">
       <DependentUpon>GridForm.cs</DependentUpon>
