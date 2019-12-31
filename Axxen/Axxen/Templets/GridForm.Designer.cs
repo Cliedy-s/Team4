@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.aDataGridView1 = new Axxen.CustomControls.ADataGridView();
+            this.aPanel1 = new Axxen.CustomControls.APanel();
             ((System.ComponentModel.ISupportInitialize)(this.aDataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -38,17 +39,27 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.aDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.aDataGridView1.Location = new System.Drawing.Point(12, 62);
+            this.aDataGridView1.Location = new System.Drawing.Point(12, 77);
             this.aDataGridView1.Name = "aDataGridView1";
             this.aDataGridView1.RowTemplate.Height = 23;
-            this.aDataGridView1.Size = new System.Drawing.Size(776, 376);
+            this.aDataGridView1.Size = new System.Drawing.Size(776, 361);
             this.aDataGridView1.TabIndex = 0;
             // 
-            // ListForm
+            // aPanel1
+            // 
+            this.aPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.aPanel1.Location = new System.Drawing.Point(12, 12);
+            this.aPanel1.Name = "aPanel1";
+            this.aPanel1.Size = new System.Drawing.Size(776, 59);
+            this.aPanel1.TabIndex = 4;
+            // 
+            // GridForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.aPanel1);
             this.Controls.Add(this.aDataGridView1);
             this.Name = "GridForm";
             this.Text = "GridForm";
@@ -59,6 +70,7 @@
 
         #endregion
 
-        private CustomControls.ADataGridView aDataGridView1;
+        protected CustomControls.APanel aPanel1;
+        protected CustomControls.ADataGridView aDataGridView1;
     }
 }
