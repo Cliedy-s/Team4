@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomControls\AHeaderBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\AHeaderBox.Designer.cs">
+      <DependentUpon>AHeaderBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\AGroupBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\AGroupBox.Designer.cs">
+      <DependentUpon>AGroupBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomControls\APanel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -63,6 +75,12 @@
     </Compile>
     <Compile Include="FormTest.Designer.cs">
       <DependentUpon>FormTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Templets\GridGridGridForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Templets\GridGridGridForm.Designer.cs">
+      <DependentUpon>GridGridGridForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Templets\FreeForm.cs">
       <SubType>Form</SubType>
@@ -276,8 +294,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CustomControls\AHeaderBox.resx">
+      <DependentUpon>AHeaderBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormTest.resx">
       <DependentUpon>FormTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Templets\GridGridGridForm.resx">
+      <DependentUpon>GridGridGridForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Templets\GridGridForm.resx">
       <DependentUpon>GridGridForm.cs</DependentUpon>
