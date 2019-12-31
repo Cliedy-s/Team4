@@ -132,6 +132,6 @@
         protected CustomControls.ASplitContainer aSplitContainer1;
         protected CustomControls.ADataGridView aDataGridView1;
         protected CustomControls.ADataGridView aDataGridView2;
-        private CustomControls.AHeaderBox aHeaderBox1;
+        protected CustomControls.AHeaderBox aHeaderBox1;
     }
 }

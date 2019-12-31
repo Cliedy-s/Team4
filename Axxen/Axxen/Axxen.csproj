@@ -300,6 +300,9 @@
     <EmbeddedResource Include="FormTest.resx">
       <DependentUpon>FormTest.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="sangyoung\PPS_SCH_001.resx">
+      <DependentUpon>PPS_SCH_001.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Templets\GridGridGridForm.resx">
       <DependentUpon>GridGridGridForm.cs</DependentUpon>
     </EmbeddedResource>
