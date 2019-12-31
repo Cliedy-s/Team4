@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Axxen
 {
-    public partial class MSS_CON_001 : Form
+    public partial class MSS_CON_001 : BaseForm
     {
         public MSS_CON_001()
         {

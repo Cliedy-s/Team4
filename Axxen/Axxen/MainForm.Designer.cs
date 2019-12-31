@@ -97,6 +97,7 @@
             this.금형관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.금형정보ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.금형사용현황ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -113,7 +114,7 @@
             this.금형관리ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(844, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1433, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -140,6 +141,7 @@
             this.사용자그룹관리ToolStripMenuItem.Name = "사용자그룹관리ToolStripMenuItem";
             this.사용자그룹관리ToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.사용자그룹관리ToolStripMenuItem.Text = "사용자그룹관리";
+            this.사용자그룹관리ToolStripMenuItem.Click += new System.EventHandler(this.사용자그룹관리ToolStripMenuItem_Click);
             // 
             // 사용자그룹별권한설정ToolStripMenuItem
             // 
@@ -503,31 +505,31 @@
             // 적재작업일지ToolStripMenuItem
             // 
             this.적재작업일지ToolStripMenuItem.Name = "적재작업일지ToolStripMenuItem";
-            this.적재작업일지ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.적재작업일지ToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.적재작업일지ToolStripMenuItem.Text = "적재작업일지";
             // 
             // 성형작업일지ToolStripMenuItem
             // 
             this.성형작업일지ToolStripMenuItem.Name = "성형작업일지ToolStripMenuItem";
-            this.성형작업일지ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.성형작업일지ToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.성형작업일지ToolStripMenuItem.Text = "성형작업일지";
             // 
             // 포장작업일지ToolStripMenuItem
             // 
             this.포장작업일지ToolStripMenuItem.Name = "포장작업일지ToolStripMenuItem";
-            this.포장작업일지ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.포장작업일지ToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.포장작업일지ToolStripMenuItem.Text = "포장작업일지";
             // 
             // 선별포장작업일지ToolStripMenuItem
             // 
             this.선별포장작업일지ToolStripMenuItem.Name = "선별포장작업일지ToolStripMenuItem";
-            this.선별포장작업일지ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.선별포장작업일지ToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.선별포장작업일지ToolStripMenuItem.Text = "선별/포장작업일지";
             // 
             // 소성작업일지ToolStripMenuItem
             // 
             this.소성작업일지ToolStripMenuItem.Name = "소성작업일지ToolStripMenuItem";
-            this.소성작업일지ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.소성작업일지ToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.소성작업일지ToolStripMenuItem.Text = "소성작업일지";
             // 
             // 분석관리ToolStripMenuItem
@@ -545,31 +547,31 @@
             // 일별생산현황ToolStripMenuItem
             // 
             this.일별생산현황ToolStripMenuItem.Name = "일별생산현황ToolStripMenuItem";
-            this.일별생산현황ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.일별생산현황ToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.일별생산현황ToolStripMenuItem.Text = "일별 생산현황";
             // 
             // 월별생산현황ToolStripMenuItem
             // 
             this.월별생산현황ToolStripMenuItem.Name = "월별생산현황ToolStripMenuItem";
-            this.월별생산현황ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.월별생산현황ToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.월별생산현황ToolStripMenuItem.Text = "월별 생산현황";
             // 
             // 월별수율현황ToolStripMenuItem
             // 
             this.월별수율현황ToolStripMenuItem.Name = "월별수율현황ToolStripMenuItem";
-            this.월별수율현황ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.월별수율현황ToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.월별수율현황ToolStripMenuItem.Text = "월별 수율현황";
             // 
             // 포장월간실적현황ToolStripMenuItem
             // 
             this.포장월간실적현황ToolStripMenuItem.Name = "포장월간실적현황ToolStripMenuItem";
-            this.포장월간실적현황ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.포장월간실적현황ToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.포장월간실적현황ToolStripMenuItem.Text = "포장 월간 실적현황";
             // 
             // 표준생산정보등록ToolStripMenuItem
             // 
             this.표준생산정보등록ToolStripMenuItem.Name = "표준생산정보등록ToolStripMenuItem";
-            this.표준생산정보등록ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.표준생산정보등록ToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.표준생산정보등록ToolStripMenuItem.Text = "표준생산정보등록";
             // 
             // 금형관리ToolStripMenuItem
@@ -584,20 +586,29 @@
             // 금형정보ToolStripMenuItem
             // 
             this.금형정보ToolStripMenuItem.Name = "금형정보ToolStripMenuItem";
-            this.금형정보ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.금형정보ToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.금형정보ToolStripMenuItem.Text = "금형정보 등록";
             // 
             // 금형사용현황ToolStripMenuItem
             // 
             this.금형사용현황ToolStripMenuItem.Name = "금형사용현황ToolStripMenuItem";
-            this.금형사용현황ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.금형사용현황ToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.금형사용현황ToolStripMenuItem.Text = "금형 사용현황";
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Location = new System.Drawing.Point(0, 24);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1433, 25);
+            this.toolStrip1.TabIndex = 2;
+            this.toolStrip1.Text = "toolStrip1";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(844, 509);
+            this.ClientSize = new System.Drawing.Size(1433, 817);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
@@ -681,5 +692,6 @@
         private System.Windows.Forms.ToolStripMenuItem 금형관리ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 금형정보ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 금형사용현황ToolStripMenuItem;
+        private System.Windows.Forms.ToolStrip toolStrip1;
     }
 }

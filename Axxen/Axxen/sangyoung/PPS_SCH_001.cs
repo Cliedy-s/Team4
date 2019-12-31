@@ -8,19 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Axxen
+namespace Axxen.sangyoung
 {
-    public partial class MainForm : Form
+    public partial class PPS_SCH_001 : Form
     {
-        public MainForm()
+        public PPS_SCH_001()
         {
             InitializeComponent();
-        }
-
-        private void 사용자그룹관리ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MSS_CON_001 frm = new MSS_CON_001();
-            frm.Show();
         }
     }
 }

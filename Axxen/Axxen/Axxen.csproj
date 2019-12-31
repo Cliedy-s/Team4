@@ -166,6 +166,102 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="sangyoung\KPI_RPT_001.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sangyoung\KPI_RPT_001.Designer.cs">
+      <DependentUpon>KPI_RPT_001.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sangyoung\KPI_RPT_002.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sangyoung\KPI_RPT_002.Designer.cs">
+      <DependentUpon>KPI_RPT_002.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sangyoung\KPI_RPT_003.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sangyoung\KPI_RPT_003.Designer.cs">
+      <DependentUpon>KPI_RPT_003.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sangyoung\KPI_RPT_004.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sangyoung\KPI_RPT_004.Designer.cs">
+      <DependentUpon>KPI_RPT_004.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sangyoung\KPI_RPT_005.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sangyoung\KPI_RPT_005.Designer.cs">
+      <DependentUpon>KPI_RPT_005.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sangyoung\PPS_MLD_001.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sangyoung\PPS_MLD_001.Designer.cs">
+      <DependentUpon>PPS_MLD_001.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sangyoung\PPS_MLD_002.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sangyoung\PPS_MLD_002.Designer.cs">
+      <DependentUpon>PPS_MLD_002.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sangyoung\PPS_SCH_001.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sangyoung\PPS_SCH_001.Designer.cs">
+      <DependentUpon>PPS_SCH_001.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sangyoung\PPS_SCH_002.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sangyoung\PPS_SCH_002.Designer.cs">
+      <DependentUpon>PPS_SCH_002.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sangyoung\PPS_SCH_003.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sangyoung\PPS_SCH_003.Designer.cs">
+      <DependentUpon>PPS_SCH_003.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sangyoung\PPS_SCH_004.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sangyoung\PPS_SCH_004.Designer.cs">
+      <DependentUpon>PPS_SCH_004.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sangyoung\PRM_RPT_001.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sangyoung\PRM_RPT_001.Designer.cs">
+      <DependentUpon>PRM_RPT_001.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sangyoung\PRM_RPT_002.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sangyoung\PRM_RPT_002.Designer.cs">
+      <DependentUpon>PRM_RPT_002.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sangyoung\PRM_RPT_003.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sangyoung\PRM_RPT_003.Designer.cs">
+      <DependentUpon>PRM_RPT_003.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sangyoung\PRM_RPT_004.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sangyoung\PRM_RPT_004.Designer.cs">
+      <DependentUpon>PRM_RPT_004.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sangyoung\PRM_RPT_005.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sangyoung\PRM_RPT_005.Designer.cs">
+      <DependentUpon>PRM_RPT_005.cs</DependentUpon>
+    </Compile>
     <Compile Include="Templets\GridForm.cs">
       <SubType>Form</SubType>
     </Compile>
