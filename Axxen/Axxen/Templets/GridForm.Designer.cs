@@ -28,10 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.aDataGridView1 = new Axxen.CustomControls.ADataGridView();
             this.aPanel1 = new Axxen.CustomControls.APanel();
+            this.aDataGridView1 = new Axxen.CustomControls.ADataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.aDataGridView1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // aPanel1
+            // 
+            this.aPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.aPanel1.Location = new System.Drawing.Point(12, 15);
+            this.aPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.aPanel1.Name = "aPanel1";
+            this.aPanel1.Size = new System.Drawing.Size(776, 74);
+            this.aPanel1.TabIndex = 4;
             // 
             // aDataGridView1
             // 
@@ -39,28 +49,21 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.aDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.aDataGridView1.Location = new System.Drawing.Point(12, 77);
+            this.aDataGridView1.Location = new System.Drawing.Point(12, 117);
+            this.aDataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.aDataGridView1.Name = "aDataGridView1";
             this.aDataGridView1.RowTemplate.Height = 23;
-            this.aDataGridView1.Size = new System.Drawing.Size(776, 361);
+            this.aDataGridView1.Size = new System.Drawing.Size(776, 430);
             this.aDataGridView1.TabIndex = 0;
-            // 
-            // aPanel1
-            // 
-            this.aPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.aPanel1.Location = new System.Drawing.Point(12, 12);
-            this.aPanel1.Name = "aPanel1";
-            this.aPanel1.Size = new System.Drawing.Size(776, 59);
-            this.aPanel1.TabIndex = 4;
             // 
             // GridForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 562);
             this.Controls.Add(this.aPanel1);
             this.Controls.Add(this.aDataGridView1);
+            this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "GridForm";
             this.Text = "GridForm";
             ((System.ComponentModel.ISupportInitialize)(this.aDataGridView1)).EndInit();
