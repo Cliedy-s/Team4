@@ -64,6 +64,12 @@
     <Compile Include="FormTest.Designer.cs">
       <DependentUpon>FormTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="Templets\FreeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Templets\FreeForm.Designer.cs">
+      <DependentUpon>FreeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Templets\GridGridForm.cs">
       <SubType>Form</SubType>
     </Compile>
