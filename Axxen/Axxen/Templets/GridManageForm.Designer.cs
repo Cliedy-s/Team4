@@ -30,8 +30,8 @@
         {
             this.aPanel2 = new Axxen.CustomControls.APanel();
             this.aSplitContainer1 = new Axxen.CustomControls.ASplitContainer();
-            this.aPanel1 = new Axxen.CustomControls.APanel();
             this.aDataGridView1 = new Axxen.CustomControls.ADataGridView();
+            this.aPanel1 = new Axxen.CustomControls.APanel();
             ((System.ComponentModel.ISupportInitialize)(this.aSplitContainer1)).BeginInit();
             this.aSplitContainer1.Panel1.SuspendLayout();
             this.aSplitContainer1.Panel2.SuspendLayout();
@@ -67,14 +67,6 @@
             this.aSplitContainer1.SplitterDistance = 290;
             this.aSplitContainer1.TabIndex = 5;
             // 
-            // aPanel1
-            // 
-            this.aPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.aPanel1.Location = new System.Drawing.Point(0, 0);
-            this.aPanel1.Name = "aPanel1";
-            this.aPanel1.Size = new System.Drawing.Size(776, 67);
-            this.aPanel1.TabIndex = 7;
-            // 
             // aDataGridView1
             // 
             this.aDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -84,6 +76,14 @@
             this.aDataGridView1.RowTemplate.Height = 23;
             this.aDataGridView1.Size = new System.Drawing.Size(776, 290);
             this.aDataGridView1.TabIndex = 6;
+            // 
+            // aPanel1
+            // 
+            this.aPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.aPanel1.Location = new System.Drawing.Point(0, 0);
+            this.aPanel1.Name = "aPanel1";
+            this.aPanel1.Size = new System.Drawing.Size(776, 67);
+            this.aPanel1.TabIndex = 7;
             // 
             // GridManageForm
             // 
@@ -104,9 +104,10 @@
         }
 
         #endregion
-        private CustomControls.APanel aPanel2;
-        private CustomControls.ASplitContainer aSplitContainer1;
-        private CustomControls.ADataGridView aDataGridView1;
-        private CustomControls.APanel aPanel1;
+
+        protected CustomControls.APanel aPanel2;
+        protected CustomControls.ASplitContainer aSplitContainer1;
+        protected CustomControls.ADataGridView aDataGridView1;
+        protected CustomControls.APanel aPanel1;
     }
 }
