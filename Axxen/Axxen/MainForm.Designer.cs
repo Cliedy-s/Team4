@@ -382,61 +382,61 @@
             // 실적조회ToolStripMenuItem
             // 
             this.실적조회ToolStripMenuItem.Name = "실적조회ToolStripMenuItem";
-            this.실적조회ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.실적조회ToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.실적조회ToolStripMenuItem.Text = "실적조회";
             // 
             // 포장팔레트마감ToolStripMenuItem
             // 
             this.포장팔레트마감ToolStripMenuItem.Name = "포장팔레트마감ToolStripMenuItem";
-            this.포장팔레트마감ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.포장팔레트마감ToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.포장팔레트마감ToolStripMenuItem.Text = "포장 팔레트 마감";
             // 
             // 완제품입고리스트ToolStripMenuItem
             // 
             this.완제품입고리스트ToolStripMenuItem.Name = "완제품입고리스트ToolStripMenuItem";
-            this.완제품입고리스트ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.완제품입고리스트ToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.완제품입고리스트ToolStripMenuItem.Text = "완제품 입고리스트";
             // 
             // gAS사용량등록ToolStripMenuItem
             // 
             this.gAS사용량등록ToolStripMenuItem.Name = "gAS사용량등록ToolStripMenuItem";
-            this.gAS사용량등록ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gAS사용량등록ToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.gAS사용량등록ToolStripMenuItem.Text = "GAS 사용량 등록";
             // 
             // 대차현황ToolStripMenuItem
             // 
             this.대차현황ToolStripMenuItem.Name = "대차현황ToolStripMenuItem";
-            this.대차현황ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.대차현황ToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.대차현황ToolStripMenuItem.Text = "대차 현황";
             // 
             // 대차이력조회ToolStripMenuItem
             // 
             this.대차이력조회ToolStripMenuItem.Name = "대차이력조회ToolStripMenuItem";
-            this.대차이력조회ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.대차이력조회ToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.대차이력조회ToolStripMenuItem.Text = "대차 이력조회";
             // 
             // 대차현황모니터링ToolStripMenuItem
             // 
             this.대차현황모니터링ToolStripMenuItem.Name = "대차현황모니터링ToolStripMenuItem";
-            this.대차현황모니터링ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.대차현황모니터링ToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.대차현황모니터링ToolStripMenuItem.Text = "대차현황 모니터링";
             // 
             // 비가동등록ToolStripMenuItem
             // 
             this.비가동등록ToolStripMenuItem.Name = "비가동등록ToolStripMenuItem";
-            this.비가동등록ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.비가동등록ToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.비가동등록ToolStripMenuItem.Text = "비가동 등록";
             // 
             // eRP근태정보조회ToolStripMenuItem
             // 
             this.eRP근태정보조회ToolStripMenuItem.Name = "eRP근태정보조회ToolStripMenuItem";
-            this.eRP근태정보조회ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.eRP근태정보조회ToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.eRP근태정보조회ToolStripMenuItem.Text = "ERP 근태정보 조회";
             // 
             // 근태현황분석ToolStripMenuItem
             // 
             this.근태현황분석ToolStripMenuItem.Name = "근태현황분석ToolStripMenuItem";
-            this.근태현황분석ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.근태현황분석ToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.근태현황분석ToolStripMenuItem.Text = "근태현황분석";
             // 
             // 품질관리ToolStripMenuItem
@@ -455,37 +455,37 @@
             // 불량이미지등록ToolStripMenuItem
             // 
             this.불량이미지등록ToolStripMenuItem.Name = "불량이미지등록ToolStripMenuItem";
-            this.불량이미지등록ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.불량이미지등록ToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.불량이미지등록ToolStripMenuItem.Text = "불량이미지 등록";
             // 
             // 품질측정값등록ToolStripMenuItem
             // 
             this.품질측정값등록ToolStripMenuItem.Name = "품질측정값등록ToolStripMenuItem";
-            this.품질측정값등록ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.품질측정값등록ToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.품질측정값등록ToolStripMenuItem.Text = "품질측정값 등록";
             // 
             // 공정조건등록ToolStripMenuItem
             // 
             this.공정조건등록ToolStripMenuItem.Name = "공정조건등록ToolStripMenuItem";
-            this.공정조건등록ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.공정조건등록ToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.공정조건등록ToolStripMenuItem.Text = "공정조건 등록";
             // 
             // 품질측정값조회ToolStripMenuItem
             // 
             this.품질측정값조회ToolStripMenuItem.Name = "품질측정값조회ToolStripMenuItem";
-            this.품질측정값조회ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.품질측정값조회ToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.품질측정값조회ToolStripMenuItem.Text = "품질측정값 조회";
             // 
             // 공정조건조회ToolStripMenuItem
             // 
             this.공정조건조회ToolStripMenuItem.Name = "공정조건조회ToolStripMenuItem";
-            this.공정조건조회ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.공정조건조회ToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.공정조건조회ToolStripMenuItem.Text = "공정조건 조회";
             // 
             // 원재료LOT관리ToolStripMenuItem
             // 
             this.원재료LOT관리ToolStripMenuItem.Name = "원재료LOT관리ToolStripMenuItem";
-            this.원재료LOT관리ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.원재료LOT관리ToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.원재료LOT관리ToolStripMenuItem.Text = "원재료 LOT관리";
             // 
             // 일지관리ToolStripMenuItem
@@ -599,6 +599,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(844, 509);
             this.Controls.Add(this.menuStrip1);
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "MainForm";
