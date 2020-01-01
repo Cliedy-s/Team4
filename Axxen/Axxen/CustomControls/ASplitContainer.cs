@@ -15,12 +15,12 @@ namespace Axxen.CustomControls
         public ASplitContainer()
         {
             InitializeComponent();
+            this.SplitterWidth = 1;
         }
 
         protected override void OnPaint(PaintEventArgs pe)
         {
             base.OnPaint(pe);
-            this.SplitterWidth = 1;
         }
     }
 }

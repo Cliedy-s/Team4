@@ -46,16 +46,19 @@
             // 
             this.aPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.aPanel2.Location = new System.Drawing.Point(12, 15);
-            this.aPanel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.aPanel2.Location = new System.Drawing.Point(15, 20);
+            this.aPanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.aPanel2.Name = "aPanel2";
-            this.aPanel2.Size = new System.Drawing.Size(776, 74);
+            this.aPanel2.Size = new System.Drawing.Size(919, 99);
             this.aPanel2.TabIndex = 4;
             // 
             // aSplitContainer1
             // 
-            this.aSplitContainer1.Location = new System.Drawing.Point(12, 129);
-            this.aSplitContainer1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.aSplitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.aSplitContainer1.Location = new System.Drawing.Point(15, 172);
+            this.aSplitContainer1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.aSplitContainer1.Name = "aSplitContainer1";
             this.aSplitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -68,8 +71,8 @@
             // 
             this.aSplitContainer1.Panel2.Controls.Add(this.aPanel1);
             this.aSplitContainer1.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.aSplitContainer1.Size = new System.Drawing.Size(776, 418);
-            this.aSplitContainer1.SplitterDistance = 335;
+            this.aSplitContainer1.Size = new System.Drawing.Size(926, 513);
+            this.aSplitContainer1.SplitterDistance = 411;
             this.aSplitContainer1.SplitterWidth = 1;
             this.aSplitContainer1.TabIndex = 5;
             // 
@@ -80,21 +83,23 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.aDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.aDataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.aDataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.aDataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.aDataGridView1.Name = "aDataGridView1";
+            this.aDataGridView1.RowHeadersWidth = 51;
             this.aDataGridView1.RowTemplate.Height = 23;
-            this.aDataGridView1.Size = new System.Drawing.Size(776, 362);
+            this.aDataGridView1.Size = new System.Drawing.Size(926, 447);
             this.aDataGridView1.TabIndex = 6;
             // 
             // aPanel1
             // 
-            this.aPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.aPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.aPanel1.Controls.Add(this.aHeaderBox2);
-            this.aPanel1.Location = new System.Drawing.Point(0, 3);
-            this.aPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.aPanel1.Location = new System.Drawing.Point(0, 9);
+            this.aPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.aPanel1.Name = "aPanel1";
-            this.aPanel1.Size = new System.Drawing.Size(776, 84);
+            this.aPanel1.Size = new System.Drawing.Size(926, 92);
             this.aPanel1.TabIndex = 7;
             // 
             // aHeaderBox2
@@ -103,8 +108,9 @@
             this.aHeaderBox2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aHeaderBox2.HeaderBoxText = "HeaderText";
             this.aHeaderBox2.Location = new System.Drawing.Point(1, 1);
+            this.aHeaderBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.aHeaderBox2.Name = "aHeaderBox2";
-            this.aHeaderBox2.Size = new System.Drawing.Size(243, 30);
+            this.aHeaderBox2.Size = new System.Drawing.Size(312, 40);
             this.aHeaderBox2.TabIndex = 10;
             // 
             // aHeaderBox1
@@ -112,20 +118,21 @@
             this.aHeaderBox1.BackColor = System.Drawing.SystemColors.ControlDark;
             this.aHeaderBox1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aHeaderBox1.HeaderBoxText = "HeaderText";
-            this.aHeaderBox1.Location = new System.Drawing.Point(13, 100);
+            this.aHeaderBox1.Location = new System.Drawing.Point(17, 133);
+            this.aHeaderBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.aHeaderBox1.Name = "aHeaderBox1";
-            this.aHeaderBox1.Size = new System.Drawing.Size(243, 30);
+            this.aHeaderBox1.Size = new System.Drawing.Size(312, 40);
             this.aHeaderBox1.TabIndex = 9;
             // 
             // GridManageForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 562);
+            this.ClientSize = new System.Drawing.Size(950, 692);
             this.Controls.Add(this.aPanel2);
             this.Controls.Add(this.aSplitContainer1);
             this.Controls.Add(this.aHeaderBox1);
-            this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.Margin = new System.Windows.Forms.Padding(4, 7, 4, 7);
             this.Name = "GridManageForm";
             this.Text = "GrieManageForm";
             this.aSplitContainer1.Panel1.ResumeLayout(false);
