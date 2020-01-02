@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Axxen
 {
-    public partial class FormTest : Form
+    public partial class TestForm : GridGridForm
     {
-        public FormTest()
+        public TestForm()
         {
             InitializeComponent();
         }

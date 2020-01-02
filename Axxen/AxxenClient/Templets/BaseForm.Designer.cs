@@ -1,4 +1,4 @@
-﻿namespace Axxen
+﻿namespace AxxenClient
 {
     partial class BaseForm
     {

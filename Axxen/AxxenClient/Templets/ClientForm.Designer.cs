@@ -1,6 +1,6 @@
-﻿namespace AxxenClient.CustomControls
+﻿namespace AxxenClient.Templets
 {
-    partial class ABorderPanel
+    partial class ClientForm
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -20,7 +20,7 @@
             base.Dispose(disposing);
         }
 
-        #region 구성 요소 디자이너에서 생성한 코드
+        #region Windows Form 디자이너에서 생성한 코드
 
         /// <summary>
         /// 디자이너 지원에 필요한 메서드입니다. 
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.components = new System.ComponentModel.Container();
         }
 
         #endregion

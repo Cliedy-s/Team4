@@ -88,7 +88,7 @@
             this.txtValue.Name = "txtValue";
             this.txtValue.Size = new System.Drawing.Size(252, 21);
             this.txtValue.TabIndex = 4;
-            this.txtValue.txtType = Axxen.CustomControls.ATextBox.type.Normal;
+            this.txtValue.txtType = Axxen.CustomControls.textboxType.Normal;
             // 
             // ATextBox_Searchable
             // 

@@ -1,6 +1,6 @@
-﻿namespace Axxen.Templets
+﻿namespace Axxen
 {
-    partial class ClientTempletForm
+    partial class TestForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,17 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            ((System.ComponentModel.ISupportInitialize)(this.aSplitContainer1)).BeginInit();
+            this.aSplitContainer1.Panel1.SuspendLayout();
+            this.aSplitContainer1.Panel2.SuspendLayout();
+            this.aSplitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // ClientTempletForm
+            // aPanel1
+            // 
+            this.aPanel1.Size = new System.Drawing.Size(841, 74);
+            // 
+            // aSplitContainer1
+            // 
+            this.aSplitContainer1.Size = new System.Drawing.Size(841, 408);
+            this.aSplitContainer1.SplitterDistance = 197;
+            // 
+            // TestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 562);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.Name = "ClientTempletForm";
-            this.Text = "ClientTempletForm";
+            this.ClientSize = new System.Drawing.Size(865, 520);
+            this.Name = "TestForm";
+            this.Text = "TestForm";
+            this.aSplitContainer1.Panel1.ResumeLayout(false);
+            this.aSplitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.aSplitContainer1)).EndInit();
+            this.aSplitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

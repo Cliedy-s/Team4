@@ -75,7 +75,6 @@
             this.aSplitContainer1.SplitterDistance = 284;
             this.aSplitContainer1.SplitterWidth = 1;
             this.aSplitContainer1.TabIndex = 7;
-            this.aSplitContainer1.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.aSplitContainer1_SplitterMoved);
             // 
             // aDataGridView1
             // 
@@ -83,12 +82,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.aDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.aDataGridView1.Location = new System.Drawing.Point(0, 32);
+            this.aDataGridView1.Location = new System.Drawing.Point(0, 30);
             this.aDataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.aDataGridView1.Name = "aDataGridView1";
             this.aDataGridView1.RowHeadersWidth = 51;
             this.aDataGridView1.RowTemplate.Height = 23;
-            this.aDataGridView1.Size = new System.Drawing.Size(1124, 250);
+            this.aDataGridView1.Size = new System.Drawing.Size(1124, 254);
             this.aDataGridView1.TabIndex = 6;
             // 
             // aHeaderBox1
@@ -112,7 +111,7 @@
             this.aDataGridView2.Name = "aDataGridView2";
             this.aDataGridView2.RowHeadersWidth = 51;
             this.aDataGridView2.RowTemplate.Height = 23;
-            this.aDataGridView2.Size = new System.Drawing.Size(1124, 268);
+            this.aDataGridView2.Size = new System.Drawing.Size(1124, 271);
             this.aDataGridView2.TabIndex = 7;
             // 
             // aHeaderBox2

@@ -16,10 +16,5 @@ namespace Axxen
         {
             InitializeComponent();
         }
-
-        private void aSplitContainer1_SplitterMoved(object sender, SplitterEventArgs e)
-        {
-
-        }
     }
 }

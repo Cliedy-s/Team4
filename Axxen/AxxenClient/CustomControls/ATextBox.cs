@@ -10,12 +10,11 @@ using System.Windows.Forms;
 
 namespace Axxen.CustomControls
 {
+    public enum textboxType { Normal, Numeric, Required }
     public partial class ATextBox : TextBox
     {
-        public enum type { Normal, Numeric, Required }
-
-        private type txttype;
-        public type txtType
+        private textboxType txttype;
+        public textboxType txtType
         {
             get
             {
@@ -28,14 +27,14 @@ namespace Axxen.CustomControls
                 this.Validating -= Team4TextBox_Validating;
                 switch (value)
                 {
-                    case type.Numeric:
+                    case textboxType.Numeric:
                         this.BackColor = Color.HotPink;
                         this.KeyPress += Team4TextBox_numberKeyPress;
                         break;
-                    case type.Normal:
+                    case textboxType.Normal:
                         this.BackColor = Color.White;
                         break;
-                    case type.Required:
+                    case textboxType.Required:
                         this.BackColor = Color.Yellow;
                         this.Validating += Team4TextBox_Validating;
                         break;
@@ -51,7 +50,7 @@ namespace Axxen.CustomControls
         {
             InitializeComponent();
             //Design
-            txtType = type.Normal;
+            txtType = textboxType.Normal;
             this.BorderStyle = BorderStyle.FixedSingle;
             //
         }

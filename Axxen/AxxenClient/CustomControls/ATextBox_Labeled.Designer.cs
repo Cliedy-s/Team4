@@ -75,7 +75,7 @@
             this.txtValue.Name = "txtValue";
             this.txtValue.Size = new System.Drawing.Size(209, 21);
             this.txtValue.TabIndex = 0;
-            this.txtValue.txtType = Axxen.CustomControls.ATextBox.type.Normal;
+            this.txtValue.txtType = Axxen.CustomControls.textboxType.Normal;
             // 
             // ATextBox_Labeled
             // 

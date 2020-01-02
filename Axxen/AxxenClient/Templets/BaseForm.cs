@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Axxen
+namespace AxxenClient
 {
     public partial class BaseForm : Form
     {
