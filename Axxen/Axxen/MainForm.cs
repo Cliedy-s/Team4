@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Axxen
 {
-    public partial class MainForm : Form
+    public partial class MainForm : FreeForm
     {
         int CheckBtnIndex = 6;
         public MainForm()
