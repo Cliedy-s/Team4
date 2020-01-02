@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Axxen.sangyoung
 {
-    public partial class PPS_SCH_002 : GridGridForm
+    public partial class PPS_SCH_002 : Axxen.GridForm
     {
         public PPS_SCH_002()
         {

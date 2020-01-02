@@ -173,30 +173,6 @@
     <Compile Include="HwiSeok\QAM_SQC_006.Designer.cs">
       <DependentUpon>QAM_SQC_006.cs</DependentUpon>
     </Compile>
-    <Compile Include="Templets\GridGridGridForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Templets\GridGridGridForm.Designer.cs">
-      <DependentUpon>GridGridGridForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Templets\FreeForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Templets\FreeForm.Designer.cs">
-      <DependentUpon>FreeForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Templets\GridGridForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Templets\GridGridForm.Designer.cs">
-      <DependentUpon>GridGridForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="sangyoung\KPI_RPT_001.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -227,18 +203,6 @@
     <Compile Include="sangyoung\KPI_RPT_005.Designer.cs">
       <DependentUpon>KPI_RPT_005.cs</DependentUpon>
     </Compile>
-    <Compile Include="sangyoung\PPS_MLD_001.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="sangyoung\PPS_MLD_001.Designer.cs">
-      <DependentUpon>PPS_MLD_001.cs</DependentUpon>
-    </Compile>
-    <Compile Include="sangyoung\PPS_MLD_002.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="sangyoung\PPS_MLD_002.Designer.cs">
-      <DependentUpon>PPS_MLD_002.cs</DependentUpon>
-    </Compile>
     <Compile Include="sangyoung\PPS_SCH_001.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,12 +220,6 @@
     </Compile>
     <Compile Include="sangyoung\PPS_SCH_003.Designer.cs">
       <DependentUpon>PPS_SCH_003.cs</DependentUpon>
-    </Compile>
-    <Compile Include="sangyoung\PPS_SCH_004.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="sangyoung\PPS_SCH_004.Designer.cs">
-      <DependentUpon>PPS_SCH_004.cs</DependentUpon>
     </Compile>
     <Compile Include="sangyoung\PRM_RPT_001.cs">
       <SubType>Form</SubType>
@@ -292,6 +250,30 @@
     </Compile>
     <Compile Include="sangyoung\PRM_RPT_005.Designer.cs">
       <DependentUpon>PRM_RPT_005.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Templets\GridGridGridForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Templets\GridGridGridForm.Designer.cs">
+      <DependentUpon>GridGridGridForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Templets\FreeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Templets\FreeForm.Designer.cs">
+      <DependentUpon>FreeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Templets\GridGridForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Templets\GridGridForm.Designer.cs">
+      <DependentUpon>GridGridForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Templets\GridForm.cs">
       <SubType>Form</SubType>
@@ -405,36 +387,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HwiSeok\PRM_PRF_001.resx">
       <DependentUpon>PRM_PRF_001.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="sangyoung\KPI_RPT_001.resx">
-      <DependentUpon>KPI_RPT_001.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="sangyoung\KPI_RPT_002.resx">
-      <DependentUpon>KPI_RPT_002.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="sangyoung\KPI_RPT_003.resx">
-      <DependentUpon>KPI_RPT_003.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="sangyoung\KPI_RPT_004.resx">
-      <DependentUpon>KPI_RPT_004.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="sangyoung\KPI_RPT_005.resx">
-      <DependentUpon>KPI_RPT_005.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="sangyoung\PPS_MLD_001.resx">
-      <DependentUpon>PPS_MLD_001.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="sangyoung\PPS_MLD_002.resx">
-      <DependentUpon>PPS_MLD_002.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="sangyoung\PPS_SCH_001.resx">
-      <DependentUpon>PPS_SCH_001.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="sangyoung\PPS_SCH_002.resx">
-      <DependentUpon>PPS_SCH_002.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="sangyoung\PPS_SCH_003.resx">
-      <DependentUpon>PPS_SCH_003.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Templets\FreeForm.resx">
       <DependentUpon>FreeForm.cs</DependentUpon>
