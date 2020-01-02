@@ -28,12 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.aLabel1 = new Axxen.CustomControls.ALabel();
+            this.aComboBox1 = new Axxen.CustomControls.AComboBox();
+            this.aPanel1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // aPanel1
+            // 
+            this.aPanel1.Controls.Add(this.aComboBox1);
+            this.aPanel1.Controls.Add(this.aLabel1);
+            // 
+            // aLabel1
+            // 
+            this.aLabel1.AutoSize = true;
+            this.aLabel1.Location = new System.Drawing.Point(27, 28);
+            this.aLabel1.Name = "aLabel1";
+            this.aLabel1.Size = new System.Drawing.Size(43, 15);
+            this.aLabel1.TabIndex = 0;
+            this.aLabel1.Text = "생산월";
+            // 
+            // aComboBox1
+            // 
+            this.aComboBox1.FormattingEnabled = true;
+            this.aComboBox1.Location = new System.Drawing.Point(76, 25);
+            this.aComboBox1.Name = "aComboBox1";
+            this.aComboBox1.Size = new System.Drawing.Size(121, 23);
+            this.aComboBox1.TabIndex = 1;
+            // 
+            // KPI_RPT_002
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Name = "KPI_RPT_002";
             this.Text = "KPI_RPT_002";
+            this.aPanel1.ResumeLayout(false);
+            this.aPanel1.PerformLayout();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private CustomControls.ALabel aLabel1;
+        private CustomControls.AComboBox aComboBox1;
     }
 }
