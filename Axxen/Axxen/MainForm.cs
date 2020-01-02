@@ -10,28 +10,38 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VO;
-
+using Service;
 namespace Axxen
 {
     public partial class MainForm : Form
     {
-        int CheckBtnIndex = 6;
+        int CheckBtnIndex = 7;
         bool BookmarkCheck = true; //즐겨찾기 
         int btntabindexCheck = -1; //현재 선택한버튼 채크
         bool btnCheck = true; //현재 선택한버튼 채크2
         bool open = true;
 
-        List<MenuTree_Master_VO> menulist;
+
+        Image CloseImage;
+
+        List<MenuTree_Master_VO> menulist; //메뉴
+        List<BookMark_VO> booklist;
 
         public MainForm()
         {
             InitializeComponent();
 
-            ImageList imgList = new ImageList();
-            imgList.Images.Add(Bitmap.FromFile("treeimg.png"));
-            tvMenu.ImageList = imgList;
-            // MainForm_Service service = new MainForm_Service();
-            // menulist = service.GetAll_MenuTree_Master();
+              ImageList imgList = new ImageList();
+              imgList.Images.Add(Bitmap.FromFile("treeimg.png"));
+              tvMenu.ImageList = imgList;
+            MainForm_Service service = new MainForm_Service();
+            menulist = service.GetAll_MenuTree_Master();
+
+
+            //booklist = service.GetAll_BookMark(1);
+            //lbxbookmark.DataSource = booklist;
+
+
         }
 
         private void 사용자그룹관리ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -245,55 +255,80 @@ namespace Axxen
         /// <param name="btnname"></param>
         private void CreateMenuTree(string btnname)
         {
-
-            if (menulist.Count > 0)
+            try
             {
-                MenuTree_Master_VO parentcode = menulist.Find(item => item.Screen_Name == btnname);
-                List<MenuTree_Master_VO> menu = menulist.FindAll(item => item.Parent_Screen_Code == parentcode.Screen_Code);
-
-                tvMenu.Nodes.Clear();
-                tvMenu.Nodes.Add(parentcode.Screen_Name);
-              //  tvMenu.TopNode.
-                for (int i = 0; i < menu.Count; i++)
+                if (menulist.Count > 0)
                 {
-                    tvMenu.TopNode.Nodes.Add(menu[i].Screen_Name);
+                    MenuTree_Master_VO parentcode = menulist.Find(item => item.Screen_Name == btnname);//부모코드find
+                    List<MenuTree_Master_VO> menu = menulist.FindAll(item => item.Parent_Screen_Code == parentcode.Screen_Code);//부모코드랑관련자녀메뉴
+                    tvMenu.Nodes.Clear();
+                    tvMenu.Nodes.Add(parentcode.Screen_Name);
+                 
+                    for (int i = 0; i < menu.Count; i++)
+                    {
+                        tvMenu.TopNode.Nodes.Add(menu[i].Screen_Name);
+                    }
+                    tvMenu.ExpandAll();
                 }
+            }
+            catch (Exception err)
+            {
+
+                MessageBox.Show(err.ToString() );
             }
 
         }
+        #region 폼동적생성
+        /// <summary>
+        /// 트리뷰 자식메뉴클릭시 폼생성
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TvMenu_AfterSelect(object sender, TreeViewEventArgs e)
         {
             MenuTree_Master_VO parentcode = menulist.Find(item => item.Screen_Name == e.Node.Text);
 
-            if(parentcode.Parent_Screen_Code != null) { 
-            string form = parentcode.Screen_Code;
-            newForm(form);
+            if (parentcode.Parent_Screen_Code != null) //부모코드에 널값이있는 메뉴를 제외하고
+            {
+                string form = parentcode.Screen_Code;
+                newForm(form);
             }
 
         }
+        /// <summary>
+        /// 새로운 폼 생성
+        /// </summary>
+        /// <param name="formName">폼이름</param>
         private void newForm(string formName)
         {
             try
             {
-
-           
-            string nameSpace = "Axxen"; //네임스페이스 명
-            Assembly cuasm = Assembly.GetExecutingAssembly();
-            //string Format 의 따옴표와 마침표 주의!!
-            Form frm = (Form)cuasm.CreateInstance(string.Format("{0}.{1}", nameSpace, formName));
-            frm.MdiParent = this;
+                string nameSpace = "Axxen"; //네임스페이스 명
+                Assembly cuasm = Assembly.GetExecutingAssembly();
+                //string Format 의 따옴표와 마침표 주의!!
+                Form frm = (Form)cuasm.CreateInstance(string.Format("{0}.{1}", nameSpace, formName));
+             //   frm.MdiParent = this;
+               // frm.WindowState = FormWindowState.Maximized;
+               // frm.Show();
+                frm.TopLevel = false;
+                tabControl2.TabPages.Add((tabControl2.TabPages.Count + 1).ToString());
+                tabControl2.TabPages[tabControl2.TabPages.Count - 1].Controls.Add(frm);
+                tabControl2.SelectedIndex = tabControl2.TabPages.Count - 1;
+                tabControl2.TabPages[tabControl2.TabPages.Count - 1].Text = frm.Text;
                 frm.WindowState = FormWindowState.Maximized;
+                frm.MdiParent = this;
                 frm.Show();
+
             }
-            catch (Exception)
+            catch (Exception err)
             {
 
-                MessageBox.Show("없는 폼");
+                MessageBox.Show(err.ToString());
             }
         }
 
         /// <summary>
-        /// 
+        /// 메뉴클릭시 폼생성
         /// </summary>
         /// <typeparam name="T">where T : Form, new()</typeparam>
         public static void FormOpen<T>(Form MdiParent) where T : Form, new()
@@ -311,9 +346,10 @@ namespace Axxen
             myform.WindowState = FormWindowState.Maximized;
             myform.Show();
         }
-
+        #endregion
+        #region 즐겨찾기
         /// <summary>
-        /// 즐겨찾기
+        /// 즐겨찾기 클릭시
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -321,6 +357,7 @@ namespace Axxen
         {
             if (BookmarkCheck)
             {
+               
                 pnBookmark.Visible = true;
                 BookmarkCheck = false;
             }
@@ -334,7 +371,109 @@ namespace Axxen
 
         private void 즐겨찾기ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //MessageBox.Show(tvMenu.SelectedNode.Text);
+            //MainForm_Service service = new MainForm_Service();
+            //MenuTree_Master_VO parentname = menulist.Find(item => item.Screen_Name == tvMenu.SelectedNode.Text.Trim());//부모코드find
 
+            //if (booklist.Count < 1)
+            //{
+            //    service.InsertBookMark(parentname.Parent_Screen_Code, parentname.Screen_Code);
+            //    return;
+            //}
+
+            //int a = booklist.Find(item => item.Screen_Code == parentname.Screen_Code).;
+            //for (int i=0; i< booklist.Count; i++)
+            //{
+            //  if(  booklist[i].Screen_Code != parentname.Screen_Code)//등록된즐겨찾기가 아니라면.
+            //    {
+                  
+            //        service.InsertBookMark(parentname.Parent_Screen_Code, parentname.Screen_Code);
+            //        break;
+            //    }
+            //}
+
+
+            //booklist = service.GetAll_BookMark(1);
+            //lbxbookmark.DataSource = booklist;
+
+
+
+        }
+        #endregion
+
+        private void TabControl1_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            try
+            {
+                var tabRect = this.tabControl2.GetTabRect(e.Index);
+                tabRect.Inflate(-2, -2);
+                var imageRect = new Rectangle(tabRect.Right - CloseImage.Width,
+                                         tabRect.Top + (tabRect.Height - CloseImage.Height) / 2,
+                                         CloseImage.Width,
+                                         CloseImage.Height);
+
+                var sf = new StringFormat(StringFormat.GenericDefault);
+                if (this.tabControl2.RightToLeft == System.Windows.Forms.RightToLeft.Yes &&
+                    this.tabControl2.RightToLeftLayout == true)
+                {
+                    tabRect = GetRTLCoordinates(this.tabControl2.ClientRectangle, tabRect);
+                    imageRect = GetRTLCoordinates(this.tabControl2.ClientRectangle, imageRect);
+                    sf.FormatFlags |= StringFormatFlags.DirectionRightToLeft;
+                }
+
+                e.Graphics.DrawString(this.tabControl2.TabPages[e.Index].Text,
+                                      this.Font, Brushes.Black, tabRect, sf);
+                e.Graphics.DrawImage(CloseImage, imageRect.Location);
+
+            }
+            catch (Exception) { }
+        }
+
+     
+        
+        public static Rectangle GetRTLCoordinates(Rectangle container, Rectangle drawRectangle)
+        {
+            return new Rectangle(
+                container.Width - drawRectangle.Width - drawRectangle.X,
+                drawRectangle.Y,
+                drawRectangle.Width,
+                drawRectangle.Height);
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+            this.tabControl2.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
+            tabControl2.DrawItem += TabControl1_DrawItem;
+            tabControl2.MouseClick += TabControl2_MouseClick;
+            CloseImage =Image.FromFile("treeimg.png"); ;
+            this.tabControl2.Padding = new Point(10, 3);
+        }
+
+        private void TabControl2_MouseClick(object sender, MouseEventArgs e)
+        {
+            for (var i = 0; i < this.tabControl2.TabPages.Count; i++)
+            {
+                var tabRect = this.tabControl2.GetTabRect(i);
+                tabRect.Inflate(-2, -2);
+                var imageRect = new Rectangle(tabRect.Right - CloseImage.Width,
+                                         tabRect.Top + (tabRect.Height - CloseImage.Height) / 2,
+                                         CloseImage.Width,
+                                         CloseImage.Height);
+                if (imageRect.Contains(e.Location))
+                {
+                    string nameSpace = "Axxen"; //네임스페이스 명
+                    Assembly cuasm = Assembly.GetExecutingAssembly();
+                    //string Format 의 따옴표와 마침표 주의!!
+                    Form frm = (Form)cuasm.CreateInstance(string.Format("{0}.{1}", nameSpace, tabControl2.SelectedTab.Text));
+                    frm.Close();
+                    frm.Dispose();
+                    
+                    this.tabControl2.TabPages.RemoveAt(i);
+                    
+                    break;
+                }
+            }
         }
     }
 }

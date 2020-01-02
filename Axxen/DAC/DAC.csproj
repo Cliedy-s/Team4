@@ -47,9 +47,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Team4Connect_DEV.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Team4Connect_DEV.xml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\VO\VO.csproj">
