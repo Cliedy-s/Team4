@@ -8,13 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Axxen.sangyoung
+namespace Axxen.CustomControls
 {
-    public partial class PPS_MLD_001 : Form
+    public partial class APanel : Panel
     {
-        public PPS_MLD_001()
+        public APanel()
         {
             InitializeComponent();
+            //Design
+        }
+
+        protected override void OnPaint(PaintEventArgs pe)
+        {
+            base.OnPaint(pe);
         }
     }
 }

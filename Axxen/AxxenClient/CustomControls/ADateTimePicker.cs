@@ -8,13 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Axxen.sangyoung
+namespace Axxen.CustomControls
 {
-    public partial class PPS_MLD_002 : Form
+    public partial class ADateTimePicker : DateTimePicker
     {
-        public PPS_MLD_002()
+        public ADateTimePicker()
         {
             InitializeComponent();
+            //Design
+        }
+
+        protected override void OnPaint(PaintEventArgs pe)
+        {
+            base.OnPaint(pe);
         }
     }
 }

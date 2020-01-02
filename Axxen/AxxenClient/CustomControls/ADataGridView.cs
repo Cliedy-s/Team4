@@ -8,13 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Axxen.sangyoung
+namespace Axxen.CustomControls
 {
-    public partial class PPS_SCH_004 : Form
+    public partial class ADataGridView : DataGridView
     {
-        public PPS_SCH_004()
+        public ADataGridView()
         {
             InitializeComponent();
+            //Design
+        }
+
+        protected override void OnPaint(PaintEventArgs pe)
+        {
+            base.OnPaint(pe);
         }
     }
 }
