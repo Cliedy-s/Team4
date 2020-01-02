@@ -388,6 +388,9 @@
     <EmbeddedResource Include="HwiSeok\PRM_PRF_001.resx">
       <DependentUpon>PRM_PRF_001.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="sangyoung\PPS_SCH_001.resx">
+      <DependentUpon>PPS_SCH_001.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Templets\FreeForm.resx">
       <DependentUpon>FreeForm.cs</DependentUpon>
     </EmbeddedResource>
