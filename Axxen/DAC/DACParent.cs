@@ -1,10 +1,10 @@
-﻿using IceCreamManager.VO;
+﻿
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Xml;
 
-namespace IceCreamManager.DAC
+namespace DAC
 {
     /// <summary>
     /// 부모 상속 받은 후 원하는 메소드만 재정의 ( 빈 줄 Alt+Enter 후 [재정의 생성...] 참조 )
@@ -17,6 +17,7 @@ namespace IceCreamManager.DAC
             {
                 XmlDocument doc = new XmlDocument();
                 doc.Load(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "/Team4Connect_DEV.xml");
+                
                 XmlNodeList nodes = doc.SelectNodes("configuration/settings/add");
                 foreach (XmlNode item in nodes)
                 {
