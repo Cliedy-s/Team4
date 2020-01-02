@@ -390,6 +390,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Templets\ReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Templets\ReportForm.Designer.cs">
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CustomControls\AHeaderBox.resx">
       <DependentUpon>AHeaderBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -450,6 +456,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Templets\ReportForm.resx">
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
