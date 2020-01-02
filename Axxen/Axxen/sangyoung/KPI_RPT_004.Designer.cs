@@ -1,4 +1,4 @@
-﻿namespace Axxen.sangyoung
+﻿namespace Axxen
 {
     partial class KPI_RPT_004
     {

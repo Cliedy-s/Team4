@@ -459,10 +459,6 @@
     <Folder Include="Service\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Service\Service.csproj">
-      <Project>{af54aca3-da6e-4a15-9bac-da1b72dd7b93}</Project>
-      <Name>Service</Name>
-    </ProjectReference>
     <ProjectReference Include="..\VO\VO.csproj">
       <Project>{40a3c251-ad92-44a6-a387-367aa57772f7}</Project>
       <Name>VO</Name>

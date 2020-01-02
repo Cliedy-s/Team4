@@ -1,4 +1,4 @@
-﻿using Service;
+﻿// using Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,8 +30,8 @@ namespace Axxen
             ImageList imgList = new ImageList();
             imgList.Images.Add(Bitmap.FromFile("treeimg.png"));
             tvMenu.ImageList = imgList;
-            MainForm_Service service = new MainForm_Service();
-            menulist = service.GetAll_MenuTree_Master();
+            // MainForm_Service service = new MainForm_Service();
+            // menulist = service.GetAll_MenuTree_Master();
         }
 
         private void 사용자그룹관리ToolStripMenuItem_Click(object sender, EventArgs e)

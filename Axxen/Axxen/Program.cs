@@ -1,5 +1,4 @@
-﻿using Axxen.sangyoung;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,7 +16,7 @@ namespace Axxen
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PPS_SCH_001());
+            Application.Run(new MainForm());
         }
     }
 }
