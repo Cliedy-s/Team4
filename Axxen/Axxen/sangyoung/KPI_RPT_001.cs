@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Axxen.sangyoung
+namespace Axxen
 {
-    public partial class KPI_RPT_001 : GridForm
+    public partial class KPI_RPT_001 : Axxen.GridForm
     {
         public KPI_RPT_001()
         {
