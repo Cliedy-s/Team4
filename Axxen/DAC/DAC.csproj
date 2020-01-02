@@ -42,10 +42,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DACParent.cs" />
+    <Compile Include="Helper.cs" />
+    <Compile Include="MainForm_DAC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Team4Connect_DEV.xml" />
+    <Content Include="Team4Connect_DEV.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VO\VO.csproj">
+      <Project>{40a3c251-ad92-44a6-a387-367aa57772f7}</Project>
+      <Name>VO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
