@@ -1,4 +1,4 @@
-﻿namespace Axxen.HwiSeok
+﻿namespace Axxen
 {
     partial class QAM_SQC_002
     {

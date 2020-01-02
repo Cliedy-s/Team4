@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Axxen.sangyoung
+namespace Axxen
 {
     public partial class PPS_SCH_002 : Axxen.GridForm
     {

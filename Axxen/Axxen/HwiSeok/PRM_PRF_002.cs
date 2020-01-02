@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Axxen.HwiSeok
+namespace Axxen
 {
     public partial class PRM_PRF_002 : Form
     {
