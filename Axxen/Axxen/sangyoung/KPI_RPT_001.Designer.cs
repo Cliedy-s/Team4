@@ -41,6 +41,7 @@
             this.aPanel1.Controls.Add(this.aDateTimePicker2);
             this.aPanel1.Controls.Add(this.aDateTimePicker1);
             this.aPanel1.Controls.Add(this.aLabel2);
+            this.aPanel1.Size = new System.Drawing.Size(1408, 74);
             // 
             // aLabel1
             // 
@@ -80,7 +81,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(848, 460);
             this.Name = "KPI_RPT_001";
             this.Text = "KPI_RPT_001";
             this.aPanel1.ResumeLayout(false);

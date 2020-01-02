@@ -436,6 +436,9 @@
     <EmbeddedResource Include="sangyoung\PPS_SCH_003.resx">
       <DependentUpon>PPS_SCH_003.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Templets\FreeForm.resx">
+      <DependentUpon>FreeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Templets\GridGridGridForm.resx">
       <DependentUpon>GridGridGridForm.cs</DependentUpon>
     </EmbeddedResource>

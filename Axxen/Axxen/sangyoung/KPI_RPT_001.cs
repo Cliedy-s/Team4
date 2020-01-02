@@ -15,6 +15,7 @@ namespace Axxen.sangyoung
         public KPI_RPT_001()
         {
             InitializeComponent();
+            this.Size = base.Size;
         }
     }
 }

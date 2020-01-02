@@ -50,7 +50,7 @@
             this.aPanel1.Location = new System.Drawing.Point(12, 15);
             this.aPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.aPanel1.Name = "aPanel1";
-            this.aPanel1.Size = new System.Drawing.Size(1360, 74);
+            this.aPanel1.Size = new System.Drawing.Size(1124, 74);
             this.aPanel1.TabIndex = 8;
             // 
             // aPanel2
@@ -60,14 +60,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.aPanel2.Location = new System.Drawing.Point(12, 128);
             this.aPanel2.Name = "aPanel2";
-            this.aPanel2.Size = new System.Drawing.Size(1360, 518);
+            this.aPanel2.Size = new System.Drawing.Size(1124, 557);
             this.aPanel2.TabIndex = 10;
             // 
             // ReportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1384, 661);
+            this.ClientSize = new System.Drawing.Size(1148, 700);
             this.Controls.Add(this.aHeaderBox1);
             this.Controls.Add(this.aPanel1);
             this.Controls.Add(this.aPanel2);
