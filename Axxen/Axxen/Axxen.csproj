@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -405,11 +406,35 @@
     <EmbeddedResource Include="HwiSeok\PRM_PRF_001.resx">
       <DependentUpon>PRM_PRF_001.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="sangyoung\KPI_RPT_001.resx">
+      <DependentUpon>KPI_RPT_001.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sangyoung\KPI_RPT_002.resx">
+      <DependentUpon>KPI_RPT_002.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sangyoung\KPI_RPT_003.resx">
+      <DependentUpon>KPI_RPT_003.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sangyoung\KPI_RPT_004.resx">
+      <DependentUpon>KPI_RPT_004.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sangyoung\KPI_RPT_005.resx">
+      <DependentUpon>KPI_RPT_005.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sangyoung\PPS_MLD_001.resx">
+      <DependentUpon>PPS_MLD_001.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sangyoung\PPS_MLD_002.resx">
+      <DependentUpon>PPS_MLD_002.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="sangyoung\PPS_SCH_001.resx">
       <DependentUpon>PPS_SCH_001.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="sangyoung\PPS_SCH_002.resx">
       <DependentUpon>PPS_SCH_002.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sangyoung\PPS_SCH_003.resx">
+      <DependentUpon>PPS_SCH_003.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Templets\GridGridGridForm.resx">
       <DependentUpon>GridGridGridForm.cs</DependentUpon>

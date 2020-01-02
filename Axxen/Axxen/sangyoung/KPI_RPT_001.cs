@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Axxen.sangyoung
 {
-    public partial class KPI_RPT_001 : Form
+    public partial class KPI_RPT_001 : GridForm
     {
         public KPI_RPT_001()
         {
