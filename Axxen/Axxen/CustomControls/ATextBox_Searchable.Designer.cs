@@ -69,7 +69,7 @@
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(54, 23);
             this.btnSearch.TabIndex = 3;
-            this.btnSearch.Text = "btnName";
+            this.btnSearch.Text = "찾기";
             this.btnSearch.UseVisualStyleBackColor = false;
             // 
             // ATextBox_Searchable

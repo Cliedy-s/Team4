@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AxxenClient.CustomControls
 {
+    public enum type { Normal, Numeric, Required }
     public partial class ATextBox : TextBox
     {
-        public enum type { Normal, Numeric, Required }
 
         private type txttype;
         public type txtType
