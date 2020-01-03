@@ -28,9 +28,72 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.aDateTimePicker2 = new Axxen.CustomControls.ADateTimePicker();
+            this.aLabel2 = new Axxen.CustomControls.ALabel();
+            this.aDateTimePicker1 = new Axxen.CustomControls.ADateTimePicker();
+            this.aLabel1 = new Axxen.CustomControls.ALabel();
+            this.aPanel1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // aPanel1
+            // 
+            this.aPanel1.Controls.Add(this.aDateTimePicker2);
+            this.aPanel1.Controls.Add(this.aLabel2);
+            this.aPanel1.Controls.Add(this.aDateTimePicker1);
+            this.aPanel1.Controls.Add(this.aLabel1);
+            // 
+            // aDateTimePicker2
+            // 
+            this.aDateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.aDateTimePicker2.Location = new System.Drawing.Point(251, 23);
+            this.aDateTimePicker2.Name = "aDateTimePicker2";
+            this.aDateTimePicker2.Size = new System.Drawing.Size(105, 23);
+            this.aDateTimePicker2.TabIndex = 8;
+            this.aDateTimePicker2.Value = new System.DateTime(2020, 1, 3, 15, 14, 0, 0);
+            // 
+            // aLabel2
+            // 
+            this.aLabel2.AutoSize = true;
+            this.aLabel2.Location = new System.Drawing.Point(230, 27);
+            this.aLabel2.Name = "aLabel2";
+            this.aLabel2.Size = new System.Drawing.Size(15, 15);
+            this.aLabel2.TabIndex = 7;
+            this.aLabel2.Text = "~";
+            // 
+            // aDateTimePicker1
+            // 
+            this.aDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.aDateTimePicker1.Location = new System.Drawing.Point(118, 23);
+            this.aDateTimePicker1.Name = "aDateTimePicker1";
+            this.aDateTimePicker1.Size = new System.Drawing.Size(105, 23);
+            this.aDateTimePicker1.TabIndex = 6;
+            this.aDateTimePicker1.Value = new System.DateTime(2020, 1, 3, 15, 14, 0, 0);
+            // 
+            // aLabel1
+            // 
+            this.aLabel1.AutoSize = true;
+            this.aLabel1.Location = new System.Drawing.Point(57, 27);
+            this.aLabel1.Name = "aLabel1";
+            this.aLabel1.Size = new System.Drawing.Size(55, 15);
+            this.aLabel1.TabIndex = 5;
+            this.aLabel1.Text = "생산일자";
+            // 
+            // KPI_RPT_001
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.ClientSize = new System.Drawing.Size(1148, 700);
+            this.Name = "KPI_RPT_001";
+            this.aPanel1.ResumeLayout(false);
+            this.aPanel1.PerformLayout();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private CustomControls.ADateTimePicker aDateTimePicker2;
+        private CustomControls.ALabel aLabel2;
+        private CustomControls.ADateTimePicker aDateTimePicker1;
+        private CustomControls.ALabel aLabel1;
     }
 }
