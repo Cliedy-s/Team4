@@ -56,7 +56,7 @@
             this.txtValue.Name = "txtValue";
             this.txtValue.Size = new System.Drawing.Size(220, 23);
             this.txtValue.TabIndex = 2;
-            this.txtValue.txtType = AxxenClient.CustomControls.ATextBox.type.Normal;
+            this.txtValue.txtType = AxxenClient.CustomControls.type.Normal;
             // 
             // btnSearch
             // 
@@ -69,7 +69,7 @@
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(54, 23);
             this.btnSearch.TabIndex = 3;
-            this.btnSearch.Text = "btnName";
+            this.btnSearch.Text = "찾기";
             this.btnSearch.UseVisualStyleBackColor = false;
             // 
             // ATextBox_Searchable
