@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Axxen
+namespace Axxen.HwiSeok
 {
-    public partial class PRM_PRF_006 : Form
+    public partial class PRM_PRF_006 : Axxen.GridForm
     {
         public PRM_PRF_006()
         {
