@@ -38,6 +38,10 @@
             this.aPanel1.Controls.Add(this.aComboBox1);
             this.aPanel1.Controls.Add(this.aLabel1);
             // 
+            // aHeaderBox1
+            // 
+            this.aHeaderBox1.HeaderBoxText = "조회내역";
+            // 
             // aComboBox1
             // 
             this.aComboBox1.FormattingEnabled = true;

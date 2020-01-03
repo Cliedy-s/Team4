@@ -33,6 +33,10 @@
             this.aPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
+            // aHeaderBox1
+            // 
+            this.aHeaderBox1.HeaderBoxText = "조회내역";
+            // 
             // aPanel1
             // 
             this.aPanel1.Controls.Add(this.aDateTimePicker1);

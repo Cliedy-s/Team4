@@ -57,6 +57,14 @@
             // aSplitContainer1
             // 
             // 
+            // aHeaderBox1
+            // 
+            this.aHeaderBox1.HeaderBoxText = "생산의뢰";
+            // 
+            // aHeaderBox2
+            // 
+            this.aHeaderBox2.HeaderBoxText = "작업지시";
+            // 
             // aButton1
             // 
             this.aButton1.BackColor = System.Drawing.SystemColors.ControlLight;

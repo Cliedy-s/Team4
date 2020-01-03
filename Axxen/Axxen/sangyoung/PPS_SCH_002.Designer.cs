@@ -52,6 +52,10 @@
             this.aPanel1.Controls.Add(this.aDateTimePicker1);
             this.aPanel1.Controls.Add(this.aLabel1);
             // 
+            // aHeaderBox1
+            // 
+            this.aHeaderBox1.HeaderBoxText = "조회내역";
+            // 
             // aDateTimePicker2
             // 
             this.aDateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
