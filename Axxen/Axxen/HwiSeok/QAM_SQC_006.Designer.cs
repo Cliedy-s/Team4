@@ -28,9 +28,50 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.aComboBox1 = new Axxen.CustomControls.AComboBox();
+            this.aLabel1 = new Axxen.CustomControls.ALabel();
+            this.aPanel1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // aPanel1
+            // 
+            this.aPanel1.Controls.Add(this.aComboBox1);
+            this.aPanel1.Controls.Add(this.aLabel1);
+            // 
+            // aHeaderBox1
+            // 
+            this.aHeaderBox1.HeaderBoxText = "조회내역";
+            // 
+            // aComboBox1
+            // 
+            this.aComboBox1.FormattingEnabled = true;
+            this.aComboBox1.Location = new System.Drawing.Point(83, 26);
+            this.aComboBox1.Name = "aComboBox1";
+            this.aComboBox1.Size = new System.Drawing.Size(121, 23);
+            this.aComboBox1.TabIndex = 27;
+            // 
+            // aLabel1
+            // 
+            this.aLabel1.AutoSize = true;
+            this.aLabel1.Location = new System.Drawing.Point(22, 29);
+            this.aLabel1.Name = "aLabel1";
+            this.aLabel1.Size = new System.Drawing.Size(55, 15);
+            this.aLabel1.TabIndex = 26;
+            this.aLabel1.Text = "생산년도";
+            // 
+            // QAM_SQC_006
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.ClientSize = new System.Drawing.Size(1148, 700);
+            this.Name = "QAM_SQC_006";
+            this.aPanel1.ResumeLayout(false);
+            this.aPanel1.PerformLayout();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+        private CustomControls.AComboBox aComboBox1;
+        private CustomControls.ALabel aLabel1;
     }
 }

@@ -28,9 +28,102 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.aButton1 = new Axxen.CustomControls.AButton();
+            this.aButton2 = new Axxen.CustomControls.AButton();
+            this.aLabel1 = new Axxen.CustomControls.ALabel();
+            this.aComboBox1 = new Axxen.CustomControls.AComboBox();
+            this.aLabel2 = new Axxen.CustomControls.ALabel();
+            this.aComboBox2 = new Axxen.CustomControls.AComboBox();
+            this.aPanel1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // aPanel1
+            // 
+            this.aPanel1.Controls.Add(this.aComboBox2);
+            this.aPanel1.Controls.Add(this.aLabel2);
+            this.aPanel1.Controls.Add(this.aComboBox1);
+            this.aPanel1.Controls.Add(this.aLabel1);
+            this.aPanel1.Controls.Add(this.aButton2);
+            this.aPanel1.Controls.Add(this.aButton1);
+            // 
+            // aHeaderBox1
+            // 
+            this.aHeaderBox1.HeaderBoxText = "조회내역";
+            // 
+            // aButton1
+            // 
+            this.aButton1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.aButton1.Location = new System.Drawing.Point(946, 25);
+            this.aButton1.Name = "aButton1";
+            this.aButton1.Size = new System.Drawing.Size(75, 23);
+            this.aButton1.TabIndex = 0;
+            this.aButton1.Text = "실적보정";
+            this.aButton1.UseVisualStyleBackColor = false;
+            // 
+            // aButton2
+            // 
+            this.aButton2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.aButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.aButton2.Location = new System.Drawing.Point(1027, 25);
+            this.aButton2.Name = "aButton2";
+            this.aButton2.Size = new System.Drawing.Size(75, 23);
+            this.aButton2.TabIndex = 1;
+            this.aButton2.Text = "실적 분할";
+            this.aButton2.UseVisualStyleBackColor = false;
+            // 
+            // aLabel1
+            // 
+            this.aLabel1.AutoSize = true;
+            this.aLabel1.Location = new System.Drawing.Point(23, 29);
+            this.aLabel1.Name = "aLabel1";
+            this.aLabel1.Size = new System.Drawing.Size(79, 15);
+            this.aLabel1.TabIndex = 2;
+            this.aLabel1.Text = "작업지시일자";
+            // 
+            // aComboBox1
+            // 
+            this.aComboBox1.FormattingEnabled = true;
+            this.aComboBox1.Location = new System.Drawing.Point(108, 26);
+            this.aComboBox1.Name = "aComboBox1";
+            this.aComboBox1.Size = new System.Drawing.Size(121, 23);
+            this.aComboBox1.TabIndex = 3;
+            // 
+            // aLabel2
+            // 
+            this.aLabel2.AutoSize = true;
+            this.aLabel2.Location = new System.Drawing.Point(235, 29);
+            this.aLabel2.Name = "aLabel2";
+            this.aLabel2.Size = new System.Drawing.Size(15, 15);
+            this.aLabel2.TabIndex = 4;
+            this.aLabel2.Text = "~";
+            // 
+            // aComboBox2
+            // 
+            this.aComboBox2.FormattingEnabled = true;
+            this.aComboBox2.Location = new System.Drawing.Point(256, 25);
+            this.aComboBox2.Name = "aComboBox2";
+            this.aComboBox2.Size = new System.Drawing.Size(121, 23);
+            this.aComboBox2.TabIndex = 5;
+            // 
+            // PRM_PRF_001
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.ClientSize = new System.Drawing.Size(1148, 700);
+            this.Name = "PRM_PRF_001";
+            this.aPanel1.ResumeLayout(false);
+            this.aPanel1.PerformLayout();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private CustomControls.AButton aButton1;
+        private CustomControls.AButton aButton2;
+        private CustomControls.AComboBox aComboBox2;
+        private CustomControls.ALabel aLabel2;
+        private CustomControls.AComboBox aComboBox1;
+        private CustomControls.ALabel aLabel1;
     }
 }
