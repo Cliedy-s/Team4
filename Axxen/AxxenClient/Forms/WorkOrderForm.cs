@@ -6,11 +6,11 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace AxxenClient.Templets
+namespace AxxenClient.Forms
 {
-    public partial class GridManageForm : AxxenClient.Templets.ClientBaseForm
+    public partial class WorkOrderForm : AxxenClient.Templets.ClientBaseForm
     {
-        public GridManageForm()
+        public WorkOrderForm()
         {
             InitializeComponent();
         }

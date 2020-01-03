@@ -49,7 +49,11 @@ namespace Axxen.CustomControls
                     break;
                 case types.GVs:
                     break;
+                case types.GVGroups:
+                    break;
                 case types.Workers:
+                    break;
+                default:
                     break;
             }
         }

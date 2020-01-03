@@ -135,6 +135,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.Name = "PRM_PRF_002";
+            this.Text = "포장 팔렛트 마감";
             this.aPanel1.ResumeLayout(false);
             this.aPanel1.PerformLayout();
             this.aSplitContainer1.Panel1.ResumeLayout(false);

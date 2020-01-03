@@ -14,7 +14,6 @@ namespace AxxenClient.CustomControls
     {
         public string LabelText { get { return lblName.Text; } set { lblName.Text = value; } }
         public string TextBoxText { get { return txtValue.Text; } set { txtValue.Text = value; } }
-        public textboxType TxtType { get { return txtValue.txtType; } set { txtValue.txtType = value; } }
         public SearchButtonClick btnSearch_Click;
         public float FontSize
         {
@@ -27,7 +26,6 @@ namespace AxxenClient.CustomControls
             }
             get { return txtValue.Font.Size; }
         }
-        public int SplitDistance { get { return splitContainer1.SplitterDistance; } set { splitContainer1.SplitterDistance = value; } }
 
         public ATextBox_Searchable()
         {

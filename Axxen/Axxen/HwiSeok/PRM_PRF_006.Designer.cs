@@ -32,11 +32,13 @@
             this.aLabel2 = new Axxen.CustomControls.ALabel();
             this.aComboBox1 = new Axxen.CustomControls.AComboBox();
             this.aLabel1 = new Axxen.CustomControls.ALabel();
+            this.aTextBox_FindNameByCode2 = new Axxen.CustomControls.ATextBox_FindNameByCode();
             this.aPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // aPanel1
             // 
+            this.aPanel1.Controls.Add(this.aTextBox_FindNameByCode2);
             this.aPanel1.Controls.Add(this.aComboBox2);
             this.aPanel1.Controls.Add(this.aLabel2);
             this.aPanel1.Controls.Add(this.aComboBox1);
@@ -80,11 +82,25 @@
             this.aLabel1.TabIndex = 10;
             this.aLabel1.Text = "로딩일자";
             // 
+            // aTextBox_FindNameByCode2
+            // 
+            this.aTextBox_FindNameByCode2.CodeType = Axxen.CustomControls.ATextBox_FindNameByCode.types.Items;
+            this.aTextBox_FindNameByCode2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aTextBox_FindNameByCode2.lblNameText = "품목";
+            this.aTextBox_FindNameByCode2.Location = new System.Drawing.Point(771, 26);
+            this.aTextBox_FindNameByCode2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.aTextBox_FindNameByCode2.Name = "aTextBox_FindNameByCode2";
+            this.aTextBox_FindNameByCode2.Size = new System.Drawing.Size(220, 27);
+            this.aTextBox_FindNameByCode2.TabIndex = 15;
+            this.aTextBox_FindNameByCode2.txtCodeText = "";
+            this.aTextBox_FindNameByCode2.txtNameText = "";
+            // 
             // PRM_PRF_006
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.Name = "PRM_PRF_006";
+            this.Text = "대차이력조회";
             this.aPanel1.ResumeLayout(false);
             this.aPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -97,5 +113,6 @@
         private CustomControls.ALabel aLabel2;
         private CustomControls.AComboBox aComboBox1;
         private CustomControls.ALabel aLabel1;
+        private CustomControls.ATextBox_FindNameByCode aTextBox_FindNameByCode2;
     }
 }
