@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.aTextBox_FindNameByCode2 = new Axxen.CustomControls.ATextBox_FindNameByCode();
+            this.aTextBox_FindNameByCode1 = new Axxen.CustomControls.ATextBox_FindNameByCode();
             this.aDateTimePicker2 = new Axxen.CustomControls.ADateTimePicker();
             this.aLabel2 = new Axxen.CustomControls.ALabel();
             this.aDateTimePicker1 = new Axxen.CustomControls.ADateTimePicker();
             this.aLabel1 = new Axxen.CustomControls.ALabel();
-            this.aTextBox_FindNameByCode2 = new Axxen.CustomControls.ATextBox_FindNameByCode();
-            this.aTextBox_FindNameByCode1 = new Axxen.CustomControls.ATextBox_FindNameByCode();
             this.aPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,52 +46,20 @@
             this.aPanel1.Controls.Add(this.aDateTimePicker1);
             this.aPanel1.Controls.Add(this.aLabel1);
             // 
-            // aDateTimePicker2
+            // aHeaderBox1
             // 
-            this.aDateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.aDateTimePicker2.Location = new System.Drawing.Point(257, 25);
-            this.aDateTimePicker2.Name = "aDateTimePicker2";
-            this.aDateTimePicker2.Size = new System.Drawing.Size(105, 23);
-            this.aDateTimePicker2.TabIndex = 8;
-            this.aDateTimePicker2.Value = new System.DateTime(2020, 1, 3, 15, 14, 0, 0);
-            // 
-            // aLabel2
-            // 
-            this.aLabel2.AutoSize = true;
-            this.aLabel2.Location = new System.Drawing.Point(236, 29);
-            this.aLabel2.Name = "aLabel2";
-            this.aLabel2.Size = new System.Drawing.Size(15, 15);
-            this.aLabel2.TabIndex = 7;
-            this.aLabel2.Text = "~";
-            // 
-            // aDateTimePicker1
-            // 
-            this.aDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.aDateTimePicker1.Location = new System.Drawing.Point(124, 25);
-            this.aDateTimePicker1.Name = "aDateTimePicker1";
-            this.aDateTimePicker1.Size = new System.Drawing.Size(105, 23);
-            this.aDateTimePicker1.TabIndex = 6;
-            this.aDateTimePicker1.Value = new System.DateTime(2020, 1, 3, 15, 14, 0, 0);
-            // 
-            // aLabel1
-            // 
-            this.aLabel1.AutoSize = true;
-            this.aLabel1.Location = new System.Drawing.Point(62, 29);
-            this.aLabel1.Name = "aLabel1";
-            this.aLabel1.Size = new System.Drawing.Size(55, 15);
-            this.aLabel1.TabIndex = 5;
-            this.aLabel1.Text = "생산일자";
+            this.aHeaderBox1.HeaderBoxText = "조회내역";
             // 
             // aTextBox_FindNameByCode2
             // 
             this.aTextBox_FindNameByCode2.CodeType = Axxen.CustomControls.ATextBox_FindNameByCode.types.WorkCenters;
             this.aTextBox_FindNameByCode2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aTextBox_FindNameByCode2.lblNameText = "작업장";
-            this.aTextBox_FindNameByCode2.Location = new System.Drawing.Point(661, 25);
+            this.aTextBox_FindNameByCode2.Location = new System.Drawing.Point(645, 26);
             this.aTextBox_FindNameByCode2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.aTextBox_FindNameByCode2.Name = "aTextBox_FindNameByCode2";
             this.aTextBox_FindNameByCode2.Size = new System.Drawing.Size(229, 27);
-            this.aTextBox_FindNameByCode2.TabIndex = 17;
+            this.aTextBox_FindNameByCode2.TabIndex = 23;
             this.aTextBox_FindNameByCode2.txtCodeText = "";
             this.aTextBox_FindNameByCode2.txtNameText = "";
             // 
@@ -100,13 +68,49 @@
             this.aTextBox_FindNameByCode1.CodeType = Axxen.CustomControls.ATextBox_FindNameByCode.types.Items;
             this.aTextBox_FindNameByCode1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aTextBox_FindNameByCode1.lblNameText = "품목";
-            this.aTextBox_FindNameByCode1.Location = new System.Drawing.Point(413, 25);
+            this.aTextBox_FindNameByCode1.Location = new System.Drawing.Point(375, 26);
             this.aTextBox_FindNameByCode1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.aTextBox_FindNameByCode1.Name = "aTextBox_FindNameByCode1";
             this.aTextBox_FindNameByCode1.Size = new System.Drawing.Size(221, 27);
-            this.aTextBox_FindNameByCode1.TabIndex = 16;
+            this.aTextBox_FindNameByCode1.TabIndex = 22;
             this.aTextBox_FindNameByCode1.txtCodeText = "";
             this.aTextBox_FindNameByCode1.txtNameText = "";
+            // 
+            // aDateTimePicker2
+            // 
+            this.aDateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.aDateTimePicker2.Location = new System.Drawing.Point(221, 28);
+            this.aDateTimePicker2.Name = "aDateTimePicker2";
+            this.aDateTimePicker2.Size = new System.Drawing.Size(105, 23);
+            this.aDateTimePicker2.TabIndex = 21;
+            this.aDateTimePicker2.Value = new System.DateTime(2020, 1, 3, 15, 14, 0, 0);
+            // 
+            // aLabel2
+            // 
+            this.aLabel2.AutoSize = true;
+            this.aLabel2.Location = new System.Drawing.Point(200, 32);
+            this.aLabel2.Name = "aLabel2";
+            this.aLabel2.Size = new System.Drawing.Size(15, 15);
+            this.aLabel2.TabIndex = 20;
+            this.aLabel2.Text = "~";
+            // 
+            // aDateTimePicker1
+            // 
+            this.aDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.aDateTimePicker1.Location = new System.Drawing.Point(88, 28);
+            this.aDateTimePicker1.Name = "aDateTimePicker1";
+            this.aDateTimePicker1.Size = new System.Drawing.Size(105, 23);
+            this.aDateTimePicker1.TabIndex = 19;
+            this.aDateTimePicker1.Value = new System.DateTime(2020, 1, 3, 15, 14, 0, 0);
+            // 
+            // aLabel1
+            // 
+            this.aLabel1.AutoSize = true;
+            this.aLabel1.Location = new System.Drawing.Point(27, 32);
+            this.aLabel1.Name = "aLabel1";
+            this.aLabel1.Size = new System.Drawing.Size(55, 15);
+            this.aLabel1.TabIndex = 18;
+            this.aLabel1.Text = "생산일자";
             // 
             // PPS_MLD_002
             // 
@@ -121,11 +125,11 @@
 
         #endregion
 
+        private CustomControls.ATextBox_FindNameByCode aTextBox_FindNameByCode2;
+        private CustomControls.ATextBox_FindNameByCode aTextBox_FindNameByCode1;
         private CustomControls.ADateTimePicker aDateTimePicker2;
         private CustomControls.ALabel aLabel2;
         private CustomControls.ADateTimePicker aDateTimePicker1;
         private CustomControls.ALabel aLabel1;
-        private CustomControls.ATextBox_FindNameByCode aTextBox_FindNameByCode2;
-        private CustomControls.ATextBox_FindNameByCode aTextBox_FindNameByCode1;
     }
 }

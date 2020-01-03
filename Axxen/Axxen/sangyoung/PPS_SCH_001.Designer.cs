@@ -57,6 +57,14 @@
             // aSplitContainer1
             // 
             // 
+            // aHeaderBox1
+            // 
+            this.aHeaderBox1.HeaderBoxText = "생산의뢰";
+            // 
+            // aHeaderBox2
+            // 
+            this.aHeaderBox2.HeaderBoxText = "작업지시";
+            // 
             // aButton1
             // 
             this.aButton1.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -82,7 +90,7 @@
             // aLabel1
             // 
             this.aLabel1.AutoSize = true;
-            this.aLabel1.Location = new System.Drawing.Point(35, 28);
+            this.aLabel1.Location = new System.Drawing.Point(27, 32);
             this.aLabel1.Name = "aLabel1";
             this.aLabel1.Size = new System.Drawing.Size(79, 15);
             this.aLabel1.TabIndex = 1;
@@ -91,7 +99,7 @@
             // aDateTimePicker1
             // 
             this.aDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.aDateTimePicker1.Location = new System.Drawing.Point(120, 24);
+            this.aDateTimePicker1.Location = new System.Drawing.Point(112, 28);
             this.aDateTimePicker1.Name = "aDateTimePicker1";
             this.aDateTimePicker1.Size = new System.Drawing.Size(105, 23);
             this.aDateTimePicker1.TabIndex = 2;
@@ -100,7 +108,7 @@
             // aLabel2
             // 
             this.aLabel2.AutoSize = true;
-            this.aLabel2.Location = new System.Drawing.Point(232, 28);
+            this.aLabel2.Location = new System.Drawing.Point(224, 32);
             this.aLabel2.Name = "aLabel2";
             this.aLabel2.Size = new System.Drawing.Size(15, 15);
             this.aLabel2.TabIndex = 3;
@@ -109,7 +117,7 @@
             // aDateTimePicker2
             // 
             this.aDateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.aDateTimePicker2.Location = new System.Drawing.Point(253, 24);
+            this.aDateTimePicker2.Location = new System.Drawing.Point(245, 28);
             this.aDateTimePicker2.Name = "aDateTimePicker2";
             this.aDateTimePicker2.Size = new System.Drawing.Size(105, 23);
             this.aDateTimePicker2.TabIndex = 4;
@@ -120,7 +128,7 @@
             this.aTextBox_Labeled1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aTextBox_Labeled1.FontSize = 9F;
             this.aTextBox_Labeled1.LabelText = "생산의뢰 번호";
-            this.aTextBox_Labeled1.Location = new System.Drawing.Point(413, 24);
+            this.aTextBox_Labeled1.Location = new System.Drawing.Point(413, 28);
             this.aTextBox_Labeled1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.aTextBox_Labeled1.Name = "aTextBox_Labeled1";
             this.aTextBox_Labeled1.Size = new System.Drawing.Size(237, 23);
@@ -132,7 +140,7 @@
             this.aTextBox_Labeled2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aTextBox_Labeled2.FontSize = 9F;
             this.aTextBox_Labeled2.LabelText = "프로젝트 명";
-            this.aTextBox_Labeled2.Location = new System.Drawing.Point(685, 24);
+            this.aTextBox_Labeled2.Location = new System.Drawing.Point(685, 28);
             this.aTextBox_Labeled2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.aTextBox_Labeled2.Name = "aTextBox_Labeled2";
             this.aTextBox_Labeled2.Size = new System.Drawing.Size(228, 23);

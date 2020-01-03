@@ -44,6 +44,7 @@
     <Compile Include="DACParent.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="MainForm_DAC.cs" />
+    <Compile Include="MoldDAC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
