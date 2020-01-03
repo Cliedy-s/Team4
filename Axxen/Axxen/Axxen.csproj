@@ -77,6 +77,12 @@
     <Compile Include="CustomControls\ATextBox_FindNameByCode.Designer.cs">
       <DependentUpon>ATextBox_FindNameByCode.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomControls\ATextBox_LabeledBigTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\ATextBox_LabeledBigTextBox.Designer.cs">
+      <DependentUpon>ATextBox_LabeledBigTextBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomControls\SearchForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -396,6 +402,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\ATextBox_FindNameByCode.resx">
       <DependentUpon>ATextBox_FindNameByCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\ATextBox_LabeledBigTextBox.resx">
+      <DependentUpon>ATextBox_LabeledBigTextBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\SearchForm.resx">
       <DependentUpon>SearchForm.cs</DependentUpon>
