@@ -124,6 +124,12 @@
     <Compile Include="CustomControls\ATextBox_Labeled.Designer.cs">
       <DependentUpon>ATextBox_Labeled.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomControls\ATextBox_LabeledBigTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\ATextBox_LabeledBigTextBox.Designer.cs">
+      <DependentUpon>ATextBox_LabeledBigTextBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomControls\ATextBox_Searchable.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -173,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\ATextBox_Labeled.resx">
       <DependentUpon>ATextBox_Labeled.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\ATextBox_LabeledBigTextBox.resx">
+      <DependentUpon>ATextBox_LabeledBigTextBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\ATextBox_Searchable.resx">
       <DependentUpon>ATextBox_Searchable.cs</DependentUpon>
