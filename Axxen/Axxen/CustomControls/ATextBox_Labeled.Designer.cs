@@ -28,74 +28,50 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.lblName = new Axxen.CustomControls.ALabel();
             this.txtValue = new Axxen.CustomControls.ATextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.IsSplitterFixed = true;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.lblName);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.txtValue);
-            this.splitContainer1.Size = new System.Drawing.Size(319, 22);
-            this.splitContainer1.SplitterDistance = 106;
-            this.splitContainer1.TabIndex = 0;
             // 
             // lblName
             // 
-            this.lblName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblName.Location = new System.Drawing.Point(0, 0);
+            this.lblName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblName.Location = new System.Drawing.Point(0, 3);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(106, 22);
-            this.lblName.TabIndex = 0;
+            this.lblName.Size = new System.Drawing.Size(147, 23);
+            this.lblName.TabIndex = 2;
             this.lblName.Text = "lblName";
-            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtValue
             // 
+            this.txtValue.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.txtValue.BackColor = System.Drawing.Color.White;
             this.txtValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtValue.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtValue.errorp = null;
-            this.txtValue.Location = new System.Drawing.Point(0, 0);
+            this.txtValue.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtValue.Location = new System.Drawing.Point(153, 3);
+            this.txtValue.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtValue.Name = "txtValue";
-            this.txtValue.Size = new System.Drawing.Size(209, 21);
-            this.txtValue.TabIndex = 0;
+            this.txtValue.Size = new System.Drawing.Size(220, 23);
+            this.txtValue.TabIndex = 3;
             this.txtValue.txtType = Axxen.CustomControls.ATextBox.type.Normal;
             // 
             // ATextBox_Labeled
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.splitContainer1);
+            this.Controls.Add(this.txtValue);
+            this.Controls.Add(this.lblName);
+            this.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ATextBox_Labeled";
-            this.Size = new System.Drawing.Size(319, 22);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            this.splitContainer1.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
+            this.Size = new System.Drawing.Size(375, 29);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.SplitContainer splitContainer1;
         private ALabel lblName;
         private ATextBox txtValue;
     }
