@@ -67,7 +67,6 @@
             this.aTextBox_Labeled1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.aTextBox_Labeled1.Name = "aTextBox_Labeled1";
             this.aTextBox_Labeled1.Size = new System.Drawing.Size(229, 23);
-            this.aTextBox_Labeled1.SplitDistance = 76;
             this.aTextBox_Labeled1.TabIndex = 9;
             this.aTextBox_Labeled1.TextBoxText = "";
             // 
@@ -79,7 +78,6 @@
             this.aTextBox_Labeled2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.aTextBox_Labeled2.Name = "aTextBox_Labeled2";
             this.aTextBox_Labeled2.Size = new System.Drawing.Size(311, 23);
-            this.aTextBox_Labeled2.SplitDistance = 103;
             this.aTextBox_Labeled2.TabIndex = 10;
             this.aTextBox_Labeled2.TextBoxText = "";
             // 

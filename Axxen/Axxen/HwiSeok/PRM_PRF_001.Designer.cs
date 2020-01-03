@@ -34,11 +34,15 @@
             this.aComboBox1 = new Axxen.CustomControls.AComboBox();
             this.aLabel2 = new Axxen.CustomControls.ALabel();
             this.aComboBox2 = new Axxen.CustomControls.AComboBox();
+            this.aTextBox_FindNameByCode1 = new Axxen.CustomControls.ATextBox_FindNameByCode();
+            this.aTextBox_FindNameByCode2 = new Axxen.CustomControls.ATextBox_FindNameByCode();
             this.aPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // aPanel1
             // 
+            this.aPanel1.Controls.Add(this.aTextBox_FindNameByCode2);
+            this.aPanel1.Controls.Add(this.aTextBox_FindNameByCode1);
             this.aPanel1.Controls.Add(this.aComboBox2);
             this.aPanel1.Controls.Add(this.aLabel2);
             this.aPanel1.Controls.Add(this.aComboBox1);
@@ -106,11 +110,38 @@
             this.aComboBox2.Size = new System.Drawing.Size(121, 23);
             this.aComboBox2.TabIndex = 5;
             // 
+            // aTextBox_FindNameByCode1
+            // 
+            this.aTextBox_FindNameByCode1.CodeType = Axxen.CustomControls.ATextBox_FindNameByCode.types.Processes;
+            this.aTextBox_FindNameByCode1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aTextBox_FindNameByCode1.lblNameText = "공정";
+            this.aTextBox_FindNameByCode1.Location = new System.Drawing.Point(436, 25);
+            this.aTextBox_FindNameByCode1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.aTextBox_FindNameByCode1.Name = "aTextBox_FindNameByCode1";
+            this.aTextBox_FindNameByCode1.Size = new System.Drawing.Size(221, 27);
+            this.aTextBox_FindNameByCode1.TabIndex = 6;
+            this.aTextBox_FindNameByCode1.txtCodeText = "";
+            this.aTextBox_FindNameByCode1.txtNameText = "";
+            // 
+            // aTextBox_FindNameByCode2
+            // 
+            this.aTextBox_FindNameByCode2.CodeType = Axxen.CustomControls.ATextBox_FindNameByCode.types.WorkCenters;
+            this.aTextBox_FindNameByCode2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aTextBox_FindNameByCode2.lblNameText = "작업장";
+            this.aTextBox_FindNameByCode2.Location = new System.Drawing.Point(675, 25);
+            this.aTextBox_FindNameByCode2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.aTextBox_FindNameByCode2.Name = "aTextBox_FindNameByCode2";
+            this.aTextBox_FindNameByCode2.Size = new System.Drawing.Size(236, 27);
+            this.aTextBox_FindNameByCode2.TabIndex = 7;
+            this.aTextBox_FindNameByCode2.txtCodeText = "";
+            this.aTextBox_FindNameByCode2.txtNameText = "";
+            // 
             // PRM_PRF_001
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.Name = "PRM_PRF_001";
+            this.Text = "실적조회";
             this.aPanel1.ResumeLayout(false);
             this.aPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -125,5 +156,7 @@
         private CustomControls.ALabel aLabel2;
         private CustomControls.AComboBox aComboBox1;
         private CustomControls.ALabel aLabel1;
+        private CustomControls.ATextBox_FindNameByCode aTextBox_FindNameByCode2;
+        private CustomControls.ATextBox_FindNameByCode aTextBox_FindNameByCode1;
     }
 }
