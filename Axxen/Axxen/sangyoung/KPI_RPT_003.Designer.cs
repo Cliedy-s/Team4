@@ -45,7 +45,7 @@
             // aComboBox1
             // 
             this.aComboBox1.FormattingEnabled = true;
-            this.aComboBox1.Location = new System.Drawing.Point(76, 28);
+            this.aComboBox1.Location = new System.Drawing.Point(87, 28);
             this.aComboBox1.Name = "aComboBox1";
             this.aComboBox1.Size = new System.Drawing.Size(106, 23);
             this.aComboBox1.TabIndex = 8;
