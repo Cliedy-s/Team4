@@ -174,6 +174,7 @@ namespace Axxen
             tvMenu.Visible = true;
             // 누르는 버튼
             Button btn = (Button)sender;
+            btn.BackColor = Color.FromArgb(201,228,232);
             // 열려있는 트리뷰가 존재하고
             // 현재 열려있는 버튼과 누르는 버튼이 같을 경우(트리뷰를 닫는다)
             if (btn.TabIndex == CheckBtnIndex && open)
@@ -192,6 +193,7 @@ namespace Axxen
                 }
                 open = false;
                 tvMenu.Visible = false;
+                btn.BackColor = Color.White;
                 return;
             }
             // 열려있는 트리뷰가 존재
@@ -278,22 +280,18 @@ namespace Axxen
             }
 
         }
-        #region 폼동적생성
-        /// <summary>
-        /// 트리뷰 자식메뉴클릭시 폼생성
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void TvMenu_AfterSelect(object sender, TreeViewEventArgs e)
+        #region
+        private void TvMenu_DoubleClick(object sender, EventArgs e)
         {
-            MenuTree_Master_VO parentcode = menulist.Find(item => item.Screen_Name == e.Node.Text);
+           
+
+            MenuTree_Master_VO parentcode = menulist.Find(item => item.Screen_Name == tvMenu.SelectedNode.Text);
 
             if (parentcode.Parent_Screen_Code != null) //부모코드에 널값이있는 메뉴를 제외하고
             {
                 string form = parentcode.Screen_Code;
                 newForm(form);
             }
-
         }
         /// <summary>
         /// 새로운 폼 생성
@@ -307,17 +305,31 @@ namespace Axxen
                 Assembly cuasm = Assembly.GetExecutingAssembly();
                 //string Format 의 따옴표와 마침표 주의!!
                 Form frm = (Form)cuasm.CreateInstance(string.Format("{0}.{1}", nameSpace, formName));
-             //   frm.MdiParent = this;
-               // frm.WindowState = FormWindowState.Maximized;
-               // frm.Show();
-                frm.TopLevel = false;
-                tabControl2.TabPages.Add((tabControl2.TabPages.Count + 1).ToString());
-                tabControl2.TabPages[tabControl2.TabPages.Count - 1].Controls.Add(frm);
-                tabControl2.SelectedIndex = tabControl2.TabPages.Count - 1;
-                tabControl2.TabPages[tabControl2.TabPages.Count - 1].Text = frm.Text;
-                frm.WindowState = FormWindowState.Maximized;
+                //frm.MdiParent = this;
+                //frm.WindowState = FormWindowState.Maximized;
+                //frm.Show();
+              
+                tabControl2.TabPages.Add(frm.Text);
+                foreach (Form childForm in Application.OpenForms)
+                {
+                    if (childForm == frm)
+                    {
+                        childForm.Activate();
+                        return;
+                    }
+                    }
                 frm.MdiParent = this;
+                frm.WindowState = FormWindowState.Maximized;
                 frm.Show();
+
+                // frm.TopLevel = false;
+                //  tabControl2.TabPages.Add((tabControl2.TabPages.Count + 1).ToString());
+                //   tabControl2.TabPages[tabControl2.TabPages.Count - 1].Controls.Add(frm);
+                //  tabControl2.SelectedIndex = tabControl2.TabPages.Count - 1;
+                // tabControl2.TabPages[tabControl2.TabPages.Count - 1].Text = frm.Text;
+                //   frm.WindowState = FormWindowState.Maximized;
+                //   frm.MdiParent = this;
+                // frm.Show();
 
             }
             catch (Exception err)
@@ -446,7 +458,7 @@ namespace Axxen
             this.tabControl2.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             tabControl2.DrawItem += TabControl1_DrawItem;
             tabControl2.MouseClick += TabControl2_MouseClick;
-            CloseImage =Image.FromFile("treeimg.png"); ;
+            CloseImage =Image.FromFile("x.png"); ;
             this.tabControl2.Padding = new Point(10, 3);
         }
 
@@ -466,14 +478,22 @@ namespace Axxen
                     Assembly cuasm = Assembly.GetExecutingAssembly();
                     //string Format 의 따옴표와 마침표 주의!!
                     Form frm = (Form)cuasm.CreateInstance(string.Format("{0}.{1}", nameSpace, tabControl2.SelectedTab.Text));
-                    frm.Close();
-                    frm.Dispose();
-                    
+                    this.ActiveMdiChild.Close();
+                           
                     this.tabControl2.TabPages.RemoveAt(i);
                     
                     break;
                 }
             }
+        }
+
+        private void TabControl2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string nameSpace = "Axxen"; //네임스페이스 명
+            Assembly cuasm = Assembly.GetExecutingAssembly();
+            Form frm = (Form)cuasm.CreateInstance(string.Format("{0}.{1}", nameSpace, tabControl2.SelectedTab.Text));
+
+
         }
     }
 }
