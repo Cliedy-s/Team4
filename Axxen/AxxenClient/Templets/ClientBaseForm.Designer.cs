@@ -55,6 +55,7 @@
             this.aLabel_Header1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.aLabel_Header1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.aLabel_Header1.Font = new System.Drawing.Font("나눔고딕", 25F, System.Drawing.FontStyle.Bold);
+            this.aLabel_Header1.ForeColor = System.Drawing.Color.White;
             this.aLabel_Header1.Location = new System.Drawing.Point(183, 29);
             this.aLabel_Header1.Name = "aLabel_Header1";
             this.aLabel_Header1.Size = new System.Drawing.Size(898, 39);
@@ -132,14 +133,14 @@
             this.aPanel3.Size = new System.Drawing.Size(1210, 97);
             this.aPanel3.TabIndex = 4;
             // 
-            // ClientForm
+            // ClientBaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1210, 629);
             this.Controls.Add(this.aPanel1);
             this.Controls.Add(this.aPanel2);
             this.KeyPreview = true;
-            this.Name = "ClientForm";
+            this.Name = "ClientBaseForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.aPanel1.ResumeLayout(false);
             this.aPanel1.PerformLayout();

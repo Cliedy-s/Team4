@@ -1,4 +1,4 @@
-﻿namespace AxxenClient
+﻿namespace AxxenClient.Templets
 {
     partial class BaseForm
     {

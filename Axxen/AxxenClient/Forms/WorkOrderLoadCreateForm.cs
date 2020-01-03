@@ -8,12 +8,11 @@ using System.Windows.Forms;
 
 namespace AxxenClient.Forms
 {
-    public partial class WorkOrderForm : AxxenClient.Templets.ClientBaseForm
+    public partial class WorkOrderLoadCreateForm : AxxenClient.Templets.ClientBaseForm
     {
-        public WorkOrderForm()
+        public WorkOrderLoadCreateForm()
         {
             InitializeComponent();
         }
-
     }
 }

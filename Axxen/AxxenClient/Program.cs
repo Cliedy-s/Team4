@@ -1,4 +1,5 @@
-﻿using AxxenClient.Templets;
+﻿using AxxenClient.Forms;
+using AxxenClient.Templets;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace AxxenClient
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ClientBaseForm());
+            Application.Run(new MainForm());
         }
     }
 }

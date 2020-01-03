@@ -142,23 +142,71 @@
     <Compile Include="CustomControls\ATreeView.Designer.cs">
       <DependentUpon>ATreeView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\WorkOrderForm.cs">
+    <Compile Include="Forms\LoadPerformanceRegisterForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\WorkOrderForm.Designer.cs">
-      <DependentUpon>WorkOrderForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Templets\BaseForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Templets\BaseForm.Designer.cs">
-      <DependentUpon>BaseForm.cs</DependentUpon>
+    <Compile Include="Forms\LoadPerformanceRegisterForm.Designer.cs">
+      <DependentUpon>LoadPerformanceRegisterForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MoldingGVSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MoldingGVSelect.Designer.cs">
+      <DependentUpon>MoldingGVSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\POP_PRD_001.Designer.cs">
+      <DependentUpon>POP_PRD_001.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\POP_PRD_005.Designer.cs">
+      <DependentUpon>POP_PRD_005.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProcessConditionRegisterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProcessConditionRegisterForm.Designer.cs">
+      <DependentUpon>ProcessConditionRegisterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WorkOrderCreateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WorkOrderCreateForm.Designer.cs">
+      <DependentUpon>WorkOrderCreateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\POP_PRD_004.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\POP_PRD_004.Designer.cs">
+      <DependentUpon>POP_PRD_004.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\POP_PRD_003.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\POP_PRD_003.Designer.cs">
+      <DependentUpon>POP_PRD_003.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\POP_PRD_005.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\POP_PRD_001.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WorkOrderLoadCreateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WorkOrderLoadCreateForm.Designer.cs">
+      <DependentUpon>WorkOrderLoadCreateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Templets\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Templets\BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -186,14 +234,38 @@
     <EmbeddedResource Include="CustomControls\ATextBox_Searchable.resx">
       <DependentUpon>ATextBox_Searchable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\WorkOrderForm.resx">
-      <DependentUpon>WorkOrderForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Templets\BaseForm.resx">
-      <DependentUpon>BaseForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\LoadPerformanceRegisterForm.resx">
+      <DependentUpon>LoadPerformanceRegisterForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MoldingGVSelect.resx">
+      <DependentUpon>MoldingGVSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\POP_PRD_001.resx">
+      <DependentUpon>POP_PRD_001.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\POP_PRD_005.resx">
+      <DependentUpon>POP_PRD_005.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProcessConditionRegisterForm.resx">
+      <DependentUpon>ProcessConditionRegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WorkOrderCreateForm.resx">
+      <DependentUpon>WorkOrderCreateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\POP_PRD_004.resx">
+      <DependentUpon>POP_PRD_004.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\POP_PRD_003.resx">
+      <DependentUpon>POP_PRD_003.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WorkOrderLoadCreateForm.resx">
+      <DependentUpon>WorkOrderLoadCreateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Templets\BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

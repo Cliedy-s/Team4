@@ -8,11 +8,19 @@ using System.Windows.Forms;
 
 namespace AxxenClient.Forms
 {
-    public partial class MainForm : AxxenClient.Templets.ClientBaseForm
+    public partial class MainForm : AxxenClient.Templets.BaseForm
     {
         public MainForm()
         {
             InitializeComponent();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            WorkOrderForm childfrm = new WorkOrderForm();
+            childfrm.WindowState = FormWindowState.Maximized;
+            childfrm.MdiParent = this;
+            childfrm.Show();
         }
     }
 }
