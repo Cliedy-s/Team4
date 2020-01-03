@@ -209,6 +209,18 @@
     <Compile Include="sangyoung\KPI_RPT_005.Designer.cs">
       <DependentUpon>KPI_RPT_005.cs</DependentUpon>
     </Compile>
+    <Compile Include="sangyoung\PPS_MLD_001.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sangyoung\PPS_MLD_001.Designer.cs">
+      <DependentUpon>PPS_MLD_001.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sangyoung\PPS_MLD_002.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sangyoung\PPS_MLD_002.Designer.cs">
+      <DependentUpon>PPS_MLD_002.cs</DependentUpon>
+    </Compile>
     <Compile Include="sangyoung\PPS_SCH_001.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -400,8 +412,26 @@
     <EmbeddedResource Include="CustomControls\SearchForm.resx">
       <DependentUpon>SearchForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="sangyoung\KPI_RPT_001.resx">
+      <DependentUpon>KPI_RPT_001.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sangyoung\KPI_RPT_005.resx">
+      <DependentUpon>KPI_RPT_005.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sangyoung\PPS_MLD_001.resx">
+      <DependentUpon>PPS_MLD_001.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sangyoung\PPS_MLD_002.resx">
+      <DependentUpon>PPS_MLD_002.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="sangyoung\PPS_SCH_001.resx">
       <DependentUpon>PPS_SCH_001.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sangyoung\PPS_SCH_002.resx">
+      <DependentUpon>PPS_SCH_002.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sangyoung\PPS_SCH_003.resx">
+      <DependentUpon>PPS_SCH_003.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Templets\FreeForm.resx">
       <DependentUpon>FreeForm.cs</DependentUpon>
