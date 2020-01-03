@@ -17,7 +17,7 @@ namespace Axxen.CustomControls
             InitializeComponent();
             //Design
             this.FlatStyle = FlatStyle.Flat;
-            this.BackColor = SystemColors.ControlLight;
+            this.BackColor = Color.White;
         }
 
         protected override void OnPaint(PaintEventArgs pe)

@@ -457,12 +457,24 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Service\" />
+    <Folder Include="Util\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\VO\VO.csproj">
       <Project>{40a3c251-ad92-44a6-a387-367aa57772f7}</Project>
       <Name>VO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Image\KakaoTalk_20200103_140950105.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Image\KakaoTalk_20200103_140950176.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Image\KakaoTalk_20200103_140950259.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
