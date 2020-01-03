@@ -46,6 +46,7 @@
             // 
             this.aPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.aPanel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.aPanel1.Location = new System.Drawing.Point(12, 15);
             this.aPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.aPanel1.Name = "aPanel1";
