@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Axxen
+namespace Axxen.HwiSeok
 {
-    public partial class QAM_SQC_004 : Form
+    public partial class QAM_SQC_004 : Axxen.GridForm
     {
         public QAM_SQC_004()
         {
