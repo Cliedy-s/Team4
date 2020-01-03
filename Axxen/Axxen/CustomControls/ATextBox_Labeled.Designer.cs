@@ -37,7 +37,7 @@
             this.lblName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblName.Location = new System.Drawing.Point(0, 3);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(147, 23);
+            this.lblName.Size = new System.Drawing.Size(78, 23);
             this.lblName.TabIndex = 2;
             this.lblName.Text = "lblName";
             this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -49,10 +49,10 @@
             this.txtValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtValue.errorp = null;
             this.txtValue.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtValue.Location = new System.Drawing.Point(153, 3);
+            this.txtValue.Location = new System.Drawing.Point(84, 3);
             this.txtValue.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtValue.Name = "txtValue";
-            this.txtValue.Size = new System.Drawing.Size(220, 23);
+            this.txtValue.Size = new System.Drawing.Size(140, 23);
             this.txtValue.TabIndex = 3;
             this.txtValue.txtType = Axxen.CustomControls.ATextBox.type.Normal;
             // 
@@ -65,7 +65,7 @@
             this.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ATextBox_Labeled";
-            this.Size = new System.Drawing.Size(375, 29);
+            this.Size = new System.Drawing.Size(227, 29);
             this.ResumeLayout(false);
             this.PerformLayout();
 

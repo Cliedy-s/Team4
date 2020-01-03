@@ -35,6 +35,7 @@ namespace Axxen
                 tb.errorp = this.baseErrorProvider;
             }
         }
+
         public IEnumerable<Control> GetAll(Control control, Type type)
         {
             var controls = control.Controls.Cast<Control>();
