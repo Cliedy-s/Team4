@@ -45,7 +45,7 @@
             // aComboBox1
             // 
             this.aComboBox1.FormattingEnabled = true;
-            this.aComboBox1.Location = new System.Drawing.Point(83, 26);
+            this.aComboBox1.Location = new System.Drawing.Point(88, 28);
             this.aComboBox1.Name = "aComboBox1";
             this.aComboBox1.Size = new System.Drawing.Size(121, 23);
             this.aComboBox1.TabIndex = 27;
@@ -53,7 +53,7 @@
             // aLabel1
             // 
             this.aLabel1.AutoSize = true;
-            this.aLabel1.Location = new System.Drawing.Point(22, 29);
+            this.aLabel1.Location = new System.Drawing.Point(27, 32);
             this.aLabel1.Name = "aLabel1";
             this.aLabel1.Size = new System.Drawing.Size(55, 15);
             this.aLabel1.TabIndex = 26;
@@ -64,6 +64,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.Name = "QAM_SQC_006";
+            this.Text = "원재료 LOT관리";
             this.aPanel1.ResumeLayout(false);
             this.aPanel1.PerformLayout();
             this.ResumeLayout(false);

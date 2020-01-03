@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.aDataGridView1 = new AxxenClient.CustomControls.ADataGridView();
+            this.aTextBox_Searchable1 = new AxxenClient.CustomControls.ATextBox_Searchable();
+            this.aTextBox_Searchable2 = new AxxenClient.CustomControls.ATextBox_Searchable();
+            this.aTextBox_Searchable3 = new AxxenClient.CustomControls.ATextBox_Searchable();
+            this.aTextBox_LabeledBigTextBox1 = new AxxenClient.CustomControls.ATextBox_LabeledBigTextBox();
+            this.aTextBox_LabeledBigTextBox2 = new AxxenClient.CustomControls.ATextBox_LabeledBigTextBox();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aDataGridView1)).BeginInit();
@@ -47,15 +52,81 @@
             this.aDataGridView1.Size = new System.Drawing.Size(636, 482);
             this.aDataGridView1.TabIndex = 4;
             // 
+            // aTextBox_Searchable1
+            // 
+            this.aTextBox_Searchable1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aTextBox_Searchable1.FontSize = 9F;
+            this.aTextBox_Searchable1.LabelText = "lblName";
+            this.aTextBox_Searchable1.Location = new System.Drawing.Point(681, 130);
+            this.aTextBox_Searchable1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.aTextBox_Searchable1.Name = "aTextBox_Searchable1";
+            this.aTextBox_Searchable1.Size = new System.Drawing.Size(365, 30);
+            this.aTextBox_Searchable1.TabIndex = 5;
+            this.aTextBox_Searchable1.TextBoxText = "";
+            // 
+            // aTextBox_Searchable2
+            // 
+            this.aTextBox_Searchable2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aTextBox_Searchable2.FontSize = 9F;
+            this.aTextBox_Searchable2.LabelText = "lblName";
+            this.aTextBox_Searchable2.Location = new System.Drawing.Point(681, 168);
+            this.aTextBox_Searchable2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.aTextBox_Searchable2.Name = "aTextBox_Searchable2";
+            this.aTextBox_Searchable2.Size = new System.Drawing.Size(365, 30);
+            this.aTextBox_Searchable2.TabIndex = 6;
+            this.aTextBox_Searchable2.TextBoxText = "";
+            // 
+            // aTextBox_Searchable3
+            // 
+            this.aTextBox_Searchable3.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aTextBox_Searchable3.FontSize = 9F;
+            this.aTextBox_Searchable3.LabelText = "lblName";
+            this.aTextBox_Searchable3.Location = new System.Drawing.Point(681, 206);
+            this.aTextBox_Searchable3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.aTextBox_Searchable3.Name = "aTextBox_Searchable3";
+            this.aTextBox_Searchable3.Size = new System.Drawing.Size(365, 30);
+            this.aTextBox_Searchable3.TabIndex = 7;
+            this.aTextBox_Searchable3.TextBoxText = "";
+            // 
+            // aTextBox_LabeledBigTextBox1
+            // 
+            this.aTextBox_LabeledBigTextBox1.LabelText = "lblName";
+            this.aTextBox_LabeledBigTextBox1.Location = new System.Drawing.Point(681, 244);
+            this.aTextBox_LabeledBigTextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.aTextBox_LabeledBigTextBox1.Name = "aTextBox_LabeledBigTextBox1";
+            this.aTextBox_LabeledBigTextBox1.Size = new System.Drawing.Size(365, 30);
+            this.aTextBox_LabeledBigTextBox1.TabIndex = 8;
+            this.aTextBox_LabeledBigTextBox1.TextBoxText = "";
+            // 
+            // aTextBox_LabeledBigTextBox2
+            // 
+            this.aTextBox_LabeledBigTextBox2.LabelText = "lblName";
+            this.aTextBox_LabeledBigTextBox2.Location = new System.Drawing.Point(681, 283);
+            this.aTextBox_LabeledBigTextBox2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.aTextBox_LabeledBigTextBox2.Name = "aTextBox_LabeledBigTextBox2";
+            this.aTextBox_LabeledBigTextBox2.Size = new System.Drawing.Size(365, 38);
+            this.aTextBox_LabeledBigTextBox2.TabIndex = 9;
+            this.aTextBox_LabeledBigTextBox2.TextBoxText = "";
+            // 
             // WorkOrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1210, 629);
+            this.Controls.Add(this.aTextBox_LabeledBigTextBox2);
+            this.Controls.Add(this.aTextBox_LabeledBigTextBox1);
+            this.Controls.Add(this.aTextBox_Searchable3);
+            this.Controls.Add(this.aTextBox_Searchable2);
+            this.Controls.Add(this.aTextBox_Searchable1);
             this.Controls.Add(this.aDataGridView1);
             this.Name = "WorkOrderForm";
             this.Controls.SetChildIndex(this.aPanel2, 0);
             this.Controls.SetChildIndex(this.aPanel1, 0);
             this.Controls.SetChildIndex(this.aDataGridView1, 0);
+            this.Controls.SetChildIndex(this.aTextBox_Searchable1, 0);
+            this.Controls.SetChildIndex(this.aTextBox_Searchable2, 0);
+            this.Controls.SetChildIndex(this.aTextBox_Searchable3, 0);
+            this.Controls.SetChildIndex(this.aTextBox_LabeledBigTextBox1, 0);
+            this.Controls.SetChildIndex(this.aTextBox_LabeledBigTextBox2, 0);
             this.aPanel1.ResumeLayout(false);
             this.aPanel1.PerformLayout();
             this.aPanel2.ResumeLayout(false);
@@ -68,5 +139,10 @@
         #endregion
 
         private CustomControls.ADataGridView aDataGridView1;
+        private CustomControls.ATextBox_Searchable aTextBox_Searchable1;
+        private CustomControls.ATextBox_Searchable aTextBox_Searchable2;
+        private CustomControls.ATextBox_Searchable aTextBox_Searchable3;
+        private CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox1;
+        private CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox2;
     }
 }

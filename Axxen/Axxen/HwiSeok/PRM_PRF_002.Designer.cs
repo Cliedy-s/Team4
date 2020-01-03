@@ -66,7 +66,7 @@
             // aComboBox2
             // 
             this.aComboBox2.FormattingEnabled = true;
-            this.aComboBox2.Location = new System.Drawing.Point(228, 24);
+            this.aComboBox2.Location = new System.Drawing.Point(236, 28);
             this.aComboBox2.Name = "aComboBox2";
             this.aComboBox2.Size = new System.Drawing.Size(121, 23);
             this.aComboBox2.TabIndex = 9;
@@ -74,7 +74,7 @@
             // aLabel2
             // 
             this.aLabel2.AutoSize = true;
-            this.aLabel2.Location = new System.Drawing.Point(207, 28);
+            this.aLabel2.Location = new System.Drawing.Point(215, 32);
             this.aLabel2.Name = "aLabel2";
             this.aLabel2.Size = new System.Drawing.Size(15, 15);
             this.aLabel2.TabIndex = 8;
@@ -83,7 +83,7 @@
             // aComboBox1
             // 
             this.aComboBox1.FormattingEnabled = true;
-            this.aComboBox1.Location = new System.Drawing.Point(80, 25);
+            this.aComboBox1.Location = new System.Drawing.Point(88, 28);
             this.aComboBox1.Name = "aComboBox1";
             this.aComboBox1.Size = new System.Drawing.Size(121, 23);
             this.aComboBox1.TabIndex = 7;
@@ -91,7 +91,7 @@
             // aLabel1
             // 
             this.aLabel1.AutoSize = true;
-            this.aLabel1.Location = new System.Drawing.Point(19, 28);
+            this.aLabel1.Location = new System.Drawing.Point(27, 32);
             this.aLabel1.Name = "aLabel1";
             this.aLabel1.Size = new System.Drawing.Size(55, 15);
             this.aLabel1.TabIndex = 6;
@@ -101,7 +101,7 @@
             // 
             this.aButton1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton1.Location = new System.Drawing.Point(749, 24);
+            this.aButton1.Location = new System.Drawing.Point(749, 28);
             this.aButton1.Name = "aButton1";
             this.aButton1.Size = new System.Drawing.Size(114, 23);
             this.aButton1.TabIndex = 10;
@@ -112,7 +112,7 @@
             // 
             this.aButton2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.aButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton2.Location = new System.Drawing.Point(869, 24);
+            this.aButton2.Location = new System.Drawing.Point(869, 28);
             this.aButton2.Name = "aButton2";
             this.aButton2.Size = new System.Drawing.Size(114, 23);
             this.aButton2.TabIndex = 10;
@@ -123,7 +123,7 @@
             // 
             this.aButton3.BackColor = System.Drawing.SystemColors.ControlLight;
             this.aButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton3.Location = new System.Drawing.Point(989, 24);
+            this.aButton3.Location = new System.Drawing.Point(989, 28);
             this.aButton3.Name = "aButton3";
             this.aButton3.Size = new System.Drawing.Size(114, 23);
             this.aButton3.TabIndex = 10;

@@ -51,7 +51,7 @@
             // aComboBox2
             // 
             this.aComboBox2.FormattingEnabled = true;
-            this.aComboBox2.Location = new System.Drawing.Point(223, 25);
+            this.aComboBox2.Location = new System.Drawing.Point(236, 29);
             this.aComboBox2.Name = "aComboBox2";
             this.aComboBox2.Size = new System.Drawing.Size(121, 23);
             this.aComboBox2.TabIndex = 13;
@@ -59,7 +59,7 @@
             // aLabel2
             // 
             this.aLabel2.AutoSize = true;
-            this.aLabel2.Location = new System.Drawing.Point(202, 29);
+            this.aLabel2.Location = new System.Drawing.Point(215, 33);
             this.aLabel2.Name = "aLabel2";
             this.aLabel2.Size = new System.Drawing.Size(15, 15);
             this.aLabel2.TabIndex = 12;
@@ -68,7 +68,7 @@
             // aComboBox1
             // 
             this.aComboBox1.FormattingEnabled = true;
-            this.aComboBox1.Location = new System.Drawing.Point(75, 26);
+            this.aComboBox1.Location = new System.Drawing.Point(88, 29);
             this.aComboBox1.Name = "aComboBox1";
             this.aComboBox1.Size = new System.Drawing.Size(121, 23);
             this.aComboBox1.TabIndex = 11;
@@ -76,7 +76,7 @@
             // aLabel1
             // 
             this.aLabel1.AutoSize = true;
-            this.aLabel1.Location = new System.Drawing.Point(14, 29);
+            this.aLabel1.Location = new System.Drawing.Point(27, 32);
             this.aLabel1.Name = "aLabel1";
             this.aLabel1.Size = new System.Drawing.Size(55, 15);
             this.aLabel1.TabIndex = 10;
@@ -87,7 +87,7 @@
             this.aTextBox_FindNameByCode1.CodeType = Axxen.CustomControls.ATextBox_FindNameByCode.types.WorkCenters;
             this.aTextBox_FindNameByCode1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aTextBox_FindNameByCode1.lblNameText = "작업장";
-            this.aTextBox_FindNameByCode1.Location = new System.Drawing.Point(375, 23);
+            this.aTextBox_FindNameByCode1.Location = new System.Drawing.Point(388, 27);
             this.aTextBox_FindNameByCode1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.aTextBox_FindNameByCode1.Name = "aTextBox_FindNameByCode1";
             this.aTextBox_FindNameByCode1.Size = new System.Drawing.Size(230, 27);

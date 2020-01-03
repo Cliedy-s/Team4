@@ -37,7 +37,7 @@
             // 
             this.lblName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblName.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblName.Location = new System.Drawing.Point(-2, 3);
+            this.lblName.Location = new System.Drawing.Point(1, 4);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(97, 23);
             this.lblName.TabIndex = 0;
@@ -51,12 +51,12 @@
             this.txtValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtValue.errorp = null;
             this.txtValue.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtValue.Location = new System.Drawing.Point(91, 3);
+            this.txtValue.Location = new System.Drawing.Point(99, 4);
             this.txtValue.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtValue.Name = "txtValue";
-            this.txtValue.Size = new System.Drawing.Size(220, 23);
+            this.txtValue.Size = new System.Drawing.Size(217, 23);
             this.txtValue.TabIndex = 2;
-            this.txtValue.txtType = Axxen.CustomControls.ATextBox.type.Normal;
+            this.txtValue.txtType = Axxen.CustomControls.type.Normal;
             // 
             // btnSearch
             // 
@@ -64,12 +64,12 @@
             this.btnSearch.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSearch.Location = new System.Drawing.Point(309, 3);
+            this.btnSearch.Location = new System.Drawing.Point(308, 4);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(54, 23);
             this.btnSearch.TabIndex = 3;
-            this.btnSearch.Text = "btnName";
+            this.btnSearch.Text = "찾기";
             this.btnSearch.UseVisualStyleBackColor = false;
             // 
             // ATextBox_Searchable

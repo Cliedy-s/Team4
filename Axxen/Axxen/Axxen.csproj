@@ -77,6 +77,12 @@
     <Compile Include="CustomControls\ATextBox_FindNameByCode.Designer.cs">
       <DependentUpon>ATextBox_FindNameByCode.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomControls\ATextBox_LabeledBigTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\ATextBox_LabeledBigTextBox.Designer.cs">
+      <DependentUpon>ATextBox_LabeledBigTextBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomControls\SearchForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,18 +214,6 @@
     </Compile>
     <Compile Include="sangyoung\KPI_RPT_005.Designer.cs">
       <DependentUpon>KPI_RPT_005.cs</DependentUpon>
-    </Compile>
-    <Compile Include="sangyoung\PPS_MLD_001.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="sangyoung\PPS_MLD_001.Designer.cs">
-      <DependentUpon>PPS_MLD_001.cs</DependentUpon>
-    </Compile>
-    <Compile Include="sangyoung\PPS_MLD_002.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="sangyoung\PPS_MLD_002.Designer.cs">
-      <DependentUpon>PPS_MLD_002.cs</DependentUpon>
     </Compile>
     <Compile Include="sangyoung\PPS_SCH_001.cs">
       <SubType>Form</SubType>
@@ -409,6 +403,9 @@
     <EmbeddedResource Include="CustomControls\ATextBox_FindNameByCode.resx">
       <DependentUpon>ATextBox_FindNameByCode.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\ATextBox_LabeledBigTextBox.resx">
+      <DependentUpon>ATextBox_LabeledBigTextBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\SearchForm.resx">
       <DependentUpon>SearchForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -430,50 +427,38 @@
     <EmbeddedResource Include="HwiSeok\PRM_PRF_006.resx">
       <DependentUpon>PRM_PRF_006.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="sangyoung\KPI_RPT_001.resx">
-      <DependentUpon>KPI_RPT_001.cs</DependentUpon>
+    <EmbeddedResource Include="HwiSeok\PRM_PRF_007.resx">
+      <DependentUpon>PRM_PRF_007.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="sangyoung\KPI_RPT_002.resx">
-      <DependentUpon>KPI_RPT_002.cs</DependentUpon>
+    <EmbeddedResource Include="HwiSeok\PRM_PRF_008.resx">
+      <DependentUpon>PRM_PRF_008.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="sangyoung\KPI_RPT_003.resx">
-      <DependentUpon>KPI_RPT_003.cs</DependentUpon>
+    <EmbeddedResource Include="HwiSeok\PRM_PRF_009.resx">
+      <DependentUpon>PRM_PRF_009.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="sangyoung\KPI_RPT_004.resx">
-      <DependentUpon>KPI_RPT_004.cs</DependentUpon>
+    <EmbeddedResource Include="HwiSeok\PRM_PRF_010.resx">
+      <DependentUpon>PRM_PRF_010.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="sangyoung\KPI_RPT_005.resx">
-      <DependentUpon>KPI_RPT_005.cs</DependentUpon>
+    <EmbeddedResource Include="HwiSeok\QAM_SQC_001.resx">
+      <DependentUpon>QAM_SQC_001.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="sangyoung\PPS_MLD_001.resx">
-      <DependentUpon>PPS_MLD_001.cs</DependentUpon>
+    <EmbeddedResource Include="HwiSeok\QAM_SQC_002.resx">
+      <DependentUpon>QAM_SQC_002.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="sangyoung\PPS_MLD_002.resx">
-      <DependentUpon>PPS_MLD_002.cs</DependentUpon>
+    <EmbeddedResource Include="HwiSeok\QAM_SQC_003.resx">
+      <DependentUpon>QAM_SQC_003.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HwiSeok\QAM_SQC_004.resx">
+      <DependentUpon>QAM_SQC_004.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HwiSeok\QAM_SQC_005.resx">
+      <DependentUpon>QAM_SQC_005.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HwiSeok\QAM_SQC_006.resx">
+      <DependentUpon>QAM_SQC_006.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="sangyoung\PPS_SCH_001.resx">
       <DependentUpon>PPS_SCH_001.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="sangyoung\PPS_SCH_002.resx">
-      <DependentUpon>PPS_SCH_002.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="sangyoung\PPS_SCH_003.resx">
-      <DependentUpon>PPS_SCH_003.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="sangyoung\PRM_RPT_001.resx">
-      <DependentUpon>PRM_RPT_001.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="sangyoung\PRM_RPT_002.resx">
-      <DependentUpon>PRM_RPT_002.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="sangyoung\PRM_RPT_003.resx">
-      <DependentUpon>PRM_RPT_003.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="sangyoung\PRM_RPT_004.resx">
-      <DependentUpon>PRM_RPT_004.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="sangyoung\PRM_RPT_005.resx">
-      <DependentUpon>PRM_RPT_005.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Templets\FreeForm.resx">
       <DependentUpon>FreeForm.cs</DependentUpon>

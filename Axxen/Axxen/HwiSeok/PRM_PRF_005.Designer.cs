@@ -29,11 +29,13 @@
         private void InitializeComponent()
         {
             this.aTextBox_FindNameByCode2 = new Axxen.CustomControls.ATextBox_FindNameByCode();
+            this.aTextBox_FindNameByCode1 = new Axxen.CustomControls.ATextBox_FindNameByCode();
             this.aPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // aPanel1
             // 
+            this.aPanel1.Controls.Add(this.aTextBox_FindNameByCode1);
             this.aPanel1.Controls.Add(this.aTextBox_FindNameByCode2);
             // 
             // aHeaderBox1
@@ -45,13 +47,26 @@
             this.aTextBox_FindNameByCode2.CodeType = Axxen.CustomControls.ATextBox_FindNameByCode.types.Items;
             this.aTextBox_FindNameByCode2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aTextBox_FindNameByCode2.lblNameText = "품목";
-            this.aTextBox_FindNameByCode2.Location = new System.Drawing.Point(293, 25);
+            this.aTextBox_FindNameByCode2.Location = new System.Drawing.Point(293, 26);
             this.aTextBox_FindNameByCode2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.aTextBox_FindNameByCode2.Name = "aTextBox_FindNameByCode2";
             this.aTextBox_FindNameByCode2.Size = new System.Drawing.Size(216, 27);
             this.aTextBox_FindNameByCode2.TabIndex = 1;
             this.aTextBox_FindNameByCode2.txtCodeText = "";
             this.aTextBox_FindNameByCode2.txtNameText = "";
+            // 
+            // aTextBox_FindNameByCode1
+            // 
+            this.aTextBox_FindNameByCode1.CodeType = Axxen.CustomControls.ATextBox_FindNameByCode.types.GVGroups;
+            this.aTextBox_FindNameByCode1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aTextBox_FindNameByCode1.lblNameText = "대차그룹";
+            this.aTextBox_FindNameByCode1.Location = new System.Drawing.Point(27, 26);
+            this.aTextBox_FindNameByCode1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.aTextBox_FindNameByCode1.Name = "aTextBox_FindNameByCode1";
+            this.aTextBox_FindNameByCode1.Size = new System.Drawing.Size(239, 27);
+            this.aTextBox_FindNameByCode1.TabIndex = 2;
+            this.aTextBox_FindNameByCode1.txtCodeText = "";
+            this.aTextBox_FindNameByCode1.txtNameText = "";
             // 
             // PRM_PRF_005
             // 
@@ -67,5 +82,6 @@
         #endregion
 
         private CustomControls.ATextBox_FindNameByCode aTextBox_FindNameByCode2;
+        private CustomControls.ATextBox_FindNameByCode aTextBox_FindNameByCode1;
     }
 }
