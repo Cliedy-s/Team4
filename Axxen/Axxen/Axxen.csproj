@@ -33,12 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
-      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
-    </Reference>
-    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
-      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
@@ -76,6 +70,12 @@
     </Compile>
     <Compile Include="CustomControls\ASplitContainer.Designer.cs">
       <DependentUpon>ASplitContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\ATextBox_FindNameByCode.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\ATextBox_FindNameByCode.Designer.cs">
+      <DependentUpon>ATextBox_FindNameByCode.cs</DependentUpon>
     </Compile>
     <Compile Include="HwiSeok\PRM_PRF_001.cs">
       <SubType>Form</SubType>
@@ -388,50 +388,11 @@
     <EmbeddedResource Include="CustomControls\AHeaderBox.resx">
       <DependentUpon>AHeaderBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\ATextBox_FindNameByCode.resx">
+      <DependentUpon>ATextBox_FindNameByCode.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HwiSeok\PRM_PRF_001.resx">
       <DependentUpon>PRM_PRF_001.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HwiSeok\PRM_PRF_002.resx">
-      <DependentUpon>PRM_PRF_002.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HwiSeok\PRM_PRF_003.resx">
-      <DependentUpon>PRM_PRF_003.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HwiSeok\PRM_PRF_004.resx">
-      <DependentUpon>PRM_PRF_004.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HwiSeok\PRM_PRF_006.resx">
-      <DependentUpon>PRM_PRF_006.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HwiSeok\PRM_PRF_007.resx">
-      <DependentUpon>PRM_PRF_007.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HwiSeok\PRM_PRF_008.resx">
-      <DependentUpon>PRM_PRF_008.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HwiSeok\PRM_PRF_009.resx">
-      <DependentUpon>PRM_PRF_009.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HwiSeok\PRM_PRF_010.resx">
-      <DependentUpon>PRM_PRF_010.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HwiSeok\QAM_SQC_001.resx">
-      <DependentUpon>QAM_SQC_001.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HwiSeok\QAM_SQC_002.resx">
-      <DependentUpon>QAM_SQC_002.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HwiSeok\QAM_SQC_003.resx">
-      <DependentUpon>QAM_SQC_003.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HwiSeok\QAM_SQC_004.resx">
-      <DependentUpon>QAM_SQC_004.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HwiSeok\QAM_SQC_005.resx">
-      <DependentUpon>QAM_SQC_005.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HwiSeok\QAM_SQC_006.resx">
-      <DependentUpon>QAM_SQC_006.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="sangyoung\PPS_SCH_001.resx">
       <DependentUpon>PPS_SCH_001.cs</DependentUpon>
@@ -505,8 +466,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Image\" />
     <Folder Include="Service\" />
+    <Folder Include="Util\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Service\Service.csproj">
@@ -520,6 +481,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\PagedList.css" />
+    <Content Include="Image\KakaoTalk_20200103_140950105.png" />
+    <Content Include="Image\KakaoTalk_20200103_140950176.png" />
+    <Content Include="Image\KakaoTalk_20200103_140950259.png" />
+    <Content Include="Image\treeimg.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

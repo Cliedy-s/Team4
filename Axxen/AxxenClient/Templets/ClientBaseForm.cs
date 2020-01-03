@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace AxxenClient.Templets
 {
-    public partial class ClientForm : AxxenClient.BaseForm
+    public partial class ClientBaseForm : BaseForm
     {
-        public ClientForm()
+        public ClientBaseForm()
         {
             InitializeComponent();
         }

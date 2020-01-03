@@ -1,4 +1,4 @@
-﻿namespace Axxen.CustomControls
+﻿namespace AxxenClient.CustomControls
 {
     partial class ATextBox_Searchable
     {
@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.lblName = new Axxen.CustomControls.ALabel();
-            this.btnSearch = new Axxen.CustomControls.AButton();
-            this.txtValue = new Axxen.CustomControls.ATextBox();
+            this.lblName = new AxxenClient.CustomControls.ALabel();
+            this.btnSearch = new AxxenClient.CustomControls.AButton();
+            this.txtValue = new AxxenClient.CustomControls.ATextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -88,7 +88,7 @@
             this.txtValue.Name = "txtValue";
             this.txtValue.Size = new System.Drawing.Size(252, 21);
             this.txtValue.TabIndex = 4;
-            this.txtValue.txtType = Axxen.CustomControls.textboxType.Normal;
+            this.txtValue.txtType = AxxenClient.CustomControls.textboxType.Normal;
             // 
             // ATextBox_Searchable
             // 
