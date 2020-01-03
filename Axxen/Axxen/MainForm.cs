@@ -309,17 +309,19 @@ namespace Axxen
                 //frm.WindowState = FormWindowState.Maximized;
                 //frm.Show();
               
-                tabControl2.TabPages.Add(frm.Text);
+            
                 foreach (Form childForm in Application.OpenForms)
                 {
-                    if (childForm == frm)
+                    if (childForm.Name.Equals(frm.Name))
                     {
                         childForm.Activate();
+             
                         return;
                     }
-                    }
+                }
                 frm.MdiParent = this;
                 frm.WindowState = FormWindowState.Maximized;
+                tabControl2.TabPages.Add(frm.Text);
                 frm.Show();
 
                 // frm.TopLevel = false;
@@ -493,6 +495,15 @@ namespace Axxen
             Assembly cuasm = Assembly.GetExecutingAssembly();
             Form frm = (Form)cuasm.CreateInstance(string.Format("{0}.{1}", nameSpace, tabControl2.SelectedTab.Text));
 
+            foreach (Form childForm in Application.OpenForms)
+            {
+                if (childForm.Name.Equals(frm.Name))
+                {
+                    childForm.Activate();
+
+                    return;
+                }
+            }
 
         }
     }
