@@ -38,10 +38,14 @@
             this.aPanel1.Controls.Add(this.aComboBox1);
             this.aPanel1.Controls.Add(this.aLabel1);
             // 
+            // aHeaderBox1
+            // 
+            this.aHeaderBox1.HeaderBoxText = "조회내역";
+            // 
             // aComboBox1
             // 
             this.aComboBox1.FormattingEnabled = true;
-            this.aComboBox1.Location = new System.Drawing.Point(138, 27);
+            this.aComboBox1.Location = new System.Drawing.Point(87, 28);
             this.aComboBox1.Name = "aComboBox1";
             this.aComboBox1.Size = new System.Drawing.Size(106, 23);
             this.aComboBox1.TabIndex = 8;
@@ -49,7 +53,7 @@
             // aLabel1
             // 
             this.aLabel1.AutoSize = true;
-            this.aLabel1.Location = new System.Drawing.Point(89, 30);
+            this.aLabel1.Location = new System.Drawing.Point(27, 32);
             this.aLabel1.Name = "aLabel1";
             this.aLabel1.Size = new System.Drawing.Size(43, 15);
             this.aLabel1.TabIndex = 7;
