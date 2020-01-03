@@ -1,4 +1,4 @@
-﻿namespace Axxen
+﻿namespace Axxen.sangyoung
 {
     partial class PRM_RPT_005
     {
@@ -28,9 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.aLabel1 = new Axxen.CustomControls.ALabel();
+            this.aDateTimePicker1 = new Axxen.CustomControls.ADateTimePicker();
+            this.aPanel1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // aPanel1
+            // 
+            this.aPanel1.Controls.Add(this.aDateTimePicker1);
+            this.aPanel1.Controls.Add(this.aLabel1);
+            // 
+            // aLabel1
+            // 
+            this.aLabel1.AutoSize = true;
+            this.aLabel1.Location = new System.Drawing.Point(77, 27);
+            this.aLabel1.Name = "aLabel1";
+            this.aLabel1.Size = new System.Drawing.Size(55, 15);
+            this.aLabel1.TabIndex = 11;
+            this.aLabel1.Text = "생산일자";
+            // 
+            // aDateTimePicker1
+            // 
+            this.aDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.aDateTimePicker1.Location = new System.Drawing.Point(141, 23);
+            this.aDateTimePicker1.Name = "aDateTimePicker1";
+            this.aDateTimePicker1.Size = new System.Drawing.Size(103, 23);
+            this.aDateTimePicker1.TabIndex = 12;
+            // 
+            // PRM_RPT_005
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.ClientSize = new System.Drawing.Size(1148, 700);
+            this.Name = "PRM_RPT_005";
+            this.aPanel1.ResumeLayout(false);
+            this.aPanel1.PerformLayout();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+        private CustomControls.ALabel aLabel1;
+        private CustomControls.ADateTimePicker aDateTimePicker1;
     }
 }

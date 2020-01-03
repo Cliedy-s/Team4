@@ -31,6 +31,11 @@
             this.aButton1 = new Axxen.CustomControls.AButton();
             this.aButton2 = new Axxen.CustomControls.AButton();
             this.aLabel1 = new Axxen.CustomControls.ALabel();
+            this.aDateTimePicker1 = new Axxen.CustomControls.ADateTimePicker();
+            this.aLabel2 = new Axxen.CustomControls.ALabel();
+            this.aDateTimePicker2 = new Axxen.CustomControls.ADateTimePicker();
+            this.aTextBox_Labeled1 = new Axxen.CustomControls.ATextBox_Labeled();
+            this.aTextBox_Labeled2 = new Axxen.CustomControls.ATextBox_Labeled();
             this.aPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aSplitContainer1)).BeginInit();
             this.aSplitContainer1.Panel1.SuspendLayout();
@@ -40,6 +45,11 @@
             // 
             // aPanel1
             // 
+            this.aPanel1.Controls.Add(this.aTextBox_Labeled2);
+            this.aPanel1.Controls.Add(this.aTextBox_Labeled1);
+            this.aPanel1.Controls.Add(this.aDateTimePicker2);
+            this.aPanel1.Controls.Add(this.aLabel2);
+            this.aPanel1.Controls.Add(this.aDateTimePicker1);
             this.aPanel1.Controls.Add(this.aLabel1);
             this.aPanel1.Controls.Add(this.aButton2);
             this.aPanel1.Controls.Add(this.aButton1);
@@ -72,11 +82,62 @@
             // aLabel1
             // 
             this.aLabel1.AutoSize = true;
-            this.aLabel1.Location = new System.Drawing.Point(32, 18);
+            this.aLabel1.Location = new System.Drawing.Point(35, 28);
             this.aLabel1.Name = "aLabel1";
             this.aLabel1.Size = new System.Drawing.Size(79, 15);
             this.aLabel1.TabIndex = 1;
             this.aLabel1.Text = "생산의뢰일자";
+            // 
+            // aDateTimePicker1
+            // 
+            this.aDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.aDateTimePicker1.Location = new System.Drawing.Point(120, 24);
+            this.aDateTimePicker1.Name = "aDateTimePicker1";
+            this.aDateTimePicker1.Size = new System.Drawing.Size(105, 23);
+            this.aDateTimePicker1.TabIndex = 2;
+            this.aDateTimePicker1.Value = new System.DateTime(2020, 1, 3, 15, 14, 0, 0);
+            // 
+            // aLabel2
+            // 
+            this.aLabel2.AutoSize = true;
+            this.aLabel2.Location = new System.Drawing.Point(232, 28);
+            this.aLabel2.Name = "aLabel2";
+            this.aLabel2.Size = new System.Drawing.Size(15, 15);
+            this.aLabel2.TabIndex = 3;
+            this.aLabel2.Text = "~";
+            // 
+            // aDateTimePicker2
+            // 
+            this.aDateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.aDateTimePicker2.Location = new System.Drawing.Point(253, 24);
+            this.aDateTimePicker2.Name = "aDateTimePicker2";
+            this.aDateTimePicker2.Size = new System.Drawing.Size(105, 23);
+            this.aDateTimePicker2.TabIndex = 4;
+            this.aDateTimePicker2.Value = new System.DateTime(2020, 1, 3, 15, 14, 0, 0);
+            // 
+            // aTextBox_Labeled1
+            // 
+            this.aTextBox_Labeled1.FontSize = 9F;
+            this.aTextBox_Labeled1.LabelText = "생산의뢰 번호";
+            this.aTextBox_Labeled1.Location = new System.Drawing.Point(393, 24);
+            this.aTextBox_Labeled1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.aTextBox_Labeled1.Name = "aTextBox_Labeled1";
+            this.aTextBox_Labeled1.Size = new System.Drawing.Size(254, 23);
+            this.aTextBox_Labeled1.SplitDistance = 84;
+            this.aTextBox_Labeled1.TabIndex = 5;
+            this.aTextBox_Labeled1.TextBoxText = "";
+            // 
+            // aTextBox_Labeled2
+            // 
+            this.aTextBox_Labeled2.FontSize = 9F;
+            this.aTextBox_Labeled2.LabelText = "프로젝트 명";
+            this.aTextBox_Labeled2.Location = new System.Drawing.Point(669, 24);
+            this.aTextBox_Labeled2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.aTextBox_Labeled2.Name = "aTextBox_Labeled2";
+            this.aTextBox_Labeled2.Size = new System.Drawing.Size(254, 23);
+            this.aTextBox_Labeled2.SplitDistance = 84;
+            this.aTextBox_Labeled2.TabIndex = 6;
+            this.aTextBox_Labeled2.TextBoxText = "";
             // 
             // PPS_SCH_001
             // 
@@ -98,5 +159,10 @@
         private CustomControls.AButton aButton1;
         private CustomControls.AButton aButton2;
         private CustomControls.ALabel aLabel1;
+        private CustomControls.ATextBox_Labeled aTextBox_Labeled2;
+        private CustomControls.ATextBox_Labeled aTextBox_Labeled1;
+        private CustomControls.ADateTimePicker aDateTimePicker2;
+        private CustomControls.ALabel aLabel2;
+        private CustomControls.ADateTimePicker aDateTimePicker1;
     }
 }

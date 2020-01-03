@@ -6,9 +6,9 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Axxen
+namespace Axxen.sangyoung
 {
-    public partial class PRM_RPT_002 : Axxen.FreeForm
+    public partial class PRM_RPT_002 : Axxen.ReportForm
     {
         public PRM_RPT_002()
         {

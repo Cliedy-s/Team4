@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace Axxen.sangyoung
 {
-    public partial class PRM_RPT_004 : Axxen.ReportForm
+    public partial class PPS_MLD_001 : Axxen.GridForm
     {
-        public PRM_RPT_004()
+        public PPS_MLD_001()
         {
             InitializeComponent();
         }
