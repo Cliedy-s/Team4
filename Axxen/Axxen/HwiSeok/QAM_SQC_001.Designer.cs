@@ -32,6 +32,8 @@
             this.aLabel2 = new Axxen.CustomControls.ALabel();
             this.aComboBox1 = new Axxen.CustomControls.AComboBox();
             this.aLabel1 = new Axxen.CustomControls.ALabel();
+            this.aTextBox_FindNameByCode1 = new Axxen.CustomControls.ATextBox_FindNameByCode();
+            this.aTextBox_FindNameByCode2 = new Axxen.CustomControls.ATextBox_FindNameByCode();
             this.aPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aSplitContainer1)).BeginInit();
             this.aSplitContainer1.Panel1.SuspendLayout();
@@ -41,6 +43,8 @@
             // 
             // aPanel1
             // 
+            this.aPanel1.Controls.Add(this.aTextBox_FindNameByCode2);
+            this.aPanel1.Controls.Add(this.aTextBox_FindNameByCode1);
             this.aPanel1.Controls.Add(this.aComboBox2);
             this.aPanel1.Controls.Add(this.aLabel2);
             this.aPanel1.Controls.Add(this.aComboBox1);
@@ -77,7 +81,7 @@
             // aComboBox1
             // 
             this.aComboBox1.FormattingEnabled = true;
-            this.aComboBox1.Location = new System.Drawing.Point(108, 27);
+            this.aComboBox1.Location = new System.Drawing.Point(108, 26);
             this.aComboBox1.Name = "aComboBox1";
             this.aComboBox1.Size = new System.Drawing.Size(121, 23);
             this.aComboBox1.TabIndex = 19;
@@ -91,11 +95,38 @@
             this.aLabel1.TabIndex = 18;
             this.aLabel1.Text = "작업지시일자";
             // 
+            // aTextBox_FindNameByCode1
+            // 
+            this.aTextBox_FindNameByCode1.CodeType = Axxen.CustomControls.ATextBox_FindNameByCode.types.Processes;
+            this.aTextBox_FindNameByCode1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aTextBox_FindNameByCode1.lblNameText = "공정";
+            this.aTextBox_FindNameByCode1.Location = new System.Drawing.Point(419, 24);
+            this.aTextBox_FindNameByCode1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.aTextBox_FindNameByCode1.Name = "aTextBox_FindNameByCode1";
+            this.aTextBox_FindNameByCode1.Size = new System.Drawing.Size(218, 27);
+            this.aTextBox_FindNameByCode1.TabIndex = 22;
+            this.aTextBox_FindNameByCode1.txtCodeText = "";
+            this.aTextBox_FindNameByCode1.txtNameText = "";
+            // 
+            // aTextBox_FindNameByCode2
+            // 
+            this.aTextBox_FindNameByCode2.CodeType = Axxen.CustomControls.ATextBox_FindNameByCode.types.WorkCenters;
+            this.aTextBox_FindNameByCode2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aTextBox_FindNameByCode2.lblNameText = "작업장";
+            this.aTextBox_FindNameByCode2.Location = new System.Drawing.Point(663, 24);
+            this.aTextBox_FindNameByCode2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.aTextBox_FindNameByCode2.Name = "aTextBox_FindNameByCode2";
+            this.aTextBox_FindNameByCode2.Size = new System.Drawing.Size(227, 27);
+            this.aTextBox_FindNameByCode2.TabIndex = 23;
+            this.aTextBox_FindNameByCode2.txtCodeText = "";
+            this.aTextBox_FindNameByCode2.txtNameText = "";
+            // 
             // QAM_SQC_001
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.Name = "QAM_SQC_001";
+            this.Text = "불량이미지 등록";
             this.aPanel1.ResumeLayout(false);
             this.aPanel1.PerformLayout();
             this.aSplitContainer1.Panel1.ResumeLayout(false);
@@ -112,5 +143,7 @@
         private CustomControls.ALabel aLabel2;
         private CustomControls.AComboBox aComboBox1;
         private CustomControls.ALabel aLabel1;
+        private CustomControls.ATextBox_FindNameByCode aTextBox_FindNameByCode2;
+        private CustomControls.ATextBox_FindNameByCode aTextBox_FindNameByCode1;
     }
 }

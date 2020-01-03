@@ -51,7 +51,7 @@
             // aComboBox2
             // 
             this.aComboBox2.FormattingEnabled = true;
-            this.aComboBox2.Location = new System.Drawing.Point(229, 24);
+            this.aComboBox2.Location = new System.Drawing.Point(229, 25);
             this.aComboBox2.Name = "aComboBox2";
             this.aComboBox2.Size = new System.Drawing.Size(121, 23);
             this.aComboBox2.TabIndex = 13;
@@ -59,7 +59,7 @@
             // aLabel2
             // 
             this.aLabel2.AutoSize = true;
-            this.aLabel2.Location = new System.Drawing.Point(208, 28);
+            this.aLabel2.Location = new System.Drawing.Point(208, 29);
             this.aLabel2.Name = "aLabel2";
             this.aLabel2.Size = new System.Drawing.Size(15, 15);
             this.aLabel2.TabIndex = 12;
@@ -76,7 +76,7 @@
             // aLabel1
             // 
             this.aLabel1.AutoSize = true;
-            this.aLabel1.Location = new System.Drawing.Point(20, 28);
+            this.aLabel1.Location = new System.Drawing.Point(20, 29);
             this.aLabel1.Name = "aLabel1";
             this.aLabel1.Size = new System.Drawing.Size(55, 15);
             this.aLabel1.TabIndex = 10;

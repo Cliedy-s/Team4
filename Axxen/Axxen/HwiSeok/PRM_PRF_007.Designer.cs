@@ -74,6 +74,7 @@
             this.Controls.Add(this.aButton2);
             this.Controls.Add(this.aButton1);
             this.Name = "PRM_PRF_007";
+            this.Text = "대차현황모니터링";
             this.ResumeLayout(false);
 
         }

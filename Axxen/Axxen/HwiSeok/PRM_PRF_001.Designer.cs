@@ -58,7 +58,7 @@
             // 
             this.aButton1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton1.Location = new System.Drawing.Point(946, 25);
+            this.aButton1.Location = new System.Drawing.Point(946, 27);
             this.aButton1.Name = "aButton1";
             this.aButton1.Size = new System.Drawing.Size(75, 23);
             this.aButton1.TabIndex = 0;
@@ -69,7 +69,7 @@
             // 
             this.aButton2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.aButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton2.Location = new System.Drawing.Point(1027, 25);
+            this.aButton2.Location = new System.Drawing.Point(1027, 27);
             this.aButton2.Name = "aButton2";
             this.aButton2.Size = new System.Drawing.Size(75, 23);
             this.aButton2.TabIndex = 1;
@@ -79,7 +79,7 @@
             // aLabel1
             // 
             this.aLabel1.AutoSize = true;
-            this.aLabel1.Location = new System.Drawing.Point(23, 29);
+            this.aLabel1.Location = new System.Drawing.Point(23, 31);
             this.aLabel1.Name = "aLabel1";
             this.aLabel1.Size = new System.Drawing.Size(79, 15);
             this.aLabel1.TabIndex = 2;
@@ -88,7 +88,7 @@
             // aComboBox1
             // 
             this.aComboBox1.FormattingEnabled = true;
-            this.aComboBox1.Location = new System.Drawing.Point(108, 26);
+            this.aComboBox1.Location = new System.Drawing.Point(108, 27);
             this.aComboBox1.Name = "aComboBox1";
             this.aComboBox1.Size = new System.Drawing.Size(121, 23);
             this.aComboBox1.TabIndex = 3;
@@ -96,7 +96,7 @@
             // aLabel2
             // 
             this.aLabel2.AutoSize = true;
-            this.aLabel2.Location = new System.Drawing.Point(235, 29);
+            this.aLabel2.Location = new System.Drawing.Point(235, 31);
             this.aLabel2.Name = "aLabel2";
             this.aLabel2.Size = new System.Drawing.Size(15, 15);
             this.aLabel2.TabIndex = 4;
@@ -105,7 +105,7 @@
             // aComboBox2
             // 
             this.aComboBox2.FormattingEnabled = true;
-            this.aComboBox2.Location = new System.Drawing.Point(256, 25);
+            this.aComboBox2.Location = new System.Drawing.Point(256, 27);
             this.aComboBox2.Name = "aComboBox2";
             this.aComboBox2.Size = new System.Drawing.Size(121, 23);
             this.aComboBox2.TabIndex = 5;
