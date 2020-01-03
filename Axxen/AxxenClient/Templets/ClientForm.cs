@@ -14,5 +14,10 @@ namespace AxxenClient.Templets
         {
             InitializeComponent();
         }
+
+        private void aButton2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
