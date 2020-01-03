@@ -120,10 +120,10 @@
             this.aTextBox_Labeled1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aTextBox_Labeled1.FontSize = 9F;
             this.aTextBox_Labeled1.LabelText = "생산의뢰 번호";
-            this.aTextBox_Labeled1.Location = new System.Drawing.Point(492, 4);
+            this.aTextBox_Labeled1.Location = new System.Drawing.Point(413, 24);
             this.aTextBox_Labeled1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.aTextBox_Labeled1.Name = "aTextBox_Labeled1";
-            this.aTextBox_Labeled1.Size = new System.Drawing.Size(313, 23);
+            this.aTextBox_Labeled1.Size = new System.Drawing.Size(237, 23);
             this.aTextBox_Labeled1.TabIndex = 5;
             this.aTextBox_Labeled1.TextBoxText = "";
             // 
@@ -132,10 +132,10 @@
             this.aTextBox_Labeled2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aTextBox_Labeled2.FontSize = 9F;
             this.aTextBox_Labeled2.LabelText = "프로젝트 명";
-            this.aTextBox_Labeled2.Location = new System.Drawing.Point(497, 36);
+            this.aTextBox_Labeled2.Location = new System.Drawing.Point(685, 24);
             this.aTextBox_Labeled2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.aTextBox_Labeled2.Name = "aTextBox_Labeled2";
-            this.aTextBox_Labeled2.Size = new System.Drawing.Size(308, 23);
+            this.aTextBox_Labeled2.Size = new System.Drawing.Size(228, 23);
             this.aTextBox_Labeled2.TabIndex = 6;
             this.aTextBox_Labeled2.TextBoxText = "";
             // 
