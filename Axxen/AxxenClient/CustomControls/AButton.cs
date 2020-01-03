@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AxxenClient.CustomControls
+namespace Axxen.CustomControls
 {
     public partial class AButton : Button
     {
@@ -17,7 +17,7 @@ namespace AxxenClient.CustomControls
             InitializeComponent();
             //Design
             this.FlatStyle = FlatStyle.Flat;
-            this.BackColor = Color.White;
+            this.BackColor = SystemColors.ControlLight;
         }
 
         protected override void OnPaint(PaintEventArgs pe)

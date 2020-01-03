@@ -1,4 +1,4 @@
-﻿namespace AxxenClient.CustomControls
+﻿namespace Axxen.CustomControls
 {
     partial class ATextBox_Searchable
     {
@@ -28,89 +28,70 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.lblName = new AxxenClient.CustomControls.ALabel();
-            this.btnSearch = new AxxenClient.CustomControls.AButton();
-            this.txtValue = new AxxenClient.CustomControls.ATextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
+            this.lblName = new Axxen.CustomControls.ALabel();
+            this.txtValue = new Axxen.CustomControls.ATextBox();
+            this.btnSearch = new Axxen.CustomControls.AButton();
             this.SuspendLayout();
-            // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.lblName);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.btnSearch);
-            this.splitContainer1.Panel2.Controls.Add(this.txtValue);
-            this.splitContainer1.Size = new System.Drawing.Size(383, 21);
-            this.splitContainer1.SplitterDistance = 127;
-            this.splitContainer1.TabIndex = 0;
             // 
             // lblName
             // 
-            this.lblName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblName.Location = new System.Drawing.Point(0, 0);
+            this.lblName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblName.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblName.Location = new System.Drawing.Point(-2, 3);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(127, 21);
-            this.lblName.TabIndex = 5;
+            this.lblName.Size = new System.Drawing.Size(97, 23);
+            this.lblName.TabIndex = 0;
             this.lblName.Text = "lblName";
-            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Location = new System.Drawing.Point(212, 0);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(40, 21);
-            this.btnSearch.TabIndex = 6;
-            this.btnSearch.Text = "찾기";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click_1);
+            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtValue
             // 
+            this.txtValue.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.txtValue.BackColor = System.Drawing.Color.White;
             this.txtValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtValue.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtValue.errorp = null;
-            this.txtValue.Location = new System.Drawing.Point(0, 0);
+            this.txtValue.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtValue.Location = new System.Drawing.Point(91, 3);
+            this.txtValue.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtValue.Name = "txtValue";
-            this.txtValue.Size = new System.Drawing.Size(252, 21);
-            this.txtValue.TabIndex = 4;
-            this.txtValue.txtType = AxxenClient.CustomControls.textboxType.Normal;
+            this.txtValue.Size = new System.Drawing.Size(220, 23);
+            this.txtValue.TabIndex = 2;
+            this.txtValue.txtType = Axxen.CustomControls.ATextBox.type.Normal;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnSearch.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSearch.Location = new System.Drawing.Point(309, 3);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(54, 23);
+            this.btnSearch.TabIndex = 3;
+            this.btnSearch.Text = "btnName";
+            this.btnSearch.UseVisualStyleBackColor = false;
             // 
             // ATextBox_Searchable
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.splitContainer1);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.txtValue);
+            this.Controls.Add(this.lblName);
+            this.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ATextBox_Searchable";
-            this.Size = new System.Drawing.Size(383, 21);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            this.splitContainer1.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
+            this.Size = new System.Drawing.Size(365, 30);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.SplitContainer splitContainer1;
-        private AButton btnSearch;
         private ALabel lblName;
         private ATextBox txtValue;
+        private AButton btnSearch;
     }
 }

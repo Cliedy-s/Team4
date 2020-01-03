@@ -118,6 +118,12 @@
     <Compile Include="CustomControls\ATextBox.designer.cs">
       <DependentUpon>ATextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomControls\ATextBox_FindNameByCode.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\ATextBox_FindNameByCode.Designer.cs">
+      <DependentUpon>ATextBox_FindNameByCode.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomControls\ATextBox_Labeled.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -135,6 +141,18 @@
     </Compile>
     <Compile Include="CustomControls\ATreeView.Designer.cs">
       <DependentUpon>ATreeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\SearchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomControls\SearchForm.Designer.cs">
+      <DependentUpon>SearchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WorkOrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WorkOrderForm.Designer.cs">
+      <DependentUpon>WorkOrderForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Templets\BaseForm.cs">
       <SubType>Form</SubType>
@@ -156,12 +174,6 @@
     <Compile Include="Templets\ClientBaseForm.Designer.cs">
       <DependentUpon>ClientBaseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Templets\GridManageForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Templets\GridManageForm.Designer.cs">
-      <DependentUpon>GridManageForm.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="CustomControls\AHeaderBox.resx">
       <DependentUpon>AHeaderBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -171,11 +183,20 @@
     <EmbeddedResource Include="CustomControls\ATextBox.resx">
       <DependentUpon>ATextBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\ATextBox_FindNameByCode.resx">
+      <DependentUpon>ATextBox_FindNameByCode.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\ATextBox_Labeled.resx">
       <DependentUpon>ATextBox_Labeled.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\ATextBox_Searchable.resx">
       <DependentUpon>ATextBox_Searchable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\SearchForm.resx">
+      <DependentUpon>SearchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WorkOrderForm.resx">
+      <DependentUpon>WorkOrderForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Templets\BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
@@ -194,9 +215,6 @@
     </Compile>
     <EmbeddedResource Include="Templets\ClientBaseForm.resx">
       <DependentUpon>ClientBaseForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Templets\GridManageForm.resx">
-      <DependentUpon>GridManageForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

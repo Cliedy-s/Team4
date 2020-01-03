@@ -1,4 +1,4 @@
-﻿namespace AxxenClient.CustomControls
+﻿namespace Axxen.CustomControls
 {
     partial class AHeaderBox
     {
@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.aLabel2 = new AxxenClient.CustomControls.ALabel();
-            this.aLabel1 = new AxxenClient.CustomControls.ALabel();
+            this.aLabel2 = new Axxen.CustomControls.ALabel();
+            this.aLabel1 = new Axxen.CustomControls.ALabel();
             this.SuspendLayout();
             // 
             // aLabel2
