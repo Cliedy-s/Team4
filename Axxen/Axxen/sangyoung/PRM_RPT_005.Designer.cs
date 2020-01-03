@@ -41,7 +41,7 @@
             // aLabel1
             // 
             this.aLabel1.AutoSize = true;
-            this.aLabel1.Location = new System.Drawing.Point(77, 27);
+            this.aLabel1.Location = new System.Drawing.Point(27, 32);
             this.aLabel1.Name = "aLabel1";
             this.aLabel1.Size = new System.Drawing.Size(55, 15);
             this.aLabel1.TabIndex = 11;
@@ -50,7 +50,7 @@
             // aDateTimePicker1
             // 
             this.aDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.aDateTimePicker1.Location = new System.Drawing.Point(141, 23);
+            this.aDateTimePicker1.Location = new System.Drawing.Point(88, 28);
             this.aDateTimePicker1.Name = "aDateTimePicker1";
             this.aDateTimePicker1.Size = new System.Drawing.Size(103, 23);
             this.aDateTimePicker1.TabIndex = 12;
