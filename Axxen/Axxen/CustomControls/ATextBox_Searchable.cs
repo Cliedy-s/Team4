@@ -26,7 +26,6 @@ namespace Axxen.CustomControls
             }
             get { return txtValue.Font.Size; }
         }
-        public int SplitDistance { get { return splitContainer1.SplitterDistance; } set { splitContainer1.SplitterDistance = value; } }
 
         public ATextBox_Searchable()
         {

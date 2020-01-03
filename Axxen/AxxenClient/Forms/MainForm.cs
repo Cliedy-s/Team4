@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace AxxenClient.Forms
 {
-    public partial class MainForm : AxxenClient.Templets.ClientForm
+    public partial class MainForm : AxxenClient.Templets.ClientBaseForm
     {
         public MainForm()
         {

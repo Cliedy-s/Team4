@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Axxen.CustomControls
+namespace AxxenClient.CustomControls
 {
     public enum textboxType { Normal, Numeric, Required }
     public partial class ATextBox : TextBox

@@ -1,4 +1,4 @@
-﻿namespace Axxen.CustomControls
+﻿namespace AxxenClient.CustomControls
 {
     partial class ATextBox_Labeled
     {
@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.lblName = new Axxen.CustomControls.ALabel();
-            this.txtValue = new Axxen.CustomControls.ATextBox();
+            this.lblName = new AxxenClient.CustomControls.ALabel();
+            this.txtValue = new AxxenClient.CustomControls.ATextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -75,7 +75,7 @@
             this.txtValue.Name = "txtValue";
             this.txtValue.Size = new System.Drawing.Size(209, 21);
             this.txtValue.TabIndex = 0;
-            this.txtValue.txtType = Axxen.CustomControls.textboxType.Normal;
+            this.txtValue.txtType = AxxenClient.CustomControls.textboxType.Normal;
             // 
             // ATextBox_Labeled
             // 
