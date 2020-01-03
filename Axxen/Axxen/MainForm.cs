@@ -31,9 +31,9 @@ namespace Axxen
         {
             InitializeComponent();
 
-              ImageList imgList = new ImageList();
-              imgList.Images.Add(Bitmap.FromFile("treeimg.png"));
-              tvMenu.ImageList = imgList;
+           //   ImageList imgList = new ImageList();
+           //   imgList.Images.Add(Bitmap.FromFile("treeimg.png"));
+           //   tvMenu.ImageList = imgList;
             MainForm_Service service = new MainForm_Service();
             menulist = service.GetAll_MenuTree_Master();
 
@@ -446,7 +446,7 @@ namespace Axxen
             this.tabControl2.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             tabControl2.DrawItem += TabControl1_DrawItem;
             tabControl2.MouseClick += TabControl2_MouseClick;
-            CloseImage =Image.FromFile("treeimg.png"); ;
+            //CloseImage =Image.FromFile("treeimg.png"); ;
             this.tabControl2.Padding = new Point(10, 3);
         }
 
