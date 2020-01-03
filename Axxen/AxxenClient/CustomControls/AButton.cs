@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Axxen.CustomControls
+namespace AxxenClient.CustomControls
 {
     public partial class AButton : Button
     {

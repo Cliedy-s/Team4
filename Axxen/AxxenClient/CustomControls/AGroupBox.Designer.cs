@@ -1,4 +1,4 @@
-﻿namespace Axxen.CustomControls
+﻿namespace AxxenClient.CustomControls
 {
     partial class AGroupBox
     {

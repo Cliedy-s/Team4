@@ -8,15 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Axxen.CustomControls
+namespace AxxenClient.CustomControls
 {
     public partial class ATextBox_Labeled : UserControl
     {
         public string LabelText { get { return lblName.Text; } set { lblName.Text = value; } }
         public string TextBoxText { get { return txtValue.Text; } set { txtValue.Text = value; } }
         //public txttype 
-        public float FontSize { 
-            set {
+        public float FontSize
+        {
+            set
+            {
                 Font lblfont = new Font(lblName.Font.FontFamily, value, lblName.Font.Style);
                 lblName.Font = lblfont;
                 Font txtfont = new Font(txtValue.Font.FontFamily, value, txtValue.Font.Style);

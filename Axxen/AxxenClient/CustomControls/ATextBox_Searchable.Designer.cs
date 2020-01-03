@@ -1,4 +1,4 @@
-﻿namespace Axxen.CustomControls
+﻿namespace AxxenClient.CustomControls
 {
     partial class ATextBox_Searchable
     {
@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblName = new Axxen.CustomControls.ALabel();
-            this.txtValue = new Axxen.CustomControls.ATextBox();
-            this.btnSearch = new Axxen.CustomControls.AButton();
+            this.lblName = new AxxenClient.CustomControls.ALabel();
+            this.txtValue = new AxxenClient.CustomControls.ATextBox();
+            this.btnSearch = new AxxenClient.CustomControls.AButton();
             this.SuspendLayout();
             // 
             // lblName
@@ -56,7 +56,7 @@
             this.txtValue.Name = "txtValue";
             this.txtValue.Size = new System.Drawing.Size(220, 23);
             this.txtValue.TabIndex = 2;
-            this.txtValue.txtType = Axxen.CustomControls.ATextBox.type.Normal;
+            this.txtValue.txtType = AxxenClient.CustomControls.ATextBox.type.Normal;
             // 
             // btnSearch
             // 

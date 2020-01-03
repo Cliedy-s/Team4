@@ -1,4 +1,4 @@
-﻿namespace Axxen.CustomControls
+﻿namespace AxxenClient.CustomControls
 {
     partial class ATextBox_Labeled
     {
@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblName = new Axxen.CustomControls.ALabel();
-            this.txtValue = new Axxen.CustomControls.ATextBox();
+            this.lblName = new AxxenClient.CustomControls.ALabel();
+            this.txtValue = new AxxenClient.CustomControls.ATextBox();
             this.SuspendLayout();
             // 
             // lblName
@@ -54,7 +54,7 @@
             this.txtValue.Name = "txtValue";
             this.txtValue.Size = new System.Drawing.Size(140, 23);
             this.txtValue.TabIndex = 3;
-            this.txtValue.txtType = Axxen.CustomControls.ATextBox.type.Normal;
+            this.txtValue.txtType = AxxenClient.CustomControls.ATextBox.type.Normal;
             // 
             // ATextBox_Labeled
             // 
