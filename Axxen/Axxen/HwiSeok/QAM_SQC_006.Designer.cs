@@ -64,6 +64,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.Name = "QAM_SQC_006";
+            this.Text = "원재료 LOT관리";
             this.aPanel1.ResumeLayout(false);
             this.aPanel1.PerformLayout();
             this.ResumeLayout(false);

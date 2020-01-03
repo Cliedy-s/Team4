@@ -32,6 +32,7 @@
             this.aLabel2 = new Axxen.CustomControls.ALabel();
             this.aComboBox1 = new Axxen.CustomControls.AComboBox();
             this.aLabel1 = new Axxen.CustomControls.ALabel();
+            this.aTextBox_FindNameByCode1 = new Axxen.CustomControls.ATextBox_FindNameByCode();
             this.aPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aSplitContainer1)).BeginInit();
             this.aSplitContainer1.Panel1.SuspendLayout();
@@ -41,6 +42,7 @@
             // 
             // aPanel1
             // 
+            this.aPanel1.Controls.Add(this.aTextBox_FindNameByCode1);
             this.aPanel1.Controls.Add(this.aComboBox2);
             this.aPanel1.Controls.Add(this.aLabel2);
             this.aPanel1.Controls.Add(this.aComboBox1);
@@ -91,11 +93,25 @@
             this.aLabel1.TabIndex = 18;
             this.aLabel1.Text = "근무일자";
             // 
+            // aTextBox_FindNameByCode1
+            // 
+            this.aTextBox_FindNameByCode1.CodeType = Axxen.CustomControls.ATextBox_FindNameByCode.types.Workers;
+            this.aTextBox_FindNameByCode1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aTextBox_FindNameByCode1.lblNameText = "작업자";
+            this.aTextBox_FindNameByCode1.Location = new System.Drawing.Point(391, 24);
+            this.aTextBox_FindNameByCode1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.aTextBox_FindNameByCode1.Name = "aTextBox_FindNameByCode1";
+            this.aTextBox_FindNameByCode1.Size = new System.Drawing.Size(293, 27);
+            this.aTextBox_FindNameByCode1.TabIndex = 22;
+            this.aTextBox_FindNameByCode1.txtCodeText = "";
+            this.aTextBox_FindNameByCode1.txtNameText = "";
+            // 
             // PRM_PRF_010
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.Name = "PRM_PRF_010";
+            this.Text = "근태현황 분석";
             this.aPanel1.ResumeLayout(false);
             this.aPanel1.PerformLayout();
             this.aSplitContainer1.Panel1.ResumeLayout(false);
@@ -112,5 +128,6 @@
         private CustomControls.ALabel aLabel2;
         private CustomControls.AComboBox aComboBox1;
         private CustomControls.ALabel aLabel1;
+        private CustomControls.ATextBox_FindNameByCode aTextBox_FindNameByCode1;
     }
 }
