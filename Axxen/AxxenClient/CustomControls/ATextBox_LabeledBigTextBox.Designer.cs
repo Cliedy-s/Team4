@@ -40,10 +40,10 @@
             this.txtValue.errorp = null;
             this.txtValue.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtValue.Location = new System.Drawing.Point(96, 4);
-            this.txtValue.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtValue.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtValue.Name = "txtValue";
             this.txtValue.Size = new System.Drawing.Size(266, 23);
-            this.txtValue.TabIndex = 5;
+            this.txtValue.TabIndex = 7;
             this.txtValue.txtType = AxxenClient.CustomControls.type.Normal;
             // 
             // lblName
@@ -53,16 +53,18 @@
             this.lblName.Location = new System.Drawing.Point(1, 4);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(94, 23);
-            this.lblName.TabIndex = 4;
+            this.lblName.TabIndex = 6;
             this.lblName.Text = "lblName";
             this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ATextBox_LabeledBigTextBox
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.txtValue);
             this.Controls.Add(this.lblName);
+            this.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ATextBox_LabeledBigTextBox";
             this.Size = new System.Drawing.Size(365, 30);
             this.ResumeLayout(false);
