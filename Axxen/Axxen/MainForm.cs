@@ -31,11 +31,7 @@ namespace Axxen
         {
             InitializeComponent();
 
-              ImageList imgList = new ImageList();
-              imgList.Images.Add(Bitmap.FromFile("treeimg.png"));
-              tvMenu.ImageList = imgList;
-            MainForm_Service service = new MainForm_Service();
-            menulist = service.GetAll_MenuTree_Master();
+             
 
 
             //booklist = service.GetAll_BookMark(1);
@@ -43,6 +39,24 @@ namespace Axxen
 
 
         }
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            MainForm_Service service = new MainForm_Service();
+            menulist = service.GetAll_MenuTree_Master();
+              
+            ImageList imgList = new ImageList();
+            imgList.Images.Add(Bitmap.FromFile("treeimg.png"));
+
+            tvMenu.ImageList = imgList;
+           
+
+            this.tabControl2.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
+            tabControl2.DrawItem += TabControl1_DrawItem;
+            tabControl2.MouseClick += TabControl2_MouseClick;
+            CloseImage = Image.FromFile("x.png");
+            this.tabControl2.Padding = new Point(10, 3);
+        }
+
 
         private void 사용자그룹관리ToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -280,11 +294,9 @@ namespace Axxen
             }
 
         }
-        #region
+        #region 트리뷰관련 이벤트
         private void TvMenu_DoubleClick(object sender, EventArgs e)
-        {
-           
-
+        {        
             MenuTree_Master_VO parentcode = menulist.Find(item => item.Screen_Name == tvMenu.SelectedNode.Text);
 
             if (parentcode.Parent_Screen_Code != null) //부모코드에 널값이있는 메뉴를 제외하고
@@ -305,38 +317,24 @@ namespace Axxen
                 Assembly cuasm = Assembly.GetExecutingAssembly();
                 //string Format 의 따옴표와 마침표 주의!!
                 Form frm = (Form)cuasm.CreateInstance(string.Format("{0}.{1}", nameSpace, formName));
-                //frm.MdiParent = this;
-                //frm.WindowState = FormWindowState.Maximized;
-                //frm.Show();
-              
-            
+                  
                 foreach (Form childForm in Application.OpenForms)
                 {
                     if (childForm.Name.Equals(frm.Name))
                     {
-                        childForm.Activate();
-             
+                        childForm.Activate();          
                         return;
                     }
                 }
                 frm.MdiParent = this;
                 frm.WindowState = FormWindowState.Maximized;
                 tabControl2.TabPages.Add(frm.Text);
+                tabControl2.TabPages     .Tag=formName;
+                MessageBox.Show(tabControl2.SelectedTab.Tag.ToString());
                 frm.Show();
-
-                // frm.TopLevel = false;
-                //  tabControl2.TabPages.Add((tabControl2.TabPages.Count + 1).ToString());
-                //   tabControl2.TabPages[tabControl2.TabPages.Count - 1].Controls.Add(frm);
-                //  tabControl2.SelectedIndex = tabControl2.TabPages.Count - 1;
-                // tabControl2.TabPages[tabControl2.TabPages.Count - 1].Text = frm.Text;
-                //   frm.WindowState = FormWindowState.Maximized;
-                //   frm.MdiParent = this;
-                // frm.Show();
-
             }
             catch (Exception err)
             {
-
                 MessageBox.Show(err.ToString());
             }
         }
@@ -454,16 +452,7 @@ namespace Axxen
                 drawRectangle.Height);
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
-            this.tabControl2.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-            tabControl2.DrawItem += TabControl1_DrawItem;
-            tabControl2.MouseClick += TabControl2_MouseClick;
-            CloseImage =Image.FromFile("x.png"); ;
-            this.tabControl2.Padding = new Point(10, 3);
-        }
-
+   
         private void TabControl2_MouseClick(object sender, MouseEventArgs e)
         {
             for (var i = 0; i < this.tabControl2.TabPages.Count; i++)
@@ -474,37 +463,37 @@ namespace Axxen
                                          tabRect.Top + (tabRect.Height - CloseImage.Height) / 2,
                                          CloseImage.Width,
                                          CloseImage.Height);
-                if (imageRect.Contains(e.Location))
+                if (imageRect.Contains(e.Location)) //x버튼 클릭시 폼종료
                 {
-                    string nameSpace = "Axxen"; //네임스페이스 명
-                    Assembly cuasm = Assembly.GetExecutingAssembly();
-                    //string Format 의 따옴표와 마침표 주의!!
-                    Form frm = (Form)cuasm.CreateInstance(string.Format("{0}.{1}", nameSpace, tabControl2.SelectedTab.Text));
-                    this.ActiveMdiChild.Close();
-                           
+               
+                    foreach (Form childForm in Application.OpenForms)
+                    {
+                        if (childForm.Name.Equals(tabControl2.SelectedTab.Tag))
+                        {
+                            childForm.Close ();
+
+                            return;
+                        }
+                    }
+
                     this.tabControl2.TabPages.RemoveAt(i);
-                    
+                  
                     break;
                 }
-            }
-        }
-
-        private void TabControl2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string nameSpace = "Axxen"; //네임스페이스 명
-            Assembly cuasm = Assembly.GetExecutingAssembly();
-            Form frm = (Form)cuasm.CreateInstance(string.Format("{0}.{1}", nameSpace, tabControl2.SelectedTab.Text));
-
-            foreach (Form childForm in Application.OpenForms)
-            {
-                if (childForm.Name.Equals(frm.Name))
+                else //x버튼을 제제외한 텝페이지클릭시 폼 앞으로
                 {
-                    childForm.Activate();
+                
+                    foreach (Form childForm in Application.OpenForms)
+                    {
+                        if (childForm.Name.Equals(tabControl2.SelectedTab.Tag))
+                        {
+                            childForm.Activate();
 
-                    return;
+                            break;
+                        }
+                    }
                 }
             }
-
         }
     }
 }

@@ -72,7 +72,8 @@
             this.Controls.Add(this.dgvUserGroup);
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "MSS_CON_001";
-            this.Text = "MSS_CON_001";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "ddd";
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserGroup)).EndInit();
             this.ResumeLayout(false);
 
