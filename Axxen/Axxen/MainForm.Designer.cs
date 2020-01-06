@@ -119,13 +119,13 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button10 = new System.Windows.Forms.Button();
             this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.pnBookmark = new Axxen.CustomControls.APanel();
             this.lbxbookmark = new System.Windows.Forms.ListBox();
             this.aPanel1 = new Axxen.CustomControls.APanel();
             this.button9 = new System.Windows.Forms.Button();
             this.aPanel2 = new Axxen.CustomControls.APanel();
             this.btnBookmark = new System.Windows.Forms.Button();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panelMenu.SuspendLayout();
             this.ctmBookMark.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -857,6 +857,16 @@
             this.tabControl2.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.TabControl1_DrawItem);
             this.tabControl2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TabControl2_MouseClick);
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Size = new System.Drawing.Size(1341, 0);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Tag = "1";
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
             // pnBookmark
             // 
             this.pnBookmark.Controls.Add(this.lbxbookmark);
@@ -886,6 +896,9 @@
             // 
             // button9
             // 
+            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.button9.BackColor = System.Drawing.Color.DimGray;
             this.button9.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button9.ForeColor = System.Drawing.Color.White;
@@ -915,16 +928,6 @@
             this.btnBookmark.Text = "즐겨찾기";
             this.btnBookmark.UseVisualStyleBackColor = false;
             this.btnBookmark.Click += new System.EventHandler(this.BtnBookmark_Click);
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(1341, 0);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Tag = "1";
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
