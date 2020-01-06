@@ -468,7 +468,7 @@ namespace Axxen
                
                     foreach (Form childForm in Application.OpenForms)
                     {
-                        if (childForm.Name.Equals(tabControl2.SelectedTab.Tag))
+                        if (childForm.Name.Equals(tabControl2.SelectedTab.Text))
                         {
                             childForm.Close ();
 
@@ -485,7 +485,7 @@ namespace Axxen
                 
                     foreach (Form childForm in Application.OpenForms)
                     {
-                        if (childForm.Name.Equals(tabControl2.SelectedTab.Tag))
+                        if (childForm.Name.Equals(tabControl2.SelectedTab.Text))
                         {
                             childForm.Activate();
 
