@@ -1,6 +1,6 @@
 ﻿namespace AxxenClient.Forms
 {
-    partial class MoldingGVSelect
+    partial class POP_PRD_007
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -47,6 +47,10 @@
             this.aPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aDataGridView1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // aLabel_Header1
+            // 
+            this.aLabel_Header1.Text = "성형 생상 대차 선택";
             // 
             // aTextBox_Labeled1
             // 
@@ -192,7 +196,7 @@
             this.aDataGridView1.Size = new System.Drawing.Size(477, 338);
             this.aDataGridView1.TabIndex = 17;
             // 
-            // MoldingGVSelect
+            // POP_PRD_007
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1210, 629);
@@ -203,7 +207,7 @@
             this.Controls.Add(this.aDataGridView2);
             this.Controls.Add(this.aPanel5);
             this.Controls.Add(this.aDataGridView1);
-            this.Name = "MoldingGVSelect";
+            this.Name = "POP_PRD_007";
             this.Controls.SetChildIndex(this.aPanel2, 0);
             this.Controls.SetChildIndex(this.aPanel1, 0);
             this.Controls.SetChildIndex(this.aDataGridView1, 0);
