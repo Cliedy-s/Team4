@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace AxxenClient.Forms
 {
-    public partial class MoldingGVSelect : AxxenClient.Templets.ClientBaseForm
+    public partial class POP_PRD_009 : AxxenClient.Templets.ClientBaseForm
     {
-        public MoldingGVSelect()
+        public POP_PRD_009()
         {
             InitializeComponent();
         }

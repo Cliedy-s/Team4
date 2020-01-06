@@ -1,6 +1,6 @@
 ﻿namespace AxxenClient.Forms
 {
-    partial class WorkOrderLoadCreateForm
+    partial class POP_PRD_009
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
