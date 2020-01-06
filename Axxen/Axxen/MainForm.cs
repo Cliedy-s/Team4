@@ -304,14 +304,14 @@ namespace Axxen
             if (parentcode.Parent_Screen_Code != null) //부모코드에 널값이있는 메뉴를 제외하고
             {
                 string form = parentcode.Screen_Code;
-                newForm(form);
+                newForm(form, tvMenu.SelectedNode.Text);
             }
         }
         /// <summary>
         /// 새로운 폼 생성
         /// </summary>
         /// <param name="formName">폼이름</param>
-        private void newForm(string formName)
+        private void newForm(string formName, string formText)
         {
             try
             {
@@ -323,7 +323,7 @@ namespace Axxen
                 
                 foreach (Form childForm in Application.OpenForms)
                 {
-                    if (childForm.Name.Equals(formName))
+                    if (childForm.Tag.ToString().Equals(formName))
                     {
                         childForm.Activate();          
                         return;
@@ -331,9 +331,10 @@ namespace Axxen
                 }
                 frm.MdiParent = this;
                 frm.WindowState = FormWindowState.Maximized;
+                frm.Tag = formName;
                 TabPage newTab = new TabPage();
-                newTab.Tag = childFormName;
-                newTab.Text = frm.Text;
+                newTab.Tag = formName;
+                newTab.Text = formText;
                 tabControl2.TabPages.Add(newTab);
 
             //    tabControl2.TabPages     .Tag=formName;
@@ -474,18 +475,18 @@ namespace Axxen
                 {
                
                     foreach (Form childForm in Application.OpenForms)
-                    {
-                        if (childForm.Name.Equals(tabControl2.SelectedTab.Text))
+                    {                     
+                            if (childForm.Tag.ToString().Equals(tabControl2.SelectedTab.Tag))
                         {
                             childForm.Close ();
                             this.tabControl2.TabPages.RemoveAt(i);
-                            return;
+                            break;
                         }
                     }
 
-                 
+             
                   
-                                 }
+               }
                 else //x버튼을 제제외한 텝페이지클릭시 폼 앞으로
                 {
                 
@@ -498,6 +499,7 @@ namespace Axxen
                             break;
                         }
                     }
+               
                 }
             }
         }
