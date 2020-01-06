@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace AxxenClient.Forms
 {
-    public partial class ProcessConditionRegisterForm : AxxenClient.Templets.ClientBaseForm
+    public partial class POP_PRD_007 : AxxenClient.Templets.ClientBaseForm
     {
-        public ProcessConditionRegisterForm()
+        public POP_PRD_007()
         {
             InitializeComponent();
         }
