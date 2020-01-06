@@ -328,7 +328,7 @@ namespace Axxen
                 }
                 frm.MdiParent = this;
                 frm.WindowState = FormWindowState.Maximized;
-                tabControl2.TabPages.Add(frm.Text);
+                tabControl2.TabPages.Add(formName);
             //    tabControl2.TabPages     .Tag=formName;
             //    MessageBox.Show(tabControl2.SelectedTab.Tag.ToString());
                 frm.Show();
