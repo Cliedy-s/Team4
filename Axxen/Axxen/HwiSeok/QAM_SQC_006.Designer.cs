@@ -1,4 +1,4 @@
-﻿namespace Axxen.HwiSeok
+﻿namespace Axxen
 {
     partial class QAM_SQC_006
     {
@@ -30,13 +30,13 @@
         {
             this.aComboBox1 = new Axxen.CustomControls.AComboBox();
             this.aLabel1 = new Axxen.CustomControls.ALabel();
-            this.aPanel1.SuspendLayout();
+            this.panTop.SuspendLayout();
             this.SuspendLayout();
             // 
             // aPanel1
             // 
-            this.aPanel1.Controls.Add(this.aComboBox1);
-            this.aPanel1.Controls.Add(this.aLabel1);
+            this.panTop.Controls.Add(this.aComboBox1);
+            this.panTop.Controls.Add(this.aLabel1);
             // 
             // aHeaderBox1
             // 
@@ -65,8 +65,8 @@
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.Name = "QAM_SQC_006";
             this.Text = "원재료 LOT관리";
-            this.aPanel1.ResumeLayout(false);
-            this.aPanel1.PerformLayout();
+            this.panTop.ResumeLayout(false);
+            this.panTop.PerformLayout();
             this.ResumeLayout(false);
 
         }

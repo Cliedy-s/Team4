@@ -304,25 +304,28 @@ namespace Axxen
             if (parentcode.Parent_Screen_Code != null) //부모코드에 널값이있는 메뉴를 제외하고
             {
                 string form = parentcode.Screen_Code;
-                newForm(form);
+                newForm(form, tvMenu.SelectedNode.Text);
+                
+                //sdfasd
             }
         }
         /// <summary>
         /// 새로운 폼 생성
         /// </summary>
         /// <param name="formName">폼이름</param>
-        private void newForm(string formName)
+        private void newForm(string formName, string formText)
         {
             try
             {
                 string nameSpace = "Axxen"; //네임스페이스 명
                 Assembly cuasm = Assembly.GetExecutingAssembly();
                 //string Format 의 따옴표와 마침표 주의!!
-                Form frm = (Form)cuasm.CreateInstance(string.Format("{0}.{1}", nameSpace, formName));
-                  
+                string childFormName = string.Format("{0}.{1}", nameSpace, formName);
+                Form frm = (Form)cuasm.CreateInstance(childFormName);                
+                
                 foreach (Form childForm in Application.OpenForms)
                 {
-                    if (childForm.Name.Equals(frm.Name))
+                    if (childForm.Tag.ToString().Equals(formName))
                     {
                         childForm.Activate();          
                         return;
@@ -330,7 +333,12 @@ namespace Axxen
                 }
                 frm.MdiParent = this;
                 frm.WindowState = FormWindowState.Maximized;
-                tabControl2.TabPages.Add(formName);
+                frm.Tag = formName;
+                TabPage newTab = new TabPage();
+                newTab.Tag = formName;
+                newTab.Text = formText;
+                tabControl2.TabPages.Add(newTab);
+
             //    tabControl2.TabPages     .Tag=formName;
             //    MessageBox.Show(tabControl2.SelectedTab.Tag.ToString());
                 frm.Show();
@@ -469,19 +477,18 @@ namespace Axxen
                 {
                
                     foreach (Form childForm in Application.OpenForms)
-                    {
-                        if (childForm.Name.Equals(tabControl2.SelectedTab.Text))
+                    {                     
+                            if (childForm.Tag.ToString().Equals(tabControl2.SelectedTab.Tag))
                         {
                             childForm.Close ();
-
-                            return;
+                            this.tabControl2.TabPages.RemoveAt(i);
+                            break;
                         }
                     }
 
-                    this.tabControl2.TabPages.RemoveAt(i);
+             
                   
-                    break;
-                }
+               }
                 else //x버튼을 제제외한 텝페이지클릭시 폼 앞으로
                 {
                 
@@ -494,6 +501,7 @@ namespace Axxen
                             break;
                         }
                     }
+               
                 }
             }
         }
