@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Axxen.HwiSeok
+namespace Axxen
 {
     public partial class QAM_SQC_002 : Axxen.GridGridGridForm
     {

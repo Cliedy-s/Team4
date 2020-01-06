@@ -6,11 +6,11 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace AxxenClient.Forms
+namespace Axxen
 {
-    public partial class ProcessConditionRegisterForm : AxxenClient.Templets.ClientBaseForm
+    public partial class MDS_CDS_001 : Axxen.BaseForm
     {
-        public ProcessConditionRegisterForm()
+        public MDS_CDS_001()
         {
             InitializeComponent();
         }

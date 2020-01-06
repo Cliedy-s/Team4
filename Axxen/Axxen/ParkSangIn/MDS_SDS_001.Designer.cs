@@ -1,6 +1,6 @@
-﻿namespace AxxenClient.Forms
+﻿namespace Axxen
 {
-    partial class ProcessConditionRegisterForm
+    partial class MDS_SDS_001
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -28,25 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.aPanel1.SuspendLayout();
-            this.aPanel2.SuspendLayout();
-            this.SuspendLayout();
-            // 
-            // aLabel_Header1
-            // 
-            this.aLabel_Header1.Text = "공정조건 등록";
-            // 
-            // ProcessConditionRegisterForm
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.ClientSize = new System.Drawing.Size(1210, 629);
-            this.Name = "ProcessConditionRegisterForm";
-            this.aPanel1.ResumeLayout(false);
-            this.aPanel1.PerformLayout();
-            this.aPanel2.ResumeLayout(false);
-            this.aPanel2.PerformLayout();
-            this.ResumeLayout(false);
-
+            this.components = new System.ComponentModel.Container();
         }
 
         #endregion

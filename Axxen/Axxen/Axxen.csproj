@@ -185,6 +185,126 @@
     <Compile Include="HwiSeok\QAM_SQC_006.Designer.cs">
       <DependentUpon>QAM_SQC_006.cs</DependentUpon>
     </Compile>
+    <Compile Include="ParkSangIn\MDS_CDS_001.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_CDS_001.Designer.cs">
+      <DependentUpon>MDS_CDS_001.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_CDS_002.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_CDS_002.Designer.cs">
+      <DependentUpon>MDS_CDS_002.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_CDS_003.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_CDS_003.Designer.cs">
+      <DependentUpon>MDS_CDS_003.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_CDS_004.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_CDS_004.Designer.cs">
+      <DependentUpon>MDS_CDS_004.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_ODS_001.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_ODS_001.Designer.cs">
+      <DependentUpon>MDS_ODS_001.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_ODS_002.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_ODS_002.Designer.cs">
+      <DependentUpon>MDS_ODS_002.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_SDS_001.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_SDS_001.Designer.cs">
+      <DependentUpon>MDS_SDS_001.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_SDS_002.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_SDS_002.Designer.cs">
+      <DependentUpon>MDS_SDS_002.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_SDS_003.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_SDS_003.Designer.cs">
+      <DependentUpon>MDS_SDS_003.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_SDS_004.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_SDS_004.Designer.cs">
+      <DependentUpon>MDS_SDS_004.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_SDS_005.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_SDS_005.Designer.cs">
+      <DependentUpon>MDS_SDS_005.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_SDS_006.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_SDS_006.Designer.cs">
+      <DependentUpon>MDS_SDS_006.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_SDS_007.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_SDS_007.Designer.cs">
+      <DependentUpon>MDS_SDS_007.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkSangIn\MSS_CON_002.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MSS_CON_002.Designer.cs">
+      <DependentUpon>MSS_CON_002.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkSangIn\MSS_CON_003.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MSS_CON_003.Designer.cs">
+      <DependentUpon>MSS_CON_003.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkSangIn\MSS_SYS_001.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MSS_SYS_001.Designer.cs">
+      <DependentUpon>MSS_SYS_001.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkSangIn\MSS_SYS_003.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MSS_SYS_003.Designer.cs">
+      <DependentUpon>MSS_SYS_003.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkSangIn\MSS_SYS_004.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MSS_SYS_004.Designer.cs">
+      <DependentUpon>MSS_SYS_004.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkSangIn\MSS_SYS_006.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MSS_SYS_006.Designer.cs">
+      <DependentUpon>MSS_SYS_006.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkSangIn\MSS_SYS_009.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MSS_SYS_009.Designer.cs">
+      <DependentUpon>MSS_SYS_009.cs</DependentUpon>
+    </Compile>
     <Compile Include="sangyoung\KPI_RPT_001.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -403,12 +523,7 @@
     <Compile Include="Templets\ReportForm.Designer.cs">
       <DependentUpon>ReportForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="TestForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TestForm.Designer.cs">
-      <DependentUpon>TestForm.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Util\InitControlUtil.cs" />
     <EmbeddedResource Include="CustomControls\AHeaderBox.resx">
       <DependentUpon>AHeaderBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -468,6 +583,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HwiSeok\QAM_SQC_006.resx">
       <DependentUpon>QAM_SQC_006.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParkSangIn\MDS_CDS_002.resx">
+      <DependentUpon>MDS_CDS_002.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParkSangIn\MSS_SYS_004.resx">
+      <DependentUpon>MSS_SYS_004.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParkSangIn\MSS_SYS_009.resx">
+      <DependentUpon>MSS_SYS_009.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="sangyoung\KPI_RPT_001.resx">
       <DependentUpon>KPI_RPT_001.cs</DependentUpon>
@@ -561,12 +685,10 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Templets\ReportForm.resx">
       <DependentUpon>ReportForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TestForm.resx">
-      <DependentUpon>TestForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -582,10 +704,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Service\" />
-    <Folder Include="Util\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Service\Service.csproj">
       <Project>{af54aca3-da6e-4a15-9bac-da1b72dd7b93}</Project>
@@ -598,10 +717,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\PagedList.css" />
-    <Content Include="Image\KakaoTalk_20200103_140950105.png" />
-    <Content Include="Image\KakaoTalk_20200103_140950176.png" />
+    <Content Include="Image\newlogo.png" />
     <Content Include="Image\treeimg.png" />
     <Content Include="Image\x.png" />
+    <None Include="Resources\newlogo.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

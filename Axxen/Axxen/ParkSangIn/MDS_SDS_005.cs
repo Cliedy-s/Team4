@@ -6,11 +6,11 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace AxxenClient.Forms
+namespace Axxen
 {
-    public partial class WorkOrderLoadCreateForm : AxxenClient.Templets.ClientBaseForm
+    public partial class MDS_SDS_005 : Axxen.BaseForm
     {
-        public WorkOrderLoadCreateForm()
+        public MDS_SDS_005()
         {
             InitializeComponent();
         }

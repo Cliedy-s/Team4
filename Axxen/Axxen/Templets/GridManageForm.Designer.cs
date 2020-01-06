@@ -46,7 +46,7 @@
             // 
             this.aPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.aPanel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.aPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.aPanel2.Location = new System.Drawing.Point(12, 15);
             this.aPanel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.aPanel2.Name = "aPanel2";
@@ -88,7 +88,7 @@
             this.aDataGridView1.Name = "aDataGridView1";
             this.aDataGridView1.RowHeadersWidth = 51;
             this.aDataGridView1.RowTemplate.Height = 23;
-            this.aDataGridView1.Size = new System.Drawing.Size(1129, 480);
+            this.aDataGridView1.Size = new System.Drawing.Size(1129, 453);
             this.aDataGridView1.TabIndex = 6;
             // 
             // aPanel1
@@ -96,6 +96,7 @@
             this.aPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.aPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.aPanel1.Controls.Add(this.aHeaderBox2);
             this.aPanel1.Location = new System.Drawing.Point(0, 7);
             this.aPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -105,20 +106,22 @@
             // 
             // aHeaderBox2
             // 
-            this.aHeaderBox2.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.aHeaderBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.aHeaderBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.aHeaderBox2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aHeaderBox2.HeaderBoxText = "HeaderText";
-            this.aHeaderBox2.Location = new System.Drawing.Point(1, 1);
+            this.aHeaderBox2.Location = new System.Drawing.Point(-1, -1);
             this.aHeaderBox2.Name = "aHeaderBox2";
             this.aHeaderBox2.Size = new System.Drawing.Size(243, 30);
             this.aHeaderBox2.TabIndex = 10;
             // 
             // aHeaderBox1
             // 
-            this.aHeaderBox1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.aHeaderBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.aHeaderBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.aHeaderBox1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aHeaderBox1.HeaderBoxText = "HeaderText";
-            this.aHeaderBox1.Location = new System.Drawing.Point(13, 100);
+            this.aHeaderBox1.Location = new System.Drawing.Point(12, 100);
             this.aHeaderBox1.Name = "aHeaderBox1";
             this.aHeaderBox1.Size = new System.Drawing.Size(243, 30);
             this.aHeaderBox1.TabIndex = 9;

@@ -23,7 +23,6 @@ namespace DAC
                 {
                     if (item.Attributes["key"].InnerText == "Team4DB")
                     {
-
                         return ((XmlCDataSection)item.ChildNodes[0]).InnerText;
                     }
                 }

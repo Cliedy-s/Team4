@@ -30,13 +30,13 @@
         {
             this.aLabel1 = new Axxen.CustomControls.ALabel();
             this.aComboBox1 = new Axxen.CustomControls.AComboBox();
-            this.aPanel1.SuspendLayout();
+            this.panTop.SuspendLayout();
             this.SuspendLayout();
             // 
             // aPanel1
             // 
-            this.aPanel1.Controls.Add(this.aComboBox1);
-            this.aPanel1.Controls.Add(this.aLabel1);
+            this.panTop.Controls.Add(this.aComboBox1);
+            this.panTop.Controls.Add(this.aLabel1);
             // 
             // aHeaderBox1
             // 
@@ -64,8 +64,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.Name = "KPI_RPT_002";
-            this.aPanel1.ResumeLayout(false);
-            this.aPanel1.PerformLayout();
+            this.panTop.ResumeLayout(false);
+            this.panTop.PerformLayout();
             this.ResumeLayout(false);
 
         }

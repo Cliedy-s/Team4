@@ -34,17 +34,17 @@
             this.aLabel2 = new Axxen.CustomControls.ALabel();
             this.aDateTimePicker1 = new Axxen.CustomControls.ADateTimePicker();
             this.aLabel1 = new Axxen.CustomControls.ALabel();
-            this.aPanel1.SuspendLayout();
+            this.panTop.SuspendLayout();
             this.SuspendLayout();
             // 
             // aPanel1
             // 
-            this.aPanel1.Controls.Add(this.aTextBox_FindNameByCode2);
-            this.aPanel1.Controls.Add(this.aTextBox_FindNameByCode1);
-            this.aPanel1.Controls.Add(this.aDateTimePicker2);
-            this.aPanel1.Controls.Add(this.aLabel2);
-            this.aPanel1.Controls.Add(this.aDateTimePicker1);
-            this.aPanel1.Controls.Add(this.aLabel1);
+            this.panTop.Controls.Add(this.aTextBox_FindNameByCode2);
+            this.panTop.Controls.Add(this.aTextBox_FindNameByCode1);
+            this.panTop.Controls.Add(this.aDateTimePicker2);
+            this.panTop.Controls.Add(this.aLabel2);
+            this.panTop.Controls.Add(this.aDateTimePicker1);
+            this.panTop.Controls.Add(this.aLabel1);
             // 
             // aHeaderBox1
             // 
@@ -117,8 +117,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.Name = "PPS_MLD_002";
-            this.aPanel1.ResumeLayout(false);
-            this.aPanel1.PerformLayout();
+            this.panTop.ResumeLayout(false);
+            this.panTop.PerformLayout();
             this.ResumeLayout(false);
 
         }

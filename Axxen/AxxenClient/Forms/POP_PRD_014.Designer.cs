@@ -1,6 +1,6 @@
 ﻿namespace AxxenClient.Forms
 {
-    partial class MoldingGVSelect
+    partial class POP_PRD_014
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -28,10 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.aTextBox_Labeled1 = new AxxenClient.CustomControls.ATextBox_Labeled();
             this.aButton2 = new AxxenClient.CustomControls.AButton();
-            this.aTextBox_Searchable2 = new AxxenClient.CustomControls.ATextBox_Searchable();
-            this.aTextBox_Searchable1 = new AxxenClient.CustomControls.ATextBox_Searchable();
             this.aDataGridView2 = new AxxenClient.CustomControls.ADataGridView();
             this.aPanel5 = new AxxenClient.CustomControls.APanel();
             this.aTextBox_LabeledBigTextBox10 = new AxxenClient.CustomControls.ATextBox_LabeledBigTextBox();
@@ -41,6 +38,8 @@
             this.aTextBox_LabeledBigTextBox7 = new AxxenClient.CustomControls.ATextBox_LabeledBigTextBox();
             this.aTextBox_LabeledBigTextBox6 = new AxxenClient.CustomControls.ATextBox_LabeledBigTextBox();
             this.aDataGridView1 = new AxxenClient.CustomControls.ADataGridView();
+            this.aTextBox_LabeledBigTextBox1 = new AxxenClient.CustomControls.ATextBox_LabeledBigTextBox();
+            this.aButton1 = new AxxenClient.CustomControls.AButton();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aDataGridView2)).BeginInit();
@@ -48,61 +47,29 @@
             ((System.ComponentModel.ISupportInitialize)(this.aDataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // aTextBox_Labeled1
+            // aLabel_Header1
             // 
-            this.aTextBox_Labeled1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aTextBox_Labeled1.FontSize = 9F;
-            this.aTextBox_Labeled1.LabelText = "옮겨타기 수량";
-            this.aTextBox_Labeled1.Location = new System.Drawing.Point(490, 329);
-            this.aTextBox_Labeled1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.aTextBox_Labeled1.Name = "aTextBox_Labeled1";
-            this.aTextBox_Labeled1.Size = new System.Drawing.Size(238, 29);
-            this.aTextBox_Labeled1.TabIndex = 23;
-            this.aTextBox_Labeled1.TextBoxText = "";
+            this.aLabel_Header1.Text = "공정조건 등록";
             // 
             // aButton2
             // 
             this.aButton2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.aButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton2.Location = new System.Drawing.Point(490, 365);
+            this.aButton2.Location = new System.Drawing.Point(626, 473);
             this.aButton2.Name = "aButton2";
-            this.aButton2.Size = new System.Drawing.Size(238, 175);
-            this.aButton2.TabIndex = 22;
-            this.aButton2.Text = "로딩";
+            this.aButton2.Size = new System.Drawing.Size(409, 112);
+            this.aButton2.TabIndex = 29;
+            this.aButton2.Text = "입력";
             this.aButton2.UseVisualStyleBackColor = false;
-            // 
-            // aTextBox_Searchable2
-            // 
-            this.aTextBox_Searchable2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aTextBox_Searchable2.FontSize = 9F;
-            this.aTextBox_Searchable2.LabelText = "대차검색";
-            this.aTextBox_Searchable2.Location = new System.Drawing.Point(734, 210);
-            this.aTextBox_Searchable2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.aTextBox_Searchable2.Name = "aTextBox_Searchable2";
-            this.aTextBox_Searchable2.Size = new System.Drawing.Size(365, 30);
-            this.aTextBox_Searchable2.TabIndex = 21;
-            this.aTextBox_Searchable2.TextBoxText = "";
-            // 
-            // aTextBox_Searchable1
-            // 
-            this.aTextBox_Searchable1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aTextBox_Searchable1.FontSize = 9F;
-            this.aTextBox_Searchable1.LabelText = "대차검색";
-            this.aTextBox_Searchable1.Location = new System.Drawing.Point(9, 212);
-            this.aTextBox_Searchable1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.aTextBox_Searchable1.Name = "aTextBox_Searchable1";
-            this.aTextBox_Searchable1.Size = new System.Drawing.Size(365, 30);
-            this.aTextBox_Searchable1.TabIndex = 20;
-            this.aTextBox_Searchable1.TextBoxText = "";
             // 
             // aDataGridView2
             // 
             this.aDataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.aDataGridView2.Location = new System.Drawing.Point(734, 247);
+            this.aDataGridView2.Location = new System.Drawing.Point(619, 211);
             this.aDataGridView2.Name = "aDataGridView2";
             this.aDataGridView2.RowTemplate.Height = 23;
-            this.aDataGridView2.Size = new System.Drawing.Size(461, 338);
-            this.aDataGridView2.TabIndex = 19;
+            this.aDataGridView2.Size = new System.Drawing.Size(581, 219);
+            this.aDataGridView2.TabIndex = 26;
             // 
             // aPanel5
             // 
@@ -112,10 +79,10 @@
             this.aPanel5.Controls.Add(this.aTextBox_LabeledBigTextBox9);
             this.aPanel5.Controls.Add(this.aTextBox_LabeledBigTextBox7);
             this.aPanel5.Controls.Add(this.aTextBox_LabeledBigTextBox6);
-            this.aPanel5.Location = new System.Drawing.Point(7, 105);
+            this.aPanel5.Location = new System.Drawing.Point(10, 105);
             this.aPanel5.Name = "aPanel5";
             this.aPanel5.Size = new System.Drawing.Size(1191, 100);
-            this.aPanel5.TabIndex = 18;
+            this.aPanel5.TabIndex = 25;
             // 
             // aTextBox_LabeledBigTextBox10
             // 
@@ -186,33 +153,53 @@
             // aDataGridView1
             // 
             this.aDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.aDataGridView1.Location = new System.Drawing.Point(7, 247);
+            this.aDataGridView1.Location = new System.Drawing.Point(10, 211);
             this.aDataGridView1.Name = "aDataGridView1";
             this.aDataGridView1.RowTemplate.Height = 23;
-            this.aDataGridView1.Size = new System.Drawing.Size(477, 338);
-            this.aDataGridView1.TabIndex = 17;
+            this.aDataGridView1.Size = new System.Drawing.Size(610, 374);
+            this.aDataGridView1.TabIndex = 24;
             // 
-            // MoldingGVSelect
+            // aTextBox_LabeledBigTextBox1
+            // 
+            this.aTextBox_LabeledBigTextBox1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aTextBox_LabeledBigTextBox1.LabelText = "측정값";
+            this.aTextBox_LabeledBigTextBox1.Location = new System.Drawing.Point(626, 437);
+            this.aTextBox_LabeledBigTextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.aTextBox_LabeledBigTextBox1.Name = "aTextBox_LabeledBigTextBox1";
+            this.aTextBox_LabeledBigTextBox1.Size = new System.Drawing.Size(365, 30);
+            this.aTextBox_LabeledBigTextBox1.TabIndex = 30;
+            this.aTextBox_LabeledBigTextBox1.TextBoxText = "";
+            // 
+            // aButton1
+            // 
+            this.aButton1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.aButton1.Location = new System.Drawing.Point(1042, 473);
+            this.aButton1.Name = "aButton1";
+            this.aButton1.Size = new System.Drawing.Size(160, 112);
+            this.aButton1.TabIndex = 31;
+            this.aButton1.Text = "삭제";
+            this.aButton1.UseVisualStyleBackColor = false;
+            // 
+            // POP_PRD_014
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1210, 629);
-            this.Controls.Add(this.aTextBox_Labeled1);
+            this.Controls.Add(this.aButton1);
+            this.Controls.Add(this.aTextBox_LabeledBigTextBox1);
             this.Controls.Add(this.aButton2);
-            this.Controls.Add(this.aTextBox_Searchable2);
-            this.Controls.Add(this.aTextBox_Searchable1);
             this.Controls.Add(this.aDataGridView2);
             this.Controls.Add(this.aPanel5);
             this.Controls.Add(this.aDataGridView1);
-            this.Name = "MoldingGVSelect";
+            this.Name = "POP_PRD_014";
             this.Controls.SetChildIndex(this.aPanel2, 0);
             this.Controls.SetChildIndex(this.aPanel1, 0);
             this.Controls.SetChildIndex(this.aDataGridView1, 0);
             this.Controls.SetChildIndex(this.aPanel5, 0);
             this.Controls.SetChildIndex(this.aDataGridView2, 0);
-            this.Controls.SetChildIndex(this.aTextBox_Searchable1, 0);
-            this.Controls.SetChildIndex(this.aTextBox_Searchable2, 0);
             this.Controls.SetChildIndex(this.aButton2, 0);
-            this.Controls.SetChildIndex(this.aTextBox_Labeled1, 0);
+            this.Controls.SetChildIndex(this.aTextBox_LabeledBigTextBox1, 0);
+            this.Controls.SetChildIndex(this.aButton1, 0);
             this.aPanel1.ResumeLayout(false);
             this.aPanel1.PerformLayout();
             this.aPanel2.ResumeLayout(false);
@@ -226,10 +213,7 @@
 
         #endregion
 
-        private CustomControls.ATextBox_Labeled aTextBox_Labeled1;
         private CustomControls.AButton aButton2;
-        private CustomControls.ATextBox_Searchable aTextBox_Searchable2;
-        private CustomControls.ATextBox_Searchable aTextBox_Searchable1;
         private CustomControls.ADataGridView aDataGridView2;
         private CustomControls.APanel aPanel5;
         private CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox10;
@@ -239,5 +223,7 @@
         private CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox7;
         private CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox6;
         private CustomControls.ADataGridView aDataGridView1;
+        private CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox1;
+        private CustomControls.AButton aButton1;
     }
 }

@@ -35,10 +35,11 @@
             // 
             // aHeaderBox1
             // 
-            this.aHeaderBox1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.aHeaderBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.aHeaderBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.aHeaderBox1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aHeaderBox1.HeaderBoxText = "HeaderText";
-            this.aHeaderBox1.Location = new System.Drawing.Point(13, 98);
+            this.aHeaderBox1.Location = new System.Drawing.Point(12, 99);
             this.aHeaderBox1.Name = "aHeaderBox1";
             this.aHeaderBox1.Size = new System.Drawing.Size(243, 30);
             this.aHeaderBox1.TabIndex = 9;
@@ -47,7 +48,7 @@
             // 
             this.aPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.aPanel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.aPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.aPanel1.Location = new System.Drawing.Point(12, 15);
             this.aPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.aPanel1.Name = "aPanel1";
@@ -59,6 +60,7 @@
             this.aPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.aPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.aPanel2.Location = new System.Drawing.Point(12, 128);
             this.aPanel2.Name = "aPanel2";
             this.aPanel2.Size = new System.Drawing.Size(1124, 557);

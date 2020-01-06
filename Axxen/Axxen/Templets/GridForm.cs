@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Axxen.Util;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,11 @@ namespace Axxen
         public GridForm()
         {
             InitializeComponent();
+        }
+
+        private void GridForm_Load(object sender, EventArgs e)
+        {
+            InitControlUtil.SetDGVDesign(dgvMainGrid);
         }
     }
 }

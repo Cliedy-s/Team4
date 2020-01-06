@@ -29,25 +29,25 @@
         private void InitializeComponent()
         {
             this.aSplitContainer1 = new Axxen.CustomControls.ASplitContainer();
-            this.aDataGridView3 = new Axxen.CustomControls.ADataGridView();
+            this.dgvMainGrid = new Axxen.CustomControls.ADataGridView();
             this.aHeaderBox1 = new Axxen.CustomControls.AHeaderBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.aGroupBox1 = new Axxen.CustomControls.AGroupBox();
-            this.aDataGridView1 = new Axxen.CustomControls.ADataGridView();
+            this.dgvSubGrid = new Axxen.CustomControls.ADataGridView();
             this.aGroupBox2 = new Axxen.CustomControls.AGroupBox();
-            this.aDataGridView2 = new Axxen.CustomControls.ADataGridView();
+            this.dgvSubSubGrid = new Axxen.CustomControls.ADataGridView();
             this.aHeaderBox2 = new Axxen.CustomControls.AHeaderBox();
             this.aPanel2 = new Axxen.CustomControls.APanel();
             ((System.ComponentModel.ISupportInitialize)(this.aSplitContainer1)).BeginInit();
             this.aSplitContainer1.Panel1.SuspendLayout();
             this.aSplitContainer1.Panel2.SuspendLayout();
             this.aSplitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.aDataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMainGrid)).BeginInit();
             this.panel1.SuspendLayout();
             this.aGroupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.aDataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSubGrid)).BeginInit();
             this.aGroupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.aDataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSubSubGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // aSplitContainer1
@@ -61,13 +61,13 @@
             // 
             // aSplitContainer1.Panel1
             // 
-            this.aSplitContainer1.Panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aSplitContainer1.Panel1.Controls.Add(this.aDataGridView3);
+            this.aSplitContainer1.Panel1.BackColor = System.Drawing.Color.White;
+            this.aSplitContainer1.Panel1.Controls.Add(this.dgvMainGrid);
             this.aSplitContainer1.Panel1.Controls.Add(this.aHeaderBox1);
             // 
             // aSplitContainer1.Panel2
             // 
-            this.aSplitContainer1.Panel2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.aSplitContainer1.Panel2.BackColor = System.Drawing.Color.White;
             this.aSplitContainer1.Panel2.Controls.Add(this.panel1);
             this.aSplitContainer1.Panel2.Controls.Add(this.aHeaderBox2);
             this.aSplitContainer1.Size = new System.Drawing.Size(1125, 588);
@@ -75,33 +75,35 @@
             this.aSplitContainer1.SplitterWidth = 1;
             this.aSplitContainer1.TabIndex = 9;
             // 
-            // aDataGridView3
+            // dgvMainGrid
             // 
-            this.aDataGridView3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvMainGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.aDataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.aDataGridView3.Location = new System.Drawing.Point(0, 29);
-            this.aDataGridView3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.aDataGridView3.Name = "aDataGridView3";
-            this.aDataGridView3.RowHeadersWidth = 51;
-            this.aDataGridView3.RowTemplate.Height = 23;
-            this.aDataGridView3.Size = new System.Drawing.Size(259, 559);
-            this.aDataGridView3.TabIndex = 0;
+            this.dgvMainGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMainGrid.Location = new System.Drawing.Point(0, 29);
+            this.dgvMainGrid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvMainGrid.Name = "dgvMainGrid";
+            this.dgvMainGrid.RowHeadersWidth = 51;
+            this.dgvMainGrid.RowTemplate.Height = 23;
+            this.dgvMainGrid.Size = new System.Drawing.Size(259, 559);
+            this.dgvMainGrid.TabIndex = 0;
             // 
             // aHeaderBox1
             // 
-            this.aHeaderBox1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.aHeaderBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.aHeaderBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.aHeaderBox1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aHeaderBox1.HeaderBoxText = "HeaderText";
-            this.aHeaderBox1.Location = new System.Drawing.Point(1, 0);
+            this.aHeaderBox1.Location = new System.Drawing.Point(0, 0);
             this.aHeaderBox1.Name = "aHeaderBox1";
             this.aHeaderBox1.Size = new System.Drawing.Size(192, 30);
             this.aHeaderBox1.TabIndex = 11;
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.aGroupBox1);
             this.panel1.Controls.Add(this.aGroupBox2);
             this.panel1.Location = new System.Drawing.Point(4, 29);
@@ -113,63 +115,66 @@
             // 
             this.aGroupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.aGroupBox1.Controls.Add(this.aDataGridView1);
-            this.aGroupBox1.Location = new System.Drawing.Point(0, -2);
+            this.aGroupBox1.BackColor = System.Drawing.Color.White;
+            this.aGroupBox1.Controls.Add(this.dgvSubGrid);
+            this.aGroupBox1.Location = new System.Drawing.Point(3, 4);
             this.aGroupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.aGroupBox1.Name = "aGroupBox1";
             this.aGroupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.aGroupBox1.Size = new System.Drawing.Size(203, 563);
+            this.aGroupBox1.Size = new System.Drawing.Size(200, 551);
             this.aGroupBox1.TabIndex = 2;
             this.aGroupBox1.TabStop = false;
             this.aGroupBox1.Text = "aGroupBox1";
             // 
-            // aDataGridView1
+            // dgvSubGrid
             // 
-            this.aDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.aDataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.aDataGridView1.Location = new System.Drawing.Point(3, 20);
-            this.aDataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.aDataGridView1.Name = "aDataGridView1";
-            this.aDataGridView1.RowHeadersWidth = 51;
-            this.aDataGridView1.RowTemplate.Height = 23;
-            this.aDataGridView1.Size = new System.Drawing.Size(197, 539);
-            this.aDataGridView1.TabIndex = 0;
+            this.dgvSubGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSubGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvSubGrid.Location = new System.Drawing.Point(3, 20);
+            this.dgvSubGrid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvSubGrid.Name = "dgvSubGrid";
+            this.dgvSubGrid.RowHeadersWidth = 51;
+            this.dgvSubGrid.RowTemplate.Height = 23;
+            this.dgvSubGrid.Size = new System.Drawing.Size(194, 527);
+            this.dgvSubGrid.TabIndex = 0;
             // 
             // aGroupBox2
             // 
             this.aGroupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.aGroupBox2.Controls.Add(this.aDataGridView2);
-            this.aGroupBox2.Location = new System.Drawing.Point(206, -2);
+            this.aGroupBox2.BackColor = System.Drawing.Color.White;
+            this.aGroupBox2.Controls.Add(this.dgvSubSubGrid);
+            this.aGroupBox2.Location = new System.Drawing.Point(206, 4);
             this.aGroupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.aGroupBox2.Name = "aGroupBox2";
             this.aGroupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.aGroupBox2.Size = new System.Drawing.Size(653, 563);
+            this.aGroupBox2.Size = new System.Drawing.Size(648, 551);
             this.aGroupBox2.TabIndex = 3;
             this.aGroupBox2.TabStop = false;
             this.aGroupBox2.Text = "aGroupBox2";
             // 
-            // aDataGridView2
+            // dgvSubSubGrid
             // 
-            this.aDataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvSubSubGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.aDataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.aDataGridView2.Location = new System.Drawing.Point(3, 60);
-            this.aDataGridView2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.aDataGridView2.Name = "aDataGridView2";
-            this.aDataGridView2.RowHeadersWidth = 51;
-            this.aDataGridView2.RowTemplate.Height = 23;
-            this.aDataGridView2.Size = new System.Drawing.Size(647, 499);
-            this.aDataGridView2.TabIndex = 0;
+            this.dgvSubSubGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSubSubGrid.Location = new System.Drawing.Point(3, 60);
+            this.dgvSubSubGrid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvSubSubGrid.Name = "dgvSubSubGrid";
+            this.dgvSubSubGrid.RowHeadersWidth = 51;
+            this.dgvSubSubGrid.RowTemplate.Height = 23;
+            this.dgvSubSubGrid.Size = new System.Drawing.Size(642, 487);
+            this.dgvSubSubGrid.TabIndex = 0;
             // 
             // aHeaderBox2
             // 
-            this.aHeaderBox2.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.aHeaderBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.aHeaderBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.aHeaderBox2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aHeaderBox2.HeaderBoxText = "HeaderText";
-            this.aHeaderBox2.Location = new System.Drawing.Point(3, -1);
+            this.aHeaderBox2.Location = new System.Drawing.Point(4, 0);
             this.aHeaderBox2.Name = "aHeaderBox2";
             this.aHeaderBox2.Size = new System.Drawing.Size(192, 30);
             this.aHeaderBox2.TabIndex = 12;
@@ -178,7 +183,7 @@
             // 
             this.aPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.aPanel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.aPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.aPanel2.Location = new System.Drawing.Point(12, 15);
             this.aPanel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.aPanel2.Name = "aPanel2";
@@ -189,7 +194,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.Controls.Add(this.aPanel2);
             this.Controls.Add(this.aSplitContainer1);
@@ -200,12 +205,12 @@
             this.aSplitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.aSplitContainer1)).EndInit();
             this.aSplitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.aDataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMainGrid)).EndInit();
             this.panel1.ResumeLayout(false);
             this.aGroupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.aDataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSubGrid)).EndInit();
             this.aGroupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.aDataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSubSubGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -213,14 +218,14 @@
         #endregion
 
         protected CustomControls.ASplitContainer aSplitContainer1;
-        protected CustomControls.ADataGridView aDataGridView3;
+        protected CustomControls.ADataGridView dgvMainGrid;
         protected CustomControls.AHeaderBox aHeaderBox1;
         protected CustomControls.AHeaderBox aHeaderBox2;
         private System.Windows.Forms.Panel panel1;
         protected CustomControls.AGroupBox aGroupBox1;
-        protected CustomControls.ADataGridView aDataGridView1;
+        protected CustomControls.ADataGridView dgvSubGrid;
         protected CustomControls.AGroupBox aGroupBox2;
-        protected CustomControls.ADataGridView aDataGridView2;
+        protected CustomControls.ADataGridView dgvSubSubGrid;
         protected CustomControls.APanel aPanel2;
     }
 }
