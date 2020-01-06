@@ -1,4 +1,4 @@
-﻿namespace Axxen.ParkSangIn
+﻿namespace Axxen
 {
     partial class MDS_SDS_007
     {

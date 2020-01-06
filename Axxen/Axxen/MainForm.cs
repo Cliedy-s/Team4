@@ -318,11 +318,12 @@ namespace Axxen
                 string nameSpace = "Axxen"; //네임스페이스 명
                 Assembly cuasm = Assembly.GetExecutingAssembly();
                 //string Format 의 따옴표와 마침표 주의!!
-                Form frm = (Form)cuasm.CreateInstance(string.Format("{0}.{1}", nameSpace, formName));
-                  
+                string childFormName = string.Format("{0}.{1}", nameSpace, formName);
+                Form frm = (Form)cuasm.CreateInstance(childFormName);                
+                
                 foreach (Form childForm in Application.OpenForms)
                 {
-                    if (childForm.Name.Equals(frm.Name))
+                    if (childForm.Name.Equals(formName))
                     {
                         childForm.Activate();          
                         return;
@@ -330,7 +331,11 @@ namespace Axxen
                 }
                 frm.MdiParent = this;
                 frm.WindowState = FormWindowState.Maximized;
-                tabControl2.TabPages.Add(formName);
+                TabPage newTab = new TabPage();
+                newTab.Tag = childFormName;
+                newTab.Text = frm.Text;
+                tabControl2.TabPages.Add(newTab);
+
             //    tabControl2.TabPages     .Tag=formName;
             //    MessageBox.Show(tabControl2.SelectedTab.Tag.ToString());
                 frm.Show();
@@ -473,15 +478,14 @@ namespace Axxen
                         if (childForm.Name.Equals(tabControl2.SelectedTab.Text))
                         {
                             childForm.Close ();
-
+                            this.tabControl2.TabPages.RemoveAt(i);
                             return;
                         }
                     }
 
-                    this.tabControl2.TabPages.RemoveAt(i);
+                 
                   
-                    break;
-                }
+                                 }
                 else //x버튼을 제제외한 텝페이지클릭시 폼 앞으로
                 {
                 

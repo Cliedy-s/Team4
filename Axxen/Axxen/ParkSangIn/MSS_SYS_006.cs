@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Axxen.ParkSangIn
+namespace Axxen
 {
-    public partial class MSS_SYS_006 : Form
+    public partial class MSS_SYS_006 : Axxen.BaseForm
     {
         public MSS_SYS_006()
         {

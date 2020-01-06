@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Axxen.ParkSangIn
+namespace Axxen
 {
     public partial class MDS_SDS_007 : Axxen.BaseForm
     {
