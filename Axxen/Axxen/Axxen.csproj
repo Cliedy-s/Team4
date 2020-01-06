@@ -523,12 +523,7 @@
     <Compile Include="Templets\ReportForm.Designer.cs">
       <DependentUpon>ReportForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="TestForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TestForm.Designer.cs">
-      <DependentUpon>TestForm.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Util\InitControlUtil.cs" />
     <EmbeddedResource Include="CustomControls\AHeaderBox.resx">
       <DependentUpon>AHeaderBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -686,9 +681,6 @@
     <EmbeddedResource Include="Templets\ReportForm.resx">
       <DependentUpon>ReportForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TestForm.resx">
-      <DependentUpon>TestForm.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -703,10 +695,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-    <Folder Include="Util\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Service\Service.csproj">
       <Project>{af54aca3-da6e-4a15-9bac-da1b72dd7b93}</Project>
@@ -719,8 +708,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\PagedList.css" />
+    <Content Include="Image\newlogo.png" />
     <Content Include="Image\treeimg.png" />
     <Content Include="Image\x.png" />
+    <None Include="Resources\newlogo.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -28,66 +28,70 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.aPanel1 = new Axxen.CustomControls.APanel();
-            this.aDataGridView1 = new Axxen.CustomControls.ADataGridView();
+            this.panTop = new Axxen.CustomControls.APanel();
+            this.dgvMainGrid = new Axxen.CustomControls.ADataGridView();
             this.aHeaderBox1 = new Axxen.CustomControls.AHeaderBox();
-            ((System.ComponentModel.ISupportInitialize)(this.aDataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMainGrid)).BeginInit();
             this.SuspendLayout();
             // 
-            // aPanel1
+            // panTop
             // 
-            this.aPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.panTop.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.aPanel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.aPanel1.Location = new System.Drawing.Point(12, 15);
-            this.aPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.aPanel1.Name = "aPanel1";
-            this.aPanel1.Size = new System.Drawing.Size(1124, 74);
-            this.aPanel1.TabIndex = 4;
+            this.panTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.panTop.Location = new System.Drawing.Point(12, 15);
+            this.panTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panTop.Name = "panTop";
+            this.panTop.Size = new System.Drawing.Size(1124, 74);
+            this.panTop.TabIndex = 4;
             // 
-            // aDataGridView1
+            // dgvMainGrid
             // 
-            this.aDataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvMainGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.aDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.aDataGridView1.Location = new System.Drawing.Point(12, 128);
-            this.aDataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.aDataGridView1.Name = "aDataGridView1";
-            this.aDataGridView1.RowTemplate.Height = 23;
-            this.aDataGridView1.Size = new System.Drawing.Size(1124, 557);
-            this.aDataGridView1.TabIndex = 0;
+            this.dgvMainGrid.BackgroundColor = System.Drawing.Color.White;
+            this.dgvMainGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvMainGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMainGrid.Location = new System.Drawing.Point(12, 128);
+            this.dgvMainGrid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvMainGrid.Name = "dgvMainGrid";
+            this.dgvMainGrid.RowTemplate.Height = 23;
+            this.dgvMainGrid.Size = new System.Drawing.Size(1124, 557);
+            this.dgvMainGrid.TabIndex = 0;
             // 
             // aHeaderBox1
             // 
-            this.aHeaderBox1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.aHeaderBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.aHeaderBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.aHeaderBox1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aHeaderBox1.HeaderBoxText = "HeaderText";
-            this.aHeaderBox1.Location = new System.Drawing.Point(13, 98);
+            this.aHeaderBox1.Location = new System.Drawing.Point(12, 99);
             this.aHeaderBox1.Name = "aHeaderBox1";
             this.aHeaderBox1.Size = new System.Drawing.Size(243, 30);
             this.aHeaderBox1.TabIndex = 6;
             // 
-            // GridForm
+            // GridFormTemplet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.Controls.Add(this.aHeaderBox1);
-            this.Controls.Add(this.aPanel1);
-            this.Controls.Add(this.aDataGridView1);
+            this.Controls.Add(this.panTop);
+            this.Controls.Add(this.dgvMainGrid);
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.Name = "GridForm";
+            this.Name = "GridFormTemplet";
             this.Text = "GridForm";
-            ((System.ComponentModel.ISupportInitialize)(this.aDataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.GridForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMainGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        protected CustomControls.APanel aPanel1;
-        protected CustomControls.ADataGridView aDataGridView1;
+        protected CustomControls.APanel panTop;
+        protected CustomControls.ADataGridView dgvMainGrid;
         protected CustomControls.AHeaderBox aHeaderBox1;
     }
 }

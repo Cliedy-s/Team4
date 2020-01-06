@@ -33,16 +33,16 @@
             this.aComboBox1 = new Axxen.CustomControls.AComboBox();
             this.aLabel1 = new Axxen.CustomControls.ALabel();
             this.aTextBox_FindNameByCode1 = new Axxen.CustomControls.ATextBox_FindNameByCode();
-            this.aPanel1.SuspendLayout();
+            this.panTop.SuspendLayout();
             this.SuspendLayout();
             // 
             // aPanel1
             // 
-            this.aPanel1.Controls.Add(this.aTextBox_FindNameByCode1);
-            this.aPanel1.Controls.Add(this.aComboBox2);
-            this.aPanel1.Controls.Add(this.aLabel2);
-            this.aPanel1.Controls.Add(this.aComboBox1);
-            this.aPanel1.Controls.Add(this.aLabel1);
+            this.panTop.Controls.Add(this.aTextBox_FindNameByCode1);
+            this.panTop.Controls.Add(this.aComboBox2);
+            this.panTop.Controls.Add(this.aLabel2);
+            this.panTop.Controls.Add(this.aComboBox1);
+            this.panTop.Controls.Add(this.aLabel1);
             // 
             // aHeaderBox1
             // 
@@ -101,8 +101,8 @@
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.Name = "PRM_PRF_004";
             this.Text = "GAS 사용량 등록";
-            this.aPanel1.ResumeLayout(false);
-            this.aPanel1.PerformLayout();
+            this.panTop.ResumeLayout(false);
+            this.panTop.PerformLayout();
             this.ResumeLayout(false);
 
         }
