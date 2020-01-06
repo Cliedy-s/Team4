@@ -6,13 +6,18 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Axxen.ParkSangIn
+namespace Axxen
 {
     public partial class MSS_SYS_004 : Axxen.BaseForm
     {
         public MSS_SYS_004()
         {
             InitializeComponent();
+        }
+
+        private void MSS_SYS_004_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

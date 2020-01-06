@@ -584,6 +584,15 @@
     <EmbeddedResource Include="HwiSeok\QAM_SQC_006.resx">
       <DependentUpon>QAM_SQC_006.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ParkSangIn\MDS_CDS_002.resx">
+      <DependentUpon>MDS_CDS_002.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParkSangIn\MSS_SYS_004.resx">
+      <DependentUpon>MSS_SYS_004.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParkSangIn\MSS_SYS_009.resx">
+      <DependentUpon>MSS_SYS_009.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="sangyoung\KPI_RPT_001.resx">
       <DependentUpon>KPI_RPT_001.cs</DependentUpon>
     </EmbeddedResource>

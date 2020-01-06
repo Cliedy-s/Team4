@@ -1,4 +1,4 @@
-﻿namespace Axxen.ParkSangIn
+﻿namespace Axxen
 {
     partial class MSS_SYS_004
     {
@@ -28,7 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // MSS_SYS_004
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.ClientSize = new System.Drawing.Size(1148, 700);
+            this.Name = "MSS_SYS_004";
+            this.Load += new System.EventHandler(this.MSS_SYS_004_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

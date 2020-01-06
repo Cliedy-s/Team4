@@ -47,19 +47,19 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(16, 15);
+            this.comboBox1.Location = new System.Drawing.Point(104, 15);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 23);
+            this.comboBox1.Size = new System.Drawing.Size(212, 23);
             this.comboBox1.TabIndex = 1;
             // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(158, 15);
+            this.comboBox2.Location = new System.Drawing.Point(452, 15);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 23);
+            this.comboBox2.Size = new System.Drawing.Size(213, 23);
             this.comboBox2.TabIndex = 2;
             // 
             // MSS_CON_001
