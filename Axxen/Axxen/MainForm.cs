@@ -52,8 +52,7 @@ namespace Axxen
            
 
             this.tabControl2.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-            tabControl2.DrawItem += TabControl1_DrawItem;
-            tabControl2.MouseClick += TabControl2_MouseClick;
+      
             //CloseImage = Image.FromFile("x.png");
             CloseImage = Properties.Resources.x;
             this.tabControl2.Padding = new Point(10, 3);
@@ -465,7 +464,10 @@ namespace Axxen
    
         private void TabControl2_MouseClick(object sender, MouseEventArgs e)
         {
-            for (var i = 0; i < this.tabControl2.TabPages.Count; i++)
+            bool check = true;
+            int i = 0;
+            int selTabIndex = 0;
+            for ( i = 0; i < this.tabControl2.TabPages.Count; i++)
             {
                 var tabRect = this.tabControl2.GetTabRect(i);
                 tabRect.Inflate(-2, -2);
@@ -473,37 +475,47 @@ namespace Axxen
                                          tabRect.Top + (tabRect.Height - CloseImage.Height) / 2,
                                          CloseImage.Width,
                                          CloseImage.Height);
-                if (imageRect.Contains(e.Location)) //x버튼 클릭시 폼종료
-                {
-               
-                    foreach (Form childForm in Application.OpenForms)
-                    {                     
-                            if (childForm.Tag.ToString().Equals(tabControl2.SelectedTab.Tag))
-                        {
-                            childForm.Close ();
+
+              
+                    if (imageRect.Contains(e.Location)) //x버튼 클릭시 폼종료
+                    {              
+                        foreach (Form childForm in Application.OpenForms)
+                        {                     
+                            if (childForm.Tag.ToString().Equals(tabControl2.SelectedTab.Tag.ToString()))
+                            {
+                            childForm.Close();
+                            MessageBox.Show(tabControl2.SelectedTab.Tag.ToString());
                             this.tabControl2.TabPages.RemoveAt(i);
-                            break;
-                        }
+                            check = false;
+                            selTabIndex = i;
+                                break;
+                            }
+                    
+                        }                 
                     }
-
-             
-                  
-               }
-                else //x버튼을 제제외한 텝페이지클릭시 폼 앞으로
-                {
-                
-                    foreach (Form childForm in Application.OpenForms)
-                    {
-                        if (childForm.Name.Equals(tabControl2.SelectedTab.Text))
+                    else //x버튼을 제제외한 텝페이지클릭시 폼 앞으로
+                    {                
+                        foreach (Form childForm in Application.OpenForms)
                         {
-                            childForm.Activate();
-
-                            break;
-                        }
-                    }
-               
-                }
+                            if (childForm.Tag.ToString().Equals(tabControl2.SelectedTab.Text))
+                            {
+                                childForm.Activate();
+                             
+                                check = false;
+                                break;
+                            }
+                        }               
+                    }   
+                
+            
             }
+
+            MessageBox.Show(selTabIndex.ToString());
+        }
+
+        private void TabControl2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
