@@ -45,7 +45,8 @@ namespace Axxen
             menulist = service.GetAll_MenuTree_Master();
               
             ImageList imgList = new ImageList();
-            imgList.Images.Add(Bitmap.FromFile("treeimg.png"));
+            //imgList.Images.Add(Bitmap.FromFile("treeimg.png"));
+            imgList.Images.Add(Properties.Resources.treeimg);
 
             tvMenu.ImageList = imgList;
            
@@ -53,7 +54,8 @@ namespace Axxen
             this.tabControl2.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             tabControl2.DrawItem += TabControl1_DrawItem;
             tabControl2.MouseClick += TabControl2_MouseClick;
-            CloseImage = Image.FromFile("x.png");
+            //CloseImage = Image.FromFile("x.png");
+            CloseImage = Properties.Resources.x;
             this.tabControl2.Padding = new Point(10, 3);
         }
 
