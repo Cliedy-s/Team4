@@ -707,6 +707,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Resources\" />
     <Folder Include="Util\" />
   </ItemGroup>
   <ItemGroup>
@@ -721,11 +722,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\PagedList.css" />
-    <Content Include="Image\KakaoTalk_20200103_140950105.png" />
-    <Content Include="Image\KakaoTalk_20200103_140950176.png" />
     <Content Include="Image\treeimg.png" />
     <Content Include="Image\x.png" />
-    <None Include="Resources\treeimg.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

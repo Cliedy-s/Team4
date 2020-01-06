@@ -1,4 +1,4 @@
-﻿namespace Axxen.HwiSeok
+﻿namespace Axxen
 {
     partial class PRM_PRF_002
     {

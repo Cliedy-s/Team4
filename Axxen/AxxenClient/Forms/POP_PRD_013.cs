@@ -6,11 +6,11 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Axxen
+namespace AxxenClient.Forms
 {
-    public partial class QAM_SQC_002 : Axxen.GridGridGridForm
+    public partial class POP_PRD_013 : AxxenClient.Templets.ClientBaseForm
     {
-        public QAM_SQC_002()
+        public POP_PRD_013()
         {
             InitializeComponent();
         }
