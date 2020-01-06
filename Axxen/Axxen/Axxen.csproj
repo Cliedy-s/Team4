@@ -185,6 +185,126 @@
     <Compile Include="HwiSeok\QAM_SQC_006.Designer.cs">
       <DependentUpon>QAM_SQC_006.cs</DependentUpon>
     </Compile>
+    <Compile Include="ParkSangIn\MDS_CDS_001.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_CDS_001.Designer.cs">
+      <DependentUpon>MDS_CDS_001.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_CDS_002.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_CDS_002.Designer.cs">
+      <DependentUpon>MDS_CDS_002.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_CDS_003.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_CDS_003.Designer.cs">
+      <DependentUpon>MDS_CDS_003.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_CDS_004.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_CDS_004.Designer.cs">
+      <DependentUpon>MDS_CDS_004.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_ODS_001.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_ODS_001.Designer.cs">
+      <DependentUpon>MDS_ODS_001.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_ODS_002.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_ODS_002.Designer.cs">
+      <DependentUpon>MDS_ODS_002.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_SDS_001.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_SDS_001.Designer.cs">
+      <DependentUpon>MDS_SDS_001.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_SDS_002.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_SDS_002.Designer.cs">
+      <DependentUpon>MDS_SDS_002.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_SDS_003.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_SDS_003.Designer.cs">
+      <DependentUpon>MDS_SDS_003.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_SDS_004.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_SDS_004.Designer.cs">
+      <DependentUpon>MDS_SDS_004.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_SDS_005.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_SDS_005.Designer.cs">
+      <DependentUpon>MDS_SDS_005.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_SDS_006.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_SDS_006.Designer.cs">
+      <DependentUpon>MDS_SDS_006.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_SDS_007.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_SDS_007.Designer.cs">
+      <DependentUpon>MDS_SDS_007.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkSangIn\MSS_CON_002.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MSS_CON_002.Designer.cs">
+      <DependentUpon>MSS_CON_002.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkSangIn\MSS_CON_003.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MSS_CON_003.Designer.cs">
+      <DependentUpon>MSS_CON_003.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkSangIn\MSS_SYS_001.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MSS_SYS_001.Designer.cs">
+      <DependentUpon>MSS_SYS_001.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkSangIn\MSS_SYS_003.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MSS_SYS_003.Designer.cs">
+      <DependentUpon>MSS_SYS_003.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkSangIn\MSS_SYS_004.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MSS_SYS_004.Designer.cs">
+      <DependentUpon>MSS_SYS_004.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkSangIn\MSS_SYS_006.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MSS_SYS_006.Designer.cs">
+      <DependentUpon>MSS_SYS_006.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkSangIn\MSS_SYS_009.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MSS_SYS_009.Designer.cs">
+      <DependentUpon>MSS_SYS_009.cs</DependentUpon>
+    </Compile>
     <Compile Include="sangyoung\KPI_RPT_001.cs">
       <SubType>Form</SubType>
     </Compile>
