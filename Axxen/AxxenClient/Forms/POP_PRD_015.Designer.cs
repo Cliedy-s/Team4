@@ -1,6 +1,6 @@
 ﻿namespace AxxenClient.Forms
 {
-    partial class POP_PRD_014
+    partial class POP_PRD_015
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.aButton1 = new AxxenClient.CustomControls.AButton();
+            this.aTextBox_LabeledBigTextBox1 = new AxxenClient.CustomControls.ATextBox_LabeledBigTextBox();
             this.aButton2 = new AxxenClient.CustomControls.AButton();
             this.aDataGridView2 = new AxxenClient.CustomControls.ADataGridView();
             this.aPanel5 = new AxxenClient.CustomControls.APanel();
@@ -38,8 +40,6 @@
             this.aTextBox_LabeledBigTextBox7 = new AxxenClient.CustomControls.ATextBox_LabeledBigTextBox();
             this.aTextBox_LabeledBigTextBox6 = new AxxenClient.CustomControls.ATextBox_LabeledBigTextBox();
             this.aDataGridView1 = new AxxenClient.CustomControls.ADataGridView();
-            this.aTextBox_LabeledBigTextBox1 = new AxxenClient.CustomControls.ATextBox_LabeledBigTextBox();
-            this.aButton1 = new AxxenClient.CustomControls.AButton();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aDataGridView2)).BeginInit();
@@ -49,27 +49,49 @@
             // 
             // aLabel_Header1
             // 
-            this.aLabel_Header1.Text = "공정조건 등록";
+            this.aLabel_Header1.Text = "품질 측정값 등록";
+            // 
+            // aButton1
+            // 
+            this.aButton1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.aButton1.Location = new System.Drawing.Point(1039, 473);
+            this.aButton1.Name = "aButton1";
+            this.aButton1.Size = new System.Drawing.Size(160, 112);
+            this.aButton1.TabIndex = 37;
+            this.aButton1.Text = "삭제";
+            this.aButton1.UseVisualStyleBackColor = false;
+            // 
+            // aTextBox_LabeledBigTextBox1
+            // 
+            this.aTextBox_LabeledBigTextBox1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aTextBox_LabeledBigTextBox1.LabelText = "측정값";
+            this.aTextBox_LabeledBigTextBox1.Location = new System.Drawing.Point(623, 437);
+            this.aTextBox_LabeledBigTextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.aTextBox_LabeledBigTextBox1.Name = "aTextBox_LabeledBigTextBox1";
+            this.aTextBox_LabeledBigTextBox1.Size = new System.Drawing.Size(365, 30);
+            this.aTextBox_LabeledBigTextBox1.TabIndex = 36;
+            this.aTextBox_LabeledBigTextBox1.TextBoxText = "";
             // 
             // aButton2
             // 
             this.aButton2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.aButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton2.Location = new System.Drawing.Point(626, 473);
+            this.aButton2.Location = new System.Drawing.Point(623, 473);
             this.aButton2.Name = "aButton2";
             this.aButton2.Size = new System.Drawing.Size(409, 112);
-            this.aButton2.TabIndex = 29;
+            this.aButton2.TabIndex = 35;
             this.aButton2.Text = "입력";
             this.aButton2.UseVisualStyleBackColor = false;
             // 
             // aDataGridView2
             // 
             this.aDataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.aDataGridView2.Location = new System.Drawing.Point(619, 211);
+            this.aDataGridView2.Location = new System.Drawing.Point(616, 211);
             this.aDataGridView2.Name = "aDataGridView2";
             this.aDataGridView2.RowTemplate.Height = 23;
             this.aDataGridView2.Size = new System.Drawing.Size(581, 219);
-            this.aDataGridView2.TabIndex = 26;
+            this.aDataGridView2.TabIndex = 34;
             // 
             // aPanel5
             // 
@@ -79,10 +101,10 @@
             this.aPanel5.Controls.Add(this.aTextBox_LabeledBigTextBox9);
             this.aPanel5.Controls.Add(this.aTextBox_LabeledBigTextBox7);
             this.aPanel5.Controls.Add(this.aTextBox_LabeledBigTextBox6);
-            this.aPanel5.Location = new System.Drawing.Point(10, 105);
+            this.aPanel5.Location = new System.Drawing.Point(7, 105);
             this.aPanel5.Name = "aPanel5";
             this.aPanel5.Size = new System.Drawing.Size(1191, 100);
-            this.aPanel5.TabIndex = 25;
+            this.aPanel5.TabIndex = 33;
             // 
             // aTextBox_LabeledBigTextBox10
             // 
@@ -153,35 +175,13 @@
             // aDataGridView1
             // 
             this.aDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.aDataGridView1.Location = new System.Drawing.Point(10, 211);
+            this.aDataGridView1.Location = new System.Drawing.Point(7, 211);
             this.aDataGridView1.Name = "aDataGridView1";
             this.aDataGridView1.RowTemplate.Height = 23;
             this.aDataGridView1.Size = new System.Drawing.Size(610, 374);
-            this.aDataGridView1.TabIndex = 24;
+            this.aDataGridView1.TabIndex = 32;
             // 
-            // aTextBox_LabeledBigTextBox1
-            // 
-            this.aTextBox_LabeledBigTextBox1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aTextBox_LabeledBigTextBox1.LabelText = "측정값";
-            this.aTextBox_LabeledBigTextBox1.Location = new System.Drawing.Point(626, 437);
-            this.aTextBox_LabeledBigTextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.aTextBox_LabeledBigTextBox1.Name = "aTextBox_LabeledBigTextBox1";
-            this.aTextBox_LabeledBigTextBox1.Size = new System.Drawing.Size(365, 30);
-            this.aTextBox_LabeledBigTextBox1.TabIndex = 30;
-            this.aTextBox_LabeledBigTextBox1.TextBoxText = "";
-            // 
-            // aButton1
-            // 
-            this.aButton1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton1.Location = new System.Drawing.Point(1042, 473);
-            this.aButton1.Name = "aButton1";
-            this.aButton1.Size = new System.Drawing.Size(160, 112);
-            this.aButton1.TabIndex = 31;
-            this.aButton1.Text = "삭제";
-            this.aButton1.UseVisualStyleBackColor = false;
-            // 
-            // POP_PRD_014
+            // POP_PRD_015
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1210, 629);
@@ -191,7 +191,7 @@
             this.Controls.Add(this.aDataGridView2);
             this.Controls.Add(this.aPanel5);
             this.Controls.Add(this.aDataGridView1);
-            this.Name = "POP_PRD_014";
+            this.Name = "POP_PRD_015";
             this.Controls.SetChildIndex(this.aPanel2, 0);
             this.Controls.SetChildIndex(this.aPanel1, 0);
             this.Controls.SetChildIndex(this.aDataGridView1, 0);
@@ -213,6 +213,8 @@
 
         #endregion
 
+        private CustomControls.AButton aButton1;
+        private CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox1;
         private CustomControls.AButton aButton2;
         private CustomControls.ADataGridView aDataGridView2;
         private CustomControls.APanel aPanel5;
@@ -223,7 +225,5 @@
         private CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox7;
         private CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox6;
         private CustomControls.ADataGridView aDataGridView1;
-        private CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox1;
-        private CustomControls.AButton aButton1;
     }
 }
