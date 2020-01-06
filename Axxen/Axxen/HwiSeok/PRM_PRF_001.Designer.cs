@@ -136,11 +136,12 @@
             this.aButton1.Text = "실적보정";
             this.aButton1.UseVisualStyleBackColor = false;
             // 
-            // PRM_PRF_000
+            // PRM_PRF_001
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1148, 700);
-            this.Name = "PRM_PRF_000";
+            this.Name = "PRM_PRF_001";
+            this.Text = "실적조회";
             this.aPanel1.ResumeLayout(false);
             this.aPanel1.PerformLayout();
             this.ResumeLayout(false);
