@@ -561,6 +561,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Templets\ReportForm.resx">
       <DependentUpon>ReportForm.cs</DependentUpon>
@@ -602,6 +603,7 @@
     <Content Include="Image\KakaoTalk_20200103_140950176.png" />
     <Content Include="Image\treeimg.png" />
     <Content Include="Image\x.png" />
+    <None Include="Resources\treeimg.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
