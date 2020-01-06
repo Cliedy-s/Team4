@@ -125,10 +125,12 @@
             this.button9 = new System.Windows.Forms.Button();
             this.aPanel2 = new Axxen.CustomControls.APanel();
             this.btnBookmark = new System.Windows.Forms.Button();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panelMenu.SuspendLayout();
             this.ctmBookMark.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            this.tabControl2.SuspendLayout();
             this.pnBookmark.SuspendLayout();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
@@ -844,6 +846,7 @@
             // 
             // tabControl2
             // 
+            this.tabControl2.Controls.Add(this.tabPage1);
             this.tabControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.tabControl2.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.tabControl2.Location = new System.Drawing.Point(267, 111);
@@ -852,7 +855,6 @@
             this.tabControl2.Size = new System.Drawing.Size(1349, 24);
             this.tabControl2.TabIndex = 12;
             this.tabControl2.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.TabControl1_DrawItem);
-            this.tabControl2.SelectedIndexChanged += new System.EventHandler(this.TabControl2_SelectedIndexChanged);
             this.tabControl2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TabControl2_MouseClick);
             // 
             // pnBookmark
@@ -914,6 +916,16 @@
             this.btnBookmark.UseVisualStyleBackColor = false;
             this.btnBookmark.Click += new System.EventHandler(this.BtnBookmark_Click);
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Size = new System.Drawing.Size(1341, 0);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Tag = "1";
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -939,6 +951,7 @@
             this.menuStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.tabControl2.ResumeLayout(false);
             this.pnBookmark.ResumeLayout(false);
             this.aPanel1.ResumeLayout(false);
             this.aPanel2.ResumeLayout(false);
@@ -1043,5 +1056,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.TabControl tabControl2;
+        private System.Windows.Forms.TabPage tabPage1;
     }
 }

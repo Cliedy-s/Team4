@@ -383,10 +383,10 @@
     <Compile Include="CustomControls\ATextBox_Labeled.Designer.cs">
       <DependentUpon>ATextBox_Labeled.cs</DependentUpon>
     </Compile>
-    <Compile Include="MSS_CON_001.cs">
+    <Compile Include="ParkSangIn\MSS_CON_001.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MSS_CON_001.Designer.cs">
+    <Compile Include="ParkSangIn\MSS_CON_001.Designer.cs">
       <DependentUpon>MSS_CON_001.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomControls\ATreeView.cs">
@@ -550,7 +550,7 @@
     <EmbeddedResource Include="CustomControls\ATextBox_Searchable.resx">
       <DependentUpon>ATextBox_Searchable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MSS_CON_001.resx">
+    <EmbeddedResource Include="ParkSangIn\MSS_CON_001.resx">
       <DependentUpon>MSS_CON_001.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -599,8 +599,8 @@
     <Content Include="Content\PagedList.css" />
     <Content Include="Image\KakaoTalk_20200103_140950105.png" />
     <Content Include="Image\KakaoTalk_20200103_140950176.png" />
-    <Content Include="Image\KakaoTalk_20200103_140950259.png" />
     <Content Include="Image\treeimg.png" />
+    <Content Include="Image\x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
