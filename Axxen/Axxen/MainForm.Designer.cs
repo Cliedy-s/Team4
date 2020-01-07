@@ -116,15 +116,16 @@
             this.금형사용현황ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button10 = new System.Windows.Forms.Button();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.pnBookmark = new Axxen.CustomControls.APanel();
             this.lbxbookmark = new System.Windows.Forms.ListBox();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.panelMenu.SuspendLayout();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
@@ -816,6 +817,7 @@
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
+            this.toolStripSeparator1,
             this.toolStripButton2,
             this.toolStripButton3,
             this.toolStripButton4});
@@ -824,52 +826,6 @@
             this.toolStrip1.Size = new System.Drawing.Size(1616, 77);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(1189, 87);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(189, 21);
-            this.textBox1.TabIndex = 10;
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(1384, 85);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(75, 23);
-            this.button10.TabIndex = 11;
-            this.button10.Text = "button10";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // tabControl2
-            // 
-            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tabControl2.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-            this.tabControl2.Location = new System.Drawing.Point(267, 111);
-            this.tabControl2.Name = "tabControl2";
-            this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(1349, 24);
-            this.tabControl2.TabIndex = 12;
-            this.tabControl2.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.TabControl1_DrawItem);
-            this.tabControl2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TabControl2_MouseClick);
-            // 
-            // pnBookmark
-            // 
-            this.pnBookmark.Controls.Add(this.lbxbookmark);
-            this.pnBookmark.Location = new System.Drawing.Point(270, 467);
-            this.pnBookmark.Name = "pnBookmark";
-            this.pnBookmark.Size = new System.Drawing.Size(200, 474);
-            this.pnBookmark.TabIndex = 7;
-            this.pnBookmark.Visible = false;
-            // 
-            // lbxbookmark
-            // 
-            this.lbxbookmark.FormattingEnabled = true;
-            this.lbxbookmark.ItemHeight = 12;
-            this.lbxbookmark.Location = new System.Drawing.Point(3, 3);
-            this.lbxbookmark.Name = "lbxbookmark";
-            this.lbxbookmark.Size = new System.Drawing.Size(194, 460);
-            this.lbxbookmark.TabIndex = 0;
             // 
             // toolStripButton1
             // 
@@ -918,6 +874,58 @@
             this.toolStripButton4.Name = "toolStripButton4";
             this.toolStripButton4.Size = new System.Drawing.Size(24, 74);
             this.toolStripButton4.Text = "toolStripButton4";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(1334, 82);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(189, 21);
+            this.textBox1.TabIndex = 10;
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button10.Location = new System.Drawing.Point(1529, 82);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(75, 23);
+            this.button10.TabIndex = 11;
+            this.button10.Text = "속성";
+            this.button10.UseVisualStyleBackColor = false;
+            // 
+            // tabControl2
+            // 
+            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tabControl2.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
+            this.tabControl2.Location = new System.Drawing.Point(267, 111);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(1349, 24);
+            this.tabControl2.TabIndex = 12;
+            this.tabControl2.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.TabControl1_DrawItem);
+            this.tabControl2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TabControl2_MouseClick);
+            // 
+            // pnBookmark
+            // 
+            this.pnBookmark.Controls.Add(this.lbxbookmark);
+            this.pnBookmark.Location = new System.Drawing.Point(270, 467);
+            this.pnBookmark.Name = "pnBookmark";
+            this.pnBookmark.Size = new System.Drawing.Size(200, 474);
+            this.pnBookmark.TabIndex = 7;
+            this.pnBookmark.Visible = false;
+            // 
+            // lbxbookmark
+            // 
+            this.lbxbookmark.FormattingEnabled = true;
+            this.lbxbookmark.ItemHeight = 12;
+            this.lbxbookmark.Location = new System.Drawing.Point(3, 3);
+            this.lbxbookmark.Name = "lbxbookmark";
+            this.lbxbookmark.Size = new System.Drawing.Size(194, 460);
+            this.lbxbookmark.TabIndex = 0;
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 77);
             // 
             // MainForm
             // 
@@ -1049,5 +1057,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.TabControl tabControl2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }
