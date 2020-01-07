@@ -29,7 +29,6 @@ namespace Axxen
         {
             InitializeComponent();
 
-
             //booklist = service.GetAll_BookMark(1);
             //lbxbookmark.DataSource = booklist;
 
@@ -37,21 +36,26 @@ namespace Axxen
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
+
+            
+            LoginForm frm = new LoginForm();
+
+            if(frm.ShowDialog() == DialogResult.OK)
+            {
             MainForm_Service service = new MainForm_Service();
             menulist = service.GetAll_MenuTree_Master();
+
+       
+                lblName.Text = UserInfo.User_Name;
 
             ImageList imgList = new ImageList();
             //imgList.Images.Add(Bitmap.FromFile("treeimg.png"));
             imgList.Images.Add(Properties.Resources.treeimg);
-
             tvMenu.ImageList = imgList;
-
-
-            this.tabControl2.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-
-            //CloseImage = Image.FromFile("x.png");
+            this.tabControl2.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;       
             CloseImage = Properties.Resources.x;
             this.tabControl2.Padding = new Point(10, 3);
+            }
         }
 
 

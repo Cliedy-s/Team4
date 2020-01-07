@@ -529,6 +529,7 @@
     <Compile Include="Templets\ReportForm.Designer.cs">
       <DependentUpon>ReportForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserInfo.cs" />
     <Compile Include="Util\InitControlUtil.cs" />
     <EmbeddedResource Include="CustomControls\AHeaderBox.resx">
       <DependentUpon>AHeaderBox.cs</DependentUpon>
