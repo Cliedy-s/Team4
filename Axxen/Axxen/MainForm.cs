@@ -31,9 +31,6 @@ namespace Axxen
         {
             InitializeComponent();
 
-             
-
-
             //booklist = service.GetAll_BookMark(1);
             //lbxbookmark.DataSource = booklist;
 
