@@ -24,14 +24,9 @@ namespace DAC
                 com.CommandType = CommandType.StoredProcedure;
                 com.Parameters.AddWithValue("@User_ID", id);
                 com.Parameters.AddWithValue("@User_PW", pwd);
-
                 com.Connection.Open();
-         
-
                 SqlDataReader reader = com.ExecuteReader();
-                user = Helper.DataReaderMapToList<UserInfoVO>(reader);
-
-          
+                user = Helper.DataReaderMapToList<UserInfoVO>(reader);  
                 com.Connection.Close();
 
                 return user[0];

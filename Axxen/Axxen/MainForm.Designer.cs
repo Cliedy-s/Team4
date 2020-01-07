@@ -120,14 +120,18 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button10 = new System.Windows.Forms.Button();
             this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.aLabel2 = new Axxen.CustomControls.ALabel();
+            this.lblSubtitle = new Axxen.CustomControls.ALabel();
             this.aLabel1 = new Axxen.CustomControls.ALabel();
             this.lblName = new Axxen.CustomControls.ALabel();
             this.pnBookmark = new Axxen.CustomControls.APanel();
-            this.lbxbookmark = new System.Windows.Forms.ListBox();
             this.aPanel1 = new Axxen.CustomControls.APanel();
             this.button9 = new System.Windows.Forms.Button();
             this.aPanel2 = new Axxen.CustomControls.APanel();
             this.btnBookmark = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tvBookMark = new System.Windows.Forms.TreeView();
             this.panelMenu.SuspendLayout();
             this.ctmBookMark.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -135,6 +139,8 @@
             this.pnBookmark.SuspendLayout();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -188,6 +194,7 @@
             // 
             // 즐겨찾기ToolStripMenuItem
             // 
+            this.즐겨찾기ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("즐겨찾기ToolStripMenuItem.Image")));
             this.즐겨찾기ToolStripMenuItem.Name = "즐겨찾기ToolStripMenuItem";
             this.즐겨찾기ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.즐겨찾기ToolStripMenuItem.Text = "즐겨찾기";
@@ -865,6 +872,23 @@
             this.tabControl2.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.TabControl1_DrawItem);
             this.tabControl2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TabControl2_MouseClick);
             // 
+            // aLabel2
+            // 
+            this.aLabel2.AutoSize = true;
+            this.aLabel2.Location = new System.Drawing.Point(53, 13);
+            this.aLabel2.Name = "aLabel2";
+            this.aLabel2.Size = new System.Drawing.Size(65, 12);
+            this.aLabel2.TabIndex = 20;
+            this.aLabel2.Text = "위치 정보 :";
+            // 
+            // lblSubtitle
+            // 
+            this.lblSubtitle.AutoSize = true;
+            this.lblSubtitle.Location = new System.Drawing.Point(118, 13);
+            this.lblSubtitle.Name = "lblSubtitle";
+            this.lblSubtitle.Size = new System.Drawing.Size(0, 12);
+            this.lblSubtitle.TabIndex = 0;
+            // 
             // aLabel1
             // 
             this.aLabel1.AutoSize = true;
@@ -887,21 +911,12 @@
             // 
             // pnBookmark
             // 
-            this.pnBookmark.Controls.Add(this.lbxbookmark);
-            this.pnBookmark.Location = new System.Drawing.Point(270, 467);
+            this.pnBookmark.Controls.Add(this.tvBookMark);
+            this.pnBookmark.Location = new System.Drawing.Point(270, 418);
             this.pnBookmark.Name = "pnBookmark";
             this.pnBookmark.Size = new System.Drawing.Size(200, 474);
             this.pnBookmark.TabIndex = 7;
             this.pnBookmark.Visible = false;
-            // 
-            // lbxbookmark
-            // 
-            this.lbxbookmark.FormattingEnabled = true;
-            this.lbxbookmark.ItemHeight = 12;
-            this.lbxbookmark.Location = new System.Drawing.Point(3, 3);
-            this.lbxbookmark.Name = "lbxbookmark";
-            this.lbxbookmark.Size = new System.Drawing.Size(194, 460);
-            this.lbxbookmark.TabIndex = 0;
             // 
             // aPanel1
             // 
@@ -949,11 +964,40 @@
             this.btnBookmark.UseVisualStyleBackColor = false;
             this.btnBookmark.Click += new System.EventHandler(this.BtnBookmark_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.aLabel2);
+            this.panel1.Controls.Add(this.lblSubtitle);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(267, 905);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1349, 39);
+            this.panel1.TabIndex = 20;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(7, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(40, 30);
+            this.pictureBox1.TabIndex = 21;
+            this.pictureBox1.TabStop = false;
+            // 
+            // tvBookMark
+            // 
+            this.tvBookMark.Location = new System.Drawing.Point(4, 4);
+            this.tvBookMark.Name = "tvBookMark";
+            this.tvBookMark.Size = new System.Drawing.Size(193, 467);
+            this.tvBookMark.TabIndex = 0;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1616, 944);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.aLabel1);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.tabControl2);
@@ -980,6 +1024,9 @@
             this.pnBookmark.ResumeLayout(false);
             this.aPanel1.ResumeLayout(false);
             this.aPanel2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1070,7 +1117,6 @@
         private System.Windows.Forms.ContextMenuStrip ctmBookMark;
         private System.Windows.Forms.ToolStripMenuItem 즐겨찾기ToolStripMenuItem;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.ListBox lbxbookmark;
         private CustomControls.APanel aPanel1;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
@@ -1084,5 +1130,10 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private CustomControls.ALabel lblName;
         private CustomControls.ALabel aLabel1;
+        private CustomControls.ALabel lblSubtitle;
+        private CustomControls.ALabel aLabel2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TreeView tvBookMark;
     }
 }
