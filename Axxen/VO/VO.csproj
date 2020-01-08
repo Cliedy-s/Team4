@@ -45,7 +45,6 @@
     <Compile Include="MoldVO.cs" />
     <Compile Include="Mold_Item_Wc_MuseVO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WorkOrder_ItemVO.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
