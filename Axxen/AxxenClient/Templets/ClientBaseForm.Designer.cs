@@ -43,7 +43,8 @@
             // aLabel1
             // 
             this.aLabel1.AutoSize = true;
-            this.aLabel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.aLabel1.BackColor = System.Drawing.Color.White;
+            this.aLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.aLabel1.Location = new System.Drawing.Point(25, 41);
             this.aLabel1.Name = "aLabel1";
             this.aLabel1.Size = new System.Drawing.Size(48, 15);
@@ -53,9 +54,9 @@
             // aLabel_Header1
             // 
             this.aLabel_Header1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.aLabel_Header1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.aLabel_Header1.BackColor = System.Drawing.Color.White;
             this.aLabel_Header1.Font = new System.Drawing.Font("나눔고딕", 25F, System.Drawing.FontStyle.Bold);
-            this.aLabel_Header1.ForeColor = System.Drawing.Color.White;
+            this.aLabel_Header1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.aLabel_Header1.Location = new System.Drawing.Point(183, 29);
             this.aLabel_Header1.Name = "aLabel_Header1";
             this.aLabel_Header1.Size = new System.Drawing.Size(898, 39);
@@ -126,7 +127,7 @@
             // 
             // aPanel3
             // 
-            this.aPanel3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.aPanel3.BackColor = System.Drawing.Color.White;
             this.aPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.aPanel3.Location = new System.Drawing.Point(0, 0);
             this.aPanel3.Name = "aPanel3";

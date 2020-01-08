@@ -54,11 +54,11 @@ namespace VO
         /// <summary>
         /// 즐겨찾기순번
         /// </summary>
-        public int  Seq { get; set; }//즐겨찾기순번
+        public long  Seq { get; set; }//즐겨찾기순번
         /// <summary>
         /// 사용자ID
         /// </summary>
-        public int  User_ID { get; set; }//사용자ID
+        public string  User_ID { get; set; }//사용자ID
         /// <summary>
         /// 화면코드
         /// </summary>
@@ -74,11 +74,11 @@ namespace VO
         /// <summary>
         /// 정렬순서
         /// </summary>
-        public string  Sort_index { get; set; }//정렬순서
+        public int  Sort_index { get; set; }//정렬순서
         /// <summary>
         /// 최초입력일자
         /// </summary>
-        public string  Ins_Date { get; set; }//최초입력일자
+        public DateTime Ins_Date { get; set; }//최초입력일자
         /// <summary>
         /// 최초입력자
         /// </summary>
@@ -86,7 +86,7 @@ namespace VO
         /// <summary>
         /// 최종수정일자
         /// </summary>
-        public string  Up_Date { get; set; }//최종수정일자
+        public DateTime Up_Date { get; set; }//최종수정일자
         /// <summary>
         /// 최종수정자
         /// </summary>

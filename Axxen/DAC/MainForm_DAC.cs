@@ -36,30 +36,32 @@ namespace DAC
         /// 즐겨찾기정보
         /// </summary>
         /// <returns></returns>
-        public List<BookMark_VO> GetAll_BookMark(int id)
+        public List<BookMark_VO> GetAll_BookMark(string id)
         {
+            List<BookMark_VO> list = null;
             using (SqlCommand comm = new SqlCommand())
             {
                 comm.Connection = new SqlConnection(Connstr);
                 comm.CommandText = "GetAll_BookMark";
                 comm.CommandType = CommandType.StoredProcedure;
-                comm.Parameters.AddWithValue("@id", id);
+                comm.Parameters.AddWithValue("@User_ID", id);
                 comm.Connection.Open();
                 SqlDataReader reader = comm.ExecuteReader();
-                List<BookMark_VO> list = Helper.DataReaderMapToList<BookMark_VO>(reader);
+                list = Helper.DataReaderMapToList<BookMark_VO>(reader);
                 comm.Connection.Close();
 
                 return list;
             }
+
+
         }
 
         /// <summary>
         /// 즐겨찾기추가
         /// </summary>
-        /// <param name="pcode">부모메뉴코드</param>
-        /// <param name="scode">폼코드</param>
+        /// <param name="list"></param>
         /// <returns></returns>
-        public bool InsertBookMark(string pcode,string scode)
+        public bool InsertBookMark(BookMark_VO list)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -67,10 +69,9 @@ namespace DAC
                 cmd.CommandText = "InsertBookMark";
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@User_ID", 1);
-                cmd.Parameters.AddWithValue("@Screen_Code", scode);
-                cmd.Parameters.AddWithValue("@Parent_Screen_Code", pcode);
-                cmd.Parameters.AddWithValue("@Type", pcode);
+                cmd.Parameters.AddWithValue("@User_ID", list.User_ID);
+                cmd.Parameters.AddWithValue("@Screen_Code", list.Screen_Code);
+                cmd.Parameters.AddWithValue("@Parent_Screen_Code", list.Parent_Screen_Code);
                 cmd.Parameters.AddWithValue("@Ins_Date", DateTime.Now);
                 cmd.Parameters.AddWithValue("@Ins_Emp", "박상인");
 

@@ -18,7 +18,7 @@ namespace Axxen
         int CheckBtnIndex = 7;
         bool BookmarkCheck = true; //즐겨찾기 
         bool open = true;
-
+        StringBuilder subtitle = new StringBuilder();
 
         Image CloseImage;
 
@@ -29,29 +29,31 @@ namespace Axxen
         {
             InitializeComponent();
 
-
-            //booklist = service.GetAll_BookMark(1);
-            //lbxbookmark.DataSource = booklist;
-
-
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
+
+            
+            LoginForm frm = new LoginForm();
+
+            if(frm.ShowDialog() == DialogResult.OK)
+            {
             MainForm_Service service = new MainForm_Service();
             menulist = service.GetAll_MenuTree_Master();
+
+                booklist = service.GetAll_BookMark(UserInfo.User_ID);
+
+                lblName.Text = UserInfo.User_Name; 
 
             ImageList imgList = new ImageList();
             //imgList.Images.Add(Bitmap.FromFile("treeimg.png"));
             imgList.Images.Add(Properties.Resources.treeimg);
-
             tvMenu.ImageList = imgList;
-
-
-            this.tabControl2.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-
-            //CloseImage = Image.FromFile("x.png");
+                tvBookMark.ImageList = imgList;
+            this.tabControl2.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;       
             CloseImage = Properties.Resources.x;
             this.tabControl2.Padding = new Point(10, 3);
+            }
         }
 
 
@@ -68,11 +70,14 @@ namespace Axxen
         /// <param name="e"></param>
         private void BtnMenu_Click(object sender, EventArgs e)
         {
+            
 
-           
+
             tvMenu.Visible = true;
             // 누르는 버튼
             Button btn = (Button)sender;
+            subtitle.Clear();
+            subtitle.Append(btn.Text);
             btn.BackColor = Color.FromArgb(201, 228, 232);
             // 열려있는 트리뷰가 존재하고
             // 현재 열려있는 버튼과 누르는 버튼이 같을 경우(트리뷰를 닫는다)
@@ -182,14 +187,23 @@ namespace Axxen
         #region 트리뷰관련 이벤트
         private void TvMenu_DoubleClick(object sender, EventArgs e)
         {
+            try
+            { 
+            if (tvMenu.SelectedNode.Text != null) { 
             MenuTree_Master_VO parentcode = menulist.Find(item => item.Screen_Name == tvMenu.SelectedNode.Text);
-
+            subtitle.Clear();
             if (parentcode.Parent_Screen_Code != null) //부모코드에 널값이있는 메뉴를 제외하고
             {
                 string form = parentcode.Screen_Code;
                 newForm(form, tvMenu.SelectedNode.Text);
 
                 //sdfasd
+            }
+            }
+            }
+            catch { 
+
+                
             }
         }
         /// <summary>
@@ -221,14 +235,17 @@ namespace Axxen
                 newTab.Tag = formName;
                 newTab.Text = formText;
                 tabControl2.TabPages.Add(newTab);
+                subtitle.Append("->");
+                subtitle.Append(newTab.ToString());
 
                 //    tabControl2.TabPages     .Tag=formName;
                 //    MessageBox.Show(tabControl2.SelectedTab.Tag.ToString());
                 frm.Show();
+                lblSubtitle.Text = "메뉴->"+ subtitle;
             }
-            catch (Exception err)
+            catch 
             {
-                MessageBox.Show(err.ToString());
+                MessageBox.Show("사용할 수 없는 메뉴"+ formName);
             }
         }
 
@@ -265,6 +282,15 @@ namespace Axxen
 
                 pnBookmark.Visible = true;
                 BookmarkCheck = false;
+                tvBookMark.Nodes.Clear();
+                tvBookMark.Nodes.Add("즐겨찾기");
+
+                for (int i = 0; i < booklist.Count; i++)
+                {
+                    tvBookMark.TopNode.Nodes.Add(booklist[i].Screen_Code);
+                }
+
+                tvBookMark.ExpandAll();
             }
             else
             {
@@ -276,30 +302,35 @@ namespace Axxen
 
         private void 즐겨찾기ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show(tvMenu.SelectedNode.Text);
-            //MainForm_Service service = new MainForm_Service();
-            //MenuTree_Master_VO parentname = menulist.Find(item => item.Screen_Name == tvMenu.SelectedNode.Text.Trim());//부모코드find
 
-            //if (booklist.Count < 1)
-            //{
-            //    service.InsertBookMark(parentname.Parent_Screen_Code, parentname.Screen_Code);
-            //    return;
-            //}
-
-            //int a = booklist.Find(item => item.Screen_Code == parentname.Screen_Code).;
-            //for (int i=0; i< booklist.Count; i++)
-            //{
-            //  if(  booklist[i].Screen_Code != parentname.Screen_Code)//등록된즐겨찾기가 아니라면.
-            //    {
-
-            //        service.InsertBookMark(parentname.Parent_Screen_Code, parentname.Screen_Code);
-            //        break;
-            //    }
-            //}
+            MainForm_Service service = new MainForm_Service();
+            MenuTree_Master_VO parentname = menulist.Find(item => item.Screen_Name == tvMenu.SelectedNode.Text);//부모코드find
+            BookMark_VO bookmark = new BookMark_VO();
+            bookmark.Parent_Screen_Code = parentname.Parent_Screen_Code;
+            bookmark.Screen_Code = parentname.Screen_Code;
+            bookmark.User_ID = UserInfo.User_ID;
 
 
-            //booklist = service.GetAll_BookMark(1);
-            //lbxbookmark.DataSource = booklist;
+
+            if (!service.InsertBookMark(bookmark))
+            {
+                MessageBox.Show("이미등록된 항목입니다.");
+            }
+            else
+            {
+
+                tvBookMark.Nodes.Clear();
+                booklist = service.GetAll_BookMark(UserInfo.User_ID);
+                tvBookMark.Nodes.Add("즐겨찾기");
+
+                for (int i = 0; i < booklist.Count; i++)
+                {
+                    tvBookMark.TopNode.Nodes.Add(booklist[i].Screen_Code);
+                }
+
+                tvBookMark.ExpandAll();
+            }
+
 
 
 
@@ -312,7 +343,7 @@ namespace Axxen
         {
             try
             {
-                var tabRect = this.tabControl2.GetTabRect(e.Index);
+                 var tabRect = this.tabControl2.GetTabRect(e.Index);
                 tabRect.Inflate(-2, -2);
                 var imageRect = new Rectangle(tabRect.Right - CloseImage.Width,
                                          tabRect.Top + (tabRect.Height - CloseImage.Height) / 2,
@@ -328,9 +359,11 @@ namespace Axxen
                     sf.FormatFlags |= StringFormatFlags.DirectionRightToLeft;
                 }
 
+                e.Graphics.FillRectangle(Brushes.Aqua, e.Bounds); //텝페이지 색
                 e.Graphics.DrawString(this.tabControl2.TabPages[e.Index].Text,
-                                      this.Font, Brushes.Black, tabRect, sf);
-                e.Graphics.DrawImage(CloseImage, imageRect.Location);
+                                      this.Font, Brushes.Black, tabRect, sf);//텝페이지 폰트랑 글자 색
+                
+                e.Graphics.DrawImage(CloseImage, imageRect.Location); //텝페이지 취소이미지 생성
 
             }
             catch (Exception) { }
@@ -383,6 +416,7 @@ namespace Axxen
                         if (childForm.Tag.ToString().Equals(tabControl2.SelectedTab.Tag.ToString()))
                         {
                             childForm.Activate();
+                            lblSubtitle.Text = "메뉴->"+ tabControl2.SelectedTab.Text.ToString();
                             break;
                         }
                     }
