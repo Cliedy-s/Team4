@@ -720,6 +720,9 @@
     <Content Include="Image\newlogo.png" />
     <Content Include="Image\treeimg.png" />
     <Content Include="Image\x.png" />
+    <Content Include="Team4Connect_DEV.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Resources\newlogo.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
