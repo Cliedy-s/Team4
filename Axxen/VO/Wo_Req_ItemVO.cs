@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VO
 {
-    class WorkOrder_ItemVO
+    public class Wo_Req_ItemVO //SCH_001
     {
         public string Wo_Req_No { get; set; } //생산의뢰번호
         public int Req_Req { get; set; } //의뢰순번

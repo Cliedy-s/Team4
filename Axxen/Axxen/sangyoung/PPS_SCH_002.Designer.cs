@@ -30,41 +30,41 @@
         {
             this.aTextBox_FindNameByCode2 = new Axxen.CustomControls.ATextBox_FindNameByCode();
             this.aTextBox_FindNameByCode1 = new Axxen.CustomControls.ATextBox_FindNameByCode();
-            this.aButton3 = new Axxen.CustomControls.AButton();
-            this.aButton2 = new Axxen.CustomControls.AButton();
-            this.aButton1 = new Axxen.CustomControls.AButton();
-            this.aDateTimePicker2 = new Axxen.CustomControls.ADateTimePicker();
+            this.btnWorkCancle = new Axxen.CustomControls.AButton();
+            this.btnWoFinish = new Axxen.CustomControls.AButton();
+            this.btnNameChange = new Axxen.CustomControls.AButton();
+            this.dtpWorkFinish = new Axxen.CustomControls.ADateTimePicker();
             this.aLabel2 = new Axxen.CustomControls.ALabel();
-            this.aDateTimePicker1 = new Axxen.CustomControls.ADateTimePicker();
+            this.dtpWorkStart = new Axxen.CustomControls.ADateTimePicker();
             this.aLabel1 = new Axxen.CustomControls.ALabel();
-            this.aTextBox_Labeled1 = new Axxen.CustomControls.ATextBox_Labeled();
-            this.aTextBox_Labeled2 = new Axxen.CustomControls.ATextBox_Labeled();
-            this.aTextBox_Labeled3 = new Axxen.CustomControls.ATextBox_Labeled();
+            this.txtWorkNum = new Axxen.CustomControls.ATextBox_Labeled();
+            this.txtItemCode = new Axxen.CustomControls.ATextBox_Labeled();
+            this.txtItemName = new Axxen.CustomControls.ATextBox_Labeled();
             this.aLabel3 = new Axxen.CustomControls.ALabel();
-            this.aDateTimePicker3 = new Axxen.CustomControls.ADateTimePicker();
+            this.dtpPlanDate = new Axxen.CustomControls.ADateTimePicker();
             this.aLabel4 = new Axxen.CustomControls.ALabel();
-            this.aTextBox1 = new Axxen.CustomControls.ATextBox();
+            this.txtPlanUnit = new Axxen.CustomControls.ATextBox();
             this.aLabel5 = new Axxen.CustomControls.ALabel();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.aTextBox_Labeled4 = new Axxen.CustomControls.ATextBox_Labeled();
+            this.numPlanQuantity = new System.Windows.Forms.NumericUpDown();
+            this.txtWorkCenter = new Axxen.CustomControls.ATextBox_Labeled();
             this.aPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aSplitContainer1)).BeginInit();
             this.aSplitContainer1.Panel2.SuspendLayout();
             this.aSplitContainer1.SuspendLayout();
             this.aPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPlanQuantity)).BeginInit();
             this.SuspendLayout();
             // 
             // aPanel2
             // 
             this.aPanel2.Controls.Add(this.aTextBox_FindNameByCode2);
             this.aPanel2.Controls.Add(this.aTextBox_FindNameByCode1);
-            this.aPanel2.Controls.Add(this.aButton3);
-            this.aPanel2.Controls.Add(this.aButton2);
-            this.aPanel2.Controls.Add(this.aButton1);
-            this.aPanel2.Controls.Add(this.aDateTimePicker2);
+            this.aPanel2.Controls.Add(this.btnWorkCancle);
+            this.aPanel2.Controls.Add(this.btnWoFinish);
+            this.aPanel2.Controls.Add(this.btnNameChange);
+            this.aPanel2.Controls.Add(this.dtpWorkFinish);
             this.aPanel2.Controls.Add(this.aLabel2);
-            this.aPanel2.Controls.Add(this.aDateTimePicker1);
+            this.aPanel2.Controls.Add(this.dtpWorkStart);
             this.aPanel2.Controls.Add(this.aLabel1);
             // 
             // aSplitContainer1
@@ -72,27 +72,27 @@
             // 
             // aPanel1
             // 
-            this.aPanel1.Controls.Add(this.aTextBox_Labeled4);
-            this.aPanel1.Controls.Add(this.numericUpDown1);
+            this.aPanel1.Controls.Add(this.txtWorkCenter);
+            this.aPanel1.Controls.Add(this.numPlanQuantity);
             this.aPanel1.Controls.Add(this.aLabel5);
-            this.aPanel1.Controls.Add(this.aTextBox1);
+            this.aPanel1.Controls.Add(this.txtPlanUnit);
             this.aPanel1.Controls.Add(this.aLabel4);
-            this.aPanel1.Controls.Add(this.aDateTimePicker3);
+            this.aPanel1.Controls.Add(this.dtpPlanDate);
             this.aPanel1.Controls.Add(this.aLabel3);
-            this.aPanel1.Controls.Add(this.aTextBox_Labeled3);
-            this.aPanel1.Controls.Add(this.aTextBox_Labeled2);
-            this.aPanel1.Controls.Add(this.aTextBox_Labeled1);
+            this.aPanel1.Controls.Add(this.txtItemName);
+            this.aPanel1.Controls.Add(this.txtItemCode);
+            this.aPanel1.Controls.Add(this.txtWorkNum);
             this.aPanel1.Controls.SetChildIndex(this.aHeaderBox2, 0);
-            this.aPanel1.Controls.SetChildIndex(this.aTextBox_Labeled1, 0);
-            this.aPanel1.Controls.SetChildIndex(this.aTextBox_Labeled2, 0);
-            this.aPanel1.Controls.SetChildIndex(this.aTextBox_Labeled3, 0);
+            this.aPanel1.Controls.SetChildIndex(this.txtWorkNum, 0);
+            this.aPanel1.Controls.SetChildIndex(this.txtItemCode, 0);
+            this.aPanel1.Controls.SetChildIndex(this.txtItemName, 0);
             this.aPanel1.Controls.SetChildIndex(this.aLabel3, 0);
-            this.aPanel1.Controls.SetChildIndex(this.aDateTimePicker3, 0);
+            this.aPanel1.Controls.SetChildIndex(this.dtpPlanDate, 0);
             this.aPanel1.Controls.SetChildIndex(this.aLabel4, 0);
-            this.aPanel1.Controls.SetChildIndex(this.aTextBox1, 0);
+            this.aPanel1.Controls.SetChildIndex(this.txtPlanUnit, 0);
             this.aPanel1.Controls.SetChildIndex(this.aLabel5, 0);
-            this.aPanel1.Controls.SetChildIndex(this.numericUpDown1, 0);
-            this.aPanel1.Controls.SetChildIndex(this.aTextBox_Labeled4, 0);
+            this.aPanel1.Controls.SetChildIndex(this.numPlanQuantity, 0);
+            this.aPanel1.Controls.SetChildIndex(this.txtWorkCenter, 0);
             // 
             // aHeaderBox1
             // 
@@ -128,47 +128,47 @@
             this.aTextBox_FindNameByCode1.txtCodeText = "";
             this.aTextBox_FindNameByCode1.txtNameText = "";
             // 
-            // aButton3
+            // btnWorkCancle
             // 
-            this.aButton3.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.aButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton3.Location = new System.Drawing.Point(970, 40);
-            this.aButton3.Name = "aButton3";
-            this.aButton3.Size = new System.Drawing.Size(130, 23);
-            this.aButton3.TabIndex = 16;
-            this.aButton3.Text = "작업지시 마감취소";
-            this.aButton3.UseVisualStyleBackColor = false;
+            this.btnWorkCancle.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnWorkCancle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWorkCancle.Location = new System.Drawing.Point(970, 40);
+            this.btnWorkCancle.Name = "btnWorkCancle";
+            this.btnWorkCancle.Size = new System.Drawing.Size(130, 23);
+            this.btnWorkCancle.TabIndex = 16;
+            this.btnWorkCancle.Text = "작업지시 마감취소";
+            this.btnWorkCancle.UseVisualStyleBackColor = false;
             // 
-            // aButton2
+            // btnWoFinish
             // 
-            this.aButton2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.aButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton2.Location = new System.Drawing.Point(970, 11);
-            this.aButton2.Name = "aButton2";
-            this.aButton2.Size = new System.Drawing.Size(130, 23);
-            this.aButton2.TabIndex = 17;
-            this.aButton2.Text = "작업지시 마감";
-            this.aButton2.UseVisualStyleBackColor = false;
+            this.btnWoFinish.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnWoFinish.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWoFinish.Location = new System.Drawing.Point(970, 11);
+            this.btnWoFinish.Name = "btnWoFinish";
+            this.btnWoFinish.Size = new System.Drawing.Size(130, 23);
+            this.btnWoFinish.TabIndex = 17;
+            this.btnWoFinish.Text = "작업지시 마감";
+            this.btnWoFinish.UseVisualStyleBackColor = false;
             // 
-            // aButton1
+            // btnNameChange
             // 
-            this.aButton1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton1.Location = new System.Drawing.Point(878, 28);
-            this.aButton1.Name = "aButton1";
-            this.aButton1.Size = new System.Drawing.Size(75, 23);
-            this.aButton1.TabIndex = 18;
-            this.aButton1.Text = "품명변경";
-            this.aButton1.UseVisualStyleBackColor = false;
+            this.btnNameChange.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnNameChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNameChange.Location = new System.Drawing.Point(878, 28);
+            this.btnNameChange.Name = "btnNameChange";
+            this.btnNameChange.Size = new System.Drawing.Size(75, 23);
+            this.btnNameChange.TabIndex = 18;
+            this.btnNameChange.Text = "품명변경";
+            this.btnNameChange.UseVisualStyleBackColor = false;
             // 
-            // aDateTimePicker2
+            // dtpWorkFinish
             // 
-            this.aDateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.aDateTimePicker2.Location = new System.Drawing.Point(254, 28);
-            this.aDateTimePicker2.Name = "aDateTimePicker2";
-            this.aDateTimePicker2.Size = new System.Drawing.Size(105, 23);
-            this.aDateTimePicker2.TabIndex = 15;
-            this.aDateTimePicker2.Value = new System.DateTime(2020, 1, 3, 15, 14, 0, 0);
+            this.dtpWorkFinish.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpWorkFinish.Location = new System.Drawing.Point(254, 28);
+            this.dtpWorkFinish.Name = "dtpWorkFinish";
+            this.dtpWorkFinish.Size = new System.Drawing.Size(105, 23);
+            this.dtpWorkFinish.TabIndex = 15;
+            this.dtpWorkFinish.Value = new System.DateTime(2020, 1, 3, 15, 14, 0, 0);
             // 
             // aLabel2
             // 
@@ -179,14 +179,14 @@
             this.aLabel2.TabIndex = 14;
             this.aLabel2.Text = "~";
             // 
-            // aDateTimePicker1
+            // dtpWorkStart
             // 
-            this.aDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.aDateTimePicker1.Location = new System.Drawing.Point(121, 28);
-            this.aDateTimePicker1.Name = "aDateTimePicker1";
-            this.aDateTimePicker1.Size = new System.Drawing.Size(105, 23);
-            this.aDateTimePicker1.TabIndex = 13;
-            this.aDateTimePicker1.Value = new System.DateTime(2020, 1, 3, 15, 14, 0, 0);
+            this.dtpWorkStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpWorkStart.Location = new System.Drawing.Point(121, 28);
+            this.dtpWorkStart.Name = "dtpWorkStart";
+            this.dtpWorkStart.Size = new System.Drawing.Size(105, 23);
+            this.dtpWorkStart.TabIndex = 13;
+            this.dtpWorkStart.Value = new System.DateTime(2020, 1, 3, 15, 14, 0, 0);
             // 
             // aLabel1
             // 
@@ -197,41 +197,41 @@
             this.aLabel1.TabIndex = 12;
             this.aLabel1.Text = "작업지시일자";
             // 
-            // aTextBox_Labeled1
+            // txtWorkNum
             // 
-            this.aTextBox_Labeled1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aTextBox_Labeled1.FontSize = 9F;
-            this.aTextBox_Labeled1.LabelText = "작업지시번호";
-            this.aTextBox_Labeled1.Location = new System.Drawing.Point(283, 20);
-            this.aTextBox_Labeled1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.aTextBox_Labeled1.Name = "aTextBox_Labeled1";
-            this.aTextBox_Labeled1.Size = new System.Drawing.Size(229, 29);
-            this.aTextBox_Labeled1.TabIndex = 11;
-            this.aTextBox_Labeled1.TextBoxText = "";
+            this.txtWorkNum.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtWorkNum.FontSize = 9F;
+            this.txtWorkNum.LabelText = "작업지시번호";
+            this.txtWorkNum.Location = new System.Drawing.Point(283, 20);
+            this.txtWorkNum.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtWorkNum.Name = "txtWorkNum";
+            this.txtWorkNum.Size = new System.Drawing.Size(229, 29);
+            this.txtWorkNum.TabIndex = 11;
+            this.txtWorkNum.TextBoxText = "";
             // 
-            // aTextBox_Labeled2
+            // txtItemCode
             // 
-            this.aTextBox_Labeled2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aTextBox_Labeled2.FontSize = 9F;
-            this.aTextBox_Labeled2.LabelText = "품목코드";
-            this.aTextBox_Labeled2.Location = new System.Drawing.Point(553, 20);
-            this.aTextBox_Labeled2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.aTextBox_Labeled2.Name = "aTextBox_Labeled2";
-            this.aTextBox_Labeled2.Size = new System.Drawing.Size(209, 29);
-            this.aTextBox_Labeled2.TabIndex = 12;
-            this.aTextBox_Labeled2.TextBoxText = "";
+            this.txtItemCode.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtItemCode.FontSize = 9F;
+            this.txtItemCode.LabelText = "품목코드";
+            this.txtItemCode.Location = new System.Drawing.Point(553, 20);
+            this.txtItemCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtItemCode.Name = "txtItemCode";
+            this.txtItemCode.Size = new System.Drawing.Size(209, 29);
+            this.txtItemCode.TabIndex = 12;
+            this.txtItemCode.TextBoxText = "";
             // 
-            // aTextBox_Labeled3
+            // txtItemName
             // 
-            this.aTextBox_Labeled3.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aTextBox_Labeled3.FontSize = 9F;
-            this.aTextBox_Labeled3.LabelText = "품목명";
-            this.aTextBox_Labeled3.Location = new System.Drawing.Point(553, 57);
-            this.aTextBox_Labeled3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.aTextBox_Labeled3.Name = "aTextBox_Labeled3";
-            this.aTextBox_Labeled3.Size = new System.Drawing.Size(209, 29);
-            this.aTextBox_Labeled3.TabIndex = 13;
-            this.aTextBox_Labeled3.TextBoxText = "";
+            this.txtItemName.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtItemName.FontSize = 9F;
+            this.txtItemName.LabelText = "품목명";
+            this.txtItemName.Location = new System.Drawing.Point(553, 57);
+            this.txtItemName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtItemName.Name = "txtItemName";
+            this.txtItemName.Size = new System.Drawing.Size(209, 29);
+            this.txtItemName.TabIndex = 13;
+            this.txtItemName.TextBoxText = "";
             // 
             // aLabel3
             // 
@@ -242,13 +242,13 @@
             this.aLabel3.TabIndex = 14;
             this.aLabel3.Text = "계획일자";
             // 
-            // aDateTimePicker3
+            // dtpPlanDate
             // 
-            this.aDateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.aDateTimePicker3.Location = new System.Drawing.Point(936, 12);
-            this.aDateTimePicker3.Name = "aDateTimePicker3";
-            this.aDateTimePicker3.Size = new System.Drawing.Size(94, 23);
-            this.aDateTimePicker3.TabIndex = 15;
+            this.dtpPlanDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpPlanDate.Location = new System.Drawing.Point(936, 12);
+            this.dtpPlanDate.Name = "dtpPlanDate";
+            this.dtpPlanDate.Size = new System.Drawing.Size(94, 23);
+            this.dtpPlanDate.TabIndex = 15;
             // 
             // aLabel4
             // 
@@ -259,16 +259,16 @@
             this.aLabel4.TabIndex = 16;
             this.aLabel4.Text = "계획수량";
             // 
-            // aTextBox1
+            // txtPlanUnit
             // 
-            this.aTextBox1.BackColor = System.Drawing.Color.White;
-            this.aTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.aTextBox1.errorp = null;
-            this.aTextBox1.Location = new System.Drawing.Point(936, 72);
-            this.aTextBox1.Name = "aTextBox1";
-            this.aTextBox1.Size = new System.Drawing.Size(94, 23);
-            this.aTextBox1.TabIndex = 17;
-            this.aTextBox1.txtType = Axxen.CustomControls.type.Normal;
+            this.txtPlanUnit.BackColor = System.Drawing.Color.White;
+            this.txtPlanUnit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPlanUnit.errorp = null;
+            this.txtPlanUnit.Location = new System.Drawing.Point(936, 72);
+            this.txtPlanUnit.Name = "txtPlanUnit";
+            this.txtPlanUnit.Size = new System.Drawing.Size(94, 23);
+            this.txtPlanUnit.TabIndex = 17;
+            this.txtPlanUnit.txtType = Axxen.CustomControls.type.Normal;
             // 
             // aLabel5
             // 
@@ -279,24 +279,24 @@
             this.aLabel5.TabIndex = 18;
             this.aLabel5.Text = "계획수량단위";
             // 
-            // numericUpDown1
+            // numPlanQuantity
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(936, 42);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(94, 23);
-            this.numericUpDown1.TabIndex = 19;
+            this.numPlanQuantity.Location = new System.Drawing.Point(936, 42);
+            this.numPlanQuantity.Name = "numPlanQuantity";
+            this.numPlanQuantity.Size = new System.Drawing.Size(94, 23);
+            this.numPlanQuantity.TabIndex = 19;
             // 
-            // aTextBox_Labeled4
+            // txtWorkCenter
             // 
-            this.aTextBox_Labeled4.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aTextBox_Labeled4.FontSize = 9F;
-            this.aTextBox_Labeled4.LabelText = "작업장";
-            this.aTextBox_Labeled4.Location = new System.Drawing.Point(283, 60);
-            this.aTextBox_Labeled4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.aTextBox_Labeled4.Name = "aTextBox_Labeled4";
-            this.aTextBox_Labeled4.Size = new System.Drawing.Size(229, 29);
-            this.aTextBox_Labeled4.TabIndex = 20;
-            this.aTextBox_Labeled4.TextBoxText = "";
+            this.txtWorkCenter.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtWorkCenter.FontSize = 9F;
+            this.txtWorkCenter.LabelText = "작업장";
+            this.txtWorkCenter.Location = new System.Drawing.Point(283, 60);
+            this.txtWorkCenter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtWorkCenter.Name = "txtWorkCenter";
+            this.txtWorkCenter.Size = new System.Drawing.Size(229, 29);
+            this.txtWorkCenter.TabIndex = 20;
+            this.txtWorkCenter.TextBoxText = "";
             // 
             // PPS_SCH_002
             // 
@@ -310,7 +310,7 @@
             this.aSplitContainer1.ResumeLayout(false);
             this.aPanel1.ResumeLayout(false);
             this.aPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPlanQuantity)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -319,22 +319,22 @@
 
         private CustomControls.ATextBox_FindNameByCode aTextBox_FindNameByCode2;
         private CustomControls.ATextBox_FindNameByCode aTextBox_FindNameByCode1;
-        private CustomControls.AButton aButton3;
-        private CustomControls.AButton aButton2;
-        private CustomControls.AButton aButton1;
-        private CustomControls.ADateTimePicker aDateTimePicker2;
+        private CustomControls.AButton btnWorkCancle;
+        private CustomControls.AButton btnWoFinish;
+        private CustomControls.AButton btnNameChange;
+        private CustomControls.ADateTimePicker dtpWorkFinish;
         private CustomControls.ALabel aLabel2;
-        private CustomControls.ADateTimePicker aDateTimePicker1;
+        private CustomControls.ADateTimePicker dtpWorkStart;
         private CustomControls.ALabel aLabel1;
-        private CustomControls.ATextBox_Labeled aTextBox_Labeled3;
-        private CustomControls.ATextBox_Labeled aTextBox_Labeled2;
-        private CustomControls.ATextBox_Labeled aTextBox_Labeled1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private CustomControls.ATextBox_Labeled txtItemName;
+        private CustomControls.ATextBox_Labeled txtItemCode;
+        private CustomControls.ATextBox_Labeled txtWorkNum;
+        private System.Windows.Forms.NumericUpDown numPlanQuantity;
         private CustomControls.ALabel aLabel5;
-        private CustomControls.ATextBox aTextBox1;
+        private CustomControls.ATextBox txtPlanUnit;
         private CustomControls.ALabel aLabel4;
-        private CustomControls.ADateTimePicker aDateTimePicker3;
+        private CustomControls.ADateTimePicker dtpPlanDate;
         private CustomControls.ALabel aLabel3;
-        private CustomControls.ATextBox_Labeled aTextBox_Labeled4;
+        private CustomControls.ATextBox_Labeled txtWorkCenter;
     }
 }
