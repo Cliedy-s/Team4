@@ -30,7 +30,7 @@
         {
             this.aPanel2 = new Axxen.CustomControls.APanel();
             this.aSplitContainer1 = new Axxen.CustomControls.ASplitContainer();
-            this.aDataGridView1 = new Axxen.CustomControls.ADataGridView();
+            this.dgvMainGrid = new Axxen.CustomControls.ADataGridView();
             this.aPanel1 = new Axxen.CustomControls.APanel();
             this.aHeaderBox2 = new Axxen.CustomControls.AHeaderBox();
             this.aHeaderBox1 = new Axxen.CustomControls.AHeaderBox();
@@ -38,7 +38,7 @@
             this.aSplitContainer1.Panel1.SuspendLayout();
             this.aSplitContainer1.Panel2.SuspendLayout();
             this.aSplitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.aDataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMainGrid)).BeginInit();
             this.aPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,7 +65,7 @@
             // 
             // aSplitContainer1.Panel1
             // 
-            this.aSplitContainer1.Panel1.Controls.Add(this.aDataGridView1);
+            this.aSplitContainer1.Panel1.Controls.Add(this.dgvMainGrid);
             this.aSplitContainer1.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             // 
             // aSplitContainer1.Panel2
@@ -77,19 +77,19 @@
             this.aSplitContainer1.SplitterWidth = 1;
             this.aSplitContainer1.TabIndex = 5;
             // 
-            // aDataGridView1
+            // dgvMainGrid
             // 
-            this.aDataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvMainGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.aDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.aDataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.aDataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.aDataGridView1.Name = "aDataGridView1";
-            this.aDataGridView1.RowHeadersWidth = 51;
-            this.aDataGridView1.RowTemplate.Height = 23;
-            this.aDataGridView1.Size = new System.Drawing.Size(1129, 453);
-            this.aDataGridView1.TabIndex = 6;
+            this.dgvMainGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMainGrid.Location = new System.Drawing.Point(0, 0);
+            this.dgvMainGrid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvMainGrid.Name = "dgvMainGrid";
+            this.dgvMainGrid.RowHeadersWidth = 51;
+            this.dgvMainGrid.RowTemplate.Height = 23;
+            this.dgvMainGrid.Size = new System.Drawing.Size(1129, 453);
+            this.dgvMainGrid.TabIndex = 6;
             // 
             // aPanel1
             // 
@@ -141,7 +141,7 @@
             this.aSplitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.aSplitContainer1)).EndInit();
             this.aSplitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.aDataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMainGrid)).EndInit();
             this.aPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -151,7 +151,7 @@
 
         protected CustomControls.APanel aPanel2;
         protected CustomControls.ASplitContainer aSplitContainer1;
-        protected CustomControls.ADataGridView aDataGridView1;
+        protected CustomControls.ADataGridView dgvMainGrid;
         protected CustomControls.APanel aPanel1;
         protected CustomControls.AHeaderBox aHeaderBox1;
         protected CustomControls.AHeaderBox aHeaderBox2;
