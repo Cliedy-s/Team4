@@ -130,6 +130,7 @@
             // 
             // btnWorkCancle
             // 
+            this.btnWorkCancle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnWorkCancle.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnWorkCancle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWorkCancle.Location = new System.Drawing.Point(970, 40);
@@ -141,6 +142,7 @@
             // 
             // btnWoFinish
             // 
+            this.btnWoFinish.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnWoFinish.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnWoFinish.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWoFinish.Location = new System.Drawing.Point(970, 11);
@@ -152,6 +154,7 @@
             // 
             // btnNameChange
             // 
+            this.btnNameChange.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNameChange.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnNameChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNameChange.Location = new System.Drawing.Point(878, 28);
@@ -199,6 +202,8 @@
             // 
             // txtWorkNum
             // 
+            this.txtWorkNum.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtWorkNum.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtWorkNum.FontSize = 9F;
             this.txtWorkNum.LabelText = "작업지시번호";
@@ -211,6 +216,8 @@
             // 
             // txtItemCode
             // 
+            this.txtItemCode.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtItemCode.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtItemCode.FontSize = 9F;
             this.txtItemCode.LabelText = "품목코드";
@@ -223,6 +230,8 @@
             // 
             // txtItemName
             // 
+            this.txtItemName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtItemName.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtItemName.FontSize = 9F;
             this.txtItemName.LabelText = "품목명";
@@ -235,6 +244,8 @@
             // 
             // aLabel3
             // 
+            this.aLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.aLabel3.AutoSize = true;
             this.aLabel3.Location = new System.Drawing.Point(851, 16);
             this.aLabel3.Name = "aLabel3";
@@ -244,6 +255,8 @@
             // 
             // dtpPlanDate
             // 
+            this.dtpPlanDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpPlanDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpPlanDate.Location = new System.Drawing.Point(936, 12);
             this.dtpPlanDate.Name = "dtpPlanDate";
@@ -252,6 +265,8 @@
             // 
             // aLabel4
             // 
+            this.aLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.aLabel4.AutoSize = true;
             this.aLabel4.Location = new System.Drawing.Point(851, 46);
             this.aLabel4.Name = "aLabel4";
@@ -261,6 +276,8 @@
             // 
             // txtPlanUnit
             // 
+            this.txtPlanUnit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPlanUnit.BackColor = System.Drawing.Color.White;
             this.txtPlanUnit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPlanUnit.errorp = null;
@@ -272,6 +289,8 @@
             // 
             // aLabel5
             // 
+            this.aLabel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.aLabel5.AutoSize = true;
             this.aLabel5.Location = new System.Drawing.Point(851, 76);
             this.aLabel5.Name = "aLabel5";
@@ -281,6 +300,8 @@
             // 
             // numPlanQuantity
             // 
+            this.numPlanQuantity.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.numPlanQuantity.Location = new System.Drawing.Point(936, 42);
             this.numPlanQuantity.Name = "numPlanQuantity";
             this.numPlanQuantity.Size = new System.Drawing.Size(94, 23);
@@ -288,6 +309,8 @@
             // 
             // txtWorkCenter
             // 
+            this.txtWorkCenter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtWorkCenter.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtWorkCenter.FontSize = 9F;
             this.txtWorkCenter.LabelText = "작업장";

@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainForm_Service.cs" />
+    <Compile Include="MoldService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserGroupService.cs" />
     <Compile Include="UserInfo_Service.cs" />

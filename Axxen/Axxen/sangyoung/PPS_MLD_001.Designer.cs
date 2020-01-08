@@ -289,6 +289,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.Name = "PPS_MLD_001";
+            this.Load += new System.EventHandler(this.PPS_MLD_001_Load);
             this.aPanel2.ResumeLayout(false);
             this.aPanel2.PerformLayout();
             this.aSplitContainer1.Panel2.ResumeLayout(false);
