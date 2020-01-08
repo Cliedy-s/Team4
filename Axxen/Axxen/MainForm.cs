@@ -17,10 +17,8 @@ namespace Axxen
     {
         int CheckBtnIndex = 7;
         bool BookmarkCheck = true; //즐겨찾기 
-        int btntabindexCheck = -1; //현재 선택한버튼 채크
-        bool btnCheck = true; //현재 선택한버튼 채크2
         bool open = true;
-
+        StringBuilder subtitle = new StringBuilder();
 
         Image CloseImage;
 
@@ -31,32 +29,31 @@ namespace Axxen
         {
             InitializeComponent();
 
-             
-
-
-            //booklist = service.GetAll_BookMark(1);
-            //lbxbookmark.DataSource = booklist;
-
-
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
+
+            
+            LoginForm frm = new LoginForm();
+
+            if(frm.ShowDialog() == DialogResult.OK)
+            {
             MainForm_Service service = new MainForm_Service();
             menulist = service.GetAll_MenuTree_Master();
-              
+
+                booklist = service.GetAll_BookMark(UserInfo.User_ID);
+
+                lblName.Text = UserInfo.User_Name; 
+
             ImageList imgList = new ImageList();
             //imgList.Images.Add(Bitmap.FromFile("treeimg.png"));
             imgList.Images.Add(Properties.Resources.treeimg);
-
             tvMenu.ImageList = imgList;
-           
-
-            this.tabControl2.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-            tabControl2.DrawItem += TabControl1_DrawItem;
-            tabControl2.MouseClick += TabControl2_MouseClick;
-            //CloseImage = Image.FromFile("x.png");
+                tvBookMark.ImageList = imgList;
+            this.tabControl2.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;       
             CloseImage = Properties.Resources.x;
             this.tabControl2.Padding = new Point(10, 3);
+            }
         }
 
 
@@ -73,124 +70,15 @@ namespace Axxen
         /// <param name="e"></param>
         private void BtnMenu_Click(object sender, EventArgs e)
         {
-
-            #region 좆망
-            //   Button btn = (Button)sender;
-            //int CheckBtnIndex=   btn.TabIndex;
-            //    int count =100;
-            //   bool check = false;
-            //   bool check2 = false;
-            //   foreach (var item in panelMenu.Controls)
-            //   {
-            //       Button allbtn;
-
-            //       if (item is Button)
-            //       {
-            //           allbtn = (Button)item;
-            //           if (((Button)allbtn).Text == btn.Text)
-            //           {
-            //               check = true;
-            //               tvMenu.Location = new Point(0, btn.Location.Y + 33);                   
-            //           }
-            //           else if(check)
-            //           {
-
-            //               if (((Button)allbtn).Text != btn.Text)
-            //               {
-            //                   if (!check2)
-            //                   {
-            //                       allbtn.Location = new Point(0, tvMenu.Location.Y+200);
-            //                       check2 = true;
-            //                   }
-            //                   else
-            //                   {
-            //                       allbtn.Location = new Point(0, allbtn.Location.Y );
-            //                   }
-
-            //               }
-            //           }
-
-            //       }
-            //   }
+            
 
 
-
-
-            //Button btn = (Button)sender;
-            //if (btn.TabIndex == btntabindexCheck) // 같은 메뉴 두번클릭시
-            //{
-            //    if (btnCheck)
-            //    {
-            //        tvMenu.Visible = true;
-            //        btnCheck = false;
-            //    }
-            //    else
-            //    {
-
-            //        tvMenu.Visible = false;
-            //        btnCheck = true;
-
-            //    }
-            //}
-            //else //처음선택시
-            //{
-            //    btntabindexCheck = btn.TabIndex;
-            //    tvMenu.Visible = true;
-            //    btnCheck = false;
-            //}
-
-
-            //foreach (var item in panelMenu.Controls)
-            //{
-            //    Button conBtn;
-            //   if(! btnCheck) { 
-            //    if (item is Button)
-            //    {
-            //        conBtn = (Button)item;
-            //        if (btn.TabIndex < CheckBtnIndex)
-            //        {
-            //            if (btn.TabIndex < conBtn.TabIndex && CheckBtnIndex >= conBtn.TabIndex)
-            //            {
-            //                conBtn.Location = new Point(0, conBtn.Location.Y + tvMenu.Size.Height);
-            //            }
-            //        }
-
-            //        if (conBtn.TabIndex <= btn.TabIndex)
-            //        {
-            //            if (conBtn.TabIndex > CheckBtnIndex)
-            //            {
-            //                conBtn.Location = new Point(0, conBtn.Location.Y - tvMenu.Size.Height);
-            //            }
-            //        }
-            //    }
-            //    }
-            //    else
-            //    {                                     
-            //            if (item is Button)
-            //            {
-            //                conBtn = (Button)item;
-            //                if (conBtn.TabIndex > CheckBtnIndex)
-            //                {
-            //                    conBtn.Location = new Point(0, conBtn.Location.Y - tvMenu.Size.Height);
-            //                }
-            //            if (conBtn.TabIndex < CheckBtnIndex)
-            //            {
-            //                conBtn.Location = new Point(0, conBtn.Location.Y + tvMenu.Size.Height);
-            //            }
-            //        }
-
-            //    }
-
-
-            //}
-            //CheckBtnIndex = btn.TabIndex;
-            //tvMenu.Location = new Point(0, btn.Location.Y + 33);
-
-            #endregion
             tvMenu.Visible = true;
             // 누르는 버튼
             Button btn = (Button)sender;
-            btn.BackColor = Color.FromArgb(201,228,232);
+            subtitle.Clear();
+            subtitle.Append(btn.Text);
+            btn.BackColor = Color.FromArgb(201, 228, 232);
             // 열려있는 트리뷰가 존재하고
             // 현재 열려있는 버튼과 누르는 버튼이 같을 경우(트리뷰를 닫는다)
             if (btn.TabIndex == CheckBtnIndex && open)
@@ -281,7 +169,7 @@ namespace Axxen
                     List<MenuTree_Master_VO> menu = menulist.FindAll(item => item.Parent_Screen_Code == parentcode.Screen_Code);//부모코드랑관련자녀메뉴
                     tvMenu.Nodes.Clear();
                     tvMenu.Nodes.Add(parentcode.Screen_Name);
-                 
+
                     for (int i = 0; i < menu.Count; i++)
                     {
                         tvMenu.TopNode.Nodes.Add(menu[i].Screen_Name);
@@ -292,19 +180,30 @@ namespace Axxen
             catch (Exception err)
             {
 
-                MessageBox.Show(err.ToString() );
+                MessageBox.Show(err.ToString());
             }
 
         }
         #region 트리뷰관련 이벤트
         private void TvMenu_DoubleClick(object sender, EventArgs e)
-        {        
+        {
+            try
+            { 
+            if (tvMenu.SelectedNode.Text != null) { 
             MenuTree_Master_VO parentcode = menulist.Find(item => item.Screen_Name == tvMenu.SelectedNode.Text);
-
+            subtitle.Clear();
             if (parentcode.Parent_Screen_Code != null) //부모코드에 널값이있는 메뉴를 제외하고
             {
                 string form = parentcode.Screen_Code;
                 newForm(form, tvMenu.SelectedNode.Text);
+
+                //sdfasd
+            }
+            }
+            }
+            catch { 
+
+                
             }
         }
         /// <summary>
@@ -319,13 +218,13 @@ namespace Axxen
                 Assembly cuasm = Assembly.GetExecutingAssembly();
                 //string Format 의 따옴표와 마침표 주의!!
                 string childFormName = string.Format("{0}.{1}", nameSpace, formName);
-                Form frm = (Form)cuasm.CreateInstance(childFormName);                
-                
+                Form frm = (Form)cuasm.CreateInstance(childFormName);
+
                 foreach (Form childForm in Application.OpenForms)
                 {
                     if (childForm.Tag.ToString().Equals(formName))
                     {
-                        childForm.Activate();          
+                        childForm.Activate();
                         return;
                     }
                 }
@@ -336,14 +235,17 @@ namespace Axxen
                 newTab.Tag = formName;
                 newTab.Text = formText;
                 tabControl2.TabPages.Add(newTab);
+                subtitle.Append("->");
+                subtitle.Append(newTab.ToString());
 
-            //    tabControl2.TabPages     .Tag=formName;
-            //    MessageBox.Show(tabControl2.SelectedTab.Tag.ToString());
+                //    tabControl2.TabPages     .Tag=formName;
+                //    MessageBox.Show(tabControl2.SelectedTab.Tag.ToString());
                 frm.Show();
+                lblSubtitle.Text = "메뉴->"+ subtitle;
             }
-            catch (Exception err)
+            catch 
             {
-                MessageBox.Show(err.ToString());
+                MessageBox.Show("사용할 수 없는 메뉴"+ formName);
             }
         }
 
@@ -377,9 +279,18 @@ namespace Axxen
         {
             if (BookmarkCheck)
             {
-               
+
                 pnBookmark.Visible = true;
                 BookmarkCheck = false;
+                tvBookMark.Nodes.Clear();
+                tvBookMark.Nodes.Add("즐겨찾기");
+
+                for (int i = 0; i < booklist.Count; i++)
+                {
+                    tvBookMark.TopNode.Nodes.Add(booklist[i].Screen_Code);
+                }
+
+                tvBookMark.ExpandAll();
             }
             else
             {
@@ -391,41 +302,48 @@ namespace Axxen
 
         private void 즐겨찾기ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show(tvMenu.SelectedNode.Text);
-            //MainForm_Service service = new MainForm_Service();
-            //MenuTree_Master_VO parentname = menulist.Find(item => item.Screen_Name == tvMenu.SelectedNode.Text.Trim());//부모코드find
 
-            //if (booklist.Count < 1)
-            //{
-            //    service.InsertBookMark(parentname.Parent_Screen_Code, parentname.Screen_Code);
-            //    return;
-            //}
-
-            //int a = booklist.Find(item => item.Screen_Code == parentname.Screen_Code).;
-            //for (int i=0; i< booklist.Count; i++)
-            //{
-            //  if(  booklist[i].Screen_Code != parentname.Screen_Code)//등록된즐겨찾기가 아니라면.
-            //    {
-                  
-            //        service.InsertBookMark(parentname.Parent_Screen_Code, parentname.Screen_Code);
-            //        break;
-            //    }
-            //}
+            MainForm_Service service = new MainForm_Service();
+            MenuTree_Master_VO parentname = menulist.Find(item => item.Screen_Name == tvMenu.SelectedNode.Text);//부모코드find
+            BookMark_VO bookmark = new BookMark_VO();
+            bookmark.Parent_Screen_Code = parentname.Parent_Screen_Code;
+            bookmark.Screen_Code = parentname.Screen_Code;
+            bookmark.User_ID = UserInfo.User_ID;
 
 
-            //booklist = service.GetAll_BookMark(1);
-            //lbxbookmark.DataSource = booklist;
+
+            if (!service.InsertBookMark(bookmark))
+            {
+                MessageBox.Show("이미등록된 항목입니다.");
+            }
+            else
+            {
+
+                tvBookMark.Nodes.Clear();
+                booklist = service.GetAll_BookMark(UserInfo.User_ID);
+                tvBookMark.Nodes.Add("즐겨찾기");
+
+                for (int i = 0; i < booklist.Count; i++)
+                {
+                    tvBookMark.TopNode.Nodes.Add(booklist[i].Screen_Code);
+                }
+
+                tvBookMark.ExpandAll();
+            }
+
 
 
 
         }
         #endregion
 
+
+        #region tabControl
         private void TabControl1_DrawItem(object sender, DrawItemEventArgs e)
         {
             try
             {
-                var tabRect = this.tabControl2.GetTabRect(e.Index);
+                 var tabRect = this.tabControl2.GetTabRect(e.Index);
                 tabRect.Inflate(-2, -2);
                 var imageRect = new Rectangle(tabRect.Right - CloseImage.Width,
                                          tabRect.Top + (tabRect.Height - CloseImage.Height) / 2,
@@ -441,16 +359,18 @@ namespace Axxen
                     sf.FormatFlags |= StringFormatFlags.DirectionRightToLeft;
                 }
 
+                e.Graphics.FillRectangle(Brushes.Aqua, e.Bounds); //텝페이지 색
                 e.Graphics.DrawString(this.tabControl2.TabPages[e.Index].Text,
-                                      this.Font, Brushes.Black, tabRect, sf);
-                e.Graphics.DrawImage(CloseImage, imageRect.Location);
+                                      this.Font, Brushes.Black, tabRect, sf);//텝페이지 폰트랑 글자 색
+                
+                e.Graphics.DrawImage(CloseImage, imageRect.Location); //텝페이지 취소이미지 생성
 
             }
             catch (Exception) { }
         }
 
-     
-        
+
+
         public static Rectangle GetRTLCoordinates(Rectangle container, Rectangle drawRectangle)
         {
             return new Rectangle(
@@ -460,10 +380,11 @@ namespace Axxen
                 drawRectangle.Height);
         }
 
-   
+
         private void TabControl2_MouseClick(object sender, MouseEventArgs e)
         {
-            for (var i = 0; i < this.tabControl2.TabPages.Count; i++)
+
+            for (int i = 0; i < this.tabControl2.TabPages.Count; i++)
             {
                 var tabRect = this.tabControl2.GetTabRect(i);
                 tabRect.Inflate(-2, -2);
@@ -471,37 +392,39 @@ namespace Axxen
                                          tabRect.Top + (tabRect.Height - CloseImage.Height) / 2,
                                          CloseImage.Width,
                                          CloseImage.Height);
+
+
                 if (imageRect.Contains(e.Location)) //x버튼 클릭시 폼종료
                 {
-               
-                    foreach (Form childForm in Application.OpenForms)
-                    {                     
-                            if (childForm.Tag.ToString().Equals(tabControl2.SelectedTab.Tag))
-                        {
-                            childForm.Close ();
-                            this.tabControl2.TabPages.RemoveAt(i);
-                            break;
-                        }
-                    }
-
-             
-                  
-               }
-                else //x버튼을 제제외한 텝페이지클릭시 폼 앞으로
-                {
-                
                     foreach (Form childForm in Application.OpenForms)
                     {
-                        if (childForm.Name.Equals(tabControl2.SelectedTab.Text))
+                        if (childForm.Tag.ToString().Equals(tabControl2.SelectedTab.Tag.ToString()))
                         {
-                            childForm.Activate();
+                            childForm.Close();
+                            this.tabControl2.TabPages.RemoveAt(i);
+
 
                             break;
                         }
+
                     }
-               
                 }
+                else //x버튼을 제제외한 텝페이지클릭시 폼 앞으로
+                {
+                    foreach (Form childForm in Application.OpenForms)
+                    {
+                        if (childForm.Tag.ToString().Equals(tabControl2.SelectedTab.Tag.ToString()))
+                        {
+                            childForm.Activate();
+                            lblSubtitle.Text = "메뉴->"+ tabControl2.SelectedTab.Text.ToString();
+                            break;
+                        }
+                    }
+                }
+
             }
         }
+
+        #endregion
     }
 }
