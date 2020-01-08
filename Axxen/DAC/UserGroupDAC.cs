@@ -37,20 +37,21 @@ namespace DAC
         /// <returns></returns>
         public bool GetUpdateUserGroup(string groupcode, string check)
         {
-            UserGroupDAC dac = new UserGroupDAC();
-
+         
             using (SqlCommand comm = new SqlCommand())
             {
                 comm.Connection = new SqlConnection(Connstr);
-                comm.CommandText = "GetAllUserGroup";
+                comm.CommandText = "GetUpdateUserGroup";
                 comm.CommandType = CommandType.StoredProcedure;
-              //  comm.Parameters.AddWithValue("@")
+                comm.Parameters.AddWithValue("@UserGroup_Code",groupcode);
+                comm.Parameters.AddWithValue("@Use_YN", check);
 
                 comm.Connection.Open();
-                SqlDataReader reader = comm.ExecuteReader();
-                List<UserGroup_MasterVO> list = Helper.DataReaderMapToList<UserGroup_MasterVO>(reader);
+               int result = Convert.ToInt32(comm.ExecuteScalar());
                 comm.Connection.Close();
 
+                if (result > 0)
+                    return true;
                 return false;
             }
 
