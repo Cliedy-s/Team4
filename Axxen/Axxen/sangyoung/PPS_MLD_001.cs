@@ -24,7 +24,7 @@ namespace Axxen.sangyoung
         {
             DataLoad();
             moldList = service.GetAllMold();
-            aDataGridView1.DataSource = moldList;
+            dgvMainGrid.DataSource = moldList;
         }
 
         /// <summary>
@@ -32,8 +32,8 @@ namespace Axxen.sangyoung
         /// </summary>
         private void DataLoad()
         {
-            InitControlUtil.SetDGVDesign(aDataGridView1);
-            DatagridviewDesigns.AddNewColumnToDataGridView(aDataGridView1, "자재번호", "mat_No", true, 60);
+            InitControlUtil.SetDGVDesign(dgvMainGrid);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "자재번호", "mat_No", true, 60);
         }
     }
 }
