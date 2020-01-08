@@ -343,7 +343,7 @@ namespace Axxen
         {
             try
             {
-                var tabRect = this.tabControl2.GetTabRect(e.Index);
+                 var tabRect = this.tabControl2.GetTabRect(e.Index);
                 tabRect.Inflate(-2, -2);
                 var imageRect = new Rectangle(tabRect.Right - CloseImage.Width,
                                          tabRect.Top + (tabRect.Height - CloseImage.Height) / 2,
@@ -359,9 +359,11 @@ namespace Axxen
                     sf.FormatFlags |= StringFormatFlags.DirectionRightToLeft;
                 }
 
+                e.Graphics.FillRectangle(Brushes.Aqua, e.Bounds); //텝페이지 색
                 e.Graphics.DrawString(this.tabControl2.TabPages[e.Index].Text,
-                                      this.Font, Brushes.Black, tabRect, sf);
-                e.Graphics.DrawImage(CloseImage, imageRect.Location);
+                                      this.Font, Brushes.Black, tabRect, sf);//텝페이지 폰트랑 글자 색
+                
+                e.Graphics.DrawImage(CloseImage, imageRect.Location); //텝페이지 취소이미지 생성
 
             }
             catch (Exception) { }
