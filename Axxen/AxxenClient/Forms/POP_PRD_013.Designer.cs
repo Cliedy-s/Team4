@@ -49,28 +49,31 @@
             // 
             // aHeaderBox2
             // 
-            this.aHeaderBox2.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.aHeaderBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.aHeaderBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.aHeaderBox2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aHeaderBox2.HeaderBoxText = "할당 대상 작업자";
-            this.aHeaderBox2.Location = new System.Drawing.Point(698, 143);
+            this.aHeaderBox2.Location = new System.Drawing.Point(698, 150);
             this.aHeaderBox2.Name = "aHeaderBox2";
             this.aHeaderBox2.Size = new System.Drawing.Size(243, 30);
             this.aHeaderBox2.TabIndex = 31;
             // 
             // aHeaderBox1
             // 
-            this.aHeaderBox1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.aHeaderBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.aHeaderBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.aHeaderBox1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aHeaderBox1.HeaderBoxText = "할당 작업자";
-            this.aHeaderBox1.Location = new System.Drawing.Point(12, 143);
+            this.aHeaderBox1.Location = new System.Drawing.Point(12, 150);
             this.aHeaderBox1.Name = "aHeaderBox1";
             this.aHeaderBox1.Size = new System.Drawing.Size(243, 30);
             this.aHeaderBox1.TabIndex = 30;
             // 
             // aButton1
             // 
-            this.aButton1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.aButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.aButton1.Font = new System.Drawing.Font("맑은 고딕", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aButton1.Location = new System.Drawing.Point(519, 452);
             this.aButton1.Name = "aButton1";
             this.aButton1.Size = new System.Drawing.Size(173, 129);
@@ -113,17 +116,18 @@
             this.aTextBox_Searchable2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aTextBox_Searchable2.FontSize = 9F;
             this.aTextBox_Searchable2.LabelText = "할당 작업자 수";
-            this.aTextBox_Searchable2.Location = new System.Drawing.Point(383, 106);
+            this.aTextBox_Searchable2.Location = new System.Drawing.Point(421, 106);
             this.aTextBox_Searchable2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.aTextBox_Searchable2.Name = "aTextBox_Searchable2";
-            this.aTextBox_Searchable2.Size = new System.Drawing.Size(365, 30);
+            this.aTextBox_Searchable2.Size = new System.Drawing.Size(390, 30);
             this.aTextBox_Searchable2.TabIndex = 34;
             this.aTextBox_Searchable2.TextBoxText = "";
             // 
             // aButton2
             // 
-            this.aButton2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.aButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.aButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.aButton2.Font = new System.Drawing.Font("맑은 고딕", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aButton2.Location = new System.Drawing.Point(519, 317);
             this.aButton2.Name = "aButton2";
             this.aButton2.Size = new System.Drawing.Size(173, 129);
@@ -133,8 +137,9 @@
             // 
             // aButton3
             // 
-            this.aButton3.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.aButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.aButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.aButton3.Font = new System.Drawing.Font("맑은 고딕", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aButton3.Location = new System.Drawing.Point(519, 182);
             this.aButton3.Name = "aButton3";
             this.aButton3.Size = new System.Drawing.Size(173, 129);

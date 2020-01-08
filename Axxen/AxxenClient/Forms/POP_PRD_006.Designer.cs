@@ -51,8 +51,9 @@
             // 
             // aButton2
             // 
-            this.aButton2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.aButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.aButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.aButton2.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aButton2.Location = new System.Drawing.Point(738, 459);
             this.aButton2.Name = "aButton2";
             this.aButton2.Size = new System.Drawing.Size(463, 128);
@@ -162,8 +163,9 @@
             // 
             // aButton1
             // 
-            this.aButton1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.aButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.aButton1.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aButton1.Location = new System.Drawing.Point(738, 247);
             this.aButton1.Name = "aButton1";
             this.aButton1.Size = new System.Drawing.Size(463, 206);
