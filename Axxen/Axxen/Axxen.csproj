@@ -89,6 +89,7 @@
     <Compile Include="CustomControls\SearchForm.Designer.cs">
       <DependentUpon>SearchForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DatagridviewDesigns.cs" />
     <Compile Include="HwiSeok\PRM_PRF_001.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -531,6 +532,9 @@
     </Compile>
     <Compile Include="UserInfo.cs" />
     <Compile Include="Util\InitControlUtil.cs" />
+    <EmbeddedResource Include="CustomControls\AButton.resx">
+      <DependentUpon>AButton.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\AHeaderBox.resx">
       <DependentUpon>AHeaderBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -727,6 +731,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\PagedList.css" />
+    <None Include="Image\MainBar.png" />
+    <None Include="Image\MianLoGo.png" />
     <Content Include="Image\newlogo.png" />
     <Content Include="Image\treeimg.png" />
     <Content Include="Image\x.png" />

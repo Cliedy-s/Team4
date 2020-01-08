@@ -359,7 +359,7 @@ namespace Axxen
                     sf.FormatFlags |= StringFormatFlags.DirectionRightToLeft;
                 }
 
-                e.Graphics.FillRectangle(Brushes.Aqua, e.Bounds); //텝페이지 색
+                e.Graphics.FillRectangle(Brushes.Aquamarine, e.Bounds); //텝페이지 색
                 e.Graphics.DrawString(this.tabControl2.TabPages[e.Index].Text,
                                       this.Font, Brushes.Black, tabRect, sf);//텝페이지 폰트랑 글자 색
                 

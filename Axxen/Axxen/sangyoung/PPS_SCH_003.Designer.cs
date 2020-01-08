@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.aDateTimePicker2 = new Axxen.CustomControls.ADateTimePicker();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            this.dtpWorkFinish = new Axxen.CustomControls.ADateTimePicker();
             this.aLabel2 = new Axxen.CustomControls.ALabel();
-            this.aDateTimePicker1 = new Axxen.CustomControls.ADateTimePicker();
+            this.dtpWorkStart = new Axxen.CustomControls.ADateTimePicker();
             this.aLabel1 = new Axxen.CustomControls.ALabel();
             this.aPanel1 = new Axxen.CustomControls.APanel();
             this.aTextBox_FindNameByCode2 = new Axxen.CustomControls.ATextBox_FindNameByCode();
             this.aTextBox_FindNameByCode1 = new Axxen.CustomControls.ATextBox_FindNameByCode();
-            this.aComboBox1 = new Axxen.CustomControls.AComboBox();
+            this.cboWorkState = new Axxen.CustomControls.AComboBox();
             this.aLabel3 = new Axxen.CustomControls.ALabel();
             this.aHeaderBox1 = new Axxen.CustomControls.AHeaderBox();
             this.aDataGridView1 = new Axxen.CustomControls.ADataGridView();
@@ -53,14 +53,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.SuspendLayout();
             // 
-            // aDateTimePicker2
+            // dtpWorkFinish
             // 
-            this.aDateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.aDateTimePicker2.Location = new System.Drawing.Point(249, 28);
-            this.aDateTimePicker2.Name = "aDateTimePicker2";
-            this.aDateTimePicker2.Size = new System.Drawing.Size(105, 23);
-            this.aDateTimePicker2.TabIndex = 8;
-            this.aDateTimePicker2.Value = new System.DateTime(2020, 1, 3, 15, 14, 0, 0);
+            this.dtpWorkFinish.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpWorkFinish.Location = new System.Drawing.Point(249, 28);
+            this.dtpWorkFinish.Name = "dtpWorkFinish";
+            this.dtpWorkFinish.Size = new System.Drawing.Size(105, 23);
+            this.dtpWorkFinish.TabIndex = 8;
+            this.dtpWorkFinish.Value = new System.DateTime(2020, 1, 3, 15, 14, 0, 0);
             // 
             // aLabel2
             // 
@@ -71,14 +71,14 @@
             this.aLabel2.TabIndex = 7;
             this.aLabel2.Text = "~";
             // 
-            // aDateTimePicker1
+            // dtpWorkStart
             // 
-            this.aDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.aDateTimePicker1.Location = new System.Drawing.Point(116, 28);
-            this.aDateTimePicker1.Name = "aDateTimePicker1";
-            this.aDateTimePicker1.Size = new System.Drawing.Size(105, 23);
-            this.aDateTimePicker1.TabIndex = 6;
-            this.aDateTimePicker1.Value = new System.DateTime(2020, 1, 3, 15, 14, 0, 0);
+            this.dtpWorkStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpWorkStart.Location = new System.Drawing.Point(116, 28);
+            this.dtpWorkStart.Name = "dtpWorkStart";
+            this.dtpWorkStart.Size = new System.Drawing.Size(105, 23);
+            this.dtpWorkStart.TabIndex = 6;
+            this.dtpWorkStart.Value = new System.DateTime(2020, 1, 3, 15, 14, 0, 0);
             // 
             // aLabel1
             // 
@@ -96,11 +96,11 @@
             this.aPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.aPanel1.Controls.Add(this.aTextBox_FindNameByCode2);
             this.aPanel1.Controls.Add(this.aTextBox_FindNameByCode1);
-            this.aPanel1.Controls.Add(this.aComboBox1);
+            this.aPanel1.Controls.Add(this.cboWorkState);
             this.aPanel1.Controls.Add(this.aLabel3);
             this.aPanel1.Controls.Add(this.aLabel1);
-            this.aPanel1.Controls.Add(this.aDateTimePicker2);
-            this.aPanel1.Controls.Add(this.aDateTimePicker1);
+            this.aPanel1.Controls.Add(this.dtpWorkFinish);
+            this.aPanel1.Controls.Add(this.dtpWorkStart);
             this.aPanel1.Controls.Add(this.aLabel2);
             this.aPanel1.Location = new System.Drawing.Point(12, 15);
             this.aPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -134,13 +134,13 @@
             this.aTextBox_FindNameByCode1.txtCodeText = "";
             this.aTextBox_FindNameByCode1.txtNameText = "";
             // 
-            // aComboBox1
+            // cboWorkState
             // 
-            this.aComboBox1.FormattingEnabled = true;
-            this.aComboBox1.Location = new System.Drawing.Point(968, 28);
-            this.aComboBox1.Name = "aComboBox1";
-            this.aComboBox1.Size = new System.Drawing.Size(132, 23);
-            this.aComboBox1.TabIndex = 10;
+            this.cboWorkState.FormattingEnabled = true;
+            this.cboWorkState.Location = new System.Drawing.Point(968, 28);
+            this.cboWorkState.Name = "cboWorkState";
+            this.cboWorkState.Size = new System.Drawing.Size(132, 23);
+            this.cboWorkState.TabIndex = 10;
             // 
             // aLabel3
             // 
@@ -177,32 +177,37 @@
             // 
             // chart1
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chart1.Legends.Add(legend3);
+            this.chart1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.chart1.BackColor = System.Drawing.Color.Gainsboro;
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(12, 393);
             this.chart1.Name = "chart1";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chart1.Series.Add(series3);
-            this.chart1.Size = new System.Drawing.Size(704, 295);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(689, 295);
             this.chart1.TabIndex = 12;
             this.chart1.Text = "chart1";
             // 
             // chart2
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chart2.Legends.Add(legend4);
+            this.chart2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.chart2.BackColor = System.Drawing.Color.LightGray;
+            chartArea2.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart2.Legends.Add(legend2);
             this.chart2.Location = new System.Drawing.Point(735, 393);
             this.chart2.Name = "chart2";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chart2.Series.Add(series4);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chart2.Series.Add(series2);
             this.chart2.Size = new System.Drawing.Size(400, 295);
             this.chart2.TabIndex = 13;
             this.chart2.Text = "chart2";
@@ -228,16 +233,16 @@
 
         #endregion
 
-        private CustomControls.ADateTimePicker aDateTimePicker2;
+        private CustomControls.ADateTimePicker dtpWorkFinish;
         private CustomControls.ALabel aLabel2;
-        private CustomControls.ADateTimePicker aDateTimePicker1;
+        private CustomControls.ADateTimePicker dtpWorkStart;
         private CustomControls.ALabel aLabel1;
         protected CustomControls.APanel aPanel1;
         protected CustomControls.AHeaderBox aHeaderBox1;
         protected CustomControls.ADataGridView aDataGridView1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
-        private CustomControls.AComboBox aComboBox1;
+        private CustomControls.AComboBox cboWorkState;
         private CustomControls.ALabel aLabel3;
         private CustomControls.ATextBox_FindNameByCode aTextBox_FindNameByCode2;
         private CustomControls.ATextBox_FindNameByCode aTextBox_FindNameByCode1;
