@@ -1,5 +1,4 @@
-﻿namespace Axxen.sangyoung
-{
+﻿namespace Axxen
     partial class PRM_RPT_004
     {
         /// <summary>

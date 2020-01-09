@@ -1,5 +1,4 @@
-﻿namespace Axxen.sangyoung
-{
+﻿namespace Axxen
     partial class PPS_SCH_002
     {
         /// <summary>
