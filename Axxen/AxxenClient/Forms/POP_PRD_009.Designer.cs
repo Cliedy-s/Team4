@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.aPanel5 = new AxxenClient.CustomControls.APanel();
+            this.aTextBox_Searchable4 = new AxxenClient.CustomControls.ATextBox_Searchable();
             this.aPanel4 = new AxxenClient.CustomControls.APanel();
-            this.aDataGridView1 = new AxxenClient.CustomControls.ADataGridView();
             this.aButton1 = new AxxenClient.CustomControls.AButton();
             this.aTextBox_LabeledBigTextBox2 = new AxxenClient.CustomControls.ATextBox_LabeledBigTextBox();
             this.aTextBox_Searchable3 = new AxxenClient.CustomControls.ATextBox_Searchable();
             this.aTextBox_Searchable2 = new AxxenClient.CustomControls.ATextBox_Searchable();
             this.aTextBox_Searchable1 = new AxxenClient.CustomControls.ATextBox_Searchable();
             this.aTextBox_LabeledBigTextBox1 = new AxxenClient.CustomControls.ATextBox_LabeledBigTextBox();
-            this.aTextBox_Searchable4 = new AxxenClient.CustomControls.ATextBox_Searchable();
+            this.aDataGridView1 = new AxxenClient.CustomControls.ADataGridView();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
             this.aPanel5.SuspendLayout();
@@ -57,6 +57,18 @@
             this.aPanel5.Size = new System.Drawing.Size(636, 47);
             this.aPanel5.TabIndex = 11;
             // 
+            // aTextBox_Searchable4
+            // 
+            this.aTextBox_Searchable4.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aTextBox_Searchable4.FontSize = 9F;
+            this.aTextBox_Searchable4.LabelText = "대차 검색";
+            this.aTextBox_Searchable4.Location = new System.Drawing.Point(136, 9);
+            this.aTextBox_Searchable4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.aTextBox_Searchable4.Name = "aTextBox_Searchable4";
+            this.aTextBox_Searchable4.Size = new System.Drawing.Size(365, 30);
+            this.aTextBox_Searchable4.TabIndex = 0;
+            this.aTextBox_Searchable4.TextBoxText = "";
+            // 
             // aPanel4
             // 
             this.aPanel4.Controls.Add(this.aButton1);
@@ -70,18 +82,9 @@
             this.aPanel4.Size = new System.Drawing.Size(549, 482);
             this.aPanel4.TabIndex = 10;
             // 
-            // aDataGridView1
-            // 
-            this.aDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.aDataGridView1.Location = new System.Drawing.Point(12, 158);
-            this.aDataGridView1.Name = "aDataGridView1";
-            this.aDataGridView1.RowTemplate.Height = 23;
-            this.aDataGridView1.Size = new System.Drawing.Size(636, 429);
-            this.aDataGridView1.TabIndex = 9;
-            // 
             // aButton1
             // 
-            this.aButton1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.aButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.aButton1.Font = new System.Drawing.Font("맑은 고딕", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aButton1.Location = new System.Drawing.Point(92, 300);
@@ -149,26 +152,23 @@
             this.aTextBox_LabeledBigTextBox1.TabIndex = 17;
             this.aTextBox_LabeledBigTextBox1.TextBoxText = "";
             // 
-            // aTextBox_Searchable4
+            // aDataGridView1
             // 
-            this.aTextBox_Searchable4.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aTextBox_Searchable4.FontSize = 9F;
-            this.aTextBox_Searchable4.LabelText = "대차 검색";
-            this.aTextBox_Searchable4.Location = new System.Drawing.Point(136, 9);
-            this.aTextBox_Searchable4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.aTextBox_Searchable4.Name = "aTextBox_Searchable4";
-            this.aTextBox_Searchable4.Size = new System.Drawing.Size(365, 30);
-            this.aTextBox_Searchable4.TabIndex = 0;
-            this.aTextBox_Searchable4.TextBoxText = "";
+            this.aDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.aDataGridView1.Location = new System.Drawing.Point(12, 158);
+            this.aDataGridView1.Name = "aDataGridView1";
+            this.aDataGridView1.RowTemplate.Height = 23;
+            this.aDataGridView1.Size = new System.Drawing.Size(636, 429);
+            this.aDataGridView1.TabIndex = 9;
             // 
-            // WorkOrderLoadForm
+            // POP_PRD_009
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1210, 629);
             this.Controls.Add(this.aPanel5);
             this.Controls.Add(this.aPanel4);
             this.Controls.Add(this.aDataGridView1);
-            this.Name = "WorkOrderLoadForm";
+            this.Name = "POP_PRD_009";
             this.Controls.SetChildIndex(this.aDataGridView1, 0);
             this.Controls.SetChildIndex(this.aPanel4, 0);
             this.Controls.SetChildIndex(this.aPanel5, 0);

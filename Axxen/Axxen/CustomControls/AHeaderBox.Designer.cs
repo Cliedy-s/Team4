@@ -55,7 +55,7 @@
             // 
             // AHeaderBox
             // 
-            this.BackColor = System.Drawing.Color.LightCyan;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.aLabel2);
             this.Controls.Add(this.aLabel1);

@@ -91,18 +91,30 @@ namespace Axxen
 
         private void DgvGroup_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.ColumnIndex == dgvGroup.Columns["btn"].Index)//눌러서 사용과 사용안함 변경
+            try
+            {
+
+            if (e.ColumnIndex == dgvGroup.Columns["btn"].Index)//눌러서 사용과 사용안함 변경
             {
                 if((dgvGroup.SelectedRows[0].Cells[3].Value).ToString() == "Y") //사용안함
                 {
-                    userservice.GetUpdateUserGroup((dgvGroup.SelectedRows[0].Cells[1].Value).ToString(), "N");
+                     userservice.GetUpdateUserGroup((dgvGroup.SelectedRows[0].Cells[0].Value).ToString(), "N");
                 }
                 else //사용함
                 {
-                    userservice.GetUpdateUserGroup((dgvGroup.SelectedRows[0].Cells[1].Value).ToString(), "Y");
+                    userservice.GetUpdateUserGroup((dgvGroup.SelectedRows[0].Cells[0].Value).ToString(), "Y");
                 }
+                GetAllUserGroup();
             }
-            GetAllUserGroup();
+
+            }
+            catch (Exception err)
+            {
+
+                MessageBox.Show(err.Message);
+            }
+
+
         }
     }
 }
