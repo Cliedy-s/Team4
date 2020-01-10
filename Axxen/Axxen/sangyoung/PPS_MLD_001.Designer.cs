@@ -219,7 +219,7 @@
             // aLabel5
             // 
             this.aLabel5.AutoSize = true;
-            this.aLabel5.Location = new System.Drawing.Point(801, 20);
+            this.aLabel5.Location = new System.Drawing.Point(835, 18);
             this.aLabel5.Name = "aLabel5";
             this.aLabel5.Size = new System.Drawing.Size(55, 15);
             this.aLabel5.TabIndex = 26;
@@ -245,7 +245,7 @@
             // aLabel6
             // 
             this.aLabel6.AutoSize = true;
-            this.aLabel6.Location = new System.Drawing.Point(802, 52);
+            this.aLabel6.Location = new System.Drawing.Point(836, 50);
             this.aLabel6.Name = "aLabel6";
             this.aLabel6.Size = new System.Drawing.Size(31, 15);
             this.aLabel6.TabIndex = 29;
@@ -256,7 +256,7 @@
             this.aTextBox1.BackColor = System.Drawing.Color.White;
             this.aTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.aTextBox1.errorp = null;
-            this.aTextBox1.Location = new System.Drawing.Point(805, 70);
+            this.aTextBox1.Location = new System.Drawing.Point(839, 68);
             this.aTextBox1.Name = "aTextBox1";
             this.aTextBox1.Size = new System.Drawing.Size(263, 23);
             this.aTextBox1.TabIndex = 30;
@@ -265,7 +265,7 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(874, 18);
+            this.radioButton1.Location = new System.Drawing.Point(908, 16);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(32, 19);
             this.radioButton1.TabIndex = 31;
@@ -276,7 +276,7 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(912, 18);
+            this.radioButton2.Location = new System.Drawing.Point(946, 16);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(34, 19);
             this.radioButton2.TabIndex = 31;
@@ -289,6 +289,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.Name = "PPS_MLD_001";
+            this.Text = "/";
             this.Load += new System.EventHandler(this.PPS_MLD_001_Load);
             this.aPanel2.ResumeLayout(false);
             this.aPanel2.PerformLayout();
