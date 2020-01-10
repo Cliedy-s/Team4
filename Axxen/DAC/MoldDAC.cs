@@ -11,7 +11,7 @@ namespace DAC
 {
     public class MoldDAC : DACParent
     {
-        public List<MoldVO> GetAllMold()
+        public List<MoldVO> SelectMoldAll()
         {
             using (SqlCommand comm = new SqlCommand())
             {
@@ -25,6 +25,23 @@ namespace DAC
                 comm.Connection.Close();
 
                 return moldlist;
+            }
+        }
+
+        public List<Mold_J_Item_Wc_MuseVO> SelectMold_Item_Wc_Muse()
+        {
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText = "GetAllMold";
+                comm.CommandType = CommandType.StoredProcedure;
+
+                comm.Connection.Open();
+                SqlDataReader reader = comm.ExecuteReader();
+                List<Mold_J_Item_Wc_MuseVO> list = Helper.DataReaderMapToList<Mold_J_Item_Wc_MuseVO>(reader);
+                comm.Connection.Close();
+
+                return list;
             }
         }
     }

@@ -10,10 +10,10 @@ namespace Service
 {
     public class MoldService
     {
-        public List<MoldVO> GetAllMold()
+        public List<MoldVO> SelectMoldAll()
         {
             MoldDAC dac = new MoldDAC();
-            return dac.GetAllMold();
+            return dac.SelectMoldAll();
         }
     }
 }
