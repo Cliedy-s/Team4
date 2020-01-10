@@ -1,4 +1,4 @@
-﻿namespace Axxen.sangyoung
+﻿namespace Axxen
 {
     partial class PPS_MLD_002
     {

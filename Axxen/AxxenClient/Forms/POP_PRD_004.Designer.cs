@@ -104,7 +104,7 @@
             // 
             // aButton3
             // 
-            this.aButton3.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.aButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.aButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.aButton3.Font = new System.Drawing.Font("맑은 고딕", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aButton3.Location = new System.Drawing.Point(279, 375);
@@ -116,7 +116,7 @@
             // 
             // aButton2
             // 
-            this.aButton2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.aButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.aButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.aButton2.Font = new System.Drawing.Font("맑은 고딕", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aButton2.Location = new System.Drawing.Point(92, 375);
@@ -128,7 +128,7 @@
             // 
             // aButton1
             // 
-            this.aButton1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.aButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.aButton1.Font = new System.Drawing.Font("맑은 고딕", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aButton1.Location = new System.Drawing.Point(92, 288);

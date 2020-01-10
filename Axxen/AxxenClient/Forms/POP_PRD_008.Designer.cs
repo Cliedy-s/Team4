@@ -46,8 +46,9 @@
             // 
             // aButton1
             // 
-            this.aButton1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.aButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.aButton1.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aButton1.Location = new System.Drawing.Point(493, 373);
             this.aButton1.Name = "aButton1";
             this.aButton1.Size = new System.Drawing.Size(238, 165);
@@ -75,28 +76,31 @@
             // 
             // aHeaderBox1
             // 
-            this.aHeaderBox1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.aHeaderBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.aHeaderBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.aHeaderBox1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aHeaderBox1.HeaderBoxText = "HeaderText";
-            this.aHeaderBox1.Location = new System.Drawing.Point(10, 105);
+            this.aHeaderBox1.HeaderBoxText = "장착 대상 금형 목록";
+            this.aHeaderBox1.Location = new System.Drawing.Point(10, 112);
             this.aHeaderBox1.Name = "aHeaderBox1";
             this.aHeaderBox1.Size = new System.Drawing.Size(243, 30);
             this.aHeaderBox1.TabIndex = 24;
             // 
             // aHeaderBox2
             // 
-            this.aHeaderBox2.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.aHeaderBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.aHeaderBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.aHeaderBox2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aHeaderBox2.HeaderBoxText = "HeaderText";
-            this.aHeaderBox2.Location = new System.Drawing.Point(737, 103);
+            this.aHeaderBox2.HeaderBoxText = "장착 금형 목록";
+            this.aHeaderBox2.Location = new System.Drawing.Point(737, 112);
             this.aHeaderBox2.Name = "aHeaderBox2";
             this.aHeaderBox2.Size = new System.Drawing.Size(243, 30);
             this.aHeaderBox2.TabIndex = 25;
             // 
             // aButton2
             // 
-            this.aButton2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.aButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.aButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.aButton2.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aButton2.Location = new System.Drawing.Point(493, 202);
             this.aButton2.Name = "aButton2";
             this.aButton2.Size = new System.Drawing.Size(238, 165);

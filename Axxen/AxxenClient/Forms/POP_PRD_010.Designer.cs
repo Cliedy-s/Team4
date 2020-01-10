@@ -176,22 +176,24 @@
             // 
             // aButton1
             // 
-            this.aButton1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.aButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton1.Location = new System.Drawing.Point(493, 500);
+            this.aButton1.Font = new System.Drawing.Font("맑은 고딕", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aButton1.Location = new System.Drawing.Point(493, 490);
             this.aButton1.Name = "aButton1";
-            this.aButton1.Size = new System.Drawing.Size(238, 85);
+            this.aButton1.Size = new System.Drawing.Size(238, 95);
             this.aButton1.TabIndex = 14;
-            this.aButton1.Text = "건조대차 비우기";
+            this.aButton1.Text = "건조대차\r\n비우기";
             this.aButton1.UseVisualStyleBackColor = false;
             // 
             // aButton2
             // 
-            this.aButton2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.aButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.aButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.aButton2.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aButton2.Location = new System.Drawing.Point(493, 319);
             this.aButton2.Name = "aButton2";
-            this.aButton2.Size = new System.Drawing.Size(238, 175);
+            this.aButton2.Size = new System.Drawing.Size(238, 165);
             this.aButton2.TabIndex = 15;
             this.aButton2.Text = "옮겨타기";
             this.aButton2.UseVisualStyleBackColor = false;

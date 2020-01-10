@@ -119,7 +119,7 @@
             // 
             // aButton1
             // 
-            this.aButton1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.aButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.aButton1.Font = new System.Drawing.Font("맑은 고딕", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aButton1.Location = new System.Drawing.Point(92, 383);
@@ -173,14 +173,14 @@
             this.aLabel_SubHeader1.TabIndex = 6;
             this.aLabel_SubHeader1.Text = "금일 입고 팔레트 목록";
             // 
-            // PackingWerehosingRegisterForm
+            // POP_PRD_002
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1210, 629);
             this.Controls.Add(this.aLabel_SubHeader1);
             this.Controls.Add(this.aPanel4);
             this.Controls.Add(this.aDataGridView1);
-            this.Name = "PackingWerehosingRegisterForm";
+            this.Name = "POP_PRD_002";
             this.Controls.SetChildIndex(this.aPanel2, 0);
             this.Controls.SetChildIndex(this.aPanel1, 0);
             this.Controls.SetChildIndex(this.aDataGridView1, 0);
