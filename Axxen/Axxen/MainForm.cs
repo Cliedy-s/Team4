@@ -15,6 +15,10 @@ namespace Axxen
 {
     public partial class MainForm : Form
     {
+   
+        public event EventHandler InsertFormEvent; //추가 폼 이벤트
+    
+
         int CheckBtnIndex = 7;
         bool BookmarkCheck = true; //즐겨찾기 
         bool open = true;
@@ -426,5 +430,13 @@ namespace Axxen
         }
 
         #endregion
+
+   
+
+        private void TsbInsert_Click(object sender, EventArgs e)
+        {
+            if (this.InsertFormEvent != null)
+                InsertFormEvent(this, null);
+        }
     }
 }

@@ -276,6 +276,12 @@
     <Compile Include="ParkSangIn\MSS_CON_002.Designer.cs">
       <DependentUpon>MSS_CON_002.cs</DependentUpon>
     </Compile>
+    <Compile Include="ParkSangIn\MSS_CON_002_1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MSS_CON_002_1.Designer.cs">
+      <DependentUpon>MSS_CON_002_1.cs</DependentUpon>
+    </Compile>
     <Compile Include="ParkSangIn\MSS_CON_003.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -603,6 +609,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ParkSangIn\MSS_CON_002.resx">
       <DependentUpon>MSS_CON_002.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParkSangIn\MSS_CON_002_1.resx">
+      <DependentUpon>MSS_CON_002_1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ParkSangIn\MSS_SYS_004.resx">
       <DependentUpon>MSS_SYS_004.cs</DependentUpon>
