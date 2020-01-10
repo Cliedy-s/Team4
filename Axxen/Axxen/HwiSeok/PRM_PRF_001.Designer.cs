@@ -49,7 +49,6 @@
             this.panTop.Controls.Add(this.aLabel1);
             this.panTop.Controls.Add(this.aButton2);
             this.panTop.Controls.Add(this.aButton1);
-            this.panTop.Paint += new System.Windows.Forms.PaintEventHandler(this.panTop_Paint);
             // 
             // aHeaderBox1
             // 

@@ -38,12 +38,8 @@ namespace Axxen
             dgvMainGrid.DataSource = wowc;
             #endregion
 
-   
-        }
-
-        private void panTop_Paint(object sender, PaintEventArgs e)
-        {
-
+            aDateTimePicker1.Value = DateTime.Now.AddDays(-7);
+            aDateTimePicker2.MaxDate = DateTime.Now;          
         }
     }
 }
