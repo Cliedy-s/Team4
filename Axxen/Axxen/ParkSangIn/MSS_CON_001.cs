@@ -89,6 +89,11 @@ namespace Axxen
             }  
         }
 
+        /// <summary>
+        /// 그리드뷰버튼클릭
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DgvGroup_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try

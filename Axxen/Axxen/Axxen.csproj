@@ -601,6 +601,9 @@
     <EmbeddedResource Include="ParkSangIn\MDS_CDS_002.resx">
       <DependentUpon>MDS_CDS_002.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ParkSangIn\MSS_CON_002.resx">
+      <DependentUpon>MSS_CON_002.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ParkSangIn\MSS_SYS_004.resx">
       <DependentUpon>MSS_SYS_004.cs</DependentUpon>
     </EmbeddedResource>
