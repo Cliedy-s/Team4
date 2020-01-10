@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace AxxenClient.CustomControls
+namespace Axxen.CustomControls
 {
     public partial class AHeaderBox : UserControl
     {

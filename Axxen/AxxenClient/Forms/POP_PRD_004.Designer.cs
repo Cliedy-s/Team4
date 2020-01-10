@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.aPanel4 = new AxxenClient.CustomControls.APanel();
-            this.aTextBox_LabeledBigTextBox5 = new AxxenClient.CustomControls.ATextBox_LabeledBigTextBox();
-            this.aTextBox_LabeledBigTextBox3 = new AxxenClient.CustomControls.ATextBox_LabeledBigTextBox();
-            this.aTextBox_LabeledBigTextBox4 = new AxxenClient.CustomControls.ATextBox_LabeledBigTextBox();
-            this.aButton3 = new AxxenClient.CustomControls.AButton();
-            this.aButton2 = new AxxenClient.CustomControls.AButton();
-            this.aButton1 = new AxxenClient.CustomControls.AButton();
-            this.aTextBox_LabeledBigTextBox2 = new AxxenClient.CustomControls.ATextBox_LabeledBigTextBox();
-            this.aTextBox_LabeledBigTextBox1 = new AxxenClient.CustomControls.ATextBox_LabeledBigTextBox();
-            this.aDataGridView1 = new AxxenClient.CustomControls.ADataGridView();
-            this.aPanel5 = new AxxenClient.CustomControls.APanel();
+            this.aPanel4 = new Axxen.CustomControls.APanel();
+            this.aTextBox_LabeledBigTextBox5 = new Axxen.CustomControls.ATextBox_LabeledBigTextBox();
+            this.aTextBox_LabeledBigTextBox3 = new Axxen.CustomControls.ATextBox_LabeledBigTextBox();
+            this.aTextBox_LabeledBigTextBox4 = new Axxen.CustomControls.ATextBox_LabeledBigTextBox();
+            this.aButton3 = new Axxen.CustomControls.AButton();
+            this.aButton2 = new Axxen.CustomControls.AButton();
+            this.aButton1 = new Axxen.CustomControls.AButton();
+            this.aTextBox_LabeledBigTextBox2 = new Axxen.CustomControls.ATextBox_LabeledBigTextBox();
+            this.aTextBox_LabeledBigTextBox1 = new Axxen.CustomControls.ATextBox_LabeledBigTextBox();
+            this.aDataGridView1 = new Axxen.CustomControls.ADataGridView();
+            this.aPanel5 = new Axxen.CustomControls.APanel();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.aLabel3 = new AxxenClient.CustomControls.ALabel();
+            this.aLabel3 = new Axxen.CustomControls.ALabel();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.aLabel2 = new AxxenClient.CustomControls.ALabel();
+            this.aLabel2 = new Axxen.CustomControls.ALabel();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
             this.aPanel4.SuspendLayout();
@@ -241,20 +241,20 @@
 
         #endregion
 
-        private CustomControls.APanel aPanel4;
-        private CustomControls.AButton aButton1;
-        private CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox2;
-        private CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox1;
-        private CustomControls.ADataGridView aDataGridView1;
-        private CustomControls.AButton aButton3;
-        private CustomControls.AButton aButton2;
-        private CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox5;
-        private CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox3;
-        private CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox4;
-        private CustomControls.APanel aPanel5;
+        private Axxen.CustomControls.APanel aPanel4;
+        private Axxen.CustomControls.AButton aButton1;
+        private Axxen.CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox2;
+        private Axxen.CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox1;
+        private Axxen.CustomControls.ADataGridView aDataGridView1;
+        private Axxen.CustomControls.AButton aButton3;
+        private Axxen.CustomControls.AButton aButton2;
+        private Axxen.CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox5;
+        private Axxen.CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox3;
+        private Axxen.CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox4;
+        private Axxen.CustomControls.APanel aPanel5;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private CustomControls.ALabel aLabel3;
+        private Axxen.CustomControls.ALabel aLabel3;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private CustomControls.ALabel aLabel2;
+        private Axxen.CustomControls.ALabel aLabel2;
     }
 }

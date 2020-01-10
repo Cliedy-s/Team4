@@ -1,4 +1,4 @@
-﻿namespace AxxenClient.CustomControls
+﻿namespace Axxen.CustomControls
 {
     partial class SearchForm
     {

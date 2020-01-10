@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.aPanel5 = new AxxenClient.CustomControls.APanel();
-            this.aTextBox_LabeledBigTextBox10 = new AxxenClient.CustomControls.ATextBox_LabeledBigTextBox();
-            this.aTextBox_LabeledBigTextBox11 = new AxxenClient.CustomControls.ATextBox_LabeledBigTextBox();
-            this.aTextBox_LabeledBigTextBox8 = new AxxenClient.CustomControls.ATextBox_LabeledBigTextBox();
-            this.aTextBox_LabeledBigTextBox9 = new AxxenClient.CustomControls.ATextBox_LabeledBigTextBox();
-            this.aTextBox_LabeledBigTextBox7 = new AxxenClient.CustomControls.ATextBox_LabeledBigTextBox();
-            this.aTextBox_LabeledBigTextBox6 = new AxxenClient.CustomControls.ATextBox_LabeledBigTextBox();
-            this.aDataGridView1 = new AxxenClient.CustomControls.ADataGridView();
-            this.aDataGridView2 = new AxxenClient.CustomControls.ADataGridView();
-            this.aTextBox_Searchable1 = new AxxenClient.CustomControls.ATextBox_Searchable();
-            this.aTextBox_Searchable2 = new AxxenClient.CustomControls.ATextBox_Searchable();
-            this.aButton1 = new AxxenClient.CustomControls.AButton();
-            this.aButton2 = new AxxenClient.CustomControls.AButton();
-            this.aTextBox_Labeled1 = new AxxenClient.CustomControls.ATextBox_Labeled();
+            this.aPanel5 = new Axxen.CustomControls.APanel();
+            this.aTextBox_LabeledBigTextBox10 = new Axxen.CustomControls.ATextBox_LabeledBigTextBox();
+            this.aTextBox_LabeledBigTextBox11 = new Axxen.CustomControls.ATextBox_LabeledBigTextBox();
+            this.aTextBox_LabeledBigTextBox8 = new Axxen.CustomControls.ATextBox_LabeledBigTextBox();
+            this.aTextBox_LabeledBigTextBox9 = new Axxen.CustomControls.ATextBox_LabeledBigTextBox();
+            this.aTextBox_LabeledBigTextBox7 = new Axxen.CustomControls.ATextBox_LabeledBigTextBox();
+            this.aTextBox_LabeledBigTextBox6 = new Axxen.CustomControls.ATextBox_LabeledBigTextBox();
+            this.aDataGridView1 = new Axxen.CustomControls.ADataGridView();
+            this.aDataGridView2 = new Axxen.CustomControls.ADataGridView();
+            this.aTextBox_Searchable1 = new Axxen.CustomControls.ATextBox_Searchable();
+            this.aTextBox_Searchable2 = new Axxen.CustomControls.ATextBox_Searchable();
+            this.aButton1 = new Axxen.CustomControls.AButton();
+            this.aButton2 = new Axxen.CustomControls.AButton();
+            this.aTextBox_Labeled1 = new Axxen.CustomControls.ATextBox_Labeled();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
             this.aPanel5.SuspendLayout();
@@ -153,7 +153,6 @@
             // aTextBox_Searchable1
             // 
             this.aTextBox_Searchable1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aTextBox_Searchable1.FontSize = 9F;
             this.aTextBox_Searchable1.LabelText = "대차검색";
             this.aTextBox_Searchable1.Location = new System.Drawing.Point(12, 212);
             this.aTextBox_Searchable1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -165,7 +164,6 @@
             // aTextBox_Searchable2
             // 
             this.aTextBox_Searchable2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aTextBox_Searchable2.FontSize = 9F;
             this.aTextBox_Searchable2.LabelText = "대차검색";
             this.aTextBox_Searchable2.Location = new System.Drawing.Point(737, 210);
             this.aTextBox_Searchable2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -246,19 +244,19 @@
 
         #endregion
 
-        private CustomControls.APanel aPanel5;
-        private CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox10;
-        private CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox11;
-        private CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox8;
-        private CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox9;
-        private CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox7;
-        private CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox6;
-        private CustomControls.ADataGridView aDataGridView1;
-        private CustomControls.ADataGridView aDataGridView2;
-        private CustomControls.ATextBox_Searchable aTextBox_Searchable1;
-        private CustomControls.ATextBox_Searchable aTextBox_Searchable2;
-        private CustomControls.AButton aButton1;
-        private CustomControls.AButton aButton2;
-        private CustomControls.ATextBox_Labeled aTextBox_Labeled1;
+        private Axxen.CustomControls.APanel aPanel5;
+        private Axxen.CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox10;
+        private Axxen.CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox11;
+        private Axxen.CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox8;
+        private Axxen.CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox9;
+        private Axxen.CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox7;
+        private Axxen.CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox6;
+        private Axxen.CustomControls.ADataGridView aDataGridView1;
+        private Axxen.CustomControls.ADataGridView aDataGridView2;
+        private Axxen.CustomControls.ATextBox_Searchable aTextBox_Searchable1;
+        private Axxen.CustomControls.ATextBox_Searchable aTextBox_Searchable2;
+        private Axxen.CustomControls.AButton aButton1;
+        private Axxen.CustomControls.AButton aButton2;
+        private Axxen.CustomControls.ATextBox_Labeled aTextBox_Labeled1;
     }
 }

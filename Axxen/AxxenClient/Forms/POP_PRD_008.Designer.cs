@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.aButton1 = new AxxenClient.CustomControls.AButton();
-            this.aDataGridView2 = new AxxenClient.CustomControls.ADataGridView();
-            this.aDataGridView1 = new AxxenClient.CustomControls.ADataGridView();
-            this.aHeaderBox1 = new AxxenClient.CustomControls.AHeaderBox();
-            this.aHeaderBox2 = new AxxenClient.CustomControls.AHeaderBox();
-            this.aButton2 = new AxxenClient.CustomControls.AButton();
+            this.aButton1 = new Axxen.CustomControls.AButton();
+            this.aDataGridView2 = new Axxen.CustomControls.ADataGridView();
+            this.aDataGridView1 = new Axxen.CustomControls.ADataGridView();
+            this.aHeaderBox1 = new Axxen.CustomControls.AHeaderBox();
+            this.aHeaderBox2 = new Axxen.CustomControls.AHeaderBox();
+            this.aButton2 = new Axxen.CustomControls.AButton();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aDataGridView2)).BeginInit();
@@ -138,11 +138,11 @@
         }
 
         #endregion
-        private CustomControls.AButton aButton1;
-        private CustomControls.ADataGridView aDataGridView2;
-        private CustomControls.ADataGridView aDataGridView1;
-        private CustomControls.AHeaderBox aHeaderBox1;
-        private CustomControls.AHeaderBox aHeaderBox2;
-        private CustomControls.AButton aButton2;
+        private Axxen.CustomControls.AButton aButton1;
+        private Axxen.CustomControls.ADataGridView aDataGridView2;
+        private Axxen.CustomControls.ADataGridView aDataGridView1;
+        private Axxen.CustomControls.AHeaderBox aHeaderBox1;
+        private Axxen.CustomControls.AHeaderBox aHeaderBox2;
+        private Axxen.CustomControls.AButton aButton2;
     }
 }
