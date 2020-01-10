@@ -430,29 +430,36 @@ namespace Axxen
 
             }
         }
+        /// <summary>
+        /// 씨발
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void 전체닫기ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form childForm in Application.OpenForms)
+            {
+
+                if (childForm.Name != "MainForm")
+                {
+                    childForm.Close();
+                }
+            }
+        }
 
         #endregion
 
 
-
+        /// <summary>
+        /// 텝컨트롤의 저장
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TsbInsert_Click(object sender, EventArgs e)
         {
             if (this.InsertFormEvent != null)
                 InsertFormEvent(this, null);
         }
-
-        private void 전체닫기ToolStripMenuItem_Click(object sender, EventArgs e)
-        { 
-                foreach (Form childForm in Application.OpenForms)
-                {
-
-                if (childForm.Name != "MainForm") { 
-                    childForm.Close();
-                }
-
-
-              
-                }       
-        }
+    
     }
 }
