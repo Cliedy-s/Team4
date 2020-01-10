@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VO
 {
-    public class Mold_Item_Wc_MuseVO //MLD_002
+    public class Mold_J_Item_Wc_MuseVO //MLD_002
     {
         public string Mold_Code { get; set; } //금형코드
         public string Mold_Name { get; set; } //금형명
