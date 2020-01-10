@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAC
 {
-    class WorkOrderDAC
+    class WorkOrderDAC : DACParent
     {
     }
 }
