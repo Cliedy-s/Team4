@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.aPanel4 = new AxxenClient.CustomControls.APanel();
-            this.aButton1 = new AxxenClient.CustomControls.AButton();
-            this.aTextBox_LabeledBigTextBox2 = new AxxenClient.CustomControls.ATextBox_LabeledBigTextBox();
-            this.aTextBox_Searchable3 = new AxxenClient.CustomControls.ATextBox_Searchable();
-            this.aTextBox_Searchable2 = new AxxenClient.CustomControls.ATextBox_Searchable();
-            this.aTextBox_Searchable1 = new AxxenClient.CustomControls.ATextBox_Searchable();
-            this.aTextBox_LabeledBigTextBox1 = new AxxenClient.CustomControls.ATextBox_LabeledBigTextBox();
-            this.aDataGridView1 = new AxxenClient.CustomControls.ADataGridView();
+            this.aPanel4 = new Axxen.CustomControls.APanel();
+            this.aButton1 = new Axxen.CustomControls.AButton();
+            this.aTextBox_LabeledBigTextBox2 = new Axxen.CustomControls.ATextBox_LabeledBigTextBox();
+            this.aTextBox_Searchable3 = new Axxen.CustomControls.ATextBox_Searchable();
+            this.aTextBox_Searchable2 = new Axxen.CustomControls.ATextBox_Searchable();
+            this.aTextBox_Searchable1 = new Axxen.CustomControls.ATextBox_Searchable();
+            this.aTextBox_LabeledBigTextBox1 = new Axxen.CustomControls.ATextBox_LabeledBigTextBox();
+            this.aDataGridView1 = new Axxen.CustomControls.ADataGridView();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
             this.aPanel4.SuspendLayout();
@@ -86,7 +86,6 @@
             // aTextBox_Searchable3
             // 
             this.aTextBox_Searchable3.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aTextBox_Searchable3.FontSize = 9F;
             this.aTextBox_Searchable3.LabelText = "작업장";
             this.aTextBox_Searchable3.Location = new System.Drawing.Point(92, 153);
             this.aTextBox_Searchable3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -98,7 +97,6 @@
             // aTextBox_Searchable2
             // 
             this.aTextBox_Searchable2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aTextBox_Searchable2.FontSize = 9F;
             this.aTextBox_Searchable2.LabelText = "공정";
             this.aTextBox_Searchable2.Location = new System.Drawing.Point(92, 115);
             this.aTextBox_Searchable2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -110,7 +108,6 @@
             // aTextBox_Searchable1
             // 
             this.aTextBox_Searchable1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aTextBox_Searchable1.FontSize = 9F;
             this.aTextBox_Searchable1.LabelText = "품목";
             this.aTextBox_Searchable1.Location = new System.Drawing.Point(92, 77);
             this.aTextBox_Searchable1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -162,13 +159,13 @@
 
         #endregion
 
-        private CustomControls.APanel aPanel4;
-        private CustomControls.AButton aButton1;
-        private CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox2;
-        private CustomControls.ATextBox_Searchable aTextBox_Searchable3;
-        private CustomControls.ATextBox_Searchable aTextBox_Searchable2;
-        private CustomControls.ATextBox_Searchable aTextBox_Searchable1;
-        private CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox1;
-        private CustomControls.ADataGridView aDataGridView1;
+        private Axxen.CustomControls.APanel aPanel4;
+        private Axxen.CustomControls.AButton aButton1;
+        private Axxen.CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox2;
+        private Axxen.CustomControls.ATextBox_Searchable aTextBox_Searchable3;
+        private Axxen.CustomControls.ATextBox_Searchable aTextBox_Searchable2;
+        private Axxen.CustomControls.ATextBox_Searchable aTextBox_Searchable1;
+        private Axxen.CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox1;
+        private Axxen.CustomControls.ADataGridView aDataGridView1;
     }
 }

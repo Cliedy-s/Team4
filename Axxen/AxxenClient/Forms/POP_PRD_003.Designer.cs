@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.aDataGridView1 = new AxxenClient.CustomControls.ADataGridView();
-            this.aPanel4 = new AxxenClient.CustomControls.APanel();
-            this.aTextBox_LabeledBigTextBox5 = new AxxenClient.CustomControls.ATextBox_LabeledBigTextBox();
-            this.aTextBox_LabeledBigTextBox4 = new AxxenClient.CustomControls.ATextBox_LabeledBigTextBox();
-            this.aTextBox_LabeledBigTextBox3 = new AxxenClient.CustomControls.ATextBox_LabeledBigTextBox();
-            this.aButton1 = new AxxenClient.CustomControls.AButton();
-            this.aTextBox_LabeledBigTextBox2 = new AxxenClient.CustomControls.ATextBox_LabeledBigTextBox();
-            this.aTextBox_LabeledBigTextBox1 = new AxxenClient.CustomControls.ATextBox_LabeledBigTextBox();
-            this.aPanel5 = new AxxenClient.CustomControls.APanel();
-            this.aTextBox_LabeledBigTextBox10 = new AxxenClient.CustomControls.ATextBox_LabeledBigTextBox();
-            this.aTextBox_LabeledBigTextBox11 = new AxxenClient.CustomControls.ATextBox_LabeledBigTextBox();
-            this.aTextBox_LabeledBigTextBox8 = new AxxenClient.CustomControls.ATextBox_LabeledBigTextBox();
-            this.aTextBox_LabeledBigTextBox9 = new AxxenClient.CustomControls.ATextBox_LabeledBigTextBox();
-            this.aTextBox_LabeledBigTextBox7 = new AxxenClient.CustomControls.ATextBox_LabeledBigTextBox();
-            this.aTextBox_LabeledBigTextBox6 = new AxxenClient.CustomControls.ATextBox_LabeledBigTextBox();
+            this.aDataGridView1 = new Axxen.CustomControls.ADataGridView();
+            this.aPanel4 = new Axxen.CustomControls.APanel();
+            this.aTextBox_LabeledBigTextBox5 = new Axxen.CustomControls.ATextBox_LabeledBigTextBox();
+            this.aTextBox_LabeledBigTextBox4 = new Axxen.CustomControls.ATextBox_LabeledBigTextBox();
+            this.aTextBox_LabeledBigTextBox3 = new Axxen.CustomControls.ATextBox_LabeledBigTextBox();
+            this.aButton1 = new Axxen.CustomControls.AButton();
+            this.aTextBox_LabeledBigTextBox2 = new Axxen.CustomControls.ATextBox_LabeledBigTextBox();
+            this.aTextBox_LabeledBigTextBox1 = new Axxen.CustomControls.ATextBox_LabeledBigTextBox();
+            this.aPanel5 = new Axxen.CustomControls.APanel();
+            this.aTextBox_LabeledBigTextBox10 = new Axxen.CustomControls.ATextBox_LabeledBigTextBox();
+            this.aTextBox_LabeledBigTextBox11 = new Axxen.CustomControls.ATextBox_LabeledBigTextBox();
+            this.aTextBox_LabeledBigTextBox8 = new Axxen.CustomControls.ATextBox_LabeledBigTextBox();
+            this.aTextBox_LabeledBigTextBox9 = new Axxen.CustomControls.ATextBox_LabeledBigTextBox();
+            this.aTextBox_LabeledBigTextBox7 = new Axxen.CustomControls.ATextBox_LabeledBigTextBox();
+            this.aTextBox_LabeledBigTextBox6 = new Axxen.CustomControls.ATextBox_LabeledBigTextBox();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aDataGridView1)).BeginInit();
@@ -247,20 +247,20 @@
         }
 
         #endregion
-        private CustomControls.ADataGridView aDataGridView1;
-        private CustomControls.APanel aPanel4;
-        private CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox5;
-        private CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox4;
-        private CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox3;
-        private CustomControls.AButton aButton1;
-        private CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox2;
-        private CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox1;
-        private CustomControls.APanel aPanel5;
-        private CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox10;
-        private CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox11;
-        private CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox8;
-        private CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox9;
-        private CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox7;
-        private CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox6;
+        private Axxen.CustomControls.ADataGridView aDataGridView1;
+        private Axxen.CustomControls.APanel aPanel4;
+        private Axxen.CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox5;
+        private Axxen.CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox4;
+        private Axxen.CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox3;
+        private Axxen.CustomControls.AButton aButton1;
+        private Axxen.CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox2;
+        private Axxen.CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox1;
+        private Axxen.CustomControls.APanel aPanel5;
+        private Axxen.CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox10;
+        private Axxen.CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox11;
+        private Axxen.CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox8;
+        private Axxen.CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox9;
+        private Axxen.CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox7;
+        private Axxen.CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox6;
     }
 }

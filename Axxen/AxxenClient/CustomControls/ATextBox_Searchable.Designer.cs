@@ -1,4 +1,4 @@
-﻿namespace AxxenClient.CustomControls
+﻿namespace Axxen.CustomControls
 {
     partial class ATextBox_Searchable
     {
@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblName = new AxxenClient.CustomControls.ALabel();
-            this.txtValue = new AxxenClient.CustomControls.ATextBox();
-            this.btnSearch = new AxxenClient.CustomControls.AButton();
+            this.lblName = new Axxen.CustomControls.ALabel();
+            this.txtValue = new Axxen.CustomControls.ATextBox();
+            this.btnSearch = new Axxen.CustomControls.AButton();
             this.SuspendLayout();
             // 
             // lblName
@@ -39,7 +39,7 @@
             this.lblName.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblName.Location = new System.Drawing.Point(1, 4);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(94, 23);
+            this.lblName.Size = new System.Drawing.Size(97, 23);
             this.lblName.TabIndex = 0;
             this.lblName.Text = "lblName";
             this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -51,12 +51,12 @@
             this.txtValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtValue.errorp = null;
             this.txtValue.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtValue.Location = new System.Drawing.Point(96, 4);
+            this.txtValue.Location = new System.Drawing.Point(99, 4);
             this.txtValue.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtValue.Name = "txtValue";
-            this.txtValue.Size = new System.Drawing.Size(214, 23);
+            this.txtValue.Size = new System.Drawing.Size(217, 23);
             this.txtValue.TabIndex = 2;
-            this.txtValue.txtType = AxxenClient.CustomControls.type.Normal;
+            this.txtValue.txtType = Axxen.CustomControls.type.Normal;
             // 
             // btnSearch
             // 

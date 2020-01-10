@@ -118,6 +118,12 @@
     <Compile Include="CustomControls\ATextBox.designer.cs">
       <DependentUpon>ATextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomControls\ATextBox_FindNameByCode.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\ATextBox_FindNameByCode.Designer.cs">
+      <DependentUpon>ATextBox_FindNameByCode.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomControls\ATextBox_Labeled.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -142,23 +148,11 @@
     <Compile Include="CustomControls\ATreeView.Designer.cs">
       <DependentUpon>ATreeView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\POP_PRD_006.cs">
+    <Compile Include="CustomControls\SearchForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\POP_PRD_006.Designer.cs">
-      <DependentUpon>POP_PRD_006.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\POP_PRD_008.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\POP_PRD_008.Designer.cs">
-      <DependentUpon>POP_PRD_008.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\POP_PRD_010.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\POP_PRD_010.Designer.cs">
-      <DependentUpon>POP_PRD_010.cs</DependentUpon>
+    <Compile Include="CustomControls\SearchForm.Designer.cs">
+      <DependentUpon>SearchForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
@@ -166,17 +160,65 @@
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\POP_PRD_001.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\POP_PRD_001.Designer.cs">
+      <DependentUpon>POP_PRD_001.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\POP_PRD_002.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\POP_PRD_002.Designer.cs">
+      <DependentUpon>POP_PRD_002.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\POP_PRD_003.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\POP_PRD_003.Designer.cs">
+      <DependentUpon>POP_PRD_003.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\POP_PRD_004.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\POP_PRD_004.Designer.cs">
+      <DependentUpon>POP_PRD_004.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\POP_PRD_005.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\POP_PRD_005.Designer.cs">
+      <DependentUpon>POP_PRD_005.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\POP_PRD_006.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\POP_PRD_006.Designer.cs">
+      <DependentUpon>POP_PRD_006.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\POP_PRD_007.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\POP_PRD_007.Designer.cs">
       <DependentUpon>POP_PRD_007.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\POP_PRD_001.Designer.cs">
-      <DependentUpon>POP_PRD_001.cs</DependentUpon>
+    <Compile Include="Forms\POP_PRD_008.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\POP_PRD_005.Designer.cs">
-      <DependentUpon>POP_PRD_005.cs</DependentUpon>
+    <Compile Include="Forms\POP_PRD_008.Designer.cs">
+      <DependentUpon>POP_PRD_008.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\POP_PRD_009.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\POP_PRD_009.Designer.cs">
+      <DependentUpon>POP_PRD_009.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\POP_PRD_010.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\POP_PRD_010.Designer.cs">
+      <DependentUpon>POP_PRD_010.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\POP_PRD_011.cs">
       <SubType>Form</SubType>
@@ -202,36 +244,6 @@
     <Compile Include="Forms\POP_PRD_014.Designer.cs">
       <DependentUpon>POP_PRD_014.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\POP_PRD_002.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\POP_PRD_002.Designer.cs">
-      <DependentUpon>POP_PRD_002.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\POP_PRD_004.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\POP_PRD_004.Designer.cs">
-      <DependentUpon>POP_PRD_004.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\POP_PRD_003.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\POP_PRD_003.Designer.cs">
-      <DependentUpon>POP_PRD_003.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\POP_PRD_005.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\POP_PRD_001.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\POP_PRD_009.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\POP_PRD_009.Designer.cs">
-      <DependentUpon>POP_PRD_009.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\POP_PRD_015.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -244,20 +256,29 @@
     <Compile Include="Forms\POP_PRD_016.Designer.cs">
       <DependentUpon>POP_PRD_016.cs</DependentUpon>
     </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Templets\BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Templets\BaseForm.Designer.cs">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Templets\ClientBaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Templets\ClientBaseForm.Designer.cs">
       <DependentUpon>ClientBaseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Templets\FreeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Templets\FreeForm.Designer.cs">
+      <DependentUpon>FreeForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CustomControls\AButton.resx">
+      <DependentUpon>AButton.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\AHeaderBox.resx">
       <DependentUpon>AHeaderBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -266,6 +287,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\ATextBox.resx">
       <DependentUpon>ATextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\ATextBox_FindNameByCode.resx">
+      <DependentUpon>ATextBox_FindNameByCode.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\ATextBox_Labeled.resx">
       <DependentUpon>ATextBox_Labeled.cs</DependentUpon>
@@ -276,26 +300,41 @@
     <EmbeddedResource Include="CustomControls\ATextBox_Searchable.resx">
       <DependentUpon>ATextBox_Searchable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\POP_PRD_006.resx">
-      <DependentUpon>POP_PRD_006.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\POP_PRD_008.resx">
-      <DependentUpon>POP_PRD_008.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\POP_PRD_010.resx">
-      <DependentUpon>POP_PRD_010.cs</DependentUpon>
+    <EmbeddedResource Include="CustomControls\SearchForm.resx">
+      <DependentUpon>SearchForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\POP_PRD_007.resx">
-      <DependentUpon>POP_PRD_007.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\POP_PRD_001.resx">
       <DependentUpon>POP_PRD_001.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\POP_PRD_002.resx">
+      <DependentUpon>POP_PRD_002.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\POP_PRD_003.resx">
+      <DependentUpon>POP_PRD_003.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\POP_PRD_004.resx">
+      <DependentUpon>POP_PRD_004.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\POP_PRD_005.resx">
       <DependentUpon>POP_PRD_005.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\POP_PRD_006.resx">
+      <DependentUpon>POP_PRD_006.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\POP_PRD_007.resx">
+      <DependentUpon>POP_PRD_007.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\POP_PRD_008.resx">
+      <DependentUpon>POP_PRD_008.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\POP_PRD_009.resx">
+      <DependentUpon>POP_PRD_009.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\POP_PRD_010.resx">
+      <DependentUpon>POP_PRD_010.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\POP_PRD_011.resx">
       <DependentUpon>POP_PRD_011.cs</DependentUpon>
@@ -309,26 +348,11 @@
     <EmbeddedResource Include="Forms\POP_PRD_014.resx">
       <DependentUpon>POP_PRD_014.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\POP_PRD_002.resx">
-      <DependentUpon>POP_PRD_002.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\POP_PRD_004.resx">
-      <DependentUpon>POP_PRD_004.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\POP_PRD_003.resx">
-      <DependentUpon>POP_PRD_003.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\POP_PRD_009.resx">
-      <DependentUpon>POP_PRD_009.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\POP_PRD_015.resx">
       <DependentUpon>POP_PRD_015.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\POP_PRD_016.resx">
       <DependentUpon>POP_PRD_016.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Templets\BaseForm.resx">
-      <DependentUpon>BaseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -339,8 +363,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Templets\BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Templets\ClientBaseForm.resx">
       <DependentUpon>ClientBaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Templets\FreeForm.resx">
+      <DependentUpon>FreeForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -351,9 +381,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

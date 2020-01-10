@@ -7,9 +7,9 @@ using System.Text;
 using System.Windows.Forms;
 using static Axxen.CustomControls.ATextBox_FindNameByCode;
 
-namespace AxxenClient.CustomControls
+namespace Axxen.CustomControls
 {
-    public partial class SearchForm : Axxen.FreeForm
+    public partial class SearchForm : AxxenClient.Templets.FreeForm
     {
         public string ResultCode { get; set; }
         public string ResultName { get; set; }
@@ -49,7 +49,11 @@ namespace AxxenClient.CustomControls
                     break;
                 case types.GVs:
                     break;
+                case types.GVGroups:
+                    break;
                 case types.Workers:
+                    break;
+                default:
                     break;
             }
         }

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AxxenClient.CustomControls
+namespace Axxen.CustomControls
 {
     public partial class ALabel : Label
     {
