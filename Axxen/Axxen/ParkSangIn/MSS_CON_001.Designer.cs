@@ -37,8 +37,8 @@
             this.aLabel1 = new Axxen.CustomControls.ALabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.aPanel2 = new Axxen.CustomControls.APanel();
-            this.aLabel2 = new Axxen.CustomControls.ALabel();
             this.aLabel3 = new Axxen.CustomControls.ALabel();
+            this.aLabel2 = new Axxen.CustomControls.ALabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGroup)).BeginInit();
             this.aPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -58,7 +58,7 @@
             // 
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Location = new System.Drawing.Point(661, 6);
+            this.btnSearch.Location = new System.Drawing.Point(649, 7);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 4;
@@ -82,6 +82,7 @@
             // 
             // aPanel1
             // 
+            this.aPanel1.BackColor = System.Drawing.Color.White;
             this.aPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.aPanel1.Controls.Add(this.lblGroup);
             this.aPanel1.Location = new System.Drawing.Point(451, 6);
@@ -134,16 +135,6 @@
             this.aPanel2.Size = new System.Drawing.Size(1141, 39);
             this.aPanel2.TabIndex = 9;
             // 
-            // aLabel2
-            // 
-            this.aLabel2.AutoSize = true;
-            this.aLabel2.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aLabel2.Location = new System.Drawing.Point(15, 9);
-            this.aLabel2.Name = "aLabel2";
-            this.aLabel2.Size = new System.Drawing.Size(91, 17);
-            this.aLabel2.TabIndex = 7;
-            this.aLabel2.Text = "사용자 그룹명";
-            // 
             // aLabel3
             // 
             this.aLabel3.AutoSize = true;
@@ -153,6 +144,16 @@
             this.aLabel3.Size = new System.Drawing.Size(117, 17);
             this.aLabel3.TabIndex = 10;
             this.aLabel3.Text = "사용자 그룹명코드";
+            // 
+            // aLabel2
+            // 
+            this.aLabel2.AutoSize = true;
+            this.aLabel2.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aLabel2.Location = new System.Drawing.Point(15, 9);
+            this.aLabel2.Name = "aLabel2";
+            this.aLabel2.Size = new System.Drawing.Size(91, 17);
+            this.aLabel2.TabIndex = 7;
+            this.aLabel2.Text = "사용자 그룹명";
             // 
             // MSS_CON_001
             // 
