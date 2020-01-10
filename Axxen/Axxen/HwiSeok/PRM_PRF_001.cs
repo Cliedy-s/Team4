@@ -12,7 +12,7 @@ namespace Axxen
 {
     public partial class PRM_PRF_001 : Axxen.GridForm
     {
-        List<WorkOrder_J_WC_ItmeVO_1> wowc;
+        List<WorkOrder_J_WC_ItmeVO> wowc;
         WorkOrder_Service woservice = new WorkOrder_Service();
 
         public PRM_PRF_001()

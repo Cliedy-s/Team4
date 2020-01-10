@@ -11,7 +11,7 @@ namespace DAC
 {
     public class WorkOrderDAC : DACParent
     {
-        public List<WorkOrder_J_WC_ItmeVO_1> GetAll_WorkOrder_Item_WC()
+        public List<WorkOrder_J_WC_ItmeVO> GetAll_WorkOrder_Item_WC()
         {
             using (SqlCommand comm = new SqlCommand())
             {
@@ -21,7 +21,7 @@ namespace DAC
 
                 comm.Connection.Open();
                 SqlDataReader reader = comm.ExecuteReader();
-                List<WorkOrder_J_WC_ItmeVO_1> list = Helper.DataReaderMapToList<WorkOrder_J_WC_ItmeVO_1>(reader);
+                List<WorkOrder_J_WC_ItmeVO> list = Helper.DataReaderMapToList<WorkOrder_J_WC_ItmeVO>(reader);
                 comm.Connection.Close();
 
                 return list;
