@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VO
 {
-    public class WorkOrder_J_WC_ItmeVO//SCH_001_2 //PRM_PRF_001
+    public class WorkOrder_J_WC_ItmeVO//SCH_001_2 
     {
         public string Workorderno { get; set; } //작업지시번호
         public int Plan_Qty { get; set; } //계획수량
@@ -20,5 +20,17 @@ namespace VO
         public string Wc_Code { get; set; } //작업장코드
         public string Wc_Name { get; set; } //작업장명
         public string Remark { get; set; } //비고
+    }
+
+    public class WorkOrder_J_WC_ItmeVO_1 //PRM_PRF_001
+    {
+        public string Wo_Status { get; set; } //작업지시상태
+        public string Workorderno { get; set; } //작업지시번호
+        public string Item_Code { get; set; } //품목코드
+        public string Item_Name { get; set; } //품목명
+        public string Wc_Name { get; set; } //작업장명
+        public int In_Qty_Main { get; set; } //투입수량
+        public int Out_Qty_Main { get; set; } //산출수량
+        public int Prd_Qty { get; set; } //생산수량     
     }
 }
