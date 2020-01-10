@@ -22,7 +22,7 @@ namespace Axxen
 
         private void PRM_PRF_001_Load(object sender, EventArgs e)
         {
-            
+            #region 그리드뷰 설정
             DatagridviewDesigns.SetDesign(dgvMainGrid);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "번호", "Num", true, 100, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "작업지시상태", "Wo_Status", true, 100, default, true);
@@ -36,6 +36,14 @@ namespace Axxen
 
             wowc = woservice.GetAll_WorkOrder_Item_WC();
             dgvMainGrid.DataSource = wowc;
+            #endregion
+
+   
+        }
+
+        private void panTop_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

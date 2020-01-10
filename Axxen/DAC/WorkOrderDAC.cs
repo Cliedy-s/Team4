@@ -11,7 +11,7 @@ namespace DAC
 {
     public class WorkOrderDAC : DACParent
     {
-        public List<WorkOrder_J_WC_ItmeVO> GetAll_WorkOrder_Item_WC()
+        public List<WorkOrder_J_WC_ItmeVO> GetAll_WorkOrder_Item_WC() //PRM_PRF_001 그리드뷰 사용
         {
             using (SqlCommand comm = new SqlCommand())
             {

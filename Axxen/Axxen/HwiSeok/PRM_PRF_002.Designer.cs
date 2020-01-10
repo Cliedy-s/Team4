@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.aComboBox2 = new Axxen.CustomControls.AComboBox();
-            this.aLabel2 = new Axxen.CustomControls.ALabel();
-            this.aComboBox1 = new Axxen.CustomControls.AComboBox();
             this.aLabel1 = new Axxen.CustomControls.ALabel();
             this.aButton1 = new Axxen.CustomControls.AButton();
             this.aButton2 = new Axxen.CustomControls.AButton();
             this.aButton3 = new Axxen.CustomControls.AButton();
+            this.aDateTimePicker2 = new Axxen.CustomControls.ADateTimePicker();
+            this.aDateTimePicker1 = new Axxen.CustomControls.ADateTimePicker();
+            this.aLabel2 = new Axxen.CustomControls.ALabel();
             this.aPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aSplitContainer1)).BeginInit();
             this.aSplitContainer1.Panel1.SuspendLayout();
@@ -44,12 +44,12 @@
             // 
             // aPanel1
             // 
+            this.aPanel1.Controls.Add(this.aDateTimePicker2);
+            this.aPanel1.Controls.Add(this.aDateTimePicker1);
+            this.aPanel1.Controls.Add(this.aLabel2);
             this.aPanel1.Controls.Add(this.aButton3);
             this.aPanel1.Controls.Add(this.aButton2);
             this.aPanel1.Controls.Add(this.aButton1);
-            this.aPanel1.Controls.Add(this.aComboBox2);
-            this.aPanel1.Controls.Add(this.aLabel2);
-            this.aPanel1.Controls.Add(this.aComboBox1);
             this.aPanel1.Controls.Add(this.aLabel1);
             // 
             // aSplitContainer1
@@ -62,31 +62,6 @@
             // aHeaderBox2
             // 
             this.aHeaderBox2.HeaderBoxText = "팔렛트 목록";
-            // 
-            // aComboBox2
-            // 
-            this.aComboBox2.FormattingEnabled = true;
-            this.aComboBox2.Location = new System.Drawing.Point(236, 28);
-            this.aComboBox2.Name = "aComboBox2";
-            this.aComboBox2.Size = new System.Drawing.Size(121, 23);
-            this.aComboBox2.TabIndex = 9;
-            // 
-            // aLabel2
-            // 
-            this.aLabel2.AutoSize = true;
-            this.aLabel2.Location = new System.Drawing.Point(215, 32);
-            this.aLabel2.Name = "aLabel2";
-            this.aLabel2.Size = new System.Drawing.Size(15, 15);
-            this.aLabel2.TabIndex = 8;
-            this.aLabel2.Text = "~";
-            // 
-            // aComboBox1
-            // 
-            this.aComboBox1.FormattingEnabled = true;
-            this.aComboBox1.Location = new System.Drawing.Point(88, 28);
-            this.aComboBox1.Name = "aComboBox1";
-            this.aComboBox1.Size = new System.Drawing.Size(121, 23);
-            this.aComboBox1.TabIndex = 7;
             // 
             // aLabel1
             // 
@@ -130,6 +105,31 @@
             this.aButton3.Text = "등급상세 수정";
             this.aButton3.UseVisualStyleBackColor = false;
             // 
+            // aDateTimePicker2
+            // 
+            this.aDateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.aDateTimePicker2.Location = new System.Drawing.Point(219, 28);
+            this.aDateTimePicker2.Name = "aDateTimePicker2";
+            this.aDateTimePicker2.Size = new System.Drawing.Size(103, 23);
+            this.aDateTimePicker2.TabIndex = 13;
+            // 
+            // aDateTimePicker1
+            // 
+            this.aDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.aDateTimePicker1.Location = new System.Drawing.Point(88, 28);
+            this.aDateTimePicker1.Name = "aDateTimePicker1";
+            this.aDateTimePicker1.Size = new System.Drawing.Size(103, 23);
+            this.aDateTimePicker1.TabIndex = 12;
+            // 
+            // aLabel2
+            // 
+            this.aLabel2.AutoSize = true;
+            this.aLabel2.Location = new System.Drawing.Point(198, 32);
+            this.aLabel2.Name = "aLabel2";
+            this.aLabel2.Size = new System.Drawing.Size(15, 15);
+            this.aLabel2.TabIndex = 11;
+            this.aLabel2.Text = "~";
+            // 
             // PRM_PRF_002
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -147,13 +147,12 @@
         }
 
         #endregion
-
-        private CustomControls.AComboBox aComboBox2;
-        private CustomControls.ALabel aLabel2;
-        private CustomControls.AComboBox aComboBox1;
         private CustomControls.ALabel aLabel1;
         private CustomControls.AButton aButton3;
         private CustomControls.AButton aButton2;
         private CustomControls.AButton aButton1;
+        private CustomControls.ADateTimePicker aDateTimePicker2;
+        private CustomControls.ADateTimePicker aDateTimePicker1;
+        private CustomControls.ALabel aLabel2;
     }
 }
