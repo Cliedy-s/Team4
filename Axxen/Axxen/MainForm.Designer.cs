@@ -135,6 +135,7 @@
             this.tsbtnSave = new System.Windows.Forms.ToolStripButton();
             this.tsbtnDelete = new System.Windows.Forms.ToolStripButton();
             this.tsbtnUpdate = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnPrint = new System.Windows.Forms.ToolStripButton();
             this.panelMenu.SuspendLayout();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
@@ -918,6 +919,7 @@
             this.tsbInsert,
             this.tsbtnUpdate,
             this.tsbtnDelete,
+            this.tsbtnPrint,
             this.tsbtnSave});
             this.toolStrip1.Location = new System.Drawing.Point(0, 34);
             this.toolStrip1.Name = "toolStrip1";
@@ -1045,6 +1047,22 @@
             this.tsbtnUpdate.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             this.tsbtnUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.tsbtnUpdate.ToolTipText = "조회";
+            // 
+            // tsbtnPrint
+            // 
+            this.tsbtnPrint.AutoSize = false;
+            this.tsbtnPrint.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tsbtnPrint.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnPrint.Image")));
+            this.tsbtnPrint.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.tsbtnPrint.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbtnPrint.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnPrint.Name = "tsbtnPrint";
+            this.tsbtnPrint.Size = new System.Drawing.Size(50, 57);
+            this.tsbtnPrint.Text = "출력";
+            this.tsbtnPrint.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.tsbtnPrint.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            this.tsbtnPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbtnPrint.ToolTipText = "조회";
             // 
             // MainForm
             // 
@@ -1193,5 +1211,6 @@
         private System.Windows.Forms.ToolStripButton tsbtnUpdate;
         private System.Windows.Forms.ToolStripButton tsbtnDelete;
         private System.Windows.Forms.ToolStripButton tsbtnSave;
+        private System.Windows.Forms.ToolStripButton tsbtnPrint;
     }
 }

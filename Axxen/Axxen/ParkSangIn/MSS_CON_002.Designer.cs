@@ -30,13 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MSS_CON_002));
             this.dgvGroup = new Axxen.CustomControls.ADataGridView();
-            this.aDataGridView1 = new Axxen.CustomControls.ADataGridView();
+            this.dgvScreen = new Axxen.CustomControls.ADataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.aLabel1 = new Axxen.CustomControls.ALabel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.aLabel2 = new Axxen.CustomControls.ALabel();
             this.aPanel2 = new Axxen.CustomControls.APanel();
-            this.aButton3 = new Axxen.CustomControls.AButton();
             this.aLabel3 = new Axxen.CustomControls.ALabel();
             this.aLabel4 = new Axxen.CustomControls.ALabel();
             this.cbbGroup = new Axxen.CustomControls.AComboBox();
@@ -44,10 +43,8 @@
             this.lblGroup = new Axxen.CustomControls.ALabel();
             this.btnSearch = new Axxen.CustomControls.AButton();
             this.aLabel5 = new Axxen.CustomControls.ALabel();
-            this.btnAdd = new Axxen.CustomControls.AButton();
-            this.aButton2 = new Axxen.CustomControls.AButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGroup)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aDataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvScreen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.aPanel2.SuspendLayout();
@@ -65,19 +62,20 @@
             this.dgvGroup.RowTemplate.Height = 23;
             this.dgvGroup.Size = new System.Drawing.Size(455, 615);
             this.dgvGroup.TabIndex = 6;
+            this.dgvGroup.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvGroup_CellDoubleClick);
             // 
-            // aDataGridView1
+            // dgvScreen
             // 
-            this.aDataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvScreen.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.aDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.aDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.aDataGridView1.Location = new System.Drawing.Point(473, 73);
-            this.aDataGridView1.Name = "aDataGridView1";
-            this.aDataGridView1.RowTemplate.Height = 23;
-            this.aDataGridView1.Size = new System.Drawing.Size(663, 615);
-            this.aDataGridView1.TabIndex = 7;
+            this.dgvScreen.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvScreen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvScreen.Location = new System.Drawing.Point(473, 73);
+            this.dgvScreen.Name = "dgvScreen";
+            this.dgvScreen.RowTemplate.Height = 23;
+            this.dgvScreen.Size = new System.Drawing.Size(663, 615);
+            this.dgvScreen.TabIndex = 7;
             // 
             // pictureBox1
             // 
@@ -122,7 +120,6 @@
             // 
             this.aPanel2.BackColor = System.Drawing.SystemColors.Info;
             this.aPanel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.aPanel2.Controls.Add(this.aButton3);
             this.aPanel2.Controls.Add(this.aLabel3);
             this.aPanel2.Controls.Add(this.aLabel4);
             this.aPanel2.Controls.Add(this.cbbGroup);
@@ -133,18 +130,6 @@
             this.aPanel2.Name = "aPanel2";
             this.aPanel2.Size = new System.Drawing.Size(1148, 38);
             this.aPanel2.TabIndex = 13;
-            // 
-            // aButton3
-            // 
-            this.aButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.aButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton3.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aButton3.Location = new System.Drawing.Point(736, 7);
-            this.aButton3.Name = "aButton3";
-            this.aButton3.Size = new System.Drawing.Size(75, 23);
-            this.aButton3.TabIndex = 16;
-            this.aButton3.Text = "출력";
-            this.aButton3.UseVisualStyleBackColor = false;
             // 
             // aLabel3
             // 
@@ -173,6 +158,7 @@
             this.cbbGroup.Name = "cbbGroup";
             this.cbbGroup.Size = new System.Drawing.Size(179, 23);
             this.cbbGroup.TabIndex = 3;
+            this.cbbGroup.SelectedIndexChanged += new System.EventHandler(this.CbbGroup_SelectedIndexChanged);
             // 
             // aPanel1
             // 
@@ -205,6 +191,7 @@
             this.btnSearch.TabIndex = 4;
             this.btnSearch.Text = "조회";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
             // aLabel5
             // 
@@ -217,52 +204,24 @@
             this.aLabel5.TabIndex = 14;
             this.aLabel5.Text = "화면권한 허용";
             // 
-            // btnAdd
-            // 
-            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnAdd.Location = new System.Drawing.Point(980, 43);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 11;
-            this.btnAdd.Text = "추가";
-            this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
-            // 
-            // aButton2
-            // 
-            this.aButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.aButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.aButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton2.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aButton2.Location = new System.Drawing.Point(1061, 43);
-            this.aButton2.Name = "aButton2";
-            this.aButton2.Size = new System.Drawing.Size(75, 23);
-            this.aButton2.TabIndex = 15;
-            this.aButton2.Text = "삭제";
-            this.aButton2.UseVisualStyleBackColor = false;
-            // 
             // MSS_CON_002
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1148, 700);
-            this.Controls.Add(this.aButton2);
-            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.aLabel5);
             this.Controls.Add(this.aPanel2);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.aLabel2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.aLabel1);
-            this.Controls.Add(this.aDataGridView1);
+            this.Controls.Add(this.dgvScreen);
             this.Controls.Add(this.dgvGroup);
             this.Name = "MSS_CON_002";
             this.Text = "사용그룹별 권한설정";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MSS_CON_002_FormClosed);
             this.Load += new System.EventHandler(this.MSS_CON_002_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGroup)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aDataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvScreen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.aPanel2.ResumeLayout(false);
@@ -277,7 +236,7 @@
         #endregion
 
         private CustomControls.ADataGridView dgvGroup;
-        private CustomControls.ADataGridView aDataGridView1;
+        private CustomControls.ADataGridView dgvScreen;
         private System.Windows.Forms.PictureBox pictureBox1;
         private CustomControls.ALabel aLabel1;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -290,8 +249,5 @@
         private CustomControls.ALabel lblGroup;
         private CustomControls.AButton btnSearch;
         private CustomControls.ALabel aLabel5;
-        private CustomControls.AButton aButton3;
-        private CustomControls.AButton btnAdd;
-        private CustomControls.AButton aButton2;
     }
 }
