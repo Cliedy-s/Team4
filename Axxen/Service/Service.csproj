@@ -47,6 +47,7 @@
     <Compile Include="ScreenItemService.cs" />
     <Compile Include="UserGroupService.cs" />
     <Compile Include="UserInfo_Service.cs" />
+    <Compile Include="WorkOrder_Service.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAC\DAC.csproj">

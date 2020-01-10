@@ -1,4 +1,4 @@
-﻿namespace AxxenClient.CustomControls
+﻿namespace Axxen.CustomControls
 {
     partial class ATextBox_LabeledBigTextBox
     {
@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtValue = new AxxenClient.CustomControls.ATextBox();
-            this.lblName = new AxxenClient.CustomControls.ALabel();
+            this.txtValue = new Axxen.CustomControls.ATextBox();
+            this.lblName = new Axxen.CustomControls.ALabel();
             this.SuspendLayout();
             // 
             // txtValue
@@ -39,12 +39,12 @@
             this.txtValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtValue.errorp = null;
             this.txtValue.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtValue.Location = new System.Drawing.Point(96, 4);
+            this.txtValue.Location = new System.Drawing.Point(99, 4);
             this.txtValue.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtValue.Name = "txtValue";
-            this.txtValue.Size = new System.Drawing.Size(266, 23);
-            this.txtValue.TabIndex = 7;
-            this.txtValue.txtType = AxxenClient.CustomControls.type.Normal;
+            this.txtValue.Size = new System.Drawing.Size(263, 23);
+            this.txtValue.TabIndex = 5;
+            this.txtValue.txtType = Axxen.CustomControls.type.Normal;
             // 
             // lblName
             // 
@@ -52,8 +52,8 @@
             this.lblName.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblName.Location = new System.Drawing.Point(1, 4);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(94, 23);
-            this.lblName.TabIndex = 6;
+            this.lblName.Size = new System.Drawing.Size(97, 23);
+            this.lblName.TabIndex = 4;
             this.lblName.Text = "lblName";
             this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 

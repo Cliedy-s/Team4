@@ -22,9 +22,5 @@ namespace VO
         public string Wc_Code { get; set; } //장착작업장코드
         public string Remark { get; set; } //비고
         public string Use_YN { get; set; } //사용여부
-        public DateTime Ins_Date { get; set; } //최초입력일자
-        public string Ins_Emp { get; set; } //최초입력자
-        public DateTime Up_Date { get; set; } //최종수정일자
-        public string Up_Emp { get; set; } //최종수정자
     }
 }

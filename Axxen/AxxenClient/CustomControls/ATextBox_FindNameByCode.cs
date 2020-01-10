@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Axxen.CustomControls
 {
+    public enum types { Users, Authoritys, Systems, Processes, Items, Facility, Errors, NonOperations, UserDefinitions, PackingGrades, WorkCenters, GVs, GVGroups, Workers }
     public partial class ATextBox_FindNameByCode : UserControl
     {
-        public enum types { Users, Authoritys, Systems, Processes, Items, Facility, Errors, NonOperations, UserDefinitions, PackingGrades, WorkCenters, GVs, Workers }
         public string lblNameText { get { return lblName.Text; } set { lblName.Text = value; } }
         public string txtCodeText { get { return txtCode.Text; } set { txtCode.Text = value; } }
         public string txtNameText { get { return txtName.Text; } set { txtName.Text = value; } }
@@ -59,6 +59,9 @@ namespace Axxen.CustomControls
                         lblNameText = "작업장";
                         break;
                     case types.GVs:
+                        lblNameText = "대차";
+                        break;
+                    case types.GVGroups:
                         lblNameText = "대차그룹";
                         break;
                     case types.Workers:

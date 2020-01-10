@@ -1,4 +1,5 @@
-﻿namespace Axxen { 
+﻿namespace Axxen
+{ 
     partial class PRM_RPT_004
     {
         /// <summary>

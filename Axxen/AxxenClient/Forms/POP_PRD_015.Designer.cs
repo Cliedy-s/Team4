@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.aButton1 = new AxxenClient.CustomControls.AButton();
-            this.aTextBox_LabeledBigTextBox1 = new AxxenClient.CustomControls.ATextBox_LabeledBigTextBox();
-            this.aButton2 = new AxxenClient.CustomControls.AButton();
-            this.aDataGridView2 = new AxxenClient.CustomControls.ADataGridView();
-            this.aPanel5 = new AxxenClient.CustomControls.APanel();
-            this.aTextBox_LabeledBigTextBox10 = new AxxenClient.CustomControls.ATextBox_LabeledBigTextBox();
-            this.aTextBox_LabeledBigTextBox11 = new AxxenClient.CustomControls.ATextBox_LabeledBigTextBox();
-            this.aTextBox_LabeledBigTextBox8 = new AxxenClient.CustomControls.ATextBox_LabeledBigTextBox();
-            this.aTextBox_LabeledBigTextBox9 = new AxxenClient.CustomControls.ATextBox_LabeledBigTextBox();
-            this.aTextBox_LabeledBigTextBox7 = new AxxenClient.CustomControls.ATextBox_LabeledBigTextBox();
-            this.aTextBox_LabeledBigTextBox6 = new AxxenClient.CustomControls.ATextBox_LabeledBigTextBox();
-            this.aDataGridView1 = new AxxenClient.CustomControls.ADataGridView();
+            this.aButton1 = new Axxen.CustomControls.AButton();
+            this.aTextBox_LabeledBigTextBox1 = new Axxen.CustomControls.ATextBox_LabeledBigTextBox();
+            this.aButton2 = new Axxen.CustomControls.AButton();
+            this.aDataGridView2 = new Axxen.CustomControls.ADataGridView();
+            this.aPanel5 = new Axxen.CustomControls.APanel();
+            this.aTextBox_LabeledBigTextBox10 = new Axxen.CustomControls.ATextBox_LabeledBigTextBox();
+            this.aTextBox_LabeledBigTextBox11 = new Axxen.CustomControls.ATextBox_LabeledBigTextBox();
+            this.aTextBox_LabeledBigTextBox8 = new Axxen.CustomControls.ATextBox_LabeledBigTextBox();
+            this.aTextBox_LabeledBigTextBox9 = new Axxen.CustomControls.ATextBox_LabeledBigTextBox();
+            this.aTextBox_LabeledBigTextBox7 = new Axxen.CustomControls.ATextBox_LabeledBigTextBox();
+            this.aTextBox_LabeledBigTextBox6 = new Axxen.CustomControls.ATextBox_LabeledBigTextBox();
+            this.aDataGridView1 = new Axxen.CustomControls.ADataGridView();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aDataGridView2)).BeginInit();
@@ -56,7 +56,7 @@
             this.aButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.aButton1.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aButton1.Location = new System.Drawing.Point(1039, 473);
+            this.aButton1.Location = new System.Drawing.Point(1042, 473);
             this.aButton1.Name = "aButton1";
             this.aButton1.Size = new System.Drawing.Size(160, 112);
             this.aButton1.TabIndex = 37;
@@ -67,7 +67,7 @@
             // 
             this.aTextBox_LabeledBigTextBox1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aTextBox_LabeledBigTextBox1.LabelText = "측정값";
-            this.aTextBox_LabeledBigTextBox1.Location = new System.Drawing.Point(623, 437);
+            this.aTextBox_LabeledBigTextBox1.Location = new System.Drawing.Point(626, 437);
             this.aTextBox_LabeledBigTextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.aTextBox_LabeledBigTextBox1.Name = "aTextBox_LabeledBigTextBox1";
             this.aTextBox_LabeledBigTextBox1.Size = new System.Drawing.Size(365, 30);
@@ -79,7 +79,7 @@
             this.aButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.aButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.aButton2.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aButton2.Location = new System.Drawing.Point(623, 473);
+            this.aButton2.Location = new System.Drawing.Point(626, 473);
             this.aButton2.Name = "aButton2";
             this.aButton2.Size = new System.Drawing.Size(409, 112);
             this.aButton2.TabIndex = 35;
@@ -89,7 +89,7 @@
             // aDataGridView2
             // 
             this.aDataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.aDataGridView2.Location = new System.Drawing.Point(616, 211);
+            this.aDataGridView2.Location = new System.Drawing.Point(619, 211);
             this.aDataGridView2.Name = "aDataGridView2";
             this.aDataGridView2.RowTemplate.Height = 23;
             this.aDataGridView2.Size = new System.Drawing.Size(581, 219);
@@ -103,7 +103,7 @@
             this.aPanel5.Controls.Add(this.aTextBox_LabeledBigTextBox9);
             this.aPanel5.Controls.Add(this.aTextBox_LabeledBigTextBox7);
             this.aPanel5.Controls.Add(this.aTextBox_LabeledBigTextBox6);
-            this.aPanel5.Location = new System.Drawing.Point(7, 105);
+            this.aPanel5.Location = new System.Drawing.Point(10, 105);
             this.aPanel5.Name = "aPanel5";
             this.aPanel5.Size = new System.Drawing.Size(1191, 100);
             this.aPanel5.TabIndex = 33;
@@ -177,7 +177,7 @@
             // aDataGridView1
             // 
             this.aDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.aDataGridView1.Location = new System.Drawing.Point(7, 211);
+            this.aDataGridView1.Location = new System.Drawing.Point(10, 211);
             this.aDataGridView1.Name = "aDataGridView1";
             this.aDataGridView1.RowTemplate.Height = 23;
             this.aDataGridView1.Size = new System.Drawing.Size(610, 374);
@@ -215,17 +215,17 @@
 
         #endregion
 
-        private CustomControls.AButton aButton1;
-        private CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox1;
-        private CustomControls.AButton aButton2;
-        private CustomControls.ADataGridView aDataGridView2;
-        private CustomControls.APanel aPanel5;
-        private CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox10;
-        private CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox11;
-        private CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox8;
-        private CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox9;
-        private CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox7;
-        private CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox6;
-        private CustomControls.ADataGridView aDataGridView1;
+        private Axxen.CustomControls.AButton aButton1;
+        private Axxen.CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox1;
+        private Axxen.CustomControls.AButton aButton2;
+        private Axxen.CustomControls.ADataGridView aDataGridView2;
+        private Axxen.CustomControls.APanel aPanel5;
+        private Axxen.CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox10;
+        private Axxen.CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox11;
+        private Axxen.CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox8;
+        private Axxen.CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox9;
+        private Axxen.CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox7;
+        private Axxen.CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox6;
+        private Axxen.CustomControls.ADataGridView aDataGridView1;
     }
 }

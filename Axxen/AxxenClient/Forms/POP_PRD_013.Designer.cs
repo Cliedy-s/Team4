@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.aHeaderBox2 = new AxxenClient.CustomControls.AHeaderBox();
-            this.aHeaderBox1 = new AxxenClient.CustomControls.AHeaderBox();
-            this.aButton1 = new AxxenClient.CustomControls.AButton();
-            this.aDataGridView2 = new AxxenClient.CustomControls.ADataGridView();
-            this.aDataGridView1 = new AxxenClient.CustomControls.ADataGridView();
-            this.aTextBox_Searchable1 = new AxxenClient.CustomControls.ATextBox_Searchable();
-            this.aTextBox_Searchable2 = new AxxenClient.CustomControls.ATextBox_Searchable();
-            this.aButton2 = new AxxenClient.CustomControls.AButton();
-            this.aButton3 = new AxxenClient.CustomControls.AButton();
+            this.aHeaderBox2 = new Axxen.CustomControls.AHeaderBox();
+            this.aHeaderBox1 = new Axxen.CustomControls.AHeaderBox();
+            this.aButton1 = new Axxen.CustomControls.AButton();
+            this.aDataGridView2 = new Axxen.CustomControls.ADataGridView();
+            this.aDataGridView1 = new Axxen.CustomControls.ADataGridView();
+            this.aTextBox_Searchable1 = new Axxen.CustomControls.ATextBox_Searchable();
+            this.aTextBox_Searchable2 = new Axxen.CustomControls.ATextBox_Searchable();
+            this.aButton2 = new Axxen.CustomControls.AButton();
+            this.aButton3 = new Axxen.CustomControls.AButton();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aDataGridView2)).BeginInit();
@@ -102,7 +102,6 @@
             // aTextBox_Searchable1
             // 
             this.aTextBox_Searchable1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aTextBox_Searchable1.FontSize = 9F;
             this.aTextBox_Searchable1.LabelText = "작업장";
             this.aTextBox_Searchable1.Location = new System.Drawing.Point(12, 106);
             this.aTextBox_Searchable1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -114,7 +113,6 @@
             // aTextBox_Searchable2
             // 
             this.aTextBox_Searchable2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aTextBox_Searchable2.FontSize = 9F;
             this.aTextBox_Searchable2.LabelText = "할당 작업자 수";
             this.aTextBox_Searchable2.Location = new System.Drawing.Point(421, 106);
             this.aTextBox_Searchable2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -183,14 +181,14 @@
         }
 
         #endregion
-        private CustomControls.AHeaderBox aHeaderBox2;
-        private CustomControls.AHeaderBox aHeaderBox1;
-        private CustomControls.AButton aButton1;
-        private CustomControls.ADataGridView aDataGridView2;
-        private CustomControls.ADataGridView aDataGridView1;
-        private CustomControls.ATextBox_Searchable aTextBox_Searchable1;
-        private CustomControls.ATextBox_Searchable aTextBox_Searchable2;
-        private CustomControls.AButton aButton2;
-        private CustomControls.AButton aButton3;
+        private Axxen.CustomControls.AHeaderBox aHeaderBox2;
+        private Axxen.CustomControls.AHeaderBox aHeaderBox1;
+        private Axxen.CustomControls.AButton aButton1;
+        private Axxen.CustomControls.ADataGridView aDataGridView2;
+        private Axxen.CustomControls.ADataGridView aDataGridView1;
+        private Axxen.CustomControls.ATextBox_Searchable aTextBox_Searchable1;
+        private Axxen.CustomControls.ATextBox_Searchable aTextBox_Searchable2;
+        private Axxen.CustomControls.AButton aButton2;
+        private Axxen.CustomControls.AButton aButton3;
     }
 }

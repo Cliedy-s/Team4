@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.aDataGridView1 = new AxxenClient.CustomControls.ADataGridView();
-            this.aPanel4 = new AxxenClient.CustomControls.APanel();
-            this.aTextBox_LabeledBigTextBox5 = new AxxenClient.CustomControls.ATextBox_LabeledBigTextBox();
-            this.aTextBox_LabeledBigTextBox6 = new AxxenClient.CustomControls.ATextBox_LabeledBigTextBox();
-            this.aTextBox_LabeledBigTextBox3 = new AxxenClient.CustomControls.ATextBox_LabeledBigTextBox();
-            this.aTextBox_LabeledBigTextBox4 = new AxxenClient.CustomControls.ATextBox_LabeledBigTextBox();
-            this.aButton1 = new AxxenClient.CustomControls.AButton();
-            this.aTextBox_LabeledBigTextBox2 = new AxxenClient.CustomControls.ATextBox_LabeledBigTextBox();
-            this.aTextBox_Searchable1 = new AxxenClient.CustomControls.ATextBox_Searchable();
-            this.aTextBox_LabeledBigTextBox1 = new AxxenClient.CustomControls.ATextBox_LabeledBigTextBox();
-            this.aLabel_SubHeader1 = new AxxenClient.CustomControls.ALabel_SubHeader();
+            this.aDataGridView1 = new Axxen.CustomControls.ADataGridView();
+            this.aPanel4 = new Axxen.CustomControls.APanel();
+            this.aTextBox_LabeledBigTextBox5 = new Axxen.CustomControls.ATextBox_LabeledBigTextBox();
+            this.aTextBox_LabeledBigTextBox6 = new Axxen.CustomControls.ATextBox_LabeledBigTextBox();
+            this.aTextBox_LabeledBigTextBox3 = new Axxen.CustomControls.ATextBox_LabeledBigTextBox();
+            this.aTextBox_LabeledBigTextBox4 = new Axxen.CustomControls.ATextBox_LabeledBigTextBox();
+            this.aButton1 = new Axxen.CustomControls.AButton();
+            this.aTextBox_LabeledBigTextBox2 = new Axxen.CustomControls.ATextBox_LabeledBigTextBox();
+            this.aTextBox_Searchable1 = new Axxen.CustomControls.ATextBox_Searchable();
+            this.aTextBox_LabeledBigTextBox1 = new Axxen.CustomControls.ATextBox_LabeledBigTextBox();
+            this.aLabel_SubHeader1 = new Axxen.CustomControls.ALabel_SubHeader();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aDataGridView1)).BeginInit();
@@ -143,7 +143,6 @@
             // aTextBox_Searchable1
             // 
             this.aTextBox_Searchable1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aTextBox_Searchable1.FontSize = 9F;
             this.aTextBox_Searchable1.LabelText = "품목";
             this.aTextBox_Searchable1.Location = new System.Drawing.Point(92, 95);
             this.aTextBox_Searchable1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -199,16 +198,16 @@
 
         #endregion
 
-        private CustomControls.ADataGridView aDataGridView1;
-        private CustomControls.APanel aPanel4;
-        private CustomControls.AButton aButton1;
-        private CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox2;
-        private CustomControls.ATextBox_Searchable aTextBox_Searchable1;
-        private CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox1;
-        private CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox5;
-        private CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox6;
-        private CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox3;
-        private CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox4;
-        private CustomControls.ALabel_SubHeader aLabel_SubHeader1;
+        private Axxen.CustomControls.ADataGridView aDataGridView1;
+        private Axxen.CustomControls.APanel aPanel4;
+        private Axxen.CustomControls.AButton aButton1;
+        private Axxen.CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox2;
+        private Axxen.CustomControls.ATextBox_Searchable aTextBox_Searchable1;
+        private Axxen.CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox1;
+        private Axxen.CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox5;
+        private Axxen.CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox6;
+        private Axxen.CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox3;
+        private Axxen.CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox4;
+        private Axxen.CustomControls.ALabel_SubHeader aLabel_SubHeader1;
     }
 }

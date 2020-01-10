@@ -8,19 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Axxen.CustomControls
+namespace AxxenClient.Templets
 {
-    public partial class ADateTimePicker : DateTimePicker
+    public partial class FreeForm : BaseForm
     {
-        public ADateTimePicker()
+        public FreeForm()
         {
             InitializeComponent();
-            //Design
-        }
-
-        protected override void OnPaint(PaintEventArgs pe)
-        {
-            base.OnPaint(pe);
         }
     }
 }

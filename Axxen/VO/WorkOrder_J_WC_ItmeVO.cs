@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace VO
 {
-    public class WorkOrder_WC_ItmeVO//SCH_001_2
+    public class WorkOrder_J_WC_ItmeVO//SCH_001_2 //PRM_PRF_001
     {
+        public int Num { get; set; } //PRM_PRF_001 순번
         public string Workorderno { get; set; } //작업지시번호
         public int Plan_Qty { get; set; } //계획수량
         public DateTime Prd_Date { get; set; } //생산일자
