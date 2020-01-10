@@ -13,6 +13,29 @@ namespace DAC
     {
 
         /// <summary>
+        /// 모든 스크린 아이템
+        /// </summary>
+        /// <param name="groupCode"></param>
+        /// <returns></returns>
+        public List<ScreenItem_MasterVO> GetALLScreenItem()
+        {
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText = "GetALLScreenItem";
+                comm.CommandType = CommandType.StoredProcedure;
+             
+
+                comm.Connection.Open();
+                SqlDataReader reader = comm.ExecuteReader();
+                List<ScreenItem_MasterVO> list = Helper.DataReaderMapToList<ScreenItem_MasterVO>(reader);
+                comm.Connection.Close();
+
+                return list;
+            }
+        }
+
+        /// <summary>
         /// 그룹에 연결된 화면들
         /// </summary>
         /// <param name="groupCode"></param>

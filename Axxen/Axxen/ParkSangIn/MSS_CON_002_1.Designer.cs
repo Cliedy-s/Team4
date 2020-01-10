@@ -40,7 +40,7 @@
             this.aTextBox1 = new Axxen.CustomControls.ATextBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.aDataGridView1 = new Axxen.CustomControls.ADataGridView();
+            this.dgvScreenItem = new Axxen.CustomControls.ADataGridView();
             this.aPanel4 = new Axxen.CustomControls.APanel();
             this.aButton3 = new Axxen.CustomControls.AButton();
             this.aButton2 = new Axxen.CustomControls.AButton();
@@ -48,7 +48,7 @@
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
             this.aPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.aDataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvScreenItem)).BeginInit();
             this.aPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -171,15 +171,15 @@
             this.radioButton1.Text = "화면명";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
-            // aDataGridView1
+            // dgvScreenItem
             // 
-            this.aDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.aDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.aDataGridView1.Location = new System.Drawing.Point(6, 99);
-            this.aDataGridView1.Name = "aDataGridView1";
-            this.aDataGridView1.RowTemplate.Height = 23;
-            this.aDataGridView1.Size = new System.Drawing.Size(549, 395);
-            this.aDataGridView1.TabIndex = 21;
+            this.dgvScreenItem.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvScreenItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvScreenItem.Location = new System.Drawing.Point(6, 99);
+            this.dgvScreenItem.Name = "dgvScreenItem";
+            this.dgvScreenItem.RowTemplate.Height = 23;
+            this.dgvScreenItem.Size = new System.Drawing.Size(549, 395);
+            this.dgvScreenItem.TabIndex = 21;
             // 
             // aPanel4
             // 
@@ -222,13 +222,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(559, 553);
             this.Controls.Add(this.aPanel4);
-            this.Controls.Add(this.aDataGridView1);
+            this.Controls.Add(this.dgvScreenItem);
             this.Controls.Add(this.aPanel3);
             this.Controls.Add(this.aPanel2);
             this.Controls.Add(this.aPanel1);
             this.Name = "MSS_CON_002_1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "화면조회";
+            this.Load += new System.EventHandler(this.MSS_CON_002_1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.aPanel1.ResumeLayout(false);
             this.aPanel1.PerformLayout();
@@ -236,7 +237,7 @@
             this.aPanel2.PerformLayout();
             this.aPanel3.ResumeLayout(false);
             this.aPanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.aDataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvScreenItem)).EndInit();
             this.aPanel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -255,7 +256,7 @@
         private CustomControls.ATextBox aTextBox1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
-        private CustomControls.ADataGridView aDataGridView1;
+        private CustomControls.ADataGridView dgvScreenItem;
         private CustomControls.APanel aPanel4;
         private CustomControls.AButton aButton3;
         private CustomControls.AButton aButton2;

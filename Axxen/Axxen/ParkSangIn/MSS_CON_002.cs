@@ -38,9 +38,7 @@ namespace Axxen
 
             DatagridviewDesigns.SetDesign(dgvScreen);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "화면코드", "Screen_Code", true, 200, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "사용자그룹명", "UserGroup_Name", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "입력일자", "Ins_Date", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "사용여부", "Use_YN", true, 60, default, true);
+
 
             GetAllUserGroup(); //유저그룹전체
             ///
