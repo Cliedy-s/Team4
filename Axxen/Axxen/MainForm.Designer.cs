@@ -118,6 +118,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button10 = new System.Windows.Forms.Button();
             this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.전체닫기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.aLabel2 = new Axxen.CustomControls.ALabel();
@@ -126,17 +128,19 @@
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbInsert = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.aLabel1 = new Axxen.CustomControls.ALabel();
             this.lblName = new Axxen.CustomControls.ALabel();
             this.pnBookmark = new Axxen.CustomControls.APanel();
             this.tvBookMark = new System.Windows.Forms.TreeView();
+            this.tsbtnSave = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnDelete = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnUpdate = new System.Windows.Forms.ToolStripButton();
             this.panelMenu.SuspendLayout();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
             this.ctmBookMark.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -838,6 +842,7 @@
             // 
             // tabControl2
             // 
+            this.tabControl2.ContextMenuStrip = this.contextMenuStrip1;
             this.tabControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.tabControl2.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.tabControl2.Location = new System.Drawing.Point(267, 111);
@@ -847,6 +852,20 @@
             this.tabControl2.TabIndex = 12;
             this.tabControl2.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.TabControl1_DrawItem);
             this.tabControl2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TabControl2_MouseClick);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.전체닫기ToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(127, 26);
+            // 
+            // 전체닫기ToolStripMenuItem
+            // 
+            this.전체닫기ToolStripMenuItem.Name = "전체닫기ToolStripMenuItem";
+            this.전체닫기ToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.전체닫기ToolStripMenuItem.Text = "전체 닫기";
+            this.전체닫기ToolStripMenuItem.Click += new System.EventHandler(this.전체닫기ToolStripMenuItem_Click);
             // 
             // panel1
             // 
@@ -897,8 +916,9 @@
             this.toolStripButton1,
             this.toolStripSeparator1,
             this.tsbInsert,
-            this.toolStripButton3,
-            this.toolStripButton4});
+            this.tsbtnUpdate,
+            this.tsbtnDelete,
+            this.tsbtnSave});
             this.toolStrip1.Location = new System.Drawing.Point(0, 34);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1616, 77);
@@ -942,24 +962,6 @@
             this.tsbInsert.ToolTipText = "조회";
             this.tsbInsert.Click += new System.EventHandler(this.TsbInsert_Click);
             // 
-            // toolStripButton3
-            // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(24, 74);
-            this.toolStripButton3.Text = "toolStripButton3";
-            // 
-            // toolStripButton4
-            // 
-            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(24, 74);
-            this.toolStripButton4.Text = "toolStripButton4";
-            // 
             // aLabel1
             // 
             this.aLabel1.AutoSize = true;
@@ -996,6 +998,54 @@
             this.tvBookMark.Size = new System.Drawing.Size(193, 467);
             this.tvBookMark.TabIndex = 0;
             // 
+            // tsbtnSave
+            // 
+            this.tsbtnSave.AutoSize = false;
+            this.tsbtnSave.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tsbtnSave.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnSave.Image")));
+            this.tsbtnSave.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.tsbtnSave.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbtnSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnSave.Name = "tsbtnSave";
+            this.tsbtnSave.Size = new System.Drawing.Size(50, 57);
+            this.tsbtnSave.Text = "저장";
+            this.tsbtnSave.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.tsbtnSave.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            this.tsbtnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbtnSave.ToolTipText = "조회";
+            // 
+            // tsbtnDelete
+            // 
+            this.tsbtnDelete.AutoSize = false;
+            this.tsbtnDelete.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tsbtnDelete.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnDelete.Image")));
+            this.tsbtnDelete.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.tsbtnDelete.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbtnDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnDelete.Name = "tsbtnDelete";
+            this.tsbtnDelete.Size = new System.Drawing.Size(50, 57);
+            this.tsbtnDelete.Text = "삭제";
+            this.tsbtnDelete.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.tsbtnDelete.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            this.tsbtnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbtnDelete.ToolTipText = "조회";
+            // 
+            // tsbtnUpdate
+            // 
+            this.tsbtnUpdate.AutoSize = false;
+            this.tsbtnUpdate.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tsbtnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnUpdate.Image")));
+            this.tsbtnUpdate.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.tsbtnUpdate.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbtnUpdate.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnUpdate.Name = "tsbtnUpdate";
+            this.tsbtnUpdate.Size = new System.Drawing.Size(50, 57);
+            this.tsbtnUpdate.Text = "수정";
+            this.tsbtnUpdate.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.tsbtnUpdate.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            this.tsbtnUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbtnUpdate.ToolTipText = "조회";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -1025,6 +1075,7 @@
             this.ctmBookMark.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -1125,9 +1176,7 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton tsbInsert;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton4;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.TabControl tabControl2;
@@ -1139,5 +1188,10 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TreeView tvBookMark;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem 전체닫기ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton tsbtnUpdate;
+        private System.Windows.Forms.ToolStripButton tsbtnDelete;
+        private System.Windows.Forms.ToolStripButton tsbtnSave;
     }
 }
