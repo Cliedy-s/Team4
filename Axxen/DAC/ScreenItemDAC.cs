@@ -40,18 +40,40 @@ namespace DAC
         /// </summary>
         /// <param name="groupCode"></param>
         /// <returns></returns>
-        public List<ScreenItem_AuthorityVO> GetGroupScreenItem(string groupCode)
+        public List<ScreenItem_MasterVO> GetUseGroupScreenItem(string groupCode)
         {
             using (SqlCommand comm = new SqlCommand())
             {
                 comm.Connection = new SqlConnection(Connstr);
-                comm.CommandText = "GetGroupScreenItem";
+                comm.CommandText = "GetUseGroupScreenItem";
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.Parameters.AddWithValue("@UserGroup_Code", groupCode);
 
                 comm.Connection.Open();
                 SqlDataReader reader = comm.ExecuteReader();
-                List<ScreenItem_AuthorityVO> list = Helper.DataReaderMapToList<ScreenItem_AuthorityVO>(reader);
+                List<ScreenItem_MasterVO> list = Helper.DataReaderMapToList<ScreenItem_MasterVO>(reader);
+                comm.Connection.Close();
+
+                return list;
+            }
+        }
+           /// <summary>
+        /// 그룹에서 사용하지않는 화면
+        /// </summary>
+        /// <param name="groupCode"></param>
+        /// <returns></returns>
+        public List<ScreenItem_MasterVO> GetNotUseGroupScreenItem(string groupCode)
+        {
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText = "GetNotUseGroupScreenItem";
+                comm.CommandType = CommandType.StoredProcedure;
+                comm.Parameters.AddWithValue("@UserGroup_Code", groupCode);
+
+                comm.Connection.Open();
+                SqlDataReader reader = comm.ExecuteReader();
+                List<ScreenItem_MasterVO> list = Helper.DataReaderMapToList<ScreenItem_MasterVO>(reader);
                 comm.Connection.Close();
 
                 return list;

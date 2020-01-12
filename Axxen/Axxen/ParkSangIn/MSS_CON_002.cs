@@ -15,7 +15,7 @@ namespace Axxen
     {
 
         List<UserGroup_MasterVO> grouplist;
-        List<ScreenItem_AuthorityVO> Screenlist;
+        List<ScreenItem_MasterVO> Screenlist;
         UserGroupService userservice = new UserGroupService();
         ScreenItemService screenservice = new ScreenItemService();
         public MSS_CON_002()
@@ -37,7 +37,7 @@ namespace Axxen
 
 
             DatagridviewDesigns.SetDesign(dgvScreen);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "화면코드", "Screen_Code", true, 200, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvScreen, "화면코드", "Screen_Code", true, 200, default, true);
 
 
             GetAllUserGroup(); //유저그룹전체
@@ -63,16 +63,16 @@ namespace Axxen
             }
             }
             
-
         /// <summary>
         /// 그리드뷰 버튼, 콤보박스세팅
         /// </summary>
         private void ControlSetting()
         {
+            //combobox
 
+           // grouplist.FindAll(item => item.Use_YN == "Y");
 
-            ///combobox
-            Dictionary<string, string> cbblist = grouplist.ToDictionary(item => item.UserGroup_Code, item => item.UserGroup_Name);
+            Dictionary<string, string> cbblist = grouplist.FindAll(item => item.Use_YN == "Y").ToDictionary(item => item.UserGroup_Code, item => item.UserGroup_Name); //사용을 하는 그룹만
             cbbGroup.DisplayMember = "Value";
             cbbGroup.ValueMember = "Key";
             cbbGroup.DataSource = new BindingSource(cbblist, null);
@@ -117,8 +117,8 @@ namespace Axxen
         private void GetGroupScreenItem(string groupCode)
         {
 
-            Screenlist = new List<ScreenItem_AuthorityVO>();
-            Screenlist = screenservice.GetGroupScreenItem(groupCode);
+            Screenlist = new List<ScreenItem_MasterVO>();
+            Screenlist = screenservice.GetUseGroupScreenItem(groupCode);
             dgvScreen.DataSource = grouplist;
         }
         #endregion
