@@ -19,7 +19,6 @@ namespace VO
         public int Purchase_Amt { get; set; } //구입금액
         public DateTime In_Date { get; set; } //입고일자
         public DateTime Last_Setup_Time { get; set; } //최종장착일시
-        public string Wc_Code { get; set; } //장착작업장코드
         public string Remark { get; set; } //비고
         public string Use_YN { get; set; } //사용여부
     }
