@@ -53,15 +53,22 @@ namespace Axxen
         /// <param name="e"></param>
         public void InsertFormShow(object sender, EventArgs e)
         {
-            if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
-            {
-                MSS_CON_002_1 frm = new MSS_CON_002_1();
-                if (frm.ShowDialog() == DialogResult.OK)
-                {
 
+            try
+            {
+                if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
+                {
+                    MSS_CON_002_1 frm = new MSS_CON_002_1();
+
+                    frm.ShowDialog();
                 }
             }
+            catch(Exception err)
+            {
+                MessageBox.Show(err.Message);
             }
+          
+        }
             
         /// <summary>
         /// 그리드뷰 버튼, 콤보박스세팅

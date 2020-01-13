@@ -66,6 +66,9 @@ namespace VO
     /// </summary>
     public class ScreenItem_AuthorityVO
     {
+        public string Type { get; set; }
+       
+
         /// <summary>
         /// 사용자그룹코드
         /// </summary>

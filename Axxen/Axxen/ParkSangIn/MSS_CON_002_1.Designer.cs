@@ -42,6 +42,8 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.dgvNotUseScreen = new Axxen.CustomControls.ADataGridView();
             this.aPanel4 = new Axxen.CustomControls.APanel();
+            this.aButton3 = new Axxen.CustomControls.AButton();
+            this.btnSave = new Axxen.CustomControls.AButton();
             this.aPanel5 = new Axxen.CustomControls.APanel();
             this.aPanel6 = new Axxen.CustomControls.APanel();
             this.aLabel6 = new Axxen.CustomControls.ALabel();
@@ -60,9 +62,8 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.aLabel10 = new Axxen.CustomControls.ALabel();
             this.aPanel8 = new Axxen.CustomControls.APanel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dgvUseScreen = new Axxen.CustomControls.ADataGridView();
-            this.aButton2 = new Axxen.CustomControls.AButton();
-            this.aButton3 = new Axxen.CustomControls.AButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
@@ -116,7 +117,7 @@
             this.aPanel1.Controls.Add(this.aLabel2);
             this.aPanel1.Controls.Add(this.pictureBox2);
             this.aPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.aPanel1.Location = new System.Drawing.Point(0, 0);
+            this.aPanel1.Location = new System.Drawing.Point(0, 24);
             this.aPanel1.Name = "aPanel1";
             this.aPanel1.Size = new System.Drawing.Size(1297, 41);
             this.aPanel1.TabIndex = 18;
@@ -172,7 +173,6 @@
             // aTextBox1
             // 
             this.aTextBox1.BackColor = System.Drawing.Color.White;
-            this.aTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.aTextBox1.errorp = null;
             this.aTextBox1.Location = new System.Drawing.Point(148, 6);
             this.aTextBox1.Name = "aTextBox1";
@@ -221,19 +221,44 @@
             this.aPanel4.BackColor = System.Drawing.Color.PowderBlue;
             this.aPanel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.aPanel4.Controls.Add(this.aButton3);
-            this.aPanel4.Controls.Add(this.aButton2);
+            this.aPanel4.Controls.Add(this.btnSave);
             this.aPanel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.aPanel4.Location = new System.Drawing.Point(0, 739);
             this.aPanel4.Name = "aPanel4";
             this.aPanel4.Size = new System.Drawing.Size(1297, 41);
             this.aPanel4.TabIndex = 22;
             // 
+            // aButton3
+            // 
+            this.aButton3.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.aButton3.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.aButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.aButton3.Location = new System.Drawing.Point(1209, 8);
+            this.aButton3.Name = "aButton3";
+            this.aButton3.Size = new System.Drawing.Size(75, 23);
+            this.aButton3.TabIndex = 1;
+            this.aButton3.Text = "취소";
+            this.aButton3.UseVisualStyleBackColor = false;
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnSave.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Location = new System.Drawing.Point(1119, 8);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 0;
+            this.btnSave.Text = "저장";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
+            // 
             // aPanel5
             // 
             this.aPanel5.Controls.Add(this.aPanel6);
             this.aPanel5.Controls.Add(this.aPanel7);
             this.aPanel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.aPanel5.Location = new System.Drawing.Point(0, 41);
+            this.aPanel5.Location = new System.Drawing.Point(0, 65);
             this.aPanel5.Name = "aPanel5";
             this.aPanel5.Size = new System.Drawing.Size(1297, 40);
             this.aPanel5.TabIndex = 23;
@@ -290,7 +315,6 @@
             // lblGroup
             // 
             this.lblGroup.BackColor = System.Drawing.Color.White;
-            this.lblGroup.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblGroup.errorp = null;
             this.lblGroup.Location = new System.Drawing.Point(310, 6);
             this.lblGroup.Name = "lblGroup";
@@ -420,45 +444,31 @@
             this.aPanel8.Controls.Add(this.aPanel3);
             this.aPanel8.Controls.Add(this.aPanel2);
             this.aPanel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.aPanel8.Location = new System.Drawing.Point(0, 81);
+            this.aPanel8.Location = new System.Drawing.Point(0, 105);
             this.aPanel8.Name = "aPanel8";
             this.aPanel8.Size = new System.Drawing.Size(1297, 40);
             this.aPanel8.TabIndex = 37;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1297, 24);
+            this.menuStrip1.TabIndex = 40;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
             // dgvUseScreen
             // 
-            this.dgvUseScreen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.dgvUseScreen.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvUseScreen.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvUseScreen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUseScreen.Location = new System.Drawing.Point(485, 147);
             this.dgvUseScreen.Name = "dgvUseScreen";
             this.dgvUseScreen.RowTemplate.Height = 23;
             this.dgvUseScreen.Size = new System.Drawing.Size(812, 590);
-            this.dgvUseScreen.TabIndex = 38;
-            this.dgvUseScreen.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvUseScreen_CellClick);
-            // 
-            // aButton2
-            // 
-            this.aButton2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.aButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton2.Location = new System.Drawing.Point(1119, 8);
-            this.aButton2.Name = "aButton2";
-            this.aButton2.Size = new System.Drawing.Size(75, 23);
-            this.aButton2.TabIndex = 0;
-            this.aButton2.Text = "저장";
-            this.aButton2.UseVisualStyleBackColor = false;
-            // 
-            // aButton3
-            // 
-            this.aButton3.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.aButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton3.Location = new System.Drawing.Point(1209, 8);
-            this.aButton3.Name = "aButton3";
-            this.aButton3.Size = new System.Drawing.Size(75, 23);
-            this.aButton3.TabIndex = 1;
-            this.aButton3.Text = "취소";
-            this.aButton3.UseVisualStyleBackColor = false;
+            this.dgvUseScreen.TabIndex = 41;
             // 
             // MSS_CON_002_1
             // 
@@ -478,6 +488,8 @@
             this.Controls.Add(this.aPanel4);
             this.Controls.Add(this.dgvNotUseScreen);
             this.Controls.Add(this.aPanel1);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "MSS_CON_002_1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "화면조회";
@@ -538,8 +550,9 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private CustomControls.ALabel aLabel10;
         private CustomControls.APanel aPanel8;
-        private CustomControls.ADataGridView dgvUseScreen;
         private CustomControls.AButton aButton3;
-        private CustomControls.AButton aButton2;
+        private CustomControls.AButton btnSave;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private CustomControls.ADataGridView dgvUseScreen;
     }
 }
