@@ -93,8 +93,11 @@ namespace Axxen
         }
         private void CbbGroup_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(cbbGroup.SelectedValue.ToString())) { 
+
             lblGroup.Text = cbbGroup.SelectedValue.ToString();
-        
+            }
+
         }
 
         /// <summary>
@@ -117,11 +120,30 @@ namespace Axxen
             if (UseScreenlist.Count > 0)
             { 
             dgvUseScreen.DataSource = UseScreenlist;
+
+                for(int i=0; i<UseScreenlist.Count; i++) //crud 체크박스
+                {
+                  
+                    string crudcheck =UseScreenlist[i].Pre_Type;
+
+                    for(int j=0; j<4; j++)
+                    {
+                        if (crudcheck[j] == 'Y')//y면은 체크
+                        {
+                            dgvUseScreen.Rows[i].Cells[j + 4].Value = true;
+                        }
+                      
+                    }
+                 
+                
+                }
             }
             else
             {
                 dgvUseScreen.DataSource = null;
             }
+
+            
         }
 
 
@@ -190,39 +212,19 @@ namespace Axxen
             foreach (DataGridViewRow row in dgvUseScreen.Rows)
             {
                 crud.Clear();
-                
-                if (Convert.ToBoolean(row.Cells[4].Value) == true)
-                {
-                    crud.Append("Y");
-                }
-                else
-                {
-                    crud.Append("N");
-                }
-                if (Convert.ToBoolean(row.Cells[5].Value) == true)
-                {
-                    crud.Append("Y");
-                }
-                else
-                {
-                    crud.Append("N");
-                }
-                if (Convert.ToBoolean(row.Cells[6].Value) == true)
-                {
-                    crud.Append("Y");
-                }
-                else
-                {
-                    crud.Append("N");
-                }
-                if (Convert.ToBoolean(row.Cells[7].Value) == true)
-                {
-                    crud.Append("Y");
-                }
-                else
-                {
-                    crud.Append("N");
-                }
+
+                    for(int i=4; i<8; i++) //crud 체크
+                    {
+                        if (Convert.ToBoolean(row.Cells[i].Value) == true)
+                        {
+                            crud.Append("Y");
+                        }
+                        else
+                        {
+                            crud.Append("N");
+                        }
+                    }
+                           
 
                 ScreenItem_AuthorityVO item = new ScreenItem_AuthorityVO
                 {
@@ -248,6 +250,36 @@ namespace Axxen
         private void BtnRemove_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void BtnScreenSearch_Click(object sender, EventArgs e)
+        {
+            if (rdoScreenName.Checked)
+            {
+                foreach (DataGridViewRow row in dgvNotUseScreen.Rows)
+                {
+                    if (row.Cells[2].Value.ToString().Contains(txtSearch.Text))
+                    {
+                        row.Cells[2].Selected = true;
+                    }
+                }
+            }
+            else if(rdoScreenCode.Checked)
+            {
+                foreach (DataGridViewRow row in dgvNotUseScreen.Rows)
+                {
+                    if (row.Cells[1].Value.ToString().Contains(txtSearch.Text))
+                    {
+                        row.Cells[1].Selected = true;
+                    }
+                }
+            }
+           
+        }
+
+        private void DgvNotUseScreen_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            dgvNotUseScreen.SelectedRows[0].Cells[0].Value = true;
         }
     }
 }

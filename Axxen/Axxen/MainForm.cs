@@ -17,7 +17,7 @@ namespace Axxen
     {
 
         public event EventHandler InsertFormEvent; //추가 폼 이벤트
-
+        public event EventHandler RefreshFormEvent; //새로고침 폼 이벤트
 
         int CheckBtnIndex = 7;
         bool BookmarkCheck = true; //즐겨찾기 
@@ -460,6 +460,11 @@ namespace Axxen
             if (this.InsertFormEvent != null)
                 InsertFormEvent(this, null);
         }
-    
+
+        private void TsbtnRefresh_Click(object sender, EventArgs e)
+        {
+            if (this.RefreshFormEvent != null)
+                RefreshFormEvent(this, null);
+        }
     }
 }

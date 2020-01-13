@@ -128,14 +128,15 @@
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbInsert = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnUpdate = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnDelete = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnPrint = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnSave = new System.Windows.Forms.ToolStripButton();
             this.aLabel1 = new Axxen.CustomControls.ALabel();
             this.lblName = new Axxen.CustomControls.ALabel();
             this.pnBookmark = new Axxen.CustomControls.APanel();
             this.tvBookMark = new System.Windows.Forms.TreeView();
-            this.tsbtnSave = new System.Windows.Forms.ToolStripButton();
-            this.tsbtnDelete = new System.Windows.Forms.ToolStripButton();
-            this.tsbtnUpdate = new System.Windows.Forms.ToolStripButton();
-            this.tsbtnPrint = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnRefresh = new System.Windows.Forms.ToolStripButton();
             this.panelMenu.SuspendLayout();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
@@ -920,7 +921,8 @@
             this.tsbtnUpdate,
             this.tsbtnDelete,
             this.tsbtnPrint,
-            this.tsbtnSave});
+            this.tsbtnSave,
+            this.tsbtnRefresh});
             this.toolStrip1.Location = new System.Drawing.Point(0, 34);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1616, 77);
@@ -964,6 +966,70 @@
             this.tsbInsert.ToolTipText = "조회";
             this.tsbInsert.Click += new System.EventHandler(this.TsbInsert_Click);
             // 
+            // tsbtnUpdate
+            // 
+            this.tsbtnUpdate.AutoSize = false;
+            this.tsbtnUpdate.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tsbtnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnUpdate.Image")));
+            this.tsbtnUpdate.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.tsbtnUpdate.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbtnUpdate.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnUpdate.Name = "tsbtnUpdate";
+            this.tsbtnUpdate.Size = new System.Drawing.Size(50, 57);
+            this.tsbtnUpdate.Text = "수정";
+            this.tsbtnUpdate.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.tsbtnUpdate.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            this.tsbtnUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbtnUpdate.ToolTipText = "조회";
+            // 
+            // tsbtnDelete
+            // 
+            this.tsbtnDelete.AutoSize = false;
+            this.tsbtnDelete.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tsbtnDelete.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnDelete.Image")));
+            this.tsbtnDelete.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.tsbtnDelete.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbtnDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnDelete.Name = "tsbtnDelete";
+            this.tsbtnDelete.Size = new System.Drawing.Size(50, 57);
+            this.tsbtnDelete.Text = "삭제";
+            this.tsbtnDelete.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.tsbtnDelete.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            this.tsbtnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbtnDelete.ToolTipText = "조회";
+            // 
+            // tsbtnPrint
+            // 
+            this.tsbtnPrint.AutoSize = false;
+            this.tsbtnPrint.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tsbtnPrint.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnPrint.Image")));
+            this.tsbtnPrint.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.tsbtnPrint.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbtnPrint.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnPrint.Name = "tsbtnPrint";
+            this.tsbtnPrint.Size = new System.Drawing.Size(50, 57);
+            this.tsbtnPrint.Text = "출력";
+            this.tsbtnPrint.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.tsbtnPrint.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            this.tsbtnPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbtnPrint.ToolTipText = "조회";
+            // 
+            // tsbtnSave
+            // 
+            this.tsbtnSave.AutoSize = false;
+            this.tsbtnSave.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tsbtnSave.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnSave.Image")));
+            this.tsbtnSave.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.tsbtnSave.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbtnSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnSave.Name = "tsbtnSave";
+            this.tsbtnSave.Size = new System.Drawing.Size(50, 57);
+            this.tsbtnSave.Text = "저장";
+            this.tsbtnSave.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.tsbtnSave.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            this.tsbtnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbtnSave.ToolTipText = "조회";
+            // 
             // aLabel1
             // 
             this.aLabel1.AutoSize = true;
@@ -1000,69 +1066,22 @@
             this.tvBookMark.Size = new System.Drawing.Size(193, 467);
             this.tvBookMark.TabIndex = 0;
             // 
-            // tsbtnSave
+            // tsbtnRefresh
             // 
-            this.tsbtnSave.AutoSize = false;
-            this.tsbtnSave.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tsbtnSave.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnSave.Image")));
-            this.tsbtnSave.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.tsbtnSave.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsbtnSave.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnSave.Name = "tsbtnSave";
-            this.tsbtnSave.Size = new System.Drawing.Size(50, 57);
-            this.tsbtnSave.Text = "저장";
-            this.tsbtnSave.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.tsbtnSave.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
-            this.tsbtnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.tsbtnSave.ToolTipText = "조회";
-            // 
-            // tsbtnDelete
-            // 
-            this.tsbtnDelete.AutoSize = false;
-            this.tsbtnDelete.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tsbtnDelete.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnDelete.Image")));
-            this.tsbtnDelete.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.tsbtnDelete.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsbtnDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnDelete.Name = "tsbtnDelete";
-            this.tsbtnDelete.Size = new System.Drawing.Size(50, 57);
-            this.tsbtnDelete.Text = "삭제";
-            this.tsbtnDelete.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.tsbtnDelete.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
-            this.tsbtnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.tsbtnDelete.ToolTipText = "조회";
-            // 
-            // tsbtnUpdate
-            // 
-            this.tsbtnUpdate.AutoSize = false;
-            this.tsbtnUpdate.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tsbtnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnUpdate.Image")));
-            this.tsbtnUpdate.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.tsbtnUpdate.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsbtnUpdate.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnUpdate.Name = "tsbtnUpdate";
-            this.tsbtnUpdate.Size = new System.Drawing.Size(50, 57);
-            this.tsbtnUpdate.Text = "수정";
-            this.tsbtnUpdate.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.tsbtnUpdate.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
-            this.tsbtnUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.tsbtnUpdate.ToolTipText = "조회";
-            // 
-            // tsbtnPrint
-            // 
-            this.tsbtnPrint.AutoSize = false;
-            this.tsbtnPrint.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tsbtnPrint.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnPrint.Image")));
-            this.tsbtnPrint.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.tsbtnPrint.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsbtnPrint.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnPrint.Name = "tsbtnPrint";
-            this.tsbtnPrint.Size = new System.Drawing.Size(50, 57);
-            this.tsbtnPrint.Text = "출력";
-            this.tsbtnPrint.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.tsbtnPrint.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
-            this.tsbtnPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.tsbtnPrint.ToolTipText = "조회";
+            this.tsbtnRefresh.AutoSize = false;
+            this.tsbtnRefresh.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tsbtnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnRefresh.Image")));
+            this.tsbtnRefresh.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.tsbtnRefresh.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbtnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnRefresh.Name = "tsbtnRefresh";
+            this.tsbtnRefresh.Size = new System.Drawing.Size(60, 57);
+            this.tsbtnRefresh.Text = "새로고침";
+            this.tsbtnRefresh.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.tsbtnRefresh.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            this.tsbtnRefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbtnRefresh.ToolTipText = "조회";
+            this.tsbtnRefresh.Click += new System.EventHandler(this.TsbtnRefresh_Click);
             // 
             // MainForm
             // 
@@ -1212,5 +1231,6 @@
         private System.Windows.Forms.ToolStripButton tsbtnDelete;
         private System.Windows.Forms.ToolStripButton tsbtnSave;
         private System.Windows.Forms.ToolStripButton tsbtnPrint;
+        private System.Windows.Forms.ToolStripButton tsbtnRefresh;
     }
 }

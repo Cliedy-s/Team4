@@ -36,10 +36,10 @@
             this.aPanel2 = new Axxen.CustomControls.APanel();
             this.aLabel1 = new Axxen.CustomControls.ALabel();
             this.aPanel3 = new Axxen.CustomControls.APanel();
-            this.aButton1 = new Axxen.CustomControls.AButton();
-            this.aTextBox1 = new Axxen.CustomControls.ATextBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.btnScreenSearch = new Axxen.CustomControls.AButton();
+            this.txtSearch = new Axxen.CustomControls.ATextBox();
+            this.rdoScreenCode = new System.Windows.Forms.RadioButton();
+            this.rdoScreenName = new System.Windows.Forms.RadioButton();
             this.dgvNotUseScreen = new Axxen.CustomControls.ADataGridView();
             this.aPanel4 = new Axxen.CustomControls.APanel();
             this.aButton3 = new Axxen.CustomControls.AButton();
@@ -147,63 +147,66 @@
             // 
             this.aPanel3.BackColor = System.Drawing.Color.Gainsboro;
             this.aPanel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.aPanel3.Controls.Add(this.aButton1);
-            this.aPanel3.Controls.Add(this.aTextBox1);
-            this.aPanel3.Controls.Add(this.radioButton2);
-            this.aPanel3.Controls.Add(this.radioButton1);
+            this.aPanel3.Controls.Add(this.btnScreenSearch);
+            this.aPanel3.Controls.Add(this.txtSearch);
+            this.aPanel3.Controls.Add(this.rdoScreenCode);
+            this.aPanel3.Controls.Add(this.rdoScreenName);
             this.aPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.aPanel3.Location = new System.Drawing.Point(128, 0);
             this.aPanel3.Name = "aPanel3";
             this.aPanel3.Size = new System.Drawing.Size(1169, 40);
             this.aPanel3.TabIndex = 20;
             // 
-            // aButton1
+            // btnScreenSearch
             // 
-            this.aButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.aButton1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aButton1.Location = new System.Drawing.Point(479, 6);
-            this.aButton1.Name = "aButton1";
-            this.aButton1.Size = new System.Drawing.Size(75, 23);
-            this.aButton1.TabIndex = 3;
-            this.aButton1.Text = "조회";
-            this.aButton1.UseVisualStyleBackColor = false;
+            this.btnScreenSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.btnScreenSearch.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnScreenSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnScreenSearch.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnScreenSearch.Location = new System.Drawing.Point(479, 6);
+            this.btnScreenSearch.Name = "btnScreenSearch";
+            this.btnScreenSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnScreenSearch.TabIndex = 3;
+            this.btnScreenSearch.Text = "조회";
+            this.btnScreenSearch.UseVisualStyleBackColor = false;
+            this.btnScreenSearch.Click += new System.EventHandler(this.BtnScreenSearch_Click);
             // 
-            // aTextBox1
+            // txtSearch
             // 
-            this.aTextBox1.BackColor = System.Drawing.Color.White;
-            this.aTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.aTextBox1.errorp = null;
-            this.aTextBox1.Location = new System.Drawing.Point(148, 6);
-            this.aTextBox1.Name = "aTextBox1";
-            this.aTextBox1.Size = new System.Drawing.Size(310, 23);
-            this.aTextBox1.TabIndex = 2;
-            this.aTextBox1.txtType = Axxen.CustomControls.type.Normal;
+            this.txtSearch.BackColor = System.Drawing.Color.White;
+            this.txtSearch.errorp = null;
+            this.txtSearch.Location = new System.Drawing.Point(148, 6);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(310, 23);
+            this.txtSearch.TabIndex = 2;
+            this.txtSearch.txtType = Axxen.CustomControls.type.Normal;
             // 
-            // radioButton2
+            // rdoScreenCode
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.radioButton2.Location = new System.Drawing.Point(73, 7);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(78, 21);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "화면코드";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rdoScreenCode.AutoSize = true;
+            this.rdoScreenCode.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.rdoScreenCode.Location = new System.Drawing.Point(73, 7);
+            this.rdoScreenCode.Name = "rdoScreenCode";
+            this.rdoScreenCode.Size = new System.Drawing.Size(78, 21);
+            this.rdoScreenCode.TabIndex = 1;
+            this.rdoScreenCode.TabStop = true;
+            this.rdoScreenCode.Tag = "2";
+            this.rdoScreenCode.Text = "화면코드";
+            this.rdoScreenCode.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rdoScreenName
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.radioButton1.Location = new System.Drawing.Point(6, 7);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(65, 21);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "화면명";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rdoScreenName.AutoSize = true;
+            this.rdoScreenName.Checked = true;
+            this.rdoScreenName.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.rdoScreenName.Location = new System.Drawing.Point(6, 7);
+            this.rdoScreenName.Name = "rdoScreenName";
+            this.rdoScreenName.Size = new System.Drawing.Size(65, 21);
+            this.rdoScreenName.TabIndex = 0;
+            this.rdoScreenName.TabStop = true;
+            this.rdoScreenName.Tag = "1";
+            this.rdoScreenName.Text = "화면명";
+            this.rdoScreenName.UseVisualStyleBackColor = true;
             // 
             // dgvNotUseScreen
             // 
@@ -216,6 +219,7 @@
             this.dgvNotUseScreen.RowTemplate.Height = 23;
             this.dgvNotUseScreen.Size = new System.Drawing.Size(419, 590);
             this.dgvNotUseScreen.TabIndex = 21;
+            this.dgvNotUseScreen.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvNotUseScreen_CellMouseDoubleClick);
             // 
             // aPanel4
             // 
@@ -316,7 +320,6 @@
             // lblGroup
             // 
             this.lblGroup.BackColor = System.Drawing.Color.White;
-            this.lblGroup.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblGroup.errorp = null;
             this.lblGroup.Location = new System.Drawing.Point(310, 6);
             this.lblGroup.Name = "lblGroup";
@@ -529,10 +532,10 @@
         private CustomControls.APanel aPanel2;
         private CustomControls.ALabel aLabel1;
         private CustomControls.APanel aPanel3;
-        private CustomControls.AButton aButton1;
-        private CustomControls.ATextBox aTextBox1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private CustomControls.AButton btnScreenSearch;
+        private CustomControls.ATextBox txtSearch;
+        private System.Windows.Forms.RadioButton rdoScreenCode;
+        private System.Windows.Forms.RadioButton rdoScreenName;
         private CustomControls.ADataGridView dgvNotUseScreen;
         private CustomControls.APanel aPanel4;
         private CustomControls.APanel aPanel5;

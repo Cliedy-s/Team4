@@ -27,7 +27,7 @@ namespace Axxen
         private void MSS_CON_002_Load(object sender, EventArgs e)
         {
             ((MainForm)this.MdiParent).InsertFormEvent += new System.EventHandler(this.InsertFormShow);//입력이벤트 등록
-
+            ((MainForm)this.MdiParent).RefreshFormEvent += new EventHandler(this.RefreshFormShow);
             ///gridview
             DatagridviewDesigns.SetDesign(dgvGroup);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "사용자그룹코드", "UserGroup_Code", true, 200, default, true);
@@ -71,7 +71,26 @@ namespace Axxen
             }
           
         }
-            
+        /// <summary>
+        /// 새로고침 이벤트 메서드
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void RefreshFormShow(object sender,EventArgs e)
+        {
+            try
+            {
+                if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
+                {
+                    GetAllUserGroup();
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
+        }
+
         /// <summary>
         /// 그리드뷰 버튼, 콤보박스세팅
         /// </summary>
