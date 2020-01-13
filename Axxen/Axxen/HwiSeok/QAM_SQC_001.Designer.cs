@@ -71,7 +71,7 @@
             this.aTextBox_FindNameByCode1.CodeType = Axxen.CustomControls.ATextBox_FindNameByCode.types.Processes;
             this.aTextBox_FindNameByCode1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aTextBox_FindNameByCode1.lblNameText = "공정";
-            this.aTextBox_FindNameByCode1.Location = new System.Drawing.Point(441, 26);
+            this.aTextBox_FindNameByCode1.Location = new System.Drawing.Point(520, 26);
             this.aTextBox_FindNameByCode1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.aTextBox_FindNameByCode1.Name = "aTextBox_FindNameByCode1";
             this.aTextBox_FindNameByCode1.Size = new System.Drawing.Size(218, 27);
@@ -84,7 +84,7 @@
             this.aTextBox_FindNameByCode2.CodeType = Axxen.CustomControls.ATextBox_FindNameByCode.types.WorkCenters;
             this.aTextBox_FindNameByCode2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aTextBox_FindNameByCode2.lblNameText = "작업장";
-            this.aTextBox_FindNameByCode2.Location = new System.Drawing.Point(685, 26);
+            this.aTextBox_FindNameByCode2.Location = new System.Drawing.Point(764, 26);
             this.aTextBox_FindNameByCode2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.aTextBox_FindNameByCode2.Name = "aTextBox_FindNameByCode2";
             this.aTextBox_FindNameByCode2.Size = new System.Drawing.Size(227, 27);
