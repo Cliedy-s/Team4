@@ -118,8 +118,8 @@ namespace Axxen
         {
 
             Screenlist = new List<ScreenItem_MasterVO>();
-            Screenlist = screenservice.GetUseGroupScreenItem(groupCode);
-            dgvScreen.DataSource = grouplist;
+         //   Screenlist = screenservice.GetUseGroupScreenItem(groupCode);
+        //    dgvScreen.DataSource = grouplist;
         }
         #endregion
 

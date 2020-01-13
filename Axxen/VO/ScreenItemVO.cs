@@ -75,13 +75,18 @@ namespace VO
         /// </summary>
         public string Screen_Code { get; set; }
         /// <summary>
+        /// 화면이름
+        /// </summary>
+        public string Type { get; set; }
+        public string Screen_Path { get; set; }
+        /// <summary>
         /// 권한
         /// </summary>
         public string Pre_Type { get; set; }
-        /// <summary>
-        /// 사용여부
-        /// </summary>
-        public string Use_YN { get; set; }
+        ///// <summary>
+        ///// 사용여부
+        ///// </summary>
+        //public string Use_YN { get; set; }
         /// <summary>
         /// 최초입력일자
         /// </summary>

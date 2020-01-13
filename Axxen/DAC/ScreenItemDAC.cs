@@ -40,7 +40,7 @@ namespace DAC
         /// </summary>
         /// <param name="groupCode"></param>
         /// <returns></returns>
-        public List<ScreenItem_MasterVO> GetUseGroupScreenItem(string groupCode)
+        public List<ScreenItem_AuthorityVO> GetUseGroupScreenItem(string groupCode)
         {
             using (SqlCommand comm = new SqlCommand())
             {
@@ -51,7 +51,7 @@ namespace DAC
 
                 comm.Connection.Open();
                 SqlDataReader reader = comm.ExecuteReader();
-                List<ScreenItem_MasterVO> list = Helper.DataReaderMapToList<ScreenItem_MasterVO>(reader);
+                List<ScreenItem_AuthorityVO> list = Helper.DataReaderMapToList<ScreenItem_AuthorityVO>(reader);
                 comm.Connection.Close();
 
                 return list;
@@ -62,7 +62,7 @@ namespace DAC
         /// </summary>
         /// <param name="groupCode"></param>
         /// <returns></returns>
-        public List<ScreenItem_MasterVO> GetNotUseGroupScreenItem(string groupCode)
+        public List<ScreenItem_AuthorityVO> GetNotUseGroupScreenItem(string groupCode)
         {
             using (SqlCommand comm = new SqlCommand())
             {
@@ -73,7 +73,7 @@ namespace DAC
 
                 comm.Connection.Open();
                 SqlDataReader reader = comm.ExecuteReader();
-                List<ScreenItem_MasterVO> list = Helper.DataReaderMapToList<ScreenItem_MasterVO>(reader);
+                List<ScreenItem_AuthorityVO> list = Helper.DataReaderMapToList<ScreenItem_AuthorityVO>(reader);
                 comm.Connection.Close();
 
                 return list;
