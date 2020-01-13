@@ -38,8 +38,8 @@ namespace Axxen
             dgvMainGrid.DataSource = wowc;
             #endregion
 
-            aDateTimePicker1.Value = DateTime.Now.AddDays(-7);
-            aDateTimePicker2.MaxDate = DateTime.Now;          
+           
+                    
         }
     }
 }

@@ -202,12 +202,11 @@
             // 
             // txtWorkNum
             // 
-            this.txtWorkNum.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtWorkNum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtWorkNum.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtWorkNum.FontSize = 9F;
             this.txtWorkNum.LabelText = "작업지시번호";
-            this.txtWorkNum.Location = new System.Drawing.Point(283, 20);
+            this.txtWorkNum.Location = new System.Drawing.Point(283, 14);
             this.txtWorkNum.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtWorkNum.Name = "txtWorkNum";
             this.txtWorkNum.Size = new System.Drawing.Size(229, 29);
@@ -216,12 +215,11 @@
             // 
             // txtItemCode
             // 
-            this.txtItemCode.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtItemCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtItemCode.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtItemCode.FontSize = 9F;
             this.txtItemCode.LabelText = "품목코드";
-            this.txtItemCode.Location = new System.Drawing.Point(553, 20);
+            this.txtItemCode.Location = new System.Drawing.Point(553, 14);
             this.txtItemCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtItemCode.Name = "txtItemCode";
             this.txtItemCode.Size = new System.Drawing.Size(209, 29);
@@ -230,12 +228,11 @@
             // 
             // txtItemName
             // 
-            this.txtItemName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtItemName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtItemName.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtItemName.FontSize = 9F;
             this.txtItemName.LabelText = "품목명";
-            this.txtItemName.Location = new System.Drawing.Point(553, 57);
+            this.txtItemName.Location = new System.Drawing.Point(553, 51);
             this.txtItemName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtItemName.Name = "txtItemName";
             this.txtItemName.Size = new System.Drawing.Size(209, 29);
@@ -244,10 +241,9 @@
             // 
             // aLabel3
             // 
-            this.aLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.aLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.aLabel3.AutoSize = true;
-            this.aLabel3.Location = new System.Drawing.Point(851, 16);
+            this.aLabel3.Location = new System.Drawing.Point(851, 10);
             this.aLabel3.Name = "aLabel3";
             this.aLabel3.Size = new System.Drawing.Size(55, 15);
             this.aLabel3.TabIndex = 14;
@@ -255,20 +251,18 @@
             // 
             // dtpPlanDate
             // 
-            this.dtpPlanDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpPlanDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.dtpPlanDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpPlanDate.Location = new System.Drawing.Point(936, 12);
+            this.dtpPlanDate.Location = new System.Drawing.Point(936, 6);
             this.dtpPlanDate.Name = "dtpPlanDate";
             this.dtpPlanDate.Size = new System.Drawing.Size(94, 23);
             this.dtpPlanDate.TabIndex = 15;
             // 
             // aLabel4
             // 
-            this.aLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.aLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.aLabel4.AutoSize = true;
-            this.aLabel4.Location = new System.Drawing.Point(851, 46);
+            this.aLabel4.Location = new System.Drawing.Point(851, 40);
             this.aLabel4.Name = "aLabel4";
             this.aLabel4.Size = new System.Drawing.Size(55, 15);
             this.aLabel4.TabIndex = 16;
@@ -276,12 +270,11 @@
             // 
             // txtPlanUnit
             // 
-            this.txtPlanUnit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPlanUnit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtPlanUnit.BackColor = System.Drawing.Color.White;
             this.txtPlanUnit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPlanUnit.errorp = null;
-            this.txtPlanUnit.Location = new System.Drawing.Point(936, 72);
+            this.txtPlanUnit.Location = new System.Drawing.Point(936, 66);
             this.txtPlanUnit.Name = "txtPlanUnit";
             this.txtPlanUnit.Size = new System.Drawing.Size(94, 23);
             this.txtPlanUnit.TabIndex = 17;
@@ -289,10 +282,9 @@
             // 
             // aLabel5
             // 
-            this.aLabel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.aLabel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.aLabel5.AutoSize = true;
-            this.aLabel5.Location = new System.Drawing.Point(851, 76);
+            this.aLabel5.Location = new System.Drawing.Point(851, 70);
             this.aLabel5.Name = "aLabel5";
             this.aLabel5.Size = new System.Drawing.Size(79, 15);
             this.aLabel5.TabIndex = 18;
@@ -300,21 +292,19 @@
             // 
             // numPlanQuantity
             // 
-            this.numPlanQuantity.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.numPlanQuantity.Location = new System.Drawing.Point(936, 42);
+            this.numPlanQuantity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.numPlanQuantity.Location = new System.Drawing.Point(936, 36);
             this.numPlanQuantity.Name = "numPlanQuantity";
             this.numPlanQuantity.Size = new System.Drawing.Size(94, 23);
             this.numPlanQuantity.TabIndex = 19;
             // 
             // txtWorkCenter
             // 
-            this.txtWorkCenter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtWorkCenter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtWorkCenter.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtWorkCenter.FontSize = 9F;
             this.txtWorkCenter.LabelText = "작업장";
-            this.txtWorkCenter.Location = new System.Drawing.Point(283, 60);
+            this.txtWorkCenter.Location = new System.Drawing.Point(283, 54);
             this.txtWorkCenter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtWorkCenter.Name = "txtWorkCenter";
             this.txtWorkCenter.Size = new System.Drawing.Size(229, 29);
@@ -326,6 +316,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.Name = "PPS_SCH_002";
+            this.Load += new System.EventHandler(this.PPS_SCH_002_Load);
             this.aPanel2.ResumeLayout(false);
             this.aPanel2.PerformLayout();
             this.aSplitContainer1.Panel2.ResumeLayout(false);

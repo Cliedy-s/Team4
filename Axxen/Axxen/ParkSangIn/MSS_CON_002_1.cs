@@ -19,6 +19,7 @@ namespace Axxen
         ScreenItemService screenservice = new ScreenItemService();
         List<ScreenItem_MasterVO> NotScreenlist ;//초기 안쓰는거
         List<ScreenItem_MasterVO> UseScreenlist; //초기 쓰는거
+        List<ScreenItem_AuthorityVO> InsertUpdateScreenlist; //db에 들어갈애들
 
         public MSS_CON_002_1()
         {
@@ -27,7 +28,7 @@ namespace Axxen
 
         private void MSS_CON_002_1_Load(object sender, EventArgs e)
         {
-
+            InsertUpdateScreenlist = new List<ScreenItem_AuthorityVO>();
             DatagridviewDesigns.SetDesign(dgvNotUseScreen);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvNotUseScreen, "화면코드", "Screen_Code", true, 200, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvNotUseScreen, "화면명", "Type", true, 200, default, true);
@@ -92,6 +93,7 @@ namespace Axxen
         private void CbbGroup_SelectedIndexChanged(object sender, EventArgs e)
         {
             lblGroup.Text = cbbGroup.SelectedValue.ToString();
+        
         }
 
         /// <summary>
@@ -103,25 +105,32 @@ namespace Axxen
         {
             //그룹에서 사용하지않는 화면
             
-           NotScreenlist = new List<ScreenItem_MasterVO>();
+            NotScreenlist = new List<ScreenItem_MasterVO>();
             NotScreenlist = screenservice.GetNotUseGroupScreenItem(lblGroup.Text);
             dgvNotUseScreen.DataSource = NotScreenlist;
 
             //그룹에서 사용하는화면
             UseScreenlist = new List<ScreenItem_MasterVO>();
-            UseScreenlist = screenservice.GetUseGroupScreenItem(lblGroup.Text);
-            dgvUseScreen.DataSource = UseScreenlist;
 
+            UseScreenlist = screenservice.GetUseGroupScreenItem(lblGroup.Text);
+            if (UseScreenlist.Count > 0)
+            { 
+            dgvUseScreen.DataSource = UseScreenlist;
+            }
+            else
+            {
+                dgvUseScreen.DataSource = null;
+            }
         }
 
 
         private void BtnInsert_Click(object sender, EventArgs e)
         {
- 
+         //   UseScreenlist = new List<ScreenItem_MasterVO>();
             List<ScreenItem_MasterVO> subDeletelist = new List<ScreenItem_MasterVO>();
             foreach (DataGridViewRow row in dgvNotUseScreen.Rows)
             {
-               
+
                 if (Convert.ToBoolean(row.Cells[0].Value) == true) //체크박스가 선택된 row들만
                 {
                     ScreenItem_MasterVO item = new ScreenItem_MasterVO
@@ -132,15 +141,14 @@ namespace Axxen
                         Ins_Date = DateTime.Now,
                         Ins_Emp = UserInfo.User_Name,
                     };
-                   
-                              
-
-                    if (UseScreenlist.Count(a => a.Screen_Code == item.Screen_Code) < 1) //사용하는 리스트에 중복으로 들어가는 지 체크 없다면 add                   
+            
+                    if (UseScreenlist.Count(a => a.Screen_Code == item.Screen_Code) < 1) //사용하는 리스트에 중복으로 들어가는 지 체크 없다면 add  
                     {
                         UseScreenlist.Add(item); //사용그리드뷰에 담을 리스트
                         subDeletelist.Add(item); // 비사용그리드뷰리시트와 비교할 서브 리스트
-                        // NotScreenlist.Remove(removeitem=> removeitem.Screen_Code== item.Screen_Code);
                    
+                        // NotScreenlist.Remove(removeitem=> removeitem.Screen_Code== item.Screen_Code);
+
                     }
                 }
 
@@ -160,14 +168,80 @@ namespace Axxen
             dgvNotUseScreen.DataSource = null;
             dgvNotUseScreen.DataSource = NotScreenlist;
 
-            dgvUseScreen.DataSource = null;
+            if (dgvUseScreen.RowCount > 0) {
+                  dgvUseScreen.DataSource = null;
+            }
             dgvUseScreen.DataSource = UseScreenlist;
 
         }
 
         private void DgvUseScreen_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            MessageBox.Show(dgvUseScreen.SelectedCells[2].ToString());
+            //MessageBox.Show(dgvUseScreen.SelectedCells[2].ToString());
+        }
+
+        private void BtnSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+            StringBuilder crud = new StringBuilder();
+            foreach (DataGridViewRow row in dgvUseScreen.Rows)
+            {
+                crud.Clear();
+                
+                if (Convert.ToBoolean(row.Cells[4].Value) == true)
+                {
+                    crud.Append("Y");
+                }
+                else
+                {
+                    crud.Append("N");
+                }
+                if (Convert.ToBoolean(row.Cells[5].Value) == true)
+                {
+                    crud.Append("Y");
+                }
+                else
+                {
+                    crud.Append("N");
+                }
+                if (Convert.ToBoolean(row.Cells[6].Value) == true)
+                {
+                    crud.Append("Y");
+                }
+                else
+                {
+                    crud.Append("N");
+                }
+                if (Convert.ToBoolean(row.Cells[7].Value) == true)
+                {
+                    crud.Append("Y");
+                }
+                else
+                {
+                    crud.Append("N");
+                }
+
+                ScreenItem_AuthorityVO item = new ScreenItem_AuthorityVO
+                {
+                    UserGroup_Code = lblGroup.Text,
+                    Screen_Code = row.Cells[1].Value.ToString(),
+                    Pre_Type = crud.ToString(),
+                    Ins_Date = DateTime.Now,
+                    Ins_Emp = UserInfo.User_Name
+
+                };
+                InsertUpdateScreenlist.Add(item);
+            }
+
+            screenservice.InsertUpdateScreenItem_Authority(InsertUpdateScreenlist);
+            }
+            catch (Exception err)
+            {
+
+                MessageBox.Show(err.ToString());
+            }
         }
     }
 }

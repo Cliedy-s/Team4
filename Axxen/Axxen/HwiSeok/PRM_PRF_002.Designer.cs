@@ -32,9 +32,7 @@
             this.aButton1 = new Axxen.CustomControls.AButton();
             this.aButton2 = new Axxen.CustomControls.AButton();
             this.aButton3 = new Axxen.CustomControls.AButton();
-            this.aDateTimePicker2 = new Axxen.CustomControls.ADateTimePicker();
-            this.aDateTimePicker1 = new Axxen.CustomControls.ADateTimePicker();
-            this.aLabel2 = new Axxen.CustomControls.ALabel();
+            this.aDateTimePickerSearch2 = new Axxen.CustomControls.ADateTimePickerSearch();
             this.aPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aSplitContainer1)).BeginInit();
             this.aSplitContainer1.Panel1.SuspendLayout();
@@ -44,9 +42,7 @@
             // 
             // aPanel1
             // 
-            this.aPanel1.Controls.Add(this.aDateTimePicker2);
-            this.aPanel1.Controls.Add(this.aDateTimePicker1);
-            this.aPanel1.Controls.Add(this.aLabel2);
+            this.aPanel1.Controls.Add(this.aDateTimePickerSearch2);
             this.aPanel1.Controls.Add(this.aButton3);
             this.aPanel1.Controls.Add(this.aButton2);
             this.aPanel1.Controls.Add(this.aButton1);
@@ -105,30 +101,15 @@
             this.aButton3.Text = "등급상세 수정";
             this.aButton3.UseVisualStyleBackColor = false;
             // 
-            // aDateTimePicker2
+            // aDateTimePickerSearch2
             // 
-            this.aDateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.aDateTimePicker2.Location = new System.Drawing.Point(219, 28);
-            this.aDateTimePicker2.Name = "aDateTimePicker2";
-            this.aDateTimePicker2.Size = new System.Drawing.Size(103, 23);
-            this.aDateTimePicker2.TabIndex = 13;
-            // 
-            // aDateTimePicker1
-            // 
-            this.aDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.aDateTimePicker1.Location = new System.Drawing.Point(88, 28);
-            this.aDateTimePicker1.Name = "aDateTimePicker1";
-            this.aDateTimePicker1.Size = new System.Drawing.Size(103, 23);
-            this.aDateTimePicker1.TabIndex = 12;
-            // 
-            // aLabel2
-            // 
-            this.aLabel2.AutoSize = true;
-            this.aLabel2.Location = new System.Drawing.Point(198, 32);
-            this.aLabel2.Name = "aLabel2";
-            this.aLabel2.Size = new System.Drawing.Size(15, 15);
-            this.aLabel2.TabIndex = 11;
-            this.aLabel2.Text = "~";
+            this.aDateTimePickerSearch2.ButtonText = "조회";
+            this.aDateTimePickerSearch2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aDateTimePickerSearch2.Location = new System.Drawing.Point(88, 23);
+            this.aDateTimePickerSearch2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.aDateTimePickerSearch2.Name = "aDateTimePickerSearch2";
+            this.aDateTimePickerSearch2.Size = new System.Drawing.Size(324, 32);
+            this.aDateTimePickerSearch2.TabIndex = 11;
             // 
             // PRM_PRF_002
             // 
@@ -151,8 +132,6 @@
         private CustomControls.AButton aButton3;
         private CustomControls.AButton aButton2;
         private CustomControls.AButton aButton1;
-        private CustomControls.ADateTimePicker aDateTimePicker2;
-        private CustomControls.ADateTimePicker aDateTimePicker1;
-        private CustomControls.ALabel aLabel2;
+        private CustomControls.ADateTimePickerSearch aDateTimePickerSearch2;
     }
 }
