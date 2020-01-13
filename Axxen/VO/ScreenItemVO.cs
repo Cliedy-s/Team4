@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace VO
 {
+    /// <summary>
+    /// 화면
+    /// </summary>
    public class ScreenItem_MasterVO
     {
         /// <summary>
@@ -58,4 +61,44 @@ namespace VO
         public string Up_Emp { get; set; }
 
     }
+    /// <summary>
+    /// 화면권한
+    /// </summary>
+    public class ScreenItem_AuthorityVO
+    {
+        /// <summary>
+        /// 사용자그룹코드
+        /// </summary>
+        public string UserGroup_Code { get; set; }
+        /// <summary>
+        /// /화면코드
+        /// </summary>
+        public string Screen_Code { get; set; }
+        /// <summary>
+        /// 권한
+        /// </summary>
+        public string Pre_Type { get; set; }
+        /// <summary>
+        /// 사용여부
+        /// </summary>
+        public string Use_YN { get; set; }
+        /// <summary>
+        /// 최초입력일자
+        /// </summary>
+        public DateTime Ins_Date { get; set; }
+        /// <summary>
+        /// 최초입력자
+        /// </summary>
+        public string Ins_Emp { get; set; }
+        /// <summary>
+        /// 최종수정일자
+        /// </summary>
+        public DateTime Up_Date { get; set; }
+        /// <summary>
+        /// 최종수정자
+        /// </summary>
+        public string Up_Emp { get; set; }
+
+    }
+
 }

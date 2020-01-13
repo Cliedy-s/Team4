@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.aLabel1 = new AxxenClient.CustomControls.ALabel();
-            this.aLabel_Header1 = new AxxenClient.CustomControls.ALabel_Header();
-            this.aPanel1 = new AxxenClient.CustomControls.APanel();
-            this.btnNoActive = new AxxenClient.CustomControls.AButton();
-            this.btnConfig = new AxxenClient.CustomControls.AButton();
-            this.txtPronounce = new AxxenClient.CustomControls.ALabel();
-            this.aPanel2 = new AxxenClient.CustomControls.APanel();
-            this.aPanel3 = new AxxenClient.CustomControls.APanel();
+            this.aLabel1 = new Axxen.CustomControls.ALabel();
+            this.aLabel_Header1 = new Axxen.CustomControls.ALabel_Header();
+            this.aPanel1 = new Axxen.CustomControls.APanel();
+            this.btnNoActive = new Axxen.CustomControls.AButton();
+            this.btnConfig = new Axxen.CustomControls.AButton();
+            this.txtPronounce = new Axxen.CustomControls.ALabel();
+            this.aPanel2 = new Axxen.CustomControls.APanel();
+            this.aPanel3 = new Axxen.CustomControls.APanel();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -153,13 +153,13 @@
 
         #endregion
 
-        protected AxxenClient.CustomControls.ALabel aLabel1;
-        protected AxxenClient.CustomControls.ALabel_Header aLabel_Header1;
-        protected AxxenClient.CustomControls.APanel aPanel1;
-        protected AxxenClient.CustomControls.AButton btnNoActive;
-        protected AxxenClient.CustomControls.AButton btnConfig;
-        protected AxxenClient.CustomControls.ALabel txtPronounce;
-        protected AxxenClient.CustomControls.APanel aPanel2;
-        private AxxenClient.CustomControls.APanel aPanel3;
+        protected Axxen.CustomControls.ALabel aLabel1;
+        protected Axxen.CustomControls.ALabel_Header aLabel_Header1;
+        protected Axxen.CustomControls.APanel aPanel1;
+        protected Axxen.CustomControls.AButton btnNoActive;
+        protected Axxen.CustomControls.AButton btnConfig;
+        protected Axxen.CustomControls.ALabel txtPronounce;
+        protected Axxen.CustomControls.APanel aPanel2;
+        private Axxen.CustomControls.APanel aPanel3;
     }
 }

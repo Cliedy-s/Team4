@@ -15,6 +15,10 @@ namespace Axxen
 {
     public partial class MainForm : Form
     {
+
+        public event EventHandler InsertFormEvent; //추가 폼 이벤트
+
+
         int CheckBtnIndex = 7;
         bool BookmarkCheck = true; //즐겨찾기 
         bool open = true;
@@ -33,26 +37,26 @@ namespace Axxen
         private void MainForm_Load(object sender, EventArgs e)
         {
 
-            
+
             LoginForm frm = new LoginForm();
 
-            if(frm.ShowDialog() == DialogResult.OK)
+            if (frm.ShowDialog() == DialogResult.OK)
             {
-            MainForm_Service service = new MainForm_Service();
-            menulist = service.GetAll_MenuTree_Master();
+                MainForm_Service service = new MainForm_Service();
+                menulist = service.GetAll_MenuTree_Master();
 
                 booklist = service.GetAll_BookMark(UserInfo.User_ID);
 
-                lblName.Text = UserInfo.User_Name; 
+                lblName.Text = UserInfo.User_Name;
 
-            ImageList imgList = new ImageList();
-            //imgList.Images.Add(Bitmap.FromFile("treeimg.png"));
-            imgList.Images.Add(Properties.Resources.treeimg);
-            tvMenu.ImageList = imgList;
+                ImageList imgList = new ImageList();
+                //imgList.Images.Add(Bitmap.FromFile("treeimg.png"));
+                imgList.Images.Add(Properties.Resources.treeimg);
+                tvMenu.ImageList = imgList;
                 tvBookMark.ImageList = imgList;
-            this.tabControl2.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;       
-            CloseImage = Properties.Resources.x;
-            this.tabControl2.Padding = new Point(10, 3);
+                this.tabControl2.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
+                CloseImage = Properties.Resources.x;
+                this.tabControl2.Padding = new Point(10, 3);
             }
         }
 
@@ -70,7 +74,7 @@ namespace Axxen
         /// <param name="e"></param>
         private void BtnMenu_Click(object sender, EventArgs e)
         {
-            
+
 
 
             tvMenu.Visible = true;
@@ -188,22 +192,24 @@ namespace Axxen
         private void TvMenu_DoubleClick(object sender, EventArgs e)
         {
             try
-            { 
-            if (tvMenu.SelectedNode.Text != null) { 
-            MenuTree_Master_VO parentcode = menulist.Find(item => item.Screen_Name == tvMenu.SelectedNode.Text);
-            subtitle.Clear();
-            if (parentcode.Parent_Screen_Code != null) //부모코드에 널값이있는 메뉴를 제외하고
             {
-                string form = parentcode.Screen_Code;
-                newForm(form, tvMenu.SelectedNode.Text);
+                if (tvMenu.SelectedNode.Text != null)
+                {
+                    MenuTree_Master_VO parentcode = menulist.Find(item => item.Screen_Name == tvMenu.SelectedNode.Text);
+                    subtitle.Clear();
+                    if (parentcode.Parent_Screen_Code != null) //부모코드에 널값이있는 메뉴를 제외하고
+                    {
+                        string form = parentcode.Screen_Code;
+                        newForm(form, tvMenu.SelectedNode.Text);
 
-                //sdfasd
+                        //sdfasd
+                    }
+                }
             }
-            }
-            }
-            catch { 
+            catch
+            {
 
-                
+
             }
         }
         /// <summary>
@@ -241,11 +247,11 @@ namespace Axxen
                 //    tabControl2.TabPages     .Tag=formName;
                 //    MessageBox.Show(tabControl2.SelectedTab.Tag.ToString());
                 frm.Show();
-                lblSubtitle.Text = "메뉴->"+ subtitle;
+                lblSubtitle.Text = "메뉴->" + subtitle;
             }
-            catch 
+            catch
             {
-                MessageBox.Show("사용할 수 없는 메뉴"+ formName);
+                MessageBox.Show("사용할 수 없는 메뉴" + formName);
             }
         }
 
@@ -343,7 +349,7 @@ namespace Axxen
         {
             try
             {
-                 var tabRect = this.tabControl2.GetTabRect(e.Index);
+                var tabRect = this.tabControl2.GetTabRect(e.Index);
                 tabRect.Inflate(-2, -2);
                 var imageRect = new Rectangle(tabRect.Right - CloseImage.Width,
                                          tabRect.Top + (tabRect.Height - CloseImage.Height) / 2,
@@ -362,7 +368,7 @@ namespace Axxen
                 e.Graphics.FillRectangle(Brushes.Aquamarine, e.Bounds); //텝페이지 색
                 e.Graphics.DrawString(this.tabControl2.TabPages[e.Index].Text,
                                       this.Font, Brushes.Black, tabRect, sf);//텝페이지 폰트랑 글자 색
-                
+
                 e.Graphics.DrawImage(CloseImage, imageRect.Location); //텝페이지 취소이미지 생성
 
             }
@@ -416,7 +422,7 @@ namespace Axxen
                         if (childForm.Tag.ToString().Equals(tabControl2.SelectedTab.Tag.ToString()))
                         {
                             childForm.Activate();
-                            lblSubtitle.Text = "메뉴->"+ tabControl2.SelectedTab.Text.ToString();
+                            lblSubtitle.Text = "메뉴->" + tabControl2.SelectedTab.Text.ToString();
                             break;
                         }
                     }
@@ -424,7 +430,36 @@ namespace Axxen
 
             }
         }
+        /// <summary>
+        /// 씨발
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void 전체닫기ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form childForm in Application.OpenForms)
+            {
+
+                if (childForm.Name != "MainForm")
+                {
+                    childForm.Close();
+                }
+            }
+        }
 
         #endregion
+
+
+        /// <summary>
+        /// 텝컨트롤의 저장
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TsbInsert_Click(object sender, EventArgs e)
+        {
+            if (this.InsertFormEvent != null)
+                InsertFormEvent(this, null);
+        }
+    
     }
 }

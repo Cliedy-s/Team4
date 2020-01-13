@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.aComboBox2 = new Axxen.CustomControls.AComboBox();
-            this.aLabel2 = new Axxen.CustomControls.ALabel();
-            this.aComboBox1 = new Axxen.CustomControls.AComboBox();
             this.aLabel1 = new Axxen.CustomControls.ALabel();
             this.aButton1 = new Axxen.CustomControls.AButton();
             this.aButton2 = new Axxen.CustomControls.AButton();
             this.aTextBox_FindNameByCode1 = new Axxen.CustomControls.ATextBox_FindNameByCode();
             this.aTextBox_FindNameByCode2 = new Axxen.CustomControls.ATextBox_FindNameByCode();
+            this.aDateTimePicker2 = new Axxen.CustomControls.ADateTimePicker();
+            this.aDateTimePicker1 = new Axxen.CustomControls.ADateTimePicker();
+            this.aLabel2 = new Axxen.CustomControls.ALabel();
             ((System.ComponentModel.ISupportInitialize)(this.aSplitContainer1)).BeginInit();
             this.aSplitContainer1.Panel1.SuspendLayout();
             this.aSplitContainer1.Panel2.SuspendLayout();
@@ -73,37 +73,12 @@
             // 
             // aPanel2
             // 
+            this.aPanel2.Controls.Add(this.aDateTimePicker2);
+            this.aPanel2.Controls.Add(this.aDateTimePicker1);
+            this.aPanel2.Controls.Add(this.aLabel2);
             this.aPanel2.Controls.Add(this.aTextBox_FindNameByCode2);
             this.aPanel2.Controls.Add(this.aTextBox_FindNameByCode1);
-            this.aPanel2.Controls.Add(this.aComboBox2);
-            this.aPanel2.Controls.Add(this.aLabel2);
-            this.aPanel2.Controls.Add(this.aComboBox1);
             this.aPanel2.Controls.Add(this.aLabel1);
-            // 
-            // aComboBox2
-            // 
-            this.aComboBox2.FormattingEnabled = true;
-            this.aComboBox2.Location = new System.Drawing.Point(256, 28);
-            this.aComboBox2.Name = "aComboBox2";
-            this.aComboBox2.Size = new System.Drawing.Size(121, 23);
-            this.aComboBox2.TabIndex = 25;
-            // 
-            // aLabel2
-            // 
-            this.aLabel2.AutoSize = true;
-            this.aLabel2.Location = new System.Drawing.Point(235, 32);
-            this.aLabel2.Name = "aLabel2";
-            this.aLabel2.Size = new System.Drawing.Size(15, 15);
-            this.aLabel2.TabIndex = 24;
-            this.aLabel2.Text = "~";
-            // 
-            // aComboBox1
-            // 
-            this.aComboBox1.FormattingEnabled = true;
-            this.aComboBox1.Location = new System.Drawing.Point(108, 28);
-            this.aComboBox1.Name = "aComboBox1";
-            this.aComboBox1.Size = new System.Drawing.Size(121, 23);
-            this.aComboBox1.TabIndex = 23;
             // 
             // aLabel1
             // 
@@ -162,6 +137,31 @@
             this.aTextBox_FindNameByCode2.txtCodeText = "";
             this.aTextBox_FindNameByCode2.txtNameText = "";
             // 
+            // aDateTimePicker2
+            // 
+            this.aDateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.aDateTimePicker2.Location = new System.Drawing.Point(243, 28);
+            this.aDateTimePicker2.Name = "aDateTimePicker2";
+            this.aDateTimePicker2.Size = new System.Drawing.Size(103, 23);
+            this.aDateTimePicker2.TabIndex = 30;
+            // 
+            // aDateTimePicker1
+            // 
+            this.aDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.aDateTimePicker1.Location = new System.Drawing.Point(112, 28);
+            this.aDateTimePicker1.Name = "aDateTimePicker1";
+            this.aDateTimePicker1.Size = new System.Drawing.Size(103, 23);
+            this.aDateTimePicker1.TabIndex = 29;
+            // 
+            // aLabel2
+            // 
+            this.aLabel2.AutoSize = true;
+            this.aLabel2.Location = new System.Drawing.Point(222, 32);
+            this.aLabel2.Name = "aLabel2";
+            this.aLabel2.Size = new System.Drawing.Size(15, 15);
+            this.aLabel2.TabIndex = 28;
+            this.aLabel2.Text = "~";
+            // 
             // QAM_SQC_002
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -183,11 +183,11 @@
 
         private CustomControls.AButton aButton2;
         private CustomControls.AButton aButton1;
-        private CustomControls.AComboBox aComboBox2;
-        private CustomControls.ALabel aLabel2;
-        private CustomControls.AComboBox aComboBox1;
         private CustomControls.ALabel aLabel1;
         private CustomControls.ATextBox_FindNameByCode aTextBox_FindNameByCode2;
         private CustomControls.ATextBox_FindNameByCode aTextBox_FindNameByCode1;
+        private CustomControls.ADateTimePicker aDateTimePicker2;
+        private CustomControls.ADateTimePicker aDateTimePicker1;
+        private CustomControls.ALabel aLabel2;
     }
 }

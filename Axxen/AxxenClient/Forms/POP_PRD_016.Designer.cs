@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.aDataGridView1 = new AxxenClient.CustomControls.ADataGridView();
-            this.aButton1 = new AxxenClient.CustomControls.AButton();
+            this.aDataGridView1 = new Axxen.CustomControls.ADataGridView();
+            this.aButton1 = new Axxen.CustomControls.AButton();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aDataGridView1)).BeginInit();
@@ -82,7 +82,7 @@
 
         #endregion
 
-        private CustomControls.ADataGridView aDataGridView1;
-        private CustomControls.AButton aButton1;
+        private Axxen.CustomControls.ADataGridView aDataGridView1;
+        private Axxen.CustomControls.AButton aButton1;
     }
 }

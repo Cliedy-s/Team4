@@ -28,50 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.aComboBox2 = new Axxen.CustomControls.AComboBox();
-            this.aLabel2 = new Axxen.CustomControls.ALabel();
-            this.aComboBox1 = new Axxen.CustomControls.AComboBox();
             this.aLabel1 = new Axxen.CustomControls.ALabel();
             this.aTextBox_FindNameByCode1 = new Axxen.CustomControls.ATextBox_FindNameByCode();
+            this.aDateTimePicker2 = new Axxen.CustomControls.ADateTimePicker();
+            this.aDateTimePicker1 = new Axxen.CustomControls.ADateTimePicker();
+            this.aLabel2 = new Axxen.CustomControls.ALabel();
             this.panTop.SuspendLayout();
             this.SuspendLayout();
             // 
-            // aPanel1
+            // panTop
             // 
-            this.panTop.Controls.Add(this.aTextBox_FindNameByCode1);
-            this.panTop.Controls.Add(this.aComboBox2);
+            this.panTop.Controls.Add(this.aDateTimePicker2);
+            this.panTop.Controls.Add(this.aDateTimePicker1);
             this.panTop.Controls.Add(this.aLabel2);
-            this.panTop.Controls.Add(this.aComboBox1);
+            this.panTop.Controls.Add(this.aTextBox_FindNameByCode1);
             this.panTop.Controls.Add(this.aLabel1);
             // 
             // aHeaderBox1
             // 
             this.aHeaderBox1.HeaderBoxText = "조회내역";
-            // 
-            // aComboBox2
-            // 
-            this.aComboBox2.FormattingEnabled = true;
-            this.aComboBox2.Location = new System.Drawing.Point(236, 29);
-            this.aComboBox2.Name = "aComboBox2";
-            this.aComboBox2.Size = new System.Drawing.Size(121, 23);
-            this.aComboBox2.TabIndex = 13;
-            // 
-            // aLabel2
-            // 
-            this.aLabel2.AutoSize = true;
-            this.aLabel2.Location = new System.Drawing.Point(215, 33);
-            this.aLabel2.Name = "aLabel2";
-            this.aLabel2.Size = new System.Drawing.Size(15, 15);
-            this.aLabel2.TabIndex = 12;
-            this.aLabel2.Text = "~";
-            // 
-            // aComboBox1
-            // 
-            this.aComboBox1.FormattingEnabled = true;
-            this.aComboBox1.Location = new System.Drawing.Point(88, 29);
-            this.aComboBox1.Name = "aComboBox1";
-            this.aComboBox1.Size = new System.Drawing.Size(121, 23);
-            this.aComboBox1.TabIndex = 11;
             // 
             // aLabel1
             // 
@@ -95,6 +70,31 @@
             this.aTextBox_FindNameByCode1.txtCodeText = "";
             this.aTextBox_FindNameByCode1.txtNameText = "";
             // 
+            // aDateTimePicker2
+            // 
+            this.aDateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.aDateTimePicker2.Location = new System.Drawing.Point(219, 28);
+            this.aDateTimePicker2.Name = "aDateTimePicker2";
+            this.aDateTimePicker2.Size = new System.Drawing.Size(103, 23);
+            this.aDateTimePicker2.TabIndex = 17;
+            // 
+            // aDateTimePicker1
+            // 
+            this.aDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.aDateTimePicker1.Location = new System.Drawing.Point(88, 28);
+            this.aDateTimePicker1.Name = "aDateTimePicker1";
+            this.aDateTimePicker1.Size = new System.Drawing.Size(103, 23);
+            this.aDateTimePicker1.TabIndex = 16;
+            // 
+            // aLabel2
+            // 
+            this.aLabel2.AutoSize = true;
+            this.aLabel2.Location = new System.Drawing.Point(198, 32);
+            this.aLabel2.Name = "aLabel2";
+            this.aLabel2.Size = new System.Drawing.Size(15, 15);
+            this.aLabel2.TabIndex = 15;
+            this.aLabel2.Text = "~";
+            // 
             // PRM_PRF_004
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -108,11 +108,10 @@
         }
 
         #endregion
-
-        private CustomControls.AComboBox aComboBox2;
-        private CustomControls.ALabel aLabel2;
-        private CustomControls.AComboBox aComboBox1;
         private CustomControls.ALabel aLabel1;
         private CustomControls.ATextBox_FindNameByCode aTextBox_FindNameByCode1;
+        private CustomControls.ADateTimePicker aDateTimePicker2;
+        private CustomControls.ADateTimePicker aDateTimePicker1;
+        private CustomControls.ALabel aLabel2;
     }
 }
