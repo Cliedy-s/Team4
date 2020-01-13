@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace AxxenClient.Forms
 {
-    public partial class WorkOrderCreateForm : AxxenClient.Templets.ClientBaseForm
+    public partial class POP_PRD_002 : AxxenClient.Templets.ClientBaseForm
     {
-        public WorkOrderCreateForm()
+        public POP_PRD_002()
         {
             InitializeComponent();
         }
