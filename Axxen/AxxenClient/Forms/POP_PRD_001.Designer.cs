@@ -191,7 +191,7 @@
             this.aPanel5.Controls.Add(this.aButton12);
             this.aPanel5.Controls.Add(this.aButton13);
             this.aPanel5.Controls.Add(this.aButton14);
-            this.aPanel5.Location = new System.Drawing.Point(13, 723);
+            this.aPanel5.Location = new System.Drawing.Point(13, 593);
             this.aPanel5.Name = "aPanel5";
             this.aPanel5.Size = new System.Drawing.Size(1186, 124);
             this.aPanel5.TabIndex = 6;

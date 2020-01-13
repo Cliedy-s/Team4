@@ -47,9 +47,9 @@
             this.aLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.aLabel1.Location = new System.Drawing.Point(25, 41);
             this.aLabel1.Name = "aLabel1";
-            this.aLabel1.Size = new System.Drawing.Size(48, 15);
+            this.aLabel1.Size = new System.Drawing.Size(125, 15);
             this.aLabel1.TabIndex = 0;
-            this.aLabel1.Text = "aLabel1";
+            this.aLabel1.Text = "2020-01-13 18:26:32";
             // 
             // aLabel_Header1
             // 

@@ -14,15 +14,14 @@ namespace Axxen.CustomControls
     {
         public string LabelText { get { return lblName.Text; } set { lblName.Text = value; } }
         public string TextBoxText { get { return txtValue.Text; } set { txtValue.Text = value; } }
-        public SearchButtonClick btnSearch_Click;
+        public event SearchButtonClick btnSearch_Click;
 
         public ATextBox_Searchable()
         {
             InitializeComponent();
         }
         public delegate EventHandler SearchButtonClick(object sender, EventArgs args);
-
-        private void btnSearch_Click_1(object sender, EventArgs e)
+        private void btnSearch_Click_2(object sender, EventArgs e)
         {
             btnSearch_Click?.Invoke(sender, e);
         }

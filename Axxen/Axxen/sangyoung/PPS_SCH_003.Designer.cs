@@ -44,12 +44,12 @@
             this.cboWorkState = new Axxen.CustomControls.AComboBox();
             this.aLabel3 = new Axxen.CustomControls.ALabel();
             this.aHeaderBox1 = new Axxen.CustomControls.AHeaderBox();
-            this.aDataGridView1 = new Axxen.CustomControls.ADataGridView();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.dgvMainGrid = new Axxen.CustomControls.ADataGridView();
+            this.dgvMain = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.aPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.aDataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMainGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -162,36 +162,36 @@
             this.aHeaderBox1.Size = new System.Drawing.Size(243, 30);
             this.aHeaderBox1.TabIndex = 11;
             // 
-            // aDataGridView1
+            // dgvMainGrid
             // 
-            this.aDataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvMainGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.aDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.aDataGridView1.Location = new System.Drawing.Point(12, 126);
-            this.aDataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.aDataGridView1.Name = "aDataGridView1";
-            this.aDataGridView1.RowTemplate.Height = 23;
-            this.aDataGridView1.Size = new System.Drawing.Size(1124, 260);
-            this.aDataGridView1.TabIndex = 10;
+            this.dgvMainGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMainGrid.Location = new System.Drawing.Point(12, 126);
+            this.dgvMainGrid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvMainGrid.Name = "dgvMainGrid";
+            this.dgvMainGrid.RowTemplate.Height = 23;
+            this.dgvMainGrid.Size = new System.Drawing.Size(1124, 260);
+            this.dgvMainGrid.TabIndex = 10;
             // 
-            // chart1
+            // dgvMain
             // 
-            this.chart1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.chart1.BackColor = System.Drawing.Color.Gainsboro;
+            this.dgvMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.dgvMain.BackColor = System.Drawing.Color.Gainsboro;
             chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
+            this.dgvMain.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(12, 393);
-            this.chart1.Name = "chart1";
+            this.dgvMain.Legends.Add(legend1);
+            this.dgvMain.Location = new System.Drawing.Point(12, 393);
+            this.dgvMain.Name = "dgvMain";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(689, 295);
-            this.chart1.TabIndex = 12;
-            this.chart1.Text = "chart1";
+            this.dgvMain.Series.Add(series1);
+            this.dgvMain.Size = new System.Drawing.Size(689, 295);
+            this.dgvMain.TabIndex = 12;
+            this.dgvMain.Text = "chart1";
             // 
             // chart2
             // 
@@ -217,15 +217,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.Controls.Add(this.chart2);
-            this.Controls.Add(this.chart1);
+            this.Controls.Add(this.dgvMain);
             this.Controls.Add(this.aHeaderBox1);
-            this.Controls.Add(this.aDataGridView1);
+            this.Controls.Add(this.dgvMainGrid);
             this.Controls.Add(this.aPanel1);
             this.Name = "PPS_SCH_003";
+            this.Load += new System.EventHandler(this.PPS_SCH_003_Load);
             this.aPanel1.ResumeLayout(false);
             this.aPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.aDataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMainGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             this.ResumeLayout(false);
 
@@ -239,8 +240,8 @@
         private CustomControls.ALabel aLabel1;
         protected CustomControls.APanel aPanel1;
         protected CustomControls.AHeaderBox aHeaderBox1;
-        protected CustomControls.ADataGridView aDataGridView1;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        protected CustomControls.ADataGridView dgvMainGrid;
+        private System.Windows.Forms.DataVisualization.Charting.Chart dgvMain;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
         private CustomControls.AComboBox cboWorkState;
         private CustomControls.ALabel aLabel3;

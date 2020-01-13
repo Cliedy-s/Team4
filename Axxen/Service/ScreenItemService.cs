@@ -34,5 +34,12 @@ namespace Service
 
             return dac.GetNotUseGroupScreenItem(groupCode);
         }
+
+        public void InsertUpdateScreenItem_Authority(List<ScreenItem_AuthorityVO> List)
+        {
+            ScreenItemDAC dac = new ScreenItemDAC();
+
+             dac.InsertUpdateScreenItem_Authority(List);
         }
+   }
 }
