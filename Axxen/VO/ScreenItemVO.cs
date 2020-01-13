@@ -80,7 +80,7 @@ namespace VO
         /// <summary>
         /// 화면이름
         /// </summary>
-        public string Type { get; set; }
+        /// 
         public string Screen_Path { get; set; }
         /// <summary>
         /// 권한
