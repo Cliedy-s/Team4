@@ -16,15 +16,15 @@ namespace DAC
             using (SqlCommand comm = new SqlCommand())
             {
                 comm.Connection = new SqlConnection(Connstr);
-                comm.CommandText = "GetAllMold";
+                comm.CommandText = "SelectMoldAll";
                 comm.CommandType = CommandType.StoredProcedure;
 
                 comm.Connection.Open();
                 SqlDataReader reader = comm.ExecuteReader();
-                List<MoldVO> moldlist = Helper.DataReaderMapToList<MoldVO>(reader);
+                List<MoldVO> list = Helper.DataReaderMapToList<MoldVO>(reader);
                 comm.Connection.Close();
 
-                return moldlist;
+                return list;
             }
         }
 
@@ -33,7 +33,7 @@ namespace DAC
             using (SqlCommand comm = new SqlCommand())
             {
                 comm.Connection = new SqlConnection(Connstr);
-                comm.CommandText = "GetAllMold";
+                comm.CommandText = "SelectMold_Item_Wc_Muse";
                 comm.CommandType = CommandType.StoredProcedure;
 
                 comm.Connection.Open();

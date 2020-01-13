@@ -14,9 +14,9 @@ namespace VO
         public string Item_Name { get; set; } //품목명
         public int Req_Qty { get; set; } //의뢰수량
         public DateTime Prd_Plan_Date { get; set; } //생산완료예정일
-        public string Cust_Name { get; set; } //거래처명
         public string Project_Name { get; set; } //프로젝트명
+        public string Cust_Name { get; set; } //거래처명
         public string Sale_Emp { get; set; } //영업담당
-        public string Req_Status { get; set; } //의뢰상태
+        public string Req_Status { get; set; } //생산의뢰상태
     }
 }
