@@ -97,7 +97,7 @@ namespace DAC
                 comm.Parameters.AddWithValue("@Screen_Code", List[i].Screen_Code);
                 comm.Parameters.AddWithValue("@Pre_Type", List[i].Pre_Type);
                 comm.Parameters.AddWithValue("@Ins_Date", List[i].Ins_Date);
-                comm.Parameters.AddWithValue("@Ins_Emp", List[i].Ins_Date);
+                comm.Parameters.AddWithValue("@Ins_Emp", List[i].Ins_Emp);
 
                    comm.Connection.Open();
                    comm.ExecuteNonQuery();

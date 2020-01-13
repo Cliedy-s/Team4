@@ -66,9 +66,7 @@ namespace VO
     /// </summary>
     public class ScreenItem_AuthorityVO
     {
-        public string Type { get; set; }
-       
-
+     
         /// <summary>
         /// 사용자그룹코드
         /// </summary>
@@ -82,6 +80,7 @@ namespace VO
         /// </summary>
         /// 
         public string Screen_Path { get; set; }
+        public string Type { get; set; }
         /// <summary>
         /// 권한
         /// </summary>

@@ -38,8 +38,9 @@ namespace Axxen
             DatagridviewDesigns.SetDesign(dgvUseScreen);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvUseScreen, "화면코드", "Screen_Code", true, 200, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvUseScreen, "화면명", "Type", true, 200, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvNotUseScreen, "화면경로", "Screen_Path", true, 200, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvUseScreen, "설정자", "Ins_Emp", true, 200, default, true);
-
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvUseScreen, "입력일", "Ins_Date", true, 200, default, true);
             ControlSetting();
         }
 
@@ -242,6 +243,11 @@ namespace Axxen
 
                 MessageBox.Show(err.ToString());
             }
+        }
+
+        private void BtnRemove_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
