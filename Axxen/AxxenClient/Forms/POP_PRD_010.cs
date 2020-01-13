@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace AxxenClient.Forms
 {
-    public partial class LoadRecordRegisterForm : AxxenClient.Templets.ClientBaseForm
+    public partial class POP_PRD_010 : AxxenClient.Templets.ClientBaseForm
     {
-        public LoadRecordRegisterForm()
+        public POP_PRD_010()
         {
             InitializeComponent();
         }
