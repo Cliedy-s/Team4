@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomControls\ADateTimePickerSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\ADateTimePickerSearch.Designer.cs">
+      <DependentUpon>ADateTimePickerSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomControls\AHeaderBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -540,6 +546,9 @@
     <Compile Include="Util\InitControlUtil.cs" />
     <EmbeddedResource Include="CustomControls\AButton.resx">
       <DependentUpon>AButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\ADateTimePickerSearch.resx">
+      <DependentUpon>ADateTimePickerSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\AHeaderBox.resx">
       <DependentUpon>AHeaderBox.cs</DependentUpon>
