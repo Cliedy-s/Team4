@@ -54,7 +54,7 @@
             this.aPanel7 = new Axxen.CustomControls.APanel();
             this.aLabel3 = new Axxen.CustomControls.ALabel();
             this.btnInsert = new Axxen.CustomControls.AButton();
-            this.aButton6 = new Axxen.CustomControls.AButton();
+            this.btnRemove = new Axxen.CustomControls.AButton();
             this.aLabel7 = new Axxen.CustomControls.ALabel();
             this.aLabel8 = new Axxen.CustomControls.ALabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -173,6 +173,7 @@
             // aTextBox1
             // 
             this.aTextBox1.BackColor = System.Drawing.Color.White;
+            this.aTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.aTextBox1.errorp = null;
             this.aTextBox1.Location = new System.Drawing.Point(148, 6);
             this.aTextBox1.Name = "aTextBox1";
@@ -315,6 +316,7 @@
             // lblGroup
             // 
             this.lblGroup.BackColor = System.Drawing.Color.White;
+            this.lblGroup.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblGroup.errorp = null;
             this.lblGroup.Location = new System.Drawing.Point(310, 6);
             this.lblGroup.Name = "lblGroup";
@@ -366,18 +368,19 @@
             this.btnInsert.UseVisualStyleBackColor = false;
             this.btnInsert.Click += new System.EventHandler(this.BtnInsert_Click);
             // 
-            // aButton6
+            // btnRemove
             // 
-            this.aButton6.BackColor = System.Drawing.Color.White;
-            this.aButton6.FlatAppearance.BorderSize = 0;
-            this.aButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton6.Image = ((System.Drawing.Image)(resources.GetObject("aButton6.Image")));
-            this.aButton6.Location = new System.Drawing.Point(425, 400);
-            this.aButton6.Name = "aButton6";
-            this.aButton6.Size = new System.Drawing.Size(54, 51);
-            this.aButton6.TabIndex = 30;
-            this.aButton6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.aButton6.UseVisualStyleBackColor = false;
+            this.btnRemove.BackColor = System.Drawing.Color.White;
+            this.btnRemove.FlatAppearance.BorderSize = 0;
+            this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemove.Image = ((System.Drawing.Image)(resources.GetObject("btnRemove.Image")));
+            this.btnRemove.Location = new System.Drawing.Point(425, 400);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(54, 51);
+            this.btnRemove.TabIndex = 30;
+            this.btnRemove.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRemove.UseVisualStyleBackColor = false;
+            this.btnRemove.Click += new System.EventHandler(this.BtnRemove_Click);
             // 
             // aLabel7
             // 
@@ -482,7 +485,7 @@
             this.Controls.Add(this.aLabel9);
             this.Controls.Add(this.aLabel8);
             this.Controls.Add(this.aLabel7);
-            this.Controls.Add(this.aButton6);
+            this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnInsert);
             this.Controls.Add(this.aPanel5);
             this.Controls.Add(this.aPanel4);
@@ -542,7 +545,7 @@
         private CustomControls.ALabel aLabel4;
         private CustomControls.AButton btngroub;
         private CustomControls.AButton btnInsert;
-        private CustomControls.AButton aButton6;
+        private CustomControls.AButton btnRemove;
         private CustomControls.ALabel aLabel7;
         private CustomControls.ALabel aLabel8;
         private System.Windows.Forms.PictureBox pictureBox1;

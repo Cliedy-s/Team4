@@ -1,6 +1,6 @@
-﻿namespace Axxen
+﻿namespace Axxen.ParkSangIn
 {
-    partial class MDS_CDS_004
+    partial class MDS_CDS_008
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -28,55 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MDS_CDS_004));
-            this.aLabel8 = new Axxen.CustomControls.ALabel();
-            this.aLabel7 = new Axxen.CustomControls.ALabel();
-            this.aPanel2 = new Axxen.CustomControls.APanel();
-            this.aLabel2 = new Axxen.CustomControls.ALabel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MDS_CDS_008));
             this.cbbGroup = new Axxen.CustomControls.AComboBox();
+            this.aLabel8 = new Axxen.CustomControls.ALabel();
+            this.aLabel2 = new Axxen.CustomControls.ALabel();
+            this.aPanel2 = new Axxen.CustomControls.APanel();
+            this.aLabel3 = new Axxen.CustomControls.ALabel();
+            this.aComboBox1 = new Axxen.CustomControls.AComboBox();
             this.btnSearch = new Axxen.CustomControls.AButton();
-            this.dgvGroup = new Axxen.CustomControls.ADataGridView();
             this.aDataGridView1 = new Axxen.CustomControls.ADataGridView();
             this.aLabel1 = new Axxen.CustomControls.ALabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.aPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGroup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aDataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // cbbGroup
+            // 
+            this.cbbGroup.FormattingEnabled = true;
+            this.cbbGroup.Location = new System.Drawing.Point(81, 7);
+            this.cbbGroup.Name = "cbbGroup";
+            this.cbbGroup.Size = new System.Drawing.Size(152, 23);
+            this.cbbGroup.TabIndex = 3;
             // 
             // aLabel8
             // 
             this.aLabel8.AutoSize = true;
             this.aLabel8.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aLabel8.Location = new System.Drawing.Point(556, 185);
+            this.aLabel8.Location = new System.Drawing.Point(68, 99);
             this.aLabel8.Name = "aLabel8";
-            this.aLabel8.Size = new System.Drawing.Size(409, 17);
-            this.aLabel8.TabIndex = 62;
-            this.aLabel8.Text = "GRID : 비가동 상세분류 코드 / 비가동 상세분류명 / 정렬순번 /비고";
-            // 
-            // aLabel7
-            // 
-            this.aLabel7.AutoSize = true;
-            this.aLabel7.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aLabel7.Location = new System.Drawing.Point(9, 194);
-            this.aLabel7.Name = "aLabel7";
-            this.aLabel7.Size = new System.Drawing.Size(398, 17);
-            this.aLabel7.TabIndex = 60;
-            this.aLabel7.Text = " GRID : 비가동 대분류 코드 / 비가동 대분류 명 / 비고 / 사용유무";
-            // 
-            // aPanel2
-            // 
-            this.aPanel2.BackColor = System.Drawing.SystemColors.Info;
-            this.aPanel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.aPanel2.Controls.Add(this.aLabel2);
-            this.aPanel2.Controls.Add(this.cbbGroup);
-            this.aPanel2.Controls.Add(this.btnSearch);
-            this.aPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.aPanel2.Location = new System.Drawing.Point(0, 0);
-            this.aPanel2.Name = "aPanel2";
-            this.aPanel2.Size = new System.Drawing.Size(1148, 39);
-            this.aPanel2.TabIndex = 59;
+            this.aLabel8.Size = new System.Drawing.Size(328, 17);
+            this.aLabel8.TabIndex = 67;
+            this.aLabel8.Text = "GRID : 대차코드/ 대차명/대차그룹/대차상태/사용유무";
             // 
             // aLabel2
             // 
@@ -84,41 +68,53 @@
             this.aLabel2.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel2.Location = new System.Drawing.Point(15, 9);
             this.aLabel2.Name = "aLabel2";
-            this.aLabel2.Size = new System.Drawing.Size(91, 17);
+            this.aLabel2.Size = new System.Drawing.Size(60, 17);
             this.aLabel2.TabIndex = 7;
-            this.aLabel2.Text = "비가동 대분류";
+            this.aLabel2.Text = "대차코드";
             // 
-            // cbbGroup
+            // aPanel2
             // 
-            this.cbbGroup.FormattingEnabled = true;
-            this.cbbGroup.Location = new System.Drawing.Point(126, 10);
-            this.cbbGroup.Name = "cbbGroup";
-            this.cbbGroup.Size = new System.Drawing.Size(152, 23);
-            this.cbbGroup.TabIndex = 3;
+            this.aPanel2.BackColor = System.Drawing.SystemColors.Info;
+            this.aPanel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.aPanel2.Controls.Add(this.aLabel3);
+            this.aPanel2.Controls.Add(this.aLabel2);
+            this.aPanel2.Controls.Add(this.aComboBox1);
+            this.aPanel2.Controls.Add(this.cbbGroup);
+            this.aPanel2.Controls.Add(this.btnSearch);
+            this.aPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.aPanel2.Location = new System.Drawing.Point(0, 0);
+            this.aPanel2.Name = "aPanel2";
+            this.aPanel2.Size = new System.Drawing.Size(1148, 39);
+            this.aPanel2.TabIndex = 65;
+            // 
+            // aLabel3
+            // 
+            this.aLabel3.AutoSize = true;
+            this.aLabel3.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aLabel3.Location = new System.Drawing.Point(239, 9);
+            this.aLabel3.Name = "aLabel3";
+            this.aLabel3.Size = new System.Drawing.Size(47, 17);
+            this.aLabel3.TabIndex = 64;
+            this.aLabel3.Text = "대차명";
+            // 
+            // aComboBox1
+            // 
+            this.aComboBox1.FormattingEnabled = true;
+            this.aComboBox1.Location = new System.Drawing.Point(292, 7);
+            this.aComboBox1.Name = "aComboBox1";
+            this.aComboBox1.Size = new System.Drawing.Size(152, 23);
+            this.aComboBox1.TabIndex = 63;
             // 
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Location = new System.Drawing.Point(784, 9);
+            this.btnSearch.Location = new System.Drawing.Point(450, 3);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 4;
             this.btnSearch.Text = "조회";
             this.btnSearch.UseVisualStyleBackColor = false;
-            // 
-            // dgvGroup
-            // 
-            this.dgvGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvGroup.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvGroup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGroup.Location = new System.Drawing.Point(0, 99);
-            this.dgvGroup.Name = "dgvGroup";
-            this.dgvGroup.RowTemplate.Height = 23;
-            this.dgvGroup.Size = new System.Drawing.Size(525, 600);
-            this.dgvGroup.TabIndex = 56;
             // 
             // aDataGridView1
             // 
@@ -127,48 +123,45 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.aDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.aDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.aDataGridView1.Location = new System.Drawing.Point(531, 99);
+            this.aDataGridView1.Location = new System.Drawing.Point(8, 79);
             this.aDataGridView1.Name = "aDataGridView1";
             this.aDataGridView1.RowTemplate.Height = 23;
-            this.aDataGridView1.Size = new System.Drawing.Size(617, 571);
-            this.aDataGridView1.TabIndex = 61;
+            this.aDataGridView1.Size = new System.Drawing.Size(1128, 571);
+            this.aDataGridView1.TabIndex = 66;
             // 
             // aLabel1
             // 
             this.aLabel1.AutoSize = true;
             this.aLabel1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.aLabel1.Location = new System.Drawing.Point(37, 57);
+            this.aLabel1.Location = new System.Drawing.Point(35, 52);
             this.aLabel1.Name = "aLabel1";
-            this.aLabel1.Size = new System.Drawing.Size(58, 21);
-            this.aLabel1.TabIndex = 57;
-            this.aLabel1.Text = "비가동";
+            this.aLabel1.Size = new System.Drawing.Size(42, 21);
+            this.aLabel1.TabIndex = 63;
+            this.aLabel1.Text = "대차";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 56);
+            this.pictureBox1.Location = new System.Drawing.Point(10, 51);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(23, 22);
-            this.pictureBox1.TabIndex = 58;
+            this.pictureBox1.TabIndex = 64;
             this.pictureBox1.TabStop = false;
             // 
-            // MDS_CDS_004
+            // MDS_CDS_008
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.Controls.Add(this.aLabel8);
-            this.Controls.Add(this.aLabel7);
             this.Controls.Add(this.aPanel2);
-            this.Controls.Add(this.dgvGroup);
             this.Controls.Add(this.aDataGridView1);
             this.Controls.Add(this.aLabel1);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "MDS_CDS_004";
-            this.Text = "비가동상세분류";
+            this.Name = "MDS_CDS_008";
+            this.Text = "대차정보";
             this.aPanel2.ResumeLayout(false);
             this.aPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGroup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aDataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -178,13 +171,13 @@
 
         #endregion
 
-        private CustomControls.ALabel aLabel8;
-        private CustomControls.ALabel aLabel7;
-        private CustomControls.APanel aPanel2;
-        private CustomControls.ALabel aLabel2;
         private CustomControls.AComboBox cbbGroup;
+        private CustomControls.ALabel aLabel8;
+        private CustomControls.ALabel aLabel2;
+        private CustomControls.APanel aPanel2;
+        private CustomControls.ALabel aLabel3;
+        private CustomControls.AComboBox aComboBox1;
         private CustomControls.AButton btnSearch;
-        private CustomControls.ADataGridView dgvGroup;
         private CustomControls.ADataGridView aDataGridView1;
         private CustomControls.ALabel aLabel1;
         private System.Windows.Forms.PictureBox pictureBox1;

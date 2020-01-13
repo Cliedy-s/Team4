@@ -17,8 +17,8 @@ namespace Axxen
         List<UserGroup_MasterVO> grouplist;
  
         ScreenItemService screenservice = new ScreenItemService();
-        List<ScreenItem_MasterVO> NotScreenlist ;//초기 안쓰는거
-        List<ScreenItem_MasterVO> UseScreenlist; //초기 쓰는거
+        List<ScreenItem_AuthorityVO> NotScreenlist ;//초기 안쓰는거
+        List<ScreenItem_AuthorityVO> UseScreenlist; //초기 쓰는거
         List<ScreenItem_AuthorityVO> InsertUpdateScreenlist; //db에 들어갈애들
 
         public MSS_CON_002_1()
@@ -38,8 +38,9 @@ namespace Axxen
             DatagridviewDesigns.SetDesign(dgvUseScreen);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvUseScreen, "화면코드", "Screen_Code", true, 200, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvUseScreen, "화면명", "Type", true, 200, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvNotUseScreen, "화면경로", "Screen_Path", true, 200, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvUseScreen, "설정자", "Ins_Emp", true, 200, default, true);
-
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvUseScreen, "입력일", "Ins_Date", true, 200, default, true);
             ControlSetting();
         }
 
@@ -105,12 +106,12 @@ namespace Axxen
         {
             //그룹에서 사용하지않는 화면
             
-            NotScreenlist = new List<ScreenItem_MasterVO>();
+            NotScreenlist = new List<ScreenItem_AuthorityVO>();
             NotScreenlist = screenservice.GetNotUseGroupScreenItem(lblGroup.Text);
             dgvNotUseScreen.DataSource = NotScreenlist;
 
             //그룹에서 사용하는화면
-            UseScreenlist = new List<ScreenItem_MasterVO>();
+            UseScreenlist = new List<ScreenItem_AuthorityVO>();
 
             UseScreenlist = screenservice.GetUseGroupScreenItem(lblGroup.Text);
             if (UseScreenlist.Count > 0)
@@ -127,13 +128,13 @@ namespace Axxen
         private void BtnInsert_Click(object sender, EventArgs e)
         {
          //   UseScreenlist = new List<ScreenItem_MasterVO>();
-            List<ScreenItem_MasterVO> subDeletelist = new List<ScreenItem_MasterVO>();
+            List<ScreenItem_AuthorityVO> subDeletelist = new List<ScreenItem_AuthorityVO>();
             foreach (DataGridViewRow row in dgvNotUseScreen.Rows)
             {
 
                 if (Convert.ToBoolean(row.Cells[0].Value) == true) //체크박스가 선택된 row들만
                 {
-                    ScreenItem_MasterVO item = new ScreenItem_MasterVO
+                    ScreenItem_AuthorityVO item = new ScreenItem_AuthorityVO
                     {
                         Screen_Code = row.Cells[1].Value.ToString(),
                         Type = row.Cells[2].Value.ToString(),
@@ -242,6 +243,11 @@ namespace Axxen
 
                 MessageBox.Show(err.ToString());
             }
+        }
+
+        private void BtnRemove_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

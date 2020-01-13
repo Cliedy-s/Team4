@@ -22,13 +22,13 @@ namespace Service
             return dac.GetALLScreenItem();
         }
 
-            public List<ScreenItem_MasterVO> GetUseGroupScreenItem(string groupCode)
+            public List<ScreenItem_AuthorityVO> GetUseGroupScreenItem(string groupCode)
         {
             ScreenItemDAC dac = new ScreenItemDAC();
 
             return dac.GetUseGroupScreenItem(groupCode);
         }
-        public List<ScreenItem_MasterVO> GetNotUseGroupScreenItem(string groupCode)
+        public List<ScreenItem_AuthorityVO> GetNotUseGroupScreenItem(string groupCode)
         {
             ScreenItemDAC dac = new ScreenItemDAC();
 

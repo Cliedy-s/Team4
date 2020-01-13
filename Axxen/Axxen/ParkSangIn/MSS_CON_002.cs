@@ -15,7 +15,7 @@ namespace Axxen
     {
 
         List<UserGroup_MasterVO> grouplist;
-        List<ScreenItem_MasterVO> Screenlist;
+        List<ScreenItem_AuthorityVO> Screenlist;
         UserGroupService userservice = new UserGroupService();
         ScreenItemService screenservice = new ScreenItemService();
         public MSS_CON_002()
@@ -38,6 +38,8 @@ namespace Axxen
 
             DatagridviewDesigns.SetDesign(dgvScreen);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvScreen, "화면코드", "Screen_Code", true, 200, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvScreen, "화면명", "Type", true, 200, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvScreen, "설정자", "Ins_Emp", true, 200, default, true);
 
 
             GetAllUserGroup(); //유저그룹전체
@@ -124,9 +126,10 @@ namespace Axxen
         private void GetGroupScreenItem(string groupCode)
         {
 
-            Screenlist = new List<ScreenItem_MasterVO>();
+            Screenlist = new List<ScreenItem_AuthorityVO>();
             Screenlist = screenservice.GetUseGroupScreenItem(groupCode);
-            dgvScreen.DataSource = grouplist;
+            dgvScreen.DataSource = null;
+            dgvScreen.DataSource = Screenlist;
         }
         #endregion
 
