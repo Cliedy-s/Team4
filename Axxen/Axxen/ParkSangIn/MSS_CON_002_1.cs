@@ -117,6 +117,10 @@ namespace Axxen
             { 
             dgvUseScreen.DataSource = UseScreenlist;
             }
+            else
+            {
+                dgvUseScreen.DataSource = null;
+            }
         }
 
 
