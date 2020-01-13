@@ -71,6 +71,7 @@
             this.btnSearch.TabIndex = 3;
             this.btnSearch.Text = "찾기";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click_2);
             // 
             // ATextBox_Searchable
             // 
