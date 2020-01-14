@@ -41,14 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Item_Goods_HistoryVO.cs" />
     <Compile Include="MainForm_VO.cs" />
     <Compile Include="MoldVO.cs" />
     <Compile Include="Mold_J_Item_Wc_MuseVO.cs" />
+    <Compile Include="Process_J_Nop_History_Gas_WC_Time_DayVO.cs" />
+    <Compile Include="Process_J_WC_Item_WO_Time_DayVO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScreenItemVO.cs" />
     <Compile Include="UserGroupVO.cs" />
     <Compile Include="UserInfoVO.cs" />
+    <Compile Include="WC_J_WO_Time_Day_ItemVO.cs" />
     <Compile Include="WorkOrder_J_WC_ItmeVO.cs" />
+    <Compile Include="WorkOrder_J_WC_Time_DayVO.cs" />
     <Compile Include="Wo_Req_ItemVO.cs" />
     <Compile Include="Wo_Req_WO_WC_ItemVO.cs" />
     <Compile Include="WO__WC_Production_ItemVO.cs" />
