@@ -383,7 +383,23 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Queries\포장언로딩.sql" />
+    <Content Include="Queries\emptysql - 복사본%2811%29.sql" />
+    <Content Include="Queries\emptysql - 복사본%282%29.sql" />
+    <Content Include="Queries\emptysql - 복사본%283%29.sql" />
+    <Content Include="Queries\emptysql - 복사본%284%29.sql" />
+    <Content Include="Queries\emptysql - 복사본%285%29.sql" />
+    <Content Include="Queries\emptysql - 복사본%286%29.sql" />
+    <Content Include="Queries\emptysql - 복사본%287%29.sql" />
+    <Content Include="Queries\emptysql - 복사본%288%29.sql" />
+    <Content Include="Queries\emptysql - 복사본%289%29.sql" />
+    <Content Include="Queries\emptysql - 복사본.sql" />
+    <Content Include="Queries\포장입고등록.sql" />
+    <Content Include="Queries\작업지시생성.sql" />
+    <Content Include="Queries\emptysql.sql" />
+    <Content Include="Queries\팔레트생성.sql" />
     <Content Include="Queries\작업지시현황.sql" />
+    <Content Include="Queries\테이블.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
