@@ -62,7 +62,6 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.aLabel10 = new Axxen.CustomControls.ALabel();
             this.aPanel8 = new Axxen.CustomControls.APanel();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dgvUseScreen = new Axxen.CustomControls.ADataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.aPanel1.SuspendLayout();
@@ -117,7 +116,7 @@
             this.aPanel1.Controls.Add(this.aLabel2);
             this.aPanel1.Controls.Add(this.pictureBox2);
             this.aPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.aPanel1.Location = new System.Drawing.Point(0, 24);
+            this.aPanel1.Location = new System.Drawing.Point(0, 0);
             this.aPanel1.Name = "aPanel1";
             this.aPanel1.Size = new System.Drawing.Size(1297, 41);
             this.aPanel1.TabIndex = 18;
@@ -174,6 +173,7 @@
             // txtSearch
             // 
             this.txtSearch.BackColor = System.Drawing.Color.White;
+            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSearch.errorp = null;
             this.txtSearch.Location = new System.Drawing.Point(148, 6);
             this.txtSearch.Name = "txtSearch";
@@ -263,7 +263,7 @@
             this.aPanel5.Controls.Add(this.aPanel6);
             this.aPanel5.Controls.Add(this.aPanel7);
             this.aPanel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.aPanel5.Location = new System.Drawing.Point(0, 65);
+            this.aPanel5.Location = new System.Drawing.Point(0, 41);
             this.aPanel5.Name = "aPanel5";
             this.aPanel5.Size = new System.Drawing.Size(1297, 40);
             this.aPanel5.TabIndex = 23;
@@ -320,6 +320,7 @@
             // lblGroup
             // 
             this.lblGroup.BackColor = System.Drawing.Color.White;
+            this.lblGroup.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblGroup.errorp = null;
             this.lblGroup.Location = new System.Drawing.Point(310, 6);
             this.lblGroup.Name = "lblGroup";
@@ -450,18 +451,10 @@
             this.aPanel8.Controls.Add(this.aPanel3);
             this.aPanel8.Controls.Add(this.aPanel2);
             this.aPanel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.aPanel8.Location = new System.Drawing.Point(0, 105);
+            this.aPanel8.Location = new System.Drawing.Point(0, 81);
             this.aPanel8.Name = "aPanel8";
             this.aPanel8.Size = new System.Drawing.Size(1297, 40);
             this.aPanel8.TabIndex = 37;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1297, 24);
-            this.menuStrip1.TabIndex = 40;
-            this.menuStrip1.Text = "menuStrip1";
             // 
             // dgvUseScreen
             // 
@@ -494,8 +487,6 @@
             this.Controls.Add(this.aPanel4);
             this.Controls.Add(this.dgvNotUseScreen);
             this.Controls.Add(this.aPanel1);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "MSS_CON_002_1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "화면조회";
@@ -558,7 +549,6 @@
         private CustomControls.APanel aPanel8;
         private CustomControls.AButton aButton3;
         private CustomControls.AButton btnSave;
-        private System.Windows.Forms.MenuStrip menuStrip1;
         private CustomControls.ADataGridView dgvUseScreen;
     }
 }

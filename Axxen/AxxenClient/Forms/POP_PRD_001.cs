@@ -20,7 +20,6 @@ namespace AxxenClient.Forms
         {
             // 화면 set
             SetButtonForms();
-            panBoxing.Location = panMolding.Location = panLoad.Location; //panLoad.Location => molding, Boxing
             // 공정별 화면
             switch (worktype)
             {
@@ -39,6 +38,7 @@ namespace AxxenClient.Forms
                 default:
                     break;
             }
+            panBoxing.Location  = panLoad.Location = panMolding.Location; //panLoad.Location => molding, Boxing
         }
         private void WorkOrderForm_Load(object sender, EventArgs e)
         {
