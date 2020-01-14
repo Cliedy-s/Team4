@@ -163,7 +163,7 @@
             // 
             this.aTextBox_Searchable1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.aTextBox_Searchable1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aTextBox_Searchable1.LabelText = "품목";
+            this.aTextBox_Searchable1.LabelText = "팔레트 번호";
             this.aTextBox_Searchable1.Location = new System.Drawing.Point(92, 95);
             this.aTextBox_Searchable1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.aTextBox_Searchable1.Name = "aTextBox_Searchable1";
