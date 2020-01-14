@@ -74,9 +74,6 @@ namespace Axxen
         /// <param name="e"></param>
         private void BtnMenu_Click(object sender, EventArgs e)
         {
-
-
-
             tvMenu.Visible = true;
             // 누르는 버튼
             Button btn = (Button)sender;

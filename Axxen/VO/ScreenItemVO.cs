@@ -88,7 +88,11 @@ namespace VO
         ///// <summary>
         ///// 사용여부
         ///// </summary>
-        //public string Use_YN { get; set; }
+        public string Use_YN { get; set; }
+        /// <summary>
+        /// 정렬순서
+        /// </summary>
+        public int Sort_index { get; set; }
         /// <summary>
         /// 최초입력일자
         /// </summary>
