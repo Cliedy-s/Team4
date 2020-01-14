@@ -110,7 +110,7 @@
             // 
             // aPanel1
             // 
-            this.aPanel1.BackColor = System.Drawing.Color.PowderBlue;
+            this.aPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.aPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.aPanel1.Controls.Add(this.aLabel5);
             this.aPanel1.Controls.Add(this.aLabel2);
@@ -123,7 +123,7 @@
             // 
             // aPanel2
             // 
-            this.aPanel2.BackColor = System.Drawing.Color.Linen;
+            this.aPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.aPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.aPanel2.Controls.Add(this.aLabel1);
             this.aPanel2.Dock = System.Windows.Forms.DockStyle.Left;
@@ -144,7 +144,7 @@
             // 
             // aPanel3
             // 
-            this.aPanel3.BackColor = System.Drawing.Color.Gainsboro;
+            this.aPanel3.BackColor = System.Drawing.Color.WhiteSmoke;
             this.aPanel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.aPanel3.Controls.Add(this.btnScreenSearch);
             this.aPanel3.Controls.Add(this.txtSearch);
@@ -172,7 +172,7 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.BackColor = System.Drawing.Color.White;
+            this.txtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSearch.errorp = null;
             this.txtSearch.Location = new System.Drawing.Point(148, 6);
@@ -270,7 +270,7 @@
             // 
             // aPanel6
             // 
-            this.aPanel6.BackColor = System.Drawing.Color.Gainsboro;
+            this.aPanel6.BackColor = System.Drawing.Color.WhiteSmoke;
             this.aPanel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.aPanel6.Controls.Add(this.aLabel6);
             this.aPanel6.Controls.Add(this.aLabel4);
@@ -319,7 +319,7 @@
             // 
             // lblGroup
             // 
-            this.lblGroup.BackColor = System.Drawing.Color.White;
+            this.lblGroup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.lblGroup.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblGroup.errorp = null;
             this.lblGroup.Location = new System.Drawing.Point(310, 6);
@@ -339,7 +339,7 @@
             // 
             // aPanel7
             // 
-            this.aPanel7.BackColor = System.Drawing.Color.Linen;
+            this.aPanel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.aPanel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.aPanel7.Controls.Add(this.aLabel3);
             this.aPanel7.Dock = System.Windows.Forms.DockStyle.Left;
@@ -468,6 +468,7 @@
             this.dgvUseScreen.RowTemplate.Height = 23;
             this.dgvUseScreen.Size = new System.Drawing.Size(812, 590);
             this.dgvUseScreen.TabIndex = 41;
+            this.dgvUseScreen.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvUseScreen_CellMouseDoubleClick);
             // 
             // MSS_CON_002_1
             // 
