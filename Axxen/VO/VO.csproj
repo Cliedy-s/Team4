@@ -49,6 +49,7 @@
     <Compile Include="UserGroupVO.cs" />
     <Compile Include="UserInfoVO.cs" />
     <Compile Include="WorkOrder_J_WC_ItmeVO.cs" />
+    <Compile Include="WorkOrder_J_WC_Time_DayVO.cs" />
     <Compile Include="Wo_Req_ItemVO.cs" />
     <Compile Include="Wo_Req_WO_WC_ItemVO.cs" />
     <Compile Include="WO__WC_Production_ItemVO.cs" />
