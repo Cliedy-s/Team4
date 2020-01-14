@@ -249,7 +249,13 @@ namespace Axxen
 
         private void BtnRemove_Click(object sender, EventArgs e)
         {
+            foreach (DataGridViewRow row in dgvUseScreen.Rows)
+            {
+                if(Convert.ToBoolean(row.Cells[0].Value) == true)
+                {
 
+                }
+            }
         }
 
         private void BtnScreenSearch_Click(object sender, EventArgs e)
