@@ -30,7 +30,6 @@
         {
             this.aButton1 = new Axxen.CustomControls.AButton();
             this.aTextBox_Searchable1 = new Axxen.CustomControls.ATextBox_Searchable();
-            this.aButton2 = new Axxen.CustomControls.AButton();
             this.aDataGridView1 = new Axxen.CustomControls.ADataGridView();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
@@ -41,63 +40,61 @@
             // 
             this.aLabel_Header1.Text = "건조대차 비우기";
             // 
+            // aPanel1
+            // 
+            this.aPanel1.Location = new System.Drawing.Point(0, 791);
+            // 
             // aButton1
             // 
+            this.aButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.aButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.aButton1.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aButton1.Location = new System.Drawing.Point(960, 346);
+            this.aButton1.Location = new System.Drawing.Point(1234, 236);
+            this.aButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.aButton1.Name = "aButton1";
-            this.aButton1.Size = new System.Drawing.Size(238, 165);
+            this.aButton1.Size = new System.Drawing.Size(306, 508);
             this.aButton1.TabIndex = 37;
-            this.aButton1.Text = "요출";
+            this.aButton1.Text = "대차 비우기";
             this.aButton1.UseVisualStyleBackColor = false;
             // 
             // aTextBox_Searchable1
             // 
             this.aTextBox_Searchable1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aTextBox_Searchable1.LabelText = "대차 검색";
-            this.aTextBox_Searchable1.Location = new System.Drawing.Point(12, 106);
-            this.aTextBox_Searchable1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.aTextBox_Searchable1.Location = new System.Drawing.Point(15, 141);
+            this.aTextBox_Searchable1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.aTextBox_Searchable1.Name = "aTextBox_Searchable1";
-            this.aTextBox_Searchable1.Size = new System.Drawing.Size(365, 30);
+            this.aTextBox_Searchable1.Size = new System.Drawing.Size(469, 40);
             this.aTextBox_Searchable1.TabIndex = 36;
             this.aTextBox_Searchable1.TextBoxText = "";
             // 
-            // aButton2
-            // 
-            this.aButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.aButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton2.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aButton2.Location = new System.Drawing.Point(960, 175);
-            this.aButton2.Name = "aButton2";
-            this.aButton2.Size = new System.Drawing.Size(238, 165);
-            this.aButton2.TabIndex = 35;
-            this.aButton2.Text = "요입";
-            this.aButton2.UseVisualStyleBackColor = false;
-            // 
             // aDataGridView1
             // 
+            this.aDataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.aDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.aDataGridView1.Location = new System.Drawing.Point(12, 143);
+            this.aDataGridView1.Location = new System.Drawing.Point(15, 191);
+            this.aDataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.aDataGridView1.Name = "aDataGridView1";
+            this.aDataGridView1.RowHeadersWidth = 51;
             this.aDataGridView1.RowTemplate.Height = 23;
-            this.aDataGridView1.Size = new System.Drawing.Size(942, 444);
+            this.aDataGridView1.Size = new System.Drawing.Size(1211, 592);
             this.aDataGridView1.TabIndex = 34;
             // 
             // POP_PRD_012
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.ClientSize = new System.Drawing.Size(1210, 629);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.ClientSize = new System.Drawing.Size(1556, 839);
             this.Controls.Add(this.aButton1);
             this.Controls.Add(this.aTextBox_Searchable1);
-            this.Controls.Add(this.aButton2);
             this.Controls.Add(this.aDataGridView1);
+            this.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.Name = "POP_PRD_012";
             this.Controls.SetChildIndex(this.aPanel2, 0);
             this.Controls.SetChildIndex(this.aPanel1, 0);
             this.Controls.SetChildIndex(this.aDataGridView1, 0);
-            this.Controls.SetChildIndex(this.aButton2, 0);
             this.Controls.SetChildIndex(this.aTextBox_Searchable1, 0);
             this.Controls.SetChildIndex(this.aButton1, 0);
             this.aPanel1.ResumeLayout(false);
@@ -113,7 +110,6 @@
 
         private Axxen.CustomControls.AButton aButton1;
         private Axxen.CustomControls.ATextBox_Searchable aTextBox_Searchable1;
-        private Axxen.CustomControls.AButton aButton2;
         private Axxen.CustomControls.ADataGridView aDataGridView1;
     }
 }

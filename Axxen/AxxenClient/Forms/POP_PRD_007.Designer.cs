@@ -50,10 +50,16 @@
             // 
             // aLabel_Header1
             // 
-            this.aLabel_Header1.Text = "성형 생상 대차 선택";
+            this.aLabel_Header1.Text = "성형 생산 대차 선택";
+            // 
+            // aPanel1
+            // 
+            this.aPanel1.Location = new System.Drawing.Point(0, 593);
+            this.aPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             // 
             // aTextBox_Labeled1
             // 
+            this.aTextBox_Labeled1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.aTextBox_Labeled1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aTextBox_Labeled1.FontSize = 9F;
             this.aTextBox_Labeled1.LabelText = "옮겨타기 수량";
@@ -66,6 +72,7 @@
             // 
             // aButton2
             // 
+            this.aButton2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.aButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.aButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.aButton2.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -78,8 +85,9 @@
             // 
             // aTextBox_Searchable2
             // 
+            this.aTextBox_Searchable2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.aTextBox_Searchable2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-             this.aTextBox_Searchable2.LabelText = "대차검색";
+            this.aTextBox_Searchable2.LabelText = "대차검색";
             this.aTextBox_Searchable2.Location = new System.Drawing.Point(734, 210);
             this.aTextBox_Searchable2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.aTextBox_Searchable2.Name = "aTextBox_Searchable2";
@@ -90,7 +98,7 @@
             // aTextBox_Searchable1
             // 
             this.aTextBox_Searchable1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-           this.aTextBox_Searchable1.LabelText = "대차검색";
+            this.aTextBox_Searchable1.LabelText = "대차검색";
             this.aTextBox_Searchable1.Location = new System.Drawing.Point(9, 212);
             this.aTextBox_Searchable1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.aTextBox_Searchable1.Name = "aTextBox_Searchable1";
@@ -100,15 +108,20 @@
             // 
             // aDataGridView2
             // 
+            this.aDataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.aDataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.aDataGridView2.Location = new System.Drawing.Point(734, 247);
             this.aDataGridView2.Name = "aDataGridView2";
+            this.aDataGridView2.RowHeadersWidth = 51;
             this.aDataGridView2.RowTemplate.Height = 23;
             this.aDataGridView2.Size = new System.Drawing.Size(461, 338);
             this.aDataGridView2.TabIndex = 19;
             // 
             // aPanel5
             // 
+            this.aPanel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.aPanel5.Controls.Add(this.aTextBox_LabeledBigTextBox10);
             this.aPanel5.Controls.Add(this.aTextBox_LabeledBigTextBox11);
             this.aPanel5.Controls.Add(this.aTextBox_LabeledBigTextBox8);
@@ -171,7 +184,7 @@
             this.aTextBox_LabeledBigTextBox7.Location = new System.Drawing.Point(16, 54);
             this.aTextBox_LabeledBigTextBox7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.aTextBox_LabeledBigTextBox7.Name = "aTextBox_LabeledBigTextBox7";
-            this.aTextBox_LabeledBigTextBox7.Size = new System.Drawing.Size(365, 30);
+            this.aTextBox_LabeledBigTextBox7.Size = new System.Drawing.Size(370, 30);
             this.aTextBox_LabeledBigTextBox7.TabIndex = 1;
             this.aTextBox_LabeledBigTextBox7.TextBoxText = "";
             // 
@@ -188,9 +201,13 @@
             // 
             // aDataGridView1
             // 
+            this.aDataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.aDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.aDataGridView1.Location = new System.Drawing.Point(7, 247);
             this.aDataGridView1.Name = "aDataGridView1";
+            this.aDataGridView1.RowHeadersWidth = 51;
             this.aDataGridView1.RowTemplate.Height = 23;
             this.aDataGridView1.Size = new System.Drawing.Size(477, 338);
             this.aDataGridView1.TabIndex = 17;
@@ -206,6 +223,7 @@
             this.Controls.Add(this.aDataGridView2);
             this.Controls.Add(this.aPanel5);
             this.Controls.Add(this.aDataGridView1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "POP_PRD_007";
             this.Controls.SetChildIndex(this.aPanel2, 0);
             this.Controls.SetChildIndex(this.aPanel1, 0);

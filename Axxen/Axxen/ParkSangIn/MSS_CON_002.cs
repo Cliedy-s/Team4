@@ -15,7 +15,7 @@ namespace Axxen
     {
 
         List<UserGroup_MasterVO> grouplist;
-        List<ScreenItem_MasterVO> Screenlist;
+        List<ScreenItem_AuthorityVO> Screenlist;
         UserGroupService userservice = new UserGroupService();
         ScreenItemService screenservice = new ScreenItemService();
         public MSS_CON_002()
@@ -27,7 +27,7 @@ namespace Axxen
         private void MSS_CON_002_Load(object sender, EventArgs e)
         {
             ((MainForm)this.MdiParent).InsertFormEvent += new System.EventHandler(this.InsertFormShow);//입력이벤트 등록
-
+            ((MainForm)this.MdiParent).RefreshFormEvent += new EventHandler(this.RefreshFormShow);
             ///gridview
             DatagridviewDesigns.SetDesign(dgvGroup);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "사용자그룹코드", "UserGroup_Code", true, 200, default, true);
@@ -38,6 +38,8 @@ namespace Axxen
 
             DatagridviewDesigns.SetDesign(dgvScreen);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvScreen, "화면코드", "Screen_Code", true, 200, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvScreen, "화면명", "Type", true, 200, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvScreen, "설정자", "Ins_Emp", true, 200, default, true);
 
 
             GetAllUserGroup(); //유저그룹전체
@@ -53,16 +55,42 @@ namespace Axxen
         /// <param name="e"></param>
         public void InsertFormShow(object sender, EventArgs e)
         {
-            if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
-            {
-                MSS_CON_002_1 frm = new MSS_CON_002_1();
-                if (frm.ShowDialog() == DialogResult.OK)
-                {
 
+            try
+            {
+                if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
+                {
+                    MSS_CON_002_1 frm = new MSS_CON_002_1();
+
+                    frm.ShowDialog();
                 }
             }
+            catch(Exception err)
+            {
+                MessageBox.Show(err.Message);
             }
-            
+          
+        }
+        /// <summary>
+        /// 새로고침 이벤트 메서드
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void RefreshFormShow(object sender,EventArgs e)
+        {
+            try
+            {
+                if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
+                {
+                    GetAllUserGroup();
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
+        }
+
         /// <summary>
         /// 그리드뷰 버튼, 콤보박스세팅
         /// </summary>
@@ -117,15 +145,17 @@ namespace Axxen
         private void GetGroupScreenItem(string groupCode)
         {
 
-            Screenlist = new List<ScreenItem_MasterVO>();
+            Screenlist = new List<ScreenItem_AuthorityVO>();
             Screenlist = screenservice.GetUseGroupScreenItem(groupCode);
-            dgvScreen.DataSource = grouplist;
+            dgvScreen.DataSource = null;
+            dgvScreen.DataSource = Screenlist;
         }
         #endregion
 
         private void MSS_CON_002_FormClosed(object sender, FormClosedEventArgs e)
         {
             ((MainForm)this.MdiParent).InsertFormEvent -= new System.EventHandler(this.InsertFormShow);//입력이벤트 등록
+            ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow);
         }
     }
 }

@@ -49,36 +49,44 @@
             // 
             this.aLabel_Header1.Text = "적재 작업지시 생성";
             // 
+            // aPanel1
+            // 
+            this.aPanel1.Location = new System.Drawing.Point(0, 791);
+            // 
             // aPanel5
             // 
             this.aPanel5.Controls.Add(this.aTextBox_Searchable4);
-            this.aPanel5.Location = new System.Drawing.Point(12, 105);
+            this.aPanel5.Location = new System.Drawing.Point(15, 140);
+            this.aPanel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.aPanel5.Name = "aPanel5";
-            this.aPanel5.Size = new System.Drawing.Size(636, 47);
+            this.aPanel5.Size = new System.Drawing.Size(818, 63);
             this.aPanel5.TabIndex = 11;
             // 
             // aTextBox_Searchable4
             // 
             this.aTextBox_Searchable4.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aTextBox_Searchable4.LabelText = "대차 검색";
-            this.aTextBox_Searchable4.Location = new System.Drawing.Point(136, 9);
-            this.aTextBox_Searchable4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.aTextBox_Searchable4.Location = new System.Drawing.Point(175, 12);
+            this.aTextBox_Searchable4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.aTextBox_Searchable4.Name = "aTextBox_Searchable4";
-            this.aTextBox_Searchable4.Size = new System.Drawing.Size(365, 30);
+            this.aTextBox_Searchable4.Size = new System.Drawing.Size(469, 40);
             this.aTextBox_Searchable4.TabIndex = 0;
             this.aTextBox_Searchable4.TextBoxText = "";
             // 
             // aPanel4
             // 
+            this.aPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.aPanel4.Controls.Add(this.aButton1);
             this.aPanel4.Controls.Add(this.aTextBox_LabeledBigTextBox2);
             this.aPanel4.Controls.Add(this.aTextBox_Searchable3);
             this.aPanel4.Controls.Add(this.aTextBox_Searchable2);
             this.aPanel4.Controls.Add(this.aTextBox_Searchable1);
             this.aPanel4.Controls.Add(this.aTextBox_LabeledBigTextBox1);
-            this.aPanel4.Location = new System.Drawing.Point(654, 105);
+            this.aPanel4.Location = new System.Drawing.Point(841, 140);
+            this.aPanel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.aPanel4.Name = "aPanel4";
-            this.aPanel4.Size = new System.Drawing.Size(549, 482);
+            this.aPanel4.Size = new System.Drawing.Size(706, 643);
             this.aPanel4.TabIndex = 10;
             // 
             // aButton1
@@ -86,9 +94,10 @@
             this.aButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.aButton1.Font = new System.Drawing.Font("맑은 고딕", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aButton1.Location = new System.Drawing.Point(92, 300);
+            this.aButton1.Location = new System.Drawing.Point(118, 400);
+            this.aButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.aButton1.Name = "aButton1";
-            this.aButton1.Size = new System.Drawing.Size(365, 105);
+            this.aButton1.Size = new System.Drawing.Size(469, 140);
             this.aButton1.TabIndex = 22;
             this.aButton1.Text = "작업지시 생성";
             this.aButton1.UseVisualStyleBackColor = false;
@@ -97,10 +106,10 @@
             // 
             this.aTextBox_LabeledBigTextBox2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aTextBox_LabeledBigTextBox2.LabelText = "계획수량";
-            this.aTextBox_LabeledBigTextBox2.Location = new System.Drawing.Point(92, 229);
-            this.aTextBox_LabeledBigTextBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.aTextBox_LabeledBigTextBox2.Location = new System.Drawing.Point(118, 305);
+            this.aTextBox_LabeledBigTextBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.aTextBox_LabeledBigTextBox2.Name = "aTextBox_LabeledBigTextBox2";
-            this.aTextBox_LabeledBigTextBox2.Size = new System.Drawing.Size(365, 30);
+            this.aTextBox_LabeledBigTextBox2.Size = new System.Drawing.Size(469, 40);
             this.aTextBox_LabeledBigTextBox2.TabIndex = 21;
             this.aTextBox_LabeledBigTextBox2.TextBoxText = "";
             // 
@@ -108,10 +117,10 @@
             // 
             this.aTextBox_Searchable3.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aTextBox_Searchable3.LabelText = "작업장";
-            this.aTextBox_Searchable3.Location = new System.Drawing.Point(92, 153);
-            this.aTextBox_Searchable3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.aTextBox_Searchable3.Location = new System.Drawing.Point(118, 204);
+            this.aTextBox_Searchable3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.aTextBox_Searchable3.Name = "aTextBox_Searchable3";
-            this.aTextBox_Searchable3.Size = new System.Drawing.Size(365, 30);
+            this.aTextBox_Searchable3.Size = new System.Drawing.Size(469, 40);
             this.aTextBox_Searchable3.TabIndex = 20;
             this.aTextBox_Searchable3.TextBoxText = "";
             // 
@@ -119,10 +128,10 @@
             // 
             this.aTextBox_Searchable2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aTextBox_Searchable2.LabelText = "공정";
-            this.aTextBox_Searchable2.Location = new System.Drawing.Point(92, 115);
-            this.aTextBox_Searchable2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.aTextBox_Searchable2.Location = new System.Drawing.Point(118, 153);
+            this.aTextBox_Searchable2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.aTextBox_Searchable2.Name = "aTextBox_Searchable2";
-            this.aTextBox_Searchable2.Size = new System.Drawing.Size(365, 30);
+            this.aTextBox_Searchable2.Size = new System.Drawing.Size(469, 40);
             this.aTextBox_Searchable2.TabIndex = 19;
             this.aTextBox_Searchable2.TextBoxText = "";
             // 
@@ -130,10 +139,10 @@
             // 
             this.aTextBox_Searchable1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aTextBox_Searchable1.LabelText = "품목";
-            this.aTextBox_Searchable1.Location = new System.Drawing.Point(92, 77);
-            this.aTextBox_Searchable1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.aTextBox_Searchable1.Location = new System.Drawing.Point(118, 103);
+            this.aTextBox_Searchable1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.aTextBox_Searchable1.Name = "aTextBox_Searchable1";
-            this.aTextBox_Searchable1.Size = new System.Drawing.Size(365, 30);
+            this.aTextBox_Searchable1.Size = new System.Drawing.Size(469, 40);
             this.aTextBox_Searchable1.TabIndex = 18;
             this.aTextBox_Searchable1.TextBoxText = "";
             // 
@@ -141,29 +150,35 @@
             // 
             this.aTextBox_LabeledBigTextBox1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aTextBox_LabeledBigTextBox1.LabelText = "작업지시일";
-            this.aTextBox_LabeledBigTextBox1.Location = new System.Drawing.Point(92, 191);
-            this.aTextBox_LabeledBigTextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.aTextBox_LabeledBigTextBox1.Location = new System.Drawing.Point(118, 255);
+            this.aTextBox_LabeledBigTextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.aTextBox_LabeledBigTextBox1.Name = "aTextBox_LabeledBigTextBox1";
-            this.aTextBox_LabeledBigTextBox1.Size = new System.Drawing.Size(365, 30);
+            this.aTextBox_LabeledBigTextBox1.Size = new System.Drawing.Size(469, 40);
             this.aTextBox_LabeledBigTextBox1.TabIndex = 17;
             this.aTextBox_LabeledBigTextBox1.TextBoxText = "";
             // 
             // aDataGridView1
             // 
+            this.aDataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.aDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.aDataGridView1.Location = new System.Drawing.Point(12, 158);
+            this.aDataGridView1.Location = new System.Drawing.Point(15, 211);
+            this.aDataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.aDataGridView1.Name = "aDataGridView1";
+            this.aDataGridView1.RowHeadersWidth = 51;
             this.aDataGridView1.RowTemplate.Height = 23;
-            this.aDataGridView1.Size = new System.Drawing.Size(636, 429);
+            this.aDataGridView1.Size = new System.Drawing.Size(818, 572);
             this.aDataGridView1.TabIndex = 9;
             // 
             // POP_PRD_009
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.ClientSize = new System.Drawing.Size(1210, 629);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.ClientSize = new System.Drawing.Size(1556, 839);
             this.Controls.Add(this.aPanel5);
             this.Controls.Add(this.aPanel4);
             this.Controls.Add(this.aDataGridView1);
+            this.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.Name = "POP_PRD_009";
             this.Controls.SetChildIndex(this.aDataGridView1, 0);
             this.Controls.SetChildIndex(this.aPanel4, 0);

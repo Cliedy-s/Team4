@@ -36,12 +36,14 @@
             this.aPanel2 = new Axxen.CustomControls.APanel();
             this.aLabel1 = new Axxen.CustomControls.ALabel();
             this.aPanel3 = new Axxen.CustomControls.APanel();
-            this.aButton1 = new Axxen.CustomControls.AButton();
-            this.aTextBox1 = new Axxen.CustomControls.ATextBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.btnScreenSearch = new Axxen.CustomControls.AButton();
+            this.txtSearch = new Axxen.CustomControls.ATextBox();
+            this.rdoScreenCode = new System.Windows.Forms.RadioButton();
+            this.rdoScreenName = new System.Windows.Forms.RadioButton();
             this.dgvNotUseScreen = new Axxen.CustomControls.ADataGridView();
             this.aPanel4 = new Axxen.CustomControls.APanel();
+            this.aButton3 = new Axxen.CustomControls.AButton();
+            this.btnSave = new Axxen.CustomControls.AButton();
             this.aPanel5 = new Axxen.CustomControls.APanel();
             this.aPanel6 = new Axxen.CustomControls.APanel();
             this.aLabel6 = new Axxen.CustomControls.ALabel();
@@ -52,7 +54,7 @@
             this.aPanel7 = new Axxen.CustomControls.APanel();
             this.aLabel3 = new Axxen.CustomControls.ALabel();
             this.btnInsert = new Axxen.CustomControls.AButton();
-            this.aButton6 = new Axxen.CustomControls.AButton();
+            this.btnRemove = new Axxen.CustomControls.AButton();
             this.aLabel7 = new Axxen.CustomControls.ALabel();
             this.aLabel8 = new Axxen.CustomControls.ALabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -61,8 +63,6 @@
             this.aLabel10 = new Axxen.CustomControls.ALabel();
             this.aPanel8 = new Axxen.CustomControls.APanel();
             this.dgvUseScreen = new Axxen.CustomControls.ADataGridView();
-            this.aButton2 = new Axxen.CustomControls.AButton();
-            this.aButton3 = new Axxen.CustomControls.AButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
@@ -146,63 +146,67 @@
             // 
             this.aPanel3.BackColor = System.Drawing.Color.Gainsboro;
             this.aPanel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.aPanel3.Controls.Add(this.aButton1);
-            this.aPanel3.Controls.Add(this.aTextBox1);
-            this.aPanel3.Controls.Add(this.radioButton2);
-            this.aPanel3.Controls.Add(this.radioButton1);
+            this.aPanel3.Controls.Add(this.btnScreenSearch);
+            this.aPanel3.Controls.Add(this.txtSearch);
+            this.aPanel3.Controls.Add(this.rdoScreenCode);
+            this.aPanel3.Controls.Add(this.rdoScreenName);
             this.aPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.aPanel3.Location = new System.Drawing.Point(128, 0);
             this.aPanel3.Name = "aPanel3";
             this.aPanel3.Size = new System.Drawing.Size(1169, 40);
             this.aPanel3.TabIndex = 20;
             // 
-            // aButton1
+            // btnScreenSearch
             // 
-            this.aButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.aButton1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aButton1.Location = new System.Drawing.Point(479, 6);
-            this.aButton1.Name = "aButton1";
-            this.aButton1.Size = new System.Drawing.Size(75, 23);
-            this.aButton1.TabIndex = 3;
-            this.aButton1.Text = "조회";
-            this.aButton1.UseVisualStyleBackColor = false;
+            this.btnScreenSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.btnScreenSearch.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnScreenSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnScreenSearch.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnScreenSearch.Location = new System.Drawing.Point(479, 6);
+            this.btnScreenSearch.Name = "btnScreenSearch";
+            this.btnScreenSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnScreenSearch.TabIndex = 3;
+            this.btnScreenSearch.Text = "조회";
+            this.btnScreenSearch.UseVisualStyleBackColor = false;
+            this.btnScreenSearch.Click += new System.EventHandler(this.BtnScreenSearch_Click);
             // 
-            // aTextBox1
+            // txtSearch
             // 
-            this.aTextBox1.BackColor = System.Drawing.Color.White;
-            this.aTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.aTextBox1.errorp = null;
-            this.aTextBox1.Location = new System.Drawing.Point(148, 6);
-            this.aTextBox1.Name = "aTextBox1";
-            this.aTextBox1.Size = new System.Drawing.Size(310, 23);
-            this.aTextBox1.TabIndex = 2;
-            this.aTextBox1.txtType = Axxen.CustomControls.type.Normal;
+            this.txtSearch.BackColor = System.Drawing.Color.White;
+            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSearch.errorp = null;
+            this.txtSearch.Location = new System.Drawing.Point(148, 6);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(310, 23);
+            this.txtSearch.TabIndex = 2;
+            this.txtSearch.txtType = Axxen.CustomControls.type.Normal;
             // 
-            // radioButton2
+            // rdoScreenCode
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.radioButton2.Location = new System.Drawing.Point(73, 7);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(78, 21);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "화면코드";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rdoScreenCode.AutoSize = true;
+            this.rdoScreenCode.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.rdoScreenCode.Location = new System.Drawing.Point(73, 7);
+            this.rdoScreenCode.Name = "rdoScreenCode";
+            this.rdoScreenCode.Size = new System.Drawing.Size(78, 21);
+            this.rdoScreenCode.TabIndex = 1;
+            this.rdoScreenCode.TabStop = true;
+            this.rdoScreenCode.Tag = "2";
+            this.rdoScreenCode.Text = "화면코드";
+            this.rdoScreenCode.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rdoScreenName
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.radioButton1.Location = new System.Drawing.Point(6, 7);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(65, 21);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "화면명";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rdoScreenName.AutoSize = true;
+            this.rdoScreenName.Checked = true;
+            this.rdoScreenName.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.rdoScreenName.Location = new System.Drawing.Point(6, 7);
+            this.rdoScreenName.Name = "rdoScreenName";
+            this.rdoScreenName.Size = new System.Drawing.Size(65, 21);
+            this.rdoScreenName.TabIndex = 0;
+            this.rdoScreenName.TabStop = true;
+            this.rdoScreenName.Tag = "1";
+            this.rdoScreenName.Text = "화면명";
+            this.rdoScreenName.UseVisualStyleBackColor = true;
             // 
             // dgvNotUseScreen
             // 
@@ -215,18 +219,44 @@
             this.dgvNotUseScreen.RowTemplate.Height = 23;
             this.dgvNotUseScreen.Size = new System.Drawing.Size(419, 590);
             this.dgvNotUseScreen.TabIndex = 21;
+            this.dgvNotUseScreen.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvNotUseScreen_CellMouseDoubleClick);
             // 
             // aPanel4
             // 
             this.aPanel4.BackColor = System.Drawing.Color.PowderBlue;
             this.aPanel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.aPanel4.Controls.Add(this.aButton3);
-            this.aPanel4.Controls.Add(this.aButton2);
+            this.aPanel4.Controls.Add(this.btnSave);
             this.aPanel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.aPanel4.Location = new System.Drawing.Point(0, 739);
             this.aPanel4.Name = "aPanel4";
             this.aPanel4.Size = new System.Drawing.Size(1297, 41);
             this.aPanel4.TabIndex = 22;
+            // 
+            // aButton3
+            // 
+            this.aButton3.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.aButton3.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.aButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.aButton3.Location = new System.Drawing.Point(1209, 8);
+            this.aButton3.Name = "aButton3";
+            this.aButton3.Size = new System.Drawing.Size(75, 23);
+            this.aButton3.TabIndex = 1;
+            this.aButton3.Text = "취소";
+            this.aButton3.UseVisualStyleBackColor = false;
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnSave.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Location = new System.Drawing.Point(1119, 8);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 0;
+            this.btnSave.Text = "저장";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // aPanel5
             // 
@@ -342,18 +372,19 @@
             this.btnInsert.UseVisualStyleBackColor = false;
             this.btnInsert.Click += new System.EventHandler(this.BtnInsert_Click);
             // 
-            // aButton6
+            // btnRemove
             // 
-            this.aButton6.BackColor = System.Drawing.Color.White;
-            this.aButton6.FlatAppearance.BorderSize = 0;
-            this.aButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton6.Image = ((System.Drawing.Image)(resources.GetObject("aButton6.Image")));
-            this.aButton6.Location = new System.Drawing.Point(425, 400);
-            this.aButton6.Name = "aButton6";
-            this.aButton6.Size = new System.Drawing.Size(54, 51);
-            this.aButton6.TabIndex = 30;
-            this.aButton6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.aButton6.UseVisualStyleBackColor = false;
+            this.btnRemove.BackColor = System.Drawing.Color.White;
+            this.btnRemove.FlatAppearance.BorderSize = 0;
+            this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemove.Image = ((System.Drawing.Image)(resources.GetObject("btnRemove.Image")));
+            this.btnRemove.Location = new System.Drawing.Point(425, 400);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(54, 51);
+            this.btnRemove.TabIndex = 30;
+            this.btnRemove.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRemove.UseVisualStyleBackColor = false;
+            this.btnRemove.Click += new System.EventHandler(this.BtnRemove_Click);
             // 
             // aLabel7
             // 
@@ -427,38 +458,16 @@
             // 
             // dgvUseScreen
             // 
-            this.dgvUseScreen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.dgvUseScreen.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvUseScreen.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvUseScreen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUseScreen.Location = new System.Drawing.Point(485, 147);
             this.dgvUseScreen.Name = "dgvUseScreen";
             this.dgvUseScreen.RowTemplate.Height = 23;
             this.dgvUseScreen.Size = new System.Drawing.Size(812, 590);
-            this.dgvUseScreen.TabIndex = 38;
-            this.dgvUseScreen.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvUseScreen_CellClick);
-            // 
-            // aButton2
-            // 
-            this.aButton2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.aButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton2.Location = new System.Drawing.Point(1119, 8);
-            this.aButton2.Name = "aButton2";
-            this.aButton2.Size = new System.Drawing.Size(75, 23);
-            this.aButton2.TabIndex = 0;
-            this.aButton2.Text = "저장";
-            this.aButton2.UseVisualStyleBackColor = false;
-            // 
-            // aButton3
-            // 
-            this.aButton3.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.aButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton3.Location = new System.Drawing.Point(1209, 8);
-            this.aButton3.Name = "aButton3";
-            this.aButton3.Size = new System.Drawing.Size(75, 23);
-            this.aButton3.TabIndex = 1;
-            this.aButton3.Text = "취소";
-            this.aButton3.UseVisualStyleBackColor = false;
+            this.dgvUseScreen.TabIndex = 41;
             // 
             // MSS_CON_002_1
             // 
@@ -472,7 +481,7 @@
             this.Controls.Add(this.aLabel9);
             this.Controls.Add(this.aLabel8);
             this.Controls.Add(this.aLabel7);
-            this.Controls.Add(this.aButton6);
+            this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnInsert);
             this.Controls.Add(this.aPanel5);
             this.Controls.Add(this.aPanel4);
@@ -514,10 +523,10 @@
         private CustomControls.APanel aPanel2;
         private CustomControls.ALabel aLabel1;
         private CustomControls.APanel aPanel3;
-        private CustomControls.AButton aButton1;
-        private CustomControls.ATextBox aTextBox1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private CustomControls.AButton btnScreenSearch;
+        private CustomControls.ATextBox txtSearch;
+        private System.Windows.Forms.RadioButton rdoScreenCode;
+        private System.Windows.Forms.RadioButton rdoScreenName;
         private CustomControls.ADataGridView dgvNotUseScreen;
         private CustomControls.APanel aPanel4;
         private CustomControls.APanel aPanel5;
@@ -530,7 +539,7 @@
         private CustomControls.ALabel aLabel4;
         private CustomControls.AButton btngroub;
         private CustomControls.AButton btnInsert;
-        private CustomControls.AButton aButton6;
+        private CustomControls.AButton btnRemove;
         private CustomControls.ALabel aLabel7;
         private CustomControls.ALabel aLabel8;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -538,8 +547,8 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private CustomControls.ALabel aLabel10;
         private CustomControls.APanel aPanel8;
-        private CustomControls.ADataGridView dgvUseScreen;
         private CustomControls.AButton aButton3;
-        private CustomControls.AButton aButton2;
+        private CustomControls.AButton btnSave;
+        private CustomControls.ADataGridView dgvUseScreen;
     }
 }

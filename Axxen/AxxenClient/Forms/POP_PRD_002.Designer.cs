@@ -1,6 +1,6 @@
 ﻿namespace AxxenClient.Forms
 {
-    partial class WorkOrderCreateForm
+    partial class POP_PRD_002
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -45,10 +45,19 @@
             // aLabel_Header1
             // 
             this.aLabel_Header1.Location = new System.Drawing.Point(184, 29);
+            this.aLabel_Header1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.aLabel_Header1.Text = "작업지시 생성";
+            // 
+            // aPanel1
+            // 
+            this.aPanel1.Location = new System.Drawing.Point(0, 593);
+            this.aPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             // 
             // aPanel4
             // 
+            this.aPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.aPanel4.Controls.Add(this.aButton1);
             this.aPanel4.Controls.Add(this.aTextBox_LabeledBigTextBox2);
             this.aPanel4.Controls.Add(this.aTextBox_Searchable3);
@@ -129,20 +138,25 @@
             // 
             // aDataGridView1
             // 
+            this.aDataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.aDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.aDataGridView1.Location = new System.Drawing.Point(7, 105);
             this.aDataGridView1.Name = "aDataGridView1";
+            this.aDataGridView1.RowHeadersWidth = 51;
             this.aDataGridView1.RowTemplate.Height = 23;
             this.aDataGridView1.Size = new System.Drawing.Size(636, 482);
             this.aDataGridView1.TabIndex = 6;
             // 
-            // WorkOrderCreateForm
+            // POP_PRD_002
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1210, 629);
             this.Controls.Add(this.aPanel4);
             this.Controls.Add(this.aDataGridView1);
-            this.Name = "WorkOrderCreateForm";
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Name = "POP_PRD_002";
             this.Controls.SetChildIndex(this.aPanel2, 0);
             this.Controls.SetChildIndex(this.aPanel1, 0);
             this.Controls.SetChildIndex(this.aDataGridView1, 0);

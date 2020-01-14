@@ -47,13 +47,15 @@
             this.aLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.aLabel1.Location = new System.Drawing.Point(25, 41);
             this.aLabel1.Name = "aLabel1";
-            this.aLabel1.Size = new System.Drawing.Size(48, 15);
+            this.aLabel1.Size = new System.Drawing.Size(125, 15);
             this.aLabel1.TabIndex = 0;
-            this.aLabel1.Text = "aLabel1";
+            this.aLabel1.Text = "2020-01-13 18:26:32";
             // 
             // aLabel_Header1
             // 
-            this.aLabel_Header1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.aLabel_Header1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.aLabel_Header1.BackColor = System.Drawing.Color.White;
             this.aLabel_Header1.Font = new System.Drawing.Font("나눔고딕", 25F, System.Drawing.FontStyle.Bold);
             this.aLabel_Header1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -71,7 +73,7 @@
             this.aPanel1.Controls.Add(this.btnConfig);
             this.aPanel1.Controls.Add(this.txtPronounce);
             this.aPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.aPanel1.Location = new System.Drawing.Point(0, 593);
+            this.aPanel1.Location = new System.Drawing.Point(0, 681);
             this.aPanel1.Name = "aPanel1";
             this.aPanel1.Size = new System.Drawing.Size(1210, 36);
             this.aPanel1.TabIndex = 2;
@@ -87,7 +89,7 @@
             this.btnNoActive.TabIndex = 4;
             this.btnNoActive.Text = "비가동 등록";
             this.btnNoActive.UseVisualStyleBackColor = false;
-            this.btnNoActive.Click += new System.EventHandler(this.aButton2_Click);
+            this.btnNoActive.Click += new System.EventHandler(this.btnNoActive_Click);
             // 
             // btnConfig
             // 
@@ -137,12 +139,13 @@
             // ClientBaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.ClientSize = new System.Drawing.Size(1210, 629);
+            this.ClientSize = new System.Drawing.Size(1210, 717);
             this.Controls.Add(this.aPanel1);
             this.Controls.Add(this.aPanel2);
             this.KeyPreview = true;
             this.Name = "ClientBaseForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
+            this.Load += new System.EventHandler(this.ClientBaseForm_Load);
             this.aPanel1.ResumeLayout(false);
             this.aPanel1.PerformLayout();
             this.aPanel2.ResumeLayout(false);
