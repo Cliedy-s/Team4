@@ -32,7 +32,6 @@
             this.aTextBox_FindNameByCode1 = new Axxen.CustomControls.ATextBox_FindNameByCode();
             this.btnWorkCancle = new Axxen.CustomControls.AButton();
             this.btnWoFinish = new Axxen.CustomControls.AButton();
-            this.btnNameChange = new Axxen.CustomControls.AButton();
             this.dtpWorkFinish = new Axxen.CustomControls.ADateTimePicker();
             this.aLabel2 = new Axxen.CustomControls.ALabel();
             this.dtpWorkStart = new Axxen.CustomControls.ADateTimePicker();
@@ -61,7 +60,6 @@
             this.aPanel2.Controls.Add(this.aTextBox_FindNameByCode1);
             this.aPanel2.Controls.Add(this.btnWorkCancle);
             this.aPanel2.Controls.Add(this.btnWoFinish);
-            this.aPanel2.Controls.Add(this.btnNameChange);
             this.aPanel2.Controls.Add(this.dtpWorkFinish);
             this.aPanel2.Controls.Add(this.aLabel2);
             this.aPanel2.Controls.Add(this.dtpWorkStart);
@@ -133,7 +131,7 @@
             this.btnWorkCancle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnWorkCancle.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnWorkCancle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnWorkCancle.Location = new System.Drawing.Point(970, 40);
+            this.btnWorkCancle.Location = new System.Drawing.Point(926, 41);
             this.btnWorkCancle.Name = "btnWorkCancle";
             this.btnWorkCancle.Size = new System.Drawing.Size(130, 23);
             this.btnWorkCancle.TabIndex = 16;
@@ -145,24 +143,12 @@
             this.btnWoFinish.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnWoFinish.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnWoFinish.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnWoFinish.Location = new System.Drawing.Point(970, 11);
+            this.btnWoFinish.Location = new System.Drawing.Point(926, 12);
             this.btnWoFinish.Name = "btnWoFinish";
             this.btnWoFinish.Size = new System.Drawing.Size(130, 23);
             this.btnWoFinish.TabIndex = 17;
             this.btnWoFinish.Text = "작업지시 마감";
             this.btnWoFinish.UseVisualStyleBackColor = false;
-            // 
-            // btnNameChange
-            // 
-            this.btnNameChange.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNameChange.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnNameChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNameChange.Location = new System.Drawing.Point(878, 28);
-            this.btnNameChange.Name = "btnNameChange";
-            this.btnNameChange.Size = new System.Drawing.Size(75, 23);
-            this.btnNameChange.TabIndex = 18;
-            this.btnNameChange.Text = "품명변경";
-            this.btnNameChange.UseVisualStyleBackColor = false;
             // 
             // dtpWorkFinish
             // 
@@ -335,7 +321,6 @@
         private CustomControls.ATextBox_FindNameByCode aTextBox_FindNameByCode1;
         private CustomControls.AButton btnWorkCancle;
         private CustomControls.AButton btnWoFinish;
-        private CustomControls.AButton btnNameChange;
         private CustomControls.ADateTimePicker dtpWorkFinish;
         private CustomControls.ALabel aLabel2;
         private CustomControls.ADateTimePicker dtpWorkStart;
