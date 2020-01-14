@@ -20,7 +20,7 @@ namespace Axxen.CustomControls
         {
             InitializeComponent();
         }
-        public delegate EventHandler SearchButtonClick(object sender, EventArgs args);
+        public delegate void SearchButtonClick(object sender, EventArgs args);
 
         private void btnSearch_Click_1(object sender, EventArgs e)
         {
