@@ -55,11 +55,11 @@
             // aPanel1
             // 
             this.aPanel1.Location = new System.Drawing.Point(0, 593);
-            this.aPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.aPanel1.Margin = new System.Windows.Forms.Padding(2);
             // 
             // aTextBox_Labeled1
             // 
-            this.aTextBox_Labeled1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.aTextBox_Labeled1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.aTextBox_Labeled1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aTextBox_Labeled1.FontSize = 9F;
             this.aTextBox_Labeled1.LabelText = "옮겨타기 수량";
@@ -72,7 +72,7 @@
             // 
             // aButton2
             // 
-            this.aButton2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.aButton2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.aButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.aButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.aButton2.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
