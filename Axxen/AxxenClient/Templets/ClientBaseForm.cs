@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AxxenClient.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,6 +19,15 @@ namespace AxxenClient.Templets
         private void aButton2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void ClientBaseForm_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void btnNoActive_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

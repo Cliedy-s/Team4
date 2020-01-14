@@ -17,7 +17,7 @@ namespace AxxenClient.Forms
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            WorkOrderForm childfrm = new WorkOrderForm(WorkType.Load);
+            WorkOrderForm childfrm = new WorkOrderForm(WorkType.Boxing);
             childfrm.WindowState = FormWindowState.Maximized;
             childfrm.MdiParent = this;
             childfrm.Show();
