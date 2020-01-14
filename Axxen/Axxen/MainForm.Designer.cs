@@ -132,11 +132,11 @@
             this.tsbtnDelete = new System.Windows.Forms.ToolStripButton();
             this.tsbtnPrint = new System.Windows.Forms.ToolStripButton();
             this.tsbtnSave = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnRefresh = new System.Windows.Forms.ToolStripButton();
             this.aLabel1 = new Axxen.CustomControls.ALabel();
             this.lblName = new Axxen.CustomControls.ALabel();
             this.pnBookmark = new Axxen.CustomControls.APanel();
             this.tvBookMark = new System.Windows.Forms.TreeView();
-            this.tsbtnRefresh = new System.Windows.Forms.ToolStripButton();
             this.panelMenu.SuspendLayout();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
@@ -184,8 +184,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button9.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button9.ForeColor = System.Drawing.Color.Black;
             this.button9.Location = new System.Drawing.Point(2, 3);
             this.button9.Name = "button9";
@@ -197,9 +198,10 @@
             // button8
             // 
             this.button8.BackColor = System.Drawing.Color.White;
-            this.button8.Location = new System.Drawing.Point(5, 216);
+            this.button8.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button8.Location = new System.Drawing.Point(3, 216);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(261, 37);
+            this.button8.Size = new System.Drawing.Size(263, 37);
             this.button8.TabIndex = 5;
             this.button8.Text = "일지관리";
             this.button8.UseVisualStyleBackColor = false;
@@ -216,8 +218,10 @@
             // 
             // btnBookmark
             // 
-            this.btnBookmark.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnBookmark.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnBookmark.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnBookmark.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBookmark.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnBookmark.Location = new System.Drawing.Point(2, 3);
             this.btnBookmark.Name = "btnBookmark";
             this.btnBookmark.Size = new System.Drawing.Size(256, 37);
@@ -230,10 +234,10 @@
             // 
             this.tvMenu.BackColor = System.Drawing.Color.White;
             this.tvMenu.ContextMenuStrip = this.ctmBookMark;
-            this.tvMenu.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tvMenu.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.tvMenu.Location = new System.Drawing.Point(3, 324);
             this.tvMenu.Name = "tvMenu";
-            this.tvMenu.Size = new System.Drawing.Size(261, 457);
+            this.tvMenu.Size = new System.Drawing.Size(261, 464);
             this.tvMenu.TabIndex = 7;
             this.tvMenu.DoubleClick += new System.EventHandler(this.TvMenu_DoubleClick);
             // 
@@ -255,6 +259,7 @@
             // button7
             // 
             this.button7.BackColor = System.Drawing.Color.White;
+            this.button7.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button7.Location = new System.Drawing.Point(4, 288);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(261, 37);
@@ -266,7 +271,11 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(3, 41);
+            this.button1.Margin = new System.Windows.Forms.Padding(5);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(261, 37);
             this.button1.TabIndex = 0;
@@ -277,6 +286,7 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button3.Location = new System.Drawing.Point(3, 111);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(261, 37);
@@ -288,6 +298,7 @@
             // button6
             // 
             this.button6.BackColor = System.Drawing.Color.White;
+            this.button6.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button6.Location = new System.Drawing.Point(4, 252);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(261, 37);
@@ -299,6 +310,7 @@
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.White;
+            this.button4.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button4.Location = new System.Drawing.Point(3, 146);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(261, 37);
@@ -310,6 +322,7 @@
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.White;
+            this.button5.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button5.Location = new System.Drawing.Point(4, 181);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(261, 37);
@@ -321,6 +334,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button2.Location = new System.Drawing.Point(3, 76);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(261, 37);
@@ -668,37 +682,37 @@
             // 불량이미지등록ToolStripMenuItem
             // 
             this.불량이미지등록ToolStripMenuItem.Name = "불량이미지등록ToolStripMenuItem";
-            this.불량이미지등록ToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.불량이미지등록ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.불량이미지등록ToolStripMenuItem.Text = "불량이미지 등록";
             // 
             // 품질측정값등록ToolStripMenuItem
             // 
             this.품질측정값등록ToolStripMenuItem.Name = "품질측정값등록ToolStripMenuItem";
-            this.품질측정값등록ToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.품질측정값등록ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.품질측정값등록ToolStripMenuItem.Text = "품질측정값 등록";
             // 
             // 공정조건등록ToolStripMenuItem
             // 
             this.공정조건등록ToolStripMenuItem.Name = "공정조건등록ToolStripMenuItem";
-            this.공정조건등록ToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.공정조건등록ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.공정조건등록ToolStripMenuItem.Text = "공정조건 등록";
             // 
             // 품질측정값조회ToolStripMenuItem
             // 
             this.품질측정값조회ToolStripMenuItem.Name = "품질측정값조회ToolStripMenuItem";
-            this.품질측정값조회ToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.품질측정값조회ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.품질측정값조회ToolStripMenuItem.Text = "품질측정값 조회";
             // 
             // 공정조건조회ToolStripMenuItem
             // 
             this.공정조건조회ToolStripMenuItem.Name = "공정조건조회ToolStripMenuItem";
-            this.공정조건조회ToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.공정조건조회ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.공정조건조회ToolStripMenuItem.Text = "공정조건 조회";
             // 
             // 원재료LOT관리ToolStripMenuItem
             // 
             this.원재료LOT관리ToolStripMenuItem.Name = "원재료LOT관리ToolStripMenuItem";
-            this.원재료LOT관리ToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.원재료LOT관리ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.원재료LOT관리ToolStripMenuItem.Text = "원재료 LOT관리";
             // 
             // 일지관리ToolStripMenuItem
@@ -716,31 +730,31 @@
             // 적재작업일지ToolStripMenuItem
             // 
             this.적재작업일지ToolStripMenuItem.Name = "적재작업일지ToolStripMenuItem";
-            this.적재작업일지ToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.적재작업일지ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.적재작업일지ToolStripMenuItem.Text = "적재작업일지";
             // 
             // 성형작업일지ToolStripMenuItem
             // 
             this.성형작업일지ToolStripMenuItem.Name = "성형작업일지ToolStripMenuItem";
-            this.성형작업일지ToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.성형작업일지ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.성형작업일지ToolStripMenuItem.Text = "성형작업일지";
             // 
             // 포장작업일지ToolStripMenuItem
             // 
             this.포장작업일지ToolStripMenuItem.Name = "포장작업일지ToolStripMenuItem";
-            this.포장작업일지ToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.포장작업일지ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.포장작업일지ToolStripMenuItem.Text = "포장작업일지";
             // 
             // 선별포장작업일지ToolStripMenuItem
             // 
             this.선별포장작업일지ToolStripMenuItem.Name = "선별포장작업일지ToolStripMenuItem";
-            this.선별포장작업일지ToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.선별포장작업일지ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.선별포장작업일지ToolStripMenuItem.Text = "선별/포장작업일지";
             // 
             // 소성작업일지ToolStripMenuItem
             // 
             this.소성작업일지ToolStripMenuItem.Name = "소성작업일지ToolStripMenuItem";
-            this.소성작업일지ToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.소성작업일지ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.소성작업일지ToolStripMenuItem.Text = "소성작업일지";
             // 
             // 분석관리ToolStripMenuItem
@@ -797,13 +811,13 @@
             // 금형정보ToolStripMenuItem
             // 
             this.금형정보ToolStripMenuItem.Name = "금형정보ToolStripMenuItem";
-            this.금형정보ToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.금형정보ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.금형정보ToolStripMenuItem.Text = "금형정보 등록";
             // 
             // 금형사용현황ToolStripMenuItem
             // 
             this.금형사용현황ToolStripMenuItem.Name = "금형사용현황ToolStripMenuItem";
-            this.금형사용현황ToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.금형사용현황ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.금형사용현황ToolStripMenuItem.Text = "금형 사용현황";
             // 
             // menuStrip1
@@ -876,15 +890,15 @@
             this.panel1.Controls.Add(this.aLabel2);
             this.panel1.Controls.Add(this.lblSubtitle);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(267, 905);
+            this.panel1.Location = new System.Drawing.Point(267, 898);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1349, 39);
+            this.panel1.Size = new System.Drawing.Size(1349, 46);
             this.panel1.TabIndex = 20;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(7, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(7, 8);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(40, 30);
             this.pictureBox1.TabIndex = 21;
@@ -893,18 +907,20 @@
             // aLabel2
             // 
             this.aLabel2.AutoSize = true;
-            this.aLabel2.Location = new System.Drawing.Point(53, 13);
+            this.aLabel2.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aLabel2.Location = new System.Drawing.Point(53, 18);
             this.aLabel2.Name = "aLabel2";
-            this.aLabel2.Size = new System.Drawing.Size(65, 12);
+            this.aLabel2.Size = new System.Drawing.Size(73, 17);
             this.aLabel2.TabIndex = 20;
             this.aLabel2.Text = "위치 정보 :";
             // 
             // lblSubtitle
             // 
             this.lblSubtitle.AutoSize = true;
-            this.lblSubtitle.Location = new System.Drawing.Point(118, 13);
+            this.lblSubtitle.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblSubtitle.Location = new System.Drawing.Point(118, 18);
             this.lblSubtitle.Name = "lblSubtitle";
-            this.lblSubtitle.Size = new System.Drawing.Size(0, 12);
+            this.lblSubtitle.Size = new System.Drawing.Size(0, 17);
             this.lblSubtitle.TabIndex = 0;
             // 
             // toolStrip1
@@ -1030,6 +1046,23 @@
             this.tsbtnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.tsbtnSave.ToolTipText = "조회";
             // 
+            // tsbtnRefresh
+            // 
+            this.tsbtnRefresh.AutoSize = false;
+            this.tsbtnRefresh.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tsbtnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnRefresh.Image")));
+            this.tsbtnRefresh.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.tsbtnRefresh.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbtnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnRefresh.Name = "tsbtnRefresh";
+            this.tsbtnRefresh.Size = new System.Drawing.Size(60, 57);
+            this.tsbtnRefresh.Text = "새로고침";
+            this.tsbtnRefresh.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.tsbtnRefresh.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            this.tsbtnRefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbtnRefresh.ToolTipText = "조회";
+            this.tsbtnRefresh.Click += new System.EventHandler(this.TsbtnRefresh_Click);
+            // 
             // aLabel1
             // 
             this.aLabel1.AutoSize = true;
@@ -1053,35 +1086,20 @@
             // pnBookmark
             // 
             this.pnBookmark.Controls.Add(this.tvBookMark);
-            this.pnBookmark.Location = new System.Drawing.Point(270, 418);
+            this.pnBookmark.Location = new System.Drawing.Point(267, 432);
             this.pnBookmark.Name = "pnBookmark";
-            this.pnBookmark.Size = new System.Drawing.Size(200, 474);
+            this.pnBookmark.Size = new System.Drawing.Size(200, 467);
             this.pnBookmark.TabIndex = 7;
             this.pnBookmark.Visible = false;
             // 
             // tvBookMark
             // 
-            this.tvBookMark.Location = new System.Drawing.Point(4, 4);
+            this.tvBookMark.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tvBookMark.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tvBookMark.Location = new System.Drawing.Point(0, 0);
             this.tvBookMark.Name = "tvBookMark";
-            this.tvBookMark.Size = new System.Drawing.Size(193, 467);
+            this.tvBookMark.Size = new System.Drawing.Size(200, 467);
             this.tvBookMark.TabIndex = 0;
-            // 
-            // tsbtnRefresh
-            // 
-            this.tsbtnRefresh.AutoSize = false;
-            this.tsbtnRefresh.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tsbtnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnRefresh.Image")));
-            this.tsbtnRefresh.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.tsbtnRefresh.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsbtnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnRefresh.Name = "tsbtnRefresh";
-            this.tsbtnRefresh.Size = new System.Drawing.Size(60, 57);
-            this.tsbtnRefresh.Text = "새로고침";
-            this.tsbtnRefresh.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.tsbtnRefresh.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
-            this.tsbtnRefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.tsbtnRefresh.ToolTipText = "조회";
-            this.tsbtnRefresh.Click += new System.EventHandler(this.TsbtnRefresh_Click);
             // 
             // MainForm
             // 
