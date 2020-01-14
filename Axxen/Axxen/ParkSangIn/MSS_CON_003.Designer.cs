@@ -143,9 +143,9 @@
             this.aLabel1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.aLabel1.Location = new System.Drawing.Point(42, 52);
             this.aLabel1.Name = "aLabel1";
-            this.aLabel1.Size = new System.Drawing.Size(128, 21);
+            this.aLabel1.Size = new System.Drawing.Size(122, 21);
             this.aLabel1.TabIndex = 17;
-            this.aLabel1.Text = "사용자 그룹목록";
+            this.aLabel1.Text = "사용자그룹목록";
             // 
             // dgvScreen
             // 
@@ -179,9 +179,9 @@
             this.aLabel5.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.aLabel5.Location = new System.Drawing.Point(505, 52);
             this.aLabel5.Name = "aLabel5";
-            this.aLabel5.Size = new System.Drawing.Size(128, 21);
+            this.aLabel5.Size = new System.Drawing.Size(192, 21);
             this.aLabel5.TabIndex = 22;
-            this.aLabel5.Text = "사용자 그룹목록";
+            this.aLabel5.Text = "사용자그룹별 사용자목록";
             // 
             // pictureBox2
             // 

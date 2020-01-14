@@ -83,6 +83,7 @@ namespace Axxen
                 if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
                 {
                     GetAllUserGroup();
+                    ControlSetting();//콤보박스
                 }
             }
             catch (Exception err)

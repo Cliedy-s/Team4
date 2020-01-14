@@ -41,5 +41,12 @@ namespace Service
 
              dac.InsertUpdateScreenItem_Authority(List);
         }
-   }
+        
+              public void DeleteGroupUseScreenItem_Authority(string group,List<ScreenItem_AuthorityVO> List)
+        {
+            ScreenItemDAC dac = new ScreenItemDAC();
+
+            dac.DeleteGroupUseScreenItem_Authority(group,List);
+        }
+    }
 }
