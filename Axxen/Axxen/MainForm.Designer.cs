@@ -115,8 +115,6 @@
             this.금형정보ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.금형사용현황ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button10 = new System.Windows.Forms.Button();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.전체닫기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -137,6 +135,7 @@
             this.lblName = new Axxen.CustomControls.ALabel();
             this.pnBookmark = new Axxen.CustomControls.APanel();
             this.tvBookMark = new System.Windows.Forms.TreeView();
+            this.aTextBox1 = new Axxen.CustomControls.ATextBox();
             this.panelMenu.SuspendLayout();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
@@ -839,23 +838,6 @@
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(1334, 82);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(189, 21);
-            this.textBox1.TabIndex = 10;
-            // 
-            // button10
-            // 
-            this.button10.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button10.Location = new System.Drawing.Point(1529, 82);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(75, 23);
-            this.button10.TabIndex = 11;
-            this.button10.Text = "검색";
-            this.button10.UseVisualStyleBackColor = false;
-            // 
             // tabControl2
             // 
             this.tabControl2.ContextMenuStrip = this.contextMenuStrip1;
@@ -1077,7 +1059,7 @@
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblName.Location = new System.Drawing.Point(1379, 46);
+            this.lblName.Location = new System.Drawing.Point(1391, 46);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(47, 19);
             this.lblName.TabIndex = 15;
@@ -1101,17 +1083,29 @@
             this.tvBookMark.Size = new System.Drawing.Size(200, 467);
             this.tvBookMark.TabIndex = 0;
             // 
+            // aTextBox1
+            // 
+            this.aTextBox1.BackColor = System.Drawing.Color.White;
+            this.aTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.aTextBox1.errorp = null;
+            this.aTextBox1.Location = new System.Drawing.Point(1303, 69);
+            this.aTextBox1.Multiline = true;
+            this.aTextBox1.Name = "aTextBox1";
+            this.aTextBox1.Size = new System.Drawing.Size(304, 37);
+            this.aTextBox1.TabIndex = 22;
+            this.aTextBox1.Text = "알림";
+            this.aTextBox1.txtType = Axxen.CustomControls.type.Normal;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1616, 944);
+            this.Controls.Add(this.aTextBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.aLabel1);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.tabControl2);
-            this.Controls.Add(this.button10);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.pnBookmark);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.toolStrip1);
@@ -1232,8 +1226,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton tsbInsert;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button10;
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private CustomControls.ALabel lblName;
@@ -1250,5 +1242,6 @@
         private System.Windows.Forms.ToolStripButton tsbtnSave;
         private System.Windows.Forms.ToolStripButton tsbtnPrint;
         private System.Windows.Forms.ToolStripButton tsbtnRefresh;
+        private CustomControls.ATextBox aTextBox1;
     }
 }
