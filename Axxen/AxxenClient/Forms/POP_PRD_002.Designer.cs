@@ -51,7 +51,7 @@
             // aPanel1
             // 
             this.aPanel1.Location = new System.Drawing.Point(0, 593);
-            this.aPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.aPanel1.Margin = new System.Windows.Forms.Padding(2);
             // 
             // aPanel4
             // 
@@ -71,6 +71,7 @@
             // 
             // aButton1
             // 
+            this.aButton1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.aButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.aButton1.Font = new System.Drawing.Font("맑은 고딕", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -83,6 +84,7 @@
             // 
             // aTextBox_LabeledBigTextBox2
             // 
+            this.aTextBox_LabeledBigTextBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.aTextBox_LabeledBigTextBox2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aTextBox_LabeledBigTextBox2.LabelText = "계획수량";
             this.aTextBox_LabeledBigTextBox2.Location = new System.Drawing.Point(92, 229);
@@ -94,6 +96,7 @@
             // 
             // aTextBox_Searchable3
             // 
+            this.aTextBox_Searchable3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.aTextBox_Searchable3.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aTextBox_Searchable3.LabelText = "작업장";
             this.aTextBox_Searchable3.Location = new System.Drawing.Point(92, 153);
@@ -105,6 +108,7 @@
             // 
             // aTextBox_Searchable2
             // 
+            this.aTextBox_Searchable2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.aTextBox_Searchable2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aTextBox_Searchable2.LabelText = "공정";
             this.aTextBox_Searchable2.Location = new System.Drawing.Point(92, 115);
@@ -116,6 +120,7 @@
             // 
             // aTextBox_Searchable1
             // 
+            this.aTextBox_Searchable1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.aTextBox_Searchable1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aTextBox_Searchable1.LabelText = "품목";
             this.aTextBox_Searchable1.Location = new System.Drawing.Point(92, 77);
@@ -127,6 +132,7 @@
             // 
             // aTextBox_LabeledBigTextBox1
             // 
+            this.aTextBox_LabeledBigTextBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.aTextBox_LabeledBigTextBox1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aTextBox_LabeledBigTextBox1.LabelText = "작업지시일";
             this.aTextBox_LabeledBigTextBox1.Location = new System.Drawing.Point(92, 191);

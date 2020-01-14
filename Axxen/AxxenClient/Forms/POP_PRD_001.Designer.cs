@@ -124,7 +124,7 @@
             this.btnWorkOrderOnOff3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnWorkOrderOnOff3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWorkOrderOnOff3.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnWorkOrderOnOff3.Location = new System.Drawing.Point(66, 6);
+            this.btnWorkOrderOnOff3.Location = new System.Drawing.Point(66, 1);
             this.btnWorkOrderOnOff3.Name = "btnWorkOrderOnOff3";
             this.btnWorkOrderOnOff3.Size = new System.Drawing.Size(145, 118);
             this.btnWorkOrderOnOff3.TabIndex = 6;
@@ -136,7 +136,7 @@
             this.btnWorkOrderQuit3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnWorkOrderQuit3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWorkOrderQuit3.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnWorkOrderQuit3.Location = new System.Drawing.Point(218, 6);
+            this.btnWorkOrderQuit3.Location = new System.Drawing.Point(218, 1);
             this.btnWorkOrderQuit3.Name = "btnWorkOrderQuit3";
             this.btnWorkOrderQuit3.Size = new System.Drawing.Size(145, 118);
             this.btnWorkOrderQuit3.TabIndex = 5;
@@ -148,7 +148,7 @@
             this.btnDryGVLoad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnDryGVLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDryGVLoad.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnDryGVLoad.Location = new System.Drawing.Point(370, 6);
+            this.btnDryGVLoad.Location = new System.Drawing.Point(370, 1);
             this.btnDryGVLoad.Name = "btnDryGVLoad";
             this.btnDryGVLoad.Size = new System.Drawing.Size(145, 118);
             this.btnDryGVLoad.TabIndex = 4;
@@ -161,7 +161,7 @@
             this.btnSetWorker3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnSetWorker3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSetWorker3.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSetWorker3.Location = new System.Drawing.Point(522, 6);
+            this.btnSetWorker3.Location = new System.Drawing.Point(522, 1);
             this.btnSetWorker3.Name = "btnSetWorker3";
             this.btnSetWorker3.Size = new System.Drawing.Size(145, 118);
             this.btnSetWorker3.TabIndex = 3;
@@ -174,7 +174,7 @@
             this.btnSetMold.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnSetMold.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSetMold.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSetMold.Location = new System.Drawing.Point(674, 6);
+            this.btnSetMold.Location = new System.Drawing.Point(674, 1);
             this.btnSetMold.Name = "btnSetMold";
             this.btnSetMold.Size = new System.Drawing.Size(145, 118);
             this.btnSetMold.TabIndex = 2;
@@ -187,7 +187,7 @@
             this.btnSetPressCondition2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnSetPressCondition2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSetPressCondition2.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSetPressCondition2.Location = new System.Drawing.Point(826, 6);
+            this.btnSetPressCondition2.Location = new System.Drawing.Point(826, 1);
             this.btnSetPressCondition2.Name = "btnSetPressCondition2";
             this.btnSetPressCondition2.Size = new System.Drawing.Size(145, 118);
             this.btnSetPressCondition2.TabIndex = 1;
@@ -200,7 +200,7 @@
             this.btnQualityMeasure3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnQualityMeasure3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQualityMeasure3.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnQualityMeasure3.Location = new System.Drawing.Point(978, 6);
+            this.btnQualityMeasure3.Location = new System.Drawing.Point(978, 1);
             this.btnQualityMeasure3.Name = "btnQualityMeasure3";
             this.btnQualityMeasure3.Size = new System.Drawing.Size(145, 118);
             this.btnQualityMeasure3.TabIndex = 0;
