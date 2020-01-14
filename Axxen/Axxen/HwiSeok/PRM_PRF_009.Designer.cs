@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.aLabel1 = new Axxen.CustomControls.ALabel();
-            this.aButton1 = new Axxen.CustomControls.AButton();
             this.aTextBox_FindNameByCode1 = new Axxen.CustomControls.ATextBox_FindNameByCode();
             this.aDateTimePicker2 = new Axxen.CustomControls.ADateTimePicker();
             this.aDateTimePicker1 = new Axxen.CustomControls.ADateTimePicker();
@@ -43,7 +42,6 @@
             this.panTop.Controls.Add(this.aDateTimePicker1);
             this.panTop.Controls.Add(this.aLabel2);
             this.panTop.Controls.Add(this.aTextBox_FindNameByCode1);
-            this.panTop.Controls.Add(this.aButton1);
             this.panTop.Controls.Add(this.aLabel1);
             // 
             // aHeaderBox1
@@ -58,17 +56,6 @@
             this.aLabel1.Size = new System.Drawing.Size(55, 15);
             this.aLabel1.TabIndex = 14;
             this.aLabel1.Text = "근무일자";
-            // 
-            // aButton1
-            // 
-            this.aButton1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton1.Location = new System.Drawing.Point(896, 28);
-            this.aButton1.Name = "aButton1";
-            this.aButton1.Size = new System.Drawing.Size(207, 23);
-            this.aButton1.TabIndex = 18;
-            this.aButton1.Text = "ERP Interface";
-            this.aButton1.UseVisualStyleBackColor = false;
             // 
             // aTextBox_FindNameByCode1
             // 
@@ -113,7 +100,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.Name = "PRM_PRF_009";
-            this.Text = "ERP 근태정보 조회";
+            this.Text = "근태정보 조회";
             this.panTop.ResumeLayout(false);
             this.panTop.PerformLayout();
             this.ResumeLayout(false);
@@ -122,7 +109,6 @@
 
         #endregion
         private CustomControls.ALabel aLabel1;
-        private CustomControls.AButton aButton1;
         private CustomControls.ATextBox_FindNameByCode aTextBox_FindNameByCode1;
         private CustomControls.ADateTimePicker aDateTimePicker2;
         private CustomControls.ADateTimePicker aDateTimePicker1;
