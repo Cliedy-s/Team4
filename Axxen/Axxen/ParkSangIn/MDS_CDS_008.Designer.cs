@@ -1,4 +1,4 @@
-﻿namespace Axxen.ParkSangIn
+﻿namespace Axxen
 {
     partial class MDS_CDS_008
     {
@@ -118,8 +118,8 @@
             // 
             // aDataGridView1
             // 
-            this.aDataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.aDataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.aDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.aDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;

@@ -15,5 +15,9 @@ namespace AxxenClient.Forms
             InitializeComponent();
         }
 
+        private void aPanel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

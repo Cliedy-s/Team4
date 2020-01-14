@@ -46,18 +46,18 @@
             // 
             // aPanel1
             // 
-            this.aPanel1.Location = new System.Drawing.Point(0, 791);
+            this.aPanel1.Location = new System.Drawing.Point(0, 593);
+            this.aPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             // 
             // aButton1
             // 
-            this.aButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.aButton1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.aButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.aButton1.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aButton1.Location = new System.Drawing.Point(634, 497);
-            this.aButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.aButton1.Location = new System.Drawing.Point(493, 373);
             this.aButton1.Name = "aButton1";
-            this.aButton1.Size = new System.Drawing.Size(306, 220);
+            this.aButton1.Size = new System.Drawing.Size(238, 165);
             this.aButton1.TabIndex = 22;
             this.aButton1.Text = "탈착";
             this.aButton1.UseVisualStyleBackColor = false;
@@ -67,12 +67,11 @@
             this.aDataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.aDataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.aDataGridView2.Location = new System.Drawing.Point(948, 188);
-            this.aDataGridView2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.aDataGridView2.Location = new System.Drawing.Point(737, 141);
             this.aDataGridView2.Name = "aDataGridView2";
             this.aDataGridView2.RowHeadersWidth = 51;
             this.aDataGridView2.RowTemplate.Height = 23;
-            this.aDataGridView2.Size = new System.Drawing.Size(593, 592);
+            this.aDataGridView2.Size = new System.Drawing.Size(461, 444);
             this.aDataGridView2.TabIndex = 19;
             // 
             // aDataGridView1
@@ -81,12 +80,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.aDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.aDataGridView1.Location = new System.Drawing.Point(13, 188);
-            this.aDataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.aDataGridView1.Location = new System.Drawing.Point(10, 141);
             this.aDataGridView1.Name = "aDataGridView1";
             this.aDataGridView1.RowHeadersWidth = 51;
             this.aDataGridView1.RowTemplate.Height = 23;
-            this.aDataGridView1.Size = new System.Drawing.Size(613, 592);
+            this.aDataGridView1.Size = new System.Drawing.Size(477, 444);
             this.aDataGridView1.TabIndex = 17;
             // 
             // aHeaderBox1
@@ -95,10 +93,9 @@
             this.aHeaderBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.aHeaderBox1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aHeaderBox1.HeaderBoxText = "장착 대상 금형 목록";
-            this.aHeaderBox1.Location = new System.Drawing.Point(13, 149);
-            this.aHeaderBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.aHeaderBox1.Location = new System.Drawing.Point(10, 112);
             this.aHeaderBox1.Name = "aHeaderBox1";
-            this.aHeaderBox1.Size = new System.Drawing.Size(312, 39);
+            this.aHeaderBox1.Size = new System.Drawing.Size(243, 30);
             this.aHeaderBox1.TabIndex = 24;
             // 
             // aHeaderBox2
@@ -108,37 +105,35 @@
             this.aHeaderBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.aHeaderBox2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aHeaderBox2.HeaderBoxText = "장착 금형 목록";
-            this.aHeaderBox2.Location = new System.Drawing.Point(948, 149);
-            this.aHeaderBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.aHeaderBox2.Location = new System.Drawing.Point(737, 112);
             this.aHeaderBox2.Name = "aHeaderBox2";
-            this.aHeaderBox2.Size = new System.Drawing.Size(312, 39);
+            this.aHeaderBox2.Size = new System.Drawing.Size(243, 30);
             this.aHeaderBox2.TabIndex = 25;
             // 
             // aButton2
             // 
-            this.aButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.aButton2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.aButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.aButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.aButton2.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aButton2.Location = new System.Drawing.Point(634, 269);
-            this.aButton2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.aButton2.Location = new System.Drawing.Point(493, 202);
             this.aButton2.Name = "aButton2";
-            this.aButton2.Size = new System.Drawing.Size(306, 220);
+            this.aButton2.Size = new System.Drawing.Size(238, 165);
             this.aButton2.TabIndex = 26;
             this.aButton2.Text = "장착";
             this.aButton2.UseVisualStyleBackColor = false;
             // 
             // POP_PRD_008
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.ClientSize = new System.Drawing.Size(1556, 839);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.ClientSize = new System.Drawing.Size(1210, 629);
             this.Controls.Add(this.aButton2);
             this.Controls.Add(this.aHeaderBox2);
             this.Controls.Add(this.aHeaderBox1);
             this.Controls.Add(this.aButton1);
             this.Controls.Add(this.aDataGridView2);
             this.Controls.Add(this.aDataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "POP_PRD_008";
             this.Controls.SetChildIndex(this.aPanel2, 0);
             this.Controls.SetChildIndex(this.aPanel1, 0);
