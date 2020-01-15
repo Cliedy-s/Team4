@@ -14,5 +14,10 @@ namespace Axxen
         {
             InitializeComponent();
         }
+
+        private void aDateTimePickerSearch2_btnDateTimeSearch_Click(object sender, EventArgs args)
+        {
+
+        }
     }
 }

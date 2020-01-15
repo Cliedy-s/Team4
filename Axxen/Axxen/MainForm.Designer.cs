@@ -135,7 +135,7 @@
             this.lblName = new Axxen.CustomControls.ALabel();
             this.pnBookmark = new Axxen.CustomControls.APanel();
             this.tvBookMark = new System.Windows.Forms.TreeView();
-            this.aTextBox1 = new Axxen.CustomControls.ATextBox();
+            this.txtnotice = new Axxen.CustomControls.ATextBox();
             this.panelMenu.SuspendLayout();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
@@ -681,37 +681,37 @@
             // 불량이미지등록ToolStripMenuItem
             // 
             this.불량이미지등록ToolStripMenuItem.Name = "불량이미지등록ToolStripMenuItem";
-            this.불량이미지등록ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.불량이미지등록ToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.불량이미지등록ToolStripMenuItem.Text = "불량이미지 등록";
             // 
             // 품질측정값등록ToolStripMenuItem
             // 
             this.품질측정값등록ToolStripMenuItem.Name = "품질측정값등록ToolStripMenuItem";
-            this.품질측정값등록ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.품질측정값등록ToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.품질측정값등록ToolStripMenuItem.Text = "품질측정값 등록";
             // 
             // 공정조건등록ToolStripMenuItem
             // 
             this.공정조건등록ToolStripMenuItem.Name = "공정조건등록ToolStripMenuItem";
-            this.공정조건등록ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.공정조건등록ToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.공정조건등록ToolStripMenuItem.Text = "공정조건 등록";
             // 
             // 품질측정값조회ToolStripMenuItem
             // 
             this.품질측정값조회ToolStripMenuItem.Name = "품질측정값조회ToolStripMenuItem";
-            this.품질측정값조회ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.품질측정값조회ToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.품질측정값조회ToolStripMenuItem.Text = "품질측정값 조회";
             // 
             // 공정조건조회ToolStripMenuItem
             // 
             this.공정조건조회ToolStripMenuItem.Name = "공정조건조회ToolStripMenuItem";
-            this.공정조건조회ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.공정조건조회ToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.공정조건조회ToolStripMenuItem.Text = "공정조건 조회";
             // 
             // 원재료LOT관리ToolStripMenuItem
             // 
             this.원재료LOT관리ToolStripMenuItem.Name = "원재료LOT관리ToolStripMenuItem";
-            this.원재료LOT관리ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.원재료LOT관리ToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.원재료LOT관리ToolStripMenuItem.Text = "원재료 LOT관리";
             // 
             // 일지관리ToolStripMenuItem
@@ -729,31 +729,31 @@
             // 적재작업일지ToolStripMenuItem
             // 
             this.적재작업일지ToolStripMenuItem.Name = "적재작업일지ToolStripMenuItem";
-            this.적재작업일지ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.적재작업일지ToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.적재작업일지ToolStripMenuItem.Text = "적재작업일지";
             // 
             // 성형작업일지ToolStripMenuItem
             // 
             this.성형작업일지ToolStripMenuItem.Name = "성형작업일지ToolStripMenuItem";
-            this.성형작업일지ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.성형작업일지ToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.성형작업일지ToolStripMenuItem.Text = "성형작업일지";
             // 
             // 포장작업일지ToolStripMenuItem
             // 
             this.포장작업일지ToolStripMenuItem.Name = "포장작업일지ToolStripMenuItem";
-            this.포장작업일지ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.포장작업일지ToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.포장작업일지ToolStripMenuItem.Text = "포장작업일지";
             // 
             // 선별포장작업일지ToolStripMenuItem
             // 
             this.선별포장작업일지ToolStripMenuItem.Name = "선별포장작업일지ToolStripMenuItem";
-            this.선별포장작업일지ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.선별포장작업일지ToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.선별포장작업일지ToolStripMenuItem.Text = "선별/포장작업일지";
             // 
             // 소성작업일지ToolStripMenuItem
             // 
             this.소성작업일지ToolStripMenuItem.Name = "소성작업일지ToolStripMenuItem";
-            this.소성작업일지ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.소성작업일지ToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.소성작업일지ToolStripMenuItem.Text = "소성작업일지";
             // 
             // 분석관리ToolStripMenuItem
@@ -810,13 +810,13 @@
             // 금형정보ToolStripMenuItem
             // 
             this.금형정보ToolStripMenuItem.Name = "금형정보ToolStripMenuItem";
-            this.금형정보ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.금형정보ToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.금형정보ToolStripMenuItem.Text = "금형정보 등록";
             // 
             // 금형사용현황ToolStripMenuItem
             // 
             this.금형사용현황ToolStripMenuItem.Name = "금형사용현황ToolStripMenuItem";
-            this.금형사용현황ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.금형사용현황ToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.금형사용현황ToolStripMenuItem.Text = "금형 사용현황";
             // 
             // menuStrip1
@@ -1083,25 +1083,25 @@
             this.tvBookMark.Size = new System.Drawing.Size(200, 467);
             this.tvBookMark.TabIndex = 0;
             // 
-            // aTextBox1
+            // txtnotice
             // 
-            this.aTextBox1.BackColor = System.Drawing.Color.White;
-            this.aTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.aTextBox1.errorp = null;
-            this.aTextBox1.Location = new System.Drawing.Point(1303, 69);
-            this.aTextBox1.Multiline = true;
-            this.aTextBox1.Name = "aTextBox1";
-            this.aTextBox1.Size = new System.Drawing.Size(304, 37);
-            this.aTextBox1.TabIndex = 22;
-            this.aTextBox1.Text = "알림";
-            this.aTextBox1.txtType = Axxen.CustomControls.type.Normal;
+            this.txtnotice.BackColor = System.Drawing.Color.White;
+            this.txtnotice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtnotice.errorp = null;
+            this.txtnotice.Location = new System.Drawing.Point(1303, 69);
+            this.txtnotice.Multiline = true;
+            this.txtnotice.Name = "txtnotice";
+            this.txtnotice.Size = new System.Drawing.Size(304, 37);
+            this.txtnotice.TabIndex = 22;
+            this.txtnotice.Text = "알림";
+            this.txtnotice.txtType = Axxen.CustomControls.type.Normal;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1616, 944);
-            this.Controls.Add(this.aTextBox1);
+            this.Controls.Add(this.txtnotice);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.aLabel1);
             this.Controls.Add(this.lblName);
@@ -1242,6 +1242,6 @@
         private System.Windows.Forms.ToolStripButton tsbtnSave;
         private System.Windows.Forms.ToolStripButton tsbtnPrint;
         private System.Windows.Forms.ToolStripButton tsbtnRefresh;
-        private CustomControls.ATextBox aTextBox1;
+        private CustomControls.ATextBox txtnotice;
     }
 }

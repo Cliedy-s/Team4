@@ -131,7 +131,7 @@
             this.aLabel2.AutoSize = true;
             this.aLabel2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.aLabel2.Location = new System.Drawing.Point(501, 53);
+            this.aLabel2.Location = new System.Drawing.Point(452, 53);
             this.aLabel2.Name = "aLabel2";
             this.aLabel2.Size = new System.Drawing.Size(0, 21);
             this.aLabel2.TabIndex = 19;
@@ -143,9 +143,9 @@
             this.aLabel1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.aLabel1.Location = new System.Drawing.Point(42, 52);
             this.aLabel1.Name = "aLabel1";
-            this.aLabel1.Size = new System.Drawing.Size(128, 21);
+            this.aLabel1.Size = new System.Drawing.Size(122, 21);
             this.aLabel1.TabIndex = 17;
-            this.aLabel1.Text = "사용자 그룹목록";
+            this.aLabel1.Text = "사용자그룹목록";
             // 
             // dgvScreen
             // 
@@ -154,10 +154,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvScreen.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvScreen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvScreen.Location = new System.Drawing.Point(473, 79);
+            this.dgvScreen.Location = new System.Drawing.Point(412, 79);
             this.dgvScreen.Name = "dgvScreen";
             this.dgvScreen.RowTemplate.Height = 23;
-            this.dgvScreen.Size = new System.Drawing.Size(663, 615);
+            this.dgvScreen.Size = new System.Drawing.Size(724, 615);
             this.dgvScreen.TabIndex = 16;
             // 
             // dgvGroup
@@ -169,7 +169,7 @@
             this.dgvGroup.Location = new System.Drawing.Point(12, 79);
             this.dgvGroup.Name = "dgvGroup";
             this.dgvGroup.RowTemplate.Height = 23;
-            this.dgvGroup.Size = new System.Drawing.Size(455, 615);
+            this.dgvGroup.Size = new System.Drawing.Size(394, 615);
             this.dgvGroup.TabIndex = 15;
             // 
             // aLabel5
@@ -177,16 +177,16 @@
             this.aLabel5.AutoSize = true;
             this.aLabel5.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel5.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.aLabel5.Location = new System.Drawing.Point(505, 52);
+            this.aLabel5.Location = new System.Drawing.Point(456, 52);
             this.aLabel5.Name = "aLabel5";
-            this.aLabel5.Size = new System.Drawing.Size(128, 21);
+            this.aLabel5.Size = new System.Drawing.Size(192, 21);
             this.aLabel5.TabIndex = 22;
-            this.aLabel5.Text = "사용자 그룹목록";
+            this.aLabel5.Text = "사용자그룹별 사용자목록";
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(476, 52);
+            this.pictureBox2.Location = new System.Drawing.Point(427, 52);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(23, 22);
             this.pictureBox2.TabIndex = 20;

@@ -45,6 +45,7 @@
             this.aButton1.TabIndex = 3;
             this.aButton1.Text = "조회";
             this.aButton1.UseVisualStyleBackColor = false;
+            this.aButton1.Click += new System.EventHandler(this.btnSearch_Click_1);
             // 
             // aLabel1
             // 
