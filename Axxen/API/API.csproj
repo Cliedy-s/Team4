@@ -107,6 +107,13 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MainController.cs" />
+    <Compile Include="Controllers\MoldController.cs" />
+    <Compile Include="Controllers\ScreenItemController.cs" />
+    <Compile Include="Controllers\UserGroupController.cs" />
+    <Compile Include="Controllers\UserInfoController.cs" />
+    <Compile Include="Controllers\WorkOrderController.cs" />
     <Compile Include="DAC\DACParent.cs" />
     <Compile Include="DAC\Helper.cs" />
     <Compile Include="DAC\MainForm_DAC.cs" />
@@ -123,6 +130,7 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <None Include="packages.config" />
+    <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -132,7 +140,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\VO\VO.csproj">

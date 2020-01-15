@@ -1,5 +1,5 @@
 ﻿using Axxen.Util;
-using Service;
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +15,9 @@ namespace Axxen
     public partial class PPS_MLD_002 : Axxen.GridForm
     {
         List<Mold_J_Item_Wc_MuseVO> molditemList;
-        MoldService service = new MoldService();
+
+        //TODO - pps_mld_002 webapi이용
+        //MoldService service = new MoldService();
 
         public PPS_MLD_002()
         {
@@ -25,7 +27,9 @@ namespace Axxen
         private void PPS_MLD_002_Load(object sender, EventArgs e)
         {
             MainDataLoad();
-            molditemList = service.SelectMold_Item_Wc_Muse();
+
+            //TODO - mms_con_002 webapi이용
+            //molditemList = service.SelectMold_Item_Wc_Muse();
 
             var molist = (from list in molditemList
                         select new {

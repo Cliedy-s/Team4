@@ -1,5 +1,4 @@
-﻿using Service;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,8 +15,8 @@ namespace Axxen
 
         List<UserGroup_MasterVO> grouplist;
         List<ScreenItem_AuthorityVO> Screenlist;
-        UserGroupService userservice = new UserGroupService();
-        ScreenItemService screenservice = new ScreenItemService();
+        //UserGroupService userservice = new UserGroupService();
+        //ScreenItemService screenservice = new ScreenItemService();
         public MSS_CON_002()
         {
             InitializeComponent();
@@ -113,9 +112,9 @@ namespace Axxen
         /// </summary>
         private void GetAllUserGroup()
         {
-
+            //TODO - mms_con_002 WebAPI이용
             grouplist = new List<UserGroup_MasterVO>();
-            grouplist = userservice.GetAllUserGroup();
+            //grouplist = userservice.GetAllUserGroup();
             dgvGroup.DataSource = grouplist;
         }
 
@@ -146,8 +145,9 @@ namespace Axxen
         private void GetGroupScreenItem(string groupCode)
         {
 
+            //TODO - mms_con_002 WebAPI이용
             Screenlist = new List<ScreenItem_AuthorityVO>();
-            Screenlist = screenservice.GetUseGroupScreenItem(groupCode);
+            //Screenlist = screenservice.GetUseGroupScreenItem(groupCode);
             dgvScreen.DataSource = null;
             dgvScreen.DataSource = Screenlist;
         }

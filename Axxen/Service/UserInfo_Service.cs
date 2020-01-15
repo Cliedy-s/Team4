@@ -8,12 +8,7 @@ using VO;
 
 namespace Service
 {
-   public class UserInfo_Service
+    public class UserInfo_Service
     {
-        public UserInfoVO GetUserInfo(string id, string pwd)
-        {
-            UserInfoDAC dac = new UserInfoDAC();
-            return dac.GetUserInfo(id,pwd);
-        }
-}
+    }
 }
