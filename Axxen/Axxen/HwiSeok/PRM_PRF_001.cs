@@ -25,6 +25,7 @@ namespace Axxen
             #region 그리드뷰 설정
             DatagridviewDesigns.SetDesign(dgvMainGrid);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "번호", "Num", true, 100, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "작업지시일자", "Prd_Date", true, 100, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "작업지시상태", "Wo_Status", true, 100, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "작업지시번호", "Workorderno", true, 100, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "품목코드", "Item_Code", true, 100, default, true);
@@ -37,9 +38,12 @@ namespace Axxen
             wowc = woservice.GetAll_WorkOrder_Item_WC();
             dgvMainGrid.DataSource = wowc;
             #endregion
+                                
+        }
 
-           
-                    
+        private void aDateTimePickerSearch1_btnDateTimeSearch_Click(object sender, EventArgs args)
+        {
+
         }
     }
 }
