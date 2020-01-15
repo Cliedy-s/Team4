@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
-using API.Models;
+using VO;
 
 namespace API.DAC
 {

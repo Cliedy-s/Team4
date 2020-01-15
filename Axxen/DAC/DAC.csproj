@@ -52,13 +52,13 @@
     <Compile Include="WorkOrderDAC.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Team4Connect_DEV.xml" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\VO\VO.csproj">
       <Project>{40a3c251-ad92-44a6-a387-367aa57772f7}</Project>
       <Name>VO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Team4Connect_DEV.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
