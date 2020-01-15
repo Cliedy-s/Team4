@@ -24,7 +24,7 @@ namespace Axxen
 
         private void PPS_MLD_002_Load(object sender, EventArgs e)
         {
-            DataLoad();
+            MainDataLoad();
             molditemList = service.SelectMold_Item_Wc_Muse();
 
             var molist = (from list in molditemList
@@ -48,7 +48,7 @@ namespace Axxen
         /// <summary>
         /// 데이터 그리드뷰 바인딩
         /// </summary>
-        private void DataLoad()
+        private void MainDataLoad()
         {
             InitControlUtil.SetDGVDesign(dgvMainGrid);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "생산일자", "Prd_Date", true, 110);

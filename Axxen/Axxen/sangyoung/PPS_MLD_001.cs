@@ -22,7 +22,7 @@ namespace Axxen
 
         private void PPS_MLD_001_Load(object sender, EventArgs e)
         {
-            DataLoad();
+            MainDataLoad();
             moldList = service.SelectMoldAll();
             dgvMainGrid.DataSource = moldList;
         }
@@ -30,7 +30,7 @@ namespace Axxen
         /// <summary>
         /// 데이터 그리드뷰 바인딩
         /// </summary>
-        private void DataLoad()
+        private void MainDataLoad()
         {
             InitControlUtil.SetDGVDesign(dgvMainGrid);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형코드", "Mold_Code", true, 100);
