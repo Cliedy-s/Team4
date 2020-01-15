@@ -157,9 +157,28 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="DAC\DACParent.cs" />
+    <Compile Include="DAC\Helper.cs" />
+    <Compile Include="DAC\MainForm_DAC.cs" />
+    <Compile Include="DAC\MoldDAC.cs" />
+    <Compile Include="DAC\ScreenItemDAC.cs" />
+    <Compile Include="DAC\UserGroupDAC.cs" />
+    <Compile Include="DAC\UserInfoDAC.cs" />
+    <Compile Include="DAC\WorkOrderDAC.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\MainForm_VO.cs" />
+    <Compile Include="Models\MoldVO.cs" />
+    <Compile Include="Models\Mold_J_Item_Wc_MuseVO.cs" />
+    <Compile Include="Models\ScreenItemVO.cs" />
+    <Compile Include="Models\UserGroupVO.cs" />
+    <Compile Include="Models\UserInfoVO.cs" />
+    <Compile Include="Models\WorkOrder_J_WC_ItmeVO.cs" />
+    <Compile Include="Models\WorkOrder_J_WC_Time_DayVO.cs" />
+    <Compile Include="Models\Wo_Req_ItemVO.cs" />
+    <Compile Include="Models\Wo_Req_WO_WC_ItemVO.cs" />
+    <Compile Include="Models\WO__WC_Production_ItemVO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -215,7 +234,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
