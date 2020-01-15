@@ -1,10 +1,12 @@
-﻿using Service;
+﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,7 +17,6 @@ namespace Axxen
     public partial class MSS_CON_001 : BaseForm
     {
         List<UserGroup_MasterVO> grouplist;
-        UserGroupService userservice = new UserGroupService();
         public MSS_CON_001()
         {
             InitializeComponent();
@@ -65,12 +66,29 @@ namespace Axxen
         /// <summary>
         /// 모든 그룹정보 GET
         /// </summary>
-        private void GetAllUserGroup()
+        private async void GetAllUserGroup()
         {
-         
-            grouplist = new List<UserGroup_MasterVO>();
-            grouplist = userservice.GetAllUserGroup();
-            dgvGroup.DataSource = grouplist;    
+            HttpClient client = new HttpClient();
+            try
+            {
+                using (HttpResponseMessage rm = await client.GetAsync("https://localhost:44321/api/UserGroup"))
+                {
+                    if (rm.IsSuccessStatusCode)
+                    {
+                        string result;
+                        using (HttpContent content = rm.Content)
+                        {
+                            result = await content.ReadAsStringAsync();
+                        }
+                        List<UserGroup_MasterVO> list = JsonConvert.DeserializeObject<List<UserGroup_MasterVO>>(result);
+                        dgvGroup.DataSource = list;
+                    }
+                }
+            }
+            catch (Exception err)
+            {
+                Debug.WriteLine(err.Message);
+            }
         }
 
         private void CbbGroup_SelectedIndexChanged(object sender, EventArgs e)
@@ -101,15 +119,16 @@ namespace Axxen
 
             if (e.ColumnIndex == dgvGroup.Columns["btn"].Index)//눌러서 사용과 사용안함 변경
             {
-                if((dgvGroup.SelectedRows[0].Cells[3].Value).ToString() == "Y") //사용안함
-                {
-                     userservice.GetUpdateUserGroup((dgvGroup.SelectedRows[0].Cells[0].Value).ToString(), "N");
-                }
-                else //사용함
-                {
-                    userservice.GetUpdateUserGroup((dgvGroup.SelectedRows[0].Cells[0].Value).ToString(), "Y");
-                }
-                GetAllUserGroup();
+                //TODO - mms_con_001 WebAPI이용
+                //if((dgvGroup.SelectedRows[0].Cells[3].Value).ToString() == "Y") //사용안함
+                //{
+                //     userservice.GetUpdateUserGroup((dgvGroup.SelectedRows[0].Cells[0].Value).ToString(), "N");
+                //}
+                //else //사용함
+                //{
+                //    userservice.GetUpdateUserGroup((dgvGroup.SelectedRows[0].Cells[0].Value).ToString(), "Y");
+                //}
+                //GetAllUserGroup();
             }
 
             }

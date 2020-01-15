@@ -1,5 +1,4 @@
-﻿using Service;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,7 +12,7 @@ namespace Axxen
     public partial class PRM_PRF_001 : Axxen.GridForm
     {
         List<WorkOrder_J_WC_ItmeVO> wowc;
-        WorkOrder_Service woservice = new WorkOrder_Service();
+        //WorkOrder_Service woservice = new WorkOrder_Service();
 
         public PRM_PRF_001()
         {
@@ -35,7 +34,8 @@ namespace Axxen
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "산출수량", "Out_Qty_Main", true, 100, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "생산수량", "Prd_Qty", true, 100, default, true);
 
-            wowc = woservice.GetAll_WorkOrder_Item_WC();
+            //TODO - prm_prf_001 WebAPI이용
+            //wowc = woservice.GetAll_WorkOrder_Item_WC();
             dgvMainGrid.DataSource = wowc;
             #endregion
                                 
