@@ -1,4 +1,4 @@
-﻿/*작업지시*/
+﻿  /*작업지시*/
 SELECT wo.[Workorderno]
       ,wo.[Item_Code]
       ,wo.[Wc_Code]
@@ -28,8 +28,7 @@ SELECT wo.[Workorderno]
       ,wo.[Up_Date]
       ,wo.[Up_Emp]
   FROM [WorkOrder] as wo
-
-  INSERT INTO [dbo].[WorkOrder]
+INSERT INTO [dbo].[WorkOrder]
            ([Workorderno]
            ,[Item_Code]
            ,[Wc_Code]
@@ -87,7 +86,6 @@ SELECT wo.[Workorderno]
            ,<Ins_Emp, nvarchar(20),>
            ,<Up_Date, datetime,>
            ,<Up_Emp, nvarchar(20),>)
-
   /*품목*/
 SELECT im.[Item_Code]
       ,im.[Item_Name]
@@ -130,7 +128,6 @@ SELECT ds.[Detail_Seq]
       ,ds.[Up_Date]
       ,ds.[Up_Emp]
   FROM [Emp_Allocation_History_Detail] as ds
-
   /*대차*/
   SELECT gv.[GV_Code]
       ,gv.[GV_Name]
@@ -143,7 +140,6 @@ SELECT ds.[Detail_Seq]
       ,gv.[Up_Date]
       ,gv.[Up_Emp]
   FROM [GV_Master] as gv
-
   /* 대차 현황 */
 SELECT gvcs.[Status_Seq]
       ,gvcs.[GV_Code]
@@ -163,7 +159,165 @@ SELECT gvcs.[Status_Seq]
       ,gvcs.[Up_Date]
       ,gvcs.[Up_Emp]
   FROM [GV_Current_Status] as gvcs
-
+INSERT INTO [dbo].[GV_Current_Status]
+           ([GV_Code]
+           ,[Workorderno]
+           ,[GV_Qty]
+           ,[GV_Rest_Qty]
+           ,[Loading_date]
+           ,[Loading_time]
+           ,[Loading_Wc]
+           ,[Unloading_date]
+           ,[Unloading_time]
+           ,[In_Time]
+           ,[Center_Time]
+           ,[Out_Time]
+           ,[Ins_Date]
+           ,[Ins_Emp]
+           ,[Up_Date]
+           ,[Up_Emp])
+     VALUES
+           (<GV_Code, nvarchar(20),>
+           ,<Workorderno, nvarchar(20),>
+           ,<GV_Qty, int,>
+           ,<GV_Rest_Qty, int,>
+           ,<Loading_date, date,>
+           ,<Loading_time, datetime,>
+           ,<Loading_Wc, nvarchar(20),>
+           ,<Unloading_date, date,>
+           ,<Unloading_time, datetime,>
+           ,<In_Time, datetime,>
+           ,<Center_Time, datetime,>
+           ,<Out_Time, datetime,>
+           ,<Ins_Date, datetime,>
+           ,<Ins_Emp, nvarchar(20),>
+           ,<Up_Date, datetime,>
+           ,<Up_Emp, nvarchar(20),>);
+/* -- UPDATE GV_Current_Status
+  UPDATE [dbo].[GV_Current_Status]
+   SET [GV_Code] = <GV_Code, nvarchar(20),>
+      ,[Workorderno] = <Workorderno, nvarchar(20),>
+      ,[GV_Qty] = <GV_Qty, int,>
+      ,[GV_Rest_Qty] = <GV_Rest_Qty, int,>
+      ,[Loading_date] = <Loading_date, date,>
+      ,[Loading_time] = <Loading_time, datetime,>
+      ,[Loading_Wc] = <Loading_Wc, nvarchar(20),>
+      ,[Unloading_date] = <Unloading_date, date,>
+      ,[Unloading_time] = <Unloading_time, datetime,>
+      ,[In_Time] = <In_Time, datetime,>
+      ,[Center_Time] = <Center_Time, datetime,>
+      ,[Out_Time] = <Out_Time, datetime,>
+      ,[Ins_Date] = <Ins_Date, datetime,>
+      ,[Ins_Emp] = <Ins_Emp, nvarchar(20),>
+      ,[Up_Date] = <Up_Date, datetime,>
+      ,[Up_Emp] = <Up_Emp, nvarchar(20),>
+ WHERE <검색 조건,,>
+*/  
+DELETE FROM [dbo].[GV_Current_Status]
+      WHERE <검색 조건,,>
+  /*대차 이력*/
+SELECT gvh.[Hist_Seq]
+      ,gvh.[GV_Code]
+      ,gvh.[Workorderno]
+      ,gvh.[Loading_Date]
+      ,gvh.[Loading_Qty]
+      ,gvh.[Loading_Wc]
+      ,gvh.[In_Time]
+      ,gvh.[Center_Time]
+      ,gvh.[Out_Time]
+      ,gvh.[Unloading_Qty]
+      ,gvh.[Unloading_date]
+      ,gvh.[Unloading_datetime]
+      ,gvh.[Unloading_wc]
+      ,gvh.[Target_GV]
+      ,gvh.[Clear_Date]
+      ,gvh.[Clear_Datetime]
+      ,gvh.[Clear_Qty]
+      ,gvh.[Clear_Cause]
+      ,gvh.[Clear_wc]
+      ,gvh.[Clear_Item]
+      ,gvh.[Ins_Date]
+      ,gvh.[Ins_Emp]
+      ,gvh.[Up_Date]
+      ,gvh.[Up_Emp]
+  FROM gvh.[GV_History]
+INSERT INTO [dbo].[GV_History]
+           ([GV_Code]
+           ,[Workorderno]
+           ,[Loading_Date]
+           ,[Loading_Qty]
+           ,[Loading_Wc]
+           ,[In_Time]
+           ,[Center_Time]
+           ,[Out_Time]
+           ,[Unloading_Qty]
+           ,[Unloading_date]
+           ,[Unloading_datetime]
+           ,[Unloading_wc]
+           ,[Target_GV]
+           ,[Clear_Date]
+           ,[Clear_Datetime]
+           ,[Clear_Qty]
+           ,[Clear_Cause]
+           ,[Clear_wc]
+           ,[Clear_Item]
+           ,[Ins_Date]
+           ,[Ins_Emp]
+           ,[Up_Date]
+           ,[Up_Emp])
+     VALUES
+           (<GV_Code, nvarchar(20),>
+           ,<Workorderno, nvarchar(20),>
+           ,<Loading_Date, date,>
+           ,<Loading_Qty, int,>
+           ,<Loading_Wc, nvarchar(20),>
+           ,<In_Time, datetime,>
+           ,<Center_Time, datetime,>
+           ,<Out_Time, datetime,>
+           ,<Unloading_Qty, int,>
+           ,<Unloading_date, date,>
+           ,<Unloading_datetime, datetime,>
+           ,<Unloading_wc, nvarchar(20),>
+           ,<Target_GV, nvarchar(20),>
+           ,<Clear_Date, date,>
+           ,<Clear_Datetime, datetime,>
+           ,<Clear_Qty, int,>
+           ,<Clear_Cause, nvarchar(20),>
+           ,<Clear_wc, nvarchar(20),>
+           ,<Clear_Item, nvarchar(20),>
+           ,<Ins_Date, datetime,>
+           ,<Ins_Emp, nvarchar(20),>
+           ,<Up_Date, datetime,>
+           ,<Up_Emp, nvarchar(20),>)
+/* -- UPDATE GV_History
+   UPDATE [dbo].[GV_History]
+   SET [GV_Code] = <GV_Code, nvarchar(20),>
+      ,[Workorderno] = <Workorderno, nvarchar(20),>
+      ,[Loading_Date] = <Loading_Date, date,>
+      ,[Loading_Qty] = <Loading_Qty, int,>
+      ,[Loading_Wc] = <Loading_Wc, nvarchar(20),>
+      ,[In_Time] = <In_Time, datetime,>
+      ,[Center_Time] = <Center_Time, datetime,>
+      ,[Out_Time] = <Out_Time, datetime,>
+      ,[Unloading_Qty] = <Unloading_Qty, int,>
+      ,[Unloading_date] = <Unloading_date, date,>
+      ,[Unloading_datetime] = <Unloading_datetime, datetime,>
+      ,[Unloading_wc] = <Unloading_wc, nvarchar(20),>
+      ,[Target_GV] = <Target_GV, nvarchar(20),>
+      ,[Clear_Date] = <Clear_Date, date,>
+      ,[Clear_Datetime] = <Clear_Datetime, datetime,>
+      ,[Clear_Qty] = <Clear_Qty, int,>
+      ,[Clear_Cause] = <Clear_Cause, nvarchar(20),>
+      ,[Clear_wc] = <Clear_wc, nvarchar(20),>
+      ,[Clear_Item] = <Clear_Item, nvarchar(20),>
+      ,[Ins_Date] = <Ins_Date, datetime,>
+      ,[Ins_Emp] = <Ins_Emp, nvarchar(20),>
+      ,[Up_Date] = <Up_Date, datetime,>
+      ,[Up_Emp] = <Up_Emp, nvarchar(20),>
+ WHERE <검색 조건,,>
+*/
+DELETE FROM [dbo].[GV_History]
+      WHERE <검색 조건,,>
   /*팔레트*/
 SELECT gih.[Workorderno]
       ,gih.[Pallet_No]
@@ -187,9 +341,8 @@ SELECT gih.[Workorderno]
       ,gih.[Up_Date]
       ,gih.[Up_Emp]
   FROM [Goods_In_History] as gih
-
   /*작업장*/
-  SELECT wcm.[Wc_Code]
+SELECT wcm.[Wc_Code]
       ,wcm.[Wc_Name]
       ,wcm.[Wc_Group]
       ,wcm.[Process_Code]
@@ -217,8 +370,6 @@ SELECT gih.[Workorderno]
   FROM wcm.[WorkCenter_Master] as wcm
 
 
-
- 
 
 
 
