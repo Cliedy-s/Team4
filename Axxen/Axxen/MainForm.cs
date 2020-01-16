@@ -41,11 +41,11 @@ namespace Axxen
 
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                //MainForm_Service service = new MainForm_Service();
+           //     MainForm_Service service = new MainForm_Service();
 
                 //TODO - MainForm webapi이용
-                //menulist = service.GetAll_MenuTree_Master();
-                //booklist = service.GetAll_BookMark(UserInfo.User_ID);
+          //      menulist = service.GetAll_MenuTree_Master();
+           //     booklist = service.GetAll_BookMark(UserInfo.User_ID);
 
                 lblName.Text = UserInfo.User_Name;
 
