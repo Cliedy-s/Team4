@@ -6,17 +6,16 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using VO;
-using Service;
 using System.Linq;
 
 namespace Axxen
 {
     public partial class MSS_CON_002_1 : Axxen.BaseForm
     {
-        UserGroupService userservice = new UserGroupService();
+        //UserGroupService userservice = new UserGroupService();
         List<UserGroup_MasterVO> grouplist;
 
-        ScreenItemService screenservice = new ScreenItemService();
+        //ScreenItemService screenservice = new ScreenItemService();
         List<ScreenItem_AuthorityVO> NotScreenlist;//초기 안쓰는거
         List<ScreenItem_AuthorityVO> UseScreenlist; //초기 쓰는거
         List<ScreenItem_AuthorityVO> InsertUpdateScreenlist; //db에 들어갈애들
@@ -84,7 +83,8 @@ namespace Axxen
             dgvUseScreen.Columns.Insert(7, gridD);
             ///combobox
             grouplist = new List<UserGroup_MasterVO>();
-            grouplist = userservice.GetAllUserGroup();
+            //TODO - mms_con_002 webapi이용
+            //grouplist = userservice.GetAllUserGroup();
             Dictionary<string, string> cbblist = grouplist.FindAll(item => item.Use_YN == "Y").ToDictionary(item => item.UserGroup_Code, item => item.UserGroup_Name); //사용을 하는 그룹만
             cbbGroup.DisplayMember = "Value";
             cbbGroup.ValueMember = "Key";
@@ -114,13 +114,16 @@ namespace Axxen
             DeleteScreenlist = new List<ScreenItem_AuthorityVO>();
 
             NotScreenlist = new List<ScreenItem_AuthorityVO>();
-            NotScreenlist = screenservice.GetNotUseGroupScreenItem(lblGroup.Text);
+
+            //TODO - mms_con_002 webapi이용
+            //NotScreenlist = screenservice.GetNotUseGroupScreenItem(lblGroup.Text);
             dgvNotUseScreen.DataSource = NotScreenlist;
 
             //그룹에서 사용하는화면
             UseScreenlist = new List<ScreenItem_AuthorityVO>();
 
-            UseScreenlist = screenservice.GetUseGroupScreenItem(lblGroup.Text);
+            //TODO - mms_con_002 webapi이용
+            //UseScreenlist = screenservice.GetUseGroupScreenItem(lblGroup.Text);
             if (UseScreenlist.Count > 0)
             {
                 dgvUseScreen.DataSource = UseScreenlist;
@@ -254,8 +257,9 @@ namespace Axxen
                     InsertUpdateScreenlist.Add(item);
                 }
 
-                screenservice.InsertUpdateScreenItem_Authority(InsertUpdateScreenlist);
-                screenservice.DeleteGroupUseScreenItem_Authority(lblGroup.Text,DeleteScreenlist);
+                //TODO - mms_con_002 webapi이용
+                //screenservice.InsertUpdateScreenItem_Authority(InsertUpdateScreenlist);
+                //screenservice.DeleteGroupUseScreenItem_Authority(lblGroup.Text,DeleteScreenlist);
             }
             catch (Exception err)
             {

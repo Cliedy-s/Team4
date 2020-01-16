@@ -1,5 +1,5 @@
 ﻿using Axxen.Util;
-using Service;
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +14,7 @@ namespace Axxen
     public partial class PPS_MLD_001 : Axxen.GridManageForm
     {
         List<MoldVO> moldList;
-        MoldService service = new MoldService();
+        //MoldService service = new MoldService();
         public PPS_MLD_001()
         {
             InitializeComponent();
@@ -22,15 +22,16 @@ namespace Axxen
 
         private void PPS_MLD_001_Load(object sender, EventArgs e)
         {
-            DataLoad();
-            moldList = service.SelectMoldAll();
+            MainDataLoad();
+            //TODO - pps_mld_001 webapi이용
+            //moldList = service.SelectMoldAll();
             dgvMainGrid.DataSource = moldList;
         }
 
         /// <summary>
         /// 데이터 그리드뷰 바인딩
         /// </summary>
-        private void DataLoad()
+        private void MainDataLoad()
         {
             InitControlUtil.SetDGVDesign(dgvMainGrid);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형코드", "Mold_Code", true, 100);

@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
@@ -825,10 +828,6 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\Service\Service.csproj">
-      <Project>{af54aca3-da6e-4a15-9bac-da1b72dd7b93}</Project>
-      <Name>Service</Name>
-    </ProjectReference>
     <ProjectReference Include="..\VO\VO.csproj">
       <Project>{40a3c251-ad92-44a6-a387-367aa57772f7}</Project>
       <Name>VO</Name>

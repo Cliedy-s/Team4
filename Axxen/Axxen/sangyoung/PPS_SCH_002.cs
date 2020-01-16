@@ -18,10 +18,10 @@ namespace Axxen
 
         private void PPS_SCH_002_Load(object sender, EventArgs e)
         {
-            DataLoad();
+            MainDataLoad();
         }
 
-        private void DataLoad()
+        private void MainDataLoad()
         {
             InitControlUtil.SetDGVDesign(dgvMainGrid);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "작업지시상태", "Wo_Status", true, 110);

@@ -37,7 +37,7 @@
             this.panTop.SuspendLayout();
             this.SuspendLayout();
             // 
-            // aPanel1
+            // panTop
             // 
             this.panTop.Controls.Add(this.aTextBox_FindNameByCode2);
             this.panTop.Controls.Add(this.aTextBox_FindNameByCode1);
@@ -117,6 +117,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.Name = "KPI_RPT_001";
+            this.Load += new System.EventHandler(this.KPI_RPT_001_Load);
             this.panTop.ResumeLayout(false);
             this.panTop.PerformLayout();
             this.ResumeLayout(false);
