@@ -41,9 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MainForm_Service.cs" />
+    <Compile Include="MoldService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScreenItemService.cs" />
+    <Compile Include="UserGroupService.cs" />
+    <Compile Include="UserInfo_Service.cs" />
+    <Compile Include="WorkOrder_Service.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DAC\DAC.csproj">
+      <Project>{b6677e46-71d2-4fda-b66b-e03b68c97c7d}</Project>
+      <Name>DAC</Name>
+    </ProjectReference>
     <ProjectReference Include="..\VO\VO.csproj">
       <Project>{40a3c251-ad92-44a6-a387-367aa57772f7}</Project>
       <Name>VO</Name>

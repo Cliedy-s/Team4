@@ -1,4 +1,4 @@
-﻿
+﻿// using Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VO;
+using Service;
 namespace Axxen
 {
     public partial class MainForm : Form
@@ -41,11 +42,10 @@ namespace Axxen
 
             if (frm.ShowDialog() == DialogResult.OK)
             {
-           //     MainForm_Service service = new MainForm_Service();
+                MainForm_Service service = new MainForm_Service();
+                menulist = service.GetAll_MenuTree_Master();
 
-                //TODO - MainForm webapi이용
-          //      menulist = service.GetAll_MenuTree_Master();
-           //     booklist = service.GetAll_BookMark(UserInfo.User_ID);
+                booklist = service.GetAll_BookMark(UserInfo.User_ID);
 
                 lblName.Text = UserInfo.User_Name;
 
@@ -306,8 +306,7 @@ namespace Axxen
         private void 즐겨찾기ToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            //TODO - mainform webapi이용
-            //MainForm_Service service = new MainForm_Service();
+            MainForm_Service service = new MainForm_Service();
             MenuTree_Master_VO parentname = menulist.Find(item => item.Screen_Name == tvMenu.SelectedNode.Text);//부모코드find
             BookMark_VO bookmark = new BookMark_VO();
             bookmark.Parent_Screen_Code = parentname.Parent_Screen_Code;
@@ -316,26 +315,24 @@ namespace Axxen
 
 
 
-            //TODO - mainform webapi이용
-            //if (!service.InsertBookMark(bookmark))
-            //{
-            //    MessageBox.Show("이미등록된 항목입니다.");
-            //}
-            //else
-            //{
+            if (!service.InsertBookMark(bookmark))
+            {
+                MessageBox.Show("이미등록된 항목입니다.");
+            }
+            else
+            {
 
-                //tvBookMark.Nodes.Clear();
-                ////TODO - mainform webapi이용
-                ////booklist = service.GetAll_BookMark(UserInfo.User_ID);
-                //tvBookMark.Nodes.Add("즐겨찾기");
+                tvBookMark.Nodes.Clear();
+                booklist = service.GetAll_BookMark(UserInfo.User_ID);
+                tvBookMark.Nodes.Add("즐겨찾기");
 
-                //for (int i = 0; i < booklist.Count; i++)
-                //{
-                //    tvBookMark.TopNode.Nodes.Add(booklist[i].Screen_Code);
-                //}
+                for (int i = 0; i < booklist.Count; i++)
+                {
+                    tvBookMark.TopNode.Nodes.Add(booklist[i].Screen_Code);
+                }
 
-                //tvBookMark.ExpandAll();
-            //}
+                tvBookMark.ExpandAll();
+            }
 
 
 

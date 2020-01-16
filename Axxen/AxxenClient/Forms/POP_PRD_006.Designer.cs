@@ -40,7 +40,6 @@
             this.aTextBox_LabeledBigTextBox7 = new Axxen.CustomControls.ATextBox_LabeledBigTextBox();
             this.aTextBox_LabeledBigTextBox6 = new Axxen.CustomControls.ATextBox_LabeledBigTextBox();
             this.aTextBox_Searchable1 = new Axxen.CustomControls.ATextBox_Searchable();
-            this.aTextBox_LabeledBigTextBox1 = new Axxen.CustomControls.ATextBox_LabeledBigTextBox();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aDataGridView1)).BeginInit();
@@ -55,7 +54,7 @@
             // aPanel1
             // 
             this.aPanel1.Location = new System.Drawing.Point(0, 593);
-            this.aPanel1.Margin = new System.Windows.Forms.Padding(2);
+            this.aPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             // 
             // aDataGridView1
             // 
@@ -75,11 +74,10 @@
             this.aPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.aPanel4.Controls.Add(this.aTextBox_LabeledBigTextBox1);
             this.aPanel4.Controls.Add(this.aButton1);
             this.aPanel4.Controls.Add(this.aButton2);
             this.aPanel4.Location = new System.Drawing.Point(737, 247);
-            this.aPanel4.Margin = new System.Windows.Forms.Padding(2);
+            this.aPanel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.aPanel4.Name = "aPanel4";
             this.aPanel4.Size = new System.Drawing.Size(472, 338);
             this.aPanel4.TabIndex = 21;
@@ -92,9 +90,9 @@
             this.aButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.aButton1.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aButton1.Location = new System.Drawing.Point(5, 43);
+            this.aButton1.Location = new System.Drawing.Point(5, 3);
             this.aButton1.Name = "aButton1";
-            this.aButton1.Size = new System.Drawing.Size(463, 162);
+            this.aButton1.Size = new System.Drawing.Size(463, 202);
             this.aButton1.TabIndex = 25;
             this.aButton1.Text = "언로딩";
             this.aButton1.UseVisualStyleBackColor = false;
@@ -205,17 +203,6 @@
             this.aTextBox_Searchable1.TabIndex = 21;
             this.aTextBox_Searchable1.TextBoxText = "";
             // 
-            // aTextBox_LabeledBigTextBox1
-            // 
-            this.aTextBox_LabeledBigTextBox1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aTextBox_LabeledBigTextBox1.LabelText = "언로딩 수량";
-            this.aTextBox_LabeledBigTextBox1.Location = new System.Drawing.Point(5, 6);
-            this.aTextBox_LabeledBigTextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.aTextBox_LabeledBigTextBox1.Name = "aTextBox_LabeledBigTextBox1";
-            this.aTextBox_LabeledBigTextBox1.Size = new System.Drawing.Size(365, 30);
-            this.aTextBox_LabeledBigTextBox1.TabIndex = 26;
-            this.aTextBox_LabeledBigTextBox1.TextBoxText = "";
-            // 
             // POP_PRD_006
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -256,6 +243,5 @@
         private Axxen.CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox7;
         private Axxen.CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox6;
         private Axxen.CustomControls.ATextBox_Searchable aTextBox_Searchable1;
-        private Axxen.CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox1;
     }
 }

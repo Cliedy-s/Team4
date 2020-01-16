@@ -43,7 +43,6 @@
   <ItemGroup>
     <Compile Include="Item_Goods_HistoryVO.cs" />
     <Compile Include="MainForm_VO.cs" />
-    <Compile Include="Message.cs" />
     <Compile Include="MoldVO.cs" />
     <Compile Include="Mold_J_Item_Wc_MuseVO.cs" />
     <Compile Include="Process_J_Nop_History_Gas_WC_Time_DayVO.cs" />
