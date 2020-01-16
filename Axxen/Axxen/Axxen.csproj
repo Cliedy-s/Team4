@@ -33,15 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
-    </Reference>
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -445,8 +438,6 @@
     <Compile Include="sangyoung\PRM_RPT_005.Designer.cs">
       <DependentUpon>PRM_RPT_005.cs</DependentUpon>
     </Compile>
-    <Compile Include="Service\ServiceMaster.cs" />
-    <Compile Include="Service\ServiceParent.cs" />
     <Compile Include="Templets\GridGridGridForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -834,6 +825,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <ProjectReference Include="..\Service\Service.csproj">
+      <Project>{af54aca3-da6e-4a15-9bac-da1b72dd7b93}</Project>
+      <Name>Service</Name>
+    </ProjectReference>
     <ProjectReference Include="..\VO\VO.csproj">
       <Project>{40a3c251-ad92-44a6-a387-367aa57772f7}</Project>
       <Name>VO</Name>

@@ -27,7 +27,8 @@ namespace Axxen
             dgv.AutoGenerateColumns = false;
             dgv.AllowUserToAddRows = false;
             dgv.MultiSelect = false; //열하나만선택
-            dgv.AllowUserToResizeColumns = false; //사용자가 열크기 조절못하도록 고정
+            // TODO - 수정
+            dgv.AllowUserToResizeColumns = false; //사용자가 열크기 조절못하도록 고정 // 소연 :  답답해서 잠깐 바꿈  //다시 바꿈
             dgv.RowHeadersVisible = false; // 맨왼쪽에 있는 컬럼 삭제
             dgv.RowHeadersWidth = 20;     // 맨왼쪽에 있는 컬럼 사이즈 변경
             dgv.AllowUserToResizeRows = false; //사용자가임의로 로우의 크기를 변경시킬수 없게        
