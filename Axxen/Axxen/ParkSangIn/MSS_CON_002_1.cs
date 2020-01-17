@@ -22,7 +22,7 @@ namespace Axxen
         List<ScreenItem_AuthorityVO> InsertUpdateScreenlist; //db에 들어갈애들
         List<ScreenItem_AuthorityVO> DeleteScreenlist; //db에서 삭제되는 목록들
 
-        int UseScreenlistCount = 0;
+
         public MSS_CON_002_1()
         {
             InitializeComponent();

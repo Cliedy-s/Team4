@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.aButton1 = new Axxen.CustomControls.AButton();
-            this.aButton2 = new Axxen.CustomControls.AButton();
             this.aLabel1 = new Axxen.CustomControls.ALabel();
             this.aTextBox_FindNameByCode1 = new Axxen.CustomControls.ATextBox_FindNameByCode();
             this.aTextBox_FindNameByCode2 = new Axxen.CustomControls.ATextBox_FindNameByCode();
@@ -43,34 +41,10 @@
             this.panTop.Controls.Add(this.aTextBox_FindNameByCode2);
             this.panTop.Controls.Add(this.aTextBox_FindNameByCode1);
             this.panTop.Controls.Add(this.aLabel1);
-            this.panTop.Controls.Add(this.aButton2);
-            this.panTop.Controls.Add(this.aButton1);
             // 
             // aHeaderBox1
             // 
             this.aHeaderBox1.HeaderBoxText = "조회내역";
-            // 
-            // aButton1
-            // 
-            this.aButton1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton1.Location = new System.Drawing.Point(946, 28);
-            this.aButton1.Name = "aButton1";
-            this.aButton1.Size = new System.Drawing.Size(75, 23);
-            this.aButton1.TabIndex = 0;
-            this.aButton1.Text = "실적보정";
-            this.aButton1.UseVisualStyleBackColor = false;
-            // 
-            // aButton2
-            // 
-            this.aButton2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.aButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton2.Location = new System.Drawing.Point(1027, 28);
-            this.aButton2.Name = "aButton2";
-            this.aButton2.Size = new System.Drawing.Size(75, 23);
-            this.aButton2.TabIndex = 1;
-            this.aButton2.Text = "실적 분할";
-            this.aButton2.UseVisualStyleBackColor = false;
             // 
             // aLabel1
             // 
@@ -134,9 +108,6 @@
         }
 
         #endregion
-
-        private CustomControls.AButton aButton1;
-        private CustomControls.AButton aButton2;
         private CustomControls.ALabel aLabel1;
         private CustomControls.ATextBox_FindNameByCode aTextBox_FindNameByCode2;
         private CustomControls.ATextBox_FindNameByCode aTextBox_FindNameByCode1;
