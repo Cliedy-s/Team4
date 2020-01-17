@@ -10,10 +10,28 @@ namespace Service
 {
    public class UserInfo_Service
     {
+        UserInfoDAC dac;
+        public UserInfo_Service()
+        {
+             dac = new UserInfoDAC();
+
+        }
+
+
         public UserInfoVO GetUserInfo(string id, string pwd)
         {
-            UserInfoDAC dac = new UserInfoDAC();
+
             return dac.GetUserInfo(id,pwd);
         }
-}
+
+        public List<UserInfoVO> GetAllUser()
+        {
+        
+            return dac.GetAllUser();
+        }
+        public bool InsertUser(UserInfoVO user)
+        {
+            return dac.InsertUser(user);
+        }
+    }
 }

@@ -198,6 +198,12 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ParkSangIn\MSS_CON_003_1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MSS_CON_003_1.Designer.cs">
+      <DependentUpon>MSS_CON_003_1.cs</DependentUpon>
+    </Compile>
     <Compile Include="ParkSangIn\MDS_CDS_001.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -347,6 +353,12 @@
     </Compile>
     <Compile Include="ParkSangIn\MSS_SYS_009.Designer.cs">
       <DependentUpon>MSS_SYS_009.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlaceHolderTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PlaceHolderTextBox.designer.cs">
+      <DependentUpon>PlaceHolderTextBox.cs</DependentUpon>
     </Compile>
     <Compile Include="sangyoung\KPI_RPT_001.cs">
       <SubType>Form</SubType>
@@ -697,6 +709,9 @@
     <EmbeddedResource Include="ParkSangIn\MSS_CON_003.resx">
       <DependentUpon>MSS_CON_003.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ParkSangIn\MSS_CON_003_1.resx">
+      <DependentUpon>MSS_CON_003_1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ParkSangIn\MSS_SYS_001.resx">
       <DependentUpon>MSS_SYS_001.cs</DependentUpon>
     </EmbeddedResource>
@@ -711,6 +726,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ParkSangIn\MSS_SYS_009.resx">
       <DependentUpon>MSS_SYS_009.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlaceHolderTextBox.resx">
+      <DependentUpon>PlaceHolderTextBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="sangyoung\KPI_RPT_001.resx">
       <DependentUpon>KPI_RPT_001.cs</DependentUpon>
