@@ -20,6 +20,7 @@ namespace Axxen
         {
             MainDataLoad();
             SubDataLoad();
+
         }
 
         private void MainDataLoad()
@@ -35,10 +36,6 @@ namespace Axxen
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "거래처명", "Cust_Name", true, 90);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "영업담당", "Sale_Emp", true, 90);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "생산의뢰상태", "Req_Status", true, 110);
-
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "생선된작업지시수", "", true, 100);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "작업지시생산수량", "", true, 80);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "작업지시계획수량", "", true, 160);
         }
 
         private void SubDataLoad()
@@ -56,7 +53,6 @@ namespace Axxen
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "생산수량", "Prd_Qty", true, 110);
 
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "비고", "Remark", true, 110,default, true);
-            
         }
     }
 }
