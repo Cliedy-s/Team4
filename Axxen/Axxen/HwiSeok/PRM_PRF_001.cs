@@ -43,7 +43,8 @@ namespace Axxen
 
         private void aDateTimePickerSearch1_btnDateTimeSearch_Click(object sender, EventArgs args)
         {
-
+            wowc = woservice.GetDatePicker_WorkOrder_Item_WC(aDateTimePickerSearch1.ADateTimePickerValue1.ToShortDateString(),aDateTimePickerSearch1.ADateTimePickerValue2.ToShortDateString());
+            dgvMainGrid.DataSource = wowc;
         }
     }
 }
