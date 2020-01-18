@@ -119,6 +119,35 @@ SELECT im.[Item_Code]
   FROM [Item_Master] as im
 
   /*작업자 할당*/
+SELECT 
+	eah.Hist_Seq
+	, eah.User_ID
+	, eah.Allocation_date
+	, eah.Allocation_datetime
+	, eah.Release_datetime
+	, eah.Ins_Date
+	, eah.Ins_Emp
+	, eah.Up_Date
+	, eah.Up_Emp
+FROM Emp_Allocation_History	as eah
+INSERT INTO Emp_Allocation_History(
+	 User_ID
+	, Allocation_date
+	, Allocation_datetime
+	, Release_datetime
+	, Ins_Date
+	, Ins_Emp
+	, Up_Date
+	, Up_Emp)
+	VALUES(
+	 User_ID
+	, Allocation_date
+	, Allocation_datetime
+	, Release_datetime
+	, Ins_Date
+	, Ins_Emp
+	, Up_Date
+	, Up_Emp);
 SELECT ds.[Detail_Seq]
       ,ds.[User_ID]
       ,ds.[Workorderno]
@@ -130,6 +159,57 @@ SELECT ds.[Detail_Seq]
       ,ds.[Up_Date]
       ,ds.[Up_Emp]
   FROM [Emp_Allocation_History_Detail] as ds
+INSERT INTO [Emp_Allocation_History_Detail](
+      [User_ID]
+      ,[Workorderno]
+      ,[Prd_Starttime]
+      ,[Prd_Endtime]
+      ,[Prd_Qty]
+      ,[Ins_Date]
+      ,[Ins_Emp]
+      ,[Up_Date]
+      ,[Up_Emp])
+VALUES(
+	  [Detail_Seq]
+      ,[User_ID]
+      ,[Workorderno]
+      ,[Prd_Starttime]
+      ,[Prd_Endtime]
+      ,[Prd_Qty]
+      ,[Ins_Date]
+      ,[Ins_Emp]
+      ,[Up_Date]
+      ,[Up_Emp]);
+/*현재 작업자 인원 할당*/
+SELECT 
+	ewa.Wc_Code
+	, ewa.User_ID
+	, ewa.Allocation_datetime
+	, ewa.Release_datetime
+	, ewa.Ins_Date
+	, ewa.Ins_Emp
+	, ewa.Up_Date
+	, ewa.Up_Emp
+FROM Emp_Wc_Allocation AS ewa
+INSERT INTO Emp_Wc_Allocation (
+	Wc_Code
+	, User_ID
+	, Allocation_datetime
+	, Release_datetime
+	, Ins_Date
+	, Ins_Emp
+	, Up_Date
+	, Up_Emp
+	)	
+	VALUES(
+	Wc_Code
+	, User_ID
+	, Allocation_datetime
+	, Release_datetime
+	, Ins_Date
+	, Ins_Emp
+	, Up_Date
+	, Up_Emp);
 
   /*대차*/
   SELECT gv.[GV_Code]
@@ -374,7 +454,7 @@ SELECT wcm.[Wc_Code]
       ,wcm.[Ins_Emp]
       ,wcm.[Up_Date]
       ,wcm.[Up_Emp]
-  FROM wcm.[WorkCenter_Master] as wcm
+  FROM [WorkCenter_Master] as wcm
 
   /*팔래트*/
   SELECT pal.[Pallet_No]
@@ -430,7 +510,7 @@ SELECT [Workorderno]
       ,[Ins_Emp]
       ,[Up_Date]
       ,[Up_Emp]
-  FROM [dbo].[Goods_In_History]
+  FROM [Goods_In_History]
 INSERT INTO [dbo].[Goods_In_History]
            ([Workorderno]
            ,[Pallet_No]
@@ -500,12 +580,62 @@ UPDATE [dbo].[Goods_In_History]
       ,[Up_Emp] = <Up_Emp, nvarchar(20),>
  WHERE <검색 조건,,>
  */
- DELETE FROM [dbo].[Goods_In_History]
+ DELETE FROM [Goods_In_History]
       WHERE <검색 조건,,>
 
+/*금형*/
+SELECT mold.Mold_Code
+,mold.Mold_Name
+,mold.Mold_Group
+,mold.Mold_Status
+,mold.Cum_Shot_Cnt
+,mold.Cum_Prd_Qty
+,mold.Cum_Time
+,mold.Guar_Shot_Cnt
+,mold.Purchase_Amt
+,mold.In_Date
+,mold.Last_Setup_Time
+,mold.Wc_Code
+,mold.Remark
+,mold.Use_YN
+,mold.Ins_Date
+,mold.Ins_Emp
+,mold.Up_Date
+,mold.Up_Emp
+FROM Mold_Master as mold
 
-
-
+/*사용자*/
+SELECT 
+	um.User_ID
+	, um.User_Name
+	, um.User_PW
+	, um.Customer_Code
+	, um.DefaultLanguage
+	, um.User_Type
+	, um.Price_Visible_YN
+	, um.IP_Security_YN
+	, um.Pw_Reset_Count
+	, um.Default_Screen_Code
+	, um.Default_Process_Code
+	, um.Monitoring_YN
+	, um.Use_YN
+	, um.S01
+	, um.S02
+	, um.S03
+	, um.S04
+	, um.S05
+	, um.S06
+	, um.S07
+	, um.S08
+	, um.S09
+	, um.S10
+	, um.S11
+	, um.S12
+	, um.Ins_Date
+	, um.Ins_Emp
+	, um.Up_Date
+	, um.Up_Emp
+FROM User_Master AS um
 
 
 

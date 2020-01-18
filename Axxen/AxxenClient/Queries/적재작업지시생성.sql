@@ -1,4 +1,4 @@
-﻿/* 현황 */
+/* 건조대차 현황 */
   SELECT gv.[GV_Code]
       ,gv.[GV_Name]
       ,gv.[GV_Group]
@@ -14,7 +14,7 @@
   JOIN [Item_Master] as im ON im.[Item_Code] = wo.[Item_Code]
   JOIN [GV_Current_Status] as gvcs ON gvcs.[Workorderno] = wo.[Workorderno]
   JOIN [GV_Master] as gv ON gv.[GV_Code] = gvcs.[GV_Code]
-	WHERE wcm.[Wo_Ini_Char] = '소성'
+	WHERE wcm.[Wo_Ini_Char] = '건조'
 
 
  /* 등록 */
