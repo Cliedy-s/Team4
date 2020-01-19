@@ -637,14 +637,241 @@ SELECT
 	, um.Up_Emp
 FROM User_Master AS um
 
+/*공정조건*/
+SELECT 
+	 csm.Item_Code
+	, csm.Wc_Code
+	, csm.Condition_Code
+	, csm.Condition_Name
+	, csm.Spec_Desc
+	, csm.SL 
+	, csm.USL 
+	, csm.LSL 
+	, csm.Condition_Unit
+	, csm.Condition_Group
+	, csm.Remark
+	, csm.Ins_Date
+	, csm.Ins_Emp
+	, csm.Up_Date
+	, csm.Up_Emp
+	FROM Condition_Spec_Master	AS csm
+INSERT Condition_Spec_Master (
+	Item_Code
+	,Wc_Code
+	,Condition_Code
+	,Condition_Name
+	,Spec_Desc
+	,SL 
+	,USL 
+	,LSL 
+	,Condition_Unit
+	,Condition_Group
+	,Remark
+	,Ins_Date
+	,Ins_Emp
+	,Up_Date
+	,Up_Emp
+	)
+	VALUES(
+	Item_Code
+	,Wc_Code
+	,Condition_Code
+	,Condition_Name
+	,Spec_Desc
+	,SL 
+	,USL 
+	,LSL 
+	,Condition_Unit
+	,Condition_Group
+	,Remark
+	,Ins_Date
+	,Ins_Emp
+	,Up_Date
+	,Up_Emp
+	)
 
+/*공정조건 이력*/
+SELECT 
+	cmh.Condition_measure_seq
+	, cmh.Item_code
+	, cmh.Wc_Code
+	, cmh.Condition_Code
+	, cmh.Condition_Date
+	, cmh.Condition_Datetime
+	, cmh.Condition_Val
+	, cmh.Workorderno
+	, cmh.Ins_Date
+	, cmh.Ins_Emp
+	, cmh.Up_Date
+	, cmh.Up_Emp
+	FROM Condition_Measure_History AS cmh
+INSERT INTO Condition_Measure_History (
+	Item_code
+	,Wc_Code
+	,Condition_Code
+	,Condition_Date
+	,Condition_Datetime
+	,Condition_Val
+	,Workorderno
+	,Ins_Date
+	,Ins_Emp
+	,Up_Date
+	,Up_Emp
+	)
+	VALUES (
+	Item_code
+	,Wc_Code
+	,Condition_Code
+	,Condition_Date
+	,Condition_Datetime
+	,Condition_Val
+	,Workorderno
+	,Ins_Date
+	,Ins_Emp
+	,Up_Date
+	,Up_Emp
+	)
+DELETE FROM Condition_Measure_History
+WHERE Condition_measure_seq = @Condition_measure_seq
+/*검사항목규격설정*/
+SELECT 
+	ism.Item_Code
+	, ism.Process_code
+	, ism.Inspect_code
+	, ism.Inspect_name
+	, ism.Spec_Desc
+	, ism.USL 
+	, ism.SL
+	, ism.LSL 
+	, ism.Sample_size
+	, ism.Inspect_Unit
+	, ism.Use_YN
+	, ism.Remark
+	, ism.Ins_Date
+	, ism.Ins_Emp
+	, ism.Up_Date
+	, ism.Up_Emp
+	FROM Inspect_Spec_Master	AS ism
+INSERT INTO Inspect_Spec_Master (	
+	Item_Code
+	,Process_code
+	,Inspect_code
+	,Inspect_name
+	,Spec_Desc
+	,USL 
+	,SL
+	,LSL 
+	,Sample_size
+	,Inspect_Unit
+	,Use_YN
+	,Remark
+	,Ins_Date
+	,Ins_Emp
+	,Up_Date
+	,Up_Emp
+	)
+	VALUES (	
+	Item_Code
+	,Process_code
+	,Inspect_code
+	,Inspect_name
+	,Spec_Desc
+	,USL 
+	,SL
+	,LSL 
+	,Sample_size
+	,Inspect_Unit
+	,Use_YN
+	,Remark
+	,Ins_Date
+	,Ins_Emp
+	,Up_Date
+	,Up_Emp
+	)
+/*공정검사 측정이력*/
+SELECT 
+	 imh,Inspect_measure_seq
+	, imh,Item_code
+	, imh,Process_code
+	, imh,Inspect_code
+	, imh,Inspect_date
+	, imh,Inspect_datetime
+	, imh,Inspect_val
+	, imh,Workorderno
+	, imh,Ins_Date
+	, imh,Ins_Emp
+	, imh,Up_Date
+	, imh,Up_Emp
+	FROM Inspect_Measure_History AS imh
+INSERT INTO Inspect_Measure_History (
+	Inspect_measure_seq
+	,Item_code
+	,Process_code
+	,Inspect_code
+	,Inspect_date
+	,Inspect_datetime
+	,Inspect_val
+	,Workorderno
+	,Ins_Date
+	,Ins_Emp
+	,Up_Date
+	,Up_Emp
+	)
+	VALUES (
+	Inspect_measure_seq
+	,Item_code
+	,Process_code
+	,Inspect_code
+	,Inspect_date
+	,Inspect_datetime
+	,Inspect_val
+	,Workorderno
+	,Ins_Date
+	,Ins_Emp
+	,Up_Date
+	,Up_Emp
+	)
+DELETE FROM Inspect_Measure_History 
+WHERE Inspect_measure_seq = @Inspect_measure_seq
 
-
-
-
-
-
-
+/*비가동 대분류*/
+SELECT 	
+	nam.Nop_Ma_Code
+	,nam.Nop_Ma_Name
+	,nam.Use_YN
+	,nam.Ins_Date
+	,nam.Ins_Emp
+	,nam.Up_Date
+	,nam.Up_Emp
+	FROM Nop_Ma_Master AS nam
+/*상세분류*/
+SELECT 	
+	nim.Nop_Mi_Code
+	, nim.Nop_Mi_Name
+	, nim.Nop_Ma_Code
+	, nim.Use_YN
+	, nim.Remark
+	, nim.Ins_Date
+	, nim.Ins_Emp
+	, nim.Up_Date
+	, nim.Up_Emp
+	FROM Nop_Mi_Master AS nim
+/*비가동 발생이력*/
+SELECT 	
+	 nh.Nop_Seq
+	, nh.Nop_Date
+	, nh.Nop_Happentime
+	, nh.Nop_Canceltime
+	, nh.Wc_Code
+	, nh.Nop_Mi_Code
+	, nh.Nop_Type
+	, nh.Nop_Time
+	, nh.Remark
+	, nh.Ins_Date
+	, nh.Ins_Emp
+	, nh.Up_Date
+	, nh.Up_Emp
+FROM Nop_History as nh
 
 
 
