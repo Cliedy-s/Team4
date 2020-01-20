@@ -68,6 +68,8 @@
             // 
             // aDateTimePickerSearch1
             // 
+            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 1, 13, 18, 8, 30, 36);
+            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 1, 20, 17, 44, 43, 980);
             this.aDateTimePickerSearch1.ButtonText = "조회";
             this.aDateTimePickerSearch1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aDateTimePickerSearch1.Location = new System.Drawing.Point(88, 23);
@@ -75,6 +77,7 @@
             this.aDateTimePickerSearch1.Name = "aDateTimePickerSearch1";
             this.aDateTimePickerSearch1.Size = new System.Drawing.Size(324, 32);
             this.aDateTimePickerSearch1.TabIndex = 15;
+            this.aDateTimePickerSearch1.btnDateTimeSearch_Click += new Axxen.CustomControls.ADateTimePickerSearch.SearchButtonClick(this.aDateTimePickerSearch1_btnDateTimeSearch_Click);
             // 
             // PRM_PRF_004
             // 
@@ -82,6 +85,7 @@
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.Name = "PRM_PRF_004";
             this.Text = "GAS 사용량 등록";
+            this.Load += new System.EventHandler(this.PRM_PRF_004_Load);
             this.panTop.ResumeLayout(false);
             this.panTop.PerformLayout();
             this.ResumeLayout(false);
