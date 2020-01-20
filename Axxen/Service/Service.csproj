@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GasUse_History_Service.cs" />
     <Compile Include="ItemMaster_Service.cs" />
     <Compile Include="MainForm_Service.cs" />
     <Compile Include="MoldService.cs" />
