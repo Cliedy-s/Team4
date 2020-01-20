@@ -21,15 +21,20 @@ namespace Axxen.CustomControls
         public ADateTimePickerSearch()
         {
             InitializeComponent();
-
-            aDateTimePicker1.Value = DateTime.Now.AddDays(-7);
-            aDateTimePicker2.MaxDate = DateTime.Now;
         }
+
         public delegate void SearchButtonClick(object sender, EventArgs args);
 
         private void btnSearch_Click_1(object sender, EventArgs e)
         {
             btnDateTimeSearch_Click?.Invoke(sender, e);
+        }
+
+        private void ADateTimePickerSearch_Load(object sender, EventArgs e)
+        {
+            aDateTimePicker1.Value = DateTime.Now.AddDays(-7);
+            aDateTimePicker2.MaxDate = DateTime.Now;
+
         }
     }
 }

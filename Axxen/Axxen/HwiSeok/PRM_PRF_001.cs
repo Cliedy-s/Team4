@@ -1,4 +1,5 @@
-﻿using Service;
+﻿using Axxen.HwiSeok;
+using Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,7 +23,9 @@ namespace Axxen
 
         private void PRM_PRF_001_Load(object sender, EventArgs e)
         {
+            ((MainForm)this.MdiParent).InsertFormEvent += new System.EventHandler(this.InsertFormShow);//입력이벤트 등록
             #region 그리드뷰 설정
+
             DatagridviewDesigns.SetDesign(dgvMainGrid);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "번호", "Num", true, 100, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "작업지시일자", "Prd_Date", true, 100, default, true);
@@ -41,10 +44,40 @@ namespace Axxen
                                 
         }
 
+        /// <summary>
+        /// 입력 이벤트 메서드
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void InsertFormShow(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
+                {
+
+                    PRM_PRF_001_1 frm = new PRM_PRF_001_1();
+
+                    frm.ShowDialog();
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
+
+        }
+
         private void aDateTimePickerSearch1_btnDateTimeSearch_Click(object sender, EventArgs args)
         {
             wowc = woservice.GetDatePicker_WorkOrder_Item_WC(aDateTimePickerSearch1.ADateTimePickerValue1.ToShortDateString(),aDateTimePickerSearch1.ADateTimePickerValue2.ToShortDateString());
             dgvMainGrid.DataSource = wowc;
+        }
+
+        private void PRM_PRF_001_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ((MainForm)this.MdiParent).InsertFormEvent -= new System.EventHandler(this.InsertFormShow);//입력이벤트 등록
         }
     }
 }

@@ -118,8 +118,6 @@ namespace Axxen
 
                 MessageBox.Show(err.Message);
             }
-
-
         }
     }
 }
