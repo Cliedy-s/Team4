@@ -45,4 +45,43 @@ namespace VO
         public string Up_Emp { get; set; }
 
     }
+
+
+    /// <summary>
+    /// 조인된 유저 목록
+    /// </summary>
+    public class UserGroup_MappingVO {
+
+       /// <summary>
+       /// 유저그릅코드
+       /// </summary>
+        public string UserGroup_Code { get; set; }
+        /// <summary>
+        /// 유저아이디
+        /// </summary>
+        public string User_ID { get; set; }
+        /// <summary>
+        /// 등록일자
+        /// </summary>
+        public DateTime Ins_Date { get; set; }
+        /// <summary>
+        /// 등록자
+        /// </summary>
+        public string Ins_Emp { get; set; }
+        /// <summary>
+        /// 수정이자
+        /// </summary>
+        public DateTime Up_Date { get; set; }
+        /// <summary>
+        /// 수정자
+        /// </summary>
+        public string Up_Emp { get; set; }
+
+
+
+
+
+    }
+
+
 }

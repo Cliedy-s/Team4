@@ -29,6 +29,10 @@ namespace Axxen
         List<MenuTree_Master_VO> menulist; //메뉴
         List<BookMark_VO> booklist;
 
+
+        List<UserGroup_MappingVO> userinfoGrouplist; //유저가속한 그룹
+        List<ScreenItem_AuthorityVO> userinfoScreenItem;//그룹에속한 화면들
+
         public MainForm()
         {
             InitializeComponent();
@@ -44,7 +48,6 @@ namespace Axxen
             {
                 MainForm_Service service = new MainForm_Service();
                 menulist = service.GetAll_MenuTree_Master();
-
                 booklist = service.GetAll_BookMark(UserInfo.User_ID);
 
                 lblName.Text = UserInfo.User_Name;
@@ -57,7 +60,19 @@ namespace Axxen
                 this.tabControl2.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
                 CloseImage = Properties.Resources.x;
                 this.tabControl2.Padding = new Point(10, 3);
-            }
+
+                UserInformation();
+           }
+        }
+
+        private void UserInformation()
+        {
+            UserGroupService service = new UserGroupService();
+          
+            userinfoGrouplist = service.GetUserInfoGroup(UserInfo.User_ID); //로그인한 사용자의 그룹권한들
+
+            ScreenItemService screenservice = new ScreenItemService();
+            userinfoScreenItem = screenservice.GetUserInfoScreenItem(userinfoGrouplist); // 로그인한 사용자의 그룹권한에 사용되는 화면들
         }
 
 
@@ -162,6 +177,8 @@ namespace Axxen
         /// <param name="btnname"></param>
         private void CreateMenuTree(string btnname)
         {
+
+
             try
             {
                 if (menulist.Count > 0)
@@ -217,7 +234,11 @@ namespace Axxen
         {
             try
             {
-                string nameSpace = "Axxen"; //네임스페이스 명
+                if (userinfoScreenItem.Count(item => item.Screen_Code == formName.ToString())>0) {
+
+
+
+                    string nameSpace = "Axxen"; //네임스페이스 명
                 Assembly cuasm = Assembly.GetExecutingAssembly();
                 //string Format 의 따옴표와 마침표 주의!!
                 string childFormName = string.Format("{0}.{1}", nameSpace, formName);
@@ -245,6 +266,11 @@ namespace Axxen
                 //    MessageBox.Show(tabControl2.SelectedTab.Tag.ToString());
                 frm.Show();
                 lblSubtitle.Text = "메뉴->" + subtitle;
+                }
+                else
+                {
+                    MessageBox.Show("사용권한이 없는 메뉴입니다." + formName);
+                }
             }
             catch
             {
@@ -412,12 +438,42 @@ namespace Axxen
 
                     }
                 }
-                else //x버튼을 제제외한 텝페이지클릭시 폼 앞으로
+                else //x버튼을 제제외한 텝페이지클릭시 폼 앞으로 && 튤박스에 해당 권한에 맞게 튤박스아이템 사용유무
                 {
                     foreach (Form childForm in Application.OpenForms)
                     {
                         if (childForm.Tag.ToString().Equals(tabControl2.SelectedTab.Tag.ToString()))
                         {
+                            ScreenItem_AuthorityVO screentype = new ScreenItem_AuthorityVO();
+                            screentype =  userinfoScreenItem.Find(item => item.Screen_Code == tabControl2.SelectedTab.Tag.ToString());
+                            if (screentype != null) {
+                                if (screentype.Pre_Type[0] == 'Y')
+                                {
+                                    tsbInsert.Enabled = true;
+                                }
+                                else
+                                {
+                                    tsbInsert.Enabled = false;
+                                }
+
+
+                                if (screentype.Pre_Type[2] == 'Y')
+                                {
+                                    tsbtnUpdate.Enabled = true;
+                                }
+                                else
+                                {
+                                    tsbtnUpdate.Enabled = false;
+                                }
+                                if (screentype.Pre_Type[3] == 'Y')
+                                {
+                                    tsbtnDelete.Enabled = true;
+                                }
+                                else
+                                {
+                                    tsbtnDelete.Enabled = false;
+                                }
+                            }
                             childForm.Activate();
                             lblSubtitle.Text = "메뉴->" + tabControl2.SelectedTab.Text.ToString();
                             break;
@@ -434,14 +490,12 @@ namespace Axxen
         /// <param name="e"></param>
         private void 전체닫기ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            foreach (Form childForm in Application.OpenForms)
+            foreach (Form children in this.MdiChildren)
             {
-
-                if (childForm.Name != "MainForm")
-                {
-                    childForm.Close();
-                }
+                children.Dispose();
             }
+
+            tabControl2.TabPages.Clear();
         }
 
         #endregion

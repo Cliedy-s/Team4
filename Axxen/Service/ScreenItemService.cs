@@ -10,6 +10,13 @@ namespace Service
    public class ScreenItemService
     {
 
+        public List<ScreenItem_AuthorityVO> GetUserInfoScreenItem(List<UserGroup_MappingVO> list)
+        {
+            ScreenItemDAC dac = new ScreenItemDAC();
+
+            return dac.GetUserInfoScreenItem(list);
+        }
+
         /// <summary>
         /// 모든 스크린 아이템
         /// </summary>

@@ -8,20 +8,46 @@ using VO;
 
 namespace Service
 {
-  public class UserGroupService
+    public class UserGroupService
     {
-        public List<UserGroup_MasterVO> GetAllUserGroup()
+        UserGroupDAC dac;
+        public UserGroupService()
         {
-            UserGroupDAC dac = new UserGroupDAC();
-   
+            dac = new UserGroupDAC();
+        }
+
+        public List<UserGroup_MappingVO> GetUserInfoGroup(string userID)
+        {
+            return dac.GetUserInfoGroup(userID);
+        }
+
+            public List<UserGroup_MasterVO> GetAllUserGroup()
+        {
+
+
             return dac.GetAllUserGroup();
         }
 
-        public bool GetUpdateUserGroup(string groupcode,string check)
+        public bool GetUpdateUserGroup(string groupcode, string check)
         {
-            UserGroupDAC dac = new UserGroupDAC();
+
 
             return dac.GetUpdateUserGroup(groupcode, check);
         }
-    }
+
+        public List<UserGroup_MappingVO> GetAllUserGroup_Mapping()
+        {
+
+            return dac.GetAllUserGroup_Mapping();
+
+        }
+        public void InsertUpdateUserGroup_Mapping(List<UserGroup_MappingVO> List)
+        {
+            dac.InsertUpdateUserGroup_Mapping(List);
+        }
+        public void DeleteUserGroup_Mapping(List<UserGroup_MappingVO> List)
+        {
+            dac.DeleteUserGroup_Mapping(List);
+        }
+        }
 }
