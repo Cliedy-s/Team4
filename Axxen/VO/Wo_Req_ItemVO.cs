@@ -8,8 +8,8 @@ namespace VO
 {
     public class Wo_Req_ItemVO //SCH_001
     {
+        public int Req_Seq { get; set; } //의뢰순번
         public string Wo_Req_No { get; set; } //생산의뢰번호
-        public int Req_Req { get; set; } //의뢰순번
         public string Item_Code { get; set; } //품목코드
         public string Item_Name { get; set; } //품목명
         public int Req_Qty { get; set; } //의뢰수량

@@ -44,6 +44,7 @@
     <Compile Include="DACParent.cs" />
     <Compile Include="GasUse_HistoryDAC.cs" />
     <Compile Include="Helper.cs" />
+    <Compile Include="ItemMasterDAC.cs" />
     <Compile Include="MainForm_DAC.cs" />
     <Compile Include="MoldDAC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -51,6 +52,7 @@
     <Compile Include="UserGroupDAC.cs" />
     <Compile Include="UserInfoDAC.cs" />
     <Compile Include="WorkOrderDAC.cs" />
+    <Compile Include="Wo_ReqDAC.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Team4Connect_DEV.xml" />

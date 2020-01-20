@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GasUse_History_Service.cs" />
+    <Compile Include="ItemMaster_Service.cs" />
     <Compile Include="MainForm_Service.cs" />
     <Compile Include="MoldService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -49,6 +49,7 @@
     <Compile Include="UserGroupService.cs" />
     <Compile Include="UserInfo_Service.cs" />
     <Compile Include="WorkOrder_Service.cs" />
+    <Compile Include="Wo_ReqService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAC\DAC.csproj">

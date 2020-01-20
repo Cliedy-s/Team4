@@ -204,6 +204,12 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ParkSangIn\MDS_SDS_001_1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_SDS_001_1.Designer.cs">
+      <DependentUpon>MDS_SDS_001_1.cs</DependentUpon>
+    </Compile>
     <Compile Include="ParkSangIn\MSS_CON_003_1.cs">
       <SubType>Form</SubType>
     </Compile>
