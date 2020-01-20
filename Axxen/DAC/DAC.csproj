@@ -51,6 +51,7 @@
     <Compile Include="UserGroupDAC.cs" />
     <Compile Include="UserInfoDAC.cs" />
     <Compile Include="WorkOrderDAC.cs" />
+    <Compile Include="Wo_ReqDAC.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Team4Connect_DEV.xml" />

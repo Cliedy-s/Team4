@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VO
 {
-    public class WO__WC_Production_ItemVO //SCH_003
+    public class WO_WC_Production_ItemVO //SCH_003
     {
         public string Wo_Status { get; set; } //작업지시상태
         public string Workorderno { get; set; } //작업지시번호
