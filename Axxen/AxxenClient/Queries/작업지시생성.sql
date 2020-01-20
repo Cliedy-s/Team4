@@ -6,10 +6,15 @@
       ,im.[Item_Name]
       ,wo.[Workorderno]
       ,wo.[Prd_Qty]
+	  ,wcm.[Wc_Code]
+      ,wcm.[Wo_Ini_Char]
+      ,wcm.[Use_YN]
   FROM [WorkOrder] as wo
+  JOIN wcm.[WorkCenter_Master] as wcm ON wo.[Wc_Code] = wcm.[Wc_Code]
   JOIN [Item_Master] as im ON im.[Item_Code] = wo.[Item_Code]
   JOIN [GV_Current_Status] as gvcs ON gvcs.[Workorderno] = wo.[Workorderno]
   JOIN [GV_Master] as gv ON gv.[GV_Code] = gvcs.[GV_Code]
+	WHERE wcm.[Wo_Ini_Char] = '소성'
 
 
  /* 등록 */

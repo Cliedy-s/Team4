@@ -38,17 +38,23 @@
             this.btnSearch = new Axxen.CustomControls.AButton();
             this.aLabel2 = new Axxen.CustomControls.ALabel();
             this.aLabel1 = new Axxen.CustomControls.ALabel();
-            this.dgvScreen = new Axxen.CustomControls.ADataGridView();
             this.dgvGroup = new Axxen.CustomControls.ADataGridView();
+            this.dgvUser = new Axxen.CustomControls.ADataGridView();
             this.aLabel5 = new Axxen.CustomControls.ALabel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dgvGroupUseUser = new Axxen.CustomControls.ADataGridView();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.aLabel6 = new Axxen.CustomControls.ALabel();
+            this.aLabel7 = new Axxen.CustomControls.ALabel();
             this.aPanel2.SuspendLayout();
             this.aPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvScreen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGroup)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGroupUseUser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // aPanel2
@@ -63,7 +69,7 @@
             this.aPanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.aPanel2.Location = new System.Drawing.Point(0, 0);
             this.aPanel2.Name = "aPanel2";
-            this.aPanel2.Size = new System.Drawing.Size(1148, 38);
+            this.aPanel2.Size = new System.Drawing.Size(1197, 38);
             this.aPanel2.TabIndex = 21;
             // 
             // aLabel3
@@ -131,7 +137,7 @@
             this.aLabel2.AutoSize = true;
             this.aLabel2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.aLabel2.Location = new System.Drawing.Point(452, 53);
+            this.aLabel2.Location = new System.Drawing.Point(440, 52);
             this.aLabel2.Name = "aLabel2";
             this.aLabel2.Size = new System.Drawing.Size(0, 21);
             this.aLabel2.TabIndex = 19;
@@ -143,50 +149,50 @@
             this.aLabel1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.aLabel1.Location = new System.Drawing.Point(42, 52);
             this.aLabel1.Name = "aLabel1";
-            this.aLabel1.Size = new System.Drawing.Size(122, 21);
+            this.aLabel1.Size = new System.Drawing.Size(90, 21);
             this.aLabel1.TabIndex = 17;
-            this.aLabel1.Text = "사용자그룹목록";
-            // 
-            // dgvScreen
-            // 
-            this.dgvScreen.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvScreen.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvScreen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvScreen.Location = new System.Drawing.Point(412, 79);
-            this.dgvScreen.Name = "dgvScreen";
-            this.dgvScreen.RowTemplate.Height = 23;
-            this.dgvScreen.Size = new System.Drawing.Size(724, 615);
-            this.dgvScreen.TabIndex = 16;
+            this.aLabel1.Text = "사용자목록";
             // 
             // dgvGroup
             // 
-            this.dgvGroup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.dgvGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvGroup.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvGroup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGroup.Location = new System.Drawing.Point(12, 79);
+            this.dgvGroup.Location = new System.Drawing.Point(412, 79);
             this.dgvGroup.Name = "dgvGroup";
             this.dgvGroup.RowTemplate.Height = 23;
-            this.dgvGroup.Size = new System.Drawing.Size(394, 615);
-            this.dgvGroup.TabIndex = 15;
+            this.dgvGroup.Size = new System.Drawing.Size(261, 615);
+            this.dgvGroup.TabIndex = 16;
+            // 
+            // dgvUser
+            // 
+            this.dgvUser.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.dgvUser.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUser.Location = new System.Drawing.Point(12, 79);
+            this.dgvUser.Name = "dgvUser";
+            this.dgvUser.RowTemplate.Height = 23;
+            this.dgvUser.Size = new System.Drawing.Size(394, 615);
+            this.dgvUser.TabIndex = 15;
             // 
             // aLabel5
             // 
             this.aLabel5.AutoSize = true;
             this.aLabel5.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel5.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.aLabel5.Location = new System.Drawing.Point(456, 52);
+            this.aLabel5.Location = new System.Drawing.Point(444, 51);
             this.aLabel5.Name = "aLabel5";
-            this.aLabel5.Size = new System.Drawing.Size(192, 21);
+            this.aLabel5.Size = new System.Drawing.Size(122, 21);
             this.aLabel5.TabIndex = 22;
-            this.aLabel5.Text = "사용자그룹별 사용자목록";
+            this.aLabel5.Text = "사용자그룹목록";
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(427, 52);
+            this.pictureBox2.Location = new System.Drawing.Point(415, 51);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(23, 22);
             this.pictureBox2.TabIndex = 20;
@@ -201,27 +207,78 @@
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
             // 
+            // dgvGroupUseUser
+            // 
+            this.dgvGroupUseUser.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvGroupUseUser.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvGroupUseUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGroupUseUser.Location = new System.Drawing.Point(678, 79);
+            this.dgvGroupUseUser.Name = "dgvGroupUseUser";
+            this.dgvGroupUseUser.RowTemplate.Height = 23;
+            this.dgvGroupUseUser.Size = new System.Drawing.Size(523, 615);
+            this.dgvGroupUseUser.TabIndex = 23;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(678, 51);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(23, 22);
+            this.pictureBox3.TabIndex = 25;
+            this.pictureBox3.TabStop = false;
+            // 
+            // aLabel6
+            // 
+            this.aLabel6.AutoSize = true;
+            this.aLabel6.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aLabel6.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.aLabel6.Location = new System.Drawing.Point(703, 52);
+            this.aLabel6.Name = "aLabel6";
+            this.aLabel6.Size = new System.Drawing.Size(0, 21);
+            this.aLabel6.TabIndex = 24;
+            // 
+            // aLabel7
+            // 
+            this.aLabel7.AutoSize = true;
+            this.aLabel7.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aLabel7.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.aLabel7.Location = new System.Drawing.Point(707, 51);
+            this.aLabel7.Name = "aLabel7";
+            this.aLabel7.Size = new System.Drawing.Size(192, 21);
+            this.aLabel7.TabIndex = 26;
+            this.aLabel7.Text = "사용자그룹별 사용자목록";
+            // 
             // MSS_CON_003
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.ClientSize = new System.Drawing.Size(1148, 700);
+            this.ClientSize = new System.Drawing.Size(1197, 700);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.aLabel6);
+            this.Controls.Add(this.aLabel7);
+            this.Controls.Add(this.dgvGroupUseUser);
             this.Controls.Add(this.aPanel2);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.aLabel2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.aLabel1);
-            this.Controls.Add(this.dgvScreen);
             this.Controls.Add(this.dgvGroup);
+            this.Controls.Add(this.dgvUser);
             this.Controls.Add(this.aLabel5);
             this.Name = "MSS_CON_003";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MSS_CON_003_FormClosed);
+            this.Load += new System.EventHandler(this.MSS_CON_003_Load);
             this.aPanel2.ResumeLayout(false);
             this.aPanel2.PerformLayout();
             this.aPanel1.ResumeLayout(false);
             this.aPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvScreen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGroup)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGroupUseUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -240,8 +297,12 @@
         private CustomControls.ALabel aLabel2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private CustomControls.ALabel aLabel1;
-        private CustomControls.ADataGridView dgvScreen;
         private CustomControls.ADataGridView dgvGroup;
+        private CustomControls.ADataGridView dgvUser;
         private CustomControls.ALabel aLabel5;
+        private CustomControls.ADataGridView dgvGroupUseUser;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private CustomControls.ALabel aLabel6;
+        private CustomControls.ALabel aLabel7;
     }
 }

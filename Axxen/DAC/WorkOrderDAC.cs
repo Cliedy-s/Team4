@@ -27,5 +27,21 @@ namespace DAC
                 return list;
             }
         }
+
+        public List<WorkOrder_J_WC_ItmeVO> GetDatePicker_WorkOrder_Item_WC(string ADateTimePickerValue1, string ADateTimePickerValue2) //PRM_PRF_001 DateTimePicker 사용
+        {
+            List<WorkOrder_J_WC_ItmeVO> list = null;
+            using (SqlConnection conn = new SqlConnection(Connstr))
+            {
+                conn.Open();
+                string sql = $"select ROW_NUMBER() OVER(ORDER BY wo.Wo_Status) Num,Prd_Date, wo.Wo_Status,wo.Workorderno,wo.Item_Code,Item_Name,Wc_Name,wo.In_Qty_Main,wo.Out_Qty_Main,wo.Prd_Qty from WorkOrder wo INNER JOIN Item_Master im  ON wo.Item_Code=im.Item_Code INNER JOIN WorkCenter_Master wm ON wo.Wc_Code=wm.Wc_Code where Prd_Date BETWEEN '{ADateTimePickerValue1}' AND '{ADateTimePickerValue2}'";
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    list = Helper.DataReaderMapToList<WorkOrder_J_WC_ItmeVO>(cmd.ExecuteReader());
+                }
+                conn.Close();
+            }
+            return list;
+        }
     }
 }
