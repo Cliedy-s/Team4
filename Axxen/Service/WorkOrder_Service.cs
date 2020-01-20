@@ -21,5 +21,11 @@ namespace Service
             WorkOrderDAC dac = new WorkOrderDAC();
             return dac.GetDatePicker_WorkOrder_Item_WC(ADateTimePickerValue1,ADateTimePickerValue2);
         }
+
+        public List<WO_WC_Production_ItemVO> GetWO_WC_Production_Items()
+        {
+            WorkOrderDAC dac = new WorkOrderDAC();
+            return dac.GetWO_WC_Production_Items();
+        }
     }
 }
