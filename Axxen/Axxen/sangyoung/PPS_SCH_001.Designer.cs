@@ -86,6 +86,7 @@
             this.btnPrFinish.TabIndex = 0;
             this.btnPrFinish.Text = "생산의뢰 마감";
             this.btnPrFinish.UseVisualStyleBackColor = false;
+            this.btnPrFinish.Click += new System.EventHandler(this.BtnPrFinish_Click);
             // 
             // aLabel1
             // 

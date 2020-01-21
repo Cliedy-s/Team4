@@ -61,5 +61,17 @@ namespace Axxen
 
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "비고", "Remark", true, 110,default, true);
         }
+
+        private void BtnPrFinish_Click(object sender, EventArgs e)
+        {
+            bool result = false;
+            string woNo = dgvMainGrid[2, dgvMainGrid.CurrentRow.Index].Value.ToString();
+            result = service.UpdateWoReq(woNo);
+            if(result)
+                MessageBox.Show("의뢰가 마감되었습니다.","생산의뢰관리",MessageBoxButtons.OK);
+            else
+                MessageBox.Show("의뢰가 마감되지 않았습니다.","생산의뢰관리",MessageBoxButtons.OK,MessageBoxIcon.Error);
+
+        }
     }
 }
