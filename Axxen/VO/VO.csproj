@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GasUse_HistoryVO.cs" />
+    <Compile Include="Goods_In_History_J_Pallet_BoxingVO.cs" />
     <Compile Include="Item_Goods_HistoryVO.cs" />
     <Compile Include="Item_Level_MasterVO.cs" />
     <Compile Include="MainForm_VO.cs" />
