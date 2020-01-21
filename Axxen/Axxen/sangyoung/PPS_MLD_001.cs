@@ -25,6 +25,7 @@ namespace Axxen
             MainDataLoad();
             moldList = service.SelectMoldAll();
             dgvMainGrid.DataSource = moldList;
+            aSplitContainer1.Panel2.Enabled = false;
         }
 
         /// <summary>

@@ -27,5 +27,22 @@ namespace DAC
                 return list;
             }
         }
+
+        public bool UpdateWoReq(string woNo)
+        {
+            int result =0;
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText = "update Wo_Req set Req_Status = '마감' where Wo_Req_No = @Wo_Req_No ";
+                comm.Parameters.AddWithValue("@Wo_Req_No", woNo);
+
+                comm.Connection.Open();
+                result = comm.ExecuteNonQuery();
+                comm.Connection.Close();
+
+                return (result > 0);
+            }
+        }
     }
 }
