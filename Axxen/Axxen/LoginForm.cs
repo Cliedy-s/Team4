@@ -38,6 +38,7 @@ namespace Axxen
                 UserInfo.User_Type = uservo.User_Type;
                 UserInfo.Price_Visible_YN = uservo.Price_Visible_YN;
                 UserInfo.IP_Security_YN = uservo.IP_Security_YN;
+            
                 UserInfo.Pw_Reset_Count = uservo.Pw_Reset_Count;
                 UserInfo.Default_Screen_Code = uservo.Default_Screen_Code;
                 UserInfo.Default_Process_Code = uservo.Default_Process_Code;
@@ -59,7 +60,9 @@ namespace Axxen
                 UserInfo.Ins_Emp = uservo.Ins_Emp;
                 UserInfo.Up_Date = uservo.Up_Date;
                 UserInfo.Up_Emp = uservo.Up_Emp;
-       
+
+            
+        
             }
 
         }

@@ -32,7 +32,7 @@
             this.aButton1 = new Axxen.CustomControls.AButton();
             this.aButton2 = new Axxen.CustomControls.AButton();
             this.aButton3 = new Axxen.CustomControls.AButton();
-            this.aDateTimePickerSearch2 = new Axxen.CustomControls.ADateTimePickerSearch();
+            this.aDateTimePickerSearch1 = new Axxen.CustomControls.ADateTimePickerSearch();
             this.aPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aSplitContainer1)).BeginInit();
             this.aSplitContainer1.Panel1.SuspendLayout();
@@ -42,7 +42,7 @@
             // 
             // aPanel1
             // 
-            this.aPanel1.Controls.Add(this.aDateTimePickerSearch2);
+            this.aPanel1.Controls.Add(this.aDateTimePickerSearch1);
             this.aPanel1.Controls.Add(this.aButton3);
             this.aPanel1.Controls.Add(this.aButton2);
             this.aPanel1.Controls.Add(this.aButton1);
@@ -101,18 +101,18 @@
             this.aButton3.Text = "등급상세 수정";
             this.aButton3.UseVisualStyleBackColor = false;
             // 
-            // aDateTimePickerSearch2
+            // aDateTimePickerSearch1
             // 
-            this.aDateTimePickerSearch2.ADateTimePickerValue1 = new System.DateTime(2020, 1, 7, 17, 5, 21, 134);
-            this.aDateTimePickerSearch2.ADateTimePickerValue2 = new System.DateTime(2020, 1, 14, 17, 5, 21, 138);
-            this.aDateTimePickerSearch2.ButtonText = "조회";
-            this.aDateTimePickerSearch2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aDateTimePickerSearch2.Location = new System.Drawing.Point(88, 23);
-            this.aDateTimePickerSearch2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.aDateTimePickerSearch2.Name = "aDateTimePickerSearch2";
-            this.aDateTimePickerSearch2.Size = new System.Drawing.Size(324, 32);
-            this.aDateTimePickerSearch2.TabIndex = 11;
-            this.aDateTimePickerSearch2.btnDateTimeSearch_Click += new Axxen.CustomControls.ADateTimePickerSearch.SearchButtonClick(this.aDateTimePickerSearch2_btnDateTimeSearch_Click);
+            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 1, 13, 15, 17, 54, 900);
+            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 1, 20, 15, 17, 24, 365);
+            this.aDateTimePickerSearch1.ButtonText = "조회";
+            this.aDateTimePickerSearch1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aDateTimePickerSearch1.Location = new System.Drawing.Point(88, 23);
+            this.aDateTimePickerSearch1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.aDateTimePickerSearch1.Name = "aDateTimePickerSearch1";
+            this.aDateTimePickerSearch1.Size = new System.Drawing.Size(324, 32);
+            this.aDateTimePickerSearch1.TabIndex = 11;
+            this.aDateTimePickerSearch1.btnDateTimeSearch_Click += new Axxen.CustomControls.ADateTimePickerSearch.SearchButtonClick(this.aDateTimePickerSearch1_btnDateTimeSearch_Click);
             // 
             // PRM_PRF_002
             // 
@@ -120,6 +120,7 @@
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.Name = "PRM_PRF_002";
             this.Text = "포장 팔렛트 마감";
+            this.Load += new System.EventHandler(this.PRM_PRF_002_Load);
             this.aPanel1.ResumeLayout(false);
             this.aPanel1.PerformLayout();
             this.aSplitContainer1.Panel1.ResumeLayout(false);
@@ -135,6 +136,6 @@
         private CustomControls.AButton aButton3;
         private CustomControls.AButton aButton2;
         private CustomControls.AButton aButton1;
-        private CustomControls.ADateTimePickerSearch aDateTimePickerSearch2;
+        private CustomControls.ADateTimePickerSearch aDateTimePickerSearch1;
     }
 }

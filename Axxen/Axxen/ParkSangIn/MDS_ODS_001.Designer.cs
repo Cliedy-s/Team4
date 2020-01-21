@@ -39,10 +39,13 @@
             this.aLabel2 = new Axxen.CustomControls.ALabel();
             this.aLabel1 = new Axxen.CustomControls.ALabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.aLabel4 = new Axxen.CustomControls.ALabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGroup)).BeginInit();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvGroup
@@ -52,10 +55,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvGroup.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvGroup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGroup.Location = new System.Drawing.Point(9, 37);
+            this.dgvGroup.Location = new System.Drawing.Point(12, 69);
             this.dgvGroup.Name = "dgvGroup";
             this.dgvGroup.RowTemplate.Height = 23;
-            this.dgvGroup.Size = new System.Drawing.Size(1124, 693);
+            this.dgvGroup.Size = new System.Drawing.Size(1124, 628);
             this.dgvGroup.TabIndex = 10;
             // 
             // cbbGroup
@@ -152,10 +155,32 @@
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(12, 41);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(23, 22);
+            this.pictureBox2.TabIndex = 15;
+            this.pictureBox2.TabStop = false;
+            // 
+            // aLabel4
+            // 
+            this.aLabel4.AutoSize = true;
+            this.aLabel4.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aLabel4.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.aLabel4.Location = new System.Drawing.Point(37, 42);
+            this.aLabel4.Name = "aLabel4";
+            this.aLabel4.Size = new System.Drawing.Size(112, 21);
+            this.aLabel4.TabIndex = 14;
+            this.aLabel4.Text = "공정그룹 목록";
+            // 
             // MDS_ODS_001
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1148, 700);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.aLabel4);
             this.Controls.Add(this.dgvGroup);
             this.Controls.Add(this.aPanel2);
             this.Controls.Add(this.aLabel1);
@@ -168,6 +193,7 @@
             this.aPanel2.ResumeLayout(false);
             this.aPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,5 +211,7 @@
         private CustomControls.ALabel aLabel2;
         private CustomControls.ALabel aLabel1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private CustomControls.ALabel aLabel4;
     }
 }

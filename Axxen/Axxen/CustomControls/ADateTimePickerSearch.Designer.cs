@@ -86,6 +86,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ADateTimePickerSearch";
             this.Size = new System.Drawing.Size(324, 32);
+            this.Load += new System.EventHandler(this.ADateTimePickerSearch_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

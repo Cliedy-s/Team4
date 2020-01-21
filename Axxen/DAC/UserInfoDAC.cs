@@ -28,8 +28,14 @@ namespace DAC
                 SqlDataReader reader = com.ExecuteReader();
                 user = Helper.DataReaderMapToList<UserInfoVO>(reader);  
                 com.Connection.Close();
-
+                if (user.Count>0) { 
                 return user[0];
+                }
+                else
+                {
+                    UserInfoVO a = new UserInfoVO();
+                    return a;
+                }
             }
         }
         /// <summary>
@@ -73,7 +79,7 @@ namespace DAC
 
                 com.Connection.Open();
 
-               int resault = com.ExecuteNonQuery();
+               int resault = Convert.ToInt32(com.ExecuteNonQuery());
 
                 com.Connection.Close();
 

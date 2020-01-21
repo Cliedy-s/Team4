@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
@@ -101,6 +104,12 @@
     </Compile>
     <Compile Include="HwiSeok\PRM_PRF_001.Designer.cs">
       <DependentUpon>PRM_PRF_001.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HwiSeok\PRM_PRF_001_1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HwiSeok\PRM_PRF_001_1.Designer.cs">
+      <DependentUpon>PRM_PRF_001_1.cs</DependentUpon>
     </Compile>
     <Compile Include="HwiSeok\PRM_PRF_002.cs">
       <SubType>Form</SubType>
@@ -192,11 +201,18 @@
     <Compile Include="HwiSeok\QAM_SQC_006.Designer.cs">
       <DependentUpon>QAM_SQC_006.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoggingUtility.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_SDS_001_1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_SDS_001_1.Designer.cs">
+      <DependentUpon>MDS_SDS_001_1.cs</DependentUpon>
     </Compile>
     <Compile Include="ParkSangIn\MSS_CON_003_1.cs">
       <SubType>Form</SubType>
@@ -580,6 +596,7 @@
     </Compile>
     <Compile Include="UserInfo.cs" />
     <Compile Include="Util\InitControlUtil.cs" />
+    <Compile Include="Util\LoggingUtility.cs" />
     <EmbeddedResource Include="CustomControls\AButton.resx">
       <DependentUpon>AButton.cs</DependentUpon>
     </EmbeddedResource>
@@ -600,6 +617,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HwiSeok\PRM_PRF_001.resx">
       <DependentUpon>PRM_PRF_001.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HwiSeok\PRM_PRF_001_1.resx">
+      <DependentUpon>PRM_PRF_001_1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HwiSeok\PRM_PRF_002.resx">
       <DependentUpon>PRM_PRF_002.cs</DependentUpon>

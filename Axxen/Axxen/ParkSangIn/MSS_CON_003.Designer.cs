@@ -32,9 +32,9 @@
             this.aPanel2 = new Axxen.CustomControls.APanel();
             this.aLabel3 = new Axxen.CustomControls.ALabel();
             this.aLabel4 = new Axxen.CustomControls.ALabel();
-            this.cbbGroup = new Axxen.CustomControls.AComboBox();
+            this.cbbUser = new Axxen.CustomControls.AComboBox();
             this.aPanel1 = new Axxen.CustomControls.APanel();
-            this.lblGroup = new Axxen.CustomControls.ALabel();
+            this.lblUser = new Axxen.CustomControls.ALabel();
             this.btnSearch = new Axxen.CustomControls.AButton();
             this.aLabel2 = new Axxen.CustomControls.ALabel();
             this.aLabel1 = new Axxen.CustomControls.ALabel();
@@ -43,17 +43,18 @@
             this.aLabel5 = new Axxen.CustomControls.ALabel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dgvGroupUseUser = new Axxen.CustomControls.ADataGridView();
+            this.dgvJoin = new Axxen.CustomControls.ADataGridView();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.aLabel6 = new Axxen.CustomControls.ALabel();
             this.aLabel7 = new Axxen.CustomControls.ALabel();
+            this.btnSave = new Axxen.CustomControls.AButton();
             this.aPanel2.SuspendLayout();
             this.aPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGroup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGroupUseUser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvJoin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,13 +64,13 @@
             this.aPanel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.aPanel2.Controls.Add(this.aLabel3);
             this.aPanel2.Controls.Add(this.aLabel4);
-            this.aPanel2.Controls.Add(this.cbbGroup);
+            this.aPanel2.Controls.Add(this.cbbUser);
             this.aPanel2.Controls.Add(this.aPanel1);
             this.aPanel2.Controls.Add(this.btnSearch);
             this.aPanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.aPanel2.Location = new System.Drawing.Point(0, 0);
             this.aPanel2.Name = "aPanel2";
-            this.aPanel2.Size = new System.Drawing.Size(1197, 38);
+            this.aPanel2.Size = new System.Drawing.Size(1288, 38);
             this.aPanel2.TabIndex = 21;
             // 
             // aLabel3
@@ -92,33 +93,33 @@
             this.aLabel4.TabIndex = 7;
             this.aLabel4.Text = "사용자명";
             // 
-            // cbbGroup
+            // cbbUser
             // 
-            this.cbbGroup.FormattingEnabled = true;
-            this.cbbGroup.Location = new System.Drawing.Point(109, 6);
-            this.cbbGroup.Name = "cbbGroup";
-            this.cbbGroup.Size = new System.Drawing.Size(179, 23);
-            this.cbbGroup.TabIndex = 3;
+            this.cbbUser.FormattingEnabled = true;
+            this.cbbUser.Location = new System.Drawing.Point(109, 6);
+            this.cbbUser.Name = "cbbUser";
+            this.cbbUser.Size = new System.Drawing.Size(179, 23);
+            this.cbbUser.TabIndex = 3;
             // 
             // aPanel1
             // 
             this.aPanel1.BackColor = System.Drawing.Color.White;
             this.aPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.aPanel1.Controls.Add(this.lblGroup);
+            this.aPanel1.Controls.Add(this.lblUser);
             this.aPanel1.Location = new System.Drawing.Point(426, 6);
             this.aPanel1.Name = "aPanel1";
             this.aPanel1.Size = new System.Drawing.Size(220, 24);
             this.aPanel1.TabIndex = 6;
             // 
-            // lblGroup
+            // lblUser
             // 
-            this.lblGroup.AutoSize = true;
-            this.lblGroup.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblGroup.Location = new System.Drawing.Point(3, 3);
-            this.lblGroup.Name = "lblGroup";
-            this.lblGroup.Size = new System.Drawing.Size(53, 17);
-            this.lblGroup.TabIndex = 0;
-            this.lblGroup.Text = "aLabel1";
+            this.lblUser.AutoSize = true;
+            this.lblUser.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblUser.Location = new System.Drawing.Point(3, 3);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(53, 17);
+            this.lblUser.TabIndex = 0;
+            this.lblUser.Text = "aLabel1";
             // 
             // btnSearch
             // 
@@ -155,16 +156,16 @@
             // 
             // dgvGroup
             // 
-            this.dgvGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvGroup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvGroup.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvGroup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGroup.Location = new System.Drawing.Point(412, 79);
             this.dgvGroup.Name = "dgvGroup";
             this.dgvGroup.RowTemplate.Height = 23;
-            this.dgvGroup.Size = new System.Drawing.Size(261, 615);
+            this.dgvGroup.Size = new System.Drawing.Size(320, 509);
             this.dgvGroup.TabIndex = 16;
+            this.dgvGroup.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvGroup_CellDoubleClick);
             // 
             // dgvUser
             // 
@@ -175,7 +176,7 @@
             this.dgvUser.Location = new System.Drawing.Point(12, 79);
             this.dgvUser.Name = "dgvUser";
             this.dgvUser.RowTemplate.Height = 23;
-            this.dgvUser.Size = new System.Drawing.Size(394, 615);
+            this.dgvUser.Size = new System.Drawing.Size(394, 509);
             this.dgvUser.TabIndex = 15;
             // 
             // aLabel5
@@ -207,23 +208,24 @@
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
             // 
-            // dgvGroupUseUser
+            // dgvJoin
             // 
-            this.dgvGroupUseUser.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvJoin.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvGroupUseUser.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvGroupUseUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGroupUseUser.Location = new System.Drawing.Point(678, 79);
-            this.dgvGroupUseUser.Name = "dgvGroupUseUser";
-            this.dgvGroupUseUser.RowTemplate.Height = 23;
-            this.dgvGroupUseUser.Size = new System.Drawing.Size(523, 615);
-            this.dgvGroupUseUser.TabIndex = 23;
+            this.dgvJoin.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvJoin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvJoin.Location = new System.Drawing.Point(738, 79);
+            this.dgvJoin.Name = "dgvJoin";
+            this.dgvJoin.RowTemplate.Height = 23;
+            this.dgvJoin.Size = new System.Drawing.Size(550, 509);
+            this.dgvJoin.TabIndex = 23;
+            this.dgvJoin.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvJoin_CellDoubleClick);
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(678, 51);
+            this.pictureBox3.Location = new System.Drawing.Point(765, 51);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(23, 22);
             this.pictureBox3.TabIndex = 25;
@@ -234,7 +236,7 @@
             this.aLabel6.AutoSize = true;
             this.aLabel6.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel6.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.aLabel6.Location = new System.Drawing.Point(703, 52);
+            this.aLabel6.Location = new System.Drawing.Point(790, 52);
             this.aLabel6.Name = "aLabel6";
             this.aLabel6.Size = new System.Drawing.Size(0, 21);
             this.aLabel6.TabIndex = 24;
@@ -244,20 +246,33 @@
             this.aLabel7.AutoSize = true;
             this.aLabel7.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel7.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.aLabel7.Location = new System.Drawing.Point(707, 51);
+            this.aLabel7.Location = new System.Drawing.Point(794, 51);
             this.aLabel7.Name = "aLabel7";
             this.aLabel7.Size = new System.Drawing.Size(192, 21);
             this.aLabel7.TabIndex = 26;
             this.aLabel7.Text = "사용자그룹별 사용자목록";
             // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Location = new System.Drawing.Point(1201, 49);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 27;
+            this.btnSave.Text = "저장";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
+            // 
             // MSS_CON_003
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.ClientSize = new System.Drawing.Size(1197, 700);
+            this.ClientSize = new System.Drawing.Size(1288, 594);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.aLabel6);
             this.Controls.Add(this.aLabel7);
-            this.Controls.Add(this.dgvGroupUseUser);
+            this.Controls.Add(this.dgvJoin);
             this.Controls.Add(this.aPanel2);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.aLabel2);
@@ -277,7 +292,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGroupUseUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvJoin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -289,9 +304,9 @@
         private CustomControls.APanel aPanel2;
         private CustomControls.ALabel aLabel3;
         private CustomControls.ALabel aLabel4;
-        private CustomControls.AComboBox cbbGroup;
+        private CustomControls.AComboBox cbbUser;
         private CustomControls.APanel aPanel1;
-        private CustomControls.ALabel lblGroup;
+        private CustomControls.ALabel lblUser;
         private CustomControls.AButton btnSearch;
         private System.Windows.Forms.PictureBox pictureBox2;
         private CustomControls.ALabel aLabel2;
@@ -300,9 +315,10 @@
         private CustomControls.ADataGridView dgvGroup;
         private CustomControls.ADataGridView dgvUser;
         private CustomControls.ALabel aLabel5;
-        private CustomControls.ADataGridView dgvGroupUseUser;
+        private CustomControls.ADataGridView dgvJoin;
         private System.Windows.Forms.PictureBox pictureBox3;
         private CustomControls.ALabel aLabel6;
         private CustomControls.ALabel aLabel7;
+        private CustomControls.AButton btnSave;
     }
 }

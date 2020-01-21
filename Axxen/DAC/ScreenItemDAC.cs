@@ -13,6 +13,48 @@ namespace DAC
     {
 
         /// <summary>
+        /// 사용자가 속한 그룹의 화면들
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public List<ScreenItem_AuthorityVO> GetUserInfoScreenItem(List<UserGroup_MappingVO> group)
+        {
+            List<ScreenItem_AuthorityVO> list = new List<ScreenItem_AuthorityVO>() ;
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                for (int i = 0; i < group.Count; i++)
+                {
+                    comm.CommandText = "GetUserInfoScreenItem";
+                    comm.CommandType = CommandType.StoredProcedure;
+                    comm.Parameters.AddWithValue("@UserGroup_Code", group[i].UserGroup_Code);
+                
+
+                    comm.Connection.Open();
+                    SqlDataReader reader = comm.ExecuteReader();
+                    while (reader.Read()) {
+                        ScreenItem_AuthorityVO item = new ScreenItem_AuthorityVO
+                        {
+                            UserGroup_Code = reader["UserGroup_Code"].ToString(),
+                    Screen_Code = reader["Screen_Code"].ToString(),
+                        Pre_Type = reader["Pre_Type"].ToString(),
+                        Use_YN = reader["Use_YN"].ToString(),
+                     
+
+                    };
+
+                        list.Add(item);
+                    }
+                
+                    comm.Parameters.Clear();
+                    comm.Connection.Close();
+                }
+
+                return list;
+            }
+        }
+
+        /// <summary>
         /// 모든 스크린 아이템
         /// </summary>
         /// <param name="groupCode"></param>

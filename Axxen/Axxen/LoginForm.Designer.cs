@@ -41,7 +41,7 @@
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(151, 21);
             this.txtID.TabIndex = 0;
-            this.txtID.Text = "maseter";
+            this.txtID.Text = "master";
             // 
             // txtPwd
             // 
