@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VO
 {
-    class NopMiMasterVO
+    public class NopMiMasterVO
     { 
         public string Nop_Mi_Code { get; set; }        // 비가동상세분류코드
         public string Nop_Mi_Name { get; set; }       // 비가동상세분류명

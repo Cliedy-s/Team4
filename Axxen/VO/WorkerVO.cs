@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace VO
 {
-    class WorkerVO
+    public class WorkerVO
     { 
         public string Wc_Code { get; set; }                     // 작업장코드
         public string User_ID { get; set; }                       // 사용자ID
         public DateTime Allocation_datetime { get; set; }   // 할당일시
         public string User_Name { get; set; }                  // 사용자명
     }
-    class WorkerAllocatableVO
+    public class WorkerAllocatableVO
     {
         public string Wc_Code { get; set; }                      // 작업장코드
         public string User_ID { get; set; }                        // 사용자ID

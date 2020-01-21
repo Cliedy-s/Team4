@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VO
 {
-    class InspectHistoryVO
+    public class InspectHistoryVO
     {
         public long Inspect_measure_seq { get; set; } // 검사순번
         public string Item_code { get; set; }               // 품목코드

@@ -9,7 +9,7 @@ namespace VO
     /// <summary>
     /// 대차비우기vo
     /// </summary>
-    class GVClearVO
+    public class GVClearVO
     { 
         public string GV_Code { get; set; }           // 대차코드
         public string Workorderno { get; set; }     // 작업지시번호

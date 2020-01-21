@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VO
 {
-    class GVStatusVO
+    public class GVStatusVO
     {
         public string GV_Code { get; set; }        // 대차번호
         public string GV_Name { get; set; }       // 대차명

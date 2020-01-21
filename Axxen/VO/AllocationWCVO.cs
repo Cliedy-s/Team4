@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VO
 {
-    class AllocationWCVO
+    public class AllocationWCVO
     { 
         public string Wc_Code { get; set; }                  // 작업장코드
         public string User_ID { get; set; }                    // 사용자ID

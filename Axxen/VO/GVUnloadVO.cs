@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VO
 {
-    class GVUnloadVO
+    public class GVUnloadVO
     {
         public string Unloading_Qty { get; set; }             // 언로딩수량
         public DateTime Unloading_date { get; set; }       // 언로딩일자

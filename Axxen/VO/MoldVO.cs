@@ -42,25 +42,5 @@ namespace VO
         public string Ins_Emp { get; set; }                       // 최초입력자
         public DateTime Up_Date { get; set; }                 // 최종수정일자  
         public string Up_Emp { get; set; }                       // 최종수정자
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VO
 {
-    class ConditionMeasureVO
+    public class ConditionMeasureVO
     { 
         public string Condition_measure_seq { get; set; }         // 조건순번
         public string Item_code { get; set; }                          // 품목코드
