@@ -127,7 +127,7 @@ namespace Axxen
             {
                 if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
                 {
-                    MDS_SDS_001_1 frm = new MDS_SDS_001_1();
+                    MDS_SDS_002_1 frm = new MDS_SDS_002_1();
 
                     frm.ShowDialog();
                 }
