@@ -28,7 +28,6 @@ namespace Axxen
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "작업코드", "Wc_Code", true, 100, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "작업장명", "Wc_Name", true, 100, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "GAS사용량", "Gas_Val", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "기숙사GAS사용량", "Dorm_Gas", true, 100, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "비고", "Remark", true, 100, default, true);
 
             guho = ghservice.GetAllGasUse_History();
