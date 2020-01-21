@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VO
 {
-    class Goods_In_HistoryVO
+    public class Goods_In_HistoryVO
     {
         public string Workorderno { get; set; }    // 작업지시번호
         public string Pallet_No { get; set; }         // 팔레트번호

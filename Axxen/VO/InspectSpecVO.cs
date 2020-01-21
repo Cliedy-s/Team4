@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VO
 {
-    class InspectSpecVO
+    public class InspectSpecVO
     {
         public string Item_Code { get; set; }         // 품목코드
         public string Process_code { get; set; }      // 공정코드

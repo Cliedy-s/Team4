@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace VO
 {
     public class WorkOrderVO
-    { 
+    {
         public string Workorderno { get; set; }          // 작업지시번호
         public string Wc_Code { get; set; }               // 작업장번호
         public string Wo_Status { get; set; }             // 작업지시상태
@@ -19,6 +19,22 @@ namespace VO
         public DateTime Prd_Starttime { get; set; }     // 작업시작시간
         public DateTime Prd_Endtime { get; set; }      // 작업종료시간
         public string Wo_Ini_Char { get; set; }           //  작업지시이니셜
+    }
+    public class WorkOrderNewVO
+    { 
+        public string Workorderno { get; set; }          // 작업지시번호
+        public string Item_Code { get; set; }              // 품목번호
+        public string Wc_Code { get; set; }                // 작업장코드
+        public string Plan_Qty { get; set; }                // 계획수량
+        public string Plan_Unit { get; set; }                // 계획수량단위
+        public string Plan_Date { get; set; }               // 계획일자
+        public string Wo_Status { get; set; }              // 작업지시상태
+        public string Wo_Order { get; set; }              // 작업순서
+        public string Wo_Req_No { get; set; }            // 생산으뢰번호
+        public string Req_Seq { get; set; }                 // 의뢰순번
+        public string Mat_LotNo { get; set; }             // 원자재Lot
+        public string Ins_Date { get; set; }                 // 최초입력일자
+        public string Ins_Emp { get; set; }                 // 최초입력자
     }
     public class WorkOrderAllVO
     {

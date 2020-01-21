@@ -3,7 +3,6 @@ SELECT
 	ewa.Wc_Code
 	, ewa.[User_ID]
 	, ewa.Allocation_datetime
-	, um.[User_ID]
 	, um.[User_Name]
 FROM Emp_Wc_Allocation AS ewa
 	JOIN User_Master AS um ON ewa.[User_ID] = um.[User_ID]
@@ -89,7 +88,6 @@ UPDATE Emp_Allocation_History SET
 WHERE 
 	Release_datetime = null 
 	AND User_ID = '작업자'
-
 UPDATE [Emp_Allocation_History_Detail] SET
       [Prd_Endtime] = '현재'
 	, Up_Date = '현재날짜'
@@ -98,7 +96,6 @@ UPDATE [Emp_Allocation_History_Detail] SET
 	[User_ID] = '작업자'
       AND [Workorderno] ='현재 작업번호'
 	  AND [Prd_Endtime] = null;
-	
 UPDATE Emp_Wc_Allocation SET
 	 Release_datetime = '현재'
 	, Up_Date = '현재날짜'
