@@ -35,6 +35,8 @@
             this.lblGroup = new Axxen.CustomControls.ALabel();
             this.btnSearch = new Axxen.CustomControls.AButton();
             this.aPanel2 = new Axxen.CustomControls.APanel();
+            this.aButton1 = new Axxen.CustomControls.AButton();
+            this.aComboBox1 = new Axxen.CustomControls.AComboBox();
             this.aLabel3 = new Axxen.CustomControls.ALabel();
             this.aLabel2 = new Axxen.CustomControls.ALabel();
             this.aLabel1 = new Axxen.CustomControls.ALabel();
@@ -42,8 +44,6 @@
             this.aLabel4 = new Axxen.CustomControls.ALabel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.aLabel5 = new Axxen.CustomControls.ALabel();
-            this.aComboBox1 = new Axxen.CustomControls.AComboBox();
-            this.aButton1 = new Axxen.CustomControls.AButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGroup)).BeginInit();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
@@ -63,6 +63,7 @@
             this.dgvGroup.RowTemplate.Height = 23;
             this.dgvGroup.Size = new System.Drawing.Size(1148, 807);
             this.dgvGroup.TabIndex = 14;
+            this.dgvGroup.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvGroup_CellClick);
             // 
             // cbbGroup
             // 
@@ -71,6 +72,7 @@
             this.cbbGroup.Name = "cbbGroup";
             this.cbbGroup.Size = new System.Drawing.Size(152, 23);
             this.cbbGroup.TabIndex = 3;
+            this.cbbGroup.SelectedIndexChanged += new System.EventHandler(this.CbbGroup_SelectedIndexChanged);
             // 
             // aPanel1
             // 
@@ -102,6 +104,7 @@
             this.btnSearch.TabIndex = 4;
             this.btnSearch.Text = "조회";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
             // aPanel2
             // 
@@ -119,6 +122,25 @@
             this.aPanel2.Name = "aPanel2";
             this.aPanel2.Size = new System.Drawing.Size(1148, 39);
             this.aPanel2.TabIndex = 17;
+            // 
+            // aButton1
+            // 
+            this.aButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.aButton1.Location = new System.Drawing.Point(771, 7);
+            this.aButton1.Name = "aButton1";
+            this.aButton1.Size = new System.Drawing.Size(75, 23);
+            this.aButton1.TabIndex = 21;
+            this.aButton1.Text = "조회";
+            this.aButton1.UseVisualStyleBackColor = false;
+            // 
+            // aComboBox1
+            // 
+            this.aComboBox1.FormattingEnabled = true;
+            this.aComboBox1.Location = new System.Drawing.Point(644, 7);
+            this.aComboBox1.Name = "aComboBox1";
+            this.aComboBox1.Size = new System.Drawing.Size(121, 23);
+            this.aComboBox1.TabIndex = 11;
             // 
             // aLabel3
             // 
@@ -189,25 +211,6 @@
             this.aLabel5.Size = new System.Drawing.Size(112, 21);
             this.aLabel5.TabIndex = 19;
             this.aLabel5.Text = "품목분류 정보";
-            // 
-            // aComboBox1
-            // 
-            this.aComboBox1.FormattingEnabled = true;
-            this.aComboBox1.Location = new System.Drawing.Point(644, 7);
-            this.aComboBox1.Name = "aComboBox1";
-            this.aComboBox1.Size = new System.Drawing.Size(121, 23);
-            this.aComboBox1.TabIndex = 11;
-            // 
-            // aButton1
-            // 
-            this.aButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton1.Location = new System.Drawing.Point(771, 7);
-            this.aButton1.Name = "aButton1";
-            this.aButton1.Size = new System.Drawing.Size(75, 23);
-            this.aButton1.TabIndex = 21;
-            this.aButton1.Text = "조회";
-            this.aButton1.UseVisualStyleBackColor = false;
             // 
             // MDS_SDS_001
             // 

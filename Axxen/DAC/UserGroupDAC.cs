@@ -58,10 +58,10 @@ namespace DAC
             }
         }
         /// <summary>
-        /// 그룹update 
+        /// 그룹 사용유무update 
         /// </summary>
         /// <returns></returns>
-        public bool GetUpdateUserGroup(string groupcode, string check)
+        public bool GetUpdateUserGroup(string groupcode, string used)
         {
          
             using (SqlCommand comm = new SqlCommand())
@@ -70,7 +70,7 @@ namespace DAC
                 comm.CommandText = "GetUpdateUserGroup";
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.Parameters.AddWithValue("@UserGroup_Code",groupcode);
-                comm.Parameters.AddWithValue("@Use_YN", check);
+                comm.Parameters.AddWithValue("@Use_YN", used);
 
                 comm.Connection.Open();
                int result = Convert.ToInt32(comm.ExecuteScalar());

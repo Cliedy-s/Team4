@@ -979,6 +979,7 @@
             this.tsbtnUpdate.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             this.tsbtnUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.tsbtnUpdate.ToolTipText = "조회";
+            this.tsbtnUpdate.Click += new System.EventHandler(this.TsbtnUpdate_Click_1);
             // 
             // tsbtnDelete
             // 
