@@ -424,6 +424,12 @@
     <Compile Include="sangyoung\PPS_SCH_001.Designer.cs">
       <DependentUpon>PPS_SCH_001.cs</DependentUpon>
     </Compile>
+    <Compile Include="sangyoung\PPS_SCH_001_Insert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sangyoung\PPS_SCH_001_Insert.Designer.cs">
+      <DependentUpon>PPS_SCH_001_Insert.cs</DependentUpon>
+    </Compile>
     <Compile Include="sangyoung\PPS_SCH_002.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -773,6 +779,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="sangyoung\PPS_SCH_001.resx">
       <DependentUpon>PPS_SCH_001.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sangyoung\PPS_SCH_001_Insert.resx">
+      <DependentUpon>PPS_SCH_001_Insert.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="sangyoung\PPS_SCH_002.resx">
       <DependentUpon>PPS_SCH_002.cs</DependentUpon>

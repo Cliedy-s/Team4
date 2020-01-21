@@ -135,6 +135,7 @@
             this.txtPrNum.Size = new System.Drawing.Size(237, 23);
             this.txtPrNum.TabIndex = 5;
             this.txtPrNum.TextBoxText = "";
+            this.txtPrNum.TextKeyPress += new Axxen.CustomControls.ATextBox_Labeled.TextEnterKeyPress(this.Text_TextKeyPress);
             // 
             // txtProjectName
             // 
@@ -147,6 +148,7 @@
             this.txtProjectName.Size = new System.Drawing.Size(228, 23);
             this.txtProjectName.TabIndex = 6;
             this.txtProjectName.TextBoxText = "";
+            this.txtProjectName.TextKeyPress += new Axxen.CustomControls.ATextBox_Labeled.TextEnterKeyPress(this.Text_TextKeyPress);
             // 
             // PPS_SCH_001
             // 
