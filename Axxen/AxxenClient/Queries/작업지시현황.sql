@@ -1,10 +1,10 @@
 
   /****** 작업지시현황 ******/
   SELECT wo.[Workorderno]
-		,wo.[Wo_Status]
 		,wo.[Wc_Code]
+		,wo.[Wo_Status]
 		,ds.[User_ID]
-		, im.[Item_Code]
+		,im.[Item_Code]
 		,im.[Item_Name]
 		,im.[Item_Unit]
 		,wo.[Prd_Qty]

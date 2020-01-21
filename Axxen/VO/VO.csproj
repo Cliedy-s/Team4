@@ -41,6 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GVClearVO.cs" />
+    <Compile Include="GVVO.cs" />
+    <Compile Include="Goods_In_HistoryVO.cs" />
+    <Compile Include="GVStatusVO.cs" />
+    <Compile Include="InspectHistoryVO.cs" />
+    <Compile Include="InspectSpecVO.cs" />
     <Compile Include="GasUse_HistoryVO.cs" />
     <Compile Include="Goods_In_History_J_Pallet_BoxingVO.cs" />
     <Compile Include="Item_Goods_HistoryVO.cs" />
@@ -48,15 +54,20 @@
     <Compile Include="MainForm_VO.cs" />
     <Compile Include="MoldVO.cs" />
     <Compile Include="Mold_J_Item_Wc_MuseVO.cs" />
+    <Compile Include="PalletVO.cs" />
+    <Compile Include="Pallet_Master_J_BoxingGrade_Detail_Master VO.cs" />
     <Compile Include="Process_J_Nop_History_Gas_WC_Time_DayVO.cs" />
     <Compile Include="Process_J_WC_Item_WO_Time_DayVO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScreenItemVO.cs" />
+    <Compile Include="GVUnloadVO.cs" />
     <Compile Include="UserGroupVO.cs" />
     <Compile Include="UserInfoVO.cs" />
     <Compile Include="WC_J_WO_Time_Day_ItemVO.cs" />
+    <Compile Include="WorkOrderVO.cs" />
     <Compile Include="WorkOrder_J_WC_ItmeVO.cs" />
     <Compile Include="WorkOrder_J_WC_Time_DayVO.cs" />
+    <Compile Include="Wo_J_Goods_In_HistoryVO.cs" />
     <Compile Include="Wo_Req_ItemVO.cs" />
     <Compile Include="Wo_Req_WO_WC_ItemVO.cs" />
     <Compile Include="WO__WC_Production_ItemVO.cs" />

@@ -72,7 +72,7 @@ namespace Axxen.Util
                 File = GetLoggingFilePath(),
                 LockingModel = new FileAppender.MinimalLock(),
                 AppendToFile = true,
-                RollingStyle = RollingFileAppender.RollingMode.Composite,
+                RollingStyle = RollingFileAppender.RollingMode.Composite, // 날짜 + 사이즈?
                 DatePattern = "_yyyyMMdd\".log\"",
                 MaxSizeRollBackups = -1,
                 MaximumFileSize = "1MB",
