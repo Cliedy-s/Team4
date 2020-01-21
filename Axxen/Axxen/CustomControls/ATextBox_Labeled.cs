@@ -28,5 +28,17 @@ namespace Axxen.CustomControls
         {
             InitializeComponent();
         }
+
+
+        public event TextEnterKeyPress TextKeyPress;
+        public delegate void TextEnterKeyPress(object sender, KeyPressEventArgs e);
+
+        private void TxtValue_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == 13)
+            {
+                TextKeyPress.Invoke(sender, e);
+            }
+        }
     }
 }

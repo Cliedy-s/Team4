@@ -34,7 +34,7 @@ namespace DAC
             using (SqlConnection conn = new SqlConnection(Connstr))
             {
                 conn.Open();
-                string sql = $"select Seq, Std_Date,gh.Wc_Code, Wc_Name, Gas_Val, Dorm_Gas,gh.Remark from GasUse_History gh INNER JOIN WorkCenter_Master wcm ON gh.Wc_Code = wcm.Wc_Code  where Std_Date BETWEEN '{ADateTimePickerValue1}' AND '{ADateTimePickerValue2}' Order By Seq Desc";
+                string sql = $"select Seq, Std_Date,gh.Wc_Code, Wc_Name, Gas_Val,gh.Remark from GasUse_History gh INNER JOIN WorkCenter_Master wcm ON gh.Wc_Code = wcm.Wc_Code  where Std_Date BETWEEN '{ADateTimePickerValue1}' AND '{ADateTimePickerValue2}' Order By Seq Desc";
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
                     list = Helper.DataReaderMapToList<GasUse_HistoryVO>(cmd.ExecuteReader());

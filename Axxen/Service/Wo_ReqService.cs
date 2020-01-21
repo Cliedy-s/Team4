@@ -15,5 +15,17 @@ namespace Service
             Wo_ReqDAC dac = new Wo_ReqDAC();
             return dac.GetAllWoReq();
         }
+
+        public bool UpdateWoReq(string woNo)
+        {
+            Wo_ReqDAC dac = new Wo_ReqDAC();
+            return dac.UpdateWoReq(woNo);
+        }
+
+        public List<WorkOrder_J_WC_ItmeVO> GetWorkOrder()
+        {
+            Wo_ReqDAC dac = new Wo_ReqDAC();
+            return dac.GetWorkOrder();
+        }
     }
 }

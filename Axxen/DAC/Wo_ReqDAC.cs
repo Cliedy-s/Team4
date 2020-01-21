@@ -27,5 +27,40 @@ namespace DAC
                 return list;
             }
         }
+
+        public bool UpdateWoReq(string woNo)
+        {
+            int result =0;
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText = "update Wo_Req set Req_Status ='마감' where Wo_Req_No = @Wo_Req_No ";
+                comm.Parameters.AddWithValue("@Wo_Req_No", woNo);
+
+                comm.Connection.Open();
+                result = comm.ExecuteNonQuery();
+                comm.Connection.Close();
+
+                return (result > 0);
+            }
+        }
+
+        public List<WorkOrder_J_WC_ItmeVO> GetWorkOrder()
+        {
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText = "select Prd_Date, wo.Wo_Status,wo.Workorderno,wo.Item_Code,Item_Name,Wc_Name,wo.In_Qty_Main,wo.Out_Qty_Main,wo.Prd_Qty,wo.Remark from WorkOrder wo INNER JOIN Item_Master im ON wo.Item_Code = im.Item_Code INNER JOIN WorkCenter_Master wm ON wo.Wc_Code = wm.Wc_Code ";
+                //where wo.Item_Code=@Item_Code
+                //comm.Parameters.AddWithValue("@Item_Code", code);
+
+                comm.Connection.Open();
+                SqlDataReader reader = comm.ExecuteReader();
+                List<WorkOrder_J_WC_ItmeVO> list = Helper.DataReaderMapToList<WorkOrder_J_WC_ItmeVO>(reader);
+                comm.Connection.Close();
+
+                return list;
+            }
+        }
     }
 }

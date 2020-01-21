@@ -44,17 +44,18 @@ namespace DAC
             return list;
         }
 
-        public List<WO_WC_Production_ItemVO> GetWO_WC_Production_Items() //PPS_SCH_003 그리드뷰 사용
+        public List<Goods_In_History_J_Pallet_BoxingVO> GetGoodsIH_PalletM_Boxing(string Workorderno) //PRM_PRF_002 그리드뷰 사용
         {
-            List<WO_WC_Production_ItemVO> list = null;
+            List<Goods_In_History_J_Pallet_BoxingVO> list = null;
             using (SqlConnection conn = new SqlConnection(Connstr))
             {
                 conn.Open();
-                string sql = "GetWO_WC_Production_Items";
+                string sql = "GetGoodsIH_PalletM_Boxing";
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    list = Helper.DataReaderMapToList<WO_WC_Production_ItemVO>(cmd.ExecuteReader());
+                    cmd.Parameters.AddWithValue("@Workorderno", Workorderno);
+                    list = Helper.DataReaderMapToList<Goods_In_History_J_Pallet_BoxingVO>(cmd.ExecuteReader());
                 }
                 conn.Close();
             }
