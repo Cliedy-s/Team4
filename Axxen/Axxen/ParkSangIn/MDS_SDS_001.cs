@@ -12,9 +12,11 @@ using VO;
 namespace Axxen
 {
     public partial class MDS_SDS_001 : Axxen.BaseForm
-    {
-        List<Item_Level_MasterVO> itemgrouplist;
+    
+{
         ItemMaster_Service itemservice = new ItemMaster_Service();
+        List<Item_Level_Master> itemgrouplist;
+    
         public MDS_SDS_001()
         {
             InitializeComponent();
@@ -68,10 +70,51 @@ namespace Axxen
         private void GetAllUserGroup()
         {
 
-            itemgrouplist = new List<Item_Level_MasterVO>();
+            itemgrouplist = new List<Item_Level_Master>();
             itemgrouplist = itemservice.GetAllItem_Level_Master();
             dgvGroup.DataSource = itemgrouplist;
         }
 
+        private void CbbGroup_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblGroup.Text = cbbGroup.SelectedValue.ToString();
+        }
+
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvGroup.Rows)
+            {
+                if (row.Cells[0].Value.ToString().Contains(lblGroup.Text))
+                {
+                    row.Cells[0].Selected = true;
+                }
+            }
+        }
+
+        private void DgvGroup_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+
+                if (e.ColumnIndex == dgvGroup.Columns["btn"].Index)//눌러서 사용과 사용안함 변경
+                {
+                    if ((dgvGroup.SelectedRows[0].Cells[5].Value).ToString() == "Y") //사용안함
+                    {
+                        itemservice.Use_YNItem_Level_Master((dgvGroup.SelectedRows[0].Cells[0].Value).ToString(), "N");
+                    }
+                    else //사용함
+                    {
+                        itemservice.Use_YNItem_Level_Master((dgvGroup.SelectedRows[0].Cells[0].Value).ToString(), "Y");
+                    }
+                    GetAllUserGroup();
+                }
+
+            }
+            catch (Exception err)
+            {
+
+                MessageBox.Show(err.Message);
+            }
+        }
     }
 }
