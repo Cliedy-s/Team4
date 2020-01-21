@@ -596,6 +596,7 @@
     </Compile>
     <Compile Include="UserInfo.cs" />
     <Compile Include="Util\InitControlUtil.cs" />
+    <Compile Include="Util\LoggingUtility.cs" />
     <EmbeddedResource Include="CustomControls\AButton.resx">
       <DependentUpon>AButton.cs</DependentUpon>
     </EmbeddedResource>
