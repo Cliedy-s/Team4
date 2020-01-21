@@ -72,6 +72,10 @@ namespace DAC
         /// <returns></returns>
         public List<Item_MasterVO> GetAllItem_Master()
         {
+            try
+            {
+
+        
             List<Item_MasterVO> Itemlist = null;
             using (SqlCommand com = new SqlCommand())
             {
@@ -86,10 +90,16 @@ namespace DAC
 
                 return Itemlist;
             }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         /// <summary>
-        /// 품목정보 전체
+        /// 품목정보 수정 캐비티, 성형, shot수 mds_sds_002
         /// </summary>
         /// <param name="id"></param>
         /// <param name="pwd"></param>
@@ -98,20 +108,45 @@ namespace DAC
         {
             try
             {
-
-
                 using (SqlCommand comm = new SqlCommand())
                 {
                     comm.Connection = new SqlConnection(Connstr);
                     comm.CommandText = "InsertUpdateAllItem_Master";
                     comm.CommandType = CommandType.StoredProcedure;
-                    //comm.Parameters.AddWithValue("@UserGroup_Code", List[i].UserGroup_Code);
-                    //comm.Parameters.AddWithValue("@User_ID", List[i].User_ID);
-                    //comm.Parameters.AddWithValue("@Ins_Date", List[i].Ins_Date);
-                    //comm.Parameters.AddWithValue("@Ins_Emp", List[i].Ins_Emp);
+                    comm.Parameters.AddWithValue("@Item_Code", item.Item_Code);
+                    comm.Parameters.AddWithValue("@Item_Name", item.Item_Name);
+                    comm.Parameters.AddWithValue("@Item_Name_Eng", item.Item_Name_Eng);
+                    comm.Parameters.AddWithValue("@Item_Name_Eng_Alias", item.Item_Name_Eng_Alias);
+                    comm.Parameters.AddWithValue("@Item_Type", item.Item_Type);
+                    comm.Parameters.AddWithValue("@Item_Spec", item.Item_Spec);
+                    comm.Parameters.AddWithValue("@Item_Unit", item.Item_Unit);
+                    comm.Parameters.AddWithValue("@Level_1", item.Level_1);
+                    comm.Parameters.AddWithValue("@Level_2", item.Level_2);
+                    comm.Parameters.AddWithValue("@Level_3", item.Level_3);
+                    comm.Parameters.AddWithValue("@Level_4", item.Level_4);
+                    comm.Parameters.AddWithValue("@Level_5", item.Level_5);
+                    comm.Parameters.AddWithValue("@Item_Stock", item.Item_Stock);
+                    comm.Parameters.AddWithValue("@LotSize", item.LotSize);
+                    comm.Parameters.AddWithValue("@PrdQty_Per_Hour", item.PrdQty_Per_Hour);
+                    comm.Parameters.AddWithValue("@PrdQTy_Per_Batch", item.PrdQTy_Per_Batch);
+            
+
+                    comm.Parameters.AddWithValue("@Cavity", item.Cavity);
+                    comm.Parameters.AddWithValue("@Line_Per_Qty", item.Line_Per_Qty);
+                    comm.Parameters.AddWithValue("@Shot_Per_Qty", item.Shot_Per_Qty);
+
+                    comm.Parameters.AddWithValue("@Dry_GV_Qty", item.Dry_GV_Qty);
+
+                    comm.Parameters.AddWithValue("@Heat_GV_Qty", item.Heat_GV_Qty);
+                    comm.Parameters.AddWithValue("@Remark", item.Remark);
+                    comm.Parameters.AddWithValue("@Ins_Date", item.Ins_Date);
+                    comm.Parameters.AddWithValue("@Ins_Emp", item.Ins_Emp);
+
+
+
 
                     comm.Connection.Open();
-                 int result =   comm.ExecuteNonQuery();              
+                 int result = comm.ExecuteNonQuery();              
                     comm.Connection.Close();
 
                     return result > 0;
