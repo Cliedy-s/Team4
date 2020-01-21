@@ -39,7 +39,16 @@ namespace AxxenClient.Forms
                     break;
             }
             panBoxing.Location  = panLoad.Location = panMolding.Location; //panLoad.Location => molding, Boxing
+
+            //데이터 읽어오기
+            GetDatas();
         }
+
+        private void GetDatas()
+        {
+            throw new NotImplementedException();
+        }
+
         private void WorkOrderForm_Load(object sender, EventArgs e)
         {
             InitControl();

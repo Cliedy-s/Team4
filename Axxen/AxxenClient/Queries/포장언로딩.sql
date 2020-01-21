@@ -3,20 +3,22 @@
       ,tab1.[GV_Name]
       ,tab1.[GV_Group]
       ,tab1.[GV_Status]
-      ,tab1.[Use_YN]
+      ,tab1.[Unloading_Wc]
       ,tab1.WorkOrderNo
-      ,wo.[Item_Code]
       ,wo.[Prd_Qty]
+      ,wo.[Prd_Unit]
+      ,wo.[Item_Code]
       ,im.[Item_Name]
  FROM (SELECT gv.[GV_Code]
                     ,gv.[GV_Name]
                     ,gv.[GV_Group]
                     ,gv.[GV_Status]
-                    ,gv.[Use_YN]
-                    ,(SELECT TOP(1) gvcs.[Workorderno] FROM [GV_Current_Status] as gvcs WHERE  gvcs.[GV_Code] =gv.[GV_Code] ORDER BY gvcs.[Loading_time] DESC) as WorkOrderNo
+                    ,gv.[Unloading_Wc]
+                    ,GetCurrentWorkOrderNoByGVCode(gv.[GV_Code]) as WorkOrderNo
             FROM [GV_Master] as gv
             WHERE 
                   gv.[Unloading_Wc] = '여기'
+                  AND  gv.[Use_YN] = 'Y'
                   AND (gv.[GV_Status] = '적재' OR gv.[GV_Status] = '언로딩')
                   AND '적재작업지시(소성)' = (SELECT [Wo_Ini_Char] 
                                                             FROM [WorkCenter_Master]
