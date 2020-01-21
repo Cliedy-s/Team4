@@ -26,8 +26,8 @@ namespace Axxen
         private void PPS_SCH_003_Load(object sender, EventArgs e)
         {
             MainDataLoad();
-            wowclist = service.GetWO_WC_Production_Items();
-            dgvMainGrid.DataSource = wowclist;
+       //     wowclist = service.GetWO_WC_Production_Items();
+       //     dgvMainGrid.DataSource = wowclist;
         }
 
         private void MainDataLoad()

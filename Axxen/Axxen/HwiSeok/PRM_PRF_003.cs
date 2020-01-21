@@ -34,8 +34,8 @@ namespace Axxen
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "취소시각", "Close_CancelTime", true, 100, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "ERP 업로드여부", "Upload_Flag", true, 100, default, true);
 
-            igh = imservice.GetworkOrder_Item_Goods();
-            dgvMainGrid.DataSource = igh;
+          //  igh = imservice.GetworkOrder_Item_Goods();
+          //  dgvMainGrid.DataSource = igh;
 
         }
     }
