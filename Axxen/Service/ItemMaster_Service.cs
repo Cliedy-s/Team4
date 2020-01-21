@@ -46,5 +46,10 @@ namespace Service
             
             return DAC.InsertUpdateAllItem_Master(item);
         }
+
+        public List<Item_Goods_HistoryVO> GetworkOrder_Item_Goods()
+        {
+            return DAC.GetworkOrder_Item_Goods();
+        }
     }
 }
