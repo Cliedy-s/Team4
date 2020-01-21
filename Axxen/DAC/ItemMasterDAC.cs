@@ -34,5 +34,28 @@ namespace DAC
                 return ItemGroup;
             }
         }
+
+
+        /// <summary>
+        /// PRM_PRF_002
+        /// </summary>
+        /// <returns></returns>
+        public List<Item_Goods_HistoryVO> GetworkOrder_Item_Goods()
+        {
+            List<Item_Goods_HistoryVO> ItemGroup = null;
+            using (SqlCommand com = new SqlCommand())
+            {
+                com.Connection = new SqlConnection(Connstr);
+                com.CommandText = "GetworkOrder_Item_Goods";
+                com.CommandType = CommandType.StoredProcedure;
+
+                com.Connection.Open();
+                SqlDataReader reader = com.ExecuteReader();
+                ItemGroup = Helper.DataReaderMapToList<Item_Goods_HistoryVO>(reader);
+                com.Connection.Close();
+
+                return ItemGroup;
+            }
+        }
     }
 }

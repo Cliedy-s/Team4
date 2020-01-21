@@ -22,6 +22,10 @@ namespace Service
             return dac.GetDatePicker_WorkOrder_Item_WC(ADateTimePickerValue1,ADateTimePickerValue2);
         }
 
-        
+        public List<Goods_In_History_J_Pallet_BoxingVO> GetGoodsIH_PalletM_Boxing(string Workorderno)
+        {
+            WorkOrderDAC dac = new WorkOrderDAC();
+            return dac.GetGoodsIH_PalletM_Boxing(Workorderno);
+        }
     }
 }

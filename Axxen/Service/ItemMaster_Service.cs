@@ -21,5 +21,11 @@ namespace Service
 
             return DAC.GetAllItem_Level_Master();
         }
+
+        public List<Item_Goods_HistoryVO> GetworkOrder_Item_Goods()
+        {
+
+            return DAC.GetworkOrder_Item_Goods();
+        }
     }
 }

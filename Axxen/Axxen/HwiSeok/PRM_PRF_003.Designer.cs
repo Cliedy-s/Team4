@@ -68,6 +68,8 @@
             // 
             // aDateTimePickerSearch2
             // 
+            this.aDateTimePickerSearch2.ADateTimePickerValue1 = new System.DateTime(2020, 1, 14, 16, 1, 18, 229);
+            this.aDateTimePickerSearch2.ADateTimePickerValue2 = new System.DateTime(2020, 1, 21, 16, 1, 18, 223);
             this.aDateTimePickerSearch2.ButtonText = "조회";
             this.aDateTimePickerSearch2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aDateTimePickerSearch2.Location = new System.Drawing.Point(88, 23);
@@ -82,6 +84,7 @@
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.Name = "PRM_PRF_003";
             this.Text = "완제품 입고리스트";
+            this.Load += new System.EventHandler(this.PRM_PRF_003_Load);
             this.panTop.ResumeLayout(false);
             this.panTop.PerformLayout();
             this.ResumeLayout(false);
