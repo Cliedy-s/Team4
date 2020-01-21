@@ -21,9 +21,14 @@ SELECT
 	nim.Nop_Mi_Code
 	, nim.Nop_Mi_Name
 	, nim.Nop_Ma_Code
-	, nim.Use_YN
 	, nim.Remark
+	, nim.Ins_Date
+	, nim.Ins_Emp
+	, nim.Up_Date
+	, nim.Up_Emp
 	FROM Nop_Mi_Master AS nim
+	WHERE nim.Use_YN = 'Y';
+
 SELECT 	
 	nam.Nop_Ma_Code
 	,nam.Nop_Ma_Name

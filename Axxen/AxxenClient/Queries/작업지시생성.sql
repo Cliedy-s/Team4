@@ -10,7 +10,6 @@
       ,wo.[Prd_Unit]
 	  ,wcm.[Wc_Code]
       ,wcm.[Wo_Ini_Char]
-      ,
   FROM [WorkOrder] as wo
   JOIN wcm.[WorkCenter_Master] as wcm ON wo.[Wc_Code] = wcm.[Wc_Code]
   JOIN [Item_Master] as im ON im.[Item_Code] = wo.[Item_Code]
