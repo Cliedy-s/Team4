@@ -43,12 +43,14 @@
   <ItemGroup>
     <Compile Include="DACParent.cs" />
     <Compile Include="GasUse_HistoryDAC.cs" />
+    <Compile Include="GV_Work_ItemDAC.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="Inspect_Measure_HistoryDAC.cs" />
     <Compile Include="ItemMasterDAC.cs" />
-    <Compile Include="Item_Spec_MasterDAC.cs" />
+    <Compile Include="Inspect_Spec_MasterDAC.cs" />
     <Compile Include="MainForm_DAC.cs" />
     <Compile Include="MoldDAC.cs" />
+    <Compile Include="Pallet_MasterDAC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScreenItemDAC.cs" />
     <Compile Include="UserGroupDAC.cs" />

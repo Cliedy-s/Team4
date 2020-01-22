@@ -493,7 +493,7 @@ namespace Axxen
         {
             foreach (Form children in this.MdiChildren)
             {
-                children.Dispose();
+                children.Close();
             }
 
             tabControl2.TabPages.Clear();

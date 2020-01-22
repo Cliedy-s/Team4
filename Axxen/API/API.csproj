@@ -158,13 +158,6 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="DAC\DACParent.cs" />
-    <Compile Include="DAC\Helper.cs" />
-    <Compile Include="DAC\MainForm_DAC.cs" />
-    <Compile Include="DAC\MoldDAC.cs" />
-    <Compile Include="DAC\ScreenItemDAC.cs" />
-    <Compile Include="DAC\UserGroupDAC.cs" />
-    <Compile Include="DAC\UserInfoDAC.cs" />
-    <Compile Include="DAC\WorkOrderDAC.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

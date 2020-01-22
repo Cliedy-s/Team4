@@ -78,5 +78,9 @@ namespace Axxen
         {
             ((MainForm)this.MdiParent).InsertFormEvent -= new System.EventHandler(this.InsertFormShow);//입력이벤트 등록
         }
+
+        private void aTextBox_FindNameByCode1_DotDotDotClick(object sender, CustomControls.SearchFormClosingArgs args)
+        {
+        }
     }
 }

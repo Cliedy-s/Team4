@@ -33,7 +33,7 @@
             this.panTop.SuspendLayout();
             this.SuspendLayout();
             // 
-            // aPanel1
+            // panTop
             // 
             this.panTop.Controls.Add(this.aTextBox_FindNameByCode1);
             this.panTop.Controls.Add(this.aTextBox_FindNameByCode2);
@@ -74,6 +74,7 @@
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.Name = "PRM_PRF_005";
             this.Text = "대차현황";
+            this.Load += new System.EventHandler(this.PRM_PRF_005_Load);
             this.panTop.ResumeLayout(false);
             this.ResumeLayout(false);
 

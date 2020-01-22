@@ -50,54 +50,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomControls\ADateTimePickerSearch.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CustomControls\ADateTimePickerSearch.Designer.cs">
-      <DependentUpon>ADateTimePickerSearch.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CustomControls\AHeaderBox.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CustomControls\AHeaderBox.Designer.cs">
-      <DependentUpon>AHeaderBox.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CustomControls\AGroupBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="CustomControls\AGroupBox.Designer.cs">
-      <DependentUpon>AGroupBox.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CustomControls\APanel.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="CustomControls\APanel.Designer.cs">
-      <DependentUpon>APanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CustomControls\ASplitContainer.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="CustomControls\ASplitContainer.Designer.cs">
-      <DependentUpon>ASplitContainer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CustomControls\ATextBox_FindNameByCode.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CustomControls\ATextBox_FindNameByCode.Designer.cs">
-      <DependentUpon>ATextBox_FindNameByCode.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CustomControls\ATextBox_LabeledBigTextBox.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CustomControls\ATextBox_LabeledBigTextBox.Designer.cs">
-      <DependentUpon>ATextBox_LabeledBigTextBox.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CustomControls\SearchForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CustomControls\SearchForm.Designer.cs">
-      <DependentUpon>SearchForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="DatagridviewDesigns.cs" />
     <Compile Include="HwiSeok\PRM_PRF_001.cs">
       <SubType>Form</SubType>
@@ -520,77 +472,11 @@
     <Compile Include="Templets\BaseForm.Designer.cs">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomControls\AButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="CustomControls\AButton.Designer.cs">
-      <DependentUpon>AButton.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CustomControls\AComboBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="CustomControls\AComboBox.Designer.cs">
-      <DependentUpon>AComboBox.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CustomControls\ADataGridView.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="CustomControls\ADataGridView.Designer.cs">
-      <DependentUpon>ADataGridView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CustomControls\ADateTimePicker.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="CustomControls\ADateTimePicker.Designer.cs">
-      <DependentUpon>ADateTimePicker.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CustomControls\ALabel.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="CustomControls\ALabel.Designer.cs">
-      <DependentUpon>ALabel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CustomControls\ALabel_Header.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="CustomControls\ALabel_Header.Designer.cs">
-      <DependentUpon>ALabel_Header.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CustomControls\ALabel_SubHeader.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="CustomControls\ALabel_SubHeader.Designer.cs">
-      <DependentUpon>ALabel_SubHeader.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CustomControls\ATextBox_Searchable.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CustomControls\ATextBox_Searchable.Designer.cs">
-      <DependentUpon>ATextBox_Searchable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CustomControls\ATextBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="CustomControls\ATextBox.designer.cs">
-      <DependentUpon>ATextBox.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CustomControls\ATextBox_Labeled.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CustomControls\ATextBox_Labeled.Designer.cs">
-      <DependentUpon>ATextBox_Labeled.cs</DependentUpon>
-    </Compile>
     <Compile Include="ParkSangIn\MSS_CON_001.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ParkSangIn\MSS_CON_001.Designer.cs">
       <DependentUpon>MSS_CON_001.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CustomControls\ATreeView.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="CustomControls\ATreeView.Designer.cs">
-      <DependentUpon>ATreeView.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -603,24 +489,6 @@
     <Compile Include="UserInfo.cs" />
     <Compile Include="Util\InitControlUtil.cs" />
     <Compile Include="Util\LoggingUtility.cs" />
-    <EmbeddedResource Include="CustomControls\AButton.resx">
-      <DependentUpon>AButton.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CustomControls\ADateTimePickerSearch.resx">
-      <DependentUpon>ADateTimePickerSearch.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CustomControls\AHeaderBox.resx">
-      <DependentUpon>AHeaderBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CustomControls\ATextBox_FindNameByCode.resx">
-      <DependentUpon>ATextBox_FindNameByCode.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CustomControls\ATextBox_LabeledBigTextBox.resx">
-      <DependentUpon>ATextBox_LabeledBigTextBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CustomControls\SearchForm.resx">
-      <DependentUpon>SearchForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="HwiSeok\PRM_PRF_001.resx">
       <DependentUpon>PRM_PRF_001.cs</DependentUpon>
     </EmbeddedResource>
@@ -831,18 +699,6 @@
     <EmbeddedResource Include="Templets\BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomControls\ALabel_SubHeader.resx">
-      <DependentUpon>ALabel_SubHeader.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CustomControls\ATextBox.resx">
-      <DependentUpon>ATextBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CustomControls\ATextBox_Labeled.resx">
-      <DependentUpon>ATextBox_Labeled.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CustomControls\ATextBox_Searchable.resx">
-      <DependentUpon>ATextBox_Searchable.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ParkSangIn\MSS_CON_001.resx">
       <DependentUpon>MSS_CON_001.cs</DependentUpon>
     </EmbeddedResource>
@@ -875,6 +731,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <ProjectReference Include="..\CustomControls\CustomControls.csproj">
+      <Project>{d5cc387b-b513-4d54-831f-e252c8eae1df}</Project>
+      <Name>CustomControls</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Service\Service.csproj">
       <Project>{af54aca3-da6e-4a15-9bac-da1b72dd7b93}</Project>
       <Name>Service</Name>
