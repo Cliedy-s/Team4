@@ -57,7 +57,7 @@ namespace DAC
                 string sql = $"select gh.GV_Code,GV_Name,gh.Workorderno,wo.Item_Code,Item_Name,gh.Loading_Date,gh.Loading_Qty,gh.Loading_time,gh.Loading_Wc,gh.In_Time,gh.Center_Time,gh.Out_Time,gh.Unloading_Qty,gh.Unloading_date,gh.Unloading_datetime,gh.Unloading_wc,gh.Target_GV,gh.Clear_Date,gh.Clear_Datetime,gh.Clear_Qty,gh.Clear_Cause,gh.Clear_wc,gh.Clear_Item " +
                              $"from GV_History gh INNER JOIN GV_Master gvm ON gh.GV_Code = gvm.GV_Code " +
                                                 $"INNER JOIN WorkOrder wo ON gh.Workorderno = wo.Workorderno " +
-                                                $"INNER JOIN Item_Master im ON im.Item_Code = wo.Item_Code" +
+                                                $"INNER JOIN Item_Master im ON im.Item_Code = wo.Item_Code " +
                              $"where gh.Loading_Date BETWEEN '{ADateTimePickerValue1}' AND '{ADateTimePickerValue2}' Order By gh.Loading_Date Desc";
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {

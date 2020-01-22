@@ -52,9 +52,9 @@ namespace Axxen
             
         }
 
-        private void aDateTimePickerSearch2_btnDateTimeSearch_Click(object sender, EventArgs args)
+        private void aDateTimePickerSearch1_btnDateTimeSearch_Click(object sender, EventArgs args)
         {
-            gvhwi = gvwiservice.GetDatePicker_GV_History_Work_Item(aDateTimePickerSearch2.ADateTimePickerValue1.ToShortDateString(), aDateTimePickerSearch2.ADateTimePickerValue2.ToShortDateString());
+            gvhwi = gvwiservice.GetDatePicker_GV_History_Work_Item(aDateTimePickerSearch1.ADateTimePickerValue1.ToShortDateString(), aDateTimePickerSearch1.ADateTimePickerValue2.ToShortDateString());
             dgvMainGrid.DataSource = gvhwi;
         }
     }
