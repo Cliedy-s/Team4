@@ -155,6 +155,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.Name = "PPS_SCH_001";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PPS_SCH_001_FormClosed);
             this.Load += new System.EventHandler(this.PPS_SCH_001_Load);
             this.aPanel1.ResumeLayout(false);
             this.aPanel1.PerformLayout();

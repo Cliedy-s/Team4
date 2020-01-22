@@ -28,73 +28,73 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.aTextBox_Labeled2 = new Axxen.CustomControls.ATextBox_Labeled();
-            this.aTextBox_Labeled1 = new Axxen.CustomControls.ATextBox_Labeled();
-            this.aComboBox1 = new Axxen.CustomControls.AComboBox();
+            this.txtName = new Axxen.CustomControls.ATextBox_Labeled();
+            this.txtCode = new Axxen.CustomControls.ATextBox_Labeled();
+            this.cboDate = new Axxen.CustomControls.AComboBox();
             this.aLabel1 = new Axxen.CustomControls.ALabel();
-            this.aTextBox_Labeled3 = new Axxen.CustomControls.ATextBox_Labeled();
-            this.aTextBox_Labeled4 = new Axxen.CustomControls.ATextBox_Labeled();
-            this.aTextBox_Labeled5 = new Axxen.CustomControls.ATextBox_Labeled();
+            this.txtMoldCode = new Axxen.CustomControls.ATextBox_Labeled();
+            this.txtMoldGroup = new Axxen.CustomControls.ATextBox_Labeled();
+            this.txtMoldName = new Axxen.CustomControls.ATextBox_Labeled();
             this.aLabel2 = new Axxen.CustomControls.ALabel();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numHit = new System.Windows.Forms.NumericUpDown();
             this.aLabel3 = new Axxen.CustomControls.ALabel();
             this.aLabel4 = new Axxen.CustomControls.ALabel();
             this.aLabel5 = new Axxen.CustomControls.ALabel();
-            this.aDateTimePicker1 = new Axxen.CustomControls.ADateTimePicker();
-            this.aDateTimePicker2 = new Axxen.CustomControls.ADateTimePicker();
+            this.dtpInDate = new Axxen.CustomControls.ADateTimePicker();
+            this.dtpLastEquip = new Axxen.CustomControls.ADateTimePicker();
             this.aLabel6 = new Axxen.CustomControls.ALabel();
-            this.aTextBox1 = new Axxen.CustomControls.ATextBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.txtRemark = new Axxen.CustomControls.ATextBox();
+            this.rdoY = new System.Windows.Forms.RadioButton();
+            this.rdoN = new System.Windows.Forms.RadioButton();
             this.aPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aSplitContainer1)).BeginInit();
             this.aSplitContainer1.Panel2.SuspendLayout();
             this.aSplitContainer1.SuspendLayout();
             this.aPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numHit)).BeginInit();
             this.SuspendLayout();
             // 
             // aPanel2
             // 
-            this.aPanel2.Controls.Add(this.aTextBox_Labeled2);
-            this.aPanel2.Controls.Add(this.aTextBox_Labeled1);
+            this.aPanel2.Controls.Add(this.txtName);
+            this.aPanel2.Controls.Add(this.txtCode);
             this.aPanel2.Controls.Add(this.aLabel1);
-            this.aPanel2.Controls.Add(this.aComboBox1);
+            this.aPanel2.Controls.Add(this.cboDate);
             // 
             // aSplitContainer1
             // 
             // 
             // aPanel1
             // 
-            this.aPanel1.Controls.Add(this.radioButton2);
-            this.aPanel1.Controls.Add(this.radioButton1);
-            this.aPanel1.Controls.Add(this.aTextBox1);
+            this.aPanel1.Controls.Add(this.rdoN);
+            this.aPanel1.Controls.Add(this.rdoY);
+            this.aPanel1.Controls.Add(this.txtRemark);
             this.aPanel1.Controls.Add(this.aLabel6);
-            this.aPanel1.Controls.Add(this.aDateTimePicker2);
-            this.aPanel1.Controls.Add(this.aDateTimePicker1);
+            this.aPanel1.Controls.Add(this.dtpLastEquip);
+            this.aPanel1.Controls.Add(this.dtpInDate);
             this.aPanel1.Controls.Add(this.aLabel5);
             this.aPanel1.Controls.Add(this.aLabel4);
             this.aPanel1.Controls.Add(this.aLabel3);
-            this.aPanel1.Controls.Add(this.numericUpDown1);
+            this.aPanel1.Controls.Add(this.numHit);
             this.aPanel1.Controls.Add(this.aLabel2);
-            this.aPanel1.Controls.Add(this.aTextBox_Labeled5);
-            this.aPanel1.Controls.Add(this.aTextBox_Labeled4);
-            this.aPanel1.Controls.Add(this.aTextBox_Labeled3);
+            this.aPanel1.Controls.Add(this.txtMoldName);
+            this.aPanel1.Controls.Add(this.txtMoldGroup);
+            this.aPanel1.Controls.Add(this.txtMoldCode);
             this.aPanel1.Controls.SetChildIndex(this.aHeaderBox2, 0);
-            this.aPanel1.Controls.SetChildIndex(this.aTextBox_Labeled3, 0);
-            this.aPanel1.Controls.SetChildIndex(this.aTextBox_Labeled4, 0);
-            this.aPanel1.Controls.SetChildIndex(this.aTextBox_Labeled5, 0);
+            this.aPanel1.Controls.SetChildIndex(this.txtMoldCode, 0);
+            this.aPanel1.Controls.SetChildIndex(this.txtMoldGroup, 0);
+            this.aPanel1.Controls.SetChildIndex(this.txtMoldName, 0);
             this.aPanel1.Controls.SetChildIndex(this.aLabel2, 0);
-            this.aPanel1.Controls.SetChildIndex(this.numericUpDown1, 0);
+            this.aPanel1.Controls.SetChildIndex(this.numHit, 0);
             this.aPanel1.Controls.SetChildIndex(this.aLabel3, 0);
             this.aPanel1.Controls.SetChildIndex(this.aLabel4, 0);
             this.aPanel1.Controls.SetChildIndex(this.aLabel5, 0);
-            this.aPanel1.Controls.SetChildIndex(this.aDateTimePicker1, 0);
-            this.aPanel1.Controls.SetChildIndex(this.aDateTimePicker2, 0);
+            this.aPanel1.Controls.SetChildIndex(this.dtpInDate, 0);
+            this.aPanel1.Controls.SetChildIndex(this.dtpLastEquip, 0);
             this.aPanel1.Controls.SetChildIndex(this.aLabel6, 0);
-            this.aPanel1.Controls.SetChildIndex(this.aTextBox1, 0);
-            this.aPanel1.Controls.SetChildIndex(this.radioButton1, 0);
-            this.aPanel1.Controls.SetChildIndex(this.radioButton2, 0);
+            this.aPanel1.Controls.SetChildIndex(this.txtRemark, 0);
+            this.aPanel1.Controls.SetChildIndex(this.rdoY, 0);
+            this.aPanel1.Controls.SetChildIndex(this.rdoN, 0);
             // 
             // aHeaderBox1
             // 
@@ -104,37 +104,40 @@
             // 
             this.aHeaderBox2.HeaderBoxText = "입력정보";
             // 
-            // aTextBox_Labeled2
+            // txtName
             // 
-            this.aTextBox_Labeled2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aTextBox_Labeled2.FontSize = 9F;
-            this.aTextBox_Labeled2.LabelText = "금형 명";
-            this.aTextBox_Labeled2.Location = new System.Drawing.Point(354, 32);
-            this.aTextBox_Labeled2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.aTextBox_Labeled2.Name = "aTextBox_Labeled2";
-            this.aTextBox_Labeled2.Size = new System.Drawing.Size(205, 23);
-            this.aTextBox_Labeled2.TabIndex = 18;
-            this.aTextBox_Labeled2.TextBoxText = "";
+            this.txtName.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtName.FontSize = 9F;
+            this.txtName.LabelText = "금형 명";
+            this.txtName.Location = new System.Drawing.Point(354, 32);
+            this.txtName.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(205, 23);
+            this.txtName.TabIndex = 18;
+            this.txtName.TextBoxText = "";
+            this.txtName.TextKeyPress += new Axxen.CustomControls.ATextBox_Labeled.TextEnterKeyPress(this.Text_TextKeyPress);
             // 
-            // aTextBox_Labeled1
+            // txtCode
             // 
-            this.aTextBox_Labeled1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aTextBox_Labeled1.FontSize = 9F;
-            this.aTextBox_Labeled1.LabelText = "금형 코드";
-            this.aTextBox_Labeled1.Location = new System.Drawing.Point(27, 32);
-            this.aTextBox_Labeled1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.aTextBox_Labeled1.Name = "aTextBox_Labeled1";
-            this.aTextBox_Labeled1.Size = new System.Drawing.Size(212, 23);
-            this.aTextBox_Labeled1.TabIndex = 17;
-            this.aTextBox_Labeled1.TextBoxText = "";
+            this.txtCode.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtCode.FontSize = 9F;
+            this.txtCode.LabelText = "금형 코드";
+            this.txtCode.Location = new System.Drawing.Point(27, 32);
+            this.txtCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Size = new System.Drawing.Size(212, 23);
+            this.txtCode.TabIndex = 17;
+            this.txtCode.TextBoxText = "";
+            this.txtCode.TextKeyPress += new Axxen.CustomControls.ATextBox_Labeled.TextEnterKeyPress(this.Text_TextKeyPress);
             // 
-            // aComboBox1
+            // cboDate
             // 
-            this.aComboBox1.FormattingEnabled = true;
-            this.aComboBox1.Location = new System.Drawing.Point(698, 32);
-            this.aComboBox1.Name = "aComboBox1";
-            this.aComboBox1.Size = new System.Drawing.Size(106, 23);
-            this.aComboBox1.TabIndex = 16;
+            this.cboDate.FormattingEnabled = true;
+            this.cboDate.Location = new System.Drawing.Point(698, 32);
+            this.cboDate.Name = "cboDate";
+            this.cboDate.Size = new System.Drawing.Size(106, 23);
+            this.cboDate.TabIndex = 16;
+            this.cboDate.SelectedIndexChanged += new System.EventHandler(this.CboDate_SelectedIndexChanged);
             // 
             // aLabel1
             // 
@@ -145,41 +148,41 @@
             this.aLabel1.TabIndex = 15;
             this.aLabel1.Text = "생산월";
             // 
-            // aTextBox_Labeled3
+            // txtMoldCode
             // 
-            this.aTextBox_Labeled3.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aTextBox_Labeled3.FontSize = 9F;
-            this.aTextBox_Labeled3.LabelText = "금형코드";
-            this.aTextBox_Labeled3.Location = new System.Drawing.Point(257, 12);
-            this.aTextBox_Labeled3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.aTextBox_Labeled3.Name = "aTextBox_Labeled3";
-            this.aTextBox_Labeled3.Size = new System.Drawing.Size(212, 23);
-            this.aTextBox_Labeled3.TabIndex = 18;
-            this.aTextBox_Labeled3.TextBoxText = "";
+            this.txtMoldCode.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtMoldCode.FontSize = 9F;
+            this.txtMoldCode.LabelText = "금형코드";
+            this.txtMoldCode.Location = new System.Drawing.Point(257, 12);
+            this.txtMoldCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMoldCode.Name = "txtMoldCode";
+            this.txtMoldCode.Size = new System.Drawing.Size(212, 23);
+            this.txtMoldCode.TabIndex = 18;
+            this.txtMoldCode.TextBoxText = "";
             // 
-            // aTextBox_Labeled4
+            // txtMoldGroup
             // 
-            this.aTextBox_Labeled4.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aTextBox_Labeled4.FontSize = 9F;
-            this.aTextBox_Labeled4.LabelText = "금형그룹";
-            this.aTextBox_Labeled4.Location = new System.Drawing.Point(257, 74);
-            this.aTextBox_Labeled4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.aTextBox_Labeled4.Name = "aTextBox_Labeled4";
-            this.aTextBox_Labeled4.Size = new System.Drawing.Size(212, 23);
-            this.aTextBox_Labeled4.TabIndex = 19;
-            this.aTextBox_Labeled4.TextBoxText = "";
+            this.txtMoldGroup.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtMoldGroup.FontSize = 9F;
+            this.txtMoldGroup.LabelText = "금형그룹";
+            this.txtMoldGroup.Location = new System.Drawing.Point(257, 74);
+            this.txtMoldGroup.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMoldGroup.Name = "txtMoldGroup";
+            this.txtMoldGroup.Size = new System.Drawing.Size(212, 23);
+            this.txtMoldGroup.TabIndex = 19;
+            this.txtMoldGroup.TextBoxText = "";
             // 
-            // aTextBox_Labeled5
+            // txtMoldName
             // 
-            this.aTextBox_Labeled5.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aTextBox_Labeled5.FontSize = 9F;
-            this.aTextBox_Labeled5.LabelText = "금형명";
-            this.aTextBox_Labeled5.Location = new System.Drawing.Point(257, 43);
-            this.aTextBox_Labeled5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.aTextBox_Labeled5.Name = "aTextBox_Labeled5";
-            this.aTextBox_Labeled5.Size = new System.Drawing.Size(212, 23);
-            this.aTextBox_Labeled5.TabIndex = 20;
-            this.aTextBox_Labeled5.TextBoxText = "";
+            this.txtMoldName.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtMoldName.FontSize = 9F;
+            this.txtMoldName.LabelText = "금형명";
+            this.txtMoldName.Location = new System.Drawing.Point(257, 43);
+            this.txtMoldName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMoldName.Name = "txtMoldName";
+            this.txtMoldName.Size = new System.Drawing.Size(212, 23);
+            this.txtMoldName.TabIndex = 20;
+            this.txtMoldName.TextBoxText = "";
             // 
             // aLabel2
             // 
@@ -190,18 +193,18 @@
             this.aLabel2.TabIndex = 22;
             this.aLabel2.Text = "보장타수";
             // 
-            // numericUpDown1
+            // numHit
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(611, 12);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.numHit.Location = new System.Drawing.Point(611, 12);
+            this.numHit.Maximum = new decimal(new int[] {
             100000,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(104, 23);
-            this.numericUpDown1.TabIndex = 23;
-            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numHit.Name = "numHit";
+            this.numHit.Size = new System.Drawing.Size(104, 23);
+            this.numHit.TabIndex = 23;
+            this.numHit.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // aLabel3
             // 
@@ -224,70 +227,71 @@
             // aLabel5
             // 
             this.aLabel5.AutoSize = true;
-            this.aLabel5.Location = new System.Drawing.Point(835, 18);
+            this.aLabel5.Location = new System.Drawing.Point(835, 14);
             this.aLabel5.Name = "aLabel5";
             this.aLabel5.Size = new System.Drawing.Size(55, 15);
             this.aLabel5.TabIndex = 26;
             this.aLabel5.Text = "사용유무";
             // 
-            // aDateTimePicker1
+            // dtpInDate
             // 
-            this.aDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.aDateTimePicker1.Location = new System.Drawing.Point(611, 43);
-            this.aDateTimePicker1.Name = "aDateTimePicker1";
-            this.aDateTimePicker1.Size = new System.Drawing.Size(134, 23);
-            this.aDateTimePicker1.TabIndex = 28;
+            this.dtpInDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpInDate.Location = new System.Drawing.Point(611, 43);
+            this.dtpInDate.Name = "dtpInDate";
+            this.dtpInDate.Size = new System.Drawing.Size(134, 23);
+            this.dtpInDate.TabIndex = 28;
             // 
-            // aDateTimePicker2
+            // dtpLastEquip
             // 
-            this.aDateTimePicker2.CustomFormat = "yyyy-MM-dd hh-mm";
-            this.aDateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.aDateTimePicker2.Location = new System.Drawing.Point(612, 76);
-            this.aDateTimePicker2.Name = "aDateTimePicker2";
-            this.aDateTimePicker2.Size = new System.Drawing.Size(133, 23);
-            this.aDateTimePicker2.TabIndex = 28;
+            this.dtpLastEquip.CustomFormat = "yyyy-MM-dd hh-mm";
+            this.dtpLastEquip.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpLastEquip.Location = new System.Drawing.Point(612, 76);
+            this.dtpLastEquip.Name = "dtpLastEquip";
+            this.dtpLastEquip.Size = new System.Drawing.Size(142, 23);
+            this.dtpLastEquip.TabIndex = 28;
             // 
             // aLabel6
             // 
             this.aLabel6.AutoSize = true;
-            this.aLabel6.Location = new System.Drawing.Point(836, 50);
+            this.aLabel6.Location = new System.Drawing.Point(836, 42);
             this.aLabel6.Name = "aLabel6";
             this.aLabel6.Size = new System.Drawing.Size(31, 15);
             this.aLabel6.TabIndex = 29;
             this.aLabel6.Text = "비고";
             // 
-            // aTextBox1
+            // txtRemark
             // 
-            this.aTextBox1.BackColor = System.Drawing.Color.White;
-            this.aTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.aTextBox1.errorp = null;
-            this.aTextBox1.Location = new System.Drawing.Point(839, 68);
-            this.aTextBox1.Name = "aTextBox1";
-            this.aTextBox1.Size = new System.Drawing.Size(263, 23);
-            this.aTextBox1.TabIndex = 30;
-            this.aTextBox1.txtType = Axxen.CustomControls.type.Normal;
+            this.txtRemark.BackColor = System.Drawing.Color.White;
+            this.txtRemark.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtRemark.errorp = null;
+            this.txtRemark.Location = new System.Drawing.Point(839, 60);
+            this.txtRemark.Multiline = true;
+            this.txtRemark.Name = "txtRemark";
+            this.txtRemark.Size = new System.Drawing.Size(263, 37);
+            this.txtRemark.TabIndex = 30;
+            this.txtRemark.txtType = Axxen.CustomControls.type.Normal;
             // 
-            // radioButton1
+            // rdoY
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(908, 16);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(32, 19);
-            this.radioButton1.TabIndex = 31;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Y";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rdoY.AutoSize = true;
+            this.rdoY.Location = new System.Drawing.Point(908, 12);
+            this.rdoY.Name = "rdoY";
+            this.rdoY.Size = new System.Drawing.Size(32, 19);
+            this.rdoY.TabIndex = 31;
+            this.rdoY.TabStop = true;
+            this.rdoY.Text = "Y";
+            this.rdoY.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rdoN
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(946, 16);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(34, 19);
-            this.radioButton2.TabIndex = 31;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "N";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rdoN.AutoSize = true;
+            this.rdoN.Location = new System.Drawing.Point(946, 12);
+            this.rdoN.Name = "rdoN";
+            this.rdoN.Size = new System.Drawing.Size(34, 19);
+            this.rdoN.TabIndex = 31;
+            this.rdoN.TabStop = true;
+            this.rdoN.Text = "N";
+            this.rdoN.UseVisualStyleBackColor = true;
             // 
             // PPS_MLD_001
             // 
@@ -295,6 +299,7 @@
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.Name = "PPS_MLD_001";
             this.Text = "/";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PPS_MLD_001_FormClosed);
             this.Load += new System.EventHandler(this.PPS_MLD_001_Load);
             this.aPanel2.ResumeLayout(false);
             this.aPanel2.PerformLayout();
@@ -303,30 +308,30 @@
             this.aSplitContainer1.ResumeLayout(false);
             this.aPanel1.ResumeLayout(false);
             this.aPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numHit)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private CustomControls.ATextBox_Labeled aTextBox_Labeled2;
-        private CustomControls.ATextBox_Labeled aTextBox_Labeled1;
-        private CustomControls.AComboBox aComboBox1;
+        private CustomControls.ATextBox_Labeled txtName;
+        private CustomControls.ATextBox_Labeled txtCode;
+        private CustomControls.AComboBox cboDate;
         private CustomControls.ALabel aLabel1;
         private CustomControls.ALabel aLabel4;
         private CustomControls.ALabel aLabel3;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numHit;
         private CustomControls.ALabel aLabel2;
-        private CustomControls.ATextBox_Labeled aTextBox_Labeled5;
-        private CustomControls.ATextBox_Labeled aTextBox_Labeled4;
-        private CustomControls.ATextBox_Labeled aTextBox_Labeled3;
-        private CustomControls.ATextBox aTextBox1;
+        private CustomControls.ATextBox_Labeled txtMoldName;
+        private CustomControls.ATextBox_Labeled txtMoldGroup;
+        private CustomControls.ATextBox_Labeled txtMoldCode;
+        private CustomControls.ATextBox txtRemark;
         private CustomControls.ALabel aLabel6;
-        private CustomControls.ADateTimePicker aDateTimePicker2;
-        private CustomControls.ADateTimePicker aDateTimePicker1;
+        private CustomControls.ADateTimePicker dtpLastEquip;
+        private CustomControls.ADateTimePicker dtpInDate;
         private CustomControls.ALabel aLabel5;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rdoN;
+        private System.Windows.Forms.RadioButton rdoY;
     }
 }
