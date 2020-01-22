@@ -50,7 +50,7 @@ namespace DAC
             using (SqlCommand comm = new SqlCommand())
             {
                 comm.Connection = new SqlConnection(Connstr);
-                comm.CommandText = "select Prd_Date, wo.Wo_Status,wo.Workorderno,wo.Item_Code,Item_Name,Wc_Name,wo.In_Qty_Main,wo.Out_Qty_Main,wo.Prd_Qty,wo.Remark from WorkOrder wo INNER JOIN Item_Master im ON wo.Item_Code = im.Item_Code INNER JOIN WorkCenter_Master wm ON wo.Wc_Code = wm.Wc_Code ";
+                comm.CommandText = "select Prd_Date, wo.Wo_Req_No, wo.Req_Seq,wo.Wo_Status,wo.Workorderno,wo.Item_Code,Item_Name,Wc_Name,wo.In_Qty_Main,wo.Out_Qty_Main,wo.Prd_Qty,wo.Remark from WorkOrder wo INNER JOIN Item_Master im ON wo.Item_Code = im.Item_Code INNER JOIN WorkCenter_Master wm ON wo.Wc_Code = wm.Wc_Code ";
                 //where wo.Item_Code=@Item_Code
                 //comm.Parameters.AddWithValue("@Item_Code", code);
 
