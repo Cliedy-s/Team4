@@ -27,5 +27,11 @@ namespace Service
             Wo_ReqDAC dac = new Wo_ReqDAC();
             return dac.GetWorkOrder();
         }
+
+        public List<WO_WC_Production_ItemVO> GetWO_WC_Production_Items()
+        {
+            Wo_ReqDAC dac = new Wo_ReqDAC();
+            return dac.GetWO_WC_Production_Items();
+        }
     }
 }

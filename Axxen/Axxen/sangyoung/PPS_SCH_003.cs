@@ -16,7 +16,7 @@ namespace Axxen
     public partial class PPS_SCH_003 : Axxen.FreeForm
     {
         List<WO_WC_Production_ItemVO> wowclist;
-        WorkOrder_Service service = new WorkOrder_Service();
+        Wo_ReqService service = new Wo_ReqService();
 
         public PPS_SCH_003()
         {

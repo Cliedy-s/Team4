@@ -17,7 +17,7 @@ namespace Axxen
         List<Wo_Req_ItemVO> reqList;
         List<WorkOrder_J_WC_ItmeVO> workList;
         Wo_ReqService service = new Wo_ReqService();
-        bool bFlag = false;
+       
 
 
         public PPS_SCH_001()
@@ -33,6 +33,13 @@ namespace Axxen
             workList = service.GetWorkOrder();
             dgvMainGrid.DataSource = reqList;
             dgvMainGrid.CellContentClick += DgvMainGrid_CellContentClick;
+            ((MainForm)this.MdiParent).RefreshFormEvent += new EventHandler(this.RefreshFormShow);
+        }
+
+        private void RefreshFormShow(object sender, EventArgs e)
+        {
+            reqList = service.GetAllWoReq();
+            dgvMainGrid.DataSource = reqList;
         }
 
         private void DgvMainGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -116,7 +123,7 @@ namespace Axxen
             if (txtPrNum.TextBoxText.Length > 0 && txtProjectName.TextBoxText.Length <= 0)
             {
                 reqList = (from data in reqList
-                           where data.Wo_Req_No == txtPrNum.TextBoxText.ToString().Trim()
+                           where data.Wo_Req_No == txtPrNum.TextBoxText
                            select data).ToList();
                 txtPrNum.TextBoxText = "";
             }
@@ -162,6 +169,11 @@ namespace Axxen
                     }
                 }
             }
+        }
+
+        private void PPS_SCH_001_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow);
         }
     }
 }
