@@ -68,7 +68,7 @@
             // 
             // aDateTimePickerSearch2
             // 
-            this.aDateTimePickerSearch2.ADateTimePickerValue1 = new System.DateTime(2020, 1, 14, 16, 1, 18, 229);
+            this.aDateTimePickerSearch2.ADateTimePickerValue1 = new System.DateTime(2020, 1, 15, 15, 1, 57, 997);
             this.aDateTimePickerSearch2.ADateTimePickerValue2 = new System.DateTime(2020, 1, 21, 16, 1, 18, 223);
             this.aDateTimePickerSearch2.ButtonText = "조회";
             this.aDateTimePickerSearch2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -77,6 +77,7 @@
             this.aDateTimePickerSearch2.Name = "aDateTimePickerSearch2";
             this.aDateTimePickerSearch2.Size = new System.Drawing.Size(324, 32);
             this.aDateTimePickerSearch2.TabIndex = 15;
+            this.aDateTimePickerSearch2.btnDateTimeSearch_Click += new Axxen.CustomControls.ADateTimePickerSearch.SearchButtonClick(this.aDateTimePickerSearch2_btnDateTimeSearch_Click);
             // 
             // PRM_PRF_003
             // 

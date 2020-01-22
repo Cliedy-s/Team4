@@ -34,9 +34,15 @@ namespace Axxen
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "취소시각", "Close_CancelTime", true, 100, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "ERP 업로드여부", "Upload_Flag", true, 100, default, true);
 
-          //  igh = imservice.GetworkOrder_Item_Goods();
-          //  dgvMainGrid.DataSource = igh;
+            igh = imservice.GetworkOrder_Item_Goods();
+            dgvMainGrid.DataSource = igh;
 
+        }
+
+        private void aDateTimePickerSearch2_btnDateTimeSearch_Click(object sender, EventArgs args)
+        {
+            igh = imservice.GetDatePicker_work_ltem_Goods(aDateTimePickerSearch2.ADateTimePickerValue1.ToShortDateString(), aDateTimePickerSearch2.ADateTimePickerValue2.ToShortDateString());
+            dgvMainGrid.DataSource = igh;
         }
     }
 }
