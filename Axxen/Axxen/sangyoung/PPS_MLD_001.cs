@@ -68,6 +68,7 @@ namespace Axxen
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "최종장착일시", "Last_Setup_Time", true, 110);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "사용여부", "Use_YN", true, 80);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "비고", "Remark", true, 160);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "비고", "Wc_Code", false, 160);
         }
 
         private void PPS_MLD_001_FormClosed(object sender, FormClosedEventArgs e)
@@ -134,6 +135,29 @@ namespace Axxen
                             select date).ToList();
                 dgvMainGrid.DataSource = moldList;
             }
+        }
+
+        private void Insert()
+        {
+            MoldVO moldInfo = new MoldVO()
+            {
+                Mold_Code = txtCode.TextBoxText,
+                Mold_Name = txtName.TextBoxText,
+                Mold_Group = txtMoldGroup.TextBoxText,
+                Mold_Status = "양호",
+                In_Date = dtpInDate.Value,
+                Guar_Shot_Cnt = Convert.ToInt32(numHit.Value),
+                Last_Setup_Time = dtpLastEquip.Value,
+                Cum_Prd_Qty = 0,
+                Cum_Shot_Cnt = 0,
+                Cum_Time = 0,
+                Purchase_Amt = Convert.ToInt32(txtCost.TextBoxText),
+                Remark = txtRemark.Text,
+                Use_YN = "N"
+                //Wc_Code = null;
+            };
+
+            
         }
     }
 }

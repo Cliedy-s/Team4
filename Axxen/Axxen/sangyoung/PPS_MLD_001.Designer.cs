@@ -39,13 +39,11 @@
             this.numHit = new System.Windows.Forms.NumericUpDown();
             this.aLabel3 = new Axxen.CustomControls.ALabel();
             this.aLabel4 = new Axxen.CustomControls.ALabel();
-            this.aLabel5 = new Axxen.CustomControls.ALabel();
             this.dtpInDate = new Axxen.CustomControls.ADateTimePicker();
             this.dtpLastEquip = new Axxen.CustomControls.ADateTimePicker();
             this.aLabel6 = new Axxen.CustomControls.ALabel();
             this.txtRemark = new Axxen.CustomControls.ATextBox();
-            this.rdoY = new System.Windows.Forms.RadioButton();
-            this.rdoN = new System.Windows.Forms.RadioButton();
+            this.txtCost = new Axxen.CustomControls.ATextBox_Labeled();
             this.aPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aSplitContainer1)).BeginInit();
             this.aSplitContainer1.Panel2.SuspendLayout();
@@ -66,13 +64,11 @@
             // 
             // aPanel1
             // 
-            this.aPanel1.Controls.Add(this.rdoN);
-            this.aPanel1.Controls.Add(this.rdoY);
+            this.aPanel1.Controls.Add(this.txtCost);
             this.aPanel1.Controls.Add(this.txtRemark);
             this.aPanel1.Controls.Add(this.aLabel6);
             this.aPanel1.Controls.Add(this.dtpLastEquip);
             this.aPanel1.Controls.Add(this.dtpInDate);
-            this.aPanel1.Controls.Add(this.aLabel5);
             this.aPanel1.Controls.Add(this.aLabel4);
             this.aPanel1.Controls.Add(this.aLabel3);
             this.aPanel1.Controls.Add(this.numHit);
@@ -88,13 +84,11 @@
             this.aPanel1.Controls.SetChildIndex(this.numHit, 0);
             this.aPanel1.Controls.SetChildIndex(this.aLabel3, 0);
             this.aPanel1.Controls.SetChildIndex(this.aLabel4, 0);
-            this.aPanel1.Controls.SetChildIndex(this.aLabel5, 0);
             this.aPanel1.Controls.SetChildIndex(this.dtpInDate, 0);
             this.aPanel1.Controls.SetChildIndex(this.dtpLastEquip, 0);
             this.aPanel1.Controls.SetChildIndex(this.aLabel6, 0);
             this.aPanel1.Controls.SetChildIndex(this.txtRemark, 0);
-            this.aPanel1.Controls.SetChildIndex(this.rdoY, 0);
-            this.aPanel1.Controls.SetChildIndex(this.rdoN, 0);
+            this.aPanel1.Controls.SetChildIndex(this.txtCost, 0);
             // 
             // aHeaderBox1
             // 
@@ -224,15 +218,6 @@
             this.aLabel4.TabIndex = 25;
             this.aLabel4.Text = "최종장착일시";
             // 
-            // aLabel5
-            // 
-            this.aLabel5.AutoSize = true;
-            this.aLabel5.Location = new System.Drawing.Point(835, 14);
-            this.aLabel5.Name = "aLabel5";
-            this.aLabel5.Size = new System.Drawing.Size(55, 15);
-            this.aLabel5.TabIndex = 26;
-            this.aLabel5.Text = "사용유무";
-            // 
             // dtpInDate
             // 
             this.dtpInDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -271,27 +256,17 @@
             this.txtRemark.TabIndex = 30;
             this.txtRemark.txtType = Axxen.CustomControls.type.Normal;
             // 
-            // rdoY
+            // txtCost
             // 
-            this.rdoY.AutoSize = true;
-            this.rdoY.Location = new System.Drawing.Point(908, 12);
-            this.rdoY.Name = "rdoY";
-            this.rdoY.Size = new System.Drawing.Size(32, 19);
-            this.rdoY.TabIndex = 31;
-            this.rdoY.TabStop = true;
-            this.rdoY.Text = "Y";
-            this.rdoY.UseVisualStyleBackColor = true;
-            // 
-            // rdoN
-            // 
-            this.rdoN.AutoSize = true;
-            this.rdoN.Location = new System.Drawing.Point(946, 12);
-            this.rdoN.Name = "rdoN";
-            this.rdoN.Size = new System.Drawing.Size(34, 19);
-            this.rdoN.TabIndex = 31;
-            this.rdoN.TabStop = true;
-            this.rdoN.Text = "N";
-            this.rdoN.UseVisualStyleBackColor = true;
+            this.txtCost.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtCost.FontSize = 9F;
+            this.txtCost.LabelText = "구입금액";
+            this.txtCost.Location = new System.Drawing.Point(835, 7);
+            this.txtCost.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtCost.Name = "txtCost";
+            this.txtCost.Size = new System.Drawing.Size(227, 29);
+            this.txtCost.TabIndex = 31;
+            this.txtCost.TextBoxText = "";
             // 
             // PPS_MLD_001
             // 
@@ -330,8 +305,6 @@
         private CustomControls.ALabel aLabel6;
         private CustomControls.ADateTimePicker dtpLastEquip;
         private CustomControls.ADateTimePicker dtpInDate;
-        private CustomControls.ALabel aLabel5;
-        private System.Windows.Forms.RadioButton rdoN;
-        private System.Windows.Forms.RadioButton rdoY;
+        private CustomControls.ATextBox_Labeled txtCost;
     }
 }
