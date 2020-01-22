@@ -1,6 +1,6 @@
-﻿namespace Axxen.HwiSeok
+﻿namespace Axxen.CustomControls
 {
-    partial class PRM_PRF_001_1
+    partial class AComboBox
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -20,7 +20,7 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form 디자이너에서 생성한 코드
+        #region 구성 요소 디자이너에서 생성한 코드
 
         /// <summary>
         /// 디자이너 지원에 필요한 메서드입니다. 
@@ -28,16 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // PRM_PRF_001_1
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.ClientSize = new System.Drawing.Size(431, 525);
-            this.Name = "PRM_PRF_001_1";
-            this.Text = "실적보정";
-            this.ResumeLayout(false);
-
+            components = new System.ComponentModel.Container();
         }
 
         #endregion

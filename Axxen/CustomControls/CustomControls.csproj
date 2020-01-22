@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D5CC387B-B513-4D54-831F-E252C8EAE1DF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CustomControls</RootNamespace>
+    <AssemblyName>CustomControls</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\AButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\AButton.Designer.cs">
+      <DependentUpon>AButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\AComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\AComboBox.Designer.cs">
+      <DependentUpon>AComboBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\ADataGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\ADataGridView.Designer.cs">
+      <DependentUpon>ADataGridView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\ADateTimePicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\ADateTimePicker.Designer.cs">
+      <DependentUpon>ADateTimePicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\ADateTimePickerSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\ADateTimePickerSearch.Designer.cs">
+      <DependentUpon>ADateTimePickerSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\AGroupBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\AGroupBox.Designer.cs">
+      <DependentUpon>AGroupBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\AHeaderBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\AHeaderBox.Designer.cs">
+      <DependentUpon>AHeaderBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\ALabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\ALabel.Designer.cs">
+      <DependentUpon>ALabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\ALabel_Header.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\ALabel_Header.Designer.cs">
+      <DependentUpon>ALabel_Header.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\ALabel_SubHeader.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\ALabel_SubHeader.Designer.cs">
+      <DependentUpon>ALabel_SubHeader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\APanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\APanel.Designer.cs">
+      <DependentUpon>APanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\ASplitContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\ASplitContainer.Designer.cs">
+      <DependentUpon>ASplitContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\ATextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\ATextBox.designer.cs">
+      <DependentUpon>ATextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\ATextBox_FindNameByCode.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\ATextBox_FindNameByCode.Designer.cs">
+      <DependentUpon>ATextBox_FindNameByCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\ATextBox_Labeled.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\ATextBox_Labeled.Designer.cs">
+      <DependentUpon>ATextBox_Labeled.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\ATextBox_LabeledBigTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\ATextBox_LabeledBigTextBox.Designer.cs">
+      <DependentUpon>ATextBox_LabeledBigTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\ATextBox_Searchable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\ATextBox_Searchable.Designer.cs">
+      <DependentUpon>ATextBox_Searchable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\ATreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\ATreeView.Designer.cs">
+      <DependentUpon>ATreeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\SearchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomControls\SearchForm.Designer.cs">
+      <DependentUpon>SearchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FreeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FreeForm.Designer.cs">
+      <DependentUpon>FreeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\AButton.resx">
+      <DependentUpon>AButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\ADateTimePickerSearch.resx">
+      <DependentUpon>ADateTimePickerSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\AHeaderBox.resx">
+      <DependentUpon>AHeaderBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\ALabel_SubHeader.resx">
+      <DependentUpon>ALabel_SubHeader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\ATextBox.resx">
+      <DependentUpon>ATextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\ATextBox_FindNameByCode.resx">
+      <DependentUpon>ATextBox_FindNameByCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\ATextBox_Labeled.resx">
+      <DependentUpon>ATextBox_Labeled.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\ATextBox_LabeledBigTextBox.resx">
+      <DependentUpon>ATextBox_LabeledBigTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\ATextBox_Searchable.resx">
+      <DependentUpon>ATextBox_Searchable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\SearchForm.resx">
+      <DependentUpon>SearchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FreeForm.resx">
+      <DependentUpon>FreeForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

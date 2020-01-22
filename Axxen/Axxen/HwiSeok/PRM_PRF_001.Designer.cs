@@ -67,7 +67,6 @@
             this.aTextBox_FindNameByCode1.TabIndex = 6;
             this.aTextBox_FindNameByCode1.txtCodeText = "";
             this.aTextBox_FindNameByCode1.txtNameText = "";
-            this.aTextBox_FindNameByCode1.DotDotDotClick += new Axxen.CustomControls.ATextBox_FindNameByCode.DotBtnClick(this.aTextBox_FindNameByCode1_DotDotDotClick);
             // 
             // aTextBox_FindNameByCode2
             // 

@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{92D247B0-2FA9-40FF-94A4-076598E546EF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomControls", "CustomControls\CustomControls.csproj", "{D5CC387B-B513-4D54-831F-E252C8EAE1DF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{92D247B0-2FA9-40FF-94A4-076598E546EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{92D247B0-2FA9-40FF-94A4-076598E546EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{92D247B0-2FA9-40FF-94A4-076598E546EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5CC387B-B513-4D54-831F-E252C8EAE1DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5CC387B-B513-4D54-831F-E252C8EAE1DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5CC387B-B513-4D54-831F-E252C8EAE1DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5CC387B-B513-4D54-831F-E252C8EAE1DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
