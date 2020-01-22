@@ -16,5 +16,20 @@ namespace Service
 
             return dac.GetAllGV_Work_Item();
         }
+
+        public List<GV_History_Work_ItemVO> GetAllGV_History_Work_Item() //PRM_PRF_006 전체 컬럼 가지고오기
+        {
+            GV_Work_ItemDAC dac = new GV_Work_ItemDAC();
+
+            return dac.GetAllGV_History_Work_Item();
+        }
+
+        public List<GV_History_Work_ItemVO> GetDatePicker_GV_History_Work_Item(string Adatetimepicker1, string Adatetimepicker2) //PRM_PRF_004 전체 컬럼 가지고오기
+        {
+            GV_Work_ItemDAC dac = new GV_Work_ItemDAC();
+
+            return dac.GetDatePicker_GV_History_Work_Item(Adatetimepicker1, Adatetimepicker2);
+        }
+
     }
 }
