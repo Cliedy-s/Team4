@@ -27,13 +27,11 @@ namespace VO
         public string Wc_Code { get; set; }                // 작업장코드
         public string Plan_Qty { get; set; }                // 계획수량
         public string Plan_Unit { get; set; }                // 계획수량단위
-        public string Plan_Date { get; set; }               // 계획일자
         public string Wo_Status { get; set; }              // 작업지시상태
         public string Wo_Order { get; set; }              // 작업순서
-        public string Wo_Req_No { get; set; }            // 생산으뢰번호
+        public string Wo_Req_No { get; set; }            // 생산의뢰번호
         public string Req_Seq { get; set; }                 // 의뢰순번
         public string Mat_LotNo { get; set; }             // 원자재Lot
-        public string Ins_Date { get; set; }                 // 최초입력일자
         public string Ins_Emp { get; set; }                 // 최초입력자
     }
     public class WorkOrderAllVO
