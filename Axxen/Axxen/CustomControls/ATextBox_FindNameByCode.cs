@@ -77,8 +77,8 @@ namespace Axxen.CustomControls
             CodeType = types.Users;
         }
 
-        public delegate void DotBtnClick(object sender, SearchFormClosingArgs args);
-        public event DotBtnClick DotDotDotClick;
+        public delegate void SearchFormClosing(object sender, SearchFormClosingArgs args);
+        public event SearchFormClosing DotDotDotFormClosing;
 
         private void aButton1_Click(object sender, EventArgs e)
         {   // btnSearch Click
@@ -87,7 +87,7 @@ namespace Axxen.CustomControls
             {
                 this.txtCodeText = searchfrm.ResultCode;
                 this.txtNameText = searchfrm.ResultName;
-                DotDotDotClick?.Invoke(this, new SearchFormClosingArgs() { ResultCode = searchfrm.ResultCode, ResultName = searchfrm.ResultName });
+                DotDotDotFormClosing?.Invoke(this, new SearchFormClosingArgs() { ResultCode = searchfrm.ResultCode, ResultName = searchfrm.ResultName });
             }
         }
     }
