@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VO
 {
-    public class FireInOutVO
+    public class GVInOutVO
     {
         public string Status_Seq { get; set; }                  // 대차순번
         public string GV_Code { get; set; }                    // 대차코드

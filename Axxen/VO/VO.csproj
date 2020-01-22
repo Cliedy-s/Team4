@@ -45,7 +45,7 @@
     <Compile Include="AllocationWCVO.cs" />
     <Compile Include="ConditionMeasureVO.cs" />
     <Compile Include="ConditionSpecVO.cs" />
-    <Compile Include="FireInOutVO.cs" />
+    <Compile Include="GVInOutVO.cs" />
     <Compile Include="GVClearVO.cs" />
     <Compile Include="GVVO.cs" />
     <Compile Include="Goods_In_HistoryVO.cs" />
@@ -63,7 +63,6 @@
     <Compile Include="NopMaMasterVO.cs" />
     <Compile Include="NopMiMasterVO.cs" />
     <Compile Include="PalletVO.cs" />
-    <Compile Include="Pallet_Master_J_BoxingGrade_Detail_Master VO.cs" />
     <Compile Include="Process_J_Nop_History_Gas_WC_Time_DayVO.cs" />
     <Compile Include="Process_J_WC_Item_WO_Time_DayVO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
