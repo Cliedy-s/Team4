@@ -50,6 +50,8 @@
     <Compile Include="GVVO.cs" />
     <Compile Include="Goods_In_HistoryVO.cs" />
     <Compile Include="GVStatusVO.cs" />
+    <Compile Include="GV_History_Work_ItemVO.cs" />
+    <Compile Include="GV_Work_ItemVO.cs" />
     <Compile Include="InspectHistoryVO.cs" />
     <Compile Include="InspectSpecVO.cs" />
     <Compile Include="GasUse_HistoryVO.cs" />

@@ -79,5 +79,21 @@ namespace DAC
             }
             return list;
         }
+
+        public List<WorkOrder_J_WC_ItmeVO> GetWorkCenterName()
+        {
+            List<WorkOrder_J_WC_ItmeVO> list = null;
+            using (SqlConnection conn = new SqlConnection(Connstr))
+            {
+                conn.Open();
+                string sql = "select distinct Wc_Name from WorkCenter_Master";
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    list = Helper.DataReaderMapToList<WorkOrder_J_WC_ItmeVO>(cmd.ExecuteReader());
+                }
+                conn.Close();
+            }
+            return list;
+        }
     }
 }

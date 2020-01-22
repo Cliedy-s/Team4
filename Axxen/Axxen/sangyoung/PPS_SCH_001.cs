@@ -1,4 +1,5 @@
-﻿using Axxen.Util;
+﻿using Axxen.sangyoung;
+using Axxen.Util;
 using Service;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using VO;
-
+//체크박스 클릭 작업지시목록처리하기..
 namespace Axxen
 {
     public partial class PPS_SCH_001 : Axxen.GridGridForm
@@ -17,8 +18,7 @@ namespace Axxen
         List<Wo_Req_ItemVO> reqList;
         List<WorkOrder_J_WC_ItmeVO> workList;
         Wo_ReqService service = new Wo_ReqService();
-       
-
+        bool bFlag = false;
 
         public PPS_SCH_001()
         {
@@ -29,11 +29,25 @@ namespace Axxen
         {
             MainDataLoad();
             SubDataLoad();
+            
             reqList = service.GetAllWoReq();
             workList = service.GetWorkOrder();
             dgvMainGrid.DataSource = reqList;
+
             dgvMainGrid.CellContentClick += DgvMainGrid_CellContentClick;
+            //dgvMainGrid.CellDoubleClick += DgvMainGrid_CellContentClick;
+
+            ((MainForm)this.MdiParent).InsertFormEvent += new System.EventHandler(this.InsertFormShow);//입력이벤트 등록
             ((MainForm)this.MdiParent).RefreshFormEvent += new EventHandler(this.RefreshFormShow);
+        }
+
+        private void InsertFormShow(object sender, EventArgs e)
+        {
+            PPS_SCH_001_Insert frm = new PPS_SCH_001_Insert();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+
+            }
         }
 
         private void RefreshFormShow(object sender, EventArgs e)
@@ -44,11 +58,13 @@ namespace Axxen
 
         private void DgvMainGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            MessageBox.Show(dgvMainGrid.SelectedRows[0].Cells[0].Value.ToString());
+            MessageBox.Show("Test");
             if (Convert.ToInt32(e.RowIndex) < 0)
             {
                 return;
             }
-            Check_Wo_Req(dgvMainGrid.Rows[e.RowIndex].Cells[3].Value.ToString(), e.ColumnIndex);
+            //Check_Wo_Req(dgvMainGrid.Rows[e.RowIndex].Cells[2].Value.ToString(), e.ColumnIndex, (bool)dgvMainGrid.CurrentRow.Cells[0].Value);
         }
 
         private void MainDataLoad()
@@ -68,25 +84,31 @@ namespace Axxen
             DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
             chk.HeaderText = "선택";
             chk.Name = "check";
+            chk.FalseValue = "false";
             chk.Width = 50;
+
             dgvMainGrid.Columns.Insert(0, chk);
+            GridCheckSetting();
         }
+
 
         private void SubDataLoad()
         {
             InitControlUtil.SetDGVDesign(dgvSubGrid);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "순번", "Num", false, 110);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "순번", "Wc_Code", false, 110);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "작업지시상태", "Wo_Status", true, 120);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "작업지시번호", "Workorderno", true, 110);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "생산일자", "Prd_Date", true, 110);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "품목코드", "Item_Code", true, 110);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "품목명", "Item_Name", true, 120);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "작업장명", "Wc_Name", true, 120);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "계획수량", "Plan_Qty", true, 110);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "투입수량", "In_Qty_Main", true, 110);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "산출수량", "Out_Qty_Main", true, 110);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "생산수량", "Prd_Qty", true, 110);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "생산의뢰순번", "Req_Seq", true, 120, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "생산의뢰번호", "Wo_Req_No", true, 120, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "작업지시상태", "Wo_Status", true, 120, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "작업지시번호", "Workorderno", true, 110, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "생산일자", "Prd_Date", true, 110, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "품목코드", "Item_Code", true, 110, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "품목명", "Item_Name", true, 120, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "작업장명", "Wc_Name", true, 120, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "계획수량", "Plan_Qty", true, 100);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "투입수량", "In_Qty_Main", true, 100);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "산출수량", "Out_Qty_Main", true, 100);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "생산수량", "Prd_Qty", true, 100);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "비고", "Remark", true, 110, default, true);
         }
 
@@ -148,32 +170,67 @@ namespace Axxen
         /// </summary>
         /// <param name="workorder">생산의뢰품목코드</param>
         /// <param name="colindex">체크박스선택</param>
-        private void Check_Wo_Req(string code, int colindex)
+        private void Check_Wo_Req(string reqno, int colindex, bool check)
         {
             if (colindex == dgvMainGrid.Columns["check"].Index)
             {
-                var list = (from work in workList
-                            where work.Item_Code.Contains(code)
+                //var list = (from work in workList
+                //            where work.Wo_Req_No.Contains(reqno)
+                //            select work).ToList();
+                workList = (from work in workList
+                            where work.Wo_Req_No.Contains(reqno)
                             select work).ToList();
-                if (dgvMainGrid.Columns["check"].Selected)
+                if (check)
                 {
-                    list.ForEach(x => x.Item_Code = code);
-                    //dgvSubGrid.Rows.Remove();
+                    List<WorkOrder_J_WC_ItmeVO> list = new List<WorkOrder_J_WC_ItmeVO>();
+                    foreach (var item in workList)
+                    {
+                        list.Add(item);
+                    }
+                    dgvSubGrid.DataSource = list;
+                    //foreach (var item in list)
+                    //{
+                    //    dgvSubGrid.Rows.Add(null, null, item.Req_Seq, item.Wo_Req_No, item.Wo_Status, item.Workorderno, item.Prd_Date, item.Item_Code, item.Item_Name, item.Wc_Name,
+                    //        item.Plan_Qty, item.In_Qty_Main, item.Out_Qty_Main, item.Prd_Qty, item.Remark);
+                    //}
                 }
                 else
                 {
-                    foreach (var item in list)
-                    {
-                        dgvSubGrid.Rows.Add(null, null, item.Wo_Status, item.Workorderno, item.Prd_Date, item.Item_Code, item.Item_Name, item.Wc_Name,
-                            item.Plan_Qty, item.In_Qty_Main, item.Out_Qty_Main, item.Prd_Qty, item.Remark);
-                    }
+                    var item = workList.FirstOrDefault(x => x.Wo_Req_No.Contains(reqno));
+                    workList.Remove(item);
+                    dgvSubGrid.DataSource = null;
+                    dgvSubGrid.DataSource = workList;
                 }
+            }
+        }
+
+        //private void UnCheck_Wo_Req(string reqno, int colindex)
+        //{
+        //    if (colindex == dgvMainGrid.Columns["check"].Index)
+        //    {
+        //        var list = (from work in workList
+        //                    where work.Wo_Req_No.Contains(reqno)
+        //                    select work).ToList();
+
+        //        foreach (var item in list)
+        //        {
+        //            //dgvSubGrid.Rows.Remove();
+        //        }
+        //    }
+        //}
+
+        private void GridCheckSetting()
+        {
+            for (int i = 0; i < dgvMainGrid.RowCount; i++)
+            {
+                dgvMainGrid.Rows[i].Cells[0].Value = true;
             }
         }
 
         private void PPS_SCH_001_FormClosed(object sender, FormClosedEventArgs e)
         {
             ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow);
+            ((MainForm)this.MdiParent).InsertFormEvent -= new System.EventHandler(this.InsertFormShow);
         }
     }
 }
