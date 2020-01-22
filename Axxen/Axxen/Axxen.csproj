@@ -208,17 +208,11 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ParkSangIn\MDS_SDS_002_1.cs">
+    <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ParkSangIn\MDS_SDS_002_1.Designer.cs">
-      <DependentUpon>MDS_SDS_002_1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ParkSangIn\MSS_CON_003_1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ParkSangIn\MSS_CON_003_1.Designer.cs">
-      <DependentUpon>MSS_CON_003_1.cs</DependentUpon>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ParkSangIn\MDS_CDS_001.cs">
       <SubType>Form</SubType>
@@ -292,6 +286,12 @@
     <Compile Include="ParkSangIn\MDS_SDS_002.Designer.cs">
       <DependentUpon>MDS_SDS_002.cs</DependentUpon>
     </Compile>
+    <Compile Include="ParkSangIn\MDS_SDS_002_1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_SDS_002_1.Designer.cs">
+      <DependentUpon>MDS_SDS_002_1.cs</DependentUpon>
+    </Compile>
     <Compile Include="ParkSangIn\MDS_SDS_003.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -322,6 +322,12 @@
     <Compile Include="ParkSangIn\MDS_SDS_007.Designer.cs">
       <DependentUpon>MDS_SDS_007.cs</DependentUpon>
     </Compile>
+    <Compile Include="ParkSangIn\MSS_CON_001.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MSS_CON_001.Designer.cs">
+      <DependentUpon>MSS_CON_001.cs</DependentUpon>
+    </Compile>
     <Compile Include="ParkSangIn\MSS_CON_002.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -339,6 +345,12 @@
     </Compile>
     <Compile Include="ParkSangIn\MSS_CON_003.Designer.cs">
       <DependentUpon>MSS_CON_003.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkSangIn\MSS_CON_003_1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MSS_CON_003_1.Designer.cs">
+      <DependentUpon>MSS_CON_003_1.cs</DependentUpon>
     </Compile>
     <Compile Include="ParkSangIn\MSS_SYS_001.cs">
       <SubType>Form</SubType>
@@ -490,12 +502,6 @@
     <Compile Include="Templets\GridGridForm.Designer.cs">
       <DependentUpon>GridGridForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Templets\GridForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -579,12 +585,6 @@
     </Compile>
     <Compile Include="CustomControls\ATextBox_Labeled.Designer.cs">
       <DependentUpon>ATextBox_Labeled.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ParkSangIn\MSS_CON_001.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ParkSangIn\MSS_CON_001.Designer.cs">
-      <DependentUpon>MSS_CON_001.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomControls\ATreeView.cs">
       <SubType>Component</SubType>
@@ -675,8 +675,8 @@
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ParkSangIn\MDS_SDS_002_1.resx">
-      <DependentUpon>MDS_SDS_002_1.cs</DependentUpon>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ParkSangIn\MDS_CDS_001.resx">
       <DependentUpon>MDS_CDS_001.cs</DependentUpon>
@@ -714,6 +714,9 @@
     <EmbeddedResource Include="ParkSangIn\MDS_SDS_002.resx">
       <DependentUpon>MDS_SDS_002.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ParkSangIn\MDS_SDS_002_1.resx">
+      <DependentUpon>MDS_SDS_002_1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ParkSangIn\MDS_SDS_003.resx">
       <DependentUpon>MDS_SDS_003.cs</DependentUpon>
     </EmbeddedResource>
@@ -728,6 +731,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ParkSangIn\MDS_SDS_007.resx">
       <DependentUpon>MDS_SDS_007.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParkSangIn\MSS_CON_001.resx">
+      <DependentUpon>MSS_CON_001.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ParkSangIn\MSS_CON_002.resx">
       <DependentUpon>MSS_CON_002.cs</DependentUpon>
@@ -816,9 +822,6 @@
     <EmbeddedResource Include="Templets\GridGridForm.resx">
       <DependentUpon>GridGridForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Templets\GridForm.resx">
       <DependentUpon>GridForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -842,9 +845,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\ATextBox_Searchable.resx">
       <DependentUpon>ATextBox_Searchable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ParkSangIn\MSS_CON_001.resx">
-      <DependentUpon>MSS_CON_001.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
