@@ -4,13 +4,8 @@
       ,gv.[GV_Group]
       ,gv.[GV_Status]
       ,gv.[Unloading_Wc]
-      ,gv.[Use_YN]
-      ,gv.[Ins_Date]
-      ,gv.[Ins_Emp]
-      ,gv.[Up_Date]
-      ,gv.[Up_Emp]
   FROM [GV_Master] as gv
- WHERE '소성대차' = gv.[GV_Group] AND  gv.[GV_Status] = '빈대차';
+ WHERE '소성대차' = gv.[GV_Group] AND  gv.[GV_Status] = '빈대차' AND gv.[Use_YN]='Y';
 
 /*건조대차*/
   SELECT gv.[GV_Code]

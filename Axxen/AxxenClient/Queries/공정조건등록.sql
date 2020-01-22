@@ -25,33 +25,31 @@ SELECT
 	FROM Condition_Measure_History AS cmh
 	WHERE cmh.Condition_Code = @Condition_Code;
 /*입력*/
-INSERT INTO Inspect_Measure_History (
-	Inspect_measure_seq
-	,Item_code
-	,Process_code
-	,Inspect_code
-	,Inspect_date
-	,Inspect_datetime
-	,Inspect_val
-	,Workorderno
-	,Ins_Date
-	,Ins_Emp
-	,Up_Date
-	,Up_Emp
+INSERT INTO Condition_Measure_History (
+		Item_code
+		,Wc_Code
+		,Condition_Code
+		,Condition_Date
+		,Condition_Datetime
+		,Condition_Val
+		,Workorderno
+		,Ins_Date
+		,Ins_Emp
+		,Up_Date
+		,Up_Emp
 	)
 	VALUES (
-	Inspect_measure_seq
-	,Item_code
-	,Process_code
-	,Inspect_code
-	,Inspect_date
-	,Inspect_datetime
-	,Inspect_val
-	,Workorderno
-	,Ins_Date
-	,Ins_Emp
-	,Up_Date
-	,Up_Emp
+		Item_code
+		,Wc_Code
+		,Condition_Code
+		,Condition_Date
+		,Condition_Datetime
+		,Condition_Val
+		,Workorderno
+		,Ins_Date
+		,Ins_Emp
+		,Up_Date
+		,Up_Emp
 	)
 
 /*삭제*/

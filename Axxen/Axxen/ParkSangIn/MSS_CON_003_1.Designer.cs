@@ -103,7 +103,7 @@
             // 
             // aPanel1
             // 
-            this.aPanel1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.aPanel1.BackColor = System.Drawing.SystemColors.Info;
             this.aPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.aPanel1.Controls.Add(this.aLabel7);
             this.aPanel1.Controls.Add(this.pictureBox2);
@@ -176,7 +176,7 @@
             // 
             // aPanel9
             // 
-            this.aPanel9.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.aPanel9.BackColor = System.Drawing.SystemColors.Info;
             this.aPanel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.aPanel9.Controls.Add(this.btnCencle);
             this.aPanel9.Controls.Add(this.btnSave);

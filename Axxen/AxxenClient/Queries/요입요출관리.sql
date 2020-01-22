@@ -9,11 +9,10 @@ SELECT gvcs.[Status_Seq]
       ,gvcs.[Center_Time]
       ,gvcs.[Out_Time]
       ,gv.[GV_Name]
-      ,gv.[Use_YN]
       ,wo.[Wc_Code]
       ,wo.[In_Qty_Main]
   FROM [GV_Current_Status] as gvcs
-	  JOIN [GV_Master] as gv ON gv.[GV_Code] = gvcs.[GV_Code]
+	  JOIN [GV_Master] as gv ON gv.[GV_Code] = gvcs.[GV_Code] AND gv.[Use_YN] = 'Y'
 	  JOIN [WorkOrder] as wo ON gvcs.[Workorderno] = wo.[Workorderno]
 WHERE gv.[GV_Group] = '소성대차'
 	AND wo.[Wc_Code] = '현재 작업장 코드';

@@ -1,14 +1,15 @@
-﻿/* 현황 */
+﻿/* 소성대차 현황 */
   SELECT gv.[GV_Code]
       ,gv.[GV_Name]
       ,gv.[GV_Group]
+      ,gv.[GV_Status]
       ,im.[Item_Code]
       ,im.[Item_Name]
       ,wo.[Workorderno]
       ,wo.[Prd_Qty]
+      ,wo.[Prd_Unit]
 	  ,wcm.[Wc_Code]
       ,wcm.[Wo_Ini_Char]
-      ,wcm.[Use_YN]
   FROM [WorkOrder] as wo
   JOIN wcm.[WorkCenter_Master] as wcm ON wo.[Wc_Code] = wcm.[Wc_Code]
   JOIN [Item_Master] as im ON im.[Item_Code] = wo.[Item_Code]

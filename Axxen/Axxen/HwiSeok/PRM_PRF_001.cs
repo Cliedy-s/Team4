@@ -40,8 +40,7 @@ namespace Axxen
 
             wowc = woservice.GetAll_WorkOrder_Item_WC();
             dgvMainGrid.DataSource = wowc;
-            #endregion
-                                
+            #endregion 
         }
 
         /// <summary>
