@@ -75,6 +75,7 @@ namespace Axxen
         {
             ((MainForm)this.MdiParent).InsertFormEvent -= new System.EventHandler(this.InsertFormShow);//입력이벤트
             ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow);//새로고침이벤트
+            //((MainForm)this.MdiParent).MyUpdat
         }
 
         private void RefreshFormShow(object sender, EventArgs e)
@@ -153,11 +154,9 @@ namespace Axxen
                 Cum_Time = 0,
                 Purchase_Amt = Convert.ToInt32(txtCost.TextBoxText),
                 Remark = txtRemark.Text,
-                Use_YN = "N"
-                //Wc_Code = null;
+                Use_YN = "N",
+                Wc_Code = null
             };
-
-            
         }
     }
 }

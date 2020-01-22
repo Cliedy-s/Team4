@@ -487,6 +487,7 @@
       <DependentUpon>ReportForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UserInfo.cs" />
+    <Compile Include="Util\ExcelHelper.cs" />
     <Compile Include="Util\InitControlUtil.cs" />
     <Compile Include="Util\LoggingUtility.cs" />
     <EmbeddedResource Include="HwiSeok\PRM_PRF_001.resx">
