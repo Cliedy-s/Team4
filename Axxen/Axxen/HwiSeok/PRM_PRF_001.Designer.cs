@@ -67,6 +67,7 @@
             this.aTextBox_FindNameByCode1.TabIndex = 6;
             this.aTextBox_FindNameByCode1.txtCodeText = "";
             this.aTextBox_FindNameByCode1.txtNameText = "";
+            this.aTextBox_FindNameByCode1.DotDotDotClick += new Axxen.CustomControls.ATextBox_FindNameByCode.DotBtnClick(this.aTextBox_FindNameByCode1_DotDotDotClick);
             // 
             // aTextBox_FindNameByCode2
             // 
@@ -83,7 +84,7 @@
             // 
             // aDateTimePickerSearch1
             // 
-            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 1, 13, 14, 45, 41, 513);
+            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 1, 15, 15, 31, 36, 788);
             this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 1, 20, 0, 0, 0, 0);
             this.aDateTimePickerSearch1.ButtonText = "조회";
             this.aDateTimePickerSearch1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));

@@ -11,6 +11,10 @@ namespace DAC
 {
     class Item_Spec_MasterDAC : DACParent
     {
+        /// <summary>
+        /// 품질 
+        /// </summary>
+        /// <returns></returns>
         public List<InspectSpecVO> GetAll()
         {
             using (SqlCommand comm = new SqlCommand())

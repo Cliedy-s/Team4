@@ -77,6 +77,9 @@ namespace Axxen.CustomControls
             CodeType = types.Users;
         }
 
+        public delegate void DotBtnClick(object sender, SearchFormClosingArgs args);
+        public event DotBtnClick DotDotDotClick;
+
         private void aButton1_Click(object sender, EventArgs e)
         {   // btnSearch Click
             SearchForm searchfrm = new SearchForm(CodeType);
@@ -84,7 +87,13 @@ namespace Axxen.CustomControls
             {
                 this.txtCodeText = searchfrm.ResultCode;
                 this.txtNameText = searchfrm.ResultName;
+                DotDotDotClick?.Invoke(this, new SearchFormClosingArgs() { ResultCode = searchfrm.ResultCode, ResultName = searchfrm.ResultName });
             }
         }
+    }
+    public class SearchFormClosingArgs :EventArgs
+    {
+        public string ResultCode { get; set; }
+        public string ResultName { get; set; }
     }
 }
