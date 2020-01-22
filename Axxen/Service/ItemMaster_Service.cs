@@ -51,5 +51,10 @@ namespace Service
         {
             return DAC.GetworkOrder_Item_Goods();
         }
+
+            public List<Item_Goods_HistoryVO> GetDatePicker_work_ltem_Goods(string Adatetimepicker1, string Adatetimepicker2) //PRM_PRF_004 전체 컬럼 가지고오기
+        {
+            return DAC.GetDatePicker_work_ltem_Goods(Adatetimepicker1, Adatetimepicker2);
+        }
     }
 }

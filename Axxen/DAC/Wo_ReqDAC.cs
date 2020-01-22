@@ -50,7 +50,7 @@ namespace DAC
             using (SqlCommand comm = new SqlCommand())
             {
                 comm.Connection = new SqlConnection(Connstr);
-                comm.CommandText = "select Prd_Date, wo.Wo_Status,wo.Workorderno,wo.Item_Code,Item_Name,Wc_Name,wo.In_Qty_Main,wo.Out_Qty_Main,wo.Prd_Qty,wo.Remark from WorkOrder wo INNER JOIN Item_Master im ON wo.Item_Code = im.Item_Code INNER JOIN WorkCenter_Master wm ON wo.Wc_Code = wm.Wc_Code ";
+                comm.CommandText = "select Prd_Date, wo.Wo_Req_No, wo.Req_Seq,wo.Wo_Status,wo.Workorderno,wo.Item_Code,Item_Name,Wc_Name,wo.In_Qty_Main,wo.Out_Qty_Main,wo.Prd_Qty,wo.Remark from WorkOrder wo INNER JOIN Item_Master im ON wo.Item_Code = im.Item_Code INNER JOIN WorkCenter_Master wm ON wo.Wc_Code = wm.Wc_Code ";
                 //where wo.Item_Code=@Item_Code
                 //comm.Parameters.AddWithValue("@Item_Code", code);
 
@@ -61,6 +61,23 @@ namespace DAC
 
                 return list;
             }
+        }
+
+        public List<WO_WC_Production_ItemVO> GetWO_WC_Production_Items() //PPS_SCH_003 그리드뷰 사용
+        {
+            List<WO_WC_Production_ItemVO> list = null;
+            using (SqlConnection conn = new SqlConnection(Connstr))
+            {
+                conn.Open();
+                string sql = "GetWO_WC_Production_Items";
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    list = Helper.DataReaderMapToList<WO_WC_Production_ItemVO>(cmd.ExecuteReader());
+                }
+                conn.Close();
+            }
+            return list;
         }
     }
 }
