@@ -9,7 +9,7 @@ using VO;
 
 namespace DAC
 {
-    class Condition_Spec_MasterDAC : DACParent
+    public class Condition_Spec_MasterDAC : DACParent
     {
         /// <summary>
         /// 공정조건 측정항목 가져오기

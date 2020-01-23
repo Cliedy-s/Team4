@@ -9,7 +9,7 @@ using VO;
 
 namespace DAC
 {
-    class GV_MasterDAC : DACParent
+    public class GV_MasterDAC : DACParent
     {
         /// <summary>
         /// 대차리스트 작업장별로 가져오기

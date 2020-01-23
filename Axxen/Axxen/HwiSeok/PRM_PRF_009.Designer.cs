@@ -59,7 +59,7 @@
             // 
             // aTextBox_FindNameByCode1
             // 
-            this.aTextBox_FindNameByCode1.CodeType = Axxen.CustomControls.ATextBox_FindNameByCode.types.Workers;
+            this.aTextBox_FindNameByCode1.CodeType = Axxen.CustomControls.types.Workers;
             this.aTextBox_FindNameByCode1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aTextBox_FindNameByCode1.lblNameText = "작업자";
             this.aTextBox_FindNameByCode1.Location = new System.Drawing.Point(388, 26);

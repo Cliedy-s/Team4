@@ -9,7 +9,7 @@ using VO;
 
 namespace DAC
 {
-    class Nop_Mi_MasterDAC :DACParent
+    public class Nop_Mi_MasterDAC :DACParent
     {
         /// <summary>
         /// 비가동 소분류 목록

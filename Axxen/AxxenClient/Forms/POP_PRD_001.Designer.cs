@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.aDataGridView1 = new Axxen.CustomControls.ADataGridView();
+            this.dgvMain = new Axxen.CustomControls.ADataGridView();
             this.panMolding = new Axxen.CustomControls.APanel();
             this.btnWorkOrderOnOff3 = new Axxen.CustomControls.AButton();
             this.btnWorkOrderQuit3 = new Axxen.CustomControls.AButton();
@@ -69,7 +69,7 @@
             this.btnQualityMeasure1 = new Axxen.CustomControls.AButton();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.aDataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).BeginInit();
             this.panMolding.SuspendLayout();
             this.panLoad.SuspendLayout();
             this.aPanel6.SuspendLayout();
@@ -90,18 +90,18 @@
             this.btnNoActive.Tag = typeof(AxxenClient.Forms.POP_PRD_016);
             this.btnNoActive.Click += new System.EventHandler(this.btnClick);
             // 
-            // aDataGridView1
+            // dgvMain
             // 
-            this.aDataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.aDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.aDataGridView1.Location = new System.Drawing.Point(12, 105);
-            this.aDataGridView1.Name = "aDataGridView1";
-            this.aDataGridView1.RowHeadersWidth = 51;
-            this.aDataGridView1.RowTemplate.Height = 23;
-            this.aDataGridView1.Size = new System.Drawing.Size(1186, 504);
-            this.aDataGridView1.TabIndex = 4;
+            this.dgvMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMain.Location = new System.Drawing.Point(12, 105);
+            this.dgvMain.Name = "dgvMain";
+            this.dgvMain.RowHeadersWidth = 51;
+            this.dgvMain.RowTemplate.Height = 23;
+            this.dgvMain.Size = new System.Drawing.Size(1186, 504);
+            this.dgvMain.TabIndex = 4;
             // 
             // panMolding
             // 
@@ -606,11 +606,11 @@
             this.Controls.Add(this.aPanel6);
             this.Controls.Add(this.panLoad);
             this.Controls.Add(this.panMolding);
-            this.Controls.Add(this.aDataGridView1);
+            this.Controls.Add(this.dgvMain);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "WorkOrderForm";
             this.Load += new System.EventHandler(this.WorkOrderForm_Load);
-            this.Controls.SetChildIndex(this.aDataGridView1, 0);
+            this.Controls.SetChildIndex(this.dgvMain, 0);
             this.Controls.SetChildIndex(this.panMolding, 0);
             this.Controls.SetChildIndex(this.panLoad, 0);
             this.Controls.SetChildIndex(this.aPanel6, 0);
@@ -621,7 +621,7 @@
             this.aPanel1.PerformLayout();
             this.aPanel2.ResumeLayout(false);
             this.aPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.aDataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).EndInit();
             this.panMolding.ResumeLayout(false);
             this.panLoad.ResumeLayout(false);
             this.aPanel6.ResumeLayout(false);
@@ -632,7 +632,7 @@
 
         #endregion
 
-        private Axxen.CustomControls.ADataGridView aDataGridView1;
+        private Axxen.CustomControls.ADataGridView dgvMain;
         private Axxen.CustomControls.APanel panMolding;
         private Axxen.CustomControls.AButton btnWorkOrderOnOff3;
         private Axxen.CustomControls.AButton btnWorkOrderQuit3;

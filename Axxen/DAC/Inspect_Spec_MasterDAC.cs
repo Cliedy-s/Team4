@@ -12,7 +12,7 @@ namespace DAC
     /// <summary>
     /// 검사항목규격
     /// </summary>
-    class Inspect_Spec_MasterDAC : DACParent
+    public class Inspect_Spec_MasterDAC : DACParent
     {
         /// <summary>
         /// 검사항목규격설정 가져오기

@@ -29,7 +29,7 @@ namespace Axxen.CustomControls
                 switch (value)
                 {
                     case type.Numeric:
-                        this.BackColor = Color.HotPink;
+                        //this.BackColor = Color.HotPink;
                         this.KeyPress += Team4TextBox_numberKeyPress;
                         break;
                     case type.Normal:
@@ -61,7 +61,7 @@ namespace Axxen.CustomControls
         }
         private void Team4TextBox_numberKeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!Char.IsDigit(e.KeyChar))
+            if (!(Char.IsDigit(e.KeyChar) || e.KeyChar == 8))
             {
                 e.Handled = true;
             }

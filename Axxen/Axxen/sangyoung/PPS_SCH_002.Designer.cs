@@ -102,7 +102,7 @@
             // 
             // aTextBox_FindNameByCode2
             // 
-            this.aTextBox_FindNameByCode2.CodeType = Axxen.CustomControls.ATextBox_FindNameByCode.types.WorkCenters;
+            this.aTextBox_FindNameByCode2.CodeType = Axxen.CustomControls.types.WorkCenters;
             this.aTextBox_FindNameByCode2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aTextBox_FindNameByCode2.lblNameText = "작업장";
             this.aTextBox_FindNameByCode2.Location = new System.Drawing.Point(625, 26);
@@ -115,7 +115,7 @@
             // 
             // aTextBox_FindNameByCode1
             // 
-            this.aTextBox_FindNameByCode1.CodeType = Axxen.CustomControls.ATextBox_FindNameByCode.types.Processes;
+            this.aTextBox_FindNameByCode1.CodeType = Axxen.CustomControls.types.Processes;
             this.aTextBox_FindNameByCode1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aTextBox_FindNameByCode1.lblNameText = "공정";
             this.aTextBox_FindNameByCode1.Location = new System.Drawing.Point(387, 26);

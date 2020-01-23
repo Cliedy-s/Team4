@@ -9,7 +9,7 @@ using VO;
 
 namespace DAC
 {
-    class GV_HistoryDAC : DACParent
+    public class GV_HistoryDAC : DACParent
     {
         /// <summary>
         /// 언로딩

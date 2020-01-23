@@ -11,6 +11,15 @@ namespace Axxen.CustomControls
     public partial class AHeaderBox : UserControl
     {
         public string HeaderBoxText { get { return this.aLabel1.Text; } set { this.aLabel1.Text = value; } }
+        public Font allfont
+        {
+            get { return this.Font; }
+            set
+            {
+                this.Font = value;
+                aLabel1.Font = value;
+            }
+        }
         public AHeaderBox()
         {
             InitializeComponent();

@@ -9,7 +9,7 @@ using VO;
 
 namespace DAC
 {
-    class Emp_Allocation_HistoryDAC : DACParent
+	public class Emp_Allocation_HistoryDAC : DACParent
     {
         /// <summary>
         /// 작업자 할당

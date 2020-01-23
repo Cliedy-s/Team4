@@ -9,12 +9,12 @@ using VO;
 
 namespace DAC
 {
-    class Pallet_MasterDAC : DACParent
+    public class Pallet_MasterDAC : DACParent
     {
         /// <summary>
         /// 팔레트목록 가져오기
         /// </summary>
-        public List<PalletVO> GetAll(string workorderno)
+        public List<PalletVO> GetAllByWorkorderno(string workorderno)
         {
             using (SqlCommand comm = new SqlCommand())
             {

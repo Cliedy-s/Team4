@@ -9,7 +9,7 @@ using VO;
 
 namespace DAC
 {
-    class GV_Current_StatusDAC : DACParent
+    public class GV_Current_StatusDAC : DACParent
     {
         /// <summary>
         /// 대차 현황 

@@ -10,12 +10,22 @@ using System.Windows.Forms;
 
 namespace Axxen.CustomControls
 {
-    public enum types { Users, Authoritys, Systems, Processes, Items, Facility, Errors, NonOperations, UserDefinitions, PackingGrades, WorkCenters, GVs, GVGroups, Workers }
     public partial class ATextBox_FindNameByCode : UserControl
     {
         public string lblNameText { get { return lblName.Text; } set { lblName.Text = value; } }
         public string txtCodeText { get { return txtCode.Text; } set { txtCode.Text = value; } }
         public string txtNameText { get { return txtName.Text; } set { txtName.Text = value; } }
+
+        public Font allfont
+        {
+            get { return this.Font; }
+            set
+            {
+                this.Font = value;
+                foreach (Control item in this.Controls)
+                    item.Font = value;
+            }
+        }
         public types codeType;
         public types CodeType { 
             get {

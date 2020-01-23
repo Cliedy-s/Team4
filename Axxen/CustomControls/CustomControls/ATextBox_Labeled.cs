@@ -14,7 +14,7 @@ namespace Axxen.CustomControls
     {
         public string LabelText { get { return lblName.Text; } set { lblName.Text = value; } }
         public string TextBoxText { get { return txtValue.Text; } set { txtValue.Text = value; } }
-        //public txttype 
+        public type TextBoxType { get { return txtValue.txtType; } set { txtValue.txtType = value; } }
         public float FontSize { 
             set {
                 Font lblfont = new Font(lblName.Font.FontFamily, value, lblName.Font.Style);

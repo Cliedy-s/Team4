@@ -9,7 +9,7 @@ using VO;
 
 namespace DAC
 {
-    class Emp_Wc_AllocationDAC : DACParent
+    public class Emp_Wc_AllocationDAC : DACParent
     {
         /// <summary>
         /// 작업장에 할당된 작업자들 목록

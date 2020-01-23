@@ -11,7 +11,7 @@ namespace DAC
 {
     public class Wo_ReqDAC : DACParent
     {
-        public List<Wo_Req_ItemVO> GetAllWoReq() //PPS_SCH_001 그리드뷰 사용
+        public List<Wo_Req_ItemVO> GetAllWoReq() //PPS_SCH_001 그리드뷰 사용, POP_PRD_002
         {
             using (SqlCommand comm = new SqlCommand())
             {

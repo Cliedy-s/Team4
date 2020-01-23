@@ -9,7 +9,7 @@ using VO;
 
 namespace DAC
 {
-    class Nop_HistoryDAC : DACParent
+    public class Nop_HistoryDAC : DACParent
     {
         /// <summary>
         /// 비가동 목록

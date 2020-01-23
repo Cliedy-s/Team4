@@ -9,7 +9,7 @@ using VO;
 
 namespace DAC
 {
-    class Condition_Measure_HistoryDAC :DACParent
+    public class Condition_Measure_HistoryDAC :DACParent
     {
         /// <summary>
         /// 공정조건 측정그룹

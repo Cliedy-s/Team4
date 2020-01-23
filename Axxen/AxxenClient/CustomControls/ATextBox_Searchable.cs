@@ -14,6 +14,12 @@ namespace Axxen.CustomControls
     {
         public string LabelText { get { return lblName.Text; } set { lblName.Text = value; } }
         public string TextBoxText { get { return txtValue.Text; } set { txtValue.Text = value; } }
+        public type TextBoxType { get { return txtValue.txtType; } set { txtValue.txtType = value; } }
+        public Font allfont { get { return this.Font; } set {
+                this.Font = value;
+                foreach (Control item in this.Controls)
+                    item.Font = value;
+            } }
         public SearchButtonClick btnSearch_Click;
 
         public ATextBox_Searchable()
