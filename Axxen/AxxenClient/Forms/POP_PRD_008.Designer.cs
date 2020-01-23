@@ -31,9 +31,9 @@
             this.aButton1 = new Axxen.CustomControls.AButton();
             this.aDataGridView2 = new Axxen.CustomControls.ADataGridView();
             this.aDataGridView1 = new Axxen.CustomControls.ADataGridView();
-            this.aHeaderBox1 = new Axxen.CustomControls.AHeaderBox();
-            this.aHeaderBox2 = new Axxen.CustomControls.AHeaderBox();
             this.aButton2 = new Axxen.CustomControls.AButton();
+            this.aBigHeaderBox1 = new Axxen.CustomControls.ABigHeaderBox();
+            this.aBigHeaderBox2 = new Axxen.CustomControls.ABigHeaderBox();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aDataGridView2)).BeginInit();
@@ -47,7 +47,7 @@
             // aPanel1
             // 
             this.aPanel1.Location = new System.Drawing.Point(0, 593);
-            this.aPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.aPanel1.Margin = new System.Windows.Forms.Padding(2);
             // 
             // aButton1
             // 
@@ -67,11 +67,11 @@
             this.aDataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.aDataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.aDataGridView2.Location = new System.Drawing.Point(737, 141);
+            this.aDataGridView2.Location = new System.Drawing.Point(737, 160);
             this.aDataGridView2.Name = "aDataGridView2";
             this.aDataGridView2.RowHeadersWidth = 51;
             this.aDataGridView2.RowTemplate.Height = 23;
-            this.aDataGridView2.Size = new System.Drawing.Size(461, 444);
+            this.aDataGridView2.Size = new System.Drawing.Size(461, 425);
             this.aDataGridView2.TabIndex = 19;
             // 
             // aDataGridView1
@@ -80,35 +80,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.aDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.aDataGridView1.Location = new System.Drawing.Point(10, 141);
+            this.aDataGridView1.Location = new System.Drawing.Point(10, 160);
             this.aDataGridView1.Name = "aDataGridView1";
             this.aDataGridView1.RowHeadersWidth = 51;
             this.aDataGridView1.RowTemplate.Height = 23;
-            this.aDataGridView1.Size = new System.Drawing.Size(477, 444);
+            this.aDataGridView1.Size = new System.Drawing.Size(477, 425);
             this.aDataGridView1.TabIndex = 17;
-            // 
-            // aHeaderBox1
-            // 
-            this.aHeaderBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.aHeaderBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.aHeaderBox1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aHeaderBox1.HeaderBoxText = "장착 대상 금형 목록";
-            this.aHeaderBox1.Location = new System.Drawing.Point(10, 112);
-            this.aHeaderBox1.Name = "aHeaderBox1";
-            this.aHeaderBox1.Size = new System.Drawing.Size(243, 30);
-            this.aHeaderBox1.TabIndex = 24;
-            // 
-            // aHeaderBox2
-            // 
-            this.aHeaderBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.aHeaderBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.aHeaderBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.aHeaderBox2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aHeaderBox2.HeaderBoxText = "장착 금형 목록";
-            this.aHeaderBox2.Location = new System.Drawing.Point(737, 112);
-            this.aHeaderBox2.Name = "aHeaderBox2";
-            this.aHeaderBox2.Size = new System.Drawing.Size(243, 30);
-            this.aHeaderBox2.TabIndex = 25;
             // 
             // aButton2
             // 
@@ -123,25 +100,50 @@
             this.aButton2.Text = "장착";
             this.aButton2.UseVisualStyleBackColor = false;
             // 
+            // aBigHeaderBox1
+            // 
+            this.aBigHeaderBox1.allfont = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aBigHeaderBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.aBigHeaderBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.aBigHeaderBox1.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aBigHeaderBox1.HeaderBoxText = "장착 대상 금형 목록";
+            this.aBigHeaderBox1.Location = new System.Drawing.Point(10, 112);
+            this.aBigHeaderBox1.Name = "aBigHeaderBox1";
+            this.aBigHeaderBox1.Size = new System.Drawing.Size(273, 50);
+            this.aBigHeaderBox1.TabIndex = 27;
+            // 
+            // aBigHeaderBox2
+            // 
+            this.aBigHeaderBox2.allfont = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aBigHeaderBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.aBigHeaderBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.aBigHeaderBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.aBigHeaderBox2.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aBigHeaderBox2.HeaderBoxText = "장착 금형 목록";
+            this.aBigHeaderBox2.Location = new System.Drawing.Point(737, 112);
+            this.aBigHeaderBox2.Name = "aBigHeaderBox2";
+            this.aBigHeaderBox2.Size = new System.Drawing.Size(273, 50);
+            this.aBigHeaderBox2.TabIndex = 28;
+            // 
             // POP_PRD_008
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1210, 629);
             this.Controls.Add(this.aButton2);
-            this.Controls.Add(this.aHeaderBox2);
-            this.Controls.Add(this.aHeaderBox1);
             this.Controls.Add(this.aButton1);
             this.Controls.Add(this.aDataGridView2);
             this.Controls.Add(this.aDataGridView1);
+            this.Controls.Add(this.aBigHeaderBox1);
+            this.Controls.Add(this.aBigHeaderBox2);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "POP_PRD_008";
+            this.Controls.SetChildIndex(this.aBigHeaderBox2, 0);
+            this.Controls.SetChildIndex(this.aBigHeaderBox1, 0);
             this.Controls.SetChildIndex(this.aPanel2, 0);
             this.Controls.SetChildIndex(this.aPanel1, 0);
             this.Controls.SetChildIndex(this.aDataGridView1, 0);
             this.Controls.SetChildIndex(this.aDataGridView2, 0);
             this.Controls.SetChildIndex(this.aButton1, 0);
-            this.Controls.SetChildIndex(this.aHeaderBox1, 0);
-            this.Controls.SetChildIndex(this.aHeaderBox2, 0);
             this.Controls.SetChildIndex(this.aButton2, 0);
             this.aPanel1.ResumeLayout(false);
             this.aPanel1.PerformLayout();
@@ -157,8 +159,8 @@
         private Axxen.CustomControls.AButton aButton1;
         private Axxen.CustomControls.ADataGridView aDataGridView2;
         private Axxen.CustomControls.ADataGridView aDataGridView1;
-        private Axxen.CustomControls.AHeaderBox aHeaderBox1;
-        private Axxen.CustomControls.AHeaderBox aHeaderBox2;
         private Axxen.CustomControls.AButton aButton2;
+        private Axxen.CustomControls.ABigHeaderBox aBigHeaderBox1;
+        private Axxen.CustomControls.ABigHeaderBox aBigHeaderBox2;
     }
 }

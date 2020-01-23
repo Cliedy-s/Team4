@@ -38,35 +38,36 @@
             this.txtValue.BackColor = System.Drawing.Color.White;
             this.txtValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtValue.errorp = null;
-            this.txtValue.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtValue.Location = new System.Drawing.Point(99, 4);
-            this.txtValue.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtValue.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtValue.Location = new System.Drawing.Point(127, 6);
+            this.txtValue.Margin = new System.Windows.Forms.Padding(4, 7, 4, 7);
             this.txtValue.Name = "txtValue";
-            this.txtValue.Size = new System.Drawing.Size(263, 23);
+            this.txtValue.Size = new System.Drawing.Size(338, 29);
             this.txtValue.TabIndex = 5;
             this.txtValue.txtType = Axxen.CustomControls.type.Normal;
             // 
             // lblName
             // 
             this.lblName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblName.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblName.Location = new System.Drawing.Point(1, 4);
+            this.lblName.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblName.Location = new System.Drawing.Point(1, 6);
+            this.lblName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(97, 23);
+            this.lblName.Size = new System.Drawing.Size(125, 32);
             this.lblName.TabIndex = 4;
             this.lblName.Text = "lblName";
             this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // ATextBox_LabeledBigTextBox
+            // ABigTextBox_LabeledBigTextBox
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.txtValue);
             this.Controls.Add(this.lblName);
-            this.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "ATextBox_LabeledBigTextBox";
-            this.Size = new System.Drawing.Size(365, 30);
+            this.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.Name = "ABigTextBox_LabeledBigTextBox";
+            this.Size = new System.Drawing.Size(469, 42);
             this.ResumeLayout(false);
             this.PerformLayout();
 

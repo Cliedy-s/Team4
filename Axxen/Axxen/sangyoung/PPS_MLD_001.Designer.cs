@@ -101,7 +101,6 @@
             // txtName
             // 
             this.txtName.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtName.FontSize = 9F;
             this.txtName.LabelText = "금형 명";
             this.txtName.Location = new System.Drawing.Point(354, 32);
             this.txtName.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -114,7 +113,6 @@
             // txtCode
             // 
             this.txtCode.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtCode.FontSize = 9F;
             this.txtCode.LabelText = "금형 코드";
             this.txtCode.Location = new System.Drawing.Point(27, 32);
             this.txtCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -145,7 +143,6 @@
             // txtMoldCode
             // 
             this.txtMoldCode.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtMoldCode.FontSize = 9F;
             this.txtMoldCode.LabelText = "금형코드";
             this.txtMoldCode.Location = new System.Drawing.Point(257, 12);
             this.txtMoldCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -157,7 +154,6 @@
             // txtMoldGroup
             // 
             this.txtMoldGroup.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtMoldGroup.FontSize = 9F;
             this.txtMoldGroup.LabelText = "금형그룹";
             this.txtMoldGroup.Location = new System.Drawing.Point(257, 74);
             this.txtMoldGroup.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -169,7 +165,6 @@
             // txtMoldName
             // 
             this.txtMoldName.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtMoldName.FontSize = 9F;
             this.txtMoldName.LabelText = "금형명";
             this.txtMoldName.Location = new System.Drawing.Point(257, 43);
             this.txtMoldName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -259,7 +254,6 @@
             // txtCost
             // 
             this.txtCost.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtCost.FontSize = 9F;
             this.txtCost.LabelText = "구입금액";
             this.txtCost.Location = new System.Drawing.Point(835, 7);
             this.txtCost.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);

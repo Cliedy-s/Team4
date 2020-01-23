@@ -37,7 +37,7 @@ namespace AxxenClient.Forms
                     Ins_Emp = GlobalUsage.username,
                     //Item_Code = txtItemCode.TextBoxText,
                     Mat_LotNo = now.ToString("yyyyMMddhhmmss"),
-                    Plan_Qty = Convert.ToInt32(txtPlanQty.TextBoxText),
+                    //Plan_Qty = Convert.ToInt32(txtPlanQty.TextBoxText),
                     Plan_Unit = "개",
                     //Req_Seq = 
                 }))

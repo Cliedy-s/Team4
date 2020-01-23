@@ -228,6 +228,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Templets\BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
@@ -263,6 +264,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Image\X.png" />
     <Content Include="Team4Connect_DEV.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

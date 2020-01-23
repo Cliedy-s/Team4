@@ -69,6 +69,7 @@
             this.btnQualityMeasure1 = new Axxen.CustomControls.AButton();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).BeginInit();
             this.panMolding.SuspendLayout();
             this.panLoad.SuspendLayout();
@@ -89,6 +90,10 @@
             // 
             this.btnNoActive.Tag = typeof(AxxenClient.Forms.POP_PRD_016);
             this.btnNoActive.Click += new System.EventHandler(this.btnClick);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Visible = false;
             // 
             // dgvMain
             // 
@@ -621,6 +626,7 @@
             this.aPanel1.PerformLayout();
             this.aPanel2.ResumeLayout(false);
             this.aPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).EndInit();
             this.panMolding.ResumeLayout(false);
             this.panLoad.ResumeLayout(false);

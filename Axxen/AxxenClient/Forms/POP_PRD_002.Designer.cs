@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.aPanel4 = new Axxen.CustomControls.APanel();
-            this.aTextBox_LabeledBigTextBox1 = new Axxen.CustomControls.ATextBox_LabeledBigTextBox();
+            this.aBigTextBox_Searchable3 = new Axxen.CustomControls.ABigTextBox_Searchable();
+            this.aBigTextBox_Searchable2 = new Axxen.CustomControls.ABigTextBox_Searchable();
+            this.aBigTextBox_Searchable1 = new Axxen.CustomControls.ABigTextBox_Searchable();
             this.btnCreateWorkOrder = new Axxen.CustomControls.AButton();
-            this.txtPlanQty = new Axxen.CustomControls.ATextBox_LabeledBigTextBox();
-            this.txtWcCode = new Axxen.CustomControls.ATextBox_Searchable();
-            this.txtProcessCode = new Axxen.CustomControls.ATextBox_Searchable();
             this.dgvWorkOrder = new Axxen.CustomControls.ADataGridView();
-            this.aTextBox_Searchable1 = new Axxen.CustomControls.ATextBox_Searchable();
+            this.aBigTextBox_LabeledBigTextBox1 = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
+            this.aBigTextBox_LabeledBigTextBox2 = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
             this.aPanel4.SuspendLayout();
@@ -57,30 +57,58 @@
             // 
             this.aPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.aPanel4.Controls.Add(this.aTextBox_Searchable1);
-            this.aPanel4.Controls.Add(this.aTextBox_LabeledBigTextBox1);
+            this.aPanel4.Controls.Add(this.aBigTextBox_LabeledBigTextBox2);
+            this.aPanel4.Controls.Add(this.aBigTextBox_LabeledBigTextBox1);
+            this.aPanel4.Controls.Add(this.aBigTextBox_Searchable3);
+            this.aPanel4.Controls.Add(this.aBigTextBox_Searchable2);
+            this.aPanel4.Controls.Add(this.aBigTextBox_Searchable1);
             this.aPanel4.Controls.Add(this.btnCreateWorkOrder);
-            this.aPanel4.Controls.Add(this.txtPlanQty);
-            this.aPanel4.Controls.Add(this.txtWcCode);
-            this.aPanel4.Controls.Add(this.txtProcessCode);
             this.aPanel4.Location = new System.Drawing.Point(649, 105);
             this.aPanel4.Name = "aPanel4";
             this.aPanel4.Size = new System.Drawing.Size(549, 482);
             this.aPanel4.TabIndex = 7;
             // 
-            // aTextBox_LabeledBigTextBox1
+            // aBigTextBox_Searchable3
             // 
-            this.aTextBox_LabeledBigTextBox1.allfont = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aTextBox_LabeledBigTextBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.aTextBox_LabeledBigTextBox1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aTextBox_LabeledBigTextBox1.LabelText = "생산의뢰 번호";
-            this.aTextBox_LabeledBigTextBox1.Location = new System.Drawing.Point(92, 229);
-            this.aTextBox_LabeledBigTextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.aTextBox_LabeledBigTextBox1.Name = "aTextBox_LabeledBigTextBox1";
-            this.aTextBox_LabeledBigTextBox1.Size = new System.Drawing.Size(365, 30);
-            this.aTextBox_LabeledBigTextBox1.TabIndex = 17;
-            this.aTextBox_LabeledBigTextBox1.TextBoxText = "";
-            this.aTextBox_LabeledBigTextBox1.TextBoxType = Axxen.CustomControls.type.Normal;
+            this.aBigTextBox_Searchable3.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aBigTextBox_Searchable3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.aBigTextBox_Searchable3.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aBigTextBox_Searchable3.LabelText = "작업장";
+            this.aBigTextBox_Searchable3.Location = new System.Drawing.Point(42, 158);
+            this.aBigTextBox_Searchable3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.aBigTextBox_Searchable3.Name = "aBigTextBox_Searchable3";
+            this.aBigTextBox_Searchable3.Size = new System.Drawing.Size(469, 42);
+            this.aBigTextBox_Searchable3.TabIndex = 24;
+            this.aBigTextBox_Searchable3.TextBoxText = "";
+            this.aBigTextBox_Searchable3.TextBoxType = Axxen.CustomControls.type.Normal;
+            // 
+            // aBigTextBox_Searchable2
+            // 
+            this.aBigTextBox_Searchable2.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aBigTextBox_Searchable2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.aBigTextBox_Searchable2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aBigTextBox_Searchable2.LabelText = "공정";
+            this.aBigTextBox_Searchable2.Location = new System.Drawing.Point(42, 104);
+            this.aBigTextBox_Searchable2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.aBigTextBox_Searchable2.Name = "aBigTextBox_Searchable2";
+            this.aBigTextBox_Searchable2.Size = new System.Drawing.Size(469, 42);
+            this.aBigTextBox_Searchable2.TabIndex = 23;
+            this.aBigTextBox_Searchable2.TextBoxText = "";
+            this.aBigTextBox_Searchable2.TextBoxType = Axxen.CustomControls.type.Normal;
+            // 
+            // aBigTextBox_Searchable1
+            // 
+            this.aBigTextBox_Searchable1.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aBigTextBox_Searchable1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.aBigTextBox_Searchable1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aBigTextBox_Searchable1.LabelText = "품목";
+            this.aBigTextBox_Searchable1.Location = new System.Drawing.Point(42, 52);
+            this.aBigTextBox_Searchable1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.aBigTextBox_Searchable1.Name = "aBigTextBox_Searchable1";
+            this.aBigTextBox_Searchable1.Size = new System.Drawing.Size(469, 42);
+            this.aBigTextBox_Searchable1.TabIndex = 22;
+            this.aBigTextBox_Searchable1.TextBoxText = "";
+            this.aBigTextBox_Searchable1.TextBoxType = Axxen.CustomControls.type.Normal;
             // 
             // btnCreateWorkOrder
             // 
@@ -96,48 +124,6 @@
             this.btnCreateWorkOrder.UseVisualStyleBackColor = false;
             this.btnCreateWorkOrder.Click += new System.EventHandler(this.btnCreateWorkOrder_Click);
             // 
-            // txtPlanQty
-            // 
-            this.txtPlanQty.allfont = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtPlanQty.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtPlanQty.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtPlanQty.LabelText = "계획수량";
-            this.txtPlanQty.Location = new System.Drawing.Point(92, 191);
-            this.txtPlanQty.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtPlanQty.Name = "txtPlanQty";
-            this.txtPlanQty.Size = new System.Drawing.Size(365, 30);
-            this.txtPlanQty.TabIndex = 15;
-            this.txtPlanQty.TextBoxText = "";
-            this.txtPlanQty.TextBoxType = Axxen.CustomControls.type.Numeric;
-            // 
-            // txtWcCode
-            // 
-            this.txtWcCode.allfont = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtWcCode.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtWcCode.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtWcCode.LabelText = "작업장";
-            this.txtWcCode.Location = new System.Drawing.Point(92, 153);
-            this.txtWcCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtWcCode.Name = "txtWcCode";
-            this.txtWcCode.Size = new System.Drawing.Size(365, 30);
-            this.txtWcCode.TabIndex = 14;
-            this.txtWcCode.TextBoxText = "";
-            this.txtWcCode.TextBoxType = Axxen.CustomControls.type.Normal;
-            // 
-            // txtProcessCode
-            // 
-            this.txtProcessCode.allfont = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtProcessCode.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtProcessCode.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtProcessCode.LabelText = "공정";
-            this.txtProcessCode.Location = new System.Drawing.Point(92, 115);
-            this.txtProcessCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtProcessCode.Name = "txtProcessCode";
-            this.txtProcessCode.Size = new System.Drawing.Size(365, 30);
-            this.txtProcessCode.TabIndex = 13;
-            this.txtProcessCode.TextBoxText = "";
-            this.txtProcessCode.TextBoxType = Axxen.CustomControls.type.Normal;
-            // 
             // dgvWorkOrder
             // 
             this.dgvWorkOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -152,19 +138,33 @@
             this.dgvWorkOrder.TabIndex = 6;
             this.dgvWorkOrder.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvWorkOrder_CellDoubleClick);
             // 
-            // aTextBox_Searchable1
+            // aBigTextBox_LabeledBigTextBox1
             // 
-            this.aTextBox_Searchable1.allfont = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aTextBox_Searchable1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.aTextBox_Searchable1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aTextBox_Searchable1.LabelText = "품목";
-            this.aTextBox_Searchable1.Location = new System.Drawing.Point(92, 77);
-            this.aTextBox_Searchable1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.aTextBox_Searchable1.Name = "aTextBox_Searchable1";
-            this.aTextBox_Searchable1.Size = new System.Drawing.Size(365, 30);
-            this.aTextBox_Searchable1.TabIndex = 18;
-            this.aTextBox_Searchable1.TextBoxText = "";
-            this.aTextBox_Searchable1.TextBoxType = Axxen.CustomControls.type.Normal;
+            this.aBigTextBox_LabeledBigTextBox1.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aBigTextBox_LabeledBigTextBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.aBigTextBox_LabeledBigTextBox1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aBigTextBox_LabeledBigTextBox1.LabelText = "계획수량";
+            this.aBigTextBox_LabeledBigTextBox1.Location = new System.Drawing.Point(42, 212);
+            this.aBigTextBox_LabeledBigTextBox1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.aBigTextBox_LabeledBigTextBox1.Name = "aBigTextBox_LabeledBigTextBox1";
+            this.aBigTextBox_LabeledBigTextBox1.Size = new System.Drawing.Size(469, 42);
+            this.aBigTextBox_LabeledBigTextBox1.TabIndex = 25;
+            this.aBigTextBox_LabeledBigTextBox1.TextBoxText = "";
+            this.aBigTextBox_LabeledBigTextBox1.TextBoxType = Axxen.CustomControls.type.Normal;
+            // 
+            // aBigTextBox_LabeledBigTextBox2
+            // 
+            this.aBigTextBox_LabeledBigTextBox2.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aBigTextBox_LabeledBigTextBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.aBigTextBox_LabeledBigTextBox2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aBigTextBox_LabeledBigTextBox2.LabelText = "생산의뢰 번호";
+            this.aBigTextBox_LabeledBigTextBox2.Location = new System.Drawing.Point(42, 266);
+            this.aBigTextBox_LabeledBigTextBox2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.aBigTextBox_LabeledBigTextBox2.Name = "aBigTextBox_LabeledBigTextBox2";
+            this.aBigTextBox_LabeledBigTextBox2.Size = new System.Drawing.Size(469, 42);
+            this.aBigTextBox_LabeledBigTextBox2.TabIndex = 26;
+            this.aBigTextBox_LabeledBigTextBox2.TextBoxText = "";
+            this.aBigTextBox_LabeledBigTextBox2.TextBoxType = Axxen.CustomControls.type.Normal;
             // 
             // POP_PRD_002
             // 
@@ -193,11 +193,11 @@
 
         private Axxen.CustomControls.APanel aPanel4;
         private Axxen.CustomControls.AButton btnCreateWorkOrder;
-        private Axxen.CustomControls.ATextBox_LabeledBigTextBox txtPlanQty;
-        private Axxen.CustomControls.ATextBox_Searchable txtWcCode;
-        private Axxen.CustomControls.ATextBox_Searchable txtProcessCode;
         private Axxen.CustomControls.ADataGridView dgvWorkOrder;
-        private Axxen.CustomControls.ATextBox_LabeledBigTextBox aTextBox_LabeledBigTextBox1;
-        private Axxen.CustomControls.ATextBox_Searchable aTextBox_Searchable1;
+        private Axxen.CustomControls.ABigTextBox_Searchable aBigTextBox_Searchable3;
+        private Axxen.CustomControls.ABigTextBox_Searchable aBigTextBox_Searchable2;
+        private Axxen.CustomControls.ABigTextBox_Searchable aBigTextBox_Searchable1;
+        private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox aBigTextBox_LabeledBigTextBox2;
+        private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox aBigTextBox_LabeledBigTextBox1;
     }
 }

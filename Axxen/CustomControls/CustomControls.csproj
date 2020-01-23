@@ -157,6 +157,12 @@
     <Compile Include="CustomControls\ATextBox_FindNameByCode.Designer.cs">
       <DependentUpon>ATextBox_FindNameByCode.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomControls\ABigTextBox_Labeled.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\ABigTextBox_Labeled.Designer.cs">
+      <DependentUpon>ABigTextBox_Labeled.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomControls\ATextBox_Labeled.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -228,6 +234,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\ATextBox_FindNameByCode.resx">
       <DependentUpon>ATextBox_FindNameByCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\ABigTextBox_Labeled.resx">
+      <DependentUpon>ABigTextBox_Labeled.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\ATextBox_Labeled.resx">
       <DependentUpon>ATextBox_Labeled.cs</DependentUpon>
