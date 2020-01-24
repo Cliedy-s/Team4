@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MDS_ODS_001));
-            this.dgvGroup = new Axxen.CustomControls.ADataGridView();
-            this.cbbGroup = new Axxen.CustomControls.AComboBox();
+            this.dgvProcess = new Axxen.CustomControls.ADataGridView();
+            this.cbbProcess = new Axxen.CustomControls.AComboBox();
             this.aPanel1 = new Axxen.CustomControls.APanel();
-            this.lblGroup = new Axxen.CustomControls.ALabel();
+            this.lblProcess = new Axxen.CustomControls.ALabel();
             this.btnSearch = new Axxen.CustomControls.AButton();
             this.aPanel2 = new Axxen.CustomControls.APanel();
             this.aLabel3 = new Axxen.CustomControls.ALabel();
@@ -41,53 +41,55 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.aLabel4 = new Axxen.CustomControls.ALabel();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGroup)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProcess)).BeginInit();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvGroup
+            // dgvProcess
             // 
-            this.dgvGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvProcess.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvGroup.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvGroup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGroup.Location = new System.Drawing.Point(12, 69);
-            this.dgvGroup.Name = "dgvGroup";
-            this.dgvGroup.RowTemplate.Height = 23;
-            this.dgvGroup.Size = new System.Drawing.Size(1124, 628);
-            this.dgvGroup.TabIndex = 10;
+            this.dgvProcess.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvProcess.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProcess.Location = new System.Drawing.Point(12, 69);
+            this.dgvProcess.Name = "dgvProcess";
+            this.dgvProcess.RowTemplate.Height = 23;
+            this.dgvProcess.Size = new System.Drawing.Size(1124, 628);
+            this.dgvProcess.TabIndex = 10;
+            this.dgvProcess.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvProcess_CellClick);
             // 
-            // cbbGroup
+            // cbbProcess
             // 
-            this.cbbGroup.FormattingEnabled = true;
-            this.cbbGroup.Location = new System.Drawing.Point(109, 6);
-            this.cbbGroup.Name = "cbbGroup";
-            this.cbbGroup.Size = new System.Drawing.Size(152, 23);
-            this.cbbGroup.TabIndex = 3;
+            this.cbbProcess.FormattingEnabled = true;
+            this.cbbProcess.Location = new System.Drawing.Point(109, 6);
+            this.cbbProcess.Name = "cbbProcess";
+            this.cbbProcess.Size = new System.Drawing.Size(152, 23);
+            this.cbbProcess.TabIndex = 3;
+            this.cbbProcess.SelectedIndexChanged += new System.EventHandler(this.CbbProcess_SelectedIndexChanged);
             // 
             // aPanel1
             // 
             this.aPanel1.BackColor = System.Drawing.Color.White;
             this.aPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.aPanel1.Controls.Add(this.lblGroup);
+            this.aPanel1.Controls.Add(this.lblProcess);
             this.aPanel1.Location = new System.Drawing.Point(451, 6);
             this.aPanel1.Name = "aPanel1";
             this.aPanel1.Size = new System.Drawing.Size(165, 24);
             this.aPanel1.TabIndex = 6;
             // 
-            // lblGroup
+            // lblProcess
             // 
-            this.lblGroup.AutoSize = true;
-            this.lblGroup.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblGroup.Location = new System.Drawing.Point(3, 3);
-            this.lblGroup.Name = "lblGroup";
-            this.lblGroup.Size = new System.Drawing.Size(53, 17);
-            this.lblGroup.TabIndex = 0;
-            this.lblGroup.Text = "aLabel1";
+            this.lblProcess.AutoSize = true;
+            this.lblProcess.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblProcess.Location = new System.Drawing.Point(3, 3);
+            this.lblProcess.Name = "lblProcess";
+            this.lblProcess.Size = new System.Drawing.Size(53, 17);
+            this.lblProcess.TabIndex = 0;
+            this.lblProcess.Text = "aLabel1";
             // 
             // btnSearch
             // 
@@ -99,6 +101,7 @@
             this.btnSearch.TabIndex = 4;
             this.btnSearch.Text = "조회";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
             // aPanel2
             // 
@@ -106,7 +109,7 @@
             this.aPanel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.aPanel2.Controls.Add(this.aLabel3);
             this.aPanel2.Controls.Add(this.aLabel2);
-            this.aPanel2.Controls.Add(this.cbbGroup);
+            this.aPanel2.Controls.Add(this.cbbProcess);
             this.aPanel2.Controls.Add(this.aPanel1);
             this.aPanel2.Controls.Add(this.btnSearch);
             this.aPanel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -181,13 +184,14 @@
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.aLabel4);
-            this.Controls.Add(this.dgvGroup);
+            this.Controls.Add(this.dgvProcess);
             this.Controls.Add(this.aPanel2);
             this.Controls.Add(this.aLabel1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "MDS_ODS_001";
             this.Text = "공정정보";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGroup)).EndInit();
+            this.Load += new System.EventHandler(this.MDS_ODS_001_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProcess)).EndInit();
             this.aPanel1.ResumeLayout(false);
             this.aPanel1.PerformLayout();
             this.aPanel2.ResumeLayout(false);
@@ -201,10 +205,10 @@
 
         #endregion
 
-        private CustomControls.ADataGridView dgvGroup;
-        private CustomControls.AComboBox cbbGroup;
+        private CustomControls.ADataGridView dgvProcess;
+        private CustomControls.AComboBox cbbProcess;
         private CustomControls.APanel aPanel1;
-        private CustomControls.ALabel lblGroup;
+        private CustomControls.ALabel lblProcess;
         private CustomControls.AButton btnSearch;
         private CustomControls.APanel aPanel2;
         private CustomControls.ALabel aLabel3;

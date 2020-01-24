@@ -61,6 +61,7 @@
     <Compile Include="Nop_Ma_MasterDAC.cs" />
     <Compile Include="Nop_Mi_MasterDAC.cs" />
     <Compile Include="Pallet_MasterDAC.cs" />
+    <Compile Include="ProcessDAC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScreenItemDAC.cs" />
     <Compile Include="UserGroupDAC.cs" />

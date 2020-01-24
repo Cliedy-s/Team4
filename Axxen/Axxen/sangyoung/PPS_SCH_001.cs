@@ -58,13 +58,30 @@ namespace Axxen
 
         private void DgvMainGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            MessageBox.Show(dgvMainGrid.SelectedRows[0].Cells[0].Value.ToString());
+
+            foreach (DataGridViewRow row in dgvMainGrid.Rows)
+            {
+                DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
+                if (chk.Value == chk.FalseValue || chk.Value == null)
+                {
+                    chk.Value = chk.TrueValue;
+                }
+                else
+                {
+                    chk.Value = chk.FalseValue;
+                }
+            }
+            dgvMainGrid.EndEdit();
+
+
+
+            MessageBox.Show(Convert.ToBoolean(dgvMainGrid.SelectedRows[0].Cells[0].Value).ToString());
             MessageBox.Show("Test");
             if (Convert.ToInt32(e.RowIndex) < 0)
             {
                 return;
             }
-            //Check_Wo_Req(dgvMainGrid.Rows[e.RowIndex].Cells[2].Value.ToString(), e.ColumnIndex, (bool)dgvMainGrid.CurrentRow.Cells[0].Value);
+            Check_Wo_Req(dgvMainGrid.Rows[e.RowIndex].Cells[2].Value.ToString(), e.ColumnIndex, Convert.ToBoolean(dgvMainGrid.CurrentRow.Cells[0].Value));
         }
 
         private void MainDataLoad()
@@ -84,7 +101,8 @@ namespace Axxen
             DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
             chk.HeaderText = "선택";
             chk.Name = "check";
-            chk.FalseValue = "false";
+            chk.TrueValue = true;
+            chk.FalseValue = false;
             chk.Width = 50;
 
             dgvMainGrid.Columns.Insert(0, chk);

@@ -8,16 +8,27 @@ using VO;
 
 namespace Service
 {
-    class Inspect_Spec_MasterService
+   public class Inspect_Spec_MasterService
     {
+        Inspect_Spec_MasterDAC dac;
+        public Inspect_Spec_MasterService()
+        {
+             dac = new Inspect_Spec_MasterDAC();
+        }
+
         /// <summary>
         /// 검사항목규격설정 가져오기
         /// </summary>
         /// <returns></returns>
         public List<InspectSpecVO> GetAll()
         {
-            Inspect_Spec_MasterDAC dac = new Inspect_Spec_MasterDAC();
+          
             return dac.GetAll();
         }
-    }
+
+        public bool InsertInspectSpec(InspectSpecVO inspctspec)
+        {
+            return dac.InsertInspectSpec(inspctspec);
+        }
+        }
 }

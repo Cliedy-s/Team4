@@ -67,6 +67,7 @@
     <Compile Include="PalletVO.cs" />
     <Compile Include="Process_J_Nop_History_Gas_WC_Time_DayVO.cs" />
     <Compile Include="Process_J_WC_Item_WO_Time_DayVO.cs" />
+    <Compile Include="Process_MasterVO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScreenItemVO.cs" />
     <Compile Include="GVUnloadVO.cs" />

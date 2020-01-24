@@ -59,6 +59,7 @@
     <Compile Include="Nop_Ma_MasterService.cs" />
     <Compile Include="Nop_Mi_MasterService.cs" />
     <Compile Include="Pallet_MasterService.cs" />
+    <Compile Include="ProcessService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScreenItemService.cs" />
     <Compile Include="UserGroupService.cs" />

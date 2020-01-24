@@ -35,13 +35,10 @@
             this.lblGroup = new Axxen.CustomControls.ALabel();
             this.btnSearch = new Axxen.CustomControls.AButton();
             this.aPanel2 = new Axxen.CustomControls.APanel();
-            this.aButton1 = new Axxen.CustomControls.AButton();
-            this.aComboBox1 = new Axxen.CustomControls.AComboBox();
             this.aLabel3 = new Axxen.CustomControls.ALabel();
             this.aLabel2 = new Axxen.CustomControls.ALabel();
             this.aLabel1 = new Axxen.CustomControls.ALabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.aLabel4 = new Axxen.CustomControls.ALabel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.aLabel5 = new Axxen.CustomControls.ALabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGroup)).BeginInit();
@@ -110,8 +107,6 @@
             // 
             this.aPanel2.BackColor = System.Drawing.SystemColors.Info;
             this.aPanel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.aPanel2.Controls.Add(this.aButton1);
-            this.aPanel2.Controls.Add(this.aComboBox1);
             this.aPanel2.Controls.Add(this.aLabel3);
             this.aPanel2.Controls.Add(this.aLabel2);
             this.aPanel2.Controls.Add(this.cbbGroup);
@@ -122,25 +117,6 @@
             this.aPanel2.Name = "aPanel2";
             this.aPanel2.Size = new System.Drawing.Size(1148, 39);
             this.aPanel2.TabIndex = 17;
-            // 
-            // aButton1
-            // 
-            this.aButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton1.Location = new System.Drawing.Point(771, 7);
-            this.aButton1.Name = "aButton1";
-            this.aButton1.Size = new System.Drawing.Size(75, 23);
-            this.aButton1.TabIndex = 21;
-            this.aButton1.Text = "조회";
-            this.aButton1.UseVisualStyleBackColor = false;
-            // 
-            // aComboBox1
-            // 
-            this.aComboBox1.FormattingEnabled = true;
-            this.aComboBox1.Location = new System.Drawing.Point(644, 7);
-            this.aComboBox1.Name = "aComboBox1";
-            this.aComboBox1.Size = new System.Drawing.Size(121, 23);
-            this.aComboBox1.TabIndex = 11;
             // 
             // aLabel3
             // 
@@ -182,16 +158,6 @@
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
             // 
-            // aLabel4
-            // 
-            this.aLabel4.AutoSize = true;
-            this.aLabel4.Location = new System.Drawing.Point(153, 215);
-            this.aLabel4.Name = "aLabel4";
-            this.aLabel4.Size = new System.Drawing.Size(735, 15);
-            this.aLabel4.TabIndex = 18;
-            this.aLabel4.Text = "GRID : 그룹코드 / 그룹명 / Level 1 / Level 2 / Level 3 / Level 4 / Level 5 / Level 6 / P" +
-    "/L당 BOX 수량 / BOX당 PCS 수량 / PCS당 소재량";
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
@@ -218,7 +184,6 @@
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.aLabel5);
-            this.Controls.Add(this.aLabel4);
             this.Controls.Add(this.dgvGroup);
             this.Controls.Add(this.aPanel2);
             this.Controls.Add(this.aLabel1);
@@ -250,10 +215,7 @@
         private CustomControls.ALabel aLabel2;
         private CustomControls.ALabel aLabel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private CustomControls.ALabel aLabel4;
         private System.Windows.Forms.PictureBox pictureBox2;
         private CustomControls.ALabel aLabel5;
-        private CustomControls.AButton aButton1;
-        private CustomControls.AComboBox aComboBox1;
     }
 }
