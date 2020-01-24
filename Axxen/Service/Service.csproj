@@ -56,6 +56,7 @@
     <Compile Include="MainForm_Service.cs" />
     <Compile Include="MoldService.cs" />
     <Compile Include="Nop_HistoryService.cs" />
+    <Compile Include="Nop_History_Mi_MaService.cs" />
     <Compile Include="Nop_Ma_MasterService.cs" />
     <Compile Include="Nop_Mi_MasterService.cs" />
     <Compile Include="Pallet_MasterService.cs" />
