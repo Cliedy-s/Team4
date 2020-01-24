@@ -58,6 +58,7 @@
     <Compile Include="MainForm_DAC.cs" />
     <Compile Include="MoldDAC.cs" />
     <Compile Include="Nop_HistoryDAC.cs" />
+    <Compile Include="Nop_History_Mi_MaDAC.cs" />
     <Compile Include="Nop_Ma_MasterDAC.cs" />
     <Compile Include="Nop_Mi_MasterDAC.cs" />
     <Compile Include="Pallet_MasterDAC.cs" />
