@@ -1,4 +1,5 @@
-﻿using Service;
+﻿using Axxen.Util;
+using Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -115,5 +116,33 @@ namespace Axxen
                 MessageBox.Show(err.Message);
             }
         }
+
+        private void BtnSave_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtName.Text) && !string.IsNullOrEmpty(txtCode.Text))
+            {
+                if (userservice.GetInsertUserGroup(txtName.Text, txtCode.Text,UserInfo.User_Name))
+                {
+                    MessageBox.Show("저장되었습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    ResetUtillity.ResetPanelControl(aPanel3);
+
+                    GetAllUserGroup();
+                }
+                else
+                {
+                    MessageBox.Show("이미등록된 코드 입니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                MessageBox.Show("필수 입력란을 입력해주세요.","알림",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            }
+          
+
+        }
+
+    
+       
     }
 }
