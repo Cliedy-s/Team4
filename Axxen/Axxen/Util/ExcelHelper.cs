@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
 
-namespace IceCreamManager
+namespace Axxen.Util
 {
     public static class Helper
     {

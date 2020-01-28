@@ -18,5 +18,6 @@ namespace VO
         public string Project_Name { get; set; } //프로젝트명
         public string Sale_Emp { get; set; } //영업담당
         public string Req_Status { get; set; } //생산의뢰상태
+        public DateTime Ins_Date { get; set; } //최초입력일자(생산의뢰일자)
     }
 }

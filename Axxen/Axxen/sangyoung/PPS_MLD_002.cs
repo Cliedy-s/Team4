@@ -26,6 +26,8 @@ namespace Axxen
         {
             MainDataLoad();
             molditemList = service.SelectMold_Item_Wc_Muse();
+            ((MainForm)this.MdiParent).RefreshFormEvent += new EventHandler(this.RefreshFormShow);
+            MainDataLoad();
 
             var molist = (from list in molditemList
                         select new {
@@ -42,6 +44,30 @@ namespace Axxen
                             Use_Starttime = list.Use_Starttime,
                             Use_Endtime = list.Use_Endtime,
                             Use_time =string.Format("{0}분",list.Use_Endtime.Subtract(list.Use_Starttime).Minutes)}).ToList();
+            dgvMainGrid.DataSource = molist;
+        }
+
+        private void RefreshFormShow(object sender, EventArgs e)
+        {
+            molditemList = service.SelectMold_Item_Wc_Muse();
+
+            var molist = (from list in molditemList
+                          select new
+                          {
+                              Prd_Date = list.Prd_Date,
+                              Mold_Code = list.Mold_Code,
+                              Mold_Name = list.Mold_Name,
+                              Workorderno = list.Workorderno,
+                              Item_Code = list.Item_Code,
+                              Item_Name = list.Item_Name,
+                              Wc_Code = list.Wc_Code,
+                              Wc_Name = list.Wc_Name,
+                              Mold_Shot_Cnt = list.Mold_Shot_Cnt,
+                              Mold_Prd_Qty = list.Mold_Prd_Qty,
+                              Use_Starttime = list.Use_Starttime,
+                              Use_Endtime = list.Use_Endtime,
+                              Use_time = string.Format("{0}분", list.Use_Endtime.Subtract(list.Use_Starttime).Minutes)
+                          }).ToList();
             dgvMainGrid.DataSource = molist;
         }
 
@@ -98,6 +124,11 @@ namespace Axxen
                               Use_time = string.Format("{0}분", list.Use_Endtime.Subtract(list.Use_Starttime).Minutes)
                           }).ToList();
             dgvMainGrid.DataSource = molist;
+        }
+
+        private void PPS_MLD_002_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow);
         }
     }
 }

@@ -28,6 +28,30 @@ namespace Service
             return dac.GetWorkOrder();
         }
 
+        public List<WorkOrderVO> GetWoStatus()
+        {
+            Wo_ReqDAC dac = new Wo_ReqDAC();
+            return dac.GetWoStatus();
+        }
+
+        public List<Wo_Req_WO_WC_ItemVO> GetWoReqOrder()
+        {
+            Wo_ReqDAC dac = new Wo_ReqDAC();
+            return dac.GetWoReqOrder();
+        }
+
+        public bool UpdateWoReqOrder(string wono)
+        {
+            Wo_ReqDAC dac = new Wo_ReqDAC();
+            return dac.UpdateWoReqOrder(wono);
+        }
+
+        public bool CancleWoReqOrder(string wono)
+        {
+            Wo_ReqDAC dac = new Wo_ReqDAC();
+            return dac.CancleWoReqOrder(wono);
+        }
+
         public List<WO_WC_Production_ItemVO> GetWO_WC_Production_Items()
         {
             Wo_ReqDAC dac = new Wo_ReqDAC();

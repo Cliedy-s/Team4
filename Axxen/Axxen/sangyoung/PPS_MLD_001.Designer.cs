@@ -30,7 +30,7 @@
         {
             this.txtName = new Axxen.CustomControls.ATextBox_Labeled();
             this.txtCode = new Axxen.CustomControls.ATextBox_Labeled();
-            this.cboDate = new Axxen.CustomControls.AComboBox();
+            this.cboGroup = new Axxen.CustomControls.AComboBox();
             this.aLabel1 = new Axxen.CustomControls.ALabel();
             this.txtMoldCode = new Axxen.CustomControls.ATextBox_Labeled();
             this.txtMoldGroup = new Axxen.CustomControls.ATextBox_Labeled();
@@ -57,7 +57,7 @@
             this.aPanel2.Controls.Add(this.txtName);
             this.aPanel2.Controls.Add(this.txtCode);
             this.aPanel2.Controls.Add(this.aLabel1);
-            this.aPanel2.Controls.Add(this.cboDate);
+            this.aPanel2.Controls.Add(this.cboGroup);
             // 
             // aSplitContainer1
             // 
@@ -100,18 +100,21 @@
             // 
             // txtName
             // 
+            this.txtName.allfont = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtName.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtName.LabelText = "금형 명";
-            this.txtName.Location = new System.Drawing.Point(354, 32);
+            this.txtName.Location = new System.Drawing.Point(346, 32);
             this.txtName.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(205, 23);
             this.txtName.TabIndex = 18;
             this.txtName.TextBoxText = "";
+            this.txtName.TextBoxType = Axxen.CustomControls.type.Normal;
             this.txtName.TextKeyPress += new Axxen.CustomControls.ATextBox_Labeled.TextEnterKeyPress(this.Text_TextKeyPress);
             // 
             // txtCode
             // 
+            this.txtCode.allfont = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtCode.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtCode.LabelText = "금형 코드";
             this.txtCode.Location = new System.Drawing.Point(27, 32);
@@ -120,28 +123,30 @@
             this.txtCode.Size = new System.Drawing.Size(212, 23);
             this.txtCode.TabIndex = 17;
             this.txtCode.TextBoxText = "";
+            this.txtCode.TextBoxType = Axxen.CustomControls.type.Normal;
             this.txtCode.TextKeyPress += new Axxen.CustomControls.ATextBox_Labeled.TextEnterKeyPress(this.Text_TextKeyPress);
             // 
-            // cboDate
+            // cboGroup
             // 
-            this.cboDate.FormattingEnabled = true;
-            this.cboDate.Location = new System.Drawing.Point(698, 32);
-            this.cboDate.Name = "cboDate";
-            this.cboDate.Size = new System.Drawing.Size(106, 23);
-            this.cboDate.TabIndex = 16;
-            this.cboDate.SelectedIndexChanged += new System.EventHandler(this.CboDate_SelectedIndexChanged);
+            this.cboGroup.FormattingEnabled = true;
+            this.cboGroup.Location = new System.Drawing.Point(698, 32);
+            this.cboGroup.Name = "cboGroup";
+            this.cboGroup.Size = new System.Drawing.Size(106, 23);
+            this.cboGroup.TabIndex = 16;
+            this.cboGroup.SelectedIndexChanged += new System.EventHandler(this.CboDate_SelectedIndexChanged);
             // 
             // aLabel1
             // 
             this.aLabel1.AutoSize = true;
-            this.aLabel1.Location = new System.Drawing.Point(649, 36);
+            this.aLabel1.Location = new System.Drawing.Point(637, 35);
             this.aLabel1.Name = "aLabel1";
-            this.aLabel1.Size = new System.Drawing.Size(43, 15);
+            this.aLabel1.Size = new System.Drawing.Size(55, 15);
             this.aLabel1.TabIndex = 15;
-            this.aLabel1.Text = "생산월";
+            this.aLabel1.Text = "금형그룹";
             // 
             // txtMoldCode
             // 
+            this.txtMoldCode.allfont = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtMoldCode.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtMoldCode.LabelText = "금형코드";
             this.txtMoldCode.Location = new System.Drawing.Point(257, 12);
@@ -150,9 +155,11 @@
             this.txtMoldCode.Size = new System.Drawing.Size(212, 23);
             this.txtMoldCode.TabIndex = 18;
             this.txtMoldCode.TextBoxText = "";
+            this.txtMoldCode.TextBoxType = Axxen.CustomControls.type.Normal;
             // 
             // txtMoldGroup
             // 
+            this.txtMoldGroup.allfont = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtMoldGroup.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtMoldGroup.LabelText = "금형그룹";
             this.txtMoldGroup.Location = new System.Drawing.Point(257, 74);
@@ -161,9 +168,11 @@
             this.txtMoldGroup.Size = new System.Drawing.Size(212, 23);
             this.txtMoldGroup.TabIndex = 19;
             this.txtMoldGroup.TextBoxText = "";
+            this.txtMoldGroup.TextBoxType = Axxen.CustomControls.type.Normal;
             // 
             // txtMoldName
             // 
+            this.txtMoldName.allfont = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtMoldName.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtMoldName.LabelText = "금형명";
             this.txtMoldName.Location = new System.Drawing.Point(257, 43);
@@ -172,6 +181,7 @@
             this.txtMoldName.Size = new System.Drawing.Size(212, 23);
             this.txtMoldName.TabIndex = 20;
             this.txtMoldName.TextBoxText = "";
+            this.txtMoldName.TextBoxType = Axxen.CustomControls.type.Normal;
             // 
             // aLabel2
             // 
@@ -253,6 +263,7 @@
             // 
             // txtCost
             // 
+            this.txtCost.allfont = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtCost.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtCost.LabelText = "구입금액";
             this.txtCost.Location = new System.Drawing.Point(835, 7);
@@ -261,6 +272,7 @@
             this.txtCost.Size = new System.Drawing.Size(227, 29);
             this.txtCost.TabIndex = 31;
             this.txtCost.TextBoxText = "";
+            this.txtCost.TextBoxType = Axxen.CustomControls.type.Normal;
             // 
             // PPS_MLD_001
             // 
@@ -286,7 +298,7 @@
 
         private CustomControls.ATextBox_Labeled txtName;
         private CustomControls.ATextBox_Labeled txtCode;
-        private CustomControls.AComboBox cboDate;
+        private CustomControls.AComboBox cboGroup;
         private CustomControls.ALabel aLabel1;
         private CustomControls.ALabel aLabel4;
         private CustomControls.ALabel aLabel3;
