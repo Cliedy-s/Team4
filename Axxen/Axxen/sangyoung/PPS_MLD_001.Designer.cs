@@ -109,7 +109,7 @@
             this.txtName.Size = new System.Drawing.Size(205, 23);
             this.txtName.TabIndex = 18;
             this.txtName.TextBoxText = "";
-            this.txtName.TextBoxType = Axxen.CustomControls.type.Normal;
+            this.txtName.TextBoxType = Axxen.CustomControls.TextType.Normal;
             this.txtName.TextKeyPress += new Axxen.CustomControls.ATextBox_Labeled.TextEnterKeyPress(this.Text_TextKeyPress);
             // 
             // txtCode
@@ -123,7 +123,7 @@
             this.txtCode.Size = new System.Drawing.Size(212, 23);
             this.txtCode.TabIndex = 17;
             this.txtCode.TextBoxText = "";
-            this.txtCode.TextBoxType = Axxen.CustomControls.type.Normal;
+            this.txtCode.TextBoxType = Axxen.CustomControls.TextType.Normal;
             this.txtCode.TextKeyPress += new Axxen.CustomControls.ATextBox_Labeled.TextEnterKeyPress(this.Text_TextKeyPress);
             // 
             // cboGroup
@@ -155,7 +155,7 @@
             this.txtMoldCode.Size = new System.Drawing.Size(212, 23);
             this.txtMoldCode.TabIndex = 18;
             this.txtMoldCode.TextBoxText = "";
-            this.txtMoldCode.TextBoxType = Axxen.CustomControls.type.Normal;
+            this.txtMoldCode.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
             // txtMoldGroup
             // 
@@ -168,7 +168,7 @@
             this.txtMoldGroup.Size = new System.Drawing.Size(212, 23);
             this.txtMoldGroup.TabIndex = 19;
             this.txtMoldGroup.TextBoxText = "";
-            this.txtMoldGroup.TextBoxType = Axxen.CustomControls.type.Normal;
+            this.txtMoldGroup.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
             // txtMoldName
             // 
@@ -181,7 +181,7 @@
             this.txtMoldName.Size = new System.Drawing.Size(212, 23);
             this.txtMoldName.TabIndex = 20;
             this.txtMoldName.TextBoxText = "";
-            this.txtMoldName.TextBoxType = Axxen.CustomControls.type.Normal;
+            this.txtMoldName.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
             // aLabel2
             // 
@@ -272,7 +272,7 @@
             this.txtCost.Size = new System.Drawing.Size(227, 29);
             this.txtCost.TabIndex = 31;
             this.txtCost.TextBoxText = "";
-            this.txtCost.TextBoxType = Axxen.CustomControls.type.Normal;
+            this.txtCost.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
             // PPS_MLD_001
             // 

@@ -99,7 +99,7 @@
             // aTextBox_FindNameByCode2
             // 
             this.aTextBox_FindNameByCode2.allfont = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aTextBox_FindNameByCode2.CodeType = Axxen.CustomControls.types.WorkCenters;
+            this.aTextBox_FindNameByCode2.CodeType = Axxen.CustomControls.DataType.WorkCenters;
             this.aTextBox_FindNameByCode2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aTextBox_FindNameByCode2.lblNameText = "작업장";
             this.aTextBox_FindNameByCode2.Location = new System.Drawing.Point(702, 26);
@@ -113,7 +113,7 @@
             // aTextBox_FindNameByCode1
             // 
             this.aTextBox_FindNameByCode1.allfont = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aTextBox_FindNameByCode1.CodeType = Axxen.CustomControls.types.Processes;
+            this.aTextBox_FindNameByCode1.CodeType = Axxen.CustomControls.DataType.Processes;
             this.aTextBox_FindNameByCode1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aTextBox_FindNameByCode1.lblNameText = "공정";
             this.aTextBox_FindNameByCode1.Location = new System.Drawing.Point(454, 26);
@@ -171,7 +171,7 @@
             this.txtWorkNum.Size = new System.Drawing.Size(229, 29);
             this.txtWorkNum.TabIndex = 11;
             this.txtWorkNum.TextBoxText = "";
-            this.txtWorkNum.TextBoxType = Axxen.CustomControls.type.Normal;
+            this.txtWorkNum.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
             // txtItemCode
             // 
@@ -185,7 +185,7 @@
             this.txtItemCode.Size = new System.Drawing.Size(209, 29);
             this.txtItemCode.TabIndex = 12;
             this.txtItemCode.TextBoxText = "";
-            this.txtItemCode.TextBoxType = Axxen.CustomControls.type.Normal;
+            this.txtItemCode.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
             // txtItemName
             // 
@@ -199,7 +199,7 @@
             this.txtItemName.Size = new System.Drawing.Size(209, 29);
             this.txtItemName.TabIndex = 13;
             this.txtItemName.TextBoxText = "";
-            this.txtItemName.TextBoxType = Axxen.CustomControls.type.Normal;
+            this.txtItemName.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
             // aLabel3
             // 
@@ -240,7 +240,7 @@
             this.txtPlanUnit.Name = "txtPlanUnit";
             this.txtPlanUnit.Size = new System.Drawing.Size(94, 23);
             this.txtPlanUnit.TabIndex = 17;
-            this.txtPlanUnit.txtType = Axxen.CustomControls.type.Normal;
+            this.txtPlanUnit.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // aLabel5
             // 
@@ -272,7 +272,7 @@
             this.txtWorkCenter.Size = new System.Drawing.Size(229, 29);
             this.txtWorkCenter.TabIndex = 20;
             this.txtWorkCenter.TextBoxText = "";
-            this.txtWorkCenter.TextBoxType = Axxen.CustomControls.type.Normal;
+            this.txtWorkCenter.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
             // aDateTimePickerSearch1
             // 

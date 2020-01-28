@@ -34,7 +34,7 @@
             this.txtWo_Req = new Axxen.CustomControls.ATextBox();
             this.aLabel3 = new Axxen.CustomControls.ALabel();
             this.aLabel4 = new Axxen.CustomControls.ALabel();
-            this.txtxItemCode = new Axxen.CustomControls.ATextBox();
+            this.txtItemCode = new Axxen.CustomControls.ATextBox();
             this.aLabel5 = new Axxen.CustomControls.ALabel();
             this.txtItemName = new Axxen.CustomControls.ATextBox();
             this.aLabel6 = new Axxen.CustomControls.ALabel();
@@ -110,16 +110,16 @@
             this.aLabel4.TabIndex = 7;
             this.aLabel4.Text = "품목코드";
             // 
-            // txtxItemCode
+            // txtItemCode
             // 
-            this.txtxItemCode.BackColor = System.Drawing.Color.White;
-            this.txtxItemCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtxItemCode.errorp = null;
-            this.txtxItemCode.Location = new System.Drawing.Point(116, 188);
-            this.txtxItemCode.Name = "txtxItemCode";
-            this.txtxItemCode.Size = new System.Drawing.Size(100, 21);
-            this.txtxItemCode.TabIndex = 6;
-            this.txtxItemCode.txtType = Axxen.CustomControls.TextType.Normal;
+            this.txtItemCode.BackColor = System.Drawing.Color.White;
+            this.txtItemCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtItemCode.errorp = null;
+            this.txtItemCode.Location = new System.Drawing.Point(116, 188);
+            this.txtItemCode.Name = "txtItemCode";
+            this.txtItemCode.Size = new System.Drawing.Size(100, 21);
+            this.txtItemCode.TabIndex = 6;
+            this.txtItemCode.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // aLabel5
             // 
@@ -157,7 +157,7 @@
             this.aLabel7.Name = "aLabel7";
             this.aLabel7.Size = new System.Drawing.Size(53, 12);
             this.aLabel7.TabIndex = 13;
-            this.aLabel7.Text = "계획수량";
+            this.aLabel7.Text = "의뢰수량";
             // 
             // txtPlanQty
             // 
@@ -292,7 +292,7 @@
             this.Controls.Add(this.aLabel5);
             this.Controls.Add(this.txtItemName);
             this.Controls.Add(this.aLabel4);
-            this.Controls.Add(this.txtxItemCode);
+            this.Controls.Add(this.txtItemCode);
             this.Controls.Add(this.aLabel3);
             this.Controls.Add(this.aLabel2);
             this.Controls.Add(this.txtWo_Req);
@@ -314,7 +314,7 @@
         private CustomControls.ATextBox txtWo_Req;
         private CustomControls.ALabel aLabel3;
         private CustomControls.ALabel aLabel4;
-        private CustomControls.ATextBox txtxItemCode;
+        private CustomControls.ATextBox txtItemCode;
         private CustomControls.ALabel aLabel5;
         private CustomControls.ATextBox txtItemName;
         private CustomControls.ALabel aLabel6;

@@ -7,10 +7,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 using VO;
-//체크박스 클릭 작업지시목록처리하기..
+using Excel = Microsoft.Office.Interop.Excel;
+
 namespace Axxen
 {
     public partial class PPS_SCH_001 : Axxen.GridGridForm
@@ -45,7 +47,13 @@ namespace Axxen
 
         private void InsertFormShow(object sender, EventArgs e)
         {
-            PPS_SCH_001_Insert frm = new PPS_SCH_001_Insert();
+            Wo_Req_ItemVO woitem = new Wo_Req_ItemVO();
+            woitem.Item_Code = dgvMainGrid[3, dgvMainGrid.CurrentRow.Index].Value.ToString();
+            woitem.Item_Name = dgvMainGrid[4, dgvMainGrid.CurrentRow.Index].Value.ToString();
+            woitem.Req_Qty = Convert.ToInt32(dgvMainGrid[5, dgvMainGrid.CurrentRow.Index].Value);
+
+            PPS_SCH_001_Insert frm = new PPS_SCH_001_Insert(woitem.Item_Code, woitem.Item_Name, woitem.Req_Qty);
+            frm.StartPosition = FormStartPosition.CenterScreen;
             if (frm.ShowDialog() == DialogResult.OK)
             {
 
@@ -99,7 +107,6 @@ namespace Axxen
             dgvMainGrid.Columns.Insert(0, chk);
             GridCheckSetting();
         }
-
 
         private void SubDataLoad()
         {
@@ -265,8 +272,73 @@ namespace Axxen
                 DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
                 if (Convert.ToBoolean(chk.Value))
                 {
+                    Cursor = Cursors.WaitCursor;
+                    List<Wo_Req_ItemVO> excellist = reqList.FindAll(item => item.Wo_Req_No == row.Cells[2].Value.ToString());
 
-                    Helper.ExcelExportFromDGVByColumns(new DataGridView[] { dgvMainGrid }, saveFileDialog1);
+                    Excel.Application xlApp;
+                    Excel.Workbook xlWorkBook;
+                    Excel.Worksheet xlWorkSheet;
+                    string startPath = System.Windows.Forms.Application.StartupPath + @"\production.xls";
+                    int sum = 0;
+                    saveFileDialog.Filter = "Excel Files (*.xls)|*.xls";
+                    saveFileDialog.InitialDirectory = "C:";
+                    saveFileDialog.Title = "Save";
+                    try
+                    {
+                        if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                        {
+                            Cursor = Cursors.WaitCursor;
+                            xlApp = new Excel.Application();
+                            xlWorkBook = xlApp.Workbooks.Open(Filename: startPath);
+                            xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+
+                            xlWorkSheet.Range["B4"].Value = excellist[0].Project_Name;//프로젝트명
+                            xlWorkSheet.Range["B5"].Value = excellist[0].Wo_Req_No;//생산의뢰번호
+                            xlWorkSheet.Range["B6"].Value = excellist[0].Cust_Name;//거래처명 
+                            xlWorkSheet.Range["D4"].Value = excellist[0].Ins_Date;//의뢰일자
+                            xlWorkSheet.Range["D5"].Value = excellist[0].Prd_Plan_Date;//생산완료예정일
+                            xlWorkSheet.Range["D6"].Value = excellist[0].Sale_Emp;//담당자명
+
+                            for (int i = 8; i < excellist.Count + 8; i++)
+                            {
+                                for (int j = 1; j < 4; j++)
+                                {
+                                    if (j == 1)
+                                    {
+                                        xlWorkSheet.Cells[i, j] = excellist[i - 8].Item_Code;//품목코드
+                                    }
+                                    else if (j == 2)
+                                    {
+                                        xlWorkSheet.Cells[i, j] = excellist[i - 8].Item_Name;//품목명
+                                    }
+                                    else if (j == 3)
+                                    {
+                                        continue;
+                                    }
+                                    else if (j == 4)
+                                    {
+                                        xlWorkSheet.Cells[i, j] = excellist[i - 8].Req_Qty;//의뢰수량
+                                    }
+                                }
+                            }
+                            xlWorkBook.SaveAs(saveFileDialog.FileName, Excel.XlFileFormat.xlWorkbookNormal);
+                            xlWorkBook.Close(true);
+                            xlApp.Quit();
+
+                            Marshal.ReleaseComObject(xlWorkSheet);
+                            Marshal.ReleaseComObject(xlWorkBook);
+                            Marshal.ReleaseComObject(xlApp);
+                            MessageBox.Show("생산의뢰서가 저장되었습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    catch (Exception err)
+                    {
+                        MessageBox.Show("생산의뢰서 저장에 실패하였습니다." + err.Message, "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    finally
+                    {
+                        Cursor = Cursors.Default;
+                    }
                 }
                 else
                 {
