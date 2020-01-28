@@ -90,7 +90,7 @@ namespace Axxen.CustomControls
         }
         private void dgvSearchResult_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex > 0)
+            if(e.RowIndex >= 0)
             {
                 this.ResultCode = dgvSearchResult.SelectedRows[0].Cells[0].Value.ToString();
                 this.ResultName = dgvSearchResult.SelectedRows[0].Cells[1].Value.ToString();

@@ -12,6 +12,7 @@ namespace AxxenClient
         static public WorkType worktype { get; set; }
         static public string woinichar { get; set; }
         static public string workorderno { get; set; }
-        static public string username { get; set; }
+        static public string username { get; set; } = "관리자";
+
     }
 }

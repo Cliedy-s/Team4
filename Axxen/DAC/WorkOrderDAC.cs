@@ -84,10 +84,10 @@ namespace DAC
 		,wo.[Prd_Endtime] 
 		,wcm.[Wo_Ini_Char] 
   FROM [WorkOrder] wo 
-    JOIN [WorkCenter_Master] as wcm ON wcm.[Wc_Code] = wo.[Wc_Code] 
-    JOIN [Item_Master] as im ON im.[Item_Code] = wo.[Item_Code] 
-    JOIN [Emp_Allocation_History_Detail] as ahd ON ahd.[Workorderno] = wo.[Workorderno] 
-WHERE wcm.[Wo_Ini_Char] =@woinichar; ";
+    LEFT OUTER JOIN [WorkCenter_Master] as wcm ON wcm.[Wc_Code] = wo.[Wc_Code] 
+    LEFT OUTER JOIN [Item_Master] as im ON im.[Item_Code] = wo.[Item_Code] 
+    LEFT OUTER JOIN [Emp_Allocation_History_Detail] as ahd ON ahd.[Workorderno] = wo.[Workorderno] ;";
+ // TODO - 작업장 생성될 시 추가해주기 //WHERE wcm.[Wo_Ini_Char] =@woinichar; ";
                 comm.CommandType = CommandType.Text;
                 comm.Parameters.AddWithValue("@woinichar", woinichar);
                 comm.Connection.Open();
@@ -122,7 +122,7 @@ WHERE wcm.[Wo_Ini_Char] =@woinichar; ";
            ,[Req_Seq]
            ,[Mat_LotNo]
            ,[Ins_Date]
-           ,[Ins_Emp]
+           ,[Ins_Emp])
      VALUES
            (@Workorderno 
            ,@Item_Code 
