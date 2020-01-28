@@ -41,6 +41,7 @@
             this.placeHolderTextBox2 = new CLIP.eForm.Consent.Standard.Management.UI.PlaceHolderTextBox();
             this.aPanel5 = new Axxen.CustomControls.APanel();
             this.aLabel3 = new Axxen.CustomControls.ALabel();
+            this.btnSave = new Axxen.CustomControls.AButton();
             this.aPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aSplitContainer1)).BeginInit();
             this.aSplitContainer1.Panel1.SuspendLayout();
@@ -71,6 +72,7 @@
             // 
             // aPanel2
             // 
+            this.aPanel2.Controls.Add(this.btnSave);
             this.aPanel2.Controls.Add(this.aPanel3);
             this.aPanel2.Controls.Add(this.aPanel5);
             this.aPanel2.Controls.Add(this.aPanel4);
@@ -84,6 +86,7 @@
             this.aPanel2.Controls.SetChildIndex(this.aPanel4, 0);
             this.aPanel2.Controls.SetChildIndex(this.aPanel5, 0);
             this.aPanel2.Controls.SetChildIndex(this.aPanel3, 0);
+            this.aPanel2.Controls.SetChildIndex(this.btnSave, 0);
             // 
             // aHeaderBox3
             // 
@@ -106,7 +109,7 @@
             this.aBigTextBox_FindNameByCode1.Location = new System.Drawing.Point(27, 19);
             this.aBigTextBox_FindNameByCode1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.aBigTextBox_FindNameByCode1.Name = "aBigTextBox_FindNameByCode1";
-            this.aBigTextBox_FindNameByCode1.Size = new System.Drawing.Size(377, 38);
+            this.aBigTextBox_FindNameByCode1.Size = new System.Drawing.Size(376, 38);
             this.aBigTextBox_FindNameByCode1.TabIndex = 10;
             this.aBigTextBox_FindNameByCode1.txtCodeText = "";
             this.aBigTextBox_FindNameByCode1.txtNameText = "";
@@ -158,7 +161,7 @@
             this.aPanel4.Controls.Add(this.placeHolderTextBox1);
             this.aPanel4.Location = new System.Drawing.Point(122, 32);
             this.aPanel4.Name = "aPanel4";
-            this.aPanel4.Size = new System.Drawing.Size(696, 55);
+            this.aPanel4.Size = new System.Drawing.Size(635, 55);
             this.aPanel4.TabIndex = 101;
             // 
             // placeHolderTextBox1
@@ -171,7 +174,7 @@
             this.placeHolderTextBox1.Multiline = true;
             this.placeHolderTextBox1.Name = "placeHolderTextBox1";
             this.placeHolderTextBox1.PlaceHolderText = "이름을 입력하세요.";
-            this.placeHolderTextBox1.Size = new System.Drawing.Size(692, 51);
+            this.placeHolderTextBox1.Size = new System.Drawing.Size(631, 51);
             this.placeHolderTextBox1.TabIndex = 62;
             this.placeHolderTextBox1.Text = "영문명을 입력하세요.";
             // 
@@ -237,11 +240,23 @@
             this.aLabel3.TabIndex = 53;
             this.aLabel3.Text = "영문명";
             // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Location = new System.Drawing.Point(761, 62);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 104;
+            this.btnSave.Text = "조회";
+            this.btnSave.UseVisualStyleBackColor = false;
+            // 
             // MDS_CDS_002
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.Name = "MDS_CDS_002";
+            this.Load += new System.EventHandler(this.MDS_CDS_002_Load);
             this.aPanel1.ResumeLayout(false);
             this.aSplitContainer1.Panel1.ResumeLayout(false);
             this.aSplitContainer1.Panel2.ResumeLayout(false);
@@ -283,5 +298,6 @@
         private CLIP.eForm.Consent.Standard.Management.UI.PlaceHolderTextBox placeHolderTextBox2;
         private CustomControls.APanel aPanel5;
         private CustomControls.ALabel aLabel3;
+        private CustomControls.AButton btnSave;
     }
 }

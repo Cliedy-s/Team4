@@ -47,6 +47,9 @@ namespace Axxen.CustomControls
                 case DataType.Facility:
                     break;
                 case DataType.Errors:
+                    InitControls("Def_Ma_Code", "Def_Ma_Name");
+                    dgvSearchResult.DataSource = GetData<Def_MaService, Def_MaVO>("GetAllDef_Ma_Master");
+                    lblSearch.Text = "불량현상 대분류 목록";
                     break;
                 case DataType.NonOperations:
                     break;

@@ -34,8 +34,17 @@ namespace Service
 
             return dac.GetUpdateUserGroup(groupcode, check);
         }
+        /// <summary>
+        /// 그룹 저장
+        /// </summary>
+        /// <returns></returns>
+        public bool GetInsertUserGroup(string groupcode, string UserGroup_Name , string user)
+        {
 
-        public List<UserGroup_MappingVO> GetAllUserGroup_Mapping()
+            return dac.GetInsertUserGroup(groupcode, UserGroup_Name, user);
+        }
+
+            public List<UserGroup_MappingVO> GetAllUserGroup_Mapping()
         {
 
             return dac.GetAllUserGroup_Mapping();
