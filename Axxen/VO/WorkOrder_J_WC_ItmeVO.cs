@@ -20,6 +20,7 @@ namespace VO
         public string Item_Name { get; set; } //품목명
         public string Wc_Code { get; set; } //작업장코드
         public string Wc_Name { get; set; } //작업장명
+        public string Process_name { get; set; } //공정명     
         public string Remark { get; set; } //비고
         public string Wo_Req_No { get; set; } //생산의로번호  
         public int Req_Seq { get; set; } //의뢰순번
