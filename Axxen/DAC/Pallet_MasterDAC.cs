@@ -14,16 +14,18 @@ namespace DAC
         /// <summary>
         /// 팔레트목록 가져오기
         /// </summary>
-        public List<PalletVO> GetAllByWorkorderno(string workorderno)
+        public List<PalletVO> GetAll()
         {
             using (SqlCommand comm = new SqlCommand())
             {
                 comm.Connection = new SqlConnection(Connstr);
                 comm.CommandText =
- @" SELECT pal.[Pallet_No]
+ @"  SELECT pal.[Pallet_No]
       ,pal.[WorkOrderNo]
       ,pal.[Barcode_No]
       ,pal.[Grade_Detail_Code]
+      ,bdm.[Grade_Detail_Name]
+      ,bdm.[Boxing_Grade_Code]
       ,pal.[Size_Code]
       ,pal.[In_Qty]
       ,pal.[CurrentQty]
@@ -31,12 +33,11 @@ namespace DAC
       ,wo.[Item_Code]
       ,im.[Item_Name]
   FROM [Pallet_Master] as pal
-        JOIN  [WorkOrder] as wo ON pal.[WorkorderNo] = wo.[Workorderno]
-        JOIN [Item_Master] as im ON im.[Item_Code] = wo.[Item_Code]
-  WHERE pal.[Use_YN] = 'Y'
-    AND @Workorderno = pal.[Workorderno]; ";
+        LEFT OUTER JOIN  [WorkOrder] as wo ON pal.[WorkorderNo] = wo.[Workorderno]
+        LEFT OUTER JOIN [Item_Master] as im ON im.[Item_Code] = wo.[Item_Code]
+		LEFT OUTER JOIN [BoxingGrade_Detail_Master] as bdm ON  bdm.[Use_YN] = 'Y' AND pal.Grade_Detail_Code = bdm.Boxing_Grade_Code
+  WHERE pal.[Use_YN] = 'Y';  ";
                 comm.CommandType = CommandType.Text;
-                comm.Parameters.AddWithValue("@Workorderno", workorderno);
 
                 comm.Connection.Open();
                 SqlDataReader reader = comm.ExecuteReader();
@@ -45,39 +46,6 @@ namespace DAC
 
                 return list;
             }
-        }
-        /// <summary>
-        /// 등급상세정보를 추가한 팔레트목록
-        /// </summary>
-        /// <param name="workorderno"></param>
-        /// <returns></returns>
-        public List<PalletDetailVO> GetAllDetail(string workorderno)
-        {
-            using (SqlCommand comm = new SqlCommand())
-            {
-                comm.Connection = new SqlConnection(Connstr);
-                comm.CommandText =
- @"  SELECT pal.[Pallet_No]
-      ,pal.[Barcode_No]
-      ,pal.[Grade_Detail_Code]
-      ,bdm.[Grade_Detail_Name]
-      ,bdm.[Boxing_Grade_Code]
-      ,pal.[In_Qty]
-  FROM [Pallet_Master] as pal
-  JOIN bdm.[BoxingGrade_Detail_Master] ON bdm.[Use_YN] = 1 AND bdm.[Grade_Detail_Code] = pal.[Grade_Detail_Code]
-  WHERE pal.[IsActive] = 1
-  AND pal.[WorkOrderNo] = @Workorderno; ";
-                comm.CommandType = CommandType.Text;
-                comm.Parameters.AddWithValue("@Workorderno", workorderno);
-
-                comm.Connection.Open();
-                SqlDataReader reader = comm.ExecuteReader();
-                List<PalletDetailVO> list = Helper.DataReaderMapToList<PalletDetailVO>(reader);
-                comm.Connection.Close();
-
-                return list;
-            }
-
         }
         /// <summary>
         /// 금일 입고 팔레트 목록
@@ -117,6 +85,80 @@ namespace DAC
             }
         }
         /// <summary>
+        /// 바코드 번호 변경하기
+        /// </summary>
+        /// <param name="palletNo"></param>
+        /// <returns></returns>
+        public bool UpdateBarcodeNo(string palletNo, string barcodeno)
+        {
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText =
+ @" UPDATE [Pallet_Master] SET [Barcode_No] = @BarcodeNo WHERE Pallet_No = @PalletNo; ";
+
+                comm.CommandType = CommandType.Text;
+                comm.Parameters.AddWithValue("@BarcodeNo", barcodeno);
+                comm.Parameters.AddWithValue("@PalletNo", palletNo);
+
+                comm.Connection.Open();
+                int result = Convert.ToInt32(comm.ExecuteNonQuery());
+                comm.Connection.Close();
+
+                return result > 0;
+            }
+        }
+        /// <summary>
+        /// 존재하는 팔레트인지 확인
+        /// </summary>
+        /// <param name="palletNo"></param>
+        /// <returns></returns>
+        public bool IsExistPallet(string palletNo)
+        {
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText =
+ @" SELECT count(*) FROM [Pallet_Master] WHERE [Pallet_No] = @PalletNo;  ";
+
+                comm.CommandType = CommandType.Text;
+                comm.Parameters.AddWithValue("@PalletNo", palletNo);
+
+                comm.Connection.Open();
+                int result = Convert.ToInt32(comm.ExecuteScalar());
+                comm.Connection.Close();
+
+                return result > 0;
+            }
+
+        }
+        /// <summary>
+        /// 바코드 번호 가져오기
+        /// </summary>
+        /// <param name="palletNo"></param>
+        /// <returns></returns>
+        public string GetBarcodeNo(string palletNo)
+        {
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText =
+ @" SELECT [Barcode_No]
+  FROM [dbo].[Pallet_Master]
+  WHERE Use_YN = 'Y' AND Pallet_No = @PalletNo;  ";
+
+                comm.CommandType = CommandType.Text;
+                comm.Parameters.AddWithValue("@PalletNo", palletNo);
+
+                comm.Connection.Open();
+                string result = comm.ExecuteScalar().ToString();
+                comm.Connection.Close();
+
+                return result;
+            }
+
+        }
+        /// <summary>
         /// 팔레트 생성
         /// </summary>
         public bool InsertPallet(PalletVO item)
@@ -142,7 +184,7 @@ namespace DAC
            ,@Size_Code
            ,@In_Qty
            ,@CurrentQty
-           ,1);  ";
+           ,'Y');  ";
 
                 comm.CommandType = CommandType.Text;
                 comm.Parameters.AddWithValue("@Pallet_No", item.Pallet_No);
@@ -182,6 +224,28 @@ namespace DAC
                 comm.CommandType = CommandType.Text;
                 comm.Parameters.AddWithValue("@username", username);
                 comm.Parameters.AddWithValue("@workorderno", workorderno);
+                comm.Parameters.AddWithValue("@palletno", palletno);
+
+                comm.Connection.Open();
+                int result = comm.ExecuteNonQuery();
+                comm.Connection.Close();
+
+                return result > 0;
+            }
+        }
+        /// <summary>
+        /// 팔레트 삭제
+        /// </summary>
+        /// <returns></returns>
+        public bool DeletePallet(string palletno)
+        {
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText =
+ @" DELETE FROM [Pallet_Master] WHERE [Pallet_No] =@palletno; ";
+
+                comm.CommandType = CommandType.Text;
                 comm.Parameters.AddWithValue("@palletno", palletno);
 
                 comm.Connection.Open();

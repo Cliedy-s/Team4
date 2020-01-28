@@ -30,6 +30,9 @@ namespace AxxenClient.Forms
             Wo_ReqService service = new Wo_ReqService();
             dgvWoReq.DataSource = service.GetAllWoReq();
         }
+        /// <summary>
+        /// 컨트롤 설정
+        /// </summary>
         private void InitControls()
         {
             InitControlUtil.SetDGVDesign(dgvWoReq);
@@ -55,7 +58,7 @@ namespace AxxenClient.Forms
                         Item_Code = txtItemSearch.CodeText,
                         Mat_LotNo = now.ToString("yyyyMMddhh"),
                         Plan_Qty = Convert.ToInt32(txtPlanQty.TextBoxText),
-                        Plan_Unit = "개",
+                        Plan_Unit = "Kg",
                         Wo_Req_No = txtReqNo.TextBoxText,
                         Req_Seq = Convert.ToInt32(lblReq_Seq.Text),
                         Wc_Code = txtWcSearch.CodeText,

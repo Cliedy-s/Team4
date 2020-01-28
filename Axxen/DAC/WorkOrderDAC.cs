@@ -78,7 +78,7 @@ namespace DAC
 		,ahd.[User_ID] 
 		,im.[Item_Code] 
 		,im.[Item_Name] 
-		,im.[Item_Unit] 
+		,wo.[Prd_Unit] 
 		,wo.[Prd_Qty] 
 		,wo.[Prd_Starttime] 
 		,wo.[Prd_Endtime] 
