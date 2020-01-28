@@ -28,61 +28,70 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.aButton1 = new Axxen.CustomControls.AButton();
-            this.aButton2 = new Axxen.CustomControls.AButton();
-            this.aButton3 = new Axxen.CustomControls.AButton();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.aLabel_SubHeader1 = new Axxen.CustomControls.ALabel_SubHeader();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.aLabel_SubHeader2 = new Axxen.CustomControls.ALabel_SubHeader();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // aButton1
+            // dataGridView1
             // 
-            this.aButton1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton1.Location = new System.Drawing.Point(22, 21);
-            this.aButton1.Name = "aButton1";
-            this.aButton1.Size = new System.Drawing.Size(228, 149);
-            this.aButton1.TabIndex = 0;
-            this.aButton1.Text = "대차명/상태\r\n작업지시번호/\r\n품목코드/품목명\r\n수량/로딩시간\r\n\r\n";
-            this.aButton1.UseVisualStyleBackColor = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(851, 62);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 23;
+            this.dataGridView1.Size = new System.Drawing.Size(277, 576);
+            this.dataGridView1.TabIndex = 2;
             // 
-            // aButton2
+            // aLabel_SubHeader1
             // 
-            this.aButton2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.aButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton2.Location = new System.Drawing.Point(277, 21);
-            this.aButton2.Name = "aButton2";
-            this.aButton2.Size = new System.Drawing.Size(228, 149);
-            this.aButton2.TabIndex = 1;
-            this.aButton2.Text = "대차명/상태\r\n작업지시번호/\r\n품목코드/품목명\r\n수량/로딩시간\r\n";
-            this.aButton2.UseVisualStyleBackColor = false;
+            this.aLabel_SubHeader1.AutoSize = true;
+            this.aLabel_SubHeader1.Font = new System.Drawing.Font("나눔고딕", 15F, System.Drawing.FontStyle.Bold);
+            this.aLabel_SubHeader1.Location = new System.Drawing.Point(925, 21);
+            this.aLabel_SubHeader1.Name = "aLabel_SubHeader1";
+            this.aLabel_SubHeader1.Size = new System.Drawing.Size(117, 23);
+            this.aLabel_SubHeader1.TabIndex = 3;
+            this.aLabel_SubHeader1.Text = "빈 대차 현황";
             // 
-            // aButton3
+            // flowLayoutPanel1
             // 
-            this.aButton3.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.aButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton3.Location = new System.Drawing.Point(932, 21);
-            this.aButton3.Name = "aButton3";
-            this.aButton3.Size = new System.Drawing.Size(204, 667);
-            this.aButton3.TabIndex = 2;
-            this.aButton3.Text = "비어있는 대차 목록";
-            this.aButton3.UseVisualStyleBackColor = false;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(22, 62);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(823, 576);
+            this.flowLayoutPanel1.TabIndex = 4;
+            // 
+            // aLabel_SubHeader2
+            // 
+            this.aLabel_SubHeader2.AutoSize = true;
+            this.aLabel_SubHeader2.Font = new System.Drawing.Font("나눔고딕", 15F, System.Drawing.FontStyle.Bold);
+            this.aLabel_SubHeader2.Location = new System.Drawing.Point(21, 21);
+            this.aLabel_SubHeader2.Name = "aLabel_SubHeader2";
+            this.aLabel_SubHeader2.Size = new System.Drawing.Size(174, 23);
+            this.aLabel_SubHeader2.TabIndex = 5;
+            this.aLabel_SubHeader2.Text = "사용중인 대차 현황";
             // 
             // PRM_PRF_007
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1148, 700);
-            this.Controls.Add(this.aButton3);
-            this.Controls.Add(this.aButton2);
-            this.Controls.Add(this.aButton1);
+            this.Controls.Add(this.aLabel_SubHeader2);
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.aLabel_SubHeader1);
+            this.Controls.Add(this.dataGridView1);
             this.Name = "PRM_PRF_007";
             this.Text = "대차현황모니터링";
+            this.Load += new System.EventHandler(this.PRM_PRF_007_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private CustomControls.AButton aButton1;
-        private CustomControls.AButton aButton2;
-        private CustomControls.AButton aButton3;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private CustomControls.ALabel_SubHeader aLabel_SubHeader1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private CustomControls.ALabel_SubHeader aLabel_SubHeader2;
     }
 }

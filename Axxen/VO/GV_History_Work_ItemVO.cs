@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace VO
 {
-    public class GV_History_Work_ItemVO // PRM_PRF_006 
+    public class GV_History_Work_ItemVO // PRM_PRF_006 , PRM_PRF_007
     {
         public string GV_Code { get; set; } //대차코드 
-        public string GV_Name { get; set; } //대차명 
+        public string GV_Name { get; set; } //대차명
+        public string GV_Status { get; set; } //대차상태 // PRM_PRF_007 만 사용  
+        public string Use_YN { get; set; } //대차 사용여부 // PRM_PRF_007 만 사용
         public string Workorderno { get; set; } //작업지시번호 
         public string Item_Code { get; set; } //품목코드 
         public string Item_Name { get; set; } //품목명 
