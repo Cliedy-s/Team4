@@ -152,7 +152,7 @@
             // 
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Location = new System.Drawing.Point(1059, 6);
+            this.btnSearch.Location = new System.Drawing.Point(1166, 6);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 4;
@@ -235,6 +235,7 @@
             this.aButton1.TabIndex = 51;
             this.aButton1.Text = "품질규격복사";
             this.aButton1.UseVisualStyleBackColor = false;
+            this.aButton1.Click += new System.EventHandler(this.AButton1_Click);
             // 
             // MDS_SDS_006
             // 

@@ -165,5 +165,14 @@ namespace Axxen
             dgvinspect.DataSource = null;
             dgvinspect.DataSource = inspect.FindAll(item => item.Item_Code == groupCode);
         }
+
+        private void AButton1_Click(object sender, EventArgs e)
+        {
+            MDS_SDS_006_2 frm = new MDS_SDS_006_2();
+
+          frm.Code = dgvItem.SelectedRows[0].Cells[0].Value.ToString();
+
+            frm.ShowDialog();
+        }
     }
 }
