@@ -106,7 +106,7 @@
             this.txtPrNum.Size = new System.Drawing.Size(237, 23);
             this.txtPrNum.TabIndex = 5;
             this.txtPrNum.TextBoxText = "";
-            this.txtPrNum.TextBoxType = Axxen.CustomControls.type.Normal;
+            this.txtPrNum.TextBoxType = Axxen.CustomControls.TextType.Normal;
             this.txtPrNum.TextKeyPress += new Axxen.CustomControls.ATextBox_Labeled.TextEnterKeyPress(this.Text_TextKeyPress);
             // 
             // txtProjectName
@@ -120,7 +120,7 @@
             this.txtProjectName.Size = new System.Drawing.Size(228, 23);
             this.txtProjectName.TabIndex = 6;
             this.txtProjectName.TextBoxText = "";
-            this.txtProjectName.TextBoxType = Axxen.CustomControls.type.Normal;
+            this.txtProjectName.TextBoxType = Axxen.CustomControls.TextType.Normal;
             this.txtProjectName.TextKeyPress += new Axxen.CustomControls.ATextBox_Labeled.TextEnterKeyPress(this.Text_TextKeyPress);
             // 
             // aDateTimePickerSearch1
