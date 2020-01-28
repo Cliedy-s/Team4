@@ -95,5 +95,72 @@ namespace DAC
             }
             return list;
         }
+
+        public List<Wo_Req_WO_WC_ItemVO> GetWoReqOrder()
+        {
+            List<Wo_Req_WO_WC_ItemVO> list = null;
+            using (SqlConnection conn = new SqlConnection(Connstr))
+            {
+                conn.Open();
+                string sql = "GetWoReqOrder";
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    list = Helper.DataReaderMapToList<Wo_Req_WO_WC_ItemVO>(cmd.ExecuteReader());
+                }
+                conn.Close();
+            }
+            return list;
+        }
+
+        public bool UpdateWoReqOrder(string wono)
+        {
+            int result = 0;
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText = "update WorkOrder set Wo_Status = '완료' where Workorderno = @Workorderno ";
+                comm.Parameters.AddWithValue("@Workorderno", wono);
+
+                comm.Connection.Open();
+                result = comm.ExecuteNonQuery();
+                comm.Connection.Close();
+
+                return (result > 0);
+            }
+        }
+
+        public bool CancleWoReqOrder(string wono)
+        {
+            int result = 0;
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText = "update WorkOrder set Wo_Status = '진행중' where Workorderno = @Workorderno ";
+                comm.Parameters.AddWithValue("@Workorderno", wono);
+
+                comm.Connection.Open();
+                result = comm.ExecuteNonQuery();
+                comm.Connection.Close();
+
+                return (result > 0);
+            }
+        }
+
+        public List<WorkOrderVO> GetWoStatus()
+        {
+            List<WorkOrderVO> list = null;
+            using (SqlConnection conn = new SqlConnection(Connstr))
+            {
+                conn.Open();
+                string sql = "select distinct Wo_Status from WorkOrder";
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    list = Helper.DataReaderMapToList<WorkOrderVO>(cmd.ExecuteReader());
+                }
+                conn.Close();
+            }
+            return list;
+        }
     }
 }

@@ -48,7 +48,8 @@
             // 
             // aTextBox_FindNameByCode2
             // 
-            this.aTextBox_FindNameByCode2.CodeType = Axxen.CustomControls.DataType.WorkCenters;
+            this.aTextBox_FindNameByCode2.allfont = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aTextBox_FindNameByCode2.CodeType = Axxen.CustomControls.types.WorkCenters;
             this.aTextBox_FindNameByCode2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aTextBox_FindNameByCode2.lblNameText = "작업장";
             this.aTextBox_FindNameByCode2.Location = new System.Drawing.Point(709, 26);
@@ -61,7 +62,8 @@
             // 
             // aTextBox_FindNameByCode1
             // 
-            this.aTextBox_FindNameByCode1.CodeType = Axxen.CustomControls.DataType.Items;
+            this.aTextBox_FindNameByCode1.allfont = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aTextBox_FindNameByCode1.CodeType = Axxen.CustomControls.types.Items;
             this.aTextBox_FindNameByCode1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aTextBox_FindNameByCode1.lblNameText = "품목";
             this.aTextBox_FindNameByCode1.Location = new System.Drawing.Point(439, 26);
@@ -84,11 +86,11 @@
             // 
             // aDateTimePickerSearch1
             // 
-            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 1, 15, 19, 7, 18, 784);
+            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 1, 21, 13, 59, 41, 347);
             this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 1, 22, 19, 7, 18, 784);
             this.aDateTimePickerSearch1.ButtonText = "조회";
             this.aDateTimePickerSearch1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aDateTimePickerSearch1.Location = new System.Drawing.Point(88, 21);
+            this.aDateTimePickerSearch1.Location = new System.Drawing.Point(88, 23);
             this.aDateTimePickerSearch1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.aDateTimePickerSearch1.Name = "aDateTimePickerSearch1";
             this.aDateTimePickerSearch1.Size = new System.Drawing.Size(324, 32);
@@ -100,6 +102,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.Name = "PPS_MLD_002";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PPS_MLD_002_FormClosed);
             this.Load += new System.EventHandler(this.PPS_MLD_002_Load);
             this.panTop.ResumeLayout(false);
             this.panTop.PerformLayout();
