@@ -14,6 +14,7 @@ namespace Axxen.CustomControls
     {
         public string LabelText { get { return lblName.Text; } set { lblName.Text = value; } }
         public string TextBoxText { get { return txtValue.Text; } set { txtValue.Text = value; } }
+        public string CodeText { get; set; }
         public TextType TextBoxType { get { return txtValue.txtType; } set { txtValue.txtType = value; } }
         public DataType DataType { get; set; }
         public Font allfont { get { return this.Font; } set {
@@ -25,14 +26,13 @@ namespace Axxen.CustomControls
         {
             InitializeComponent();
         }
-
         private void btnSearch_Click_2(object sender, EventArgs e)
         {
             SearchForm search = new SearchForm(DataType);
             if (search.ShowDialog() == DialogResult.OK)
             {
                 TextBoxText = search.ResultName;
-                //TextBoxText = search.ResultCode;
+                CodeText = search.ResultCode;
             }
         }
     }

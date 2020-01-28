@@ -9,13 +9,13 @@ using System.Windows.Forms;
 
 namespace AxxenClient.Forms
 {
-    public partial class WorkOrderForm : AxxenClient.Templets.ClientBaseForm
+    public partial class POP_PRD_001 : AxxenClient.Templets.ClientBaseForm
     {
         /// <summary>
         /// POP작업 종류에 따른 다른 화면 설정
         /// </summary>
         /// <param name="worktype"></param>
-        public WorkOrderForm(WorkType worktype)
+        public POP_PRD_001(WorkType worktype)
         {
             InitializeComponent();
             GlobalUsage.worktype = worktype;
@@ -56,7 +56,7 @@ namespace AxxenClient.Forms
         /// <summary>
         /// 데이터를 DB에서 가져온다
         /// </summary>
-        private void GetDatas()
+        public void GetDatas()
         {
             WorkOrder_Service service = new WorkOrder_Service();
             string woinichar = string.Empty;
@@ -95,7 +95,6 @@ namespace AxxenClient.Forms
                 frm.WindowState = FormWindowState.Maximized;
                 frm.MdiParent = this.MdiParent;
                 frm.Show();
-                frm.Activate();
             }
         }
     }
