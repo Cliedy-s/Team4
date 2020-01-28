@@ -34,7 +34,7 @@
             this.txtPrNum = new Axxen.CustomControls.ATextBox_Labeled();
             this.txtProjectName = new Axxen.CustomControls.ATextBox_Labeled();
             this.aDateTimePickerSearch1 = new Axxen.CustomControls.ADateTimePickerSearch();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.aPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aSplitContainer1)).BeginInit();
             this.aSplitContainer1.Panel1.SuspendLayout();
@@ -106,7 +106,7 @@
             this.txtPrNum.Size = new System.Drawing.Size(237, 23);
             this.txtPrNum.TabIndex = 5;
             this.txtPrNum.TextBoxText = "";
-            this.txtPrNum.TextBoxType = Axxen.CustomControls.type.Normal;
+            this.txtPrNum.TextBoxType = Axxen.CustomControls.TextType.Normal;
             this.txtPrNum.TextKeyPress += new Axxen.CustomControls.ATextBox_Labeled.TextEnterKeyPress(this.Text_TextKeyPress);
             // 
             // txtProjectName
@@ -120,12 +120,12 @@
             this.txtProjectName.Size = new System.Drawing.Size(228, 23);
             this.txtProjectName.TabIndex = 6;
             this.txtProjectName.TextBoxText = "";
-            this.txtProjectName.TextBoxType = Axxen.CustomControls.type.Normal;
+            this.txtProjectName.TextBoxType = Axxen.CustomControls.TextType.Normal;
             this.txtProjectName.TextKeyPress += new Axxen.CustomControls.ATextBox_Labeled.TextEnterKeyPress(this.Text_TextKeyPress);
             // 
             // aDateTimePickerSearch1
             // 
-            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 1, 21, 14, 0, 10, 96);
+            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 1, 21, 15, 2, 49, 565);
             this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 1, 28, 13, 44, 54, 448);
             this.aDateTimePickerSearch1.ButtonText = "조회";
             this.aDateTimePickerSearch1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -161,6 +161,6 @@
         private CustomControls.ATextBox_Labeled txtProjectName;
         private CustomControls.ATextBox_Labeled txtPrNum;
         private CustomControls.ADateTimePickerSearch aDateTimePickerSearch1;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
     }
 }

@@ -67,5 +67,42 @@ namespace DAC
             }
             return list;
         }
+      
+        public List<GV_History_Work_ItemVO> GV_Current_YesStatus() //PRM_PRF_007 사용중 대차 현황 
+        {
+            List<GV_History_Work_ItemVO> list = null;
+            using (SqlConnection conn = new SqlConnection(Connstr))
+            {
+                conn.Open();
+                string sql = "select GV_Name,GV_Status,gvm.Use_YN,gvcs.Workorderno,wo.Item_Code,Item_Name,Loading_time " +
+                             "from GV_Current_Status gvcs INNER JOIN GV_Master gvm ON gvm.GV_Code = gvcs.GV_Code " +
+                             "INNER JOIN WorkOrder wo ON gvcs.Workorderno = wo.Workorderno " +
+                             "INNER JOIN Item_Master im ON wo.Item_Code = im.Item_Code " +
+                             "where gvm.Use_YN = 'Y'";
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    list = Helper.DataReaderMapToList<GV_History_Work_ItemVO>(cmd.ExecuteReader());
+                }
+                conn.Close();
+            }
+            return list;
+        }
+
+        public List<GV_History_Work_ItemVO> GetGV_Current_NO_Status() //PRM_PRF_007 빈 대차 현황 
+        {
+            List<GV_History_Work_ItemVO> list = null;
+            using (SqlConnection conn = new SqlConnection(Connstr))
+            {
+                conn.Open();
+                string sql = "select GV_Code,GV_Name from GV_Master gvcs where Use_YN = 'N'";
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    list = Helper.DataReaderMapToList<GV_History_Work_ItemVO>(cmd.ExecuteReader());
+                }
+                conn.Close();
+            }
+            return list;
+        }
+        
     }
 }
