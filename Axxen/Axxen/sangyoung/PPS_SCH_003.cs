@@ -77,10 +77,24 @@ namespace Axxen
         private void DateChartLoad()
         {
             chartDate.Series.Clear();
-
             chartDate.Series.Add("생산량");
             chartDate.Series["생산량"].ChartType = SeriesChartType.Column;
             chartDate.Series["생산량"].IsValueShownAsLabel = true;
+            //foreach (var item in wowclist)
+            //{
+
+            //    chartDate.Series.Add(item.Item_Name);
+
+            //    if(chartDate.Series.FindByName(item.Item_Name))
+            //    {
+            //        chartDate.Series[item.Item_Name].Points.AddXY(item.Prd_Date.ToString().Substring(0, 10), item.Prd_Qty);
+            //    }
+            //    else
+            //    {
+            //        chartDate.Series.Add(item.Item_Name);
+            //        chartDate.Series[item.Item_Name].Points.AddXY(item.Prd_Date.ToString().Substring(0, 10), item.Prd_Qty);
+            //    }
+            //}
             foreach (var item in wowclist)
             {
                 chartDate.Series["생산량"].Points.AddXY(item.Prd_Date.ToString().Substring(0, 10), item.Prd_Qty);
@@ -95,11 +109,10 @@ namespace Axxen
         {
             DateTime startT = aDateTimePickerSearch1.ADateTimePickerValue1;
             DateTime endT = aDateTimePickerSearch1.ADateTimePickerValue2;
-            endT = endT.AddDays(10);
-            var wowcdatelist = (from date in wowclist
+            wowclist = (from date in wowclist
                                 where date.Prd_Date >= startT && date.Prd_Date <= endT
                                 select date).ToList();
-            dgvMainGrid.DataSource = wowcdatelist;
+            dgvMainGrid.DataSource = wowclist;
             DateChartLoad();
         }
 
@@ -121,6 +134,18 @@ namespace Axxen
         private void PPS_SCH_003_FormClosed(object sender, FormClosedEventArgs e)
         {
             ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow);
+        }
+
+        private void DotWorkCenter_DotDotDotFormClosing(object sender, CustomControls.SearchFormClosingArgs args)
+        {
+            string wName = dotWorkCenter.txtNameText;
+            if(wName.Length > 0)
+            {
+                var wlist = (from list in wowclist
+                             where list.Wc_Name.Contains(wName)
+                             select list).ToList();
+                dgvMainGrid.DataSource = wlist;
+            }
         }
     }
 }

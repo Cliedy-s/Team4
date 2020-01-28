@@ -23,7 +23,7 @@ namespace VO
         public int Out_Qty_Main { get; set; } //산출수량
         public int Prd_Qty { get; set; } //생산수량
         public string Wo_Req_No { get; set; } //생산의뢰번호
-        public int Req_Req { get; set; } //생산의뢰순번
+        public int Req_Seq { get; set; } //생산의뢰순번
         public string Project_Name { get; set; } //프로젝트명
         
     }

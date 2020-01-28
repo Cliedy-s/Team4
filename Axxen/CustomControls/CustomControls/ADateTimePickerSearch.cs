@@ -33,6 +33,7 @@ namespace Axxen.CustomControls
         private void ADateTimePickerSearch_Load(object sender, EventArgs e)
         {
             aDateTimePicker1.Value = DateTime.Now.AddDays(-7);
+            aDateTimePicker2.Value = DateTime.Now;
             aDateTimePicker2.MaxDate = DateTime.Now;
 
         }

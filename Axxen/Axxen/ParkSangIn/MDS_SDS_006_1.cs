@@ -91,6 +91,8 @@ namespace Axxen
             {
             Inspect_Spec_MasterService service = new Inspect_Spec_MasterService();
 
+
+
             InspectSpecVO inspect = new InspectSpecVO
             {
                 Item_Code = lblItem.Text,
