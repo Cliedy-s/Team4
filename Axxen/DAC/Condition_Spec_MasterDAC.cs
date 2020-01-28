@@ -44,5 +44,46 @@ namespace DAC
                 return list;
             }
         }
+        /// <summary>
+        /// 공정조건insert
+        /// </summary>
+        /// <param name="condition"></param>
+        /// <returns></returns>
+        public bool InsertConditionSpec(ConditionSpecVO condition)
+        {        
+                try
+                {
+                    using (SqlCommand com = new SqlCommand())
+                    {
+                        com.Connection = new SqlConnection(Connstr);
+                        com.CommandText = "InsertConditionSpec";
+                        com.CommandType = CommandType.StoredProcedure;
+                        com.Parameters.AddWithValue("@Item_Code", condition.Item_Code);
+                        com.Parameters.AddWithValue("@Wc_Code", condition.Wc_Code);
+                        com.Parameters.AddWithValue("@Condition_Code", condition.Condition_Code);
+                        com.Parameters.AddWithValue("@Condition_Name", condition.Condition_Name);
+                        com.Parameters.AddWithValue("@USL", condition.USL);
+                        com.Parameters.AddWithValue("@SL", condition.SL);
+                        com.Parameters.AddWithValue("@LSL", condition.LSL);                 
+                        com.Parameters.AddWithValue("@Condition_Unit", condition.Condition_Unit);
+                        com.Parameters.AddWithValue("@Remark", condition.Remark);
+
+                        com.Connection.Open();
+                        int resault = Convert.ToInt32(com.ExecuteNonQuery());
+                        com.Connection.Close();
+                    if (resault > 0)
+                        return true;
+                    else
+                        return false;
+                }
+
+                }
+                catch (Exception)
+                {
+                  
+                    throw;
+                
+            }
+        }
     }
 }

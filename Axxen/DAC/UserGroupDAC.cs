@@ -116,7 +116,39 @@ namespace DAC
 
             }
         }
+        
+        /// <summary>
+        /// 그룹 수정
+        /// </summary>
+        /// <returns></returns>
+        public bool GetUpdateUserGroup(string groupcode, string UserGroup_Name, string user)
+        {
+            try
+            {
+                using (SqlCommand comm = new SqlCommand())
+                {
+                    comm.Connection = new SqlConnection(Connstr);
+                    comm.CommandText = "GetUpdateUsedUserGroup";
+                    comm.CommandType = CommandType.StoredProcedure;
+                    comm.Parameters.AddWithValue("@UserGroup_Code", groupcode);
+                    comm.Parameters.AddWithValue("@UserGroup_Name", UserGroup_Name);
+                    comm.Parameters.AddWithValue("@Ins_Emp", user);
+                    comm.Connection.Open();
+                    int result = Convert.ToInt32(comm.ExecuteNonQuery());
+                    comm.Connection.Close();
 
+                    if (result > 0)
+                        return true;
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+                throw;
+
+            }
+        }
         /// <summary>
         /// 그룹맵핑 
         /// </summary>

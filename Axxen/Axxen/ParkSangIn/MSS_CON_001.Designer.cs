@@ -80,9 +80,9 @@
             this.aLabel7.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.aLabel7.Location = new System.Drawing.Point(25, 671);
             this.aLabel7.Name = "aLabel7";
-            this.aLabel7.Size = new System.Drawing.Size(166, 21);
+            this.aLabel7.Size = new System.Drawing.Size(128, 21);
             this.aLabel7.TabIndex = 11;
-            this.aLabel7.Text = "사용자 그룹목록 저장";
+            this.aLabel7.Text = "사용자 그룹설정";
             // 
             // aPanel3
             // 
@@ -256,6 +256,7 @@
             this.dgvGroup.Size = new System.Drawing.Size(1124, 591);
             this.dgvGroup.TabIndex = 5;
             this.dgvGroup.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvGroup_CellClick);
+            this.dgvGroup.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvGroup_CellDoubleClick);
             // 
             // MSS_CON_001
             // 
@@ -273,6 +274,7 @@
             this.Name = "MSS_CON_001";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "사용자그룹관리";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MSS_CON_001_FormClosing);
             this.Load += new System.EventHandler(this.MSS_CON_001_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

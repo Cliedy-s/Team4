@@ -24,7 +24,13 @@ namespace Axxen
 
         private void MSS_CON_001_Load(object sender, EventArgs e)
         {
-       
+            txtName.Enabled = false;
+            txtCode.Enabled = false;
+            btnSave.Enabled = false;
+
+            ((MainForm)this.MdiParent).MyUpdateEvent += new System.EventHandler(this.MyUpdateShow);//입력이벤트 등록
+            ((MainForm)this.MdiParent).InsertFormEvent += new System.EventHandler(this.InsertFormShow);//입력이벤트 등록
+            ((MainForm)this.MdiParent).RefreshFormEvent += new EventHandler(this.RefreshFormShow);
             ///gridview
             DatagridviewDesigns.SetDesign(dgvGroup);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "사용자그룹코드", "UserGroup_Code", true, 210, default, true);
@@ -45,7 +51,7 @@ namespace Axxen
             gridbtn.HeaderText = "사용여부";
             gridbtn.Text = "변경";
             gridbtn.Name = "btn";
-            gridbtn.Width = 100;          
+            gridbtn.Width = 100;
             gridbtn.FlatStyle = FlatStyle.Popup;
             gridbtn.DefaultCellStyle.BackColor = Color.LightYellow;
             gridbtn.UseColumnTextForButtonValue = true;
@@ -60,14 +66,72 @@ namespace Axxen
             ///
         }
         /// <summary>
+        /// 입력 이벤트 메서드
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void InsertFormShow(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
+                {
+                    txtName.Enabled = true;
+                    txtCode.Enabled = true;
+                    btnSave.Enabled = true;
+                    btnSave.Text = "저장";
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
+
+        }
+        /// <summary>
+        /// 수정
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void MyUpdateShow(object sender, EventArgs e)
+        {
+
+            txtName.Enabled = true;
+            txtCode.Enabled = false;
+            btnSave.Enabled = true;
+            btnSave.Text = "수정";
+        }
+        /// <summary>
+        /// 새로고침 이벤트 메서드
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void RefreshFormShow(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
+                {
+                    GetAllUserGroup();
+                    ControlSetting();//콤보박스
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
+        }
+
+        /// <summary>
         /// 모든 그룹정보 GET
         /// </summary>
         private void GetAllUserGroup()
         {
-         
+
             grouplist = new List<UserGroup_MasterVO>();
             grouplist = userservice.GetAllUserGroup();
-            dgvGroup.DataSource = grouplist;    
+            dgvGroup.DataSource = grouplist;
         }
 
         private void CbbGroup_SelectedIndexChanged(object sender, EventArgs e)
@@ -83,7 +147,7 @@ namespace Axxen
                 {
                     row.Cells[0].Selected = true;
                 }
-            }  
+            }
         }
 
         /// <summary>
@@ -96,18 +160,18 @@ namespace Axxen
             try
             {
 
-            if (e.ColumnIndex == dgvGroup.Columns["btn"].Index)//눌러서 사용과 사용안함 변경
-            {
-                if((dgvGroup.SelectedRows[0].Cells[3].Value).ToString() == "Y") //사용안함
+                if (e.ColumnIndex == dgvGroup.Columns["btn"].Index)//눌러서 사용과 사용안함 변경
                 {
-                     userservice.GetUpdateUserGroup((dgvGroup.SelectedRows[0].Cells[0].Value).ToString(), "N");
+                    if ((dgvGroup.SelectedRows[0].Cells[3].Value).ToString() == "Y") //사용안함
+                    {
+                        userservice.GetUpdateUserGroup((dgvGroup.SelectedRows[0].Cells[0].Value).ToString(), "N");
+                    }
+                    else //사용함
+                    {
+                        userservice.GetUpdateUserGroup((dgvGroup.SelectedRows[0].Cells[0].Value).ToString(), "Y");
+                    }
+                    GetAllUserGroup();
                 }
-                else //사용함
-                {
-                    userservice.GetUpdateUserGroup((dgvGroup.SelectedRows[0].Cells[0].Value).ToString(), "Y");
-                }
-                GetAllUserGroup();
-            }
 
             }
             catch (Exception err)
@@ -119,30 +183,52 @@ namespace Axxen
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
+
             if (!string.IsNullOrEmpty(txtName.Text) && !string.IsNullOrEmpty(txtCode.Text))
             {
-                if (userservice.GetInsertUserGroup(txtName.Text, txtCode.Text,UserInfo.User_Name))
+                if (btnSave.Text == "저장")
                 {
-                    MessageBox.Show("저장되었습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    ResetUtillity.ResetPanelControl(aPanel3);
-
-                    GetAllUserGroup();
+                    if (userservice.GetInsertUserGroup(txtCode.Text, txtName.Text, UserInfo.User_Name))
+                    {
+                        MessageBox.Show("저장되었습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);                     
+                    }
+                    else
+                    {
+                        MessageBox.Show("이미등록된 코드 입니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
+
                 else
                 {
-                    MessageBox.Show("이미등록된 코드 입니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (userservice.GetUpdateUserGroup(txtCode.Text, txtName.Text, UserInfo.User_Name))
+                    {
+                        MessageBox.Show("수정되었습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                  
                 }
+                ResetUtillity.ResetPanelControl(aPanel3);
+                GetAllUserGroup();
             }
+
             else
             {
-                MessageBox.Show("필수 입력란을 입력해주세요.","알림",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("필수 입력란을 입력해주세요.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-          
+
 
         }
 
-    
-       
+        private void MSS_CON_001_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ((MainForm)this.MdiParent).MyUpdateEvent -= new System.EventHandler(this.MyUpdateShow);//입력이벤트 등록
+            ((MainForm)this.MdiParent).InsertFormEvent -= new System.EventHandler(this.InsertFormShow);//입력이벤트 등록
+            ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow);
+        }
+
+        private void DgvGroup_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtName.Text = dgvGroup.SelectedRows[0].Cells[1].Value.ToString();
+            txtCode.Text = dgvGroup.SelectedRows[0].Cells[0].Value.ToString();
+        }
     }
 }

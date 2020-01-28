@@ -55,6 +55,7 @@
             this.txtPwd.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Italic);
             this.txtPwd.ForeColor = System.Drawing.Color.Gray;
             this.txtPwd.Location = new System.Drawing.Point(15, 265);
+            this.txtPwd.MaxLength = 50;
             this.txtPwd.Name = "txtPwd";
             this.txtPwd.PlaceHolderText = "비밀번호를 입력하세요.";
             this.txtPwd.Size = new System.Drawing.Size(300, 29);
@@ -66,6 +67,7 @@
             this.txtID.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Italic);
             this.txtID.ForeColor = System.Drawing.Color.Gray;
             this.txtID.Location = new System.Drawing.Point(13, 187);
+            this.txtID.MaxLength = 20;
             this.txtID.Name = "txtID";
             this.txtID.PlaceHolderText = "아이디를 입력하세요.";
             this.txtID.Size = new System.Drawing.Size(300, 29);
@@ -77,11 +79,13 @@
             this.txtName.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Italic);
             this.txtName.ForeColor = System.Drawing.Color.Gray;
             this.txtName.Location = new System.Drawing.Point(12, 116);
+            this.txtName.MaxLength = 1000;
             this.txtName.Name = "txtName";
             this.txtName.PlaceHolderText = "이름을 입력하세요.";
             this.txtName.Size = new System.Drawing.Size(300, 29);
             this.txtName.TabIndex = 50;
             this.txtName.Text = "아이디를 입력하세요.";
+            this.txtName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtName_KeyPress);
             // 
             // lblDay
             // 
@@ -150,9 +154,9 @@
             this.aLabel2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel2.Location = new System.Drawing.Point(12, 242);
             this.aLabel2.Name = "aLabel2";
-            this.aLabel2.Size = new System.Drawing.Size(128, 21);
+            this.aLabel2.Size = new System.Drawing.Size(135, 21);
             this.aLabel2.TabIndex = 3;
-            this.aLabel2.Text = "사용자 비밀번호";
+            this.aLabel2.Text = "*사용자 비밀번호";
             // 
             // aLabel1
             // 
@@ -160,9 +164,9 @@
             this.aLabel1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel1.Location = new System.Drawing.Point(12, 164);
             this.aLabel1.Name = "aLabel1";
-            this.aLabel1.Size = new System.Drawing.Size(106, 21);
+            this.aLabel1.Size = new System.Drawing.Size(113, 21);
             this.aLabel1.TabIndex = 3;
-            this.aLabel1.Text = "사용자아이디";
+            this.aLabel1.Text = "*사용자아이디";
             // 
             // aLabel4
             // 
@@ -170,9 +174,9 @@
             this.aLabel4.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel4.Location = new System.Drawing.Point(12, 90);
             this.aLabel4.Name = "aLabel4";
-            this.aLabel4.Size = new System.Drawing.Size(74, 21);
+            this.aLabel4.Size = new System.Drawing.Size(81, 21);
             this.aLabel4.TabIndex = 3;
-            this.aLabel4.Text = "사용자명";
+            this.aLabel4.Text = "*사용자명";
             // 
             // aPanel9
             // 
