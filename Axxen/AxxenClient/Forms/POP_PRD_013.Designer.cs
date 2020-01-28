@@ -152,7 +152,7 @@
             this.aBigTextBox_Searchable1.Size = new System.Drawing.Size(469, 42);
             this.aBigTextBox_Searchable1.TabIndex = 39;
             this.aBigTextBox_Searchable1.TextBoxText = "";
-            this.aBigTextBox_Searchable1.TextBoxType = Axxen.CustomControls.type.Normal;
+            this.aBigTextBox_Searchable1.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
             // aBigTextBox_Searchable2
             // 
@@ -165,7 +165,7 @@
             this.aBigTextBox_Searchable2.Size = new System.Drawing.Size(469, 42);
             this.aBigTextBox_Searchable2.TabIndex = 40;
             this.aBigTextBox_Searchable2.TextBoxText = "";
-            this.aBigTextBox_Searchable2.TextBoxType = Axxen.CustomControls.type.Normal;
+            this.aBigTextBox_Searchable2.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
             // POP_PRD_013
             // 

@@ -29,24 +29,24 @@
         private void InitializeComponent()
         {
             this.aPanel4 = new Axxen.CustomControls.APanel();
-            this.aButton3 = new Axxen.CustomControls.AButton();
-            this.aButton2 = new Axxen.CustomControls.AButton();
-            this.aButton1 = new Axxen.CustomControls.AButton();
-            this.aDataGridView1 = new Axxen.CustomControls.ADataGridView();
+            this.txtCurrentQty = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
+            this.txtSizeCode = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
+            this.txtBoxingDetailGrade = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
+            this.txtBoxingGrade = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
+            this.txtPalletNo = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
+            this.btnDelete = new Axxen.CustomControls.AButton();
+            this.btnPalletPrint = new Axxen.CustomControls.AButton();
+            this.dgvPalletList = new Axxen.CustomControls.ADataGridView();
             this.aPanel5 = new Axxen.CustomControls.APanel();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.aLabel3 = new Axxen.CustomControls.ALabel();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.aLabel2 = new Axxen.CustomControls.ALabel();
-            this.aBigTextBox_LabeledBigTextBox5 = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
-            this.aBigTextBox_LabeledBigTextBox4 = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
-            this.aBigTextBox_LabeledBigTextBox3 = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
-            this.aBigTextBox_LabeledBigTextBox2 = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
-            this.aBigTextBox_LabeledBigTextBox1 = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             this.aPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.aDataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPalletList)).BeginInit();
             this.aPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,70 +64,129 @@
             this.aPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.aPanel4.Controls.Add(this.aBigTextBox_LabeledBigTextBox5);
-            this.aPanel4.Controls.Add(this.aBigTextBox_LabeledBigTextBox4);
-            this.aPanel4.Controls.Add(this.aBigTextBox_LabeledBigTextBox3);
-            this.aPanel4.Controls.Add(this.aBigTextBox_LabeledBigTextBox2);
-            this.aPanel4.Controls.Add(this.aBigTextBox_LabeledBigTextBox1);
-            this.aPanel4.Controls.Add(this.aButton3);
-            this.aPanel4.Controls.Add(this.aButton2);
-            this.aPanel4.Controls.Add(this.aButton1);
+            this.aPanel4.Controls.Add(this.txtCurrentQty);
+            this.aPanel4.Controls.Add(this.txtSizeCode);
+            this.aPanel4.Controls.Add(this.txtBoxingDetailGrade);
+            this.aPanel4.Controls.Add(this.txtBoxingGrade);
+            this.aPanel4.Controls.Add(this.txtPalletNo);
+            this.aPanel4.Controls.Add(this.btnDelete);
+            this.aPanel4.Controls.Add(this.btnPalletPrint);
             this.aPanel4.Location = new System.Drawing.Point(649, 105);
             this.aPanel4.Name = "aPanel4";
             this.aPanel4.Size = new System.Drawing.Size(549, 482);
             this.aPanel4.TabIndex = 7;
             // 
-            // aButton3
+            // txtCurrentQty
             // 
-            this.aButton3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.aButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.aButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton3.Font = new System.Drawing.Font("맑은 고딕", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aButton3.Location = new System.Drawing.Point(280, 375);
-            this.aButton3.Name = "aButton3";
-            this.aButton3.Size = new System.Drawing.Size(178, 81);
-            this.aButton3.TabIndex = 18;
-            this.aButton3.Text = "삭제";
-            this.aButton3.UseVisualStyleBackColor = false;
+            this.txtCurrentQty.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtCurrentQty.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtCurrentQty.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtCurrentQty.LabelText = "팔레트 수량";
+            this.txtCurrentQty.Location = new System.Drawing.Point(40, 220);
+            this.txtCurrentQty.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtCurrentQty.Name = "txtCurrentQty";
+            this.txtCurrentQty.Size = new System.Drawing.Size(469, 42);
+            this.txtCurrentQty.TabIndex = 40;
+            this.txtCurrentQty.TextBoxText = "";
+            this.txtCurrentQty.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
-            // aButton2
+            // txtSizeCode
             // 
-            this.aButton2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.aButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.aButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton2.Font = new System.Drawing.Font("맑은 고딕", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aButton2.Location = new System.Drawing.Point(93, 375);
-            this.aButton2.Name = "aButton2";
-            this.aButton2.Size = new System.Drawing.Size(178, 81);
-            this.aButton2.TabIndex = 17;
-            this.aButton2.Text = "수정";
-            this.aButton2.UseVisualStyleBackColor = false;
+            this.txtSizeCode.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtSizeCode.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtSizeCode.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtSizeCode.LabelText = "사이즈";
+            this.txtSizeCode.Location = new System.Drawing.Point(40, 173);
+            this.txtSizeCode.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtSizeCode.Name = "txtSizeCode";
+            this.txtSizeCode.Size = new System.Drawing.Size(469, 42);
+            this.txtSizeCode.TabIndex = 39;
+            this.txtSizeCode.TextBoxText = "";
+            this.txtSizeCode.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
-            // aButton1
+            // txtBoxingDetailGrade
             // 
-            this.aButton1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.aButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton1.Font = new System.Drawing.Font("맑은 고딕", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aButton1.Location = new System.Drawing.Point(93, 288);
-            this.aButton1.Name = "aButton1";
-            this.aButton1.Size = new System.Drawing.Size(365, 81);
-            this.aButton1.TabIndex = 16;
-            this.aButton1.Text = "재발행";
-            this.aButton1.UseVisualStyleBackColor = false;
+            this.txtBoxingDetailGrade.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtBoxingDetailGrade.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtBoxingDetailGrade.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtBoxingDetailGrade.LabelText = "등급상세";
+            this.txtBoxingDetailGrade.Location = new System.Drawing.Point(40, 126);
+            this.txtBoxingDetailGrade.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtBoxingDetailGrade.Name = "txtBoxingDetailGrade";
+            this.txtBoxingDetailGrade.Size = new System.Drawing.Size(469, 42);
+            this.txtBoxingDetailGrade.TabIndex = 38;
+            this.txtBoxingDetailGrade.TextBoxText = "";
+            this.txtBoxingDetailGrade.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
-            // aDataGridView1
+            // txtBoxingGrade
             // 
-            this.aDataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtBoxingGrade.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtBoxingGrade.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtBoxingGrade.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtBoxingGrade.LabelText = "등급";
+            this.txtBoxingGrade.Location = new System.Drawing.Point(40, 79);
+            this.txtBoxingGrade.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtBoxingGrade.Name = "txtBoxingGrade";
+            this.txtBoxingGrade.Size = new System.Drawing.Size(469, 42);
+            this.txtBoxingGrade.TabIndex = 37;
+            this.txtBoxingGrade.TextBoxText = "";
+            this.txtBoxingGrade.TextBoxType = Axxen.CustomControls.TextType.Normal;
+            // 
+            // txtPalletNo
+            // 
+            this.txtPalletNo.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtPalletNo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtPalletNo.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtPalletNo.LabelText = "팔레트번호";
+            this.txtPalletNo.Location = new System.Drawing.Point(40, 32);
+            this.txtPalletNo.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtPalletNo.Name = "txtPalletNo";
+            this.txtPalletNo.Size = new System.Drawing.Size(469, 42);
+            this.txtPalletNo.TabIndex = 36;
+            this.txtPalletNo.TextBoxText = "";
+            this.txtPalletNo.TextBoxType = Axxen.CustomControls.TextType.Normal;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("맑은 고딕", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnDelete.Location = new System.Drawing.Point(93, 375);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(365, 81);
+            this.btnDelete.TabIndex = 18;
+            this.btnDelete.Text = "삭제";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnPalletPrint
+            // 
+            this.btnPalletPrint.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnPalletPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.btnPalletPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPalletPrint.Font = new System.Drawing.Font("맑은 고딕", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnPalletPrint.Location = new System.Drawing.Point(93, 288);
+            this.btnPalletPrint.Name = "btnPalletPrint";
+            this.btnPalletPrint.Size = new System.Drawing.Size(365, 81);
+            this.btnPalletPrint.TabIndex = 16;
+            this.btnPalletPrint.Text = "재발행";
+            this.btnPalletPrint.UseVisualStyleBackColor = false;
+            this.btnPalletPrint.Click += new System.EventHandler(this.btnPalletPrint_Click);
+            // 
+            // dgvPalletList
+            // 
+            this.dgvPalletList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.aDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.aDataGridView1.Location = new System.Drawing.Point(7, 165);
-            this.aDataGridView1.Name = "aDataGridView1";
-            this.aDataGridView1.RowHeadersWidth = 51;
-            this.aDataGridView1.RowTemplate.Height = 23;
-            this.aDataGridView1.Size = new System.Drawing.Size(636, 422);
-            this.aDataGridView1.TabIndex = 6;
+            this.dgvPalletList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPalletList.Location = new System.Drawing.Point(7, 165);
+            this.dgvPalletList.Name = "dgvPalletList";
+            this.dgvPalletList.RowHeadersWidth = 51;
+            this.dgvPalletList.RowTemplate.Height = 23;
+            this.dgvPalletList.Size = new System.Drawing.Size(636, 422);
+            this.dgvPalletList.TabIndex = 6;
+            this.dgvPalletList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPalletList_CellDoubleClick);
             // 
             // aPanel5
             // 
@@ -178,96 +237,28 @@
             this.aLabel2.TabIndex = 12;
             this.aLabel2.Text = "생산일자";
             // 
-            // aBigTextBox_LabeledBigTextBox5
-            // 
-            this.aBigTextBox_LabeledBigTextBox5.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aBigTextBox_LabeledBigTextBox5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.aBigTextBox_LabeledBigTextBox5.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aBigTextBox_LabeledBigTextBox5.LabelText = "팔레트 수량";
-            this.aBigTextBox_LabeledBigTextBox5.Location = new System.Drawing.Point(40, 220);
-            this.aBigTextBox_LabeledBigTextBox5.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.aBigTextBox_LabeledBigTextBox5.Name = "aBigTextBox_LabeledBigTextBox5";
-            this.aBigTextBox_LabeledBigTextBox5.Size = new System.Drawing.Size(469, 42);
-            this.aBigTextBox_LabeledBigTextBox5.TabIndex = 40;
-            this.aBigTextBox_LabeledBigTextBox5.TextBoxText = "";
-            this.aBigTextBox_LabeledBigTextBox5.TextBoxType = Axxen.CustomControls.type.Normal;
-            // 
-            // aBigTextBox_LabeledBigTextBox4
-            // 
-            this.aBigTextBox_LabeledBigTextBox4.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aBigTextBox_LabeledBigTextBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.aBigTextBox_LabeledBigTextBox4.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aBigTextBox_LabeledBigTextBox4.LabelText = "사이즈";
-            this.aBigTextBox_LabeledBigTextBox4.Location = new System.Drawing.Point(40, 173);
-            this.aBigTextBox_LabeledBigTextBox4.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.aBigTextBox_LabeledBigTextBox4.Name = "aBigTextBox_LabeledBigTextBox4";
-            this.aBigTextBox_LabeledBigTextBox4.Size = new System.Drawing.Size(469, 42);
-            this.aBigTextBox_LabeledBigTextBox4.TabIndex = 39;
-            this.aBigTextBox_LabeledBigTextBox4.TextBoxText = "";
-            this.aBigTextBox_LabeledBigTextBox4.TextBoxType = Axxen.CustomControls.type.Normal;
-            // 
-            // aBigTextBox_LabeledBigTextBox3
-            // 
-            this.aBigTextBox_LabeledBigTextBox3.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aBigTextBox_LabeledBigTextBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.aBigTextBox_LabeledBigTextBox3.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aBigTextBox_LabeledBigTextBox3.LabelText = "등급상세";
-            this.aBigTextBox_LabeledBigTextBox3.Location = new System.Drawing.Point(40, 126);
-            this.aBigTextBox_LabeledBigTextBox3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.aBigTextBox_LabeledBigTextBox3.Name = "aBigTextBox_LabeledBigTextBox3";
-            this.aBigTextBox_LabeledBigTextBox3.Size = new System.Drawing.Size(469, 42);
-            this.aBigTextBox_LabeledBigTextBox3.TabIndex = 38;
-            this.aBigTextBox_LabeledBigTextBox3.TextBoxText = "";
-            this.aBigTextBox_LabeledBigTextBox3.TextBoxType = Axxen.CustomControls.type.Normal;
-            // 
-            // aBigTextBox_LabeledBigTextBox2
-            // 
-            this.aBigTextBox_LabeledBigTextBox2.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aBigTextBox_LabeledBigTextBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.aBigTextBox_LabeledBigTextBox2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aBigTextBox_LabeledBigTextBox2.LabelText = "등급";
-            this.aBigTextBox_LabeledBigTextBox2.Location = new System.Drawing.Point(40, 79);
-            this.aBigTextBox_LabeledBigTextBox2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.aBigTextBox_LabeledBigTextBox2.Name = "aBigTextBox_LabeledBigTextBox2";
-            this.aBigTextBox_LabeledBigTextBox2.Size = new System.Drawing.Size(469, 42);
-            this.aBigTextBox_LabeledBigTextBox2.TabIndex = 37;
-            this.aBigTextBox_LabeledBigTextBox2.TextBoxText = "";
-            this.aBigTextBox_LabeledBigTextBox2.TextBoxType = Axxen.CustomControls.type.Normal;
-            // 
-            // aBigTextBox_LabeledBigTextBox1
-            // 
-            this.aBigTextBox_LabeledBigTextBox1.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aBigTextBox_LabeledBigTextBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.aBigTextBox_LabeledBigTextBox1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aBigTextBox_LabeledBigTextBox1.LabelText = "팔레트번호";
-            this.aBigTextBox_LabeledBigTextBox1.Location = new System.Drawing.Point(40, 32);
-            this.aBigTextBox_LabeledBigTextBox1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.aBigTextBox_LabeledBigTextBox1.Name = "aBigTextBox_LabeledBigTextBox1";
-            this.aBigTextBox_LabeledBigTextBox1.Size = new System.Drawing.Size(469, 42);
-            this.aBigTextBox_LabeledBigTextBox1.TabIndex = 36;
-            this.aBigTextBox_LabeledBigTextBox1.TextBoxText = "";
-            this.aBigTextBox_LabeledBigTextBox1.TextBoxType = Axxen.CustomControls.type.Normal;
-            // 
             // POP_PRD_004
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1210, 629);
             this.Controls.Add(this.aPanel5);
             this.Controls.Add(this.aPanel4);
-            this.Controls.Add(this.aDataGridView1);
+            this.Controls.Add(this.dgvPalletList);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "POP_PRD_004";
+            this.Load += new System.EventHandler(this.POP_PRD_004_Load);
             this.Controls.SetChildIndex(this.aPanel2, 0);
             this.Controls.SetChildIndex(this.aPanel1, 0);
-            this.Controls.SetChildIndex(this.aDataGridView1, 0);
+            this.Controls.SetChildIndex(this.dgvPalletList, 0);
             this.Controls.SetChildIndex(this.aPanel4, 0);
             this.Controls.SetChildIndex(this.aPanel5, 0);
             this.aPanel1.ResumeLayout(false);
             this.aPanel1.PerformLayout();
             this.aPanel2.ResumeLayout(false);
             this.aPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             this.aPanel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.aDataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPalletList)).EndInit();
             this.aPanel5.ResumeLayout(false);
             this.aPanel5.PerformLayout();
             this.ResumeLayout(false);
@@ -277,19 +268,18 @@
         #endregion
 
         private Axxen.CustomControls.APanel aPanel4;
-        private Axxen.CustomControls.AButton aButton1;
-        private Axxen.CustomControls.ADataGridView aDataGridView1;
-        private Axxen.CustomControls.AButton aButton3;
-        private Axxen.CustomControls.AButton aButton2;
+        private Axxen.CustomControls.AButton btnPalletPrint;
+        private Axxen.CustomControls.ADataGridView dgvPalletList;
+        private Axxen.CustomControls.AButton btnDelete;
         private Axxen.CustomControls.APanel aPanel5;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private Axxen.CustomControls.ALabel aLabel3;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private Axxen.CustomControls.ALabel aLabel2;
-        private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox aBigTextBox_LabeledBigTextBox5;
-        private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox aBigTextBox_LabeledBigTextBox4;
-        private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox aBigTextBox_LabeledBigTextBox3;
-        private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox aBigTextBox_LabeledBigTextBox2;
-        private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox aBigTextBox_LabeledBigTextBox1;
+        private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox txtCurrentQty;
+        private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox txtSizeCode;
+        private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox txtBoxingDetailGrade;
+        private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox txtBoxingGrade;
+        private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox txtPalletNo;
     }
 }

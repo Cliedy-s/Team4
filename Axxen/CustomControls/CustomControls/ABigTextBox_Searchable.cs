@@ -14,23 +14,26 @@ namespace Axxen.CustomControls
     {
         public string LabelText { get { return lblName.Text; } set { lblName.Text = value; } }
         public string TextBoxText { get { return txtValue.Text; } set { txtValue.Text = value; } }
-        public type TextBoxType { get { return txtValue.txtType; } set { txtValue.txtType = value; } }
+        public string CodeText { get; set; }
+        public TextType TextBoxType { get { return txtValue.txtType; } set { txtValue.txtType = value; } }
+        public DataType DataType { get; set; }
         public Font allfont { get { return this.Font; } set {
                 this.Font = value;
                 foreach (Control item in this.Controls)
                     item.Font = value;
             } }
-        public SearchButtonClick btnSearch_Click;
-
         public ABigTextBox_Searchable()
         {
             InitializeComponent();
         }
-        public delegate void SearchButtonClick(object sender, EventArgs args);
-
-        private void btnSearch_Click_1(object sender, EventArgs e)
+        private void btnSearch_Click_2(object sender, EventArgs e)
         {
-            btnSearch_Click?.Invoke(sender, e);
+            SearchForm search = new SearchForm(DataType);
+            if (search.ShowDialog() == DialogResult.OK)
+            {
+                TextBoxText = search.ResultName;
+                CodeText = search.ResultCode;
+            }
         }
     }
 }

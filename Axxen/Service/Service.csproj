@@ -31,6 +31,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Condition_Measure_HistoryService.cs" />
     <Compile Include="Condition_Spec_MasterService.cs" />
+    <Compile Include="Def_MaService.cs" />
     <Compile Include="Emp_Allocation_HistoryService.cs" />
     <Compile Include="Emp_Wc_AllocationService.cs" />
     <Compile Include="GasUse_History_Service.cs" />
@@ -65,6 +68,7 @@
     <Compile Include="ScreenItemService.cs" />
     <Compile Include="UserGroupService.cs" />
     <Compile Include="UserInfo_Service.cs" />
+    <Compile Include="WorkCenter_MasterService.cs" />
     <Compile Include="WorkOrder_Service.cs" />
     <Compile Include="Wo_ReqService.cs" />
   </ItemGroup>

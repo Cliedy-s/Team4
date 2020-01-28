@@ -1,6 +1,6 @@
 ﻿namespace AxxenClient.Forms
 {
-    partial class WorkOrderForm
+    partial class POP_PRD_001
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvMain = new Axxen.CustomControls.ADataGridView();
             this.panMolding = new Axxen.CustomControls.APanel();
             this.btnWorkOrderOnOff3 = new Axxen.CustomControls.AButton();
@@ -69,7 +70,7 @@
             this.btnQualityMeasure1 = new Axxen.CustomControls.AButton();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).BeginInit();
             this.panMolding.SuspendLayout();
             this.panLoad.SuspendLayout();
@@ -91,16 +92,20 @@
             this.btnNoActive.Tag = typeof(AxxenClient.Forms.POP_PRD_016);
             this.btnNoActive.Click += new System.EventHandler(this.btnClick);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Visible = false;
-            // 
             // dgvMain
             // 
             this.dgvMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMain.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvMain.Location = new System.Drawing.Point(12, 105);
             this.dgvMain.Name = "dgvMain";
             this.dgvMain.RowHeadersWidth = 51;
@@ -603,7 +608,7 @@
             this.btnQualityMeasure1.UseVisualStyleBackColor = false;
             this.btnQualityMeasure1.Click += new System.EventHandler(this.btnClick);
             // 
-            // WorkOrderForm
+            // POP_PRD_001
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1210, 781);
@@ -613,7 +618,7 @@
             this.Controls.Add(this.panMolding);
             this.Controls.Add(this.dgvMain);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "WorkOrderForm";
+            this.Name = "POP_PRD_001";
             this.Load += new System.EventHandler(this.WorkOrderForm_Load);
             this.Controls.SetChildIndex(this.dgvMain, 0);
             this.Controls.SetChildIndex(this.panMolding, 0);
@@ -626,7 +631,7 @@
             this.aPanel1.PerformLayout();
             this.aPanel2.ResumeLayout(false);
             this.aPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).EndInit();
             this.panMolding.ResumeLayout(false);
             this.panLoad.ResumeLayout(false);

@@ -16,6 +16,13 @@ namespace Service
             return dac.SelectMoldAll();
         }
 
+        public List<MoldVO> selectMoldGroup()
+        {
+            MoldDAC dac = new MoldDAC();
+            return dac.SelectMoldGroup();
+        }
+
+
         public List<Mold_J_Item_Wc_MuseVO> SelectMold_Item_Wc_Muse()
         {
             MoldDAC dac = new MoldDAC();

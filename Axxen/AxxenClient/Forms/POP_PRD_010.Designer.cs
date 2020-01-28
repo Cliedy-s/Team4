@@ -120,7 +120,7 @@
             this.txtWorkOrderno.Size = new System.Drawing.Size(365, 41);
             this.txtWorkOrderno.TabIndex = 0;
             this.txtWorkOrderno.TextBoxText = "";
-            this.txtWorkOrderno.TextBoxType = Axxen.CustomControls.type.Normal;
+            this.txtWorkOrderno.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
             // txtWorkOrderDate
             // 
@@ -133,7 +133,7 @@
             this.txtWorkOrderDate.Size = new System.Drawing.Size(365, 41);
             this.txtWorkOrderDate.TabIndex = 1;
             this.txtWorkOrderDate.TextBoxText = "";
-            this.txtWorkOrderDate.TextBoxType = Axxen.CustomControls.type.Normal;
+            this.txtWorkOrderDate.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
             // txtItemName
             // 
@@ -146,7 +146,7 @@
             this.txtItemName.Size = new System.Drawing.Size(365, 41);
             this.txtItemName.TabIndex = 2;
             this.txtItemName.TextBoxText = "";
-            this.txtItemName.TextBoxType = Axxen.CustomControls.type.Normal;
+            this.txtItemName.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
             // txtQty
             // 
@@ -159,7 +159,7 @@
             this.txtQty.Size = new System.Drawing.Size(365, 41);
             this.txtQty.TabIndex = 3;
             this.txtQty.TextBoxText = "";
-            this.txtQty.TextBoxType = Axxen.CustomControls.type.Normal;
+            this.txtQty.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
             // txtWcCode
             // 
@@ -172,7 +172,7 @@
             this.txtWcCode.Size = new System.Drawing.Size(365, 41);
             this.txtWcCode.TabIndex = 4;
             this.txtWcCode.TextBoxText = "";
-            this.txtWcCode.TextBoxType = Axxen.CustomControls.type.Normal;
+            this.txtWcCode.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
             // txtUnit
             // 
@@ -185,7 +185,7 @@
             this.txtUnit.Size = new System.Drawing.Size(365, 41);
             this.txtUnit.TabIndex = 5;
             this.txtUnit.TextBoxText = "";
-            this.txtUnit.TextBoxType = Axxen.CustomControls.type.Normal;
+            this.txtUnit.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
             // aPanel6
             // 
@@ -214,7 +214,7 @@
             this.aBigTextBox_Searchable2.Size = new System.Drawing.Size(428, 42);
             this.aBigTextBox_Searchable2.TabIndex = 28;
             this.aBigTextBox_Searchable2.TextBoxText = "";
-            this.aBigTextBox_Searchable2.TextBoxType = Axxen.CustomControls.type.Normal;
+            this.aBigTextBox_Searchable2.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
             // aBigTextBox_Searchable1
             // 
@@ -227,7 +227,7 @@
             this.aBigTextBox_Searchable1.Size = new System.Drawing.Size(427, 42);
             this.aBigTextBox_Searchable1.TabIndex = 27;
             this.aBigTextBox_Searchable1.TextBoxText = "";
-            this.aBigTextBox_Searchable1.TextBoxType = Axxen.CustomControls.type.Normal;
+            this.aBigTextBox_Searchable1.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
             // aBigTextBox_Labeled1
             // 
@@ -241,7 +241,7 @@
             this.aBigTextBox_Labeled1.Size = new System.Drawing.Size(306, 41);
             this.aBigTextBox_Labeled1.TabIndex = 29;
             this.aBigTextBox_Labeled1.TextBoxText = "";
-            this.aBigTextBox_Labeled1.TextBoxType = Axxen.CustomControls.type.Numeric;
+            this.aBigTextBox_Labeled1.TextBoxType = Axxen.CustomControls.TextType.Numeric;
             // 
             // POP_PRD_010
             // 

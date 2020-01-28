@@ -16,6 +16,7 @@ namespace Axxen
     public partial class PPS_SCH_003 : Axxen.FreeForm
     {
         List<WO_WC_Production_ItemVO> wowclist;
+        List<WorkOrderVO> statuslist;
         Wo_ReqService service = new Wo_ReqService();
 
         public PPS_SCH_003()
@@ -25,9 +26,30 @@ namespace Axxen
 
         private void PPS_SCH_003_Load(object sender, EventArgs e)
         {
+            ((MainForm)this.MdiParent).RefreshFormEvent += new EventHandler(this.RefreshFormShow);
             MainDataLoad();
-       //     wowclist = service.GetWO_WC_Production_Items();
-       //     dgvMainGrid.DataSource = wowclist;
+            ComboBinding();
+            wowclist = service.GetWO_WC_Production_Items();
+            dgvMainGrid.DataSource = wowclist;
+        }
+
+        private void RefreshFormShow(object sender, EventArgs e)
+        {
+            wowclist = service.GetWO_WC_Production_Items();
+            dgvMainGrid.DataSource = wowclist;
+            cboStatus.SelectedIndex = 0;
+        }
+
+        private void ComboBinding()
+        {
+            statuslist = service.GetWoStatus();
+
+            cboStatus.Items.Add("==선택==");
+            foreach (var item in statuslist)
+            {
+                cboStatus.Items.Add(item.Wo_Status);
+            }
+            cboStatus.SelectedIndex = 0;
         }
 
         private void MainDataLoad()
@@ -74,11 +96,31 @@ namespace Axxen
             DateTime startT = aDateTimePickerSearch1.ADateTimePickerValue1;
             DateTime endT = aDateTimePickerSearch1.ADateTimePickerValue2;
             endT = endT.AddDays(10);
-            wowclist = (from date in wowclist
-                        where date.Prd_Date >= startT && date.Prd_Date <= endT
-                        select date).ToList();
-
+            var wowcdatelist = (from date in wowclist
+                                where date.Prd_Date >= startT && date.Prd_Date <= endT
+                                select date).ToList();
+            dgvMainGrid.DataSource = wowcdatelist;
             DateChartLoad();
+        }
+
+        private void CboStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboStatus.SelectedIndex == 0)
+            {
+                RefreshFormShow(null, null);
+            }
+            else
+            {
+                var wostatuslist = (from status in wowclist
+                                    where status.Wo_Status.Contains(cboStatus.SelectedItem.ToString())
+                                    select status).ToList();
+                dgvMainGrid.DataSource = wostatuslist;
+            }
+        }
+
+        private void PPS_SCH_003_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow);
         }
     }
 }

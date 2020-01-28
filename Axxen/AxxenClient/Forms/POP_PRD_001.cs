@@ -1,4 +1,5 @@
-﻿using Service;
+﻿using Axxen.CustomControls;
+using Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,13 +10,13 @@ using System.Windows.Forms;
 
 namespace AxxenClient.Forms
 {
-    public partial class WorkOrderForm : AxxenClient.Templets.ClientBaseForm
+    public partial class POP_PRD_001 : AxxenClient.Templets.ClientBaseForm
     {
         /// <summary>
         /// POP작업 종류에 따른 다른 화면 설정
         /// </summary>
         /// <param name="worktype"></param>
-        public WorkOrderForm(WorkType worktype)
+        public POP_PRD_001(WorkType worktype)
         {
             InitializeComponent();
             GlobalUsage.worktype = worktype;
@@ -28,6 +29,9 @@ namespace AxxenClient.Forms
         {
             // 화면 set
             SetButtonForms();
+            SetDGV();
+            btnClose.Visible = false;
+
             // 공정별 화면
             switch (GlobalUsage.worktype)
             {
@@ -52,9 +56,28 @@ namespace AxxenClient.Forms
             GetDatas();
         }
         /// <summary>
+        /// 데이터 그리드뷰 설정
+        /// </summary>
+        private void SetDGV()
+        {
+            InitControlUtil.SetPOPDGVDesign(dgvMain);
+            InitControlUtil.AddNewColumnToDataGridView(dgvMain, "상태", "Wo_Status", true, 70, DataGridViewContentAlignment.MiddleLeft, false);
+            InitControlUtil.AddNewColumnToDataGridView(dgvMain, "작업지시번호", "Workorderno", true, 175, DataGridViewContentAlignment.MiddleLeft, false);
+            InitControlUtil.AddNewColumnToDataGridView(dgvMain, "할당작업자", "User_ID", true, 100, DataGridViewContentAlignment.MiddleLeft, false);
+            InitControlUtil.AddNewColumnToDataGridView(dgvMain, "품목코드", "Item_Code", true, 80, DataGridViewContentAlignment.MiddleLeft, false);
+            InitControlUtil.AddNewColumnToDataGridView(dgvMain, "품목명", "Item_Name", true, 100, DataGridViewContentAlignment.MiddleLeft, true);
+            InitControlUtil.AddNewColumnToDataGridView(dgvMain, "단위", "Prd_Unit", true, 60, DataGridViewContentAlignment.MiddleLeft, false);
+            InitControlUtil.AddNewColumnToDataGridView(dgvMain, "실적수량", "Prd_Qty", true, 100, DataGridViewContentAlignment.MiddleLeft, false);
+            InitControlUtil.AddNewColumnToDataGridView(dgvMain, "실적수량", "Prd_Qty", true, 100, DataGridViewContentAlignment.MiddleLeft, false);
+            InitControlUtil.AddNewColumnToDataGridView(dgvMain, "생산시작시간", "Prd_Starttime", true, 200, DataGridViewContentAlignment.MiddleLeft, false);
+            InitControlUtil.AddNewColumnToDataGridView(dgvMain, "생산종료시간", "Prd_Endtime", true, 200, DataGridViewContentAlignment.MiddleLeft, false);
+            dgvMain.Columns[8].DefaultCellStyle.Format = "yyyy-MM-dd hh:mm:ss";
+            dgvMain.Columns[9].DefaultCellStyle.Format = "yyyy-MM-dd hh:mm:ss";
+        }
+        /// <summary>
         /// 데이터를 DB에서 가져온다
         /// </summary>
-        private void GetDatas()
+        public void GetDatas()
         {
             WorkOrder_Service service = new WorkOrder_Service();
             string woinichar = string.Empty;
@@ -93,7 +116,6 @@ namespace AxxenClient.Forms
                 frm.WindowState = FormWindowState.Maximized;
                 frm.MdiParent = this.MdiParent;
                 frm.Show();
-                frm.Activate();
             }
         }
     }

@@ -121,7 +121,7 @@
             this.aBigTextBox_LabeledBigTextBox6.Size = new System.Drawing.Size(469, 42);
             this.aBigTextBox_LabeledBigTextBox6.TabIndex = 34;
             this.aBigTextBox_LabeledBigTextBox6.TextBoxText = "";
-            this.aBigTextBox_LabeledBigTextBox6.TextBoxType = Axxen.CustomControls.type.Normal;
+            this.aBigTextBox_LabeledBigTextBox6.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
             // aBigTextBox_LabeledBigTextBox5
             // 
@@ -135,7 +135,7 @@
             this.aBigTextBox_LabeledBigTextBox5.Size = new System.Drawing.Size(469, 42);
             this.aBigTextBox_LabeledBigTextBox5.TabIndex = 33;
             this.aBigTextBox_LabeledBigTextBox5.TextBoxText = "";
-            this.aBigTextBox_LabeledBigTextBox5.TextBoxType = Axxen.CustomControls.type.Normal;
+            this.aBigTextBox_LabeledBigTextBox5.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
             // aBigTextBox_LabeledBigTextBox4
             // 
@@ -149,7 +149,7 @@
             this.aBigTextBox_LabeledBigTextBox4.Size = new System.Drawing.Size(469, 42);
             this.aBigTextBox_LabeledBigTextBox4.TabIndex = 32;
             this.aBigTextBox_LabeledBigTextBox4.TextBoxText = "";
-            this.aBigTextBox_LabeledBigTextBox4.TextBoxType = Axxen.CustomControls.type.Normal;
+            this.aBigTextBox_LabeledBigTextBox4.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
             // aBigTextBox_LabeledBigTextBox3
             // 
@@ -163,7 +163,7 @@
             this.aBigTextBox_LabeledBigTextBox3.Size = new System.Drawing.Size(469, 42);
             this.aBigTextBox_LabeledBigTextBox3.TabIndex = 31;
             this.aBigTextBox_LabeledBigTextBox3.TextBoxText = "";
-            this.aBigTextBox_LabeledBigTextBox3.TextBoxType = Axxen.CustomControls.type.Normal;
+            this.aBigTextBox_LabeledBigTextBox3.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
             // aBigTextBox_LabeledBigTextBox2
             // 
@@ -177,7 +177,7 @@
             this.aBigTextBox_LabeledBigTextBox2.Size = new System.Drawing.Size(469, 42);
             this.aBigTextBox_LabeledBigTextBox2.TabIndex = 30;
             this.aBigTextBox_LabeledBigTextBox2.TextBoxText = "";
-            this.aBigTextBox_LabeledBigTextBox2.TextBoxType = Axxen.CustomControls.type.Normal;
+            this.aBigTextBox_LabeledBigTextBox2.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
             // aBigTextBox_LabeledBigTextBox1
             // 
@@ -191,7 +191,7 @@
             this.aBigTextBox_LabeledBigTextBox1.Size = new System.Drawing.Size(469, 42);
             this.aBigTextBox_LabeledBigTextBox1.TabIndex = 29;
             this.aBigTextBox_LabeledBigTextBox1.TextBoxText = "";
-            this.aBigTextBox_LabeledBigTextBox1.TextBoxType = Axxen.CustomControls.type.Normal;
+            this.aBigTextBox_LabeledBigTextBox1.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
             // aBigTextBox_Searchable1
             // 
@@ -205,7 +205,7 @@
             this.aBigTextBox_Searchable1.Size = new System.Drawing.Size(469, 42);
             this.aBigTextBox_Searchable1.TabIndex = 28;
             this.aBigTextBox_Searchable1.TextBoxText = "";
-            this.aBigTextBox_Searchable1.TextBoxType = Axxen.CustomControls.type.Normal;
+            this.aBigTextBox_Searchable1.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
             // POP_PRD_005
             // 

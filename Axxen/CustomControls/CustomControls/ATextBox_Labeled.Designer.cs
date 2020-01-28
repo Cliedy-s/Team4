@@ -54,7 +54,7 @@
             this.txtValue.Name = "txtValue";
             this.txtValue.Size = new System.Drawing.Size(140, 23);
             this.txtValue.TabIndex = 3;
-            this.txtValue.txtType = Axxen.CustomControls.type.Normal;
+            this.txtValue.txtType = Axxen.CustomControls.TextType.Normal;
             this.txtValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtValue_KeyPress);
             // 
             // ATextBox_Labeled

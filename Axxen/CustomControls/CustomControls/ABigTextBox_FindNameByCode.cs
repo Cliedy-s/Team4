@@ -19,7 +19,7 @@ namespace Axxen.CustomControls
         public ABigTextBox_FindNameByCode()
         {
             InitializeComponent();
-            CodeType = types.Users;
+            CodeType = DataType.Users;
         }
 
         public Font allfont
@@ -32,8 +32,8 @@ namespace Axxen.CustomControls
                     item.Font = value;
             }
         }
-        public types codeType;
-        public types CodeType { 
+        public DataType codeType;
+        public DataType CodeType { 
             get {
                 return this.codeType;
             } 
@@ -41,46 +41,46 @@ namespace Axxen.CustomControls
                 this.codeType = value;
                 switch (value)
                 {
-                    case types.Users:
+                    case DataType.Users:
                         lblNameText = "사용자 그룹";
                         break;
-                    case types.Authoritys:
+                    case DataType.Authoritys:
                         lblNameText = "권한 그룹";
                         break;
-                    case types.Systems:
+                    case DataType.Systems:
                         lblNameText = "시스템 대분류";
                         break;
-                    case types.Processes:
+                    case DataType.Processes:
                         lblNameText = "공정";
                         break;
-                    case types.Items:
+                    case DataType.Items:
                         lblNameText = "품목";
                         break;
-                    case types.Facility:
+                    case DataType.Facility:
                         lblNameText = "설비";
                         break;
-                    case types.Errors:
+                    case DataType.Errors:
                         lblNameText = "불량현상 대분류";
                         break;
-                    case types.NonOperations:
+                    case DataType.NonOperations:
                         lblNameText = "비가동 대분류";
                         break;
-                    case types.UserDefinitions:
+                    case DataType.UserDefinitions:
                         lblNameText = "사용자정의코드 대분류";
                         break;
-                    case types.PackingGrades:
+                    case DataType.PackingGrades:
                         lblNameText = "포장등급";
                         break;
-                    case types.WorkCenters:
+                    case DataType.WorkCenters:
                         lblNameText = "작업장";
                         break;
-                    case types.GVs:
+                    case DataType.GVs:
                         lblNameText = "대차";
                         break;
-                    case types.GVGroups:
+                    case DataType.GVGroups:
                         lblNameText = "대차그룹";
                         break;
-                    case types.Workers:
+                    case DataType.Workers:
                         lblNameText = "작업자";
                         break;
                     default:

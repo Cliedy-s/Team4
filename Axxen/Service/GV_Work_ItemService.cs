@@ -31,5 +31,20 @@ namespace Service
             return dac.GetDatePicker_GV_History_Work_Item(Adatetimepicker1, Adatetimepicker2);
         }
 
+        public List<GV_History_Work_ItemVO> GV_Current_YesStatus() //PRM_PRF_007 사용중 대차 현황
+        {
+            GV_Work_ItemDAC dac = new GV_Work_ItemDAC();
+
+            return dac.GV_Current_YesStatus();
+        }
+
+        public List<GV_History_Work_ItemVO> GetGV_Current_NO_Status() //PRM_PRF_007 빈 대차 현황
+        {
+            GV_Work_ItemDAC dac = new GV_Work_ItemDAC();
+
+            return dac.GetGV_Current_NO_Status();
+        }
+
+        
     }
 }

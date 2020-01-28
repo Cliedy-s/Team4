@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.dgvSearchResult = new System.Windows.Forms.DataGridView();
-            this.aLabel_Header1 = new Axxen.CustomControls.ALabel_Header();
+            this.lblSearch = new Axxen.CustomControls.ALabel_Header();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchResult)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,23 +43,24 @@
             this.dgvSearchResult.TabIndex = 0;
             this.dgvSearchResult.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSearchResult_CellDoubleClick);
             // 
-            // aLabel_Header1
+            // lblSearch
             // 
-            this.aLabel_Header1.AutoSize = true;
-            this.aLabel_Header1.Font = new System.Drawing.Font("나눔고딕", 25F, System.Drawing.FontStyle.Bold);
-            this.aLabel_Header1.Location = new System.Drawing.Point(12, 9);
-            this.aLabel_Header1.Name = "aLabel_Header1";
-            this.aLabel_Header1.Size = new System.Drawing.Size(160, 39);
-            this.aLabel_Header1.TabIndex = 1;
-            this.aLabel_Header1.Text = "lblSearch";
+            this.lblSearch.AutoSize = true;
+            this.lblSearch.Font = new System.Drawing.Font("나눔고딕", 25F, System.Drawing.FontStyle.Bold);
+            this.lblSearch.Location = new System.Drawing.Point(12, 9);
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Size = new System.Drawing.Size(160, 39);
+            this.lblSearch.TabIndex = 1;
+            this.lblSearch.Text = "lblSearch";
             // 
             // SearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(462, 452);
-            this.Controls.Add(this.aLabel_Header1);
+            this.Controls.Add(this.lblSearch);
             this.Controls.Add(this.dgvSearchResult);
             this.Name = "SearchForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "찾기";
             this.Load += new System.EventHandler(this.SearchForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchResult)).EndInit();
@@ -71,6 +72,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvSearchResult;
-        private ALabel_Header aLabel_Header1;
+        private ALabel_Header lblSearch;
     }
 }

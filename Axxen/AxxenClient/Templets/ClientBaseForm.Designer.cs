@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.aLabel1 = new Axxen.CustomControls.ALabel();
+            this.components = new System.ComponentModel.Container();
+            this.lblTime = new Axxen.CustomControls.ALabel();
             this.aLabel_Header1 = new Axxen.CustomControls.ALabel_Header();
             this.aPanel1 = new Axxen.CustomControls.APanel();
             this.btnNoActive = new Axxen.CustomControls.AButton();
@@ -36,23 +37,25 @@
             this.txtPronounce = new Axxen.CustomControls.ALabel();
             this.aPanel2 = new Axxen.CustomControls.APanel();
             this.aPanel3 = new Axxen.CustomControls.APanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnClose = new System.Windows.Forms.PictureBox();
+            this.timetimer = new System.Windows.Forms.Timer(this.components);
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
             this.aPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             this.SuspendLayout();
             // 
-            // aLabel1
+            // lblTime
             // 
-            this.aLabel1.AutoSize = true;
-            this.aLabel1.BackColor = System.Drawing.Color.White;
-            this.aLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.aLabel1.Location = new System.Drawing.Point(25, 41);
-            this.aLabel1.Name = "aLabel1";
-            this.aLabel1.Size = new System.Drawing.Size(125, 15);
-            this.aLabel1.TabIndex = 0;
-            this.aLabel1.Text = "2020-01-13 18:26:32";
+            this.lblTime.AutoSize = true;
+            this.lblTime.BackColor = System.Drawing.Color.White;
+            this.lblTime.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblTime.ForeColor = System.Drawing.Color.Orange;
+            this.lblTime.Location = new System.Drawing.Point(25, 41);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(164, 21);
+            this.lblTime.TabIndex = 0;
+            this.lblTime.Text = "2020-01-13 18:26:32";
             // 
             // aLabel_Header1
             // 
@@ -92,7 +95,6 @@
             this.btnNoActive.TabIndex = 4;
             this.btnNoActive.Text = "비가동 등록";
             this.btnNoActive.UseVisualStyleBackColor = false;
-            this.btnNoActive.Click += new System.EventHandler(this.btnNoActive_Click);
             // 
             // btnConfig
             // 
@@ -121,7 +123,7 @@
             // aPanel2
             // 
             this.aPanel2.BackColor = System.Drawing.Color.Gray;
-            this.aPanel2.Controls.Add(this.aLabel1);
+            this.aPanel2.Controls.Add(this.lblTime);
             this.aPanel2.Controls.Add(this.aLabel_Header1);
             this.aPanel2.Controls.Add(this.aPanel3);
             this.aPanel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -133,23 +135,29 @@
             // aPanel3
             // 
             this.aPanel3.BackColor = System.Drawing.Color.White;
-            this.aPanel3.Controls.Add(this.pictureBox1);
+            this.aPanel3.Controls.Add(this.btnClose);
             this.aPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.aPanel3.Location = new System.Drawing.Point(0, 0);
             this.aPanel3.Name = "aPanel3";
             this.aPanel3.Size = new System.Drawing.Size(1210, 97);
             this.aPanel3.TabIndex = 4;
             // 
-            // pictureBox1
+            // btnClose
             // 
-            this.pictureBox1.Image = global::AxxenClient.Properties.Resources.X;
-            this.pictureBox1.Location = new System.Drawing.Point(1129, 16);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(69, 65);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.Image = global::AxxenClient.Properties.Resources.X;
+            this.btnClose.Location = new System.Drawing.Point(1129, 16);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(69, 65);
+            this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnClose.TabIndex = 0;
+            this.btnClose.TabStop = false;
+            this.btnClose.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // timetimer
+            // 
+            this.timetimer.Interval = 1000;
+            this.timetimer.Tick += new System.EventHandler(this.timetimer_Tick);
             // 
             // ClientBaseForm
             // 
@@ -160,20 +168,21 @@
             this.KeyPreview = true;
             this.Name = "ClientBaseForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
-            this.Load += new System.EventHandler(this.ClientBaseForm_Load);
+            this.Activated += new System.EventHandler(this.ClientBaseForm_Activated);
+            this.Deactivate += new System.EventHandler(this.ClientBaseForm_Deactivate);
             this.aPanel1.ResumeLayout(false);
             this.aPanel1.PerformLayout();
             this.aPanel2.ResumeLayout(false);
             this.aPanel2.PerformLayout();
             this.aPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        protected Axxen.CustomControls.ALabel aLabel1;
+        protected Axxen.CustomControls.ALabel lblTime;
         protected Axxen.CustomControls.ALabel_Header aLabel_Header1;
         protected Axxen.CustomControls.APanel aPanel1;
         protected Axxen.CustomControls.AButton btnNoActive;
@@ -181,6 +190,7 @@
         protected Axxen.CustomControls.ALabel txtPronounce;
         protected Axxen.CustomControls.APanel aPanel2;
         private Axxen.CustomControls.APanel aPanel3;
-        protected System.Windows.Forms.PictureBox pictureBox1;
+        protected System.Windows.Forms.PictureBox btnClose;
+        protected System.Windows.Forms.Timer timetimer;
     }
 }
