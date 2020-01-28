@@ -60,6 +60,7 @@
             this.Controls.Add(this.aLabel_Header1);
             this.Controls.Add(this.dgvSearchResult);
             this.Name = "SearchForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "찾기";
             this.Load += new System.EventHandler(this.SearchForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchResult)).EndInit();

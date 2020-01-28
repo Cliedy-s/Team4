@@ -33,7 +33,7 @@ namespace Axxen.CustomControls
             }
         }
         public types codeType;
-        public types CodeType { 
+                public types CodeType { 
             get {
                 return this.codeType;
             } 
