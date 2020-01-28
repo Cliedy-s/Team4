@@ -45,7 +45,6 @@ namespace AxxenClient.Forms
 
             }
         }
-
         private void dgvWorkOrder_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             //dgvWorkOrder.SelectedRows[0].Cells["Req_Seq"]

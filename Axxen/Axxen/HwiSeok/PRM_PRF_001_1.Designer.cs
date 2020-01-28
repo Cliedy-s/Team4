@@ -62,7 +62,7 @@
             this.aTextBox1.Name = "aTextBox1";
             this.aTextBox1.Size = new System.Drawing.Size(114, 23);
             this.aTextBox1.TabIndex = 0;
-            this.aTextBox1.txtType = Axxen.CustomControls.type.Normal;
+            this.aTextBox1.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // aLabel1
             // 
@@ -163,7 +163,7 @@
             this.aTextBox2.Name = "aTextBox2";
             this.aTextBox2.Size = new System.Drawing.Size(227, 23);
             this.aTextBox2.TabIndex = 11;
-            this.aTextBox2.txtType = Axxen.CustomControls.type.Normal;
+            this.aTextBox2.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // aTextBox3
             // 
@@ -174,7 +174,7 @@
             this.aTextBox3.Name = "aTextBox3";
             this.aTextBox3.Size = new System.Drawing.Size(227, 23);
             this.aTextBox3.TabIndex = 11;
-            this.aTextBox3.txtType = Axxen.CustomControls.type.Normal;
+            this.aTextBox3.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // aTextBox4
             // 
@@ -185,7 +185,7 @@
             this.aTextBox4.Name = "aTextBox4";
             this.aTextBox4.Size = new System.Drawing.Size(227, 23);
             this.aTextBox4.TabIndex = 11;
-            this.aTextBox4.txtType = Axxen.CustomControls.type.Normal;
+            this.aTextBox4.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // aTextBox5
             // 
@@ -196,7 +196,7 @@
             this.aTextBox5.Name = "aTextBox5";
             this.aTextBox5.Size = new System.Drawing.Size(147, 23);
             this.aTextBox5.TabIndex = 11;
-            this.aTextBox5.txtType = Axxen.CustomControls.type.Normal;
+            this.aTextBox5.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // aTextBox6
             // 
@@ -207,7 +207,7 @@
             this.aTextBox6.Name = "aTextBox6";
             this.aTextBox6.Size = new System.Drawing.Size(227, 23);
             this.aTextBox6.TabIndex = 11;
-            this.aTextBox6.txtType = Axxen.CustomControls.type.Normal;
+            this.aTextBox6.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // aTextBox7
             // 
@@ -218,7 +218,7 @@
             this.aTextBox7.Name = "aTextBox7";
             this.aTextBox7.Size = new System.Drawing.Size(227, 23);
             this.aTextBox7.TabIndex = 11;
-            this.aTextBox7.txtType = Axxen.CustomControls.type.Normal;
+            this.aTextBox7.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // aTextBox8
             // 
@@ -229,7 +229,7 @@
             this.aTextBox8.Name = "aTextBox8";
             this.aTextBox8.Size = new System.Drawing.Size(156, 23);
             this.aTextBox8.TabIndex = 11;
-            this.aTextBox8.txtType = Axxen.CustomControls.type.Normal;
+            this.aTextBox8.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // aTextBox9
             // 
@@ -240,7 +240,7 @@
             this.aTextBox9.Name = "aTextBox9";
             this.aTextBox9.Size = new System.Drawing.Size(156, 23);
             this.aTextBox9.TabIndex = 11;
-            this.aTextBox9.txtType = Axxen.CustomControls.type.Normal;
+            this.aTextBox9.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // aTextBox10
             // 
@@ -251,7 +251,7 @@
             this.aTextBox10.Name = "aTextBox10";
             this.aTextBox10.Size = new System.Drawing.Size(156, 23);
             this.aTextBox10.TabIndex = 11;
-            this.aTextBox10.txtType = Axxen.CustomControls.type.Normal;
+            this.aTextBox10.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // aLabel_Header1
             // 
