@@ -34,7 +34,7 @@
             this.txtPrNum = new Axxen.CustomControls.ATextBox_Labeled();
             this.txtProjectName = new Axxen.CustomControls.ATextBox_Labeled();
             this.aDateTimePickerSearch1 = new Axxen.CustomControls.ADateTimePickerSearch();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.aPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aSplitContainer1)).BeginInit();
             this.aSplitContainer1.Panel1.SuspendLayout();
@@ -125,7 +125,7 @@
             // 
             // aDateTimePickerSearch1
             // 
-            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 1, 21, 14, 0, 10, 96);
+            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 1, 21, 15, 2, 49, 565);
             this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 1, 28, 13, 44, 54, 448);
             this.aDateTimePickerSearch1.ButtonText = "조회";
             this.aDateTimePickerSearch1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -161,6 +161,6 @@
         private CustomControls.ATextBox_Labeled txtProjectName;
         private CustomControls.ATextBox_Labeled txtPrNum;
         private CustomControls.ADateTimePickerSearch aDateTimePickerSearch1;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
     }
 }
