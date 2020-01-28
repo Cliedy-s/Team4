@@ -61,7 +61,7 @@
             this.txtState.Name = "txtState";
             this.txtState.Size = new System.Drawing.Size(100, 21);
             this.txtState.TabIndex = 0;
-            this.txtState.txtType = Axxen.CustomControls.type.Normal;
+            this.txtState.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // aLabel1
             // 
@@ -90,7 +90,7 @@
             this.txtWo_Req.Name = "txtWo_Req";
             this.txtWo_Req.Size = new System.Drawing.Size(100, 21);
             this.txtWo_Req.TabIndex = 2;
-            this.txtWo_Req.txtType = Axxen.CustomControls.type.Normal;
+            this.txtWo_Req.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // aLabel3
             // 
@@ -119,7 +119,7 @@
             this.txtxItemCode.Name = "txtxItemCode";
             this.txtxItemCode.Size = new System.Drawing.Size(100, 21);
             this.txtxItemCode.TabIndex = 6;
-            this.txtxItemCode.txtType = Axxen.CustomControls.type.Normal;
+            this.txtxItemCode.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // aLabel5
             // 
@@ -139,7 +139,7 @@
             this.txtItemName.Name = "txtItemName";
             this.txtItemName.Size = new System.Drawing.Size(100, 21);
             this.txtItemName.TabIndex = 8;
-            this.txtItemName.txtType = Axxen.CustomControls.type.Normal;
+            this.txtItemName.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // aLabel6
             // 
@@ -169,7 +169,7 @@
             this.txtPlanQty.Size = new System.Drawing.Size(100, 21);
             this.txtPlanQty.TabIndex = 12;
             this.txtPlanQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtPlanQty.txtType = Axxen.CustomControls.type.Normal;
+            this.txtPlanQty.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // aLabel8
             // 
@@ -190,7 +190,7 @@
             this.txtInQty.Size = new System.Drawing.Size(100, 21);
             this.txtInQty.TabIndex = 14;
             this.txtInQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtInQty.txtType = Axxen.CustomControls.type.Normal;
+            this.txtInQty.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // aLabel9
             // 
@@ -211,7 +211,7 @@
             this.txtOutQty.Size = new System.Drawing.Size(100, 21);
             this.txtOutQty.TabIndex = 16;
             this.txtOutQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtOutQty.txtType = Axxen.CustomControls.type.Normal;
+            this.txtOutQty.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // aLabel10
             // 
@@ -232,7 +232,7 @@
             this.txtPrdQty.Size = new System.Drawing.Size(100, 21);
             this.txtPrdQty.TabIndex = 18;
             this.txtPrdQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtPrdQty.txtType = Axxen.CustomControls.type.Normal;
+            this.txtPrdQty.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // aLabel11
             // 
@@ -253,7 +253,7 @@
             this.txtRemark.Name = "txtRemark";
             this.txtRemark.Size = new System.Drawing.Size(320, 115);
             this.txtRemark.TabIndex = 20;
-            this.txtRemark.txtType = Axxen.CustomControls.type.Normal;
+            this.txtRemark.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // cboWorkCenter
             // 

@@ -254,5 +254,19 @@
       <DependentUpon>FreeForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAC\DAC.csproj">
+      <Project>{B6677E46-71D2-4FDA-B66B-E03B68C97C7D}</Project>
+      <Name>DAC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Service\Service.csproj">
+      <Project>{AF54ACA3-DA6E-4A15-9BAC-DA1B72DD7B93}</Project>
+      <Name>Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VO\VO.csproj">
+      <Project>{40A3C251-AD92-44A6-A387-367AA57772F7}</Project>
+      <Name>VO</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

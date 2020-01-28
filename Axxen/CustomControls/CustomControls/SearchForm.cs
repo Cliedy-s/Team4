@@ -1,10 +1,14 @@
-﻿using System;
+﻿using DAC;
+using Service;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
+using VO;
 using static Axxen.CustomControls.ATextBox_FindNameByCode;
 
 namespace Axxen.CustomControls
@@ -13,51 +17,61 @@ namespace Axxen.CustomControls
     {
         public string ResultCode { get; set; }
         public string ResultName { get; set; }
-        types type;
-        public SearchForm(types type)
+        DataType type;
+        public SearchForm(DataType type)
         {
             InitializeComponent();
             this.type = type;
         }
-
         private void SearchForm_Load(object sender, EventArgs e)
         {
             //TODO - ( SearchForm ) 검색 결과 출력하기
             switch (type)
             {
-                case types.Users:
+                case DataType.Users:
                     break;
-                case types.Authoritys:
+                case DataType.Authoritys:
                     break;
-                case types.Systems:
+                case DataType.Systems:
                     break;
-                case types.Processes:
+                case DataType.Processes:
                     break;
-                case types.Items:
+                case DataType.Items:
+                    dgvSearchResult.DataSource = GetData<ItemMaster_Service, Item_MasterVO>("GetAllItem_Master");
                     break;
-                case types.Facility:
+                case DataType.Facility:
                     break;
-                case types.Errors:
+                case DataType.Errors:
                     break;
-                case types.NonOperations:
+                case DataType.NonOperations:
                     break;
-                case types.UserDefinitions:
+                case DataType.UserDefinitions:
                     break;
-                case types.PackingGrades:
+                case DataType.PackingGrades:
                     break;
-                case types.WorkCenters:
+                case DataType.WorkCenters:
                     break;
-                case types.GVs:
+                case DataType.GVs:
                     break;
-                case types.GVGroups:
+                case DataType.GVGroups:
                     break;
-                case types.Workers:
+                case DataType.Workers:
                     break;
                 default:
                     break;
             }
+            
         }
+        /// <summary>
+        /// 데이터를 가져오는 메서드
+        /// </summary>
+        private List<U> GetData<T, U>(string methodname) 
+        {
+            object objInstance = Activator.CreateInstance(typeof(T));
+            MethodInfo methodInfo = typeof(T).GetMethod(methodname);
 
+            return (List<U>)methodInfo.Invoke(objInstance, null);
+        }
         private void dgvSearchResult_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             // TODO - CellDoubleClick시 값을 ATextBox_FindNameByCode로 전달하는 코딩

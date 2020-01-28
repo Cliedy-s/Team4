@@ -249,7 +249,7 @@
             this.txtRemark.Name = "txtRemark";
             this.txtRemark.Size = new System.Drawing.Size(263, 37);
             this.txtRemark.TabIndex = 30;
-            this.txtRemark.txtType = Axxen.CustomControls.type.Normal;
+            this.txtRemark.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // txtCost
             // 

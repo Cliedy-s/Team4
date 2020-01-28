@@ -28,6 +28,8 @@ namespace AxxenClient.Forms
         {
             // 화면 set
             SetButtonForms();
+            btnClose.Visible = false;
+
             // 공정별 화면
             switch (GlobalUsage.worktype)
             {

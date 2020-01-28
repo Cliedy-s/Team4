@@ -56,7 +56,7 @@
             this.txtValue.Name = "txtValue";
             this.txtValue.Size = new System.Drawing.Size(217, 23);
             this.txtValue.TabIndex = 2;
-            this.txtValue.txtType = Axxen.CustomControls.type.Normal;
+            this.txtValue.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // btnSearch
             // 
