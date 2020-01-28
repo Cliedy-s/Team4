@@ -24,6 +24,7 @@ namespace Axxen
         private void PRM_PRF_001_Load(object sender, EventArgs e)
         {
             ((MainForm)this.MdiParent).InsertFormEvent += new System.EventHandler(this.InsertFormShow);//입력이벤트 등록
+
             #region 그리드뷰 설정
 
             DatagridviewDesigns.SetDesign(dgvMainGrid);
