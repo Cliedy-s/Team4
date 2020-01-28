@@ -48,16 +48,19 @@ namespace DAC
             }
         }
         /// <summary>
-        /// 금일 입고 팔레트 목록
+        /// 팔레트 정보 가져오기
         /// </summary>
+        /// <param name="palletno"></param>
         /// <returns></returns>
-        public List<PalletTodayInVO> GetPalletTodayIn()
+        public PalletTodayInVO GetPalletInfo(string palletno)
         {
+            PalletTodayInVO item = new PalletTodayInVO();
             using (SqlCommand comm = new SqlCommand())
             {
                 comm.Connection = new SqlConnection(Connstr);
                 comm.CommandText =
  @" SELECT gih.[Workorderno]
+      ,wo.[Plan_Date]
       ,gih.[Pallet_No]
       ,pal.[Barcode_No]
       ,pal.[Grade_Detail_Code]
@@ -70,10 +73,103 @@ namespace DAC
       ,wo.[Item_Code]
       ,wo.[Wc_Code]
   FROM [WorkOrder] as wo
-  JOIN [Goods_In_History] as gih ON gih.[Workorderno] = wo.[Workorderno]
-  JOIN [Pallet_Master] as pal ON pal.[Pallet_No] = gih.[Pallet_No] AND pal.[Use_YN] = 1
-  JOIN [BoxingGrade_Detail_Master] as bdm ON bdm.[Grade_Detail_Code] = pal.[Grade_Detail_Code] AND bdm.[Use_YN] = 1
-  WHERE gih.[In_Date] = CAST(GETDATE() AS DATE) AND gih.[In_YN] = 'Y'; ";
+  RIGHT OUTER JOIN [Goods_In_History] as gih ON gih.[Workorderno] = wo.[Workorderno]
+  LEFT OUTER JOIN [Pallet_Master] as pal ON pal.[Pallet_No] = gih.[Pallet_No] AND pal.[Use_YN] = 'Y'
+  LEFT OUTER JOIN [BoxingGrade_Detail_Master] as bdm ON bdm.[Grade_Detail_Code] = pal.[Grade_Detail_Code] AND bdm.[Use_YN] = 'Y'
+    WHERE gih.[Pallet_No] =@palletNo ; ";
+                comm.CommandType = CommandType.Text;
+                comm.Parameters.AddWithValue("@palletNo", palletno);
+
+                comm.Connection.Open();
+                SqlDataReader reader = comm.ExecuteReader();
+                if (reader.Read())
+                {
+                    item.Workorderno = reader[0].ToString();
+                    item.Plan_Date = Convert.ToDateTime(reader[1].ToString());
+                    item.Pallet_No = reader[2].ToString();
+                    item.Barcode_No = reader[3].ToString();
+                    item.Grade_Detail_Code = reader[4].ToString();
+                    item.Grade_Detail_Name = reader[5].ToString();
+                    item.Boxing_Grade_Code = reader[6].ToString();
+                    item.In_Qty = Convert.ToInt32(reader[7].ToString());
+                    item.CurrentQty = Convert.ToInt32(reader[8].ToString());
+                    item.In_Date = Convert.ToDateTime(reader[9].ToString());
+                    item.In_YN = reader[10].ToString();
+                    item.Item_Code = reader[11].ToString();
+                    item.Wc_Code = reader[12].ToString();
+                }
+                comm.Connection.Close();
+
+                return item;
+            }
+        }
+        /// <summary>
+        /// 입고 가능한 팔레트 목록
+        /// </summary>
+        /// <returns></returns>
+        public List<PalletTodayInVO> GetInablePallet()
+        {
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText =
+ @" SELECT gih.[Workorderno]
+      ,wo.[Plan_Date]
+      ,gih.[Pallet_No]
+      ,pal.[Barcode_No]
+      ,pal.[Grade_Detail_Code]
+      ,bdm.[Grade_Detail_Name]
+      ,bdm.[Boxing_Grade_Code]
+      ,pal.[In_Qty]
+      ,pal.[CurrentQty]
+      ,gih.[In_Date]
+      ,gih.[In_YN]
+      ,wo.[Item_Code]
+      ,wo.[Wc_Code]
+  FROM [WorkOrder] as wo
+  RIGHT OUTER JOIN [Goods_In_History] as gih ON gih.[Workorderno] = wo.[Workorderno]
+  LEFT OUTER JOIN [Pallet_Master] as pal ON pal.[Pallet_No] = gih.[Pallet_No] AND pal.[Use_YN] = 'Y'
+  LEFT OUTER JOIN [BoxingGrade_Detail_Master] as bdm ON bdm.[Grade_Detail_Code] = pal.[Grade_Detail_Code] AND bdm.[Use_YN] = 'Y'
+    WHERE In_YN = 'N'; ";
+                comm.CommandType = CommandType.Text;
+
+                comm.Connection.Open();
+                SqlDataReader reader = comm.ExecuteReader();
+                List<PalletTodayInVO> list = Helper.DataReaderMapToList<PalletTodayInVO>(reader);
+                comm.Connection.Close();
+
+                return list;
+            }
+        }
+        /// <summary>
+        /// 금일 입고 팔레트 목록
+        /// </summary>
+        /// <returns></returns>
+        public List<PalletTodayInVO> GetPalletTodayIn()
+        {
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText =
+ @" SELECT gih.[Workorderno]
+      ,wo.[Plan_Date]
+      ,gih.[Pallet_No]
+      ,pal.[Barcode_No]
+      ,pal.[Grade_Detail_Code]
+      ,bdm.[Grade_Detail_Name]
+      ,bdm.[Boxing_Grade_Code]
+      ,pal.[In_Qty]
+      ,pal.[CurrentQty]
+      ,gih.[In_Date]
+      ,gih.[In_YN]
+      ,wo.[Item_Code]
+      ,wo.[Wc_Code]
+  FROM [WorkOrder] as wo
+  RIGHT OUTER JOIN [Goods_In_History] as gih ON gih.[Workorderno] = wo.[Workorderno]
+  LEFT OUTER JOIN [Pallet_Master] as pal ON pal.[Pallet_No] = gih.[Pallet_No] AND pal.[Use_YN] = 'Y'
+  LEFT OUTER JOIN [BoxingGrade_Detail_Master] as bdm ON bdm.[Grade_Detail_Code] = pal.[Grade_Detail_Code] AND bdm.[Use_YN] = 'Y'
+    WHERE In_YN = 'N';";
+                //WHERE gih.[In_Date] = CAST(GETDATE() AS DATE) AND gih.[In_YN] = 'Y'; ";
                 comm.CommandType = CommandType.Text;
 
                 comm.Connection.Open();
@@ -212,14 +308,14 @@ namespace DAC
             {
                 comm.Connection = new SqlConnection(Connstr);
                 comm.CommandText =
- @" UPDATE [dbo].[Goods_In_History]
+ @" UPDATE [dbo].[Goods_In_History] 
    SET 
-      [In_Date] = getdate()
-      ,[In_YN] = 'Y'
-      ,[Up_Date] = getdate()
-      ,[Up_Emp] = @username
- WHERE [Workorderno] = @workorderno
-            ,[Pallet_No] =@palletno';  ";
+      [In_Date] = getdate() 
+      ,[In_YN] = 'Y' 
+      ,[Up_Date] = getdate() 
+      ,[Up_Emp] = @username 
+ WHERE [Workorderno] = @workorderno 
+            AND [Pallet_No] =@palletno ;  ";
 
                 comm.CommandType = CommandType.Text;
                 comm.Parameters.AddWithValue("@username", username);

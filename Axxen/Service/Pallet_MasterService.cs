@@ -28,6 +28,24 @@ namespace Service
             return dac.GetPalletTodayIn();
         }
         /// <summary>
+        /// 팔레트 정보 가져오기
+        /// </summary>
+        /// <returns></returns>
+        public PalletTodayInVO GetPalletInfo(string palletno)
+        {
+            Pallet_MasterDAC dac = new Pallet_MasterDAC();
+            return dac.GetPalletInfo(palletno);
+        }
+        /// <summary>
+        /// 입고가능한 팔레트 목록
+        /// </summary>
+        /// <returns></returns>
+        public List<PalletTodayInVO> GetInablePallet()
+        {
+            Pallet_MasterDAC dac = new Pallet_MasterDAC();
+            return dac.GetInablePallet();
+        }
+        /// <summary>
         /// 존재하는 팔레트인지 확인
         /// </summary>
         public bool IsExistPallet(string palletNo)

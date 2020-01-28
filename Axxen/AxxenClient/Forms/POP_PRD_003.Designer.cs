@@ -101,7 +101,7 @@
             this.txtPrintPallet.Size = new System.Drawing.Size(469, 42);
             this.txtPrintPallet.TabIndex = 35;
             this.txtPrintPallet.TextBoxText = "";
-            this.txtPrintPallet.TextBoxType = Axxen.CustomControls.TextType.Normal;
+            this.txtPrintPallet.TextBoxType = Axxen.CustomControls.TextType.Numeric;
             // 
             // txtSizeCode
             // 
@@ -175,8 +175,7 @@
             // 
             // aPanel6
             // 
-            this.aPanel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.aPanel6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.aPanel6.Controls.Add(this.txtUnit);
             this.aPanel6.Controls.Add(this.txtWcCode);
             this.aPanel6.Controls.Add(this.txtQty);
@@ -275,6 +274,7 @@
             this.Controls.Add(this.dgvPalletList);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "POP_PRD_003";
+            this.Text = "팔레트 생성";
             this.Load += new System.EventHandler(this.POP_PRD_003_Load);
             this.Controls.SetChildIndex(this.aPanel2, 0);
             this.Controls.SetChildIndex(this.aPanel1, 0);
