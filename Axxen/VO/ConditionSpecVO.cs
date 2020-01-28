@@ -19,10 +19,5 @@ namespace VO
         public string Condition_Unit { get; set; }         // 조건단위
         public string Condition_Group { get; set; }      // 공정조건그룹
         public string Remark { get; set; }                  // 비고
-        public DateTime Ins_Date { get; set; }            // 최초입력일자
-        public string Ins_Emp { get; set; }                 // 최초입력자
-        public DateTime Up_Date { get; set; }            // 최종수정일자
-        public string Up_Emp { get; set; }                 // 최종수정자
-
     }
 }

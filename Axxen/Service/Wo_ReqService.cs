@@ -10,7 +10,7 @@ namespace Service
 {
     public class Wo_ReqService
     {
-        public List<Wo_Req_ItemVO> GetAllWoReq()
+        public List<Wo_Req_ItemVO> GetAllWoReq() //POP_PRD_002
         {
             Wo_ReqDAC dac = new Wo_ReqDAC();
             return dac.GetAllWoReq();
@@ -32,6 +32,12 @@ namespace Service
         {
             Wo_ReqDAC dac = new Wo_ReqDAC();
             return dac.GetWO_WC_Production_Items();
+        }
+
+        public List<WorkOrder_J_WC_ItmeVO> GetWorkCenterName()
+        {
+            Wo_ReqDAC dac = new Wo_ReqDAC();
+            return dac.GetWorkCenterName();
         }
     }
 }

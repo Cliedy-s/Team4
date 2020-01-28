@@ -44,13 +44,9 @@ namespace Axxen
             gridbtn.HeaderText = "사용여부";
             gridbtn.Text = "변경";
             gridbtn.Name = "btn";
-            gridbtn.Width = 100;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            gridbtn.DefaultCellStyle = dataGridViewCellStyle1;
-           
-
+            gridbtn.Width = 100;          
+            gridbtn.FlatStyle = FlatStyle.Popup;
+            gridbtn.DefaultCellStyle.BackColor = Color.LightYellow;
             gridbtn.UseColumnTextForButtonValue = true;
             dgvGroup.Columns.Add(gridbtn);
 

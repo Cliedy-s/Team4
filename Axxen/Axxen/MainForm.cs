@@ -23,7 +23,7 @@ namespace Axxen
         int CheckBtnIndex = 7;
         bool BookmarkCheck = true; //즐겨찾기 
         bool open = true;
-        StringBuilder subtitle = new StringBuilder();
+    
 
         Image CloseImage;
 
@@ -33,7 +33,7 @@ namespace Axxen
 
         List<UserGroup_MappingVO> userinfoGrouplist; //유저가속한 그룹
         List<ScreenItem_AuthorityVO> userinfoScreenItem;//그룹에속한 화면들
-
+        List<ScreenItem_MasterVO> screenitemlist; //모든 스크린 
         public MainForm()
         {
             InitializeComponent();
@@ -74,6 +74,9 @@ namespace Axxen
 
             ScreenItemService screenservice = new ScreenItemService();
             userinfoScreenItem = screenservice.GetUserInfoScreenItem(userinfoGrouplist); // 로그인한 사용자의 그룹권한에 사용되는 화면들
+
+            screenitemlist = screenservice.GetALLScreenItem(); //모든스크린
+
         }
 
 
@@ -93,8 +96,7 @@ namespace Axxen
             tvMenu.Visible = true;
             // 누르는 버튼
             Button btn = (Button)sender;
-            subtitle.Clear();
-            subtitle.Append(btn.Text);
+         
             btn.BackColor = Color.FromArgb(201, 228, 232);
             // 열려있는 트리뷰가 존재하고
             // 현재 열려있는 버튼과 누르는 버튼이 같을 경우(트리뷰를 닫는다)
@@ -211,7 +213,7 @@ namespace Axxen
                 if (tvMenu.SelectedNode.Text != null)
                 {
                     MenuTree_Master_VO parentcode = menulist.Find(item => item.Screen_Name == tvMenu.SelectedNode.Text);
-                    subtitle.Clear();
+                
                     if (parentcode.Parent_Screen_Code != null) //부모코드에 널값이있는 메뉴를 제외하고
                     {
                         string form = parentcode.Screen_Code;
@@ -260,13 +262,12 @@ namespace Axxen
                 newTab.Tag = formName;
                 newTab.Text = formText;
                 tabControl2.TabPages.Add(newTab);
-                subtitle.Append("->");
-                subtitle.Append(newTab.ToString());
+             
 
                 //    tabControl2.TabPages     .Tag=formName;
                 //    MessageBox.Show(tabControl2.SelectedTab.Tag.ToString());
                 frm.Show();
-                lblSubtitle.Text = "메뉴->" + subtitle;
+                    lblSubtitle.Text =  screenitemlist.Find(item => item.Screen_Code == formName.ToString()).Screen_Path.ToString();
                 }
                 else
                 {
@@ -476,7 +477,8 @@ namespace Axxen
                                 }
                             }
                             childForm.Activate();
-                            lblSubtitle.Text = "메뉴->" + tabControl2.SelectedTab.Text.ToString();
+                            lblSubtitle.Text = screenitemlist.Find(item => item.Screen_Code == tabControl2.SelectedTab.Tag.ToString()).Screen_Path.ToString();
+
                             break;
                         }
                     }
@@ -493,7 +495,7 @@ namespace Axxen
         {
             foreach (Form children in this.MdiChildren)
             {
-                children.Dispose();
+                children.Close();
             }
 
             tabControl2.TabPages.Clear();

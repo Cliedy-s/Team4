@@ -9,7 +9,7 @@ using VO;
 
 namespace DAC
 {
-    class Inspect_Measure_HistoryDAC : DACParent
+    public class Inspect_Measure_HistoryDAC : DACParent
     {
         /// <summary>
         /// Inspect_Measure_History 목록 가져오기

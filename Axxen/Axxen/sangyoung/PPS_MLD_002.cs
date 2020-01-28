@@ -65,5 +65,39 @@ namespace Axxen
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형사용종료시간", "Use_Endtime", true, 110);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형사용시간", "Use_time", true, 110);
         }
+
+        private void ATextBox_FindNameByCode1_DotDotDotFormClosing(object sender, CustomControls.SearchFormClosingArgs args)
+        {
+
+        }
+
+        private void ADateTimePickerSearch1_btnDateTimeSearch_Click(object sender, EventArgs args)
+        {
+            DateTime startT = aDateTimePickerSearch1.ADateTimePickerValue1;
+            DateTime endT = aDateTimePickerSearch1.ADateTimePickerValue2;
+            endT = endT.AddDays(10);
+            molditemList = (from date in molditemList
+                            where date.Prd_Date >= startT && date.Prd_Date <= endT
+                        select date).ToList();
+
+            var molist = (from list in molditemList
+                          select new
+                          {
+                              Prd_Date = list.Prd_Date,
+                              Mold_Code = list.Mold_Code,
+                              Mold_Name = list.Mold_Name,
+                              Workorderno = list.Workorderno,
+                              Item_Code = list.Item_Code,
+                              Item_Name = list.Item_Name,
+                              Wc_Code = list.Wc_Code,
+                              Wc_Name = list.Wc_Name,
+                              Mold_Shot_Cnt = list.Mold_Shot_Cnt,
+                              Mold_Prd_Qty = list.Mold_Prd_Qty,
+                              Use_Starttime = list.Use_Starttime,
+                              Use_Endtime = list.Use_Endtime,
+                              Use_time = string.Format("{0}분", list.Use_Endtime.Subtract(list.Use_Starttime).Minutes)
+                          }).ToList();
+            dgvMainGrid.DataSource = molist;
+        }
     }
 }

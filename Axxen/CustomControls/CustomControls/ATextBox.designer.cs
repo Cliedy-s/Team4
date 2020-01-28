@@ -30,7 +30,7 @@
         {
             this.SuspendLayout();
             // 
-            // Team4TextBox
+            // ATextBox
             // 
             this.Validating += new System.ComponentModel.CancelEventHandler(this.Team4TextBox_Validating);
             this.ResumeLayout(false);

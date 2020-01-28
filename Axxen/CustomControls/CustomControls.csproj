@@ -49,6 +49,30 @@
     <Compile Include="BaseForm.Designer.cs">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomControls\ABigHeaderBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\ABigHeaderBox.Designer.cs">
+      <DependentUpon>ABigHeaderBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\ABigTextBox_FindNameByCode.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\ABigTextBox_FindNameByCode.Designer.cs">
+      <DependentUpon>ABigTextBox_FindNameByCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\ABigTextBox_LabeledBigTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\ABigTextBox_LabeledBigTextBox.Designer.cs">
+      <DependentUpon>ABigTextBox_LabeledBigTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\ABigTextBox_Searchable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\ABigTextBox_Searchable.Designer.cs">
+      <DependentUpon>ABigTextBox_Searchable.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomControls\AButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -133,6 +157,12 @@
     <Compile Include="CustomControls\ATextBox_FindNameByCode.Designer.cs">
       <DependentUpon>ATextBox_FindNameByCode.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomControls\ABigTextBox_Labeled.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\ABigTextBox_Labeled.Designer.cs">
+      <DependentUpon>ABigTextBox_Labeled.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomControls\ATextBox_Labeled.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -175,6 +205,18 @@
     <EmbeddedResource Include="BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\ABigHeaderBox.resx">
+      <DependentUpon>ABigHeaderBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\ABigTextBox_FindNameByCode.resx">
+      <DependentUpon>ABigTextBox_FindNameByCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\ABigTextBox_LabeledBigTextBox.resx">
+      <DependentUpon>ABigTextBox_LabeledBigTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\ABigTextBox_Searchable.resx">
+      <DependentUpon>ABigTextBox_Searchable.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\AButton.resx">
       <DependentUpon>AButton.cs</DependentUpon>
     </EmbeddedResource>
@@ -192,6 +234,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\ATextBox_FindNameByCode.resx">
       <DependentUpon>ATextBox_FindNameByCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\ABigTextBox_Labeled.resx">
+      <DependentUpon>ABigTextBox_Labeled.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\ATextBox_Labeled.resx">
       <DependentUpon>ATextBox_Labeled.cs</DependentUpon>

@@ -41,11 +41,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Condition_Measure_HistoryService.cs" />
+    <Compile Include="Condition_Spec_MasterService.cs" />
+    <Compile Include="Emp_Allocation_HistoryService.cs" />
+    <Compile Include="Emp_Wc_AllocationService.cs" />
     <Compile Include="GasUse_History_Service.cs" />
+    <Compile Include="GV_Current_StatusService.cs" />
+    <Compile Include="GV_HistoryService.cs" />
+    <Compile Include="GV_MasterService.cs" />
     <Compile Include="GV_Work_ItemService.cs" />
+    <Compile Include="Inspect_Measure_HistoryService.cs" />
+    <Compile Include="Inspect_Spec_MasterService.cs" />
     <Compile Include="ItemMaster_Service.cs" />
     <Compile Include="MainForm_Service.cs" />
     <Compile Include="MoldService.cs" />
+    <Compile Include="Nop_HistoryService.cs" />
+    <Compile Include="Nop_History_Mi_MaService.cs" />
+    <Compile Include="Nop_Ma_MasterService.cs" />
+    <Compile Include="Nop_Mi_MasterService.cs" />
+    <Compile Include="Pallet_MasterService.cs" />
+    <Compile Include="ProcessService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScreenItemService.cs" />
     <Compile Include="UserGroupService.cs" />

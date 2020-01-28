@@ -11,7 +11,7 @@ namespace DAC
 {
     public class Wo_ReqDAC : DACParent
     {
-        public List<Wo_Req_ItemVO> GetAllWoReq() //PPS_SCH_001 그리드뷰 사용
+        public List<Wo_Req_ItemVO> GetAllWoReq() //PPS_SCH_001 그리드뷰 사용, POP_PRD_002
         {
             using (SqlCommand comm = new SqlCommand())
             {
@@ -74,6 +74,22 @@ namespace DAC
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     list = Helper.DataReaderMapToList<WO_WC_Production_ItemVO>(cmd.ExecuteReader());
+                }
+                conn.Close();
+            }
+            return list;
+        }
+
+        public List<WorkOrder_J_WC_ItmeVO> GetWorkCenterName()
+        {
+            List<WorkOrder_J_WC_ItmeVO> list = null;
+            using (SqlConnection conn = new SqlConnection(Connstr))
+            {
+                conn.Open();
+                string sql = "select distinct Wc_Name from WorkCenter_Master";
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    list = Helper.DataReaderMapToList<WorkOrder_J_WC_ItmeVO>(cmd.ExecuteReader());
                 }
                 conn.Close();
             }

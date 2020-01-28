@@ -18,7 +18,7 @@ namespace VO
         public decimal LSL { get; set; }                // 규격하한값
         public int Sample_size { get; set; }           // 샘플크기
         public string Inspect_Unit { get; set; }       // 단위
-        public char Use_YN { get; set; }               // 사용여부
+        public string Use_YN { get; set; }               // 사용여부
         public string Remark { get; set; }             // 비고
     }
 }

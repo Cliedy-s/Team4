@@ -102,7 +102,7 @@
             // 
             // aTextBox_FindNameByCode2
             // 
-            this.aTextBox_FindNameByCode2.CodeType = Axxen.CustomControls.ATextBox_FindNameByCode.types.WorkCenters;
+            this.aTextBox_FindNameByCode2.CodeType = Axxen.CustomControls.types.WorkCenters;
             this.aTextBox_FindNameByCode2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aTextBox_FindNameByCode2.lblNameText = "작업장";
             this.aTextBox_FindNameByCode2.Location = new System.Drawing.Point(625, 26);
@@ -115,7 +115,7 @@
             // 
             // aTextBox_FindNameByCode1
             // 
-            this.aTextBox_FindNameByCode1.CodeType = Axxen.CustomControls.ATextBox_FindNameByCode.types.Processes;
+            this.aTextBox_FindNameByCode1.CodeType = Axxen.CustomControls.types.Processes;
             this.aTextBox_FindNameByCode1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aTextBox_FindNameByCode1.lblNameText = "공정";
             this.aTextBox_FindNameByCode1.Location = new System.Drawing.Point(387, 26);
@@ -190,7 +190,6 @@
             // 
             this.txtWorkNum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtWorkNum.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtWorkNum.FontSize = 9F;
             this.txtWorkNum.LabelText = "작업지시번호";
             this.txtWorkNum.Location = new System.Drawing.Point(283, 14);
             this.txtWorkNum.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -203,7 +202,6 @@
             // 
             this.txtItemCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtItemCode.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtItemCode.FontSize = 9F;
             this.txtItemCode.LabelText = "품목코드";
             this.txtItemCode.Location = new System.Drawing.Point(553, 14);
             this.txtItemCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -216,7 +214,6 @@
             // 
             this.txtItemName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtItemName.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtItemName.FontSize = 9F;
             this.txtItemName.LabelText = "품목명";
             this.txtItemName.Location = new System.Drawing.Point(553, 51);
             this.txtItemName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -288,7 +285,6 @@
             // 
             this.txtWorkCenter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtWorkCenter.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtWorkCenter.FontSize = 9F;
             this.txtWorkCenter.LabelText = "작업장";
             this.txtWorkCenter.Location = new System.Drawing.Point(283, 54);
             this.txtWorkCenter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);

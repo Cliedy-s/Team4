@@ -126,19 +126,13 @@ namespace DAC
                     comm.Parameters.AddWithValue("@Level_4", item.Level_4);
                     comm.Parameters.AddWithValue("@Level_5", item.Level_5);
                     comm.Parameters.AddWithValue("@Item_Stock", item.Item_Stock);
-                    comm.Parameters.AddWithValue("@LotSize", item.LotSize);
                     comm.Parameters.AddWithValue("@PrdQty_Per_Hour", item.PrdQty_Per_Hour);
-                    comm.Parameters.AddWithValue("@PrdQTy_Per_Batch", item.PrdQTy_Per_Batch);
-            
-
+                    comm.Parameters.AddWithValue("@PrdQTy_Per_Batch", item.PrdQTy_Per_Batch);         
                     comm.Parameters.AddWithValue("@Cavity", item.Cavity);
                     comm.Parameters.AddWithValue("@Line_Per_Qty", item.Line_Per_Qty);
                     comm.Parameters.AddWithValue("@Shot_Per_Qty", item.Shot_Per_Qty);
-
                     comm.Parameters.AddWithValue("@Dry_GV_Qty", item.Dry_GV_Qty);
-
                     comm.Parameters.AddWithValue("@Heat_GV_Qty", item.Heat_GV_Qty);
-                    comm.Parameters.AddWithValue("@Remark", item.Remark);
                     comm.Parameters.AddWithValue("@Ins_Date", item.Ins_Date);
                     comm.Parameters.AddWithValue("@Ins_Emp", item.Ins_Emp);
 

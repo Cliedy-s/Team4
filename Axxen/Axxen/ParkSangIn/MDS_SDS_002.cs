@@ -54,6 +54,12 @@ namespace Axxen
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "건조대차기본수량", "Dry_GV_Qty", true, 210, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "소성대차기본수량", "Heat_GV_Qty", true, 210, default, true);
 
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "Level1", "Level_1", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "Level2", "Level_2", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "Level3", "Level_3", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "Level4", "Level_4", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "Level5", "Level_5", true, 210, default, true);
+
             GetAllItem();
             ///
             ControlSetting();
