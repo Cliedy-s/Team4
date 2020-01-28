@@ -142,6 +142,7 @@
             // 
             // btnClose
             // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.Image = global::AxxenClient.Properties.Resources.X;
             this.btnClose.Location = new System.Drawing.Point(1129, 16);
             this.btnClose.Name = "btnClose";

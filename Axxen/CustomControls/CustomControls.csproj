@@ -199,6 +199,7 @@
     <Compile Include="FreeForm.Designer.cs">
       <DependentUpon>FreeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="InitControlUtil.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

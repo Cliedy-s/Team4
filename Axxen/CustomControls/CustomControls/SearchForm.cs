@@ -35,9 +35,14 @@ namespace Axxen.CustomControls
                 case DataType.Systems:
                     break;
                 case DataType.Processes:
+                    InitControls("Process_code", "Process_name");
+                    dgvSearchResult.DataSource = GetData<ProcessService, Process_MasterVO>("GetAllProcess_Master");
+                    lblSearch.Text = "공정 목록";
                     break;
                 case DataType.Items:
+                    InitControls("Item_Code", "Item_Name");
                     dgvSearchResult.DataSource = GetData<ItemMaster_Service, Item_MasterVO>("GetAllItem_Master");
+                    lblSearch.Text = "품목 목록";
                     break;
                 case DataType.Facility:
                     break;
@@ -50,6 +55,9 @@ namespace Axxen.CustomControls
                 case DataType.PackingGrades:
                     break;
                 case DataType.WorkCenters:
+                    InitControls("Wc_Code", "Wc_Name");
+                    dgvSearchResult.DataSource = GetData<WorkCenter_MasterService, WorkCenter_MasterVO>("GetAll");
+                    lblSearch.Text = "작업장 목록";
                     break;
                 case DataType.GVs:
                     break;
@@ -60,24 +68,34 @@ namespace Axxen.CustomControls
                 default:
                     break;
             }
-            
+            //if (codecolumn == null || namecolumn == null)
+            //{
+            //    return;
+            //}
+
+        }
+        private void InitControls(string codecolumn, string namecolumn)
+        {
+            InitControlUtil.SetDGVDesign(dgvSearchResult);
+            InitControlUtil.AddNewColumnToDataGridView(dgvSearchResult, "Code", codecolumn, true, 100, DataGridViewContentAlignment.MiddleLeft, true);
+            InitControlUtil.AddNewColumnToDataGridView(dgvSearchResult, "Name", namecolumn, true, 100, DataGridViewContentAlignment.MiddleLeft, true);
         }
         /// <summary>
         /// 데이터를 가져오는 메서드
         /// </summary>
-        private List<U> GetData<T, U>(string methodname) 
+        private List<VOType> GetData<Service, VOType>(string methodname) 
         {
-            object objInstance = Activator.CreateInstance(typeof(T));
-            MethodInfo methodInfo = typeof(T).GetMethod(methodname);
-
-            return (List<U>)methodInfo.Invoke(objInstance, null);
+            Type type = typeof(Service);
+            return (List<VOType>)type.GetMethod(methodname).Invoke(Activator.CreateInstance(type), null);
         }
         private void dgvSearchResult_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            // TODO - CellDoubleClick시 값을 ATextBox_FindNameByCode로 전달하는 코딩
-            // this.ResultCode = ;
-            // this.ResultName = ;
-            this.Close();
+            if(e.RowIndex > 0)
+            {
+                this.ResultCode = dgvSearchResult.SelectedRows[0].Cells[0].Value.ToString();
+                this.ResultName = dgvSearchResult.SelectedRows[0].Cells[1].Value.ToString();
+                this.DialogResult = DialogResult.OK;
+            }
         }
     }
 }

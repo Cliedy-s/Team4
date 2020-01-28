@@ -31,7 +31,8 @@ namespace Axxen.CustomControls
             SearchForm search = new SearchForm(DataType);
             if (search.ShowDialog() == DialogResult.OK)
             {
-
+                TextBoxText = search.ResultName;
+                //TextBoxText = search.ResultCode;
             }
         }
     }
