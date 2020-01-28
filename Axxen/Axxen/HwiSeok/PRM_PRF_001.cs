@@ -69,15 +69,15 @@ namespace Axxen
         }
 
         public void RefreshFormShow(object sender, EventArgs e) // 새로고침 // 초기화
-        {         
-            DataLoad();
-
+        {
             aDateTimePickerSearch1.ADateTimePickerValue1 = Convert.ToDateTime(DateTime.Now.AddDays(-7).ToShortDateString());
             aDateTimePickerSearch1.ADateTimePickerValue2 = Convert.ToDateTime(DateTime.Now.ToShortDateString());
             aTextBox_FindNameByCode1.txtCodeText = "";
             aTextBox_FindNameByCode1.txtNameText = "";
             aTextBox_FindNameByCode2.txtCodeText = "";
             aTextBox_FindNameByCode2.txtNameText = "";
+
+            DataLoad();         
         }
 
         private void DataLoad() // 그리드뷰 불러오기
@@ -89,10 +89,13 @@ namespace Axxen
 
         private void aDateTimePickerSearch1_btnDateTimeSearch_Click(object sender, EventArgs args) // 날짜별 조회
         {
-            wowc = woservice.GetDatePicker_WorkOrder_Item_WC(aDateTimePickerSearch1.ADateTimePickerValue1.ToShortDateString(),aDateTimePickerSearch1.ADateTimePickerValue2.ToShortDateString());
-            dgvMainGrid.DataSource = wowc;
             aTextBox_FindNameByCode1.txtCodeText = "";
             aTextBox_FindNameByCode1.txtNameText = "";
+            aTextBox_FindNameByCode2.txtCodeText = "";
+            aTextBox_FindNameByCode2.txtNameText = "";
+
+            wowc = woservice.GetDatePicker_WorkOrder_Item_WC(aDateTimePickerSearch1.ADateTimePickerValue1.ToShortDateString(),aDateTimePickerSearch1.ADateTimePickerValue2.ToShortDateString());
+            dgvMainGrid.DataSource = wowc;         
         }
 
         private void PRM_PRF_001_FormClosing(object sender, FormClosingEventArgs e) //이벤트 종료
@@ -106,27 +109,26 @@ namespace Axxen
                                where date.Process_name == aTextBox_FindNameByCode1.txtNameText
                                select date).ToList();
             dgvMainGrid.DataSource = reqdateList;
+
+            aTextBox_FindNameByCode2.txtCodeText = "";
+            aTextBox_FindNameByCode2.txtNameText = "";
         }
 
         private void aTextBox_FindNameByCode2_DotDotDotFormClosing(object sender, CustomControls.SearchFormClosingArgs args) // 작업장별 검색
         {
             if (aTextBox_FindNameByCode1.txtCodeText == "")
             {
-
-                reqdateList = (from date in wowc
-                               where date.Wc_Name == aTextBox_FindNameByCode2.txtNameText
-                               select date).ToList();
-                dgvMainGrid.DataSource = reqdateList;
-
-                aTextBox_FindNameByCode2.txtCodeText = "";
-                aTextBox_FindNameByCode2.txtNameText = "";
+                    reqdateList = (from date in wowc
+                                   where date.Wc_Name == aTextBox_FindNameByCode2.txtNameText
+                                   select date).ToList();
+                    dgvMainGrid.DataSource = reqdateList;            
             }
             else
             {
-                var reqdateList1 = (from date in reqdateList
-                                    where date.Wc_Name == aTextBox_FindNameByCode2.txtNameText
-                                    select date).ToList();
-                dgvMainGrid.DataSource = reqdateList1;
+                    var reqdateList1 = (from date in reqdateList
+                                        where date.Wc_Name == aTextBox_FindNameByCode2.txtNameText
+                                        select date).ToList();
+                    dgvMainGrid.DataSource = reqdateList1;
             }
         }
     }
