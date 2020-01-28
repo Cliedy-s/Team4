@@ -68,6 +68,7 @@
     <Compile Include="ScreenItemDAC.cs" />
     <Compile Include="UserGroupDAC.cs" />
     <Compile Include="UserInfoDAC.cs" />
+    <Compile Include="WorkCenter_MasterDAC.cs" />
     <Compile Include="WorkOrderDAC.cs" />
     <Compile Include="Wo_ReqDAC.cs" />
   </ItemGroup>

@@ -102,7 +102,7 @@
             this.aBigTextBox_LabeledBigTextBox2.Size = new System.Drawing.Size(469, 42);
             this.aBigTextBox_LabeledBigTextBox2.TabIndex = 26;
             this.aBigTextBox_LabeledBigTextBox2.TextBoxText = "";
-            this.aBigTextBox_LabeledBigTextBox2.TextBoxType = Axxen.CustomControls.type.Normal;
+            this.aBigTextBox_LabeledBigTextBox2.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
             // aBigTextBox_LabeledBigTextBox1
             // 
@@ -116,7 +116,7 @@
             this.aBigTextBox_LabeledBigTextBox1.Size = new System.Drawing.Size(469, 42);
             this.aBigTextBox_LabeledBigTextBox1.TabIndex = 25;
             this.aBigTextBox_LabeledBigTextBox1.TextBoxText = "";
-            this.aBigTextBox_LabeledBigTextBox1.TextBoxType = Axxen.CustomControls.type.Normal;
+            this.aBigTextBox_LabeledBigTextBox1.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
             // aBigTextBox_Searchable3
             // 
@@ -130,7 +130,7 @@
             this.aBigTextBox_Searchable3.Size = new System.Drawing.Size(469, 42);
             this.aBigTextBox_Searchable3.TabIndex = 24;
             this.aBigTextBox_Searchable3.TextBoxText = "";
-            this.aBigTextBox_Searchable3.TextBoxType = Axxen.CustomControls.type.Normal;
+            this.aBigTextBox_Searchable3.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
             // aBigTextBox_Searchable2
             // 
@@ -144,7 +144,7 @@
             this.aBigTextBox_Searchable2.Size = new System.Drawing.Size(469, 42);
             this.aBigTextBox_Searchable2.TabIndex = 23;
             this.aBigTextBox_Searchable2.TextBoxText = "";
-            this.aBigTextBox_Searchable2.TextBoxType = Axxen.CustomControls.type.Normal;
+            this.aBigTextBox_Searchable2.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
             // aBigTextBox_Searchable1
             // 
@@ -158,7 +158,7 @@
             this.aBigTextBox_Searchable1.Size = new System.Drawing.Size(469, 42);
             this.aBigTextBox_Searchable1.TabIndex = 22;
             this.aBigTextBox_Searchable1.TextBoxText = "";
-            this.aBigTextBox_Searchable1.TextBoxType = Axxen.CustomControls.type.Normal;
+            this.aBigTextBox_Searchable1.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
             // btnCreateWorkOrder
             // 
@@ -185,7 +185,7 @@
             this.aBigTextBox_Searchable4.Size = new System.Drawing.Size(469, 42);
             this.aBigTextBox_Searchable4.TabIndex = 27;
             this.aBigTextBox_Searchable4.TextBoxText = "";
-            this.aBigTextBox_Searchable4.TextBoxType = Axxen.CustomControls.type.Normal;
+            this.aBigTextBox_Searchable4.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
             // POP_PRD_009
             // 

@@ -179,7 +179,7 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(310, 23);
             this.txtSearch.TabIndex = 2;
-            this.txtSearch.txtType = Axxen.CustomControls.type.Normal;
+            this.txtSearch.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // rdoScreenCode
             // 
@@ -326,7 +326,7 @@
             this.lblGroup.Name = "lblGroup";
             this.lblGroup.Size = new System.Drawing.Size(148, 23);
             this.lblGroup.TabIndex = 1;
-            this.lblGroup.txtType = Axxen.CustomControls.type.Normal;
+            this.lblGroup.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // cbbGroup
             // 

@@ -76,6 +76,7 @@
     <Compile Include="UserGroupVO.cs" />
     <Compile Include="UserInfoVO.cs" />
     <Compile Include="WC_J_WO_Time_Day_ItemVO.cs" />
+    <Compile Include="WorkCenter_MasterVO.cs" />
     <Compile Include="WorkerVO.cs" />
     <Compile Include="WorkOrderVO.cs" />
     <Compile Include="WorkOrder_J_WC_ItmeVO.cs" />

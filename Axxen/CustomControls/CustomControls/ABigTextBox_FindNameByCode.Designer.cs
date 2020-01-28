@@ -47,7 +47,7 @@
             this.txtCode.ReadOnly = true;
             this.txtCode.Size = new System.Drawing.Size(48, 29);
             this.txtCode.TabIndex = 0;
-            this.txtCode.txtType = Axxen.CustomControls.type.Normal;
+            this.txtCode.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // aButton1
             // 
@@ -77,7 +77,7 @@
             this.txtName.ReadOnly = true;
             this.txtName.Size = new System.Drawing.Size(124, 29);
             this.txtName.TabIndex = 2;
-            this.txtName.txtType = Axxen.CustomControls.type.Normal;
+            this.txtName.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // lblName
             // 

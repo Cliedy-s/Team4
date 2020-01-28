@@ -36,11 +36,11 @@
             this.txtPronounce = new Axxen.CustomControls.ALabel();
             this.aPanel2 = new Axxen.CustomControls.APanel();
             this.aPanel3 = new Axxen.CustomControls.APanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnClose = new System.Windows.Forms.PictureBox();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
             this.aPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             this.SuspendLayout();
             // 
             // aLabel1
@@ -133,23 +133,24 @@
             // aPanel3
             // 
             this.aPanel3.BackColor = System.Drawing.Color.White;
-            this.aPanel3.Controls.Add(this.pictureBox1);
+            this.aPanel3.Controls.Add(this.btnClose);
             this.aPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.aPanel3.Location = new System.Drawing.Point(0, 0);
             this.aPanel3.Name = "aPanel3";
             this.aPanel3.Size = new System.Drawing.Size(1210, 97);
             this.aPanel3.TabIndex = 4;
             // 
-            // pictureBox1
+            // btnClose
             // 
-            this.pictureBox1.Image = global::AxxenClient.Properties.Resources.X;
-            this.pictureBox1.Location = new System.Drawing.Point(1129, 16);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(69, 65);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.Image = global::AxxenClient.Properties.Resources.X;
+            this.btnClose.Location = new System.Drawing.Point(1129, 16);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(69, 65);
+            this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnClose.TabIndex = 0;
+            this.btnClose.TabStop = false;
+            this.btnClose.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // ClientBaseForm
             // 
@@ -166,7 +167,7 @@
             this.aPanel2.ResumeLayout(false);
             this.aPanel2.PerformLayout();
             this.aPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -181,6 +182,6 @@
         protected Axxen.CustomControls.ALabel txtPronounce;
         protected Axxen.CustomControls.APanel aPanel2;
         private Axxen.CustomControls.APanel aPanel3;
-        protected System.Windows.Forms.PictureBox pictureBox1;
+        protected System.Windows.Forms.PictureBox btnClose;
     }
 }

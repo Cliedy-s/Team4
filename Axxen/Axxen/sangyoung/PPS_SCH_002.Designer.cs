@@ -32,9 +32,6 @@
             this.aTextBox_FindNameByCode1 = new Axxen.CustomControls.ATextBox_FindNameByCode();
             this.btnWorkCancle = new Axxen.CustomControls.AButton();
             this.btnWoFinish = new Axxen.CustomControls.AButton();
-            this.dtpWorkFinish = new Axxen.CustomControls.ADateTimePicker();
-            this.aLabel2 = new Axxen.CustomControls.ALabel();
-            this.dtpWorkStart = new Axxen.CustomControls.ADateTimePicker();
             this.aLabel1 = new Axxen.CustomControls.ALabel();
             this.txtWorkNum = new Axxen.CustomControls.ATextBox_Labeled();
             this.txtItemCode = new Axxen.CustomControls.ATextBox_Labeled();
@@ -46,6 +43,7 @@
             this.aLabel5 = new Axxen.CustomControls.ALabel();
             this.numPlanQuantity = new System.Windows.Forms.NumericUpDown();
             this.txtWorkCenter = new Axxen.CustomControls.ATextBox_Labeled();
+            this.aDateTimePickerSearch1 = new Axxen.CustomControls.ADateTimePickerSearch();
             this.aPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aSplitContainer1)).BeginInit();
             this.aSplitContainer1.Panel2.SuspendLayout();
@@ -56,13 +54,11 @@
             // 
             // aPanel2
             // 
+            this.aPanel2.Controls.Add(this.aDateTimePickerSearch1);
             this.aPanel2.Controls.Add(this.aTextBox_FindNameByCode2);
             this.aPanel2.Controls.Add(this.aTextBox_FindNameByCode1);
             this.aPanel2.Controls.Add(this.btnWorkCancle);
             this.aPanel2.Controls.Add(this.btnWoFinish);
-            this.aPanel2.Controls.Add(this.dtpWorkFinish);
-            this.aPanel2.Controls.Add(this.aLabel2);
-            this.aPanel2.Controls.Add(this.dtpWorkStart);
             this.aPanel2.Controls.Add(this.aLabel1);
             // 
             // aSplitContainer1
@@ -102,10 +98,11 @@
             // 
             // aTextBox_FindNameByCode2
             // 
-            this.aTextBox_FindNameByCode2.CodeType = Axxen.CustomControls.types.WorkCenters;
+            this.aTextBox_FindNameByCode2.allfont = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aTextBox_FindNameByCode2.CodeType = Axxen.CustomControls.DataType.WorkCenters;
             this.aTextBox_FindNameByCode2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aTextBox_FindNameByCode2.lblNameText = "작업장";
-            this.aTextBox_FindNameByCode2.Location = new System.Drawing.Point(625, 26);
+            this.aTextBox_FindNameByCode2.Location = new System.Drawing.Point(702, 26);
             this.aTextBox_FindNameByCode2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.aTextBox_FindNameByCode2.Name = "aTextBox_FindNameByCode2";
             this.aTextBox_FindNameByCode2.Size = new System.Drawing.Size(229, 27);
@@ -115,10 +112,11 @@
             // 
             // aTextBox_FindNameByCode1
             // 
-            this.aTextBox_FindNameByCode1.CodeType = Axxen.CustomControls.types.Processes;
+            this.aTextBox_FindNameByCode1.allfont = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aTextBox_FindNameByCode1.CodeType = Axxen.CustomControls.DataType.Processes;
             this.aTextBox_FindNameByCode1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aTextBox_FindNameByCode1.lblNameText = "공정";
-            this.aTextBox_FindNameByCode1.Location = new System.Drawing.Point(387, 26);
+            this.aTextBox_FindNameByCode1.Location = new System.Drawing.Point(454, 26);
             this.aTextBox_FindNameByCode1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.aTextBox_FindNameByCode1.Name = "aTextBox_FindNameByCode1";
             this.aTextBox_FindNameByCode1.Size = new System.Drawing.Size(221, 27);
@@ -131,51 +129,26 @@
             this.btnWorkCancle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnWorkCancle.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnWorkCancle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnWorkCancle.Location = new System.Drawing.Point(926, 41);
+            this.btnWorkCancle.Location = new System.Drawing.Point(963, 42);
             this.btnWorkCancle.Name = "btnWorkCancle";
             this.btnWorkCancle.Size = new System.Drawing.Size(130, 23);
             this.btnWorkCancle.TabIndex = 16;
             this.btnWorkCancle.Text = "작업지시 마감취소";
             this.btnWorkCancle.UseVisualStyleBackColor = false;
+            this.btnWorkCancle.Click += new System.EventHandler(this.BtnWorkCancle_Click);
             // 
             // btnWoFinish
             // 
             this.btnWoFinish.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnWoFinish.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnWoFinish.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnWoFinish.Location = new System.Drawing.Point(926, 12);
+            this.btnWoFinish.Location = new System.Drawing.Point(963, 13);
             this.btnWoFinish.Name = "btnWoFinish";
             this.btnWoFinish.Size = new System.Drawing.Size(130, 23);
             this.btnWoFinish.TabIndex = 17;
             this.btnWoFinish.Text = "작업지시 마감";
             this.btnWoFinish.UseVisualStyleBackColor = false;
-            // 
-            // dtpWorkFinish
-            // 
-            this.dtpWorkFinish.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpWorkFinish.Location = new System.Drawing.Point(254, 28);
-            this.dtpWorkFinish.Name = "dtpWorkFinish";
-            this.dtpWorkFinish.Size = new System.Drawing.Size(105, 23);
-            this.dtpWorkFinish.TabIndex = 15;
-            this.dtpWorkFinish.Value = new System.DateTime(2020, 1, 3, 15, 14, 0, 0);
-            // 
-            // aLabel2
-            // 
-            this.aLabel2.AutoSize = true;
-            this.aLabel2.Location = new System.Drawing.Point(233, 32);
-            this.aLabel2.Name = "aLabel2";
-            this.aLabel2.Size = new System.Drawing.Size(15, 15);
-            this.aLabel2.TabIndex = 14;
-            this.aLabel2.Text = "~";
-            // 
-            // dtpWorkStart
-            // 
-            this.dtpWorkStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpWorkStart.Location = new System.Drawing.Point(121, 28);
-            this.dtpWorkStart.Name = "dtpWorkStart";
-            this.dtpWorkStart.Size = new System.Drawing.Size(105, 23);
-            this.dtpWorkStart.TabIndex = 13;
-            this.dtpWorkStart.Value = new System.DateTime(2020, 1, 3, 15, 14, 0, 0);
+            this.btnWoFinish.Click += new System.EventHandler(this.BtnWoFinish_Click);
             // 
             // aLabel1
             // 
@@ -188,6 +161,7 @@
             // 
             // txtWorkNum
             // 
+            this.txtWorkNum.allfont = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtWorkNum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtWorkNum.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtWorkNum.LabelText = "작업지시번호";
@@ -197,9 +171,11 @@
             this.txtWorkNum.Size = new System.Drawing.Size(229, 29);
             this.txtWorkNum.TabIndex = 11;
             this.txtWorkNum.TextBoxText = "";
+            this.txtWorkNum.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
             // txtItemCode
             // 
+            this.txtItemCode.allfont = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtItemCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtItemCode.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtItemCode.LabelText = "품목코드";
@@ -209,9 +185,11 @@
             this.txtItemCode.Size = new System.Drawing.Size(209, 29);
             this.txtItemCode.TabIndex = 12;
             this.txtItemCode.TextBoxText = "";
+            this.txtItemCode.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
             // txtItemName
             // 
+            this.txtItemName.allfont = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtItemName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtItemName.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtItemName.LabelText = "품목명";
@@ -221,6 +199,7 @@
             this.txtItemName.Size = new System.Drawing.Size(209, 29);
             this.txtItemName.TabIndex = 13;
             this.txtItemName.TextBoxText = "";
+            this.txtItemName.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
             // aLabel3
             // 
@@ -261,7 +240,7 @@
             this.txtPlanUnit.Name = "txtPlanUnit";
             this.txtPlanUnit.Size = new System.Drawing.Size(94, 23);
             this.txtPlanUnit.TabIndex = 17;
-            this.txtPlanUnit.txtType = Axxen.CustomControls.type.Normal;
+            this.txtPlanUnit.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // aLabel5
             // 
@@ -283,6 +262,7 @@
             // 
             // txtWorkCenter
             // 
+            this.txtWorkCenter.allfont = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtWorkCenter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtWorkCenter.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtWorkCenter.LabelText = "작업장";
@@ -292,12 +272,27 @@
             this.txtWorkCenter.Size = new System.Drawing.Size(229, 29);
             this.txtWorkCenter.TabIndex = 20;
             this.txtWorkCenter.TextBoxText = "";
+            this.txtWorkCenter.TextBoxType = Axxen.CustomControls.TextType.Normal;
+            // 
+            // aDateTimePickerSearch1
+            // 
+            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 1, 21, 14, 0, 26, 886);
+            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 1, 28, 13, 56, 27, 894);
+            this.aDateTimePickerSearch1.ButtonText = "조회";
+            this.aDateTimePickerSearch1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aDateTimePickerSearch1.Location = new System.Drawing.Point(107, 23);
+            this.aDateTimePickerSearch1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.aDateTimePickerSearch1.Name = "aDateTimePickerSearch1";
+            this.aDateTimePickerSearch1.Size = new System.Drawing.Size(324, 32);
+            this.aDateTimePickerSearch1.TabIndex = 21;
+            this.aDateTimePickerSearch1.btnDateTimeSearch_Click += new Axxen.CustomControls.ADateTimePickerSearch.SearchButtonClick(this.ADateTimePickerSearch1_btnDateTimeSearch_Click);
             // 
             // PPS_SCH_002
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.Name = "PPS_SCH_002";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PPS_SCH_002_FormClosed);
             this.Load += new System.EventHandler(this.PPS_SCH_002_Load);
             this.aPanel2.ResumeLayout(false);
             this.aPanel2.PerformLayout();
@@ -317,9 +312,6 @@
         private CustomControls.ATextBox_FindNameByCode aTextBox_FindNameByCode1;
         private CustomControls.AButton btnWorkCancle;
         private CustomControls.AButton btnWoFinish;
-        private CustomControls.ADateTimePicker dtpWorkFinish;
-        private CustomControls.ALabel aLabel2;
-        private CustomControls.ADateTimePicker dtpWorkStart;
         private CustomControls.ALabel aLabel1;
         private CustomControls.ATextBox_Labeled txtItemName;
         private CustomControls.ATextBox_Labeled txtItemCode;
@@ -331,5 +323,6 @@
         private CustomControls.ADateTimePicker dtpPlanDate;
         private CustomControls.ALabel aLabel3;
         private CustomControls.ATextBox_Labeled txtWorkCenter;
+        private CustomControls.ADateTimePickerSearch aDateTimePickerSearch1;
     }
 }

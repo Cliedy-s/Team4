@@ -96,7 +96,7 @@
             this.aBigTextBox_Searchable4.Size = new System.Drawing.Size(469, 42);
             this.aBigTextBox_Searchable4.TabIndex = 34;
             this.aBigTextBox_Searchable4.TextBoxText = "";
-            this.aBigTextBox_Searchable4.TextBoxType = Axxen.CustomControls.type.Normal;
+            this.aBigTextBox_Searchable4.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
             // POP_PRD_011
             // 
