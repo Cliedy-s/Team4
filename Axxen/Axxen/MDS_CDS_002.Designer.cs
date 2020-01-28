@@ -100,7 +100,7 @@
             // aBigTextBox_FindNameByCode1
             // 
             this.aBigTextBox_FindNameByCode1.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aBigTextBox_FindNameByCode1.CodeType = Axxen.CustomControls.types.Errors;
+       //     this.aBigTextBox_FindNameByCode1.CodeType = Axxen.CustomControls.types.Errors;
             this.aBigTextBox_FindNameByCode1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aBigTextBox_FindNameByCode1.lblNameText = "불량현상 대분류";
             this.aBigTextBox_FindNameByCode1.Location = new System.Drawing.Point(27, 19);
