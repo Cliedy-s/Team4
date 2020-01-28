@@ -44,7 +44,7 @@
             this.txtValue.Name = "txtValue";
             this.txtValue.Size = new System.Drawing.Size(338, 29);
             this.txtValue.TabIndex = 5;
-            this.txtValue.txtType = Axxen.CustomControls.type.Normal;
+            this.txtValue.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // lblName
             // 

@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Axxen.Util
 {
-    public static class InitControlUtil
+    static class InitControlUtil
     {
         /// <summary>
         /// 그리드뷰 칼럼 삽입

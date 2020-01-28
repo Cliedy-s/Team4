@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Axxen.Util
+namespace Axxen.CustomControls
 {
     public static class InitControlUtil
     {
@@ -33,9 +33,8 @@ namespace Axxen.Util
         /// </summary>
         public static void SetDGVDesign(DataGridView dgv)
         {
-            // TODO - 임시 주석 제거 // **// 
-            // **// dgv.AutoGenerateColumns = false;
-            // **// dgv.AllowUserToAddRows = false;
+            dgv.AutoGenerateColumns = false;
+            dgv.AllowUserToAddRows = false;
             dgv.MultiSelect = false; //열하나만선택
 
             dgv.AllowUserToResizeColumns = true; // 칼럼 사용자 변경 o

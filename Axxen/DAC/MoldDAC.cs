@@ -27,6 +27,22 @@ namespace DAC
                 return list;
             }
         }
+
+        public List<MoldVO> SelectMoldGroup()
+        {
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText = "select distinct Mold_Group from Mold_Master";
+
+                comm.Connection.Open();
+                SqlDataReader reader = comm.ExecuteReader();
+                List<MoldVO> list = Helper.DataReaderMapToList<MoldVO>(reader);
+                comm.Connection.Close();
+
+                return list;
+            }
+        }
         public List<Mold_J_Item_Wc_MuseVO> SelectMold_Item_Wc_Muse()
         {
             using (SqlCommand comm = new SqlCommand())

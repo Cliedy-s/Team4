@@ -1095,7 +1095,7 @@
             this.txtnotice.Size = new System.Drawing.Size(304, 37);
             this.txtnotice.TabIndex = 22;
             this.txtnotice.Text = "알림";
-            this.txtnotice.txtType = Axxen.CustomControls.type.Normal;
+            this.txtnotice.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // MainForm
             // 

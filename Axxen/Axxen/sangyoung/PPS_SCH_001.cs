@@ -16,9 +16,11 @@ namespace Axxen
     public partial class PPS_SCH_001 : Axxen.GridGridForm
     {
         List<Wo_Req_ItemVO> reqList;
+        List<Wo_Req_ItemVO> reqSearchList;
+        List<Wo_Req_ItemVO> excelList;
         List<WorkOrder_J_WC_ItmeVO> workList;
+        List<WorkOrder_J_WC_ItmeVO> addlist = new List<WorkOrder_J_WC_ItmeVO>();
         Wo_ReqService service = new Wo_ReqService();
-        bool bFlag = false;
 
         public PPS_SCH_001()
         {
@@ -58,30 +60,19 @@ namespace Axxen
 
         private void DgvMainGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            bool result = false;
 
-            foreach (DataGridViewRow row in dgvMainGrid.Rows)
-            {
-                DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
-                if (chk.Value == chk.FalseValue || chk.Value == null)
-                {
-                    chk.Value = chk.TrueValue;
-                }
-                else
-                {
-                    chk.Value = chk.FalseValue;
-                }
-            }
-            dgvMainGrid.EndEdit();
-
-
-
-            MessageBox.Show(Convert.ToBoolean(dgvMainGrid.SelectedRows[0].Cells[0].Value).ToString());
-            MessageBox.Show("Test");
-            if (Convert.ToInt32(e.RowIndex) < 0)
+            if (e.RowIndex < 0)
             {
                 return;
             }
-            Check_Wo_Req(dgvMainGrid.Rows[e.RowIndex].Cells[2].Value.ToString(), e.ColumnIndex, Convert.ToBoolean(dgvMainGrid.CurrentRow.Cells[0].Value));
+            else
+            {
+                result = Convert.ToBoolean(dgvMainGrid.Rows[e.RowIndex].Cells[0].Value);
+                dgvMainGrid.Rows[e.RowIndex].Cells[0].Value = !result;
+                dgvMainGrid.EndEdit();
+                Check_Wo_Req(dgvMainGrid.Rows[e.RowIndex].Cells[2].Value.ToString(), e.ColumnIndex, Convert.ToBoolean(dgvMainGrid.CurrentRow.Cells[0].Value));
+            }
         }
 
         private void MainDataLoad()
@@ -133,12 +124,27 @@ namespace Axxen
         private void BtnPrFinish_Click(object sender, EventArgs e)
         {
             bool result = false;
-            string woNo = dgvMainGrid[2, dgvMainGrid.CurrentRow.Index].Value.ToString();
-            result = service.UpdateWoReq(woNo);
+            string woNo = string.Empty;
+
+            foreach (DataGridViewRow row in dgvMainGrid.Rows)
+            {
+                DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
+                if (Convert.ToBoolean(chk.Value))
+                {
+                    woNo = row.Cells[2].Value.ToString();
+                    result = service.UpdateWoReq(woNo);
+                }
+                else
+                {
+                    continue;
+                }
+            }
             if (result)
                 MessageBox.Show("의뢰가 마감되었습니다.", "생산의뢰관리", MessageBoxButtons.OK);
             else
                 MessageBox.Show("의뢰가 마감되지 않았습니다.", "생산의뢰관리", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            RefreshFormShow(null, null);
 
         }
 
@@ -162,25 +168,31 @@ namespace Axxen
         {
             if (txtPrNum.TextBoxText.Length > 0 && txtProjectName.TextBoxText.Length <= 0)
             {
-                reqList = (from data in reqList
-                           where data.Wo_Req_No == txtPrNum.TextBoxText
-                           select data).ToList();
+                reqSearchList = (from data in reqList
+                                 where data.Wo_Req_No.Contains(txtPrNum.TextBoxText.Trim())
+                                 select data).ToList();
                 txtPrNum.TextBoxText = "";
             }
             else if (txtProjectName.TextBoxText.Length > 0 && txtPrNum.TextBoxText.Length <= 0)
             {
-                reqList = (from data in reqList
-                           where data.Wo_Req_No.Contains(txtProjectName.TextBoxText.ToString().Trim())
-                           select data).ToList();
+                reqSearchList = (from data in reqList
+                                 where data.Wo_Req_No.Contains(txtProjectName.TextBoxText.Trim())
+                                 select data).ToList();
                 txtProjectName.TextBoxText = "";
+            }
+            else if (txtProjectName.TextBoxText.Length > 0 && txtPrNum.TextBoxText.Length > 0)
+            {
+                reqSearchList = (from data in reqList
+                                 where data.Wo_Req_No.Contains(txtProjectName.TextBoxText.Trim()) || data.Wo_Req_No.Contains(txtPrNum.TextBoxText.Trim())
+                                 select data).ToList();
+                txtProjectName.TextBoxText = "";
+                txtPrNum.TextBoxText = "";
             }
             else
             {
-                txtProjectName.TextBoxText = "";
-                txtPrNum.TextBoxText = "";
                 MessageBox.Show("검색조건을 입력해 주세요.");
             }
-            dgvMainGrid.DataSource = reqList;
+            dgvMainGrid.DataSource = reqSearchList;
         }
 
         /// <summary>
@@ -192,50 +204,30 @@ namespace Axxen
         {
             if (colindex == dgvMainGrid.Columns["check"].Index)
             {
-                //var list = (from work in workList
-                //            where work.Wo_Req_No.Contains(reqno)
-                //            select work).ToList();
-                workList = (from work in workList
-                            where work.Wo_Req_No.Contains(reqno)
-                            select work).ToList();
-                if (check)
+                if (colindex == dgvMainGrid.Columns["check"].Index)
                 {
-                    List<WorkOrder_J_WC_ItmeVO> list = new List<WorkOrder_J_WC_ItmeVO>();
-                    foreach (var item in workList)
+                    var list = (from work in workList
+                                where work.Wo_Req_No.Contains(reqno)
+                                select work).ToList();
+                    if (check)
                     {
-                        list.Add(item);
+                        foreach (var item in list)
+                        {
+                            addlist.Add(item);
+                        }
+                        dgvSubGrid.DataSource = null;
+                        dgvSubGrid.DataSource = addlist;
+
                     }
-                    dgvSubGrid.DataSource = list;
-                    //foreach (var item in list)
-                    //{
-                    //    dgvSubGrid.Rows.Add(null, null, item.Req_Seq, item.Wo_Req_No, item.Wo_Status, item.Workorderno, item.Prd_Date, item.Item_Code, item.Item_Name, item.Wc_Name,
-                    //        item.Plan_Qty, item.In_Qty_Main, item.Out_Qty_Main, item.Prd_Qty, item.Remark);
-                    //}
-                }
-                else
-                {
-                    var item = workList.FirstOrDefault(x => x.Wo_Req_No.Contains(reqno));
-                    workList.Remove(item);
-                    dgvSubGrid.DataSource = null;
-                    dgvSubGrid.DataSource = workList;
+                    else
+                    {
+                        addlist.RemoveAll(x => x.Wo_Req_No.Contains(reqno));
+                        dgvSubGrid.DataSource = null;
+                        dgvSubGrid.DataSource = addlist;
+                    }
                 }
             }
         }
-
-        //private void UnCheck_Wo_Req(string reqno, int colindex)
-        //{
-        //    if (colindex == dgvMainGrid.Columns["check"].Index)
-        //    {
-        //        var list = (from work in workList
-        //                    where work.Wo_Req_No.Contains(reqno)
-        //                    select work).ToList();
-
-        //        foreach (var item in list)
-        //        {
-        //            //dgvSubGrid.Rows.Remove();
-        //        }
-        //    }
-        //}
 
         private void GridCheckSetting()
         {
@@ -249,6 +241,38 @@ namespace Axxen
         {
             ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow);
             ((MainForm)this.MdiParent).InsertFormEvent -= new System.EventHandler(this.InsertFormShow);
+        }
+
+        private void ADateTimePickerSearch1_btnDateTimeSearch_Click(object sender, EventArgs args)
+        {
+            DateTime startT = aDateTimePickerSearch1.ADateTimePickerValue1;
+            DateTime endT = aDateTimePickerSearch1.ADateTimePickerValue2;
+            endT = endT.AddDays(10);
+            var reqdateList = (from date in reqList
+                               where date.Ins_Date >= startT && date.Ins_Date <= endT
+                               select date).ToList();
+            dgvMainGrid.DataSource = reqdateList;
+        }
+
+        private void BtnPrDown_Click(object sender, EventArgs e)
+        {
+            if (dgvMainGrid.SelectedRows.Count < 0)
+            {
+                MessageBox.Show("목록을 선택해 주세요.");
+            }
+            foreach (DataGridViewRow row in dgvMainGrid.Rows)
+            {
+                DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
+                if (Convert.ToBoolean(chk.Value))
+                {
+
+                    Helper.ExcelExportFromDGVByColumns(new DataGridView[] { dgvMainGrid }, saveFileDialog1);
+                }
+                else
+                {
+                    continue;
+                }
+            }
         }
     }
 }
