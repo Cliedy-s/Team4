@@ -182,6 +182,24 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ParkSangIn\MDS_CDS_003.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_CDS_003.Designer.cs">
+      <DependentUpon>MDS_CDS_003.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_CDS_002.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_CDS_002.Designer.cs">
+      <DependentUpon>MDS_CDS_002.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_CDS_001.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_CDS_001.Designer.cs">
+      <DependentUpon>MDS_CDS_001.cs</DependentUpon>
+    </Compile>
     <Compile Include="ParkSangIn\MDS_SDS_006_1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,47 +212,23 @@
     <Compile Include="ParkSangIn\MDS_SDS_002_1.Designer.cs">
       <DependentUpon>MDS_SDS_002_1.cs</DependentUpon>
     </Compile>
+    <Compile Include="ParkSangIn\MDS_SDS_006_2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_SDS_006_2.Designer.cs">
+      <DependentUpon>MDS_SDS_006_2.cs</DependentUpon>
+    </Compile>
     <Compile Include="ParkSangIn\MSS_CON_003_1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ParkSangIn\MSS_CON_003_1.Designer.cs">
       <DependentUpon>MSS_CON_003_1.cs</DependentUpon>
     </Compile>
-    <Compile Include="ParkSangIn\MDS_CDS_001.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ParkSangIn\MDS_CDS_001.Designer.cs">
-      <DependentUpon>MDS_CDS_001.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ParkSangIn\MDS_CDS_002.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ParkSangIn\MDS_CDS_002.Designer.cs">
-      <DependentUpon>MDS_CDS_002.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ParkSangIn\MDS_CDS_003.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ParkSangIn\MDS_CDS_003.Designer.cs">
-      <DependentUpon>MDS_CDS_003.cs</DependentUpon>
-    </Compile>
     <Compile Include="ParkSangIn\MDS_CDS_004.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ParkSangIn\MDS_CDS_004.Designer.cs">
       <DependentUpon>MDS_CDS_004.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ParkSangIn\MDS_CDS_005.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ParkSangIn\MDS_CDS_005.Designer.cs">
-      <DependentUpon>MDS_CDS_005.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ParkSangIn\MDS_CDS_006.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ParkSangIn\MDS_CDS_006.Designer.cs">
-      <DependentUpon>MDS_CDS_006.cs</DependentUpon>
     </Compile>
     <Compile Include="ParkSangIn\MDS_CDS_007.cs">
       <SubType>Form</SubType>
@@ -271,24 +265,6 @@
     </Compile>
     <Compile Include="ParkSangIn\MDS_SDS_002.Designer.cs">
       <DependentUpon>MDS_SDS_002.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ParkSangIn\MDS_SDS_003.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ParkSangIn\MDS_SDS_003.Designer.cs">
-      <DependentUpon>MDS_SDS_003.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ParkSangIn\MDS_SDS_004.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ParkSangIn\MDS_SDS_004.Designer.cs">
-      <DependentUpon>MDS_SDS_004.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ParkSangIn\MDS_SDS_005.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ParkSangIn\MDS_SDS_005.Designer.cs">
-      <DependentUpon>MDS_SDS_005.cs</DependentUpon>
     </Compile>
     <Compile Include="ParkSangIn\MDS_SDS_006.cs">
       <SubType>Form</SubType>
@@ -524,6 +500,7 @@
     <Compile Include="Util\ExcelHelper.cs" />
     <Compile Include="Util\InitControlUtil.cs" />
     <Compile Include="Util\LoggingUtility.cs" />
+    <Compile Include="Util\ResetUtillity.cs" />
     <EmbeddedResource Include="HwiSeok\PRM_PRF_001.resx">
       <DependentUpon>PRM_PRF_001.cs</DependentUpon>
     </EmbeddedResource>
@@ -578,26 +555,20 @@
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ParkSangIn\MDS_SDS_002_1.resx">
-      <DependentUpon>MDS_SDS_002_1.cs</DependentUpon>
+    <EmbeddedResource Include="ParkSangIn\MDS_CDS_002.resx">
+      <DependentUpon>MDS_CDS_002.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ParkSangIn\MDS_CDS_001.resx">
       <DependentUpon>MDS_CDS_001.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ParkSangIn\MDS_CDS_002.resx">
-      <DependentUpon>MDS_CDS_002.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ParkSangIn\MDS_CDS_003.resx">
       <DependentUpon>MDS_CDS_003.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ParkSangIn\MDS_SDS_002_1.resx">
+      <DependentUpon>MDS_SDS_002_1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ParkSangIn\MDS_CDS_004.resx">
       <DependentUpon>MDS_CDS_004.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ParkSangIn\MDS_CDS_005.resx">
-      <DependentUpon>MDS_CDS_005.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ParkSangIn\MDS_CDS_006.resx">
-      <DependentUpon>MDS_CDS_006.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ParkSangIn\MDS_CDS_007.resx">
       <DependentUpon>MDS_CDS_007.cs</DependentUpon>
@@ -617,20 +588,14 @@
     <EmbeddedResource Include="ParkSangIn\MDS_SDS_002.resx">
       <DependentUpon>MDS_SDS_002.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ParkSangIn\MDS_SDS_003.resx">
-      <DependentUpon>MDS_SDS_003.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ParkSangIn\MDS_SDS_004.resx">
-      <DependentUpon>MDS_SDS_004.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ParkSangIn\MDS_SDS_005.resx">
-      <DependentUpon>MDS_SDS_005.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ParkSangIn\MDS_SDS_006.resx">
       <DependentUpon>MDS_SDS_006.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ParkSangIn\MDS_SDS_006_1.resx">
       <DependentUpon>MDS_SDS_006_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParkSangIn\MDS_SDS_006_2.resx">
+      <DependentUpon>MDS_SDS_006_2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ParkSangIn\MDS_SDS_007.resx">
       <DependentUpon>MDS_SDS_007.cs</DependentUpon>

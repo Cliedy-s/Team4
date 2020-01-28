@@ -28,165 +28,276 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MDS_CDS_002));
-            this.aLabel8 = new Axxen.CustomControls.ALabel();
-            this.aLabel7 = new Axxen.CustomControls.ALabel();
-            this.aPanel2 = new Axxen.CustomControls.APanel();
+            this.aBigTextBox_FindNameByCode1 = new Axxen.CustomControls.ABigTextBox_FindNameByCode();
+            this.aPanel6 = new Axxen.CustomControls.APanel();
+            this.txteng = new CLIP.eForm.Consent.Standard.Management.UI.PlaceHolderTextBox();
+            this.aPanel7 = new Axxen.CustomControls.APanel();
             this.aLabel2 = new Axxen.CustomControls.ALabel();
-            this.cbbGroup = new Axxen.CustomControls.AComboBox();
-            this.btnSearch = new Axxen.CustomControls.AButton();
-            this.dgvGroup = new Axxen.CustomControls.ADataGridView();
-            this.aDataGridView1 = new Axxen.CustomControls.ADataGridView();
+            this.aPanel4 = new Axxen.CustomControls.APanel();
+            this.placeHolderTextBox1 = new CLIP.eForm.Consent.Standard.Management.UI.PlaceHolderTextBox();
+            this.aPanel8 = new Axxen.CustomControls.APanel();
             this.aLabel1 = new Axxen.CustomControls.ALabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.aPanel3 = new Axxen.CustomControls.APanel();
+            this.placeHolderTextBox2 = new CLIP.eForm.Consent.Standard.Management.UI.PlaceHolderTextBox();
+            this.aPanel5 = new Axxen.CustomControls.APanel();
+            this.aLabel3 = new Axxen.CustomControls.ALabel();
+            this.btnSave = new Axxen.CustomControls.AButton();
+            this.aPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.aSplitContainer1)).BeginInit();
+            this.aSplitContainer1.Panel1.SuspendLayout();
+            this.aSplitContainer1.Panel2.SuspendLayout();
+            this.aSplitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.aSplitContainer2)).BeginInit();
+            this.aSplitContainer2.Panel1.SuspendLayout();
+            this.aSplitContainer2.Panel2.SuspendLayout();
+            this.aSplitContainer2.SuspendLayout();
             this.aPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGroup)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aDataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.aPanel6.SuspendLayout();
+            this.aPanel7.SuspendLayout();
+            this.aPanel4.SuspendLayout();
+            this.aPanel8.SuspendLayout();
+            this.aPanel3.SuspendLayout();
+            this.aPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
-            // aLabel8
+            // aPanel1
             // 
-            this.aLabel8.AutoSize = true;
-            this.aLabel8.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aLabel8.Location = new System.Drawing.Point(556, 184);
-            this.aLabel8.Name = "aLabel8";
-            this.aLabel8.Size = new System.Drawing.Size(440, 17);
-            this.aLabel8.TabIndex = 55;
-            this.aLabel8.Text = " GRID : 불량현상 상세분류 코드 / 불량현상 상세분류명 / 정렬순번 /비고";
+            this.aPanel1.Controls.Add(this.aBigTextBox_FindNameByCode1);
             // 
-            // aLabel7
+            // aSplitContainer1
             // 
-            this.aLabel7.AutoSize = true;
-            this.aLabel7.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aLabel7.Location = new System.Drawing.Point(9, 193);
-            this.aLabel7.Name = "aLabel7";
-            this.aLabel7.Size = new System.Drawing.Size(424, 17);
-            this.aLabel7.TabIndex = 53;
-            this.aLabel7.Text = " GRID : 불량현상 대분류 코드 / 불량현상 대분류 명 / 비고 / 사용유무";
+            // 
+            // aSplitContainer2
+            // 
             // 
             // aPanel2
             // 
-            this.aPanel2.BackColor = System.Drawing.SystemColors.Info;
-            this.aPanel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.aPanel2.Controls.Add(this.aLabel2);
-            this.aPanel2.Controls.Add(this.cbbGroup);
-            this.aPanel2.Controls.Add(this.btnSearch);
-            this.aPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.aPanel2.Location = new System.Drawing.Point(0, 0);
-            this.aPanel2.Name = "aPanel2";
-            this.aPanel2.Size = new System.Drawing.Size(1148, 39);
-            this.aPanel2.TabIndex = 52;
+            this.aPanel2.Controls.Add(this.btnSave);
+            this.aPanel2.Controls.Add(this.aPanel3);
+            this.aPanel2.Controls.Add(this.aPanel5);
+            this.aPanel2.Controls.Add(this.aPanel4);
+            this.aPanel2.Controls.Add(this.aPanel8);
+            this.aPanel2.Controls.Add(this.aPanel6);
+            this.aPanel2.Controls.Add(this.aPanel7);
+            this.aPanel2.Controls.SetChildIndex(this.aHeaderBox3, 0);
+            this.aPanel2.Controls.SetChildIndex(this.aPanel7, 0);
+            this.aPanel2.Controls.SetChildIndex(this.aPanel6, 0);
+            this.aPanel2.Controls.SetChildIndex(this.aPanel8, 0);
+            this.aPanel2.Controls.SetChildIndex(this.aPanel4, 0);
+            this.aPanel2.Controls.SetChildIndex(this.aPanel5, 0);
+            this.aPanel2.Controls.SetChildIndex(this.aPanel3, 0);
+            this.aPanel2.Controls.SetChildIndex(this.btnSave, 0);
+            // 
+            // aHeaderBox3
+            // 
+            this.aHeaderBox3.HeaderBoxText = "입력정보";
+            // 
+            // aHeaderBox1
+            // 
+            this.aHeaderBox1.HeaderBoxText = "불량현상 대분류";
+            // 
+            // aHeaderBox2
+            // 
+            this.aHeaderBox2.HeaderBoxText = "불량현상 상세분류";
+            // 
+            // aBigTextBox_FindNameByCode1
+            // 
+            this.aBigTextBox_FindNameByCode1.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aBigTextBox_FindNameByCode1.CodeType = Axxen.CustomControls.DataType.Errors;
+            this.aBigTextBox_FindNameByCode1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aBigTextBox_FindNameByCode1.lblNameText = "불량현상 대분류";
+            this.aBigTextBox_FindNameByCode1.Location = new System.Drawing.Point(27, 19);
+            this.aBigTextBox_FindNameByCode1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.aBigTextBox_FindNameByCode1.Name = "aBigTextBox_FindNameByCode1";
+            this.aBigTextBox_FindNameByCode1.Size = new System.Drawing.Size(376, 38);
+            this.aBigTextBox_FindNameByCode1.TabIndex = 10;
+            this.aBigTextBox_FindNameByCode1.txtCodeText = "";
+            this.aBigTextBox_FindNameByCode1.txtNameText = "";
+            // 
+            // aPanel6
+            // 
+            this.aPanel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.aPanel6.Controls.Add(this.txteng);
+            this.aPanel6.Location = new System.Drawing.Point(348, 0);
+            this.aPanel6.Name = "aPanel6";
+            this.aPanel6.Size = new System.Drawing.Size(152, 31);
+            this.aPanel6.TabIndex = 99;
+            // 
+            // txteng
+            // 
+            this.txteng.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Italic);
+            this.txteng.ForeColor = System.Drawing.Color.Gray;
+            this.txteng.Location = new System.Drawing.Point(2, 1);
+            this.txteng.Name = "txteng";
+            this.txteng.PlaceHolderText = "이름을 입력하세요.";
+            this.txteng.Size = new System.Drawing.Size(160, 25);
+            this.txteng.TabIndex = 62;
+            this.txteng.Text = "영문명을 입력하세요.";
+            // 
+            // aPanel7
+            // 
+            this.aPanel7.BackColor = System.Drawing.SystemColors.Info;
+            this.aPanel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.aPanel7.Controls.Add(this.aLabel2);
+            this.aPanel7.Location = new System.Drawing.Point(244, 0);
+            this.aPanel7.Name = "aPanel7";
+            this.aPanel7.Size = new System.Drawing.Size(102, 30);
+            this.aPanel7.TabIndex = 98;
             // 
             // aLabel2
             // 
             this.aLabel2.AutoSize = true;
             this.aLabel2.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aLabel2.Location = new System.Drawing.Point(15, 9);
+            this.aLabel2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.aLabel2.Location = new System.Drawing.Point(24, 6);
             this.aLabel2.Name = "aLabel2";
-            this.aLabel2.Size = new System.Drawing.Size(209, 17);
-            this.aLabel2.TabIndex = 7;
-            this.aLabel2.Text = "불량현상 대분류                     ";
+            this.aLabel2.Size = new System.Drawing.Size(47, 17);
+            this.aLabel2.TabIndex = 53;
+            this.aLabel2.Text = "영문명";
             // 
-            // cbbGroup
+            // aPanel4
             // 
-            this.cbbGroup.FormattingEnabled = true;
-            this.cbbGroup.Location = new System.Drawing.Point(220, 7);
-            this.cbbGroup.Name = "cbbGroup";
-            this.cbbGroup.Size = new System.Drawing.Size(152, 23);
-            this.cbbGroup.TabIndex = 3;
+            this.aPanel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.aPanel4.Controls.Add(this.placeHolderTextBox1);
+            this.aPanel4.Location = new System.Drawing.Point(122, 32);
+            this.aPanel4.Name = "aPanel4";
+            this.aPanel4.Size = new System.Drawing.Size(635, 55);
+            this.aPanel4.TabIndex = 101;
             // 
-            // btnSearch
+            // placeHolderTextBox1
             // 
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Location = new System.Drawing.Point(784, 9);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearch.TabIndex = 4;
-            this.btnSearch.Text = "조회";
-            this.btnSearch.UseVisualStyleBackColor = false;
+            this.placeHolderTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.placeHolderTextBox1.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Italic);
+            this.placeHolderTextBox1.ForeColor = System.Drawing.Color.Gray;
+            this.placeHolderTextBox1.Location = new System.Drawing.Point(0, 0);
+            this.placeHolderTextBox1.MaxLength = 100;
+            this.placeHolderTextBox1.Multiline = true;
+            this.placeHolderTextBox1.Name = "placeHolderTextBox1";
+            this.placeHolderTextBox1.PlaceHolderText = "이름을 입력하세요.";
+            this.placeHolderTextBox1.Size = new System.Drawing.Size(631, 51);
+            this.placeHolderTextBox1.TabIndex = 62;
+            this.placeHolderTextBox1.Text = "영문명을 입력하세요.";
             // 
-            // dgvGroup
+            // aPanel8
             // 
-            this.dgvGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvGroup.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvGroup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGroup.Location = new System.Drawing.Point(0, 98);
-            this.dgvGroup.Name = "dgvGroup";
-            this.dgvGroup.RowTemplate.Height = 23;
-            this.dgvGroup.Size = new System.Drawing.Size(525, 600);
-            this.dgvGroup.TabIndex = 49;
-            // 
-            // aDataGridView1
-            // 
-            this.aDataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.aDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.aDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.aDataGridView1.Location = new System.Drawing.Point(531, 98);
-            this.aDataGridView1.Name = "aDataGridView1";
-            this.aDataGridView1.RowTemplate.Height = 23;
-            this.aDataGridView1.Size = new System.Drawing.Size(617, 571);
-            this.aDataGridView1.TabIndex = 54;
+            this.aPanel8.BackColor = System.Drawing.SystemColors.Info;
+            this.aPanel8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.aPanel8.Controls.Add(this.aLabel1);
+            this.aPanel8.Location = new System.Drawing.Point(3, 28);
+            this.aPanel8.Name = "aPanel8";
+            this.aPanel8.Size = new System.Drawing.Size(118, 36);
+            this.aPanel8.TabIndex = 100;
             // 
             // aLabel1
             // 
             this.aLabel1.AutoSize = true;
-            this.aLabel1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aLabel1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.aLabel1.Location = new System.Drawing.Point(37, 56);
+            this.aLabel1.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aLabel1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.aLabel1.Location = new System.Drawing.Point(29, 2);
             this.aLabel1.Name = "aLabel1";
-            this.aLabel1.Size = new System.Drawing.Size(74, 21);
-            this.aLabel1.TabIndex = 50;
-            this.aLabel1.Text = "불량현상";
+            this.aLabel1.Size = new System.Drawing.Size(47, 17);
+            this.aLabel1.TabIndex = 53;
+            this.aLabel1.Text = "영문명";
             // 
-            // pictureBox1
+            // aPanel3
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 55);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(23, 22);
-            this.pictureBox1.TabIndex = 51;
-            this.pictureBox1.TabStop = false;
+            this.aPanel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.aPanel3.Controls.Add(this.placeHolderTextBox2);
+            this.aPanel3.Location = new System.Drawing.Point(605, 0);
+            this.aPanel3.Name = "aPanel3";
+            this.aPanel3.Size = new System.Drawing.Size(152, 31);
+            this.aPanel3.TabIndex = 103;
+            // 
+            // placeHolderTextBox2
+            // 
+            this.placeHolderTextBox2.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Italic);
+            this.placeHolderTextBox2.ForeColor = System.Drawing.Color.Gray;
+            this.placeHolderTextBox2.Location = new System.Drawing.Point(2, 1);
+            this.placeHolderTextBox2.Name = "placeHolderTextBox2";
+            this.placeHolderTextBox2.PlaceHolderText = "이름을 입력하세요.";
+            this.placeHolderTextBox2.Size = new System.Drawing.Size(160, 25);
+            this.placeHolderTextBox2.TabIndex = 62;
+            this.placeHolderTextBox2.Text = "영문명을 입력하세요.";
+            // 
+            // aPanel5
+            // 
+            this.aPanel5.BackColor = System.Drawing.SystemColors.Info;
+            this.aPanel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.aPanel5.Controls.Add(this.aLabel3);
+            this.aPanel5.Location = new System.Drawing.Point(501, 0);
+            this.aPanel5.Name = "aPanel5";
+            this.aPanel5.Size = new System.Drawing.Size(102, 30);
+            this.aPanel5.TabIndex = 102;
+            // 
+            // aLabel3
+            // 
+            this.aLabel3.AutoSize = true;
+            this.aLabel3.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aLabel3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.aLabel3.Location = new System.Drawing.Point(24, 6);
+            this.aLabel3.Name = "aLabel3";
+            this.aLabel3.Size = new System.Drawing.Size(47, 17);
+            this.aLabel3.TabIndex = 53;
+            this.aLabel3.Text = "영문명";
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Location = new System.Drawing.Point(761, 62);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 104;
+            this.btnSave.Text = "조회";
+            this.btnSave.UseVisualStyleBackColor = false;
             // 
             // MDS_CDS_002
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1148, 700);
-            this.Controls.Add(this.aLabel8);
-            this.Controls.Add(this.aLabel7);
-            this.Controls.Add(this.aPanel2);
-            this.Controls.Add(this.dgvGroup);
-            this.Controls.Add(this.aDataGridView1);
-            this.Controls.Add(this.aLabel1);
-            this.Controls.Add(this.pictureBox1);
             this.Name = "MDS_CDS_002";
-            this.Text = "불량현상 상세 분류";
+            this.Load += new System.EventHandler(this.MDS_CDS_002_Load);
+            this.aPanel1.ResumeLayout(false);
+            this.aSplitContainer1.Panel1.ResumeLayout(false);
+            this.aSplitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.aSplitContainer1)).EndInit();
+            this.aSplitContainer1.ResumeLayout(false);
+            this.aSplitContainer2.Panel1.ResumeLayout(false);
+            this.aSplitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.aSplitContainer2)).EndInit();
+            this.aSplitContainer2.ResumeLayout(false);
             this.aPanel2.ResumeLayout(false);
-            this.aPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGroup)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aDataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.aPanel6.ResumeLayout(false);
+            this.aPanel6.PerformLayout();
+            this.aPanel7.ResumeLayout(false);
+            this.aPanel7.PerformLayout();
+            this.aPanel4.ResumeLayout(false);
+            this.aPanel4.PerformLayout();
+            this.aPanel8.ResumeLayout(false);
+            this.aPanel8.PerformLayout();
+            this.aPanel3.ResumeLayout(false);
+            this.aPanel3.PerformLayout();
+            this.aPanel5.ResumeLayout(false);
+            this.aPanel5.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private CustomControls.ALabel aLabel8;
-        private CustomControls.ALabel aLabel7;
-        private CustomControls.APanel aPanel2;
-        private CustomControls.ALabel aLabel2;
-        private CustomControls.AComboBox cbbGroup;
-        private CustomControls.AButton btnSearch;
-        private CustomControls.ADataGridView dgvGroup;
-        private CustomControls.ADataGridView aDataGridView1;
+        private CustomControls.ABigTextBox_FindNameByCode aBigTextBox_FindNameByCode1;
+        private CustomControls.APanel aPanel4;
+        private CLIP.eForm.Consent.Standard.Management.UI.PlaceHolderTextBox placeHolderTextBox1;
+        private CustomControls.APanel aPanel8;
         private CustomControls.ALabel aLabel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private CustomControls.APanel aPanel6;
+        private CLIP.eForm.Consent.Standard.Management.UI.PlaceHolderTextBox txteng;
+        private CustomControls.APanel aPanel7;
+        private CustomControls.ALabel aLabel2;
+        private CustomControls.APanel aPanel3;
+        private CLIP.eForm.Consent.Standard.Management.UI.PlaceHolderTextBox placeHolderTextBox2;
+        private CustomControls.APanel aPanel5;
+        private CustomControls.ALabel aLabel3;
+        private CustomControls.AButton btnSave;
     }
 }

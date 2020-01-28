@@ -14,10 +14,10 @@ namespace VO
         public string User_ID { get; set; }                 // 사용자ID
         public string Item_Code { get; set; }             // 품목코드
         public string Item_Name { get; set; }            // 품목명
-        public string Item_Unit { get; set; }               // 단위
+        public string Prd_Unit { get; set; }               // 단위
         public int Prd_Qty { get; set; }                     // 생산수량
-        public DateTime Prd_Starttime { get; set; }     // 작업시작시간
-        public DateTime Prd_Endtime { get; set; }      // 작업종료시간
+        public DateTime? Prd_Starttime { get; set; }     // 작업시작시간
+        public DateTime? Prd_Endtime { get; set; }      // 작업종료시간
         public string Wo_Ini_Char { get; set; }           //  작업지시이니셜
     }
     public class WorkOrderNewVO

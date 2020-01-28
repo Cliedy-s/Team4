@@ -8,25 +8,15 @@ using VO;
 
 namespace Service
 {
-    class Pallet_MasterService
+    public class Pallet_MasterService
     {
         /// <summary>
         /// 팔레트목록 가져오기
         /// </summary>
-        public List<PalletVO> GetAllByWorkorderno(string workorderno)
+        public List<PalletVO> GetAll()
         {
             Pallet_MasterDAC dac = new Pallet_MasterDAC();
-            return dac.GetAllByWorkorderno(workorderno);
-        }
-        /// <summary>
-        /// 등급상세정보를 추가한 팔레트목록
-        /// </summary>
-        /// <param name="workorderno"></param>
-        /// <returns></returns>
-        public List<PalletDetailVO> GetAllDetail(string workorderno)
-        {
-            Pallet_MasterDAC dac = new Pallet_MasterDAC();
-            return dac.GetAllDetail(workorderno);
+            return dac.GetAll();
         }
         /// <summary>
         /// 금일 입고 팔레트 목록
@@ -36,6 +26,24 @@ namespace Service
         {
             Pallet_MasterDAC dac = new Pallet_MasterDAC();
             return dac.GetPalletTodayIn();
+        }
+        /// <summary>
+        /// 존재하는 팔레트인지 확인
+        /// </summary>
+        public bool IsExistPallet(string palletNo)
+        {
+            Pallet_MasterDAC dac = new Pallet_MasterDAC();
+            return dac.IsExistPallet(palletNo);
+        }
+        /// <summary>
+        /// 바코드번호 가져오기
+        /// </summary>
+        /// <param name="palletNo"></param>
+        /// <returns></returns>
+        public string GetBarcodeNo(string palletNo)
+        {
+            Pallet_MasterDAC dac = new Pallet_MasterDAC();
+            return dac.GetBarcodeNo(palletNo);
         }
         /// <summary>
         /// 팔레트 생성
@@ -53,6 +61,25 @@ namespace Service
         {
             Pallet_MasterDAC dac = new Pallet_MasterDAC();
             return dac.InputPallet(username, workorderno, palletno);
+        }
+        /// <summary>
+        /// 바코드번호 변경
+        /// </summary>
+        /// <param name="palletNo"></param>
+        /// <returns></returns>
+        public bool UpdateBarcodeNo(string palletNo, string barcodeno)
+        {
+            Pallet_MasterDAC dac = new Pallet_MasterDAC();
+            return dac.UpdateBarcodeNo(palletNo, barcodeno);
+        }
+        /// <summary>
+        /// 팔레트 삭제
+        /// </summary>
+        /// <returns></returns>
+        public bool DeletePallet(string palletno)
+        {
+            Pallet_MasterDAC dac = new Pallet_MasterDAC();
+            return dac.DeletePallet(palletno);
         }
     }
 }

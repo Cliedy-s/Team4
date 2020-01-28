@@ -354,7 +354,7 @@
             this.aLabel6.AutoSize = true;
             this.aLabel6.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aLabel6.Location = new System.Drawing.Point(7, 5);
+            this.aLabel6.Location = new System.Drawing.Point(14, 9);
             this.aLabel6.Name = "aLabel6";
             this.aLabel6.Size = new System.Drawing.Size(97, 17);
             this.aLabel6.TabIndex = 65;
@@ -680,7 +680,7 @@
             this.aLabel12.AutoSize = true;
             this.aLabel12.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel12.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aLabel12.Location = new System.Drawing.Point(26, 5);
+            this.aLabel12.Location = new System.Drawing.Point(30, 5);
             this.aLabel12.Name = "aLabel12";
             this.aLabel12.Size = new System.Drawing.Size(47, 17);
             this.aLabel12.TabIndex = 54;

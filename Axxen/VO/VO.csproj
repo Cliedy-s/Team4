@@ -45,6 +45,7 @@
     <Compile Include="AllocationWCVO.cs" />
     <Compile Include="ConditionMeasureVO.cs" />
     <Compile Include="ConditionSpecVO.cs" />
+    <Compile Include="Def_MaVO.cs" />
     <Compile Include="GVInOutVO.cs" />
     <Compile Include="GVClearVO.cs" />
     <Compile Include="GVVO.cs" />

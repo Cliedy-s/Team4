@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Axxen
 {
-    public partial class MDS_CDS_003 : Axxen.BaseForm
+    public partial class MDS_CDS_003 : Axxen.GridManageForm
     {
         public MDS_CDS_003()
         {
