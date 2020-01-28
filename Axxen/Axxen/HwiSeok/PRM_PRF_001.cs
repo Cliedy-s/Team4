@@ -25,6 +25,8 @@ namespace Axxen
         {
             ((MainForm)this.MdiParent).MyUpdateEvent += new System.EventHandler(this.MyUpdateShow);//수정 이벤트 등록
             ((MainForm)this.MdiParent).RefreshFormEvent += new System.EventHandler(this.RefreshFormShow); // 새로고침
+
+            #region 그리드뷰 설정
             DatagridviewDesigns.SetDesign(dgvMainGrid);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "번호", "Num", true, 100, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "작업지시일자", "Prd_Date", true, 100, default, true);
@@ -36,8 +38,9 @@ namespace Axxen
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "투입수량", "In_Qty_Main", true, 100, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "산출수량", "Out_Qty_Main", true, 100, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "생산수량", "Prd_Qty", true, 100, default, true);
+            #endregion
 
-            DataLoad(); //메인 그리드뷰
+            DataLoad(); //메인 초기화
         }
 
         /// <summary>
@@ -72,8 +75,7 @@ namespace Axxen
         }
 
         private void DataLoad()
-        {
-          
+        {      
             wowc = woservice.GetAll_WorkOrder_Item_WC();
             dgvMainGrid.DataSource = null;
             dgvMainGrid.DataSource = wowc;
