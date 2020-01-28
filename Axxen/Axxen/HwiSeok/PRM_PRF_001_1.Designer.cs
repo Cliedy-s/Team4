@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.aTextBox1 = new Axxen.CustomControls.ATextBox();
+            this.txtNum = new Axxen.CustomControls.ATextBox();
             this.aLabel1 = new Axxen.CustomControls.ALabel();
             this.aLabel2 = new Axxen.CustomControls.ALabel();
             this.aLabel3 = new Axxen.CustomControls.ALabel();
@@ -39,30 +39,33 @@
             this.aLabel8 = new Axxen.CustomControls.ALabel();
             this.aLabel9 = new Axxen.CustomControls.ALabel();
             this.aLabel10 = new Axxen.CustomControls.ALabel();
-            this.aTextBox2 = new Axxen.CustomControls.ATextBox();
-            this.aTextBox3 = new Axxen.CustomControls.ATextBox();
-            this.aTextBox4 = new Axxen.CustomControls.ATextBox();
-            this.aTextBox5 = new Axxen.CustomControls.ATextBox();
-            this.aTextBox6 = new Axxen.CustomControls.ATextBox();
-            this.aTextBox7 = new Axxen.CustomControls.ATextBox();
-            this.aTextBox8 = new Axxen.CustomControls.ATextBox();
-            this.aTextBox9 = new Axxen.CustomControls.ATextBox();
-            this.aTextBox10 = new Axxen.CustomControls.ATextBox();
+            this.txtWo_Status = new Axxen.CustomControls.ATextBox();
+            this.txtWorkorderno = new Axxen.CustomControls.ATextBox();
+            this.txtItem_Code = new Axxen.CustomControls.ATextBox();
+            this.txtItem_Name = new Axxen.CustomControls.ATextBox();
+            this.txtWc_Name = new Axxen.CustomControls.ATextBox();
+            this.txtIn_Qty_Main = new Axxen.CustomControls.ATextBox();
+            this.txtOut_Qty_Main = new Axxen.CustomControls.ATextBox();
+            this.txtPrd_Qty = new Axxen.CustomControls.ATextBox();
             this.aLabel_Header1 = new Axxen.CustomControls.ALabel_Header();
             this.aButton1 = new Axxen.CustomControls.AButton();
             this.aButton2 = new Axxen.CustomControls.AButton();
+            this.txtProcess_name = new Axxen.CustomControls.ATextBox();
+            this.aLabel11 = new Axxen.CustomControls.ALabel();
+            this.txtPrd_Date = new Axxen.CustomControls.ATextBox();
             this.SuspendLayout();
             // 
-            // aTextBox1
+            // txtNum
             // 
-            this.aTextBox1.BackColor = System.Drawing.Color.White;
-            this.aTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.aTextBox1.errorp = null;
-            this.aTextBox1.Location = new System.Drawing.Point(149, 67);
-            this.aTextBox1.Name = "aTextBox1";
-            this.aTextBox1.Size = new System.Drawing.Size(114, 23);
-            this.aTextBox1.TabIndex = 0;
-            this.aTextBox1.txtType = Axxen.CustomControls.TextType.Normal;
+            this.txtNum.BackColor = System.Drawing.Color.White;
+            this.txtNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNum.errorp = null;
+            this.txtNum.Location = new System.Drawing.Point(149, 67);
+            this.txtNum.Name = "txtNum";
+            this.txtNum.ReadOnly = true;
+            this.txtNum.Size = new System.Drawing.Size(114, 23);
+            this.txtNum.TabIndex = 0;
+            this.txtNum.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // aLabel1
             // 
@@ -130,7 +133,7 @@
             // aLabel8
             // 
             this.aLabel8.AutoSize = true;
-            this.aLabel8.Location = new System.Drawing.Point(32, 341);
+            this.aLabel8.Location = new System.Drawing.Point(33, 378);
             this.aLabel8.Name = "aLabel8";
             this.aLabel8.Size = new System.Drawing.Size(55, 15);
             this.aLabel8.TabIndex = 8;
@@ -139,7 +142,7 @@
             // aLabel9
             // 
             this.aLabel9.AutoSize = true;
-            this.aLabel9.Location = new System.Drawing.Point(32, 381);
+            this.aLabel9.Location = new System.Drawing.Point(33, 418);
             this.aLabel9.Name = "aLabel9";
             this.aLabel9.Size = new System.Drawing.Size(55, 15);
             this.aLabel9.TabIndex = 9;
@@ -148,110 +151,106 @@
             // aLabel10
             // 
             this.aLabel10.AutoSize = true;
-            this.aLabel10.Location = new System.Drawing.Point(32, 422);
+            this.aLabel10.Location = new System.Drawing.Point(33, 459);
             this.aLabel10.Name = "aLabel10";
             this.aLabel10.Size = new System.Drawing.Size(55, 15);
             this.aLabel10.TabIndex = 10;
             this.aLabel10.Text = "생산수량";
             // 
-            // aTextBox2
+            // txtWo_Status
             // 
-            this.aTextBox2.BackColor = System.Drawing.Color.White;
-            this.aTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.aTextBox2.errorp = null;
-            this.aTextBox2.Location = new System.Drawing.Point(149, 105);
-            this.aTextBox2.Name = "aTextBox2";
-            this.aTextBox2.Size = new System.Drawing.Size(227, 23);
-            this.aTextBox2.TabIndex = 11;
-            this.aTextBox2.txtType = Axxen.CustomControls.TextType.Normal;
+            this.txtWo_Status.BackColor = System.Drawing.Color.White;
+            this.txtWo_Status.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtWo_Status.errorp = null;
+            this.txtWo_Status.Location = new System.Drawing.Point(149, 143);
+            this.txtWo_Status.Name = "txtWo_Status";
+            this.txtWo_Status.ReadOnly = true;
+            this.txtWo_Status.Size = new System.Drawing.Size(227, 23);
+            this.txtWo_Status.TabIndex = 11;
+            this.txtWo_Status.txtType = Axxen.CustomControls.TextType.Normal;
             // 
-            // aTextBox3
+            // txtWorkorderno
             // 
-            this.aTextBox3.BackColor = System.Drawing.Color.White;
-            this.aTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.aTextBox3.errorp = null;
-            this.aTextBox3.Location = new System.Drawing.Point(149, 143);
-            this.aTextBox3.Name = "aTextBox3";
-            this.aTextBox3.Size = new System.Drawing.Size(227, 23);
-            this.aTextBox3.TabIndex = 11;
-            this.aTextBox3.txtType = Axxen.CustomControls.TextType.Normal;
+            this.txtWorkorderno.BackColor = System.Drawing.Color.White;
+            this.txtWorkorderno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtWorkorderno.errorp = null;
+            this.txtWorkorderno.Location = new System.Drawing.Point(149, 182);
+            this.txtWorkorderno.Name = "txtWorkorderno";
+            this.txtWorkorderno.ReadOnly = true;
+            this.txtWorkorderno.Size = new System.Drawing.Size(227, 23);
+            this.txtWorkorderno.TabIndex = 11;
+            this.txtWorkorderno.txtType = Axxen.CustomControls.TextType.Normal;
             // 
-            // aTextBox4
+            // txtItem_Code
             // 
-            this.aTextBox4.BackColor = System.Drawing.Color.White;
-            this.aTextBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.aTextBox4.errorp = null;
-            this.aTextBox4.Location = new System.Drawing.Point(149, 182);
-            this.aTextBox4.Name = "aTextBox4";
-            this.aTextBox4.Size = new System.Drawing.Size(227, 23);
-            this.aTextBox4.TabIndex = 11;
-            this.aTextBox4.txtType = Axxen.CustomControls.TextType.Normal;
+            this.txtItem_Code.BackColor = System.Drawing.Color.White;
+            this.txtItem_Code.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtItem_Code.errorp = null;
+            this.txtItem_Code.Location = new System.Drawing.Point(149, 222);
+            this.txtItem_Code.Name = "txtItem_Code";
+            this.txtItem_Code.ReadOnly = true;
+            this.txtItem_Code.Size = new System.Drawing.Size(147, 23);
+            this.txtItem_Code.TabIndex = 11;
+            this.txtItem_Code.txtType = Axxen.CustomControls.TextType.Normal;
             // 
-            // aTextBox5
+            // txtItem_Name
             // 
-            this.aTextBox5.BackColor = System.Drawing.Color.White;
-            this.aTextBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.aTextBox5.errorp = null;
-            this.aTextBox5.Location = new System.Drawing.Point(149, 222);
-            this.aTextBox5.Name = "aTextBox5";
-            this.aTextBox5.Size = new System.Drawing.Size(147, 23);
-            this.aTextBox5.TabIndex = 11;
-            this.aTextBox5.txtType = Axxen.CustomControls.TextType.Normal;
+            this.txtItem_Name.BackColor = System.Drawing.Color.White;
+            this.txtItem_Name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtItem_Name.errorp = null;
+            this.txtItem_Name.Location = new System.Drawing.Point(149, 261);
+            this.txtItem_Name.Name = "txtItem_Name";
+            this.txtItem_Name.ReadOnly = true;
+            this.txtItem_Name.Size = new System.Drawing.Size(227, 23);
+            this.txtItem_Name.TabIndex = 11;
+            this.txtItem_Name.txtType = Axxen.CustomControls.TextType.Normal;
             // 
-            // aTextBox6
+            // txtWc_Name
             // 
-            this.aTextBox6.BackColor = System.Drawing.Color.White;
-            this.aTextBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.aTextBox6.errorp = null;
-            this.aTextBox6.Location = new System.Drawing.Point(149, 261);
-            this.aTextBox6.Name = "aTextBox6";
-            this.aTextBox6.Size = new System.Drawing.Size(227, 23);
-            this.aTextBox6.TabIndex = 11;
-            this.aTextBox6.txtType = Axxen.CustomControls.TextType.Normal;
+            this.txtWc_Name.BackColor = System.Drawing.Color.White;
+            this.txtWc_Name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtWc_Name.errorp = null;
+            this.txtWc_Name.Location = new System.Drawing.Point(149, 300);
+            this.txtWc_Name.Name = "txtWc_Name";
+            this.txtWc_Name.ReadOnly = true;
+            this.txtWc_Name.Size = new System.Drawing.Size(227, 23);
+            this.txtWc_Name.TabIndex = 11;
+            this.txtWc_Name.txtType = Axxen.CustomControls.TextType.Normal;
             // 
-            // aTextBox7
+            // txtIn_Qty_Main
             // 
-            this.aTextBox7.BackColor = System.Drawing.Color.White;
-            this.aTextBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.aTextBox7.errorp = null;
-            this.aTextBox7.Location = new System.Drawing.Point(149, 300);
-            this.aTextBox7.Name = "aTextBox7";
-            this.aTextBox7.Size = new System.Drawing.Size(227, 23);
-            this.aTextBox7.TabIndex = 11;
-            this.aTextBox7.txtType = Axxen.CustomControls.TextType.Normal;
+            this.txtIn_Qty_Main.BackColor = System.Drawing.Color.White;
+            this.txtIn_Qty_Main.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtIn_Qty_Main.errorp = null;
+            this.txtIn_Qty_Main.Location = new System.Drawing.Point(149, 376);
+            this.txtIn_Qty_Main.Name = "txtIn_Qty_Main";
+            this.txtIn_Qty_Main.ReadOnly = true;
+            this.txtIn_Qty_Main.Size = new System.Drawing.Size(156, 23);
+            this.txtIn_Qty_Main.TabIndex = 11;
+            this.txtIn_Qty_Main.txtType = Axxen.CustomControls.TextType.Normal;
             // 
-            // aTextBox8
+            // txtOut_Qty_Main
             // 
-            this.aTextBox8.BackColor = System.Drawing.Color.White;
-            this.aTextBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.aTextBox8.errorp = null;
-            this.aTextBox8.Location = new System.Drawing.Point(148, 339);
-            this.aTextBox8.Name = "aTextBox8";
-            this.aTextBox8.Size = new System.Drawing.Size(156, 23);
-            this.aTextBox8.TabIndex = 11;
-            this.aTextBox8.txtType = Axxen.CustomControls.TextType.Normal;
+            this.txtOut_Qty_Main.BackColor = System.Drawing.Color.White;
+            this.txtOut_Qty_Main.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtOut_Qty_Main.errorp = null;
+            this.txtOut_Qty_Main.Location = new System.Drawing.Point(149, 416);
+            this.txtOut_Qty_Main.Name = "txtOut_Qty_Main";
+            this.txtOut_Qty_Main.ReadOnly = true;
+            this.txtOut_Qty_Main.Size = new System.Drawing.Size(156, 23);
+            this.txtOut_Qty_Main.TabIndex = 11;
+            this.txtOut_Qty_Main.txtType = Axxen.CustomControls.TextType.Normal;
             // 
-            // aTextBox9
+            // txtPrd_Qty
             // 
-            this.aTextBox9.BackColor = System.Drawing.Color.White;
-            this.aTextBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.aTextBox9.errorp = null;
-            this.aTextBox9.Location = new System.Drawing.Point(148, 379);
-            this.aTextBox9.Name = "aTextBox9";
-            this.aTextBox9.Size = new System.Drawing.Size(156, 23);
-            this.aTextBox9.TabIndex = 11;
-            this.aTextBox9.txtType = Axxen.CustomControls.TextType.Normal;
-            // 
-            // aTextBox10
-            // 
-            this.aTextBox10.BackColor = System.Drawing.Color.White;
-            this.aTextBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.aTextBox10.errorp = null;
-            this.aTextBox10.Location = new System.Drawing.Point(148, 420);
-            this.aTextBox10.Name = "aTextBox10";
-            this.aTextBox10.Size = new System.Drawing.Size(156, 23);
-            this.aTextBox10.TabIndex = 11;
-            this.aTextBox10.txtType = Axxen.CustomControls.TextType.Normal;
+            this.txtPrd_Qty.BackColor = System.Drawing.Color.White;
+            this.txtPrd_Qty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPrd_Qty.errorp = null;
+            this.txtPrd_Qty.Location = new System.Drawing.Point(149, 457);
+            this.txtPrd_Qty.Name = "txtPrd_Qty";
+            this.txtPrd_Qty.Size = new System.Drawing.Size(156, 23);
+            this.txtPrd_Qty.TabIndex = 11;
+            this.txtPrd_Qty.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // aLabel_Header1
             // 
@@ -267,40 +266,77 @@
             // 
             this.aButton1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton1.Location = new System.Drawing.Point(199, 477);
+            this.aButton1.Location = new System.Drawing.Point(200, 514);
             this.aButton1.Name = "aButton1";
             this.aButton1.Size = new System.Drawing.Size(85, 32);
             this.aButton1.TabIndex = 13;
             this.aButton1.Text = "저장";
             this.aButton1.UseVisualStyleBackColor = false;
+            this.aButton1.Click += new System.EventHandler(this.aButton1_Click);
             // 
             // aButton2
             // 
             this.aButton2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.aButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton2.Location = new System.Drawing.Point(311, 477);
+            this.aButton2.Location = new System.Drawing.Point(312, 514);
             this.aButton2.Name = "aButton2";
             this.aButton2.Size = new System.Drawing.Size(85, 32);
             this.aButton2.TabIndex = 13;
             this.aButton2.Text = "취소";
             this.aButton2.UseVisualStyleBackColor = false;
+            this.aButton2.Click += new System.EventHandler(this.aButton2_Click);
+            // 
+            // txtProcess_name
+            // 
+            this.txtProcess_name.BackColor = System.Drawing.Color.White;
+            this.txtProcess_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtProcess_name.errorp = null;
+            this.txtProcess_name.Location = new System.Drawing.Point(149, 335);
+            this.txtProcess_name.Name = "txtProcess_name";
+            this.txtProcess_name.ReadOnly = true;
+            this.txtProcess_name.Size = new System.Drawing.Size(227, 23);
+            this.txtProcess_name.TabIndex = 15;
+            this.txtProcess_name.txtType = Axxen.CustomControls.TextType.Normal;
+            // 
+            // aLabel11
+            // 
+            this.aLabel11.AutoSize = true;
+            this.aLabel11.Location = new System.Drawing.Point(32, 338);
+            this.aLabel11.Name = "aLabel11";
+            this.aLabel11.Size = new System.Drawing.Size(43, 15);
+            this.aLabel11.TabIndex = 14;
+            this.aLabel11.Text = "공정명";
+            // 
+            // txtPrd_Date
+            // 
+            this.txtPrd_Date.BackColor = System.Drawing.Color.White;
+            this.txtPrd_Date.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPrd_Date.errorp = null;
+            this.txtPrd_Date.Location = new System.Drawing.Point(149, 105);
+            this.txtPrd_Date.Name = "txtPrd_Date";
+            this.txtPrd_Date.ReadOnly = true;
+            this.txtPrd_Date.Size = new System.Drawing.Size(227, 23);
+            this.txtPrd_Date.TabIndex = 16;
+            this.txtPrd_Date.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // PRM_PRF_001_1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.ClientSize = new System.Drawing.Size(431, 525);
+            this.ClientSize = new System.Drawing.Size(431, 571);
+            this.Controls.Add(this.txtPrd_Date);
+            this.Controls.Add(this.txtProcess_name);
+            this.Controls.Add(this.aLabel11);
             this.Controls.Add(this.aButton2);
             this.Controls.Add(this.aButton1);
             this.Controls.Add(this.aLabel_Header1);
-            this.Controls.Add(this.aTextBox10);
-            this.Controls.Add(this.aTextBox9);
-            this.Controls.Add(this.aTextBox8);
-            this.Controls.Add(this.aTextBox7);
-            this.Controls.Add(this.aTextBox6);
-            this.Controls.Add(this.aTextBox5);
-            this.Controls.Add(this.aTextBox4);
-            this.Controls.Add(this.aTextBox3);
-            this.Controls.Add(this.aTextBox2);
+            this.Controls.Add(this.txtPrd_Qty);
+            this.Controls.Add(this.txtOut_Qty_Main);
+            this.Controls.Add(this.txtIn_Qty_Main);
+            this.Controls.Add(this.txtWc_Name);
+            this.Controls.Add(this.txtItem_Name);
+            this.Controls.Add(this.txtItem_Code);
+            this.Controls.Add(this.txtWorkorderno);
+            this.Controls.Add(this.txtWo_Status);
             this.Controls.Add(this.aLabel10);
             this.Controls.Add(this.aLabel9);
             this.Controls.Add(this.aLabel8);
@@ -311,9 +347,10 @@
             this.Controls.Add(this.aLabel3);
             this.Controls.Add(this.aLabel2);
             this.Controls.Add(this.aLabel1);
-            this.Controls.Add(this.aTextBox1);
+            this.Controls.Add(this.txtNum);
             this.Name = "PRM_PRF_001_1";
             this.Text = "실적보정";
+            this.Load += new System.EventHandler(this.PRM_PRF_001_1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -321,7 +358,7 @@
 
         #endregion
 
-        private CustomControls.ATextBox aTextBox1;
+        private CustomControls.ATextBox txtNum;
         private CustomControls.ALabel aLabel1;
         private CustomControls.ALabel aLabel2;
         private CustomControls.ALabel aLabel3;
@@ -332,17 +369,19 @@
         private CustomControls.ALabel aLabel8;
         private CustomControls.ALabel aLabel9;
         private CustomControls.ALabel aLabel10;
-        private CustomControls.ATextBox aTextBox2;
-        private CustomControls.ATextBox aTextBox3;
-        private CustomControls.ATextBox aTextBox4;
-        private CustomControls.ATextBox aTextBox5;
-        private CustomControls.ATextBox aTextBox6;
-        private CustomControls.ATextBox aTextBox7;
-        private CustomControls.ATextBox aTextBox8;
-        private CustomControls.ATextBox aTextBox9;
-        private CustomControls.ATextBox aTextBox10;
+        private CustomControls.ATextBox txtWo_Status;
+        private CustomControls.ATextBox txtWorkorderno;
+        private CustomControls.ATextBox txtItem_Code;
+        private CustomControls.ATextBox txtItem_Name;
+        private CustomControls.ATextBox txtWc_Name;
+        private CustomControls.ATextBox txtIn_Qty_Main;
+        private CustomControls.ATextBox txtOut_Qty_Main;
+        private CustomControls.ATextBox txtPrd_Qty;
         private CustomControls.ALabel_Header aLabel_Header1;
         private CustomControls.AButton aButton1;
         private CustomControls.AButton aButton2;
+        private CustomControls.ATextBox txtProcess_name;
+        private CustomControls.ALabel aLabel11;
+        private CustomControls.ATextBox txtPrd_Date;
     }
 }

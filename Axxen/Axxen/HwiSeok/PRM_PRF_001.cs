@@ -28,6 +28,8 @@ namespace Axxen
             ((MainForm)this.MdiParent).MyUpdateEvent += new System.EventHandler(this.MyUpdateShow);//수정 이벤트 등록
             ((MainForm)this.MdiParent).RefreshFormEvent += new System.EventHandler(this.RefreshFormShow); // 새로고침
 
+            dgvMainGrid.CellDoubleClick += DgvMainGrid_CellDoubleClick;
+
             #region 그리드뷰 설정
             DatagridviewDesigns.SetDesign(dgvMainGrid);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "번호", "Num", true, 100, default, true);
@@ -46,26 +48,13 @@ namespace Axxen
             DataLoad(); //메인 초기화
         }
 
-        /// <summary>
-        /// 입력 이벤트 메서드
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public void MyUpdateShow(object sender, EventArgs e)
+        private void DgvMainGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e) //그리드뷰 더블클릭 이벤트
         {
-            try
-            {
-                if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
-                {
-                    PRM_PRF_001_1 frm = new PRM_PRF_001_1();
-                    frm.ShowDialog();
-                }
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show(err.Message);
-            }
-
+            UPDATE_Prd_Qtys();
+        }
+        public void MyUpdateShow(object sender, EventArgs e) //생산 수량 수정
+        {
+            UPDATE_Prd_Qtys();
         }
 
         public void RefreshFormShow(object sender, EventArgs e) // 새로고침 // 초기화
@@ -80,11 +69,42 @@ namespace Axxen
             DataLoad();         
         }
 
-        private void DataLoad() // 그리드뷰 불러오기
+        private void DataLoad() //전체 데이터 그리드뷰 불러오기
         {      
             wowc = woservice.GetAll_WorkOrder_Item_WC();
             dgvMainGrid.DataSource = null;
             dgvMainGrid.DataSource = wowc;
+        }
+
+        private void UPDATE_Prd_Qtys() //수정이랑 모든 데이터 가지고 오는소스
+        {
+            try
+            {
+                if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
+                {
+                    PRM_PRF_001_1 frm = new PRM_PRF_001_1();
+                    frm.Num = dgvMainGrid.SelectedRows[0].Cells[0].Value.ToString();
+                    frm.Prd_Date = dgvMainGrid.SelectedRows[0].Cells[1].Value.ToString();
+                    frm.Wo_Status = dgvMainGrid.SelectedRows[0].Cells[2].Value.ToString();
+                    frm.Workorderno = dgvMainGrid.SelectedRows[0].Cells[3].Value.ToString();
+                    frm.Item_Code = dgvMainGrid.SelectedRows[0].Cells[4].Value.ToString();
+                    frm.Item_Name = dgvMainGrid.SelectedRows[0].Cells[5].Value.ToString();
+                    frm.Wc_Name = dgvMainGrid.SelectedRows[0].Cells[6].Value.ToString();
+                    frm.Process_name = dgvMainGrid.SelectedRows[0].Cells[7].Value.ToString();
+                    frm.In_Qty_Main = dgvMainGrid.SelectedRows[0].Cells[8].Value.ToString();
+                    frm.Out_Qty_Main = dgvMainGrid.SelectedRows[0].Cells[9].Value.ToString();
+                    frm.Prd_Qty = dgvMainGrid.SelectedRows[0].Cells[10].Value.ToString();
+
+                    if (frm.ShowDialog() == DialogResult.OK)
+                    {
+                        DataLoad();
+                    }
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
         }
 
         private void aDateTimePickerSearch1_btnDateTimeSearch_Click(object sender, EventArgs args) // 날짜별 조회
@@ -131,5 +151,6 @@ namespace Axxen
                     dgvMainGrid.DataSource = reqdateList1;
             }
         }
+
     }
 }

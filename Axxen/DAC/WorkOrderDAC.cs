@@ -64,6 +64,33 @@ namespace DAC
             return list;
         }
 
+        public bool UPDATE_Prd_Qty(string Prd_Qty, string Num, string Wo_Status, string Workorderno, string Item_Code)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(Connstr);
+                cmd.CommandText = $"WITH PRM_PRF_001_1(Num,Prd_Date,Wo_Status,Workorderno,Item_Code,Item_Name,Wc_Name,Process_name,In_Qty_Main,Out_Qty_Main,Prd_Qty) " +
+                    $"AS(select ROW_NUMBER() OVER(ORDER BY wo.Wo_Status) Num, Prd_Date, wo.Wo_Status, wo.Workorderno, wo.Item_Code, Item_Name, Wc_Name, Process_name, wo.In_Qty_Main, wo.Out_Qty_Main, wo.Prd_Qty " +
+                    $"from WorkOrder wo INNER JOIN Item_Master im  ON wo.Item_Code = im.Item_Code " +
+                    $"INNER JOIN WorkCenter_Master wm ON wo.Wc_Code = wm.Wc_Code " +
+                    $"INNER JOIN Process_Master pm ON wm.Process_code = pm.Process_code) " +
+                    $"UPDATE PRM_PRF_001_1 SET Prd_Qty=@Prd_Qty WHERE Num=@Num and Wo_Status=@Wo_Status and Workorderno=@Workorderno and Item_Code=@Item_Code";
+
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@Prd_Qty", Prd_Qty);
+                cmd.Parameters.AddWithValue("@Num", Num);
+                cmd.Parameters.AddWithValue("@Wo_Status", Wo_Status);
+                cmd.Parameters.AddWithValue("@Workorderno", Workorderno);
+                cmd.Parameters.AddWithValue("@Item_Code", Item_Code);
+
+                cmd.Connection.Open();
+                int result = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+
+                return result > 0;
+            }
+        }
+
         //pop
         /// <summary>
         /// 작업장으로 작업지시현황 가져오기

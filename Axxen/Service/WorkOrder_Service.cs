@@ -26,6 +26,12 @@ namespace Service
             return dac.GetGoodsIH_PalletM_Boxing(Workorderno);
         }
 
+        public bool UPDATE_Prd_Qty(string Prd_Qty, string Num, string Wo_Status, string Workorderno, string Item_Code) //PRM_PRF_001_1 생산수량 업데이트
+        {
+            WorkOrderDAC dac = new WorkOrderDAC();
+            return dac.UPDATE_Prd_Qty(Prd_Qty, Num, Wo_Status, Workorderno, Item_Code);
+        }
+
 
         //pop
         /// <summary>
