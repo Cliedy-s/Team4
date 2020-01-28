@@ -68,6 +68,16 @@ namespace Axxen.CustomControls
                     break;
                 case DataType.Workers:
                     break;
+                case DataType.Pallet:
+                    InitControls("Grade_Detail_Name", "Pallet_No");
+                    dgvSearchResult.DataSource = GetData<Pallet_MasterService, PalletVO>("GetAll");
+                    lblSearch.Text = "팔레트 목록";
+                    break;
+                case DataType.InablePallet:
+                    InitControls("Grade_Detail_Name", "포장등급상세", "Pallet_No", "팔레트번호");
+                    dgvSearchResult.DataSource = GetData<Pallet_MasterService, PalletTodayInVO>("GetInablePallet");
+                    lblSearch.Text = "입고 대상 팔레트 목록";
+                    break;
                 default:
                     break;
             }
@@ -83,6 +93,12 @@ namespace Axxen.CustomControls
             InitControlUtil.AddNewColumnToDataGridView(dgvSearchResult, "Code", codecolumn, true, 100, DataGridViewContentAlignment.MiddleLeft, true);
             InitControlUtil.AddNewColumnToDataGridView(dgvSearchResult, "Name", namecolumn, true, 100, DataGridViewContentAlignment.MiddleLeft, true);
         }
+        private void InitControls(string codecolumn, string codecolumnname, string namecolumn, string namecolumnname)
+        {
+            InitControlUtil.SetDGVDesign(dgvSearchResult);
+            InitControlUtil.AddNewColumnToDataGridView(dgvSearchResult, codecolumnname, codecolumn, true, 100, DataGridViewContentAlignment.MiddleLeft, true);
+            InitControlUtil.AddNewColumnToDataGridView(dgvSearchResult, namecolumnname, namecolumn, true, 100, DataGridViewContentAlignment.MiddleLeft, true);
+        }
         /// <summary>
         /// 데이터를 가져오는 메서드
         /// </summary>
@@ -95,8 +111,8 @@ namespace Axxen.CustomControls
         {
             if(e.RowIndex >= 0)
             {
-                this.ResultCode = dgvSearchResult.SelectedRows[0].Cells[0].Value.ToString();
-                this.ResultName = dgvSearchResult.SelectedRows[0].Cells[1].Value.ToString();
+                this.ResultCode = dgvSearchResult.SelectedRows[0].Cells[0].Value==null ? "" : dgvSearchResult.SelectedRows[0].Cells[0].Value.ToString();
+                this.ResultName = dgvSearchResult.SelectedRows[0].Cells[1].Value == null ? "" : dgvSearchResult.SelectedRows[0].Cells[1].Value.ToString();
                 this.DialogResult = DialogResult.OK;
             }
         }

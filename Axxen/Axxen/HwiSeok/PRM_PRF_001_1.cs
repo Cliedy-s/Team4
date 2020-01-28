@@ -10,7 +10,7 @@ using VO;
 
 namespace Axxen.HwiSeok
 {
-    public partial class PRM_PRF_001_1 : Axxen.BaseForm
+    public partial class PRM_PRF_001_1 : BaseForm
     {
 
             WorkOrder_Service woservice = new WorkOrder_Service();

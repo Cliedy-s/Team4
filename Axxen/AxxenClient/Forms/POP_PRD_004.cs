@@ -51,7 +51,12 @@ namespace AxxenClient.Forms
                 txtCurrentQty.TextBoxText = dgvPalletList.SelectedRows[0].Cells[4].Value.ToString();
             }
         }
-        private void btnPalletPrint_Click(object sender, EventArgs e)
+        /// <summary>
+        /// 팔레트 바코드 재발행
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnBarcodeRecreate(object sender, EventArgs e)
         {
             Pallet_MasterService service = new Pallet_MasterService();
             if (!service.IsExistPallet(txtPalletNo.TextBoxText))
@@ -62,10 +67,11 @@ namespace AxxenClient.Forms
             string barcodeno = txtPalletNo.TextBoxText + (new Random(DateTime.Now.Millisecond)).Next(0, 36546).ToString("00000");
             if (!service.UpdateBarcodeNo(txtPalletNo.TextBoxText, barcodeno))
             {
-                MessageBox.Show("바코드 생성에 실패했습니다.");
+                MessageBox.Show("바코드 재발행에 실패했습니다.");
                 return;
             }
 
+            GetDatas();
             PrintPallet(barcodeno, Convert.ToInt32(txtCurrentQty.TextBoxText));
         }
         /// <summary>
@@ -78,11 +84,23 @@ namespace AxxenClient.Forms
             // TODO - 팔레트 출력하기
             MessageBox.Show("팔레트 출력합니다..");
         }
-
+        /// <summary>
+        /// 팔레트 삭제 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            Pallet_MasterService service = new Pallet_MasterService();
-            //service.DeletePallet(txtPalletNo);
+            if(MessageBox.Show("정말로 삭제하시겠습니까?","팔레트삭제",MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                Pallet_MasterService service = new Pallet_MasterService();
+                if (service.DeletePallet(txtPalletNo.TextBoxText))
+                {
+                    MessageBox.Show("팔레트 제거에 성공하였습니다.");
+                    GetDatas();
+                }
+                else MessageBox.Show("팔레트 제거에 실패하였습니다.");
+            }
         }
     }
 }

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Axxen.CustomControls
 {
-    public enum DataType { Users, Authoritys, Systems, Processes, Items, Facility, Errors, NonOperations, UserDefinitions, PackingGrades, WorkCenters, GVs, GVGroups, Workers }
+    public enum DataType { Users, Authoritys, Systems, Processes, Items, Facility, Errors, NonOperations, UserDefinitions, PackingGrades, WorkCenters, GVs, GVGroups, Workers, Pallet, InablePallet }
     public partial class ATextBox_FindNameByCode : UserControl
     {
         public string lblNameText { get { return lblName.Text; } set { lblName.Text = value; } }

@@ -16,6 +16,7 @@ namespace Axxen
     {
         List<Wo_Req_WO_WC_ItemVO> woList = new List<Wo_Req_WO_WC_ItemVO>();
         Wo_ReqService service = new Wo_ReqService();
+        bool bFlag = false;
 
         public PPS_SCH_002()
         {
@@ -36,13 +37,17 @@ namespace Axxen
         {
             woList = service.GetWoReqOrder();
             dgvMainGrid.DataSource = woList;
+
+            aDateTimePickerSearch1.ADateTimePickerValue1 = Convert.ToDateTime(DateTime.Now.AddDays(-7).ToShortDateString());
+            aDateTimePickerSearch1.ADateTimePickerValue2 = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+            dotWorkCenter.txtCodeText = "";
+            dotWorkCenter.txtNameText = "";
         }
 
         private void MyUpdateShow(object sender, EventArgs e)
         {
             aSplitContainer1.Panel2.Enabled = true;
         }
-
 
         private void MainDataLoad()
         {
@@ -56,14 +61,14 @@ namespace Axxen
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "품목코드", "Item_Code", true, 90);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "품목명", "Item_Name", true, 90);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "작업장명", "Wc_Name", true, 90);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "생산일자", "Prd_Date", true, 90);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "작업일자", "Prd_Date", true, 90);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "작업시작시간", "Prd_Starttime", true, 80);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "작업종료시간", "Prd_Endtime", true, 80);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "투입수량", "In_Qty_Main", true, 80);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "산출수량", "Out_Qty_Main", true, 80);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "생산수량", "Prd_Qty", true, 80);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "생산의뢰번호", "Wo_Req_No", true, 80);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "생산의뢰순번", "In_Qty_Main", true, 80);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "생산의뢰순번", "Req_Seq", true, 80);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "프로젝트명", "Project_Name", true, 100);
         }
 
@@ -104,6 +109,20 @@ namespace Axxen
                               where date.Prd_Date >= startT && date.Prd_Date <= endT
                               select date).ToList();
             dgvMainGrid.DataSource = wodateList;
+        }
+
+        private void ATextBox_FindNameByCode1_DotDotDotFormClosing(object sender, CustomControls.SearchFormClosingArgs args)
+        {
+            string pcode = dotProcess.txtCodeText;
+            string wName = dotWorkCenter.txtNameText;
+
+            if(wName.Length > 0)
+            {
+                var colist = (from list in woList
+                              where list.Wc_Name.Contains(wName)
+                              select list).ToList();
+                dgvMainGrid.DataSource = colist;
+            }
         }
     }
 }

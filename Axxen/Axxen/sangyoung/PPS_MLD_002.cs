@@ -15,6 +15,7 @@ namespace Axxen
     public partial class PPS_MLD_002 : Axxen.GridForm
     {
         List<Mold_J_Item_Wc_MuseVO> molditemList;
+        List<Mold_J_Item_Wc_MuseVO> moldSearchList;
         MoldService service = new MoldService();
 
         public PPS_MLD_002()
@@ -24,57 +25,27 @@ namespace Axxen
 
         private void PPS_MLD_002_Load(object sender, EventArgs e)
         {
-            MainDataLoad();
+            MainGridLoad();
             molditemList = service.SelectMold_Item_Wc_Muse();
+            DataLoad(molditemList);
             ((MainForm)this.MdiParent).RefreshFormEvent += new EventHandler(this.RefreshFormShow);
-            MainDataLoad();
-
-            var molist = (from list in molditemList
-                        select new {
-                            Prd_Date = list.Prd_Date,
-                            Mold_Code = list.Mold_Code,
-                            Mold_Name = list.Mold_Name,
-                            Workorderno = list.Workorderno,
-                            Item_Code = list.Item_Code,
-                            Item_Name = list.Item_Name,
-                            Wc_Code = list.Wc_Code,
-                            Wc_Name = list.Wc_Name,
-                            Mold_Shot_Cnt = list.Mold_Shot_Cnt,
-                            Mold_Prd_Qty = list.Mold_Prd_Qty,
-                            Use_Starttime = list.Use_Starttime,
-                            Use_Endtime = list.Use_Endtime,
-                            Use_time =string.Format("{0}분",list.Use_Endtime.Subtract(list.Use_Starttime).Minutes)}).ToList();
-            dgvMainGrid.DataSource = molist;
         }
 
         private void RefreshFormShow(object sender, EventArgs e)
         {
             molditemList = service.SelectMold_Item_Wc_Muse();
+            DataLoad(molditemList);
+            dotItem.txtNameText = "";
+            dotItem.txtCodeText = "";
+            dotWorkCenter.txtNameText = "";
+            dotWorkCenter.txtCodeText = "";
 
-            var molist = (from list in molditemList
-                          select new
-                          {
-                              Prd_Date = list.Prd_Date,
-                              Mold_Code = list.Mold_Code,
-                              Mold_Name = list.Mold_Name,
-                              Workorderno = list.Workorderno,
-                              Item_Code = list.Item_Code,
-                              Item_Name = list.Item_Name,
-                              Wc_Code = list.Wc_Code,
-                              Wc_Name = list.Wc_Name,
-                              Mold_Shot_Cnt = list.Mold_Shot_Cnt,
-                              Mold_Prd_Qty = list.Mold_Prd_Qty,
-                              Use_Starttime = list.Use_Starttime,
-                              Use_Endtime = list.Use_Endtime,
-                              Use_time = string.Format("{0}분", list.Use_Endtime.Subtract(list.Use_Starttime).Minutes)
-                          }).ToList();
-            dgvMainGrid.DataSource = molist;
-        }
+        }//새로고침버튼클릭
 
         /// <summary>
         /// 데이터 그리드뷰 바인딩
         /// </summary>
-        private void MainDataLoad()
+        private void MainGridLoad()
         {
             InitControlUtil.SetDGVDesign(dgvMainGrid);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "생산일자", "Prd_Date", true, 110);
@@ -92,20 +63,70 @@ namespace Axxen
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형사용시간", "Use_time", true, 110);
         }
 
+        /// <summary>
+        /// 조건 검색
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void ATextBox_FindNameByCode1_DotDotDotFormClosing(object sender, CustomControls.SearchFormClosingArgs args)
         {
+            string iName = dotItem.txtNameText;
+            string wName = dotWorkCenter.txtNameText;
 
+            if(iName.Length > 0 && wName.Length <= 0)
+            {
+                moldSearchList = (from name in molditemList
+                                  where name.Item_Name.Contains(iName)
+                                  select name).ToList();
+            }
+            else if(wName.Length > 0 && iName.Length <= 0)
+            {
+                moldSearchList = (from name in molditemList
+                                  where name.Wc_Name.Contains(wName)
+                                  select name).ToList();
+            }
+            else if(wName.Length > 0 && iName.Length > 0)
+            {
+                moldSearchList = (from name in molditemList
+                                  where name.Item_Name.Contains(iName) || name.Wc_Name.Contains(wName)
+                                  select name).ToList();
+
+                dotItem.txtNameText = "";
+                dotWorkCenter.txtNameText = "";
+            }
+            DataLoad(moldSearchList);
         }
 
+
+        /// <summary>
+        /// 기간조건검색
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void ADateTimePickerSearch1_btnDateTimeSearch_Click(object sender, EventArgs args)
         {
             DateTime startT = aDateTimePickerSearch1.ADateTimePickerValue1;
             DateTime endT = aDateTimePickerSearch1.ADateTimePickerValue2;
             endT = endT.AddDays(10);
-            molditemList = (from date in molditemList
+            moldSearchList = (from date in molditemList
                             where date.Prd_Date >= startT && date.Prd_Date <= endT
                         select date).ToList();
 
+            DataLoad(moldSearchList);
+        }
+
+        private void PPS_MLD_002_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow);
+        }
+
+
+        /// <summary>
+        /// 그리드뷰 데이터 바인딩
+        /// </summary>
+        /// <param name="molditemList">리스트</param>
+        private void DataLoad(List<Mold_J_Item_Wc_MuseVO> molditemList)
+        {
             var molist = (from list in molditemList
                           select new
                           {
@@ -124,11 +145,6 @@ namespace Axxen
                               Use_time = string.Format("{0}분", list.Use_Endtime.Subtract(list.Use_Starttime).Minutes)
                           }).ToList();
             dgvMainGrid.DataSource = molist;
-        }
-
-        private void PPS_MLD_002_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow);
         }
     }
 }
