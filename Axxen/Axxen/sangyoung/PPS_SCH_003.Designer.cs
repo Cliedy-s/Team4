@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.aLabel1 = new Axxen.CustomControls.ALabel();
             this.aPanel1 = new Axxen.CustomControls.APanel();
             this.aDateTimePickerSearch1 = new Axxen.CustomControls.ADateTimePickerSearch();
-            this.aTextBox_FindNameByCode2 = new Axxen.CustomControls.ATextBox_FindNameByCode();
+            this.dotWorkCenter = new Axxen.CustomControls.ATextBox_FindNameByCode();
             this.aTextBox_FindNameByCode1 = new Axxen.CustomControls.ATextBox_FindNameByCode();
             this.cboStatus = new Axxen.CustomControls.AComboBox();
             this.aLabel3 = new Axxen.CustomControls.ALabel();
@@ -66,7 +66,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.aPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.aPanel1.Controls.Add(this.aDateTimePickerSearch1);
-            this.aPanel1.Controls.Add(this.aTextBox_FindNameByCode2);
+            this.aPanel1.Controls.Add(this.dotWorkCenter);
             this.aPanel1.Controls.Add(this.aTextBox_FindNameByCode1);
             this.aPanel1.Controls.Add(this.cboStatus);
             this.aPanel1.Controls.Add(this.aLabel3);
@@ -79,8 +79,8 @@
             // 
             // aDateTimePickerSearch1
             // 
-            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 1, 21, 14, 0, 56, 499);
-            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 1, 20, 14, 47, 55, 159);
+            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 1, 21, 17, 30, 42, 902);
+            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 1, 28, 17, 30, 42, 902);
             this.aDateTimePickerSearch1.ButtonText = "조회";
             this.aDateTimePickerSearch1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aDateTimePickerSearch1.Location = new System.Drawing.Point(105, 23);
@@ -90,19 +90,20 @@
             this.aDateTimePickerSearch1.TabIndex = 14;
             this.aDateTimePickerSearch1.btnDateTimeSearch_Click += new Axxen.CustomControls.ADateTimePickerSearch.SearchButtonClick(this.ADateTimePickerSearch1_btnDateTimeSearch_Click);
             // 
-            // aTextBox_FindNameByCode2
+            // dotWorkCenter
             // 
-            this.aTextBox_FindNameByCode2.allfont = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aTextBox_FindNameByCode2.CodeType = Axxen.CustomControls.DataType.WorkCenters;
-            this.aTextBox_FindNameByCode2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aTextBox_FindNameByCode2.lblNameText = "작업장";
-            this.aTextBox_FindNameByCode2.Location = new System.Drawing.Point(696, 26);
-            this.aTextBox_FindNameByCode2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.aTextBox_FindNameByCode2.Name = "aTextBox_FindNameByCode2";
-            this.aTextBox_FindNameByCode2.Size = new System.Drawing.Size(229, 27);
-            this.aTextBox_FindNameByCode2.TabIndex = 13;
-            this.aTextBox_FindNameByCode2.txtCodeText = "";
-            this.aTextBox_FindNameByCode2.txtNameText = "";
+            this.dotWorkCenter.allfont = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dotWorkCenter.CodeType = Axxen.CustomControls.DataType.WorkCenters;
+            this.dotWorkCenter.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dotWorkCenter.lblNameText = "작업장";
+            this.dotWorkCenter.Location = new System.Drawing.Point(696, 26);
+            this.dotWorkCenter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dotWorkCenter.Name = "dotWorkCenter";
+            this.dotWorkCenter.Size = new System.Drawing.Size(229, 27);
+            this.dotWorkCenter.TabIndex = 13;
+            this.dotWorkCenter.txtCodeText = "";
+            this.dotWorkCenter.txtNameText = "";
+            this.dotWorkCenter.DotDotDotFormClosing += new Axxen.CustomControls.ATextBox_FindNameByCode.SearchFormClosing(this.DotWorkCenter_DotDotDotFormClosing);
             // 
             // aTextBox_FindNameByCode1
             // 
@@ -164,16 +165,16 @@
             // 
             this.chartTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.chartTime.BackColor = System.Drawing.Color.Gainsboro;
-            chartArea3.Name = "ChartArea1";
-            this.chartTime.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chartTime.Legends.Add(legend3);
+            chartArea1.Name = "ChartArea1";
+            this.chartTime.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartTime.Legends.Add(legend1);
             this.chartTime.Location = new System.Drawing.Point(12, 393);
             this.chartTime.Name = "chartTime";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chartTime.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartTime.Series.Add(series1);
             this.chartTime.Size = new System.Drawing.Size(689, 295);
             this.chartTime.TabIndex = 12;
             this.chartTime.Text = "chart1";
@@ -183,17 +184,17 @@
             this.chartDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chartDate.BackColor = System.Drawing.Color.LightGray;
-            chartArea4.Name = "ChartArea1";
-            this.chartDate.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chartDate.Legends.Add(legend4);
+            chartArea2.Name = "ChartArea1";
+            this.chartDate.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartDate.Legends.Add(legend2);
             this.chartDate.Location = new System.Drawing.Point(735, 393);
             this.chartDate.Name = "chartDate";
-            this.chartDate.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chartDate.Series.Add(series4);
+            this.chartDate.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartDate.Series.Add(series2);
             this.chartDate.Size = new System.Drawing.Size(400, 295);
             this.chartDate.TabIndex = 13;
             this.chartDate.Text = "chart2";
@@ -228,7 +229,7 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chartDate;
         private CustomControls.AComboBox cboStatus;
         private CustomControls.ALabel aLabel3;
-        private CustomControls.ATextBox_FindNameByCode aTextBox_FindNameByCode2;
+        private CustomControls.ATextBox_FindNameByCode dotWorkCenter;
         private CustomControls.ATextBox_FindNameByCode aTextBox_FindNameByCode1;
         private CustomControls.ADateTimePickerSearch aDateTimePickerSearch1;
     }

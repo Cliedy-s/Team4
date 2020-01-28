@@ -37,6 +37,9 @@ namespace Axxen
             ((MainForm)this.MdiParent).RefreshFormEvent += new EventHandler(this.RefreshFormShow);//새로고침이벤트
         }
 
+        /// <summary>
+        /// 콤보박스 바인딩
+        /// </summary>
         private void ComboBinding()
         {
             cboGroup.Items.Insert(0, "==선택==");
@@ -46,11 +49,11 @@ namespace Axxen
                 cboGroup.Items.Add(item.Mold_Group);
             }
         }
-
+        
         public void InsertFormShow(object sender, EventArgs e)
         {
             aSplitContainer1.Panel2.Enabled = true;
-        }
+        }//추가버튼클릭
 
         /// <summary>
         /// 데이터 그리드뷰 바인딩
@@ -78,7 +81,6 @@ namespace Axxen
         {
             ((MainForm)this.MdiParent).InsertFormEvent -= new System.EventHandler(this.InsertFormShow);//입력이벤트
             ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow);//새로고침이벤트
-            //((MainForm)this.MdiParent).MyUpdat
         }
 
         private void RefreshFormShow(object sender, EventArgs e)
@@ -86,8 +88,13 @@ namespace Axxen
             moldList = service.SelectMoldAll();
             dgvMainGrid.DataSource = moldList;
             cboGroup.SelectedIndex = 0;
-        }
+        } //새로고침클릭
 
+        /// <summary>
+        /// 텍스트 박스 엔터클릭
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">키 입력값</param>
         private void Text_TextKeyPress(object sender, KeyPressEventArgs e)
         {
             if(e.KeyChar == 13)
@@ -96,6 +103,9 @@ namespace Axxen
             }
         }
 
+        /// <summary>
+        /// 조건 검색
+        /// </summary>
         private void SearchList()
         {
             if (txtCode.TextBoxText.Length > 0 && txtName.TextBoxText.Length <= 0)
@@ -140,7 +150,7 @@ namespace Axxen
                                      select mgroup).ToList();
                 dgvMainGrid.DataSource = moldgroupList;
             }
-        }
+        }//콤보박스 목록선택
 
         private void Insert()
         {
@@ -161,6 +171,6 @@ namespace Axxen
                 Use_YN = "N",
                 Wc_Code = null
             };
-        }
+        }//금형정보등록
     }
 }
