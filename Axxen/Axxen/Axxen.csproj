@@ -765,6 +765,7 @@
     <None Include="Image\MianLoGo.png" />
     <Content Include="Image\newlogo.png" />
     <Content Include="Image\treeimg.png" />
+    <None Include="Image\winch.png" />
     <Content Include="Image\x.png" />
     <Content Include="Team4Connect_DEV.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
