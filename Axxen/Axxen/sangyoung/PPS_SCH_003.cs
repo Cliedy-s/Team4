@@ -38,6 +38,7 @@ namespace Axxen
             wowclist = service.GetWO_WC_Production_Items();
             dgvMainGrid.DataSource = wowclist;
             cboStatus.SelectedIndex = 0;
+            chartDate.Series.Clear();
         }
 
         private void ComboBinding()

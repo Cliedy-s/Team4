@@ -50,6 +50,7 @@
             this.txtRemark = new Axxen.CustomControls.ATextBox();
             this.cboWorkCenter = new Axxen.CustomControls.AComboBox();
             this.aDateTimePicker1 = new Axxen.CustomControls.ADateTimePicker();
+            this.btnOK = new Axxen.CustomControls.AButton();
             this.SuspendLayout();
             // 
             // txtState
@@ -237,7 +238,7 @@
             // aLabel11
             // 
             this.aLabel11.AutoSize = true;
-            this.aLabel11.Location = new System.Drawing.Point(30, 295);
+            this.aLabel11.Location = new System.Drawing.Point(30, 281);
             this.aLabel11.Name = "aLabel11";
             this.aLabel11.Size = new System.Drawing.Size(53, 12);
             this.aLabel11.TabIndex = 21;
@@ -248,7 +249,7 @@
             this.txtRemark.BackColor = System.Drawing.Color.White;
             this.txtRemark.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtRemark.errorp = null;
-            this.txtRemark.Location = new System.Drawing.Point(85, 293);
+            this.txtRemark.Location = new System.Drawing.Point(85, 279);
             this.txtRemark.Multiline = true;
             this.txtRemark.Name = "txtRemark";
             this.txtRemark.Size = new System.Drawing.Size(320, 115);
@@ -271,11 +272,23 @@
             this.aDateTimePicker1.Size = new System.Drawing.Size(100, 21);
             this.aDateTimePicker1.TabIndex = 23;
             // 
+            // btnOK
+            // 
+            this.btnOK.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOK.Location = new System.Drawing.Point(319, 408);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(86, 33);
+            this.btnOK.TabIndex = 24;
+            this.btnOK.Text = "확인";
+            this.btnOK.UseVisualStyleBackColor = false;
+            // 
             // PPS_SCH_001_Insert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(445, 450);
+            this.Controls.Add(this.btnOK);
             this.Controls.Add(this.aDateTimePicker1);
             this.Controls.Add(this.cboWorkCenter);
             this.Controls.Add(this.aLabel11);
@@ -298,6 +311,7 @@
             this.Controls.Add(this.txtWo_Req);
             this.Controls.Add(this.aLabel1);
             this.Controls.Add(this.txtState);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "PPS_SCH_001_Insert";
             this.Text = "PPS_SCH_001_Insert";
             this.Load += new System.EventHandler(this.PPS_SCH_001_Insert_Load);
@@ -330,5 +344,6 @@
         private CustomControls.ATextBox txtRemark;
         private CustomControls.AComboBox cboWorkCenter;
         private CustomControls.ADateTimePicker aDateTimePicker1;
+        private CustomControls.AButton btnOK;
     }
 }

@@ -11,6 +11,10 @@ namespace DAC
 {
     public class MoldDAC : DACParent
     {
+        /// <summary>
+        /// 금형등록 정보조회
+        /// </summary>
+        /// <returns></returns>
         public List<MoldVO> SelectMoldAll()
         {
             using (SqlCommand comm = new SqlCommand())
@@ -28,6 +32,10 @@ namespace DAC
             }
         }
 
+        /// <summary>
+        /// 금형그룹 조회
+        /// </summary>
+        /// <returns></returns>
         public List<MoldVO> SelectMoldGroup()
         {
             using (SqlCommand comm = new SqlCommand())
@@ -43,6 +51,11 @@ namespace DAC
                 return list;
             }
         }
+
+        /// <summary>
+        /// 금형사용정보조회
+        /// </summary>
+        /// <returns></returns>
         public List<Mold_J_Item_Wc_MuseVO> SelectMold_Item_Wc_Muse()
         {
             using (SqlCommand comm = new SqlCommand())

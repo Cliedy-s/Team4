@@ -83,9 +83,9 @@ namespace Axxen
             string wono = dgvMainGrid[1, dgvMainGrid.CurrentRow.Index].Value.ToString();
             bool result = service.UpdateWoReqOrder(wono);
             if (result)
-                MessageBox.Show("성공");
+                MessageBox.Show("작업이 마감되었습니다.","작업지시관리",MessageBoxButtons.OK);
             else
-                MessageBox.Show("실패");
+                MessageBox.Show("마감을 할 수 없습니다.", "작업지시관리", MessageBoxButtons.OK,MessageBoxIcon.Error);
             RefreshFormShow(null, null);
         }
 
@@ -94,9 +94,9 @@ namespace Axxen
             string wono = dgvMainGrid[1, dgvMainGrid.CurrentRow.Index].Value.ToString();
             bool result = service.CancleWoReqOrder(wono);
             if (result)
-                MessageBox.Show("성공");
+                MessageBox.Show("작업이 마감취소되었습니다.", "작업지시관리", MessageBoxButtons.OK);
             else
-                MessageBox.Show("실패");
+                MessageBox.Show("취소가 되지 않았습니다.", "작업지시관리", MessageBoxButtons.OK, MessageBoxIcon.Error);
             RefreshFormShow(null, null);
         }
 

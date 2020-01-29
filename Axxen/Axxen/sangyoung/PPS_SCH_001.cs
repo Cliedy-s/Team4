@@ -54,10 +54,8 @@ namespace Axxen
 
             PPS_SCH_001_Insert frm = new PPS_SCH_001_Insert(woitem.Item_Code, woitem.Item_Name, woitem.Req_Qty);
             frm.StartPosition = FormStartPosition.CenterScreen;
-            if (frm.ShowDialog() == DialogResult.OK)
-            {
-
-            }
+            frm.Show();
+          
         }
 
         private void RefreshFormShow(object sender, EventArgs e)

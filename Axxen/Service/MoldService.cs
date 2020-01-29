@@ -10,19 +10,30 @@ namespace Service
 {
     public class MoldService
     {
+        /// <summary>
+        /// 금형등록 정보조회
+        /// </summary>
+        /// <returns></returns>
         public List<MoldVO> SelectMoldAll()
         {
             MoldDAC dac = new MoldDAC();
             return dac.SelectMoldAll();
         }
 
+        /// <summary>
+        /// 금형그룹조회
+        /// </summary>
+        /// <returns></returns>
         public List<MoldVO> selectMoldGroup()
         {
             MoldDAC dac = new MoldDAC();
             return dac.SelectMoldGroup();
         }
 
-
+        /// <summary>
+        /// 금형사용정보조회
+        /// </summary>
+        /// <returns></returns>
         public List<Mold_J_Item_Wc_MuseVO> SelectMold_Item_Wc_Muse()
         {
             MoldDAC dac = new MoldDAC();

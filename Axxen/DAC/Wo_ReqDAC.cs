@@ -28,6 +28,11 @@ namespace DAC
             }
         }
 
+        /// <summary>
+        /// 생산의뢰마감처리
+        /// </summary>
+        /// <param name="woNo">생산의뢰번호</param>
+        /// <returns></returns>
         public bool UpdateWoReq(string woNo)
         {
             int result =0;
@@ -45,6 +50,10 @@ namespace DAC
             }
         }
 
+        /// <summary>
+        /// 작업지시정보조회
+        /// </summary>
+        /// <returns></returns>
         public List<WorkOrder_J_WC_ItmeVO> GetWorkOrder()
         {
             using (SqlCommand comm = new SqlCommand())
@@ -61,8 +70,12 @@ namespace DAC
 
                 return list;
             }
-        }
+        }//PPS_SCH_001_Sub그리드뷰
 
+        /// <summary>
+        /// 일별실적조회
+        /// </summary>
+        /// <returns></returns>
         public List<WO_WC_Production_ItemVO> GetWO_WC_Production_Items() //PPS_SCH_003 그리드뷰 사용
         {
             List<WO_WC_Production_ItemVO> list = null;
@@ -80,6 +93,10 @@ namespace DAC
             return list;
         }
 
+        /// <summary>
+        /// 작업장조회
+        /// </summary>
+        /// <returns></returns>
         public List<WorkOrder_J_WC_ItmeVO> GetWorkCenterName()
         {
             List<WorkOrder_J_WC_ItmeVO> list = null;
@@ -96,6 +113,10 @@ namespace DAC
             return list;
         }
 
+        /// <summary>
+        /// 작업지시상세조회
+        /// </summary>
+        /// <returns></returns>
         public List<Wo_Req_WO_WC_ItemVO> GetWoReqOrder()
         {
             List<Wo_Req_WO_WC_ItemVO> list = null;
@@ -111,8 +132,13 @@ namespace DAC
                 conn.Close();
             }
             return list;
-        }
+        }//PPS_SCH_002그리드뷰
 
+        /// <summary>
+        /// 작업지시마감처리
+        /// </summary>
+        /// <param name="wono">작업지시번호</param>
+        /// <returns></returns>
         public bool UpdateWoReqOrder(string wono)
         {
             int result = 0;
@@ -130,6 +156,11 @@ namespace DAC
             }
         }
 
+        /// <summary>
+        /// 작업지시마감취소
+        /// </summary>
+        /// <param name="wono"></param>
+        /// <returns></returns>
         public bool CancleWoReqOrder(string wono)
         {
             int result = 0;
@@ -147,6 +178,10 @@ namespace DAC
             }
         }
 
+        /// <summary>
+        /// 작업지시상태조회
+        /// </summary>
+        /// <returns></returns>
         public List<WorkOrderVO> GetWoStatus()
         {
             List<WorkOrderVO> list = null;
