@@ -270,7 +270,7 @@
             this.aButton1.Name = "aButton1";
             this.aButton1.Size = new System.Drawing.Size(85, 32);
             this.aButton1.TabIndex = 13;
-            this.aButton1.Text = "저장";
+            this.aButton1.Text = "수정";
             this.aButton1.UseVisualStyleBackColor = false;
             this.aButton1.Click += new System.EventHandler(this.aButton1_Click);
             // 

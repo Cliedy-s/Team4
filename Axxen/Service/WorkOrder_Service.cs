@@ -32,6 +32,12 @@ namespace Service
             return dac.UPDATE_Prd_Qty(Prd_Qty, Num, Wo_Status, Workorderno, Item_Code);
         }
 
+        public bool UPDATE_Grade_Detail_Name(List<Goods_In_History_J_Pallet_BoxingVO> list) //PRM_PRF_002_1 생산수량 업데이트
+        {
+            WorkOrderDAC dac = new WorkOrderDAC();
+            return dac.UPDATE_Grade_Detail_Name(list);
+        }
+
 
         //pop
         /// <summary>
