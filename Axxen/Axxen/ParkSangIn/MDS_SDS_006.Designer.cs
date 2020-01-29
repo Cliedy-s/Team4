@@ -30,20 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MDS_SDS_006));
             this.aPanel2 = new Axxen.CustomControls.APanel();
-            this.aComboBox1 = new Axxen.CustomControls.AComboBox();
+            this.aButton1 = new Axxen.CustomControls.AButton();
+            this.cbbprocess = new Axxen.CustomControls.AComboBox();
             this.aPanel3 = new Axxen.CustomControls.APanel();
             this.lblItem = new Axxen.CustomControls.ALabel();
             this.aLabel3 = new Axxen.CustomControls.ALabel();
             this.aLabel2 = new Axxen.CustomControls.ALabel();
             this.cbbItem = new Axxen.CustomControls.AComboBox();
             this.aPanel1 = new Axxen.CustomControls.APanel();
-            this.lblGroup = new Axxen.CustomControls.ALabel();
-            this.btnSearch = new Axxen.CustomControls.AButton();
+            this.lblprocess = new Axxen.CustomControls.ALabel();
             this.dgvItem = new Axxen.CustomControls.ADataGridView();
             this.aLabel1 = new Axxen.CustomControls.ALabel();
             this.dgvinspect = new Axxen.CustomControls.ADataGridView();
             this.aLabel4 = new Axxen.CustomControls.ALabel();
-            this.aButton1 = new Axxen.CustomControls.AButton();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.aPanel2.SuspendLayout();
@@ -59,26 +58,39 @@
             // 
             this.aPanel2.BackColor = System.Drawing.SystemColors.Info;
             this.aPanel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.aPanel2.Controls.Add(this.aComboBox1);
+            this.aPanel2.Controls.Add(this.aButton1);
+            this.aPanel2.Controls.Add(this.cbbprocess);
             this.aPanel2.Controls.Add(this.aPanel3);
             this.aPanel2.Controls.Add(this.aLabel3);
             this.aPanel2.Controls.Add(this.aLabel2);
             this.aPanel2.Controls.Add(this.cbbItem);
             this.aPanel2.Controls.Add(this.aPanel1);
-            this.aPanel2.Controls.Add(this.btnSearch);
             this.aPanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.aPanel2.Location = new System.Drawing.Point(0, 0);
             this.aPanel2.Name = "aPanel2";
             this.aPanel2.Size = new System.Drawing.Size(1248, 39);
             this.aPanel2.TabIndex = 45;
             // 
-            // aComboBox1
+            // aButton1
             // 
-            this.aComboBox1.FormattingEnabled = true;
-            this.aComboBox1.Location = new System.Drawing.Point(442, 7);
-            this.aComboBox1.Name = "aComboBox1";
-            this.aComboBox1.Size = new System.Drawing.Size(152, 23);
-            this.aComboBox1.TabIndex = 51;
+            this.aButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.aButton1.Location = new System.Drawing.Point(812, 9);
+            this.aButton1.Name = "aButton1";
+            this.aButton1.Size = new System.Drawing.Size(175, 23);
+            this.aButton1.TabIndex = 51;
+            this.aButton1.Text = "품질규격복사";
+            this.aButton1.UseVisualStyleBackColor = false;
+            this.aButton1.Click += new System.EventHandler(this.AButton1_Click);
+            // 
+            // cbbprocess
+            // 
+            this.cbbprocess.FormattingEnabled = true;
+            this.cbbprocess.Location = new System.Drawing.Point(442, 7);
+            this.cbbprocess.Name = "cbbprocess";
+            this.cbbprocess.Size = new System.Drawing.Size(152, 23);
+            this.cbbprocess.TabIndex = 51;
+            this.cbbprocess.SelectedIndexChanged += new System.EventHandler(this.Cbbprocess_SelectedIndexChanged);
             // 
             // aPanel3
             // 
@@ -94,11 +106,10 @@
             // 
             this.lblItem.AutoSize = true;
             this.lblItem.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblItem.Location = new System.Drawing.Point(12, 5);
+            this.lblItem.Location = new System.Drawing.Point(9, 3);
             this.lblItem.Name = "lblItem";
-            this.lblItem.Size = new System.Drawing.Size(53, 17);
+            this.lblItem.Size = new System.Drawing.Size(0, 17);
             this.lblItem.TabIndex = 0;
-            this.lblItem.Text = "aLabel1";
             // 
             // aLabel3
             // 
@@ -127,38 +138,26 @@
             this.cbbItem.Name = "cbbItem";
             this.cbbItem.Size = new System.Drawing.Size(152, 23);
             this.cbbItem.TabIndex = 3;
+            this.cbbItem.SelectedIndexChanged += new System.EventHandler(this.CbbItem_SelectedIndexChanged);
             // 
             // aPanel1
             // 
             this.aPanel1.BackColor = System.Drawing.Color.White;
             this.aPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.aPanel1.Controls.Add(this.lblGroup);
+            this.aPanel1.Controls.Add(this.lblprocess);
             this.aPanel1.Location = new System.Drawing.Point(600, 7);
             this.aPanel1.Name = "aPanel1";
             this.aPanel1.Size = new System.Drawing.Size(165, 24);
             this.aPanel1.TabIndex = 6;
             // 
-            // lblGroup
+            // lblprocess
             // 
-            this.lblGroup.AutoSize = true;
-            this.lblGroup.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblGroup.Location = new System.Drawing.Point(12, 5);
-            this.lblGroup.Name = "lblGroup";
-            this.lblGroup.Size = new System.Drawing.Size(53, 17);
-            this.lblGroup.TabIndex = 0;
-            this.lblGroup.Text = "aLabel1";
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Location = new System.Drawing.Point(1166, 6);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearch.TabIndex = 4;
-            this.btnSearch.Text = "조회";
-            this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
+            this.lblprocess.AutoSize = true;
+            this.lblprocess.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblprocess.Location = new System.Drawing.Point(10, 3);
+            this.lblprocess.Name = "lblprocess";
+            this.lblprocess.Size = new System.Drawing.Size(0, 17);
+            this.lblprocess.TabIndex = 0;
             // 
             // dgvItem
             // 
@@ -208,18 +207,6 @@
             this.aLabel4.TabIndex = 49;
             this.aLabel4.Text = "품질규격 설정";
             // 
-            // aButton1
-            // 
-            this.aButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton1.Location = new System.Drawing.Point(201, 42);
-            this.aButton1.Name = "aButton1";
-            this.aButton1.Size = new System.Drawing.Size(175, 23);
-            this.aButton1.TabIndex = 51;
-            this.aButton1.Text = "품질규격복사";
-            this.aButton1.UseVisualStyleBackColor = false;
-            this.aButton1.Click += new System.EventHandler(this.AButton1_Click);
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
@@ -242,7 +229,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1248, 700);
-            this.Controls.Add(this.aButton1);
             this.Controls.Add(this.aLabel4);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.aPanel2);
@@ -274,12 +260,11 @@
         private CustomControls.ALabel aLabel2;
         private CustomControls.AComboBox cbbItem;
         private CustomControls.APanel aPanel1;
-        private CustomControls.ALabel lblGroup;
-        private CustomControls.AButton btnSearch;
+        private CustomControls.ALabel lblprocess;
         private CustomControls.ADataGridView dgvItem;
         private CustomControls.ALabel aLabel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private CustomControls.AComboBox aComboBox1;
+        private CustomControls.AComboBox cbbprocess;
         private CustomControls.APanel aPanel3;
         private CustomControls.ALabel lblItem;
         private CustomControls.ADataGridView dgvinspect;

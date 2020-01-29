@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MDS_SDS_007_2));
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.aPanel4 = new Axxen.CustomControls.APanel();
             this.aLabel1 = new Axxen.CustomControls.ALabel();
             this.aLabel4 = new Axxen.CustomControls.ALabel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.aPanel2 = new Axxen.CustomControls.APanel();
             this.aPanel8 = new Axxen.CustomControls.APanel();
             this.lblItem = new Axxen.CustomControls.ALabel();
@@ -44,8 +44,8 @@
             this.btnCencle = new Axxen.CustomControls.AButton();
             this.btnSave = new Axxen.CustomControls.AButton();
             this.dgvCondition = new Axxen.CustomControls.ADataGridView();
-            this.aPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.aPanel4.SuspendLayout();
             this.aPanel2.SuspendLayout();
             this.aPanel8.SuspendLayout();
             this.aPanel3.SuspendLayout();
@@ -53,6 +53,15 @@
             this.aPanel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCondition)).BeginInit();
             this.SuspendLayout();
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(24, 84);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(23, 22);
+            this.pictureBox2.TabIndex = 133;
+            this.pictureBox2.TabStop = false;
             // 
             // aPanel4
             // 
@@ -85,15 +94,6 @@
             this.aLabel4.Size = new System.Drawing.Size(112, 21);
             this.aLabel4.TabIndex = 132;
             this.aLabel4.Text = "품질규격 설정";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(24, 84);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(23, 22);
-            this.pictureBox2.TabIndex = 133;
-            this.pictureBox2.TabStop = false;
             // 
             // aPanel2
             // 
@@ -170,19 +170,17 @@
             this.aPanel9.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.aPanel9.Location = new System.Drawing.Point(0, 510);
             this.aPanel9.Name = "aPanel9";
-            this.aPanel9.Size = new System.Drawing.Size(870, 41);
+            this.aPanel9.Size = new System.Drawing.Size(916, 41);
             this.aPanel9.TabIndex = 139;
             // 
             // btnCencle
             // 
-            this.btnCencle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCencle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCencle.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnCencle.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCencle.FlatAppearance.BorderSize = 0;
             this.btnCencle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCencle.Location = new System.Drawing.Point(781, 11);
+            this.btnCencle.Location = new System.Drawing.Point(827, 11);
             this.btnCencle.Name = "btnCencle";
             this.btnCencle.Size = new System.Drawing.Size(75, 23);
             this.btnCencle.TabIndex = 45;
@@ -191,14 +189,12 @@
             // 
             // btnSave
             // 
-            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnSave.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Location = new System.Drawing.Point(700, 11);
+            this.btnSave.Location = new System.Drawing.Point(746, 11);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 0;
@@ -216,13 +212,13 @@
             this.dgvCondition.Location = new System.Drawing.Point(10, 112);
             this.dgvCondition.Name = "dgvCondition";
             this.dgvCondition.RowTemplate.Height = 23;
-            this.dgvCondition.Size = new System.Drawing.Size(854, 395);
+            this.dgvCondition.Size = new System.Drawing.Size(900, 395);
             this.dgvCondition.TabIndex = 138;
             // 
             // MDS_SDS_007_2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.ClientSize = new System.Drawing.Size(870, 551);
+            this.ClientSize = new System.Drawing.Size(916, 551);
             this.Controls.Add(this.aPanel4);
             this.Controls.Add(this.aLabel4);
             this.Controls.Add(this.pictureBox2);
@@ -232,10 +228,12 @@
             this.Controls.Add(this.aPanel9);
             this.Controls.Add(this.dgvCondition);
             this.Name = "MDS_SDS_007_2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "공정조건복사";
             this.Load += new System.EventHandler(this.MDS_SDS_007_2_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.aPanel4.ResumeLayout(false);
             this.aPanel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.aPanel2.ResumeLayout(false);
             this.aPanel8.ResumeLayout(false);
             this.aPanel8.PerformLayout();
