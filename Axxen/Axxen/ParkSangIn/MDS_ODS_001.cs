@@ -1,4 +1,5 @@
-﻿using Service;
+﻿using Axxen.Util;
+using Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +15,7 @@ namespace Axxen
     public partial class MDS_ODS_001 : Axxen.BaseForm
     {
         List<Process_MasterVO> processlist;
-        ProcessService userservice = new ProcessService();
+        ProcessService processservice = new ProcessService();
 
         public MDS_ODS_001()
         {
@@ -25,10 +26,19 @@ namespace Axxen
 
         private void MDS_ODS_001_Load(object sender, EventArgs e)
         {
+            txtName.Enabled = false;
+            txtCode.Enabled = false;
+            btnSave.Enabled = false;
+            txtremark.Enabled = false;
+          ((MainForm)this.MdiParent).MyUpdateEvent += new System.EventHandler(this.MyUpdateShow);//입력이벤트 등록
+            ((MainForm)this.MdiParent).InsertFormEvent += new System.EventHandler(this.InsertFormShow);//입력이벤트 등록
+            ((MainForm)this.MdiParent).RefreshFormEvent += new EventHandler(this.RefreshFormShow);
             ///gridview
             DatagridviewDesigns.SetDesign(dgvProcess);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvProcess, "공정코드", "Process_code", true, 210, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvProcess, "공정이름", "Process_name", true, 210, default, true);
+
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvProcess, "비고", "Remark", true, 210, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvProcess, "입력일자", "Ins_Date", true, 210, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvProcess, "사용여부", "Use_YN", true, 210, default, true);
             GetAllProcess();
@@ -49,8 +59,6 @@ namespace Axxen
             gridbtn.FlatStyle = FlatStyle.Popup;
             gridbtn.DefaultCellStyle.BackColor = Color.LightYellow;
             gridbtn.UseColumnTextForButtonValue = true;
-
-
             gridbtn.UseColumnTextForButtonValue = true;
             dgvProcess.Columns.Add(gridbtn);
 
@@ -69,7 +77,7 @@ namespace Axxen
         {
 
             processlist = new List<Process_MasterVO>();
-            processlist = userservice.GetAllProcess_Master();
+            processlist = processservice.GetAllProcess_Master();
             dgvProcess.DataSource = processlist;
         }
 
@@ -77,6 +85,67 @@ namespace Axxen
         {
             lblProcess.Text = cbbProcess.SelectedValue.ToString();
         }
+
+        /// <summary>
+        /// 입력 이벤트 메서드
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void InsertFormShow(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
+                {
+                    txtName.Enabled = true;
+                    txtCode.Enabled = true;
+                    btnSave.Enabled = true;
+                    txtremark.Enabled = true;
+                    btnSave.Text = "저장";
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
+
+        }
+        /// <summary>
+        /// 수정
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void MyUpdateShow(object sender, EventArgs e)
+        {
+
+            txtName.Enabled = true;
+            txtCode.Enabled = false;
+            txtremark.Enabled = true;
+            btnSave.Enabled = true;
+            btnSave.Text = "수정";
+        }
+        /// <summary>
+        /// 새로고침 이벤트 메서드
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void RefreshFormShow(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
+                {
+                    GetAllProcess();
+                    ControlSetting();//콤보박스
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
+        }
+
 
         private void BtnSearch_Click(object sender, EventArgs e)
         {
@@ -98,11 +167,11 @@ namespace Axxen
                 {
                     if ((dgvProcess.SelectedRows[0].Cells[3].Value).ToString() == "Y") //사용안함
                     {
-                        userservice.GetUpdateProcessMaster((dgvProcess.SelectedRows[0].Cells[0].Value).ToString(), "N");
+                        processservice.GetUpdateProcessMaster((dgvProcess.SelectedRows[0].Cells[0].Value).ToString(), "N");
                     }
                     else //사용함
                     {
-                        userservice.GetUpdateProcessMaster((dgvProcess.SelectedRows[0].Cells[0].Value).ToString(), "Y");
+                        processservice.GetUpdateProcessMaster((dgvProcess.SelectedRows[0].Cells[0].Value).ToString(), "Y");
                     }
                     GetAllProcess();
                 }
@@ -112,6 +181,59 @@ namespace Axxen
             {
 
                 MessageBox.Show(err.Message);
+            }
+        }
+
+        private void BtnSave_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtName.Text) && !string.IsNullOrEmpty(txtCode.Text))
+            {
+                if (btnSave.Text == "저장")
+                {
+           
+                    if (processservice.GetInsertUpdateProcess(btnSave.Text,txtCode.Text, txtName.Text,txtremark.Text ,UserInfo.User_Name))
+                    {
+                        MessageBox.Show("저장되었습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("이미등록된 코드 입니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+
+                else
+                {
+                    if (processservice.GetInsertUpdateProcess(btnSave.Text, txtCode.Text, txtName.Text, txtremark.Text, UserInfo.User_Name))
+                    {
+                        MessageBox.Show("수정되었습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+                }
+                ResetUtillity.ResetPanelControl(aPanel3);
+                GetAllProcess();
+            }
+
+            else
+            {
+                MessageBox.Show("필수 입력란을 입력해주세요.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+        }
+
+        private void MDS_ODS_001_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ((MainForm)this.MdiParent).MyUpdateEvent -= new System.EventHandler(this.MyUpdateShow);//입력이벤트 등록
+            ((MainForm)this.MdiParent).InsertFormEvent -= new System.EventHandler(this.InsertFormShow);//입력이벤트 등록
+            ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow);
+        }
+
+        private void DgvProcess_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtName.Text = dgvProcess.SelectedRows[0].Cells[1].Value.ToString();
+            txtCode.Text = dgvProcess.SelectedRows[0].Cells[0].Value.ToString();
+
+            if (dgvProcess.SelectedRows[0].Cells[2].Value!=null) { 
+            txtremark.Text = dgvProcess.SelectedRows[0].Cells[2].Value.ToString();
             }
         }
     }

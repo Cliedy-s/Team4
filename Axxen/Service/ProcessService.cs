@@ -27,7 +27,11 @@ namespace Service
         {
             return DAC.GetUpdateProcessMaster(processcode, used);
         }
+        public bool GetInsertUpdateProcess(string check, string code, string Name, string remark, string user)
+        {
+            return DAC.GetInsertUpdateProcess(check, code,Name, remark, user);
+        }
 
-    }
+        }
         
 }

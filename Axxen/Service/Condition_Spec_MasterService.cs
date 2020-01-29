@@ -8,16 +8,27 @@ using VO;
 
 namespace Service
 {
-    class Condition_Spec_MasterService
+   public class Condition_Spec_MasterService
     {
+        Condition_Spec_MasterDAC dac;
+        public Condition_Spec_MasterService()
+        {
+            dac = new Condition_Spec_MasterDAC();
+        }
+
         /// <summary>
         /// 공정조건 측정항목 가져오기
         /// </summary>
         /// <returns></returns>
         public List<ConditionSpecVO> GetAll()
         {
-            Condition_Spec_MasterDAC dac = new Condition_Spec_MasterDAC();
+        
             return dac.GetAll();
         }
-    }
+
+        public bool InsertConditionSpec(ConditionSpecVO condition)
+        {
+            return dac.InsertConditionSpec(condition);
+        }
+        }
 }

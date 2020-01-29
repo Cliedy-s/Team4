@@ -282,6 +282,7 @@
             this.Controls.Add(this.dgvUser);
             this.Controls.Add(this.aLabel5);
             this.Name = "MSS_CON_003";
+            this.Text = "사용자관리";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MSS_CON_003_FormClosed);
             this.Load += new System.EventHandler(this.MSS_CON_003_Load);
             this.aPanel2.ResumeLayout(false);

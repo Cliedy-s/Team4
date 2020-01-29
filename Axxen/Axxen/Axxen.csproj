@@ -182,6 +182,18 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ParkSangIn\MDS_SDS_007_2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_SDS_007_2.Designer.cs">
+      <DependentUpon>MDS_SDS_007_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_SDS_007_1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_SDS_007_1.Designer.cs">
+      <DependentUpon>MDS_SDS_007_1.cs</DependentUpon>
+    </Compile>
     <Compile Include="ParkSangIn\MDS_CDS_003.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -555,6 +567,9 @@
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ParkSangIn\MDS_SDS_007_2.resx">
+      <DependentUpon>MDS_SDS_007_2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ParkSangIn\MDS_CDS_002.resx">
       <DependentUpon>MDS_CDS_002.cs</DependentUpon>
     </EmbeddedResource>
@@ -599,6 +614,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ParkSangIn\MDS_SDS_007.resx">
       <DependentUpon>MDS_SDS_007.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParkSangIn\MDS_SDS_007_1.resx">
+      <DependentUpon>MDS_SDS_007_1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ParkSangIn\MSS_CON_002.resx">
       <DependentUpon>MSS_CON_002.cs</DependentUpon>
