@@ -27,6 +27,7 @@ namespace AxxenClient.Forms
         /// </summary>
         private void InitControl()
         {
+            panBoxing.Location = panLoad.Location = panMolding.Location;
             // 화면 set
             SetButtonForms();
             SetDGV();
@@ -37,20 +38,14 @@ namespace AxxenClient.Forms
             {
                 case WorkType.Molding:
                     panMolding.Visible = true;
-                    panBoxing.Visible = panLoad.Visible = false;
                     break;
                 case WorkType.Load:
                     panLoad.Visible = true;
-                    panBoxing.Visible = panMolding.Visible = false;
                     break;
                 case WorkType.Boxing:
                     panBoxing.Visible = true;
-                    panMolding.Visible = panLoad.Visible = false;
-                    break;
-                default:
                     break;
             }
-            panBoxing.Location  = panLoad.Location = panMolding.Location; //panLoad.Location => molding, Boxing
 
             //데이터 읽어오기
             GetDatas();
@@ -67,8 +62,8 @@ namespace AxxenClient.Forms
             InitControlUtil.AddNewColumnToDataGridView(dgvMain, "품목코드", "Item_Code", true, 80, DataGridViewContentAlignment.MiddleLeft, false);
             InitControlUtil.AddNewColumnToDataGridView(dgvMain, "품목명", "Item_Name", true, 100, DataGridViewContentAlignment.MiddleLeft, true);
             InitControlUtil.AddNewColumnToDataGridView(dgvMain, "단위", "Prd_Unit", true, 60, DataGridViewContentAlignment.MiddleLeft, false);
-            InitControlUtil.AddNewColumnToDataGridView(dgvMain, "실적수량", "Prd_Qty", true, 100, DataGridViewContentAlignment.MiddleLeft, false);
-            InitControlUtil.AddNewColumnToDataGridView(dgvMain, "실적수량", "Prd_Qty", true, 100, DataGridViewContentAlignment.MiddleLeft, false);
+            InitControlUtil.AddNewColumnToDataGridView(dgvMain, "실적수량", "Prd_Qty", true, 110, DataGridViewContentAlignment.MiddleLeft, false);
+            InitControlUtil.AddNewColumnToDataGridView(dgvMain, "실적수량", "Prd_Qty", true, 110, DataGridViewContentAlignment.MiddleLeft, false);
             InitControlUtil.AddNewColumnToDataGridView(dgvMain, "생산시작시간", "Prd_Starttime", true, 200, DataGridViewContentAlignment.MiddleLeft, false);
             InitControlUtil.AddNewColumnToDataGridView(dgvMain, "생산종료시간", "Prd_Endtime", true, 200, DataGridViewContentAlignment.MiddleLeft, false);
             dgvMain.Columns[8].DefaultCellStyle.Format = "yyyy-MM-dd hh:mm:ss";

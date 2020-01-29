@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvMain = new Axxen.CustomControls.ADataGridView();
             this.panMolding = new Axxen.CustomControls.APanel();
             this.btnWorkOrderOnOff3 = new Axxen.CustomControls.AButton();
@@ -48,16 +47,6 @@
             this.btnClearDryGV = new Axxen.CustomControls.AButton();
             this.btnSetPressCondition1 = new Axxen.CustomControls.AButton();
             this.btnQualityMeasure2 = new Axxen.CustomControls.AButton();
-            this.aPanel6 = new Axxen.CustomControls.APanel();
-            this.aButton17 = new Axxen.CustomControls.AButton();
-            this.aButton18 = new Axxen.CustomControls.AButton();
-            this.aButton19 = new Axxen.CustomControls.AButton();
-            this.aButton20 = new Axxen.CustomControls.AButton();
-            this.aButton21 = new Axxen.CustomControls.AButton();
-            this.aButton22 = new Axxen.CustomControls.AButton();
-            this.aButton23 = new Axxen.CustomControls.AButton();
-            this.aButton24 = new Axxen.CustomControls.AButton();
-            this.aButton25 = new Axxen.CustomControls.AButton();
             this.panBoxing = new Axxen.CustomControls.APanel();
             this.btnWorkOrderOnOff1 = new Axxen.CustomControls.AButton();
             this.btnWorkOrderQuit1 = new Axxen.CustomControls.AButton();
@@ -74,7 +63,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).BeginInit();
             this.panMolding.SuspendLayout();
             this.panLoad.SuspendLayout();
-            this.aPanel6.SuspendLayout();
             this.panBoxing.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,7 +72,7 @@
             // 
             // aPanel1
             // 
-            this.aPanel1.Location = new System.Drawing.Point(0, 745);
+            this.aPanel1.Location = new System.Drawing.Point(0, 585);
             this.aPanel1.Margin = new System.Windows.Forms.Padding(4);
             // 
             // btnNoActive
@@ -98,19 +86,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMain.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvMain.Location = new System.Drawing.Point(12, 105);
             this.dgvMain.Name = "dgvMain";
             this.dgvMain.RowHeadersWidth = 51;
             this.dgvMain.RowTemplate.Height = 23;
-            this.dgvMain.Size = new System.Drawing.Size(1186, 504);
+            this.dgvMain.Size = new System.Drawing.Size(1186, 344);
             this.dgvMain.TabIndex = 4;
             // 
             // panMolding
@@ -124,13 +104,15 @@
             this.panMolding.Controls.Add(this.btnSetMold);
             this.panMolding.Controls.Add(this.btnSetPressCondition2);
             this.panMolding.Controls.Add(this.btnQualityMeasure3);
-            this.panMolding.Location = new System.Drawing.Point(12, 617);
+            this.panMolding.Location = new System.Drawing.Point(12, 455);
             this.panMolding.Name = "panMolding";
             this.panMolding.Size = new System.Drawing.Size(1186, 124);
             this.panMolding.TabIndex = 5;
+            this.panMolding.Visible = false;
             // 
             // btnWorkOrderOnOff3
             // 
+            this.btnWorkOrderOnOff3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnWorkOrderOnOff3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnWorkOrderOnOff3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWorkOrderOnOff3.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -143,6 +125,7 @@
             // 
             // btnWorkOrderQuit3
             // 
+            this.btnWorkOrderQuit3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnWorkOrderQuit3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnWorkOrderQuit3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWorkOrderQuit3.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -155,6 +138,7 @@
             // 
             // btnDryGVLoad
             // 
+            this.btnDryGVLoad.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnDryGVLoad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnDryGVLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDryGVLoad.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -168,6 +152,7 @@
             // 
             // btnSetWorker3
             // 
+            this.btnSetWorker3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnSetWorker3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnSetWorker3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSetWorker3.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -181,6 +166,7 @@
             // 
             // btnSetMold
             // 
+            this.btnSetMold.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnSetMold.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnSetMold.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSetMold.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -194,6 +180,7 @@
             // 
             // btnSetPressCondition2
             // 
+            this.btnSetPressCondition2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnSetPressCondition2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnSetPressCondition2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSetPressCondition2.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -207,6 +194,7 @@
             // 
             // btnQualityMeasure3
             // 
+            this.btnQualityMeasure3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnQualityMeasure3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnQualityMeasure3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQualityMeasure3.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -231,13 +219,15 @@
             this.panLoad.Controls.Add(this.btnClearDryGV);
             this.panLoad.Controls.Add(this.btnSetPressCondition1);
             this.panLoad.Controls.Add(this.btnQualityMeasure2);
-            this.panLoad.Location = new System.Drawing.Point(12, 363);
+            this.panLoad.Location = new System.Drawing.Point(12, 455);
             this.panLoad.Name = "panLoad";
             this.panLoad.Size = new System.Drawing.Size(1186, 124);
             this.panLoad.TabIndex = 6;
+            this.panLoad.Visible = false;
             // 
             // btnWorkOrderOnOff2
             // 
+            this.btnWorkOrderOnOff2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnWorkOrderOnOff2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnWorkOrderOnOff2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWorkOrderOnOff2.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -250,6 +240,7 @@
             // 
             // btnWorkOrderQuit2
             // 
+            this.btnWorkOrderQuit2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnWorkOrderQuit2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnWorkOrderQuit2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWorkOrderQuit2.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -262,6 +253,7 @@
             // 
             // btnWorkOrderCreate2
             // 
+            this.btnWorkOrderCreate2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnWorkOrderCreate2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnWorkOrderCreate2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWorkOrderCreate2.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -275,6 +267,7 @@
             // 
             // btnSetWorker2
             // 
+            this.btnSetWorker2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnSetWorker2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnSetWorker2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSetWorker2.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -288,6 +281,7 @@
             // 
             // btnLoadRecordRegister
             // 
+            this.btnLoadRecordRegister.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnLoadRecordRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnLoadRecordRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoadRecordRegister.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -301,6 +295,7 @@
             // 
             // btnFiringInOut
             // 
+            this.btnFiringInOut.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnFiringInOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnFiringInOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFiringInOut.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -314,6 +309,7 @@
             // 
             // btnClearDryGV
             // 
+            this.btnClearDryGV.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnClearDryGV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnClearDryGV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClearDryGV.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -327,6 +323,7 @@
             // 
             // btnSetPressCondition1
             // 
+            this.btnSetPressCondition1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnSetPressCondition1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnSetPressCondition1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSetPressCondition1.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -340,6 +337,7 @@
             // 
             // btnQualityMeasure2
             // 
+            this.btnQualityMeasure2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnQualityMeasure2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnQualityMeasure2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQualityMeasure2.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -350,130 +348,6 @@
             this.btnQualityMeasure2.Text = "품질\r\n측정값\r\n등록";
             this.btnQualityMeasure2.UseVisualStyleBackColor = false;
             this.btnQualityMeasure2.Click += new System.EventHandler(this.btnClick);
-            // 
-            // aPanel6
-            // 
-            this.aPanel6.Controls.Add(this.aButton17);
-            this.aPanel6.Controls.Add(this.aButton18);
-            this.aPanel6.Controls.Add(this.aButton19);
-            this.aPanel6.Controls.Add(this.aButton20);
-            this.aPanel6.Controls.Add(this.aButton21);
-            this.aPanel6.Controls.Add(this.aButton22);
-            this.aPanel6.Controls.Add(this.aButton23);
-            this.aPanel6.Controls.Add(this.aButton24);
-            this.aPanel6.Controls.Add(this.aButton25);
-            this.aPanel6.Location = new System.Drawing.Point(13, 853);
-            this.aPanel6.Name = "aPanel6";
-            this.aPanel6.Size = new System.Drawing.Size(1186, 124);
-            this.aPanel6.TabIndex = 7;
-            // 
-            // aButton17
-            // 
-            this.aButton17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.aButton17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton17.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aButton17.Location = new System.Drawing.Point(6, 3);
-            this.aButton17.Name = "aButton17";
-            this.aButton17.Size = new System.Drawing.Size(126, 118);
-            this.aButton17.TabIndex = 24;
-            this.aButton17.Text = "작업시작/종료";
-            this.aButton17.UseVisualStyleBackColor = false;
-            // 
-            // aButton18
-            // 
-            this.aButton18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.aButton18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton18.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aButton18.Location = new System.Drawing.Point(137, 3);
-            this.aButton18.Name = "aButton18";
-            this.aButton18.Size = new System.Drawing.Size(126, 118);
-            this.aButton18.TabIndex = 23;
-            this.aButton18.Text = "현장마감";
-            this.aButton18.UseVisualStyleBackColor = false;
-            // 
-            // aButton19
-            // 
-            this.aButton19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.aButton19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton19.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aButton19.Location = new System.Drawing.Point(268, 3);
-            this.aButton19.Name = "aButton19";
-            this.aButton19.Size = new System.Drawing.Size(126, 118);
-            this.aButton19.TabIndex = 22;
-            this.aButton19.Text = "작업지시 생성";
-            this.aButton19.UseVisualStyleBackColor = false;
-            // 
-            // aButton20
-            // 
-            this.aButton20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.aButton20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton20.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aButton20.Location = new System.Drawing.Point(399, 3);
-            this.aButton20.Name = "aButton20";
-            this.aButton20.Size = new System.Drawing.Size(126, 118);
-            this.aButton20.TabIndex = 21;
-            this.aButton20.Text = "작업자 할당";
-            this.aButton20.UseVisualStyleBackColor = false;
-            // 
-            // aButton21
-            // 
-            this.aButton21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.aButton21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton21.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aButton21.Location = new System.Drawing.Point(530, 3);
-            this.aButton21.Name = "aButton21";
-            this.aButton21.Size = new System.Drawing.Size(126, 118);
-            this.aButton21.TabIndex = 20;
-            this.aButton21.Text = "팔레트 생성";
-            this.aButton21.UseVisualStyleBackColor = false;
-            // 
-            // aButton22
-            // 
-            this.aButton22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.aButton22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton22.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aButton22.Location = new System.Drawing.Point(661, 3);
-            this.aButton22.Name = "aButton22";
-            this.aButton22.Size = new System.Drawing.Size(126, 118);
-            this.aButton22.TabIndex = 19;
-            this.aButton22.Text = "팔레트 바코드 재발행";
-            this.aButton22.UseVisualStyleBackColor = false;
-            // 
-            // aButton23
-            // 
-            this.aButton23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.aButton23.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton23.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aButton23.Location = new System.Drawing.Point(792, 3);
-            this.aButton23.Name = "aButton23";
-            this.aButton23.Size = new System.Drawing.Size(126, 118);
-            this.aButton23.TabIndex = 18;
-            this.aButton23.Text = "입고\r\n등록";
-            this.aButton23.UseVisualStyleBackColor = false;
-            // 
-            // aButton24
-            // 
-            this.aButton24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.aButton24.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton24.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aButton24.Location = new System.Drawing.Point(923, 3);
-            this.aButton24.Name = "aButton24";
-            this.aButton24.Size = new System.Drawing.Size(126, 118);
-            this.aButton24.TabIndex = 17;
-            this.aButton24.Text = "언로딩";
-            this.aButton24.UseVisualStyleBackColor = false;
-            // 
-            // aButton25
-            // 
-            this.aButton25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.aButton25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton25.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aButton25.Location = new System.Drawing.Point(1054, 3);
-            this.aButton25.Name = "aButton25";
-            this.aButton25.Size = new System.Drawing.Size(126, 118);
-            this.aButton25.TabIndex = 16;
-            this.aButton25.Text = "품질\r\n측정값\r\n등록";
-            this.aButton25.UseVisualStyleBackColor = false;
             // 
             // panBoxing
             // 
@@ -488,13 +362,15 @@
             this.panBoxing.Controls.Add(this.btnWarehousing);
             this.panBoxing.Controls.Add(this.btnUnload);
             this.panBoxing.Controls.Add(this.btnQualityMeasure1);
-            this.panBoxing.Location = new System.Drawing.Point(12, 490);
+            this.panBoxing.Location = new System.Drawing.Point(12, 455);
             this.panBoxing.Name = "panBoxing";
             this.panBoxing.Size = new System.Drawing.Size(1186, 124);
             this.panBoxing.TabIndex = 16;
+            this.panBoxing.Visible = false;
             // 
             // btnWorkOrderOnOff1
             // 
+            this.btnWorkOrderOnOff1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnWorkOrderOnOff1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnWorkOrderOnOff1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWorkOrderOnOff1.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -507,6 +383,7 @@
             // 
             // btnWorkOrderQuit1
             // 
+            this.btnWorkOrderQuit1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnWorkOrderQuit1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnWorkOrderQuit1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWorkOrderQuit1.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -519,6 +396,7 @@
             // 
             // btnWorkOrderCreate1
             // 
+            this.btnWorkOrderCreate1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnWorkOrderCreate1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnWorkOrderCreate1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWorkOrderCreate1.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -532,6 +410,7 @@
             // 
             // btnSetWorker1
             // 
+            this.btnSetWorker1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnSetWorker1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnSetWorker1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSetWorker1.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -545,6 +424,7 @@
             // 
             // btnCreatePallet
             // 
+            this.btnCreatePallet.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnCreatePallet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnCreatePallet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreatePallet.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -558,6 +438,7 @@
             // 
             // btnBarcordeRecreate
             // 
+            this.btnBarcordeRecreate.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnBarcordeRecreate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnBarcordeRecreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBarcordeRecreate.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -571,6 +452,7 @@
             // 
             // btnWarehousing
             // 
+            this.btnWarehousing.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnWarehousing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnWarehousing.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWarehousing.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -584,6 +466,7 @@
             // 
             // btnUnload
             // 
+            this.btnUnload.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnUnload.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnUnload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUnload.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -597,6 +480,7 @@
             // 
             // btnQualityMeasure1
             // 
+            this.btnQualityMeasure1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnQualityMeasure1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnQualityMeasure1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQualityMeasure1.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -611,19 +495,18 @@
             // POP_PRD_001
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.ClientSize = new System.Drawing.Size(1210, 781);
+            this.ClientSize = new System.Drawing.Size(1210, 621);
             this.Controls.Add(this.panBoxing);
-            this.Controls.Add(this.aPanel6);
             this.Controls.Add(this.panLoad);
             this.Controls.Add(this.panMolding);
             this.Controls.Add(this.dgvMain);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "POP_PRD_001";
+            this.Text = "작업지시현황";
             this.Load += new System.EventHandler(this.WorkOrderForm_Load);
             this.Controls.SetChildIndex(this.dgvMain, 0);
             this.Controls.SetChildIndex(this.panMolding, 0);
             this.Controls.SetChildIndex(this.panLoad, 0);
-            this.Controls.SetChildIndex(this.aPanel6, 0);
             this.Controls.SetChildIndex(this.panBoxing, 0);
             this.Controls.SetChildIndex(this.aPanel2, 0);
             this.Controls.SetChildIndex(this.aPanel1, 0);
@@ -635,7 +518,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).EndInit();
             this.panMolding.ResumeLayout(false);
             this.panLoad.ResumeLayout(false);
-            this.aPanel6.ResumeLayout(false);
             this.panBoxing.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -662,16 +544,6 @@
         private Axxen.CustomControls.AButton btnClearDryGV;
         private Axxen.CustomControls.AButton btnSetPressCondition1;
         private Axxen.CustomControls.AButton btnQualityMeasure2;
-        private Axxen.CustomControls.APanel aPanel6;
-        private Axxen.CustomControls.AButton aButton17;
-        private Axxen.CustomControls.AButton aButton18;
-        private Axxen.CustomControls.AButton aButton19;
-        private Axxen.CustomControls.AButton aButton20;
-        private Axxen.CustomControls.AButton aButton21;
-        private Axxen.CustomControls.AButton aButton22;
-        private Axxen.CustomControls.AButton aButton23;
-        private Axxen.CustomControls.AButton aButton24;
-        private Axxen.CustomControls.AButton aButton25;
         private Axxen.CustomControls.APanel panBoxing;
         private Axxen.CustomControls.AButton btnWorkOrderOnOff1;
         private Axxen.CustomControls.AButton btnWorkOrderQuit1;

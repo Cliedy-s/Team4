@@ -38,6 +38,7 @@
             this.btnPalletPrint = new Axxen.CustomControls.AButton();
             this.dgvPalletList = new Axxen.CustomControls.ADataGridView();
             this.aPanel5 = new Axxen.CustomControls.APanel();
+            this.aButton1 = new Axxen.CustomControls.AButton();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.aLabel3 = new Axxen.CustomControls.ALabel();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -61,8 +62,7 @@
             // 
             // aPanel4
             // 
-            this.aPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.aPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.aPanel4.Controls.Add(this.txtCurrentQty);
             this.aPanel4.Controls.Add(this.txtSizeCode);
@@ -88,7 +88,7 @@
             this.txtCurrentQty.Size = new System.Drawing.Size(469, 42);
             this.txtCurrentQty.TabIndex = 40;
             this.txtCurrentQty.TextBoxText = "";
-            this.txtCurrentQty.TextBoxType = Axxen.CustomControls.TextType.Normal;
+            this.txtCurrentQty.TextBoxType = Axxen.CustomControls.TextType.Numeric;
             // 
             // txtSizeCode
             // 
@@ -172,7 +172,7 @@
             this.btnPalletPrint.TabIndex = 16;
             this.btnPalletPrint.Text = "재발행";
             this.btnPalletPrint.UseVisualStyleBackColor = false;
-            this.btnPalletPrint.Click += new System.EventHandler(this.btnPalletPrint_Click);
+            this.btnPalletPrint.Click += new System.EventHandler(this.btnBarcodeRecreate);
             // 
             // dgvPalletList
             // 
@@ -190,6 +190,7 @@
             // 
             // aPanel5
             // 
+            this.aPanel5.Controls.Add(this.aButton1);
             this.aPanel5.Controls.Add(this.dateTimePicker2);
             this.aPanel5.Controls.Add(this.aLabel3);
             this.aPanel5.Controls.Add(this.dateTimePicker1);
@@ -199,11 +200,22 @@
             this.aPanel5.Size = new System.Drawing.Size(636, 54);
             this.aPanel5.TabIndex = 8;
             // 
+            // aButton1
+            // 
+            this.aButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.aButton1.Location = new System.Drawing.Point(465, 17);
+            this.aButton1.Name = "aButton1";
+            this.aButton1.Size = new System.Drawing.Size(75, 24);
+            this.aButton1.TabIndex = 16;
+            this.aButton1.Text = "조회";
+            this.aButton1.UseVisualStyleBackColor = false;
+            // 
             // dateTimePicker2
             // 
             this.dateTimePicker2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(386, 14);
+            this.dateTimePicker2.Location = new System.Drawing.Point(348, 14);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(111, 29);
             this.dateTimePicker2.TabIndex = 15;
@@ -212,7 +224,7 @@
             // 
             this.aLabel3.AutoSize = true;
             this.aLabel3.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aLabel3.Location = new System.Drawing.Point(346, 18);
+            this.aLabel3.Location = new System.Drawing.Point(308, 18);
             this.aLabel3.Name = "aLabel3";
             this.aLabel3.Size = new System.Drawing.Size(21, 21);
             this.aLabel3.TabIndex = 14;
@@ -222,7 +234,7 @@
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(210, 14);
+            this.dateTimePicker1.Location = new System.Drawing.Point(172, 14);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(121, 29);
             this.dateTimePicker1.TabIndex = 13;
@@ -231,7 +243,7 @@
             // 
             this.aLabel2.AutoSize = true;
             this.aLabel2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aLabel2.Location = new System.Drawing.Point(130, 18);
+            this.aLabel2.Location = new System.Drawing.Point(92, 18);
             this.aLabel2.Name = "aLabel2";
             this.aLabel2.Size = new System.Drawing.Size(74, 21);
             this.aLabel2.TabIndex = 12;
@@ -246,6 +258,7 @@
             this.Controls.Add(this.dgvPalletList);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "POP_PRD_004";
+            this.Text = "팔레트 바코드 재발행";
             this.Load += new System.EventHandler(this.POP_PRD_004_Load);
             this.Controls.SetChildIndex(this.aPanel2, 0);
             this.Controls.SetChildIndex(this.aPanel1, 0);
@@ -281,5 +294,6 @@
         private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox txtBoxingDetailGrade;
         private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox txtBoxingGrade;
         private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox txtPalletNo;
+        private Axxen.CustomControls.AButton aButton1;
     }
 }

@@ -30,6 +30,7 @@
         {
             this.aDataGridView1 = new Axxen.CustomControls.ADataGridView();
             this.aPanel4 = new Axxen.CustomControls.APanel();
+            this.aBigTextBox_LabeledBigTextBox1 = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
             this.aButton1 = new Axxen.CustomControls.AButton();
             this.aButton2 = new Axxen.CustomControls.AButton();
             this.aPanel6 = new Axxen.CustomControls.APanel();
@@ -40,9 +41,9 @@
             this.txtWorkOrderDate = new Axxen.CustomControls.ABigTextBox_Labeled();
             this.txtWorkOrderno = new Axxen.CustomControls.ABigTextBox_Labeled();
             this.aBigTextBox_Searchable1 = new Axxen.CustomControls.ABigTextBox_Searchable();
-            this.aBigTextBox_LabeledBigTextBox1 = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aDataGridView1)).BeginInit();
             this.aPanel4.SuspendLayout();
             this.aPanel6.SuspendLayout();
@@ -72,8 +73,7 @@
             // 
             // aPanel4
             // 
-            this.aPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.aPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.aPanel4.Controls.Add(this.aBigTextBox_LabeledBigTextBox1);
             this.aPanel4.Controls.Add(this.aButton1);
@@ -83,6 +83,19 @@
             this.aPanel4.Name = "aPanel4";
             this.aPanel4.Size = new System.Drawing.Size(472, 338);
             this.aPanel4.TabIndex = 21;
+            // 
+            // aBigTextBox_LabeledBigTextBox1
+            // 
+            this.aBigTextBox_LabeledBigTextBox1.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aBigTextBox_LabeledBigTextBox1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aBigTextBox_LabeledBigTextBox1.LabelText = "언로딩 수량";
+            this.aBigTextBox_LabeledBigTextBox1.Location = new System.Drawing.Point(3, 1);
+            this.aBigTextBox_LabeledBigTextBox1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.aBigTextBox_LabeledBigTextBox1.Name = "aBigTextBox_LabeledBigTextBox1";
+            this.aBigTextBox_LabeledBigTextBox1.Size = new System.Drawing.Size(465, 42);
+            this.aBigTextBox_LabeledBigTextBox1.TabIndex = 29;
+            this.aBigTextBox_LabeledBigTextBox1.TextBoxText = "";
+            this.aBigTextBox_LabeledBigTextBox1.TextBoxType = Axxen.CustomControls.TextType.Numeric;
             // 
             // aButton1
             // 
@@ -115,8 +128,7 @@
             // 
             // aPanel6
             // 
-            this.aPanel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.aPanel6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.aPanel6.Controls.Add(this.txtUnit);
             this.aPanel6.Controls.Add(this.txtWcCode);
             this.aPanel6.Controls.Add(this.txtQty);
@@ -209,6 +221,8 @@
             // aBigTextBox_Searchable1
             // 
             this.aBigTextBox_Searchable1.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aBigTextBox_Searchable1.CodeText = null;
+            this.aBigTextBox_Searchable1.DataType = Axxen.CustomControls.DataType.Users;
             this.aBigTextBox_Searchable1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aBigTextBox_Searchable1.LabelText = "대차검색";
             this.aBigTextBox_Searchable1.Location = new System.Drawing.Point(14, 205);
@@ -218,19 +232,6 @@
             this.aBigTextBox_Searchable1.TabIndex = 28;
             this.aBigTextBox_Searchable1.TextBoxText = "";
             this.aBigTextBox_Searchable1.TextBoxType = Axxen.CustomControls.TextType.Normal;
-            // 
-            // aBigTextBox_LabeledBigTextBox1
-            // 
-            this.aBigTextBox_LabeledBigTextBox1.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aBigTextBox_LabeledBigTextBox1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aBigTextBox_LabeledBigTextBox1.LabelText = "언로딩 수량";
-            this.aBigTextBox_LabeledBigTextBox1.Location = new System.Drawing.Point(3, 1);
-            this.aBigTextBox_LabeledBigTextBox1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.aBigTextBox_LabeledBigTextBox1.Name = "aBigTextBox_LabeledBigTextBox1";
-            this.aBigTextBox_LabeledBigTextBox1.Size = new System.Drawing.Size(465, 42);
-            this.aBigTextBox_LabeledBigTextBox1.TabIndex = 29;
-            this.aBigTextBox_LabeledBigTextBox1.TextBoxText = "";
-            this.aBigTextBox_LabeledBigTextBox1.TextBoxType = Axxen.CustomControls.TextType.Numeric;
             // 
             // POP_PRD_006
             // 
@@ -242,6 +243,7 @@
             this.Controls.Add(this.aPanel6);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "POP_PRD_006";
+            this.Text = "포장언로딩";
             this.Controls.SetChildIndex(this.aPanel6, 0);
             this.Controls.SetChildIndex(this.aDataGridView1, 0);
             this.Controls.SetChildIndex(this.aPanel4, 0);
@@ -252,6 +254,7 @@
             this.aPanel1.PerformLayout();
             this.aPanel2.ResumeLayout(false);
             this.aPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aDataGridView1)).EndInit();
             this.aPanel4.ResumeLayout(false);
             this.aPanel6.ResumeLayout(false);

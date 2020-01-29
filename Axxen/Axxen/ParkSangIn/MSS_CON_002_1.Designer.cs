@@ -172,10 +172,11 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtSearch.BackColor = System.Drawing.Color.White;
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSearch.errorp = null;
             this.txtSearch.Location = new System.Drawing.Point(148, 6);
+            this.txtSearch.MaxLength = 30;
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(310, 23);
             this.txtSearch.TabIndex = 2;
@@ -319,7 +320,7 @@
             // 
             // lblGroup
             // 
-            this.lblGroup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lblGroup.BackColor = System.Drawing.Color.White;
             this.lblGroup.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblGroup.errorp = null;
             this.lblGroup.Location = new System.Drawing.Point(310, 6);

@@ -174,5 +174,10 @@ namespace Axxen
 
             frm.ShowDialog();
         }
+
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

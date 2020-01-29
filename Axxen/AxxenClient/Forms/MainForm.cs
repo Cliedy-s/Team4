@@ -17,7 +17,7 @@ namespace AxxenClient.Forms
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            POP_PRD_001 childfrm = new POP_PRD_001(WorkType.Boxing);
+            POP_PRD_001 childfrm = new POP_PRD_001(WorkType.Molding);
             childfrm.WindowState = FormWindowState.Maximized;
             childfrm.MdiParent = this;
             childfrm.Show();

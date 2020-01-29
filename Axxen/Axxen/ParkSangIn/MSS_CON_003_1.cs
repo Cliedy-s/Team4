@@ -25,6 +25,10 @@ namespace Axxen
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
+
+            if(string.IsNullOrEmpty(txtName.Text) && string.IsNullOrEmpty(txtID.Text) && string.IsNullOrEmpty(txtPwd.Text))
+            {
+
             UserInfoVO user = new UserInfoVO
             {
                 User_Name = txtName.Text,
@@ -35,15 +39,29 @@ namespace Axxen
 
             };
             UserInfo_Service service = new UserInfo_Service();
-         bool bFlag =   service.InsertUser(user);
-            if (bFlag)
+      
+            if (service.InsertUser(user))
             {
-                MessageBox.Show("등록");
+                MessageBox.Show("등록","알림",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
             else
             {
 
-                MessageBox.Show("등록실패");
+                    MessageBox.Show("이미 등록된 회원입니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               }
+            }
+            else
+            {
+                MessageBox.Show(".", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+   
+        private void TxtName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && e.KeyChar != 8)
+            {
+                e.Handled = true;
             }
         }
     }

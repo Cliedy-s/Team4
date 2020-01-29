@@ -71,7 +71,7 @@ namespace DAC
             }
             catch (Exception)
             {
-
+                return false;
                 throw;
             }
         }

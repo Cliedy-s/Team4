@@ -66,6 +66,9 @@ namespace DAC
         public bool InsertUser(UserInfoVO user)
         {
 
+            try
+            {
+
             using (SqlCommand com = new SqlCommand())
             {
                 com.Connection = new SqlConnection(Connstr);
@@ -84,6 +87,13 @@ namespace DAC
                 com.Connection.Close();
 
                 return resault>0;
+            }
+
+            }
+            catch (Exception)
+            {
+
+                return false;
             }
         }
     }

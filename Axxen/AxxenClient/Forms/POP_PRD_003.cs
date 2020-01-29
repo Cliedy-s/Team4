@@ -62,10 +62,14 @@ namespace AxxenClient.Forms
                         WorkOrderNo = GlobalUsage.workorderno,
                         CurrentQty = Convert.ToInt32(txtPrintPallet.TextBoxText),
                         Grade_Detail_Code = txtBoxingDegailGrade.TextBoxText,
+                        Boxing_Grade_Code = txtBoxingGrade.TextBoxText,
                         Size_Code = "3",
                     });
                 if (IsSuccess)
+                {
                     MessageBox.Show("팔레트가 생성되었습니다.");
+                    GetDatas();
+                }
                 else
                     MessageBox.Show("팔레트 생성에 실패하였습니다.");
             }

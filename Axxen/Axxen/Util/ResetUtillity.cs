@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Axxen.CustomControls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,6 +19,10 @@ namespace Axxen.Util
                 if (item is TextBox)
                 {
                     item.Text = string.Empty;
+                }
+                if(item is DateTimePicker)
+                {
+                   // item.
                 }
                
             }
