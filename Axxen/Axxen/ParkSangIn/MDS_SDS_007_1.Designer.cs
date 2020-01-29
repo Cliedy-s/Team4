@@ -194,9 +194,9 @@
             this.aLabel12.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.aLabel12.Location = new System.Drawing.Point(30, 5);
             this.aLabel12.Name = "aLabel12";
-            this.aLabel12.Size = new System.Drawing.Size(60, 17);
+            this.aLabel12.Size = new System.Drawing.Size(66, 17);
             this.aLabel12.TabIndex = 54;
-            this.aLabel12.Text = "작업장명";
+            this.aLabel12.Text = "*작업장명";
             // 
             // aLabel5
             // 
@@ -256,9 +256,9 @@
             this.aLabel3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.aLabel3.Location = new System.Drawing.Point(29, 5);
             this.aLabel3.Name = "aLabel3";
-            this.aLabel3.Size = new System.Drawing.Size(73, 17);
+            this.aLabel3.Size = new System.Drawing.Size(79, 17);
             this.aLabel3.TabIndex = 55;
-            this.aLabel3.Text = "작업장코드";
+            this.aLabel3.Text = "*작업장코드";
             // 
             // aPanel13
             // 
@@ -355,9 +355,9 @@
             this.aLabel4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.aLabel4.Location = new System.Drawing.Point(29, 5);
             this.aLabel4.Name = "aLabel4";
-            this.aLabel4.Size = new System.Drawing.Size(60, 17);
+            this.aLabel4.Size = new System.Drawing.Size(66, 17);
             this.aLabel4.TabIndex = 55;
-            this.aLabel4.Text = "품목코드";
+            this.aLabel4.Text = "*품목코드";
             // 
             // aPanel2
             // 
@@ -421,9 +421,9 @@
             this.aLabel1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.aLabel1.Location = new System.Drawing.Point(26, 5);
             this.aLabel1.Name = "aLabel1";
-            this.aLabel1.Size = new System.Drawing.Size(47, 17);
+            this.aLabel1.Size = new System.Drawing.Size(53, 17);
             this.aLabel1.TabIndex = 54;
-            this.aLabel1.Text = "품목명";
+            this.aLabel1.Text = "*품목명";
             // 
             // txtCondition_Code
             // 
@@ -715,6 +715,7 @@
             this.Controls.Add(this.aPanel9);
             this.Controls.Add(this.aPanel20);
             this.Name = "MDS_SDS_007_1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.MDS_SDS_007_1_Load);
             this.aPanel19.ResumeLayout(false);
             this.aPanel19.PerformLayout();
