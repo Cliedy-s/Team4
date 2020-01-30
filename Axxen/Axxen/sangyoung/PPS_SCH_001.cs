@@ -295,7 +295,7 @@ namespace Axxen
             ((MainForm)this.MdiParent).InsertFormEvent += new System.EventHandler(this.InsertFormShow); //추가
             ((MainForm)this.MdiParent).RefreshFormEvent += new EventHandler(this.RefreshFormShow); //새로고침
             ToolStripManager.Merge(toolStrip1, ((MainForm)this.MdiParent).toolStrip1); //저장버튼 추가
-            ((MainForm)this.MdiParent).MySaveEvent += new EventHandler(this.SaveFormShow); //저장
+           // ((MainForm)this.MdiParent).MySaveEvent += new EventHandler(this.SaveFormShow); //저장
             //((MainForm)this.MdiParent).MyPrintEvent += new EventHandler(this.PrintFormShow); //프린트
         }
 

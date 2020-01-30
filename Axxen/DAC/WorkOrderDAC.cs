@@ -178,7 +178,7 @@ namespace DAC
                             from WorkOrder wo INNER JOIN Item_Master im  ON wo.Item_Code = im.Item_Code
                             INNER JOIN WorkCenter_Master wm ON wo.Wc_Code = wm.Wc_Code 
                             INNER JOIN Process_Master pm ON wm.Process_code = pm.Process_code) 
-                            UPDATE PRM_PRF_002 SET Wo_Status='마감' WHERE Wo_Status<>'마감' and Workorderno=@Workorderno and Item_Code=@Item_Code;";
+                            UPDATE PRM_PRF_002 SET Wo_Status='현장마감' WHERE Wo_Status<>'현장마감' and Workorderno=@Workorderno and Item_Code=@Item_Code;";
                     using (SqlCommand cmd = new SqlCommand(Stsql, conn))
                     {                            
                         cmd.Transaction = tran;

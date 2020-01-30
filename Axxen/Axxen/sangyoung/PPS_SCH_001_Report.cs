@@ -41,7 +41,7 @@ namespace Axxen.sangyoung
 
         private void PPS_SCH_001_Report_Activated(object sender, EventArgs e)
         {
-            ((MainForm)this.MdiParent).MyPrintEvent += new EventHandler(this.PrintFormShow);
+           // ((MainForm)this.MdiParent).MyPrintEvent += new EventHandler(this.PrintFormShow);
             ToolStripManager.Merge(toolStrip1, ((MainForm)this.MdiParent).toolStrip1);
         }
 

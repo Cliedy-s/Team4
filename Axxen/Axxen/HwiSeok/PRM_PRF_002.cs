@@ -296,9 +296,10 @@ namespace Axxen
 
              string msg = woservice.UpdateWo_Status(chkWorkorderno);
 
-             if (msg=="OK")
+              if (msg=="OK")
               {                  
-                     MessageBox.Show("성공적으로 마감하였습니다.", "작업지시마감 성공", MessageBoxButtons.OK, MessageBoxIcon.Information);                        
+                 MessageBox.Show("성공적으로 마감하였습니다.", "작업지시마감 성공", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                 DataLoad();
               }
               else
               {
