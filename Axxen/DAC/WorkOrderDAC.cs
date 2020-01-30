@@ -65,6 +65,23 @@ namespace DAC
             return list;
         }
 
+        public List<WO_WC_Time_ItemVO> GetTimeWork(string wono) //PPS_SCH_003 그리드뷰 사용
+        {
+            List<WO_WC_Time_ItemVO> list = null;
+            using (SqlConnection conn = new SqlConnection(Connstr))
+            {
+                conn.Open();
+                string sql = "select Workorderno, Prd_Date, Start_Hour, In_Qty_Main, Out_Qty_Main, Prd_Qty from Time_Production_History_Day t where Workorderno = '@Workorderno'";
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Workorderno", wono);
+                    list = Helper.DataReaderMapToList<WO_WC_Time_ItemVO>(cmd.ExecuteReader());
+                }
+                conn.Close();
+            }
+            return list;
+        }
+
 
         public bool UPDATE_Prd_Qty(string Prd_Qty, string Num, string Wo_Status, string Workorderno, string Item_Code)
         {

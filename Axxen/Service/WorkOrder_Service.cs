@@ -50,6 +50,11 @@ namespace Service
             return dac.UpdateWo_Status(list);
         }
 
+        public List<WO_WC_Time_ItemVO> GetTimeWork(string wono)
+        {
+            WorkOrderDAC dac = new WorkOrderDAC();
+            return dac.GetTimeWork(wono)
+        }
 
         //pop
         /// <summary>
