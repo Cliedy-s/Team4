@@ -26,7 +26,6 @@ namespace Axxen
 
         private void PPS_SCH_003_Load(object sender, EventArgs e)
         {
-            
             MainDataLoad();
             ComboBinding();
             wowclist = service.GetWO_WC_Production_Items();
@@ -157,6 +156,12 @@ namespace Axxen
         private void PPS_SCH_003_Deactivate(object sender, EventArgs e)
         {
             ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow);
+        }
+
+        private void DgvMainGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string wono = dgvMainGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
+
         }
     }
 }
