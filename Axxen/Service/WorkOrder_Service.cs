@@ -53,7 +53,7 @@ namespace Service
         public List<WO_WC_Time_ItemVO> GetTimeWork(string wono)
         {
             WorkOrderDAC dac = new WorkOrderDAC();
-            return dac.GetTimeWork(wono)
+            return dac.GetTimeWork(wono);
         }
 
         //pop
