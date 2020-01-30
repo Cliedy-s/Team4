@@ -85,8 +85,12 @@ namespace Axxen
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
+            List<ConditionSpecVO> addlist = new List<ConditionSpecVO>();
             try
             {
+                if(!string.IsNullOrEmpty(txtCondition_Code.Text) && !string.IsNullOrEmpty(txtCondition_Name.Text))
+                {
+
 
                 Condition_Spec_MasterService service = new Condition_Spec_MasterService();
                 ConditionSpecVO inspect = new ConditionSpecVO
@@ -103,16 +107,19 @@ namespace Axxen
                     Remark = txtRemark.Text,
                  
                 };
-
-                if (service.InsertConditionSpec(inspect))
+                addlist.Add(inspect);
+                if (service.InsertConditionSpec(addlist))
                 {
-
-
                     MessageBox.Show("저장 완료", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
                     MessageBox.Show("이미 등록된 검사항목입니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                }
+                else
+                {
+                    MessageBox.Show("필수 항목을 입력해주세요.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception err)

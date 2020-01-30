@@ -54,7 +54,7 @@ namespace DAC
         /// 작업지시정보조회
         /// </summary>
         /// <returns></returns>
-        public List<WorkOrder_J_WC_ItmeVO> GetWorkOrder()
+        public List<WorkOrder_WC_ItemVO> GetWorkOrder()
         {
             using (SqlCommand comm = new SqlCommand())
             {
@@ -65,7 +65,7 @@ namespace DAC
 
                 comm.Connection.Open();
                 SqlDataReader reader = comm.ExecuteReader();
-                List<WorkOrder_J_WC_ItmeVO> list = Helper.DataReaderMapToList<WorkOrder_J_WC_ItmeVO>(reader);
+                List<WorkOrder_WC_ItemVO> list = Helper.DataReaderMapToList<WorkOrder_WC_ItemVO>(reader);
                 comm.Connection.Close();
 
                 return list;
@@ -97,16 +97,16 @@ namespace DAC
         /// 작업장조회
         /// </summary>
         /// <returns></returns>
-        public List<WorkOrder_J_WC_ItmeVO> GetWorkCenterName()
+        public List<WorkOrder_WC_ItemVO> GetWorkCenterName()
         {
-            List<WorkOrder_J_WC_ItmeVO> list = null;
+            List<WorkOrder_WC_ItemVO> list = null;
             using (SqlConnection conn = new SqlConnection(Connstr))
             {
                 conn.Open();
                 string sql = "select distinct Wc_Name from WorkCenter_Master";
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
-                    list = Helper.DataReaderMapToList<WorkOrder_J_WC_ItmeVO>(cmd.ExecuteReader());
+                    list = Helper.DataReaderMapToList<WorkOrder_WC_ItemVO>(cmd.ExecuteReader());
                 }
                 conn.Close();
             }

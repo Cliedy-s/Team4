@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PPS_MLD_001));
             this.txtName = new Axxen.CustomControls.ATextBox_Labeled();
             this.txtCode = new Axxen.CustomControls.ATextBox_Labeled();
             this.cboGroup = new Axxen.CustomControls.AComboBox();
@@ -44,12 +45,17 @@
             this.aLabel6 = new Axxen.CustomControls.ALabel();
             this.txtRemark = new Axxen.CustomControls.ATextBox();
             this.txtCost = new Axxen.CustomControls.ATextBox_Labeled();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tsbtnSave = new System.Windows.Forms.ToolStripButton();
+            this.aLabel5 = new Axxen.CustomControls.ALabel();
+            this.cboWorkCenter = new Axxen.CustomControls.AComboBox();
             this.aPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aSplitContainer1)).BeginInit();
             this.aSplitContainer1.Panel2.SuspendLayout();
             this.aSplitContainer1.SuspendLayout();
             this.aPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numHit)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // aPanel2
@@ -64,6 +70,8 @@
             // 
             // aPanel1
             // 
+            this.aPanel1.Controls.Add(this.cboWorkCenter);
+            this.aPanel1.Controls.Add(this.aLabel5);
             this.aPanel1.Controls.Add(this.txtCost);
             this.aPanel1.Controls.Add(this.txtRemark);
             this.aPanel1.Controls.Add(this.aLabel6);
@@ -89,6 +97,8 @@
             this.aPanel1.Controls.SetChildIndex(this.aLabel6, 0);
             this.aPanel1.Controls.SetChildIndex(this.txtRemark, 0);
             this.aPanel1.Controls.SetChildIndex(this.txtCost, 0);
+            this.aPanel1.Controls.SetChildIndex(this.aLabel5, 0);
+            this.aPanel1.Controls.SetChildIndex(this.cboWorkCenter, 0);
             // 
             // aHeaderBox1
             // 
@@ -107,7 +117,7 @@
             this.txtName.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(205, 23);
-            this.txtName.TabIndex = 18;
+            this.txtName.TabIndex = 21;
             this.txtName.TextBoxText = "";
             this.txtName.TextBoxType = Axxen.CustomControls.TextType.Normal;
             this.txtName.TextKeyPress += new Axxen.CustomControls.ATextBox_Labeled.TextEnterKeyPress(this.Text_TextKeyPress);
@@ -121,7 +131,7 @@
             this.txtCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCode.Name = "txtCode";
             this.txtCode.Size = new System.Drawing.Size(212, 23);
-            this.txtCode.TabIndex = 17;
+            this.txtCode.TabIndex = 20;
             this.txtCode.TextBoxText = "";
             this.txtCode.TextBoxType = Axxen.CustomControls.TextType.Normal;
             this.txtCode.TextKeyPress += new Axxen.CustomControls.ATextBox_Labeled.TextEnterKeyPress(this.Text_TextKeyPress);
@@ -132,7 +142,7 @@
             this.cboGroup.Location = new System.Drawing.Point(698, 32);
             this.cboGroup.Name = "cboGroup";
             this.cboGroup.Size = new System.Drawing.Size(106, 23);
-            this.cboGroup.TabIndex = 16;
+            this.cboGroup.TabIndex = 22;
             this.cboGroup.SelectedIndexChanged += new System.EventHandler(this.CboDate_SelectedIndexChanged);
             // 
             // aLabel1
@@ -153,7 +163,7 @@
             this.txtMoldCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMoldCode.Name = "txtMoldCode";
             this.txtMoldCode.Size = new System.Drawing.Size(212, 23);
-            this.txtMoldCode.TabIndex = 18;
+            this.txtMoldCode.TabIndex = 0;
             this.txtMoldCode.TextBoxText = "";
             this.txtMoldCode.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
@@ -166,7 +176,7 @@
             this.txtMoldGroup.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMoldGroup.Name = "txtMoldGroup";
             this.txtMoldGroup.Size = new System.Drawing.Size(212, 23);
-            this.txtMoldGroup.TabIndex = 19;
+            this.txtMoldGroup.TabIndex = 2;
             this.txtMoldGroup.TextBoxText = "";
             this.txtMoldGroup.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
@@ -179,14 +189,14 @@
             this.txtMoldName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMoldName.Name = "txtMoldName";
             this.txtMoldName.Size = new System.Drawing.Size(212, 23);
-            this.txtMoldName.TabIndex = 20;
+            this.txtMoldName.TabIndex = 1;
             this.txtMoldName.TextBoxText = "";
             this.txtMoldName.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
             // aLabel2
             // 
             this.aLabel2.AutoSize = true;
-            this.aLabel2.Location = new System.Drawing.Point(527, 18);
+            this.aLabel2.Location = new System.Drawing.Point(500, 14);
             this.aLabel2.Name = "aLabel2";
             this.aLabel2.Size = new System.Drawing.Size(55, 15);
             this.aLabel2.TabIndex = 22;
@@ -194,21 +204,21 @@
             // 
             // numHit
             // 
-            this.numHit.Location = new System.Drawing.Point(611, 12);
+            this.numHit.Location = new System.Drawing.Point(560, 10);
             this.numHit.Maximum = new decimal(new int[] {
-            100000,
+            1000000,
             0,
             0,
             0});
             this.numHit.Name = "numHit";
             this.numHit.Size = new System.Drawing.Size(104, 23);
-            this.numHit.TabIndex = 23;
+            this.numHit.TabIndex = 3;
             this.numHit.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // aLabel3
             // 
             this.aLabel3.AutoSize = true;
-            this.aLabel3.Location = new System.Drawing.Point(527, 49);
+            this.aLabel3.Location = new System.Drawing.Point(500, 80);
             this.aLabel3.Name = "aLabel3";
             this.aLabel3.Size = new System.Drawing.Size(55, 15);
             this.aLabel3.TabIndex = 24;
@@ -217,7 +227,7 @@
             // aLabel4
             // 
             this.aLabel4.AutoSize = true;
-            this.aLabel4.Location = new System.Drawing.Point(527, 80);
+            this.aLabel4.Location = new System.Drawing.Point(729, 65);
             this.aLabel4.Name = "aLabel4";
             this.aLabel4.Size = new System.Drawing.Size(79, 15);
             this.aLabel4.TabIndex = 25;
@@ -226,24 +236,24 @@
             // dtpInDate
             // 
             this.dtpInDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpInDate.Location = new System.Drawing.Point(611, 43);
+            this.dtpInDate.Location = new System.Drawing.Point(561, 74);
             this.dtpInDate.Name = "dtpInDate";
             this.dtpInDate.Size = new System.Drawing.Size(134, 23);
-            this.dtpInDate.TabIndex = 28;
+            this.dtpInDate.TabIndex = 5;
             // 
             // dtpLastEquip
             // 
             this.dtpLastEquip.CustomFormat = "yyyy-MM-dd hh-mm";
             this.dtpLastEquip.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpLastEquip.Location = new System.Drawing.Point(612, 76);
+            this.dtpLastEquip.Location = new System.Drawing.Point(814, 61);
             this.dtpLastEquip.Name = "dtpLastEquip";
             this.dtpLastEquip.Size = new System.Drawing.Size(142, 23);
-            this.dtpLastEquip.TabIndex = 28;
+            this.dtpLastEquip.TabIndex = 7;
             // 
             // aLabel6
             // 
             this.aLabel6.AutoSize = true;
-            this.aLabel6.Location = new System.Drawing.Point(836, 42);
+            this.aLabel6.Location = new System.Drawing.Point(974, 12);
             this.aLabel6.Name = "aLabel6";
             this.aLabel6.Size = new System.Drawing.Size(31, 15);
             this.aLabel6.TabIndex = 29;
@@ -251,14 +261,16 @@
             // 
             // txtRemark
             // 
+            this.txtRemark.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtRemark.BackColor = System.Drawing.Color.White;
             this.txtRemark.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtRemark.errorp = null;
-            this.txtRemark.Location = new System.Drawing.Point(839, 60);
+            this.txtRemark.Location = new System.Drawing.Point(977, 28);
             this.txtRemark.Multiline = true;
             this.txtRemark.Name = "txtRemark";
-            this.txtRemark.Size = new System.Drawing.Size(263, 37);
-            this.txtRemark.TabIndex = 30;
+            this.txtRemark.Size = new System.Drawing.Size(137, 56);
+            this.txtRemark.TabIndex = 8;
             this.txtRemark.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // txtCost
@@ -266,22 +278,73 @@
             this.txtCost.allfont = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtCost.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtCost.LabelText = "구입금액";
-            this.txtCost.Location = new System.Drawing.Point(835, 7);
+            this.txtCost.Location = new System.Drawing.Point(498, 38);
             this.txtCost.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCost.Name = "txtCost";
-            this.txtCost.Size = new System.Drawing.Size(227, 29);
-            this.txtCost.TabIndex = 31;
+            this.txtCost.Size = new System.Drawing.Size(205, 29);
+            this.txtCost.TabIndex = 4;
             this.txtCost.TextBoxText = "";
             this.txtCost.TextBoxType = Axxen.CustomControls.TextType.Normal;
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbtnSave});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1148, 60);
+            this.toolStrip1.TabIndex = 10;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // tsbtnSave
+            // 
+            this.tsbtnSave.AutoSize = false;
+            this.tsbtnSave.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tsbtnSave.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnSave.Image")));
+            this.tsbtnSave.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.tsbtnSave.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbtnSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnSave.Name = "tsbtnSave";
+            this.tsbtnSave.Size = new System.Drawing.Size(50, 57);
+            this.tsbtnSave.Text = "저장";
+            this.tsbtnSave.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.tsbtnSave.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            this.tsbtnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbtnSave.ToolTipText = "조회";
+            this.tsbtnSave.Click += new System.EventHandler(this.TsbtnSave_Click);
+            // 
+            // aLabel5
+            // 
+            this.aLabel5.AutoSize = true;
+            this.aLabel5.Location = new System.Drawing.Point(741, 23);
+            this.aLabel5.Name = "aLabel5";
+            this.aLabel5.Size = new System.Drawing.Size(67, 15);
+            this.aLabel5.TabIndex = 32;
+            this.aLabel5.Text = "장착작업장";
+            // 
+            // cboWorkCenter
+            // 
+            this.cboWorkCenter.FormattingEnabled = true;
+            this.cboWorkCenter.Location = new System.Drawing.Point(814, 20);
+            this.cboWorkCenter.Name = "cboWorkCenter";
+            this.cboWorkCenter.Size = new System.Drawing.Size(105, 23);
+            this.cboWorkCenter.TabIndex = 6;
             // 
             // PPS_MLD_001
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1148, 700);
+            this.Controls.Add(this.toolStrip1);
             this.Name = "PPS_MLD_001";
-            this.Text = "/";
+            this.Text = "";
+            this.Activated += new System.EventHandler(this.PPS_MLD_001_Activated);
+            this.Deactivate += new System.EventHandler(this.PPS_MLD_001_Deactivate);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PPS_MLD_001_FormClosed);
             this.Load += new System.EventHandler(this.PPS_MLD_001_Load);
+            this.Controls.SetChildIndex(this.aHeaderBox1, 0);
+            this.Controls.SetChildIndex(this.aSplitContainer1, 0);
+            this.Controls.SetChildIndex(this.aPanel2, 0);
+            this.Controls.SetChildIndex(this.toolStrip1, 0);
             this.aPanel2.ResumeLayout(false);
             this.aPanel2.PerformLayout();
             this.aSplitContainer1.Panel2.ResumeLayout(false);
@@ -290,7 +353,10 @@
             this.aPanel1.ResumeLayout(false);
             this.aPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numHit)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -312,5 +378,9 @@
         private CustomControls.ADateTimePicker dtpLastEquip;
         private CustomControls.ADateTimePicker dtpInDate;
         private CustomControls.ATextBox_Labeled txtCost;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton tsbtnSave;
+        private CustomControls.AComboBox cboWorkCenter;
+        private CustomControls.ALabel aLabel5;
     }
 }

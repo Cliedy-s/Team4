@@ -170,7 +170,7 @@
             this.aPanel9.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.aPanel9.Location = new System.Drawing.Point(0, 510);
             this.aPanel9.Name = "aPanel9";
-            this.aPanel9.Size = new System.Drawing.Size(916, 41);
+            this.aPanel9.Size = new System.Drawing.Size(1003, 41);
             this.aPanel9.TabIndex = 139;
             // 
             // btnCencle
@@ -180,7 +180,7 @@
             this.btnCencle.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCencle.FlatAppearance.BorderSize = 0;
             this.btnCencle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCencle.Location = new System.Drawing.Point(827, 11);
+            this.btnCencle.Location = new System.Drawing.Point(914, 11);
             this.btnCencle.Name = "btnCencle";
             this.btnCencle.Size = new System.Drawing.Size(75, 23);
             this.btnCencle.TabIndex = 45;
@@ -194,7 +194,7 @@
             this.btnSave.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Location = new System.Drawing.Point(746, 11);
+            this.btnSave.Location = new System.Drawing.Point(833, 11);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 0;
@@ -212,13 +212,13 @@
             this.dgvCondition.Location = new System.Drawing.Point(10, 112);
             this.dgvCondition.Name = "dgvCondition";
             this.dgvCondition.RowTemplate.Height = 23;
-            this.dgvCondition.Size = new System.Drawing.Size(900, 395);
+            this.dgvCondition.Size = new System.Drawing.Size(987, 395);
             this.dgvCondition.TabIndex = 138;
             // 
             // MDS_SDS_007_2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.ClientSize = new System.Drawing.Size(916, 551);
+            this.ClientSize = new System.Drawing.Size(1003, 551);
             this.Controls.Add(this.aPanel4);
             this.Controls.Add(this.aLabel4);
             this.Controls.Add(this.pictureBox2);

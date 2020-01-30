@@ -26,7 +26,7 @@ namespace Axxen
 
         private void PPS_SCH_003_Load(object sender, EventArgs e)
         {
-            ((MainForm)this.MdiParent).RefreshFormEvent += new EventHandler(this.RefreshFormShow);
+            
             MainDataLoad();
             ComboBinding();
             wowclist = service.GetWO_WC_Production_Items();
@@ -147,6 +147,16 @@ namespace Axxen
                              select list).ToList();
                 dgvMainGrid.DataSource = wlist;
             }
+        }
+
+        private void PPS_SCH_003_Activated(object sender, EventArgs e)
+        {
+            ((MainForm)this.MdiParent).RefreshFormEvent += new EventHandler(this.RefreshFormShow); //새로고침
+        }
+
+        private void PPS_SCH_003_Deactivate(object sender, EventArgs e)
+        {
+            ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow);
         }
     }
 }

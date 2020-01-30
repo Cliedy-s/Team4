@@ -276,9 +276,9 @@
             this.aLabel1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.aLabel1.Location = new System.Drawing.Point(27, 6);
             this.aLabel1.Name = "aLabel1";
-            this.aLabel1.Size = new System.Drawing.Size(47, 17);
+            this.aLabel1.Size = new System.Drawing.Size(53, 17);
             this.aLabel1.TabIndex = 54;
-            this.aLabel1.Text = "품목명";
+            this.aLabel1.Text = "*품목명";
             // 
             // aLabel4
             // 
@@ -287,9 +287,9 @@
             this.aLabel4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.aLabel4.Location = new System.Drawing.Point(30, 5);
             this.aLabel4.Name = "aLabel4";
-            this.aLabel4.Size = new System.Drawing.Size(60, 17);
+            this.aLabel4.Size = new System.Drawing.Size(66, 17);
             this.aLabel4.TabIndex = 55;
-            this.aLabel4.Text = "품목코드";
+            this.aLabel4.Text = "*품목코드";
             // 
             // aPanel9
             // 
@@ -348,9 +348,9 @@
             this.aLabel6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.aLabel6.Location = new System.Drawing.Point(39, 5);
             this.aLabel6.Name = "aLabel6";
-            this.aLabel6.Size = new System.Drawing.Size(34, 17);
+            this.aLabel6.Size = new System.Drawing.Size(40, 17);
             this.aLabel6.TabIndex = 65;
-            this.aLabel6.Text = "유형";
+            this.aLabel6.Text = "*유형";
             // 
             // aLabel8
             // 

@@ -22,10 +22,19 @@ namespace Service
             return DAC.GetAllItem_Level_Master();
         }
         /// <summary>
-        /// 그룹 사용유무update 
+        /// 그룹 저장 수정
         /// </summary>
         /// <returns></returns>
-        public bool Use_YNItem_Level_Master(string groupcode, string used)
+        public bool InsertUpdateItem_Level_Master(Item_Level_Master item)
+        {
+
+            return DAC.InsertUpdateItem_Level_Master(item);
+        }
+            /// <summary>
+            /// 그룹 사용유무update 
+            /// </summary>
+            /// <returns></returns>
+            public bool Use_YNItem_Level_Master(string groupcode, string used)
         {
             return DAC.Use_YNItem_Level_Master(groupcode, used);
         }

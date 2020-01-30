@@ -172,11 +172,10 @@
             // 
             this.lblItem.AutoSize = true;
             this.lblItem.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblItem.Location = new System.Drawing.Point(12, 5);
+            this.lblItem.Location = new System.Drawing.Point(11, 3);
             this.lblItem.Name = "lblItem";
-            this.lblItem.Size = new System.Drawing.Size(53, 17);
+            this.lblItem.Size = new System.Drawing.Size(0, 17);
             this.lblItem.TabIndex = 0;
-            this.lblItem.Text = "aLabel1";
             // 
             // aLabel3
             // 
@@ -223,9 +222,8 @@
             this.lblwork.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblwork.Location = new System.Drawing.Point(12, 3);
             this.lblwork.Name = "lblwork";
-            this.lblwork.Size = new System.Drawing.Size(53, 17);
+            this.lblwork.Size = new System.Drawing.Size(0, 17);
             this.lblwork.TabIndex = 0;
-            this.lblwork.Text = "aLabel1";
             // 
             // MDS_SDS_007
             // 

@@ -28,7 +28,7 @@ namespace Axxen
             MainGridLoad();
             molditemList = service.SelectMold_Item_Wc_Muse();
             DataLoad(molditemList);
-            ((MainForm)this.MdiParent).RefreshFormEvent += new EventHandler(this.RefreshFormShow);
+            
         }
 
         private void RefreshFormShow(object sender, EventArgs e)
@@ -145,6 +145,16 @@ namespace Axxen
                               Use_time = string.Format("{0}분", list.Use_Endtime.Subtract(list.Use_Starttime).Minutes)
                           }).ToList();
             dgvMainGrid.DataSource = molist;
+        }
+
+        private void PPS_MLD_002_Activated(object sender, EventArgs e)
+        {
+            ((MainForm)this.MdiParent).RefreshFormEvent += new EventHandler(this.RefreshFormShow); //새로고침
+        }
+
+        private void PPS_MLD_002_Deactivate(object sender, EventArgs e)
+        {
+            ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow);
         }
     }
 }

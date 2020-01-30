@@ -18,6 +18,7 @@ namespace Axxen
         List<MoldVO> moldSearchList;
         MoldService service = new MoldService();
         List<MoldVO> moldGroup;
+        DataSet ds = new DataSet();
         public PPS_MLD_001()
         {
             InitializeComponent();
@@ -29,12 +30,12 @@ namespace Axxen
             moldList = service.SelectMoldAll();
             moldGroup = service.selectMoldGroup();
             dgvMainGrid.DataSource = moldList;
+            ds = service.MoldWorkCenter();
             ComboBinding();
             
             aSplitContainer1.Panel2.Enabled = false;
+            txtCode.Focus();
 
-            ((MainForm)this.MdiParent).InsertFormEvent += new System.EventHandler(this.InsertFormShow);//입력이벤트 등록
-            ((MainForm)this.MdiParent).RefreshFormEvent += new EventHandler(this.RefreshFormShow);//새로고침이벤트
         }
 
         /// <summary>
@@ -48,11 +49,22 @@ namespace Axxen
             {
                 cboGroup.Items.Add(item.Mold_Group);
             }
+
+            //DataRow row = ds.Tables["Wc"].NewRow();
+            //row[0] = 0;
+            //row[1] = "==선택==";*/
+            /*ds.Tables["Wc"].Rows.InsertAt(row, 0);*/
+            cboWorkCenter.DisplayMember = "Wc_Name";
+            cboWorkCenter.ValueMember = "Wc_Code";
+            cboWorkCenter.DataSource = ds.Tables["Wc"];
+            cboWorkCenter.Text = "==선택==";
+            cboWorkCenter.SelectedIndex = 0;
         }
         
         public void InsertFormShow(object sender, EventArgs e)
         {
             aSplitContainer1.Panel2.Enabled = true;
+            txtMoldCode.Focus();
         }//추가버튼클릭
 
         /// <summary>
@@ -71,9 +83,9 @@ namespace Axxen
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "보장타수", "Guar_Shot_Cnt", true, 90);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "구입금액", "Purchase_Amt", true, 90);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "입고일자", "In_Date", true, 100);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "최종장착일시", "Last_Setup_Time", true, 110);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "사용여부", "Use_YN", true, 80);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "비고", "Remark", true, 160);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "최종장착일시", "Last_Setup_Time", true, 140);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "사용여부", "Use_YN", true, 60);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "비고", "Remark", true, 140);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "비고", "Wc_Code", false, 160);
         }
 
@@ -152,25 +164,49 @@ namespace Axxen
             }
         }//콤보박스 목록선택
 
-        private void Insert()
+        private void PPS_MLD_001_Activated(object sender, EventArgs e)
         {
-            MoldVO moldInfo = new MoldVO()
+            ((MainForm)this.MdiParent).InsertFormEvent += new System.EventHandler(this.InsertFormShow);//입력이벤트 등록
+            ((MainForm)this.MdiParent).RefreshFormEvent += new EventHandler(this.RefreshFormShow);//새로고침이벤트
+            ToolStripManager.Merge(toolStrip1, ((MainForm)this.MdiParent).toolStrip1); //저장버튼 추가
+        }
+
+        private void PPS_MLD_001_Deactivate(object sender, EventArgs e)
+        {
+            ((MainForm)this.MdiParent).InsertFormEvent -= new System.EventHandler(this.InsertFormShow);//입력이벤트 등록
+            ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow);//새로고침이벤트
+            ToolStripManager.RevertMerge(toolStrip1, ((MainForm)this.MdiParent).toolStrip1); //저장버튼 추가
+        }
+
+        /// <summary>
+        /// 금형정보등록 - 저장버튼클릭
+        /// </summary>
+        private void TsbtnSave_Click(object sender, EventArgs e)
+        {
+            MoldVO minfo = new MoldVO
             {
-                Mold_Code = txtCode.TextBoxText,
-                Mold_Name = txtName.TextBoxText,
+                Mold_Code = txtMoldCode.TextBoxText,
+                Mold_Name = txtMoldName.TextBoxText,
                 Mold_Group = txtMoldGroup.TextBoxText,
                 Mold_Status = "양호",
-                In_Date = dtpInDate.Value,
-                Guar_Shot_Cnt = Convert.ToInt32(numHit.Value),
-                Last_Setup_Time = dtpLastEquip.Value,
                 Cum_Prd_Qty = 0,
                 Cum_Shot_Cnt = 0,
                 Cum_Time = 0,
+                Guar_Shot_Cnt = Convert.ToInt32(numHit.Value),
+                In_Date = dtpInDate.Value,
+                Last_Setup_Time = dtpLastEquip.Value,
                 Purchase_Amt = Convert.ToInt32(txtCost.TextBoxText),
                 Remark = txtRemark.Text,
                 Use_YN = "N",
-                Wc_Code = null
+                Wc_Code = cboWorkCenter.SelectedValue.ToString()
             };
-        }//금형정보등록
+            bool result = service.InsertMold(minfo);
+            if (result)
+                MessageBox.Show("성공");
+            else
+                MessageBox.Show("실패");
+
+            RefreshFormShow(null, null);
+        }
     }
 }
