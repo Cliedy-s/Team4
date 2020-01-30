@@ -30,7 +30,7 @@ namespace DAC
                 //     ,[Up_Emp] = @username
                 //WHERE[GV_Code] = @gvcode
                 //     AND[Workorderno] = @workorderno
-                //     AND[Unloading_time] = null;
+                //     AND[Unloading_time] is null;
 
                 //  UPDATE[dbo].[GV_History]
                 //       SET
@@ -42,7 +42,7 @@ namespace DAC
                 //     ,[Up_Emp] = @username
                 //WHERE[GV_Code] = @gvcode
                 //     AND[Workorderno] = @workorderno
-                //     AND[Unloading_datetime] = null
+                //     AND[Unloading_datetime] is null
 
                 // UPDATE [GV_Master] SET GV_Status = '언로딩' WHERE GV_Code = @gvcode;
 

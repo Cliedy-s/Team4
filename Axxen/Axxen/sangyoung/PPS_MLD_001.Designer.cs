@@ -233,7 +233,7 @@
             // 
             // dtpLastEquip
             // 
-            this.dtpLastEquip.CustomFormat = "yyyy-MM-dd hh-mm";
+            this.dtpLastEquip.CustomFormat = "yyyy-MM-dd HH-mm";
             this.dtpLastEquip.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpLastEquip.Location = new System.Drawing.Point(612, 76);
             this.dtpLastEquip.Name = "dtpLastEquip";

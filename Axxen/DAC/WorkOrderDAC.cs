@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -119,7 +120,7 @@ namespace DAC
                 return result > 0;
             }
         }
-        
+
         //pop
         /// <summary>
         /// 작업장으로 작업지시현황 가져오기
@@ -136,7 +137,7 @@ namespace DAC
 		,wo.[Wc_Code] 
 		,wo.[Wo_Status] 
         ,wo.[Plan_Date]
-		,ahd.[User_ID] 
+		,(SELECT TOP(1) [User_ID] FROM [Emp_Allocation_History_Detail] ahd WHERE ahd.[Workorderno] = wo.[Workorderno] AND ahd.Prd_Endtime IS null ORDER BY Detail_Seq DESC ) AS [User_ID]
 		,im.[Item_Code] 
 		,im.[Item_Name] 
 		,wo.[Prd_Unit] 
@@ -147,9 +148,8 @@ namespace DAC
   FROM [WorkOrder] wo 
     LEFT OUTER JOIN [WorkCenter_Master] as wcm ON wcm.[Wc_Code] = wo.[Wc_Code] 
     LEFT OUTER JOIN [Item_Master] as im ON im.[Item_Code] = wo.[Item_Code] 
-    LEFT OUTER JOIN [Emp_Allocation_History_Detail] as ahd ON ahd.[Workorderno] = wo.[Workorderno]
-   WHERE wo.[Wo_Status]  <> '마감' ;";
- // TODO - 작업장 생성될 시 추가해주기 //WHERE wcm.[Wo_Ini_Char] =@woinichar; ";
+   WHERE wo.[Wo_Status]  NOT IN ('현장마감','작업지시마감') ;";
+                // TODO - 작업장 생성될 시 추가해주기 //WHERE wcm.[Wo_Ini_Char] =@woinichar; ";
                 comm.CommandType = CommandType.Text;
                 comm.Parameters.AddWithValue("@woinichar", woinichar);
                 comm.Connection.Open();
@@ -184,7 +184,8 @@ namespace DAC
            ,[Req_Seq]
            ,[Mat_LotNo]
            ,[Ins_Date]
-           ,[Ins_Emp])
+           ,[Ins_Emp]
+           ,[Prd_Unit])
      VALUES
            (@Workorderno 
            ,@Item_Code 
@@ -199,6 +200,7 @@ namespace DAC
            ,@Mat_LotNo
            ,getdate()
            ,@Ins_Emp
+           ,@Prd_Unit
 );  ";
 
                 comm.CommandType = CommandType.Text;
@@ -213,6 +215,7 @@ namespace DAC
                 comm.Parameters.AddWithValue("@Req_Seq", item.Req_Seq);
                 comm.Parameters.AddWithValue("@Mat_LotNo", item.Mat_LotNo);
                 comm.Parameters.AddWithValue("@Ins_Emp", item.Ins_Emp);
+                comm.Parameters.AddWithValue("@Prd_Unit", item.Prd_Unit);
 
                 comm.Connection.Open();
                 int result = comm.ExecuteNonQuery();
@@ -225,29 +228,20 @@ namespace DAC
         /// 작업지시 시작
         /// </summary>
         /// <returns></returns>
-        public bool UpdateWorkOrderStart(string workorderno, string prdunit, string username)
+        public bool UpdateWorkOrderStart(string workorderno, string prdunit, string userid)
         {
-            using (SqlCommand comm = new SqlCommand())
+            string sql = "UpdateStartWorkOrder";
+            using (SqlConnection conn = new SqlConnection(Connstr))
             {
-                comm.Connection = new SqlConnection(Connstr);
-                comm.CommandText =
- @"  UPDATE [dbo].[WorkOrder]
-   SET 
-      [Wo_Status] = '시작'
-      ,[Prd_Starttime] = getdate()
-      ,[Prd_Unit] = @Prd_Unit
-      ,[Up_Date] = getdate()
-      ,[Up_Emp] = @username
- WHERE [Workorderno] = @WorkorderNo; 
-";
+                SqlCommand comm = new SqlCommand(sql, conn);
+                comm.CommandType = CommandType.StoredProcedure;
+
                 comm.Parameters.AddWithValue("@Prd_Unit", prdunit);
-                comm.Parameters.AddWithValue("@username", username);
                 comm.Parameters.AddWithValue("@WorkorderNo", workorderno);
+                comm.Parameters.AddWithValue("@userid", userid);
 
-                comm.Connection.Open();
+                conn.Open();
                 int result = comm.ExecuteNonQuery();
-                comm.Connection.Close();
-
                 return result > 0;
             }
         }
@@ -255,36 +249,60 @@ namespace DAC
         /// 작업지시 종료
         /// </summary>
         /// <returns></returns>
-        public bool UpdateWorkOrderEnd(string workorderno, int outqty, int prdqty, string username )
+        public bool UpdateWorkOrderEnd(string workorderno, int outqty, int prdqty, string userid)
         {
-            using (SqlCommand comm = new SqlCommand())
+            string sql = "UpdateEndWorkOrder";
+            using (SqlConnection conn = new SqlConnection(Connstr))
             {
-                comm.Connection = new SqlConnection(Connstr);
-                comm.CommandText =
- @"  UPDATE [dbo].[WorkOrder]
-   SET 
-     [Prd_Date] = getdate()
-      ,[Wo_Status] = '종료'
-      ,[Prd_Endtime] = getdate()
-      ,[Out_Qty_Main] = @Out_qty_Main
-      ,[Prd_Qty] = @Prd_Qty
-      ,[Up_Date] = getdate()
-      ,[Up_Emp] = @username
- WHERE [Workorderno] = @workorderno; 
-";
+                SqlCommand comm = new SqlCommand(sql, conn);
+                comm.CommandType = CommandType.StoredProcedure;
 
-                comm.CommandType = CommandType.Text;
                 comm.Parameters.AddWithValue("@Out_qty_Main", outqty);
                 comm.Parameters.AddWithValue("@Prd_Qty", prdqty);
-                comm.Parameters.AddWithValue("@username", username);
+                comm.Parameters.AddWithValue("@userid", userid);
                 comm.Parameters.AddWithValue("@workorderno", workorderno);
 
-                comm.Connection.Open();
+                conn.Open();
                 int result = comm.ExecuteNonQuery();
-                comm.Connection.Close();
-
-                return result > 0;
+                return result >= 2;
             }
+        }
+        /// <summary>
+        /// 작업지시 현장 마감
+        /// </summary>
+        /// <returns></returns>
+        public bool UpdateWorkOrderClose(string username, string workorderno)
+        {
+            try
+            {
+                using (SqlCommand comm = new SqlCommand())
+                {
+                    comm.Connection = new SqlConnection(Connstr);
+                    comm.CommandText =
+     @"  UPDATE [dbo].[WorkOrder]
+   SET 
+      [Wo_Status] = '현장마감'
+      ,[Worker_CloseTime] = getdate()
+      ,[Up_Date] = getdate()
+      ,[Up_Emp] = @username
+ WHERE [Workorderno] = @Workorderno ;
+";
+                    comm.Parameters.AddWithValue("@username", username);
+                    comm.Parameters.AddWithValue("@workorderno", workorderno);
+
+                    comm.Connection.Open();
+                    int result = comm.ExecuteNonQuery();
+                    comm.Connection.Close();
+
+                    return result > 0;
+                }
+
+            }
+            catch (Exception ee)
+            {
+                Debug.WriteLine(ee.Message);
+            }
+            return false;
         }
         /// <summary>
         /// 옮겨타기
@@ -355,7 +373,7 @@ namespace DAC
                 //      ,[Up_Emp] = @username
                 //WHERE[GV_Code] = @fromgvcode
                 //,[Workorderno] = @workorderno
-                //,[Unloading_datetime] = null
+                //,[Unloading_datetime] is null
                 // UPDATE[dbo].[GV_Current_Status]
                 //        SET[GV_Qty] = @qty
                 //      ,[GV_Rest_Qty] = [GV_Rest_Qty]+1
@@ -365,7 +383,7 @@ namespace DAC
                 //      ,[Up_Emp] = @username
                 //WHERE[GV_Code] = @fromgvcode
                 //,[Workorderno] = @workorderno
-                //,[Unloading_time] = null
+                //,[Unloading_time] is null
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.Parameters.AddWithValue("@togvcode", togvcode);
                 comm.Parameters.AddWithValue("@workorderno", workorderno);

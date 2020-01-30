@@ -63,11 +63,18 @@ namespace Service
             Wo_ReqDAC dac = new Wo_ReqDAC();
             return dac.GetWorkCenterName();
         }
-
+        
+        //POP
+        /// <summary>
+        /// 생산의뢰목록 가져오기
+        /// </summary>
+        /// <returns></returns>
         public List<Wo_Req_ItemUnitVO> GetAllWoReqUnit()
         {
             Wo_ReqDAC dac = new Wo_ReqDAC();
             return dac.GetAllWoReqUnit();
         }
+
+
     }
 }
