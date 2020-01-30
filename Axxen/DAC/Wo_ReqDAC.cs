@@ -145,7 +145,7 @@ namespace DAC
             using (SqlCommand comm = new SqlCommand())
             {
                 comm.Connection = new SqlConnection(Connstr);
-                comm.CommandText = "update WorkOrder set Wo_Status = '완료' where Workorderno = @Workorderno ";
+                comm.CommandText = "update WorkOrder set Wo_Status = '작업지시마감' where Workorderno = @Workorderno ";
                 comm.Parameters.AddWithValue("@Workorderno", wono);
 
                 comm.Connection.Open();
@@ -167,7 +167,7 @@ namespace DAC
             using (SqlCommand comm = new SqlCommand())
             {
                 comm.Connection = new SqlConnection(Connstr);
-                comm.CommandText = "update WorkOrder set Wo_Status = '진행중' where Workorderno = @Workorderno ";
+                comm.CommandText = "update WorkOrder set Wo_Status = '현장마감' where Workorderno = @Workorderno ";
                 comm.Parameters.AddWithValue("@Workorderno", wono);
 
                 comm.Connection.Open();
