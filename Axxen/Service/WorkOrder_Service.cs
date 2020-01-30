@@ -44,7 +44,7 @@ namespace Service
             return dac.UpdatePalletUse(chkPalletNo);
         }
 
-        public bool UpdateWo_Status(List<WorkOrder_J_WC_ItmeVO> list) //PRM_PRF_002 작업지시 마감 업데이트
+        public string UpdateWo_Status(List<WorkOrder_J_WC_ItmeVO> list) //PRM_PRF_002 작업지시 마감 업데이트
         {
             WorkOrderDAC dac = new WorkOrderDAC();
             return dac.UpdateWo_Status(list);

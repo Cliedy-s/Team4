@@ -293,16 +293,16 @@ namespace Axxen
                 MessageBox.Show("마감 할 작업지시 목록을 선택해주세요", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-    
-             bool IsSuccess = woservice.UpdateWo_Status(chkWorkorderno);
-            
-             if (IsSuccess)
+
+             string msg = woservice.UpdateWo_Status(chkWorkorderno);
+
+             if (msg=="OK")
               {                  
                      MessageBox.Show("성공적으로 마감하였습니다.", "작업지시마감 성공", MessageBoxButtons.OK, MessageBoxIcon.Information);                        
               }
               else
               {
-                  MessageBox.Show("선택하신 작업지시상태 목록 중에 이미 마감처리된 목록이 있습니다.", "작업지시마감 오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                  MessageBox.Show($"{msg}", "작업지시마감 오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
               }                
         }
     }
