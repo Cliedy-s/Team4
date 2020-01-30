@@ -12,29 +12,23 @@ namespace AxxenClient.Forms
 {
     public partial class POP_PRD_001 : AxxenClient.Templets.ClientBaseForm
     {
-        /// <summary>
-        /// POP작업 종류에 따른 다른 화면 설정
-        /// </summary>
-        /// <param name="worktype"></param>
-        public POP_PRD_001(WorkType worktype)
+        public POP_PRD_001()
         {
             InitializeComponent();
-            GlobalUsage.worktype = worktype;
-            GlobalUsage.woinichar = worktype.ToString();
+            panBoxing.Location = panLoad.Location = panMolding.Location;
         }
         /// <summary>
         /// 컨트롤들 기본설정
         /// </summary>
         private void InitControl()
         {
-            panBoxing.Location = panLoad.Location = panMolding.Location;
             // 화면 set
             SetButtonForms();
             SetDGV();
             btnClose.Visible = false;
 
             // 공정별 화면
-            switch (GlobalUsage.worktype)
+            switch (GlobalUsage.WorkType)
             {
                 case WorkType.Molding:
                     panMolding.Visible = true;

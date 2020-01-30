@@ -67,7 +67,6 @@
             this.dgvInPallet.RowTemplate.Height = 23;
             this.dgvInPallet.Size = new System.Drawing.Size(636, 429);
             this.dgvInPallet.TabIndex = 4;
-            this.dgvInPallet.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInPallet_CellDoubleClick);
             // 
             // aPanel4
             // 
@@ -185,6 +184,7 @@
             this.txtPalletNo.TabIndex = 28;
             this.txtPalletNo.TextBoxText = "";
             this.txtPalletNo.TextBoxType = Axxen.CustomControls.TextType.Normal;
+            this.txtPalletNo.searchclick += new Axxen.CustomControls.ABigTextBox_Searchable.SearchClick(this.txtPalletNo_searchclick);
             // 
             // btnIn
             // 
