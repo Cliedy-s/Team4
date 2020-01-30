@@ -26,7 +26,6 @@ namespace Axxen
         Wo_ReqService service = new Wo_ReqService();
         ProductionRequest rpt = new ProductionRequest();
         bool chk = false;
-        bool pnt = false;
 
         public PPS_SCH_001()
         {
@@ -281,13 +280,13 @@ namespace Axxen
             }
             dt = ListToDataTable.ToDataTable(reportList);
             rpt.DataSource = dt;
-            PPS_SCH_001_Report frm = new PPS_SCH_001_Report();
-            pnt = true;
+            PPS_SCH_001_Report frm = new PPS_SCH_001_Report(dt);
             frm.documentViewer1.DocumentSource = rpt;
             frm.MdiParent = MdiParent;
             frm.WindowState = FormWindowState.Maximized;
+            
+            
             frm.Show();
-            reportList.Clear();
         }
 
         private void PPS_SCH_001_Activated(object sender, EventArgs e)
@@ -295,8 +294,6 @@ namespace Axxen
             ((MainForm)this.MdiParent).InsertFormEvent += new System.EventHandler(this.InsertFormShow); //추가
             ((MainForm)this.MdiParent).RefreshFormEvent += new EventHandler(this.RefreshFormShow); //새로고침
             ToolStripManager.Merge(toolStrip1, ((MainForm)this.MdiParent).toolStrip1); //저장버튼 추가
-           // ((MainForm)this.MdiParent).MySaveEvent += new EventHandler(this.SaveFormShow); //저장
-            //((MainForm)this.MdiParent).MyPrintEvent += new EventHandler(this.PrintFormShow); //프린트
         }
 
         private void PPS_SCH_001_Deactivate(object sender, EventArgs e)
@@ -304,13 +301,19 @@ namespace Axxen
             ((MainForm)this.MdiParent).InsertFormEvent -= new System.EventHandler(this.InsertFormShow); 
             ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow); 
             ToolStripManager.RevertMerge(((MainForm)this.MdiParent).toolStrip1, toolStrip1); //저장버튼 제거
-            //((MainForm)this.MdiParent).MyPrintEvent -= new EventHandler(this.PrintFormShow); 
+
+            reportList.Clear();
+            rpt.DataSource = null;
         }
 
-        private void SaveFormShow(object sender, EventArgs e)
+        /// <summary>
+        /// 작업지시생성 - 저장버튼클릭
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TsbtnSave_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            
         }
-
     }
 }
