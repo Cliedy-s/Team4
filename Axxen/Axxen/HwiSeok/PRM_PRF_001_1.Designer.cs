@@ -59,6 +59,7 @@
             // 
             this.txtNum.BackColor = System.Drawing.Color.White;
             this.txtNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNum.Enabled = false;
             this.txtNum.errorp = null;
             this.txtNum.Location = new System.Drawing.Point(149, 67);
             this.txtNum.Name = "txtNum";
