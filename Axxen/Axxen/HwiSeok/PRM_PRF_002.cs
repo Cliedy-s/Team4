@@ -24,7 +24,11 @@ namespace Axxen
 
         private void PRM_PRF_002_Load(object sender, EventArgs e) // 메인 그리드뷰
         {
+            ((MainForm)this.MdiParent).MyUpdateEvent += new System.EventHandler(this.MyUpdateShow);//수정 이벤트 등록
+            ((MainForm)this.MdiParent).RefreshFormEvent += new System.EventHandler(this.RefreshFormShow); // 새로고침
+
             dgvMainGrid.CellDoubleClick += DgvMainGrid_CellDoubleClick;
+            dgvSubGrid.CellDoubleClick += DgvSubGrid_CellDoubleClick;
 
             #region 메인그리드뷰
             DatagridviewDesigns.SetDesign(dgvMainGrid);
@@ -48,8 +52,49 @@ namespace Axxen
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "ERP 업로드 여부", "Upload_Flag", true, 100, default, true);
             #endregion
 
+            DataLoad(); // 그리드뷰
+        }
+
+        private void DgvSubGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e) //서브 그리드뷰 클릭 등급상세 수정
+        {
+            UPDATE_Grade_Detail_Name();
+        }
+
+        public void MyUpdateShow(object sender, EventArgs e) //등급상세 수정
+        {
+            UPDATE_Grade_Detail_Name();
+        }
+
+        public void RefreshFormShow(object sender, EventArgs e) // 새로고침 // 초기화
+        {
+            aDateTimePickerSearch1.ADateTimePickerValue1 = Convert.ToDateTime(DateTime.Now.AddDays(-7).ToShortDateString());
+            aDateTimePickerSearch1.ADateTimePickerValue2 = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+
+            DataLoad();
+        }
+
+        private void UPDATE_Grade_Detail_Name() //수정이랑 모든 데이터 가지고 오는소스
+        {
+            try
+            {
+                if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
+                {
+                    PRM_PRF_002_1 frm = new PRM_PRF_002_1();
+                    frm.Ghpb= ghpb.FindAll(item => item.Pallet_No == dgvMainGrid.SelectedRows[0].Cells[0].Value.ToString() && item.Grade_Detail_Code == dgvMainGrid.SelectedRows[0].Cells[2].Value.ToString());
+                    
+                    frm.ShowDialog();
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
+        }
+
+        private void DataLoad() //전체 데이터
+        {
             wowc = woservice.GetAll_WorkOrder_Item_WC();
-            dgvMainGrid.DataSource = wowc;       
+            dgvMainGrid.DataSource = wowc;
         }
 
         private void DgvMainGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e) //서브 그리드뷰
