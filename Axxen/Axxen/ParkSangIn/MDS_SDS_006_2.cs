@@ -149,7 +149,7 @@ namespace Axxen
                      
                     }
                 }
-                if (service.InsertInspectSpec(inspect))
+                if (service.InsertInspectSpec(addlist))
                 {
                     MessageBox.Show("저장 완료", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
