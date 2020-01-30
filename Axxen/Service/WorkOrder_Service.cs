@@ -20,7 +20,7 @@ namespace Service
             WorkOrderDAC dac = new WorkOrderDAC();
             return dac.GetDatePicker_WorkOrder_Item_WC(ADateTimePickerValue1, ADateTimePickerValue2);
         }
-        public List<Goods_In_History_J_Pallet_BoxingVO> GetGoodsIH_PalletM_Boxing(string Workorderno)
+        public List<Goods_In_History_J_Pallet_BoxingVO> GetGoodsIH_PalletM_Boxing(string Workorderno) //서브 그리드뷰 불러오기
         {
             WorkOrderDAC dac = new WorkOrderDAC();
             return dac.GetGoodsIH_PalletM_Boxing(Workorderno);
@@ -32,10 +32,22 @@ namespace Service
             return dac.UPDATE_Prd_Qty(Prd_Qty, Num, Wo_Status, Workorderno, Item_Code);
         }
 
-        public bool UPDATE_Grade_Detail_Name(List<Goods_In_History_J_Pallet_BoxingVO> list) //PRM_PRF_002_1 생산수량 업데이트
+        public bool UPDATE_Grade_Detail_Name(string Workorderno,string Pallet_No, string Grade_Detail_Name) //PRM_PRF_002_1 생산수량 업데이트
         {
             WorkOrderDAC dac = new WorkOrderDAC();
-            return dac.UPDATE_Grade_Detail_Name(list);
+            return dac.UPDATE_Grade_Detail_Name(Workorderno, Pallet_No, Grade_Detail_Name);
+        }
+
+        public bool UpdatePalletUse(List<string> chkPalletNo) //PRM_PRF_002 팔렛트 마감 업데이트
+        {
+            WorkOrderDAC dac = new WorkOrderDAC();
+            return dac.UpdatePalletUse(chkPalletNo);
+        }
+
+        public bool UpdateWo_Status(List<WorkOrder_J_WC_ItmeVO> list) //PRM_PRF_002 작업지시 마감 업데이트
+        {
+            WorkOrderDAC dac = new WorkOrderDAC();
+            return dac.UpdateWo_Status(list);
         }
 
 
@@ -59,6 +71,24 @@ namespace Service
         {
             WorkOrderDAC dac = new WorkOrderDAC();
             return dac.InsertWorkOrder(item);
+        }
+        /// <summary>
+        /// 작업지시 시작
+        /// </summary>
+        /// <returns></returns>
+        public bool UpdateWorkOrderStart(string workorderno, string prdunit, string username)
+        {
+            WorkOrderDAC dac = new WorkOrderDAC();
+            return dac.UpdateWorkOrderStart(workorderno, prdunit, username);
+        }
+        /// <summary>
+        /// 작업지시 종료
+        /// </summary>
+        /// <returns></returns>
+        public bool UpdateWorkOrderEnd(string workorderno, int outqty, int prdqty, string username)
+        {
+            WorkOrderDAC dac = new WorkOrderDAC();
+            return dac.UpdateWorkOrderEnd(workorderno, outqty, prdqty, username);
         }
         /// <summary>
         /// 옮겨타기
@@ -86,5 +116,6 @@ namespace Service
             WorkOrderDAC dac = new WorkOrderDAC();
             return dac.InsertLoadQty(togvcode, qty, workorderno, wccode, username);
         }
+
     }
 }

@@ -63,5 +63,11 @@ namespace Service
             Wo_ReqDAC dac = new Wo_ReqDAC();
             return dac.GetWorkCenterName();
         }
+
+        public List<Wo_Req_ItemUnitVO> GetAllWoReqUnit()
+        {
+            Wo_ReqDAC dac = new Wo_ReqDAC();
+            return dac.GetAllWoReqUnit();
+        }
     }
 }

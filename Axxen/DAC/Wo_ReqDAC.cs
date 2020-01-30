@@ -11,7 +11,7 @@ namespace DAC
 {
     public class Wo_ReqDAC : DACParent
     {
-        public List<Wo_Req_ItemVO> GetAllWoReq() //PPS_SCH_001 그리드뷰 사용, POP_PRD_002
+        public List<Wo_Req_ItemVO> GetAllWoReq() //PPS_SCH_001 그리드뷰 사용
         {
             using (SqlCommand comm = new SqlCommand())
             {
@@ -197,5 +197,30 @@ namespace DAC
             }
             return list;
         }
+
+        //pop
+        /// <summary>
+        /// 작업지시목록 가져오기
+        /// </summary>
+        /// <returns></returns>
+        public List<Wo_Req_ItemUnitVO> GetAllWoReqUnit() 
+        {
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText =
+ @"select [Wo_Req_No], [Req_Seq], i.[Item_Code],i.Item_Name, i.Item_Unit, [Req_Qty], [Prd_Plan_Date], [Cust_Name], [Project_Name], [Sale_Emp], [Req_Status], w.Ins_Date
+from Wo_Req w Inner join Item_Master i on w.Item_Code = i.Item_Code order by Req_Seq";
+                comm.CommandType = CommandType.StoredProcedure;
+
+                comm.Connection.Open();
+                SqlDataReader reader = comm.ExecuteReader();
+                List<Wo_Req_ItemUnitVO> list = Helper.DataReaderMapToList<Wo_Req_ItemUnitVO>(reader);
+                comm.Connection.Close();
+
+                return list;
+            }
+        }
+
     }
 }

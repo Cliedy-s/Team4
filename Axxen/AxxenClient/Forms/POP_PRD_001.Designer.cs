@@ -122,6 +122,7 @@
             this.btnWorkOrderOnOff3.TabIndex = 6;
             this.btnWorkOrderOnOff3.Text = "작업시작/종료";
             this.btnWorkOrderOnOff3.UseVisualStyleBackColor = false;
+            this.btnWorkOrderOnOff3.Click += new System.EventHandler(this.btnWorkOrderToggle);
             // 
             // btnWorkOrderQuit3
             // 
@@ -135,6 +136,7 @@
             this.btnWorkOrderQuit3.TabIndex = 5;
             this.btnWorkOrderQuit3.Text = "현장마감";
             this.btnWorkOrderQuit3.UseVisualStyleBackColor = false;
+            this.btnWorkOrderQuit3.Click += new System.EventHandler(this.btnEndWorkOrder);
             // 
             // btnDryGVLoad
             // 
@@ -237,6 +239,7 @@
             this.btnWorkOrderOnOff2.TabIndex = 15;
             this.btnWorkOrderOnOff2.Text = "작업시작/종료";
             this.btnWorkOrderOnOff2.UseVisualStyleBackColor = false;
+            this.btnWorkOrderOnOff2.Click += new System.EventHandler(this.btnWorkOrderToggle);
             // 
             // btnWorkOrderQuit2
             // 
@@ -250,6 +253,7 @@
             this.btnWorkOrderQuit2.TabIndex = 14;
             this.btnWorkOrderQuit2.Text = "현장마감";
             this.btnWorkOrderQuit2.UseVisualStyleBackColor = false;
+            this.btnWorkOrderQuit2.Click += new System.EventHandler(this.btnEndWorkOrder);
             // 
             // btnWorkOrderCreate2
             // 
@@ -380,6 +384,7 @@
             this.btnWorkOrderOnOff1.TabIndex = 15;
             this.btnWorkOrderOnOff1.Text = "작업시작/종료";
             this.btnWorkOrderOnOff1.UseVisualStyleBackColor = false;
+            this.btnWorkOrderOnOff1.Click += new System.EventHandler(this.btnWorkOrderToggle);
             // 
             // btnWorkOrderQuit1
             // 
@@ -393,6 +398,7 @@
             this.btnWorkOrderQuit1.TabIndex = 14;
             this.btnWorkOrderQuit1.Text = "현장마감";
             this.btnWorkOrderQuit1.UseVisualStyleBackColor = false;
+            this.btnWorkOrderQuit1.Click += new System.EventHandler(this.btnEndWorkOrder);
             // 
             // btnWorkOrderCreate1
             // 

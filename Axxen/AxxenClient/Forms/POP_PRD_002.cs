@@ -28,7 +28,7 @@ namespace AxxenClient.Forms
         private void GetDatas()
         {
             Wo_ReqService service = new Wo_ReqService();
-            dgvWoReq.DataSource = service.GetAllWoReq();
+            dgvWoReq.DataSource = service.GetAllWoReqUnit();
         }
         /// <summary>
         /// 컨트롤 설정
@@ -44,6 +44,7 @@ namespace AxxenClient.Forms
             InitControlUtil.AddNewColumnToDataGridView(dgvWoReq, "날짜", "Prd_Plan_Date", true, 100, DataGridViewContentAlignment.MiddleLeft, true);
             InitControlUtil.AddNewColumnToDataGridView(dgvWoReq, "거래처", "Cust_Name", true, 100, DataGridViewContentAlignment.MiddleLeft, true);
             InitControlUtil.AddNewColumnToDataGridView(dgvWoReq, "상태", "Req_Status", true, 100, DataGridViewContentAlignment.MiddleLeft, true);
+            InitControlUtil.AddNewColumnToDataGridView(dgvWoReq, "품목 단위", "Item_Unit", false);
         }
         private void btnCreateWorkOrder_Click(object sender, EventArgs e)
         {

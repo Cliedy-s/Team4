@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.aButton2 = new Axxen.CustomControls.AButton();
-            this.aDataGridView2 = new Axxen.CustomControls.ADataGridView();
-            this.aDataGridView1 = new Axxen.CustomControls.ADataGridView();
+            this.dgvGVFrom = new Axxen.CustomControls.ADataGridView();
+            this.dgvGVTo = new Axxen.CustomControls.ADataGridView();
             this.aPanel6 = new Axxen.CustomControls.APanel();
             this.txtUnit = new Axxen.CustomControls.ABigTextBox_Labeled();
             this.txtWcCode = new Axxen.CustomControls.ABigTextBox_Labeled();
@@ -46,8 +46,8 @@
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aDataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aDataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGVFrom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGVTo)).BeginInit();
             this.aPanel6.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,30 +73,30 @@
             this.aButton2.Text = "로딩";
             this.aButton2.UseVisualStyleBackColor = false;
             // 
-            // aDataGridView2
+            // dgvGVFrom
             // 
-            this.aDataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvGVFrom.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.aDataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.aDataGridView2.Location = new System.Drawing.Point(700, 247);
-            this.aDataGridView2.Name = "aDataGridView2";
-            this.aDataGridView2.RowHeadersWidth = 51;
-            this.aDataGridView2.RowTemplate.Height = 23;
-            this.aDataGridView2.Size = new System.Drawing.Size(498, 338);
-            this.aDataGridView2.TabIndex = 19;
+            this.dgvGVFrom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGVFrom.Location = new System.Drawing.Point(700, 247);
+            this.dgvGVFrom.Name = "dgvGVFrom";
+            this.dgvGVFrom.RowHeadersWidth = 51;
+            this.dgvGVFrom.RowTemplate.Height = 23;
+            this.dgvGVFrom.Size = new System.Drawing.Size(498, 338);
+            this.dgvGVFrom.TabIndex = 19;
             // 
-            // aDataGridView1
+            // dgvGVTo
             // 
-            this.aDataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvGVTo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.aDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.aDataGridView1.Location = new System.Drawing.Point(7, 247);
-            this.aDataGridView1.Name = "aDataGridView1";
-            this.aDataGridView1.RowHeadersWidth = 51;
-            this.aDataGridView1.RowTemplate.Height = 23;
-            this.aDataGridView1.Size = new System.Drawing.Size(374, 338);
-            this.aDataGridView1.TabIndex = 17;
+            this.dgvGVTo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGVTo.Location = new System.Drawing.Point(7, 247);
+            this.dgvGVTo.Name = "dgvGVTo";
+            this.dgvGVTo.RowHeadersWidth = 51;
+            this.dgvGVTo.RowTemplate.Height = 23;
+            this.dgvGVTo.Size = new System.Drawing.Size(374, 338);
+            this.dgvGVTo.TabIndex = 17;
             // 
             // aPanel6
             // 
@@ -266,14 +266,15 @@
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.aBigTextBox_Labeled1);
             this.Controls.Add(this.aButton2);
-            this.Controls.Add(this.aDataGridView2);
-            this.Controls.Add(this.aDataGridView1);
+            this.Controls.Add(this.dgvGVFrom);
+            this.Controls.Add(this.dgvGVTo);
             this.Controls.Add(this.aPanel6);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "POP_PRD_007";
+            this.Load += new System.EventHandler(this.POP_PRD_007_Load);
             this.Controls.SetChildIndex(this.aPanel6, 0);
-            this.Controls.SetChildIndex(this.aDataGridView1, 0);
-            this.Controls.SetChildIndex(this.aDataGridView2, 0);
+            this.Controls.SetChildIndex(this.dgvGVTo, 0);
+            this.Controls.SetChildIndex(this.dgvGVFrom, 0);
             this.Controls.SetChildIndex(this.aButton2, 0);
             this.Controls.SetChildIndex(this.aBigTextBox_Labeled1, 0);
             this.Controls.SetChildIndex(this.txtSearch, 0);
@@ -287,8 +288,8 @@
             this.aPanel2.ResumeLayout(false);
             this.aPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aDataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aDataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGVFrom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGVTo)).EndInit();
             this.aPanel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -296,8 +297,8 @@
 
         #endregion
         private Axxen.CustomControls.AButton aButton2;
-        private Axxen.CustomControls.ADataGridView aDataGridView2;
-        private Axxen.CustomControls.ADataGridView aDataGridView1;
+        private Axxen.CustomControls.ADataGridView dgvGVFrom;
+        private Axxen.CustomControls.ADataGridView dgvGVTo;
         private Axxen.CustomControls.APanel aPanel6;
         private Axxen.CustomControls.ABigTextBox_Labeled txtUnit;
         private Axxen.CustomControls.ABigTextBox_Labeled txtWcCode;
