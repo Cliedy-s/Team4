@@ -9,22 +9,40 @@ using System.Windows.Forms;
 
 namespace Axxen.Util
 {
-   public class ResetUtillity
+    public class ResetUtillity
     {
         public static void ResetPanelControl(Panel panel)
         {
             foreach (Control item in panel.Controls)
             {
+                if (item is Panel)
+                {
+                    foreach (Control subitem in item.Controls)
+                    {
+                        if (subitem is TextBox)
+                        {
+                            subitem.Text = string.Empty;
+                        }
+                        if(subitem is NumericUpDown)
+                        {
+                            subitem.Text = "0";
+                        }
+                        if(subitem is ComboBox)
+                        {
+                            subitem.Text = "";
+                        }
+                    }
+                }
 
                 if (item is TextBox)
                 {
                     item.Text = string.Empty;
                 }
-                if(item is DateTimePicker)
+                if (item is DateTimePicker)
                 {
-                   // item.
+                    item.Text =DateTime.Now.ToShortDateString();
                 }
-               
+
             }
 
         }
