@@ -24,11 +24,11 @@ namespace AxxenClient.Forms
         }
         private void TopPanelSet()
         {
-            txtWorkOrderno.TextBoxText = GlobalUsage.workorderno;
+            txtWorkOrderno.TextBoxText = GlobalUsage.WorkOrderNo;
             txtItemName.TextBoxText = GlobalUsage.ItemName;
             txtQty.TextBoxText = GlobalUsage.Prd_Qty.ToString();
             txtUnit.TextBoxText = GlobalUsage.Prd_Unit.ToString();
-            txtWcCode.TextBoxText = GlobalUsage.woinichar;
+            txtWcCode.TextBoxText = GlobalUsage.WoIniChar;
             txtWorkOrderDate.TextBoxText = GlobalUsage.WorkorderDate.ToString();
         }
         private void InitControls()
@@ -58,8 +58,8 @@ namespace AxxenClient.Forms
                     new VO.PalletVO()
                     {
                         Pallet_No = txtPalletNo.TextBoxText,
-                        Barcode_No = txtPalletNo.TextBoxText + rand.Next(0, 36546).ToString("00000"),
-                        WorkOrderNo = GlobalUsage.workorderno,
+                        Barcode_No = DateTime.Now.Date.ToString("yyyyMMddhhmmssffffff"),
+                        WorkOrderNo = GlobalUsage.WorkOrderNo,
                         CurrentQty = Convert.ToInt32(txtPrintPallet.TextBoxText),
                         Grade_Detail_Code = txtBoxingDegailGrade.TextBoxText,
                         Boxing_Grade_Code = txtBoxingGrade.TextBoxText,
@@ -91,7 +91,7 @@ namespace AxxenClient.Forms
             {
                 txtPalletNo.TextBoxText = dgvPalletList.SelectedRows[0].Cells[0].Value.ToString();
                 txtBoxingGrade.TextBoxText = dgvPalletList.SelectedRows[0].Cells[2].Value == null ? "" : dgvPalletList.SelectedRows[0].Cells[2].Value.ToString();
-                txtBoxingDegailGrade.TextBoxText = dgvPalletList.SelectedRows[0].Cells[4].Value==null ? "" : dgvPalletList.SelectedRows[0].Cells[4].Value.ToString();
+                txtBoxingDegailGrade.TextBoxText = dgvPalletList.SelectedRows[0].Cells[4].Value == null ? "" : dgvPalletList.SelectedRows[0].Cells[4].Value.ToString();
                 txtSizeCode.TextBoxText = dgvPalletList.SelectedRows[0].Cells[5].Value == null ? "" : dgvPalletList.SelectedRows[0].Cells[5].Value.ToString();
                 txtPrintPallet.TextBoxText = dgvPalletList.SelectedRows[0].Cells[3].Value.ToString();
             }

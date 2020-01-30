@@ -53,14 +53,17 @@
             this.txtProcess_name = new Axxen.CustomControls.ATextBox();
             this.aLabel11 = new Axxen.CustomControls.ALabel();
             this.txtPrd_Date = new Axxen.CustomControls.ATextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtNum
             // 
             this.txtNum.BackColor = System.Drawing.Color.White;
             this.txtNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNum.Enabled = false;
             this.txtNum.errorp = null;
-            this.txtNum.Location = new System.Drawing.Point(149, 67);
+            this.txtNum.Location = new System.Drawing.Point(21, 3);
             this.txtNum.Name = "txtNum";
             this.txtNum.ReadOnly = true;
             this.txtNum.Size = new System.Drawing.Size(114, 23);
@@ -162,7 +165,7 @@
             this.txtWo_Status.BackColor = System.Drawing.Color.White;
             this.txtWo_Status.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtWo_Status.errorp = null;
-            this.txtWo_Status.Location = new System.Drawing.Point(149, 143);
+            this.txtWo_Status.Location = new System.Drawing.Point(21, 79);
             this.txtWo_Status.Name = "txtWo_Status";
             this.txtWo_Status.ReadOnly = true;
             this.txtWo_Status.Size = new System.Drawing.Size(227, 23);
@@ -174,7 +177,7 @@
             this.txtWorkorderno.BackColor = System.Drawing.Color.White;
             this.txtWorkorderno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtWorkorderno.errorp = null;
-            this.txtWorkorderno.Location = new System.Drawing.Point(149, 182);
+            this.txtWorkorderno.Location = new System.Drawing.Point(21, 118);
             this.txtWorkorderno.Name = "txtWorkorderno";
             this.txtWorkorderno.ReadOnly = true;
             this.txtWorkorderno.Size = new System.Drawing.Size(227, 23);
@@ -186,7 +189,7 @@
             this.txtItem_Code.BackColor = System.Drawing.Color.White;
             this.txtItem_Code.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtItem_Code.errorp = null;
-            this.txtItem_Code.Location = new System.Drawing.Point(149, 222);
+            this.txtItem_Code.Location = new System.Drawing.Point(21, 158);
             this.txtItem_Code.Name = "txtItem_Code";
             this.txtItem_Code.ReadOnly = true;
             this.txtItem_Code.Size = new System.Drawing.Size(147, 23);
@@ -198,7 +201,7 @@
             this.txtItem_Name.BackColor = System.Drawing.Color.White;
             this.txtItem_Name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtItem_Name.errorp = null;
-            this.txtItem_Name.Location = new System.Drawing.Point(149, 261);
+            this.txtItem_Name.Location = new System.Drawing.Point(21, 197);
             this.txtItem_Name.Name = "txtItem_Name";
             this.txtItem_Name.ReadOnly = true;
             this.txtItem_Name.Size = new System.Drawing.Size(227, 23);
@@ -210,7 +213,7 @@
             this.txtWc_Name.BackColor = System.Drawing.Color.White;
             this.txtWc_Name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtWc_Name.errorp = null;
-            this.txtWc_Name.Location = new System.Drawing.Point(149, 300);
+            this.txtWc_Name.Location = new System.Drawing.Point(21, 236);
             this.txtWc_Name.Name = "txtWc_Name";
             this.txtWc_Name.ReadOnly = true;
             this.txtWc_Name.Size = new System.Drawing.Size(227, 23);
@@ -222,7 +225,7 @@
             this.txtIn_Qty_Main.BackColor = System.Drawing.Color.White;
             this.txtIn_Qty_Main.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIn_Qty_Main.errorp = null;
-            this.txtIn_Qty_Main.Location = new System.Drawing.Point(149, 376);
+            this.txtIn_Qty_Main.Location = new System.Drawing.Point(21, 312);
             this.txtIn_Qty_Main.Name = "txtIn_Qty_Main";
             this.txtIn_Qty_Main.ReadOnly = true;
             this.txtIn_Qty_Main.Size = new System.Drawing.Size(156, 23);
@@ -234,7 +237,7 @@
             this.txtOut_Qty_Main.BackColor = System.Drawing.Color.White;
             this.txtOut_Qty_Main.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtOut_Qty_Main.errorp = null;
-            this.txtOut_Qty_Main.Location = new System.Drawing.Point(149, 416);
+            this.txtOut_Qty_Main.Location = new System.Drawing.Point(21, 352);
             this.txtOut_Qty_Main.Name = "txtOut_Qty_Main";
             this.txtOut_Qty_Main.ReadOnly = true;
             this.txtOut_Qty_Main.Size = new System.Drawing.Size(156, 23);
@@ -291,7 +294,7 @@
             this.txtProcess_name.BackColor = System.Drawing.Color.White;
             this.txtProcess_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtProcess_name.errorp = null;
-            this.txtProcess_name.Location = new System.Drawing.Point(149, 335);
+            this.txtProcess_name.Location = new System.Drawing.Point(21, 271);
             this.txtProcess_name.Name = "txtProcess_name";
             this.txtProcess_name.ReadOnly = true;
             this.txtProcess_name.Size = new System.Drawing.Size(227, 23);
@@ -312,31 +315,40 @@
             this.txtPrd_Date.BackColor = System.Drawing.Color.White;
             this.txtPrd_Date.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPrd_Date.errorp = null;
-            this.txtPrd_Date.Location = new System.Drawing.Point(149, 105);
+            this.txtPrd_Date.Location = new System.Drawing.Point(21, 41);
             this.txtPrd_Date.Name = "txtPrd_Date";
             this.txtPrd_Date.ReadOnly = true;
             this.txtPrd_Date.Size = new System.Drawing.Size(227, 23);
             this.txtPrd_Date.TabIndex = 16;
             this.txtPrd_Date.txtType = Axxen.CustomControls.TextType.Normal;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.txtNum);
+            this.panel1.Controls.Add(this.txtPrd_Date);
+            this.panel1.Controls.Add(this.txtWo_Status);
+            this.panel1.Controls.Add(this.txtProcess_name);
+            this.panel1.Controls.Add(this.txtWorkorderno);
+            this.panel1.Controls.Add(this.txtItem_Code);
+            this.panel1.Controls.Add(this.txtItem_Name);
+            this.panel1.Controls.Add(this.txtWc_Name);
+            this.panel1.Controls.Add(this.txtIn_Qty_Main);
+            this.panel1.Controls.Add(this.txtOut_Qty_Main);
+            this.panel1.Location = new System.Drawing.Point(128, 67);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(291, 384);
+            this.panel1.TabIndex = 17;
+            // 
             // PRM_PRF_001_1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(431, 571);
-            this.Controls.Add(this.txtPrd_Date);
-            this.Controls.Add(this.txtProcess_name);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.aLabel11);
             this.Controls.Add(this.aButton2);
             this.Controls.Add(this.aButton1);
             this.Controls.Add(this.aLabel_Header1);
             this.Controls.Add(this.txtPrd_Qty);
-            this.Controls.Add(this.txtOut_Qty_Main);
-            this.Controls.Add(this.txtIn_Qty_Main);
-            this.Controls.Add(this.txtWc_Name);
-            this.Controls.Add(this.txtItem_Name);
-            this.Controls.Add(this.txtItem_Code);
-            this.Controls.Add(this.txtWorkorderno);
-            this.Controls.Add(this.txtWo_Status);
             this.Controls.Add(this.aLabel10);
             this.Controls.Add(this.aLabel9);
             this.Controls.Add(this.aLabel8);
@@ -347,10 +359,11 @@
             this.Controls.Add(this.aLabel3);
             this.Controls.Add(this.aLabel2);
             this.Controls.Add(this.aLabel1);
-            this.Controls.Add(this.txtNum);
             this.Name = "PRM_PRF_001_1";
             this.Text = "실적보정";
             this.Load += new System.EventHandler(this.PRM_PRF_001_1_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -383,5 +396,6 @@
         private CustomControls.ATextBox txtProcess_name;
         private CustomControls.ALabel aLabel11;
         private CustomControls.ATextBox txtPrd_Date;
+        private System.Windows.Forms.Panel panel1;
     }
 }

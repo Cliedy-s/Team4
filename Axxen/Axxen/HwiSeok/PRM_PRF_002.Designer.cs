@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.aLabel1 = new Axxen.CustomControls.ALabel();
-            this.aButton1 = new Axxen.CustomControls.AButton();
-            this.aButton2 = new Axxen.CustomControls.AButton();
+            this.btnWorkorderno = new Axxen.CustomControls.AButton();
+            this.btnPallet = new Axxen.CustomControls.AButton();
             this.aDateTimePickerSearch1 = new Axxen.CustomControls.ADateTimePickerSearch();
             this.aPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aSplitContainer1)).BeginInit();
@@ -42,8 +42,8 @@
             // aPanel1
             // 
             this.aPanel1.Controls.Add(this.aDateTimePickerSearch1);
-            this.aPanel1.Controls.Add(this.aButton2);
-            this.aPanel1.Controls.Add(this.aButton1);
+            this.aPanel1.Controls.Add(this.btnPallet);
+            this.aPanel1.Controls.Add(this.btnWorkorderno);
             this.aPanel1.Controls.Add(this.aLabel1);
             // 
             // aSplitContainer1
@@ -66,32 +66,34 @@
             this.aLabel1.TabIndex = 6;
             this.aLabel1.Text = "생산일자";
             // 
-            // aButton1
+            // btnWorkorderno
             // 
-            this.aButton1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton1.Location = new System.Drawing.Point(849, 28);
-            this.aButton1.Name = "aButton1";
-            this.aButton1.Size = new System.Drawing.Size(114, 23);
-            this.aButton1.TabIndex = 10;
-            this.aButton1.Text = "작업지시 마감";
-            this.aButton1.UseVisualStyleBackColor = false;
+            this.btnWorkorderno.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnWorkorderno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWorkorderno.Location = new System.Drawing.Point(849, 28);
+            this.btnWorkorderno.Name = "btnWorkorderno";
+            this.btnWorkorderno.Size = new System.Drawing.Size(114, 23);
+            this.btnWorkorderno.TabIndex = 10;
+            this.btnWorkorderno.Text = "작업지시 마감";
+            this.btnWorkorderno.UseVisualStyleBackColor = false;
+            this.btnWorkorderno.Click += new System.EventHandler(this.btnWorkorderno_Click);
             // 
-            // aButton2
+            // btnPallet
             // 
-            this.aButton2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.aButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton2.Location = new System.Drawing.Point(986, 28);
-            this.aButton2.Name = "aButton2";
-            this.aButton2.Size = new System.Drawing.Size(114, 23);
-            this.aButton2.TabIndex = 10;
-            this.aButton2.Text = "팔렛트 마감";
-            this.aButton2.UseVisualStyleBackColor = false;
+            this.btnPallet.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnPallet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPallet.Location = new System.Drawing.Point(986, 28);
+            this.btnPallet.Name = "btnPallet";
+            this.btnPallet.Size = new System.Drawing.Size(114, 23);
+            this.btnPallet.TabIndex = 10;
+            this.btnPallet.Text = "팔렛트 마감";
+            this.btnPallet.UseVisualStyleBackColor = false;
+            this.btnPallet.Click += new System.EventHandler(this.btnPallet_Click);
             // 
             // aDateTimePickerSearch1
             // 
-            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 1, 22, 16, 53, 34, 199);
-            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 1, 29, 16, 53, 34, 199);
+            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 1, 23, 15, 18, 20, 306);
+            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 1, 30, 15, 18, 20, 306);
             this.aDateTimePickerSearch1.ButtonText = "조회";
             this.aDateTimePickerSearch1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aDateTimePickerSearch1.Location = new System.Drawing.Point(88, 23);
@@ -120,8 +122,8 @@
 
         #endregion
         private CustomControls.ALabel aLabel1;
-        private CustomControls.AButton aButton2;
-        private CustomControls.AButton aButton1;
+        private CustomControls.AButton btnPallet;
+        private CustomControls.AButton btnWorkorderno;
         private CustomControls.ADateTimePickerSearch aDateTimePickerSearch1;
     }
 }

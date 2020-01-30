@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PPS_SCH_001));
             this.btnPrDown = new Axxen.CustomControls.AButton();
             this.btnPrFinish = new Axxen.CustomControls.AButton();
             this.aLabel1 = new Axxen.CustomControls.ALabel();
@@ -35,11 +36,16 @@
             this.txtProjectName = new Axxen.CustomControls.ATextBox_Labeled();
             this.aDateTimePickerSearch1 = new Axxen.CustomControls.ADateTimePickerSearch();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.adgv = new Axxen.CustomControls.ADataGridView();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tsbtnSave = new System.Windows.Forms.ToolStripButton();
             this.aPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aSplitContainer1)).BeginInit();
             this.aSplitContainer1.Panel1.SuspendLayout();
             this.aSplitContainer1.Panel2.SuspendLayout();
             this.aSplitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.adgv)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // aPanel1
@@ -125,8 +131,8 @@
             // 
             // aDateTimePickerSearch1
             // 
-            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 1, 21, 15, 2, 49, 565);
-            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 1, 28, 13, 44, 54, 448);
+            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 1, 23, 15, 6, 57, 132);
+            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 1, 30, 15, 6, 57, 132);
             this.aDateTimePickerSearch1.ButtonText = "조회";
             this.aDateTimePickerSearch1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aDateTimePickerSearch1.Location = new System.Drawing.Point(112, 23);
@@ -136,20 +142,67 @@
             this.aDateTimePickerSearch1.TabIndex = 7;
             this.aDateTimePickerSearch1.btnDateTimeSearch_Click += new Axxen.CustomControls.ADateTimePickerSearch.SearchButtonClick(this.ADateTimePickerSearch1_btnDateTimeSearch_Click);
             // 
+            // adgv
+            // 
+            this.adgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.adgv.Location = new System.Drawing.Point(1116, 3);
+            this.adgv.Name = "adgv";
+            this.adgv.RowTemplate.Height = 23;
+            this.adgv.Size = new System.Drawing.Size(20, 14);
+            this.adgv.TabIndex = 8;
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbtnSave});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1148, 60);
+            this.toolStrip1.TabIndex = 9;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // tsbtnSave
+            // 
+            this.tsbtnSave.AutoSize = false;
+            this.tsbtnSave.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tsbtnSave.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnSave.Image")));
+            this.tsbtnSave.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.tsbtnSave.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbtnSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnSave.Name = "tsbtnSave";
+            this.tsbtnSave.Size = new System.Drawing.Size(50, 57);
+            this.tsbtnSave.Text = "저장";
+            this.tsbtnSave.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.tsbtnSave.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            this.tsbtnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbtnSave.ToolTipText = "조회";
+            // 
             // PPS_SCH_001
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1148, 700);
+            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.adgv);
             this.Name = "PPS_SCH_001";
+            this.Activated += new System.EventHandler(this.PPS_SCH_001_Activated);
+            this.Deactivate += new System.EventHandler(this.PPS_SCH_001_Deactivate);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PPS_SCH_001_FormClosed);
             this.Load += new System.EventHandler(this.PPS_SCH_001_Load);
+            this.Controls.SetChildIndex(this.aPanel1, 0);
+            this.Controls.SetChildIndex(this.aSplitContainer1, 0);
+            this.Controls.SetChildIndex(this.adgv, 0);
+            this.Controls.SetChildIndex(this.toolStrip1, 0);
             this.aPanel1.ResumeLayout(false);
             this.aPanel1.PerformLayout();
             this.aSplitContainer1.Panel1.ResumeLayout(false);
             this.aSplitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.aSplitContainer1)).EndInit();
             this.aSplitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.adgv)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -162,5 +215,8 @@
         private CustomControls.ATextBox_Labeled txtPrNum;
         private CustomControls.ADateTimePickerSearch aDateTimePickerSearch1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private CustomControls.ADataGridView adgv;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton tsbtnSave;
     }
 }

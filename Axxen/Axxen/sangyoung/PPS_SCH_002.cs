@@ -28,8 +28,7 @@ namespace Axxen
             MainDataLoad();
             woList = service.GetWoReqOrder();
             dgvMainGrid.DataSource = woList;
-            ((MainForm)this.MdiParent).MyUpdateEvent += new System.EventHandler(this.MyUpdateShow); //수정이벤트
-            ((MainForm)this.MdiParent).RefreshFormEvent += new EventHandler(this.RefreshFormShow); //새로고침
+            
             aSplitContainer1.Panel2.Enabled = false;
         }
 
@@ -123,6 +122,18 @@ namespace Axxen
                               select list).ToList();
                 dgvMainGrid.DataSource = colist;
             }
+        }
+
+        private void PPS_SCH_002_Activated(object sender, EventArgs e)
+        {
+            ((MainForm)this.MdiParent).MyUpdateEvent += new System.EventHandler(this.MyUpdateShow); //수정이벤트
+            ((MainForm)this.MdiParent).RefreshFormEvent += new EventHandler(this.RefreshFormShow); //새로고침
+        }
+
+        private void PPS_SCH_002_Deactivate(object sender, EventArgs e)
+        {
+            ((MainForm)this.MdiParent).MyUpdateEvent -= new System.EventHandler(this.MyUpdateShow); //수정이벤트
+            ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow); //새로고침
         }
     }
 }

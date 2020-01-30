@@ -122,6 +122,7 @@
             this.btnWorkOrderOnOff3.TabIndex = 6;
             this.btnWorkOrderOnOff3.Text = "작업시작/종료";
             this.btnWorkOrderOnOff3.UseVisualStyleBackColor = false;
+            this.btnWorkOrderOnOff3.Click += new System.EventHandler(this.btnWorkOrderToggle);
             // 
             // btnWorkOrderQuit3
             // 
@@ -135,6 +136,7 @@
             this.btnWorkOrderQuit3.TabIndex = 5;
             this.btnWorkOrderQuit3.Text = "현장마감";
             this.btnWorkOrderQuit3.UseVisualStyleBackColor = false;
+            this.btnWorkOrderQuit3.Click += new System.EventHandler(this.btnEndWorkOrder);
             // 
             // btnDryGVLoad
             // 
@@ -219,7 +221,7 @@
             this.panLoad.Controls.Add(this.btnClearDryGV);
             this.panLoad.Controls.Add(this.btnSetPressCondition1);
             this.panLoad.Controls.Add(this.btnQualityMeasure2);
-            this.panLoad.Location = new System.Drawing.Point(12, 455);
+            this.panLoad.Location = new System.Drawing.Point(12, 199);
             this.panLoad.Name = "panLoad";
             this.panLoad.Size = new System.Drawing.Size(1186, 124);
             this.panLoad.TabIndex = 6;
@@ -237,6 +239,7 @@
             this.btnWorkOrderOnOff2.TabIndex = 15;
             this.btnWorkOrderOnOff2.Text = "작업시작/종료";
             this.btnWorkOrderOnOff2.UseVisualStyleBackColor = false;
+            this.btnWorkOrderOnOff2.Click += new System.EventHandler(this.btnWorkOrderToggle);
             // 
             // btnWorkOrderQuit2
             // 
@@ -250,6 +253,7 @@
             this.btnWorkOrderQuit2.TabIndex = 14;
             this.btnWorkOrderQuit2.Text = "현장마감";
             this.btnWorkOrderQuit2.UseVisualStyleBackColor = false;
+            this.btnWorkOrderQuit2.Click += new System.EventHandler(this.btnEndWorkOrder);
             // 
             // btnWorkOrderCreate2
             // 
@@ -362,7 +366,7 @@
             this.panBoxing.Controls.Add(this.btnWarehousing);
             this.panBoxing.Controls.Add(this.btnUnload);
             this.panBoxing.Controls.Add(this.btnQualityMeasure1);
-            this.panBoxing.Location = new System.Drawing.Point(12, 455);
+            this.panBoxing.Location = new System.Drawing.Point(12, 326);
             this.panBoxing.Name = "panBoxing";
             this.panBoxing.Size = new System.Drawing.Size(1186, 124);
             this.panBoxing.TabIndex = 16;
@@ -380,6 +384,7 @@
             this.btnWorkOrderOnOff1.TabIndex = 15;
             this.btnWorkOrderOnOff1.Text = "작업시작/종료";
             this.btnWorkOrderOnOff1.UseVisualStyleBackColor = false;
+            this.btnWorkOrderOnOff1.Click += new System.EventHandler(this.btnWorkOrderToggle);
             // 
             // btnWorkOrderQuit1
             // 
@@ -393,6 +398,7 @@
             this.btnWorkOrderQuit1.TabIndex = 14;
             this.btnWorkOrderQuit1.Text = "현장마감";
             this.btnWorkOrderQuit1.UseVisualStyleBackColor = false;
+            this.btnWorkOrderQuit1.Click += new System.EventHandler(this.btnEndWorkOrder);
             // 
             // btnWorkOrderCreate1
             // 

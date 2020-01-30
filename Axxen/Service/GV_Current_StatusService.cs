@@ -8,17 +8,59 @@ using VO;
 
 namespace Service
 {
-    class GV_Current_StatusService
+    public class GV_Current_StatusService
     {
         /// <summary>
         /// 대차 현황 
         /// </summary>
         /// <param name="woinichar"></param>
         /// <returns></returns>
+        public List<GVStatusVO> GetGVCurrentStatus(string woinichar, string ProcessName)
+        {
+            GV_Current_StatusDAC dac = new GV_Current_StatusDAC();
+            return dac.GetGVCurrentStatus(woinichar, ProcessName);
+        }
         public List<GVStatusVO> GetGVCurrentStatus(string woinichar)
         {
             GV_Current_StatusDAC dac = new GV_Current_StatusDAC();
             return dac.GetGVCurrentStatus(woinichar);
+        }
+        /// <summary>
+        /// 작업지시에 따라
+        /// </summary>
+        /// <param name="woinichar"></param>
+        /// <param name="workorderno"></param>
+        /// <returns></returns>
+        public List<GVStatusVO> GetGVCurrentStatusByWorkOrderno(string woinichar, string workorderno)
+        {
+            GV_Current_StatusDAC dac = new GV_Current_StatusDAC();
+            return dac.GetGVCurrentStatusByWorkOrderno(woinichar, workorderno);
+        }
+        /// <summary>
+        /// 대차 현황 상태따라
+        /// </summary>
+        /// <param name="woinichar"></param>
+        /// <param name="gvStatus"></param>
+        /// <returns></returns>
+        public List<GVStatusVO> GetGVCurrentStatusByGvStatus(string woinichar, string ProcessName, string gvStatus)
+        {
+            GV_Current_StatusDAC dac = new GV_Current_StatusDAC();
+            return dac.GetGVCurrentStatusByGvStatus( woinichar, ProcessName,  gvStatus);
+        }
+        public List<GVStatusVO> GetGVCurrentStatusByGvStatus(string woinichar, string gvStatus)
+        {
+            GV_Current_StatusDAC dac = new GV_Current_StatusDAC();
+            return dac.GetGVCurrentStatusByGvStatus(woinichar, gvStatus);
+        }
+        /// <summary>
+        /// 대차 이름 검색
+        /// </summary>
+        /// <param name="GVName"></param>
+        /// <returns></returns>
+        public List<GVStatusVO> GetGVCurrentStatusByName(string woinichar, string ProcessName, string GVName)
+        {
+            GV_Current_StatusDAC dac = new GV_Current_StatusDAC();
+            return dac.GetGVCurrentStatusByName(woinichar, ProcessName, GVName);
         }
         /// <summary>
         /// 요입현황
