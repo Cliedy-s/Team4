@@ -26,7 +26,7 @@ namespace Service
             return dac.GetAll();
         }
 
-        public bool InsertConditionSpec(ConditionSpecVO condition)
+        public bool InsertConditionSpec(List<ConditionSpecVO> condition)
         {
             return dac.InsertConditionSpec(condition);
         }
