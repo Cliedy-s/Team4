@@ -89,14 +89,15 @@ namespace Axxen
             InitControlUtil.SetDGVDesign(dgvMainGrid);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "생산의뢰순번", "Req_Seq", true, 110, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "생산의뢰번호", "Wo_Req_No", true, 110, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "의뢰일자", "Ins_Date", true, 110, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "품목코드", "Item_Code", true, 100, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "품목명", "Item_Name", true, 80, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "의뢰수량", "Req_Qty", true, 90, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "생산완료예정일", "Prd_Plan_Date", true, 90, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "프로젝트명", "Project_Name", true, 110, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "거래처명", "Cust_Name", true, 90, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "영업담당", "Sale_Emp", true, 90, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "생산의뢰상태", "Req_Status", true, 110, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "의뢰수량", "Req_Qty", true, 90, default, true);
 
             DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
             chk.HeaderText = "선택";
@@ -106,7 +107,6 @@ namespace Axxen
             chk.Width = 50;
 
             dgvMainGrid.Columns.Insert(0, chk);
-            GridCheckSetting();
         }
 
         private void SubDataLoad()
@@ -237,14 +237,6 @@ namespace Axxen
             }
         }
 
-        private void GridCheckSetting()
-        {
-            for (int i = 0; i < dgvMainGrid.RowCount; i++)
-            {
-                dgvMainGrid.Rows[i].Cells[0].Value = true;
-            }
-        }
-
         private void PPS_SCH_001_FormClosed(object sender, FormClosedEventArgs e)
         {
             ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow);
@@ -263,7 +255,6 @@ namespace Axxen
 
         private void BtnPrDown_Click(object sender, EventArgs e)
         {
-            DataSet ds = new DataSet();
             DataTable dt = new DataTable();
 
             List<Wo_Req_ItemVO> list = dgvMainGrid.DataSource as List<Wo_Req_ItemVO>;
@@ -281,43 +272,11 @@ namespace Axxen
                     }
                 }
             }
-            //adgv.DataSource = reportList;
-            //dt = adgv.DataSource as DataTable;
-            //ds.Tables.Add(dt);
             dt = ListToDataTable.ToDataTable(reportList);
-            ds.Tables.Add(dt);
             ProductionRequest rpt = new ProductionRequest();
-            rpt.DataSource = ds.Tables[0];
-
-            PPS_SCH_001_Report frm = new PPS_SCH_001_Report();
-            frm.documentViewer1.DocumentSource = rpt;
-            frm.ShowDialog();
-
-            //if (dgvMainGrid.SelectedRows.Count < 0)
-            //{
-            //    MessageBox.Show("목록을 선택해 주세요.");
-            //}
-            //foreach (DataGridViewRow row in dgvMainGrid.Rows)
-            //{
-            //    DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
-            //    if (Convert.ToBoolean(chk.Value))
-            //    {
-            //        MessageBox.Show((row.DataBoundItem as Wo_Req_ItemVO).Item_Name);
-            //        DataRow dr = (row.DataBoundItem as DataRowView).Row;
-            //        dt.Rows.Add(dr);
-            //    }
-            //    else
-            //    {
-            //        continue;
-            //    }
-            //}
-            //ds.Tables.Add(dt);
-            //ProductionRequest rpt = new ProductionRequest();
-            //rpt.DataSource = ds.Tables[0];
-
-            //PPS_SCH_001_Report frm = new PPS_SCH_001_Report();
-            //frm.documentViewer1.DocumentSource = rpt;
-            //frm.ShowDialog();
+            rpt.DataSource = dt;
+            PPS_SCH_001_Report frm = new PPS_SCH_001_Report(rpt);
+            reportList.Clear();
         }
     }
 }

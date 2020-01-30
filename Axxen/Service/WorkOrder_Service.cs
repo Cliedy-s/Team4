@@ -73,6 +73,24 @@ namespace Service
             return dac.InsertWorkOrder(item);
         }
         /// <summary>
+        /// 작업지시 시작
+        /// </summary>
+        /// <returns></returns>
+        public bool UpdateWorkOrderStart(string workorderno, string prdunit, string username)
+        {
+            WorkOrderDAC dac = new WorkOrderDAC();
+            return dac.UpdateWorkOrderStart(workorderno, prdunit, username);
+        }
+        /// <summary>
+        /// 작업지시 종료
+        /// </summary>
+        /// <returns></returns>
+        public bool UpdateWorkOrderEnd(string workorderno, int outqty, int prdqty, string username)
+        {
+            WorkOrderDAC dac = new WorkOrderDAC();
+            return dac.UpdateWorkOrderEnd(workorderno, outqty, prdqty, username);
+        }
+        /// <summary>
         /// 옮겨타기
         /// </summary>
         /// <param name="workorderno"></param>
@@ -98,5 +116,6 @@ namespace Service
             WorkOrderDAC dac = new WorkOrderDAC();
             return dac.InsertLoadQty(togvcode, qty, workorderno, wccode, username);
         }
+
     }
 }

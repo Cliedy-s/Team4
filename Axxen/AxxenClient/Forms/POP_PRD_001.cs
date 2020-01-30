@@ -12,6 +12,7 @@ namespace AxxenClient.Forms
 {
     public partial class POP_PRD_001 : AxxenClient.Templets.ClientBaseForm
     {
+        public Color runningDefaultColor { get; set; }
         public POP_PRD_001()
         {
             InitializeComponent();
@@ -57,11 +58,12 @@ namespace AxxenClient.Forms
             InitControlUtil.AddNewColumnToDataGridView(dgvMain, "품목명", "Item_Name", true, 100, DataGridViewContentAlignment.MiddleLeft, true);
             InitControlUtil.AddNewColumnToDataGridView(dgvMain, "단위", "Prd_Unit", true, 60, DataGridViewContentAlignment.MiddleLeft, false);
             InitControlUtil.AddNewColumnToDataGridView(dgvMain, "실적수량", "Prd_Qty", true, 110, DataGridViewContentAlignment.MiddleLeft, false);
-            InitControlUtil.AddNewColumnToDataGridView(dgvMain, "실적수량", "Prd_Qty", true, 110, DataGridViewContentAlignment.MiddleLeft, false);
             InitControlUtil.AddNewColumnToDataGridView(dgvMain, "생산시작시간", "Prd_Starttime", true, 200, DataGridViewContentAlignment.MiddleLeft, false);
-            InitControlUtil.AddNewColumnToDataGridView(dgvMain, "생산종료시간", "Prd_Endtime", true, 200, DataGridViewContentAlignment.MiddleLeft, false);
+            InitControlUtil.AddNewColumnToDataGridView(dgvMain, "생산종료시간", "Prd_Endtime", true, 200);
+            InitControlUtil.AddNewColumnToDataGridView(dgvMain, "계획 날짜", "Plan_Date", false, 200);
+
+            dgvMain.Columns[7].DefaultCellStyle.Format = "yyyy-MM-dd hh:mm:ss";
             dgvMain.Columns[8].DefaultCellStyle.Format = "yyyy-MM-dd hh:mm:ss";
-            dgvMain.Columns[9].DefaultCellStyle.Format = "yyyy-MM-dd hh:mm:ss";
         }
         /// <summary>
         /// 데이터를 DB에서 가져온다
@@ -106,6 +108,78 @@ namespace AxxenClient.Forms
                 frm.MdiParent = this.MdiParent;
                 frm.Show();
             }
+        }
+        /// <summary>
+        /// 작업지시 토글
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnWorkOrderToggle(object sender, EventArgs e)
+        {
+            if(dgvMain.SelectedRows.Count <= 0)
+            { // 선택한 작업지시가 없을 경우
+                MessageBox.Show("작업지시를 선택해주세요.");
+                return;
+            }
+
+            // 시작한 작업지시가 있을 경우 - 작업지시를 끝냄
+            if (GlobalUsage.WorkOrderNo != "설정안됨")
+            {
+                WorkOrder_Service service = new WorkOrder_Service();
+                // 작업지시 끝내기
+                if (service.UpdateWorkOrderEnd(GlobalUsage.WorkOrderNo, GlobalUsage.Out_Qty, GlobalUsage.Prd_Qty, GlobalUsage.Username))
+                { // 성공
+                    for (int i = 0; i < dgvMain.RowCount; i++) // 작업지시의 배경 색상 원래색상으로 변경
+                    {
+                        if (dgvMain.Rows[i].Cells[1].Value.ToString() == GlobalUsage.WorkOrderNo)
+                        {
+                            dgvMain.Rows[i].DefaultCellStyle.BackColor = runningDefaultColor;
+                            break;
+                        }
+                    }
+                    GetDatas();
+                }
+                else //실패
+                    MessageBox.Show("작업지시 종료에 실패하였습니다.");
+                return;
+            }
+
+            // 시작한 작업지시가 없을 때
+            // 작업지시가 시작되지 않았을 때 - 작업지시를 시작함
+            if (dgvMain.SelectedRows[0].Cells[7].Value == null) 
+            {
+                DataGridViewRow row = dgvMain.SelectedRows[0];
+                WorkOrder_Service service = new WorkOrder_Service();
+                // 작업지시 시작하기
+                //service.UpdateWorkOrderStart(row.Cells[1].Value.ToString(), );
+
+                //색상 변경
+                runningDefaultColor = row.DefaultCellStyle.BackColor;
+                row.DefaultCellStyle.BackColor = Color.FromArgb(100, 200, 255);
+            }
+
+            //else if(dgvMain.SelectedRows[0].Cells[8].Value == null) // 시작하고 종료 안한 작업지시 일 경우
+            //{
+
+            //}
+            // 시작 // dgvMain.SelectedRows[0].Cells[7]
+            // 종료 // dgvMain.SelectedRows[0].Cells[8]
+
+            // 해당 프로그램의 전역에 설정해줌
+            //GlobalUsage.WorkOrderNo = dgvMain.SelectedRows[0].Cells[1].Value.ToString();
+            //GlobalUsage.WorkorderDate = Convert.ToDateTime(dgvMain.SelectedRows[0].Cells[9].Value);
+            //GlobalUsage.ItemName = dgvMain.SelectedRows[0].Cells[4].Value.ToString();
+        }
+
+        private void btnEndWorkOrder(object sender, EventArgs e)
+        {
+            if (dgvMain.SelectedRows.Count <= 0)
+            {
+                MessageBox.Show("작업지시를 선택해주세요.");
+                return;
+            }
+
+            // TODO - 현장 마감 // dgvMain.SelectedRows[0].Cells[1].Value.ToString()
         }
     }
 }

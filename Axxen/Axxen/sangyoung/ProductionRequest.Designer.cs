@@ -410,7 +410,7 @@
             this.xrTableCell12.BorderColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.xrTableCell12.Dpi = 254F;
             this.xrTableCell12.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Query].[Ins_Date]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "GetDate([Query].[Ins_Date])")});
             this.xrTableCell12.Font = new System.Drawing.Font("맑은 고딕", 11F);
             this.xrTableCell12.Multiline = true;
             this.xrTableCell12.Name = "xrTableCell12";
@@ -507,7 +507,7 @@
             this.xrTableCell18.BorderColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.xrTableCell18.Dpi = 254F;
             this.xrTableCell18.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Query].[Prd_Plan_Date]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "GetDate([Query].[Prd_Plan_Date]\n)")});
             this.xrTableCell18.Font = new System.Drawing.Font("맑은 고딕", 11F);
             this.xrTableCell18.Multiline = true;
             this.xrTableCell18.Name = "xrTableCell18";
