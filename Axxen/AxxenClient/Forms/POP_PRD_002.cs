@@ -35,7 +35,7 @@ namespace AxxenClient.Forms
         /// </summary>
         private void InitControls()
         {
-            InitControlUtil.SetDGVDesign(dgvWoReq);
+            InitControlUtil.SetPOPDGVDesign(dgvWoReq);
             InitControlUtil.AddNewColumnToDataGridView(dgvWoReq, "의뢰순번", "Req_Seq", false, 100, DataGridViewContentAlignment.MiddleLeft, true);
             InitControlUtil.AddNewColumnToDataGridView(dgvWoReq, "생산의뢰번호", "Wo_Req_No", true, 100, DataGridViewContentAlignment.MiddleLeft, true);
             InitControlUtil.AddNewColumnToDataGridView(dgvWoReq, "품목코드", "Item_Code", false, 100, DataGridViewContentAlignment.MiddleLeft, true);
@@ -55,17 +55,18 @@ namespace AxxenClient.Forms
                 bool IsSuccess = service.InsertWorkOrder(
                     new VO.WorkOrderNewVO()
                     {
-                        Ins_Emp = GlobalUsage.Username,
+                        Ins_Emp = GlobalUsage.UserID,
                         Item_Code = txtItemSearch.CodeText,
-                        Mat_LotNo = now.ToString("yyyyMMddhh"),
+                        Mat_LotNo = now.ToString("yyyyMMddHH"),
                         Plan_Qty = Convert.ToInt32(txtPlanQty.TextBoxText),
-                        Plan_Unit = "Kg",
+                        Plan_Unit = lblItem_Unit.Text,
                         Wo_Req_No = txtReqNo.TextBoxText,
                         Req_Seq = Convert.ToInt32(lblReq_Seq.Text),
                         Wc_Code = txtWcSearch.CodeText,
-                        Workorderno = "WO" + now.ToString("yyyyMMddhhmm"),
-                        Wo_Status = "대기",
-                        Wo_Order = "1"
+                        Workorderno = "WK" + now.ToString("yyyyMMddHHmmffffff"),
+                        Wo_Status = "생산대기",
+                        Wo_Order = "1",
+                        Prd_Unit = lblItem_Unit.Text
                     });
                 if (IsSuccess)
                     MessageBox.Show("성공적으로 생성하였습니다.", "작업지시생성");
@@ -86,6 +87,7 @@ namespace AxxenClient.Forms
             txtItemSearch.CodeText = dgvWoReq.SelectedRows[0].Cells[2].Value.ToString();
             txtReqNo.TextBoxText = dgvWoReq.SelectedRows[0].Cells[1].Value.ToString();
             lblReq_Seq.Text = dgvWoReq.SelectedRows[0].Cells[0].Value.ToString();
+            lblItem_Unit.Text = dgvWoReq.SelectedRows[0].Cells[8].Value.ToString();
         }
 
         private void POP_PRD_002_FormClosing(object sender, FormClosingEventArgs e)

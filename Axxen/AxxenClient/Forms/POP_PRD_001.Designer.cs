@@ -136,7 +136,7 @@
             this.btnWorkOrderQuit3.TabIndex = 5;
             this.btnWorkOrderQuit3.Text = "현장마감";
             this.btnWorkOrderQuit3.UseVisualStyleBackColor = false;
-            this.btnWorkOrderQuit3.Click += new System.EventHandler(this.btnEndWorkOrder);
+            this.btnWorkOrderQuit3.Click += new System.EventHandler(this.btnWorkOrderClose);
             // 
             // btnDryGVLoad
             // 
@@ -253,7 +253,7 @@
             this.btnWorkOrderQuit2.TabIndex = 14;
             this.btnWorkOrderQuit2.Text = "현장마감";
             this.btnWorkOrderQuit2.UseVisualStyleBackColor = false;
-            this.btnWorkOrderQuit2.Click += new System.EventHandler(this.btnEndWorkOrder);
+            this.btnWorkOrderQuit2.Click += new System.EventHandler(this.btnWorkOrderClose);
             // 
             // btnWorkOrderCreate2
             // 
@@ -398,7 +398,7 @@
             this.btnWorkOrderQuit1.TabIndex = 14;
             this.btnWorkOrderQuit1.Text = "현장마감";
             this.btnWorkOrderQuit1.UseVisualStyleBackColor = false;
-            this.btnWorkOrderQuit1.Click += new System.EventHandler(this.btnEndWorkOrder);
+            this.btnWorkOrderQuit1.Click += new System.EventHandler(this.btnWorkOrderClose);
             // 
             // btnWorkOrderCreate1
             // 

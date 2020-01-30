@@ -29,7 +29,7 @@ namespace AxxenClient.Forms
             txtQty.TextBoxText = GlobalUsage.Prd_Qty.ToString();
             txtUnit.TextBoxText = GlobalUsage.Prd_Unit.ToString();
             txtWcCode.TextBoxText = GlobalUsage.WoIniChar;
-            txtWorkOrderDate.TextBoxText = GlobalUsage.WorkorderDate.ToString();
+            txtWorkOrderDate.TextBoxText = (GlobalUsage.WorkorderDate == null) ? "": GlobalUsage.WorkorderDate.Value.ToString("yyyy-MM-dd HH:mm:ss");
         }
         private void InitControls()
         {
@@ -58,7 +58,7 @@ namespace AxxenClient.Forms
                     new VO.PalletVO()
                     {
                         Pallet_No = txtPalletNo.TextBoxText,
-                        Barcode_No = DateTime.Now.Date.ToString("yyyyMMddhhmmssffffff"),
+                        Barcode_No = DateTime.Now.Date.ToString("yyyyMMddHHmmssffffff"),
                         WorkOrderNo = GlobalUsage.WorkOrderNo,
                         CurrentQty = Convert.ToInt32(txtPrintPallet.TextBoxText),
                         Grade_Detail_Code = txtBoxingDegailGrade.TextBoxText,

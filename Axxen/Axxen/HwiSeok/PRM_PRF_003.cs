@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Linq;
 using VO;
 
 namespace Axxen
@@ -13,6 +14,7 @@ namespace Axxen
     public partial class PRM_PRF_003 : Axxen.GridForm
     {
         List<Item_Goods_HistoryVO> igh;
+        List<Item_Goods_HistoryVO> ighList;
         ItemMaster_Service imservice = new ItemMaster_Service();
         public PRM_PRF_003()
         {
@@ -21,6 +23,8 @@ namespace Axxen
 
         private void PRM_PRF_003_Load(object sender, EventArgs e)
         {
+            ((MainForm)this.MdiParent).RefreshFormEvent += new System.EventHandler(this.RefreshFormShow); // 새로고침
+
             DatagridviewDesigns.SetDesign(dgvMainGrid);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "생산일자", "Prd_Date", true, 100, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "작업지시번호", "Workorderno", true, 100, default, true);
@@ -39,10 +43,30 @@ namespace Axxen
 
         }
 
-        private void aDateTimePickerSearch2_btnDateTimeSearch_Click(object sender, EventArgs args)
+        private void RefreshFormShow(object sender, EventArgs e)
+        {
+            igh = imservice.GetworkOrder_Item_Goods();
+            dgvMainGrid.DataSource = igh;
+            aTextBox_FindNameByCode1.txtCodeText = "";
+            aTextBox_FindNameByCode1.txtNameText = "";
+            aDateTimePickerSearch2.ADateTimePickerValue1 = Convert.ToDateTime(DateTime.Now.AddDays(-7).ToShortDateString());
+            aDateTimePickerSearch2.ADateTimePickerValue2 = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+        }
+
+        private void aDateTimePickerSearch2_btnDateTimeSearch_Click(object sender, EventArgs args) // 날짜별 조회
         {
             igh = imservice.GetDatePicker_work_ltem_Goods(aDateTimePickerSearch2.ADateTimePickerValue1.ToShortDateString(), aDateTimePickerSearch2.ADateTimePickerValue2.ToShortDateString());
             dgvMainGrid.DataSource = igh;
+            aTextBox_FindNameByCode1.txtCodeText = "";
+            aTextBox_FindNameByCode1.txtNameText = "";
+        }
+
+        private void aTextBox_FindNameByCode1_DotDotDotFormClosing(object sender, CustomControls.SearchFormClosingArgs args)
+        {
+            ighList = (from date in igh
+                       where date.Item_Code == aTextBox_FindNameByCode1.txtCodeText
+                       select date).ToList();
+            dgvMainGrid.DataSource = ighList;
         }
     }
 }

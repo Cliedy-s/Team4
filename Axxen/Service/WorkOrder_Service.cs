@@ -91,6 +91,15 @@ namespace Service
             return dac.UpdateWorkOrderEnd(workorderno, outqty, prdqty, username);
         }
         /// <summary>
+        /// 작업지시 마감
+        /// </summary>
+        /// <returns></returns>
+        public bool UpdateWorkOrderClose(string username, string workorderno)
+        {
+            WorkOrderDAC dac = new WorkOrderDAC();
+            return dac.UpdateWorkOrderClose( username,  workorderno);
+        }
+        /// <summary>
         /// 옮겨타기
         /// </summary>
         /// <param name="workorderno"></param>

@@ -79,6 +79,7 @@ namespace Axxen.CustomControls
             dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(145, 224, 244); // 선택 로우 색
 
             dgv.DefaultCellStyle.WrapMode = DataGridViewTriState.False;
+            dgv.RowTemplate.Height = 30;
             dgv.DefaultCellStyle.Font = new Font("나눔고딕", 13);
             dgv.ColumnHeadersDefaultCellStyle.Font = new Font("나눔고딕", 13);
         }

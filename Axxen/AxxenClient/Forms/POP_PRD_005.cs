@@ -49,7 +49,7 @@ namespace AxxenClient.Forms
                 MessageBox.Show("팔레트 번호를 확인해주세요");
                 return;
             }
-            bool isSuccess = service.InputPallet(GlobalUsage.Username, txtWorkorderNo.TextBoxText, txtPalletNo.TextBoxText);
+            bool isSuccess = service.InputPallet(GlobalUsage.UserID, txtWorkorderNo.TextBoxText, txtPalletNo.TextBoxText);
             if (!isSuccess)
             {
                 MessageBox.Show("입고에 실패하였습니다.");
@@ -66,7 +66,7 @@ namespace AxxenClient.Forms
 
             txtPalletNo.TextBoxText = item.Pallet_No;
             txtWorkorderNo.TextBoxText = item.Workorderno;
-            txtWorkorderDate.TextBoxText = item.Plan_Date.ToString("yyyy-MM-dd hh:mm:ss");
+            txtWorkorderDate.TextBoxText = item.Plan_Date.ToString("yyyy-MM-dd HH:mm:ss");
             txtItemCode.TextBoxText = item.Item_Code;
             txtWcCode.TextBoxText = item.Wc_Code;
             txtBoxingGrade.TextBoxText = item.Boxing_Grade_Code;

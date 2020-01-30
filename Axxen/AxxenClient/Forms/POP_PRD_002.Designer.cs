@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.aPanel4 = new Axxen.CustomControls.APanel();
+            this.lblItem_Unit = new Axxen.CustomControls.ALabel();
             this.lblReq_Seq = new Axxen.CustomControls.ALabel();
             this.txtReqNo = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
             this.txtPlanQty = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
@@ -59,6 +60,7 @@
             // 
             this.aPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.aPanel4.Controls.Add(this.lblItem_Unit);
             this.aPanel4.Controls.Add(this.lblReq_Seq);
             this.aPanel4.Controls.Add(this.txtReqNo);
             this.aPanel4.Controls.Add(this.txtPlanQty);
@@ -70,6 +72,16 @@
             this.aPanel4.Name = "aPanel4";
             this.aPanel4.Size = new System.Drawing.Size(549, 482);
             this.aPanel4.TabIndex = 7;
+            // 
+            // lblItem_Unit
+            // 
+            this.lblItem_Unit.AutoSize = true;
+            this.lblItem_Unit.Location = new System.Drawing.Point(109, 314);
+            this.lblItem_Unit.Name = "lblItem_Unit";
+            this.lblItem_Unit.Size = new System.Drawing.Size(58, 15);
+            this.lblItem_Unit.TabIndex = 28;
+            this.lblItem_Unit.Text = "Item_Unit";
+            this.lblItem_Unit.Visible = false;
             // 
             // lblReq_Seq
             // 
@@ -223,5 +235,6 @@
         private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox txtReqNo;
         private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox txtPlanQty;
         private Axxen.CustomControls.ALabel lblReq_Seq;
+        private Axxen.CustomControls.ALabel lblItem_Unit;
     }
 }

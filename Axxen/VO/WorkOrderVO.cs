@@ -34,6 +34,7 @@ namespace VO
         public int Req_Seq { get; set; }                 // 의뢰순번
         public string Mat_LotNo { get; set; }             // 원자재Lot
         public string Ins_Emp { get; set; }                 // 최초입력자
+        public string Prd_Unit { get; set; }                // 생산 단위
     }
     public class WorkOrderAllVO
     {
