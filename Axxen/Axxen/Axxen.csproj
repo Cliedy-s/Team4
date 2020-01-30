@@ -34,7 +34,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Charts.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Office.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Pdf.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.PivotGrid.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -44,6 +46,7 @@
     <Reference Include="DevExpress.Sparkline.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v19.2.UI, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraCharts.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraGauges.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -344,6 +347,12 @@
     <Compile Include="PlaceHolderTextBox.designer.cs">
       <DependentUpon>PlaceHolderTextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="sangyoung\BoxingGrade.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="sangyoung\BoxingGrade.Designer.cs">
+      <DependentUpon>BoxingGrade.cs</DependentUpon>
+    </Compile>
     <Compile Include="sangyoung\KPI_RPT_001.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -397,6 +406,12 @@
     </Compile>
     <Compile Include="sangyoung\PPS_SCH_001_Insert.Designer.cs">
       <DependentUpon>PPS_SCH_001_Insert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sangyoung\PPS_SCH_001_Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sangyoung\PPS_SCH_001_Report.Designer.cs">
+      <DependentUpon>PPS_SCH_001_Report.cs</DependentUpon>
     </Compile>
     <Compile Include="sangyoung\PPS_SCH_002.cs">
       <SubType>Form</SubType>
@@ -511,6 +526,7 @@
     <Compile Include="UserInfo.cs" />
     <Compile Include="Util\ExcelHelper.cs" />
     <Compile Include="Util\InitControlUtil.cs" />
+    <Compile Include="Util\ListToDataTable.cs" />
     <Compile Include="Util\LoggingUtility.cs" />
     <Compile Include="Util\ResetUtillity.cs" />
     <EmbeddedResource Include="HwiSeok\PRM_PRF_001.resx">
@@ -649,6 +665,9 @@
       <DependentUpon>PlaceHolderTextBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="sangyoung\BoxingGrade.resx">
+      <DependentUpon>BoxingGrade.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="sangyoung\KPI_RPT_001.resx">
       <DependentUpon>KPI_RPT_001.cs</DependentUpon>
     </EmbeddedResource>
@@ -675,6 +694,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="sangyoung\PPS_SCH_001_Insert.resx">
       <DependentUpon>PPS_SCH_001_Insert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sangyoung\PPS_SCH_001_Report.resx">
+      <DependentUpon>PPS_SCH_001_Report.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="sangyoung\PPS_SCH_002.resx">
       <DependentUpon>PPS_SCH_002.cs</DependentUpon>
