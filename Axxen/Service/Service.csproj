@@ -46,6 +46,7 @@
     <Compile Include="Condition_Measure_HistoryService.cs" />
     <Compile Include="Condition_Spec_MasterService.cs" />
     <Compile Include="Def_MaService.cs" />
+    <Compile Include="Def_MiService.cs" />
     <Compile Include="Emp_Allocation_HistoryService.cs" />
     <Compile Include="Emp_Wc_AllocationService.cs" />
     <Compile Include="GasUse_History_Service.cs" />

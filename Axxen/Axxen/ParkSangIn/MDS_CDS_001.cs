@@ -13,7 +13,7 @@ namespace Axxen
 {
     public partial class MDS_CDS_001 : Axxen.GridForm
     {
-        List<Def_MaVO> Defmalist;
+        List<Def_MaVO> Defmalist; //불량 대분류
         Def_MaService Defservice = new Def_MaService();
         public MDS_CDS_001()
         {
@@ -31,15 +31,6 @@ namespace Axxen
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "불량현상대분류 명", "Def_Ma_Name", true, 210, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "입력일자", "Ins_Date", true, 210, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "사용여부", "Use_YN", true, 210, default, true);
-            GetAllUserGroup();
-            ///
-            ControlSetting();
-        }
-        /// <summary>
-        /// 그리드뷰 버튼, 콤보박스세팅
-        /// </summary>
-        private void ControlSetting()
-        {
 
             DataGridViewButtonColumn gridbtn = new DataGridViewButtonColumn();
             gridbtn.HeaderText = "사용여부";
@@ -50,7 +41,15 @@ namespace Axxen
             gridbtn.DefaultCellStyle.BackColor = Color.LightYellow;
             gridbtn.UseColumnTextForButtonValue = true;
             dgvMainGrid.Columns.Add(gridbtn);
-
+            GetAllUserGroup();
+            ///
+            ControlSetting();
+        }
+        /// <summary>
+        /// 그리드뷰 버튼, 콤보박스세팅
+        /// </summary>
+        private void ControlSetting()
+        {
             ///combobox
             Dictionary<string, string> cbblist = Defmalist.ToDictionary(item => item.Def_Ma_Code, item => item.Def_Ma_Name);
             cbbGroup.DisplayMember = "Value";

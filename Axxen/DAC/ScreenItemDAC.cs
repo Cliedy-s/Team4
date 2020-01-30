@@ -20,18 +20,18 @@ namespace DAC
         public List<ScreenItem_AuthorityVO> GetUserInfoScreenItem(List<UserGroup_MappingVO> group)
         {
             List<ScreenItem_AuthorityVO> list = new List<ScreenItem_AuthorityVO>() ;
-            using (SqlCommand comm = new SqlCommand())
+            using (SqlCommand cmd = new SqlCommand())
             {
-                comm.Connection = new SqlConnection(Connstr);
+                cmd.Connection = new SqlConnection(Connstr);
                 for (int i = 0; i < group.Count; i++)
                 {
-                    comm.CommandText = "GetUserInfoScreenItem";
-                    comm.CommandType = CommandType.StoredProcedure;
-                    comm.Parameters.AddWithValue("@UserGroup_Code", group[i].UserGroup_Code);
+                    cmd.CommandText = "GetUserInfoScreenItem";
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@UserGroup_Code", group[i].UserGroup_Code);
                 
 
-                    comm.Connection.Open();
-                    SqlDataReader reader = comm.ExecuteReader();
+                    cmd.Connection.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
                     while (reader.Read()) {
                         ScreenItem_AuthorityVO item = new ScreenItem_AuthorityVO
                         {
@@ -46,8 +46,8 @@ namespace DAC
                         list.Add(item);
                     }
                 
-                    comm.Parameters.Clear();
-                    comm.Connection.Close();
+                    cmd.Parameters.Clear();
+                    cmd.Connection.Close();
                 }
 
                 return list;
@@ -61,17 +61,17 @@ namespace DAC
         /// <returns></returns>
         public List<ScreenItem_MasterVO> GetALLScreenItem()
         {
-            using (SqlCommand comm = new SqlCommand())
+            using (SqlCommand cmd = new SqlCommand())
             {
-                comm.Connection = new SqlConnection(Connstr);
-                comm.CommandText = "GetALLScreenItem";
-                comm.CommandType = CommandType.StoredProcedure;
+                cmd.Connection = new SqlConnection(Connstr);
+                cmd.CommandText = "GetALLScreenItem";
+                cmd.CommandType = CommandType.StoredProcedure;
              
 
-                comm.Connection.Open();
-                SqlDataReader reader = comm.ExecuteReader();
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
                 List<ScreenItem_MasterVO> list = Helper.DataReaderMapToList<ScreenItem_MasterVO>(reader);
-                comm.Connection.Close();
+                cmd.Connection.Close();
 
                 return list;
             }

@@ -93,25 +93,18 @@ namespace DAC
             }
         }
 
-        public bool UPDATE_Grade_Detail_Name(List<Goods_In_History_J_Pallet_BoxingVO> list)
+        public bool UPDATE_Grade_Detail_Name(string Workorderno,string Pallet_No, string Grade_Detail_Name)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
 
                 cmd.Connection = new SqlConnection(Connstr);
-                cmd.CommandText = $"WITH PRM_PRF_001_1(Num,Prd_Date,Wo_Status,Workorderno,Item_Code,Item_Name,Wc_Name,Process_name,In_Qty_Main,Out_Qty_Main,Prd_Qty) " +
-                    $"AS(select ROW_NUMBER() OVER(ORDER BY wo.Wo_Status) Num, Prd_Date, wo.Wo_Status, wo.Workorderno, wo.Item_Code, Item_Name, Wc_Name, Process_name, wo.In_Qty_Main, wo.Out_Qty_Main, wo.Prd_Qty " +
-                    $"from WorkOrder wo INNER JOIN Item_Master im  ON wo.Item_Code = im.Item_Code " +
-                    $"INNER JOIN WorkCenter_Master wm ON wo.Wc_Code = wm.Wc_Code " +
-                    $"INNER JOIN Process_Master pm ON wm.Process_code = pm.Process_code) " +
-                    $"UPDATE PRM_PRF_001_1 SET Prd_Qty=@Prd_Qty WHERE Num=@Num and Wo_Status=@Wo_Status and Workorderno=@Workorderno and Item_Code=@Item_Code";
+                cmd.CommandText = $"UPDATE Pallet_Master SET Grade_Detail_Name=@Grade_Detail_Name where Workorderno = @Workorderno AND Pallet_No=@Pallet_No";
 
                 cmd.CommandType = CommandType.Text;
-                //cmd.Parameters.AddWithValue("@Prd_Qty", );
-                //cmd.Parameters.AddWithValue("@Num", Num);
-                //cmd.Parameters.AddWithValue("@Wo_Status", Wo_Status);
-                //cmd.Parameters.AddWithValue("@Workorderno", Workorderno);
-                //cmd.Parameters.AddWithValue("@Item_Code", Item_Code);
+                cmd.Parameters.AddWithValue("@Grade_Detail_Name", Grade_Detail_Name);
+                cmd.Parameters.AddWithValue("@Pallet_No", Pallet_No);
+                cmd.Parameters.AddWithValue("@Workorderno", Workorderno);
 
                 cmd.Connection.Open();
                 int result = cmd.ExecuteNonQuery();
@@ -121,6 +114,104 @@ namespace DAC
             }
         }
 
+        public bool UpdatePalletUse(List<string> chkPalletNo) //팔렛트 마감
+        {
+            using (SqlConnection conn = new SqlConnection(Connstr))
+            {
+                conn.Open();
+                SqlTransaction tran = conn.BeginTransaction();
+                using (SqlCommand cmd = new SqlCommand("UPDATE Pallet_Master SET Use_YN='Y' where Pallet_No = @Pallet_No AND Use_YN<>'Y' ", conn))
+                {                    
+                    try
+                    {
+                        cmd.Transaction = tran;
+                        for (int i = 0; i < chkPalletNo.Count; i++)
+                        {              
+                           //cmd.CommandType = CommandType.Text;
+                            cmd.Parameters.AddWithValue("@Pallet_No", chkPalletNo[i]);
+                            int iResult = cmd.ExecuteNonQuery();
+                            if (iResult < 1)
+                                throw new Exception("오류");
+                            
+                            cmd.Parameters.Clear();
+                        }
+
+                        tran.Commit();
+                        conn.Close();
+                        return true;
+                    }
+                    catch (Exception)
+                    {
+                        tran.Rollback();
+                        return false;
+                    }
+                }
+            }
+        }
+
+        public string UpdateWo_Status(List<WorkOrder_J_WC_ItmeVO> list) // 작업지시 마감
+        {
+            using (SqlConnection conn = new SqlConnection(Connstr))
+            {
+                conn.Open();
+                SqlTransaction tran = conn.BeginTransaction();
+
+                try
+                {
+                    string chksql = "select count(Use_YN) from Pallet_Master where Workorderno = @Workorderno AND Use_YN='N'";
+                    using (SqlCommand cmdchk = new SqlCommand(chksql, conn))
+                    {
+                        cmdchk.Transaction = tran;
+                        for (int i = 0; i < list.Count; i++)
+                        {
+                            //cmd.CommandType = CommandType.Text;
+                            cmdchk.Parameters.AddWithValue("@Workorderno", list[i].Workorderno);
+                            int iResult = Convert.ToInt32(cmdchk.ExecuteScalar());
+                            if (iResult > 0)
+                                throw new Exception("선택한 작업지시 목록에 속한 모든 팔렛트를 마감되어야 합니다.");
+
+                            cmdchk.Parameters.Clear();
+                        }
+                    }
+                    //-------------------------------------------------------------
+                    string Stsql = @"WITH PRM_PRF_002(Num,Prd_Date,Wo_Status,Workorderno,Item_Code,Item_Name,Wc_Name,Process_name,In_Qty_Main,Out_Qty_Main,Prd_Qty)
+                            AS(select ROW_NUMBER() OVER(ORDER BY wo.Wo_Status) Num, Prd_Date, wo.Wo_Status, wo.Workorderno, wo.Item_Code, Item_Name, Wc_Name, Process_name, wo.In_Qty_Main, wo.Out_Qty_Main, wo.Prd_Qty
+                            from WorkOrder wo INNER JOIN Item_Master im  ON wo.Item_Code = im.Item_Code
+                            INNER JOIN WorkCenter_Master wm ON wo.Wc_Code = wm.Wc_Code 
+                            INNER JOIN Process_Master pm ON wm.Process_code = pm.Process_code) 
+                            UPDATE PRM_PRF_002 SET Wo_Status='현장마감' WHERE Wo_Status<>'현장마감' and Workorderno=@Workorderno and Item_Code=@Item_Code;";
+                    using (SqlCommand cmd = new SqlCommand(Stsql, conn))
+                    {                            
+                        cmd.Transaction = tran;
+                        for (int i = 0; i < list.Count; i++)
+                        {
+                            //cmd.CommandType = CommandType.Text;
+                            cmd.Parameters.AddWithValue("@Workorderno", list[i].Workorderno);
+                            cmd.Parameters.AddWithValue("@Item_Code", list[i].Item_Code);
+
+                            int iResult = cmd.ExecuteNonQuery();
+                            if (iResult < 1)
+                                throw new Exception("선택하신 작업지시상태 목록 중에 이미 마감처리된 목록이 있습니다.");
+
+                            cmd.Parameters.Clear();
+                        }
+
+                        tran.Commit();                            
+                        return "OK";
+                    }
+                }
+                catch (Exception err)
+                {
+                    tran.Rollback();
+                    return err.Message;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+        
         //pop
         /// <summary>
         /// 작업장으로 작업지시현황 가져오기

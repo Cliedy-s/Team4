@@ -19,8 +19,7 @@ namespace Axxen
         public event EventHandler InsertFormEvent; //추가 폼 이벤트
         public event EventHandler RefreshFormEvent; //새로고침 폼 이벤트
         public event EventHandler MyUpdateEvent; //수정 이벤트
-        public event EventHandler MySaveEvent; //저장
-        public event EventHandler MyPrintEvent;//출력
+
 
         int CheckBtnIndex = 7;
         bool BookmarkCheck = true; //즐겨찾기 
@@ -529,16 +528,5 @@ namespace Axxen
                 MyUpdateEvent(this, null);
         }
 
-        private void TsbtnSave_Click(object sender, EventArgs e)
-        {
-            if (this.MySaveEvent != null)
-                MySaveEvent(this, null);
-        }
-
-        private void TsbtnPrint_Click(object sender, EventArgs e)
-        {
-            if (this.MyPrintEvent != null)
-                MyPrintEvent(this, null);
-        }
     }
 }

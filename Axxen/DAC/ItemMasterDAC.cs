@@ -36,6 +36,51 @@ namespace DAC
         }
 
         /// <summary>
+        /// 그룹 저장 수정
+        /// </summary>
+        /// <returns></returns>
+        public bool InsertUpdateItem_Level_Master(Item_Level_Master item)
+        {
+            try
+            {
+                using (SqlCommand comm = new SqlCommand())
+                {
+                    comm.Connection = new SqlConnection(Connstr);
+                    comm.CommandText = "InsertUpdateItem_Level_Master";
+                    comm.CommandType = CommandType.StoredProcedure;
+
+                    comm.Parameters.AddWithValue("@Level_Code", item.Level_Code);
+                    comm.Parameters.AddWithValue("@Level_Name", item.Level_Name);
+                    comm.Parameters.AddWithValue("@Item_lvl1", item.Item_lvl1);
+                    comm.Parameters.AddWithValue("@Item_lvl2", item.Item_lvl2);
+                    comm.Parameters.AddWithValue("@Item_lvl3", item.Item_lvl3);
+                    comm.Parameters.AddWithValue("@Item_lvl4", item.Item_lvl4);
+                    comm.Parameters.AddWithValue("@Item_lvl5", item.Item_lvl5);
+                    comm.Parameters.AddWithValue("@Box_Qty", item.Box_Qty);
+                    comm.Parameters.AddWithValue("@Pcs_Qty", item.Pcs_Qty);
+                    comm.Parameters.AddWithValue("@Mat_Qty", item.Mat_Qty);
+                    comm.Parameters.AddWithValue("@Ins_Emp", item.Ins_Emp);
+
+                    comm.Connection.Open();
+                    int result = Convert.ToInt32(comm.ExecuteNonQuery());
+                    comm.Connection.Close();
+
+                    if (result > 0)
+                        return true;
+                    else
+                        return false;
+
+                }
+            }
+            catch (Exception err)
+            {
+           
+                return false;
+            }
+
+        }
+
+        /// <summary>
         /// 그룹 사용유무update 
         /// </summary>
         /// <returns></returns>
@@ -51,7 +96,7 @@ namespace DAC
                 comm.Parameters.AddWithValue("@Use_YN", used);
 
                 comm.Connection.Open();
-                int result = Convert.ToInt32(comm.ExecuteScalar());
+                int result = Convert.ToInt32(comm.ExecuteNonQuery());
                 comm.Connection.Close();
 
                 if (result > 0)
@@ -75,21 +120,21 @@ namespace DAC
             try
             {
 
-        
-            List<Item_MasterVO> Itemlist = null;
-            using (SqlCommand com = new SqlCommand())
-            {
-                com.Connection = new SqlConnection(Connstr);
-                com.CommandText = "GetAllItem_Master";
-                com.CommandType = CommandType.StoredProcedure;
 
-                com.Connection.Open();
-                SqlDataReader reader = com.ExecuteReader();
-                Itemlist = Helper.DataReaderMapToList<Item_MasterVO>(reader);
-                com.Connection.Close();
+                List<Item_MasterVO> Itemlist = null;
+                using (SqlCommand com = new SqlCommand())
+                {
+                    com.Connection = new SqlConnection(Connstr);
+                    com.CommandText = "GetAllItem_Master";
+                    com.CommandType = CommandType.StoredProcedure;
 
-                return Itemlist;
-            }
+                    com.Connection.Open();
+                    SqlDataReader reader = com.ExecuteReader();
+                    Itemlist = Helper.DataReaderMapToList<Item_MasterVO>(reader);
+                    com.Connection.Close();
+
+                    return Itemlist;
+                }
             }
             catch (Exception)
             {
@@ -127,7 +172,7 @@ namespace DAC
                     comm.Parameters.AddWithValue("@Level_5", item.Level_5);
                     comm.Parameters.AddWithValue("@Item_Stock", item.Item_Stock);
                     comm.Parameters.AddWithValue("@PrdQty_Per_Hour", item.PrdQty_Per_Hour);
-                    comm.Parameters.AddWithValue("@PrdQTy_Per_Batch", item.PrdQTy_Per_Batch);         
+                    comm.Parameters.AddWithValue("@PrdQTy_Per_Batch", item.PrdQTy_Per_Batch);
                     comm.Parameters.AddWithValue("@Cavity", item.Cavity);
                     comm.Parameters.AddWithValue("@Line_Per_Qty", item.Line_Per_Qty);
                     comm.Parameters.AddWithValue("@Shot_Per_Qty", item.Shot_Per_Qty);
@@ -140,10 +185,13 @@ namespace DAC
 
 
                     comm.Connection.Open();
-                 int result = comm.ExecuteNonQuery();              
+                    int result = comm.ExecuteNonQuery();
                     comm.Connection.Close();
 
-                    return result > 0;
+                    if (result > 0)
+                        return true;
+                    else
+                        return false;
                 }
             }
             catch (Exception)

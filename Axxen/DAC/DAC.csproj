@@ -45,6 +45,7 @@
     <Compile Include="Condition_Spec_MasterDAC.cs" />
     <Compile Include="DACParent.cs" />
     <Compile Include="Def_MaDAC.cs" />
+    <Compile Include="Def_MiDAC.cs" />
     <Compile Include="Emp_Allocation_HistoryDAC.cs" />
     <Compile Include="Emp_Wc_AllocationDAC.cs" />
     <Compile Include="GasUse_HistoryDAC.cs" />

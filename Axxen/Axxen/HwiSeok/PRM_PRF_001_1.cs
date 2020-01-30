@@ -51,6 +51,8 @@ namespace Axxen.HwiSeok
             txtIn_Qty_Main.Text = In_Qty_Main;
             txtOut_Qty_Main.Text = Out_Qty_Main;
             txtPrd_Qty.Text = Prd_Qty;
+
+            panel1.Enabled = false;
         }
 
         private void aButton1_Click(object sender, EventArgs e)
@@ -58,9 +60,9 @@ namespace Axxen.HwiSeok
             bool IsSuccess = woservice.UPDATE_Prd_Qty(txtPrd_Qty.Text, Num, Wo_Status, Workorderno, Item_Code);
 
             if (IsSuccess)
-                MessageBox.Show("성공적으로 수정하였습니다.", "수정성공");
+                MessageBox.Show("성공적으로 수정하였습니다.", "수정성공", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
-                MessageBox.Show("수정에 실패하였습니다.", "수정오류");
+                MessageBox.Show("수정에 실패하였습니다.", "수정오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
             this.DialogResult=DialogResult.OK;
         }
     }

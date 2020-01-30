@@ -20,7 +20,7 @@ namespace DAC
             using (SqlCommand comm = new SqlCommand())
             {
                 comm.Connection = new SqlConnection(Connstr);
-                comm.CommandText = 
+                comm.CommandText =
  @"SELECT 
 	 csm.Item_Code
 	, csm.Wc_Code
@@ -49,40 +49,44 @@ namespace DAC
         /// </summary>
         /// <param name="condition"></param>
         /// <returns></returns>
-        public bool InsertConditionSpec(ConditionSpecVO condition)
-        {        
-                try
-                {
-                    using (SqlCommand com = new SqlCommand())
+        public bool InsertConditionSpec(List<ConditionSpecVO> condition)
+        {
+
+            using (SqlConnection conn = new SqlConnection(Connstr))
+            {
+                conn.Open();
+                SqlTransaction tran = conn.BeginTransaction();
+                using (SqlCommand cmd = new SqlCommand("InsertConditionSpec", conn))
+                {       
+                    cmd.Transaction = tran;
+                    try
                     {
-                        com.Connection = new SqlConnection(Connstr);
-                        com.CommandText = "InsertConditionSpec";
-                        com.CommandType = CommandType.StoredProcedure;
-                        com.Parameters.AddWithValue("@Item_Code", condition.Item_Code);
-                        com.Parameters.AddWithValue("@Wc_Code", condition.Wc_Code);
-                        com.Parameters.AddWithValue("@Condition_Code", condition.Condition_Code);
-                        com.Parameters.AddWithValue("@Condition_Name", condition.Condition_Name);
-                        com.Parameters.AddWithValue("@USL", condition.USL);
-                        com.Parameters.AddWithValue("@SL", condition.SL);
-                        com.Parameters.AddWithValue("@LSL", condition.LSL);                 
-                        com.Parameters.AddWithValue("@Condition_Unit", condition.Condition_Unit);
-                        com.Parameters.AddWithValue("@Remark", condition.Remark);
-
-                        com.Connection.Open();
-                        int resault = Convert.ToInt32(com.ExecuteNonQuery());
-                        com.Connection.Close();
-                    if (resault > 0)
+                        for (int i = 0; i < condition.Count; i++)
+                        {                                           
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@Item_Code", condition[i].Item_Code);
+                            cmd.Parameters.AddWithValue("@Wc_Code", condition[i].Wc_Code);
+                            cmd.Parameters.AddWithValue("@Condition_Code", condition[i].Condition_Code);
+                            cmd.Parameters.AddWithValue("@Condition_Name", condition[i].Condition_Name);
+                            cmd.Parameters.AddWithValue("@USL", condition[i].USL);
+                            cmd.Parameters.AddWithValue("@SL", condition[i].SL);
+                            cmd.Parameters.AddWithValue("@LSL", condition[i].LSL);
+                            cmd.Parameters.AddWithValue("@Condition_Unit", condition[i].Condition_Unit);
+                            cmd.Parameters.AddWithValue("@Remark", condition[i].Remark);
+                            cmd.ExecuteNonQuery();
+                            cmd.Parameters.Clear();
+                        }
+                                      
+                        tran.Commit();
+                        conn.Close();
                         return true;
-                    else
+                    }
+                    catch (Exception)
+                    {
+                        tran.Rollback();
                         return false;
-                }
-
-                }
-                catch (Exception)
-                {
-                  
-                    throw;
-                
+                    }
+                }     
             }
         }
     }

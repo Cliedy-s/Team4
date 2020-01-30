@@ -14,17 +14,21 @@ namespace Axxen.sangyoung
 {
     public partial class PPS_SCH_001_Insert : Form
     {
-        List<WorkOrder_J_WC_ItmeVO> namelist = new List<WorkOrder_J_WC_ItmeVO>();
+        List<WorkOrder_WC_ItemVO> namelist = new List<WorkOrder_WC_ItemVO>();
         string code = string.Empty;
         string name = string.Empty;
         string qty = string.Empty;
+        string reqno = string.Empty;
+        string seq = string.Empty;
         public PPS_SCH_001_Insert()
         {
             InitializeComponent();
         }
 
-        public PPS_SCH_001_Insert(string code, string name, int qty) : this()
+        public PPS_SCH_001_Insert(int seq, string reqno, string code, string name, int qty) : this()
         {
+            this.seq = seq.ToString();
+            this.reqno = reqno;
             this.code = code;
             this.name = name;
             this.qty = qty.ToString();
@@ -42,17 +46,23 @@ namespace Axxen.sangyoung
             txtInQty.Text = "0";
             txtPrdQty.Text = "0";
             txtOutQty.Text = "0";
+            txtWoStatus.Text = "대기";
 
+            txtSeq.Text = seq;
+            txtReqNo.Text = reqno;
             txtItemCode.Text = code;
             txtItemName.Text = name;
             txtPlanQty.Text = qty;
 
+            txtSeq.Enabled = false;
+            txtReqNo.Enabled = false;
             txtItemName.Enabled = false;
             txtItemCode.Enabled = false;
             txtPlanQty.Enabled = false;
             txtInQty.Enabled = false;
             txtOutQty.Enabled = false;
             txtPrdQty.Enabled = false;
+            txtWoStatus.Enabled = false;
 
             cboWorkCenter.Items.Add("==선택==");
             foreach (var name in namelist)
@@ -60,6 +70,26 @@ namespace Axxen.sangyoung
                 cboWorkCenter.Items.Add(name.Wc_Name);
             };
             cboWorkCenter.SelectedIndex = 0;
+        }
+
+
+        private void BtnOK_Click(object sender, EventArgs e)
+        {
+            WorkOrder_WC_ItemVO work = new WorkOrder_WC_ItemVO();
+            work.Req_Seq = Convert.ToInt32(txtSeq.Text);
+            work.Wo_Req_No = txtReqNo.Text;
+            work.Workorderno = txtWoorderno.Text;
+            work.Wo_Status = txtWoStatus.Text;
+            work.Wc_Name = cboWorkCenter.Text;
+            work.Remark = txtRemark.Text;
+            work.Plan_Qty = Convert.ToInt32(txtPlanQty.Text);
+            work.Out_Qty_Main = Convert.ToInt32(txtOutQty.Text);
+            work.In_Qty_Main = Convert.ToInt32(txtInQty.Text);
+            work.Prd_Qty = Convert.ToInt32(txtPrdQty.Text);
+            work.Prd_Date = dtpDate.Value;
+            work.Item_Code = txtItemCode.Text;
+            work.Item_Name = txtItemName.Text;
+            this.Close();
         }
     }
 }

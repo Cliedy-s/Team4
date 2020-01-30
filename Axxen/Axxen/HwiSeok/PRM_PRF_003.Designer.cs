@@ -56,6 +56,7 @@
             // 
             // aTextBox_FindNameByCode1
             // 
+            this.aTextBox_FindNameByCode1.allfont = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aTextBox_FindNameByCode1.CodeType = Axxen.CustomControls.DataType.Items;
             this.aTextBox_FindNameByCode1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aTextBox_FindNameByCode1.lblNameText = "품목";
@@ -66,11 +67,12 @@
             this.aTextBox_FindNameByCode1.TabIndex = 14;
             this.aTextBox_FindNameByCode1.txtCodeText = "";
             this.aTextBox_FindNameByCode1.txtNameText = "";
+            this.aTextBox_FindNameByCode1.DotDotDotFormClosing += new Axxen.CustomControls.ATextBox_FindNameByCode.SearchFormClosing(this.aTextBox_FindNameByCode1_DotDotDotFormClosing);
             // 
             // aDateTimePickerSearch2
             // 
-            this.aDateTimePickerSearch2.ADateTimePickerValue1 = new System.DateTime(2020, 1, 15, 15, 1, 57, 997);
-            this.aDateTimePickerSearch2.ADateTimePickerValue2 = new System.DateTime(2020, 1, 21, 16, 1, 18, 223);
+            this.aDateTimePickerSearch2.ADateTimePickerValue1 = new System.DateTime(2020, 1, 23, 19, 39, 58, 708);
+            this.aDateTimePickerSearch2.ADateTimePickerValue2 = new System.DateTime(2020, 1, 30, 19, 39, 58, 708);
             this.aDateTimePickerSearch2.ButtonText = "조회";
             this.aDateTimePickerSearch2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aDateTimePickerSearch2.Location = new System.Drawing.Point(88, 23);

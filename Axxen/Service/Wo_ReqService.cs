@@ -22,7 +22,7 @@ namespace Service
             return dac.UpdateWoReq(woNo);
         }
 
-        public List<WorkOrder_J_WC_ItmeVO> GetWorkOrder()
+        public List<WorkOrder_WC_ItemVO> GetWorkOrder()
         {
             Wo_ReqDAC dac = new Wo_ReqDAC();
             return dac.GetWorkOrder();
@@ -58,7 +58,7 @@ namespace Service
             return dac.GetWO_WC_Production_Items();
         }
 
-        public List<WorkOrder_J_WC_ItmeVO> GetWorkCenterName()
+        public List<WorkOrder_WC_ItemVO> GetWorkCenterName()
         {
             Wo_ReqDAC dac = new Wo_ReqDAC();
             return dac.GetWorkCenterName();
