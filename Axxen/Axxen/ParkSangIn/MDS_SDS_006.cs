@@ -16,7 +16,7 @@ namespace Axxen
         ItemMaster_Service itemservice = new ItemMaster_Service(); //품목
         List<Item_MasterVO> Itemlist;
 
-        Inspect_Spec_MasterService inspectservice = new Inspect_Spec_MasterService(); // 
+        Inspect_Spec_MasterService inspectservice = new Inspect_Spec_MasterService(); 
         List<InspectSpecVO> inspect; //검사항목규격
 
         ProcessService processService = new ProcessService(); //공정
