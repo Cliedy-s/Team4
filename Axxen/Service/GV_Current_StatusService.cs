@@ -26,6 +26,17 @@ namespace Service
             return dac.GetGVCurrentStatus(woinichar);
         }
         /// <summary>
+        /// 작업지시에 따라
+        /// </summary>
+        /// <param name="woinichar"></param>
+        /// <param name="workorderno"></param>
+        /// <returns></returns>
+        public List<GVStatusVO> GetGVCurrentStatusByWorkOrderno(string woinichar, string workorderno)
+        {
+            GV_Current_StatusDAC dac = new GV_Current_StatusDAC();
+            return dac.GetGVCurrentStatusByWorkOrderno(woinichar, workorderno);
+        }
+        /// <summary>
         /// 대차 현황 상태따라
         /// </summary>
         /// <param name="woinichar"></param>
@@ -35,6 +46,11 @@ namespace Service
         {
             GV_Current_StatusDAC dac = new GV_Current_StatusDAC();
             return dac.GetGVCurrentStatusByGvStatus( woinichar, ProcessName,  gvStatus);
+        }
+        public List<GVStatusVO> GetGVCurrentStatusByGvStatus(string woinichar, string gvStatus)
+        {
+            GV_Current_StatusDAC dac = new GV_Current_StatusDAC();
+            return dac.GetGVCurrentStatusByGvStatus(woinichar, gvStatus);
         }
         /// <summary>
         /// 대차 이름 검색

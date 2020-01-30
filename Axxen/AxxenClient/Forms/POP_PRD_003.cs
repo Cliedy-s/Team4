@@ -58,7 +58,7 @@ namespace AxxenClient.Forms
                     new VO.PalletVO()
                     {
                         Pallet_No = txtPalletNo.TextBoxText,
-                        Barcode_No = txtPalletNo.TextBoxText + rand.Next(0, 36546).ToString("00000"),
+                        Barcode_No = DateTime.Now.Date.ToString("yyyyMMddhhmmssffffff"),
                         WorkOrderNo = GlobalUsage.WorkOrderNo,
                         CurrentQty = Convert.ToInt32(txtPrintPallet.TextBoxText),
                         Grade_Detail_Code = txtBoxingDegailGrade.TextBoxText,
@@ -91,7 +91,7 @@ namespace AxxenClient.Forms
             {
                 txtPalletNo.TextBoxText = dgvPalletList.SelectedRows[0].Cells[0].Value.ToString();
                 txtBoxingGrade.TextBoxText = dgvPalletList.SelectedRows[0].Cells[2].Value == null ? "" : dgvPalletList.SelectedRows[0].Cells[2].Value.ToString();
-                txtBoxingDegailGrade.TextBoxText = dgvPalletList.SelectedRows[0].Cells[4].Value==null ? "" : dgvPalletList.SelectedRows[0].Cells[4].Value.ToString();
+                txtBoxingDegailGrade.TextBoxText = dgvPalletList.SelectedRows[0].Cells[4].Value == null ? "" : dgvPalletList.SelectedRows[0].Cells[4].Value.ToString();
                 txtSizeCode.TextBoxText = dgvPalletList.SelectedRows[0].Cells[5].Value == null ? "" : dgvPalletList.SelectedRows[0].Cells[5].Value.ToString();
                 txtPrintPallet.TextBoxText = dgvPalletList.SelectedRows[0].Cells[3].Value.ToString();
             }
