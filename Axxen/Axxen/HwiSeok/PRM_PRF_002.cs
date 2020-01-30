@@ -45,11 +45,11 @@ namespace Axxen
 
             #region 서브그리드뷰
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "팔렛트번호", "Pallet_No", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "등급", "Boxing_Grade_Code", true, 100, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "등급", "Grade_Code", true, 100, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "등급상세 코드", "Grade_Detail_Code", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "등급상세 명", "Grade_Detail_Name", true, 100, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "등급상세명", "Grade_Detail_Name", true, 100, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "수량", "In_Qty", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "ERP 업로드 여부", "Upload_Flag", true, 100, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "팔렛트 마감 여부", "Use_YN", true, 100, default, true);
             #endregion
 
             DataLoad(); // 그리드뷰
