@@ -33,13 +33,14 @@ namespace AxxenClient.Forms
             InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "등급상세", "Grade_Detail_Code", false);
             InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "사이즈", "Size_Code", false);
 
+            dtpTodate.Value = DateTime.Now;
+            dtpFromdate.Value = DateTime.Now.AddDays(-7);
         }
         private void GetDatas()
         {
             Pallet_MasterService service = new Pallet_MasterService();
             dgvPalletList.DataSource = service.GetAll();
         }
-
         private void dgvPalletList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex > -1)
@@ -101,6 +102,16 @@ namespace AxxenClient.Forms
                 }
                 else MessageBox.Show("팔레트 제거에 실패하였습니다.");
             }
+        }
+        /// <summary>
+        /// 팔레트 조회
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSearchByDate_Click(object sender, EventArgs e)
+        {
+            Pallet_MasterService service = new Pallet_MasterService();
+            dgvPalletList.DataSource = service.GetAllByDateTime(dtpFromdate.Value, dtpTodate.Value);
         }
     }
 }

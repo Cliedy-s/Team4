@@ -48,6 +48,45 @@ namespace DAC
             }
         }
         /// <summary>
+        /// 팔레트목록 날짜로 가져오기
+        /// </summary>
+        public List<PalletVO> GetAllByDateTime(DateTime fromdate, DateTime todate)
+        {
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText =
+ @"  SELECT pal.[Pallet_No]
+      ,pal.[WorkOrderNo]
+      ,pal.[Barcode_No]
+      ,pal.[Grade_Detail_Code]
+      ,bdm.[Grade_Detail_Name]
+      ,bdm.[Boxing_Grade_Code]
+      ,pal.[Size_Code]
+      ,pal.[In_Qty]
+      ,pal.[CurrentQty]
+      ,pal.[Use_YN]
+      ,wo.[Item_Code]
+      ,im.[Item_Name]
+  FROM [Pallet_Master] as pal
+        LEFT OUTER JOIN  [WorkOrder] as wo ON pal.[WorkorderNo] = wo.[Workorderno]
+        LEFT OUTER JOIN [Item_Master] as im ON im.[Item_Code] = wo.[Item_Code]
+		LEFT OUTER JOIN [BoxingGrade_Detail_Master] as bdm ON  bdm.[Use_YN] = 'Y' AND pal.Grade_Detail_Code = bdm.Boxing_Grade_Code
+  WHERE pal.[Use_YN] = 'Y'
+    AND Barcode_PublishDate BETWEEN @fromdate AND @todate;  ";
+                comm.CommandType = CommandType.Text;
+                comm.Parameters.AddWithValue("@fromdate", fromdate.Date);
+                comm.Parameters.AddWithValue("@todate", todate.Date.AddDays(1));
+
+                comm.Connection.Open();
+                SqlDataReader reader = comm.ExecuteReader();
+                List<PalletVO> list = Helper.DataReaderMapToList<PalletVO>(reader);
+                comm.Connection.Close();
+
+                return list;
+            }
+        }
+        /// <summary>
         /// 팔레트 정보 가져오기
         /// </summary>
         /// <param name="palletno"></param>
@@ -168,7 +207,7 @@ namespace DAC
   RIGHT OUTER JOIN [Goods_In_History] as gih ON gih.[Workorderno] = wo.[Workorderno]
   LEFT OUTER JOIN [Pallet_Master] as pal ON pal.[Pallet_No] = gih.[Pallet_No] AND pal.[Use_YN] = 'Y'
   LEFT OUTER JOIN [BoxingGrade_Detail_Master] as bdm ON bdm.[Grade_Detail_Code] = pal.[Grade_Detail_Code] AND bdm.[Use_YN] = 'Y'
-    WHERE In_YN = 'N';";
+    WHERE In_YN = 'Y';";
                 //WHERE gih.[In_Date] = CAST(GETDATE() AS DATE) AND gih.[In_YN] = 'Y'; ";
                 comm.CommandType = CommandType.Text;
 

@@ -35,11 +35,13 @@
             this.txtProjectName = new Axxen.CustomControls.ATextBox_Labeled();
             this.aDateTimePickerSearch1 = new Axxen.CustomControls.ADateTimePickerSearch();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.adgv = new Axxen.CustomControls.ADataGridView();
             this.aPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aSplitContainer1)).BeginInit();
             this.aSplitContainer1.Panel1.SuspendLayout();
             this.aSplitContainer1.Panel2.SuspendLayout();
             this.aSplitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.adgv)).BeginInit();
             this.SuspendLayout();
             // 
             // aPanel1
@@ -125,8 +127,8 @@
             // 
             // aDateTimePickerSearch1
             // 
-            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 1, 21, 15, 2, 49, 565);
-            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 1, 28, 13, 44, 54, 448);
+            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 1, 22, 20, 44, 4, 911);
+            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 1, 29, 20, 44, 4, 911);
             this.aDateTimePickerSearch1.ButtonText = "조회";
             this.aDateTimePickerSearch1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aDateTimePickerSearch1.Location = new System.Drawing.Point(112, 23);
@@ -136,19 +138,33 @@
             this.aDateTimePickerSearch1.TabIndex = 7;
             this.aDateTimePickerSearch1.btnDateTimeSearch_Click += new Axxen.CustomControls.ADateTimePickerSearch.SearchButtonClick(this.ADateTimePickerSearch1_btnDateTimeSearch_Click);
             // 
+            // adgv
+            // 
+            this.adgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.adgv.Location = new System.Drawing.Point(1116, 3);
+            this.adgv.Name = "adgv";
+            this.adgv.RowTemplate.Height = 23;
+            this.adgv.Size = new System.Drawing.Size(20, 14);
+            this.adgv.TabIndex = 8;
+            // 
             // PPS_SCH_001
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1148, 700);
+            this.Controls.Add(this.adgv);
             this.Name = "PPS_SCH_001";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PPS_SCH_001_FormClosed);
             this.Load += new System.EventHandler(this.PPS_SCH_001_Load);
+            this.Controls.SetChildIndex(this.aPanel1, 0);
+            this.Controls.SetChildIndex(this.aSplitContainer1, 0);
+            this.Controls.SetChildIndex(this.adgv, 0);
             this.aPanel1.ResumeLayout(false);
             this.aPanel1.PerformLayout();
             this.aSplitContainer1.Panel1.ResumeLayout(false);
             this.aSplitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.aSplitContainer1)).EndInit();
             this.aSplitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.adgv)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -162,5 +178,6 @@
         private CustomControls.ATextBox_Labeled txtPrNum;
         private CustomControls.ADateTimePickerSearch aDateTimePickerSearch1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private CustomControls.ADataGridView adgv;
     }
 }

@@ -1,6 +1,7 @@
 ﻿using DAC;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,14 @@ namespace Service
         {
             Pallet_MasterDAC dac = new Pallet_MasterDAC();
             return dac.GetAll();
+        }
+        /// <summary>
+        /// 팔레트목록 날짜로 가져오기
+        /// </summary>
+        public List<PalletVO> GetAllByDateTime(DateTime fromdate, DateTime todate)
+        {
+            Pallet_MasterDAC dac = new Pallet_MasterDAC();
+            return dac.GetAllByDateTime(fromdate, todate);
         }
         /// <summary>
         /// 금일 입고 팔레트 목록

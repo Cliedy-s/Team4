@@ -38,11 +38,14 @@
             this.txtItemName = new Axxen.CustomControls.ABigTextBox_Labeled();
             this.txtWorkOrderDate = new Axxen.CustomControls.ABigTextBox_Labeled();
             this.txtWorkOrderno = new Axxen.CustomControls.ABigTextBox_Labeled();
-            this.aBigTextBox_Searchable1 = new Axxen.CustomControls.ABigTextBox_Searchable();
-            this.aBigTextBox_Searchable2 = new Axxen.CustomControls.ABigTextBox_Searchable();
             this.aBigTextBox_Labeled1 = new Axxen.CustomControls.ABigTextBox_Labeled();
+            this.btnSearch = new Axxen.CustomControls.AButton();
+            this.txtSearch = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
+            this.aButton1 = new Axxen.CustomControls.AButton();
+            this.aBigTextBox_LabeledBigTextBox1 = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aDataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aDataGridView1)).BeginInit();
             this.aPanel6.SuspendLayout();
@@ -59,11 +62,11 @@
             // 
             // aButton2
             // 
-            this.aButton2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.aButton2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.aButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.aButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.aButton2.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aButton2.Location = new System.Drawing.Point(441, 339);
+            this.aButton2.Location = new System.Drawing.Point(388, 339);
             this.aButton2.Name = "aButton2";
             this.aButton2.Size = new System.Drawing.Size(306, 246);
             this.aButton2.TabIndex = 22;
@@ -75,11 +78,11 @@
             this.aDataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.aDataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.aDataGridView2.Location = new System.Drawing.Point(754, 247);
+            this.aDataGridView2.Location = new System.Drawing.Point(700, 247);
             this.aDataGridView2.Name = "aDataGridView2";
             this.aDataGridView2.RowHeadersWidth = 51;
             this.aDataGridView2.RowTemplate.Height = 23;
-            this.aDataGridView2.Size = new System.Drawing.Size(444, 338);
+            this.aDataGridView2.Size = new System.Drawing.Size(498, 338);
             this.aDataGridView2.TabIndex = 19;
             // 
             // aDataGridView1
@@ -92,13 +95,12 @@
             this.aDataGridView1.Name = "aDataGridView1";
             this.aDataGridView1.RowHeadersWidth = 51;
             this.aDataGridView1.RowTemplate.Height = 23;
-            this.aDataGridView1.Size = new System.Drawing.Size(427, 338);
+            this.aDataGridView1.Size = new System.Drawing.Size(374, 338);
             this.aDataGridView1.TabIndex = 17;
             // 
             // aPanel6
             // 
-            this.aPanel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.aPanel6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.aPanel6.Controls.Add(this.txtUnit);
             this.aPanel6.Controls.Add(this.txtWcCode);
             this.aPanel6.Controls.Add(this.txtQty);
@@ -188,40 +190,13 @@
             this.txtWorkOrderno.TextBoxText = "";
             this.txtWorkOrderno.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
-            // aBigTextBox_Searchable1
-            // 
-            this.aBigTextBox_Searchable1.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aBigTextBox_Searchable1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aBigTextBox_Searchable1.LabelText = "대차검색";
-            this.aBigTextBox_Searchable1.Location = new System.Drawing.Point(7, 205);
-            this.aBigTextBox_Searchable1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.aBigTextBox_Searchable1.Name = "aBigTextBox_Searchable1";
-            this.aBigTextBox_Searchable1.Size = new System.Drawing.Size(427, 42);
-            this.aBigTextBox_Searchable1.TabIndex = 25;
-            this.aBigTextBox_Searchable1.TextBoxText = "";
-            this.aBigTextBox_Searchable1.TextBoxType = Axxen.CustomControls.TextType.Normal;
-            // 
-            // aBigTextBox_Searchable2
-            // 
-            this.aBigTextBox_Searchable2.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aBigTextBox_Searchable2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.aBigTextBox_Searchable2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aBigTextBox_Searchable2.LabelText = "대차검색";
-            this.aBigTextBox_Searchable2.Location = new System.Drawing.Point(770, 205);
-            this.aBigTextBox_Searchable2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.aBigTextBox_Searchable2.Name = "aBigTextBox_Searchable2";
-            this.aBigTextBox_Searchable2.Size = new System.Drawing.Size(428, 42);
-            this.aBigTextBox_Searchable2.TabIndex = 26;
-            this.aBigTextBox_Searchable2.TextBoxText = "";
-            this.aBigTextBox_Searchable2.TextBoxType = Axxen.CustomControls.TextType.Normal;
-            // 
             // aBigTextBox_Labeled1
             // 
             this.aBigTextBox_Labeled1.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aBigTextBox_Labeled1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.aBigTextBox_Labeled1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.aBigTextBox_Labeled1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aBigTextBox_Labeled1.LabelText = "옮겨타기 수량";
-            this.aBigTextBox_Labeled1.Location = new System.Drawing.Point(441, 296);
+            this.aBigTextBox_Labeled1.Location = new System.Drawing.Point(388, 296);
             this.aBigTextBox_Labeled1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.aBigTextBox_Labeled1.Name = "aBigTextBox_Labeled1";
             this.aBigTextBox_Labeled1.Size = new System.Drawing.Size(306, 41);
@@ -229,13 +204,67 @@
             this.aBigTextBox_Labeled1.TextBoxText = "";
             this.aBigTextBox_Labeled1.TextBoxType = Axxen.CustomControls.TextType.Numeric;
             // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSearch.Location = new System.Drawing.Point(473, 211);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 29);
+            this.btnSearch.TabIndex = 32;
+            this.btnSearch.Text = "검색";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtSearch.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtSearch.LabelText = "대차검색";
+            this.txtSearch.Location = new System.Drawing.Point(7, 205);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(469, 42);
+            this.txtSearch.TabIndex = 31;
+            this.txtSearch.TextBoxText = "";
+            this.txtSearch.TextBoxType = Axxen.CustomControls.TextType.Normal;
+            // 
+            // aButton1
+            // 
+            this.aButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.aButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.aButton1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aButton1.Location = new System.Drawing.Point(1124, 211);
+            this.aButton1.Name = "aButton1";
+            this.aButton1.Size = new System.Drawing.Size(75, 29);
+            this.aButton1.TabIndex = 32;
+            this.aButton1.Text = "검색";
+            this.aButton1.UseVisualStyleBackColor = false;
+            // 
+            // aBigTextBox_LabeledBigTextBox1
+            // 
+            this.aBigTextBox_LabeledBigTextBox1.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aBigTextBox_LabeledBigTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.aBigTextBox_LabeledBigTextBox1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aBigTextBox_LabeledBigTextBox1.LabelText = "대차검색";
+            this.aBigTextBox_LabeledBigTextBox1.Location = new System.Drawing.Point(700, 205);
+            this.aBigTextBox_LabeledBigTextBox1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.aBigTextBox_LabeledBigTextBox1.Name = "aBigTextBox_LabeledBigTextBox1";
+            this.aBigTextBox_LabeledBigTextBox1.Size = new System.Drawing.Size(427, 42);
+            this.aBigTextBox_LabeledBigTextBox1.TabIndex = 31;
+            this.aBigTextBox_LabeledBigTextBox1.TextBoxText = "";
+            this.aBigTextBox_LabeledBigTextBox1.TextBoxType = Axxen.CustomControls.TextType.Normal;
+            // 
             // POP_PRD_007
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1210, 629);
+            this.Controls.Add(this.aButton1);
+            this.Controls.Add(this.aBigTextBox_LabeledBigTextBox1);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.aBigTextBox_Labeled1);
-            this.Controls.Add(this.aBigTextBox_Searchable2);
-            this.Controls.Add(this.aBigTextBox_Searchable1);
             this.Controls.Add(this.aButton2);
             this.Controls.Add(this.aDataGridView2);
             this.Controls.Add(this.aDataGridView1);
@@ -243,18 +272,21 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "POP_PRD_007";
             this.Controls.SetChildIndex(this.aPanel6, 0);
-            this.Controls.SetChildIndex(this.aPanel2, 0);
-            this.Controls.SetChildIndex(this.aPanel1, 0);
             this.Controls.SetChildIndex(this.aDataGridView1, 0);
             this.Controls.SetChildIndex(this.aDataGridView2, 0);
             this.Controls.SetChildIndex(this.aButton2, 0);
-            this.Controls.SetChildIndex(this.aBigTextBox_Searchable1, 0);
-            this.Controls.SetChildIndex(this.aBigTextBox_Searchable2, 0);
             this.Controls.SetChildIndex(this.aBigTextBox_Labeled1, 0);
+            this.Controls.SetChildIndex(this.txtSearch, 0);
+            this.Controls.SetChildIndex(this.btnSearch, 0);
+            this.Controls.SetChildIndex(this.aPanel2, 0);
+            this.Controls.SetChildIndex(this.aBigTextBox_LabeledBigTextBox1, 0);
+            this.Controls.SetChildIndex(this.aPanel1, 0);
+            this.Controls.SetChildIndex(this.aButton1, 0);
             this.aPanel1.ResumeLayout(false);
             this.aPanel1.PerformLayout();
             this.aPanel2.ResumeLayout(false);
             this.aPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aDataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aDataGridView1)).EndInit();
             this.aPanel6.ResumeLayout(false);
@@ -273,8 +305,10 @@
         private Axxen.CustomControls.ABigTextBox_Labeled txtItemName;
         private Axxen.CustomControls.ABigTextBox_Labeled txtWorkOrderDate;
         private Axxen.CustomControls.ABigTextBox_Labeled txtWorkOrderno;
-        private Axxen.CustomControls.ABigTextBox_Searchable aBigTextBox_Searchable1;
-        private Axxen.CustomControls.ABigTextBox_Searchable aBigTextBox_Searchable2;
         private Axxen.CustomControls.ABigTextBox_Labeled aBigTextBox_Labeled1;
+        private Axxen.CustomControls.AButton btnSearch;
+        private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox txtSearch;
+        private Axxen.CustomControls.AButton aButton1;
+        private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox aBigTextBox_LabeledBigTextBox1;
     }
 }

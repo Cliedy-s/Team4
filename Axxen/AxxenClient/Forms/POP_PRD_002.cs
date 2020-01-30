@@ -54,7 +54,7 @@ namespace AxxenClient.Forms
                 bool IsSuccess = service.InsertWorkOrder(
                     new VO.WorkOrderNewVO()
                     {
-                        Ins_Emp = GlobalUsage.username,
+                        Ins_Emp = GlobalUsage.Username,
                         Item_Code = txtItemSearch.CodeText,
                         Mat_LotNo = now.ToString("yyyyMMddhh"),
                         Plan_Qty = Convert.ToInt32(txtPlanQty.TextBoxText),
