@@ -131,8 +131,8 @@
             // 
             // aDateTimePickerSearch1
             // 
-            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 1, 23, 15, 6, 57, 132);
-            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 1, 30, 15, 6, 57, 132);
+            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 1, 23, 18, 9, 53, 58);
+            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 1, 30, 18, 9, 53, 58);
             this.aDateTimePickerSearch1.ButtonText = "조회";
             this.aDateTimePickerSearch1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aDateTimePickerSearch1.Location = new System.Drawing.Point(112, 23);
@@ -176,6 +176,7 @@
             this.tsbtnSave.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             this.tsbtnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.tsbtnSave.ToolTipText = "조회";
+            this.tsbtnSave.Click += new System.EventHandler(this.TsbtnSave_Click);
             // 
             // PPS_SCH_001
             // 

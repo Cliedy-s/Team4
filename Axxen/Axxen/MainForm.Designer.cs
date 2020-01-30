@@ -1228,7 +1228,6 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton tsbInsert;
-        private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private CustomControls.ALabel lblName;
         private CustomControls.ALabel aLabel1;
@@ -1246,5 +1245,6 @@
         private System.Windows.Forms.ToolStripButton tsbtnRefresh;
         private CustomControls.ATextBox txtnotice;
         public System.Windows.Forms.ToolStrip toolStrip1;
+        public System.Windows.Forms.TabControl tabControl2;
     }
 }
