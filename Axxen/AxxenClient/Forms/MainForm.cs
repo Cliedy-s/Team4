@@ -17,7 +17,12 @@ namespace AxxenClient.Forms
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            POP_PRD_001 childfrm = new POP_PRD_001(WorkType.Molding);
+            GlobalUsage.WoIniChar = "Y";
+            GlobalUsage.WorkType = WorkType.Load;
+            GlobalUsage.Username = "관리자";
+            GlobalUsage.WcCode = "WC1";
+
+            POP_PRD_001 childfrm = new POP_PRD_001();
             childfrm.WindowState = FormWindowState.Maximized;
             childfrm.MdiParent = this;
             childfrm.Show();

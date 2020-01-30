@@ -31,7 +31,6 @@
             this.aLabel1 = new Axxen.CustomControls.ALabel();
             this.aButton1 = new Axxen.CustomControls.AButton();
             this.aButton2 = new Axxen.CustomControls.AButton();
-            this.aButton3 = new Axxen.CustomControls.AButton();
             this.aDateTimePickerSearch1 = new Axxen.CustomControls.ADateTimePickerSearch();
             this.aPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aSplitContainer1)).BeginInit();
@@ -43,7 +42,6 @@
             // aPanel1
             // 
             this.aPanel1.Controls.Add(this.aDateTimePickerSearch1);
-            this.aPanel1.Controls.Add(this.aButton3);
             this.aPanel1.Controls.Add(this.aButton2);
             this.aPanel1.Controls.Add(this.aButton1);
             this.aPanel1.Controls.Add(this.aLabel1);
@@ -72,7 +70,7 @@
             // 
             this.aButton1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton1.Location = new System.Drawing.Point(749, 28);
+            this.aButton1.Location = new System.Drawing.Point(849, 28);
             this.aButton1.Name = "aButton1";
             this.aButton1.Size = new System.Drawing.Size(114, 23);
             this.aButton1.TabIndex = 10;
@@ -83,28 +81,17 @@
             // 
             this.aButton2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.aButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton2.Location = new System.Drawing.Point(869, 28);
+            this.aButton2.Location = new System.Drawing.Point(986, 28);
             this.aButton2.Name = "aButton2";
             this.aButton2.Size = new System.Drawing.Size(114, 23);
             this.aButton2.TabIndex = 10;
             this.aButton2.Text = "팔렛트 마감";
             this.aButton2.UseVisualStyleBackColor = false;
             // 
-            // aButton3
-            // 
-            this.aButton3.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.aButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton3.Location = new System.Drawing.Point(989, 28);
-            this.aButton3.Name = "aButton3";
-            this.aButton3.Size = new System.Drawing.Size(114, 23);
-            this.aButton3.TabIndex = 10;
-            this.aButton3.Text = "등급상세 수정";
-            this.aButton3.UseVisualStyleBackColor = false;
-            // 
             // aDateTimePickerSearch1
             // 
-            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 1, 13, 15, 17, 54, 900);
-            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 1, 20, 15, 17, 24, 365);
+            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 1, 22, 16, 53, 34, 199);
+            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 1, 29, 16, 53, 34, 199);
             this.aDateTimePickerSearch1.ButtonText = "조회";
             this.aDateTimePickerSearch1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aDateTimePickerSearch1.Location = new System.Drawing.Point(88, 23);
@@ -133,7 +120,6 @@
 
         #endregion
         private CustomControls.ALabel aLabel1;
-        private CustomControls.AButton aButton3;
         private CustomControls.AButton aButton2;
         private CustomControls.AButton aButton1;
         private CustomControls.ADateTimePickerSearch aDateTimePickerSearch1;

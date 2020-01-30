@@ -24,11 +24,11 @@ namespace AxxenClient.Forms
         }
         private void TopPanelSet()
         {
-            txtWorkOrderno.TextBoxText = GlobalUsage.workorderno;
+            txtWorkOrderno.TextBoxText = GlobalUsage.WorkOrderNo;
             txtItemName.TextBoxText = GlobalUsage.ItemName;
             txtQty.TextBoxText = GlobalUsage.Prd_Qty.ToString();
             txtUnit.TextBoxText = GlobalUsage.Prd_Unit.ToString();
-            txtWcCode.TextBoxText = GlobalUsage.woinichar;
+            txtWcCode.TextBoxText = GlobalUsage.WoIniChar;
             txtWorkOrderDate.TextBoxText = GlobalUsage.WorkorderDate.ToString();
         }
         private void InitControls()
@@ -59,7 +59,7 @@ namespace AxxenClient.Forms
                     {
                         Pallet_No = txtPalletNo.TextBoxText,
                         Barcode_No = txtPalletNo.TextBoxText + rand.Next(0, 36546).ToString("00000"),
-                        WorkOrderNo = GlobalUsage.workorderno,
+                        WorkOrderNo = GlobalUsage.WorkOrderNo,
                         CurrentQty = Convert.ToInt32(txtPrintPallet.TextBoxText),
                         Grade_Detail_Code = txtBoxingDegailGrade.TextBoxText,
                         Boxing_Grade_Code = txtBoxingGrade.TextBoxText,

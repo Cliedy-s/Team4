@@ -1012,6 +1012,7 @@
             this.tsbtnPrint.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             this.tsbtnPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.tsbtnPrint.ToolTipText = "조회";
+            this.tsbtnPrint.Click += new System.EventHandler(this.TsbtnPrint_Click);
             // 
             // tsbtnSave
             // 
@@ -1028,6 +1029,7 @@
             this.tsbtnSave.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             this.tsbtnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.tsbtnSave.ToolTipText = "조회";
+            this.tsbtnSave.Click += new System.EventHandler(this.TsbtnSave_Click);
             // 
             // tsbtnRefresh
             // 

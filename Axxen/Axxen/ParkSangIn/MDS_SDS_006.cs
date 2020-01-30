@@ -13,11 +13,14 @@ namespace Axxen
 {
     public partial class MDS_SDS_006 : Axxen.BaseForm
     {
-        ItemMaster_Service itemservice = new ItemMaster_Service();
+        ItemMaster_Service itemservice = new ItemMaster_Service(); //품목
         List<Item_MasterVO> Itemlist;
 
-        Inspect_Spec_MasterService inspectservice = new Inspect_Spec_MasterService();
-        List<InspectSpecVO> inspect;
+        Inspect_Spec_MasterService inspectservice = new Inspect_Spec_MasterService(); 
+        List<InspectSpecVO> inspect; //검사항목규격
+
+        ProcessService processService = new ProcessService(); //공정
+        List<Process_MasterVO> processlist;
 
         public MDS_SDS_006()
         {
@@ -67,6 +70,9 @@ namespace Axxen
 
                 inspect = new List<InspectSpecVO>();
                 inspect= inspectservice.GetAll();//품목규격전체
+
+                processlist = new List<Process_MasterVO>(); //공정 목록
+                processlist = processService.GetAllProcess_Master();
         
                 dgvinspect.DataSource = inspect.FindAll(item => item.Item_Code == dgvItem.SelectedRows[0].Cells[0].Value.ToString()); 
             }
@@ -88,7 +94,15 @@ namespace Axxen
             cbbItem.DisplayMember = "Value";
             cbbItem.ValueMember = "Key";
             cbbItem.DataSource = new BindingSource(cbblistname, null);
-            lblItem.Text = cbbItem.SelectedValue.ToString();   
+            lblItem.Text = cbbItem.SelectedValue.ToString();
+
+          
+            //공정 콤보
+            Dictionary<string, string> cbbprocesslist = processlist.ToDictionary(code => code.Process_code, name => name.Process_name);
+            cbbprocess.DisplayMember = "Value";
+            cbbprocess.ValueMember = "Key";
+            cbbprocess.DataSource = new BindingSource(cbbprocesslist, null);
+            cbbprocess.Text = cbbprocess.SelectedValue.ToString();
         }
         /// <summary>
         /// 수정
@@ -175,9 +189,15 @@ namespace Axxen
             frm.ShowDialog();
         }
 
-        private void BtnSearch_Click(object sender, EventArgs e)
-        {
 
+        private void CbbItem_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblItem.Text = cbbItem.SelectedValue.ToString();
+        }
+
+        private void Cbbprocess_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblprocess.Text = cbbprocess.SelectedValue.ToString();
         }
     }
 }
