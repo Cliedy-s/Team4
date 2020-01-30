@@ -79,8 +79,8 @@
             // 
             // aDateTimePickerSearch1
             // 
-            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 1, 21, 17, 30, 42, 902);
-            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 1, 28, 17, 30, 42, 902);
+            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 1, 23, 19, 56, 20, 851);
+            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 1, 30, 19, 56, 20, 851);
             this.aDateTimePickerSearch1.ButtonText = "조회";
             this.aDateTimePickerSearch1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aDateTimePickerSearch1.Location = new System.Drawing.Point(105, 23);
@@ -160,6 +160,7 @@
             this.dgvMainGrid.RowTemplate.Height = 23;
             this.dgvMainGrid.Size = new System.Drawing.Size(1124, 260);
             this.dgvMainGrid.TabIndex = 10;
+            this.dgvMainGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvMainGrid_CellDoubleClick);
             // 
             // chartTime
             // 
@@ -209,6 +210,8 @@
             this.Controls.Add(this.dgvMainGrid);
             this.Controls.Add(this.aPanel1);
             this.Name = "PPS_SCH_003";
+            this.Activated += new System.EventHandler(this.PPS_SCH_003_Activated);
+            this.Deactivate += new System.EventHandler(this.PPS_SCH_003_Deactivate);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PPS_SCH_003_FormClosed);
             this.Load += new System.EventHandler(this.PPS_SCH_003_Load);
             this.aPanel1.ResumeLayout(false);

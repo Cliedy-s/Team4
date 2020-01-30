@@ -6,11 +6,12 @@ using DevExpress.XtraReports.UI;
 
 namespace Axxen.sangyoung
 {
-    public partial class ProductionRequest : DevExpress.XtraReports.UI.XtraReport
+    public partial class BoxingGrade : DevExpress.XtraReports.UI.XtraReport
     {
-        public ProductionRequest()
+        public BoxingGrade()
         {
             InitializeComponent();
         }
+
     }
 }

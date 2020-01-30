@@ -34,18 +34,19 @@ namespace DAC
         }
 
         /// <summary>
-        /// 그룹 사용유무update 
+        /// 상세내용 사용유무update 
         /// </summary>
         /// <returns></returns>
-        public bool GetUpdateDef_Ma_Master(string groupcode, string used)
+        public bool GetUpdateDef_Ma_Master(string Def_Ma_Code, string used)
         {
-
+            try
+            {       
             using (SqlCommand comm = new SqlCommand())
             {
                 comm.Connection = new SqlConnection(Connstr);
                 comm.CommandText = "GetUpdateDef_Ma_Master";
                 comm.CommandType = CommandType.StoredProcedure;
-                comm.Parameters.AddWithValue("@Def_Ma_Code", groupcode);
+                comm.Parameters.AddWithValue("@Def_Mi_Code", Def_Ma_Code);
                 comm.Parameters.AddWithValue("@Use_YN", used);
 
                 comm.Connection.Open();
@@ -54,6 +55,12 @@ namespace DAC
 
                 if (result > 0)
                     return true;
+                return false;
+            }
+            }
+            catch (Exception)
+            {
+
                 return false;
             }
 

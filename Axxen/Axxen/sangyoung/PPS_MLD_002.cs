@@ -28,7 +28,7 @@ namespace Axxen
             MainGridLoad();
             molditemList = service.SelectMold_Item_Wc_Muse();
             DataLoad(molditemList);
-            ((MainForm)this.MdiParent).RefreshFormEvent += new EventHandler(this.RefreshFormShow);
+            
         }
 
         private void RefreshFormShow(object sender, EventArgs e)
@@ -58,9 +58,9 @@ namespace Axxen
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "작업장이름", "Wc_Name", true, 100);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형타수", "Mold_Shot_Cnt", true, 80);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형생산량", "Mold_Prd_Qty", true, 100);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형사용시작시간", "Use_Starttime", true, 110);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형사용종료시간", "Use_Endtime", true, 110);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형사용시간", "Use_time", true, 110);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형사용시작시간", "Use_Starttime", true, 140);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형사용종료시간", "Use_Endtime", true, 140);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형사용시간", "Use_time", true, 80);
         }
 
         /// <summary>
@@ -145,6 +145,16 @@ namespace Axxen
                               Use_time = string.Format("{0}분", list.Use_Endtime.Subtract(list.Use_Starttime).Minutes)
                           }).ToList();
             dgvMainGrid.DataSource = molist;
+        }
+
+        private void PPS_MLD_002_Activated(object sender, EventArgs e)
+        {
+            ((MainForm)this.MdiParent).RefreshFormEvent += new EventHandler(this.RefreshFormShow); //새로고침
+        }
+
+        private void PPS_MLD_002_Deactivate(object sender, EventArgs e)
+        {
+            ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow);
         }
     }
 }

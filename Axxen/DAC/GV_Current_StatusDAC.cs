@@ -16,35 +16,18 @@ namespace DAC
         /// </summary>
         /// <param name="woinichar"></param>
         /// <returns></returns>
-        public List<GVStatusVO> GetGVCurrentStatus(string woinichar)
+        public List<GVStatusVO> GetGVCurrentStatus(string woinichar = null, string ProcessName = null, string workorderno = null, string gvStatus = null, string gvName = null)
         {
             using (SqlCommand comm = new SqlCommand())
             {
                 comm.Connection = new SqlConnection(Connstr);
-                comm.CommandText =
- @"   SELECT gv.[GV_Code]
-      ,gv.[GV_Name]
-      ,gv.[GV_Group]
-      ,gv.[GV_Status]
-      ,im.[Item_Code]
-      ,im.[Item_Name]
-      ,wo.[Workorderno]
-      ,wo.[Prd_Qty]
-      ,wo.[Prd_Unit]
-	  ,wcm.[Wc_Code]
-      ,wcm.[Wo_Ini_Char]
-  FROM [WorkOrder] as wo
-  JOIN wcm.[WorkCenter_Master] as wcm ON wo.[Wc_Code] = wcm.[Wc_Code] AND wcm.[Use_YN] = 'Y'
-  JOIN [Item_Master] as im ON im.[Item_Code] = wo.[Item_Code]
-  JOIN (
-            SELECT GV_Code, Loading_time 
-            FROM [GV_Current_Status] as cs 
-            WHERE Loading_time = (SELECT MAX(Loading_time) FROM [GV_Current_Status] as cs2 WHERE cs.GV_Code =cs2.GV_Code GROUP BY cs2.GV_Code 
-            )) as gvcs ON gvcs.[Workorderno] = wo.[Workorderno]
-  JOIN [GV_Master] as gv ON gv.[GV_Code] = gvcs.[GV_Code]
-	WHERE wcm.[Wo_Ini_Char] = @woinichar ";
-                comm.CommandType = CommandType.Text;
+                comm.CommandText = @"GetGVCurrentStatus";
+                comm.CommandType = CommandType.StoredProcedure;
                 comm.Parameters.AddWithValue("@woinichar", woinichar);
+                comm.Parameters.AddWithValue("@ProcessName", ProcessName);
+                comm.Parameters.AddWithValue("@gvStatus", workorderno);
+                comm.Parameters.AddWithValue("@workorderno", gvStatus);
+                comm.Parameters.AddWithValue("@GVName", gvName);
 
                 comm.Connection.Open();
                 SqlDataReader reader = comm.ExecuteReader();
@@ -54,6 +37,10 @@ namespace DAC
                 return list;
             }
         }
+        //public List<GVStatusVO> GetEmptyGV()
+        //{
+
+        //}
         /// <summary>
         /// 요입현황
         /// </summary>

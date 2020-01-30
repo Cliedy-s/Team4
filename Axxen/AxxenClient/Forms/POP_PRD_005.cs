@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using VO;
 
 namespace AxxenClient.Forms
 {
@@ -40,18 +41,6 @@ namespace AxxenClient.Forms
             Pallet_MasterService service = new Pallet_MasterService();
             dgvInPallet.DataSource = service.GetPalletTodayIn();
         }
-        private void dgvInPallet_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex > -1)
-            {
-                txtPalletNo.TextBoxText = dgvInPallet.SelectedRows[0].Cells[1].Value.ToString();
-                txtWorkorderNo.TextBoxText = dgvInPallet.SelectedRows[0].Cells[0].Value.ToString();
-                txtWorkorderDate.TextBoxText = dgvInPallet.SelectedRows[0].Cells[7].Value.ToString();
-                txtItemCode.TextBoxText = dgvInPallet.SelectedRows[0].Cells[8].Value.ToString();
-                txtWcCode.TextBoxText = dgvInPallet.SelectedRows[0].Cells[9].Value.ToString();
-                txtBoxingGrade.TextBoxText = dgvInPallet.SelectedRows[0].Cells[3].Value == null ? "" : dgvInPallet.SelectedRows[0].Cells[3].Value.ToString();
-            }
-        }
         private void btnIn_Click(object sender, EventArgs e)
         {
             Pallet_MasterService service = new Pallet_MasterService();
@@ -60,7 +49,7 @@ namespace AxxenClient.Forms
                 MessageBox.Show("팔레트 번호를 확인해주세요");
                 return;
             }
-            bool isSuccess = service.InputPallet(GlobalUsage.username, txtWorkorderNo.TextBoxText, txtPalletNo.TextBoxText);
+            bool isSuccess = service.InputPallet(GlobalUsage.UserID, txtWorkorderNo.TextBoxText, txtPalletNo.TextBoxText);
             if (!isSuccess)
             {
                 MessageBox.Show("입고에 실패하였습니다.");
@@ -68,6 +57,19 @@ namespace AxxenClient.Forms
             }
             GetDatas();
 
+        }
+
+        private void txtPalletNo_searchclick(object sender, EventArgs e)
+        {
+            Pallet_MasterService service = new Pallet_MasterService();
+            PalletTodayInVO item = service.GetPalletInfo(txtPalletNo.TextBoxText);
+
+            txtPalletNo.TextBoxText = item.Pallet_No;
+            txtWorkorderNo.TextBoxText = item.Workorderno;
+            txtWorkorderDate.TextBoxText = item.Plan_Date.ToString("yyyy-MM-dd HH:mm:ss");
+            txtItemCode.TextBoxText = item.Item_Code;
+            txtWcCode.TextBoxText = item.Wc_Code;
+            txtBoxingGrade.TextBoxText = item.Boxing_Grade_Code;
         }
     }
 }

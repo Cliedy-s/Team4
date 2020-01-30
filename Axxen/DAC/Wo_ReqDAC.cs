@@ -11,7 +11,7 @@ namespace DAC
 {
     public class Wo_ReqDAC : DACParent
     {
-        public List<Wo_Req_ItemVO> GetAllWoReq() //PPS_SCH_001 그리드뷰 사용, POP_PRD_002
+        public List<Wo_Req_ItemVO> GetAllWoReq() //PPS_SCH_001 그리드뷰 사용
         {
             using (SqlCommand comm = new SqlCommand())
             {
@@ -39,7 +39,7 @@ namespace DAC
             using (SqlCommand comm = new SqlCommand())
             {
                 comm.Connection = new SqlConnection(Connstr);
-                comm.CommandText = "update Wo_Req set Req_Status ='마감' where Wo_Req_No = @Wo_Req_No ";
+                comm.CommandText = "update Wo_Req set Req_Status ='완료' where Wo_Req_No = @Wo_Req_No ";
                 comm.Parameters.AddWithValue("@Wo_Req_No", woNo);
 
                 comm.Connection.Open();
@@ -54,7 +54,7 @@ namespace DAC
         /// 작업지시정보조회
         /// </summary>
         /// <returns></returns>
-        public List<WorkOrder_J_WC_ItmeVO> GetWorkOrder()
+        public List<WorkOrder_WC_ItemVO> GetWorkOrder()
         {
             using (SqlCommand comm = new SqlCommand())
             {
@@ -65,7 +65,7 @@ namespace DAC
 
                 comm.Connection.Open();
                 SqlDataReader reader = comm.ExecuteReader();
-                List<WorkOrder_J_WC_ItmeVO> list = Helper.DataReaderMapToList<WorkOrder_J_WC_ItmeVO>(reader);
+                List<WorkOrder_WC_ItemVO> list = Helper.DataReaderMapToList<WorkOrder_WC_ItemVO>(reader);
                 comm.Connection.Close();
 
                 return list;
@@ -97,16 +97,16 @@ namespace DAC
         /// 작업장조회
         /// </summary>
         /// <returns></returns>
-        public List<WorkOrder_J_WC_ItmeVO> GetWorkCenterName()
+        public List<WorkOrder_WC_ItemVO> GetWorkCenterName()
         {
-            List<WorkOrder_J_WC_ItmeVO> list = null;
+            List<WorkOrder_WC_ItemVO> list = null;
             using (SqlConnection conn = new SqlConnection(Connstr))
             {
                 conn.Open();
                 string sql = "select distinct Wc_Name from WorkCenter_Master";
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
-                    list = Helper.DataReaderMapToList<WorkOrder_J_WC_ItmeVO>(cmd.ExecuteReader());
+                    list = Helper.DataReaderMapToList<WorkOrder_WC_ItemVO>(cmd.ExecuteReader());
                 }
                 conn.Close();
             }
@@ -145,7 +145,7 @@ namespace DAC
             using (SqlCommand comm = new SqlCommand())
             {
                 comm.Connection = new SqlConnection(Connstr);
-                comm.CommandText = "update WorkOrder set Wo_Status = '완료' where Workorderno = @Workorderno ";
+                comm.CommandText = "update WorkOrder set Wo_Status = '작업지시마감' where Workorderno = @Workorderno ";
                 comm.Parameters.AddWithValue("@Workorderno", wono);
 
                 comm.Connection.Open();
@@ -167,7 +167,7 @@ namespace DAC
             using (SqlCommand comm = new SqlCommand())
             {
                 comm.Connection = new SqlConnection(Connstr);
-                comm.CommandText = "update WorkOrder set Wo_Status = '진행중' where Workorderno = @Workorderno ";
+                comm.CommandText = "update WorkOrder set Wo_Status = '현장마감' where Workorderno = @Workorderno ";
                 comm.Parameters.AddWithValue("@Workorderno", wono);
 
                 comm.Connection.Open();
@@ -197,5 +197,29 @@ namespace DAC
             }
             return list;
         }
+
+        //pop
+        /// <summary>
+        /// 생산의뢰 목록 가져오기
+        /// </summary>
+        /// <returns></returns>
+        public List<Wo_Req_ItemUnitVO> GetAllWoReqUnit() 
+        {
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText =
+ @"select [Wo_Req_No], [Req_Seq], i.[Item_Code],i.Item_Name, i.Item_Unit, [Req_Qty], [Prd_Plan_Date], [Cust_Name], [Project_Name], [Sale_Emp], [Req_Status], w.Ins_Date
+from Wo_Req w Inner join Item_Master i on w.Item_Code = i.Item_Code order by Req_Seq DESC; ";
+
+                comm.Connection.Open();
+                SqlDataReader reader = comm.ExecuteReader();
+                List<Wo_Req_ItemUnitVO> list = Helper.DataReaderMapToList<Wo_Req_ItemUnitVO>(reader);
+                comm.Connection.Close();
+
+                return list;
+            }
+        }
+
     }
 }

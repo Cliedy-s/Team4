@@ -125,6 +125,9 @@ namespace Axxen
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
+
+            List<ConditionSpecVO> addlist = new List<ConditionSpecVO>();
+
             foreach (DataGridViewRow row in dgvCondition.Rows)
             {
 
@@ -145,17 +148,16 @@ namespace Axxen
                         Remark = row.Cells[9].Value.ToString(),
 
                     };
-                
-
-                    if (conditionservice.InsertConditionSpec(inspect))
-                    {
-                        MessageBox.Show("저장 완료", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("이미 등록된 검사항목입니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                    addlist.Add(inspect);              
                 }
+            }
+            if (conditionservice.InsertConditionSpec(addlist))
+            {
+                MessageBox.Show("저장 완료", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("저장 실패.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

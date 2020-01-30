@@ -73,6 +73,64 @@ namespace DAC
             }
         }
 
+        /// <summary>
+        /// 금형정보등록
+        /// </summary>
+        /// <param name="minfo">금형정보가담긴VO</param>
+        /// <returns>true/false</returns>
+        public bool InsertMold(MoldVO minfo)
+        {
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText = @"insert into Mold_Master( Mold_Code,Mold_Name,Mold_Group,Mold_Status,Cum_Shot_Cnt,Cum_Prd_Qty
+      ,Cum_Time,Guar_Shot_Cnt,Purchase_Amt,In_Date,Last_Setup_Time,Wc_Code,Remark
+      ,Use_YN,Ins_Date,Ins_Emp,Up_Date,Up_Emp) values ( @Mold_Code, @Mold_Name, @Mold_Group, @Mold_Status, @Cum_Shot_Cnt, @Cum_Prd_Qty
+      , @Cum_Time, @Guar_Shot_Cnt, @Purchase_Amt, @In_Date, @Last_Setup_Time, @Wc_Code,@Remark
+      , @Use_YN, SYSDATETIME(),'김상영', SYSDATETIME(),'김상영')";
+
+                comm.Parameters.AddWithValue("@Mold_Code", minfo.Mold_Code);
+                comm.Parameters.AddWithValue("@Mold_Name", minfo.Mold_Name);
+                comm.Parameters.AddWithValue("@Mold_Group", minfo.Mold_Group);
+                comm.Parameters.AddWithValue("@Mold_Status", minfo.Mold_Status);
+                comm.Parameters.AddWithValue("@Cum_Shot_Cnt", minfo.Cum_Shot_Cnt);
+                comm.Parameters.AddWithValue("@Cum_Prd_Qty", minfo.Cum_Prd_Qty);
+                comm.Parameters.AddWithValue("@Cum_Time", minfo.Cum_Time);
+                comm.Parameters.AddWithValue("@Guar_Shot_Cnt", minfo.Guar_Shot_Cnt);
+                comm.Parameters.AddWithValue("@Purchase_Amt", minfo.Purchase_Amt);
+                comm.Parameters.AddWithValue("@In_Date", minfo.In_Date);
+                comm.Parameters.AddWithValue("@Last_Setup_Time", minfo.Last_Setup_Time);
+                comm.Parameters.AddWithValue("@Wc_Code", minfo.Wc_Code);
+                comm.Parameters.AddWithValue("@Remark", minfo.Remark);
+                comm.Parameters.AddWithValue("@Use_YN", minfo.Use_YN);
+
+                comm.Connection.Open();
+                int result = comm.ExecuteNonQuery();
+                comm.Connection.Close();
+
+                return result > 0;
+            }
+        }
+
+        /// <summary>
+        /// 금형정보 등록에 필요한 작업장정보 조회
+        /// </summary>
+        /// <returns></returns>
+        /// 
+        public DataSet MoldWorkCenter()
+        {
+            DataSet ds = new DataSet();
+            using (SqlConnection conn = new SqlConnection(Connstr))
+            {
+                conn.Open();
+                string sql = "select Wc_Code, Wc_Name from WorkCenter_Master";
+                SqlDataAdapter da = new SqlDataAdapter(sql, conn);
+                da.Fill(ds, "Wc");
+                conn.Close();
+            }
+            return ds;
+        }
+
         //pop
         /// <summary>
         /// 장착 가능 금형 목록

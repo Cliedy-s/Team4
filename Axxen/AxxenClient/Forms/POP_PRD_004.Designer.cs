@@ -38,10 +38,10 @@
             this.btnPalletPrint = new Axxen.CustomControls.AButton();
             this.dgvPalletList = new Axxen.CustomControls.ADataGridView();
             this.aPanel5 = new Axxen.CustomControls.APanel();
-            this.aButton1 = new Axxen.CustomControls.AButton();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.btnSearchByDate = new Axxen.CustomControls.AButton();
+            this.dtpTodate = new System.Windows.Forms.DateTimePicker();
             this.aLabel3 = new Axxen.CustomControls.ALabel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpFromdate = new System.Windows.Forms.DateTimePicker();
             this.aLabel2 = new Axxen.CustomControls.ALabel();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
@@ -190,35 +190,36 @@
             // 
             // aPanel5
             // 
-            this.aPanel5.Controls.Add(this.aButton1);
-            this.aPanel5.Controls.Add(this.dateTimePicker2);
+            this.aPanel5.Controls.Add(this.btnSearchByDate);
+            this.aPanel5.Controls.Add(this.dtpTodate);
             this.aPanel5.Controls.Add(this.aLabel3);
-            this.aPanel5.Controls.Add(this.dateTimePicker1);
+            this.aPanel5.Controls.Add(this.dtpFromdate);
             this.aPanel5.Controls.Add(this.aLabel2);
             this.aPanel5.Location = new System.Drawing.Point(7, 105);
             this.aPanel5.Name = "aPanel5";
             this.aPanel5.Size = new System.Drawing.Size(636, 54);
             this.aPanel5.TabIndex = 8;
             // 
-            // aButton1
+            // btnSearchByDate
             // 
-            this.aButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton1.Location = new System.Drawing.Point(465, 17);
-            this.aButton1.Name = "aButton1";
-            this.aButton1.Size = new System.Drawing.Size(75, 24);
-            this.aButton1.TabIndex = 16;
-            this.aButton1.Text = "조회";
-            this.aButton1.UseVisualStyleBackColor = false;
+            this.btnSearchByDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.btnSearchByDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchByDate.Location = new System.Drawing.Point(465, 17);
+            this.btnSearchByDate.Name = "btnSearchByDate";
+            this.btnSearchByDate.Size = new System.Drawing.Size(75, 24);
+            this.btnSearchByDate.TabIndex = 16;
+            this.btnSearchByDate.Text = "조회";
+            this.btnSearchByDate.UseVisualStyleBackColor = false;
+            this.btnSearchByDate.Click += new System.EventHandler(this.btnSearchByDate_Click);
             // 
-            // dateTimePicker2
+            // dtpTodate
             // 
-            this.dateTimePicker2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(348, 14);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(111, 29);
-            this.dateTimePicker2.TabIndex = 15;
+            this.dtpTodate.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dtpTodate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpTodate.Location = new System.Drawing.Point(348, 14);
+            this.dtpTodate.Name = "dtpTodate";
+            this.dtpTodate.Size = new System.Drawing.Size(111, 29);
+            this.dtpTodate.TabIndex = 15;
             // 
             // aLabel3
             // 
@@ -230,14 +231,14 @@
             this.aLabel3.TabIndex = 14;
             this.aLabel3.Text = "~";
             // 
-            // dateTimePicker1
+            // dtpFromdate
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(172, 14);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(121, 29);
-            this.dateTimePicker1.TabIndex = 13;
+            this.dtpFromdate.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dtpFromdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFromdate.Location = new System.Drawing.Point(172, 14);
+            this.dtpFromdate.Name = "dtpFromdate";
+            this.dtpFromdate.Size = new System.Drawing.Size(121, 29);
+            this.dtpFromdate.TabIndex = 13;
             // 
             // aLabel2
             // 
@@ -285,15 +286,15 @@
         private Axxen.CustomControls.ADataGridView dgvPalletList;
         private Axxen.CustomControls.AButton btnDelete;
         private Axxen.CustomControls.APanel aPanel5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dtpTodate;
         private Axxen.CustomControls.ALabel aLabel3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpFromdate;
         private Axxen.CustomControls.ALabel aLabel2;
         private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox txtCurrentQty;
         private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox txtSizeCode;
         private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox txtBoxingDetailGrade;
         private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox txtBoxingGrade;
         private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox txtPalletNo;
-        private Axxen.CustomControls.AButton aButton1;
+        private Axxen.CustomControls.AButton btnSearchByDate;
     }
 }

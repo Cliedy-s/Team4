@@ -11,6 +11,7 @@ namespace VO
         public string Workorderno { get; set; }          // 작업지시번호
         public string Wc_Code { get; set; }               // 작업장번호
         public string Wo_Status { get; set; }             // 작업지시상태
+        public DateTime Plan_Date { get; set; }         // 계획 날짜
         public string User_ID { get; set; }                 // 사용자ID
         public string Item_Code { get; set; }             // 품목코드
         public string Item_Name { get; set; }            // 품목명
@@ -33,6 +34,7 @@ namespace VO
         public int Req_Seq { get; set; }                 // 의뢰순번
         public string Mat_LotNo { get; set; }             // 원자재Lot
         public string Ins_Emp { get; set; }                 // 최초입력자
+        public string Prd_Unit { get; set; }                // 생산 단위
     }
     public class WorkOrderAllVO
     {

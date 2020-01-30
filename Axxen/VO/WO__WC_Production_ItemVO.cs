@@ -23,4 +23,14 @@ namespace VO
         public int Out_Qty_Main { get; set; } //산출수량
         public int Prd_Qty { get; set; } //생산수량
     }
+
+    public class WO_WC_Time_ItemVO //SCH_003 Chart
+    {
+        public string Workorderno { get; set; } //작업지시번호
+        public DateTime Prd_Date { get; set; } //생산일자
+        public int Start_Hour { get; set; } //시작시간
+        public int In_Qty_Main { get; set; } //투입수량
+        public int Out_Qty_Main { get; set; } //산출수량
+        public int Prd_Qty { get; set; } //생산수량
+    }
 }

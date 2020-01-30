@@ -8,17 +8,17 @@ using VO;
 
 namespace Service
 {
-    class GV_Current_StatusService
+    public class GV_Current_StatusService
     {
         /// <summary>
         /// 대차 현황 
         /// </summary>
         /// <param name="woinichar"></param>
         /// <returns></returns>
-        public List<GVStatusVO> GetGVCurrentStatus(string woinichar)
+        public List<GVStatusVO> GetGVCurrentStatus(string woinichar = null, string ProcessName = null, string workorderno = null, string gvStatus = null, string gvName = null)
         {
             GV_Current_StatusDAC dac = new GV_Current_StatusDAC();
-            return dac.GetGVCurrentStatus(woinichar);
+            return dac.GetGVCurrentStatus( woinichar ,  ProcessName ,  workorderno ,  gvStatus ,  gvName );
         }
         /// <summary>
         /// 요입현황

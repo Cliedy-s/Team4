@@ -117,4 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="sqlDataSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="customSqlQuery1.Sql" xml:space="preserve">
+    <value>select [Wo_Req_No], [Req_Seq], i.[Item_Code],i.Item_Name, [Req_Qty], [Prd_Plan_Date], [Cust_Name], [Project_Name], [Sale_Emp], [Req_Status], w.Ins_Date
+from Wo_Req w Inner join Item_Master i on w.Item_Code=i.Item_Code order by Req_Seq</value>
+  </data>
+  <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlF1ZXJ5Ij48RmllbGQgTmFtZT0iV29fUmVxX05vIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlJlcV9TZXEiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJJdGVtX0NvZGUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iSXRlbV9OYW1lIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlJlcV9RdHkiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJQcmRfUGxhbl9EYXRlIiBUeXBlPSJEYXRlVGltZSIgLz48RmllbGQgTmFtZT0iQ3VzdF9OYW1lIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlByb2plY3RfTmFtZSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJTYWxlX0VtcCIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJSZXFfU3RhdHVzIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Ikluc19EYXRlIiBUeXBlPSJEYXRlVGltZSIgLz48L1ZpZXc+PC9EYXRhU2V0Pg==</value>
+  </data>
 </root>
