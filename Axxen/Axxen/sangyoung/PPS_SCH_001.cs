@@ -21,10 +21,12 @@ namespace Axxen
         List<Wo_Req_ItemVO> reqList;
         List<Wo_Req_ItemVO> reqSearchList;
         List<Wo_Req_ItemVO> reportList = new List<Wo_Req_ItemVO>();
-        List<WorkOrder_J_WC_ItmeVO> workList;
-        List<WorkOrder_J_WC_ItmeVO> addlist = new List<WorkOrder_J_WC_ItmeVO>();
+        List<WorkOrder_WC_ItemVO> workList;
+        List<WorkOrder_WC_ItemVO> addlist = new List<WorkOrder_WC_ItemVO>();
         Wo_ReqService service = new Wo_ReqService();
-        bool bFlag = false;
+        ProductionRequest rpt = new ProductionRequest();
+        bool chk = false;
+        bool pnt = false;
 
         public PPS_SCH_001()
         {
@@ -41,21 +43,18 @@ namespace Axxen
             dgvMainGrid.DataSource = reqList;
 
             dgvMainGrid.CellContentClick += DgvMainGrid_CellContentClick;
-            //dgvMainGrid.CellDoubleClick += DgvMainGrid_CellContentClick;
-
-            ((MainForm)this.MdiParent).InsertFormEvent += new System.EventHandler(this.InsertFormShow);//입력이벤트 등록
-            ((MainForm)this.MdiParent).RefreshFormEvent += new EventHandler(this.RefreshFormShow);
-            //((MainForm)this.MdiParent).
         }
 
         private void InsertFormShow(object sender, EventArgs e)
         {
             Wo_Req_ItemVO woitem = new Wo_Req_ItemVO();
+            woitem.Req_Seq = Convert.ToInt32(dgvMainGrid[1, dgvMainGrid.CurrentRow.Index].Value);
+            woitem.Wo_Req_No = dgvMainGrid[2, dgvMainGrid.CurrentRow.Index].Value.ToString();
             woitem.Item_Code = dgvMainGrid[3, dgvMainGrid.CurrentRow.Index].Value.ToString();
             woitem.Item_Name = dgvMainGrid[4, dgvMainGrid.CurrentRow.Index].Value.ToString();
             woitem.Req_Qty = Convert.ToInt32(dgvMainGrid[5, dgvMainGrid.CurrentRow.Index].Value);
 
-            PPS_SCH_001_Insert frm = new PPS_SCH_001_Insert(woitem.Item_Code, woitem.Item_Name, woitem.Req_Qty);
+            PPS_SCH_001_Insert frm = new PPS_SCH_001_Insert(woitem.Req_Seq, woitem.Wo_Req_No, woitem.Item_Code, woitem.Item_Name, woitem.Req_Qty);
             frm.StartPosition = FormStartPosition.CenterScreen;
             frm.Show();
           
@@ -112,13 +111,11 @@ namespace Axxen
         private void SubDataLoad()
         {
             InitControlUtil.SetDGVDesign(dgvSubGrid);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "순번", "Num", false, 110);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "순번", "Wc_Code", false, 110);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "생산의뢰순번", "Req_Seq", true, 120, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "생산의뢰번호", "Wo_Req_No", true, 120, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "작업지시상태", "Wo_Status", true, 120, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "작업지시번호", "Workorderno", true, 110, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "생산일자", "Prd_Date", true, 110, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "작업지시일자", "Prd_Date", true, 110, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "품목코드", "Item_Code", true, 110, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "품목명", "Item_Name", true, 120, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "작업장명", "Wc_Name", true, 120, default, true);
@@ -223,14 +220,24 @@ namespace Axxen
                         {
                             addlist.Add(item);
                         }
-                        dgvSubGrid.DataSource = null;
-                        dgvSubGrid.DataSource = addlist;
-
+                        if(!chk)
+                        {
+                            dgvSubGrid.DataSource = null;
+                            dgvSubGrid.DataSource = addlist;
+                            chk = true;
+                        }
+                        else
+                        {
+                            dgvSubGrid.DataSource = null;
+                            SubDataLoad();
+                            dgvSubGrid.DataSource = addlist;
+                        }
                     }
                     else
                     {
                         addlist.RemoveAll(x => x.Wo_Req_No.Contains(reqno));
                         dgvSubGrid.DataSource = null;
+                        SubDataLoad();
                         dgvSubGrid.DataSource = addlist;
                     }
                 }
@@ -273,10 +280,37 @@ namespace Axxen
                 }
             }
             dt = ListToDataTable.ToDataTable(reportList);
-            ProductionRequest rpt = new ProductionRequest();
             rpt.DataSource = dt;
-            PPS_SCH_001_Report frm = new PPS_SCH_001_Report(rpt);
+            PPS_SCH_001_Report frm = new PPS_SCH_001_Report();
+            pnt = true;
+            frm.documentViewer1.DocumentSource = rpt;
+            frm.MdiParent = MdiParent;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
             reportList.Clear();
         }
+
+        private void PPS_SCH_001_Activated(object sender, EventArgs e)
+        {
+            ((MainForm)this.MdiParent).InsertFormEvent += new System.EventHandler(this.InsertFormShow); //추가
+            ((MainForm)this.MdiParent).RefreshFormEvent += new EventHandler(this.RefreshFormShow); //새로고침
+            ToolStripManager.Merge(toolStrip1, ((MainForm)this.MdiParent).toolStrip1); //저장버튼 추가
+            ((MainForm)this.MdiParent).MySaveEvent += new EventHandler(this.SaveFormShow); //저장
+            //((MainForm)this.MdiParent).MyPrintEvent += new EventHandler(this.PrintFormShow); //프린트
+        }
+
+        private void PPS_SCH_001_Deactivate(object sender, EventArgs e)
+        {
+            ((MainForm)this.MdiParent).InsertFormEvent -= new System.EventHandler(this.InsertFormShow); 
+            ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow); 
+            ToolStripManager.RevertMerge(((MainForm)this.MdiParent).toolStrip1, toolStrip1); //저장버튼 제거
+            //((MainForm)this.MdiParent).MyPrintEvent -= new EventHandler(this.PrintFormShow); 
+        }
+
+        private void SaveFormShow(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }
