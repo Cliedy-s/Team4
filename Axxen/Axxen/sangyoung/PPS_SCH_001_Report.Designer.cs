@@ -28,24 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.documentViewer1 = new DevExpress.XtraPrinting.Preview.DocumentViewer();
             this.SuspendLayout();
-            // 
-            // documentViewer1
-            // 
-            this.documentViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.documentViewer1.IsMetric = true;
-            this.documentViewer1.Location = new System.Drawing.Point(0, 0);
-            this.documentViewer1.Name = "documentViewer1";
-            this.documentViewer1.Size = new System.Drawing.Size(800, 450);
-            this.documentViewer1.TabIndex = 0;
             // 
             // PPS_SCH_001_Report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.documentViewer1);
             this.Name = "PPS_SCH_001_Report";
             this.Text = "PPS_SCH_001_Report";
             this.ResumeLayout(false);
@@ -53,7 +42,5 @@
         }
 
         #endregion
-
-        public DevExpress.XtraPrinting.Preview.DocumentViewer documentViewer1;
     }
 }
