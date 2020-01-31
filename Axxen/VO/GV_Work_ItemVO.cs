@@ -10,6 +10,7 @@ namespace VO
     {
         public string GV_Code { get; set; }//대차코드 
         public string GV_Name { get; set; } //대차명
+        public string GV_Group { get; set; } //대차그룹명
         public string Workorderno { get; set; } //작업지시번호
         public string Item_Code { get; set; } //품목코드 
         public string Item_Name { get; set; } //품목명 

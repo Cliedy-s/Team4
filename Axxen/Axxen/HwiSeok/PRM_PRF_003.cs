@@ -43,14 +43,25 @@ namespace Axxen
 
         }
 
-        private void RefreshFormShow(object sender, EventArgs e)
-        {
-            igh = imservice.GetworkOrder_Item_Goods();
-            dgvMainGrid.DataSource = igh;
-            aTextBox_FindNameByCode1.txtCodeText = "";
-            aTextBox_FindNameByCode1.txtNameText = "";
-            aDateTimePickerSearch2.ADateTimePickerValue1 = Convert.ToDateTime(DateTime.Now.AddDays(-7).ToShortDateString());
-            aDateTimePickerSearch2.ADateTimePickerValue2 = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+        private void RefreshFormShow(object sender, EventArgs e) //새로고침
+        {          
+            try
+            {
+                if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
+                {
+                    igh = imservice.GetworkOrder_Item_Goods();
+                    dgvMainGrid.DataSource = igh;
+                    aTextBox_FindNameByCode1.txtCodeText = "";
+                    aTextBox_FindNameByCode1.txtNameText = "";
+                    aDateTimePickerSearch2.ADateTimePickerValue1 = Convert.ToDateTime(DateTime.Now.AddDays(-7).ToShortDateString());
+                    aDateTimePickerSearch2.ADateTimePickerValue2 = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+                Program.Log.WriteError(err.Message);
+            }
         }
 
         private void aDateTimePickerSearch2_btnDateTimeSearch_Click(object sender, EventArgs args) // 날짜별 조회
@@ -67,6 +78,11 @@ namespace Axxen
                        where date.Item_Code == aTextBox_FindNameByCode1.txtCodeText
                        select date).ToList();
             dgvMainGrid.DataSource = ighList;
+        }
+
+        private void PRM_PRF_003_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ((MainForm)this.MdiParent).RefreshFormEvent -= new System.EventHandler(this.RefreshFormShow); // 새로고침
         }
     }
 }

@@ -16,6 +16,7 @@ namespace Axxen
     public partial class PPS_SCH_003 : Axxen.FreeForm
     {
         List<WO_WC_Production_ItemVO> wowclist;
+        List<WO_WC_Production_ItemVO> wowcSearchlist;
         List<WorkOrderVO> statuslist;
         Wo_ReqService service = new Wo_ReqService();
         WorkOrder_Service woservice = new WorkOrder_Service();
@@ -39,6 +40,10 @@ namespace Axxen
             dgvMainGrid.DataSource = wowclist;
             cboStatus.SelectedIndex = 0;
             chartDate.Series.Clear();
+            dotProcess.txtCodeText = "";
+            dotProcess.txtNameText = "";
+            dotWorkCenter.txtCodeText = "";
+            dotWorkCenter.txtNameText = "";
         }
 
         private void ComboBinding()
@@ -70,6 +75,7 @@ namespace Axxen
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "투입수량", "In_Qty_Main", true, 100);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "산출수량", "Out_Qty_Main", true, 100);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "생산수량", "Prd_Qty", true, 100);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "공정코드", "Process_Code", false, 100);
         }
 
         /// <summary>
@@ -139,14 +145,33 @@ namespace Axxen
 
         private void DotWorkCenter_DotDotDotFormClosing(object sender, CustomControls.SearchFormClosingArgs args)
         {
+
+            string pcode = dotProcess.txtCodeText;
             string wName = dotWorkCenter.txtNameText;
-            if(wName.Length > 0)
+
+            if (wName.Length > 0 && pcode.Length <= 0)
             {
-                var wlist = (from list in wowclist
-                             where list.Wc_Name.Contains(wName)
-                             select list).ToList();
-                dgvMainGrid.DataSource = wlist;
+                wowcSearchlist = (from list in wowclist
+                                  where list.Wc_Name.Contains(wName)
+                                select list).ToList();
             }
+            else if (pcode.Length > 0 && wName.Length <= 0)
+            {
+                wowcSearchlist = (from list in wowclist
+                                  where list.Process_Code.Contains(pcode)
+                                select list).ToList();
+            }
+            else if (wName.Length > 0 && pcode.Length > 0)
+            {
+                wowcSearchlist = (from list in wowcSearchlist
+                                  where list.Wc_Name.Contains(wName) && list.Process_Code.Contains(pcode)
+                                select list).ToList();
+                dotProcess.txtCodeText = "";
+                dotProcess.txtNameText = "";
+                dotWorkCenter.txtCodeText = "";
+                dotWorkCenter.txtNameText = "";
+            }
+            dgvMainGrid.DataSource = wowcSearchlist;
         }
 
         private void PPS_SCH_003_Activated(object sender, EventArgs e)

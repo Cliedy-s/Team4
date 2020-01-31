@@ -136,6 +136,12 @@
     <Compile Include="HwiSeok\PRM_PRF_008.Designer.cs">
       <DependentUpon>PRM_PRF_008.cs</DependentUpon>
     </Compile>
+    <Compile Include="HwiSeok\PRM_PRF_008_1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HwiSeok\PRM_PRF_008_1.Designer.cs">
+      <DependentUpon>PRM_PRF_008_1.cs</DependentUpon>
+    </Compile>
     <Compile Include="HwiSeok\PRM_PRF_009.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -564,6 +570,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HwiSeok\PRM_PRF_008.resx">
       <DependentUpon>PRM_PRF_008.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HwiSeok\PRM_PRF_008_1.resx">
+      <DependentUpon>PRM_PRF_008_1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HwiSeok\PRM_PRF_009.resx">
       <DependentUpon>PRM_PRF_009.cs</DependentUpon>

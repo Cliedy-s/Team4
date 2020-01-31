@@ -190,7 +190,7 @@ namespace DAC
                             cmdchk.Parameters.Clear();
                         }
                     }
-                    //-------------------------------------------------------------
+                    //------------------------------------------------------------- 
                     string Stsql = @"WITH PRM_PRF_002(Num,Prd_Date,Wo_Status,Workorderno,Item_Code,Item_Name,Wc_Name,Process_name,In_Qty_Main,Out_Qty_Main,Prd_Qty)
                             AS(select ROW_NUMBER() OVER(ORDER BY wo.Wo_Status) Num, Prd_Date, wo.Wo_Status, wo.Workorderno, wo.Item_Code, Item_Name, Wc_Name, Process_name, wo.In_Qty_Main, wo.Out_Qty_Main, wo.Prd_Qty
                             from WorkOrder wo INNER JOIN Item_Master im  ON wo.Item_Code = im.Item_Code
@@ -228,7 +228,66 @@ namespace DAC
                 }
             }
         }
-        
+
+        /// <summary>
+        /// 생산의뢰에 따른 작업지시생성
+        /// </summary>
+        /// <param name="order"></param>
+        /// <returns></returns>
+        public bool InsertPPSWorkorder(WorkOrderAllVO order)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(Connstr);
+                cmd.CommandText = "insert into WorkOrder(Req_Seq,Wo_Req_No,Workorderno,Wo_Status,Wc_Code,Remark,Plan_Qty,Out_Qty_Main,In_Qty_Main,Prd_Qty,Prd_Date,Item_Code,Plan_Unit) values(@Req_Seq,@Wo_Req_No,@Workorderno,@Wo_Status,@Wc_Code,@Remark,@Plan_Qty,@Out_Qty_Main,@In_Qty_Main,@Prd_Qty,@Prd_Date,@Item_Code,@Plan_Unit)";
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@Req_Seq", order.Req_Seq);
+                cmd.Parameters.AddWithValue("@Wo_Req_No", order.Wo_Req_No);
+                cmd.Parameters.AddWithValue("@Workorderno", order.Workorderno);
+                cmd.Parameters.AddWithValue("@Wo_Status", order.Wo_Status);
+                cmd.Parameters.AddWithValue("@Wc_Code", order.Wc_Code);
+                cmd.Parameters.AddWithValue("@Remark", order.Remark);
+                cmd.Parameters.AddWithValue("@Plan_Qty", order.Plan_Qty);
+                cmd.Parameters.AddWithValue("@Out_Qty_Main", order.Out_Qty_Main);
+                cmd.Parameters.AddWithValue("@In_Qty_Main", order.In_Qty_Main);
+                cmd.Parameters.AddWithValue("@Prd_Qty", order.Prd_Qty);
+                cmd.Parameters.AddWithValue("@Prd_Date", order.Prd_Date);
+                cmd.Parameters.AddWithValue("@Item_Code", order.Item_Code);
+                cmd.Parameters.AddWithValue("@Plan_Unit", order.Plan_Unit);
+
+                cmd.Connection.Open();
+                int result = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+
+                return result > 0;
+            }
+        }
+
+        /// <summary>
+        /// 작업지시목록에서 선택한 작업의 계획변경
+        /// </summary>
+        /// <param name="order"></param>
+        /// <returns></returns>
+        public bool UpdatePPSWorkorder(WorkOrderAllVO order)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(Connstr);
+                cmd.CommandText = "update WorkOrder set Plan_Qty=@Plan_Qty, Plan_Date=@Plan_Date, Plan_Unit=@Plan_Unit where Workorderno = @Workorderno";
+                cmd.CommandType = CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@Workorderno", order.Workorderno);
+                cmd.Parameters.AddWithValue("@Plan_Qty", order.Plan_Qty);
+                cmd.Parameters.AddWithValue("@Plan_Date", order.Plan_Date);
+                cmd.Parameters.AddWithValue("@Plan_Unit", order.Plan_Unit);
+
+                cmd.Connection.Open();
+                int result = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+
+                return result > 0;
+            }
+        }
         //pop
         /// <summary>
         /// 작업장으로 작업지시현황 가져오기

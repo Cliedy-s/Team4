@@ -38,14 +38,25 @@ namespace Axxen
             dgvMainGrid.DataSource = guho;
         }
 
-        private void RefreshFormShow(object sender, EventArgs e)
-        {
-            guho = ghservice.GetAllGasUse_History();
-            dgvMainGrid.DataSource = guho;
-            aTextBox_FindNameByCode1.txtCodeText = "";
-            aTextBox_FindNameByCode1.txtNameText = "";
-            aDateTimePickerSearch1.ADateTimePickerValue1 = Convert.ToDateTime(DateTime.Now.AddDays(-7).ToShortDateString());
-            aDateTimePickerSearch1.ADateTimePickerValue2 = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+        private void RefreshFormShow(object sender, EventArgs e) //새로고침
+        {         
+            try
+            {
+                if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
+                {
+                    guho = ghservice.GetAllGasUse_History();
+                    dgvMainGrid.DataSource = guho;
+                    aTextBox_FindNameByCode1.txtCodeText = "";
+                    aTextBox_FindNameByCode1.txtNameText = "";
+                    aDateTimePickerSearch1.ADateTimePickerValue1 = Convert.ToDateTime(DateTime.Now.AddDays(-7).ToShortDateString());
+                    aDateTimePickerSearch1.ADateTimePickerValue2 = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+                Program.Log.WriteError(err.Message);
+            }
         }
 
         private void aDateTimePickerSearch1_btnDateTimeSearch_Click(object sender, EventArgs args) // 날짜별 조회
@@ -60,6 +71,11 @@ namespace Axxen
                         where date.Wc_Name == aTextBox_FindNameByCode1.txtNameText
                        select date).ToList();
             dgvMainGrid.DataSource = guhoList;
+        }
+
+        private void PRM_PRF_004_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ((MainForm)this.MdiParent).RefreshFormEvent -= new System.EventHandler(this.RefreshFormShow); // 새로고침
         }
     }
 }

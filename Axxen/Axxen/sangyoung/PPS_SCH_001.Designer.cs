@@ -56,7 +56,7 @@
             this.aPanel1.Controls.Add(this.aLabel1);
             this.aPanel1.Controls.Add(this.btnPrFinish);
             this.aPanel1.Controls.Add(this.btnPrDown);
-            this.aPanel1.Location = new System.Drawing.Point(15, 41);
+            this.aPanel1.Location = new System.Drawing.Point(15, 17);
             this.aPanel1.Size = new System.Drawing.Size(1213, 74);
             // 
             // aSplitContainer1
@@ -135,8 +135,8 @@
             // 
             // aDateTimePickerSearch1
             // 
-            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 1, 23, 21, 29, 2, 529);
-            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 1, 30, 21, 29, 2, 529);
+            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 1, 24, 9, 22, 17, 344);
+            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 1, 31, 9, 22, 17, 344);
             this.aDateTimePickerSearch1.ButtonText = "조회";
             this.aDateTimePickerSearch1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aDateTimePickerSearch1.Location = new System.Drawing.Point(112, 23);

@@ -50,10 +50,37 @@ namespace Service
             return dac.UpdateWo_Status(list);
         }
 
-        public List<WO_WC_Time_ItemVO> GetTimeWork(string wono)
+        /// <summary>
+        /// PPS_SCH_003 시간대별 실적조회
+        /// </summary>
+        /// <param name="wono">조회하고싶은작업지시번호</param>
+        /// <returns></returns>
+        public List<WO_WC_Time_ItemVO> GetTimeWork(string wono) 
         {
             WorkOrderDAC dac = new WorkOrderDAC();
             return dac.GetTimeWork(wono);
+        }
+
+        /// <summary>
+        /// PPS_SCH_001 작업지시생성하기
+        /// </summary>
+        /// <param name="order">작업지시입력정보VO</param>
+        /// <returns></returns>
+        public bool InsertPPSWorkorder(WorkOrderAllVO order)
+        {
+            WorkOrderDAC dac = new WorkOrderDAC();
+            return dac.InsertPPSWorkorder(order);
+        }
+
+        /// <summary>
+        /// PPS_SCH_002 작업지시계획변경
+        /// </summary>
+        /// <param name="order"></param>
+        /// <returns></returns>
+        public bool UpdatePPSWorkorder(WorkOrderAllVO order)
+        {
+            WorkOrderDAC dac = new WorkOrderDAC();
+            return dac.UpdatePPSWorkorder(order);
         }
 
         //pop

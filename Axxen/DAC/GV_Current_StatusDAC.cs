@@ -14,19 +14,19 @@ namespace DAC
         /// <summary>
         /// 대차 현황 
         /// </summary>
-        /// <param name="woinichar"></param>
+        /// <param name="wccode"></param>
         /// <returns></returns>
-        public List<GVStatusVO> GetGVCurrentStatus(string woinichar = null, string ProcessName = null, string workorderno = null, string gvStatus = null, string gvName = null)
+        public List<GVStatusVO> GetGVCurrentStatus(string wccode = null, string ProcessName = null, string workorderno = null, string gvStatus = null, string gvName = null)
         {
             using (SqlCommand comm = new SqlCommand())
             {
                 comm.Connection = new SqlConnection(Connstr);
                 comm.CommandText = @"GetGVCurrentStatus";
                 comm.CommandType = CommandType.StoredProcedure;
-                comm.Parameters.AddWithValue("@woinichar", woinichar);
+                comm.Parameters.AddWithValue("@wccode", wccode);
                 comm.Parameters.AddWithValue("@ProcessName", ProcessName);
-                comm.Parameters.AddWithValue("@gvStatus", workorderno);
-                comm.Parameters.AddWithValue("@workorderno", gvStatus);
+                comm.Parameters.AddWithValue("@gvStatus", gvStatus);
+                comm.Parameters.AddWithValue("@workorderno", workorderno);
                 comm.Parameters.AddWithValue("@GVName", gvName);
 
                 comm.Connection.Open();

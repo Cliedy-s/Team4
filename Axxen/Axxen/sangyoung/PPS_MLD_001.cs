@@ -57,7 +57,7 @@ namespace Axxen
             cboWorkCenter.ValueMember = "Wc_Code";
             cboWorkCenter.DataSource = ds.Tables["Wc"];
             cboWorkCenter.Text = "==선택==";
-            cboWorkCenter.SelectedIndex = 0;
+            //cboWorkCenter.SelectedIndex = 0;
         }
         
         public void InsertFormShow(object sender, EventArgs e)

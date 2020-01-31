@@ -11,6 +11,14 @@ namespace Service
     public class GV_HistoryService
     {
         /// <summary>
+        /// 로딩
+        /// </summary>
+        public void UpdateLoad()
+        {
+            GV_HistoryDAC dac = new GV_HistoryDAC();
+            dac.UpdateLoad();
+        }
+        /// <summary>
         /// 언로딩
         /// </summary>
         public bool UpdateUnload(string username, string gvcode, string wccode, int qty)
@@ -26,5 +34,6 @@ namespace Service
             GV_HistoryDAC dac = new GV_HistoryDAC();
             return dac.UpdateClearGV(item);
         }
+
     }
 }
