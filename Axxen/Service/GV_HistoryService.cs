@@ -16,7 +16,7 @@ namespace Service
         public void UpdateLoad()
         {
             GV_HistoryDAC dac = new GV_HistoryDAC();
-            return dac.UpdateLoad();
+            dac.UpdateLoad();
         }
         /// <summary>
         /// 언로딩
