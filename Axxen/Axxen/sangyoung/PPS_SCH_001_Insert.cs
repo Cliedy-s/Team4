@@ -14,7 +14,7 @@ namespace Axxen.sangyoung
 {
     public partial class PPS_SCH_001_Insert : Form
     {
-        List<WorkOrder_WC_ItemVO> namelist = new List<WorkOrder_WC_ItemVO>();
+        List<WorkOrder_J_WC_ItmeVO> namelist = new List<WorkOrder_J_WC_ItmeVO>();
         string code = string.Empty;
         string name = string.Empty;
         string qty = string.Empty;
@@ -39,6 +39,7 @@ namespace Axxen.sangyoung
             Wo_ReqService service = new Wo_ReqService();
             namelist = service.GetWorkCenterName();
             InitControl();
+            
         }
 
         private void InitControl()
@@ -46,7 +47,6 @@ namespace Axxen.sangyoung
             txtInQty.Text = "0";
             txtPrdQty.Text = "0";
             txtOutQty.Text = "0";
-            txtWoStatus.Text = "대기";
 
             txtSeq.Text = seq;
             txtReqNo.Text = reqno;
@@ -62,16 +62,12 @@ namespace Axxen.sangyoung
             txtInQty.Enabled = false;
             txtOutQty.Enabled = false;
             txtPrdQty.Enabled = false;
-            txtWoStatus.Enabled = false;
-
-            cboWorkCenter.Items.Add("==선택==");
-            foreach (var name in namelist)
-            {
-                cboWorkCenter.Items.Add(name.Wc_Name);
-            };
-            cboWorkCenter.SelectedIndex = 0;
+           
+            cboWorkCenter.ValueMember = "Wc_Code";
+            cboWorkCenter.DisplayMember = "Wc_Name";
+            cboWorkCenter.DataSource = namelist;
+            cboWorkCenter.Text = "==선택==";
         }
-
 
         private void BtnOK_Click(object sender, EventArgs e)
         {
@@ -79,8 +75,8 @@ namespace Axxen.sangyoung
             work.Req_Seq = Convert.ToInt32(txtSeq.Text);
             work.Wo_Req_No = txtReqNo.Text;
             work.Workorderno = txtWoorderno.Text;
-            work.Wo_Status = txtWoStatus.Text;
-            work.Wc_Name = cboWorkCenter.Text;
+            work.Wo_Status = "생산대기";
+            work.Wc_Code = cboWorkCenter.SelectedValue.ToString();
             work.Remark = txtRemark.Text;
             work.Plan_Qty = Convert.ToInt32(txtPlanQty.Text);
             work.Out_Qty_Main = Convert.ToInt32(txtOutQty.Text);
@@ -88,8 +84,8 @@ namespace Axxen.sangyoung
             work.Prd_Qty = Convert.ToInt32(txtPrdQty.Text);
             work.Prd_Date = dtpDate.Value;
             work.Item_Code = txtItemCode.Text;
-            work.Item_Name = txtItemName.Text;
-            this.Close();
+            work.Paln_Unit = txtPlanUnit.Text;
+
         }
     }
 }

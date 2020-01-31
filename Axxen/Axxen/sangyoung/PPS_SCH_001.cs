@@ -24,7 +24,9 @@ namespace Axxen
         List<WorkOrder_WC_ItemVO> workList;
         List<WorkOrder_WC_ItemVO> addlist = new List<WorkOrder_WC_ItemVO>();
         Wo_ReqService service = new Wo_ReqService();
-      
+        PPS_SCH_001_Insert frm;
+
+
         bool chk = false;
 
         public PPS_SCH_001()
@@ -53,7 +55,7 @@ namespace Axxen
             woitem.Item_Name = dgvMainGrid[4, dgvMainGrid.CurrentRow.Index].Value.ToString();
             woitem.Req_Qty = Convert.ToInt32(dgvMainGrid[5, dgvMainGrid.CurrentRow.Index].Value);
 
-            PPS_SCH_001_Insert frm = new PPS_SCH_001_Insert(woitem.Req_Seq, woitem.Wo_Req_No, woitem.Item_Code, woitem.Item_Name, woitem.Req_Qty);
+            frm = new PPS_SCH_001_Insert(woitem.Req_Seq, woitem.Wo_Req_No, woitem.Item_Code, woitem.Item_Name, woitem.Req_Qty);
             frm.StartPosition = FormStartPosition.CenterScreen;
             frm.Show();
           
@@ -278,7 +280,6 @@ namespace Axxen
                     }
                 }
             }
-       
             dt = ListToDataTable.ToDataTable(reportList);
             ProductionRequest rpt = new ProductionRequest();
             rpt.DataSource = dt;
@@ -318,7 +319,23 @@ namespace Axxen
         /// <param name="e"></param>
         private void TsbtnSave_Click(object sender, EventArgs e)
         {
-            
+            frm.Owner = this;
+            WorkOrder_WC_ItemVO order = new WorkOrder_WC_ItemVO();
+            order.Req_Seq = Convert.ToInt32(frm.txtSeq.Text);
+            order.Wo_Req_No = frm.txtReqNo.Text;
+            order.Workorderno = frm.txtWoorderno.Text;
+            order.Wo_Status = "생산대기";
+            order.Wc_Code = frm.cboWorkCenter.SelectedValue.ToString();
+            order.Remark = frm.txtRemark.Text;
+            order.Plan_Qty = Convert.ToInt32(frm.txtPlanQty.Text);
+            order.Out_Qty_Main = Convert.ToInt32(frm.txtOutQty.Text);
+            order.In_Qty_Main = Convert.ToInt32(frm.txtInQty.Text);
+            order.Prd_Qty = Convert.ToInt32(frm.txtPrdQty.Text);
+            order.Prd_Date = frm.dtpDate.Value;
+            order.Item_Code = frm.txtItemCode.Text;
+            order.Paln_Unit = frm.txtPlanUnit.Text;
+
+
         }
     }
 }
