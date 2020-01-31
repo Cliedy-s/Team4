@@ -76,7 +76,7 @@ namespace Axxen.sangyoung
             work.Wo_Req_No = txtReqNo.Text;
             work.Workorderno = txtWoorderno.Text;
             work.Wo_Status = "생산대기";
-            work.Wc_Code = cboWorkCenter.SelectedValue.ToString();
+            //work.Wc_Code = cboWorkCenter.SelectedValue.ToString();
             work.Remark = txtRemark.Text;
             work.Plan_Qty = Convert.ToInt32(txtPlanQty.Text);
             work.Out_Qty_Main = Convert.ToInt32(txtOutQty.Text);
@@ -84,7 +84,7 @@ namespace Axxen.sangyoung
             work.Prd_Qty = Convert.ToInt32(txtPrdQty.Text);
             work.Prd_Date = dtpDate.Value;
             work.Item_Code = txtItemCode.Text;
-            work.Paln_Unit = txtPlanUnit.Text;
+            //work.Paln_Unit = txtPlanUnit.Text;
 
         }
     }
