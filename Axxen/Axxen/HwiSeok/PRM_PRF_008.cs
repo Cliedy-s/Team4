@@ -21,6 +21,9 @@ namespace Axxen
 
         private void PRM_PRF_008_Load(object sender, EventArgs e)
         {
+            ((MainForm)this.MdiParent).RefreshFormEvent += new System.EventHandler(this.RefreshFormShow); // 새로고침
+
+            #region 그리드뷰
             DatagridviewDesigns.SetDesign(dgvMainGrid);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "비가동일자", "Nop_Date", true, 100, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "작업장코드", "Wc_Code", true, 100, default, true);
@@ -32,15 +35,56 @@ namespace Axxen
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "비가동시간", "Nop_Time", true, 100, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "비고", "Remark", true, 100, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "발생유형", "Nop_Type", true, 100, default, true);
+            #endregion
 
             nohm = nohmservice.GetAllNop_History_Mi_Ma();
             dgvMainGrid.DataSource = nohm;
         }
 
-        private void ADateTimePickerSearch2_btnDateTimeSearch_Click(object sender, EventArgs args)
+        private void RefreshFormShow(object sender, EventArgs e) //새로고침
+        {
+
+            try
+            {
+                if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
+                {
+                    nohm = nohmservice.GetAllNop_History_Mi_Ma();
+                    dgvMainGrid.DataSource = nohm;
+
+                    aTextBox_FindNameByCode1.txtCodeText = "";
+                    aTextBox_FindNameByCode1.txtNameText = "";
+                    aTextBox_FindNameByCode2.txtCodeText = "";
+                    aTextBox_FindNameByCode2.txtNameText = "";
+                    aDateTimePickerSearch2.ADateTimePickerValue1 = Convert.ToDateTime(DateTime.Now.AddDays(-7).ToShortDateString());
+                    aDateTimePickerSearch2.ADateTimePickerValue2 = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+                Program.Log.WriteError(err.Message);
+            }
+        }
+
+        private void ADateTimePickerSearch2_btnDateTimeSearch_Click(object sender, EventArgs args) //날짜별
         {
             nohm = nohmservice.GetDatePicker_Nop_History_Mi_Ma(aDateTimePickerSearch2.ADateTimePickerValue1.ToShortDateString(), aDateTimePickerSearch2.ADateTimePickerValue2.ToShortDateString());
             dgvMainGrid.DataSource = nohm;
+        }
+
+        private void aTextBox_FindNameByCode1_DotDotDotFormClosing(object sender, CustomControls.SearchFormClosingArgs args)
+        {
+
+        }
+
+        private void aTextBox_FindNameByCode2_DotDotDotFormClosing(object sender, CustomControls.SearchFormClosingArgs args)
+        {
+
+        }
+
+        private void PRM_PRF_008_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ((MainForm)this.MdiParent).RefreshFormEvent -= new System.EventHandler(this.RefreshFormShow); // 새로고침
         }
     }
 }

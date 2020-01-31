@@ -70,7 +70,7 @@ namespace Axxen
             }
         }
 
-        private void aTextBox_FindNameByCode1_DotDotDotFormClosing(object sender, CustomControls.SearchFormClosingArgs args)
+        private void aTextBox_FindNameByCode1_DotDotDotFormClosing(object sender, CustomControls.SearchFormClosingArgs args) //대차그룹별
         {
             if (aTextBox_FindNameByCode2.txtCodeText == "")
             {
@@ -88,7 +88,7 @@ namespace Axxen
             }
         }
 
-        private void aTextBox_FindNameByCode2_DotDotDotFormClosing(object sender, CustomControls.SearchFormClosingArgs args)
+        private void aTextBox_FindNameByCode2_DotDotDotFormClosing(object sender, CustomControls.SearchFormClosingArgs args) //품목별
         {
             if (aTextBox_FindNameByCode1.txtCodeText == "")
             {
