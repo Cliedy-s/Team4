@@ -188,14 +188,25 @@ namespace Axxen
         }
 
         public void RefreshFormShow(object sender, EventArgs e) // 새로고침 // 초기화
-        {
-            aDateTimePickerSearch1.ADateTimePickerValue1 = Convert.ToDateTime(DateTime.Now.AddDays(-7).ToShortDateString());
-            aDateTimePickerSearch1.ADateTimePickerValue2 = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+        {          
+            try
+            {
+                if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
+                {
+                    aDateTimePickerSearch1.ADateTimePickerValue1 = Convert.ToDateTime(DateTime.Now.AddDays(-7).ToShortDateString());
+                    aDateTimePickerSearch1.ADateTimePickerValue2 = Convert.ToDateTime(DateTime.Now.ToShortDateString());
 
-            DataLoad();
+                    DataLoad();
 
-            ghpb = woservice.GetGoodsIH_PalletM_Boxing((dgvMainGrid.SelectedRows[0].Cells[3].Value).ToString());
-            dgvSubGrid.DataSource = ghpb;;
+                    ghpb = woservice.GetGoodsIH_PalletM_Boxing((dgvMainGrid.SelectedRows[0].Cells[3].Value).ToString());
+                    dgvSubGrid.DataSource = ghpb; ;
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+                Program.Log.WriteError(err.Message);
+            }
         }
 
         private void UPDATE_Grade_Detail_Name() //수정이랑 모든 데이터 가지고 오는소스
@@ -322,7 +333,8 @@ namespace Axxen
 
         private void PRM_PRF_002_FormClosing(object sender, FormClosingEventArgs e)
         {
-            ((MainForm)this.MdiParent).MyUpdateEvent -= new System.EventHandler(this.MyUpdateShow);//수정 이벤트 삭제
+            ((MainForm)this.MdiParent).MyUpdateEvent -= new System.EventHandler(this.MyUpdateShow);//수정 이벤트 등록
+            ((MainForm)this.MdiParent).RefreshFormEvent -= new System.EventHandler(this.RefreshFormShow); // 새로고침
         }
     }
 }

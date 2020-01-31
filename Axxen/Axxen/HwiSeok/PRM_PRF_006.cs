@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using VO;
@@ -13,6 +14,7 @@ namespace Axxen
     public partial class PRM_PRF_006 : Axxen.GridForm
     {
         List<GV_History_Work_ItemVO> gvhwi;
+        List<GV_History_Work_ItemVO> gvhwiList;
         GV_Work_ItemService gvwiservice = new GV_Work_ItemService();
         public PRM_PRF_006()
         {
@@ -21,6 +23,9 @@ namespace Axxen
 
         private void PRM_PRF_006_Load(object sender, EventArgs e)
         {
+            ((MainForm)this.MdiParent).RefreshFormEvent += new System.EventHandler(this.RefreshFormShow); // 새로고침
+
+            #region 그리드뷰 
             DatagridviewDesigns.SetDesign(dgvMainGrid);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "대차코드", "GV_Code", true, 100, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "대차명", "GV_Name", true, 100, default, true);
@@ -45,17 +50,85 @@ namespace Axxen
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "대차비우기원인", "Clear_Cause", true, 100, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "대상작업장", "Clear_wc", true, 100, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "대상작업장품목", "Clear_Item", true, 100, default, true);
-
+            #endregion
 
             gvhwi = gvwiservice.GetAllGV_History_Work_Item();
             dgvMainGrid.DataSource = gvhwi;
             
         }
 
-        private void aDateTimePickerSearch1_btnDateTimeSearch_Click(object sender, EventArgs args)
+        private void RefreshFormShow(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
+                {
+                    gvhwi = gvwiservice.GetAllGV_History_Work_Item();
+                    dgvMainGrid.DataSource = gvhwi;
+
+                    aTextBox_FindNameByCode1.txtCodeText = "";
+                    aTextBox_FindNameByCode1.txtNameText = "";
+                    aTextBox_FindNameByCode2.txtCodeText = "";
+                    aTextBox_FindNameByCode2.txtNameText = "";
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+                Program.Log.WriteError(err.Message);
+            }
+        }
+
+        private void aDateTimePickerSearch1_btnDateTimeSearch_Click(object sender, EventArgs args) //날짜별조회
         {
             gvhwi = gvwiservice.GetDatePicker_GV_History_Work_Item(aDateTimePickerSearch1.ADateTimePickerValue1.ToShortDateString(), aDateTimePickerSearch1.ADateTimePickerValue2.ToShortDateString());
             dgvMainGrid.DataSource = gvhwi;
+
+            aTextBox_FindNameByCode1.txtCodeText = "";
+            aTextBox_FindNameByCode1.txtNameText = "";
+            aTextBox_FindNameByCode2.txtCodeText = "";
+            aTextBox_FindNameByCode2.txtNameText = "";
+        }
+
+        private void aTextBox_FindNameByCode1_DotDotDotFormClosing(object sender, CustomControls.SearchFormClosingArgs args)
+        {         
+            if (aTextBox_FindNameByCode2.txtCodeText == "")
+            {
+                gvhwiList = (from date in gvhwi
+                             where date.GV_Code == aTextBox_FindNameByCode1.txtCodeText
+                             select date).ToList();
+                dgvMainGrid.DataSource = gvhwiList;
+            }
+            else if (aTextBox_FindNameByCode2.txtCodeText != "" && aTextBox_FindNameByCode1.txtCodeText != "")
+            {
+                gvhwiList = (from date in gvhwi
+                             where date.GV_Code == aTextBox_FindNameByCode1.txtCodeText && date.Item_Code == aTextBox_FindNameByCode2.txtCodeText
+                             select date).ToList();
+                dgvMainGrid.DataSource = gvhwiList;
+            }
+        }
+
+        private void aTextBox_FindNameByCode2_DotDotDotFormClosing(object sender, CustomControls.SearchFormClosingArgs args)
+        {
+            if (aTextBox_FindNameByCode1.txtCodeText == "")
+            {
+                gvhwiList = (from date in gvhwi
+                         where date.Item_Code == aTextBox_FindNameByCode2.txtCodeText
+                         select date).ToList();
+            dgvMainGrid.DataSource = gvhwiList;
+            }
+            else if (aTextBox_FindNameByCode2.txtCodeText != "" && aTextBox_FindNameByCode1.txtCodeText != "")
+            {
+                gvhwiList = (from date in gvhwi
+                             where date.GV_Code == aTextBox_FindNameByCode1.txtCodeText && date.Item_Code == aTextBox_FindNameByCode2.txtCodeText
+                             select date).ToList();
+                dgvMainGrid.DataSource = gvhwiList;
+            }
+        }
+
+        private void PRM_PRF_006_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ((MainForm)this.MdiParent).RefreshFormEvent -= new System.EventHandler(this.RefreshFormShow); // 새로고침
         }
     }
 }
