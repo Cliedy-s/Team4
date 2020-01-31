@@ -40,10 +40,16 @@ namespace Service
         }
 
 
-        public List<GVMasterVO> GetAllByGVMaster()
+        public List<GVMasterVO> GetGV_Code() // 대차 코드
         {
             GV_MasterDAC dac = new GV_MasterDAC();
-            return dac.GetAllByGVMaster();
+            return dac.GetGV_Code();
         }
+        public List<GVMasterVO> GetGV_GroupCode() // 대차 그룹 코드
+        {
+            GV_MasterDAC dac = new GV_MasterDAC();
+            return dac.GetGV_GroupCode();
+        }
+        
     }
 }

@@ -64,12 +64,12 @@ namespace Axxen.CustomControls
                     break;
                 case DataType.GVs:
                     InitControls("GV_Code", "GV_Name");
-                    dgvSearchResult.DataSource = GetData<GV_MasterService, GVMasterVO>("GetAllByGVMaster");
+                    dgvSearchResult.DataSource = GetData<GV_MasterService, GVMasterVO>("GetGV_Code");
                     lblSearch.Text = "대차 목록";
                     break;
                 case DataType.GVGroups:
                     InitControls("GV_GroupCode", "GV_Group");
-                    dgvSearchResult.DataSource = GetData<GV_MasterService, GVMasterVO>("GetAllByGVMaster");
+                    dgvSearchResult.DataSource = GetData<GV_MasterService, GVMasterVO>("GetGV_GroupCode");
                     lblSearch.Text = "대차그룹 목록";
                     break;
                 case DataType.Workers:
