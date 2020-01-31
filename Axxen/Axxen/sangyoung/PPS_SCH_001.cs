@@ -24,7 +24,9 @@ namespace Axxen
         List<WorkOrder_WC_ItemVO> workList;
         List<WorkOrder_WC_ItemVO> addlist = new List<WorkOrder_WC_ItemVO>();
         Wo_ReqService service = new Wo_ReqService();
-      
+        PPS_SCH_001_Insert frm;
+
+
         bool chk = false;
 
         public PPS_SCH_001()
@@ -53,7 +55,7 @@ namespace Axxen
             woitem.Item_Name = dgvMainGrid[4, dgvMainGrid.CurrentRow.Index].Value.ToString();
             woitem.Req_Qty = Convert.ToInt32(dgvMainGrid[5, dgvMainGrid.CurrentRow.Index].Value);
 
-            PPS_SCH_001_Insert frm = new PPS_SCH_001_Insert(woitem.Req_Seq, woitem.Wo_Req_No, woitem.Item_Code, woitem.Item_Name, woitem.Req_Qty);
+            frm = new PPS_SCH_001_Insert(woitem.Req_Seq, woitem.Wo_Req_No, woitem.Item_Code, woitem.Item_Name, woitem.Req_Qty);
             frm.StartPosition = FormStartPosition.CenterScreen;
             frm.Show();
           
@@ -85,7 +87,7 @@ namespace Axxen
         private void MainDataLoad()
         {
             InitControlUtil.SetDGVDesign(dgvMainGrid);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "생산의뢰순번", "Req_Seq", true, 110, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "No.", "Req_Seq", true, 60);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "생산의뢰번호", "Wo_Req_No", true, 110, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "의뢰일자", "Ins_Date", true, 110, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "품목코드", "Item_Code", true, 100, default, true);
@@ -95,7 +97,7 @@ namespace Axxen
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "거래처명", "Cust_Name", true, 90, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "영업담당", "Sale_Emp", true, 90, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "생산의뢰상태", "Req_Status", true, 110, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "의뢰수량", "Req_Qty", true, 90, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "의뢰수량", "Req_Qty", true, 90);
 
             DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
             chk.HeaderText = "선택";
@@ -110,7 +112,7 @@ namespace Axxen
         private void SubDataLoad()
         {
             InitControlUtil.SetDGVDesign(dgvSubGrid);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "생산의뢰순번", "Req_Seq", true, 120, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "No.", "Req_Seq", true, 60);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "생산의뢰번호", "Wo_Req_No", true, 120, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "작업지시상태", "Wo_Status", true, 120, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "작업지시번호", "Workorderno", true, 110, default, true);
@@ -118,10 +120,10 @@ namespace Axxen
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "품목코드", "Item_Code", true, 110, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "품목명", "Item_Name", true, 120, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "작업장명", "Wc_Name", true, 120, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "계획수량", "Plan_Qty", true, 100);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "투입수량", "In_Qty_Main", true, 100);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "산출수량", "Out_Qty_Main", true, 100);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "생산수량", "Prd_Qty", true, 100);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "계획수량", "Plan_Qty", true, 90);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "투입수량", "In_Qty_Main", true, 90);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "산출수량", "Out_Qty_Main", true, 90);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "생산수량", "Prd_Qty", true, 90);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "비고", "Remark", true, 110, default, true);
         }
 
@@ -278,7 +280,6 @@ namespace Axxen
                     }
                 }
             }
-       
             dt = ListToDataTable.ToDataTable(reportList);
             ProductionRequest rpt = new ProductionRequest();
             rpt.DataSource = dt;
@@ -318,7 +319,44 @@ namespace Axxen
         /// <param name="e"></param>
         private void TsbtnSave_Click(object sender, EventArgs e)
         {
-            
+            frm.Owner = this;
+            WorkOrderAllVO order = new WorkOrderAllVO();
+            order.Req_Seq = Convert.ToInt32(frm.txtSeq.Text);
+            order.Wo_Req_No = frm.txtReqNo.Text;
+            order.Workorderno = frm.txtWoorderno.Text;
+            order.Wo_Status = "생산대기";
+            order.Wc_Code = frm.cboWorkCenter.SelectedValue.ToString();
+            order.Remark = frm.txtRemark.Text;
+            order.Plan_Qty = Convert.ToInt32(frm.txtPlanQty.Text);
+            order.Out_Qty_Main = Convert.ToInt32(frm.txtOutQty.Text);
+            order.In_Qty_Main = Convert.ToInt32(frm.txtInQty.Text);
+            order.Prd_Qty = Convert.ToInt32(frm.txtPrdQty.Text);
+            order.Prd_Date = frm.dtpDate.Value;
+            order.Item_Code = frm.txtItemCode.Text;
+            order.Plan_Unit = frm.txtPlanUnit.Text;
+
+
+            try
+            {
+                WorkOrder_Service service = new WorkOrder_Service();
+                bool result = service.InsertPPSWorkorder(order);
+                if (result)
+                {
+                    MessageBox.Show("Success");
+                    frm.Close();
+                }
+                else
+                    MessageBox.Show("Fail");
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
+            finally
+            {
+                RefreshFormShow(null, null);
+
+            }
         }
     }
 }

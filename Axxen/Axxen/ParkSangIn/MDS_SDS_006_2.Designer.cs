@@ -138,6 +138,7 @@
             this.cbbItem.Name = "cbbItem";
             this.cbbItem.Size = new System.Drawing.Size(160, 23);
             this.cbbItem.TabIndex = 154;
+            this.cbbItem.SelectedIndexChanged += new System.EventHandler(this.CbbItem_SelectedIndexChanged);
             // 
             // aPanel5
             // 
@@ -226,6 +227,7 @@
             this.Controls.Add(this.aLabel4);
             this.Controls.Add(this.pictureBox2);
             this.Name = "MDS_SDS_006_2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "품질규격복사";
             this.Load += new System.EventHandler(this.MDS_SDS_006_2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

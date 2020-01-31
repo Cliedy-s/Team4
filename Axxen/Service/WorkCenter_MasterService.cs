@@ -19,5 +19,11 @@ namespace Service
             WorkCenter_MasterDAC dac = new WorkCenter_MasterDAC();
             return dac.GetAll();
         }
+
+        public List<WorkCenter_MasterVO> GetCombo1() //PRM_PRF_008_1 작업장명만 가지고오는쿼리
+        {
+            WorkCenter_MasterDAC dac = new WorkCenter_MasterDAC();
+            return dac.GetCombo1();
+        }
     }
 }

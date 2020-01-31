@@ -41,7 +41,7 @@ namespace DAC
                     $"from Nop_History noh INNER JOIN Nop_Mi_Master nomi ON noh.Nop_Mi_Code = nomi.Nop_Mi_Code " +
                     $"INNER JOIN Nop_Ma_Master noma ON nomi.Nop_Ma_Code = noma.Nop_Ma_Code " +
                     $"INNER JOIN WorkCenter_Master wcm ON noh.Wc_Code = wcm.Wc_Code " +
-                    $"where gh.Loading_Date BETWEEN '{ADateTimePickerValue1}' AND '{ADateTimePickerValue2}' Order By gh.Loading_Date Desc";
+                    $"where Nop_Date BETWEEN '{ADateTimePickerValue1}' AND '{ADateTimePickerValue2}' Order By Nop_Date Desc";
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
                     list = Helper.DataReaderMapToList<Nop_History_Mi_MaVO>(cmd.ExecuteReader());

@@ -58,7 +58,7 @@ namespace Service
             return dac.GetWO_WC_Production_Items();
         }
 
-        public List<WorkOrder_WC_ItemVO> GetWorkCenterName()
+        public List<WorkOrder_J_WC_ItmeVO> GetWorkCenterName()
         {
             Wo_ReqDAC dac = new Wo_ReqDAC();
             return dac.GetWorkCenterName();

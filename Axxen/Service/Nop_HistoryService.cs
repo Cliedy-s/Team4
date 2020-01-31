@@ -8,7 +8,7 @@ using VO;
 
 namespace Service
 {
-    class Nop_HistoryService
+    public class Nop_HistoryService
     {
         /// <summary>
         /// 비가동 목록
@@ -29,6 +29,12 @@ namespace Service
         {
             Nop_HistoryDAC dac = new Nop_HistoryDAC();
             return dac.UpdateNop_History(nopMiCode, username, nopseq);
+        }
+
+        public bool InsertNop_History(NopHistoryVO nop)
+        {
+            Nop_HistoryDAC dac = new Nop_HistoryDAC();
+            return dac.InsertNop_History(nop);
         }
     }
 }

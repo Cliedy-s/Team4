@@ -220,7 +220,6 @@ namespace Axxen
                         string form = parentcode.Screen_Code;
                         newForm(form, tvMenu.SelectedNode.Text);
 
-                        //sdfasd
                     }
                 }
             }
@@ -252,8 +251,41 @@ namespace Axxen
                 {
                     if (childForm.Tag.ToString().Equals(formName))
                     {
-                        childForm.Activate();
-                        return;
+                      
+                            
+                                ScreenItem_AuthorityVO screentype = new ScreenItem_AuthorityVO();
+                                screentype = userinfoScreenItem.Find(item => item.Screen_Code == formName);
+                                if (screentype != null)
+                                {
+                                    if (screentype.Pre_Type[0] == 'Y')
+                                    {
+                                        tsbInsert.Enabled = true;
+                                    }
+                                    else
+                                    {
+                                        tsbInsert.Enabled = false;
+                                    }
+                                    if (screentype.Pre_Type[2] == 'Y')
+                                    {
+                                        tsbtnUpdate.Enabled = true;
+                                    }
+                                    else
+                                    {
+                                        tsbtnUpdate.Enabled = false;
+                                    }
+                                    if (screentype.Pre_Type[3] == 'Y')
+                                    {
+                                        tsbtnDelete.Enabled = true;
+                                    }
+                                    else
+                                    {
+                                        tsbtnDelete.Enabled = false;
+                                    }
+
+                                    break;
+                                }
+                            childForm.Activate();
+                            return;
                     }
                 }
                 frm.MdiParent = this;
@@ -265,9 +297,48 @@ namespace Axxen
                 tabControl2.TabPages.Add(newTab);
                     frm.Show();
 
+/////////////////// 메뉴클릭시 
+                    foreach (Form childForm in Application.OpenForms)
+                    {                  
+                            ScreenItem_AuthorityVO screentype = new ScreenItem_AuthorityVO();
+                            screentype = userinfoScreenItem.Find(item => item.Screen_Code == formName);
+                            if (screentype != null)
+                            {
+                                if (screentype.Pre_Type[0] == 'Y')
+                                {
+                                    tsbInsert.Enabled = true;
+                                }
+                                else
+                                {
+                                    tsbInsert.Enabled = false;
+                                }
+
+
+                                if (screentype.Pre_Type[2] == 'Y')
+                                {
+                                    tsbtnUpdate.Enabled = true;
+                                }
+                                else
+                                {
+                                    tsbtnUpdate.Enabled = false;
+                                }
+                                if (screentype.Pre_Type[3] == 'Y')
+                                {
+                                    tsbtnDelete.Enabled = true;
+                                }
+                                else
+                                {
+                                    tsbtnDelete.Enabled = false;
+                                }
+                                                                       
+                            break;
+                        }
+                    }
+//////////////////////////////////////////
+
                     //  tabControl2.TabPages.Tag=formName;
                     //  MessageBox.Show(tabControl2.SelectedTab.Tag.ToString());
-           
+
                     lblSubtitle.Text =  screenitemlist.Find(item => item.Screen_Code == formName.ToString()).Screen_Path.ToString();
                 }
                 else

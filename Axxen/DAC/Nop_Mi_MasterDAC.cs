@@ -37,5 +37,22 @@ namespace DAC
                 return list;
             }
         }
+
+        public List<NopMiMasterVO> GetCombo() //PRM_PRF_008_1 비가동상세분류코드
+        {
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText = @"select Nop_Mi_Code,Nop_Mi_Name from Nop_Mi_Master where Use_YN='Y'";
+                comm.CommandType = CommandType.Text;
+
+                comm.Connection.Open();
+                SqlDataReader reader = comm.ExecuteReader();
+                List<NopMiMasterVO> list = Helper.DataReaderMapToList<NopMiMasterVO>(reader);
+                comm.Connection.Close();
+
+                return list;
+            }
+        }
     }
 }

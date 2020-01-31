@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VO
 {
-    public class WO_WC_Production_ItemVO //SCH_003
+    public class WO_WC_Production_ItemVO //PPS_SCH_003
     {
         public string Wo_Status { get; set; } //작업지시상태
         public string Workorderno { get; set; } //작업지시번호
@@ -22,9 +22,10 @@ namespace VO
         public int In_Qty_Main { get; set; } //투입수량
         public int Out_Qty_Main { get; set; } //산출수량
         public int Prd_Qty { get; set; } //생산수량
+        public string Process_Code { get; set; } //공정코드
     }
 
-    public class WO_WC_Time_ItemVO //SCH_003 Chart
+    public class WO_WC_Time_ItemVO //PPS_SCH_003 시간대별 차트
     {
         public string Workorderno { get; set; } //작업지시번호
         public DateTime Prd_Date { get; set; } //생산일자

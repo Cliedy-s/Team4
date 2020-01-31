@@ -136,6 +136,12 @@
     <Compile Include="HwiSeok\PRM_PRF_008.Designer.cs">
       <DependentUpon>PRM_PRF_008.cs</DependentUpon>
     </Compile>
+    <Compile Include="HwiSeok\PRM_PRF_008_1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HwiSeok\PRM_PRF_008_1.Designer.cs">
+      <DependentUpon>PRM_PRF_008_1.cs</DependentUpon>
+    </Compile>
     <Compile Include="HwiSeok\PRM_PRF_009.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,6 +197,18 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MDS_CDS_004.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDS_CDS_004.Designer.cs">
+      <DependentUpon>MDS_CDS_004.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_CDS_003.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_CDS_003.Designer.cs">
+      <DependentUpon>MDS_CDS_003.cs</DependentUpon>
+    </Compile>
     <Compile Include="ParkSangIn\MDS_SDS_007_2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,12 +220,6 @@
     </Compile>
     <Compile Include="ParkSangIn\MDS_SDS_007_1.Designer.cs">
       <DependentUpon>MDS_SDS_007_1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ParkSangIn\MDS_CDS_003.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ParkSangIn\MDS_CDS_003.Designer.cs">
-      <DependentUpon>MDS_CDS_003.cs</DependentUpon>
     </Compile>
     <Compile Include="ParkSangIn\MDS_CDS_002.cs">
       <SubType>Form</SubType>
@@ -244,12 +256,6 @@
     </Compile>
     <Compile Include="ParkSangIn\MSS_CON_003_1.Designer.cs">
       <DependentUpon>MSS_CON_003_1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ParkSangIn\MDS_CDS_004.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ParkSangIn\MDS_CDS_004.Designer.cs">
-      <DependentUpon>MDS_CDS_004.cs</DependentUpon>
     </Compile>
     <Compile Include="ParkSangIn\MDS_CDS_007.cs">
       <SubType>Form</SubType>
@@ -565,6 +571,9 @@
     <EmbeddedResource Include="HwiSeok\PRM_PRF_008.resx">
       <DependentUpon>PRM_PRF_008.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HwiSeok\PRM_PRF_008_1.resx">
+      <DependentUpon>PRM_PRF_008_1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HwiSeok\PRM_PRF_009.resx">
       <DependentUpon>PRM_PRF_009.cs</DependentUpon>
     </EmbeddedResource>
@@ -592,6 +601,12 @@
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MDS_CDS_004.resx">
+      <DependentUpon>MDS_CDS_004.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParkSangIn\MDS_CDS_003.resx">
+      <DependentUpon>MDS_CDS_003.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ParkSangIn\MDS_SDS_007_2.resx">
       <DependentUpon>MDS_SDS_007_2.cs</DependentUpon>
     </EmbeddedResource>
@@ -601,14 +616,8 @@
     <EmbeddedResource Include="ParkSangIn\MDS_CDS_001.resx">
       <DependentUpon>MDS_CDS_001.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ParkSangIn\MDS_CDS_003.resx">
-      <DependentUpon>MDS_CDS_003.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ParkSangIn\MDS_SDS_002_1.resx">
       <DependentUpon>MDS_SDS_002_1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ParkSangIn\MDS_CDS_004.resx">
-      <DependentUpon>MDS_CDS_004.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ParkSangIn\MDS_CDS_007.resx">
       <DependentUpon>MDS_CDS_007.cs</DependentUpon>
