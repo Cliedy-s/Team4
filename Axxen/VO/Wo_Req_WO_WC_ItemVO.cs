@@ -25,6 +25,7 @@ namespace VO
         public string Wo_Req_No { get; set; } //생산의뢰번호
         public int Req_Seq { get; set; } //생산의뢰순번
         public string Project_Name { get; set; } //프로젝트명
+        public string Process_Code { get; set; } //공정명
         
     }
 }

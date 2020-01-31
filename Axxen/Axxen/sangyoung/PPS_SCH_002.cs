@@ -14,7 +14,8 @@ namespace Axxen
 {
     public partial class PPS_SCH_002 : Axxen.GridManageForm
     {
-        List<Wo_Req_WO_WC_ItemVO> woList = new List<Wo_Req_WO_WC_ItemVO>();
+        List<Wo_Req_WO_WC_ItemVO> woList;
+        List<Wo_Req_WO_WC_ItemVO> woSearchList;
         Wo_ReqService service = new Wo_ReqService();
 
         public PPS_SCH_002()
@@ -45,8 +46,16 @@ namespace Axxen
 
             aDateTimePickerSearch1.ADateTimePickerValue1 = Convert.ToDateTime(DateTime.Now.AddDays(-7).ToShortDateString());
             aDateTimePickerSearch1.ADateTimePickerValue2 = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+            dotProcess.txtCodeText = "";
+            dotProcess.txtNameText = "";
             dotWorkCenter.txtCodeText = "";
             dotWorkCenter.txtNameText = "";
+
+            txtItemCode.TextBoxText = "";
+            txtItemName.TextBoxText = "";
+            txtWorkNum.TextBoxText = "";
+            txtPlanUnit.Text = "";
+            numPlanQuantity.Value = 0;
         }
 
         private void MyUpdateShow(object sender, EventArgs e)
@@ -74,6 +83,7 @@ namespace Axxen
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "생산의뢰순번", "Req_Seq", true, 80);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "생산의뢰번호", "Wo_Req_No", true, 80);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "프로젝트명", "Project_Name", true, 100);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "공정코드", "Process_Code", false, 100);
         }
 
         private void PPS_SCH_002_FormClosed(object sender, FormClosedEventArgs e)
@@ -120,13 +130,31 @@ namespace Axxen
             string pcode = dotProcess.txtCodeText;
             string wName = dotWorkCenter.txtNameText;
 
-            if(wName.Length > 0)
+            if(wName.Length > 0 && pcode.Length <=0)
             {
-                var colist = (from list in woList
+                woSearchList = (from list in woList
                               where list.Wc_Name.Contains(wName)
                               select list).ToList();
-                dgvMainGrid.DataSource = colist;
             }
+            else if (pcode.Length > 0 && wName.Length <= 0)
+            {
+                woSearchList = (from list in woList
+                              where list.Process_Code.Contains(pcode)
+                              select list).ToList();
+            }
+            else if (wName.Length > 0 && pcode.Length > 0)
+            {
+                woSearchList = (from list in woSearchList
+                                where list.Wc_Name.Contains(wName) && list.Process_Code.Contains(pcode)
+                              select list).ToList();
+                dotProcess.txtCodeText = "";
+                dotProcess.txtNameText = "";
+                dotWorkCenter.txtCodeText = "";
+                dotWorkCenter.txtNameText = "";
+            }
+            dgvMainGrid.DataSource = woSearchList;
+
+
         }
 
         private void PPS_SCH_002_Activated(object sender, EventArgs e)
@@ -151,7 +179,23 @@ namespace Axxen
             order.Plan_Unit = txtPlanUnit.Text;
             order.Plan_Date = dtpPlanDate.Value;
 
-           
+            try
+            {
+                WorkOrder_Service service = new WorkOrder_Service();
+                bool result = service.UpdatePPSWorkorder(order);
+                if (result)
+                    MessageBox.Show("Success");
+                else
+                    MessageBox.Show("Fail");
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
+            finally
+            {
+                RefreshFormShow(null, null);
+            }
         }
     }
 }

@@ -243,6 +243,7 @@
             this.txtPlanUnit.Name = "txtPlanUnit";
             this.txtPlanUnit.Size = new System.Drawing.Size(94, 23);
             this.txtPlanUnit.TabIndex = 17;
+            this.txtPlanUnit.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtPlanUnit.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // aLabel5
@@ -262,11 +263,12 @@
             this.numPlanQuantity.Name = "numPlanQuantity";
             this.numPlanQuantity.Size = new System.Drawing.Size(94, 23);
             this.numPlanQuantity.TabIndex = 19;
+            this.numPlanQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // aDateTimePickerSearch1
             // 
-            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 1, 24, 17, 2, 20, 825);
-            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 1, 31, 17, 2, 20, 825);
+            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 1, 24, 17, 52, 39, 816);
+            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 1, 31, 17, 52, 39, 816);
             this.aDateTimePickerSearch1.ButtonText = "조회";
             this.aDateTimePickerSearch1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aDateTimePickerSearch1.Location = new System.Drawing.Point(107, 23);
