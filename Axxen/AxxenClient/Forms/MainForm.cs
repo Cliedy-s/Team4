@@ -18,7 +18,7 @@ namespace AxxenClient.Forms
         private void MainForm_Load(object sender, EventArgs e)
         {
             GlobalUsage.WoIniChar = "W";
-            GlobalUsage.WorkType = WorkType.Boxing;
+            GlobalUsage.WorkType = WorkType.Molding;
             GlobalUsage.UserID = "master";
             GlobalUsage.WcCode = "WC1";
 

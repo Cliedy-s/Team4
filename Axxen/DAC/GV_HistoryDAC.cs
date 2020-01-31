@@ -13,6 +13,12 @@ namespace DAC
     public class GV_HistoryDAC : DACParent
     {
         /// <summary>
+        /// 로딩
+        /// </summary>
+        public void UpdateLoad()
+        {
+        }
+        /// <summary>
         /// 언로딩
         /// </summary>
         public bool UpdateUnload(string username, string gvcode, string wccode, int qty)
@@ -59,6 +65,8 @@ namespace DAC
                 return result > 0;
             }
         }
+
+
         /// <summary>
         /// 대차비우기
         /// </summary>
@@ -68,7 +76,7 @@ namespace DAC
             {
                 SqlCommand comm = new SqlCommand();
                 comm.Connection = conn;
-                comm.CommandText = 
+                comm.CommandText =
  @"UPDATE [dbo].[GV_History]
  SET
  [Clear_Date] = getdate() 
@@ -79,7 +87,8 @@ namespace DAC
  ,[Clear_Item] = @Clear_Item
  ,[Up_Date] = getdate()
  ,[Up_Emp] = @Up_Emp
- WHERE [GV_Code] = @GV_Code; ";
+ WHERE [GV_Code] = @GV_Code
+	AND Loading_time = (SELECT MAX(Loading_time) FROM [GV_History] WHERE GV_Code = @GV_Code); ";
                 comm.Parameters.AddWithValue("@Clear_Qty", item.Clear_Qty);
                 comm.Parameters.AddWithValue("@Clear_Cause", item.Clear_Cause);
                 comm.Parameters.AddWithValue("@Clear_wc", item.Clear_wc);

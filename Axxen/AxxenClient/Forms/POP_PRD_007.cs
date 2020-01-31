@@ -29,28 +29,62 @@ namespace AxxenClient.Forms
             txtItemName.TextBoxText = GlobalUsage.ItemName;
             txtQty.TextBoxText = GlobalUsage.Prd_Qty.ToString();
             txtUnit.TextBoxText = GlobalUsage.Prd_Unit.ToString();
-            txtWcCode.TextBoxText = GlobalUsage.WoIniChar;
+            txtWcCode.TextBoxText = GlobalUsage.WcCode;
             txtWorkOrderDate.TextBoxText = (GlobalUsage.WorkorderDate == null) ? "" : GlobalUsage.WorkorderDate.Value.ToString("yyyy-MM-dd HH:mm:ss");
         }
         private void InitControls()
         {
-            //InitControlUtil.SetPOPDGVDesign(dgvGVTo);
-            //InitControlUtil.AddNewColumnToDataGridView(dgvGVTo, "대차코드", "GV_Code", true, 110);
-            //InitControlUtil.AddNewColumnToDataGridView(dgvGVTo, "대차명", "GV_Name", true, 100, DataGridViewContentAlignment.MiddleLeft, true);
+            InitControlUtil.SetPOPDGVDesign(dgvGVTo);
+            InitControlUtil.AddNewColumnToDataGridView(dgvGVTo, "대차코드", "GV_Code", true, 80);
+            InitControlUtil.AddNewColumnToDataGridView(dgvGVTo, "대차명", "GV_Name", true, 100, DataGridViewContentAlignment.MiddleLeft, true);
 
-            //InitControlUtil.SetPOPDGVDesign(dgvGVFrom);
-            //InitControlUtil.AddNewColumnToDataGridView(dgvGVFrom, "대차코드", "GV_Code", true, 110);
-            //InitControlUtil.AddNewColumnToDataGridView(dgvGVFrom, "대차명", "GV_Name", true, 100, DataGridViewContentAlignment.MiddleLeft, true);
-            //InitControlUtil.AddNewColumnToDataGridView(dgvGVFrom, "적재시각", "GV_Name", true, 100, DataGridViewContentAlignment.MiddleLeft, true);
-            //InitControlUtil.AddNewColumnToDataGridView(dgvGVFrom, "수량", "GV_Name", true, 100, DataGridViewContentAlignment.MiddleLeft, true);
+            InitControlUtil.SetPOPDGVDesign(dgvGVFrom);
+            InitControlUtil.AddNewColumnToDataGridView(dgvGVFrom, "대차코드", "GV_Code", true, 80);
+            InitControlUtil.AddNewColumnToDataGridView(dgvGVFrom, "대차명", "GV_Name", true, 100, DataGridViewContentAlignment.MiddleLeft, true);
+            InitControlUtil.AddNewColumnToDataGridView(dgvGVFrom, "적재시각", "Loading_time", true, 200);
+            InitControlUtil.AddNewColumnToDataGridView(dgvGVFrom, "수량", "Loading_Qty", true, 50);
+            dgvGVFrom.Columns[2].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm:ss";
         }
         private void GetDatas()
         {
             GV_Current_StatusService service = new GV_Current_StatusService();
             // 해당 작업지시에서 생성한 모든 대차
-            dgvGVFrom.DataSource = service.GetGVCurrentStatus(woinichar:GlobalUsage.WoIniChar, workorderno:GlobalUsage.WorkOrderNo);
+            // TODO - 조건에 맞게 변경하기
+            //dgvGVFrom.DataSource = service.GetGVCurrentStatus(wccode:GlobalUsage.WcCode, workorderno:GlobalUsage.WorkOrderNo, gvStatus:"적재");
+            dgvGVFrom.DataSource = service.GetGVCurrentStatus(gvStatus: "적재");
             // 해당 작업장의 모든 빈대차를 가져온다.
-            dgvGVTo.DataSource = service.GetGVCurrentStatus(woinichar:GlobalUsage.WoIniChar, gvStatus:"빈대차"); 
+            //dgvGVTo.DataSource = service.GetGVCurrentStatus(wccode: GlobalUsage.WcCode, gvStatus: "빈대차");
+            dgvGVTo.DataSource = service.GetGVCurrentStatus(gvStatus: "빈대차");
+        }
+        private void btnToSearch_Click(object sender, EventArgs e)
+        { // 검색
+            GV_Current_StatusService service = new GV_Current_StatusService();
+            // TODO - 조건에 맞게 변경하기
+            dgvGVTo.DataSource = service.GetGVCurrentStatus(gvStatus: "빈대차", gvName:txtToSearch.TextBoxText);
+        }
+        private void btnFromSearch_Click(object sender, EventArgs e)
+        { // 검색
+            GV_Current_StatusService service = new GV_Current_StatusService();
+            // TODO - 조건에 맞게 변경하기
+            dgvGVFrom.DataSource = service.GetGVCurrentStatus(gvStatus: "적재", gvName:txtFromSearch.TextBoxText);
+        }
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            // 언로딩
+            GV_HistoryService service = new GV_HistoryService();
+            service.UpdateUnload(GlobalUsage.UserID, dgvGVFrom.SelectedRows[0].Cells[0].ToString(), GlobalUsage.WcCode, Convert.ToInt32(txtLoading.TextBoxText));
+
+            // 로딩
+            //GlobalUsage.UserID, dgvGVFrom.SelectedRows[0].Cells[0].ToString(), GlobalUsage.WcCode, Convert.ToInt32(txtLoading.TextBoxText)
+            service.UpdateLoad();
+            dgvGVTo.SelectedRows[0].Cells[0].ToString();
+        }
+        private void dgvGVFrom_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex > -1)
+            {
+                txtLoading.TextBoxText = dgvGVFrom.SelectedRows[0].Cells[3].Value.ToString();
+            }
         }
     }
 }
