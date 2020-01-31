@@ -8,7 +8,7 @@ using VO;
 
 namespace Service
 {
-    class GV_MasterService
+    public class GV_MasterService
     {
         /// <summary>
         /// 대차리스트 작업장별로 가져오기
@@ -37,6 +37,13 @@ namespace Service
         {
             GV_MasterDAC dac = new GV_MasterDAC();
             return dac.GetAllWithLoadingTime(gvgroup, workorderno);
+        }
+
+
+        public List<GVMasterVO> GetAllByGVMaster()
+        {
+            GV_MasterDAC dac = new GV_MasterDAC();
+            return dac.GetAllByGVMaster();
         }
     }
 }

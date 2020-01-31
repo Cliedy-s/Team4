@@ -128,5 +128,26 @@ namespace DAC
                 return list;
             }
         }
+
+        public List<GVMasterVO> GetAllByGVMaster()
+        {
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText = @"SELECT [GV_Code]
+      ,[GV_Name]
+      ,[GV_GroupCode]
+      ,[GV_Group]
+  FROM [TEAM4].[dbo].[GV_Master]";
+                comm.CommandType = CommandType.Text;
+
+                comm.Connection.Open();
+                SqlDataReader reader = comm.ExecuteReader();
+                List<GVMasterVO> list = Helper.DataReaderMapToList<GVMasterVO>(reader);
+                comm.Connection.Close();
+
+                return list;
+            }
+        }
     }
 }

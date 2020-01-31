@@ -56,15 +56,21 @@ namespace Axxen.CustomControls
                 case DataType.UserDefinitions:
                     break;
                 case DataType.PackingGrades:
-                    break;
+                    break;                 
                 case DataType.WorkCenters:
                     InitControls("Wc_Code", "Wc_Name");
                     dgvSearchResult.DataSource = GetData<WorkCenter_MasterService, WorkCenter_MasterVO>("GetAll");
                     lblSearch.Text = "작업장 목록";
                     break;
                 case DataType.GVs:
+                    InitControls("GV_Code", "GV_Name");
+                    dgvSearchResult.DataSource = GetData<GV_MasterService, GVMasterVO>("GetAllByGVMaster");
+                    lblSearch.Text = "대차 목록";
                     break;
                 case DataType.GVGroups:
+                    InitControls("GV_GroupCode", "GV_Group");
+                    dgvSearchResult.DataSource = GetData<GV_MasterService, GVMasterVO>("GetAllByGVMaster");
+                    lblSearch.Text = "대차그룹 목록";
                     break;
                 case DataType.Workers:
                     break;
