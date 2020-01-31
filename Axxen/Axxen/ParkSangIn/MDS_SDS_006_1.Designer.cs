@@ -32,12 +32,10 @@
             this.nudsample = new System.Windows.Forms.NumericUpDown();
             this.nudlsl = new System.Windows.Forms.NumericUpDown();
             this.aPanel29 = new Axxen.CustomControls.APanel();
-            this.txtRemark = new CLIP.eForm.Consent.Standard.Management.UI.PlaceHolderTextBox();
             this.aPanel21 = new Axxen.CustomControls.APanel();
             this.aPanel31 = new Axxen.CustomControls.APanel();
             this.aLabel16 = new Axxen.CustomControls.ALabel();
             this.aPanel33 = new Axxen.CustomControls.APanel();
-            this.txttype = new CLIP.eForm.Consent.Standard.Management.UI.PlaceHolderTextBox();
             this.aPanel34 = new Axxen.CustomControls.APanel();
             this.aLabel18 = new Axxen.CustomControls.ALabel();
             this.aPanel23 = new Axxen.CustomControls.APanel();
@@ -68,7 +66,6 @@
             this.lblManager = new Axxen.CustomControls.ALabel();
             this.aPanel7 = new Axxen.CustomControls.APanel();
             this.aPanel6 = new Axxen.CustomControls.APanel();
-            this.txtInspect_name = new CLIP.eForm.Consent.Standard.Management.UI.PlaceHolderTextBox();
             this.aPanel4 = new Axxen.CustomControls.APanel();
             this.aPanel2 = new Axxen.CustomControls.APanel();
             this.aPanel8 = new Axxen.CustomControls.APanel();
@@ -88,7 +85,10 @@
             this.aPanel19 = new Axxen.CustomControls.APanel();
             this.aLabel8 = new Axxen.CustomControls.ALabel();
             this.aPanel20 = new Axxen.CustomControls.APanel();
-            this.txtInspect_code = new CLIP.eForm.Consent.Standard.Management.UI.PlaceHolderTextBox();
+            this.txtInspect_code = new Axxen.CustomControls.ATextBox();
+            this.txtInspect_name = new Axxen.CustomControls.ATextBox();
+            this.txttype = new Axxen.CustomControls.ATextBox();
+            this.txtRemark = new Axxen.CustomControls.ATextBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudsample)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudlsl)).BeginInit();
             this.aPanel29.SuspendLayout();
@@ -148,19 +148,6 @@
             this.aPanel29.Size = new System.Drawing.Size(348, 82);
             this.aPanel29.TabIndex = 147;
             // 
-            // txtRemark
-            // 
-            this.txtRemark.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Italic);
-            this.txtRemark.ForeColor = System.Drawing.Color.Gray;
-            this.txtRemark.Location = new System.Drawing.Point(3, 3);
-            this.txtRemark.MaxLength = 100;
-            this.txtRemark.Multiline = true;
-            this.txtRemark.Name = "txtRemark";
-            this.txtRemark.PlaceHolderText = "이름을 입력하세요.";
-            this.txtRemark.Size = new System.Drawing.Size(338, 72);
-            this.txtRemark.TabIndex = 151;
-            this.txtRemark.Text = "비고.";
-            // 
             // aPanel21
             // 
             this.aPanel21.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -199,18 +186,6 @@
             this.aPanel33.Name = "aPanel33";
             this.aPanel33.Size = new System.Drawing.Size(170, 35);
             this.aPanel33.TabIndex = 149;
-            // 
-            // txttype
-            // 
-            this.txttype.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Italic);
-            this.txttype.ForeColor = System.Drawing.Color.Gray;
-            this.txttype.Location = new System.Drawing.Point(3, 3);
-            this.txttype.MaxLength = 20;
-            this.txttype.Name = "txttype";
-            this.txttype.PlaceHolderText = "이름을 입력하세요.";
-            this.txttype.Size = new System.Drawing.Size(160, 25);
-            this.txttype.TabIndex = 150;
-            this.txttype.Text = "단위를 입력하세요.";
             // 
             // aPanel34
             // 
@@ -406,9 +381,9 @@
             this.aLabel4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.aLabel4.Location = new System.Drawing.Point(29, 5);
             this.aLabel4.Name = "aLabel4";
-            this.aLabel4.Size = new System.Drawing.Size(60, 17);
+            this.aLabel4.Size = new System.Drawing.Size(66, 17);
             this.aLabel4.TabIndex = 55;
-            this.aLabel4.Text = "품목코드";
+            this.aLabel4.Text = "*품목코드";
             // 
             // aLabel1
             // 
@@ -417,9 +392,9 @@
             this.aLabel1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.aLabel1.Location = new System.Drawing.Point(26, 5);
             this.aLabel1.Name = "aLabel1";
-            this.aLabel1.Size = new System.Drawing.Size(47, 17);
+            this.aLabel1.Size = new System.Drawing.Size(53, 17);
             this.aLabel1.TabIndex = 54;
-            this.aLabel1.Text = "품목명";
+            this.aLabel1.Text = "*품목명";
             // 
             // aLabel2
             // 
@@ -428,9 +403,9 @@
             this.aLabel2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.aLabel2.Location = new System.Drawing.Point(26, 5);
             this.aLabel2.Name = "aLabel2";
-            this.aLabel2.Size = new System.Drawing.Size(60, 17);
+            this.aLabel2.Size = new System.Drawing.Size(66, 17);
             this.aLabel2.TabIndex = 53;
-            this.aLabel2.Text = "검사항목";
+            this.aLabel2.Text = "*검사항목";
             // 
             // aLabel7
             // 
@@ -522,18 +497,6 @@
             this.aPanel6.Size = new System.Drawing.Size(170, 35);
             this.aPanel6.TabIndex = 129;
             // 
-            // txtInspect_name
-            // 
-            this.txtInspect_name.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Italic);
-            this.txtInspect_name.ForeColor = System.Drawing.Color.Gray;
-            this.txtInspect_name.Location = new System.Drawing.Point(3, 3);
-            this.txtInspect_name.MaxLength = 30;
-            this.txtInspect_name.Name = "txtInspect_name";
-            this.txtInspect_name.PlaceHolderText = "이름을 입력하세요.";
-            this.txtInspect_name.Size = new System.Drawing.Size(160, 25);
-            this.txtInspect_name.TabIndex = 62;
-            this.txtInspect_name.Text = "검사항목명을 입력하세요.";
-            // 
             // aPanel4
             // 
             this.aPanel4.BackColor = System.Drawing.SystemColors.Info;
@@ -616,9 +579,9 @@
             this.aLabel3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.aLabel3.Location = new System.Drawing.Point(29, 5);
             this.aLabel3.Name = "aLabel3";
-            this.aLabel3.Size = new System.Drawing.Size(60, 17);
+            this.aLabel3.Size = new System.Drawing.Size(66, 17);
             this.aLabel3.TabIndex = 55;
-            this.aLabel3.Text = "공정코드";
+            this.aLabel3.Text = "*공정코드";
             // 
             // aPanel13
             // 
@@ -682,9 +645,9 @@
             this.aLabel12.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.aLabel12.Location = new System.Drawing.Point(30, 5);
             this.aLabel12.Name = "aLabel12";
-            this.aLabel12.Size = new System.Drawing.Size(47, 17);
+            this.aLabel12.Size = new System.Drawing.Size(53, 17);
             this.aLabel12.TabIndex = 54;
-            this.aLabel12.Text = "공정명";
+            this.aLabel12.Text = "*공정명";
             // 
             // aPanel19
             // 
@@ -703,9 +666,9 @@
             this.aLabel8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.aLabel8.Location = new System.Drawing.Point(29, 5);
             this.aLabel8.Name = "aLabel8";
-            this.aLabel8.Size = new System.Drawing.Size(60, 17);
+            this.aLabel8.Size = new System.Drawing.Size(66, 17);
             this.aLabel8.TabIndex = 55;
-            this.aLabel8.Text = "검사코드";
+            this.aLabel8.Text = "*검사코드";
             // 
             // aPanel20
             // 
@@ -718,15 +681,52 @@
             // 
             // txtInspect_code
             // 
-            this.txtInspect_code.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Italic);
-            this.txtInspect_code.ForeColor = System.Drawing.Color.Gray;
+            this.txtInspect_code.BackColor = System.Drawing.Color.White;
+            this.txtInspect_code.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtInspect_code.errorp = null;
             this.txtInspect_code.Location = new System.Drawing.Point(3, 3);
-            this.txtInspect_code.MaxLength = 30;
+            this.txtInspect_code.MaxLength = 20;
             this.txtInspect_code.Name = "txtInspect_code";
-            this.txtInspect_code.PlaceHolderText = "이름을 입력하세요.";
-            this.txtInspect_code.Size = new System.Drawing.Size(160, 25);
-            this.txtInspect_code.TabIndex = 63;
-            this.txtInspect_code.Text = "검사코드를 입력하세요.";
+            this.txtInspect_code.Size = new System.Drawing.Size(160, 23);
+            this.txtInspect_code.TabIndex = 156;
+            this.txtInspect_code.txtType = Axxen.CustomControls.TextType.Normal;
+            // 
+            // txtInspect_name
+            // 
+            this.txtInspect_name.BackColor = System.Drawing.Color.White;
+            this.txtInspect_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtInspect_name.errorp = null;
+            this.txtInspect_name.Location = new System.Drawing.Point(2, 4);
+            this.txtInspect_name.MaxLength = 20;
+            this.txtInspect_name.Name = "txtInspect_name";
+            this.txtInspect_name.Size = new System.Drawing.Size(160, 23);
+            this.txtInspect_name.TabIndex = 157;
+            this.txtInspect_name.txtType = Axxen.CustomControls.TextType.Normal;
+            // 
+            // txttype
+            // 
+            this.txttype.BackColor = System.Drawing.Color.White;
+            this.txttype.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txttype.errorp = null;
+            this.txttype.Location = new System.Drawing.Point(3, 4);
+            this.txttype.MaxLength = 20;
+            this.txttype.Name = "txttype";
+            this.txttype.Size = new System.Drawing.Size(160, 23);
+            this.txttype.TabIndex = 158;
+            this.txttype.txtType = Axxen.CustomControls.TextType.Normal;
+            // 
+            // txtRemark
+            // 
+            this.txtRemark.BackColor = System.Drawing.Color.White;
+            this.txtRemark.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtRemark.errorp = null;
+            this.txtRemark.Location = new System.Drawing.Point(3, 3);
+            this.txtRemark.MaxLength = 100;
+            this.txtRemark.Multiline = true;
+            this.txtRemark.Name = "txtRemark";
+            this.txtRemark.Size = new System.Drawing.Size(338, 72);
+            this.txtRemark.TabIndex = 159;
+            this.txtRemark.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // MDS_SDS_006_1
             // 
@@ -857,15 +857,12 @@
         private CustomControls.ALabel lblManager;
         private CustomControls.ALabel lblDay;
         private CustomControls.APanel aPanel7;
-        private CLIP.eForm.Consent.Standard.Management.UI.PlaceHolderTextBox txtInspect_name;
         private CustomControls.APanel aPanel6;
         private CustomControls.APanel aPanel4;
         private CustomControls.APanel aPanel2;
         private CustomControls.APanel aPanel3;
         private CustomControls.APanel aPanel5;
         private CustomControls.AComboBox cbbItem;
-        private CLIP.eForm.Consent.Standard.Management.UI.PlaceHolderTextBox txtRemark;
-        private CLIP.eForm.Consent.Standard.Management.UI.PlaceHolderTextBox txttype;
         private System.Windows.Forms.NumericUpDown nudusl;
         private CustomControls.APanel aPanel8;
         private CustomControls.ALabel lblItem;
@@ -881,6 +878,9 @@
         private CustomControls.APanel aPanel19;
         private CustomControls.ALabel aLabel8;
         private CustomControls.APanel aPanel20;
-        private CLIP.eForm.Consent.Standard.Management.UI.PlaceHolderTextBox txtInspect_code;
+        private CustomControls.ATextBox txtRemark;
+        private CustomControls.ATextBox txttype;
+        private CustomControls.ATextBox txtInspect_name;
+        private CustomControls.ATextBox txtInspect_code;
     }
 }

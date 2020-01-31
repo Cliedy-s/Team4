@@ -118,12 +118,23 @@ namespace Axxen
         /// <param name="e"></param>
         public void MyUpdateShow(object sender, EventArgs e)
         {
+            try
+            {
+                if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
+                {
 
-            txtName.Enabled = true;
-            txtCode.Enabled = false;
-            txtremark.Enabled = true;
-            btnSave.Enabled = true;
-            btnSave.Text = "수정";
+                    txtName.Enabled = true;
+                    txtCode.Enabled = false;
+                    txtremark.Enabled = true;
+                    btnSave.Enabled = true;
+                    btnSave.Text = "수정";
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
+
         }
         /// <summary>
         /// 새로고침 이벤트 메서드

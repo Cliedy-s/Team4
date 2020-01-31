@@ -46,6 +46,7 @@
             this.aLabel4 = new Axxen.CustomControls.ALabel();
             this.aPanel10 = new Axxen.CustomControls.APanel();
             this.txtRemark = new Axxen.CustomControls.ATextBox();
+            this.btnSearch = new Axxen.CustomControls.AButton();
             this.aPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aSplitContainer1)).BeginInit();
             this.aSplitContainer1.Panel1.SuspendLayout();
@@ -68,6 +69,7 @@
             // 
             // aPanel1
             // 
+            this.aPanel1.Controls.Add(this.btnSearch);
             this.aPanel1.Controls.Add(this.aBigTextBox_FindNameByCode1);
             this.aPanel1.Size = new System.Drawing.Size(1233, 74);
             // 
@@ -311,6 +313,18 @@
             this.txtRemark.TabIndex = 11;
             this.txtRemark.txtType = Axxen.CustomControls.TextType.Normal;
             // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Location = new System.Drawing.Point(420, 24);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(83, 30);
+            this.btnSearch.TabIndex = 13;
+            this.btnSearch.Text = "조회";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
+            // 
             // MDS_CDS_002
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -368,5 +382,6 @@
         private CustomControls.ATextBox txtRemark;
         private CustomControls.APanel aPanel9;
         private CustomControls.ALabel aLabel4;
+        private CustomControls.AButton btnSearch;
     }
 }
