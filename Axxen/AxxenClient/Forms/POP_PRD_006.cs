@@ -29,7 +29,7 @@ namespace AxxenClient.Forms
             txtItemName.TextBoxText = GlobalUsage.ItemName;
             txtQty.TextBoxText = GlobalUsage.Prd_Qty.ToString();
             txtUnit.TextBoxText = GlobalUsage.Prd_Unit.ToString();
-            txtWcCode.TextBoxText = GlobalUsage.WoIniChar;
+            txtWcCode.TextBoxText = GlobalUsage.WcCode;
             txtWorkOrderDate.TextBoxText = (GlobalUsage.WorkorderDate == null) ? "" : GlobalUsage.WorkorderDate.Value.ToString("yyyy-MM-dd HH:mm:ss");
         }
         private void InitControls()
@@ -41,16 +41,21 @@ namespace AxxenClient.Forms
             InitControlUtil.AddNewColumnToDataGridView(dgvBoxing, "품목코드", "Item_Code", true, 120);
             InitControlUtil.AddNewColumnToDataGridView(dgvBoxing, "품목명", "Item_Name", true);
             InitControlUtil.AddNewColumnToDataGridView(dgvBoxing, "수량", "Prd_Qty", true);
+            InitControlUtil.AddNewColumnToDataGridView(dgvBoxing, "대차상태", "GV_Status", true);
         }
         private void GetDatas()
         {
             GV_Current_StatusService service = new GV_Current_StatusService();
-            dgvBoxing.DataSource = service.GetGVCurrentStatus(woinichar:GlobalUsage.WoIniChar, ProcessName:"소성", gvStatus:"적재");
+            //dgvBoxing.DataSource = service.GetGVCurrentStatus(wocode: GlobalUsage.WcCode, ProcessName: "소성", gvStatus: "적재");
+            //dgvBoxing.DataSource = service.GetGVCurrentStatus(gvStatus: "적재");
+            dgvBoxing.DataSource = service.GetGVCurrentStatus();
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
             GV_Current_StatusService service = new GV_Current_StatusService();
-            dgvBoxing.DataSource = service.GetGVCurrentStatus(woinichar:GlobalUsage.WoIniChar, ProcessName:"소성", gvName:txtSearch.TextBoxText);
+            //dgvBoxing.DataSource = service.GetGVCurrentStatus(wocode:GlobalUsage.WcCode, ProcessName:"소성", gvName:txtSearch.TextBoxText);
+            //dgvBoxing.DataSource = service.GetGVCurrentStatus(gvStatus: "적재", gvName: txtSearch.TextBoxText);
+            dgvBoxing.DataSource = service.GetGVCurrentStatus(gvName: txtSearch.TextBoxText);
         }
         private void btnUnload_Click(object sender, EventArgs e)
         {
@@ -76,8 +81,8 @@ namespace AxxenClient.Forms
             GVClearVO clearvo = new GVClearVO()
             {
                 Clear_Cause = "포장문제",
-                Clear_Item = dgvBoxing.SelectedRows[0].Cells[3].Value.ToString(),
-                Clear_Qty = Convert.ToInt32(dgvBoxing.SelectedRows[0].Cells[5].Value),
+                Clear_Item = dgvBoxing.SelectedRows[0].Cells[3].Value==null ? "" : dgvBoxing.SelectedRows[0].Cells[3].Value.ToString(),
+                Clear_Qty = dgvBoxing.SelectedRows[0].Cells[5].Value == null ? 0 : Convert.ToInt32(dgvBoxing.SelectedRows[0].Cells[5].Value),
                 Clear_wc = GlobalUsage.WcCode,
                 GV_Code = dgvBoxing.SelectedRows[0].Cells[0].Value.ToString(),
                 Up_Emp = GlobalUsage.UserID

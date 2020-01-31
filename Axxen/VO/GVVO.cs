@@ -14,6 +14,16 @@ namespace VO
         public string GV_Status { get; set; }       // 대차상태
         public string Unloading_Wc { get; set; } // 언로딩작업장
     }
+
+    public class GVMasterVO
+
+    {
+        public string GV_Code { get; set; }        // 대차코드
+        public string GV_Name { get; set; }       // 대차명
+        public string GV_GroupCode { get; set; }       // 대차그룹코드
+        public string GV_Group { get; set; }       // 대차그룹
+    }
+
     public class GVWorkItemVO
     {
         public string GV_Code { get; set; }        // 대차코드

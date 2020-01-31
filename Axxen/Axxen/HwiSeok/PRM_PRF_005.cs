@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using VO;
@@ -13,6 +14,7 @@ namespace Axxen
     public partial class PRM_PRF_005 : Axxen.GridForm
     {
         List<GV_Work_ItemVO> gvwi;
+        List<GV_Work_ItemVO> gvwiList;
         GV_Work_ItemService gvwiservice = new GV_Work_ItemService();
         public PRM_PRF_005()
         {
@@ -21,9 +23,11 @@ namespace Axxen
 
         private void PRM_PRF_005_Load(object sender, EventArgs e)
         {
+            
             DatagridviewDesigns.SetDesign(dgvMainGrid);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "대차코드", "GV_Code", true, 100, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "대차명", "GV_Name", true, 100, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "대차그룹명", "GV_Group", true, 100, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "작업지시번호", "Workorderno", true, 100, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "품목코드", "Item_Code", true, 100, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "품목명", "Item_Name", true, 100, default, true);
@@ -41,6 +45,14 @@ namespace Axxen
 
             gvwi = gvwiservice.GetAllGV_Work_Item();
             dgvMainGrid.DataSource = gvwi;
+        }
+
+        private void aTextBox_FindNameByCode1_DotDotDotFormClosing(object sender, CustomControls.SearchFormClosingArgs args)
+        {
+            gvwiList = (from date in gvwi
+                        where date.GV_Group == aTextBox_FindNameByCode1.txtNameText
+                           select date).ToList();
+            dgvMainGrid.DataSource = gvwiList;
         }
     }
 }
