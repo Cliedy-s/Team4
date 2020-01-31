@@ -56,6 +56,7 @@
             this.aTextBox_FindNameByCode2.TabIndex = 1;
             this.aTextBox_FindNameByCode2.txtCodeText = "";
             this.aTextBox_FindNameByCode2.txtNameText = "";
+            this.aTextBox_FindNameByCode2.DotDotDotFormClosing += new Axxen.CustomControls.ATextBox_FindNameByCode.SearchFormClosing(this.aTextBox_FindNameByCode2_DotDotDotFormClosing);
             // 
             // aTextBox_FindNameByCode1
             // 
@@ -78,6 +79,7 @@
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.Name = "PRM_PRF_005";
             this.Text = "대차현황";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PRM_PRF_005_FormClosing);
             this.Load += new System.EventHandler(this.PRM_PRF_005_Load);
             this.panTop.ResumeLayout(false);
             this.ResumeLayout(false);

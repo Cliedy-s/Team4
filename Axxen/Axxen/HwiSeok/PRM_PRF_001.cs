@@ -69,15 +69,26 @@ namespace Axxen
         }
 
         public void RefreshFormShow(object sender, EventArgs e) // 새로고침 // 초기화
-        {
-            aDateTimePickerSearch1.ADateTimePickerValue1 = Convert.ToDateTime(DateTime.Now.AddDays(-7).ToShortDateString());
-            aDateTimePickerSearch1.ADateTimePickerValue2 = Convert.ToDateTime(DateTime.Now.ToShortDateString());
-            aTextBox_FindNameByCode1.txtCodeText = "";
-            aTextBox_FindNameByCode1.txtNameText = "";
-            aTextBox_FindNameByCode2.txtCodeText = "";
-            aTextBox_FindNameByCode2.txtNameText = "";
+        {       
+            try
+            {
+                if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
+                {
+                    aDateTimePickerSearch1.ADateTimePickerValue1 = Convert.ToDateTime(DateTime.Now.AddDays(-7).ToShortDateString());
+                    aDateTimePickerSearch1.ADateTimePickerValue2 = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+                    aTextBox_FindNameByCode1.txtCodeText = "";
+                    aTextBox_FindNameByCode1.txtNameText = "";
+                    aTextBox_FindNameByCode2.txtCodeText = "";
+                    aTextBox_FindNameByCode2.txtNameText = "";
 
-            DataLoad();         
+                    DataLoad();
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+                Program.Log.WriteError(err.Message);
+            }
         }
 
         private void DataLoad() //전체 데이터 그리드뷰 불러오기
@@ -131,7 +142,8 @@ namespace Axxen
 
         private void PRM_PRF_001_FormClosing(object sender, FormClosingEventArgs e) //이벤트 종료
         {
-            ((MainForm)this.MdiParent).InsertFormEvent -= new System.EventHandler(this.MyUpdateShow); //수정 이벤트 등록         
+            ((MainForm)this.MdiParent).MyUpdateEvent -= new System.EventHandler(this.MyUpdateShow);//수정 이벤트 등록
+            ((MainForm)this.MdiParent).RefreshFormEvent -= new System.EventHandler(this.RefreshFormShow); // 새로고침     
         }
 
         private void aTextBox_FindNameByCode1_DotDotDotFormClosing(object sender, CustomControls.SearchFormClosingArgs args) //공정별 검색
