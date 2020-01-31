@@ -79,11 +79,9 @@
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.documentViewer1);
             this.Name = "PPS_SCH_001_Report";
-            this.Text = "PPS_SCH_001_Report";
+            this.Text = "생산의뢰목록";
             this.Activated += new System.EventHandler(this.PPS_SCH_001_Report_Activated);
             this.Deactivate += new System.EventHandler(this.PPS_SCH_001_Report_Deactivate);
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PPS_SCH_001_Report_FormClosed);
-            this.Load += new System.EventHandler(this.PPS_SCH_001_Report_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);

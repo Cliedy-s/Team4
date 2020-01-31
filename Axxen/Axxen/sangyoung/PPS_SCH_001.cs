@@ -24,7 +24,7 @@ namespace Axxen
         List<WorkOrder_WC_ItemVO> workList;
         List<WorkOrder_WC_ItemVO> addlist = new List<WorkOrder_WC_ItemVO>();
         Wo_ReqService service = new Wo_ReqService();
-        ProductionRequest rpt = new ProductionRequest();
+      
         bool chk = false;
 
         public PPS_SCH_001()
@@ -261,7 +261,6 @@ namespace Axxen
 
         private void BtnPrDown_Click(object sender, EventArgs e)
         {
-      
             DataTable dt = new DataTable();
 
             List<Wo_Req_ItemVO> list = dgvMainGrid.DataSource as List<Wo_Req_ItemVO>;
@@ -279,27 +278,22 @@ namespace Axxen
                     }
                 }
             }
-
-
        
             dt = ListToDataTable.ToDataTable(reportList);
+            ProductionRequest rpt = new ProductionRequest();
             rpt.DataSource = dt;
             PPS_SCH_001_Report frm = new PPS_SCH_001_Report(dt);
-           
+            frm.documentViewer1.DocumentSource = null;
             frm.documentViewer1.DocumentSource = rpt;
-            //  ((MainForm)this.MdiParent).newForm(frm.Name, frm.Name);
             frm.MdiParent = MdiParent;
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
 
-
             TabPage newTab = new TabPage();
             newTab.Tag = frm.Name;
-            newTab.Text = frm.Name;
+            newTab.Text = "생산의뢰목록";
             frm.Tag = frm.Name;
             ((MainForm)this.MdiParent).tabControl2.TabPages.Add(newTab);
-
-
         }
 
         private void PPS_SCH_001_Activated(object sender, EventArgs e)
@@ -314,9 +308,7 @@ namespace Axxen
             ((MainForm)this.MdiParent).InsertFormEvent -= new System.EventHandler(this.InsertFormShow); 
             ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow); 
             ToolStripManager.RevertMerge(((MainForm)this.MdiParent).toolStrip1, toolStrip1); //저장버튼 제거
-
             reportList.Clear();
-            rpt.DataSource = null;
         }
 
         /// <summary>
