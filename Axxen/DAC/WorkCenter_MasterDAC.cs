@@ -53,5 +53,23 @@ namespace DAC
                 return list;
             }
         }
+
+        public List<WorkCenter_MasterVO> GetCombo1()
+        {
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText = @"select Wc_Code,Wc_Name From WorkCenter_Master where Use_YN='Y'";
+                comm.CommandType = CommandType.Text;
+
+                comm.Connection.Open();
+                SqlDataReader reader = comm.ExecuteReader();
+                List<WorkCenter_MasterVO> list = Helper.DataReaderMapToList<WorkCenter_MasterVO>(reader);
+                comm.Connection.Close();
+
+                return list;
+            }
+        }
+        
     }
 }

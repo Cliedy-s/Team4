@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using VO;
@@ -13,6 +14,7 @@ namespace Axxen
     public partial class PRM_PRF_008 : Axxen.GridForm
     {
         List<Nop_History_Mi_MaVO> nohm;
+        List<Nop_History_Mi_MaVO> nohmList;
         Nop_History_Mi_MaService nohmservice = new Nop_History_Mi_MaService();
         public PRM_PRF_008()
         {
@@ -22,6 +24,7 @@ namespace Axxen
         private void PRM_PRF_008_Load(object sender, EventArgs e)
         {
             ((MainForm)this.MdiParent).RefreshFormEvent += new System.EventHandler(this.RefreshFormShow); // 새로고침
+            ((MainForm)this.MdiParent).InsertFormEvent += new System.EventHandler(this.InsertFormShow); // 추가
 
             #region 그리드뷰
             DatagridviewDesigns.SetDesign(dgvMainGrid);
@@ -41,6 +44,23 @@ namespace Axxen
             dgvMainGrid.DataSource = nohm;
         }
 
+        private void InsertFormShow(object sender, EventArgs e) //비가동 등록
+        {        
+            try
+            {
+                if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
+                {
+                    PRM_PRF_008_1 frm = new PRM_PRF_008_1();
+                    frm.ShowDialog();
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+                Program.Log.WriteError(err.Message);
+            }
+        }
+
         private void RefreshFormShow(object sender, EventArgs e) //새로고침
         {
 
@@ -51,8 +71,6 @@ namespace Axxen
                     nohm = nohmservice.GetAllNop_History_Mi_Ma();
                     dgvMainGrid.DataSource = nohm;
 
-                    aTextBox_FindNameByCode1.txtCodeText = "";
-                    aTextBox_FindNameByCode1.txtNameText = "";
                     aTextBox_FindNameByCode2.txtCodeText = "";
                     aTextBox_FindNameByCode2.txtNameText = "";
                     aDateTimePickerSearch2.ADateTimePickerValue1 = Convert.ToDateTime(DateTime.Now.AddDays(-7).ToShortDateString());
@@ -70,21 +88,23 @@ namespace Axxen
         {
             nohm = nohmservice.GetDatePicker_Nop_History_Mi_Ma(aDateTimePickerSearch2.ADateTimePickerValue1.ToShortDateString(), aDateTimePickerSearch2.ADateTimePickerValue2.ToShortDateString());
             dgvMainGrid.DataSource = nohm;
+
+            aTextBox_FindNameByCode2.txtCodeText = "";
+            aTextBox_FindNameByCode2.txtNameText = "";
         }
 
-        private void aTextBox_FindNameByCode1_DotDotDotFormClosing(object sender, CustomControls.SearchFormClosingArgs args)
+        private void aTextBox_FindNameByCode2_DotDotDotFormClosing(object sender, CustomControls.SearchFormClosingArgs args) //작업장별
         {
-
-        }
-
-        private void aTextBox_FindNameByCode2_DotDotDotFormClosing(object sender, CustomControls.SearchFormClosingArgs args)
-        {
-
+            nohmList = (from date in nohm
+                        where date.Wc_Code == aTextBox_FindNameByCode2.txtCodeText
+                        select date).ToList();
+            dgvMainGrid.DataSource = nohmList;
         }
 
         private void PRM_PRF_008_FormClosing(object sender, FormClosingEventArgs e)
         {
             ((MainForm)this.MdiParent).RefreshFormEvent -= new System.EventHandler(this.RefreshFormShow); // 새로고침
+            ((MainForm)this.MdiParent).InsertFormEvent -= new System.EventHandler(this.InsertFormShow); // 추가
         }
     }
 }

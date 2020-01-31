@@ -78,5 +78,34 @@ namespace DAC
             }
 
         }
+
+        public bool InsertNop_History(NopHistoryVO nop)
+        {
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText = @"INSERT INTO Nop_History(Nop_Date, Nop_Happentime, Nop_Canceltime, Wc_Code, Nop_Mi_Code, Nop_Type, Nop_Time, Remark, Ins_Date, Ins_Emp) values(@Nop_Date, @Nop_Happentime, @Nop_Canceltime, @Wc_Code, @Nop_Mi_Code, @Nop_Type, @Nop_Time, @Remark, @Ins_Date, @Ins_Emp)";
+                comm.CommandType = CommandType.Text;
+                comm.Parameters.AddWithValue("@Nop_Date", nop.Nop_Date);
+                comm.Parameters.AddWithValue("@Nop_Happentime", nop.Nop_Happentime);
+                comm.Parameters.AddWithValue("@Nop_Canceltime", nop.Nop_Canceltime);
+                comm.Parameters.AddWithValue("@Wc_Code", nop.Wc_Code);
+                comm.Parameters.AddWithValue("@Nop_Mi_Code", nop.Nop_Mi_Code);
+                comm.Parameters.AddWithValue("@Nop_Type", nop.Nop_Type);
+                comm.Parameters.AddWithValue("@Nop_Time", nop.Nop_Time);
+                comm.Parameters.AddWithValue("@Remark", nop.Remark);
+                comm.Parameters.AddWithValue("@Ins_Date", nop.Ins_Date);
+                comm.Parameters.AddWithValue("@Ins_Emp", nop.Ins_Emp);
+
+                comm.Connection.Open();
+                int result = comm.ExecuteNonQuery();
+                comm.Connection.Close();
+
+                return result > 0;
+            }
+
+        }
+
+        
     }
 }

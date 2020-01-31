@@ -1,4 +1,4 @@
-﻿namespace Axxen.HwiSeok
+﻿namespace Axxen
 {
     partial class PRM_PRF_008_1
     {
@@ -39,8 +39,10 @@
             this.aLabel3 = new Axxen.CustomControls.ALabel();
             this.aPanel13 = new Axxen.CustomControls.APanel();
             this.aPanel14 = new Axxen.CustomControls.APanel();
+            this.placeHolderTextBox1 = new CLIP.eForm.Consent.Standard.Management.UI.PlaceHolderTextBox();
             this.aPanel15 = new Axxen.CustomControls.APanel();
-            this.cbbProcess = new Axxen.CustomControls.AComboBox();
+            this.aTextBox2 = new Axxen.CustomControls.ATextBox();
+            this.aComboBox2 = new Axxen.CustomControls.AComboBox();
             this.aPanel16 = new Axxen.CustomControls.APanel();
             this.aLabel12 = new Axxen.CustomControls.ALabel();
             this.aPanel29 = new Axxen.CustomControls.APanel();
@@ -61,17 +63,23 @@
             this.aPanel7 = new Axxen.CustomControls.APanel();
             this.aLabel2 = new Axxen.CustomControls.ALabel();
             this.aPanel6 = new Axxen.CustomControls.APanel();
+            this.aDateTimePicker2 = new Axxen.CustomControls.ADateTimePicker();
             this.aPanel4 = new Axxen.CustomControls.APanel();
             this.aLabel4 = new Axxen.CustomControls.ALabel();
             this.aPanel2 = new Axxen.CustomControls.APanel();
+            this.aComboBox1 = new Axxen.CustomControls.AComboBox();
             this.aPanel3 = new Axxen.CustomControls.APanel();
+            this.aDateTimePicker3 = new Axxen.CustomControls.ADateTimePicker();
             this.aPanel5 = new Axxen.CustomControls.APanel();
             this.aLabel1 = new Axxen.CustomControls.ALabel();
-            this.aComboBox1 = new Axxen.CustomControls.AComboBox();
             this.aDateTimePicker1 = new Axxen.CustomControls.ADateTimePicker();
-            this.aDateTimePicker2 = new Axxen.CustomControls.ADateTimePicker();
-            this.aDateTimePicker3 = new Axxen.CustomControls.ADateTimePicker();
-            this.placeHolderTextBox1 = new CLIP.eForm.Consent.Standard.Management.UI.PlaceHolderTextBox();
+            this.aPanel8 = new Axxen.CustomControls.APanel();
+            this.aLabel10 = new Axxen.CustomControls.ALabel();
+            this.aPanel17 = new Axxen.CustomControls.APanel();
+            this.aTextBox1 = new Axxen.CustomControls.ATextBox();
+            this.aPanel18 = new Axxen.CustomControls.APanel();
+            this.aLabel11 = new Axxen.CustomControls.ALabel();
+            this.aPanel21 = new Axxen.CustomControls.APanel();
             this.aPanel19.SuspendLayout();
             this.aPanel10.SuspendLayout();
             this.aPanel13.SuspendLayout();
@@ -92,6 +100,10 @@
             this.aPanel2.SuspendLayout();
             this.aPanel3.SuspendLayout();
             this.aPanel5.SuspendLayout();
+            this.aPanel8.SuspendLayout();
+            this.aPanel17.SuspendLayout();
+            this.aPanel18.SuspendLayout();
+            this.aPanel21.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCencle
@@ -119,7 +131,6 @@
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnSave.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Location = new System.Drawing.Point(337, 9);
@@ -128,6 +139,7 @@
             this.btnSave.TabIndex = 0;
             this.btnSave.Text = "저장";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // aPanel19
             // 
@@ -144,7 +156,7 @@
             this.aLabel8.AutoSize = true;
             this.aLabel8.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aLabel8.Location = new System.Drawing.Point(40, 5);
+            this.aLabel8.Location = new System.Drawing.Point(41, 5);
             this.aLabel8.Name = "aLabel8";
             this.aLabel8.Size = new System.Drawing.Size(60, 17);
             this.aLabel8.TabIndex = 55;
@@ -163,7 +175,7 @@
             this.aPanel10.BackColor = System.Drawing.SystemColors.Info;
             this.aPanel10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.aPanel10.Controls.Add(this.aLabel3);
-            this.aPanel10.Location = new System.Drawing.Point(12, 260);
+            this.aPanel10.Location = new System.Drawing.Point(12, 331);
             this.aPanel10.Name = "aPanel10";
             this.aPanel10.Size = new System.Drawing.Size(140, 35);
             this.aPanel10.TabIndex = 180;
@@ -173,7 +185,7 @@
             this.aLabel3.AutoSize = true;
             this.aLabel3.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aLabel3.Location = new System.Drawing.Point(40, 8);
+            this.aLabel3.Location = new System.Drawing.Point(41, 8);
             this.aLabel3.Name = "aLabel3";
             this.aLabel3.Size = new System.Drawing.Size(60, 17);
             this.aLabel3.TabIndex = 55;
@@ -183,7 +195,7 @@
             // 
             this.aPanel13.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.aPanel13.Controls.Add(this.aPanel14);
-            this.aPanel13.Location = new System.Drawing.Point(153, 259);
+            this.aPanel13.Location = new System.Drawing.Point(153, 330);
             this.aPanel13.Name = "aPanel13";
             this.aPanel13.Size = new System.Drawing.Size(170, 35);
             this.aPanel13.TabIndex = 181;
@@ -197,29 +209,56 @@
             this.aPanel14.Size = new System.Drawing.Size(160, 27);
             this.aPanel14.TabIndex = 151;
             // 
+            // placeHolderTextBox1
+            // 
+            this.placeHolderTextBox1.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Italic);
+            this.placeHolderTextBox1.ForeColor = System.Drawing.Color.Gray;
+            this.placeHolderTextBox1.Location = new System.Drawing.Point(-1, 0);
+            this.placeHolderTextBox1.MaxLength = 20;
+            this.placeHolderTextBox1.Name = "placeHolderTextBox1";
+            this.placeHolderTextBox1.PlaceHolderText = "이름을 입력하세요.";
+            this.placeHolderTextBox1.Size = new System.Drawing.Size(160, 25);
+            this.placeHolderTextBox1.TabIndex = 151;
+            this.placeHolderTextBox1.Text = "발생유형을 입력하세요.";
+            // 
             // aPanel15
             // 
             this.aPanel15.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.aPanel15.Controls.Add(this.cbbProcess);
-            this.aPanel15.Location = new System.Drawing.Point(153, 224);
+            this.aPanel15.Controls.Add(this.aTextBox2);
+            this.aPanel15.Location = new System.Drawing.Point(153, 295);
             this.aPanel15.Name = "aPanel15";
             this.aPanel15.Size = new System.Drawing.Size(170, 35);
             this.aPanel15.TabIndex = 179;
             // 
-            // cbbProcess
+            // aTextBox2
             // 
-            this.cbbProcess.FormattingEnabled = true;
-            this.cbbProcess.Location = new System.Drawing.Point(2, 3);
-            this.cbbProcess.Name = "cbbProcess";
-            this.cbbProcess.Size = new System.Drawing.Size(162, 23);
-            this.cbbProcess.TabIndex = 154;
+            this.aTextBox2.BackColor = System.Drawing.Color.White;
+            this.aTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.aTextBox2.Enabled = false;
+            this.aTextBox2.errorp = null;
+            this.aTextBox2.Location = new System.Drawing.Point(3, 4);
+            this.aTextBox2.Name = "aTextBox2";
+            this.aTextBox2.ReadOnly = true;
+            this.aTextBox2.Size = new System.Drawing.Size(160, 23);
+            this.aTextBox2.TabIndex = 0;
+            this.aTextBox2.txtType = Axxen.CustomControls.TextType.Normal;
+            // 
+            // aComboBox2
+            // 
+            this.aComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.aComboBox2.FormattingEnabled = true;
+            this.aComboBox2.Location = new System.Drawing.Point(3, 4);
+            this.aComboBox2.Name = "aComboBox2";
+            this.aComboBox2.Size = new System.Drawing.Size(162, 23);
+            this.aComboBox2.TabIndex = 154;
+            this.aComboBox2.SelectedIndexChanged += new System.EventHandler(this.aComboBox2_SelectedIndexChanged);
             // 
             // aPanel16
             // 
             this.aPanel16.BackColor = System.Drawing.SystemColors.Info;
             this.aPanel16.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.aPanel16.Controls.Add(this.aLabel12);
-            this.aPanel16.Location = new System.Drawing.Point(12, 225);
+            this.aPanel16.Location = new System.Drawing.Point(12, 296);
             this.aPanel16.Name = "aPanel16";
             this.aPanel16.Size = new System.Drawing.Size(140, 35);
             this.aPanel16.TabIndex = 178;
@@ -229,7 +268,7 @@
             this.aLabel12.AutoSize = true;
             this.aLabel12.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel12.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aLabel12.Location = new System.Drawing.Point(8, 8);
+            this.aLabel12.Location = new System.Drawing.Point(9, 8);
             this.aLabel12.Name = "aLabel12";
             this.aLabel12.Size = new System.Drawing.Size(125, 17);
             this.aLabel12.TabIndex = 54;
@@ -239,7 +278,7 @@
             // 
             this.aPanel29.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.aPanel29.Controls.Add(this.txtRemark);
-            this.aPanel29.Location = new System.Drawing.Point(153, 329);
+            this.aPanel29.Location = new System.Drawing.Point(153, 400);
             this.aPanel29.Name = "aPanel29";
             this.aPanel29.Size = new System.Drawing.Size(348, 82);
             this.aPanel29.TabIndex = 175;
@@ -262,7 +301,7 @@
             this.aPanel31.BackColor = System.Drawing.SystemColors.Info;
             this.aPanel31.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.aPanel31.Controls.Add(this.aLabel16);
-            this.aPanel31.Location = new System.Drawing.Point(12, 328);
+            this.aPanel31.Location = new System.Drawing.Point(12, 399);
             this.aPanel31.Name = "aPanel31";
             this.aPanel31.Size = new System.Drawing.Size(141, 35);
             this.aPanel31.TabIndex = 174;
@@ -272,7 +311,7 @@
             this.aLabel16.AutoSize = true;
             this.aLabel16.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel16.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aLabel16.Location = new System.Drawing.Point(53, 8);
+            this.aLabel16.Location = new System.Drawing.Point(54, 8);
             this.aLabel16.Name = "aLabel16";
             this.aLabel16.Size = new System.Drawing.Size(34, 17);
             this.aLabel16.TabIndex = 82;
@@ -300,15 +339,20 @@
             // 
             this.aPanel11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.aPanel11.Controls.Add(this.nudusl);
-            this.aPanel11.Location = new System.Drawing.Point(153, 294);
+            this.aPanel11.Location = new System.Drawing.Point(153, 365);
             this.aPanel11.Name = "aPanel11";
             this.aPanel11.Size = new System.Drawing.Size(170, 35);
             this.aPanel11.TabIndex = 167;
             // 
             // nudusl
             // 
-            this.nudusl.DecimalPlaces = 4;
+            this.nudusl.DecimalPlaces = 1;
             this.nudusl.Location = new System.Drawing.Point(1, 3);
+            this.nudusl.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
             this.nudusl.Name = "nudusl";
             this.nudusl.Size = new System.Drawing.Size(160, 23);
             this.nudusl.TabIndex = 150;
@@ -318,7 +362,7 @@
             this.aPanel12.BackColor = System.Drawing.SystemColors.Info;
             this.aPanel12.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.aPanel12.Controls.Add(this.aLabel6);
-            this.aPanel12.Location = new System.Drawing.Point(12, 295);
+            this.aPanel12.Location = new System.Drawing.Point(12, 366);
             this.aPanel12.Name = "aPanel12";
             this.aPanel12.Size = new System.Drawing.Size(140, 35);
             this.aPanel12.TabIndex = 166;
@@ -328,7 +372,7 @@
             this.aLabel6.AutoSize = true;
             this.aLabel6.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aLabel6.Location = new System.Drawing.Point(34, 8);
+            this.aLabel6.Location = new System.Drawing.Point(35, 8);
             this.aLabel6.Name = "aLabel6";
             this.aLabel6.Size = new System.Drawing.Size(73, 17);
             this.aLabel6.TabIndex = 65;
@@ -341,7 +385,7 @@
             this.aPanel9.Controls.Add(this.btnCencle);
             this.aPanel9.Controls.Add(this.btnSave);
             this.aPanel9.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.aPanel9.Location = new System.Drawing.Point(0, 441);
+            this.aPanel9.Location = new System.Drawing.Point(0, 488);
             this.aPanel9.Name = "aPanel9";
             this.aPanel9.Size = new System.Drawing.Size(510, 41);
             this.aPanel9.TabIndex = 158;
@@ -405,7 +449,7 @@
             this.aLabel2.AutoSize = true;
             this.aLabel2.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aLabel2.Location = new System.Drawing.Point(40, 5);
+            this.aLabel2.Location = new System.Drawing.Point(41, 5);
             this.aLabel2.Name = "aLabel2";
             this.aLabel2.Size = new System.Drawing.Size(60, 17);
             this.aLabel2.TabIndex = 53;
@@ -419,6 +463,15 @@
             this.aPanel6.Name = "aPanel6";
             this.aPanel6.Size = new System.Drawing.Size(170, 35);
             this.aPanel6.TabIndex = 165;
+            // 
+            // aDateTimePicker2
+            // 
+            this.aDateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.aDateTimePicker2.Location = new System.Drawing.Point(4, 4);
+            this.aDateTimePicker2.Name = "aDateTimePicker2";
+            this.aDateTimePicker2.ShowUpDown = true;
+            this.aDateTimePicker2.Size = new System.Drawing.Size(160, 23);
+            this.aDateTimePicker2.TabIndex = 1;
             // 
             // aPanel4
             // 
@@ -435,11 +488,11 @@
             this.aLabel4.AutoSize = true;
             this.aLabel4.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aLabel4.Location = new System.Drawing.Point(34, 9);
+            this.aLabel4.Location = new System.Drawing.Point(41, 9);
             this.aLabel4.Name = "aLabel4";
-            this.aLabel4.Size = new System.Drawing.Size(73, 17);
+            this.aLabel4.Size = new System.Drawing.Size(60, 17);
             this.aLabel4.TabIndex = 55;
-            this.aLabel4.Text = "작업장코드";
+            this.aLabel4.Text = "작업장명";
             // 
             // aPanel2
             // 
@@ -450,6 +503,16 @@
             this.aPanel2.Size = new System.Drawing.Size(170, 35);
             this.aPanel2.TabIndex = 163;
             // 
+            // aComboBox1
+            // 
+            this.aComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.aComboBox1.FormattingEnabled = true;
+            this.aComboBox1.Location = new System.Drawing.Point(3, 4);
+            this.aComboBox1.Name = "aComboBox1";
+            this.aComboBox1.Size = new System.Drawing.Size(161, 23);
+            this.aComboBox1.TabIndex = 155;
+            this.aComboBox1.SelectedIndexChanged += new System.EventHandler(this.aComboBox1_SelectedIndexChanged);
+            // 
             // aPanel3
             // 
             this.aPanel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -458,6 +521,14 @@
             this.aPanel3.Name = "aPanel3";
             this.aPanel3.Size = new System.Drawing.Size(170, 35);
             this.aPanel3.TabIndex = 161;
+            // 
+            // aDateTimePicker3
+            // 
+            this.aDateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.aDateTimePicker3.Location = new System.Drawing.Point(4, 4);
+            this.aDateTimePicker3.Name = "aDateTimePicker3";
+            this.aDateTimePicker3.Size = new System.Drawing.Size(160, 23);
+            this.aDateTimePicker3.TabIndex = 1;
             // 
             // aPanel5
             // 
@@ -474,19 +545,11 @@
             this.aLabel1.AutoSize = true;
             this.aLabel1.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aLabel1.Location = new System.Drawing.Point(40, 8);
+            this.aLabel1.Location = new System.Drawing.Point(41, 8);
             this.aLabel1.Name = "aLabel1";
             this.aLabel1.Size = new System.Drawing.Size(60, 17);
             this.aLabel1.TabIndex = 54;
             this.aLabel1.Text = "해제일시";
-            // 
-            // aComboBox1
-            // 
-            this.aComboBox1.FormattingEnabled = true;
-            this.aComboBox1.Location = new System.Drawing.Point(3, 4);
-            this.aComboBox1.Name = "aComboBox1";
-            this.aComboBox1.Size = new System.Drawing.Size(161, 23);
-            this.aComboBox1.TabIndex = 155;
             // 
             // aDateTimePicker1
             // 
@@ -496,39 +559,88 @@
             this.aDateTimePicker1.Size = new System.Drawing.Size(161, 23);
             this.aDateTimePicker1.TabIndex = 0;
             // 
-            // aDateTimePicker2
+            // aPanel8
             // 
-            this.aDateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.aDateTimePicker2.Location = new System.Drawing.Point(4, 4);
-            this.aDateTimePicker2.Name = "aDateTimePicker2";
-            this.aDateTimePicker2.Size = new System.Drawing.Size(160, 23);
-            this.aDateTimePicker2.TabIndex = 1;
+            this.aPanel8.BackColor = System.Drawing.SystemColors.Info;
+            this.aPanel8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.aPanel8.Controls.Add(this.aLabel10);
+            this.aPanel8.Location = new System.Drawing.Point(12, 225);
+            this.aPanel8.Name = "aPanel8";
+            this.aPanel8.Size = new System.Drawing.Size(140, 35);
+            this.aPanel8.TabIndex = 164;
             // 
-            // aDateTimePicker3
+            // aLabel10
             // 
-            this.aDateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.aDateTimePicker3.Location = new System.Drawing.Point(4, 4);
-            this.aDateTimePicker3.Name = "aDateTimePicker3";
-            this.aDateTimePicker3.Size = new System.Drawing.Size(160, 23);
-            this.aDateTimePicker3.TabIndex = 1;
+            this.aLabel10.AutoSize = true;
+            this.aLabel10.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aLabel10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.aLabel10.Location = new System.Drawing.Point(35, 9);
+            this.aLabel10.Name = "aLabel10";
+            this.aLabel10.Size = new System.Drawing.Size(73, 17);
+            this.aLabel10.TabIndex = 55;
+            this.aLabel10.Text = "작업장코드";
             // 
-            // placeHolderTextBox1
+            // aPanel17
             // 
-            this.placeHolderTextBox1.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Italic);
-            this.placeHolderTextBox1.ForeColor = System.Drawing.Color.Gray;
-            this.placeHolderTextBox1.Location = new System.Drawing.Point(-1, 0);
-            this.placeHolderTextBox1.MaxLength = 20;
-            this.placeHolderTextBox1.Name = "placeHolderTextBox1";
-            this.placeHolderTextBox1.PlaceHolderText = "이름을 입력하세요.";
-            this.placeHolderTextBox1.Size = new System.Drawing.Size(160, 25);
-            this.placeHolderTextBox1.TabIndex = 151;
-            this.placeHolderTextBox1.Text = "발생유형을 입력하세요.";
+            this.aPanel17.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.aPanel17.Controls.Add(this.aTextBox1);
+            this.aPanel17.Location = new System.Drawing.Point(153, 224);
+            this.aPanel17.Name = "aPanel17";
+            this.aPanel17.Size = new System.Drawing.Size(170, 35);
+            this.aPanel17.TabIndex = 165;
+            // 
+            // aTextBox1
+            // 
+            this.aTextBox1.BackColor = System.Drawing.Color.White;
+            this.aTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.aTextBox1.Enabled = false;
+            this.aTextBox1.errorp = null;
+            this.aTextBox1.Location = new System.Drawing.Point(4, 5);
+            this.aTextBox1.Name = "aTextBox1";
+            this.aTextBox1.ReadOnly = true;
+            this.aTextBox1.Size = new System.Drawing.Size(160, 23);
+            this.aTextBox1.TabIndex = 0;
+            this.aTextBox1.txtType = Axxen.CustomControls.TextType.Normal;
+            // 
+            // aPanel18
+            // 
+            this.aPanel18.BackColor = System.Drawing.SystemColors.Info;
+            this.aPanel18.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.aPanel18.Controls.Add(this.aLabel11);
+            this.aPanel18.Location = new System.Drawing.Point(12, 261);
+            this.aPanel18.Name = "aPanel18";
+            this.aPanel18.Size = new System.Drawing.Size(140, 35);
+            this.aPanel18.TabIndex = 166;
+            // 
+            // aLabel11
+            // 
+            this.aLabel11.AutoSize = true;
+            this.aLabel11.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aLabel11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.aLabel11.Location = new System.Drawing.Point(15, 9);
+            this.aLabel11.Name = "aLabel11";
+            this.aLabel11.Size = new System.Drawing.Size(112, 17);
+            this.aLabel11.TabIndex = 55;
+            this.aLabel11.Text = "비가동상세분류명";
+            // 
+            // aPanel21
+            // 
+            this.aPanel21.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.aPanel21.Controls.Add(this.aComboBox2);
+            this.aPanel21.Location = new System.Drawing.Point(153, 260);
+            this.aPanel21.Name = "aPanel21";
+            this.aPanel21.Size = new System.Drawing.Size(170, 35);
+            this.aPanel21.TabIndex = 167;
             // 
             // PRM_PRF_008_1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.ClientSize = new System.Drawing.Size(510, 482);
+            this.ClientSize = new System.Drawing.Size(510, 529);
+            this.Controls.Add(this.aPanel18);
+            this.Controls.Add(this.aPanel8);
+            this.Controls.Add(this.aPanel21);
             this.Controls.Add(this.aDateTimePicker1);
+            this.Controls.Add(this.aPanel17);
             this.Controls.Add(this.aPanel19);
             this.Controls.Add(this.aPanel20);
             this.Controls.Add(this.aPanel10);
@@ -551,6 +663,7 @@
             this.Controls.Add(this.aPanel5);
             this.Name = "PRM_PRF_008_1";
             this.Text = "비가동 등록";
+            this.Load += new System.EventHandler(this.PRM_PRF_008_1_Load);
             this.aPanel19.ResumeLayout(false);
             this.aPanel19.PerformLayout();
             this.aPanel10.ResumeLayout(false);
@@ -559,6 +672,7 @@
             this.aPanel14.ResumeLayout(false);
             this.aPanel14.PerformLayout();
             this.aPanel15.ResumeLayout(false);
+            this.aPanel15.PerformLayout();
             this.aPanel16.ResumeLayout(false);
             this.aPanel16.PerformLayout();
             this.aPanel29.ResumeLayout(false);
@@ -582,6 +696,13 @@
             this.aPanel3.ResumeLayout(false);
             this.aPanel5.ResumeLayout(false);
             this.aPanel5.PerformLayout();
+            this.aPanel8.ResumeLayout(false);
+            this.aPanel8.PerformLayout();
+            this.aPanel17.ResumeLayout(false);
+            this.aPanel17.PerformLayout();
+            this.aPanel18.ResumeLayout(false);
+            this.aPanel18.PerformLayout();
+            this.aPanel21.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -601,7 +722,7 @@
         private CustomControls.APanel aPanel14;
         private CLIP.eForm.Consent.Standard.Management.UI.PlaceHolderTextBox placeHolderTextBox1;
         private CustomControls.APanel aPanel15;
-        private CustomControls.AComboBox cbbProcess;
+        private CustomControls.AComboBox aComboBox2;
         private CustomControls.APanel aPanel16;
         private CustomControls.ALabel aLabel12;
         private CustomControls.APanel aPanel29;
@@ -632,5 +753,13 @@
         private CustomControls.APanel aPanel5;
         private CustomControls.ALabel aLabel1;
         private CustomControls.ADateTimePicker aDateTimePicker1;
+        private CustomControls.ATextBox aTextBox2;
+        private CustomControls.APanel aPanel8;
+        private CustomControls.ALabel aLabel10;
+        private CustomControls.APanel aPanel17;
+        private CustomControls.ATextBox aTextBox1;
+        private CustomControls.APanel aPanel18;
+        private CustomControls.ALabel aLabel11;
+        private CustomControls.APanel aPanel21;
     }
 }
