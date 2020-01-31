@@ -72,6 +72,17 @@ namespace Service
             return dac.InsertPPSWorkorder(order);
         }
 
+        /// <summary>
+        /// PPS_SCH_002 작업지시계획변경
+        /// </summary>
+        /// <param name="order"></param>
+        /// <returns></returns>
+        public bool UpdatePPSWorkorder(WorkOrderAllVO order)
+        {
+            WorkOrderDAC dac = new WorkOrderDAC();
+            return dac.UpdatePPSWorkorder(order);
+        }
+
         //pop
         /// <summary>
         /// 작업장으로 작업지시현황 가져오기

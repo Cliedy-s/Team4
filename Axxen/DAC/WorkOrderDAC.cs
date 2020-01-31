@@ -229,7 +229,12 @@ namespace DAC
             }
         }
 
-        public bool InsertPPSWorkorder(WorkOrderAllVO order) //PPS_SCH_001 Form
+        /// <summary>
+        /// 생산의뢰에 따른 작업지시생성
+        /// </summary>
+        /// <param name="order"></param>
+        /// <returns></returns>
+        public bool InsertPPSWorkorder(WorkOrderAllVO order)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -257,7 +262,32 @@ namespace DAC
                 return result > 0;
             }
         }
-        
+
+        /// <summary>
+        /// 작업지시목록에서 선택한 작업의 계획변경
+        /// </summary>
+        /// <param name="order"></param>
+        /// <returns></returns>
+        public bool UpdatePPSWorkorder(WorkOrderAllVO order)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(Connstr);
+                cmd.CommandText = "update WorkOrder set Plan_Qty=@Plan_Qty, Plan_Date=@Plan_Date, Plan_Unit=@Plan_Unit where Workorderno = @Workorderno";
+                cmd.CommandType = CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@Workorderno", order.Workorderno);
+                cmd.Parameters.AddWithValue("@Plan_Qty", order.Plan_Qty);
+                cmd.Parameters.AddWithValue("@Plan_Date", order.Plan_Date);
+                cmd.Parameters.AddWithValue("@Plan_Unit", order.Plan_Unit);
+
+                cmd.Connection.Open();
+                int result = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+
+                return result > 0;
+            }
+        }
         //pop
         /// <summary>
         /// 작업장으로 작업지시현황 가져오기
