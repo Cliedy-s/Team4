@@ -50,7 +50,7 @@ namespace Service
             return dac.UpdateWo_Status(list);
         }
 
-        public List<WO_WC_Time_ItemVO> GetTimeWork(string wono)
+        public List<WO_WC_Time_ItemVO> GetTimeWork(string wono) //PPS_SCH_003 chart
         {
             WorkOrderDAC dac = new WorkOrderDAC();
             return dac.GetTimeWork(wono);
