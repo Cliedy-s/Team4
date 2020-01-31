@@ -50,6 +50,11 @@ namespace Service
             return dac.UpdateWo_Status(list);
         }
 
+        public List<WO_WC_Time_ItemVO> GetTimeWork(string wono)
+        {
+            WorkOrderDAC dac = new WorkOrderDAC();
+            return dac.GetTimeWork(wono);
+        }
 
         //pop
         /// <summary>
@@ -89,6 +94,15 @@ namespace Service
         {
             WorkOrderDAC dac = new WorkOrderDAC();
             return dac.UpdateWorkOrderEnd(workorderno, outqty, prdqty, username);
+        }
+        /// <summary>
+        /// 작업지시 마감
+        /// </summary>
+        /// <returns></returns>
+        public bool UpdateWorkOrderClose(string username, string workorderno)
+        {
+            WorkOrderDAC dac = new WorkOrderDAC();
+            return dac.UpdateWorkOrderClose( username,  workorderno);
         }
         /// <summary>
         /// 옮겨타기

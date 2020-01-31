@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.aLabel1 = new Axxen.CustomControls.ALabel();
             this.aPanel1 = new Axxen.CustomControls.APanel();
             this.aDateTimePickerSearch1 = new Axxen.CustomControls.ADateTimePickerSearch();
@@ -79,8 +79,8 @@
             // 
             // aDateTimePickerSearch1
             // 
-            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 1, 23, 14, 52, 18, 980);
-            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 1, 30, 14, 52, 18, 980);
+            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 1, 23, 19, 56, 20, 851);
+            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 1, 30, 19, 56, 20, 851);
             this.aDateTimePickerSearch1.ButtonText = "조회";
             this.aDateTimePickerSearch1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aDateTimePickerSearch1.Location = new System.Drawing.Point(105, 23);
@@ -160,21 +160,22 @@
             this.dgvMainGrid.RowTemplate.Height = 23;
             this.dgvMainGrid.Size = new System.Drawing.Size(1124, 260);
             this.dgvMainGrid.TabIndex = 10;
+            this.dgvMainGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvMainGrid_CellDoubleClick);
             // 
             // chartTime
             // 
             this.chartTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.chartTime.BackColor = System.Drawing.Color.Gainsboro;
-            chartArea3.Name = "ChartArea1";
-            this.chartTime.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chartTime.Legends.Add(legend3);
+            chartArea1.Name = "ChartArea1";
+            this.chartTime.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartTime.Legends.Add(legend1);
             this.chartTime.Location = new System.Drawing.Point(12, 393);
             this.chartTime.Name = "chartTime";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chartTime.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartTime.Series.Add(series1);
             this.chartTime.Size = new System.Drawing.Size(689, 295);
             this.chartTime.TabIndex = 12;
             this.chartTime.Text = "chart1";
@@ -184,17 +185,17 @@
             this.chartDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chartDate.BackColor = System.Drawing.Color.LightGray;
-            chartArea4.Name = "ChartArea1";
-            this.chartDate.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chartDate.Legends.Add(legend4);
+            chartArea2.Name = "ChartArea1";
+            this.chartDate.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartDate.Legends.Add(legend2);
             this.chartDate.Location = new System.Drawing.Point(735, 393);
             this.chartDate.Name = "chartDate";
             this.chartDate.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chartDate.Series.Add(series4);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartDate.Series.Add(series2);
             this.chartDate.Size = new System.Drawing.Size(400, 295);
             this.chartDate.TabIndex = 13;
             this.chartDate.Text = "chart2";

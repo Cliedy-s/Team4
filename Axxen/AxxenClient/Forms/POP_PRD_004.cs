@@ -65,7 +65,7 @@ namespace AxxenClient.Forms
                 MessageBox.Show("팔레트 번호를 확인해주세요");
                 return;
             }
-            string barcodeno = DateTime.Now.Date.ToString("yyyyMMddhhmmssffffff");
+            string barcodeno = DateTime.Now.Date.ToString("yyyyMMddHHmmssffffff");
             if (!service.UpdateBarcodeNo(txtPalletNo.TextBoxText, barcodeno))
             {
                 MessageBox.Show("바코드 재발행에 실패했습니다.");

@@ -35,7 +35,6 @@ namespace Axxen
             
             aSplitContainer1.Panel2.Enabled = false;
             txtCode.Focus();
-
         }
 
         /// <summary>
@@ -100,6 +99,13 @@ namespace Axxen
             moldList = service.SelectMoldAll();
             dgvMainGrid.DataSource = moldList;
             cboGroup.SelectedIndex = 0;
+
+            ResetUtillity.ResetPanelControl(aSplitContainer1.Panel2);
+            txtMoldCode.TextBoxText = "";
+            txtMoldName.TextBoxText = "";
+            txtMoldGroup.TextBoxText = "";
+            txtCost.TextBoxText = "";
+
         } //새로고침클릭
 
         /// <summary>

@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraReports.UI;
+﻿using Axxen.sangyoung;
+using DevExpress.XtraReports.UI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Axxen.sangyoung
+namespace Axxen
 {
     public partial class PPS_SCH_001_Report : Form
     {

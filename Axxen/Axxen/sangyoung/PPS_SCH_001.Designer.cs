@@ -56,9 +56,13 @@
             this.aPanel1.Controls.Add(this.aLabel1);
             this.aPanel1.Controls.Add(this.btnPrFinish);
             this.aPanel1.Controls.Add(this.btnPrDown);
+            this.aPanel1.Location = new System.Drawing.Point(15, 41);
+            this.aPanel1.Size = new System.Drawing.Size(1213, 74);
             // 
             // aSplitContainer1
             // 
+            this.aSplitContainer1.Size = new System.Drawing.Size(1213, 771);
+            this.aSplitContainer1.SplitterDistance = 372;
             // 
             // aHeaderBox1
             // 
@@ -131,8 +135,8 @@
             // 
             // aDateTimePickerSearch1
             // 
-            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 1, 23, 18, 9, 53, 58);
-            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 1, 30, 18, 9, 53, 58);
+            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 1, 23, 21, 29, 2, 529);
+            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 1, 30, 21, 29, 2, 529);
             this.aDateTimePickerSearch1.ButtonText = "조회";
             this.aDateTimePickerSearch1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aDateTimePickerSearch1.Location = new System.Drawing.Point(112, 23);
@@ -157,7 +161,7 @@
             this.tsbtnSave});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1148, 60);
+            this.toolStrip1.Size = new System.Drawing.Size(1237, 60);
             this.toolStrip1.TabIndex = 9;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -181,7 +185,7 @@
             // PPS_SCH_001
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.ClientSize = new System.Drawing.Size(1148, 700);
+            this.ClientSize = new System.Drawing.Size(1237, 883);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.adgv);
             this.Name = "PPS_SCH_001";

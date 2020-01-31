@@ -1127,7 +1127,6 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton tsbInsert;
-        private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private CustomControls.ALabel lblName;
         private CustomControls.ALabel aLabel1;
@@ -1213,5 +1212,6 @@
         private System.Windows.Forms.ToolStripMenuItem 금형사용현황ToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        public System.Windows.Forms.TabControl tabControl2;
     }
 }

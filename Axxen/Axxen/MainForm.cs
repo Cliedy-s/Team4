@@ -234,11 +234,11 @@ namespace Axxen
         /// 새로운 폼 생성
         /// </summary>
         /// <param name="formName">폼이름</param>
-        private void newForm(string formName, string formText)
+        public void newForm(string formName, string formText)
         {
             try
             {
-                if (userinfoScreenItem.Count(item => item.Screen_Code == formName.ToString())>0) {
+               if (userinfoScreenItem.Count(item => item.Screen_Code == formName.ToString())>0) {
 
 
 
@@ -263,11 +263,11 @@ namespace Axxen
                 newTab.Tag = formName;
                 newTab.Text = formText;
                 tabControl2.TabPages.Add(newTab);
-             
+                    frm.Show();
 
-                //    tabControl2.TabPages     .Tag=formName;
-                //    MessageBox.Show(tabControl2.SelectedTab.Tag.ToString());
-                frm.Show();
+                    //  tabControl2.TabPages.Tag=formName;
+                    //  MessageBox.Show(tabControl2.SelectedTab.Tag.ToString());
+           
                     lblSubtitle.Text =  screenitemlist.Find(item => item.Screen_Code == formName.ToString()).Screen_Path.ToString();
                 }
                 else
@@ -275,9 +275,10 @@ namespace Axxen
                     MessageBox.Show("사용권한이 없는 메뉴입니다." + formName);
                 }
             }
-            catch
+            catch 
             {
                 MessageBox.Show("사용할 수 없는 메뉴" + formName);
+                throw;
             }
         }
 

@@ -30,7 +30,7 @@ namespace AxxenClient.Forms
             txtQty.TextBoxText = GlobalUsage.Prd_Qty.ToString();
             txtUnit.TextBoxText = GlobalUsage.Prd_Unit.ToString();
             txtWcCode.TextBoxText = GlobalUsage.WoIniChar;
-            txtWorkOrderDate.TextBoxText = GlobalUsage.WorkorderDate.ToString();
+            txtWorkOrderDate.TextBoxText = (GlobalUsage.WorkorderDate == null) ? "" : GlobalUsage.WorkorderDate.Value.ToString("yyyy-MM-dd HH:mm:ss");
         }
         private void InitControls()
         {
@@ -45,12 +45,12 @@ namespace AxxenClient.Forms
         private void GetDatas()
         {
             GV_Current_StatusService service = new GV_Current_StatusService();
-            dgvBoxing.DataSource = service.GetGVCurrentStatusByGvStatus(GlobalUsage.WoIniChar, "성형", "적재");
+            dgvBoxing.DataSource = service.GetGVCurrentStatus(woinichar:GlobalUsage.WoIniChar, ProcessName:"소성", gvStatus:"적재");
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
             GV_Current_StatusService service = new GV_Current_StatusService();
-            dgvBoxing.DataSource = service.GetGVCurrentStatusByName(GlobalUsage.WoIniChar, "소성", txtSearch.TextBoxText);
+            dgvBoxing.DataSource = service.GetGVCurrentStatus(woinichar:GlobalUsage.WoIniChar, ProcessName:"소성", gvName:txtSearch.TextBoxText);
         }
         private void btnUnload_Click(object sender, EventArgs e)
         {
@@ -60,7 +60,7 @@ namespace AxxenClient.Forms
                 return;
             }
             GV_HistoryService service = new GV_HistoryService();
-            if (service.UpdateUnload(GlobalUsage.Username, dgvBoxing.SelectedRows[0].Cells[0].Value.ToString(), GlobalUsage.WcCode, Convert.ToInt32(dgvBoxing.SelectedRows[0].Cells[5].Value)))
+            if (service.UpdateUnload(GlobalUsage.UserID, dgvBoxing.SelectedRows[0].Cells[0].Value.ToString(), GlobalUsage.WcCode, Convert.ToInt32(dgvBoxing.SelectedRows[0].Cells[5].Value)))
                 GetDatas();
             else
                 MessageBox.Show("언로딩에 실패하였습니다.");
@@ -80,7 +80,7 @@ namespace AxxenClient.Forms
                 Clear_Qty = Convert.ToInt32(dgvBoxing.SelectedRows[0].Cells[5].Value),
                 Clear_wc = GlobalUsage.WcCode,
                 GV_Code = dgvBoxing.SelectedRows[0].Cells[0].Value.ToString(),
-                Up_Emp = GlobalUsage.Username
+                Up_Emp = GlobalUsage.UserID
             };
             if (service.UpdateClearGV(clearvo))
                 GetDatas();

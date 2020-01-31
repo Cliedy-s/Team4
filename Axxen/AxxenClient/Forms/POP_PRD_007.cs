@@ -30,7 +30,7 @@ namespace AxxenClient.Forms
             txtQty.TextBoxText = GlobalUsage.Prd_Qty.ToString();
             txtUnit.TextBoxText = GlobalUsage.Prd_Unit.ToString();
             txtWcCode.TextBoxText = GlobalUsage.WoIniChar;
-            txtWorkOrderDate.TextBoxText = GlobalUsage.WorkorderDate.ToString();
+            txtWorkOrderDate.TextBoxText = (GlobalUsage.WorkorderDate == null) ? "" : GlobalUsage.WorkorderDate.Value.ToString("yyyy-MM-dd HH:mm:ss");
         }
         private void InitControls()
         {
@@ -48,9 +48,9 @@ namespace AxxenClient.Forms
         {
             GV_Current_StatusService service = new GV_Current_StatusService();
             // 해당 작업지시에서 생성한 모든 대차
-            dgvGVFrom.DataSource = service.GetGVCurrentStatusByWorkOrderno(GlobalUsage.WoIniChar, GlobalUsage.WorkOrderNo);
+            dgvGVFrom.DataSource = service.GetGVCurrentStatus(woinichar:GlobalUsage.WoIniChar, workorderno:GlobalUsage.WorkOrderNo);
             // 해당 작업장의 모든 빈대차를 가져온다.
-            dgvGVTo.DataSource = service.GetGVCurrentStatusByGvStatus(GlobalUsage.WoIniChar, "빈대차"); 
+            dgvGVTo.DataSource = service.GetGVCurrentStatus(woinichar:GlobalUsage.WoIniChar, gvStatus:"빈대차"); 
         }
     }
 }

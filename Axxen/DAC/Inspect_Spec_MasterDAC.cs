@@ -41,32 +41,37 @@ namespace DAC
         /// 품목규격 설정 
         /// </summary>
         /// <param name="inspctspec"></param>
-        public bool InsertInspectSpec(InspectSpecVO inspctspec)
+        public bool InsertInspectSpec(List<InspectSpecVO> inspctspec)
         {
             try
             {
 
-            using (SqlCommand com = new SqlCommand())
-            {
-                com.Connection = new SqlConnection(Connstr);
-                com.CommandText = "InsertInspectSpec";
-                com.CommandType = CommandType.StoredProcedure;
-                com.Parameters.AddWithValue("@Item_Code", inspctspec.Item_Code);
-                com.Parameters.AddWithValue("@Process_code", inspctspec.Process_code);
-                com.Parameters.AddWithValue("@Inspect_code", inspctspec.Inspect_code);
-                com.Parameters.AddWithValue("@Inspect_name", inspctspec.Inspect_name);
-                com.Parameters.AddWithValue("@USL", inspctspec.USL);
-                com.Parameters.AddWithValue("@SL", inspctspec.SL);
-                com.Parameters.AddWithValue("@LSL", inspctspec.LSL);
-                com.Parameters.AddWithValue("@Sample_size", inspctspec.Sample_size);
-                com.Parameters.AddWithValue("@Inspect_Unit", inspctspec.Inspect_Unit);
-                com.Parameters.AddWithValue("@Remark", inspctspec.Remark);
 
-                com.Connection.Open();
-                int resault = Convert.ToInt32(com.ExecuteNonQuery());
-                com.Connection.Close();
-                return resault > 0;
-            }
+                using (SqlCommand com = new SqlCommand())
+                {
+                    com.Connection.Open();
+                    foreach (var item in inspctspec)
+                    {
+                        com.Connection = new SqlConnection(Connstr);
+                        com.CommandText = "InsertInspectSpec";
+                        com.CommandType = CommandType.StoredProcedure;                   
+                        com.Parameters.AddWithValue("@Item_Code", item.Item_Code);
+                        com.Parameters.AddWithValue("@Process_code", item.Process_code);
+                        com.Parameters.AddWithValue("@Inspect_code", item.Inspect_code);
+                        com.Parameters.AddWithValue("@Inspect_name", item.Inspect_name);
+                        com.Parameters.AddWithValue("@USL", item.USL);
+                        com.Parameters.AddWithValue("@SL", item.SL);
+                        com.Parameters.AddWithValue("@LSL", item.LSL);
+                        com.Parameters.AddWithValue("@Sample_size", item.Sample_size);
+                        com.Parameters.AddWithValue("@Inspect_Unit", item.Inspect_Unit);
+                        com.Parameters.AddWithValue("@Remark", item.Remark);
+
+
+                        com.ExecuteNonQuery();
+                    }
+                    com.Connection.Close();
+                    return true;
+                }
 
             }
             catch (Exception)

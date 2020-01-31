@@ -184,8 +184,8 @@ namespace Axxen
         {
             MDS_SDS_006_2 frm = new MDS_SDS_006_2();
 
-          frm.Code = dgvItem.SelectedRows[0].Cells[0].Value.ToString();
-
+            frm.itemCode = lblItem.Text;
+            frm.inspectcode = lblprocess.Text;
             frm.ShowDialog();
         }
 

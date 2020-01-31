@@ -26,7 +26,7 @@ namespace Service
             return dac.GetAll();
         }
 
-        public bool InsertInspectSpec(InspectSpecVO inspctspec)
+        public bool InsertInspectSpec(List<InspectSpecVO> inspctspec)
         {
             return dac.InsertInspectSpec(inspctspec);
         }

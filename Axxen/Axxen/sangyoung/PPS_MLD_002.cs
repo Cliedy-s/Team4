@@ -58,9 +58,9 @@ namespace Axxen
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "작업장이름", "Wc_Name", true, 100);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형타수", "Mold_Shot_Cnt", true, 80);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형생산량", "Mold_Prd_Qty", true, 100);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형사용시작시간", "Use_Starttime", true, 110);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형사용종료시간", "Use_Endtime", true, 110);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형사용시간", "Use_time", true, 110);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형사용시작시간", "Use_Starttime", true, 140);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형사용종료시간", "Use_Endtime", true, 140);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형사용시간", "Use_time", true, 80);
         }
 
         /// <summary>
