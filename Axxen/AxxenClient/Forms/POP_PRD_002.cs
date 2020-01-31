@@ -57,7 +57,7 @@ namespace AxxenClient.Forms
                     {
                         Ins_Emp = GlobalUsage.UserID,
                         Item_Code = txtItemSearch.CodeText,
-                        Mat_LotNo = now.ToString("yyyyMMddHH"),
+                        Mat_LotNo = "MAT"+now.ToString("yyyyMMddHHmmss"),
                         Plan_Qty = Convert.ToInt32(txtPlanQty.TextBoxText),
                         Plan_Unit = lblItem_Unit.Text,
                         Wo_Req_No = txtReqNo.TextBoxText,

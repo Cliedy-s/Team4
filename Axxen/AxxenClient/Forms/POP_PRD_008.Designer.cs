@@ -28,16 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.aButton1 = new Axxen.CustomControls.AButton();
-            this.aDataGridView2 = new Axxen.CustomControls.ADataGridView();
-            this.aDataGridView1 = new Axxen.CustomControls.ADataGridView();
-            this.aButton2 = new Axxen.CustomControls.AButton();
+            this.btnUnEquip = new Axxen.CustomControls.AButton();
+            this.dgvEquipedMoldList = new Axxen.CustomControls.ADataGridView();
+            this.dgvEquipMoldList = new Axxen.CustomControls.ADataGridView();
+            this.btnEquip = new Axxen.CustomControls.AButton();
             this.aBigHeaderBox1 = new Axxen.CustomControls.ABigHeaderBox();
             this.aBigHeaderBox2 = new Axxen.CustomControls.ABigHeaderBox();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.aDataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aDataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEquipedMoldList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEquipMoldList)).BeginInit();
             this.SuspendLayout();
             // 
             // aLabel_Header1
@@ -49,56 +50,58 @@
             this.aPanel1.Location = new System.Drawing.Point(0, 593);
             this.aPanel1.Margin = new System.Windows.Forms.Padding(2);
             // 
-            // aButton1
+            // btnUnEquip
             // 
-            this.aButton1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.aButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton1.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aButton1.Location = new System.Drawing.Point(493, 373);
-            this.aButton1.Name = "aButton1";
-            this.aButton1.Size = new System.Drawing.Size(238, 165);
-            this.aButton1.TabIndex = 22;
-            this.aButton1.Text = "탈착";
-            this.aButton1.UseVisualStyleBackColor = false;
+            this.btnUnEquip.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnUnEquip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.btnUnEquip.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUnEquip.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnUnEquip.Location = new System.Drawing.Point(493, 373);
+            this.btnUnEquip.Name = "btnUnEquip";
+            this.btnUnEquip.Size = new System.Drawing.Size(238, 165);
+            this.btnUnEquip.TabIndex = 22;
+            this.btnUnEquip.Text = "탈착";
+            this.btnUnEquip.UseVisualStyleBackColor = false;
+            this.btnUnEquip.Click += new System.EventHandler(this.btnUnEquip_Click);
             // 
-            // aDataGridView2
+            // dgvEquipedMoldList
             // 
-            this.aDataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvEquipedMoldList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.aDataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.aDataGridView2.Location = new System.Drawing.Point(737, 160);
-            this.aDataGridView2.Name = "aDataGridView2";
-            this.aDataGridView2.RowHeadersWidth = 51;
-            this.aDataGridView2.RowTemplate.Height = 23;
-            this.aDataGridView2.Size = new System.Drawing.Size(461, 425);
-            this.aDataGridView2.TabIndex = 19;
+            this.dgvEquipedMoldList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEquipedMoldList.Location = new System.Drawing.Point(737, 160);
+            this.dgvEquipedMoldList.Name = "dgvEquipedMoldList";
+            this.dgvEquipedMoldList.RowHeadersWidth = 51;
+            this.dgvEquipedMoldList.RowTemplate.Height = 23;
+            this.dgvEquipedMoldList.Size = new System.Drawing.Size(461, 425);
+            this.dgvEquipedMoldList.TabIndex = 19;
             // 
-            // aDataGridView1
+            // dgvEquipMoldList
             // 
-            this.aDataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvEquipMoldList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.aDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.aDataGridView1.Location = new System.Drawing.Point(10, 160);
-            this.aDataGridView1.Name = "aDataGridView1";
-            this.aDataGridView1.RowHeadersWidth = 51;
-            this.aDataGridView1.RowTemplate.Height = 23;
-            this.aDataGridView1.Size = new System.Drawing.Size(477, 425);
-            this.aDataGridView1.TabIndex = 17;
+            this.dgvEquipMoldList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEquipMoldList.Location = new System.Drawing.Point(10, 160);
+            this.dgvEquipMoldList.Name = "dgvEquipMoldList";
+            this.dgvEquipMoldList.RowHeadersWidth = 51;
+            this.dgvEquipMoldList.RowTemplate.Height = 23;
+            this.dgvEquipMoldList.Size = new System.Drawing.Size(477, 425);
+            this.dgvEquipMoldList.TabIndex = 17;
             // 
-            // aButton2
+            // btnEquip
             // 
-            this.aButton2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.aButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.aButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton2.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aButton2.Location = new System.Drawing.Point(493, 202);
-            this.aButton2.Name = "aButton2";
-            this.aButton2.Size = new System.Drawing.Size(238, 165);
-            this.aButton2.TabIndex = 26;
-            this.aButton2.Text = "장착";
-            this.aButton2.UseVisualStyleBackColor = false;
+            this.btnEquip.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnEquip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.btnEquip.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEquip.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnEquip.Location = new System.Drawing.Point(493, 202);
+            this.btnEquip.Name = "btnEquip";
+            this.btnEquip.Size = new System.Drawing.Size(238, 165);
+            this.btnEquip.TabIndex = 26;
+            this.btnEquip.Text = "장착";
+            this.btnEquip.UseVisualStyleBackColor = false;
+            this.btnEquip.Click += new System.EventHandler(this.btnEquip_Click);
             // 
             // aBigHeaderBox1
             // 
@@ -129,37 +132,39 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1210, 629);
-            this.Controls.Add(this.aButton2);
-            this.Controls.Add(this.aButton1);
-            this.Controls.Add(this.aDataGridView2);
-            this.Controls.Add(this.aDataGridView1);
+            this.Controls.Add(this.btnEquip);
+            this.Controls.Add(this.btnUnEquip);
+            this.Controls.Add(this.dgvEquipedMoldList);
+            this.Controls.Add(this.dgvEquipMoldList);
             this.Controls.Add(this.aBigHeaderBox1);
             this.Controls.Add(this.aBigHeaderBox2);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "POP_PRD_008";
+            this.Load += new System.EventHandler(this.POP_PRD_008_Load);
             this.Controls.SetChildIndex(this.aBigHeaderBox2, 0);
             this.Controls.SetChildIndex(this.aBigHeaderBox1, 0);
             this.Controls.SetChildIndex(this.aPanel2, 0);
             this.Controls.SetChildIndex(this.aPanel1, 0);
-            this.Controls.SetChildIndex(this.aDataGridView1, 0);
-            this.Controls.SetChildIndex(this.aDataGridView2, 0);
-            this.Controls.SetChildIndex(this.aButton1, 0);
-            this.Controls.SetChildIndex(this.aButton2, 0);
+            this.Controls.SetChildIndex(this.dgvEquipMoldList, 0);
+            this.Controls.SetChildIndex(this.dgvEquipedMoldList, 0);
+            this.Controls.SetChildIndex(this.btnUnEquip, 0);
+            this.Controls.SetChildIndex(this.btnEquip, 0);
             this.aPanel1.ResumeLayout(false);
             this.aPanel1.PerformLayout();
             this.aPanel2.ResumeLayout(false);
             this.aPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.aDataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aDataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEquipedMoldList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEquipMoldList)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private Axxen.CustomControls.AButton aButton1;
-        private Axxen.CustomControls.ADataGridView aDataGridView2;
-        private Axxen.CustomControls.ADataGridView aDataGridView1;
-        private Axxen.CustomControls.AButton aButton2;
+        private Axxen.CustomControls.AButton btnUnEquip;
+        private Axxen.CustomControls.ADataGridView dgvEquipedMoldList;
+        private Axxen.CustomControls.ADataGridView dgvEquipMoldList;
+        private Axxen.CustomControls.AButton btnEquip;
         private Axxen.CustomControls.ABigHeaderBox aBigHeaderBox1;
         private Axxen.CustomControls.ABigHeaderBox aBigHeaderBox2;
     }

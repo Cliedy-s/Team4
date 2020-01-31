@@ -65,7 +65,7 @@ namespace AxxenClient.Forms
                 return;
             }
             GV_HistoryService service = new GV_HistoryService();
-            if (service.UpdateUnload(GlobalUsage.UserID, dgvBoxing.SelectedRows[0].Cells[0].Value.ToString(), GlobalUsage.WcCode, Convert.ToInt32(dgvBoxing.SelectedRows[0].Cells[5].Value)))
+            if (service.UpdateUnload(GlobalUsage.UserID, dgvBoxing.SelectedRows[0].Cells[0].Value.ToString(), null ,GlobalUsage.WcCode, Convert.ToInt32(dgvBoxing.SelectedRows[0].Cells[5].Value)))
                 GetDatas();
             else
                 MessageBox.Show("언로딩에 실패하였습니다.");

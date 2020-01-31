@@ -15,49 +15,19 @@ namespace DAC
         /// <summary>
         /// 로딩
         /// </summary>
-        public void UpdateLoad()
-        {
-
-        }
-        /// <summary>
-        /// 언로딩
-        /// </summary>
-        public bool UpdateUnload(string username, string gvcode, string wccode, int qty)
+        public bool UpdateLoad(string username, string gvcode, int qty, string wccode, string workorderno)
         {
             using (SqlCommand comm = new SqlCommand())
             {
                 comm.Connection = new SqlConnection(Connstr);
-                comm.CommandText = @"UpdateUnloading";
-                // 프로시저 o
-                //UPDATE[dbo].[GV_Current_Status]
-                //  SET
-                //     [Unloading_date] = getdate()
-                //     ,[Unloading_time] = getdate()
-                //     ,[Up_Date] = getdate()
-                //     ,[Up_Emp] = @username
-                //WHERE[GV_Code] = @gvcode
-                //     AND[Workorderno] = @workorderno
-                //     AND[Unloading_time] is null;
-
-                //  UPDATE[dbo].[GV_History]
-                //       SET
-                //    [Unloading_Qty] = [Unloading_Qty] + @qty
-                //     ,[Unloading_date] = getdate()
-                //     ,[Unloading_datetime] = getdate()
-                //     ,[Unloading_wc] = @wccode
-                //     ,[Up_Date] = getdate()
-                //     ,[Up_Emp] = @username
-                //WHERE[GV_Code] = @gvcode
-                //     AND[Workorderno] = @workorderno
-                //     AND[Unloading_datetime] is null
-
-                // UPDATE [GV_Master] SET GV_Status = '언로딩' WHERE GV_Code = @gvcode;
+                comm.CommandText = @"UpdateLoad"; // 기본대차 수량 설정해둠
 
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.Parameters.AddWithValue("@username", username);
                 comm.Parameters.AddWithValue("@gvcode", gvcode);
-                comm.Parameters.AddWithValue("@wccode", wccode);
                 comm.Parameters.AddWithValue("@qty", qty);
+                comm.Parameters.AddWithValue("@wccode", wccode);
+                comm.Parameters.AddWithValue("@workorderno", workorderno);
 
                 comm.Connection.Open();
                 int result = comm.ExecuteNonQuery();
@@ -66,7 +36,55 @@ namespace DAC
                 return result > 0;
             }
         }
+        /// <summary>
+        /// 언로딩
+        /// </summary>
+        public bool UpdateUnload(string username, string gvcode, string targetgvcode, string wccode, int qty)
+        {
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText = @"UpdateUnloading"; 
 
+                comm.CommandType = CommandType.StoredProcedure;
+                comm.Parameters.AddWithValue("@username", username);
+                comm.Parameters.AddWithValue("@gvcode", gvcode);
+                comm.Parameters.AddWithValue("@wccode", wccode);
+                comm.Parameters.AddWithValue("@qty", qty);
+                comm.Parameters.AddWithValue("@targetgvcode", targetgvcode); 
+
+                comm.Connection.Open();
+                int result = comm.ExecuteNonQuery();
+                comm.Connection.Close();
+
+                return result > 0;
+            }
+        }
+        /// <summary>
+        ///  옮겨타기
+        /// </summary>
+        public bool UpdateMoveGvItem(string unloadgvcode, string loadgvcode, int unloadqty, string userid, string wccode, string workorderno)
+        {
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText = @"UpdateMoveGvItem";
+
+                comm.CommandType = CommandType.StoredProcedure;
+                comm.Parameters.AddWithValue("@unloadgvcode", unloadgvcode);
+                comm.Parameters.AddWithValue("@loadgvcode", loadgvcode);
+                comm.Parameters.AddWithValue("@unloadqty", unloadqty);
+                comm.Parameters.AddWithValue("@userid", userid);
+                comm.Parameters.AddWithValue("@wccode", wccode);
+                comm.Parameters.AddWithValue("@workorderno", workorderno);
+
+                comm.Connection.Open();
+                int result = comm.ExecuteNonQuery();
+                comm.Connection.Close();
+
+                return result > 0;
+            }
+        }
 
         /// <summary>
         /// 대차비우기

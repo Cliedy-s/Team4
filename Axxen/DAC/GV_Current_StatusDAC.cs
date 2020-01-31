@@ -37,10 +37,6 @@ namespace DAC
                 return list;
             }
         }
-        //public List<GVStatusVO> GetEmptyGV()
-        //{
-
-        //}
         /// <summary>
         /// 요입현황
         /// </summary>

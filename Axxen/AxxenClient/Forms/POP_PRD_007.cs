@@ -22,6 +22,8 @@ namespace AxxenClient.Forms
             InitControls();
             TopPanelSet();
             GetDatas();
+
+            txtLoading.TextBoxText = dgvGVFrom.SelectedRows[0].Cells[3].Value.ToString();
         }
         private void TopPanelSet()
         {
@@ -44,6 +46,7 @@ namespace AxxenClient.Forms
             InitControlUtil.AddNewColumnToDataGridView(dgvGVFrom, "적재시각", "Loading_time", true, 200);
             InitControlUtil.AddNewColumnToDataGridView(dgvGVFrom, "수량", "Loading_Qty", true, 50);
             dgvGVFrom.Columns[2].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm:ss";
+
         }
         private void GetDatas()
         {
@@ -70,14 +73,17 @@ namespace AxxenClient.Forms
         }
         private void btnLoad_Click(object sender, EventArgs e)
         {
-            // 언로딩
+            string loadinggvcode = dgvGVTo.SelectedRows[0].Cells[0].Value.ToString();
+            string unloadgvcode = dgvGVFrom.SelectedRows[0].Cells[0].Value.ToString();
             GV_HistoryService service = new GV_HistoryService();
-            service.UpdateUnload(GlobalUsage.UserID, dgvGVFrom.SelectedRows[0].Cells[0].ToString(), GlobalUsage.WcCode, Convert.ToInt32(txtLoading.TextBoxText));
 
-            // 로딩
-            //GlobalUsage.UserID, dgvGVFrom.SelectedRows[0].Cells[0].ToString(), GlobalUsage.WcCode, Convert.ToInt32(txtLoading.TextBoxText)
-            service.UpdateLoad();
-            dgvGVTo.SelectedRows[0].Cells[0].ToString();
+            // 옮겨타기
+            if (service.UpdateMoveGvItem(unloadgvcode, loadinggvcode, Convert.ToInt32(txtLoading.TextBoxText), GlobalUsage.UserID, GlobalUsage.WcCode, GlobalUsage.WorkOrderNo))
+            {
+                GetDatas();
+            }
+            else
+                MessageBox.Show("옮길 수 없는 대차 입니다.");
         }
         private void dgvGVFrom_CellClick(object sender, DataGridViewCellEventArgs e)
         {

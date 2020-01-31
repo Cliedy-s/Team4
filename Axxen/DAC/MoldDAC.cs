@@ -133,38 +133,20 @@ namespace DAC
 
         //pop
         /// <summary>
-        /// 장착 가능 금형 목록
+        /// 금형 검색
         /// </summary>
         /// <param name="wccode"></param>
         /// <param name="wcstatus"></param>
         /// <returns></returns>
-        public List<MoldVO> SelectEquipableMold(string wccode, string wcstatus)
-        { // 현재 작업장 코드, 장착
+        public List<MoldVO> GetMoldList(string wccode = null, string moldstatus = null)
+        { // 현재 작업장 코드
             using (SqlCommand comm = new SqlCommand())
             {
                 comm.Connection = new SqlConnection(Connstr);
-                comm.CommandText = 
-@"SELECT mold.Mold_Code
- ,mold.Mold_Name 
- ,mold.Mold_Group 
- ,mold.Mold_Status 
- ,mold.Cum_Shot_Cnt 
- ,mold.Cum_Prd_Qty 
- ,mold.Cum_Time 
- ,mold.Guar_Shot_Cnt 
- ,mold.Purchase_Amt 
- ,mold.In_Date 
- ,mold.Last_Setup_Time 
- ,mold.Wc_Code 
- ,mold.Remark 
- ,mold.Use_YN 
- FROM Mold_Master as mold 
- WHERE mold.Wc_Code = @wccode
-    AND mold.Mold_Status = @wcstatus
-    AND mold.Use_YN = 1; ";
-                comm.CommandType = CommandType.Text;
+                comm.CommandText = @"GetMoldList";
+                comm.CommandType = CommandType.StoredProcedure;
                 comm.Parameters.AddWithValue("@wccode", wccode);
-                comm.Parameters.AddWithValue("@wcstatus", wcstatus);
+                comm.Parameters.AddWithValue("@Mold_Status", moldstatus);
 
                 comm.Connection.Open();
                 SqlDataReader reader = comm.ExecuteReader();
@@ -175,77 +157,54 @@ namespace DAC
             }
         }
         /// <summary>
-        /// 장착된 금형 목록
+        /// 장착
         /// </summary>
-        /// <param name="wccode"></param>
-        /// <param name="wcstatus"></param>
         /// <returns></returns>
-        public List<MoldVO> SelectEquipedMold(string wccode, string wcstatus)
-        { // 현재 작업장코드, 대기
+        public bool UpdateEquipMold(string wccode, string moldcode)
+        {
             using (SqlCommand comm = new SqlCommand())
             {
                 comm.Connection = new SqlConnection(Connstr);
                 comm.CommandText =
-@"SELECT mold.Mold_Code
- ,mold.Mold_Name
- ,mold.Mold_Group
- ,mold.Mold_Status
- ,mold.Cum_Shot_Cnt
- ,mold.Cum_Prd_Qty
- ,mold.Cum_Time
- ,mold.Guar_Shot_Cnt
- ,mold.Purchase_Amt
- ,mold.In_Date
- ,mold.Last_Setup_Time
- ,mold.Wc_Code
- ,mold.Remark
- ,mold.Use_YN
- FROM Mold_Master as mold
- WHERE mold.Wc_Code = @wccode
-	AND mold.Mold_Status = @wcstatus
-	AND mold.Use_YN = 1
-	AND mold.Cum_Shot_Cnt >= mold.Guar_Shot_Cnt; ";
+@"UPDATE Mold_Master 
+ SET Wc_Code = @wccode
+       , [Last_Setup_Time] = getdate()
+ WHERE Mold_Code = @moldcode; ";
                 comm.CommandType = CommandType.Text;
                 comm.Parameters.AddWithValue("@wccode", wccode);
-                comm.Parameters.AddWithValue("@wcstatus", wcstatus);
+                //comm.Parameters.AddWithValue("@wccode", (object)wccode ?? DBNull.Value);
+                comm.Parameters.AddWithValue("@moldcode", moldcode);
 
                 comm.Connection.Open();
-                SqlDataReader reader = comm.ExecuteReader();
-                List<MoldVO> list = Helper.DataReaderMapToList<MoldVO>(reader);
+                int result = comm.ExecuteNonQuery();
                 comm.Connection.Close();
 
-                return list;
+                return result > 0;
             }
         }
         /// <summary>
-        /// 장착/ 탈착
+        /// 탈착
         /// </summary>
         /// <returns></returns>
-        public bool UpdateEquipMold(string wccode, string moldcode, string moldstatus)
-        { 
-            //장착
-            //현재 작업장코드, 장착
-            //탈착
-            //빈칸, 대기
-                using (SqlCommand comm = new SqlCommand())
-                {
-                    comm.Connection = new SqlConnection(Connstr);
-                    comm.CommandText =
-     @"UPDATE Mold_Master 
-SET mold.Wc_Code = @wccode,  mold.Mold_Status =@moldstatus
-WHERE mold.Mold_Code = @moldcode";
-                    comm.CommandType = CommandType.StoredProcedure;
-                    comm.Parameters.AddWithValue("@wccode", wccode);
-                    comm.Parameters.AddWithValue("@moldstatus", moldstatus);
-                    comm.Parameters.AddWithValue("@moldcode", moldcode);
+        public bool UpdateEquipMold(string moldcode)
+        {
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText =
+@"UPDATE Mold_Master 
+ SET Wc_Code = @wccode
+ WHERE Mold_Code = @moldcode; ";
+                comm.CommandType = CommandType.Text;
+                comm.Parameters.AddWithValue("@wccode", DBNull.Value);
+                comm.Parameters.AddWithValue("@moldcode", moldcode);
 
-                    comm.Connection.Open();
-                    int result = comm.ExecuteNonQuery();
-                    comm.Connection.Close();
+                comm.Connection.Open();
+                int result = comm.ExecuteNonQuery();
+                comm.Connection.Close();
 
-                    return result > 0;
-                }
-
+                return result > 0;
+            }
         }
     }
 }
