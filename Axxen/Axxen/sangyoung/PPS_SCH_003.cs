@@ -18,6 +18,7 @@ namespace Axxen
         List<WO_WC_Production_ItemVO> wowclist;
         List<WorkOrderVO> statuslist;
         Wo_ReqService service = new Wo_ReqService();
+        WorkOrder_Service woservice = new WorkOrder_Service();
 
         public PPS_SCH_003()
         {
@@ -161,6 +162,9 @@ namespace Axxen
         private void DgvMainGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             string wono = dgvMainGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
+            List<WO_WC_Time_ItemVO> list = woservice.GetTimeWork(wono);
+
+            //시간대별 차트그리기
 
         }
     }
