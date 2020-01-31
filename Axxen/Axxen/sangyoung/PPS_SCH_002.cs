@@ -16,7 +16,6 @@ namespace Axxen
     {
         List<Wo_Req_WO_WC_ItemVO> woList = new List<Wo_Req_WO_WC_ItemVO>();
         Wo_ReqService service = new Wo_ReqService();
-        bool bFlag = false;
 
         public PPS_SCH_002()
         {
@@ -28,8 +27,15 @@ namespace Axxen
             MainDataLoad();
             woList = service.GetWoReqOrder();
             dgvMainGrid.DataSource = woList;
-            
+            dgvMainGrid.CellDoubleClick += dgvMainGrid_CellDoubleClick;
             aSplitContainer1.Panel2.Enabled = false;
+        }
+
+        private void dgvMainGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtWorkNum.TextBoxText = dgvMainGrid[1, dgvMainGrid.CurrentRow.Index].Value.ToString();
+            txtItemCode.TextBoxText = dgvMainGrid[5, dgvMainGrid.CurrentRow.Index].Value.ToString();
+            txtItemName.TextBoxText = dgvMainGrid[6, dgvMainGrid.CurrentRow.Index].Value.ToString();
         }
 
         private void RefreshFormShow(object sender, EventArgs e)
@@ -54,7 +60,6 @@ namespace Axxen
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "작업지시상태", "Wo_Status", true, 110);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "작업지시번호", "Workorderno", true, 110);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "계획일자", "Plan_Date", true, 90);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "품목명", "Item_Name", true, 80);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "계획수량", "Plan_Qty", true, 90);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "계획수량단위", "Plan_Unit", true, 110);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "품목코드", "Item_Code", true, 90);
@@ -66,8 +71,8 @@ namespace Axxen
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "투입수량", "In_Qty_Main", true, 80);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "산출수량", "Out_Qty_Main", true, 80);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "생산수량", "Prd_Qty", true, 80);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "생산의뢰번호", "Wo_Req_No", true, 80);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "생산의뢰순번", "Req_Seq", true, 80);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "생산의뢰번호", "Wo_Req_No", true, 80);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "프로젝트명", "Project_Name", true, 100);
         }
 
@@ -128,12 +133,25 @@ namespace Axxen
         {
             ((MainForm)this.MdiParent).MyUpdateEvent += new System.EventHandler(this.MyUpdateShow); //수정이벤트
             ((MainForm)this.MdiParent).RefreshFormEvent += new EventHandler(this.RefreshFormShow); //새로고침
+            ToolStripManager.Merge(toolStrip1, ((MainForm)this.MdiParent).toolStrip1); //저장버튼 추가
         }
 
         private void PPS_SCH_002_Deactivate(object sender, EventArgs e)
         {
             ((MainForm)this.MdiParent).MyUpdateEvent -= new System.EventHandler(this.MyUpdateShow); //수정이벤트
             ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow); //새로고침
+            ToolStripManager.RevertMerge(toolStrip1, ((MainForm)this.MdiParent).toolStrip1); //저장버튼 추가
+        }
+
+        private void TsbtnSave_Click(object sender, EventArgs e)
+        {
+            WorkOrderAllVO order = new WorkOrderAllVO();
+            order.Workorderno = txtWorkNum.TextBoxText;
+            order.Plan_Qty = Convert.ToInt32(numPlanQuantity.Value);
+            order.Plan_Unit = txtPlanUnit.Text;
+            order.Plan_Date = dtpPlanDate.Value;
+
+           
         }
     }
 }
