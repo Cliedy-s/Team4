@@ -227,5 +227,18 @@ namespace Axxen
             aDataGridView2.CellDoubleClick -= aDataGridView2_CellDoubleClick;
             aDataGridView2.CellContentClick -= aDataGridView2_CellContentClick;
         }
+
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            //aBigTextBox_FindNameByCode1.txtCodeText
+
+            foreach (DataGridViewRow row in aDataGridView1.Rows)
+            {
+                if(row.Cells[0].Value.ToString() == aBigTextBox_FindNameByCode1.txtCodeText)
+                {
+                    row.Selected=true;
+                }
+            }
+        }
     }
 }

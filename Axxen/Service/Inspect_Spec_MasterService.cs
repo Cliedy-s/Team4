@@ -30,5 +30,13 @@ namespace Service
         {
             return dac.InsertInspectSpec(inspctspec);
         }
+        /// <summary>
+        /// 검사항목규격설정 사용
+        /// </summary>
+        /// <returns></returns>
+        public bool UseInspectSpec(InspectSpecVO inspect, string use)
+        {
+            return dac.UseInspectSpec(inspect, use);
+        }
         }
 }

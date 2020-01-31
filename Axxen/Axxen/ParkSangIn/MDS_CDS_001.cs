@@ -13,7 +13,7 @@ namespace Axxen
 {
     public partial class MDS_CDS_001 : Axxen.GridForm
     {
-        List<Def_MaVO> Defmalist; //불량 대분류
+        List<Def_MaVO> Defmalist; //비가동 대분류
         Def_MaService Defservice = new Def_MaService();
         public MDS_CDS_001()
         {
@@ -31,6 +31,8 @@ namespace Axxen
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "불량현상대분류 명", "Def_Ma_Name", true, 210, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "입력일자", "Ins_Date", true, 210, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "사용여부", "Use_YN", true, 210, default, true);
+
+
 
             DataGridViewButtonColumn gridbtn = new DataGridViewButtonColumn();
             gridbtn.HeaderText = "사용여부";

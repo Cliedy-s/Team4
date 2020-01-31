@@ -38,7 +38,7 @@
             this.aPanel1 = new Axxen.CustomControls.APanel();
             this.aDateTimePickerSearch1 = new Axxen.CustomControls.ADateTimePickerSearch();
             this.dotWorkCenter = new Axxen.CustomControls.ATextBox_FindNameByCode();
-            this.aTextBox_FindNameByCode1 = new Axxen.CustomControls.ATextBox_FindNameByCode();
+            this.dotProcess = new Axxen.CustomControls.ATextBox_FindNameByCode();
             this.cboStatus = new Axxen.CustomControls.AComboBox();
             this.aLabel3 = new Axxen.CustomControls.ALabel();
             this.aHeaderBox1 = new Axxen.CustomControls.AHeaderBox();
@@ -67,7 +67,7 @@
             this.aPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.aPanel1.Controls.Add(this.aDateTimePickerSearch1);
             this.aPanel1.Controls.Add(this.dotWorkCenter);
-            this.aPanel1.Controls.Add(this.aTextBox_FindNameByCode1);
+            this.aPanel1.Controls.Add(this.dotProcess);
             this.aPanel1.Controls.Add(this.cboStatus);
             this.aPanel1.Controls.Add(this.aLabel3);
             this.aPanel1.Controls.Add(this.aLabel1);
@@ -79,8 +79,8 @@
             // 
             // aDateTimePickerSearch1
             // 
-            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 1, 23, 19, 56, 20, 851);
-            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 1, 30, 19, 56, 20, 851);
+            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 1, 24, 18, 14, 48, 460);
+            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 1, 31, 18, 14, 48, 460);
             this.aDateTimePickerSearch1.ButtonText = "조회";
             this.aDateTimePickerSearch1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aDateTimePickerSearch1.Location = new System.Drawing.Point(105, 23);
@@ -105,19 +105,19 @@
             this.dotWorkCenter.txtNameText = "";
             this.dotWorkCenter.DotDotDotFormClosing += new Axxen.CustomControls.ATextBox_FindNameByCode.SearchFormClosing(this.DotWorkCenter_DotDotDotFormClosing);
             // 
-            // aTextBox_FindNameByCode1
+            // dotProcess
             // 
-            this.aTextBox_FindNameByCode1.allfont = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aTextBox_FindNameByCode1.CodeType = Axxen.CustomControls.DataType.Processes;
-            this.aTextBox_FindNameByCode1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aTextBox_FindNameByCode1.lblNameText = "공정";
-            this.aTextBox_FindNameByCode1.Location = new System.Drawing.Point(456, 26);
-            this.aTextBox_FindNameByCode1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.aTextBox_FindNameByCode1.Name = "aTextBox_FindNameByCode1";
-            this.aTextBox_FindNameByCode1.Size = new System.Drawing.Size(221, 27);
-            this.aTextBox_FindNameByCode1.TabIndex = 12;
-            this.aTextBox_FindNameByCode1.txtCodeText = "";
-            this.aTextBox_FindNameByCode1.txtNameText = "";
+            this.dotProcess.allfont = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dotProcess.CodeType = Axxen.CustomControls.DataType.Processes;
+            this.dotProcess.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dotProcess.lblNameText = "공정";
+            this.dotProcess.Location = new System.Drawing.Point(456, 26);
+            this.dotProcess.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dotProcess.Name = "dotProcess";
+            this.dotProcess.Size = new System.Drawing.Size(221, 27);
+            this.dotProcess.TabIndex = 12;
+            this.dotProcess.txtCodeText = "";
+            this.dotProcess.txtNameText = "";
             // 
             // cboStatus
             // 
@@ -233,7 +233,7 @@
         private CustomControls.AComboBox cboStatus;
         private CustomControls.ALabel aLabel3;
         private CustomControls.ATextBox_FindNameByCode dotWorkCenter;
-        private CustomControls.ATextBox_FindNameByCode aTextBox_FindNameByCode1;
+        private CustomControls.ATextBox_FindNameByCode dotProcess;
         private CustomControls.ADateTimePickerSearch aDateTimePickerSearch1;
     }
 }

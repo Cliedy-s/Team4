@@ -14,9 +14,9 @@ namespace Axxen
 {
     public partial class PPS_SCH_002 : Axxen.GridManageForm
     {
-        List<Wo_Req_WO_WC_ItemVO> woList = new List<Wo_Req_WO_WC_ItemVO>();
+        List<Wo_Req_WO_WC_ItemVO> woList;
+        List<Wo_Req_WO_WC_ItemVO> woSearchList;
         Wo_ReqService service = new Wo_ReqService();
-        bool bFlag = false;
 
         public PPS_SCH_002()
         {
@@ -28,8 +28,15 @@ namespace Axxen
             MainDataLoad();
             woList = service.GetWoReqOrder();
             dgvMainGrid.DataSource = woList;
-            
+            dgvMainGrid.CellDoubleClick += dgvMainGrid_CellDoubleClick;
             aSplitContainer1.Panel2.Enabled = false;
+        }
+
+        private void dgvMainGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtWorkNum.TextBoxText = dgvMainGrid[1, dgvMainGrid.CurrentRow.Index].Value.ToString();
+            txtItemCode.TextBoxText = dgvMainGrid[5, dgvMainGrid.CurrentRow.Index].Value.ToString();
+            txtItemName.TextBoxText = dgvMainGrid[6, dgvMainGrid.CurrentRow.Index].Value.ToString();
         }
 
         private void RefreshFormShow(object sender, EventArgs e)
@@ -39,8 +46,16 @@ namespace Axxen
 
             aDateTimePickerSearch1.ADateTimePickerValue1 = Convert.ToDateTime(DateTime.Now.AddDays(-7).ToShortDateString());
             aDateTimePickerSearch1.ADateTimePickerValue2 = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+            dotProcess.txtCodeText = "";
+            dotProcess.txtNameText = "";
             dotWorkCenter.txtCodeText = "";
             dotWorkCenter.txtNameText = "";
+
+            txtItemCode.TextBoxText = "";
+            txtItemName.TextBoxText = "";
+            txtWorkNum.TextBoxText = "";
+            txtPlanUnit.Text = "";
+            numPlanQuantity.Value = 0;
         }
 
         private void MyUpdateShow(object sender, EventArgs e)
@@ -54,7 +69,6 @@ namespace Axxen
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "작업지시상태", "Wo_Status", true, 110);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "작업지시번호", "Workorderno", true, 110);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "계획일자", "Plan_Date", true, 90);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "품목명", "Item_Name", true, 80);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "계획수량", "Plan_Qty", true, 90);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "계획수량단위", "Plan_Unit", true, 110);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "품목코드", "Item_Code", true, 90);
@@ -66,9 +80,10 @@ namespace Axxen
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "투입수량", "In_Qty_Main", true, 80);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "산출수량", "Out_Qty_Main", true, 80);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "생산수량", "Prd_Qty", true, 80);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "생산의뢰번호", "Wo_Req_No", true, 80);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "생산의뢰순번", "Req_Seq", true, 80);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "생산의뢰번호", "Wo_Req_No", true, 80);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "프로젝트명", "Project_Name", true, 100);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "공정코드", "Process_Code", false, 100);
         }
 
         private void PPS_SCH_002_FormClosed(object sender, FormClosedEventArgs e)
@@ -115,25 +130,72 @@ namespace Axxen
             string pcode = dotProcess.txtCodeText;
             string wName = dotWorkCenter.txtNameText;
 
-            if(wName.Length > 0)
+            if(wName.Length > 0 && pcode.Length <=0)
             {
-                var colist = (from list in woList
+                woSearchList = (from list in woList
                               where list.Wc_Name.Contains(wName)
                               select list).ToList();
-                dgvMainGrid.DataSource = colist;
             }
+            else if (pcode.Length > 0 && wName.Length <= 0)
+            {
+                woSearchList = (from list in woList
+                              where list.Process_Code.Contains(pcode)
+                              select list).ToList();
+            }
+            else if (wName.Length > 0 && pcode.Length > 0)
+            {
+                woSearchList = (from list in woSearchList
+                                where list.Wc_Name.Contains(wName) && list.Process_Code.Contains(pcode)
+                              select list).ToList();
+                dotProcess.txtCodeText = "";
+                dotProcess.txtNameText = "";
+                dotWorkCenter.txtCodeText = "";
+                dotWorkCenter.txtNameText = "";
+            }
+            dgvMainGrid.DataSource = woSearchList;
+
+
         }
 
         private void PPS_SCH_002_Activated(object sender, EventArgs e)
         {
             ((MainForm)this.MdiParent).MyUpdateEvent += new System.EventHandler(this.MyUpdateShow); //수정이벤트
             ((MainForm)this.MdiParent).RefreshFormEvent += new EventHandler(this.RefreshFormShow); //새로고침
+            ToolStripManager.Merge(toolStrip1, ((MainForm)this.MdiParent).toolStrip1); //저장버튼 추가
         }
 
         private void PPS_SCH_002_Deactivate(object sender, EventArgs e)
         {
             ((MainForm)this.MdiParent).MyUpdateEvent -= new System.EventHandler(this.MyUpdateShow); //수정이벤트
             ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow); //새로고침
+            ToolStripManager.RevertMerge(toolStrip1, ((MainForm)this.MdiParent).toolStrip1); //저장버튼 추가
+        }
+
+        private void TsbtnSave_Click(object sender, EventArgs e)
+        {
+            WorkOrderAllVO order = new WorkOrderAllVO();
+            order.Workorderno = txtWorkNum.TextBoxText;
+            order.Plan_Qty = Convert.ToInt32(numPlanQuantity.Value);
+            order.Plan_Unit = txtPlanUnit.Text;
+            order.Plan_Date = dtpPlanDate.Value;
+
+            try
+            {
+                WorkOrder_Service service = new WorkOrder_Service();
+                bool result = service.UpdatePPSWorkorder(order);
+                if (result)
+                    MessageBox.Show("Success");
+                else
+                    MessageBox.Show("Fail");
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
+            finally
+            {
+                RefreshFormShow(null, null);
+            }
         }
     }
 }

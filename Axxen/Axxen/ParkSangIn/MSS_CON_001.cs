@@ -37,16 +37,6 @@ namespace Axxen
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "사용자그룹명", "UserGroup_Name", true, 210, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "입력일자", "Ins_Date", true, 210, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "사용여부", "Use_YN", true, 210, default, true);
-            GetAllUserGroup();
-            ///
-            ControlSetting();
-        }
-        /// <summary>
-        /// 그리드뷰 버튼, 콤보박스세팅
-        /// </summary>
-        private void ControlSetting()
-        {
-
             DataGridViewButtonColumn gridbtn = new DataGridViewButtonColumn();
             gridbtn.HeaderText = "사용여부";
             gridbtn.Text = "변경";
@@ -56,7 +46,15 @@ namespace Axxen
             gridbtn.DefaultCellStyle.BackColor = Color.LightYellow;
             gridbtn.UseColumnTextForButtonValue = true;
             dgvGroup.Columns.Add(gridbtn);
-
+            GetAllUserGroup();
+            ///
+            ControlSetting();
+        }
+        /// <summary>
+        /// 그리드뷰 버튼, 콤보박스세팅
+        /// </summary>
+        private void ControlSetting()
+        {  
             ///combobox
             Dictionary<string, string> cbblist = grouplist.ToDictionary(item => item.UserGroup_Code, item => item.UserGroup_Name);
             cbbGroup.DisplayMember = "Value";
@@ -96,11 +94,20 @@ namespace Axxen
         /// <param name="e"></param>
         public void MyUpdateShow(object sender, EventArgs e)
         {
-
-            txtName.Enabled = true;
+            try
+            {
+                if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
+                {
+                    txtName.Enabled = true;
             txtCode.Enabled = false;
             btnSave.Enabled = true;
             btnSave.Text = "수정";
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
         }
         /// <summary>
         /// 새로고침 이벤트 메서드

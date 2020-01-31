@@ -168,7 +168,7 @@
             this.dgvItem.Location = new System.Drawing.Point(0, 68);
             this.dgvItem.Name = "dgvItem";
             this.dgvItem.RowTemplate.Height = 23;
-            this.dgvItem.Size = new System.Drawing.Size(376, 628);
+            this.dgvItem.Size = new System.Drawing.Size(273, 628);
             this.dgvItem.TabIndex = 42;
             this.dgvItem.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvItem_CellDoubleClick);
             // 
@@ -190,18 +190,19 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvinspect.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvinspect.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvinspect.Location = new System.Drawing.Point(382, 68);
+            this.dgvinspect.Location = new System.Drawing.Point(279, 68);
             this.dgvinspect.Name = "dgvinspect";
             this.dgvinspect.RowTemplate.Height = 23;
-            this.dgvinspect.Size = new System.Drawing.Size(866, 628);
+            this.dgvinspect.Size = new System.Drawing.Size(969, 628);
             this.dgvinspect.TabIndex = 47;
+            this.dgvinspect.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgvinspect_CellContentClick);
             // 
             // aLabel4
             // 
             this.aLabel4.AutoSize = true;
             this.aLabel4.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel4.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.aLabel4.Location = new System.Drawing.Point(414, 41);
+            this.aLabel4.Location = new System.Drawing.Point(307, 41);
             this.aLabel4.Name = "aLabel4";
             this.aLabel4.Size = new System.Drawing.Size(112, 21);
             this.aLabel4.TabIndex = 49;
@@ -210,7 +211,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(389, 40);
+            this.pictureBox2.Location = new System.Drawing.Point(282, 40);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(23, 22);
             this.pictureBox2.TabIndex = 50;

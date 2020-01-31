@@ -23,6 +23,8 @@ namespace Axxen
             InitializeComponent();
         }
 
+        public InspectSpecVO updateinspectitem { get; set; }
+    
 
 
         private void MDS_SDS_006_1_Load(object sender, EventArgs e)
@@ -31,6 +33,27 @@ namespace Axxen
             ControlSetting();
             lblManager.Text = UserInfo.User_Name;
             lblDay.Text = DateTime.Now.ToShortDateString() ;
+
+            if (updateinspectitem != null)//수정이라면
+            {
+                cbbItem.Text = Itemlist.Find(itemname => itemname.Item_Code == updateinspectitem.Item_Code).Item_Name;
+                lblItem.Text = updateinspectitem.Item_Code;
+                cbbProcess.Text = processlist.Find(proname => proname.Process_code == updateinspectitem.Process_code).Process_name;
+                lblProcess.Text = updateinspectitem.Process_code;
+                  txtInspect_code.Text = updateinspectitem.Inspect_code;
+                  txtInspect_name.Text = updateinspectitem.Inspect_name;
+      
+               nudusl.Value = updateinspectitem.USL;
+                 nudsl.Value = updateinspectitem.SL;
+               nudlsl.Value = updateinspectitem.LSL;
+            nudsample.Value = updateinspectitem.Sample_size;
+               txttype.Text = updateinspectitem.Inspect_Unit;
+              txtRemark.Text = updateinspectitem.Remark;
+
+            
+                cbbItem.Enabled = false;
+                cbbProcess.Enabled = false;
+            }
         }
 
         /// <summary>
@@ -82,13 +105,17 @@ namespace Axxen
 
         private void CbbProcess_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lblProcess.Text = cbbItem.SelectedValue.ToString();
+            lblProcess.Text = cbbProcess.SelectedValue.ToString();
         }
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
             try
             {
+
+                if(!string.IsNullOrEmpty(txtInspect_code.Text) && !string.IsNullOrEmpty(txtInspect_name.Text)) { 
+
+
                 Inspect_Spec_MasterService service = new Inspect_Spec_MasterService();
                 List<InspectSpecVO> additem = new List<InspectSpecVO>();
 
@@ -118,6 +145,11 @@ namespace Axxen
                 else
                 {
                     MessageBox.Show("이미 등록된 검사항목입니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                }
+                else
+                {
+                    MessageBox.Show("필수 항목을 입력하세요.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception err)

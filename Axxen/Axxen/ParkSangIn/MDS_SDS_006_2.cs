@@ -22,7 +22,7 @@ namespace Axxen
 
         CheckBox headerCheckBox = new CheckBox();
         public string itemCode { get; set; }
-        public string inspectcode { get; set; }
+        public string Process_code { get; set; }
         public MDS_SDS_006_2()
         {
             InitializeComponent();
@@ -34,9 +34,9 @@ namespace Axxen
 
             DatagridviewDesigns.SetDesign(dgvinspect);
           
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvinspect, "공정코드", "Process_code", true, 210, default, true);  
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvinspect, "검사항목코드", "Item_Code", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvinspect, "검사항목명", "Process_code", true, 210, default, true);
+          
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvinspect, "검사항목코드", "Inspect_code", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvinspect, "검사항목명", "Inspect_name", true, 210, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvinspect, "규격상한값", "USL", true, 210, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvinspect, "규격기준값", "SL", true, 210, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvinspect, "규격하한값", "LSL", true, 210, default, true);
@@ -62,7 +62,8 @@ namespace Axxen
 
                 inspectlist = new List<InspectSpecVO>();
                 inspectlist = inspectservice.GetAll();//품목규격전체
-                dgvinspect.DataSource = inspectlist.FindAll(item => item.Item_Code == itemCode && item.Inspect_code == inspectcode);
+                var a = inspectlist.FindAll(item => item.Item_Code == itemCode && item.Process_code == Process_code); 
+                dgvinspect.DataSource = a;
             }
             catch (Exception err)
             {
@@ -132,21 +133,20 @@ namespace Axxen
                         InspectSpecVO inspect = new InspectSpecVO {
 
                             Item_Code = lblItem.Text,
-                            Process_code = row.Cells[1].Value.ToString(),
-                            Inspect_code = row.Cells[2].Value.ToString(),
-                            Inspect_name = row.Cells[3].Value.ToString(),
+                            Process_code = Process_code,
+                            Inspect_code = row.Cells[1].Value.ToString(),
+                            Inspect_name = row.Cells[2].Value.ToString(),
                             //Spec_Desc    =                     ,
-                            USL = Convert.ToInt32(row.Cells[4].Value),
-                            SL = Convert.ToInt32(row.Cells[5].Value),
-                            LSL = Convert.ToInt32(row.Cells[6].Value),
-                            Sample_size = Convert.ToInt32(row.Cells[7].Value),
-                            Inspect_Unit = row.Cells[8].Value.ToString(),
-                            Remark = row.Cells[9].Value.ToString()
+                            USL = Convert.ToInt32(row.Cells[3].Value),
+                            SL = Convert.ToInt32(row.Cells[4].Value),
+                            LSL = Convert.ToInt32(row.Cells[5].Value),
+                            Sample_size = Convert.ToInt32(row.Cells[6].Value),
+                            Inspect_Unit = row.Cells[7].Value.ToString(),
+                            Remark = row.Cells[8].Value.ToString()
                         };
 
                         addlist.Add(inspect);
 
-                     
                     }
                 }
                 if (service.InsertInspectSpec(addlist))
@@ -163,6 +163,11 @@ namespace Axxen
                 MessageBox.Show("이미 등록된 검사항목입니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Program.Log.WriteError(err.Message);
             }
+        }
+
+        private void CbbItem_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblItem.Text = cbbItem.SelectedValue.ToString();
         }
     }
 }

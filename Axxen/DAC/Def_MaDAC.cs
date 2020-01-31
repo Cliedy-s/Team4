@@ -46,11 +46,11 @@ namespace DAC
                 comm.Connection = new SqlConnection(Connstr);
                 comm.CommandText = "GetUpdateDef_Ma_Master";
                 comm.CommandType = CommandType.StoredProcedure;
-                comm.Parameters.AddWithValue("@Def_Mi_Code", Def_Ma_Code);
+                comm.Parameters.AddWithValue("@Def_Ma_Code", Def_Ma_Code);
                 comm.Parameters.AddWithValue("@Use_YN", used);
 
                 comm.Connection.Open();
-                int result = Convert.ToInt32(comm.ExecuteScalar());
+                int result = Convert.ToInt32(comm.ExecuteNonQuery());
                 comm.Connection.Close();
 
                 if (result > 0)
@@ -61,7 +61,7 @@ namespace DAC
             catch (Exception)
             {
 
-                return false;
+                throw;
             }
 
         }
