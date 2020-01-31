@@ -54,7 +54,18 @@ namespace Axxen
         }
         public void MyUpdateShow(object sender, EventArgs e) //생산 수량 수정
         {
-            UPDATE_Prd_Qtys();
+            try
+            {
+                if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
+                {
+                    UPDATE_Prd_Qtys();
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+                Program.Log.WriteError(err.Message);
+            }    
         }
 
         public void RefreshFormShow(object sender, EventArgs e) // 새로고침 // 초기화

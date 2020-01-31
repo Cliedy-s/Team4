@@ -161,17 +161,30 @@ namespace Axxen
 
         public void MyUpdateShow(object sender, EventArgs e) //등급상세 수정
         {
-            if (dgvSubGrid.SelectedRows.Count > 0)
+
+            try
             {
-                if (dgvSubGrid.SelectedRows[0].Cells[6].Value.ToString() == "N")
+                if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
                 {
-                    UPDATE_Grade_Detail_Name();
+                    if (dgvSubGrid.SelectedRows.Count > 0)
+                    {
+                        if (dgvSubGrid.SelectedRows[0].Cells[6].Value.ToString() == "N")
+                        {
+                            UPDATE_Grade_Detail_Name();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("등급상세명을 수정 할 팔렛트 목록을 클릭해주세요.", "수정", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
             }
-            else
+            catch (Exception err)
             {
-                MessageBox.Show("등급상세명을 수정 할 팔렛트 목록을 클릭해주세요.","수정",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show(err.Message);
+                Program.Log.WriteError(err.Message);
             }
+          
         }
 
         public void RefreshFormShow(object sender, EventArgs e) // 새로고침 // 초기화
@@ -305,6 +318,11 @@ namespace Axxen
               {
                   MessageBox.Show($"{msg}", "작업지시마감 오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
               }                
+        }
+
+        private void PRM_PRF_002_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ((MainForm)this.MdiParent).MyUpdateEvent -= new System.EventHandler(this.MyUpdateShow);//수정 이벤트 삭제
         }
     }
 }

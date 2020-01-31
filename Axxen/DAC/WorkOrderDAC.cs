@@ -190,7 +190,7 @@ namespace DAC
                             cmdchk.Parameters.Clear();
                         }
                     }
-                    //-------------------------------------------------------------
+                    //------------------------------------------------------------- 
                     string Stsql = @"WITH PRM_PRF_002(Num,Prd_Date,Wo_Status,Workorderno,Item_Code,Item_Name,Wc_Name,Process_name,In_Qty_Main,Out_Qty_Main,Prd_Qty)
                             AS(select ROW_NUMBER() OVER(ORDER BY wo.Wo_Status) Num, Prd_Date, wo.Wo_Status, wo.Workorderno, wo.Item_Code, Item_Name, Wc_Name, Process_name, wo.In_Qty_Main, wo.Out_Qty_Main, wo.Prd_Qty
                             from WorkOrder wo INNER JOIN Item_Master im  ON wo.Item_Code = im.Item_Code
