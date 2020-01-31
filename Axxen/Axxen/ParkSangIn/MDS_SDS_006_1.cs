@@ -89,35 +89,36 @@ namespace Axxen
         {
             try
             {
-            Inspect_Spec_MasterService service = new Inspect_Spec_MasterService();
+                Inspect_Spec_MasterService service = new Inspect_Spec_MasterService();
+                List<InspectSpecVO> additem = new List<InspectSpecVO>();
 
 
+                InspectSpecVO inspect = new InspectSpecVO
+                {
+                    Item_Code = lblItem.Text,
+                    Process_code = lblProcess.Text,
+                    Inspect_code = txtInspect_code.Text,
+                    Inspect_name = txtInspect_name.Text,
+                    //Spec_Desc    =                     ,
+                    USL = nudusl.Value,
+                    SL = nudsl.Value,
+                    LSL = nudlsl.Value,
+                    Sample_size = Convert.ToInt32(nudsample.Value),
+                    Inspect_Unit = txttype.Text,
+                    Remark = txtRemark.Text
 
-            InspectSpecVO inspect = new InspectSpecVO
-            {
-                Item_Code = lblItem.Text,
-                Process_code = lblProcess.Text,
-                Inspect_code = txtInspect_code.Text,
-                Inspect_name = txtInspect_name.Text,
-                //Spec_Desc    =                     ,
-                USL = nudusl.Value,
-                SL = nudsl.Value,
-                LSL = nudlsl.Value,
-                Sample_size = Convert.ToInt32(nudsample.Value),
-                Inspect_Unit = txttype.Text,
-                Remark = txtRemark.Text
-
-            };
-
-            if (service.InsertInspectSpec(inspect)) {
+                };
+                additem.Add(inspect);
+                if (service.InsertInspectSpec(additem))
+                {
 
 
-                MessageBox.Show("저장 완료", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("이미 등록된 검사항목입니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+                    MessageBox.Show("저장 완료", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("이미 등록된 검사항목입니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             catch (Exception err)
             {

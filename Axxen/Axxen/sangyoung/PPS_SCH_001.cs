@@ -261,6 +261,7 @@ namespace Axxen
 
         private void BtnPrDown_Click(object sender, EventArgs e)
         {
+      
             DataTable dt = new DataTable();
 
             List<Wo_Req_ItemVO> list = dgvMainGrid.DataSource as List<Wo_Req_ItemVO>;
@@ -278,15 +279,27 @@ namespace Axxen
                     }
                 }
             }
+
+
+       
             dt = ListToDataTable.ToDataTable(reportList);
             rpt.DataSource = dt;
             PPS_SCH_001_Report frm = new PPS_SCH_001_Report(dt);
+           
             frm.documentViewer1.DocumentSource = rpt;
+            //  ((MainForm)this.MdiParent).newForm(frm.Name, frm.Name);
             frm.MdiParent = MdiParent;
             frm.WindowState = FormWindowState.Maximized;
-            
-            
             frm.Show();
+
+
+            TabPage newTab = new TabPage();
+            newTab.Tag = frm.Name;
+            newTab.Text = frm.Name;
+            frm.Tag = frm.Name;
+            ((MainForm)this.MdiParent).tabControl2.TabPages.Add(newTab);
+
+
         }
 
         private void PPS_SCH_001_Activated(object sender, EventArgs e)

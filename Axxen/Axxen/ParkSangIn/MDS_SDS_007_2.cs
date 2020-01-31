@@ -19,8 +19,8 @@ namespace Axxen
         Condition_Spec_MasterService conditionservice = new Condition_Spec_MasterService(); //공정조건
         List<ConditionSpecVO> inspectlist;
         CheckBox headerCheckBox = new CheckBox();
-        public string itemCode { get; set; }
-        public string WorkCode { get; set; }
+        public string itemCode { get; set; }// 검색조건 품목
+        public string WorkCode { get; set; }//검색조건 작업장
         public MDS_SDS_007_2()
         {
             InitializeComponent();
@@ -71,7 +71,7 @@ namespace Axxen
             catch (Exception err)
             {
                 Program.Log.WriteError(err.Message);
-                throw;
+               
             }
         }
         /// <summary>
