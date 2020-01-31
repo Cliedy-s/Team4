@@ -320,7 +320,7 @@ namespace Axxen
         private void TsbtnSave_Click(object sender, EventArgs e)
         {
             frm.Owner = this;
-            WorkOrder_WC_ItemVO order = new WorkOrder_WC_ItemVO();
+            WorkOrderAllVO order = new WorkOrderAllVO();
             order.Req_Seq = Convert.ToInt32(frm.txtSeq.Text);
             order.Wo_Req_No = frm.txtReqNo.Text;
             order.Workorderno = frm.txtWoorderno.Text;
@@ -333,7 +333,7 @@ namespace Axxen
             order.Prd_Qty = Convert.ToInt32(frm.txtPrdQty.Text);
             order.Prd_Date = frm.dtpDate.Value;
             order.Item_Code = frm.txtItemCode.Text;
-            order.Paln_Unit = frm.txtPlanUnit.Text;
+            order.Plan_Unit = frm.txtPlanUnit.Text;
 
 
         }
