@@ -57,8 +57,8 @@
             // 
             // aDateTimePickerSearch2
             // 
-            this.aDateTimePickerSearch2.ADateTimePickerValue1 = new System.DateTime(2020, 1, 21, 9, 41, 14, 715);
-            this.aDateTimePickerSearch2.ADateTimePickerValue2 = new System.DateTime(2020, 1, 24, 20, 21, 3, 736);
+            this.aDateTimePickerSearch2.ADateTimePickerValue1 = new System.DateTime(2020, 1, 24, 15, 0, 52, 512);
+            this.aDateTimePickerSearch2.ADateTimePickerValue2 = new System.DateTime(2020, 1, 31, 15, 0, 52, 512);
             this.aDateTimePickerSearch2.ButtonText = "조회";
             this.aDateTimePickerSearch2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aDateTimePickerSearch2.Location = new System.Drawing.Point(100, 23);
@@ -81,6 +81,7 @@
             this.aTextBox_FindNameByCode1.TabIndex = 18;
             this.aTextBox_FindNameByCode1.txtCodeText = "";
             this.aTextBox_FindNameByCode1.txtNameText = "";
+            this.aTextBox_FindNameByCode1.DotDotDotFormClosing += new Axxen.CustomControls.ATextBox_FindNameByCode.SearchFormClosing(this.aTextBox_FindNameByCode1_DotDotDotFormClosing);
             // 
             // aTextBox_FindNameByCode2
             // 
@@ -95,6 +96,7 @@
             this.aTextBox_FindNameByCode2.TabIndex = 19;
             this.aTextBox_FindNameByCode2.txtCodeText = "";
             this.aTextBox_FindNameByCode2.txtNameText = "";
+            this.aTextBox_FindNameByCode2.DotDotDotFormClosing += new Axxen.CustomControls.ATextBox_FindNameByCode.SearchFormClosing(this.aTextBox_FindNameByCode2_DotDotDotFormClosing);
             // 
             // PRM_PRF_008
             // 
@@ -103,6 +105,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 7, 4, 7);
             this.Name = "PRM_PRF_008";
             this.Text = "비가동 등록";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PRM_PRF_008_FormClosing);
             this.Load += new System.EventHandler(this.PRM_PRF_008_Load);
             this.panTop.ResumeLayout(false);
             this.panTop.PerformLayout();

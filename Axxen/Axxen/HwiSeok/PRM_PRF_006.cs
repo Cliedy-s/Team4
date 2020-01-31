@@ -70,6 +70,8 @@ namespace Axxen
                     aTextBox_FindNameByCode1.txtNameText = "";
                     aTextBox_FindNameByCode2.txtCodeText = "";
                     aTextBox_FindNameByCode2.txtNameText = "";
+                    aDateTimePickerSearch1.ADateTimePickerValue1 = Convert.ToDateTime(DateTime.Now.AddDays(-7).ToShortDateString());
+                    aDateTimePickerSearch1.ADateTimePickerValue2 = Convert.ToDateTime(DateTime.Now.ToShortDateString());
                 }
             }
             catch (Exception err)
@@ -90,7 +92,7 @@ namespace Axxen
             aTextBox_FindNameByCode2.txtNameText = "";
         }
 
-        private void aTextBox_FindNameByCode1_DotDotDotFormClosing(object sender, CustomControls.SearchFormClosingArgs args)
+        private void aTextBox_FindNameByCode1_DotDotDotFormClosing(object sender, CustomControls.SearchFormClosingArgs args) //대차 코드별
         {         
             if (aTextBox_FindNameByCode2.txtCodeText == "")
             {
@@ -108,7 +110,7 @@ namespace Axxen
             }
         }
 
-        private void aTextBox_FindNameByCode2_DotDotDotFormClosing(object sender, CustomControls.SearchFormClosingArgs args)
+        private void aTextBox_FindNameByCode2_DotDotDotFormClosing(object sender, CustomControls.SearchFormClosingArgs args) //품목별
         {
             if (aTextBox_FindNameByCode1.txtCodeText == "")
             {
