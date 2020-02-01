@@ -206,7 +206,6 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "POP_PRD_002";
             this.Text = "작업지시생성";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.POP_PRD_002_FormClosing);
             this.Load += new System.EventHandler(this.POP_PRD_002_Load);
             this.Controls.SetChildIndex(this.dgvWoReq, 0);
             this.Controls.SetChildIndex(this.aPanel4, 0);

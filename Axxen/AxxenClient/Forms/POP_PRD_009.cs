@@ -40,6 +40,9 @@ namespace AxxenClient.Forms
             InitControlUtil.AddNewColumnToDataGridView(dgvGVList, "작업지시일", "Plan_Date", false, 100);
             InitControlUtil.AddNewColumnToDataGridView(dgvGVList, "계획수량", "Plan_Qty", false, 100);
             InitControlUtil.AddNewColumnToDataGridView(dgvGVList, "계획단위", "Prd_Unit", false, 100);
+            InitControlUtil.AddNewColumnToDataGridView(dgvGVList, "생산의뢰번호", "Wo_Req_No", false, 100);
+            InitControlUtil.AddNewColumnToDataGridView(dgvGVList, "생산의뢰순서", "Req_Seq", false, 100);
+
 
             dgvGVList.Columns[10].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm:ss";
         }
@@ -63,24 +66,34 @@ namespace AxxenClient.Forms
             txtWorkCenter.CodeText = (dgvGVList.SelectedRows[0].Cells[6].Value ?? "").ToString();
             txtPlanDate.TextBoxText = (dgvGVList.SelectedRows[0].Cells[10].Value ?? "").ToString();
             txtPlanQty.TextBoxText = (dgvGVList.SelectedRows[0].Cells[11].Value ?? "").ToString();
+            lblUnit.Text = (dgvGVList.SelectedRows[0].Cells[12].Value ?? "").ToString();
+            lblReqNo.Text = (dgvGVList.SelectedRows[0].Cells[13].Value ?? "").ToString();
+            lblReqSeq.Text = (dgvGVList.SelectedRows[0].Cells[14].Value ?? "").ToString();
         }
         private void btnCreateWorkOrder_Click(object sender, EventArgs e)
         {   // 작업지시 생성
-            //DateTime now = DateTime.Now;
-            //WorkOrder_Service service = new WorkOrder_Service();
-            //WorkOrderNewVO item = new WorkOrderNewVO();
-            //item.Ins_Emp = GlobalUsage.UserID;
-            //item.Item_Code = txtItem.CodeText;
-            //item.Mat_LotNo = "MAT" + now.ToString("yyyyMMddHHmmss");
-            //item.Plan_Qty = Convert.ToInt32(txtPlanQty.TextBoxText);
-            //item.Plan_Unit = dgvGVList.Rows[0].Cells[12].Value.ToString();
-            //item.Wo_Req_No = txtReqNo.TextBoxText;
-            //item.Req_Seq = Convert.ToInt32(lblReq_Seq.Text);
-            //item.Wc_Code = txtWorkCenter.CodeText;
-            //item.Workorderno = "WK" + now.ToString("yyyyMMddHHmmffffff");
-            //item.Wo_Status = "생산대기";
-            //item.Prd_Unit = lblItem_Unit.Text;
-            //service.InsertWorkOrder(item);
+            DateTime now = DateTime.Now;
+            WorkOrder_Service service = new WorkOrder_Service();
+            WorkOrderNewVO item = new WorkOrderNewVO();
+            item.Ins_Emp = GlobalUsage.UserID;
+            item.Item_Code = txtItem.CodeText;
+            item.Mat_LotNo = "MAT" + now.ToString("yyyyMMddHHmmss");
+            item.Plan_Qty = Convert.ToInt32(txtPlanQty.TextBoxText);
+            item.Plan_Unit = lblUnit.Text;
+            item.Wo_Req_No = lblReqNo.Text;
+            item.Req_Seq = Convert.ToInt32(lblReqSeq.Text);
+            item.Wc_Code = txtWorkCenter.CodeText;
+            item.Wo_Order = "2";
+            item.Workorderno = "WK" + now.ToString("yyyyMMddHHmmffffff");
+            item.Wo_Status = "생산대기";
+            item.Prd_Unit = lblUnit.Text;
+            if (service.InsertWorkOrder(item))
+            {
+                this.Close();
+                return;
+            }
+            MessageBox.Show("작업지시 생성에 실패하였습니다.");
+
         }
     }
 }

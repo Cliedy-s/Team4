@@ -90,16 +90,5 @@ namespace AxxenClient.Forms
             lblItem_Unit.Text = dgvWoReq.SelectedRows[0].Cells[8].Value.ToString();
         }
 
-        private void POP_PRD_002_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            foreach (var item in this.MdiParent.MdiChildren)
-            {
-                if(item is POP_PRD_001 frm)
-                {
-                    frm.GetDatas();
-                    break;
-                }
-            } 
-        } // 폼 종료시 첫번째 폼 데이터 다시 가져오기
     }
 }
