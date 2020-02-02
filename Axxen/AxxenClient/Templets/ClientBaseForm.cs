@@ -33,5 +33,20 @@ namespace AxxenClient.Templets
         {
             lblTime.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
         }
+
+        private void ClientBaseForm_FormClosing(object sender, FormClosingEventArgs e)
+        { // 폼 종료시 첫번째 폼 데이터 다시 가져오기
+            if(!(sender is POP_PRD_001))
+            {
+                foreach (var item in this.MdiParent.MdiChildren)
+                {
+                    if (item is POP_PRD_001 frm)
+                    {
+                        frm.GetDatas();
+                        break;
+                    }
+                }
+            }
+        }
     }
 }

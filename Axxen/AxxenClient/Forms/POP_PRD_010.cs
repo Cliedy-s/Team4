@@ -1,10 +1,13 @@
-﻿using System;
+﻿using Axxen.CustomControls;
+using Service;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using VO;
 
 namespace AxxenClient.Forms
 {
@@ -13,6 +16,94 @@ namespace AxxenClient.Forms
         public POP_PRD_010()
         {
             InitializeComponent();
+        }
+
+        private void POP_PRD_010_Load(object sender, EventArgs e)
+        {
+            InitControls();
+            TopPanelSet();
+            GetDatas();
+        }
+        private void TopPanelSet()
+        {
+            txtWorkOrderno.TextBoxText = GlobalUsage.WorkOrderNo;
+            txtItemName.TextBoxText = GlobalUsage.ItemName;
+            txtQty.TextBoxText = GlobalUsage.Prd_Qty.ToString();
+            txtUnit.TextBoxText = GlobalUsage.Prd_Unit.ToString();
+            txtWcCode.TextBoxText = GlobalUsage.WcCode;
+            txtWorkOrderDate.TextBoxText = (GlobalUsage.WorkorderDate == null) ? "" : GlobalUsage.WorkorderDate.Value.ToString("yyyy-MM-dd HH:mm:ss");
+        }
+        private void InitControls()
+        {
+            InitControlUtil.SetPOPDGVDesign(dgvGVTo);
+            InitControlUtil.AddNewColumnToDataGridView(dgvGVTo, "대차코드", "GV_Code", true, 80);
+            InitControlUtil.AddNewColumnToDataGridView(dgvGVTo, "대차명", "GV_Name", true, 100, DataGridViewContentAlignment.MiddleLeft, true);
+
+            InitControlUtil.SetPOPDGVDesign(dgvGVFrom);
+            InitControlUtil.AddNewColumnToDataGridView(dgvGVFrom, "대차코드", "GV_Code", true, 80);
+            InitControlUtil.AddNewColumnToDataGridView(dgvGVFrom, "대차명", "GV_Name", true, 100, DataGridViewContentAlignment.MiddleLeft, true);
+            InitControlUtil.AddNewColumnToDataGridView(dgvGVFrom, "적재시각", "Loading_time", true, 200);
+            InitControlUtil.AddNewColumnToDataGridView(dgvGVFrom, "수량", "Loading_Qty", true, 50);
+            InitControlUtil.AddNewColumnToDataGridView(dgvGVFrom, "품목번호", "Item_Code", false, 50);
+            dgvGVFrom.Columns[2].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm:ss";
+
+        }
+        private void GetDatas()
+        {
+            GV_Current_StatusService service = new GV_Current_StatusService();
+            // 해당 작업지시에서 생성한 모든 대차
+            // TODO - 조건에 맞게 변경하기
+            //dgvGVFrom.DataSource = service.GetGVCurrentStatus(wccode:GlobalUsage.WcCode, workorderno:GlobalUsage.WorkOrderNo, gvStatus:"적재");
+            dgvGVFrom.DataSource = service.GetGVCurrentStatus(gvStatus: "적재"); // TODO - 적재, 언로딩 두가지 가져오게 변경하기
+            // 해당 작업장의 모든 빈대차를 가져온다.
+            //dgvGVTo.DataSource = service.GetGVCurrentStatus(wccode: GlobalUsage.WcCode, gvStatus: "빈대차");
+            dgvGVTo.DataSource = service.GetGVCurrentStatus(gvStatus: "빈대차");
+        }
+
+        private void btnMove_Click(object sender, EventArgs e)
+        {
+            string loadinggvcode = dgvGVTo.SelectedRows[0].Cells[0].Value.ToString();
+            string unloadgvcode = dgvGVFrom.SelectedRows[0].Cells[0].Value.ToString();
+            GV_HistoryService service = new GV_HistoryService();
+
+            // 옮겨타기
+            if (service.UpdateMoveGvItem(unloadgvcode, loadinggvcode, Convert.ToInt32(txtMove.TextBoxText), GlobalUsage.UserID, GlobalUsage.WcCode, GlobalUsage.WorkOrderNo))
+            {
+                GetDatas();
+            }
+            else
+                MessageBox.Show("옮길 수 없는 대차 입니다.");
+        }
+
+        private void dgvGVFrom_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                txtMove.TextBoxText = dgvGVFrom.SelectedRows[0].Cells[3].Value.ToString();
+            }
+        }
+
+        private void btnClearGV_Click(object sender, EventArgs e)
+        {
+            if (dgvGVFrom.SelectedRows.Count < 1)
+            {
+                MessageBox.Show("대차를 선택해주세요");
+                return;
+            }
+            GV_HistoryService service = new GV_HistoryService();
+            GVClearVO clearvo = new GVClearVO()
+            {
+                Clear_Cause = "적재문제",
+                Clear_Item = dgvGVFrom.SelectedRows[0].Cells[4].Value == null ? "" : dgvGVFrom.SelectedRows[0].Cells[4].Value.ToString(),
+                Clear_Qty = dgvGVFrom.SelectedRows[0].Cells[3].Value == null ? 0 : Convert.ToInt32(dgvGVFrom.SelectedRows[0].Cells[3].Value),
+                Clear_wc = GlobalUsage.WcCode,
+                GV_Code = dgvGVFrom.SelectedRows[0].Cells[0].Value.ToString(),
+                Up_Emp = GlobalUsage.UserID
+            };
+            if (service.UpdateClearGV(clearvo))
+                GetDatas();
+            else
+                MessageBox.Show("대차 비우기에 실패하였습니다.");
         }
     }
 }
