@@ -292,6 +292,7 @@
             this.Controls.Add(this.aHeaderBox1);
             this.Controls.Add(this.panTop);
             this.Name = "MDS_CDS_003";
+            this.Text = "비가동대분류";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MDS_CDS_003_FormClosing);
             this.Load += new System.EventHandler(this.MDS_CDS_003_Load);
             this.panTop.ResumeLayout(false);

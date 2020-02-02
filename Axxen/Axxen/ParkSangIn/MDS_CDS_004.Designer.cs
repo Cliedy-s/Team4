@@ -275,6 +275,7 @@
             this.Controls.Add(this.dgvMainGrid);
             this.Controls.Add(this.panTop);
             this.Name = "MDS_CDS_004";
+            this.Text = "비가동상세분류";
             this.panTop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMainGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aDataGridView1)).EndInit();

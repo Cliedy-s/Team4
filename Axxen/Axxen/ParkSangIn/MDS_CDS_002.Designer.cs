@@ -330,6 +330,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1257, 713);
             this.Name = "MDS_CDS_002";
+            this.Text = "불량현상대분류";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MDS_CDS_002_FormClosing);
             this.Load += new System.EventHandler(this.MDS_CDS_002_Load);
             this.aPanel1.ResumeLayout(false);
