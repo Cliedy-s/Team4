@@ -37,6 +37,12 @@ where w.Process_Code = p.Process_Code";
             }
         }
 
+        /// <summary>
+        /// 작업장사용유무
+        /// </summary>
+        /// <param name="code"></param>
+        /// <param name="use"></param>
+        /// <returns></returns>
         public bool UsedWorkCenter_Master2VO(string code, string use)
         {
             using (SqlCommand comm = new SqlCommand())
@@ -58,7 +64,11 @@ where w.Process_Code = p.Process_Code";
         }
 
 
-
+        /// <summary>
+        /// 작업장추가
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
         public bool InsertWorkservice(WorkCenter_Master2VO item)
         {
             try
@@ -67,12 +77,12 @@ where w.Process_Code = p.Process_Code";
             using (SqlCommand comm = new SqlCommand())
             {
                 comm.Connection = new SqlConnection(Connstr);
-                comm.CommandText = $"insert into WorkCenter_Master(Wc_Code,Wc_Name,Process_Code,Remark,Ins_Date,Ins_Emp) values(@Wc_Code,@Wc_Name,@Process_Code,@Remark,'{Convert.ToDateTime(DateTime.Now.ToShortDateString())}',@Ins_Emp)";
+                comm.CommandText = $"insert into WorkCenter_Master(Wc_Code,Wc_Name,Process_Code,Remark,Ins_Date,Ins_Emp) values(@Wc_Code,@Wc_Name,@Process_Code,@Remark,'{DateTime.Now.ToShortDateString()}',@Ins_Emp)";
                 comm.CommandType = CommandType.Text;
                 comm.Parameters.AddWithValue("@Wc_Code", item.Wc_Code);
                 comm.Parameters.AddWithValue("@Wc_Name", item.Wc_Name);
                 comm.Parameters.AddWithValue("@Process_Code", item.Process_Code);
-                comm.Parameters.AddWithValue("@Remark", item.Process_name);
+                comm.Parameters.AddWithValue("@Remark", item.Remark);
                     comm.Parameters.AddWithValue("@Ins_Emp", item.Ins_Emp);
 
                     comm.Connection.Open();

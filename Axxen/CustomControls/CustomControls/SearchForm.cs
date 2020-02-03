@@ -52,6 +52,8 @@ namespace Axxen.CustomControls
                     lblSearch.Text = "불량현상 대분류 목록";
                     break;
                 case DataType.NonOperations:
+                    InitControls("Nop_Ma_Code", "Nop_Ma_Name");
+                    dgvSearchResult.DataSource  = GetData<Nop_Ma_MasterService,NopMaMasterVO>("GetAllNopMA");
                     break;
                 case DataType.UserDefinitions:
                     break;
