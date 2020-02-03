@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.aButton2 = new Axxen.CustomControls.AButton();
+            this.btnInput = new Axxen.CustomControls.AButton();
             this.dgvGVList = new Axxen.CustomControls.ADataGridView();
-            this.aButton1 = new Axxen.CustomControls.AButton();
-            this.aBigTextBox_Searchable4 = new Axxen.CustomControls.ABigTextBox_Searchable();
+            this.btnOutput = new Axxen.CustomControls.AButton();
+            this.txtGVSearch = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
+            this.btnSearch = new Axxen.CustomControls.AButton();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
@@ -44,22 +45,22 @@
             // 
             // aPanel1
             // 
-            this.aPanel1.Location = new System.Drawing.Point(0, 791);
-            this.aPanel1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.aPanel1.Location = new System.Drawing.Point(0, 593);
+            this.aPanel1.Margin = new System.Windows.Forms.Padding(2);
             // 
-            // aButton2
+            // btnInput
             // 
-            this.aButton2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.aButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.aButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton2.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aButton2.Location = new System.Drawing.Point(1234, 271);
-            this.aButton2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.aButton2.Name = "aButton2";
-            this.aButton2.Size = new System.Drawing.Size(306, 220);
-            this.aButton2.TabIndex = 31;
-            this.aButton2.Text = "요입";
-            this.aButton2.UseVisualStyleBackColor = false;
+            this.btnInput.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.btnInput.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInput.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnInput.Location = new System.Drawing.Point(960, 203);
+            this.btnInput.Name = "btnInput";
+            this.btnInput.Size = new System.Drawing.Size(238, 165);
+            this.btnInput.TabIndex = 31;
+            this.btnInput.Text = "요입";
+            this.btnInput.UseVisualStyleBackColor = false;
+            this.btnInput.Click += new System.EventHandler(this.btnInput_Click);
             // 
             // dgvGVList
             // 
@@ -67,60 +68,73 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvGVList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGVList.Location = new System.Drawing.Point(15, 209);
-            this.dgvGVList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvGVList.Location = new System.Drawing.Point(12, 157);
             this.dgvGVList.Name = "dgvGVList";
             this.dgvGVList.RowHeadersWidth = 51;
             this.dgvGVList.RowTemplate.Height = 23;
-            this.dgvGVList.Size = new System.Drawing.Size(1211, 573);
+            this.dgvGVList.Size = new System.Drawing.Size(942, 430);
             this.dgvGVList.TabIndex = 27;
             // 
-            // aButton1
+            // btnOutput
             // 
-            this.aButton1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.aButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton1.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aButton1.Location = new System.Drawing.Point(1234, 499);
-            this.aButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.aButton1.Name = "aButton1";
-            this.aButton1.Size = new System.Drawing.Size(306, 220);
-            this.aButton1.TabIndex = 33;
-            this.aButton1.Text = "요출";
-            this.aButton1.UseVisualStyleBackColor = false;
+            this.btnOutput.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnOutput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.btnOutput.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOutput.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnOutput.Location = new System.Drawing.Point(960, 374);
+            this.btnOutput.Name = "btnOutput";
+            this.btnOutput.Size = new System.Drawing.Size(238, 165);
+            this.btnOutput.TabIndex = 33;
+            this.btnOutput.Text = "요출";
+            this.btnOutput.UseVisualStyleBackColor = false;
+            this.btnOutput.Click += new System.EventHandler(this.btnOutput_Click);
             // 
-            // aBigTextBox_Searchable4
+            // txtGVSearch
             // 
-            this.aBigTextBox_Searchable4.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aBigTextBox_Searchable4.CodeText = null;
-            this.aBigTextBox_Searchable4.DataType = Axxen.CustomControls.DataType.Users;
-            this.aBigTextBox_Searchable4.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aBigTextBox_Searchable4.LabelText = "대차검색";
-            this.aBigTextBox_Searchable4.Location = new System.Drawing.Point(17, 141);
-            this.aBigTextBox_Searchable4.Margin = new System.Windows.Forms.Padding(5, 8, 5, 8);
-            this.aBigTextBox_Searchable4.Name = "aBigTextBox_Searchable4";
-            this.aBigTextBox_Searchable4.Size = new System.Drawing.Size(603, 56);
-            this.aBigTextBox_Searchable4.TabIndex = 34;
-            this.aBigTextBox_Searchable4.TextBoxText = "";
-            this.aBigTextBox_Searchable4.TextBoxType = Axxen.CustomControls.TextType.Normal;
+            this.txtGVSearch.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtGVSearch.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtGVSearch.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtGVSearch.LabelText = "대차검색";
+            this.txtGVSearch.Location = new System.Drawing.Point(12, 108);
+            this.txtGVSearch.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtGVSearch.Name = "txtGVSearch";
+            this.txtGVSearch.Size = new System.Drawing.Size(469, 42);
+            this.txtGVSearch.TabIndex = 37;
+            this.txtGVSearch.TextBoxText = "";
+            this.txtGVSearch.TextBoxType = Axxen.CustomControls.TextType.Normal;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSearch.Location = new System.Drawing.Point(481, 114);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(69, 29);
+            this.btnSearch.TabIndex = 36;
+            this.btnSearch.Text = "검색";
+            this.btnSearch.UseVisualStyleBackColor = false;
             // 
             // POP_PRD_011
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.ClientSize = new System.Drawing.Size(1556, 839);
-            this.Controls.Add(this.aButton1);
-            this.Controls.Add(this.aButton2);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.ClientSize = new System.Drawing.Size(1210, 629);
+            this.Controls.Add(this.txtGVSearch);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.btnOutput);
+            this.Controls.Add(this.btnInput);
             this.Controls.Add(this.dgvGVList);
-            this.Controls.Add(this.aBigTextBox_Searchable4);
-            this.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "POP_PRD_011";
             this.Load += new System.EventHandler(this.POP_PRD_011_Load);
-            this.Controls.SetChildIndex(this.aBigTextBox_Searchable4, 0);
+            this.Controls.SetChildIndex(this.dgvGVList, 0);
+            this.Controls.SetChildIndex(this.btnInput, 0);
+            this.Controls.SetChildIndex(this.btnOutput, 0);
             this.Controls.SetChildIndex(this.aPanel2, 0);
             this.Controls.SetChildIndex(this.aPanel1, 0);
-            this.Controls.SetChildIndex(this.dgvGVList, 0);
-            this.Controls.SetChildIndex(this.aButton2, 0);
-            this.Controls.SetChildIndex(this.aButton1, 0);
+            this.Controls.SetChildIndex(this.btnSearch, 0);
+            this.Controls.SetChildIndex(this.txtGVSearch, 0);
             this.aPanel1.ResumeLayout(false);
             this.aPanel1.PerformLayout();
             this.aPanel2.ResumeLayout(false);
@@ -133,9 +147,10 @@
 
         #endregion
 
-        private Axxen.CustomControls.AButton aButton2;
+        private Axxen.CustomControls.AButton btnInput;
         private Axxen.CustomControls.ADataGridView dgvGVList;
-        private Axxen.CustomControls.AButton aButton1;
-        private Axxen.CustomControls.ABigTextBox_Searchable aBigTextBox_Searchable4;
+        private Axxen.CustomControls.AButton btnOutput;
+        private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox txtGVSearch;
+        private Axxen.CustomControls.AButton btnSearch;
     }
 }
