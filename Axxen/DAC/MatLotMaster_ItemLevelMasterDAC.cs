@@ -28,5 +28,24 @@ namespace DAC
                 return list;
             }
         }
+
+        public List<MatLotMaster_ItemLevelMasterVO> PickerMatLotMaster_ItemLevelMaster(string ADateTimePickerValue) //DateTimePicker 사용
+        {
+            List<MatLotMaster_ItemLevelMasterVO> list = null;
+            using (SqlConnection conn = new SqlConnection(Connstr))
+            {
+                conn.Open();
+                string sql = $"select YYYY,ilm.Level_Code,Level_Name,Prd_Order,Mat_LotNo " +
+                             $"from Item_Level_Master ilm INNER JOIN Mat_Lot_Master mlm ON ilm.Level_Code = mlm.Level_Code " +
+                             $"where YYYY='{ADateTimePickerValue}'";
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    list = Helper.DataReaderMapToList<MatLotMaster_ItemLevelMasterVO>(cmd.ExecuteReader());
+                }
+                conn.Close();
+            }
+            return list;
+        }
+        
     }
 }

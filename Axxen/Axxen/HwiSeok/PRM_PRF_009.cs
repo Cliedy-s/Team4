@@ -77,5 +77,10 @@ namespace Axxen
                         select date).ToList();
             dgvMainGrid.DataSource = whcuList;
         }
+
+        private void PRM_PRF_009_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ((MainForm)this.MdiParent).RefreshFormEvent -= new System.EventHandler(this.RefreshFormShow); // 새로고침
+        }
     }
 }

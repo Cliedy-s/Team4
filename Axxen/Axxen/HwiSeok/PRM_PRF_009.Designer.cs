@@ -55,8 +55,8 @@
             // 
             // aDateTimePickerSearch1
             // 
-            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 1, 27, 14, 8, 27, 352);
-            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 2, 3, 14, 8, 27, 352);
+            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 1, 27, 14, 57, 30, 805);
+            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 2, 3, 14, 57, 30, 805);
             this.aDateTimePickerSearch1.ButtonText = "조회";
             this.aDateTimePickerSearch1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aDateTimePickerSearch1.Location = new System.Drawing.Point(88, 23);
@@ -87,6 +87,7 @@
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.Name = "PRM_PRF_009";
             this.Text = "근태정보 조회";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PRM_PRF_009_FormClosing);
             this.Load += new System.EventHandler(this.PRM_PRF_009_Load);
             this.panTop.ResumeLayout(false);
             this.panTop.PerformLayout();

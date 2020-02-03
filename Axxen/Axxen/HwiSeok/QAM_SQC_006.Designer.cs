@@ -73,6 +73,7 @@
             this.aButton1.TabIndex = 30;
             this.aButton1.Text = "조회";
             this.aButton1.UseVisualStyleBackColor = false;
+            this.aButton1.Click += new System.EventHandler(this.aButton1_Click);
             // 
             // QAM_SQC_006
             // 
@@ -80,6 +81,7 @@
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.Name = "QAM_SQC_006";
             this.Text = "원재료 LOT관리";
+            this.Load += new System.EventHandler(this.QAM_SQC_006_Load);
             this.panTop.ResumeLayout(false);
             this.panTop.PerformLayout();
             this.ResumeLayout(false);

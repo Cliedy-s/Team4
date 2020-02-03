@@ -15,5 +15,12 @@ namespace Service
             MatLotMaster_ItemLevelMasterDAC dac = new MatLotMaster_ItemLevelMasterDAC();
             return dac.GetAllMatLotMaster_ItemLevelMaster();
         }
+
+        public List<MatLotMaster_ItemLevelMasterVO> PickerMatLotMaster_ItemLevelMaster(string Adatetimepicker) //QAM_SQC_006 날짜별조회
+        {
+            MatLotMaster_ItemLevelMasterDAC dac = new MatLotMaster_ItemLevelMasterDAC();
+
+            return dac.PickerMatLotMaster_ItemLevelMaster(Adatetimepicker);
+        }
     }
 }

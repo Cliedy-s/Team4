@@ -39,10 +39,26 @@ namespace Axxen
 
         private void RefreshFormShow(object sender, EventArgs e)
         {
-            mlmilm = mlmilmservice.GetAllMatLotMaster_ItemLevelMaster(); //전체 조회
-            dgvMainGrid.DataSource = mlmilm;
+            try
+            {
+                if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
+                {
+                    mlmilm = mlmilmservice.GetAllMatLotMaster_ItemLevelMaster(); //전체 조회
+                    dgvMainGrid.DataSource = mlmilm;
+                    aDateTimePicker1.Value = DateTime.Now;                   
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+                Program.Log.WriteError(err.Message);
+            }
+        }
 
-            aDateTimePicker1.CustomFormat = "yyyy";
+        private void aButton1_Click(object sender, EventArgs e)
+        {
+            mlmilm = mlmilmservice.PickerMatLotMaster_ItemLevelMaster(aDateTimePicker1.Text);
+            dgvMainGrid.DataSource = mlmilm;
         }
     }
 }
