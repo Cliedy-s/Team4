@@ -55,7 +55,7 @@ namespace DAC
                 comm.Parameters.AddWithValue("@Use_YN", used);
 
                 comm.Connection.Open();
-                int result = Convert.ToInt32(comm.ExecuteScalar());
+                int result = Convert.ToInt32(comm.ExecuteNonQuery());
                 comm.Connection.Close();
 
                 if (result > 0)
