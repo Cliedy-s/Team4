@@ -30,11 +30,13 @@
         {
             this.aLabel1 = new Axxen.CustomControls.ALabel();
             this.aDateTimePicker1 = new Axxen.CustomControls.ADateTimePicker();
+            this.aButton1 = new Axxen.CustomControls.AButton();
             this.panTop.SuspendLayout();
             this.SuspendLayout();
             // 
             // panTop
             // 
+            this.panTop.Controls.Add(this.aButton1);
             this.panTop.Controls.Add(this.aDateTimePicker1);
             this.panTop.Controls.Add(this.aLabel1);
             // 
@@ -53,11 +55,24 @@
             // 
             // aDateTimePicker1
             // 
-            this.aDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.aDateTimePicker1.CustomFormat = "yyyy";
+            this.aDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.aDateTimePicker1.Location = new System.Drawing.Point(88, 28);
             this.aDateTimePicker1.Name = "aDateTimePicker1";
-            this.aDateTimePicker1.Size = new System.Drawing.Size(106, 23);
+            this.aDateTimePicker1.ShowUpDown = true;
+            this.aDateTimePicker1.Size = new System.Drawing.Size(60, 23);
             this.aDateTimePicker1.TabIndex = 29;
+            // 
+            // aButton1
+            // 
+            this.aButton1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.aButton1.Location = new System.Drawing.Point(168, 28);
+            this.aButton1.Name = "aButton1";
+            this.aButton1.Size = new System.Drawing.Size(75, 23);
+            this.aButton1.TabIndex = 30;
+            this.aButton1.Text = "조회";
+            this.aButton1.UseVisualStyleBackColor = false;
             // 
             // QAM_SQC_006
             // 
@@ -74,5 +89,6 @@
         #endregion
         private CustomControls.ALabel aLabel1;
         private CustomControls.ADateTimePicker aDateTimePicker1;
+        private CustomControls.AButton aButton1;
     }
 }
