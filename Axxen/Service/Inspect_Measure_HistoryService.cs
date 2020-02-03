@@ -8,24 +8,24 @@ using VO;
 
 namespace Service
 {
-    class Inspect_Measure_HistoryService
+    public class Inspect_Measure_HistoryService
     {
         /// <summary>
         /// Inspect_Measure_History 목록 가져오기
         /// </summary>
-        public List<InspectHistoryVO> GetAll()
+        public List<InspectHistoryVO> GetAll(string itemcode, string processcode, string inspectcode)
         {
             Inspect_Measure_HistoryDAC dac = new Inspect_Measure_HistoryDAC();
-            return dac.GetAll();
+            return dac.GetAll(itemcode, processcode, inspectcode);
         }
         /// <summary>
         /// 품질측정값 등록
         /// </summary>
         /// <param name="item">Inspect_measure_seq를 제외하고 채워야함</param>
-        public bool InsertInspect_Measure(InspectHistoryVO item)
+        public bool InsertInspect_Measure(InspectHistoryVO item, string userid)
         {
             Inspect_Measure_HistoryDAC dac = new Inspect_Measure_HistoryDAC();
-            return dac.InsertInspect_Measure(item);
+            return dac.InsertInspect_Measure(item, userid);
         }
         /// <summary>
         /// 품질측정값 삭제

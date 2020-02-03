@@ -60,13 +60,15 @@ namespace AxxenClient.Forms
             InitControlUtil.AddNewColumnToDataGridView(dgvMain, "품목코드", "Item_Code", true, 110, DataGridViewContentAlignment.MiddleLeft, false);
             InitControlUtil.AddNewColumnToDataGridView(dgvMain, "품목명", "Item_Name", true, 80, DataGridViewContentAlignment.MiddleLeft, true);
             InitControlUtil.AddNewColumnToDataGridView(dgvMain, "단위", "Prd_Unit", true, 80, DataGridViewContentAlignment.MiddleLeft, false);
+            InitControlUtil.AddNewColumnToDataGridView(dgvMain, "계획수량", "Prd_Qty", true, 110);
             InitControlUtil.AddNewColumnToDataGridView(dgvMain, "실적수량", "Prd_Qty", true, 110, DataGridViewContentAlignment.MiddleRight, false);
             InitControlUtil.AddNewColumnToDataGridView(dgvMain, "생산시작시간", "Prd_Starttime", true, 200, DataGridViewContentAlignment.MiddleLeft, false);
             InitControlUtil.AddNewColumnToDataGridView(dgvMain, "생산종료시간", "Prd_Endtime", true, 200);
             InitControlUtil.AddNewColumnToDataGridView(dgvMain, "계획 날짜", "Plan_Date", false, 200);
+            InitControlUtil.AddNewColumnToDataGridView(dgvMain, "계획수량", "Prd_Qty", false, 200);
 
-            dgvMain.Columns[7].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm:ss";
             dgvMain.Columns[8].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm:ss";
+            dgvMain.Columns[9].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm:ss";
         }
         /// <summary>
         /// 데이터를 DB에서 가져온다
@@ -162,7 +164,7 @@ namespace AxxenClient.Forms
 
                 //해당 프로그램의 전역에 설정해줌
                 GlobalUsage.WorkOrderNo = row.Cells[1].Value.ToString();
-                GlobalUsage.WorkorderDate = Convert.ToDateTime(row.Cells[9].Value);
+                GlobalUsage.WorkorderDate = Convert.ToDateTime(row.Cells[10].Value);
                 GlobalUsage.ItemName = row.Cells[4].Value.ToString();
                 GlobalUsage.Prd_Qty = 0;
                 GlobalUsage.Out_Qty = 0;

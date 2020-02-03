@@ -30,9 +30,9 @@ namespace DAC
 	, cmh.Condition_Datetime
 	, cmh.Condition_Val
 	, cmh.Workorderno
-    , csh.Condition_Name
+    , csm.Condition_Name
 	FROM Condition_Measure_History AS cmh
-       JOIN Condition_Spec_Master AS csm ON csm.Condition_Code = csh.Condition_Code
+       JOIN Condition_Spec_Master AS csm ON csm.Condition_Code = cmh.Condition_Code AND csm.Wc_Code =cmh.Wc_Code AND csm.Item_code = cmh.Item_code
 	WHERE cmh.Condition_Code = @Condition_Code AND cmh.Wc_Code = @Wc_Code AND cmh.Item_Code = @Item_Code; ";
                 comm.CommandType = CommandType.Text;
                 comm.Parameters.AddWithValue("@Condition_Code", conditioncode);

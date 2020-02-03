@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.aButton1 = new Axxen.CustomControls.AButton();
-            this.aButton2 = new Axxen.CustomControls.AButton();
-            this.aDataGridView2 = new Axxen.CustomControls.ADataGridView();
-            this.aDataGridView1 = new Axxen.CustomControls.ADataGridView();
+            this.btnDeleteMeasure = new Axxen.CustomControls.AButton();
+            this.btnInsertMeasure = new Axxen.CustomControls.AButton();
+            this.dgvInspectMeasure = new Axxen.CustomControls.ADataGridView();
+            this.dgvInspect = new Axxen.CustomControls.ADataGridView();
             this.aPanel6 = new Axxen.CustomControls.APanel();
             this.txtUnit = new Axxen.CustomControls.ABigTextBox_Labeled();
             this.txtWcCode = new Axxen.CustomControls.ABigTextBox_Labeled();
@@ -39,11 +39,15 @@
             this.txtItemName = new Axxen.CustomControls.ABigTextBox_Labeled();
             this.txtWorkOrderDate = new Axxen.CustomControls.ABigTextBox_Labeled();
             this.txtWorkOrderno = new Axxen.CustomControls.ABigTextBox_Labeled();
-            this.aBigTextBox_LabeledBigTextBox1 = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
+            this.txtMeasure = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
+            this.lblProcesscode = new Axxen.CustomControls.ALabel();
+            this.lblItemCode = new Axxen.CustomControls.ALabel();
+            this.lblInspectcode = new Axxen.CustomControls.ALabel();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.aDataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aDataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInspectMeasure)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInspect)).BeginInit();
             this.aPanel6.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,56 +60,59 @@
             this.aPanel1.Location = new System.Drawing.Point(0, 593);
             this.aPanel1.Margin = new System.Windows.Forms.Padding(2);
             // 
-            // aButton1
+            // btnDeleteMeasure
             // 
-            this.aButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.aButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton1.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aButton1.Location = new System.Drawing.Point(1042, 473);
-            this.aButton1.Name = "aButton1";
-            this.aButton1.Size = new System.Drawing.Size(160, 112);
-            this.aButton1.TabIndex = 37;
-            this.aButton1.Text = "삭제";
-            this.aButton1.UseVisualStyleBackColor = false;
+            this.btnDeleteMeasure.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDeleteMeasure.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.btnDeleteMeasure.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteMeasure.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnDeleteMeasure.Location = new System.Drawing.Point(1042, 473);
+            this.btnDeleteMeasure.Name = "btnDeleteMeasure";
+            this.btnDeleteMeasure.Size = new System.Drawing.Size(160, 112);
+            this.btnDeleteMeasure.TabIndex = 37;
+            this.btnDeleteMeasure.Text = "삭제";
+            this.btnDeleteMeasure.UseVisualStyleBackColor = false;
+            this.btnDeleteMeasure.Click += new System.EventHandler(this.btnDeleteMeasure_Click);
             // 
-            // aButton2
+            // btnInsertMeasure
             // 
-            this.aButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.aButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.aButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton2.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aButton2.Location = new System.Drawing.Point(626, 473);
-            this.aButton2.Name = "aButton2";
-            this.aButton2.Size = new System.Drawing.Size(409, 112);
-            this.aButton2.TabIndex = 35;
-            this.aButton2.Text = "입력";
-            this.aButton2.UseVisualStyleBackColor = false;
+            this.btnInsertMeasure.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnInsertMeasure.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.btnInsertMeasure.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInsertMeasure.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnInsertMeasure.Location = new System.Drawing.Point(626, 473);
+            this.btnInsertMeasure.Name = "btnInsertMeasure";
+            this.btnInsertMeasure.Size = new System.Drawing.Size(409, 112);
+            this.btnInsertMeasure.TabIndex = 35;
+            this.btnInsertMeasure.Text = "입력";
+            this.btnInsertMeasure.UseVisualStyleBackColor = false;
+            this.btnInsertMeasure.Click += new System.EventHandler(this.btnInsertMeasure_Click);
             // 
-            // aDataGridView2
+            // dgvInspectMeasure
             // 
-            this.aDataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvInspectMeasure.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.aDataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.aDataGridView2.Location = new System.Drawing.Point(626, 211);
-            this.aDataGridView2.Name = "aDataGridView2";
-            this.aDataGridView2.RowHeadersWidth = 51;
-            this.aDataGridView2.RowTemplate.Height = 23;
-            this.aDataGridView2.Size = new System.Drawing.Size(574, 218);
-            this.aDataGridView2.TabIndex = 34;
+            this.dgvInspectMeasure.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInspectMeasure.Location = new System.Drawing.Point(626, 211);
+            this.dgvInspectMeasure.Name = "dgvInspectMeasure";
+            this.dgvInspectMeasure.RowHeadersWidth = 51;
+            this.dgvInspectMeasure.RowTemplate.Height = 23;
+            this.dgvInspectMeasure.Size = new System.Drawing.Size(574, 218);
+            this.dgvInspectMeasure.TabIndex = 34;
             // 
-            // aDataGridView1
+            // dgvInspect
             // 
-            this.aDataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvInspect.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.aDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.aDataGridView1.Location = new System.Drawing.Point(10, 211);
-            this.aDataGridView1.Name = "aDataGridView1";
-            this.aDataGridView1.RowHeadersWidth = 51;
-            this.aDataGridView1.RowTemplate.Height = 23;
-            this.aDataGridView1.Size = new System.Drawing.Size(610, 374);
-            this.aDataGridView1.TabIndex = 32;
+            this.dgvInspect.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInspect.Location = new System.Drawing.Point(10, 211);
+            this.dgvInspect.Name = "dgvInspect";
+            this.dgvInspect.RowHeadersWidth = 51;
+            this.dgvInspect.RowTemplate.Height = 23;
+            this.dgvInspect.Size = new System.Drawing.Size(610, 374);
+            this.dgvInspect.TabIndex = 32;
+            this.dgvInspect.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInspect_CellClick);
             // 
             // aPanel6
             // 
@@ -200,57 +207,93 @@
             this.txtWorkOrderno.TextBoxText = "";
             this.txtWorkOrderno.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
-            // aBigTextBox_LabeledBigTextBox1
+            // txtMeasure
             // 
-            this.aBigTextBox_LabeledBigTextBox1.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aBigTextBox_LabeledBigTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.aBigTextBox_LabeledBigTextBox1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aBigTextBox_LabeledBigTextBox1.LabelText = "측정값";
-            this.aBigTextBox_LabeledBigTextBox1.Location = new System.Drawing.Point(628, 430);
-            this.aBigTextBox_LabeledBigTextBox1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.aBigTextBox_LabeledBigTextBox1.Name = "aBigTextBox_LabeledBigTextBox1";
-            this.aBigTextBox_LabeledBigTextBox1.Size = new System.Drawing.Size(469, 42);
-            this.aBigTextBox_LabeledBigTextBox1.TabIndex = 41;
-            this.aBigTextBox_LabeledBigTextBox1.TextBoxText = "";
-            this.aBigTextBox_LabeledBigTextBox1.TextBoxType = Axxen.CustomControls.TextType.Numeric;
+            this.txtMeasure.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtMeasure.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMeasure.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtMeasure.LabelText = "측정값";
+            this.txtMeasure.Location = new System.Drawing.Point(628, 430);
+            this.txtMeasure.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtMeasure.Name = "txtMeasure";
+            this.txtMeasure.Size = new System.Drawing.Size(469, 42);
+            this.txtMeasure.TabIndex = 41;
+            this.txtMeasure.TextBoxText = "";
+            this.txtMeasure.TextBoxType = Axxen.CustomControls.TextType.Numeric;
+            // 
+            // lblProcesscode
+            // 
+            this.lblProcesscode.AutoSize = true;
+            this.lblProcesscode.Location = new System.Drawing.Point(12, 271);
+            this.lblProcesscode.Name = "lblProcesscode";
+            this.lblProcesscode.Size = new System.Drawing.Size(86, 15);
+            this.lblProcesscode.TabIndex = 44;
+            this.lblProcesscode.Text = "lblProcesscode";
+            // 
+            // lblItemCode
+            // 
+            this.lblItemCode.AutoSize = true;
+            this.lblItemCode.Location = new System.Drawing.Point(12, 239);
+            this.lblItemCode.Name = "lblItemCode";
+            this.lblItemCode.Size = new System.Drawing.Size(72, 15);
+            this.lblItemCode.TabIndex = 43;
+            this.lblItemCode.Text = "lblItemCode";
+            // 
+            // lblInspectcode
+            // 
+            this.lblInspectcode.AutoSize = true;
+            this.lblInspectcode.Location = new System.Drawing.Point(12, 211);
+            this.lblInspectcode.Name = "lblInspectcode";
+            this.lblInspectcode.Size = new System.Drawing.Size(84, 15);
+            this.lblInspectcode.TabIndex = 42;
+            this.lblInspectcode.Text = "lblInspectcode";
             // 
             // POP_PRD_015
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1210, 629);
-            this.Controls.Add(this.aBigTextBox_LabeledBigTextBox1);
-            this.Controls.Add(this.aButton1);
-            this.Controls.Add(this.aButton2);
-            this.Controls.Add(this.aDataGridView2);
-            this.Controls.Add(this.aDataGridView1);
+            this.Controls.Add(this.lblProcesscode);
+            this.Controls.Add(this.lblItemCode);
+            this.Controls.Add(this.lblInspectcode);
+            this.Controls.Add(this.txtMeasure);
+            this.Controls.Add(this.btnDeleteMeasure);
+            this.Controls.Add(this.btnInsertMeasure);
+            this.Controls.Add(this.dgvInspectMeasure);
+            this.Controls.Add(this.dgvInspect);
             this.Controls.Add(this.aPanel6);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "POP_PRD_015";
+            this.Load += new System.EventHandler(this.POP_PRD_015_Load);
             this.Controls.SetChildIndex(this.aPanel6, 0);
             this.Controls.SetChildIndex(this.aPanel2, 0);
             this.Controls.SetChildIndex(this.aPanel1, 0);
-            this.Controls.SetChildIndex(this.aDataGridView1, 0);
-            this.Controls.SetChildIndex(this.aDataGridView2, 0);
-            this.Controls.SetChildIndex(this.aButton2, 0);
-            this.Controls.SetChildIndex(this.aButton1, 0);
-            this.Controls.SetChildIndex(this.aBigTextBox_LabeledBigTextBox1, 0);
+            this.Controls.SetChildIndex(this.dgvInspect, 0);
+            this.Controls.SetChildIndex(this.dgvInspectMeasure, 0);
+            this.Controls.SetChildIndex(this.btnInsertMeasure, 0);
+            this.Controls.SetChildIndex(this.btnDeleteMeasure, 0);
+            this.Controls.SetChildIndex(this.txtMeasure, 0);
+            this.Controls.SetChildIndex(this.lblInspectcode, 0);
+            this.Controls.SetChildIndex(this.lblItemCode, 0);
+            this.Controls.SetChildIndex(this.lblProcesscode, 0);
             this.aPanel1.ResumeLayout(false);
             this.aPanel1.PerformLayout();
             this.aPanel2.ResumeLayout(false);
             this.aPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.aDataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aDataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInspectMeasure)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInspect)).EndInit();
             this.aPanel6.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private Axxen.CustomControls.AButton aButton1;
-        private Axxen.CustomControls.AButton aButton2;
-        private Axxen.CustomControls.ADataGridView aDataGridView2;
-        private Axxen.CustomControls.ADataGridView aDataGridView1;
+        private Axxen.CustomControls.AButton btnDeleteMeasure;
+        private Axxen.CustomControls.AButton btnInsertMeasure;
+        private Axxen.CustomControls.ADataGridView dgvInspectMeasure;
+        private Axxen.CustomControls.ADataGridView dgvInspect;
         private Axxen.CustomControls.APanel aPanel6;
         private Axxen.CustomControls.ABigTextBox_Labeled txtUnit;
         private Axxen.CustomControls.ABigTextBox_Labeled txtWcCode;
@@ -258,6 +301,9 @@
         private Axxen.CustomControls.ABigTextBox_Labeled txtItemName;
         private Axxen.CustomControls.ABigTextBox_Labeled txtWorkOrderDate;
         private Axxen.CustomControls.ABigTextBox_Labeled txtWorkOrderno;
-        private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox aBigTextBox_LabeledBigTextBox1;
+        private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox txtMeasure;
+        private Axxen.CustomControls.ALabel lblProcesscode;
+        private Axxen.CustomControls.ALabel lblItemCode;
+        private Axxen.CustomControls.ALabel lblInspectcode;
     }
 }

@@ -35,9 +35,8 @@ namespace AxxenClient.Forms
         }
         private void InitControls()
         {
-            lblConditionCode.Text = "";
-            lblItemCode.Text = "";
-            lblWcCode.Text = "";
+            lblConditionCode.Text = lblItemCode.Text = lblWcCode.Text = "";
+            lblConditionCode.Visible = lblItemCode.Visible = lblWcCode.Visible = false;
             InitControlUtil.SetPOPDGVDesign(dgvConditionList);
             InitControlUtil.AddNewColumnToDataGridView(dgvConditionList, "측정항목", "Condition_Name", true, 100, DataGridViewContentAlignment.MiddleLeft, true);
             InitControlUtil.AddNewColumnToDataGridView(dgvConditionList, "USL", "USL", true, 130);
@@ -76,7 +75,11 @@ namespace AxxenClient.Forms
                 item.Condition_Code = lblConditionCode.Text;
                 item.Condition_Val = Convert.ToDecimal(txtMeasure.TextBoxText);
                 item.Workorderno = GlobalUsage.WorkOrderNo;
-                if (service.InsertConditionMeasure(item, GlobalUsage.UserID)) SearchData();
+                if (service.InsertConditionMeasure(item, GlobalUsage.UserID))
+                {
+                    SearchData();
+                    txtMeasure.TextBoxText = "";
+                }
                 else MessageBox.Show("입력할 수 없는 항목입니다.");
 
             }
