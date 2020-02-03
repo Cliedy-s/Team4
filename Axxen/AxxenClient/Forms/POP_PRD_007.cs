@@ -63,13 +63,13 @@ namespace AxxenClient.Forms
         { // 검색
             GV_Current_StatusService service = new GV_Current_StatusService();
             // TODO - 조건에 맞게 변경하기
-            dgvGVTo.DataSource = service.GetGVCurrentStatus(gvStatus: "빈대차", gvName:txtToSearch.TextBoxText);
+            dgvGVTo.DataSource = service.GetGVCurrentStatus(gvStatus: "빈대차", gvName:txtToGVSearch.TextBoxText);
         }
         private void btnFromSearch_Click(object sender, EventArgs e)
         { // 검색
             GV_Current_StatusService service = new GV_Current_StatusService();
             // TODO - 조건에 맞게 변경하기
-            dgvGVFrom.DataSource = service.GetGVCurrentStatus(gvStatus: "적재", gvName:txtFromSearch.TextBoxText);
+            dgvGVFrom.DataSource = service.GetGVCurrentStatus(gvStatus: "적재", gvName:txtFromGVSearch.TextBoxText);
         }
         private void btnLoad_Click(object sender, EventArgs e)
         {

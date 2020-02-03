@@ -89,27 +89,7 @@ WHERE gv.[GV_Group] = @gvgroup
             using (SqlCommand comm = new SqlCommand())
             {
                 comm.Connection = new SqlConnection(Connstr);
-                comm.CommandText =
- @"UpdateGVIn";
-                /*
-  UPDATE [dbo].[GV_Current_Status]
-   SET 
-      [In_Time] = getdate()
-      ,[Up_Date] = getdate()
-      ,[Up_Emp] = @username
- WHERE [GV_Code] = @gvcode
-      AND [Workorderno] = @workorderno
-      AND [In_Time] = null;
-
-   UPDATE [dbo].[GV_History]
-   SET 
-      [In_Time] = getdate()
-      ,[Up_Date] = getdate()
-      ,[Up_Emp] = @username
- WHERE [GV_Code] = @gvcode
-      AND [Workorderno] = @workorderno
-      AND [In_Time] = null;
-                 */
+                comm.CommandText = @"UpdateGVIn";
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.Parameters.AddWithValue("@username", username);
                 comm.Parameters.AddWithValue("@gvcode", gvcode);
@@ -121,7 +101,7 @@ WHERE gv.[GV_Group] = @gvgroup
 
                 return result > 0;
             }
-        } // TODO - 프로시저 생성
+        }
         /// <summary>
         /// 요출
         /// </summary>
@@ -134,27 +114,7 @@ WHERE gv.[GV_Group] = @gvgroup
             using (SqlCommand comm = new SqlCommand())
             {
                 comm.Connection = new SqlConnection(Connstr);
-                comm.CommandText =
- @"UpdateGVOut";
-                /*
-  UPDATE [dbo].[GV_Current_Status]
-   SET 
-      [Center_Time] = [In_Time] + DATEDIFF(mm,[In_Time],getdate())
-      ,[Out_Time] =  getdate()
-      ,[Up_Date] = getdate()
-      ,[Up_Emp] = @username
- WHERE [GV_Code] = @gvcode
-      AND [Workorderno] = @workorderno;
-
-   UPDATE [dbo].[GV_History]
-   SET
-      [Center_Time] = [In_Time] + DATEDIFF(mm,[In_Time],getdate())
-      ,[Out_Time] = getdate()
-      ,[Up_Date] = getdate()
-      ,[Up_Emp] = @username
- WHERE [GV_Code] = @gvcode
-      AND [Workorderno] = @workorderno
-                 */
+                comm.CommandText = @"UpdateGVOut";
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.Parameters.AddWithValue("@username", username);
                 comm.Parameters.AddWithValue("@gvcode", gvcode);
@@ -166,7 +126,7 @@ WHERE gv.[GV_Group] = @gvgroup
 
                 return result > 0;
             }
-        } // TODO - 프로시저 생성
+        }
 
     }
 }

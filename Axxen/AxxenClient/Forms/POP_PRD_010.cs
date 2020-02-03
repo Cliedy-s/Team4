@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using VO;
@@ -17,7 +18,6 @@ namespace AxxenClient.Forms
         {
             InitializeComponent();
         }
-
         private void POP_PRD_010_Load(object sender, EventArgs e)
         {
             InitControls();
@@ -54,12 +54,15 @@ namespace AxxenClient.Forms
             // 해당 작업지시에서 생성한 모든 대차
             // TODO - 조건에 맞게 변경하기
             //dgvGVFrom.DataSource = service.GetGVCurrentStatus(wccode:GlobalUsage.WcCode, workorderno:GlobalUsage.WorkOrderNo, gvStatus:"적재");
-            dgvGVFrom.DataSource = service.GetGVCurrentStatus(gvStatus: "적재"); // TODO - 적재, 언로딩 두가지 가져오게 변경하기
+            List<GVStatusVO> list = service.GetGVCurrentStatus();
+            dgvGVFrom.DataSource =
+                (from item in list
+                 where (item.GV_Status =="적재" || item.GV_Status == "언로딩")
+                 select item).ToList();
             // 해당 작업장의 모든 빈대차를 가져온다.
             //dgvGVTo.DataSource = service.GetGVCurrentStatus(wccode: GlobalUsage.WcCode, gvStatus: "빈대차");
             dgvGVTo.DataSource = service.GetGVCurrentStatus(gvStatus: "빈대차");
         }
-
         private void btnMove_Click(object sender, EventArgs e)
         {
             string loadinggvcode = dgvGVTo.SelectedRows[0].Cells[0].Value.ToString();
@@ -74,7 +77,6 @@ namespace AxxenClient.Forms
             else
                 MessageBox.Show("옮길 수 없는 대차 입니다.");
         }
-
         private void dgvGVFrom_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex > -1)
@@ -82,9 +84,8 @@ namespace AxxenClient.Forms
                 txtMove.TextBoxText = dgvGVFrom.SelectedRows[0].Cells[3].Value.ToString();
             }
         }
-
         private void btnClearGV_Click(object sender, EventArgs e)
-        {
+        {   // 대차 비우기
             if (dgvGVFrom.SelectedRows.Count < 1)
             {
                 MessageBox.Show("대차를 선택해주세요");
@@ -104,6 +105,22 @@ namespace AxxenClient.Forms
                 GetDatas();
             else
                 MessageBox.Show("대차 비우기에 실패하였습니다.");
+        }
+        private void btnToSearch_Click(object sender, EventArgs e)
+        {   // 빈대차 목록 검색
+            // TODO - 조건에 맞게 변경하기
+            GV_Current_StatusService service = new GV_Current_StatusService();
+            dgvGVTo.DataSource = service.GetGVCurrentStatus(gvStatus: "빈대차", gvName: txtToGVSearch.TextBoxText);
+        }
+        private void btnFromSearch_Click(object sender, EventArgs e)
+        {   // 적재된 목록 검색
+            // TODO - 조건에 맞게 변경하기
+            GV_Current_StatusService service = new GV_Current_StatusService();
+            List<GVStatusVO> list = service.GetGVCurrentStatus(gvName: txtFromGVSearch.TextBoxText);
+            dgvGVFrom.DataSource =
+                (from item in list
+                 where (item.GV_Status == "적재" || item.GV_Status == "언로딩")
+                 select item).ToList();
         }
     }
 }
