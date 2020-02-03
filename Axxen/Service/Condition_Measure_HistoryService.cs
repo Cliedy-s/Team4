@@ -8,16 +8,16 @@ using VO;
 
 namespace Service
 {
-    class Condition_Measure_HistoryService
+    public class Condition_Measure_HistoryService
     {
         /// <summary>
         /// 공정조건 측정그룹
         /// </summary>
         /// <returns></returns>
-        public List<ConditionMeasureVO> GetAll(string conditioncode)
+        public List<ConditionMeasureVO> GetAll(string conditioncode, string wccode, string itemcode)
         {
             Condition_Measure_HistoryDAC dac = new Condition_Measure_HistoryDAC();
-            return dac.GetAll(conditioncode);
+            return dac.GetAll(conditioncode, wccode, itemcode);
         }
         /// <summary>
         /// 입력

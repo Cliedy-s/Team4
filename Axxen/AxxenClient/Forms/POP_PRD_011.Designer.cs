@@ -115,6 +115,7 @@
             this.btnSearch.TabIndex = 36;
             this.btnSearch.Text = "검색";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // POP_PRD_011
             // 

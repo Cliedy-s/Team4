@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Service
 {
-    class Emp_Allocation_HistoryService
+    public class Emp_Allocation_HistoryService
 	{
 		/// <summary>
 		/// 작업자 할당
@@ -28,6 +28,18 @@ namespace Service
 		{
 			Emp_Allocation_HistoryDAC dac = new Emp_Allocation_HistoryDAC();
 			return dac.UpdateWorkerDeallocate( targetUserId,  username,  wcCode);
-		} 
+		}
+		/// <summary>
+		/// 작업자 전체 해제
+		/// </summary>
+		/// <param name="targetUserId"></param>
+		/// <param name="username"></param>
+		/// <param name="wcCode"></param>
+		/// <returns></returns>
+		public bool UpdateWorkerDeallocateAll(List<string> targetUserIds, string username, string wcCode)
+		{
+			Emp_Allocation_HistoryDAC dac = new Emp_Allocation_HistoryDAC();
+			return dac.UpdateWorkerDeallocateAll(targetUserIds, username, wcCode);
+		}
 	}
 }

@@ -72,7 +72,7 @@ INSERT INTO Emp_Wc_Allocation (
 
                 return result > 0;
             }
-        } // TODO - 프로시저 생성
+        }
 		/// <summary>
 		/// 작업자 해제
 		/// </summary>
@@ -116,6 +116,39 @@ UPDATE Emp_Wc_Allocation SET
 				return result > 0;
 			}
 
-		} // TODO - 프로시저 생성
-    }
+		}
+		/// <summary>
+		/// 작업자 전체 해제
+		/// </summary>
+		/// <param name="targetUserId"></param>
+		/// <param name="username"></param>
+		/// <param name="wcCode"></param>
+		/// <returns></returns>
+		public bool UpdateWorkerDeallocateAll(List<string> targetUserIds, string username, string wcCode)
+		{
+			StringBuilder sb = new StringBuilder();
+			foreach (string item in targetUserIds)
+			{
+				sb.Append(item + "@");
+			}
+
+			using (SqlCommand comm = new SqlCommand())
+			{
+				comm.Connection = new SqlConnection(Connstr);
+				comm.CommandText = @"UpdateWorkerDeallocateAll";
+				comm.CommandType = CommandType.StoredProcedure;
+				comm.Parameters.AddWithValue("@Up_Emp", username);
+				comm.Parameters.AddWithValue("@UserID", targetUserIds.ToString().TrimEnd('@'));
+				comm.Parameters.AddWithValue("@wccode", wcCode);
+				comm.Parameters.AddWithValue("@splitchar", '@');
+
+				comm.Connection.Open();
+				int result = comm.ExecuteNonQuery();
+				comm.Connection.Close();
+
+				return result > 0;
+			}
+
+		}
+	}
 }

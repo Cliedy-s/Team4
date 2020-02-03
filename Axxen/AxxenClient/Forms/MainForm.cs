@@ -26,6 +26,11 @@ namespace AxxenClient.Forms
             childfrm.WindowState = FormWindowState.Maximized;
             childfrm.MdiParent = this;
             childfrm.Show();
+
+            //foreach (Form item in this.MdiChildren)
+            //{
+            //    item.FormBorderStyle = FormBorderStyle.None;
+            //} 
         }
     }
 }

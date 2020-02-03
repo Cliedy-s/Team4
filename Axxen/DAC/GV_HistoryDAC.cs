@@ -118,7 +118,7 @@ namespace DAC
                 SqlCommand comm2 = new SqlCommand();
                 comm2.Connection = conn;
                 comm2.CommandText = 
-@"UPDATE [GV_Master] SET GV_Status = '언로딩' WHERE GV_Code = @gvcode; ";
+@"UPDATE [GV_Master] SET GV_Status = '빈대차' WHERE GV_Code = @gvcode; ";
                 comm2.Parameters.AddWithValue("@gvcode", item.GV_Code);
 
                 SqlTransaction transaction =null;

@@ -15,7 +15,7 @@ namespace DAC
         /// 공정조건 측정그룹
         /// </summary>
         /// <returns></returns>
-        public List<ConditionMeasureVO> GetAll(string conditioncode)
+        public List<ConditionMeasureVO> GetAll(string conditioncode, string wccode, string itemcode)
         {
             using (SqlCommand comm = new SqlCommand())
             {
@@ -30,10 +30,14 @@ namespace DAC
 	, cmh.Condition_Datetime
 	, cmh.Condition_Val
 	, cmh.Workorderno
+    , csh.Condition_Name
 	FROM Condition_Measure_History AS cmh
-	WHERE cmh.Condition_Code = @Condition_Code; ";
+       JOIN Condition_Spec_Master AS csm ON csm.Condition_Code = csh.Condition_Code
+	WHERE cmh.Condition_Code = @Condition_Code AND cmh.Wc_Code = @Wc_Code AND cmh.Item_Code = @Item_Code; ";
                 comm.CommandType = CommandType.Text;
                 comm.Parameters.AddWithValue("@Condition_Code", conditioncode);
+                comm.Parameters.AddWithValue("@Wc_Code", wccode);
+                comm.Parameters.AddWithValue("@Item_Code", itemcode);
 
                 comm.Connection.Open();
                 SqlDataReader reader = comm.ExecuteReader();

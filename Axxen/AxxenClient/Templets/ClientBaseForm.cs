@@ -31,7 +31,7 @@ namespace AxxenClient.Templets
 
         private void timetimer_Tick(object sender, EventArgs e)
         {
-            lblTime.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            lblTime.Text = DateTime.Now.ToString("yyyy-MM-dd\nHH:mm:ss");
         }
 
         private void ClientBaseForm_FormClosing(object sender, FormClosingEventArgs e)

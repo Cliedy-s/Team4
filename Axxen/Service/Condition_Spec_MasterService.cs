@@ -8,7 +8,7 @@ using VO;
 
 namespace Service
 {
-   public class Condition_Spec_MasterService
+    public class Condition_Spec_MasterService
     {
         Condition_Spec_MasterDAC dac;
         public Condition_Spec_MasterService()
@@ -22,7 +22,7 @@ namespace Service
         /// <returns></returns>
         public List<ConditionSpecVO> GetAll()
         {
-        
+
             return dac.GetAll();
         }
 
@@ -30,5 +30,5 @@ namespace Service
         {
             return dac.InsertConditionSpec(condition);
         }
-        }
+    }
 }

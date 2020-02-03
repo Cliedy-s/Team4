@@ -7,11 +7,14 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using VO;
 
 namespace AxxenClient.Forms
 {
     public partial class POP_PRD_001 : AxxenClient.Templets.ClientBaseForm
     {
+        string selectedrowwono { get; set; }
+        int columnno { get; set; }
         public Color runningDefaultColor { get; set; }
         public POP_PRD_001()
         {
@@ -53,10 +56,10 @@ namespace AxxenClient.Forms
             InitControlUtil.SetPOPDGVDesign(dgvMain);
             InitControlUtil.AddNewColumnToDataGridView(dgvMain, "상태", "Wo_Status", true, 80, DataGridViewContentAlignment.MiddleLeft, false);
             InitControlUtil.AddNewColumnToDataGridView(dgvMain, "작업지시번호", "Workorderno", true, 240, DataGridViewContentAlignment.MiddleLeft, false);
-            InitControlUtil.AddNewColumnToDataGridView(dgvMain, "할당작업자", "User_ID", true, 100, DataGridViewContentAlignment.MiddleLeft, false);
-            InitControlUtil.AddNewColumnToDataGridView(dgvMain, "품목코드", "Item_Code", true, 80, DataGridViewContentAlignment.MiddleLeft, false);
+            InitControlUtil.AddNewColumnToDataGridView(dgvMain, "할당작업자", "User_ID", true, 130, DataGridViewContentAlignment.MiddleLeft, false);
+            InitControlUtil.AddNewColumnToDataGridView(dgvMain, "품목코드", "Item_Code", true, 110, DataGridViewContentAlignment.MiddleLeft, false);
             InitControlUtil.AddNewColumnToDataGridView(dgvMain, "품목명", "Item_Name", true, 80, DataGridViewContentAlignment.MiddleLeft, true);
-            InitControlUtil.AddNewColumnToDataGridView(dgvMain, "단위", "Prd_Unit", true, 60, DataGridViewContentAlignment.MiddleLeft, false);
+            InitControlUtil.AddNewColumnToDataGridView(dgvMain, "단위", "Prd_Unit", true, 80, DataGridViewContentAlignment.MiddleLeft, false);
             InitControlUtil.AddNewColumnToDataGridView(dgvMain, "실적수량", "Prd_Qty", true, 110, DataGridViewContentAlignment.MiddleRight, false);
             InitControlUtil.AddNewColumnToDataGridView(dgvMain, "생산시작시간", "Prd_Starttime", true, 200, DataGridViewContentAlignment.MiddleLeft, false);
             InitControlUtil.AddNewColumnToDataGridView(dgvMain, "생산종료시간", "Prd_Endtime", true, 200);
@@ -75,9 +78,19 @@ namespace AxxenClient.Forms
             string woinichar = string.Empty;
             dgvMain.DataSource = service.GetAllWorkOrder_AlloHisDetail_Item_Wc(woinichar);
 
-            // 실행중인 작업을 표시한다
+            // 실행중인 작업 및 선택했던 로우를 선택한다
             if (!GlobalUsage.WorkOrderNo.Equals("설정안함"))
                 SetColor(GlobalUsage.WorkOrderNo);
+            if (!string.IsNullOrEmpty(selectedrowwono))
+            {
+                for (int i = 0; i < dgvMain.Rows.Count; i++)
+                {
+                    if (dgvMain.Rows[i].Cells[1].Value.ToString().Equals(selectedrowwono))
+                    {
+                        dgvMain.CurrentCell = dgvMain.Rows[i].Cells[columnno];
+                    }
+                }
+            }
         }
         /// <summary>
         /// 버튼에 폼을 연결한다.
@@ -223,6 +236,24 @@ namespace AxxenClient.Forms
             }
             else
                 MessageBox.Show("마감할 수 없는 작업지시입니다.");
+        }
+        /// <summary>
+        /// 매 초마다 작업 현황 가져오기
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void timetimer_Tick(object sender, EventArgs e)
+        {
+            selectedrowwono = dgvMain.SelectedRows[0].Cells[1].Value.ToString();
+            columnno = dgvMain.CurrentCell.ColumnIndex;
+            GetDatas();
+        }
+        private void POP_PRD_001_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
+            {
+                WorkOrderEnd();
+            }
         }
     }
 }
