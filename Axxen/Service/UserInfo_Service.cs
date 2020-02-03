@@ -29,6 +29,13 @@ namespace Service
         
             return dac.GetAllUser();
         }
+
+        public List<UserInfoVO> UserID_UserName() //유저 아이디 / 닉네임 서치
+        {
+
+            return dac.UserID_UserName();
+        }
+        
         public bool InsertUser(UserInfoVO user)
         {
             return dac.InsertUser(user);

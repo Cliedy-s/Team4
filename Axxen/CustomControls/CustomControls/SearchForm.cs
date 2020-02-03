@@ -73,6 +73,9 @@ namespace Axxen.CustomControls
                     lblSearch.Text = "대차그룹 목록";
                     break;
                 case DataType.Workers:
+                    InitControls("User_ID", "User_Name");
+                    dgvSearchResult.DataSource = GetData<UserInfo_Service, UserInfoVO>("UserID_UserName");
+                    lblSearch.Text = "작업자";
                     break;
                 case DataType.Pallet:
                     InitControls("Grade_Detail_Name", "Pallet_No");

@@ -96,5 +96,23 @@ namespace DAC
                 return false;
             }
         }
+
+        public List<UserInfoVO> UserID_UserName()
+        {
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText = @"select User_ID,User_Name from User_Master";
+                comm.CommandType = CommandType.Text;
+
+                comm.Connection.Open();
+                SqlDataReader reader = comm.ExecuteReader();
+                List<UserInfoVO> list = Helper.DataReaderMapToList<UserInfoVO>(reader);
+                comm.Connection.Close();
+
+                return list;
+            }
+        }
+        
     }
 }
