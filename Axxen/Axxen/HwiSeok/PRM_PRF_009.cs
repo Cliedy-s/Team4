@@ -73,9 +73,14 @@ namespace Axxen
         private void aTextBox_FindNameByCode1_DotDotDotFormClosing(object sender, CustomControls.SearchFormClosingArgs args)
         {
             whcuList = (from date in whcu
-                        where date.Wc_Name == aTextBox_FindNameByCode1.txtNameText
+                        where date.User_Name == aTextBox_FindNameByCode1.txtNameText
                         select date).ToList();
             dgvMainGrid.DataSource = whcuList;
+        }
+
+        private void PRM_PRF_009_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ((MainForm)this.MdiParent).RefreshFormEvent -= new System.EventHandler(this.RefreshFormShow); // 새로고침
         }
     }
 }

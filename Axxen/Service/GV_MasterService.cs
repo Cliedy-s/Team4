@@ -10,10 +10,26 @@ namespace Service
 {
     public class GV_MasterService
     {
-        /// <summary>
-        /// 대차리스트 작업장별로 가져오기
-        /// </summary>
-        public List<GVWorkItemVO> GetAllByWC(string wccode, string woinichar)
+        public List<GVMasterVO> GetALLGVMaster()
+        {
+            GV_MasterDAC dac = new GV_MasterDAC();
+            return dac.GetALLGVMaster();
+        }
+        public bool InsertUpdateGV_Master(GVMasterVO GVMaster)
+        {
+            GV_MasterDAC dac = new GV_MasterDAC();
+            return dac.InsertUpdateGV_Master(GVMaster);
+        }
+        public bool UsedGV_Master(string GV_Code, string used)
+        {
+            GV_MasterDAC dac = new GV_MasterDAC();
+            return dac.UsedGV_Master(GV_Code, used);
+        }
+
+            /// <summary>
+            /// 대차리스트 작업장별로 가져오기
+            /// </summary>
+            public List<GVWorkItemVO> GetAllByWC(string wccode, string woinichar)
         {
             GV_MasterDAC dac = new GV_MasterDAC();
             return dac.GetAllByWC(wccode, woinichar);
