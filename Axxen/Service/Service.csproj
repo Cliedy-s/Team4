@@ -71,6 +71,7 @@
     <Compile Include="UserGroupService.cs" />
     <Compile Include="UserInfo_Service.cs" />
     <Compile Include="WorkCenter_MasterService.cs" />
+    <Compile Include="WorkHistory_Center_UserMasterService.cs" />
     <Compile Include="WorkOrder_Service.cs" />
     <Compile Include="Wo_ReqService.cs" />
   </ItemGroup>
