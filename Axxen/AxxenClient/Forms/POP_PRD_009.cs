@@ -58,12 +58,12 @@ namespace AxxenClient.Forms
         }
         private void dgvGVList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtItem.TextBoxText =(dgvGVList.SelectedRows[0].Cells[2].Value ?? "").ToString();
-            txtItem.CodeText = (dgvGVList.SelectedRows[0].Cells[1].Value ?? "").ToString();
-            txtProcess.TextBoxText = (dgvGVList.SelectedRows[0].Cells[9].Value ?? "").ToString();
-            txtProcess.CodeText = (dgvGVList.SelectedRows[0].Cells[8].Value ?? "").ToString();
-            txtWorkCenter.TextBoxText = (dgvGVList.SelectedRows[0].Cells[7].Value ?? "").ToString();
-            txtWorkCenter.CodeText = (dgvGVList.SelectedRows[0].Cells[6].Value ?? "").ToString();
+            txtItemSearch.TextBoxText =(dgvGVList.SelectedRows[0].Cells[2].Value ?? "").ToString();
+            txtItemSearch.CodeText = (dgvGVList.SelectedRows[0].Cells[1].Value ?? "").ToString();
+            txtProcessSearch.TextBoxText = (dgvGVList.SelectedRows[0].Cells[9].Value ?? "").ToString();
+            txtProcessSearch.CodeText = (dgvGVList.SelectedRows[0].Cells[8].Value ?? "").ToString();
+            txtWcSearch.TextBoxText = (dgvGVList.SelectedRows[0].Cells[7].Value ?? "").ToString();
+            txtWcSearch.CodeText = (dgvGVList.SelectedRows[0].Cells[6].Value ?? "").ToString();
             txtPlanDate.TextBoxText = (dgvGVList.SelectedRows[0].Cells[10].Value ?? "").ToString();
             txtPlanQty.TextBoxText = (dgvGVList.SelectedRows[0].Cells[11].Value ?? "").ToString();
             lblUnit.Text = (dgvGVList.SelectedRows[0].Cells[12].Value ?? "").ToString();
@@ -76,13 +76,13 @@ namespace AxxenClient.Forms
             WorkOrder_Service service = new WorkOrder_Service();
             WorkOrderNewVO item = new WorkOrderNewVO();
             item.Ins_Emp = GlobalUsage.UserID;
-            item.Item_Code = txtItem.CodeText;
+            item.Item_Code = txtItemSearch.CodeText;
             item.Mat_LotNo = "MAT" + now.ToString("yyyyMMddHHmmss");
             item.Plan_Qty = Convert.ToInt32(txtPlanQty.TextBoxText);
             item.Plan_Unit = lblUnit.Text;
             item.Wo_Req_No = lblReqNo.Text;
             item.Req_Seq = Convert.ToInt32(lblReqSeq.Text);
-            item.Wc_Code = txtWorkCenter.CodeText;
+            item.Wc_Code = txtWcSearch.CodeText;
             item.Wo_Order = "2";
             item.Workorderno = "WK" + now.ToString("yyyyMMddHHmmffffff");
             item.Wo_Status = "생산대기";

@@ -59,6 +59,7 @@
     <Compile Include="Inspect_Spec_MasterService.cs" />
     <Compile Include="ItemMaster_Service.cs" />
     <Compile Include="MainForm_Service.cs" />
+    <Compile Include="MatLotMaster_ItemLevelMasterSerivce.cs" />
     <Compile Include="MoldService.cs" />
     <Compile Include="Nop_HistoryService.cs" />
     <Compile Include="Nop_History_Mi_MaService.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="UserGroupService.cs" />
     <Compile Include="UserInfo_Service.cs" />
     <Compile Include="WorkCenter_MasterService.cs" />
+    <Compile Include="WorkHistory_Center_UserMasterService.cs" />
     <Compile Include="WorkOrder_Service.cs" />
     <Compile Include="Wo_ReqService.cs" />
   </ItemGroup>

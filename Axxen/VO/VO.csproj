@@ -34,6 +34,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -62,6 +64,7 @@
     <Compile Include="Item_Goods_HistoryVO.cs" />
     <Compile Include="Item_MasterVO.cs" />
     <Compile Include="MainForm_VO.cs" />
+    <Compile Include="MatLotMaster_ItemLevelMasterVO.cs" />
     <Compile Include="MoldVO.cs" />
     <Compile Include="Mold_J_Item_Wc_MuseVO.cs" />
     <Compile Include="NopHistoryVO.cs" />
@@ -80,6 +83,7 @@
     <Compile Include="WC_J_WO_Time_Day_ItemVO.cs" />
     <Compile Include="WorkCenter_MasterVO.cs" />
     <Compile Include="WorkerVO.cs" />
+    <Compile Include="WorkHistory_Center_UserMasterVO.cs" />
     <Compile Include="WorkOrderVO.cs" />
     <Compile Include="WorkOrder_J_WC_ItmeVO.cs" />
     <Compile Include="WorkOrder_J_WC_Time_DayVO.cs" />

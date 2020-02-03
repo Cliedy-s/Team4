@@ -59,6 +59,7 @@
     <Compile Include="ItemMasterDAC.cs" />
     <Compile Include="Inspect_Spec_MasterDAC.cs" />
     <Compile Include="MainForm_DAC.cs" />
+    <Compile Include="MatLotMaster_ItemLevelMasterDAC.cs" />
     <Compile Include="MoldDAC.cs" />
     <Compile Include="Nop_HistoryDAC.cs" />
     <Compile Include="Nop_History_Mi_MaDAC.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="UserGroupDAC.cs" />
     <Compile Include="UserInfoDAC.cs" />
     <Compile Include="WorkCenter_MasterDAC.cs" />
+    <Compile Include="WorkHistory_Center_UserMasterDAC.cs" />
     <Compile Include="WorkOrderDAC.cs" />
     <Compile Include="Wo_ReqDAC.cs" />
   </ItemGroup>
