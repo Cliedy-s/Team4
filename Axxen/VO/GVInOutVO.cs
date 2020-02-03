@@ -15,7 +15,7 @@ namespace VO
         public DateTime Loading_time { get; set; }               // 로딩시간
         public string Loading_Wc { get; set; }                // 로딩작업장
         public DateTime In_Time { get; set; }                      // 요입시간
-        public DateTime Center_Time { get; set; }                // 중간시간
+        public int Center_Time { get; set; }                // 중간시간
         public DateTime Out_Time { get; set; }                    // 요출시간
         public string GV_Name { get; set; }                   // 대차명
         public string Wc_Code { get; set; }                    // 작업장코드
