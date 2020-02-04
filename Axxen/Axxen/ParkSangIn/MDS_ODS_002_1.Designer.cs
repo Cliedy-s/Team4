@@ -204,7 +204,7 @@
             this.txtwork_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtwork_name.errorp = null;
             this.txtwork_name.Location = new System.Drawing.Point(2, 4);
-            this.txtwork_name.MaxLength = 20;
+            this.txtwork_name.MaxLength = 50;
             this.txtwork_name.Name = "txtwork_name";
             this.txtwork_name.Size = new System.Drawing.Size(160, 23);
             this.txtwork_name.TabIndex = 157;

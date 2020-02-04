@@ -28,119 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.aTextBox_FindNameByCode1 = new Axxen.CustomControls.ATextBox_FindNameByCode();
-            this.btnSearch = new Axxen.CustomControls.AButton();
-            this.panTop = new Axxen.CustomControls.APanel();
-            this.aHeaderBox1 = new Axxen.CustomControls.AHeaderBox();
-            this.dgvMainGrid = new Axxen.CustomControls.ADataGridView();
-            this.aHeaderBox2 = new Axxen.CustomControls.AHeaderBox();
-            this.aDataGridView1 = new Axxen.CustomControls.ADataGridView();
             this.aHeaderBox3 = new Axxen.CustomControls.AHeaderBox();
             this.panelNopMaMaste = new Axxen.CustomControls.APanel();
+            this.aPanel1 = new Axxen.CustomControls.APanel();
+            this.txtName = new Axxen.CustomControls.ATextBox();
+            this.aPanel2 = new Axxen.CustomControls.APanel();
+            this.aLabel9 = new Axxen.CustomControls.ALabel();
             this.btnSave = new Axxen.CustomControls.AButton();
             this.aPanel6 = new Axxen.CustomControls.APanel();
-            this.txtCode = new Axxen.CustomControls.ATextBox();
+            this.txtACode = new Axxen.CustomControls.ATextBox();
             this.aPanel7 = new Axxen.CustomControls.APanel();
             this.aLabel10 = new Axxen.CustomControls.ALabel();
             this.aPanel5 = new Axxen.CustomControls.APanel();
-            this.txtName = new Axxen.CustomControls.ATextBox();
+            this.txtICode = new Axxen.CustomControls.ATextBox();
             this.aPanel4 = new Axxen.CustomControls.APanel();
-            this.aLabel9 = new Axxen.CustomControls.ALabel();
-            this.panTop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMainGrid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aDataGridView1)).BeginInit();
+            this.aLabel1 = new Axxen.CustomControls.ALabel();
+            this.aHeaderBox2 = new Axxen.CustomControls.AHeaderBox();
+            this.dgvMi = new Axxen.CustomControls.ADataGridView();
+            this.aHeaderBox1 = new Axxen.CustomControls.AHeaderBox();
+            this.dgvMa = new Axxen.CustomControls.ADataGridView();
+            this.panTop = new Axxen.CustomControls.APanel();
+            this.btnSearch = new Axxen.CustomControls.AButton();
+            this.aTextBox_FindNameByCode1 = new Axxen.CustomControls.ATextBox_FindNameByCode();
             this.panelNopMaMaste.SuspendLayout();
+            this.aPanel1.SuspendLayout();
+            this.aPanel2.SuspendLayout();
             this.aPanel6.SuspendLayout();
             this.aPanel7.SuspendLayout();
             this.aPanel5.SuspendLayout();
             this.aPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMa)).BeginInit();
+            this.panTop.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // aTextBox_FindNameByCode1
-            // 
-            this.aTextBox_FindNameByCode1.allfont = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aTextBox_FindNameByCode1.CodeType = Axxen.CustomControls.DataType.Users;
-            this.aTextBox_FindNameByCode1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aTextBox_FindNameByCode1.lblNameText = "사용자 그룹";
-            this.aTextBox_FindNameByCode1.Location = new System.Drawing.Point(23, 22);
-            this.aTextBox_FindNameByCode1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.aTextBox_FindNameByCode1.Name = "aTextBox_FindNameByCode1";
-            this.aTextBox_FindNameByCode1.Size = new System.Drawing.Size(293, 27);
-            this.aTextBox_FindNameByCode1.TabIndex = 9;
-            this.aTextBox_FindNameByCode1.txtCodeText = "";
-            this.aTextBox_FindNameByCode1.txtNameText = "";
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Location = new System.Drawing.Point(341, 19);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(83, 30);
-            this.btnSearch.TabIndex = 14;
-            this.btnSearch.Text = "조회";
-            this.btnSearch.UseVisualStyleBackColor = false;
-            // 
-            // panTop
-            // 
-            this.panTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.panTop.Controls.Add(this.btnSearch);
-            this.panTop.Controls.Add(this.aTextBox_FindNameByCode1);
-            this.panTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panTop.Location = new System.Drawing.Point(0, 0);
-            this.panTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panTop.Name = "panTop";
-            this.panTop.Size = new System.Drawing.Size(1204, 74);
-            this.panTop.TabIndex = 6;
-            // 
-            // aHeaderBox1
-            // 
-            this.aHeaderBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.aHeaderBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.aHeaderBox1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aHeaderBox1.HeaderBoxText = "HeaderText";
-            this.aHeaderBox1.Location = new System.Drawing.Point(0, 79);
-            this.aHeaderBox1.Name = "aHeaderBox1";
-            this.aHeaderBox1.Size = new System.Drawing.Size(243, 30);
-            this.aHeaderBox1.TabIndex = 8;
-            // 
-            // dgvMainGrid
-            // 
-            this.dgvMainGrid.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.dgvMainGrid.BackgroundColor = System.Drawing.Color.White;
-            this.dgvMainGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMainGrid.Location = new System.Drawing.Point(0, 108);
-            this.dgvMainGrid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dgvMainGrid.Name = "dgvMainGrid";
-            this.dgvMainGrid.RowTemplate.Height = 23;
-            this.dgvMainGrid.Size = new System.Drawing.Size(334, 474);
-            this.dgvMainGrid.TabIndex = 7;
-            // 
-            // aHeaderBox2
-            // 
-            this.aHeaderBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.aHeaderBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.aHeaderBox2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aHeaderBox2.HeaderBoxText = "HeaderText";
-            this.aHeaderBox2.Location = new System.Drawing.Point(340, 80);
-            this.aHeaderBox2.Name = "aHeaderBox2";
-            this.aHeaderBox2.Size = new System.Drawing.Size(243, 30);
-            this.aHeaderBox2.TabIndex = 10;
-            // 
-            // aDataGridView1
-            // 
-            this.aDataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.aDataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.aDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.aDataGridView1.Location = new System.Drawing.Point(340, 109);
-            this.aDataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.aDataGridView1.Name = "aDataGridView1";
-            this.aDataGridView1.RowTemplate.Height = 23;
-            this.aDataGridView1.Size = new System.Drawing.Size(850, 473);
-            this.aDataGridView1.TabIndex = 9;
             // 
             // aHeaderBox3
             // 
@@ -157,6 +77,8 @@
             // panelNopMaMaste
             // 
             this.panelNopMaMaste.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelNopMaMaste.Controls.Add(this.aPanel1);
+            this.panelNopMaMaste.Controls.Add(this.aPanel2);
             this.panelNopMaMaste.Controls.Add(this.btnSave);
             this.panelNopMaMaste.Controls.Add(this.aPanel6);
             this.panelNopMaMaste.Controls.Add(this.aPanel7);
@@ -169,37 +91,80 @@
             this.panelNopMaMaste.Size = new System.Drawing.Size(1204, 76);
             this.panelNopMaMaste.TabIndex = 18;
             // 
+            // aPanel1
+            // 
+            this.aPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.aPanel1.Controls.Add(this.txtName);
+            this.aPanel1.Location = new System.Drawing.Point(726, 6);
+            this.aPanel1.Name = "aPanel1";
+            this.aPanel1.Size = new System.Drawing.Size(172, 35);
+            this.aPanel1.TabIndex = 216;
+            // 
+            // txtName
+            // 
+            this.txtName.BackColor = System.Drawing.Color.White;
+            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtName.errorp = null;
+            this.txtName.Location = new System.Drawing.Point(4, 4);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(160, 23);
+            this.txtName.TabIndex = 25;
+            this.txtName.txtType = Axxen.CustomControls.TextType.Normal;
+            // 
+            // aPanel2
+            // 
+            this.aPanel2.BackColor = System.Drawing.SystemColors.Info;
+            this.aPanel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.aPanel2.Controls.Add(this.aLabel9);
+            this.aPanel2.Location = new System.Drawing.Point(604, 6);
+            this.aPanel2.Name = "aPanel2";
+            this.aPanel2.Size = new System.Drawing.Size(120, 35);
+            this.aPanel2.TabIndex = 215;
+            // 
+            // aLabel9
+            // 
+            this.aLabel9.AutoSize = true;
+            this.aLabel9.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aLabel9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.aLabel9.Location = new System.Drawing.Point(0, 7);
+            this.aLabel9.Name = "aLabel9";
+            this.aLabel9.Size = new System.Drawing.Size(118, 17);
+            this.aLabel9.TabIndex = 54;
+            this.aLabel9.Text = "*비가동상세분류명";
+            // 
             // btnSave
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Location = new System.Drawing.Point(1111, 30);
+            this.btnSave.Location = new System.Drawing.Point(1110, 30);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(88, 33);
             this.btnSave.TabIndex = 210;
             this.btnSave.Text = "저장";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // aPanel6
             // 
             this.aPanel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.aPanel6.Controls.Add(this.txtCode);
+            this.aPanel6.Controls.Add(this.txtACode);
             this.aPanel6.Location = new System.Drawing.Point(126, 6);
             this.aPanel6.Name = "aPanel6";
             this.aPanel6.Size = new System.Drawing.Size(172, 35);
             this.aPanel6.TabIndex = 212;
             // 
-            // txtCode
+            // txtACode
             // 
-            this.txtCode.BackColor = System.Drawing.Color.White;
-            this.txtCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCode.errorp = null;
-            this.txtCode.Location = new System.Drawing.Point(3, 5);
-            this.txtCode.Name = "txtCode";
-            this.txtCode.Size = new System.Drawing.Size(160, 23);
-            this.txtCode.TabIndex = 24;
-            this.txtCode.txtType = Axxen.CustomControls.TextType.Normal;
+            this.txtACode.BackColor = System.Drawing.Color.White;
+            this.txtACode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtACode.Enabled = false;
+            this.txtACode.errorp = null;
+            this.txtACode.Location = new System.Drawing.Point(3, 5);
+            this.txtACode.Name = "txtACode";
+            this.txtACode.Size = new System.Drawing.Size(160, 23);
+            this.txtACode.TabIndex = 24;
+            this.txtACode.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // aPanel7
             // 
@@ -225,43 +190,131 @@
             // aPanel5
             // 
             this.aPanel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.aPanel5.Controls.Add(this.txtName);
+            this.aPanel5.Controls.Add(this.txtICode);
             this.aPanel5.Location = new System.Drawing.Point(426, 6);
             this.aPanel5.Name = "aPanel5";
             this.aPanel5.Size = new System.Drawing.Size(172, 35);
             this.aPanel5.TabIndex = 214;
             // 
-            // txtName
+            // txtICode
             // 
-            this.txtName.BackColor = System.Drawing.Color.White;
-            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtName.errorp = null;
-            this.txtName.Location = new System.Drawing.Point(4, 4);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(160, 23);
-            this.txtName.TabIndex = 25;
-            this.txtName.txtType = Axxen.CustomControls.TextType.Normal;
+            this.txtICode.BackColor = System.Drawing.Color.White;
+            this.txtICode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtICode.errorp = null;
+            this.txtICode.Location = new System.Drawing.Point(4, 4);
+            this.txtICode.Name = "txtICode";
+            this.txtICode.Size = new System.Drawing.Size(160, 23);
+            this.txtICode.TabIndex = 25;
+            this.txtICode.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // aPanel4
             // 
             this.aPanel4.BackColor = System.Drawing.SystemColors.Info;
             this.aPanel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.aPanel4.Controls.Add(this.aLabel9);
+            this.aPanel4.Controls.Add(this.aLabel1);
             this.aPanel4.Location = new System.Drawing.Point(304, 6);
             this.aPanel4.Name = "aPanel4";
             this.aPanel4.Size = new System.Drawing.Size(120, 35);
             this.aPanel4.TabIndex = 213;
             // 
-            // aLabel9
+            // aLabel1
             // 
-            this.aLabel9.AutoSize = true;
-            this.aLabel9.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aLabel9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.aLabel9.Location = new System.Drawing.Point(3, 8);
-            this.aLabel9.Name = "aLabel9";
-            this.aLabel9.Size = new System.Drawing.Size(105, 17);
-            this.aLabel9.TabIndex = 54;
-            this.aLabel9.Text = "*비가동대분류명";
+            this.aLabel1.AutoSize = true;
+            this.aLabel1.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aLabel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.aLabel1.Location = new System.Drawing.Point(8, 8);
+            this.aLabel1.Name = "aLabel1";
+            this.aLabel1.Size = new System.Drawing.Size(105, 17);
+            this.aLabel1.TabIndex = 54;
+            this.aLabel1.Text = "*비가동상세코드";
+            // 
+            // aHeaderBox2
+            // 
+            this.aHeaderBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.aHeaderBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.aHeaderBox2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aHeaderBox2.HeaderBoxText = "비가동상세분류";
+            this.aHeaderBox2.Location = new System.Drawing.Point(457, 79);
+            this.aHeaderBox2.Name = "aHeaderBox2";
+            this.aHeaderBox2.Size = new System.Drawing.Size(243, 30);
+            this.aHeaderBox2.TabIndex = 10;
+            // 
+            // dgvMi
+            // 
+            this.dgvMi.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvMi.BackgroundColor = System.Drawing.Color.White;
+            this.dgvMi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMi.Location = new System.Drawing.Point(457, 109);
+            this.dgvMi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvMi.Name = "dgvMi";
+            this.dgvMi.RowTemplate.Height = 23;
+            this.dgvMi.Size = new System.Drawing.Size(733, 473);
+            this.dgvMi.TabIndex = 9;
+            this.dgvMi.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvMi_CellContentClick);
+            // 
+            // aHeaderBox1
+            // 
+            this.aHeaderBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.aHeaderBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.aHeaderBox1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aHeaderBox1.HeaderBoxText = "비가동대분류";
+            this.aHeaderBox1.Location = new System.Drawing.Point(0, 79);
+            this.aHeaderBox1.Name = "aHeaderBox1";
+            this.aHeaderBox1.Size = new System.Drawing.Size(243, 30);
+            this.aHeaderBox1.TabIndex = 8;
+            // 
+            // dgvMa
+            // 
+            this.dgvMa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.dgvMa.BackgroundColor = System.Drawing.Color.White;
+            this.dgvMa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMa.Location = new System.Drawing.Point(0, 108);
+            this.dgvMa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvMa.Name = "dgvMa";
+            this.dgvMa.RowTemplate.Height = 23;
+            this.dgvMa.Size = new System.Drawing.Size(451, 474);
+            this.dgvMa.TabIndex = 7;
+            this.dgvMa.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvMa_CellDoubleClick);
+            // 
+            // panTop
+            // 
+            this.panTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.panTop.Controls.Add(this.btnSearch);
+            this.panTop.Controls.Add(this.aTextBox_FindNameByCode1);
+            this.panTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panTop.Location = new System.Drawing.Point(0, 0);
+            this.panTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panTop.Name = "panTop";
+            this.panTop.Size = new System.Drawing.Size(1204, 74);
+            this.panTop.TabIndex = 6;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Location = new System.Drawing.Point(341, 19);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(83, 30);
+            this.btnSearch.TabIndex = 14;
+            this.btnSearch.Text = "조회";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            // 
+            // aTextBox_FindNameByCode1
+            // 
+            this.aTextBox_FindNameByCode1.allfont = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aTextBox_FindNameByCode1.CodeType = Axxen.CustomControls.DataType.NonOperations;
+            this.aTextBox_FindNameByCode1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aTextBox_FindNameByCode1.lblNameText = "비가동 대분류";
+            this.aTextBox_FindNameByCode1.Location = new System.Drawing.Point(23, 22);
+            this.aTextBox_FindNameByCode1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.aTextBox_FindNameByCode1.Name = "aTextBox_FindNameByCode1";
+            this.aTextBox_FindNameByCode1.Size = new System.Drawing.Size(293, 27);
+            this.aTextBox_FindNameByCode1.TabIndex = 9;
+            this.aTextBox_FindNameByCode1.txtCodeText = "";
+            this.aTextBox_FindNameByCode1.txtNameText = "";
             // 
             // MDS_CDS_004
             // 
@@ -270,16 +323,18 @@
             this.Controls.Add(this.aHeaderBox3);
             this.Controls.Add(this.panelNopMaMaste);
             this.Controls.Add(this.aHeaderBox2);
-            this.Controls.Add(this.aDataGridView1);
+            this.Controls.Add(this.dgvMi);
             this.Controls.Add(this.aHeaderBox1);
-            this.Controls.Add(this.dgvMainGrid);
+            this.Controls.Add(this.dgvMa);
             this.Controls.Add(this.panTop);
             this.Name = "MDS_CDS_004";
             this.Text = "비가동상세분류";
-            this.panTop.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMainGrid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aDataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.MDS_CDS_004_Load);
             this.panelNopMaMaste.ResumeLayout(false);
+            this.aPanel1.ResumeLayout(false);
+            this.aPanel1.PerformLayout();
+            this.aPanel2.ResumeLayout(false);
+            this.aPanel2.PerformLayout();
             this.aPanel6.ResumeLayout(false);
             this.aPanel6.PerformLayout();
             this.aPanel7.ResumeLayout(false);
@@ -288,6 +343,9 @@
             this.aPanel5.PerformLayout();
             this.aPanel4.ResumeLayout(false);
             this.aPanel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMa)).EndInit();
+            this.panTop.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -298,19 +356,23 @@
         private CustomControls.AButton btnSearch;
         protected CustomControls.APanel panTop;
         protected CustomControls.AHeaderBox aHeaderBox1;
-        protected CustomControls.ADataGridView dgvMainGrid;
+        protected CustomControls.ADataGridView dgvMa;
         protected CustomControls.AHeaderBox aHeaderBox2;
-        protected CustomControls.ADataGridView aDataGridView1;
+        protected CustomControls.ADataGridView dgvMi;
         protected CustomControls.AHeaderBox aHeaderBox3;
         protected CustomControls.APanel panelNopMaMaste;
         private CustomControls.AButton btnSave;
         private CustomControls.APanel aPanel6;
-        private CustomControls.ATextBox txtCode;
+        private CustomControls.ATextBox txtACode;
         private CustomControls.APanel aPanel7;
         private CustomControls.ALabel aLabel10;
         private CustomControls.APanel aPanel5;
-        private CustomControls.ATextBox txtName;
+        private CustomControls.ATextBox txtICode;
         private CustomControls.APanel aPanel4;
         private CustomControls.ALabel aLabel9;
+        private CustomControls.APanel aPanel1;
+        private CustomControls.ATextBox txtName;
+        private CustomControls.APanel aPanel2;
+        private CustomControls.ALabel aLabel1;
     }
 }
