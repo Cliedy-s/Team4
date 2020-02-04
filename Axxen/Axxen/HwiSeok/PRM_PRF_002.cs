@@ -30,10 +30,10 @@ namespace Axxen
             ((MainForm)this.MdiParent).MyUpdateEvent += new System.EventHandler(this.MyUpdateShow);//수정 이벤트 등록
             ((MainForm)this.MdiParent).RefreshFormEvent += new System.EventHandler(this.RefreshFormShow); // 새로고침
 
-            dgvMainGrid.CellDoubleClick += DgvMainGrid_CellDoubleClick;
-            dgvSubGrid.CellDoubleClick += DgvSubGrid_CellDoubleClick;
-            dgvMainGrid.CellContentClick += dgvMainGrid_CellContentClick;
-            dgvSubGrid.CellContentClick += dgvSubGrid_CellContentClick;
+            dgvMainGrid.CellDoubleClick += DgvMainGrid_CellDoubleClick; //메인그리드뷰 더블클릭
+            dgvSubGrid.CellDoubleClick += DgvSubGrid_CellDoubleClick; //서브그리드뷰 더블클릭
+            dgvMainGrid.CellContentClick += dgvMainGrid_CellContentClick; //체크박스
+            dgvSubGrid.CellContentClick += dgvSubGrid_CellContentClick; //체크박스
 
 
             #region 메인 그리드뷰 체크박스

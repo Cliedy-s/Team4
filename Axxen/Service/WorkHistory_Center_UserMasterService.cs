@@ -37,5 +37,13 @@ namespace Service
 
             return dac.PickerWorkHistory_UserMaster_UserID(Adatetimepicker1, Adatetimepicker2, UserID);
         }
+
+        public List<WorkHistory_Center_UserMasterVO> GetAllUserDetails(string UserName) //PRM_PRF_010 서브그리드뷰
+        {
+            WorkHistory_Center_UserMasterDAC dac = new WorkHistory_Center_UserMasterDAC();
+
+            return dac.GetAllUserDetails(UserName);
+        }
+        
     }
 }

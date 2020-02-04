@@ -49,6 +49,26 @@ namespace DAC
             return list;
         }
 
+        public List<WorkHistory_Center_UserMasterVO> GetAllUserDetails(string UserName) //PRM_PRF_010 서브그리드뷰 사용
+        {
+            List<WorkHistory_Center_UserMasterVO> list = null;
+            using (SqlConnection conn = new SqlConnection(Connstr))
+            {
+                conn.Open();
+                string sql = $"select emp.Workorderno,wo.Wc_Code,Wc_Name,wo.Item_Code,Item_Name,emp.Prd_Starttime,emp.Prd_Endtime,emp.Prd_Qty,User_Name " +
+                    $"from Emp_Allocation_History_Detail emp INNER JOIN WorkOrder wo ON emp.Workorderno = wo.Workorderno " +
+                    $"INNER JOIN WorkCenter_Master wcm ON wo.Wc_Code = wcm.Wc_Code " +
+                    $"INNER JOIN Item_Master im ON wo.Item_Code = im.Item_Code " +
+                    $"INNER JOIN User_Master um ON emp.User_ID = um.User_ID where User_Name = '{UserName}'";
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    list = Helper.DataReaderMapToList<WorkHistory_Center_UserMasterVO>(cmd.ExecuteReader());
+                }
+                conn.Close();
+            }
+            return list;
+        }
+        
         public DataTable PickerWorkHistory_UserMaster(string ADateTimePickerValue1, string ADateTimePickerValue2) //PRM_PRF_010 DateTimePicker 사용
         {
             try
