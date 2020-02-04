@@ -44,6 +44,9 @@ namespace Axxen
             rpt.CreateDocument();
         }
 
+        
+
+
         private void TsbtnPrint_Click(object sender, EventArgs e)
         {
             using (ReportPrintTool printTool = new ReportPrintTool(rpt))

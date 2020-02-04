@@ -18,16 +18,17 @@ namespace Service
         }
 
 
-        public UserInfoVO GetUserInfo(string id, string pwd)
-        {
-
-            return dac.GetUserInfo(id,pwd);
-        }
+        
 
         public List<UserInfoVO> GetAllUser()
         {
         
             return dac.GetAllUser();
+        }
+        public void InsertLogin_History(Login_History login)
+        {
+
+             dac.InsertLogin_History(login);
         }
 
         public List<UserInfoVO> UserID_UserName() //유저 아이디 / 닉네임 서치

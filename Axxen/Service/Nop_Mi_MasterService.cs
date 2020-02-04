@@ -28,9 +28,8 @@ namespace Service
         public bool InsertUpdateNop_Mi_Masterservice(NopMiMasterVO item)
         {
             Nop_Mi_MasterDAC dac = new Nop_Mi_MasterDAC();
-            return dac.InsertUpdateNop_Mi_Masterservice(item);
+            return dac.InsertUpdateNop_Mi_Master(item);
         }
-
             /// <summary>
             /// 비가동 소분류 사용 유무 
             /// </summary>

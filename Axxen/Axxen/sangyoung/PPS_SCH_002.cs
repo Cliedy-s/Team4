@@ -116,12 +116,23 @@ namespace Axxen
 
         private void ADateTimePickerSearch1_btnDateTimeSearch_Click(object sender, EventArgs args)
         {
+            using (WaitForm waitfrm = new WaitForm(ReportBinding))
+            {
+                waitfrm.ShowDialog(this);
+            }
+        }
+
+        private void ReportBinding()
+        {
+            
             DateTime startT = aDateTimePickerSearch1.ADateTimePickerValue1;
             DateTime endT = aDateTimePickerSearch1.ADateTimePickerValue2;
             endT = endT.AddDays(10);
             var wodateList = (from date in woList
                               where date.Prd_Date >= startT && date.Prd_Date <= endT
                               select date).ToList();
+
+            dgvMainGrid.DataSource = null;
             dgvMainGrid.DataSource = wodateList;
         }
 
