@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Service;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,15 +21,29 @@ namespace AxxenClient.Forms
         private void ChangeNopReason_Load(object sender, EventArgs e)
         {
             lblWcName.Text = WcName;
-            // TODO - 데이터 가져오기 (2020-02-04)
         }
-        private void btnSet_Click(object sender, EventArgs e)
+        private void GetDatas()
         {
-            this.DialogResult = DialogResult.OK;
+            Nop_Ma_MasterService service = new Nop_Ma_MasterService();
+            cboNopMa.DataSource = service.GetAllNopMA();
+            cboNopMa.ValueMember = "Nop_Ma_Code";
+            cboNopMa.DisplayMember = "Nop_Ma_Name";
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        private void cboNopMa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Nop_Mi_MasterService service = new Nop_Mi_MasterService();
+            cboNopMi.DataSource = service.GetAllNopMi(cboNopMa.SelectedValue.ToString());
+            cboNopMi.ValueMember = "Nop_Mi_Code";
+            cboNopMi.DisplayMember = "Nop_Mi_Name";
+        }
+        private void btnSet_Click(object sender, EventArgs e)
+        {
+            NopMiCode = cboNopMi.SelectedValue.ToString();
+            this.DialogResult = DialogResult.OK;
         }
     }
 }

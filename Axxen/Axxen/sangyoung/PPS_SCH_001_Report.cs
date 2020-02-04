@@ -18,14 +18,13 @@ namespace Axxen
         public PPS_SCH_001_Report(DataTable data)
         {
             InitializeComponent();
-
             this.dt = data;
         }
 
-        public PPS_SCH_001_Report()
-        {
-            InitializeComponent();
-        }
+        //public PPS_SCH_001_Report()
+        //{
+        //    InitializeComponent();
+        //}
 
         private void PPS_SCH_001_Report_Activated(object sender, EventArgs e)
         {

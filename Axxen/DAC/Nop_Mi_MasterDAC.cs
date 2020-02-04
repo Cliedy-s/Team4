@@ -39,6 +39,33 @@ namespace DAC
                 return list;
             }
         }
+        /// <summary>
+        /// 비가동 소분류 검색
+        /// </summary>
+        public List<NopMiMasterVO> GetAllNopMi(string macode)
+        {
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText =
+ @" SELECT 	
+	nim.Nop_Mi_Code
+	, nim.Nop_Mi_Name
+	, nim.Nop_Ma_Code
+	, nim.Remark
+	FROM Nop_Mi_Master AS nim
+	WHERE nim.Use_YN = 'Y' AND nim.Nop_Ma_Code = @macode; ";
+                comm.CommandType = CommandType.Text;
+                comm.Parameters.AddWithValue("@macode", macode);
+
+                comm.Connection.Open();
+                SqlDataReader reader = comm.ExecuteReader();
+                List<NopMiMasterVO> list = Helper.DataReaderMapToList<NopMiMasterVO>(reader);
+                comm.Connection.Close();
+
+                return list;
+            }
+        }
 
         /// <summary>
         /// 비가동 소분류 목록 사용하지 않는 목록도 
@@ -108,26 +135,23 @@ namespace DAC
         /// <summary>
         /// 비가동 상세 추가
         /// </summary>
-        public bool InsertUpdateNop_Mi_Masterservice(string code, string use)
+        public bool InsertUpdateNop_Mi_Masterservice(NopMiMasterVO item)
         {
             try
             {
-
-
                 using (SqlCommand comm = new SqlCommand())
                 {
                     comm.Connection = new SqlConnection(Connstr);
                     comm.CommandText =
                         "update Nop_Mi_Master set Use_YN =@Use_YN where Nop_Mi_Code=@Nop_Mi_Code ";
                     comm.CommandType = CommandType.Text;
-                    comm.Parameters.AddWithValue("@Nop_Mi_Code", code);
-                    comm.Parameters.AddWithValue("@Use_YN", use);
+                    comm.Parameters.AddWithValue("@Nop_Mi_Code", item.Nop_Mi_Code);
+                    comm.Parameters.AddWithValue("@Nop_Mi_Name", item.Nop_Mi_Name);
+                    comm.Parameters.AddWithValue("@Nop_Ma_Code", item.Nop_Ma_Code);
                     comm.Connection.Open();
                     int result = comm.ExecuteNonQuery();
 
                     comm.Connection.Close();
-
-
 
                     if (result > 0)
                         return true;

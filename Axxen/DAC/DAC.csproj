@@ -50,6 +50,7 @@
     <Compile Include="Emp_Allocation_HistoryDAC.cs" />
     <Compile Include="Emp_Wc_AllocationDAC.cs" />
     <Compile Include="GasUse_HistoryDAC.cs" />
+    <Compile Include="Goods_In_HistoryDAC.cs" />
     <Compile Include="GV_Current_StatusDAC.cs" />
     <Compile Include="GV_HistoryDAC.cs" />
     <Compile Include="GV_MasterDAC.cs" />

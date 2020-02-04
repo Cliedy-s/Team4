@@ -61,6 +61,9 @@
             // 
             // aPanel5
             // 
+            this.aPanel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.aPanel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.aPanel5.Controls.Add(this.txtGVSearch);
             this.aPanel5.Controls.Add(this.btnSearch);
             this.aPanel5.Location = new System.Drawing.Point(12, 105);
@@ -74,7 +77,7 @@
             this.txtGVSearch.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtGVSearch.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtGVSearch.LabelText = "대차검색";
-            this.txtGVSearch.Location = new System.Drawing.Point(40, 2);
+            this.txtGVSearch.Location = new System.Drawing.Point(39, 2);
             this.txtGVSearch.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtGVSearch.Name = "txtGVSearch";
             this.txtGVSearch.Size = new System.Drawing.Size(469, 42);
@@ -84,6 +87,7 @@
             // 
             // btnSearch
             // 
+            this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -213,6 +217,7 @@
             this.lblReqSeq.Size = new System.Drawing.Size(60, 15);
             this.lblReqSeq.TabIndex = 29;
             this.lblReqSeq.Text = "lblReqSeq";
+            this.lblReqSeq.Visible = false;
             // 
             // lblReqNo
             // 
@@ -223,6 +228,7 @@
             this.lblReqNo.Size = new System.Drawing.Size(56, 15);
             this.lblReqNo.TabIndex = 28;
             this.lblReqNo.Text = "lblReqNo";
+            this.lblReqNo.Visible = false;
             // 
             // lblUnit
             // 
@@ -233,6 +239,7 @@
             this.lblUnit.Size = new System.Drawing.Size(42, 15);
             this.lblUnit.TabIndex = 27;
             this.lblUnit.Text = "lblUnit";
+            this.lblUnit.Visible = false;
             // 
             // btnCreateWorkOrder
             // 

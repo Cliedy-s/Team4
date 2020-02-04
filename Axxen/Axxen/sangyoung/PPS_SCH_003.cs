@@ -32,6 +32,11 @@ namespace Axxen
             ComboBinding();
             wowclist = service.GetWO_WC_Production_Items();
             dgvMainGrid.DataSource = wowclist;
+
+            chartTime.Titles.Add("시간대별 생산 현황");
+            chartTime.Legends.Clear();
+            chartDate.Titles.Add("일별 생산 현황");
+            chartDate.Legends.Clear();
         }
 
         private void RefreshFormShow(object sender, EventArgs e)
@@ -87,29 +92,11 @@ namespace Axxen
             chartDate.Series.Add("생산량");
             chartDate.Series["생산량"].ChartType = SeriesChartType.Column;
             chartDate.Series["생산량"].IsValueShownAsLabel = true;
-            //foreach (var item in wowclist)
-            //{
-
-            //    chartDate.Series.Add(item.Item_Name);
-
-            //    if(chartDate.Series.FindByName(item.Item_Name))
-            //    {
-            //        chartDate.Series[item.Item_Name].Points.AddXY(item.Prd_Date.ToString().Substring(0, 10), item.Prd_Qty);
-            //    }
-            //    else
-            //    {
-            //        chartDate.Series.Add(item.Item_Name);
-            //        chartDate.Series[item.Item_Name].Points.AddXY(item.Prd_Date.ToString().Substring(0, 10), item.Prd_Qty);
-            //    }
-            //}
             foreach (var item in wowclist)
             {
                 chartDate.Series["생산량"].Points.AddXY(item.Prd_Date.ToString().Substring(0, 10), item.Prd_Qty);
             }
-
-            chartDate.Legends.Clear();
             chartDate.ChartAreas[0].AxisX.MajorGrid.Enabled = false;// 그래프선 보이기 안보이기
-            chartDate.Titles.Add("생산 일자별 생산량");
         }
 
         private void ADateTimePickerSearch1_btnDateTimeSearch_Click(object sender, EventArgs args)
@@ -187,10 +174,29 @@ namespace Axxen
         private void DgvMainGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             string wono = dgvMainGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
-            List<WO_WC_Time_ItemVO> list = woservice.GetTimeWork(wono);
+            List<WO_WC_Time_ItemVO> timelist = woservice.GetTimeWork(wono);
 
             //시간대별 차트그리기
+            chartTime.Series.Clear();
+            Series series = new Series("");
+            chartTime.Series.Add(series);
+            chartTime.Series[0].ChartType = SeriesChartType.Line;
+            chartTime.Series[0].IsValueShownAsLabel = true;
+            foreach (var item in timelist)
+            {
+                chartTime.Series[0].Points.AddXY(item.Start_Hour, item.Prd_Qty);
+            }
 
+            chartTime.Legends.Clear();
+            chartTime.ChartAreas[0].AxisX.MajorGrid.Enabled = false;// 그래프선 보이기 안보이기
+
+            series.BorderWidth = 3;
+            series.Color = Color.Orange;
+            series.MarkerStyle = MarkerStyle.Circle;
+            series.MarkerSize = 10;
+            series.MarkerStep = 1;
+            series.MarkerColor = Color.Orange;
+            series.ToolTip = @"ToolTip";
         }
     }
 }

@@ -51,6 +51,7 @@
     <Compile Include="Emp_Allocation_HistoryService.cs" />
     <Compile Include="Emp_Wc_AllocationService.cs" />
     <Compile Include="GasUse_History_Service.cs" />
+    <Compile Include="Goods_In_HistorySercive.cs" />
     <Compile Include="GV_Current_StatusService.cs" />
     <Compile Include="GV_HistoryService.cs" />
     <Compile Include="GV_MasterService.cs" />

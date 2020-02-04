@@ -61,8 +61,6 @@ namespace Axxen
             dgvMi.Columns.Add(gridbtn);
         }
 
-
-    
         /// <summary>
         /// 모든 그룹정보 GET
         /// </summary>
@@ -199,18 +197,18 @@ namespace Axxen
                   
                     };
 
-                    //if (MIservice.InsertUpdateNop_MI_Master(additem))
-                    //{
-                    //    MessageBox.Show("저장되었습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //    GetAllUserGroup();
+                    if (MIservice.InsertUpdateNop_Mi_Masterservice(additem))
+                    {
+                        MessageBox.Show("저장되었습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        GetAllUserGroup();
                         
-                    //    ResetUtillity.ResetPanelControl(panelNopMaMaste);
+                        ResetUtillity.ResetPanelControl(panelNopMaMaste);
 
-                    //}
-                    //else
-                    //{
-                    //    MessageBox.Show("db실패", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //}
+                    }
+                    else
+                    {
+                        MessageBox.Show("db실패", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
 
                 }
                 else

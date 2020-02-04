@@ -190,6 +190,9 @@
             // 
             // aPanel5
             // 
+            this.aPanel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.aPanel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.aPanel5.Controls.Add(this.btnSearchByDate);
             this.aPanel5.Controls.Add(this.dtpTodate);
             this.aPanel5.Controls.Add(this.aLabel3);
@@ -202,6 +205,7 @@
             // 
             // btnSearchByDate
             // 
+            this.btnSearchByDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnSearchByDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnSearchByDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchByDate.Location = new System.Drawing.Point(465, 17);
@@ -214,6 +218,7 @@
             // 
             // dtpTodate
             // 
+            this.dtpTodate.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dtpTodate.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dtpTodate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpTodate.Location = new System.Drawing.Point(348, 14);
@@ -223,6 +228,7 @@
             // 
             // aLabel3
             // 
+            this.aLabel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.aLabel3.AutoSize = true;
             this.aLabel3.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel3.Location = new System.Drawing.Point(308, 18);
@@ -233,6 +239,7 @@
             // 
             // dtpFromdate
             // 
+            this.dtpFromdate.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dtpFromdate.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dtpFromdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFromdate.Location = new System.Drawing.Point(172, 14);
@@ -242,6 +249,7 @@
             // 
             // aLabel2
             // 
+            this.aLabel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.aLabel2.AutoSize = true;
             this.aLabel2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel2.Location = new System.Drawing.Point(92, 18);

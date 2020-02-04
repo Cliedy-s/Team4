@@ -71,7 +71,7 @@ namespace DAC
             using (SqlConnection conn = new SqlConnection(Connstr))
             {
                 conn.Open();
-                string sql = "select Workorderno, Prd_Date, Start_Hour, In_Qty_Main, Out_Qty_Main, Prd_Qty from Time_Production_History_Day t where Workorderno = '@Workorderno'";
+                string sql = "select Workorderno, Prd_Date, Start_Hour, In_Qty_Main, Out_Qty_Main, Prd_Qty from Time_Production_History_Day t where Workorderno = @Workorderno";
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
                     cmd.Parameters.AddWithValue("@Workorderno", wono);
