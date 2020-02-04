@@ -77,12 +77,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatagridviewDesigns.cs" />
-    <Compile Include="frmWaitForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmWaitForm.Designer.cs">
-      <DependentUpon>frmWaitForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="HwiSeok\PRM_PRF_001.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -548,9 +542,6 @@
     <Compile Include="Util\ListToDataTable.cs" />
     <Compile Include="Util\LoggingUtility.cs" />
     <Compile Include="Util\ResetUtillity.cs" />
-    <EmbeddedResource Include="frmWaitForm.resx">
-      <DependentUpon>frmWaitForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="HwiSeok\PRM_PRF_001.resx">
       <DependentUpon>PRM_PRF_001.cs</DependentUpon>
     </EmbeddedResource>

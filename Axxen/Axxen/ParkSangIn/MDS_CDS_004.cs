@@ -61,9 +61,6 @@ namespace Axxen
             dgvMi.Columns.Add(gridbtn);
         }
 
-
-
-
         /// <summary>
         /// 모든 그룹정보 GET
         /// </summary>

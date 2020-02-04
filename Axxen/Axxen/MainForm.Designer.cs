@@ -959,6 +959,7 @@
             this.pictureBox2.Size = new System.Drawing.Size(67, 68);
             this.pictureBox2.TabIndex = 25;
             this.pictureBox2.TabStop = false;
+ 
             // 
             // aLabel2
             // 
