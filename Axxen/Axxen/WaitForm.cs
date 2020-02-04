@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace Axxen
 {
-    public partial class Progressbar : Form
+    public partial class WaitForm : Form
     {
         public Action Worker;
-        public Progressbar(Action worker)
+        public WaitForm(Action worker)
         {
             InitializeComponent();
             InitializeComponent();

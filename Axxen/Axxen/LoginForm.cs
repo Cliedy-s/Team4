@@ -22,7 +22,7 @@ namespace Axxen
         private void BtnLogin_Click(object sender, EventArgs e)
         {
 
-            using (Progressbar frm = new Progressbar(aaa))
+            using (WaitForm frm = new WaitForm(aaa))
             {
                 frm.ShowDialog(this);
             }
