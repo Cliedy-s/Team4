@@ -27,11 +27,11 @@ namespace Axxen
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            using(WaitForm frm = new WaitForm(wait))
-            {
-                frm.ShowDialog();
-            }
-        
+            //using(WaitForm frm = new WaitForm(wait))
+            //{
+            //    frm.ShowDialog();
+            //}
+            wait();
         }
      
 
