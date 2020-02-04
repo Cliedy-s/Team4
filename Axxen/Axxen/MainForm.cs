@@ -42,10 +42,6 @@ namespace Axxen
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
-
-
-
-
             LoginForm frm = new LoginForm();
 
             if (frm.ShowDialog() == DialogResult.OK)
@@ -605,6 +601,6 @@ namespace Axxen
                 MyUpdateEvent(this, null);
         }
 
-     
+
     }
 }

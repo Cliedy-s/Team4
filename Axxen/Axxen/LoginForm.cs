@@ -21,6 +21,17 @@ namespace Axxen
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
+
+            using (Progressbar frm = new Progressbar(aaa))
+            {
+                frm.ShowDialog(this);
+            }
+
+          
+
+        }
+        private void aaa()
+        {
             UserInfo_Service service = new UserInfo_Service();
 
             UserInfoVO uservo = service.GetUserInfo(txtID.Text, txtPwd.Text);
@@ -29,7 +40,8 @@ namespace Axxen
                 MessageBox.Show("등록되지 않은아이디");
                 return;
             }
-           else{
+            else
+            {
                 UserInfo.User_ID = uservo.User_ID;
                 UserInfo.User_Name = uservo.User_Name;
                 UserInfo.User_PW = uservo.User_PW;
@@ -38,7 +50,6 @@ namespace Axxen
                 UserInfo.User_Type = uservo.User_Type;
                 UserInfo.Price_Visible_YN = uservo.Price_Visible_YN;
                 UserInfo.IP_Security_YN = uservo.IP_Security_YN;
-            
                 UserInfo.Pw_Reset_Count = uservo.Pw_Reset_Count;
                 UserInfo.Default_Screen_Code = uservo.Default_Screen_Code;
                 UserInfo.Default_Process_Code = uservo.Default_Process_Code;
@@ -60,11 +71,8 @@ namespace Axxen
                 UserInfo.Ins_Emp = uservo.Ins_Emp;
                 UserInfo.Up_Date = uservo.Up_Date;
                 UserInfo.Up_Emp = uservo.Up_Emp;
-
-            
-        
             }
-
         }
+
     }
 }
