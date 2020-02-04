@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace VO
 {
-    public class Goods_In_HistoryVO
+    public class Goods_In_HistoryVO //PRM_RPT_004
     {
-        public string Workorderno { get; set; }    // 작업지시번호
-        public string Pallet_No { get; set; }         // 팔레트번호
-        public DateTime In_Date { get; set; }      // 입고일자
-        public string In_YN { get; set; }              // 입고여부
-        public DateTime Up_Date { get; set; }     // 최종수정일자
-        public string Up_Emp { get; set; }          // 최종수정자
+        public long Num { get; set; }              // 순번
+        public string Workorderno { get; set; }   // 작업지시번호
+        public string Pallet_No { get; set; }     // 팔레트번호
+        public DateTime In_Date { get; set; }     // 입고일자
+        public string Item_Name { get; set; }     // 품목명
+        public string Remark { get; set; }        // 비고
+        public DateTime Closed_Time { get; set; } // 작업마감시간
+
     }
 }
