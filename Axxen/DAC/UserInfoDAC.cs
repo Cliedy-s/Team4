@@ -11,33 +11,7 @@ namespace DAC
 {
   public  class UserInfoDAC :DACParent
     {
-        /// <summary>
-        /// 로그인시 사용자정보
-        /// </summary>
-        public UserInfoVO GetUserInfo(string id,string pwd)
-        {
-            List<UserInfoVO> user = null;
-            using (SqlCommand com = new SqlCommand())
-            {
-                com.Connection = new SqlConnection(Connstr);
-                com.CommandText = "GetUserInfo";
-                com.CommandType = CommandType.StoredProcedure;
-                com.Parameters.AddWithValue("@User_ID", id);
-                com.Parameters.AddWithValue("@User_PW", pwd);
-                com.Connection.Open();
-                SqlDataReader reader = com.ExecuteReader();
-                user = Helper.DataReaderMapToList<UserInfoVO>(reader);  
-                com.Connection.Close();
-                if (user.Count>0) { 
-                return user[0];
-                }
-                else
-                {
-                    UserInfoVO a = new UserInfoVO();
-                    return a;
-                }
-            }
-        }
+       
         /// <summary>
         /// 유저전체목록
         /// </summary>
@@ -56,6 +30,29 @@ namespace DAC
                 comm.Connection.Close();
 
                 return list;
+            }
+        }
+        /// <summary>
+        /// 로그인 이력추가
+        /// </summary>
+        /// <returns></returns>
+        public void InsertLogin_History(Login_History login)
+        {
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText = "insert into Login_History (User_ID,Login_Day,Login_Date,Login_Success) values(@User_ID,@Login_Day,@Login_Date,@Login_Success)";
+                comm.CommandType = CommandType.Text;
+                comm.Parameters.AddWithValue("@User_ID", login.User_ID);
+                comm.Parameters.AddWithValue("@Login_Day", login.Login_Day);
+                comm.Parameters.AddWithValue("@Login_Date", login.Login_Date);
+                comm.Parameters.AddWithValue("@Login_Success", login.Login_Success);
+
+                 comm.Connection.Open();
+                comm.ExecuteNonQuery();
+                comm.Connection.Close();
+
+                
             }
         }
         /// <summary>
