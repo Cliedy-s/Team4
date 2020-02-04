@@ -39,9 +39,9 @@ namespace AxxenClient.Forms
             //lblInspectcode.Visible = lblItemCode.Visible = lblProcesscode.Visible = false;
             InitControlUtil.SetPOPDGVDesign(dgvInspect);
             InitControlUtil.AddNewColumnToDataGridView(dgvInspect, "측정항목", "Inspect_name", true, 100, DataGridViewContentAlignment.MiddleLeft, true);
-            InitControlUtil.AddNewColumnToDataGridView(dgvInspect, "USL", "USL", true, 130);
-            InitControlUtil.AddNewColumnToDataGridView(dgvInspect, "SL", "SL", true, 130);
-            InitControlUtil.AddNewColumnToDataGridView(dgvInspect, "LSL", "LSL", true, 130);
+            InitControlUtil.AddNewColumnToDataGridView(dgvInspect, "USL", "USL", true, 140, DataGridViewContentAlignment.MiddleRight);
+            InitControlUtil.AddNewColumnToDataGridView(dgvInspect, "SL", "SL", true, 140, DataGridViewContentAlignment.MiddleRight);
+            InitControlUtil.AddNewColumnToDataGridView(dgvInspect, "LSL", "LSL", true, 140, DataGridViewContentAlignment.MiddleRight);
             InitControlUtil.AddNewColumnToDataGridView(dgvInspect, "품목코드", "Item_Code", false, 100);
             InitControlUtil.AddNewColumnToDataGridView(dgvInspect, "공정코드", "Process_code", false, 100);
             InitControlUtil.AddNewColumnToDataGridView(dgvInspect, "항목코드", "Inspect_code", false, 100);

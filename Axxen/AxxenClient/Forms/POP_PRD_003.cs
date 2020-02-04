@@ -37,8 +37,8 @@ namespace AxxenClient.Forms
             InitControlUtil.SetPOPDGVDesign(dgvPalletList);
             InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "팔레트번호", "Pallet_No", true, 100, DataGridViewContentAlignment.MiddleLeft, true);
             InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "제품", "Item_Name", true);
-            InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "등급", "Boxing_Grade_Code", true);
-            InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "수량", "CurrentQty", true);
+            InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "등급", "Boxing_Grade_Code", true, 100, DataGridViewContentAlignment.MiddleCenter);
+            InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "수량", "CurrentQty", true, 100, DataGridViewContentAlignment.MiddleRight);
             InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "등급상세", "Grade_Detail_Code", false);
             InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "사이즈", "Size_Code", false);
 
@@ -77,7 +77,7 @@ namespace AxxenClient.Forms
                     return;
                 }
             }
-            PrintPallet(service.GetBarcodeNo(txtPalletNo.TextBoxText), Convert.ToInt32(txtPrintPallet.TextBoxText));
+            PrintPallet(txtPalletNo.TextBoxText, Convert.ToInt32(txtPrintPallet.TextBoxText));
         }
         /// <summary>
         /// 팔레트 바코드 출력
@@ -86,22 +86,26 @@ namespace AxxenClient.Forms
         /// <param name="count"></param>
         public void PrintPallet(string palletno, int count)
         {
-//            Pallet_MasterService service = new Pallet_MasterService();
-//            List<PalletTodayInVO> list =  service.GetPalletInfo(palletno);
-//            DataSet ds = new DataSet();
-//            using (SqlConnection conn = new SqlConnection(connstr))
-//            {
-//                conn.Open();
-//                SqlDataAdapter adapter = new SqlDataAdapter(
-//@"SELECT Right('00000' + cast([BarcodeID] as varchar), '5') BarcodeID, ProductName, QuantityPerUnit, Qty
-//from BarcodeOutput bo, Products p
-//where bo.ProductID = p.ProductID
-//	and BarcodeID in (" + chkbarcodeid + ") ORDER BY BarcodeID desc; ", conn);
-//                adapter.Fill(ds, "BarcodeList");
-//            }
+            Pallet_MasterService service = new Pallet_MasterService();
+            DataTable table = service.GetPalletToDT(palletno);
+            if (table != null)
+            {
+                for (int i = 0; i < count; i++)
+                {
+                    DataRow dr = table.NewRow();
+                    for (int k = 0; k < table.Columns.Count; k++)
+                    {
+                        dr[k] = table.Rows[0][k];
+                    }
+                    table.Rows.Add(dr);
+                }
 
-//            BarcodeReport rpt = new BarcodeReport();
-//            rpt.DataSource = ds.Tables["BarcodeList"];
+                BarcodeReport rpt = new BarcodeReport();
+                rpt.DataSource = table;
+
+                ReportPreview frm = new ReportPreview(rpt);
+            }
+
         }
         private void dgvPalletList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {

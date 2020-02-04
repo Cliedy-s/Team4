@@ -28,12 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.aComboBox1 = new Axxen.CustomControls.AComboBox();
+            this.aButton1 = new Axxen.CustomControls.AButton();
             this.SuspendLayout();
+            // 
+            // aComboBox1
+            // 
+            this.aComboBox1.FormattingEnabled = true;
+            this.aComboBox1.Location = new System.Drawing.Point(12, 12);
+            this.aComboBox1.Name = "aComboBox1";
+            this.aComboBox1.Size = new System.Drawing.Size(121, 23);
+            this.aComboBox1.TabIndex = 1;
+            // 
+            // aButton1
+            // 
+            this.aButton1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.aButton1.Location = new System.Drawing.Point(139, 12);
+            this.aButton1.Name = "aButton1";
+            this.aButton1.Size = new System.Drawing.Size(75, 23);
+            this.aButton1.TabIndex = 2;
+            this.aButton1.Text = "열기";
+            this.aButton1.UseVisualStyleBackColor = false;
+            this.aButton1.Click += new System.EventHandler(this.aButton1_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1427, 862);
+            this.Controls.Add(this.aButton1);
+            this.Controls.Add(this.aComboBox1);
             this.IsMdiContainer = true;
             this.Name = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -42,5 +66,8 @@
         }
 
         #endregion
+
+        private Axxen.CustomControls.AComboBox aComboBox1;
+        private Axxen.CustomControls.AButton aButton1;
     }
 }

@@ -29,8 +29,8 @@ namespace AxxenClient.Forms
             InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "작업지시번호", "WorkOrderNo", false);
             InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "팔레트번호", "Pallet_No", true, 100, DataGridViewContentAlignment.MiddleLeft, true);
             InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "제품", "Item_Name", true);
-            InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "등급", "Boxing_Grade_Code", true);
-            InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "수량", "CurrentQty", true);
+            InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "등급", "Boxing_Grade_Code", true, 100, DataGridViewContentAlignment.MiddleCenter);
+            InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "수량", "CurrentQty", true, 100, DataGridViewContentAlignment.MiddleRight);
             InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "등급상세", "Grade_Detail_Code", false);
             InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "사이즈", "Size_Code", false);
 
@@ -83,8 +83,26 @@ namespace AxxenClient.Forms
         /// <param name="count"></param>
         public void PrintPallet(string palletno, int count)
         {
-            // TODO - 팔레트 출력하기
             MessageBox.Show("팔레트 출력합니다..");
+            Pallet_MasterService service = new Pallet_MasterService();
+            DataTable table = service.GetPalletToDT(palletno);
+            if (table != null)
+            {
+                for (int i = 0; i < count; i++)
+                {
+                    DataRow dr = table.NewRow();
+                    for (int k = 0; k < table.Columns.Count; k++)
+                    {
+                        dr[k] = table.Rows[0][k];
+                    }
+                    table.Rows.Add(dr);
+                }
+
+                BarcodeReport rpt = new BarcodeReport();
+                rpt.DataSource = table;
+
+                ReportPreview frm = new ReportPreview(rpt);
+            }
         }
         /// <summary>
         /// 팔레트 삭제 
@@ -111,7 +129,7 @@ namespace AxxenClient.Forms
         /// <param name="e"></param>
         private void btnSearchByDate_Click(object sender, EventArgs e)
         {
-            ProgressForm frm = new ProgressForm(() => { Thread.Sleep(5000);  GetSearch();  });
+            ProgressForm frm = new ProgressForm(() => { Thread.Sleep(500);  GetSearch();  });
             frm.ShowInTaskbar = false;
             frm.StartPosition = FormStartPosition.CenterParent;
             frm.ShowDialog();

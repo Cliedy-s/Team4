@@ -67,11 +67,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DSOrder.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DSOrder.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Forms\ChangeNopReason.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,6 +187,12 @@
     <Compile Include="Forms\BarcodeReport.Designer.cs">
       <DependentUpon>BarcodeReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ReportPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ReportPreview.Designer.cs">
+      <DependentUpon>ReportPreview.cs</DependentUpon>
+    </Compile>
     <Compile Include="GlobalUsage.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -294,17 +295,6 @@
       <DependentUpon>FreeForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
-    <None Include="DSOrder.xsc">
-      <DependentUpon>DSOrder.xsd</DependentUpon>
-    </None>
-    <None Include="DSOrder.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DSOrder.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DSOrder.xss">
-      <DependentUpon>DSOrder.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

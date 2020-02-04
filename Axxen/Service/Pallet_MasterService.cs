@@ -1,6 +1,7 @@
 ﻿using DAC;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -18,6 +19,22 @@ namespace Service
         {
             Pallet_MasterDAC dac = new Pallet_MasterDAC();
             return dac.GetAll();
+        }
+        /// <summary>
+        /// 팔레트 검색
+        /// </summary>
+        public PalletVO GetPallet(string palletno)
+        {
+            Pallet_MasterDAC dac = new Pallet_MasterDAC();
+            return dac.GetPallet(palletno);
+        }
+        /// <summary>
+        /// 팔레트 검색하기
+        /// </summary>
+        public DataTable GetPalletToDT(string palletno)
+        {
+            Pallet_MasterDAC dac = new Pallet_MasterDAC();
+            return dac.GetPalletToDT(palletno);
         }
         /// <summary>
         /// 팔레트목록 날짜로 가져오기
@@ -71,6 +88,14 @@ namespace Service
         {
             Pallet_MasterDAC dac = new Pallet_MasterDAC();
             return dac.GetBarcodeNo(palletNo);
+        }
+        /// <summary>
+        /// 바코드 번호로 팔레트 검색
+        /// </summary>
+        public PalletVO GetPalletByBarcode(string barcodeNo)
+        {
+            Pallet_MasterDAC dac = new Pallet_MasterDAC();
+            return dac.GetPalletByBarcode(barcodeNo);
         }
         /// <summary>
         /// 팔레트 생성

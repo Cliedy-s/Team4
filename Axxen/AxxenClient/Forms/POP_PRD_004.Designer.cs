@@ -208,9 +208,10 @@
             this.btnSearchByDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnSearchByDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnSearchByDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearchByDate.Location = new System.Drawing.Point(465, 17);
+            this.btnSearchByDate.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSearchByDate.Location = new System.Drawing.Point(465, 14);
             this.btnSearchByDate.Name = "btnSearchByDate";
-            this.btnSearchByDate.Size = new System.Drawing.Size(75, 24);
+            this.btnSearchByDate.Size = new System.Drawing.Size(75, 29);
             this.btnSearchByDate.TabIndex = 16;
             this.btnSearchByDate.Text = "조회";
             this.btnSearchByDate.UseVisualStyleBackColor = false;

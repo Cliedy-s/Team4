@@ -30,7 +30,7 @@ namespace AxxenClient.Forms
             InitControlUtil.AddNewColumnToDataGridView(dgvGVList, "건조대차", "GV_Name", true, 110);
             InitControlUtil.AddNewColumnToDataGridView(dgvGVList, "품목코드", "Item_Code", true, 100, DataGridViewContentAlignment.MiddleLeft, true);
             InitControlUtil.AddNewColumnToDataGridView(dgvGVList, "품목명", "Item_Name", true, 100);
-            InitControlUtil.AddNewColumnToDataGridView(dgvGVList, "수량", "Loading_Qty", true, 100);
+            InitControlUtil.AddNewColumnToDataGridView(dgvGVList, "수량", "Loading_Qty", true, 100, DataGridViewContentAlignment.MiddleLeft);
             InitControlUtil.AddNewColumnToDataGridView(dgvGVList, "품목이름", "Item_Name", false, 100);
             InitControlUtil.AddNewColumnToDataGridView(dgvGVList, "품목이름", "Item_Code", false, 100); 
             InitControlUtil.AddNewColumnToDataGridView(dgvGVList, "작업장코드", "Wc_Code", false, 100);

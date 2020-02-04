@@ -37,7 +37,6 @@ namespace AxxenClient
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
-            this.dsOrder1 = new AxxenClient.DSOrder();
             this.DetailReport = new DevExpress.XtraReports.UI.DetailReportBand();
             this.Detail1 = new DevExpress.XtraReports.UI.DetailBand();
             this.xrBarCode1 = new DevExpress.XtraReports.UI.XRBarCode();
@@ -52,29 +51,23 @@ namespace AxxenClient
             this.xrTableCell5 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell6 = new DevExpress.XtraReports.UI.XRTableCell();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dsOrder1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // TopMargin
             // 
-            this.TopMargin.HeightF = 10F;
+            this.TopMargin.HeightF = 22.50001F;
             this.TopMargin.Name = "TopMargin";
             // 
             // BottomMargin
             // 
-            this.BottomMargin.HeightF = 10F;
+            this.BottomMargin.HeightF = 29.04189F;
             this.BottomMargin.Name = "BottomMargin";
             // 
             // Detail
             // 
             this.Detail.HeightF = 0F;
             this.Detail.Name = "Detail";
-            // 
-            // dsOrder1
-            // 
-            this.dsOrder1.DataSetName = "DSOrder";
-            this.dsOrder1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // DetailReport
             // 
@@ -89,7 +82,7 @@ namespace AxxenClient
             this.Detail1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrBarCode1,
             this.xrTable1});
-            this.Detail1.HeightF = 306F;
+            this.Detail1.HeightF = 305.9999F;
             this.Detail1.MultiColumn.ColumnCount = 2;
             this.Detail1.MultiColumn.Layout = DevExpress.XtraPrinting.ColumnLayout.AcrossThenDown;
             this.Detail1.MultiColumn.Mode = DevExpress.XtraReports.UI.MultiColumnMode.UseColumnCount;
@@ -103,12 +96,13 @@ namespace AxxenClient
             this.xrBarCode1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 194.5416F);
             this.xrBarCode1.Name = "xrBarCode1";
             this.xrBarCode1.Padding = new DevExpress.XtraPrinting.PaddingInfo(10, 10, 0, 0, 100F);
-            this.xrBarCode1.SizeF = new System.Drawing.SizeF(405F, 111.4583F);
+            this.xrBarCode1.SizeF = new System.Drawing.SizeF(395F, 111.4583F);
             this.xrBarCode1.StylePriority.UseTextAlignment = false;
+            code39ExtendedGenerator1.CalcCheckSum = false;
             code39ExtendedGenerator1.WideNarrowRatio = 3F;
             this.xrBarCode1.Symbology = code39ExtendedGenerator1;
             this.xrBarCode1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
-            this.xrBarCode1.TextFormatString = "{0}*";
+            this.xrBarCode1.TextFormatString = "{0}";
             // 
             // xrTable1
             // 
@@ -120,7 +114,7 @@ namespace AxxenClient
             this.xrTableRow1,
             this.xrTableRow2,
             this.xrTableRow3});
-            this.xrTable1.SizeF = new System.Drawing.SizeF(405F, 193.75F);
+            this.xrTable1.SizeF = new System.Drawing.SizeF(394.9999F, 193.75F);
             this.xrTable1.StylePriority.UseFont = false;
             this.xrTable1.StylePriority.UseTextAlignment = false;
             this.xrTable1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
@@ -154,7 +148,7 @@ namespace AxxenClient
             this.xrTableCell3.Name = "xrTableCell3";
             this.xrTableCell3.StylePriority.UseBorders = false;
             this.xrTableCell3.Text = "xrTableCell3";
-            this.xrTableCell3.Weight = 2.3662340198863641D;
+            this.xrTableCell3.Weight = 2.283116623201221D;
             // 
             // xrTableRow2
             // 
@@ -182,7 +176,7 @@ namespace AxxenClient
             this.xrTableCell4.Name = "xrTableCell4";
             this.xrTableCell4.StylePriority.UseBorders = false;
             this.xrTableCell4.Text = "xrTableCell4";
-            this.xrTableCell4.Weight = 2.3662340198863641D;
+            this.xrTableCell4.Weight = 2.283116623201221D;
             // 
             // xrTableRow3
             // 
@@ -213,7 +207,7 @@ namespace AxxenClient
             this.xrTableCell6.Name = "xrTableCell6";
             this.xrTableCell6.StylePriority.UseBorders = false;
             this.xrTableCell6.Text = "xrTableCell6";
-            this.xrTableCell6.Weight = 2.3662340198863641D;
+            this.xrTableCell6.Weight = 2.283116623201221D;
             // 
             // sqlDataSource1
             // 
@@ -225,7 +219,7 @@ namespace AxxenClient
             customSqlQuery1});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
-            // XtraReport2
+            // BarcodeReport
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
             this.TopMargin,
@@ -233,15 +227,13 @@ namespace AxxenClient
             this.Detail,
             this.DetailReport});
             this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
-            this.dsOrder1,
             this.sqlDataSource1});
             this.DataMember = "Query";
             this.DataSource = this.sqlDataSource1;
             this.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.Margins = new System.Drawing.Printing.Margins(10, 10, 10, 10);
+            this.Margins = new System.Drawing.Printing.Margins(34, 26, 23, 29);
             this.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomCenter;
             this.Version = "19.2";
-            ((System.ComponentModel.ISupportInitialize)(this.dsOrder1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
@@ -252,7 +244,6 @@ namespace AxxenClient
         private DevExpress.XtraReports.UI.TopMarginBand TopMargin;
         private DevExpress.XtraReports.UI.BottomMarginBand BottomMargin;
         private DevExpress.XtraReports.UI.DetailBand Detail;
-        private DSOrder dsOrder1;
         private DevExpress.XtraReports.UI.DetailReportBand DetailReport;
         private DevExpress.XtraReports.UI.DetailBand Detail1;
         private DevExpress.XtraReports.UI.XRBarCode xrBarCode1;

@@ -39,9 +39,9 @@ namespace AxxenClient.Forms
             lblConditionCode.Visible = lblItemCode.Visible = lblWcCode.Visible = false;
             InitControlUtil.SetPOPDGVDesign(dgvConditionList);
             InitControlUtil.AddNewColumnToDataGridView(dgvConditionList, "측정항목", "Condition_Name", true, 100, DataGridViewContentAlignment.MiddleLeft, true);
-            InitControlUtil.AddNewColumnToDataGridView(dgvConditionList, "USL", "USL", true, 130);
-            InitControlUtil.AddNewColumnToDataGridView(dgvConditionList, "SL", "SL", true, 130);
-            InitControlUtil.AddNewColumnToDataGridView(dgvConditionList, "LSL", "LSL", true, 130);
+            InitControlUtil.AddNewColumnToDataGridView(dgvConditionList, "USL", "USL", true, 140, DataGridViewContentAlignment.MiddleRight);
+            InitControlUtil.AddNewColumnToDataGridView(dgvConditionList, "SL", "SL", true, 140, DataGridViewContentAlignment.MiddleRight);
+            InitControlUtil.AddNewColumnToDataGridView(dgvConditionList, "LSL", "LSL", true, 140, DataGridViewContentAlignment.MiddleRight);
             InitControlUtil.AddNewColumnToDataGridView(dgvConditionList, "품목코드", "Item_Code", false, 100);
             InitControlUtil.AddNewColumnToDataGridView(dgvConditionList, "코드", "Condition_Code", false, 100);
             InitControlUtil.AddNewColumnToDataGridView(dgvConditionList, "작업장코드", "Wc_Code", false, 100);

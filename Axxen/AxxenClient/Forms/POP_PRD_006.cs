@@ -36,12 +36,12 @@ namespace AxxenClient.Forms
         {
             InitControlUtil.SetPOPDGVDesign(dgvBoxing);
             InitControlUtil.AddNewColumnToDataGridView(dgvBoxing, "대차코드", "GV_Code", true, 110);
-            InitControlUtil.AddNewColumnToDataGridView(dgvBoxing, "대차명", "GV_Name", true, 100, DataGridViewContentAlignment.MiddleLeft, true);
-            InitControlUtil.AddNewColumnToDataGridView(dgvBoxing, "작업지시번호", "Workorderno", true, 140);
+            InitControlUtil.AddNewColumnToDataGridView(dgvBoxing, "대차명", "GV_Name", true, 100);
+            InitControlUtil.AddNewColumnToDataGridView(dgvBoxing, "작업지시번호", "Workorderno", true, 200, DataGridViewContentAlignment.MiddleLeft, true);
             InitControlUtil.AddNewColumnToDataGridView(dgvBoxing, "품목코드", "Item_Code", true, 120);
             InitControlUtil.AddNewColumnToDataGridView(dgvBoxing, "품목명", "Item_Name", true);
-            InitControlUtil.AddNewColumnToDataGridView(dgvBoxing, "수량", "Prd_Qty", true);
-            InitControlUtil.AddNewColumnToDataGridView(dgvBoxing, "대차상태", "GV_Status", true);
+            InitControlUtil.AddNewColumnToDataGridView(dgvBoxing, "수량", "Prd_Qty", true, 100, DataGridViewContentAlignment.MiddleRight);
+            InitControlUtil.AddNewColumnToDataGridView(dgvBoxing, "대차상태", "GV_Status", true, 110, DataGridViewContentAlignment.MiddleCenter);
         }
         private void GetDatas()
         {

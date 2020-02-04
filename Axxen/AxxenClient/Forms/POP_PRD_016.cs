@@ -26,8 +26,8 @@ namespace AxxenClient.Forms
         {
             InitControlUtil.SetPOPDGVDesign(dgvNopList);
             InitControlUtil.AddNewColumnToDataGridView(dgvNopList, "작업장", "Wc_Name", true, 100, DataGridViewContentAlignment.MiddleLeft, true);
-            InitControlUtil.AddNewColumnToDataGridView(dgvNopList, "주원인", "Nop_Ma_Name", true, 130);
-            InitControlUtil.AddNewColumnToDataGridView(dgvNopList, "상세원인", "Nop_Mi_Name", true, 130);
+            InitControlUtil.AddNewColumnToDataGridView(dgvNopList, "주원인", "Nop_Ma_Name", true, 130, DataGridViewContentAlignment.MiddleCenter);
+            InitControlUtil.AddNewColumnToDataGridView(dgvNopList, "상세원인", "Nop_Mi_Name", true, 130, DataGridViewContentAlignment.MiddleCenter);
             InitControlUtil.AddNewColumnToDataGridView(dgvNopList, "발생시각", "Nop_Happentime", true, 200);
             InitControlUtil.AddNewColumnToDataGridView(dgvNopList, "해제시각", "Nop_Canceltime", true, 200);
             InitControlUtil.AddNewColumnToDataGridView(dgvNopList, "비가동시간(분)", "Nop_Time", true, 200);

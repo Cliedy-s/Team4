@@ -48,6 +48,159 @@ namespace DAC
             }
         }
         /// <summary>
+        /// 팔레트 검색하기
+        /// </summary>
+        public PalletVO GetPallet(string palletno)
+        {
+            PalletVO item = null;
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText =
+ @"  SELECT TOP(1) pal.[Pallet_No]
+      ,pal.[WorkOrderNo]
+      ,pal.[Barcode_No]
+      ,pal.[Grade_Detail_Code]
+      ,bdm.[Grade_Detail_Name]
+      ,bdm.[Boxing_Grade_Code]
+      ,pal.[Size_Code]
+      ,pal.[In_Qty]
+      ,pal.[CurrentQty]
+      ,pal.[Use_YN]
+      ,wo.[Item_Code]
+      ,im.[Item_Name]
+  FROM [Pallet_Master] as pal
+        LEFT OUTER JOIN  [WorkOrder] as wo ON pal.[WorkorderNo] = wo.[Workorderno]
+        LEFT OUTER JOIN [Item_Master] as im ON im.[Item_Code] = wo.[Item_Code]
+		LEFT OUTER JOIN [BoxingGrade_Detail_Master] as bdm ON  bdm.[Use_YN] = 'Y' AND pal.Grade_Detail_Code = bdm.Boxing_Grade_Code
+  WHERE pal.[Use_YN] = 'Y' AND pal.[Pallet_No] = @palletno ;  ";
+                comm.CommandType = CommandType.Text;
+                comm.Parameters.AddWithValue("@palletno", palletno);
+
+                comm.Connection.Open();
+                SqlDataReader reader = comm.ExecuteReader();
+                if (reader.Read())
+                {
+                    item = new PalletVO()
+                    {
+                        Pallet_No = reader[0].ToString(),
+                        WorkOrderNo = reader[1].ToString(),
+                        Barcode_No = reader[2].ToString(),
+                        Grade_Detail_Code = reader[3].ToString(),
+                        Grade_Detail_Name = reader[4].ToString(),
+                        Boxing_Grade_Code = reader[5].ToString(),
+                        Size_Code = reader[6].ToString(),
+                        In_Qty = Convert.ToInt32(reader[7]),
+                        CurrentQty = Convert.ToInt32(reader[8]),
+                        Use_YN = reader[9].ToString(),
+                        Item_Code = reader[10].ToString(),
+                        Item_Name = reader[11].ToString()
+                    };
+                }
+                comm.Connection.Close();
+
+                return item;
+            }
+        }
+
+        /// <summary>
+        /// 바코드 번호로 팔레트 검색
+        /// </summary>
+        /// <param name="barcodeNo"></param>
+        /// <returns></returns>
+        public PalletVO GetPalletByBarcode(string barcodeNo)
+        {
+            PalletVO item = null;
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText =
+ @"  SELECT TOP(1) pal.[Pallet_No]
+      ,pal.[WorkOrderNo]
+      ,pal.[Barcode_No]
+      ,pal.[Grade_Detail_Code]
+      ,bdm.[Grade_Detail_Name]
+      ,bdm.[Boxing_Grade_Code]
+      ,pal.[Size_Code]
+      ,pal.[In_Qty]
+      ,pal.[CurrentQty]
+      ,pal.[Use_YN]
+      ,wo.[Item_Code]
+      ,im.[Item_Name]
+  FROM [Pallet_Master] as pal
+        LEFT OUTER JOIN  [WorkOrder] as wo ON pal.[WorkorderNo] = wo.[Workorderno]
+        LEFT OUTER JOIN [Item_Master] as im ON im.[Item_Code] = wo.[Item_Code]
+		LEFT OUTER JOIN [BoxingGrade_Detail_Master] as bdm ON  bdm.[Use_YN] = 'Y' AND pal.Grade_Detail_Code = bdm.Boxing_Grade_Code
+  WHERE pal.[Use_YN] = 'Y' AND pal.[Barcode_No] = @barcodeNo ;  ";
+                comm.CommandType = CommandType.Text;
+                comm.Parameters.AddWithValue("@barcodeNo", barcodeNo);
+
+                comm.Connection.Open();
+                SqlDataReader reader = comm.ExecuteReader();
+                if (reader.Read())
+                {
+                    item = new PalletVO()
+                    {
+                        Pallet_No = reader[0].ToString(),
+                        WorkOrderNo = reader[1].ToString(),
+                        Barcode_No = reader[2].ToString(),
+                        Grade_Detail_Code = reader[3].ToString(),
+                        Grade_Detail_Name = reader[4].ToString(),
+                        Boxing_Grade_Code = reader[5].ToString(),
+                        Size_Code = reader[6].ToString(),
+                        In_Qty = Convert.ToInt32(reader[7]),
+                        CurrentQty = Convert.ToInt32(reader[8]),
+                        Use_YN = reader[9].ToString(),
+                        Item_Code = reader[10].ToString(),
+                        Item_Name = reader[11].ToString()
+                    };
+                }
+                comm.Connection.Close();
+
+                return item;
+            }
+        }
+
+        /// <summary>
+        /// 팔레트 검색하기
+        /// </summary>
+        public DataTable GetPalletToDT(string palletno)
+        {
+            DataTable dt = new DataTable();
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText =
+ @"  SELECT TOP(1) pal.[Pallet_No]
+      ,pal.[WorkOrderNo]
+      ,pal.[Barcode_No]
+      ,pal.[Grade_Detail_Code]
+      ,bdm.[Grade_Detail_Name]
+      ,bdm.[Boxing_Grade_Code]
+      ,pal.[Size_Code]
+      ,pal.[In_Qty]
+      ,pal.[CurrentQty]
+      ,pal.[Use_YN]
+      ,wo.[Item_Code]
+      ,im.[Item_Name]
+  FROM [Pallet_Master] as pal
+        LEFT OUTER JOIN  [WorkOrder] as wo ON pal.[WorkorderNo] = wo.[Workorderno]
+        LEFT OUTER JOIN [Item_Master] as im ON im.[Item_Code] = wo.[Item_Code]
+		LEFT OUTER JOIN [BoxingGrade_Detail_Master] as bdm ON  bdm.[Use_YN] = 'Y' AND pal.Grade_Detail_Code = bdm.Boxing_Grade_Code
+  WHERE pal.[Use_YN] = 'Y' AND pal.[Pallet_No] = @palletno ;  ";
+                comm.CommandType = CommandType.Text;
+                comm.Parameters.AddWithValue("@palletno", palletno);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(comm);
+
+                comm.Connection.Open();
+                adapter.Fill(dt);
+                comm.Connection.Close();
+
+                return dt;
+            }
+        }
+        /// <summary>
         /// 팔레트목록 날짜로 가져오기
         /// </summary>
         public List<PalletVO> GetAllByDateTime(DateTime fromdate, DateTime todate)
