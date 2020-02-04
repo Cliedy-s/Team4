@@ -9,6 +9,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using VO;
 
@@ -32,6 +33,17 @@ namespace Axxen
 
         private void ADateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
+            documentViewer1.DocumentSource = null;
+            threadmethod += ReportBinding;
+            using (WaitForm waitfrm = new WaitForm(() => { Thread.Sleep(3000); dtpDate.Invoke(threadmethod); }))
+            {
+                waitfrm.ShowDialog(this);
+            }
+        }
+        public delegate void threadDelegate();
+        threadDelegate threadmethod;
+        private void ReportBinding()
+        {
             string date = dtpDate.Value.ToString("yyyyMMdd");
             var searchlist = (from data in boxlist
                               where data.In_Date.ToString("yyyyMMdd") == date
@@ -44,7 +56,6 @@ namespace Axxen
             rpt.CreateDocument();
         }
 
-        
 
 
         private void TsbtnPrint_Click(object sender, EventArgs e)

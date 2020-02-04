@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using VO;
 
@@ -116,15 +117,6 @@ namespace Axxen
 
         private void ADateTimePickerSearch1_btnDateTimeSearch_Click(object sender, EventArgs args)
         {
-            using (WaitForm waitfrm = new WaitForm(ReportBinding))
-            {
-                waitfrm.ShowDialog(this);
-            }
-        }
-
-        private void ReportBinding()
-        {
-            
             DateTime startT = aDateTimePickerSearch1.ADateTimePickerValue1;
             DateTime endT = aDateTimePickerSearch1.ADateTimePickerValue2;
             endT = endT.AddDays(10);
