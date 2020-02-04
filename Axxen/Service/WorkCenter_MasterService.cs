@@ -11,10 +11,37 @@ namespace Service
     public class WorkCenter_MasterService
     {
         /// <summary>
-        /// 모든 작업장정보를 가져오는 메소드
+        /// 모든 작업장 + 공정이름 
         /// </summary>
         /// <returns></returns>
-        public List<WorkCenter_MasterVO> GetAll()
+        public List<WorkCenter_Master2VO> GetAll_WorkCenter_Master()
+        {
+            WorkCenter_MasterDAC dac = new WorkCenter_MasterDAC();
+            return dac.GetAll_WorkCenter_Master();
+        }
+        /// <summary>
+        /// 작업장사용유무
+        /// </summary>
+        /// <param name="code"></param>
+        /// <param name="use"></param>
+        /// <returns></returns>
+        public bool UsedWorkCenter_Master2VO(string code, string use)
+        {
+            WorkCenter_MasterDAC dac = new WorkCenter_MasterDAC();
+            return dac.UsedWorkCenter_Master2VO(code, use);
+        }
+
+        public bool InsertWorkservice(WorkCenter_Master2VO item)
+        {
+            WorkCenter_MasterDAC dac = new WorkCenter_MasterDAC();
+            return dac.InsertWorkservice(item);
+        }
+
+            /// <summary>
+            /// 모든 작업장정보를 가져오는 메소드
+            /// </summary>
+            /// <returns></returns>
+            public List<WorkCenter_MasterVO> GetAll()
         {
             WorkCenter_MasterDAC dac = new WorkCenter_MasterDAC();
             return dac.GetAll();

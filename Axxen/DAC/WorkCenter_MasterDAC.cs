@@ -11,6 +11,100 @@ namespace DAC
 {
     public class WorkCenter_MasterDAC : DACParent
     {
+
+
+        /// <summary>
+        /// 모든 작업장 + 공정명
+        /// </summary>
+        /// <returns></returns>
+        public List<WorkCenter_Master2VO> GetAll_WorkCenter_Master()
+        {
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText =
+ @" select Wc_Code,Wc_Name,w.Process_Code,Process_name,Wo_Status,Last_Cnt_Time,Prd_Req_Type,Pallet_YN,Item_Code,Prd_Unit,Mold_Setup_YN,w.Use_YN,w.Remark
+from WorkCenter_Master w , Process_Master p
+where w.Process_Code = p.Process_Code";
+                comm.CommandType = CommandType.Text;
+
+                comm.Connection.Open();
+                SqlDataReader reader = comm.ExecuteReader();
+                List<WorkCenter_Master2VO> list = Helper.DataReaderMapToList<WorkCenter_Master2VO>(reader);
+                comm.Connection.Close();
+
+                return list;
+            }
+        }
+
+        /// <summary>
+        /// 작업장사용유무
+        /// </summary>
+        /// <param name="code"></param>
+        /// <param name="use"></param>
+        /// <returns></returns>
+        public bool UsedWorkCenter_Master2VO(string code, string use)
+        {
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText = $"update WorkCenter_Master set Use_YN=@Use_YN where Wc_Code=@Wc_Code";
+                comm.CommandType = CommandType.Text;
+                comm.Parameters.AddWithValue("@Wc_Code", code);
+                comm.Parameters.AddWithValue("@Use_YN", use);
+
+                comm.Connection.Open();
+                int result = Convert.ToInt32(comm.ExecuteNonQuery());
+                comm.Connection.Close();
+
+                if (result > 0)
+                    return true;
+                return false;
+            }
+        }
+
+
+        /// <summary>
+        /// 작업장추가
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
+        public bool InsertWorkservice(WorkCenter_Master2VO item)
+        {
+            try
+            {
+
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText = $"insert into WorkCenter_Master(Wc_Code,Wc_Name,Process_Code,Remark,Ins_Date,Ins_Emp) values(@Wc_Code,@Wc_Name,@Process_Code,@Remark,'{DateTime.Now.ToShortDateString()}',@Ins_Emp)";
+                comm.CommandType = CommandType.Text;
+                comm.Parameters.AddWithValue("@Wc_Code", item.Wc_Code);
+                comm.Parameters.AddWithValue("@Wc_Name", item.Wc_Name);
+                comm.Parameters.AddWithValue("@Process_Code", item.Process_Code);
+                comm.Parameters.AddWithValue("@Remark", item.Remark);
+                    comm.Parameters.AddWithValue("@Ins_Emp", item.Ins_Emp);
+
+                    comm.Connection.Open();
+                int result = Convert.ToInt32(comm.ExecuteNonQuery());
+                comm.Connection.Close();
+
+                if (result > 0)
+                    return true;
+                return false;
+            }
+
+            }
+            catch 
+            {
+
+              
+                throw;
+            }
+        }
+
+
+
         /// <summary>
         /// 모든 작업장정보를 가져오는 메소드
         /// </summary>
@@ -70,6 +164,6 @@ namespace DAC
                 return list;
             }
         }
-        
+
     }
 }

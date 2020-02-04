@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.aDataGridView1 = new Axxen.CustomControls.ADataGridView();
-            this.aButton1 = new Axxen.CustomControls.AButton();
+            this.dgvNopList = new Axxen.CustomControls.ADataGridView();
+            this.btnChangeReason = new Axxen.CustomControls.AButton();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.aDataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNopList)).BeginInit();
             this.SuspendLayout();
             // 
             // aLabel_Header1
@@ -41,61 +42,63 @@
             // 
             // aPanel1
             // 
-            this.aPanel1.Location = new System.Drawing.Point(0, 791);
+            this.aPanel1.Location = new System.Drawing.Point(0, 593);
+            this.aPanel1.Margin = new System.Windows.Forms.Padding(2);
             // 
-            // aDataGridView1
+            // dgvNopList
             // 
-            this.aDataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvNopList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.aDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.aDataGridView1.Location = new System.Drawing.Point(15, 140);
-            this.aDataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.aDataGridView1.Name = "aDataGridView1";
-            this.aDataGridView1.RowHeadersWidth = 51;
-            this.aDataGridView1.RowTemplate.Height = 23;
-            this.aDataGridView1.Size = new System.Drawing.Size(1299, 643);
-            this.aDataGridView1.TabIndex = 7;
+            this.dgvNopList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvNopList.Location = new System.Drawing.Point(12, 105);
+            this.dgvNopList.Name = "dgvNopList";
+            this.dgvNopList.RowHeadersWidth = 51;
+            this.dgvNopList.RowTemplate.Height = 23;
+            this.dgvNopList.Size = new System.Drawing.Size(1001, 482);
+            this.dgvNopList.TabIndex = 7;
             // 
-            // aButton1
+            // btnChangeReason
             // 
-            this.aButton1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnChangeReason.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.aButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton1.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aButton1.Location = new System.Drawing.Point(1322, 140);
-            this.aButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.aButton1.Name = "aButton1";
-            this.aButton1.Size = new System.Drawing.Size(219, 643);
-            this.aButton1.TabIndex = 38;
-            this.aButton1.Text = "비가동\r\n사유변경";
-            this.aButton1.UseVisualStyleBackColor = false;
+            this.btnChangeReason.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.btnChangeReason.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangeReason.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnChangeReason.Location = new System.Drawing.Point(1019, 105);
+            this.btnChangeReason.Name = "btnChangeReason";
+            this.btnChangeReason.Size = new System.Drawing.Size(179, 482);
+            this.btnChangeReason.TabIndex = 38;
+            this.btnChangeReason.Text = "비가동\r\n사유변경";
+            this.btnChangeReason.UseVisualStyleBackColor = false;
+            this.btnChangeReason.Click += new System.EventHandler(this.btnChangeReason_Click);
             // 
             // POP_PRD_016
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.ClientSize = new System.Drawing.Size(1556, 839);
-            this.Controls.Add(this.aButton1);
-            this.Controls.Add(this.aDataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.ClientSize = new System.Drawing.Size(1210, 629);
+            this.Controls.Add(this.btnChangeReason);
+            this.Controls.Add(this.dgvNopList);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "POP_PRD_016";
+            this.Load += new System.EventHandler(this.POP_PRD_016_Load);
             this.Controls.SetChildIndex(this.aPanel2, 0);
             this.Controls.SetChildIndex(this.aPanel1, 0);
-            this.Controls.SetChildIndex(this.aDataGridView1, 0);
-            this.Controls.SetChildIndex(this.aButton1, 0);
+            this.Controls.SetChildIndex(this.dgvNopList, 0);
+            this.Controls.SetChildIndex(this.btnChangeReason, 0);
             this.aPanel1.ResumeLayout(false);
             this.aPanel1.PerformLayout();
             this.aPanel2.ResumeLayout(false);
             this.aPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.aDataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNopList)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Axxen.CustomControls.ADataGridView aDataGridView1;
-        private Axxen.CustomControls.AButton aButton1;
+        private Axxen.CustomControls.ADataGridView dgvNopList;
+        private Axxen.CustomControls.AButton btnChangeReason;
     }
 }

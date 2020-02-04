@@ -27,12 +27,12 @@ namespace AxxenClient.Forms
             InitControlUtil.SetPOPDGVDesign(dgvEquipMoldList);
             InitControlUtil.AddNewColumnToDataGridView(dgvEquipMoldList, "금형코드", "Mold_Code", true, 110);
             InitControlUtil.AddNewColumnToDataGridView(dgvEquipMoldList, "금형명", "Mold_Name", true, 100, DataGridViewContentAlignment.MiddleLeft, true);
-            InitControlUtil.AddNewColumnToDataGridView(dgvEquipMoldList, "금형그룹", "Mold_Group", true, 100);
+            InitControlUtil.AddNewColumnToDataGridView(dgvEquipMoldList, "그룹", "Mold_Group", true, 100);
 
             InitControlUtil.SetPOPDGVDesign(dgvEquipedMoldList);
             InitControlUtil.AddNewColumnToDataGridView(dgvEquipedMoldList, "금형코드", "Mold_Code", true, 110);
             InitControlUtil.AddNewColumnToDataGridView(dgvEquipedMoldList, "금형명", "Mold_Name", true, 100, DataGridViewContentAlignment.MiddleLeft, true);
-            InitControlUtil.AddNewColumnToDataGridView(dgvEquipedMoldList, "금형그룹", "Mold_Group", true, 100);
+            InitControlUtil.AddNewColumnToDataGridView(dgvEquipedMoldList, "그룹", "Mold_Group", true, 100);
 
         }
         private void GetDatas()

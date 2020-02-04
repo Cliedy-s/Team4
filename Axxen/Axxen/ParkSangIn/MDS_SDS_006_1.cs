@@ -17,14 +17,14 @@ namespace Axxen
         List<Item_MasterVO> Itemlist;
 
         List<Process_MasterVO> processlist;
-        ProcessService userservice = new ProcessService();
+        ProcessService processservice = new ProcessService();
         public MDS_SDS_006_1()
         {
             InitializeComponent();
         }
 
         public InspectSpecVO updateinspectitem { get; set; }
-    
+
 
 
         private void MDS_SDS_006_1_Load(object sender, EventArgs e)
@@ -32,7 +32,7 @@ namespace Axxen
             GetAllItem();
             ControlSetting();
             lblManager.Text = UserInfo.User_Name;
-            lblDay.Text = DateTime.Now.ToShortDateString() ;
+            lblDay.Text = DateTime.Now.ToShortDateString();
 
             if (updateinspectitem != null)//수정이라면
             {
@@ -40,17 +40,17 @@ namespace Axxen
                 lblItem.Text = updateinspectitem.Item_Code;
                 cbbProcess.Text = processlist.Find(proname => proname.Process_code == updateinspectitem.Process_code).Process_name;
                 lblProcess.Text = updateinspectitem.Process_code;
-                  txtInspect_code.Text = updateinspectitem.Inspect_code;
-                  txtInspect_name.Text = updateinspectitem.Inspect_name;
-      
-               nudusl.Value = updateinspectitem.USL;
-                 nudsl.Value = updateinspectitem.SL;
-               nudlsl.Value = updateinspectitem.LSL;
-            nudsample.Value = updateinspectitem.Sample_size;
-               txttype.Text = updateinspectitem.Inspect_Unit;
-              txtRemark.Text = updateinspectitem.Remark;
+                txtInspect_code.Text = updateinspectitem.Inspect_code;
+                txtInspect_name.Text = updateinspectitem.Inspect_name;
 
-            
+                nudusl.Value = updateinspectitem.USL;
+                nudsl.Value = updateinspectitem.SL;
+                nudlsl.Value = updateinspectitem.LSL;
+                nudsample.Value = updateinspectitem.Sample_size;
+                txttype.Text = updateinspectitem.Inspect_Unit;
+                txtRemark.Text = updateinspectitem.Remark;
+
+
                 cbbItem.Enabled = false;
                 cbbProcess.Enabled = false;
             }
@@ -67,7 +67,7 @@ namespace Axxen
                 Itemlist = itemservice.GetAllItem_Master();
 
                 processlist = new List<Process_MasterVO>();
-                processlist = userservice.GetAllProcess_Master();
+                processlist = processservice.GetAllProcess_Master();
 
             }
             catch (Exception err)
@@ -113,39 +113,40 @@ namespace Axxen
             try
             {
 
-                if(!string.IsNullOrEmpty(txtInspect_code.Text) && !string.IsNullOrEmpty(txtInspect_name.Text)) { 
-
-
-                Inspect_Spec_MasterService service = new Inspect_Spec_MasterService();
-                List<InspectSpecVO> additem = new List<InspectSpecVO>();
-
-
-                InspectSpecVO inspect = new InspectSpecVO
-                {
-                    Item_Code = lblItem.Text,
-                    Process_code = lblProcess.Text,
-                    Inspect_code = txtInspect_code.Text,
-                    Inspect_name = txtInspect_name.Text,
-                    //Spec_Desc    =                     ,
-                    USL = nudusl.Value,
-                    SL = nudsl.Value,
-                    LSL = nudlsl.Value,
-                    Sample_size = Convert.ToInt32(nudsample.Value),
-                    Inspect_Unit = txttype.Text,
-                    Remark = txtRemark.Text
-
-                };
-                additem.Add(inspect);
-                if (service.InsertInspectSpec(additem))
+                if (!string.IsNullOrEmpty(txtInspect_code.Text) && !string.IsNullOrEmpty(txtInspect_name.Text))
                 {
 
 
-                    MessageBox.Show("저장 완료", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("이미 등록된 검사항목입니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                    Inspect_Spec_MasterService service = new Inspect_Spec_MasterService();
+                    List<InspectSpecVO> additem = new List<InspectSpecVO>();
+
+
+                    InspectSpecVO inspect = new InspectSpecVO
+                    {
+                        Item_Code = lblItem.Text,
+                        Process_code = lblProcess.Text,
+                        Inspect_code = txtInspect_code.Text,
+                        Inspect_name = txtInspect_name.Text,
+                        //Spec_Desc    =                     ,
+                        USL = nudusl.Value,
+                        SL = nudsl.Value,
+                        LSL = nudlsl.Value,
+                        Sample_size = Convert.ToInt32(nudsample.Value),
+                        Inspect_Unit = txttype.Text,
+                        Remark = txtRemark.Text
+
+                    };
+                    additem.Add(inspect);
+                    if (service.InsertInspectSpec(additem))
+                    {
+
+
+                        MessageBox.Show("저장 완료", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("이미 등록된 검사항목입니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
                 else
                 {

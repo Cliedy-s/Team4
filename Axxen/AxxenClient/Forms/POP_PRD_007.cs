@@ -37,14 +37,14 @@ namespace AxxenClient.Forms
         private void InitControls()
         {
             InitControlUtil.SetPOPDGVDesign(dgvGVTo);
-            InitControlUtil.AddNewColumnToDataGridView(dgvGVTo, "대차코드", "GV_Code", true, 80);
+            InitControlUtil.AddNewColumnToDataGridView(dgvGVTo, "코드", "GV_Code", true, 80);
             InitControlUtil.AddNewColumnToDataGridView(dgvGVTo, "대차명", "GV_Name", true, 100, DataGridViewContentAlignment.MiddleLeft, true);
 
             InitControlUtil.SetPOPDGVDesign(dgvGVFrom);
-            InitControlUtil.AddNewColumnToDataGridView(dgvGVFrom, "대차코드", "GV_Code", true, 80);
+            InitControlUtil.AddNewColumnToDataGridView(dgvGVFrom, "코드", "GV_Code", true, 80);
             InitControlUtil.AddNewColumnToDataGridView(dgvGVFrom, "대차명", "GV_Name", true, 100, DataGridViewContentAlignment.MiddleLeft, true);
             InitControlUtil.AddNewColumnToDataGridView(dgvGVFrom, "적재시각", "Loading_time", true, 200);
-            InitControlUtil.AddNewColumnToDataGridView(dgvGVFrom, "수량", "Loading_Qty", true, 50);
+            InitControlUtil.AddNewColumnToDataGridView(dgvGVFrom, "수량", "Loading_Qty", true, 80);
             dgvGVFrom.Columns[2].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm:ss";
 
         }
@@ -63,13 +63,13 @@ namespace AxxenClient.Forms
         { // 검색
             GV_Current_StatusService service = new GV_Current_StatusService();
             // TODO - 조건에 맞게 변경하기
-            dgvGVTo.DataSource = service.GetGVCurrentStatus(gvStatus: "빈대차", gvName:txtToSearch.TextBoxText);
+            dgvGVTo.DataSource = service.GetGVCurrentStatus(gvStatus: "빈대차", gvName:txtToGVSearch.TextBoxText);
         }
         private void btnFromSearch_Click(object sender, EventArgs e)
         { // 검색
             GV_Current_StatusService service = new GV_Current_StatusService();
             // TODO - 조건에 맞게 변경하기
-            dgvGVFrom.DataSource = service.GetGVCurrentStatus(gvStatus: "적재", gvName:txtFromSearch.TextBoxText);
+            dgvGVFrom.DataSource = service.GetGVCurrentStatus(gvStatus: "적재", gvName:txtFromGVSearch.TextBoxText);
         }
         private void btnLoad_Click(object sender, EventArgs e)
         {

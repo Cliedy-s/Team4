@@ -77,6 +77,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatagridviewDesigns.cs" />
+    <Compile Include="frmWaitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWaitForm.Designer.cs">
+      <DependentUpon>frmWaitForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="HwiSeok\PRM_PRF_001.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +203,12 @@
     </Compile>
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_ODS_002_1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MDS_ODS_002_1.Designer.cs">
+      <DependentUpon>MDS_ODS_002_1.cs</DependentUpon>
     </Compile>
     <Compile Include="ParkSangIn\MDS_CDS_004.cs">
       <SubType>Form</SubType>
@@ -542,6 +554,9 @@
     <Compile Include="Util\ListToDataTable.cs" />
     <Compile Include="Util\LoggingUtility.cs" />
     <Compile Include="Util\ResetUtillity.cs" />
+    <EmbeddedResource Include="frmWaitForm.resx">
+      <DependentUpon>frmWaitForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HwiSeok\PRM_PRF_001.resx">
       <DependentUpon>PRM_PRF_001.cs</DependentUpon>
     </EmbeddedResource>
@@ -607,6 +622,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ParkSangIn\MDS_CDS_003.resx">
       <DependentUpon>MDS_CDS_003.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParkSangIn\MDS_ODS_002_1.resx">
+      <DependentUpon>MDS_ODS_002_1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ParkSangIn\MDS_SDS_007_2.resx">
       <DependentUpon>MDS_SDS_007_2.cs</DependentUpon>

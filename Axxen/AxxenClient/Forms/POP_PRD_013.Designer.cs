@@ -28,19 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.aButton1 = new Axxen.CustomControls.AButton();
-            this.aDataGridView2 = new Axxen.CustomControls.ADataGridView();
-            this.aDataGridView1 = new Axxen.CustomControls.ADataGridView();
-            this.aButton2 = new Axxen.CustomControls.AButton();
-            this.aButton3 = new Axxen.CustomControls.AButton();
+            this.btnDeallocateAll = new Axxen.CustomControls.AButton();
+            this.dgvAllocatableWorker = new Axxen.CustomControls.ADataGridView();
+            this.dgvAllocatedWorker = new Axxen.CustomControls.ADataGridView();
+            this.btnDeallocate = new Axxen.CustomControls.AButton();
+            this.btnAllocate = new Axxen.CustomControls.AButton();
             this.aBigHeaderBox1 = new Axxen.CustomControls.ABigHeaderBox();
             this.aBigHeaderBox2 = new Axxen.CustomControls.ABigHeaderBox();
-            this.aBigTextBox_Searchable1 = new Axxen.CustomControls.ABigTextBox_Searchable();
-            this.aBigTextBox_Searchable2 = new Axxen.CustomControls.ABigTextBox_Searchable();
+            this.txtWc = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
+            this.txtWorkerCnt = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.aDataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aDataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAllocatableWorker)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAllocatedWorker)).BeginInit();
             this.SuspendLayout();
             // 
             // aLabel_Header1
@@ -52,69 +53,72 @@
             this.aPanel1.Location = new System.Drawing.Point(0, 593);
             this.aPanel1.Margin = new System.Windows.Forms.Padding(2);
             // 
-            // aButton1
+            // btnDeallocateAll
             // 
-            this.aButton1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.aButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton1.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aButton1.Location = new System.Drawing.Point(519, 460);
-            this.aButton1.Name = "aButton1";
-            this.aButton1.Size = new System.Drawing.Size(154, 123);
-            this.aButton1.TabIndex = 29;
-            this.aButton1.Text = "작업자\r\n전체 해제\r\n→";
-            this.aButton1.UseVisualStyleBackColor = false;
+            this.btnDeallocateAll.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnDeallocateAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.btnDeallocateAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeallocateAll.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnDeallocateAll.Location = new System.Drawing.Point(519, 460);
+            this.btnDeallocateAll.Name = "btnDeallocateAll";
+            this.btnDeallocateAll.Size = new System.Drawing.Size(154, 123);
+            this.btnDeallocateAll.TabIndex = 29;
+            this.btnDeallocateAll.Text = "작업자\r\n전체 해제\r\n→";
+            this.btnDeallocateAll.UseVisualStyleBackColor = false;
+            this.btnDeallocateAll.Click += new System.EventHandler(this.btnDeallocateAll_Click);
             // 
-            // aDataGridView2
+            // dgvAllocatableWorker
             // 
-            this.aDataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.aDataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.aDataGridView2.Location = new System.Drawing.Point(679, 196);
-            this.aDataGridView2.Name = "aDataGridView2";
-            this.aDataGridView2.RowHeadersWidth = 51;
-            this.aDataGridView2.RowTemplate.Height = 23;
-            this.aDataGridView2.Size = new System.Drawing.Size(521, 389);
-            this.aDataGridView2.TabIndex = 28;
-            // 
-            // aDataGridView1
-            // 
-            this.aDataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvAllocatableWorker.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.aDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.aDataGridView1.Location = new System.Drawing.Point(12, 196);
-            this.aDataGridView1.Name = "aDataGridView1";
-            this.aDataGridView1.RowHeadersWidth = 51;
-            this.aDataGridView1.RowTemplate.Height = 23;
-            this.aDataGridView1.Size = new System.Drawing.Size(501, 389);
-            this.aDataGridView1.TabIndex = 27;
+            this.dgvAllocatableWorker.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAllocatableWorker.Location = new System.Drawing.Point(679, 196);
+            this.dgvAllocatableWorker.Name = "dgvAllocatableWorker";
+            this.dgvAllocatableWorker.RowHeadersWidth = 51;
+            this.dgvAllocatableWorker.RowTemplate.Height = 23;
+            this.dgvAllocatableWorker.Size = new System.Drawing.Size(521, 389);
+            this.dgvAllocatableWorker.TabIndex = 28;
             // 
-            // aButton2
+            // dgvAllocatedWorker
             // 
-            this.aButton2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.aButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.aButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton2.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aButton2.Location = new System.Drawing.Point(519, 329);
-            this.aButton2.Name = "aButton2";
-            this.aButton2.Size = new System.Drawing.Size(154, 123);
-            this.aButton2.TabIndex = 35;
-            this.aButton2.Text = "작업자\r\n해제\r\n→";
-            this.aButton2.UseVisualStyleBackColor = false;
+            this.dgvAllocatedWorker.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.dgvAllocatedWorker.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAllocatedWorker.Location = new System.Drawing.Point(12, 196);
+            this.dgvAllocatedWorker.Name = "dgvAllocatedWorker";
+            this.dgvAllocatedWorker.RowHeadersWidth = 51;
+            this.dgvAllocatedWorker.RowTemplate.Height = 23;
+            this.dgvAllocatedWorker.Size = new System.Drawing.Size(501, 389);
+            this.dgvAllocatedWorker.TabIndex = 27;
             // 
-            // aButton3
+            // btnDeallocate
             // 
-            this.aButton3.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.aButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.aButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton3.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aButton3.Location = new System.Drawing.Point(519, 200);
-            this.aButton3.Name = "aButton3";
-            this.aButton3.Size = new System.Drawing.Size(154, 123);
-            this.aButton3.TabIndex = 36;
-            this.aButton3.Text = "작업자\r\n할당\r\n←";
-            this.aButton3.UseVisualStyleBackColor = false;
+            this.btnDeallocate.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnDeallocate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.btnDeallocate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeallocate.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnDeallocate.Location = new System.Drawing.Point(519, 329);
+            this.btnDeallocate.Name = "btnDeallocate";
+            this.btnDeallocate.Size = new System.Drawing.Size(154, 123);
+            this.btnDeallocate.TabIndex = 35;
+            this.btnDeallocate.Text = "작업자\r\n해제\r\n→";
+            this.btnDeallocate.UseVisualStyleBackColor = false;
+            this.btnDeallocate.Click += new System.EventHandler(this.btnDeallocate_Click);
+            // 
+            // btnAllocate
+            // 
+            this.btnAllocate.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnAllocate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.btnAllocate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAllocate.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnAllocate.Location = new System.Drawing.Point(519, 200);
+            this.btnAllocate.Name = "btnAllocate";
+            this.btnAllocate.Size = new System.Drawing.Size(154, 123);
+            this.btnAllocate.TabIndex = 36;
+            this.btnAllocate.Text = "작업자\r\n할당\r\n←";
+            this.btnAllocate.UseVisualStyleBackColor = false;
+            this.btnAllocate.Click += new System.EventHandler(this.btnAllocate_Click);
             // 
             // aBigHeaderBox1
             // 
@@ -131,7 +135,6 @@
             // aBigHeaderBox2
             // 
             this.aBigHeaderBox2.allfont = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aBigHeaderBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.aBigHeaderBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.aBigHeaderBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.aBigHeaderBox2.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -141,77 +144,79 @@
             this.aBigHeaderBox2.Size = new System.Drawing.Size(273, 50);
             this.aBigHeaderBox2.TabIndex = 38;
             // 
-            // aBigTextBox_Searchable1
+            // txtWc
             // 
-            this.aBigTextBox_Searchable1.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aBigTextBox_Searchable1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aBigTextBox_Searchable1.LabelText = "작업장";
-            this.aBigTextBox_Searchable1.Location = new System.Drawing.Point(12, 104);
-            this.aBigTextBox_Searchable1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.aBigTextBox_Searchable1.Name = "aBigTextBox_Searchable1";
-            this.aBigTextBox_Searchable1.Size = new System.Drawing.Size(469, 42);
-            this.aBigTextBox_Searchable1.TabIndex = 39;
-            this.aBigTextBox_Searchable1.TextBoxText = "";
-            this.aBigTextBox_Searchable1.TextBoxType = Axxen.CustomControls.TextType.Normal;
+            this.txtWc.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtWc.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtWc.LabelText = "작업장";
+            this.txtWc.Location = new System.Drawing.Point(12, 106);
+            this.txtWc.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtWc.Name = "txtWc";
+            this.txtWc.Size = new System.Drawing.Size(469, 42);
+            this.txtWc.TabIndex = 39;
+            this.txtWc.TextBoxText = "";
+            this.txtWc.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
-            // aBigTextBox_Searchable2
+            // txtWorkerCnt
             // 
-            this.aBigTextBox_Searchable2.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aBigTextBox_Searchable2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aBigTextBox_Searchable2.LabelText = "할당 작업자 수";
-            this.aBigTextBox_Searchable2.Location = new System.Drawing.Point(489, 104);
-            this.aBigTextBox_Searchable2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.aBigTextBox_Searchable2.Name = "aBigTextBox_Searchable2";
-            this.aBigTextBox_Searchable2.Size = new System.Drawing.Size(469, 42);
-            this.aBigTextBox_Searchable2.TabIndex = 40;
-            this.aBigTextBox_Searchable2.TextBoxText = "";
-            this.aBigTextBox_Searchable2.TextBoxType = Axxen.CustomControls.TextType.Normal;
+            this.txtWorkerCnt.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtWorkerCnt.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtWorkerCnt.LabelText = "할당 작업자수";
+            this.txtWorkerCnt.Location = new System.Drawing.Point(489, 106);
+            this.txtWorkerCnt.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtWorkerCnt.Name = "txtWorkerCnt";
+            this.txtWorkerCnt.Size = new System.Drawing.Size(469, 42);
+            this.txtWorkerCnt.TabIndex = 40;
+            this.txtWorkerCnt.TextBoxText = "";
+            this.txtWorkerCnt.TextBoxType = Axxen.CustomControls.TextType.Numeric;
             // 
             // POP_PRD_013
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1210, 629);
-            this.Controls.Add(this.aButton3);
-            this.Controls.Add(this.aButton2);
-            this.Controls.Add(this.aButton1);
-            this.Controls.Add(this.aDataGridView2);
-            this.Controls.Add(this.aDataGridView1);
+            this.Controls.Add(this.txtWorkerCnt);
+            this.Controls.Add(this.txtWc);
+            this.Controls.Add(this.btnAllocate);
+            this.Controls.Add(this.btnDeallocate);
+            this.Controls.Add(this.btnDeallocateAll);
+            this.Controls.Add(this.dgvAllocatableWorker);
+            this.Controls.Add(this.dgvAllocatedWorker);
             this.Controls.Add(this.aBigHeaderBox2);
             this.Controls.Add(this.aBigHeaderBox1);
-            this.Controls.Add(this.aBigTextBox_Searchable2);
-            this.Controls.Add(this.aBigTextBox_Searchable1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "POP_PRD_013";
-            this.Controls.SetChildIndex(this.aBigTextBox_Searchable1, 0);
-            this.Controls.SetChildIndex(this.aBigTextBox_Searchable2, 0);
+            this.Load += new System.EventHandler(this.POP_PRD_013_Load);
             this.Controls.SetChildIndex(this.aBigHeaderBox1, 0);
             this.Controls.SetChildIndex(this.aBigHeaderBox2, 0);
             this.Controls.SetChildIndex(this.aPanel2, 0);
             this.Controls.SetChildIndex(this.aPanel1, 0);
-            this.Controls.SetChildIndex(this.aDataGridView1, 0);
-            this.Controls.SetChildIndex(this.aDataGridView2, 0);
-            this.Controls.SetChildIndex(this.aButton1, 0);
-            this.Controls.SetChildIndex(this.aButton2, 0);
-            this.Controls.SetChildIndex(this.aButton3, 0);
+            this.Controls.SetChildIndex(this.dgvAllocatedWorker, 0);
+            this.Controls.SetChildIndex(this.dgvAllocatableWorker, 0);
+            this.Controls.SetChildIndex(this.btnDeallocateAll, 0);
+            this.Controls.SetChildIndex(this.btnDeallocate, 0);
+            this.Controls.SetChildIndex(this.btnAllocate, 0);
+            this.Controls.SetChildIndex(this.txtWc, 0);
+            this.Controls.SetChildIndex(this.txtWorkerCnt, 0);
             this.aPanel1.ResumeLayout(false);
             this.aPanel1.PerformLayout();
             this.aPanel2.ResumeLayout(false);
             this.aPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.aDataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aDataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAllocatableWorker)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAllocatedWorker)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private Axxen.CustomControls.AButton aButton1;
-        private Axxen.CustomControls.ADataGridView aDataGridView2;
-        private Axxen.CustomControls.ADataGridView aDataGridView1;
-        private Axxen.CustomControls.AButton aButton2;
-        private Axxen.CustomControls.AButton aButton3;
+        private Axxen.CustomControls.AButton btnDeallocateAll;
+        private Axxen.CustomControls.ADataGridView dgvAllocatableWorker;
+        private Axxen.CustomControls.ADataGridView dgvAllocatedWorker;
+        private Axxen.CustomControls.AButton btnDeallocate;
+        private Axxen.CustomControls.AButton btnAllocate;
         private Axxen.CustomControls.ABigHeaderBox aBigHeaderBox1;
         private Axxen.CustomControls.ABigHeaderBox aBigHeaderBox2;
-        private Axxen.CustomControls.ABigTextBox_Searchable aBigTextBox_Searchable1;
-        private Axxen.CustomControls.ABigTextBox_Searchable aBigTextBox_Searchable2;
+        private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox txtWc;
+        private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox txtWorkerCnt;
     }
 }

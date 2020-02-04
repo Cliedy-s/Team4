@@ -8,7 +8,7 @@ using VO;
 
 namespace Service
 {
-    class Emp_Wc_AllocationService
+    public class Emp_Wc_AllocationService
     {
         /// <summary>
         /// 작업장에 할당된 작업자들 목록
@@ -28,7 +28,7 @@ namespace Service
         public List<WorkerAllocatableVO> GetAllocatableWorker(string wccode)
         {
             Emp_Wc_AllocationDAC dac = new Emp_Wc_AllocationDAC();
-            return GetAllocatableWorker(wccode);
+            return dac.GetAllocatableWorker(wccode);
         }
     }
 }

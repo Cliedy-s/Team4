@@ -32,10 +32,12 @@
             this.nudsample = new System.Windows.Forms.NumericUpDown();
             this.nudlsl = new System.Windows.Forms.NumericUpDown();
             this.aPanel29 = new Axxen.CustomControls.APanel();
+            this.txtRemark = new Axxen.CustomControls.ATextBox();
             this.aPanel21 = new Axxen.CustomControls.APanel();
             this.aPanel31 = new Axxen.CustomControls.APanel();
             this.aLabel16 = new Axxen.CustomControls.ALabel();
             this.aPanel33 = new Axxen.CustomControls.APanel();
+            this.txttype = new Axxen.CustomControls.ATextBox();
             this.aPanel34 = new Axxen.CustomControls.APanel();
             this.aLabel18 = new Axxen.CustomControls.ALabel();
             this.aPanel23 = new Axxen.CustomControls.APanel();
@@ -58,14 +60,14 @@
             this.aLabel1 = new Axxen.CustomControls.ALabel();
             this.aLabel2 = new Axxen.CustomControls.ALabel();
             this.aLabel7 = new Axxen.CustomControls.ALabel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.aLabel9 = new Axxen.CustomControls.ALabel();
+            this.lbltitle = new Axxen.CustomControls.ALabel();
             this.aLabel5 = new Axxen.CustomControls.ALabel();
             this.aPanel1 = new Axxen.CustomControls.APanel();
             this.lblDay = new Axxen.CustomControls.ALabel();
             this.lblManager = new Axxen.CustomControls.ALabel();
             this.aPanel7 = new Axxen.CustomControls.APanel();
             this.aPanel6 = new Axxen.CustomControls.APanel();
+            this.txtInspect_name = new Axxen.CustomControls.ATextBox();
             this.aPanel4 = new Axxen.CustomControls.APanel();
             this.aPanel2 = new Axxen.CustomControls.APanel();
             this.aPanel8 = new Axxen.CustomControls.APanel();
@@ -86,9 +88,7 @@
             this.aLabel8 = new Axxen.CustomControls.ALabel();
             this.aPanel20 = new Axxen.CustomControls.APanel();
             this.txtInspect_code = new Axxen.CustomControls.ATextBox();
-            this.txtInspect_name = new Axxen.CustomControls.ATextBox();
-            this.txttype = new Axxen.CustomControls.ATextBox();
-            this.txtRemark = new Axxen.CustomControls.ATextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudsample)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudlsl)).BeginInit();
             this.aPanel29.SuspendLayout();
@@ -106,7 +106,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudusl)).BeginInit();
             this.aPanel12.SuspendLayout();
             this.aPanel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.aPanel1.SuspendLayout();
             this.aPanel7.SuspendLayout();
             this.aPanel6.SuspendLayout();
@@ -122,6 +121,7 @@
             this.aPanel16.SuspendLayout();
             this.aPanel19.SuspendLayout();
             this.aPanel20.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // nudsample
@@ -147,6 +147,19 @@
             this.aPanel29.Name = "aPanel29";
             this.aPanel29.Size = new System.Drawing.Size(348, 82);
             this.aPanel29.TabIndex = 147;
+            // 
+            // txtRemark
+            // 
+            this.txtRemark.BackColor = System.Drawing.Color.White;
+            this.txtRemark.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtRemark.errorp = null;
+            this.txtRemark.Location = new System.Drawing.Point(3, 3);
+            this.txtRemark.MaxLength = 100;
+            this.txtRemark.Multiline = true;
+            this.txtRemark.Name = "txtRemark";
+            this.txtRemark.Size = new System.Drawing.Size(338, 72);
+            this.txtRemark.TabIndex = 159;
+            this.txtRemark.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // aPanel21
             // 
@@ -186,6 +199,18 @@
             this.aPanel33.Name = "aPanel33";
             this.aPanel33.Size = new System.Drawing.Size(170, 35);
             this.aPanel33.TabIndex = 149;
+            // 
+            // txttype
+            // 
+            this.txttype.BackColor = System.Drawing.Color.White;
+            this.txttype.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txttype.errorp = null;
+            this.txttype.Location = new System.Drawing.Point(3, 4);
+            this.txttype.MaxLength = 20;
+            this.txttype.Name = "txttype";
+            this.txttype.Size = new System.Drawing.Size(160, 23);
+            this.txttype.TabIndex = 158;
+            this.txttype.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // aPanel34
             // 
@@ -417,25 +442,16 @@
             this.aLabel7.Size = new System.Drawing.Size(0, 21);
             this.aLabel7.TabIndex = 15;
             // 
-            // pictureBox2
+            // lbltitle
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(18, 9);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(23, 22);
-            this.pictureBox2.TabIndex = 16;
-            this.pictureBox2.TabStop = false;
-            // 
-            // aLabel9
-            // 
-            this.aLabel9.AutoSize = true;
-            this.aLabel9.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aLabel9.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.aLabel9.Location = new System.Drawing.Point(49, 9);
-            this.aLabel9.Name = "aLabel9";
-            this.aLabel9.Size = new System.Drawing.Size(112, 21);
-            this.aLabel9.TabIndex = 35;
-            this.aLabel9.Text = "품질규격 등록";
+            this.lbltitle.AutoSize = true;
+            this.lbltitle.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lbltitle.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lbltitle.Location = new System.Drawing.Point(49, 9);
+            this.lbltitle.Name = "lbltitle";
+            this.lbltitle.Size = new System.Drawing.Size(112, 21);
+            this.lbltitle.TabIndex = 35;
+            this.lbltitle.Text = "품질규격 등록";
             // 
             // aLabel5
             // 
@@ -452,7 +468,7 @@
             this.aPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.aPanel1.Controls.Add(this.aLabel7);
             this.aPanel1.Controls.Add(this.pictureBox2);
-            this.aPanel1.Controls.Add(this.aLabel9);
+            this.aPanel1.Controls.Add(this.lbltitle);
             this.aPanel1.Controls.Add(this.lblDay);
             this.aPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.aPanel1.Location = new System.Drawing.Point(0, 0);
@@ -496,6 +512,18 @@
             this.aPanel6.Name = "aPanel6";
             this.aPanel6.Size = new System.Drawing.Size(170, 35);
             this.aPanel6.TabIndex = 129;
+            // 
+            // txtInspect_name
+            // 
+            this.txtInspect_name.BackColor = System.Drawing.Color.White;
+            this.txtInspect_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtInspect_name.errorp = null;
+            this.txtInspect_name.Location = new System.Drawing.Point(2, 4);
+            this.txtInspect_name.MaxLength = 20;
+            this.txtInspect_name.Name = "txtInspect_name";
+            this.txtInspect_name.Size = new System.Drawing.Size(160, 23);
+            this.txtInspect_name.TabIndex = 157;
+            this.txtInspect_name.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // aPanel4
             // 
@@ -691,42 +719,14 @@
             this.txtInspect_code.TabIndex = 156;
             this.txtInspect_code.txtType = Axxen.CustomControls.TextType.Normal;
             // 
-            // txtInspect_name
+            // pictureBox2
             // 
-            this.txtInspect_name.BackColor = System.Drawing.Color.White;
-            this.txtInspect_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtInspect_name.errorp = null;
-            this.txtInspect_name.Location = new System.Drawing.Point(2, 4);
-            this.txtInspect_name.MaxLength = 20;
-            this.txtInspect_name.Name = "txtInspect_name";
-            this.txtInspect_name.Size = new System.Drawing.Size(160, 23);
-            this.txtInspect_name.TabIndex = 157;
-            this.txtInspect_name.txtType = Axxen.CustomControls.TextType.Normal;
-            // 
-            // txttype
-            // 
-            this.txttype.BackColor = System.Drawing.Color.White;
-            this.txttype.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txttype.errorp = null;
-            this.txttype.Location = new System.Drawing.Point(3, 4);
-            this.txttype.MaxLength = 20;
-            this.txttype.Name = "txttype";
-            this.txttype.Size = new System.Drawing.Size(160, 23);
-            this.txttype.TabIndex = 158;
-            this.txttype.txtType = Axxen.CustomControls.TextType.Normal;
-            // 
-            // txtRemark
-            // 
-            this.txtRemark.BackColor = System.Drawing.Color.White;
-            this.txtRemark.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtRemark.errorp = null;
-            this.txtRemark.Location = new System.Drawing.Point(3, 3);
-            this.txtRemark.MaxLength = 100;
-            this.txtRemark.Multiline = true;
-            this.txtRemark.Name = "txtRemark";
-            this.txtRemark.Size = new System.Drawing.Size(338, 72);
-            this.txtRemark.TabIndex = 159;
-            this.txtRemark.txtType = Axxen.CustomControls.TextType.Normal;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(18, 9);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(23, 22);
+            this.pictureBox2.TabIndex = 16;
+            this.pictureBox2.TabStop = false;
             // 
             // MDS_SDS_006_1
             // 
@@ -788,7 +788,6 @@
             this.aPanel12.ResumeLayout(false);
             this.aPanel12.PerformLayout();
             this.aPanel9.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.aPanel1.ResumeLayout(false);
             this.aPanel1.PerformLayout();
             this.aPanel7.ResumeLayout(false);
@@ -815,6 +814,7 @@
             this.aPanel19.PerformLayout();
             this.aPanel20.ResumeLayout(false);
             this.aPanel20.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -851,7 +851,7 @@
         private CustomControls.ALabel aLabel2;
         private CustomControls.ALabel aLabel7;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private CustomControls.ALabel aLabel9;
+        private CustomControls.ALabel lbltitle;
         private CustomControls.ALabel aLabel5;
         private CustomControls.APanel aPanel1;
         private CustomControls.ALabel lblManager;

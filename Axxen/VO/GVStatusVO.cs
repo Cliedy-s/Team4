@@ -28,5 +28,8 @@ namespace VO
         public int Plan_Qty { get; set; }               // 계획수량
         public string Process_code { get; set; }    // 공정코드
         public string Process_name { get; set; }    // 공정이름
+        public DateTime? In_Time { get; set; }       // 요입시간
+        public DateTime? Out_Time { get; set; }      // 요출시간
+        public int Center_Time { get; set; }            // 중간시간
     }
 }

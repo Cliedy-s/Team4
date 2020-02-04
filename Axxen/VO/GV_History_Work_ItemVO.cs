@@ -20,7 +20,7 @@ namespace VO
         public DateTime Loading_time { get; set; } //로딩시간 
         public string Loading_Wc { get; set; } //로딩작업장 
         public DateTime In_Time { get; set; } //요입시간 
-        public DateTime Center_Time { get; set; } //중간시간 
+        public int Center_Time { get; set; } //중간시간 
         public DateTime Out_Time { get; set; } //요출시간 
         public int Unloading_Qty { get; set; } //언로딩수량 
         public DateTime Unloading_date { get; set; } //언로딩일자 

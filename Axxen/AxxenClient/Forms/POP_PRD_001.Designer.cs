@@ -80,6 +80,10 @@
             this.btnNoActive.Tag = typeof(AxxenClient.Forms.POP_PRD_016);
             this.btnNoActive.Click += new System.EventHandler(this.btnClick);
             // 
+            // timetimer
+            // 
+            this.timetimer.Tick += new System.EventHandler(this.timetimer_Tick);
+            // 
             // dgvMain
             // 
             this.dgvMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -509,6 +513,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "POP_PRD_001";
             this.Text = "작업지시현황";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.POP_PRD_001_FormClosing);
             this.Load += new System.EventHandler(this.WorkOrderForm_Load);
             this.Controls.SetChildIndex(this.dgvMain, 0);
             this.Controls.SetChildIndex(this.panMolding, 0);
