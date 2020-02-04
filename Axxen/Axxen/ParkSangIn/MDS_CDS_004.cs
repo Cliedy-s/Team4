@@ -62,7 +62,8 @@ namespace Axxen
         }
 
 
-    
+
+
         /// <summary>
         /// 모든 그룹정보 GET
         /// </summary>
@@ -199,7 +200,7 @@ namespace Axxen
                   
                     };
 
-                    if (MIservice.InsertUpdateNop_MI_Master(additem))
+                    if (MIservice.InsertUpdateNop_Mi_Masterservice(additem))
                     {
                         MessageBox.Show("저장되었습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         GetAllUserGroup();

@@ -108,26 +108,23 @@ namespace DAC
         /// <summary>
         /// 비가동 상세 추가
         /// </summary>
-        public bool InsertUpdateNop_Mi_Masterservice(string code, string use)
+        public bool InsertUpdateNop_Mi_Masterservice(NopMiMasterVO item)
         {
             try
             {
-
-
                 using (SqlCommand comm = new SqlCommand())
                 {
                     comm.Connection = new SqlConnection(Connstr);
                     comm.CommandText =
                         "update Nop_Mi_Master set Use_YN =@Use_YN where Nop_Mi_Code=@Nop_Mi_Code ";
                     comm.CommandType = CommandType.Text;
-                    comm.Parameters.AddWithValue("@Nop_Mi_Code", code);
-                    comm.Parameters.AddWithValue("@Use_YN", use);
+                    comm.Parameters.AddWithValue("@Nop_Mi_Code", item.Nop_Mi_Code);
+                    comm.Parameters.AddWithValue("@Nop_Mi_Name", item.Nop_Mi_Name);
+                    comm.Parameters.AddWithValue("@Nop_Ma_Code", item.Nop_Ma_Code);
                     comm.Connection.Open();
                     int result = comm.ExecuteNonQuery();
 
                     comm.Connection.Close();
-
-
 
                     if (result > 0)
                         return true;

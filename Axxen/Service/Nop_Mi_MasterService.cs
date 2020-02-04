@@ -25,11 +25,16 @@ namespace Service
             Nop_Mi_MasterDAC dac = new Nop_Mi_MasterDAC();
             return dac.GetAllNopMi2();
         }
+        public bool InsertUpdateNop_Mi_Masterservice(NopMiMasterVO item)
+        {
+            Nop_Mi_MasterDAC dac = new Nop_Mi_MasterDAC();
+            return dac.InsertUpdateNop_Mi_Masterservice(item);
+        }
 
-        /// <summary>
-        /// 비가동 소분류 사용 유무 
-        /// </summary>
-        public bool UsedNop_Mi_Masterservice(string code, string use)
+            /// <summary>
+            /// 비가동 소분류 사용 유무 
+            /// </summary>
+            public bool UsedNop_Mi_Masterservice(string code, string use)
         {
             Nop_Mi_MasterDAC dac = new Nop_Mi_MasterDAC();
             return dac.UsedNop_Mi_Masterservice(code, use);
