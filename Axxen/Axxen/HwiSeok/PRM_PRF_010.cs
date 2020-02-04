@@ -61,7 +61,7 @@ namespace Axxen
 
         private void DgvMainGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e) //더블클릭
         {
-            whcu = whcuservice.GetAllUserDetails((dgvMainGrid.SelectedRows[0].Cells[2].Value).ToString());
+            whcu = whcuservice.GetAllUserDetails((dgvMainGrid.SelectedRows[0].Cells[1].Value).ToString());
             dgvSubGrid.DataSource = whcu;
         }
 
@@ -78,7 +78,10 @@ namespace Axxen
                     dgvMainGrid.DataSource = dt;
 
                     aTextBox_FindNameByCode1.txtCodeText = "";
-                    aTextBox_FindNameByCode1.txtNameText = "";                 
+                    aTextBox_FindNameByCode1.txtNameText = "";
+
+                    whcu = whcuservice.GetAllUserDetails((dgvMainGrid.SelectedRows[0].Cells[1].Value).ToString());
+                    dgvSubGrid.DataSource = whcu;
                 }
             }
             catch (Exception err)
