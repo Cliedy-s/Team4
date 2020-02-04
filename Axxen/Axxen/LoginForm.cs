@@ -27,7 +27,7 @@ namespace Axxen
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            //using(WaitForm frm = new WaitForm(wait))
+            //using(WaitForm frm = new WaitForm(wait))/
             //{
             //    frm.ShowDialog();
             //}
@@ -40,7 +40,7 @@ namespace Axxen
             UserInfo_Service service = new UserInfo_Service();      
             userlist = service.GetAllUser();
 
-            try
+            try 
             {
                 if (userlist.Count(item => item.User_ID == txtID.Text) > 0)
                 {
