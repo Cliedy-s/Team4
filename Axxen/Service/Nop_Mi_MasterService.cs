@@ -18,6 +18,14 @@ namespace Service
             Nop_Mi_MasterDAC dac = new Nop_Mi_MasterDAC();
             return dac.GetAllNopMi();
         }
+        /// <summary>
+        /// 비가동 소분류 검색
+        /// </summary>
+        public List<NopMiMasterVO> GetAllNopMi(string macode)
+        {
+            Nop_Mi_MasterDAC dac = new Nop_Mi_MasterDAC();
+            return dac.GetAllNopMi(macode);
+        }
 
         public List<NopMiMasterVO> GetCombo() // PRM_PRF_008_1
         {

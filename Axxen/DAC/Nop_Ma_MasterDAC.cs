@@ -33,33 +33,7 @@ namespace DAC
                 return list;
             }
         }
-     
 
-
-        /// <summary>
-        /// 비가동 대분류 목록 소현이가만든거
-        /// </summary>
-        public List<NopMaMasterVO> GetAllNopMi()
-        {
-            using (SqlCommand comm = new SqlCommand())
-            {
-                comm.Connection = new SqlConnection(Connstr);
-                comm.CommandText =
- @" SELECT 	
-	nam.Nop_Ma_Code
-	,nam.Nop_Ma_Name
-	FROM Nop_Ma_Master AS nam
-	WHERE nam.Use_YN = 'Y'; ";
-                comm.CommandType = CommandType.Text;
-
-                comm.Connection.Open();
-                SqlDataReader reader = comm.ExecuteReader();
-                List<NopMaMasterVO> list = Helper.DataReaderMapToList<NopMaMasterVO>(reader);
-                comm.Connection.Close();
-
-                return list;
-            }
-        }
         /// <summary>
         /// 비가동 상세 저장 수정
         /// </summary>
