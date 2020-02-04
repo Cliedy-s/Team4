@@ -58,7 +58,7 @@ namespace Axxen
             frm = new PPS_SCH_001_Insert(woitem.Req_Seq, woitem.Wo_Req_No, woitem.Item_Code, woitem.Item_Name, woitem.Req_Qty);
             frm.StartPosition = FormStartPosition.CenterScreen;
             frm.Show();
-          
+
         }
 
         private void RefreshFormShow(object sender, EventArgs e)
@@ -221,24 +221,13 @@ namespace Axxen
                         {
                             addlist.Add(item);
                         }
-                        if(!chk)
-                        {
-                            dgvSubGrid.DataSource = null;
-                            dgvSubGrid.DataSource = addlist;
-                            chk = true;
-                        }
-                        else
-                        {
-                            dgvSubGrid.DataSource = null;
-                            SubDataLoad();
-                            dgvSubGrid.DataSource = addlist;
-                        }
+                        dgvSubGrid.DataSource = null;
+                        dgvSubGrid.DataSource = addlist;
                     }
                     else
                     {
                         addlist.RemoveAll(x => x.Wo_Req_No.Contains(reqno));
                         dgvSubGrid.DataSource = null;
-                        SubDataLoad();
                         dgvSubGrid.DataSource = addlist;
                     }
                 }
@@ -306,8 +295,8 @@ namespace Axxen
 
         private void PPS_SCH_001_Deactivate(object sender, EventArgs e)
         {
-            ((MainForm)this.MdiParent).InsertFormEvent -= new System.EventHandler(this.InsertFormShow); 
-            ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow); 
+            ((MainForm)this.MdiParent).InsertFormEvent -= new System.EventHandler(this.InsertFormShow);
+            ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow);
             ToolStripManager.RevertMerge(((MainForm)this.MdiParent).toolStrip1, toolStrip1); //저장버튼 제거
             reportList.Clear();
         }
