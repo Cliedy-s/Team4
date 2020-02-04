@@ -28,11 +28,6 @@ namespace Axxen
         {
             Goods_In_HistorySercive sercive = new Goods_In_HistorySercive();
             boxlist = sercive.GetBoxingHistory();
-            //dt = ListToDataTable.ToDataTable(boxlist);
-            //rpt.DataSource = dt;
-            //rpt.Parameters["Ins_Date"].Visible = false;
-            //documentViewer1.DocumentSource = rpt;
-            //rpt.CreateDocument();
         }
 
         private void ADateTimePicker1_ValueChanged(object sender, EventArgs e)
