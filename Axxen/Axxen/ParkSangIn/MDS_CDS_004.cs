@@ -28,7 +28,7 @@ namespace Axxen
         private void MDS_CDS_004_Load(object sender, EventArgs e)
         {
             panelNopMaMaste.Enabled = false;
-
+            txtACode.Enabled = false;
             ((MainForm)this.MdiParent).MyUpdateEvent += new System.EventHandler(this.MyUpdateShow);//입력이벤트 등록
             ((MainForm)this.MdiParent).InsertFormEvent += new System.EventHandler(this.InsertFormShow);//입력이벤트 등록
             ((MainForm)this.MdiParent).RefreshFormEvent += new EventHandler(this.RefreshFormShow);
@@ -61,9 +61,6 @@ namespace Axxen
             dgvMi.Columns.Add(gridbtn);
         }
 
-
-
-
         /// <summary>
         /// 모든 그룹정보 GET
         /// </summary>
@@ -75,7 +72,7 @@ namespace Axxen
 
             NopMilist = new List<NopMiMasterVO>();
             NopMilist = MIservice.GetAllNopMi2();
-            dgvMi.DataSource = NopMilist;
+            dgvMi.DataSource = NopMilist.FindAll(item=>item.Nop_Ma_Code==dgvMa.SelectedRows[0].Cells[0].Value.ToString());
         }
 
         /// <summary>
@@ -89,10 +86,12 @@ namespace Axxen
             {
                 if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
                 {
-                    //ResetUtillity.ResetPanelControl(panelNopMaMaste);
-                    //panelNopMaMaste.Enabled = true;
-                    //txtCode.Enabled = true;
-                    //btnSave.Text = "저장";
+                    string group = txtACode.Text;
+                    ResetUtillity.ResetPanelControl(panelNopMaMaste);
+                    txtACode.Text = group;
+                    panelNopMaMaste.Enabled = true;
+                    txtICode.Enabled = true;
+                    btnSave.Text = "저장";
                 }
             }
             catch (Exception err)
@@ -113,9 +112,7 @@ namespace Axxen
                 if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
                 {
                     panelNopMaMaste.Enabled = true;
-                    txtICode.Enabled = true;
-                    txtACode.Enabled = false;
-                    btnSave.Enabled = true;
+                    txtICode.Enabled = false;
                     btnSave.Text = "수정";
                 }
             }
@@ -174,12 +171,21 @@ namespace Axxen
         {
             txtACode.Text = dgvMa.SelectedRows[0].Cells[0].Value.ToString();
 
+            dgvMi.DataSource = null;
+            dgvMi.DataSource = NopMilist.FindAll(item => item.Nop_Ma_Code == dgvMa.SelectedRows[0].Cells[0].Value.ToString());
+        }
+        private void DgvMi_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
 
+
+            txtACode.Text = dgvMi.SelectedRows[0].Cells[0].Value.ToString();
             if (btnSave.Text.Equals("수정"))
             {
-                //var taget = NopMalist.Find(item => item.Nop_Ma_Code == dgvGroup.SelectedRows[0].Cells[0].Value.ToString());
-                //txtName.Text = taget.Nop_Ma_Name.ToString();
-                //txtCode.Text = taget.Nop_Ma_Code.ToString();
+                var taget = NopMilist.Find(item => item.Nop_Mi_Code == dgvMi.SelectedRows[0].Cells[1].Value.ToString());
+                txtICode.Text = taget.Nop_Mi_Code.ToString();
+                txtACode.Text = taget.Nop_Ma_Code.ToString();
+                txtName.Text = taget.Nop_Mi_Name.ToString();
+                txtremark.Text = taget.Remark.ToString();
             }
         }
 
@@ -195,16 +201,16 @@ namespace Axxen
                     NopMiMasterVO additem = new NopMiMasterVO()
                     {
                         Nop_Ma_Code = txtACode.Text,
-                      Nop_Mi_Code  = txtICode.Text ,
-                Nop_Mi_Name= txtName.Text ,
+                          Nop_Mi_Code  = txtICode.Text ,
+                      Nop_Mi_Name= txtName.Text ,
+                      Remark = txtremark.Text
                   
                     };
 
                     if (MIservice.InsertUpdateNop_Mi_Masterservice(additem))
                     {
                         MessageBox.Show("저장되었습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        GetAllUserGroup();
-                        
+                        GetAllUserGroup();                     
                         ResetUtillity.ResetPanelControl(panelNopMaMaste);
 
                     }
@@ -228,6 +234,21 @@ namespace Axxen
             }
 
 
+        }
+
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvMa.Rows)
+            {
+                if (row.Cells[0].Value.ToString() == aTextBox_FindNameByCode1.txtCodeText.ToString())
+                {
+                    row.Selected = true;
+                }
+            }
+            txtACode.Text = dgvMa.SelectedRows[0].Cells[0].Value.ToString();
+
+            dgvMi.DataSource = null;
+            dgvMi.DataSource = NopMilist.FindAll(item => item.Nop_Ma_Code == dgvMa.SelectedRows[0].Cells[0].Value.ToString());
         }
     }
 }

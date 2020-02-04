@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using VO;
 
@@ -122,6 +123,8 @@ namespace Axxen
             var wodateList = (from date in woList
                               where date.Prd_Date >= startT && date.Prd_Date <= endT
                               select date).ToList();
+
+            dgvMainGrid.DataSource = null;
             dgvMainGrid.DataSource = wodateList;
         }
 

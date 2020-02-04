@@ -34,9 +34,7 @@
             this.button8 = new System.Windows.Forms.Button();
             this.tvMenu = new System.Windows.Forms.TreeView();
             this.ctmBookMark = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.즐겨찾기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button7 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -46,15 +44,6 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.전체닫기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsbInsert = new System.Windows.Forms.ToolStripButton();
-            this.tsbtnUpdate = new System.Windows.Forms.ToolStripButton();
-            this.tsbtnDelete = new System.Windows.Forms.ToolStripButton();
-            this.tsbtnRefresh = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.시스템관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.사용자그룹관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.사용자그룹별권한설정ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -125,6 +114,17 @@
             this.금형사용현황ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.즐겨찾기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbInsert = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnUpdate = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnDelete = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnRefresh = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.aLabel2 = new Axxen.CustomControls.ALabel();
             this.lblSubtitle = new Axxen.CustomControls.ALabel();
             this.aLabel1 = new Axxen.CustomControls.ALabel();
@@ -139,10 +139,10 @@
             this.ctmBookMark.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.pnBookmark.SuspendLayout();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
@@ -198,14 +198,6 @@
             this.ctmBookMark.Name = "contextMenuStrip";
             this.ctmBookMark.Size = new System.Drawing.Size(123, 26);
             // 
-            // 즐겨찾기ToolStripMenuItem
-            // 
-            this.즐겨찾기ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("즐겨찾기ToolStripMenuItem.Image")));
-            this.즐겨찾기ToolStripMenuItem.Name = "즐겨찾기ToolStripMenuItem";
-            this.즐겨찾기ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
-            this.즐겨찾기ToolStripMenuItem.Text = "즐겨찾기";
-            this.즐겨찾기ToolStripMenuItem.Click += new System.EventHandler(this.즐겨찾기ToolStripMenuItem_Click);
-            // 
             // button7
             // 
             this.button7.BackColor = System.Drawing.Color.White;
@@ -217,21 +209,6 @@
             this.button7.Text = "금형관리";
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.BtnMenu_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(3, 41);
-            this.button1.Margin = new System.Windows.Forms.Padding(5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(261, 37);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "시스템관리";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.BtnMenu_Click);
             // 
             // button3
             // 
@@ -331,128 +308,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1355, 46);
             this.panel1.TabIndex = 20;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(7, 8);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 30);
-            this.pictureBox1.TabIndex = 21;
-            this.pictureBox1.TabStop = false;
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.AutoSize = false;
-            this.toolStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.toolStrip1.BackgroundImage = global::Axxen.Properties.Resources.MainBar;
-            this.toolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripSeparator1,
-            this.tsbInsert,
-            this.tsbtnUpdate,
-            this.tsbtnDelete,
-            this.tsbtnRefresh,
-            this.toolStripSeparator2});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 34);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1622, 97);
-            this.toolStrip1.TabIndex = 2;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.AutoSize = false;
-            this.toolStripButton1.BackColor = System.Drawing.Color.Transparent;
-            this.toolStripButton1.BackgroundImage = global::Axxen.Properties.Resources.MianLoGo;
-            this.toolStripButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.ForeColor = System.Drawing.Color.Transparent;
-            this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(250, 70);
-            this.toolStripButton1.Text = "toolStripButton1";
-            this.toolStripButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 97);
-            // 
-            // tsbInsert
-            // 
-            this.tsbInsert.AutoSize = false;
-            this.tsbInsert.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tsbInsert.Image = ((System.Drawing.Image)(resources.GetObject("tsbInsert.Image")));
-            this.tsbInsert.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.tsbInsert.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsbInsert.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbInsert.Name = "tsbInsert";
-            this.tsbInsert.Size = new System.Drawing.Size(50, 57);
-            this.tsbInsert.Text = "추가";
-            this.tsbInsert.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.tsbInsert.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
-            this.tsbInsert.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.tsbInsert.ToolTipText = "조회";
-            this.tsbInsert.Click += new System.EventHandler(this.TsbInsert_Click);
-            // 
-            // tsbtnUpdate
-            // 
-            this.tsbtnUpdate.AutoSize = false;
-            this.tsbtnUpdate.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tsbtnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnUpdate.Image")));
-            this.tsbtnUpdate.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.tsbtnUpdate.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsbtnUpdate.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnUpdate.Name = "tsbtnUpdate";
-            this.tsbtnUpdate.Size = new System.Drawing.Size(50, 57);
-            this.tsbtnUpdate.Text = "수정";
-            this.tsbtnUpdate.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.tsbtnUpdate.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
-            this.tsbtnUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.tsbtnUpdate.ToolTipText = "조회";
-            this.tsbtnUpdate.Click += new System.EventHandler(this.TsbtnUpdate_Click_1);
-            // 
-            // tsbtnDelete
-            // 
-            this.tsbtnDelete.AutoSize = false;
-            this.tsbtnDelete.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tsbtnDelete.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnDelete.Image")));
-            this.tsbtnDelete.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.tsbtnDelete.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsbtnDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnDelete.Name = "tsbtnDelete";
-            this.tsbtnDelete.Size = new System.Drawing.Size(50, 57);
-            this.tsbtnDelete.Text = "삭제";
-            this.tsbtnDelete.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.tsbtnDelete.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
-            this.tsbtnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.tsbtnDelete.ToolTipText = "조회";
-            // 
-            // tsbtnRefresh
-            // 
-            this.tsbtnRefresh.AutoSize = false;
-            this.tsbtnRefresh.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tsbtnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnRefresh.Image")));
-            this.tsbtnRefresh.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.tsbtnRefresh.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsbtnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnRefresh.Name = "tsbtnRefresh";
-            this.tsbtnRefresh.Size = new System.Drawing.Size(60, 57);
-            this.tsbtnRefresh.Text = "새로고침";
-            this.tsbtnRefresh.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.tsbtnRefresh.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
-            this.tsbtnRefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.tsbtnRefresh.ToolTipText = "조회";
-            this.tsbtnRefresh.Click += new System.EventHandler(this.TsbtnRefresh_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 97);
             // 
             // 시스템관리ToolStripMenuItem
             // 
@@ -960,6 +815,151 @@
             this.pictureBox2.TabIndex = 25;
             this.pictureBox2.TabStop = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(7, 8);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(40, 30);
+            this.pictureBox1.TabIndex = 21;
+            this.pictureBox1.TabStop = false;
+            // 
+            // 즐겨찾기ToolStripMenuItem
+            // 
+            this.즐겨찾기ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("즐겨찾기ToolStripMenuItem.Image")));
+            this.즐겨찾기ToolStripMenuItem.Name = "즐겨찾기ToolStripMenuItem";
+            this.즐겨찾기ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.즐겨찾기ToolStripMenuItem.Text = "즐겨찾기";
+            this.즐겨찾기ToolStripMenuItem.Click += new System.EventHandler(this.즐겨찾기ToolStripMenuItem_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(3, 41);
+            this.button1.Margin = new System.Windows.Forms.Padding(5);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(261, 37);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "시스템관리";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.BtnMenu_Click);
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.AutoSize = false;
+            this.toolStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.toolStrip1.BackgroundImage = global::Axxen.Properties.Resources.MainBar;
+            this.toolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1,
+            this.toolStripSeparator1,
+            this.tsbInsert,
+            this.tsbtnUpdate,
+            this.tsbtnDelete,
+            this.tsbtnRefresh,
+            this.toolStripSeparator2});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 34);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1622, 97);
+            this.toolStrip1.TabIndex = 2;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.AutoSize = false;
+            this.toolStripButton1.BackColor = System.Drawing.Color.Transparent;
+            this.toolStripButton1.BackgroundImage = global::Axxen.Properties.Resources.MianLoGo;
+            this.toolStripButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.ForeColor = System.Drawing.Color.Transparent;
+            this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(250, 70);
+            this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 97);
+            // 
+            // tsbInsert
+            // 
+            this.tsbInsert.AutoSize = false;
+            this.tsbInsert.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tsbInsert.Image = ((System.Drawing.Image)(resources.GetObject("tsbInsert.Image")));
+            this.tsbInsert.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.tsbInsert.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbInsert.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbInsert.Name = "tsbInsert";
+            this.tsbInsert.Size = new System.Drawing.Size(50, 57);
+            this.tsbInsert.Text = "추가";
+            this.tsbInsert.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.tsbInsert.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            this.tsbInsert.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbInsert.ToolTipText = "조회";
+            this.tsbInsert.Click += new System.EventHandler(this.TsbInsert_Click);
+            // 
+            // tsbtnUpdate
+            // 
+            this.tsbtnUpdate.AutoSize = false;
+            this.tsbtnUpdate.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tsbtnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnUpdate.Image")));
+            this.tsbtnUpdate.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.tsbtnUpdate.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbtnUpdate.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnUpdate.Name = "tsbtnUpdate";
+            this.tsbtnUpdate.Size = new System.Drawing.Size(50, 57);
+            this.tsbtnUpdate.Text = "수정";
+            this.tsbtnUpdate.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.tsbtnUpdate.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            this.tsbtnUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbtnUpdate.ToolTipText = "조회";
+            this.tsbtnUpdate.Click += new System.EventHandler(this.TsbtnUpdate_Click_1);
+            // 
+            // tsbtnDelete
+            // 
+            this.tsbtnDelete.AutoSize = false;
+            this.tsbtnDelete.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tsbtnDelete.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnDelete.Image")));
+            this.tsbtnDelete.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.tsbtnDelete.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbtnDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnDelete.Name = "tsbtnDelete";
+            this.tsbtnDelete.Size = new System.Drawing.Size(50, 57);
+            this.tsbtnDelete.Text = "삭제";
+            this.tsbtnDelete.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.tsbtnDelete.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            this.tsbtnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbtnDelete.ToolTipText = "조회";
+            // 
+            // tsbtnRefresh
+            // 
+            this.tsbtnRefresh.AutoSize = false;
+            this.tsbtnRefresh.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tsbtnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnRefresh.Image")));
+            this.tsbtnRefresh.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.tsbtnRefresh.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbtnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnRefresh.Name = "tsbtnRefresh";
+            this.tsbtnRefresh.Size = new System.Drawing.Size(60, 57);
+            this.tsbtnRefresh.Text = "새로고침";
+            this.tsbtnRefresh.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.tsbtnRefresh.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            this.tsbtnRefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbtnRefresh.ToolTipText = "조회";
+            this.tsbtnRefresh.Click += new System.EventHandler(this.TsbtnRefresh_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 97);
+            // 
             // aLabel2
             // 
             this.aLabel2.AutoSize = true;
@@ -1093,12 +1093,12 @@
             this.contextMenuStrip1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.pnBookmark.ResumeLayout(false);
             this.aPanel1.ResumeLayout(false);
             this.aPanel2.ResumeLayout(false);

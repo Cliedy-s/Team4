@@ -114,7 +114,7 @@ namespace Axxen
 
             DataLoad(moldSearchList);
         }
-
+        
         private void PPS_MLD_002_FormClosed(object sender, FormClosedEventArgs e)
         {
             ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow);

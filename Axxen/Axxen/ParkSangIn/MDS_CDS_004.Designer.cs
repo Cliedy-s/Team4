@@ -30,6 +30,10 @@
         {
             this.aHeaderBox3 = new Axxen.CustomControls.AHeaderBox();
             this.panelNopMaMaste = new Axxen.CustomControls.APanel();
+            this.aPanel3 = new Axxen.CustomControls.APanel();
+            this.txtremark = new Axxen.CustomControls.ATextBox();
+            this.aPanel8 = new Axxen.CustomControls.APanel();
+            this.aLabel2 = new Axxen.CustomControls.ALabel();
             this.aPanel1 = new Axxen.CustomControls.APanel();
             this.txtName = new Axxen.CustomControls.ATextBox();
             this.aPanel2 = new Axxen.CustomControls.APanel();
@@ -51,6 +55,8 @@
             this.btnSearch = new Axxen.CustomControls.AButton();
             this.aTextBox_FindNameByCode1 = new Axxen.CustomControls.ATextBox_FindNameByCode();
             this.panelNopMaMaste.SuspendLayout();
+            this.aPanel3.SuspendLayout();
+            this.aPanel8.SuspendLayout();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
             this.aPanel6.SuspendLayout();
@@ -69,7 +75,7 @@
             this.aHeaderBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.aHeaderBox3.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aHeaderBox3.HeaderBoxText = "비가동 설정";
-            this.aHeaderBox3.Location = new System.Drawing.Point(0, 585);
+            this.aHeaderBox3.Location = new System.Drawing.Point(0, 671);
             this.aHeaderBox3.Name = "aHeaderBox3";
             this.aHeaderBox3.Size = new System.Drawing.Size(243, 30);
             this.aHeaderBox3.TabIndex = 17;
@@ -77,6 +83,8 @@
             // panelNopMaMaste
             // 
             this.panelNopMaMaste.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelNopMaMaste.Controls.Add(this.aPanel3);
+            this.panelNopMaMaste.Controls.Add(this.aPanel8);
             this.panelNopMaMaste.Controls.Add(this.aPanel1);
             this.panelNopMaMaste.Controls.Add(this.aPanel2);
             this.panelNopMaMaste.Controls.Add(this.btnSave);
@@ -85,17 +93,60 @@
             this.panelNopMaMaste.Controls.Add(this.aPanel5);
             this.panelNopMaMaste.Controls.Add(this.aPanel4);
             this.panelNopMaMaste.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelNopMaMaste.Location = new System.Drawing.Point(0, 614);
+            this.panelNopMaMaste.Location = new System.Drawing.Point(0, 700);
             this.panelNopMaMaste.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelNopMaMaste.Name = "panelNopMaMaste";
-            this.panelNopMaMaste.Size = new System.Drawing.Size(1204, 76);
+            this.panelNopMaMaste.Size = new System.Drawing.Size(1228, 118);
             this.panelNopMaMaste.TabIndex = 18;
+            // 
+            // aPanel3
+            // 
+            this.aPanel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.aPanel3.Controls.Add(this.txtremark);
+            this.aPanel3.Location = new System.Drawing.Point(422, 6);
+            this.aPanel3.Name = "aPanel3";
+            this.aPanel3.Size = new System.Drawing.Size(428, 98);
+            this.aPanel3.TabIndex = 218;
+            // 
+            // txtremark
+            // 
+            this.txtremark.BackColor = System.Drawing.Color.White;
+            this.txtremark.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtremark.errorp = null;
+            this.txtremark.Location = new System.Drawing.Point(4, 4);
+            this.txtremark.MaxLength = 100;
+            this.txtremark.Multiline = true;
+            this.txtremark.Name = "txtremark";
+            this.txtremark.Size = new System.Drawing.Size(417, 87);
+            this.txtremark.TabIndex = 25;
+            this.txtremark.txtType = Axxen.CustomControls.TextType.Normal;
+            // 
+            // aPanel8
+            // 
+            this.aPanel8.BackColor = System.Drawing.SystemColors.Info;
+            this.aPanel8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.aPanel8.Controls.Add(this.aLabel2);
+            this.aPanel8.Location = new System.Drawing.Point(300, 6);
+            this.aPanel8.Name = "aPanel8";
+            this.aPanel8.Size = new System.Drawing.Size(120, 35);
+            this.aPanel8.TabIndex = 217;
+            // 
+            // aLabel2
+            // 
+            this.aLabel2.AutoSize = true;
+            this.aLabel2.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aLabel2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.aLabel2.Location = new System.Drawing.Point(8, 8);
+            this.aLabel2.Name = "aLabel2";
+            this.aLabel2.Size = new System.Drawing.Size(34, 17);
+            this.aLabel2.TabIndex = 54;
+            this.aLabel2.Text = "비고";
             // 
             // aPanel1
             // 
             this.aPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.aPanel1.Controls.Add(this.txtName);
-            this.aPanel1.Location = new System.Drawing.Point(726, 6);
+            this.aPanel1.Location = new System.Drawing.Point(126, 78);
             this.aPanel1.Name = "aPanel1";
             this.aPanel1.Size = new System.Drawing.Size(172, 35);
             this.aPanel1.TabIndex = 216;
@@ -106,6 +157,7 @@
             this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtName.errorp = null;
             this.txtName.Location = new System.Drawing.Point(4, 4);
+            this.txtName.MaxLength = 30;
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(160, 23);
             this.txtName.TabIndex = 25;
@@ -116,7 +168,7 @@
             this.aPanel2.BackColor = System.Drawing.SystemColors.Info;
             this.aPanel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.aPanel2.Controls.Add(this.aLabel9);
-            this.aPanel2.Location = new System.Drawing.Point(604, 6);
+            this.aPanel2.Location = new System.Drawing.Point(4, 78);
             this.aPanel2.Name = "aPanel2";
             this.aPanel2.Size = new System.Drawing.Size(120, 35);
             this.aPanel2.TabIndex = 215;
@@ -137,7 +189,7 @@
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Location = new System.Drawing.Point(1110, 30);
+            this.btnSave.Location = new System.Drawing.Point(1134, 72);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(88, 33);
             this.btnSave.TabIndex = 210;
@@ -161,6 +213,7 @@
             this.txtACode.Enabled = false;
             this.txtACode.errorp = null;
             this.txtACode.Location = new System.Drawing.Point(3, 5);
+            this.txtACode.MaxLength = 20;
             this.txtACode.Name = "txtACode";
             this.txtACode.Size = new System.Drawing.Size(160, 23);
             this.txtACode.TabIndex = 24;
@@ -191,7 +244,7 @@
             // 
             this.aPanel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.aPanel5.Controls.Add(this.txtICode);
-            this.aPanel5.Location = new System.Drawing.Point(426, 6);
+            this.aPanel5.Location = new System.Drawing.Point(126, 42);
             this.aPanel5.Name = "aPanel5";
             this.aPanel5.Size = new System.Drawing.Size(172, 35);
             this.aPanel5.TabIndex = 214;
@@ -202,6 +255,7 @@
             this.txtICode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtICode.errorp = null;
             this.txtICode.Location = new System.Drawing.Point(4, 4);
+            this.txtICode.MaxLength = 20;
             this.txtICode.Name = "txtICode";
             this.txtICode.Size = new System.Drawing.Size(160, 23);
             this.txtICode.TabIndex = 25;
@@ -212,7 +266,7 @@
             this.aPanel4.BackColor = System.Drawing.SystemColors.Info;
             this.aPanel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.aPanel4.Controls.Add(this.aLabel1);
-            this.aPanel4.Location = new System.Drawing.Point(304, 6);
+            this.aPanel4.Location = new System.Drawing.Point(4, 42);
             this.aPanel4.Name = "aPanel4";
             this.aPanel4.Size = new System.Drawing.Size(120, 35);
             this.aPanel4.TabIndex = 213;
@@ -250,9 +304,10 @@
             this.dgvMi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvMi.Name = "dgvMi";
             this.dgvMi.RowTemplate.Height = 23;
-            this.dgvMi.Size = new System.Drawing.Size(733, 473);
+            this.dgvMi.Size = new System.Drawing.Size(757, 560);
             this.dgvMi.TabIndex = 9;
             this.dgvMi.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvMi_CellContentClick);
+            this.dgvMi.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvMi_CellDoubleClick);
             // 
             // aHeaderBox1
             // 
@@ -275,7 +330,7 @@
             this.dgvMa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvMa.Name = "dgvMa";
             this.dgvMa.RowTemplate.Height = 23;
-            this.dgvMa.Size = new System.Drawing.Size(451, 474);
+            this.dgvMa.Size = new System.Drawing.Size(451, 561);
             this.dgvMa.TabIndex = 7;
             this.dgvMa.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvMa_CellDoubleClick);
             // 
@@ -288,7 +343,7 @@
             this.panTop.Location = new System.Drawing.Point(0, 0);
             this.panTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panTop.Name = "panTop";
-            this.panTop.Size = new System.Drawing.Size(1204, 74);
+            this.panTop.Size = new System.Drawing.Size(1228, 74);
             this.panTop.TabIndex = 6;
             // 
             // btnSearch
@@ -301,6 +356,7 @@
             this.btnSearch.TabIndex = 14;
             this.btnSearch.Text = "조회";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
             // aTextBox_FindNameByCode1
             // 
@@ -319,7 +375,7 @@
             // MDS_CDS_004
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.ClientSize = new System.Drawing.Size(1204, 690);
+            this.ClientSize = new System.Drawing.Size(1228, 818);
             this.Controls.Add(this.aHeaderBox3);
             this.Controls.Add(this.panelNopMaMaste);
             this.Controls.Add(this.aHeaderBox2);
@@ -331,6 +387,10 @@
             this.Text = "비가동상세분류";
             this.Load += new System.EventHandler(this.MDS_CDS_004_Load);
             this.panelNopMaMaste.ResumeLayout(false);
+            this.aPanel3.ResumeLayout(false);
+            this.aPanel3.PerformLayout();
+            this.aPanel8.ResumeLayout(false);
+            this.aPanel8.PerformLayout();
             this.aPanel1.ResumeLayout(false);
             this.aPanel1.PerformLayout();
             this.aPanel2.ResumeLayout(false);
@@ -374,5 +434,9 @@
         private CustomControls.ATextBox txtName;
         private CustomControls.APanel aPanel2;
         private CustomControls.ALabel aLabel1;
+        private CustomControls.APanel aPanel3;
+        private CustomControls.ATextBox txtremark;
+        private CustomControls.APanel aPanel8;
+        private CustomControls.ALabel aLabel2;
     }
 }

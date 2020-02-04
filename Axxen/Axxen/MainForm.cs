@@ -42,17 +42,10 @@ namespace Axxen
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
-
-
-
-
             LoginForm frm = new LoginForm();
 
             if (frm.ShowDialog() == DialogResult.OK)
             {
-
-              
-
                 MainForm_Service service = new MainForm_Service();
                 menulist = service.GetAll_MenuTree_Master();
                 booklist = service.GetAll_BookMark(UserInfo.User_ID);
@@ -69,7 +62,11 @@ namespace Axxen
                 this.tabControl2.Padding = new Point(10, 3);
 
                 UserInformation();
-           }
+            }
+            else
+            {
+                MessageBox.Show("zz");
+            }
         }
 
         private void UserInformation()
@@ -598,29 +595,13 @@ namespace Axxen
             if (this.RefreshFormEvent != null)
                 RefreshFormEvent(this, null);
         }
-    
+
         private void TsbtnUpdate_Click_1(object sender, EventArgs e)
         {
             if (this.MyUpdateEvent != null)
                 MyUpdateEvent(this, null);
         }
 
-
-        private void WaitBar()
-        {
-            UserGroupService service = new UserGroupService();
-
-            userinfoGrouplist = service.GetUserInfoGroup(UserInfo.User_ID); //로그인한 사용자의 그룹권한들
-
-            ScreenItemService screenservice = new ScreenItemService();
-            userinfoScreenItem = screenservice.GetUserInfoScreenItem(userinfoGrouplist); // 로그인한 사용자의 그룹권한에 사용되는 화면들
-
-            screenitemlist = screenservice.GetALLScreenItem(); //모든스크린    
-        }
-
-
-     
-    
 
     }
 }

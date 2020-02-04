@@ -72,7 +72,6 @@
             // btnLogin
             // 
             this.btnLogin.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnLogin.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Location = new System.Drawing.Point(344, 234);
             this.btnLogin.Name = "btnLogin";

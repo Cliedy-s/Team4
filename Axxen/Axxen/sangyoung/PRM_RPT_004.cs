@@ -9,6 +9,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using VO;
 
@@ -28,14 +29,20 @@ namespace Axxen
         {
             Goods_In_HistorySercive sercive = new Goods_In_HistorySercive();
             boxlist = sercive.GetBoxingHistory();
-            //dt = ListToDataTable.ToDataTable(boxlist);
-            //rpt.DataSource = dt;
-            //rpt.Parameters["Ins_Date"].Visible = false;
-            //documentViewer1.DocumentSource = rpt;
-            //rpt.CreateDocument();
         }
 
         private void ADateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            documentViewer1.DocumentSource = null;
+            threadmethod += ReportBinding;
+            using (WaitForm waitfrm = new WaitForm(() => { Thread.Sleep(3000); dtpDate.Invoke(threadmethod); }))
+            {
+                waitfrm.ShowDialog(this);
+            }
+        }
+        public delegate void threadDelegate();
+        threadDelegate threadmethod;
+        private void ReportBinding()
         {
             string date = dtpDate.Value.ToString("yyyyMMdd");
             var searchlist = (from data in boxlist
@@ -48,6 +55,8 @@ namespace Axxen
             documentViewer1.DocumentSource = rpt;
             rpt.CreateDocument();
         }
+
+
 
         private void TsbtnPrint_Click(object sender, EventArgs e)
         {
