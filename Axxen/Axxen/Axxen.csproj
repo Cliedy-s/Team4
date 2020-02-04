@@ -366,6 +366,12 @@
     <Compile Include="sangyoung\BoxingGrade.Designer.cs">
       <DependentUpon>BoxingGrade.cs</DependentUpon>
     </Compile>
+    <Compile Include="sangyoung\FigurationRequest.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="sangyoung\FigurationRequest.Designer.cs">
+      <DependentUpon>FigurationRequest.cs</DependentUpon>
+    </Compile>
     <Compile Include="sangyoung\KPI_RPT_001.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -686,6 +692,9 @@
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="sangyoung\BoxingGrade.resx">
       <DependentUpon>BoxingGrade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sangyoung\FigurationRequest.resx">
+      <DependentUpon>FigurationRequest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="sangyoung\KPI_RPT_001.resx">
       <DependentUpon>KPI_RPT_001.cs</DependentUpon>

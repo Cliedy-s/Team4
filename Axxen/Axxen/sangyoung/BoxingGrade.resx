@@ -117,4 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="sqlDataSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="customSqlQuery1.Sql" xml:space="preserve">
+    <value>SELECT ROW_NUMBER() OVER(ORDER BY [In_Date]) AS Num
+	  ,g.[Workorderno]
+	  ,Item_Name
+      ,[Pallet_No]
+      ,[In_Date]
+      ,g.[Remark]
+	  ,Closed_Time
+  FROM [TEAM4].[dbo].[Goods_In_History] g,WorkOrder w, Item_Master i where g.Workorderno=w.Workorderno and w.Item_Code=i.Item_Code</value>
+  </data>
+  <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlF1ZXJ5Ij48RmllbGQgTmFtZT0iTnVtIiBUeXBlPSJJbnQ2NCIgLz48RmllbGQgTmFtZT0iV29ya29yZGVybm8iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iSXRlbV9OYW1lIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlBhbGxldF9ObyIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJJbl9EYXRlIiBUeXBlPSJEYXRlVGltZSIgLz48RmllbGQgTmFtZT0iUmVtYXJrIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkNsb3NlZF9UaW1lIiBUeXBlPSJEYXRlVGltZSIgLz48L1ZpZXc+PC9EYXRhU2V0Pg==</value>
+  </data>
 </root>

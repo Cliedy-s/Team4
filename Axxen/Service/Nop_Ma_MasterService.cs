@@ -8,24 +8,16 @@ using VO;
 
 namespace Service
 {
-  public  class Nop_Ma_MasterService
+    public class Nop_Ma_MasterService
     {
         Nop_Ma_MasterDAC dac;
         public Nop_Ma_MasterService()
         {
-             dac = new Nop_Ma_MasterDAC();
+            dac = new Nop_Ma_MasterDAC();
         }
         public List<NopMaMasterVO> GetAllNopMA()
         {
             return dac.GetAllNopMA();
-        }
-            /// <summary>
-            /// 비가동 대분류 목록
-            /// </summary>
-            public List<NopMaMasterVO> GetAllNopMi()
-        {
-         
-            return dac.GetAllNopMi();
         }
         public bool InsertUpdateNop_Ma_Master(NopMaMasterVO item)
         {
@@ -35,5 +27,5 @@ namespace Service
         {
             return dac.GetUseNopservice(groupcode, used);
         }
-        }
+    }
 }

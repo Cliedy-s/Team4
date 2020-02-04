@@ -44,6 +44,7 @@
             this.cboNopMa.Name = "cboNopMa";
             this.cboNopMa.Size = new System.Drawing.Size(336, 38);
             this.cboNopMa.TabIndex = 0;
+            this.cboNopMa.SelectedIndexChanged += new System.EventHandler(this.cboNopMa_SelectedIndexChanged);
             // 
             // cboNopMi
             // 
@@ -110,7 +111,9 @@
             this.Controls.Add(this.aLabel1);
             this.Controls.Add(this.cboNopMi);
             this.Controls.Add(this.cboNopMa);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ChangeNopReason";
+            this.Text = "비가동 사유 변경";
             this.Load += new System.EventHandler(this.ChangeNopReason_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

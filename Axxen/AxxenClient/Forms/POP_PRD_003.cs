@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using VO;
 
 namespace AxxenClient.Forms
 {
@@ -71,7 +72,10 @@ namespace AxxenClient.Forms
                     GetDatas();
                 }
                 else
+                {
                     MessageBox.Show("팔레트 생성에 실패하였습니다.");
+                    return;
+                }
             }
             PrintPallet(service.GetBarcodeNo(txtPalletNo.TextBoxText), Convert.ToInt32(txtPrintPallet.TextBoxText));
         }
@@ -82,8 +86,22 @@ namespace AxxenClient.Forms
         /// <param name="count"></param>
         public void PrintPallet(string palletno, int count)
         {
-            // TODO - 팔레트 출력하기
-            MessageBox.Show("팔레트 출력합니다..");
+//            Pallet_MasterService service = new Pallet_MasterService();
+//            List<PalletTodayInVO> list =  service.GetPalletInfo(palletno);
+//            DataSet ds = new DataSet();
+//            using (SqlConnection conn = new SqlConnection(connstr))
+//            {
+//                conn.Open();
+//                SqlDataAdapter adapter = new SqlDataAdapter(
+//@"SELECT Right('00000' + cast([BarcodeID] as varchar), '5') BarcodeID, ProductName, QuantityPerUnit, Qty
+//from BarcodeOutput bo, Products p
+//where bo.ProductID = p.ProductID
+//	and BarcodeID in (" + chkbarcodeid + ") ORDER BY BarcodeID desc; ", conn);
+//                adapter.Fill(ds, "BarcodeList");
+//            }
+
+//            BarcodeReport rpt = new BarcodeReport();
+//            rpt.DataSource = ds.Tables["BarcodeList"];
         }
         private void dgvPalletList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
