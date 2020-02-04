@@ -16,7 +16,6 @@ namespace Axxen
         public WaitForm(Action worker)
         {
             InitializeComponent();
-            InitializeComponent();
             this.Worker = worker;
             this.BackColor = Color.LimeGreen;
             this.TransparencyKey = Color.LimeGreen;
