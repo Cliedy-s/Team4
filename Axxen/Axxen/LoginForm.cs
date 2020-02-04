@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VO;
@@ -14,9 +15,11 @@ namespace Axxen
 {
     public partial class LoginForm : Form
     {
+  
         Login_History logininfo;
         List<UserInfoVO> userlist = new List<UserInfoVO>();
         UserInfoVO uservo = new UserInfoVO();
+  
         public LoginForm()
         {
             InitializeComponent();
@@ -24,22 +27,20 @@ namespace Axxen
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-
-            using (WaitForm frm = new WaitForm(wait))
-            {
-                frm.ShowDialog(this);
-            }
-
-         
+            //using(WaitForm frm = new WaitForm(wait))/
+            //{
+            //    frm.ShowDialog();
+            //}
+            wait();
         }
+     
+
         private void wait()
         {
-            UserInfo_Service service = new UserInfo_Service();
-         
+            UserInfo_Service service = new UserInfo_Service();      
             userlist = service.GetAllUser();
 
-         
-            try
+            try 
             {
                 if (userlist.Count(item => item.User_ID == txtID.Text) > 0)
                 {
@@ -76,15 +77,20 @@ namespace Axxen
                         UserInfo.Ins_Emp = uservo.Ins_Emp;
                         UserInfo.Up_Date = uservo.Up_Date;
                         UserInfo.Up_Emp = uservo.Up_Emp;
+
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
                     }
                     else
                     {
                         MessageBox.Show("비밀번호가 올바르지 않습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
                     }
                 }
                 else
                 {
                     MessageBox.Show("등록되지 않은아이디입니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
                 }
 
 
@@ -96,7 +102,8 @@ namespace Axxen
             }
             finally
             {
-             //   InsertLogin_History
+                //   InsertLogin_History
+                //this.Close();
             }
         }
 

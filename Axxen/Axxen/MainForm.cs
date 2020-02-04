@@ -46,9 +46,6 @@ namespace Axxen
 
             if (frm.ShowDialog() == DialogResult.OK)
             {
-
-              
-
                 MainForm_Service service = new MainForm_Service();
                 menulist = service.GetAll_MenuTree_Master();
                 booklist = service.GetAll_BookMark(UserInfo.User_ID);
@@ -65,7 +62,11 @@ namespace Axxen
                 this.tabControl2.Padding = new Point(10, 3);
 
                 UserInformation();
-           }
+            }
+            else
+            {
+                MessageBox.Show("zz");
+            }
         }
 
         private void UserInformation()
