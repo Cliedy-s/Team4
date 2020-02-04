@@ -14,6 +14,7 @@ namespace Axxen
     public partial class PRM_PRF_010 : Axxen.GridGridForm
     {
         DataTable dt;
+        List<WorkHistory_Center_UserMasterVO> whcu;
         WorkHistory_Center_UserMasterService whcuservice = new WorkHistory_Center_UserMasterService();
         public PRM_PRF_010()
         {
@@ -23,10 +24,11 @@ namespace Axxen
         private void PRM_PRF_010_Load(object sender, EventArgs e)
         {
             ((MainForm)this.MdiParent).RefreshFormEvent += new System.EventHandler(this.RefreshFormShow); // 새로고침
+            dgvMainGrid.CellDoubleClick += DgvMainGrid_CellDoubleClick; //메인그리드뷰 더블클릭
 
             try
             {
-                #region 그리드뷰
+                #region 메인그리드뷰
                 DatagridviewDesigns.SetDesign(dgvMainGrid);
                 dgvMainGrid.AutoGenerateColumns = true;
                 dgvMainGrid.AllowUserToAddRows = false;
@@ -38,11 +40,29 @@ namespace Axxen
                 dt = whcuservice.PickerWorkHistory_UserMaster(aDateTimePickerSearch2.ADateTimePickerValue1.ToShortDateString().Replace("-", ""), aDateTimePickerSearch2.ADateTimePickerValue2.ToShortDateString().Replace("-", "")); //전체 조회
                 dgvMainGrid.DataSource = dt;
                 #endregion
+
             }
             catch
             {
                 MessageBox.Show("선택하신 날짜에 근무이력이 없습니다.","근무이력",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
+            #region 서브그리드뷰
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "작업지시번호", "Workorderno", true, 100, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "작업장코드", "Wc_Code", true, 100, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "작업장명", "Wc_Name", true, 100, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "품목코드", "Item_Code", true, 100, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "품목명", "Item_Name", true, 100, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "작업지삭일시", "Prd_Starttime", true, 100, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "작업종료일시", "Prd_Endtime", true, 100, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "생산수량", "Prd_Qty", true, 100, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "할당작업자", "User_Name", true, 100, default, true);
+            #endregion
+        }
+
+        private void DgvMainGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e) //더블클릭
+        {
+            whcu = whcuservice.GetAllUserDetails((dgvMainGrid.SelectedRows[0].Cells[1].Value).ToString());
+            dgvSubGrid.DataSource = whcu;
         }
 
         private void RefreshFormShow(object sender, EventArgs e)
@@ -58,7 +78,10 @@ namespace Axxen
                     dgvMainGrid.DataSource = dt;
 
                     aTextBox_FindNameByCode1.txtCodeText = "";
-                    aTextBox_FindNameByCode1.txtNameText = "";                 
+                    aTextBox_FindNameByCode1.txtNameText = "";
+
+                    whcu = whcuservice.GetAllUserDetails((dgvMainGrid.SelectedRows[0].Cells[1].Value).ToString());
+                    dgvSubGrid.DataSource = whcu;
                 }
             }
             catch (Exception err)
