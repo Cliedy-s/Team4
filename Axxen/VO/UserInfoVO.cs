@@ -92,4 +92,26 @@ namespace VO
         public string Up_Emp { get; set; }
 
     }
+
+    /// <summary>
+    /// 로그인 이력
+    /// </summary>
+    public class Login_History{
+        
+        public string Session_ID { get; set; }
+    public string User_ID { get; set; }
+        public DateTime Login_Day { get; set; }
+        public DateTime Login_Date { get; set; }
+    public string Login_Ipaddress { get; set; }//x
+    public string Client_HostName { get; set; }//x
+    public string Execute_Flag { get; set; }//x
+    public string ERP_Execute_Flag { get; set; }//x
+    public string Login_Success { get; set; } //로그인성공
+    public string Ins_Date { get; set; }//x
+    public string Ins_Emp { get; set; } //x
+
+}
+
+
+
 }
