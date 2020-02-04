@@ -78,7 +78,6 @@
             // txtGVSearch
             // 
             this.txtGVSearch.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtGVSearch.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtGVSearch.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtGVSearch.LabelText = "대차검색";
             this.txtGVSearch.Location = new System.Drawing.Point(12, 108);

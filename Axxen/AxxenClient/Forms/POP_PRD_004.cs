@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace AxxenClient.Forms
@@ -109,6 +110,13 @@ namespace AxxenClient.Forms
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnSearchByDate_Click(object sender, EventArgs e)
+        {
+            ProgressForm frm = new ProgressForm(() => { Thread.Sleep(5000);  GetSearch();  });
+            frm.ShowInTaskbar = false;
+            frm.StartPosition = FormStartPosition.CenterParent;
+            frm.ShowDialog();
+        }
+        private void GetSearch()
         {
             Pallet_MasterService service = new Pallet_MasterService();
             dgvPalletList.DataSource = service.GetAllByDateTime(dtpFromdate.Value, dtpTodate.Value);

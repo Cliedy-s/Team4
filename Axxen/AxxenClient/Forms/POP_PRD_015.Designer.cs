@@ -116,8 +116,7 @@
             // 
             // aPanel6
             // 
-            this.aPanel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.aPanel6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.aPanel6.Controls.Add(this.txtUnit);
             this.aPanel6.Controls.Add(this.txtWcCode);
             this.aPanel6.Controls.Add(this.txtQty);
