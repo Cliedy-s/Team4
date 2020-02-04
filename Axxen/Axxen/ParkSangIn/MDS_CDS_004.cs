@@ -199,18 +199,18 @@ namespace Axxen
                   
                     };
 
-                    if (MIservice.InsertUpdateNop_MI_Master(additem))
-                    {
-                        MessageBox.Show("저장되었습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        GetAllUserGroup();
+                    //if (MIservice.InsertUpdateNop_MI_Master(additem))
+                    //{
+                    //    MessageBox.Show("저장되었습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //    GetAllUserGroup();
                         
-                        ResetUtillity.ResetPanelControl(panelNopMaMaste);
+                    //    ResetUtillity.ResetPanelControl(panelNopMaMaste);
 
-                    }
-                    else
-                    {
-                        MessageBox.Show("db실패", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                    //}
+                    //else
+                    //{
+                    //    MessageBox.Show("db실패", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //}
 
                 }
                 else
