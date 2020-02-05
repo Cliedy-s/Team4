@@ -56,6 +56,7 @@
     <Compile Include="GV_HistoryService.cs" />
     <Compile Include="GV_MasterService.cs" />
     <Compile Include="GV_Work_ItemService.cs" />
+    <Compile Include="InspectMeasure_History_MasterService.cs" />
     <Compile Include="Inspect_Measure_HistoryService.cs" />
     <Compile Include="Inspect_Spec_MasterService.cs" />
     <Compile Include="ItemMaster_Service.cs" />

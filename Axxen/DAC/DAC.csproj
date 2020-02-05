@@ -56,6 +56,7 @@
     <Compile Include="GV_MasterDAC.cs" />
     <Compile Include="GV_Work_ItemDAC.cs" />
     <Compile Include="Helper.cs" />
+    <Compile Include="InspectMeasure_History_MasterDAC.cs" />
     <Compile Include="Inspect_Measure_HistoryDAC.cs" />
     <Compile Include="ItemMasterDAC.cs" />
     <Compile Include="Inspect_Spec_MasterDAC.cs" />
