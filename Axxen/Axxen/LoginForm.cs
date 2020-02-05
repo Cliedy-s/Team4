@@ -13,13 +13,17 @@ using VO;
 
 namespace Axxen
 {
+   
+
+
     public partial class LoginForm : Form
     {
-  
+      
         Login_History logininfo;
         List<UserInfoVO> userlist = new List<UserInfoVO>();
         UserInfoVO uservo = new UserInfoVO();
-  
+        UserInfo_Service service = new UserInfo_Service();
+
         public LoginForm()
         {
             InitializeComponent();
@@ -27,17 +31,19 @@ namespace Axxen
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            //using(WaitForm frm = new WaitForm(wait))/
+            //using (WaitForm frm = new WaitForm(wait))
             //{
-            //    frm.ShowDialog();
+            //    frm.ShowDialog(this);
             //}
             wait();
         }
-     
+ 
+
+
 
         private void wait()
-        {
-            UserInfo_Service service = new UserInfo_Service();      
+        {  
+            
             userlist = service.GetAllUser();
 
             try 
@@ -78,6 +84,37 @@ namespace Axxen
                         UserInfo.Up_Date = uservo.Up_Date;
                         UserInfo.Up_Emp = uservo.Up_Emp;
 
+
+
+                        Random r = new Random();
+                        //신규비밀번호 = 랜덤8자리(영문대문자 + 숫자)
+                        string pwd = string.Empty;
+
+                        for (int i = 0; i < 12; i++)
+                        {
+                            int rndVal = r.Next(0, 36);
+                            if (rndVal < 10) //숫자
+                            {
+                                pwd += rndVal;
+                            }
+                            else
+                            {
+                                pwd += (char)(rndVal + 55); //65~90 : 영어대문자
+                            }
+                        }
+                        UserInfo.Session_ID = pwd;
+
+                        logininfo = new Login_History()
+                        {
+                            Session_ID = pwd,
+                            User_ID = uservo.User_ID,
+                            Login_Day = Convert.ToDateTime(DateTime.Now.ToShortDateString()),
+                            Login_Date = DateTime.Now,
+                            Login_Success = "Y"
+
+                        };
+
+                        service.InsertLogin_History(logininfo);
                         this.DialogResult = DialogResult.OK;
                         this.Close();
                     }
@@ -92,19 +129,13 @@ namespace Axxen
                     MessageBox.Show("등록되지 않은아이디입니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
-
-
             }
             catch (Exception)
             {
 
                 throw;
             }
-            finally
-            {
-                //   InsertLogin_History
-                //this.Close();
-            }
+                       
         }
 
     }

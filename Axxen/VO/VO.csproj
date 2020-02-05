@@ -63,6 +63,7 @@
     <Compile Include="Goods_In_History_J_Pallet_BoxingVO.cs" />
     <Compile Include="Item_Goods_HistoryVO.cs" />
     <Compile Include="Item_MasterVO.cs" />
+    <Compile Include="Login_Screen_HistoryVO.cs" />
     <Compile Include="MainForm_VO.cs" />
     <Compile Include="MatLotMaster_ItemLevelMasterVO.cs" />
     <Compile Include="MoldVO.cs" />

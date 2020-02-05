@@ -24,7 +24,7 @@ namespace Axxen
         int CheckBtnIndex = 7;
         bool BookmarkCheck = true; //즐겨찾기 
         bool open = true;
-    
+      //  int SegCnt =0; //화면 사용이력 순번
 
         Image CloseImage;
 
@@ -32,6 +32,7 @@ namespace Axxen
         List<BookMark_VO> booklist;
 
 
+        UserInfo_Service userservice = new UserInfo_Service();
         List<UserGroup_MappingVO> userinfoGrouplist; //유저가속한 그룹
         List<ScreenItem_AuthorityVO> userinfoScreenItem;//그룹에속한 화면들
         List<ScreenItem_MasterVO> screenitemlist; //모든 스크린 
@@ -286,6 +287,7 @@ namespace Axxen
 
                                     break;
                                 }
+
                             childForm.Activate();
                             return;
                     }
@@ -336,21 +338,33 @@ namespace Axxen
                             break;
                         }
                     }
-//////////////////////////////////////////
+                    //////////////////////////////////////////
 
                     //  tabControl2.TabPages.Tag=formName;
                     //  MessageBox.Show(tabControl2.SelectedTab.Tag.ToString());
+                  //  SegCnt++;
+                    Login_Screen_HistoryVO loginscreen = new Login_Screen_HistoryVO()
+                    {
+                        Session_ID = UserInfo.Session_ID,
+                    //    Seg =SegCnt,
+                        Open_Day = Convert.ToDateTime(DateTime.Now.ToShortDateString()),
+                        Open_Date = DateTime.Now,
+                        User_ID = UserInfo.User_ID,
+                        Screen_Code = formName
+                    };
+                    userservice.InsertLogin_Screen_History(loginscreen);
 
                     lblSubtitle.Text =  screenitemlist.Find(item => item.Screen_Code == formName.ToString()).Screen_Path.ToString();
+               
                 }
                 else
                 {
                     MessageBox.Show("사용권한이 없는 메뉴입니다." + formName);
                 }
             }
-            catch 
+            catch (Exception err)
             {
-                MessageBox.Show("사용할 수 없는 메뉴" + formName);
+                MessageBox.Show("사용할 수 없는 메뉴"+err.Message + formName);
                 throw;
             }
         }
@@ -602,6 +616,10 @@ namespace Axxen
                 MyUpdateEvent(this, null);
         }
 
-
+        private void BtnSetting_Click(object sender, EventArgs e)
+        {
+            UserSettingForm frm = new UserSettingForm();
+            frm.ShowDialog();
+        }
     }
 }
