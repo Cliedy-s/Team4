@@ -48,6 +48,7 @@
     <Compile Include="AllocationWCVO.cs" />
     <Compile Include="ConditionMeasureVO.cs" />
     <Compile Include="ConditionSpecVO.cs" />
+    <Compile Include="Condition_History_MasterVO.cs" />
     <Compile Include="Def_MaVO.cs" />
     <Compile Include="Def_MiVO.cs" />
     <Compile Include="GVInOutVO.cs" />
@@ -58,6 +59,7 @@
     <Compile Include="GV_History_Work_ItemVO.cs" />
     <Compile Include="GV_Work_ItemVO.cs" />
     <Compile Include="InspectHistoryVO.cs" />
+    <Compile Include="InspectMeasure_History_MasterVO.cs" />
     <Compile Include="InspectSpecVO.cs" />
     <Compile Include="GasUse_HistoryVO.cs" />
     <Compile Include="Goods_In_History_J_Pallet_BoxingVO.cs" />
