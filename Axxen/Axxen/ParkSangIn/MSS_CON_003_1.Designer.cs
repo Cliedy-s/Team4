@@ -79,13 +79,12 @@
             this.txtName.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Italic);
             this.txtName.ForeColor = System.Drawing.Color.Gray;
             this.txtName.Location = new System.Drawing.Point(12, 116);
-            this.txtName.MaxLength = 1000;
+            this.txtName.MaxLength = 30;
             this.txtName.Name = "txtName";
             this.txtName.PlaceHolderText = "이름을 입력하세요.";
             this.txtName.Size = new System.Drawing.Size(300, 29);
             this.txtName.TabIndex = 50;
             this.txtName.Text = "아이디를 입력하세요.";
-            this.txtName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtName_KeyPress);
             // 
             // lblDay
             // 
