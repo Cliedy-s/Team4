@@ -110,5 +110,49 @@ getdate() ,
                 return result > 0;
             }
         }
+
+        /// <summary>
+        /// PRM_RPT_002 성형작업일지
+        /// </summary>
+        /// <param name="workno"></param>
+        /// <returns></returns>
+        public List<InspectMeasureHistoryVO> GetFiguration(List<string> workno)
+        {
+            List<InspectMeasureHistoryVO> list = null;
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText = @" SELECT A.Workorderno, adate, aval, bdate, bval, cdate, cval, ddate, dval, edate, eval FROM 
+(select Workorderno,inspect_DateTime adate,Inspect_Val aval from Inspect_Measure_history where Inspect_Code = 'SP1' and workorderno = @Workorderno) AS A
+,(select Workorderno,inspect_DateTime bdate,Inspect_Val bval from Inspect_Measure_history where Inspect_Code = 'SP2' and workorderno = @Workorderno) AS B
+,(select Workorderno,inspect_DateTime cdate,Inspect_Val cval from Inspect_Measure_history where Inspect_Code = 'SP3' and workorderno = @Workorderno) AS C
+,(select Workorderno,inspect_DateTime ddate,Inspect_Val dval from Inspect_Measure_history where Inspect_Code = 'SP4' and workorderno = @Workorderno) AS D
+,(select Workorderno,inspect_DateTime as edate ,Inspect_Val eval from Inspect_Measure_history where Inspect_Code = 'SP5' and workorderno = @Workorderno) AS E
+where A.Workorderno=B.Workorderno and B.Workorderno=C.Workorderno and C.Workorderno=D.Workorderno and D.Workorderno=E.Workorderno";
+                comm.CommandType = CommandType.Text;
+                comm.Connection.Open();
+                SqlTransaction trans = comm.Connection.BeginTransaction();
+                try
+                {
+                    comm.Transaction = trans;
+                    foreach (var item in workno)
+                    {
+                        comm.Parameters.Clear();
+                        comm.Parameters.AddWithValue("@Workorderno", item);
+
+                        SqlDataReader reader = comm.ExecuteReader();
+                        list = Helper.DataReaderMapToList<InspectMeasureHistoryVO>(reader);
+                    }
+                    trans.Commit();
+                    comm.Connection.Close();
+                }
+                catch(Exception)
+                {
+                    trans.Rollback();
+                    comm.Connection.Close();
+                }
+                return list;
+            }
+        }
     }
 }

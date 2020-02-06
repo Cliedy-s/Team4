@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VO
 {
-    public class InspectHistoryVO
+    public class InspectHistoryVO 
     {
         public long Inspect_measure_seq { get; set; } // 검사순번
         public string Item_code { get; set; }               // 품목코드
@@ -20,5 +20,20 @@ namespace VO
         public string Ins_Emp { get; set; }                // 최초입력자
         public string Up_Date { get; set; }                // 최초수정일자
         public string Up_Emp { get; set; }                // 최초수정자
+    }
+
+    public class InspectMeasureHistoryVO //PRM_RPT_002 사용
+    {
+        public string Workorderno { get; set; } //작업지시번호
+        public DateTime Adate { get; set; } //길이측정시간
+        public decimal AVal { get; set; } //길이측정값
+        public DateTime Bdate { get; set; } //너비측정시간
+        public decimal BVal { get; set; } //너비측정값
+        public DateTime Cdate { get; set; } //두께측정시간
+        public decimal CVal { get; set; } //두께측정값
+        public DateTime Ddate { get; set; } //진공압측정시간
+        public decimal DVal { get; set; } //진공압측정값
+        public DateTime Edate { get; set; } //성형압측정시간
+        public decimal EVal { get; set; } //성형압측정값
     }
 }

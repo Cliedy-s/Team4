@@ -35,7 +35,7 @@ namespace Axxen
         {
             documentViewer1.DocumentSource = null;
             threadmethod += ReportBinding;
-            using (WaitForm waitfrm = new WaitForm(() => { Thread.Sleep(3000); dtpDate.Invoke(threadmethod); }))
+            using (WaitForm waitfrm = new WaitForm(() => { Thread.Sleep(2000); dtpDate.Invoke(threadmethod); }))
             {
                 waitfrm.ShowDialog(this);
             }

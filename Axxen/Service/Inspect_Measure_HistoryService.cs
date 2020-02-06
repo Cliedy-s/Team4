@@ -37,5 +37,16 @@ namespace Service
             Inspect_Measure_HistoryDAC dac = new Inspect_Measure_HistoryDAC();
             return dac.DeleteInspect_MeasureBySeq(seq);
         }
+
+        /// <summary>
+        /// PRM_RPT_002 성형작업일지
+        /// </summary>
+        /// <param name="workno"></param>
+        /// <returns></returns>
+        public List<InspectMeasureHistoryVO> GetFiguration(List<string> workno)
+        {
+            Inspect_Measure_HistoryDAC dac = new Inspect_Measure_HistoryDAC();
+            return dac.GetFiguration(workno);
+        }
     }
 }
