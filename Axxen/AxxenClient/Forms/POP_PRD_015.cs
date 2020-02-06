@@ -51,6 +51,7 @@ namespace AxxenClient.Forms
             InitControlUtil.AddNewColumnToDataGridView(dgvInspectMeasure, "측정값", "Inspect_val", true, 120, DataGridViewContentAlignment.MiddleLeft, true);
             InitControlUtil.AddNewColumnToDataGridView(dgvInspectMeasure, "측정일시", "Inspect_datetime", true, 200);
             InitControlUtil.AddNewColumnToDataGridView(dgvInspectMeasure, "조건순번", "Inspect_measure_seq", false, 200);
+            dgvInspectMeasure.Columns[1].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm:ss";
         }
         private void GetDatas()
         {

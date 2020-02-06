@@ -1,6 +1,6 @@
 ﻿namespace Axxen
 {
-    partial class FreeForm
+    partial class CustomControlFree
     {
         /// <summary>
         /// Required designer variable.

@@ -52,6 +52,8 @@ namespace AxxenClient.Forms
             InitControlUtil.AddNewColumnToDataGridView(dgvConditionMeasureList, "측정값", "Condition_Val", true, 120, DataGridViewContentAlignment.MiddleLeft, true);
             InitControlUtil.AddNewColumnToDataGridView(dgvConditionMeasureList, "측정일시", "Condition_Datetime", true, 200);
             InitControlUtil.AddNewColumnToDataGridView(dgvConditionMeasureList, "조건순번", "Condition_measure_seq", false, 200);
+
+            dgvConditionMeasureList.Columns[2].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm:ss";
         }
         private void GetDatas()
         {

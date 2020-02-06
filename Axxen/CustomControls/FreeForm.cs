@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Axxen
 {
-    public partial class FreeForm : BaseForm
+    public partial class CustomControlFree : CustomControlBase
     {
-        public FreeForm()
+        public CustomControlFree()
         {
             InitializeComponent();
         }

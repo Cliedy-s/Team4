@@ -9,11 +9,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AxxenClient.Templets
+namespace Axxen
 {
-    public partial class BaseForm : Form
+    public partial class CustomControlBase : Form
     {
-        public BaseForm()
+        public CustomControlBase()
         {
             InitializeComponent();
         }
@@ -35,6 +35,7 @@ namespace AxxenClient.Templets
                 tb.errorp = this.baseErrorProvider;
             }
         }
+
         public IEnumerable<Control> GetAll(Control control, Type type)
         {
             var controls = control.Controls.Cast<Control>();

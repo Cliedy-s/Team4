@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace AxxenClient.Forms
 {
-    public partial class ChangeNopReason : AxxenClient.Templets.FreeForm
+    public partial class ChangeNopReason : AxxenClient.Templets.ClientFreeForm
     {
         public string NopMiCode { get; set; }
         string WcName;

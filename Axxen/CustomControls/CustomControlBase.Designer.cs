@@ -1,6 +1,6 @@
 ﻿namespace Axxen
 {
-    partial class BaseForm
+    partial class CustomControlBase
     {
         /// <summary>
         /// Required designer variable.

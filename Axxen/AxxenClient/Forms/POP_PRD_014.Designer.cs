@@ -43,7 +43,7 @@
             this.lblConditionCode = new Axxen.CustomControls.ALabel();
             this.lblItemCode = new Axxen.CustomControls.ALabel();
             this.lblWcCode = new Axxen.CustomControls.ALabel();
-            this.aPanel1.SuspendLayout();
+            this.panBottom.SuspendLayout();
             this.aPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConditionMeasureList)).BeginInit();
@@ -57,8 +57,8 @@
             // 
             // aPanel1
             // 
-            this.aPanel1.Location = new System.Drawing.Point(0, 593);
-            this.aPanel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panBottom.Location = new System.Drawing.Point(0, 593);
+            this.panBottom.Margin = new System.Windows.Forms.Padding(2);
             // 
             // btnInsertMeasure
             // 
@@ -265,7 +265,7 @@
             this.Load += new System.EventHandler(this.POP_PRD_014_Load);
             this.Controls.SetChildIndex(this.aPanel6, 0);
             this.Controls.SetChildIndex(this.aPanel2, 0);
-            this.Controls.SetChildIndex(this.aPanel1, 0);
+            this.Controls.SetChildIndex(this.panBottom, 0);
             this.Controls.SetChildIndex(this.dgvConditionList, 0);
             this.Controls.SetChildIndex(this.dgvConditionMeasureList, 0);
             this.Controls.SetChildIndex(this.btnInsertMeasure, 0);
@@ -274,8 +274,8 @@
             this.Controls.SetChildIndex(this.lblConditionCode, 0);
             this.Controls.SetChildIndex(this.lblItemCode, 0);
             this.Controls.SetChildIndex(this.lblWcCode, 0);
-            this.aPanel1.ResumeLayout(false);
-            this.aPanel1.PerformLayout();
+            this.panBottom.ResumeLayout(false);
+            this.panBottom.PerformLayout();
             this.aPanel2.ResumeLayout(false);
             this.aPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();

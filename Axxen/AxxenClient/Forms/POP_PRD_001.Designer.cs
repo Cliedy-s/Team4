@@ -57,7 +57,7 @@
             this.btnWarehousing = new Axxen.CustomControls.AButton();
             this.btnUnload = new Axxen.CustomControls.AButton();
             this.btnQualityMeasure1 = new Axxen.CustomControls.AButton();
-            this.aPanel1.SuspendLayout();
+            this.panBottom.SuspendLayout();
             this.aPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).BeginInit();
@@ -72,8 +72,8 @@
             // 
             // aPanel1
             // 
-            this.aPanel1.Location = new System.Drawing.Point(0, 585);
-            this.aPanel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panBottom.Location = new System.Drawing.Point(0, 585);
+            this.panBottom.Margin = new System.Windows.Forms.Padding(4);
             // 
             // btnNoActive
             // 
@@ -82,7 +82,7 @@
             // 
             // timetimer
             // 
-            this.timetimer.Tick += new System.EventHandler(this.timetimer_Tick);
+            //this.timetimer.Tick += new System.EventHandler(this.timetimer_Tick);
             // 
             // dgvMain
             // 
@@ -520,9 +520,9 @@
             this.Controls.SetChildIndex(this.panLoad, 0);
             this.Controls.SetChildIndex(this.panBoxing, 0);
             this.Controls.SetChildIndex(this.aPanel2, 0);
-            this.Controls.SetChildIndex(this.aPanel1, 0);
-            this.aPanel1.ResumeLayout(false);
-            this.aPanel1.PerformLayout();
+            this.Controls.SetChildIndex(this.panBottom, 0);
+            this.panBottom.ResumeLayout(false);
+            this.panBottom.PerformLayout();
             this.aPanel2.ResumeLayout(false);
             this.aPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
