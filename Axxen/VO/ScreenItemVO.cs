@@ -60,6 +60,10 @@ namespace VO
         /// </summary>
         public string Up_Emp { get; set; }
 
+        public Dictionary<string, string> ToDictionary(Func<object, object> p1, Func<object, object> p2)
+        {
+            throw new NotImplementedException();
+        }
     }
     /// <summary>
     /// 화면권한

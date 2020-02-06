@@ -105,6 +105,42 @@ namespace DAC
         }
 
         /// <summary>
+        /// 메뉴 부모,자식 삭제
+        /// </summary>
+        /// <param name="parent"></param>
+        /// <param name="son"></param>
+        /// <returns></returns>
+        public bool DeleteMenuTree_Master_VO(string parent, string code)
+        {
+
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText = "DeleteMenuTree_Master_VO";
+                comm.CommandType = CommandType.StoredProcedure;
+
+                comm.Parameters.AddWithValue("@Parent_Screen_Code", parent);
+                comm.Parameters.AddWithValue("@Screen_Code", code);
+
+                comm.Connection.Open();
+                int result = comm.ExecuteNonQuery();
+
+                comm.Connection.Close();
+
+                if (result > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            }
+
+        }
+
+        /// <summary>
         /// 즐겨찾기정보
         /// </summary>
         /// <returns></returns>

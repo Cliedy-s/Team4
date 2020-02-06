@@ -38,8 +38,8 @@
             this.tvMenu = new Axxen.CustomControls.ATreeView();
             this.dgvSon = new Axxen.CustomControls.ADataGridView();
             this.dgvParent = new Axxen.CustomControls.ADataGridView();
-            this.aLabel4 = new Axxen.CustomControls.ALabel();
-            this.aLabel5 = new Axxen.CustomControls.ALabel();
+            this.lbldeletecheck1 = new Axxen.CustomControls.ALabel();
+            this.lbldeletecheck2 = new Axxen.CustomControls.ALabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -134,6 +134,7 @@
             this.dgvSon.RowTemplate.Height = 23;
             this.dgvSon.Size = new System.Drawing.Size(585, 341);
             this.dgvSon.TabIndex = 1;
+            this.dgvSon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvSon_CellClick);
             // 
             // dgvParent
             // 
@@ -143,32 +144,35 @@
             this.dgvParent.RowTemplate.Height = 23;
             this.dgvParent.Size = new System.Drawing.Size(585, 304);
             this.dgvParent.TabIndex = 0;
+            this.dgvParent.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvParent_CellClick);
             this.dgvParent.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvParent_CellDoubleClick);
             // 
-            // aLabel4
+            // lbldeletecheck1
             // 
-            this.aLabel4.AutoSize = true;
-            this.aLabel4.Location = new System.Drawing.Point(110, 15);
-            this.aLabel4.Name = "aLabel4";
-            this.aLabel4.Size = new System.Drawing.Size(48, 15);
-            this.aLabel4.TabIndex = 25;
-            this.aLabel4.Text = "aLabel4";
+            this.lbldeletecheck1.AutoSize = true;
+            this.lbldeletecheck1.Location = new System.Drawing.Point(110, 15);
+            this.lbldeletecheck1.Name = "lbldeletecheck1";
+            this.lbldeletecheck1.Size = new System.Drawing.Size(45, 15);
+            this.lbldeletecheck1.TabIndex = 25;
+            this.lbldeletecheck1.Text = "check1";
+            this.lbldeletecheck1.Visible = false;
             // 
-            // aLabel5
+            // lbldeletecheck2
             // 
-            this.aLabel5.AutoSize = true;
-            this.aLabel5.Location = new System.Drawing.Point(148, 356);
-            this.aLabel5.Name = "aLabel5";
-            this.aLabel5.Size = new System.Drawing.Size(48, 15);
-            this.aLabel5.TabIndex = 26;
-            this.aLabel5.Text = "aLabel5";
+            this.lbldeletecheck2.AutoSize = true;
+            this.lbldeletecheck2.Location = new System.Drawing.Point(148, 356);
+            this.lbldeletecheck2.Name = "lbldeletecheck2";
+            this.lbldeletecheck2.Size = new System.Drawing.Size(45, 15);
+            this.lbldeletecheck2.TabIndex = 26;
+            this.lbldeletecheck2.Text = "check2";
+            this.lbldeletecheck2.Visible = false;
             // 
             // MSS_SYS_001
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1299, 719);
-            this.Controls.Add(this.aLabel5);
-            this.Controls.Add(this.aLabel4);
+            this.Controls.Add(this.lbldeletecheck2);
+            this.Controls.Add(this.lbldeletecheck1);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.aLabel3);
             this.Controls.Add(this.pictureBox2);
@@ -202,7 +206,7 @@
         private CustomControls.ALabel aLabel2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private CustomControls.ALabel aLabel3;
-        private CustomControls.ALabel aLabel4;
-        private CustomControls.ALabel aLabel5;
+        private CustomControls.ALabel lbldeletecheck1;
+        private CustomControls.ALabel lbldeletecheck2;
     }
 }

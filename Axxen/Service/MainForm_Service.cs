@@ -34,6 +34,13 @@ namespace Service
 
             return dac.InsertMenuTree_Master_VO(menu);
         }
+        public bool DeleteMenuTree_Master_VO(string parent, string code)
+        {
+            MainForm_DAC dac = new DAC.MainForm_DAC();
+
+            return dac.DeleteMenuTree_Master_VO(parent, code);
+
+        }
             public List<BookMark_VO> GetAll_BookMark(string id)
         {
             MainForm_DAC dac = new DAC.MainForm_DAC();

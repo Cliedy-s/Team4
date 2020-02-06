@@ -98,7 +98,36 @@ namespace Axxen
         }
         private void MyDelete(object sender, EventArgs e)
         {
-            
+
+
+
+            if (lbldeletecheck1.Text == "1")
+            {
+                if (MessageBox.Show(dgvParent.SelectedRows[0].Cells[0].Value.ToString() + "하위항목도 모두 삭제됩니다. 메뉴를 삭제하시겠습니까?", "알림", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    //   MessageBox.Show(dgvParent.SelectedRows[0].Cells[0].Value.ToString());
+                    if (service.DeleteMenuTree_Master_VO(dgvParent.SelectedRows[0].Cells[0].Value.ToString(), dgvParent.SelectedRows[0].Cells[0].Value.ToString()))
+                    {
+                        treeview();
+                        datagridviewsetting();
+                        MessageBox.Show(dgvParent.SelectedRows[0].Cells[0].Value.ToString() + "가 삭제되었습니다.", "알림", MessageBoxButtons.YesNo);
+                    }
+                }
+            }
+            else if (lbldeletecheck2.Text == "1")
+            {
+                if (MessageBox.Show(dgvSon.SelectedRows[0].Cells[1].Value.ToString() + "메뉴를 삭제하시겠습니까?", "알림", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    //      MessageBox.Show(dgvSon.SelectedRows[0].Cells[1].Value.ToString());
+                    if (service.DeleteMenuTree_Master_VO("-1", dgvSon.SelectedRows[0].Cells[1].Value.ToString()))
+                    {
+                        treeview();
+                        datagridviewsetting();
+                        MessageBox.Show(dgvParent.SelectedRows[0].Cells[0].Value.ToString() + "가 삭제되었습니다.", "알림", MessageBoxButtons.YesNo);
+                              }
+                }
+            }
+
         }
         /// <summary>
         /// 새로고침 이벤트 메서드
@@ -112,6 +141,7 @@ namespace Axxen
                 if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
                 {
                     treeview();
+                    datagridviewsetting();
                 }
             }
             catch (Exception err)
@@ -133,22 +163,22 @@ namespace Axxen
         #region drawtreeview
         private void TvMenu_DragDrop(object sender, DragEventArgs e)
         {
-            
+
             Point targetPoint = tvMenu.PointToClient(new Point(e.X, e.Y));
 
             TreeNode targetNode = tvMenu.GetNodeAt(targetPoint);
 
 
-            if (targetNode != null&&targetNode.Level == 0 ) //레벨0인곳에만 이동가능하게
+            if (targetNode != null && targetNode.Level == 0) //레벨0인곳에만 이동가능하게
             {
 
                 // Retrieve the node that was dragged.
                 TreeNode draggedNode = (TreeNode)e.Data.GetData(typeof(TreeNode));
 
                 if (draggedNode.Level != 0) // level0인 부모를 자식에게 넣지못하게
-                {            
+                {
                     if (!draggedNode.Equals(targetNode) && !ContainsNode(draggedNode, targetNode))
-                    {              
+                    {
                         if (e.Effect == DragDropEffects.Move)
                         {
                             draggedNode.Remove();
@@ -156,12 +186,12 @@ namespace Axxen
                             service.UpdateManu(targetNode.Tag.ToString(), draggedNode.Tag.ToString()); //메뉴 db변경
                             ((MainForm)this.MdiParent).Setting();
                         }
-               
+
                         else if (e.Effect == DragDropEffects.Copy)
                         {
                             targetNode.Nodes.Add((TreeNode)draggedNode.Clone());
                         }
-                     
+
                     }
                 }
                 else
@@ -238,6 +268,19 @@ namespace Axxen
             dgvSon.DataSource = null;
             var son = menulist.FindAll(p => p.Parent_Screen_Code == dgvParent.SelectedRows[0].Cells[0].Value.ToString());
             dgvSon.DataSource = son;
+        }
+
+        private void DgvParent_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            lbldeletecheck1.Text = "1";
+            lbldeletecheck2.Text = "0";
+        }
+
+        private void DgvSon_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            lbldeletecheck1.Text = "0";
+            lbldeletecheck2.Text = "1";
         }
     }
 }

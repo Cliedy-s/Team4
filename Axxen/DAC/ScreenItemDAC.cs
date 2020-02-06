@@ -77,6 +77,26 @@ namespace DAC
             }
         }
 
+        public bool UsedScreenItem_MasterVO(string screencode, string used)
+        {
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText = $"update ScreenItem_Master set Use_YN=@Use_YN where Screen_Code=@Screen_Code";
+                comm.CommandType = CommandType.Text;
+                comm.Parameters.AddWithValue("@Screen_Code", screencode);
+                comm.Parameters.AddWithValue("@Use_YN", used);
+
+                comm.Connection.Open();
+                int result = Convert.ToInt32(comm.ExecuteNonQuery());
+                comm.Connection.Close();
+
+                if (result > 0)
+                    return true;
+                return false;
+            }
+
+        }
         /// <summary>
         /// 그룹서 사용하는 화면들
         /// </summary>

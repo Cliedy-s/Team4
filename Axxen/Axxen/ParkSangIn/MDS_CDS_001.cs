@@ -43,7 +43,7 @@ namespace Axxen
             gridbtn.DefaultCellStyle.BackColor = Color.LightYellow;
             gridbtn.UseColumnTextForButtonValue = true;
             dgvMainGrid.Columns.Add(gridbtn);
-            GetAllUserGroup();
+            GetAllDefMa();
             ///
             ControlSetting();
         }
@@ -63,7 +63,7 @@ namespace Axxen
         /// <summary>
         /// 모든 그룹정보 GET
         /// </summary>
-        private void GetAllUserGroup()
+        private void GetAllDefMa()
         {
 
             Defmalist = new List<Def_MaVO>();
@@ -101,7 +101,7 @@ namespace Axxen
                     {
                         Defservice.GetUpdateDef_Ma_Master((dgvMainGrid.SelectedRows[0].Cells[0].Value).ToString(), "Y");
                     }
-                    GetAllUserGroup();
+                    GetAllDefMa();
                 }
 
             }

@@ -28,6 +28,13 @@ namespace Service
 
             return dac.GetALLScreenItem();
         }
+        public bool UsedScreenItem_MasterVO(string screencode, string used)
+        {
+
+            ScreenItemDAC dac = new ScreenItemDAC();
+
+            return dac.UsedScreenItem_MasterVO(screencode, used);
+        }
 
             public List<ScreenItem_AuthorityVO> GetUseGroupScreenItem(string groupCode)
         {
