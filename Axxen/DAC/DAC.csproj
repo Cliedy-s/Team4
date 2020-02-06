@@ -72,6 +72,7 @@
     <Compile Include="ProcessDAC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScreenItemDAC.cs" />
+    <Compile Include="Sys_NoticeDAC.cs" />
     <Compile Include="UserGroupDAC.cs" />
     <Compile Include="UserInfoDAC.cs" />
     <Compile Include="WorkCenter_MasterDAC.cs" />

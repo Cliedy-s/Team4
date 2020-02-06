@@ -29,49 +29,26 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.lblTime = new Axxen.CustomControls.ALabel();
-            this.aLabel_Header1 = new Axxen.CustomControls.ALabel_Header();
+            this.timetimer = new System.Windows.Forms.Timer(this.components);
             this.aPanel1 = new Axxen.CustomControls.APanel();
             this.btnNoActive = new Axxen.CustomControls.AButton();
             this.btnConfig = new Axxen.CustomControls.AButton();
             this.txtPronounce = new Axxen.CustomControls.ALabel();
             this.aPanel2 = new Axxen.CustomControls.APanel();
+            this.lblTime = new Axxen.CustomControls.ALabel();
+            this.aLabel_Header1 = new Axxen.CustomControls.ALabel_Header();
             this.aPanel3 = new Axxen.CustomControls.APanel();
             this.btnClose = new System.Windows.Forms.PictureBox();
-            this.timetimer = new System.Windows.Forms.Timer(this.components);
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
             this.aPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblTime
+            // timetimer
             // 
-            this.lblTime.AutoSize = true;
-            this.lblTime.BackColor = System.Drawing.Color.White;
-            this.lblTime.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblTime.ForeColor = System.Drawing.Color.Orange;
-            this.lblTime.Location = new System.Drawing.Point(25, 20);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(127, 60);
-            this.lblTime.TabIndex = 0;
-            this.lblTime.Text = "2020-01-13\r\n18:26:32";
-            this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // aLabel_Header1
-            // 
-            this.aLabel_Header1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.aLabel_Header1.BackColor = System.Drawing.Color.White;
-            this.aLabel_Header1.Font = new System.Drawing.Font("나눔고딕", 25F, System.Drawing.FontStyle.Bold);
-            this.aLabel_Header1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.aLabel_Header1.Location = new System.Drawing.Point(183, 29);
-            this.aLabel_Header1.Name = "aLabel_Header1";
-            this.aLabel_Header1.Size = new System.Drawing.Size(898, 39);
-            this.aLabel_Header1.TabIndex = 1;
-            this.aLabel_Header1.Text = "aLabel_Header1";
-            this.aLabel_Header1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.timetimer.Interval = 1000;
+            this.timetimer.Tick += new System.EventHandler(this.timetimer_Tick);
             // 
             // aPanel1
             // 
@@ -115,7 +92,7 @@
             this.txtPronounce.AutoSize = true;
             this.txtPronounce.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtPronounce.ForeColor = System.Drawing.Color.Yellow;
-            this.txtPronounce.Location = new System.Drawing.Point(857, 11);
+            this.txtPronounce.Location = new System.Drawing.Point(1132, 10);
             this.txtPronounce.Name = "txtPronounce";
             this.txtPronounce.Size = new System.Drawing.Size(78, 17);
             this.txtPronounce.TabIndex = 5;
@@ -132,6 +109,34 @@
             this.aPanel2.Name = "aPanel2";
             this.aPanel2.Size = new System.Drawing.Size(1210, 99);
             this.aPanel2.TabIndex = 3;
+            // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.BackColor = System.Drawing.Color.White;
+            this.lblTime.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblTime.ForeColor = System.Drawing.Color.Orange;
+            this.lblTime.Location = new System.Drawing.Point(25, 20);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(127, 60);
+            this.lblTime.TabIndex = 0;
+            this.lblTime.Text = "2020-01-13\r\n18:26:32";
+            this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // aLabel_Header1
+            // 
+            this.aLabel_Header1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.aLabel_Header1.BackColor = System.Drawing.Color.White;
+            this.aLabel_Header1.Font = new System.Drawing.Font("나눔고딕", 25F, System.Drawing.FontStyle.Bold);
+            this.aLabel_Header1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.aLabel_Header1.Location = new System.Drawing.Point(183, 29);
+            this.aLabel_Header1.Name = "aLabel_Header1";
+            this.aLabel_Header1.Size = new System.Drawing.Size(898, 39);
+            this.aLabel_Header1.TabIndex = 1;
+            this.aLabel_Header1.Text = "aLabel_Header1";
+            this.aLabel_Header1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // aPanel3
             // 
@@ -155,11 +160,6 @@
             this.btnClose.TabStop = false;
             this.btnClose.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // timetimer
-            // 
-            this.timetimer.Interval = 1000;
-            this.timetimer.Tick += new System.EventHandler(this.timetimer_Tick);
-            // 
             // ClientBaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -172,6 +172,7 @@
             this.Activated += new System.EventHandler(this.ClientBaseForm_Activated);
             this.Deactivate += new System.EventHandler(this.ClientBaseForm_Deactivate);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ClientBaseForm_FormClosing);
+            this.Load += new System.EventHandler(this.ClientBaseForm_Load);
             this.aPanel1.ResumeLayout(false);
             this.aPanel1.PerformLayout();
             this.aPanel2.ResumeLayout(false);
