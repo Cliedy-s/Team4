@@ -15,7 +15,26 @@ namespace Service
 
             return dac.GetAll_MenuTree_Master();
         }
-        public List<BookMark_VO> GetAll_BookMark(string id)
+        public bool UpdateManu(string parent, string son)
+        {
+            MainForm_DAC dac = new DAC.MainForm_DAC();
+
+            return dac.UpdateManu(parent,son);
+
+        }
+        /// <summary>
+        /// 메뉴 부모,자식 추가
+        /// </summary>
+        /// <param name="parent"></param>
+        /// <param name="son"></param>
+        /// <returns></returns>
+        public bool InsertMenuTree_Master_VO(MenuTree_Master_VO menu)
+        {
+            MainForm_DAC dac = new DAC.MainForm_DAC();
+
+            return dac.InsertMenuTree_Master_VO(menu);
+        }
+            public List<BookMark_VO> GetAll_BookMark(string id)
         {
             MainForm_DAC dac = new DAC.MainForm_DAC();
 

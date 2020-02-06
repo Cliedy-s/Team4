@@ -253,14 +253,17 @@ namespace Axxen
                     };
                     InsertUpdateScreenlist.Add(item);
                 }
-
-                screenservice.InsertUpdateScreenItem_Authority(InsertUpdateScreenlist);
+                if (InsertUpdateScreenlist.Count > 0)
+                    screenservice.InsertUpdateScreenItem_Authority(InsertUpdateScreenlist);
+                if(DeleteScreenlist.Count>0)
                 screenservice.DeleteGroupUseScreenItem_Authority(lblGroup.Text,DeleteScreenlist);
+         
+                  
             }
             catch (Exception err)
             {
 
-                MessageBox.Show(err.ToString());
+             //  MessageBox.Show("선택한 내용이없습니다."+ err.ToString());
             }
         }
 
