@@ -180,6 +180,7 @@ namespace DAC
                 cmd.Parameters.AddWithValue("@User_ID", list.User_ID);
                 cmd.Parameters.AddWithValue("@Screen_Code", list.Screen_Code);
                 cmd.Parameters.AddWithValue("@Parent_Screen_Code", list.Parent_Screen_Code);
+                cmd.Parameters.AddWithValue("@Type", list.Type);
                 cmd.Parameters.AddWithValue("@Ins_Date", DateTime.Now);
                 cmd.Parameters.AddWithValue("@Ins_Emp", "박상인");
 

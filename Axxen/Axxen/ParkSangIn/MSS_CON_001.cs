@@ -31,6 +31,8 @@ namespace Axxen
             ((MainForm)this.MdiParent).MyUpdateEvent += new System.EventHandler(this.MyUpdateShow);//입력이벤트 등록
             ((MainForm)this.MdiParent).InsertFormEvent += new System.EventHandler(this.InsertFormShow);//입력이벤트 등록
             ((MainForm)this.MdiParent).RefreshFormEvent += new EventHandler(this.RefreshFormShow);
+            ((MainForm)this.MdiParent).MyDeleteEvent += new EventHandler(this.MyDelete);
+
             ///gridview
             DatagridviewDesigns.SetDesign(dgvGroup);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "사용자그룹코드", "UserGroup_Code", true, 210, default, true);
@@ -86,6 +88,24 @@ namespace Axxen
                 MessageBox.Show(err.Message);
             }
 
+        }
+        private void MyDelete(object sender, EventArgs e)
+        {
+            if (MessageBox.Show(dgvGroup.SelectedRows[0].Cells[0].Value.ToString() + "하위항목도 모두 삭제됩니다. 메뉴를 삭제하시겠습니까?", "알림", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                //   MessageBox.Show(dgvParent.SelectedRows[0].Cells[0].Value.ToString());
+                if (userservice.DeleteUserGroup_MasterVO(dgvGroup.SelectedRows[0].Cells[0].Value.ToString()))
+                {
+                    GetAllUserGroup();
+                    ControlSetting();//콤보박스
+
+                }
+                else
+                {
+                    MessageBox.Show("삭제실패");
+                }
+            }
+         
         }
         /// <summary>
         /// 수정

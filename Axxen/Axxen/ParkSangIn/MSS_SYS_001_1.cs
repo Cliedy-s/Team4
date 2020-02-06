@@ -37,11 +37,18 @@ namespace Axxen
         private void ControlSetting() // 콤보박스 세팅
         {
             menulist = service.GetAll_MenuTree_Master();        
-            Dictionary<string, string> cbblist = menulist.FindAll(item => item.Parent_Screen_Code == null).ToDictionary(item => item.Screen_Code, item => item.Screen_Name);
+            Dictionary<string, string> pcbblist = menulist.FindAll(item => item.Parent_Screen_Code == null).ToDictionary(item => item.Screen_Code, item => item.Screen_Name);
             cbbParent.DisplayMember = "Value";
             cbbParent.ValueMember = "Key";
-            cbbParent.DataSource = new BindingSource(cbblist, null);
+            cbbParent.DataSource = new BindingSource(pcbblist, null);
             lblParent.Text = cbbParent.SelectedValue.ToString();
+
+
+            Dictionary<string, string> ccbblist = menulist.FindAll(item => item.Parent_Screen_Code != null).ToDictionary(item => item.Screen_Code, item => item.Screen_Name);
+            cbbScreenname.DisplayMember = "Value";
+            cbbScreenname.ValueMember = "Key";
+            cbbScreenname.DataSource = new BindingSource(ccbblist, null);
+            lblscreencode.Text = cbbScreenname.SelectedValue.ToString();
         }
         private void tab_JOlist_DrawItem2(Object sender, System.Windows.Forms.DrawItemEventArgs e)
         {
@@ -90,14 +97,14 @@ namespace Axxen
             try
             {
 
-                if (!string.IsNullOrEmpty(txtsoncode.Text) && !string.IsNullOrEmpty(txtsonname.Text) )
+                if (!string.IsNullOrEmpty(lblscreencode.Text) && !string.IsNullOrEmpty(cbbScreenname.Text) )
                 {
 
                     MenuTree_Master_VO additem = new MenuTree_Master_VO()
                     {
                         Parent_Screen_Code = lblParent.Text,
-                        Screen_Code = txtsoncode.Text,
-                        Screen_Name = txtsonname.Text,
+                        Screen_Code = lblscreencode.Text,
+                        Screen_Name = cbbScreenname.Text,
                         Ins_Date = Convert.ToDateTime(lblday1.Text),
                         Ins_Emp = lblemp1.Text
                     };
@@ -148,8 +155,8 @@ namespace Axxen
                     MenuTree_Master_VO additem = new MenuTree_Master_VO()
                     {
                         Parent_Screen_Code = "0",
-                        Screen_Code = txtparentcode.Text,
-                        Screen_Name = txtparentname.Text,
+                        Screen_Code = lblscreencode.Text,
+                        Screen_Name = cbbScreenname.Text,
                         Ins_Date = Convert.ToDateTime(lblday2.Text),
                         Ins_Emp = lblemp2.Text
                     };
@@ -180,6 +187,11 @@ namespace Axxen
                 MessageBox.Show(err.ToString(), "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Program.Log.WriteError(err.Message);
             }
+        }
+
+        private void CbbScreenname_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblscreencode.Text = cbbScreenname.SelectedValue.ToString();
         }
     }
 }
