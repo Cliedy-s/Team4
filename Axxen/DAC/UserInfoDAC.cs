@@ -41,8 +41,9 @@ namespace DAC
             using (SqlCommand comm = new SqlCommand())
             {
                 comm.Connection = new SqlConnection(Connstr);
-                comm.CommandText = "insert into Login_History (User_ID,Login_Day,Login_Date,Login_Success) values(@User_ID,@Login_Day,@Login_Date,@Login_Success)";
+                comm.CommandText = "insert into Login_History (Session_ID,User_ID,Login_Day,Login_Date,Login_Success) values(@Session_ID,@User_ID,@Login_Day,@Login_Date,@Login_Success)";
                 comm.CommandType = CommandType.Text;
+                comm.Parameters.AddWithValue("@Session_ID", login.Session_ID);
                 comm.Parameters.AddWithValue("@User_ID", login.User_ID);
                 comm.Parameters.AddWithValue("@Login_Day", login.Login_Day);
                 comm.Parameters.AddWithValue("@Login_Date", login.Login_Date);
@@ -110,6 +111,85 @@ namespace DAC
                 return list;
             }
         }
-        
+
+        /// <summary>
+        /// 화면 사용내역 저장
+        /// </summary>
+        /// <param name="loginscreen"></param>
+        /// <returns></returns>
+        public bool InsertLogin_Screen_History(Login_Screen_HistoryVO loginscreen)
+        {
+            try
+            {
+
+                using (SqlCommand com = new SqlCommand())
+                {
+                    com.Connection = new SqlConnection(Connstr);
+                    com.CommandText = @"insert into Login_Screen_History (Session_ID,Open_Day,Open_Date,User_ID,Screen_Code)
+                                    values(@Session_ID,@Open_Day,@Open_Date,@User_ID,@Screen_Code)";
+                    com.CommandType = CommandType.Text;
+                    com.Parameters.AddWithValue("@Session_ID", loginscreen.Session_ID);
+                // com.Parameters.AddWithValue("@Seg", loginscreen.Seg);
+                    com.Parameters.AddWithValue("@Open_Day", loginscreen.Open_Day);
+                    com.Parameters.AddWithValue("@Open_Date", loginscreen.Open_Date);
+                    com.Parameters.AddWithValue("@User_ID", loginscreen.User_ID);
+                    com.Parameters.AddWithValue("@Screen_Code", loginscreen.Screen_Code);
+
+
+                 com.Connection.Open();
+
+                    int resault = Convert.ToInt32(com.ExecuteNonQuery());
+
+                    com.Connection.Close();
+
+                    return resault > 0;
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+
+        /// <summary>
+        /// 기간별 사용자 화면 사용 로그인 내역
+        /// </summary>
+        /// <param name="loginscreen"></param>
+        /// <returns></returns>
+        public List<SearchLogin_Screen_HistoryVO> GetUser_Screen_Login(DateTime start, DateTime end, string screencode, string userid)
+        {
+            try
+            {
+
+                using (SqlCommand com = new SqlCommand())
+                {
+                    com.Connection = new SqlConnection(Connstr);
+                    com.CommandText = "GetUser_Screen_Login";
+                    com.CommandType = CommandType.StoredProcedure;
+                    com.Parameters.AddWithValue("@User_ID", userid);                 
+                    com.Parameters.AddWithValue("@start", start.ToShortDateString());
+                    com.Parameters.AddWithValue("@end",end.ToShortDateString());
+                    com.Parameters.AddWithValue("@Screen_Code", screencode);
+             
+                     com.Connection.Open();
+
+                    SqlDataReader reader = com.ExecuteReader();
+                    List<SearchLogin_Screen_HistoryVO> list = Helper.DataReaderMapToList<SearchLogin_Screen_HistoryVO>(reader);
+                    com.Connection.Close();
+
+                    return list;
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
     }
 }

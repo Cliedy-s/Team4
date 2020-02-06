@@ -13,7 +13,6 @@ namespace Axxen
     public partial class QAM_SQC_006 : Axxen.GridForm
     {
         List<MatLotMaster_ItemLevelMasterVO> mlmilm;
-        List<MatLotMaster_ItemLevelMasterVO> mlmilmList;
         MatLotMaster_ItemLevelMasterSerivce mlmilmservice = new MatLotMaster_ItemLevelMasterSerivce();
         public QAM_SQC_006()
         {

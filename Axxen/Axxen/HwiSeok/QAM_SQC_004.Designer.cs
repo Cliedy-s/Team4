@@ -59,6 +59,7 @@
             this.aTextBox_FindNameByCode2.TabIndex = 39;
             this.aTextBox_FindNameByCode2.txtCodeText = "";
             this.aTextBox_FindNameByCode2.txtNameText = "";
+            this.aTextBox_FindNameByCode2.DotDotDotFormClosing += new Axxen.CustomControls.ATextBox_FindNameByCode.SearchFormClosing(this.aTextBox_FindNameByCode2_DotDotDotFormClosing);
             // 
             // aTextBox_FindNameByCode1
             // 
@@ -73,6 +74,7 @@
             this.aTextBox_FindNameByCode1.TabIndex = 38;
             this.aTextBox_FindNameByCode1.txtCodeText = "";
             this.aTextBox_FindNameByCode1.txtNameText = "";
+            this.aTextBox_FindNameByCode1.DotDotDotFormClosing += new Axxen.CustomControls.ATextBox_FindNameByCode.SearchFormClosing(this.aTextBox_FindNameByCode1_DotDotDotFormClosing);
             // 
             // aLabel1
             // 
@@ -85,8 +87,8 @@
             // 
             // aDateTimePickerSearch1
             // 
-            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 1, 28, 11, 21, 8, 672);
-            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 2, 4, 11, 21, 8, 672);
+            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 1, 29, 16, 2, 44, 541);
+            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 2, 5, 16, 2, 44, 541);
             this.aDateTimePickerSearch1.ButtonText = "조회";
             this.aDateTimePickerSearch1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aDateTimePickerSearch1.Location = new System.Drawing.Point(112, 23);
@@ -94,6 +96,7 @@
             this.aDateTimePickerSearch1.Name = "aDateTimePickerSearch1";
             this.aDateTimePickerSearch1.Size = new System.Drawing.Size(324, 32);
             this.aDateTimePickerSearch1.TabIndex = 40;
+            this.aDateTimePickerSearch1.btnDateTimeSearch_Click += new Axxen.CustomControls.ADateTimePickerSearch.SearchButtonClick(this.aDateTimePickerSearch1_btnDateTimeSearch_Click);
             // 
             // QAM_SQC_004
             // 
@@ -101,6 +104,8 @@
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.Name = "QAM_SQC_004";
             this.Text = "품질측정값 조회";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.QAM_SQC_004_FormClosing);
+            this.Load += new System.EventHandler(this.QAM_SQC_004_Load);
             this.panTop.ResumeLayout(false);
             this.panTop.PerformLayout();
             this.ResumeLayout(false);

@@ -90,5 +90,7 @@ namespace Axxen
         /// 최종수정자
         /// </summary>
         public static string Up_Emp { get; set; }
+
+        public static string Session_ID { get; set; }
     }
 }
