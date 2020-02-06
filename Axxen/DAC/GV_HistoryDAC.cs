@@ -91,62 +91,32 @@ namespace DAC
         /// </summary>
         public bool UpdateClearGV(GVClearVO item)
         {
-            using (SqlConnection conn = new SqlConnection(Connstr))
+            try
             {
-                SqlCommand comm = new SqlCommand();
-                comm.Connection = conn;
-                comm.CommandText =
- @"UPDATE [dbo].[GV_History]
- SET
- [Clear_Date] = getdate() 
- ,[Clear_Datetime] = getdate()
- ,[Clear_Qty] = @Clear_Qty
- ,[Clear_Cause] = @Clear_Cause 
- ,[Clear_wc] = @Clear_wc 
- ,[Clear_Item] = @Clear_Item
- ,[Up_Date] = getdate()
- ,[Up_Emp] = @Up_Emp
- WHERE [GV_Code] = @GV_Code
-	AND Loading_time = (SELECT MAX(Loading_time) FROM [GV_History] WHERE GV_Code = @GV_Code); ";
-                comm.Parameters.AddWithValue("@Clear_Qty", item.Clear_Qty);
-                comm.Parameters.AddWithValue("@Clear_Cause", item.Clear_Cause);
-                comm.Parameters.AddWithValue("@Clear_wc", item.Clear_wc);
-                comm.Parameters.AddWithValue("@Clear_Item", item.Clear_Item);
-                comm.Parameters.AddWithValue("@Up_Emp", item.Up_Emp);
-                comm.Parameters.AddWithValue("@GV_Code", item.GV_Code);
-
-                SqlCommand comm2 = new SqlCommand();
-                comm2.Connection = conn;
-                comm2.CommandText = 
-@"UPDATE [GV_Master] SET GV_Status = '빈대차' WHERE GV_Code = @gvcode; ";
-                comm2.Parameters.AddWithValue("@gvcode", item.GV_Code);
-
-                SqlTransaction transaction =null;
-                try
+                using (SqlCommand comm = new SqlCommand())
                 {
-                    conn.Open();
-                    transaction = conn.BeginTransaction();
+                    comm.Connection = new SqlConnection(Connstr);
+                    comm.CommandText = @"UpdateGVClear";
 
-                    comm.Transaction = transaction;
-                    comm2.Transaction = transaction;
+                    comm.CommandType = CommandType.StoredProcedure;
 
+                    comm.Parameters.AddWithValue("@Clear_Qty", item.Clear_Qty);
+                    comm.Parameters.AddWithValue("@Clear_Cause", item.Clear_Cause);
+                    comm.Parameters.AddWithValue("@Clear_wc", item.Clear_wc);
+                    comm.Parameters.AddWithValue("@Clear_Item", item.Clear_Item);
+                    comm.Parameters.AddWithValue("@Up_Emp", item.Up_Emp);
+                    comm.Parameters.AddWithValue("@GV_Code", item.GV_Code);
+
+                    comm.Connection.Open();
                     int result = comm.ExecuteNonQuery();
-                    int result2 = comm2.ExecuteNonQuery();
-                    transaction.Commit();
-                    conn.Close();
+                    comm.Connection.Close();
 
-                    return (result > 0) && (result2 > 0);
+                    return result > 0;
                 }
-                catch (Exception ee)
-                {
-                    Debug.WriteLine(ee.Message);
-                    transaction.Rollback();
-                    return false;
-                }
-                finally
-                {
-                    conn.Close();
-                }
+            }
+            catch (Exception EE)
+            {
+                return false;
             }
         }
     }

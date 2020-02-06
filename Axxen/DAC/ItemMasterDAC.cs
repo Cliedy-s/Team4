@@ -72,7 +72,7 @@ namespace DAC
 
                 }
             }
-            catch (Exception err)
+            catch
             {
            
                 return false;
@@ -230,7 +230,7 @@ namespace DAC
             using (SqlConnection conn = new SqlConnection(Connstr))
             {
                 conn.Open();
-                string sql = $"select Prd_Date,wo.Item_Code,Pallet_No,Plan_Qty,Worker_CloseTime,Close_CancelTime,Upload_Flag,wo.Workorderno,Wo_Status from workOrder wo INNER JOIN Item_Master im ON wo.Item_Code = im.Item_Code INNER JOIN Goods_In_History gih ON wo.Workorderno = gih.Workorderno  where Prd_Date BETWEEN '{ADateTimePickerValue1}' AND '{ADateTimePickerValue2}' Order By Prd_Date Desc";
+                string sql = $"select Prd_Date,wo.Item_Code,Item_Name,Pallet_No,Plan_Qty,Worker_CloseTime,Close_CancelTime,Upload_Flag,wo.Workorderno,Wo_Status from workOrder wo INNER JOIN Item_Master im ON wo.Item_Code = im.Item_Code INNER JOIN Goods_In_History gih ON wo.Workorderno = gih.Workorderno  where Prd_Date BETWEEN '{ADateTimePickerValue1}' AND '{ADateTimePickerValue2}' Order By Prd_Date Desc";
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
                     list = Helper.DataReaderMapToList<Item_Goods_HistoryVO>(cmd.ExecuteReader());

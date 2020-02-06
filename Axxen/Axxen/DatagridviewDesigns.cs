@@ -39,6 +39,7 @@ namespace Axxen
             dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(218, 239, 245);//홀수행 색변경
             dgv.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(218, 239, 245);   //컬럼 해더 색설정     
             dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(160, 239, 245); //컬럼색설정
+            dgv.DefaultCellStyle.SelectionForeColor = Color.Black; //글리드뷰 안 글자색
             dgv.BackgroundColor = Color.White; //그리드뷰 배경색
 
             dgv.DefaultCellStyle.WrapMode = DataGridViewTriState.False;

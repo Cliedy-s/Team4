@@ -30,7 +30,7 @@
         {
             this.dgvNopList = new Axxen.CustomControls.ADataGridView();
             this.btnChangeReason = new Axxen.CustomControls.AButton();
-            this.aPanel1.SuspendLayout();
+            this.panBottom.SuspendLayout();
             this.aPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNopList)).BeginInit();
@@ -42,8 +42,8 @@
             // 
             // aPanel1
             // 
-            this.aPanel1.Location = new System.Drawing.Point(0, 593);
-            this.aPanel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panBottom.Location = new System.Drawing.Point(0, 593);
+            this.panBottom.Margin = new System.Windows.Forms.Padding(2);
             // 
             // dgvNopList
             // 
@@ -83,11 +83,11 @@
             this.Name = "POP_PRD_016";
             this.Load += new System.EventHandler(this.POP_PRD_016_Load);
             this.Controls.SetChildIndex(this.aPanel2, 0);
-            this.Controls.SetChildIndex(this.aPanel1, 0);
+            this.Controls.SetChildIndex(this.panBottom, 0);
             this.Controls.SetChildIndex(this.dgvNopList, 0);
             this.Controls.SetChildIndex(this.btnChangeReason, 0);
-            this.aPanel1.ResumeLayout(false);
-            this.aPanel1.PerformLayout();
+            this.panBottom.ResumeLayout(false);
+            this.panBottom.PerformLayout();
             this.aPanel2.ResumeLayout(false);
             this.aPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();

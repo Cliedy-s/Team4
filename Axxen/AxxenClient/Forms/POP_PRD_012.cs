@@ -57,7 +57,7 @@ namespace AxxenClient.Forms
             // TODO - 조건에 맞게 변경하기
             //dgvGVFrom.DataSource = service.GetGVCurrentStatus(wccode:GlobalUsage.WcCode, workorderno:GlobalUsage.WorkOrderNo, gvStatus:"적재");
             GV_Current_StatusService service = new GV_Current_StatusService();
-            List<GVStatusVO> list = service.GetGVCurrentStatus(gvName:txtGVSearch.TextBoxText);
+            List<GVStatusVO> list = service.GetGVCurrentStatus(gvName: txtGVSearch.TextBoxText);
             dgvGVList.DataSource =
                 (from item in list
                  where (item.GV_Status == "적재" || item.GV_Status == "언로딩")
@@ -66,25 +66,30 @@ namespace AxxenClient.Forms
 
         private void btnGVClear_Click(object sender, EventArgs e)
         {
-            if (dgvGVList.SelectedRows.Count < 1)
+
+            if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
             {
-                MessageBox.Show("대차를 선택해주세요");
-                return;
+                if (dgvGVList.SelectedRows.Count < 1)
+                {
+                    MessageBox.Show("대차를 선택해주세요");
+                    return;
+                }
+                GV_HistoryService service = new GV_HistoryService();
+                GVClearVO clearvo = new GVClearVO()
+                {
+                    Clear_Cause = "건조대차 비움",
+                    Clear_Item = dgvGVList.SelectedRows[0].Cells[7].Value == null ? "" : dgvGVList.SelectedRows[0].Cells[7].Value.ToString(),
+                    Clear_Qty = dgvGVList.SelectedRows[0].Cells[3].Value == null ? 0 : Convert.ToInt32(dgvGVList.SelectedRows[0].Cells[3].Value),
+                    Clear_wc = GlobalUsage.WcCode,
+                    GV_Code = dgvGVList.SelectedRows[0].Cells[0].Value.ToString(),
+                    Up_Emp = GlobalUsage.UserID
+                };
+                if (service.UpdateClearGV(clearvo))
+                    GetDatas();
+                else
+                    MessageBox.Show("대차 비우기에 실패하였습니다.");
             }
-            GV_HistoryService service = new GV_HistoryService();
-            GVClearVO clearvo = new GVClearVO()
-            {
-                Clear_Cause = "건조대차 비움",
-                Clear_Item = dgvGVList.SelectedRows[0].Cells[7].Value == null ? "" : dgvGVList.SelectedRows[0].Cells[7].Value.ToString(),
-                Clear_Qty = dgvGVList.SelectedRows[0].Cells[3].Value == null ? 0 : Convert.ToInt32(dgvGVList.SelectedRows[0].Cells[3].Value),
-                Clear_wc = GlobalUsage.WcCode,
-                GV_Code = dgvGVList.SelectedRows[0].Cells[0].Value.ToString(),
-                Up_Emp = GlobalUsage.UserID
-            };
-            if (service.UpdateClearGV(clearvo))
-                GetDatas();
-            else
-                MessageBox.Show("대차 비우기에 실패하였습니다.");
+            else MessageBox.Show("작업을 시작해주세요");
         }
     }
 }

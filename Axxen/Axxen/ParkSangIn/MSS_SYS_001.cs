@@ -27,9 +27,13 @@ namespace Axxen
             tvMenu.ImageList = imgList;
             tvMenu.AllowDrop = true;
             treeview();
-         
 
-             DatagridviewDesigns.SetDesign(dgvParent);
+            ((MainForm)this.MdiParent).InsertFormEvent += new System.EventHandler(this.InsertFormShow);//입력이벤트 등록
+            ((MainForm)this.MdiParent).RefreshFormEvent += new EventHandler(this.RefreshFormShow);
+            ((MainForm)this.MdiParent).MyDeleteEvent += new EventHandler(this.MyDelete);
+
+
+            DatagridviewDesigns.SetDesign(dgvParent);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvParent, "코드", "Screen_Code", true, 210, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvParent, "이름", "Screen_Name", true, 210, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvParent, "날자", "Ins_Date", true, 210, default, true);
@@ -55,14 +59,96 @@ namespace Axxen
             for (int i = 0; i < parent.Count; i++)
             {
                 tvMenu.Nodes.Add(parent[i].Screen_Name);
+                tvMenu.Nodes[i].Tag = parent[i].Screen_Code;
                 var son = menulist.FindAll(s => s.Parent_Screen_Code == parent[i].Screen_Code);
                 for (int j = 0; j < son.Count; j++)
                 {
                     tvMenu.Nodes[i].Nodes.Add(son[j].Screen_Name);
+                    tvMenu.Nodes[i].Nodes[j].Tag = son[j].Screen_Code;
                 }
             }
 
             tvMenu.ExpandAll();
+        }
+
+        /// <summary>
+        /// 입력 이벤트 메서드
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void InsertFormShow(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
+                {
+                    MSS_SYS_001_1 frm = new MSS_SYS_001_1();
+
+                    frm.ShowDialog();
+                    datagridviewsetting();
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+                Program.Log.WriteError(err.Message);
+            }
+
+        }
+        private void MyDelete(object sender, EventArgs e)
+        {
+
+
+
+            if (lbldeletecheck1.Text == "1")
+            {
+                if (MessageBox.Show(dgvParent.SelectedRows[0].Cells[0].Value.ToString() + "하위항목도 모두 삭제됩니다. 메뉴를 삭제하시겠습니까?", "알림", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    //   MessageBox.Show(dgvParent.SelectedRows[0].Cells[0].Value.ToString());
+                    if (service.DeleteMenuTree_Master_VO(dgvParent.SelectedRows[0].Cells[0].Value.ToString(), dgvParent.SelectedRows[0].Cells[0].Value.ToString()))
+                    {
+                        treeview();
+                        datagridviewsetting();
+                        MessageBox.Show(dgvParent.SelectedRows[0].Cells[0].Value.ToString() + "가 삭제되었습니다.", "알림", MessageBoxButtons.YesNo);
+                    }
+                }
+            }
+            else if (lbldeletecheck2.Text == "1")
+            {
+                if (MessageBox.Show(dgvSon.SelectedRows[0].Cells[1].Value.ToString() + "메뉴를 삭제하시겠습니까?", "알림", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    //      MessageBox.Show(dgvSon.SelectedRows[0].Cells[1].Value.ToString());
+                    if (service.DeleteMenuTree_Master_VO("-1", dgvSon.SelectedRows[0].Cells[1].Value.ToString()))
+                    {
+                        treeview();
+                        datagridviewsetting();
+                        MessageBox.Show(dgvParent.SelectedRows[0].Cells[0].Value.ToString() + "가 삭제되었습니다.", "알림", MessageBoxButtons.YesNo);
+                              }
+                }
+            }
+
+        }
+        /// <summary>
+        /// 새로고침 이벤트 메서드
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void RefreshFormShow(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
+                {
+                    treeview();
+                    datagridviewsetting();
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+                Program.Log.WriteError(err.Message);
+            }
         }
 
         private void datagridviewsetting()
@@ -77,42 +163,41 @@ namespace Axxen
         #region drawtreeview
         private void TvMenu_DragDrop(object sender, DragEventArgs e)
         {
-            // Retrieve the client coordinates of the drop location.
+
             Point targetPoint = tvMenu.PointToClient(new Point(e.X, e.Y));
 
-            // Retrieve the node at the drop location.
             TreeNode targetNode = tvMenu.GetNodeAt(targetPoint);
-       
 
-            if (targetNode.Level==0)
-            { 
 
-            // Retrieve the node that was dragged.
-            TreeNode draggedNode = (TreeNode)e.Data.GetData(typeof(TreeNode));
-
-            // Confirm that the node at the drop location is not 
-            // the dragged node or a descendant of the dragged node.
-            if (!draggedNode.Equals(targetNode) && !ContainsNode(draggedNode, targetNode))
+            if (targetNode != null && targetNode.Level == 0) //레벨0인곳에만 이동가능하게
             {
-                // If it is a move operation, remove the node from its current 
-                // location and add it to the node at the drop location.
-                if (e.Effect == DragDropEffects.Move)
-                {
-                    draggedNode.Remove();
-                    targetNode.Nodes.Add(draggedNode);
-                }
 
-                // If it is a copy operation, clone the dragged node 
-                // and add it to the node at the drop location.
-                else if (e.Effect == DragDropEffects.Copy)
-                {
-                    targetNode.Nodes.Add((TreeNode)draggedNode.Clone());
-                }
+                // Retrieve the node that was dragged.
+                TreeNode draggedNode = (TreeNode)e.Data.GetData(typeof(TreeNode));
 
-                // Expand the node at the location 
-                // to show the dropped node.
-                targetNode.Expand();
-            }
+                if (draggedNode.Level != 0) // level0인 부모를 자식에게 넣지못하게
+                {
+                    if (!draggedNode.Equals(targetNode) && !ContainsNode(draggedNode, targetNode))
+                    {
+                        if (e.Effect == DragDropEffects.Move)
+                        {
+                            draggedNode.Remove();
+                            targetNode.Nodes.Add(draggedNode);
+                            service.UpdateManu(targetNode.Tag.ToString(), draggedNode.Tag.ToString()); //메뉴 db변경
+                            ((MainForm)this.MdiParent).Setting();
+                        }
+
+                        else if (e.Effect == DragDropEffects.Copy)
+                        {
+                            targetNode.Nodes.Add((TreeNode)draggedNode.Clone());
+                        }
+
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("이동할 수 없는 경로입니다.");
+                }
             }
             else
             {
@@ -161,7 +246,7 @@ namespace Axxen
 
             {
 
-        //        tvMenu.tvPersonSaveXml();
+                //        tvMenu.tvPersonSaveXml();
 
             }
         }
@@ -181,8 +266,21 @@ namespace Axxen
         private void DgvParent_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             dgvSon.DataSource = null;
-           var son = menulist.FindAll(p => p.Parent_Screen_Code == dgvParent.SelectedRows[0].Cells[0].Value.ToString());
+            var son = menulist.FindAll(p => p.Parent_Screen_Code == dgvParent.SelectedRows[0].Cells[0].Value.ToString());
             dgvSon.DataSource = son;
+        }
+
+        private void DgvParent_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            lbldeletecheck1.Text = "1";
+            lbldeletecheck2.Text = "0";
+        }
+
+        private void DgvSon_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            lbldeletecheck1.Text = "0";
+            lbldeletecheck2.Text = "1";
         }
     }
 }

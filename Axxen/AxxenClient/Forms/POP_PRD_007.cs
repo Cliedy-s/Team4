@@ -61,33 +61,40 @@ namespace AxxenClient.Forms
         }
         private void btnToSearch_Click(object sender, EventArgs e)
         { // 검색
+
             GV_Current_StatusService service = new GV_Current_StatusService();
             // TODO - 조건에 맞게 변경하기
-            dgvGVTo.DataSource = service.GetGVCurrentStatus(gvStatus: "빈대차", gvName:txtToGVSearch.TextBoxText);
+            dgvGVTo.DataSource = service.GetGVCurrentStatus(gvStatus: "빈대차", gvName: txtToGVSearch.TextBoxText);
         }
         private void btnFromSearch_Click(object sender, EventArgs e)
         { // 검색
+
             GV_Current_StatusService service = new GV_Current_StatusService();
             // TODO - 조건에 맞게 변경하기
-            dgvGVFrom.DataSource = service.GetGVCurrentStatus(gvStatus: "적재", gvName:txtFromGVSearch.TextBoxText);
+            dgvGVFrom.DataSource = service.GetGVCurrentStatus(gvStatus: "적재", gvName: txtFromGVSearch.TextBoxText);
         }
         private void btnLoad_Click(object sender, EventArgs e)
         {
-            string loadinggvcode = dgvGVTo.SelectedRows[0].Cells[0].Value.ToString();
-            string unloadgvcode = dgvGVFrom.SelectedRows[0].Cells[0].Value.ToString();
-            GV_HistoryService service = new GV_HistoryService();
 
-            // 옮겨타기
-            if (service.UpdateMoveGvItem(unloadgvcode, loadinggvcode, Convert.ToInt32(txtLoading.TextBoxText), GlobalUsage.UserID, GlobalUsage.WcCode, GlobalUsage.WorkOrderNo))
+            if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
             {
-                GetDatas();
+                string loadinggvcode = dgvGVTo.SelectedRows[0].Cells[0].Value.ToString();
+                string unloadgvcode = dgvGVFrom.SelectedRows[0].Cells[0].Value.ToString();
+                GV_HistoryService service = new GV_HistoryService();
+
+                // 옮겨타기
+                if (service.UpdateMoveGvItem(unloadgvcode, loadinggvcode, Convert.ToInt32(txtLoading.TextBoxText), GlobalUsage.UserID, GlobalUsage.WcCode, GlobalUsage.WorkOrderNo))
+                {
+                    GetDatas();
+                }
+                else
+                    MessageBox.Show("옮길 수 없는 대차 입니다.");
             }
-            else
-                MessageBox.Show("옮길 수 없는 대차 입니다.");
+            else MessageBox.Show("작업을 시작해주세요");
         }
         private void dgvGVFrom_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex > -1)
+            if (e.RowIndex > -1)
             {
                 txtLoading.TextBoxText = dgvGVFrom.SelectedRows[0].Cells[3].Value.ToString();
             }

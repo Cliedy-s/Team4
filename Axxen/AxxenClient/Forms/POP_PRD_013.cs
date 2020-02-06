@@ -27,12 +27,13 @@ namespace AxxenClient.Forms
         {
             InitControlUtil.SetPOPDGVDesign(dgvAllocatedWorker);
             InitControlUtil.AddNewColumnToDataGridView(dgvAllocatedWorker, "작업자", "User_Name", true, 100);
-            InitControlUtil.AddNewColumnToDataGridView(dgvAllocatedWorker, "할당시각", "Allocation_datetime", true, 100, DataGridViewContentAlignment.MiddleLeft, true);
+            InitControlUtil.AddNewColumnToDataGridView(dgvAllocatedWorker, "할당시각", "Allocation_datetime", true, 200, DataGridViewContentAlignment.MiddleLeft, true);
+            InitControlUtil.AddNewColumnToDataGridView(dgvAllocatedWorker, "ID", "User_ID", true, 80);
             dgvAllocatedWorker.Columns[1].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm:ss";
 
             InitControlUtil.SetPOPDGVDesign(dgvAllocatableWorker);
             InitControlUtil.AddNewColumnToDataGridView(dgvAllocatableWorker, "작업자", "User_Name", true, 100);
-            InitControlUtil.AddNewColumnToDataGridView(dgvAllocatableWorker, "현재 작업장", "Wc_Name", true, 100, DataGridViewContentAlignment.MiddleLeft, true);
+            InitControlUtil.AddNewColumnToDataGridView(dgvAllocatableWorker, "현재 작업장", "NOWWC", true, 100, DataGridViewContentAlignment.MiddleLeft, true);
             InitControlUtil.AddNewColumnToDataGridView(dgvAllocatableWorker, "ID", "User_ID", false, 80);
         }
         private void GetDatas()
@@ -63,7 +64,7 @@ namespace AxxenClient.Forms
             if (dgvAllocatedWorker.SelectedRows.Count > 0)
             {
                 Emp_Allocation_HistoryService service = new Emp_Allocation_HistoryService();
-                if (service.UpdateWorkerDeallocate(dgvAllocatableWorker.SelectedRows[0].Cells[2].Value.ToString(), GlobalUsage.UserID, GlobalUsage.WcCode))
+                if (service.UpdateWorkerDeallocate(dgvAllocatedWorker.SelectedRows[0].Cells[2].Value.ToString(), GlobalUsage.UserID, GlobalUsage.WcCode))
                 {
                     GetDatas();
                 }

@@ -38,7 +38,7 @@
             this.btnSetPressCondition2 = new Axxen.CustomControls.AButton();
             this.btnQualityMeasure3 = new Axxen.CustomControls.AButton();
             this.panLoad = new Axxen.CustomControls.APanel();
-            this.btnWorkOrderOnOff2 = new Axxen.CustomControls.AButton();
+            this.btnWorkOrderOnOff0 = new Axxen.CustomControls.AButton();
             this.btnWorkOrderQuit2 = new Axxen.CustomControls.AButton();
             this.btnWorkOrderCreate2 = new Axxen.CustomControls.AButton();
             this.btnSetWorker2 = new Axxen.CustomControls.AButton();
@@ -47,6 +47,7 @@
             this.btnClearDryGV = new Axxen.CustomControls.AButton();
             this.btnSetPressCondition1 = new Axxen.CustomControls.AButton();
             this.btnQualityMeasure2 = new Axxen.CustomControls.AButton();
+            this.btnWorkOrderOnOff2 = new Axxen.CustomControls.AButton();
             this.panBoxing = new Axxen.CustomControls.APanel();
             this.btnWorkOrderOnOff1 = new Axxen.CustomControls.AButton();
             this.btnWorkOrderQuit1 = new Axxen.CustomControls.AButton();
@@ -57,7 +58,7 @@
             this.btnWarehousing = new Axxen.CustomControls.AButton();
             this.btnUnload = new Axxen.CustomControls.AButton();
             this.btnQualityMeasure1 = new Axxen.CustomControls.AButton();
-            this.aPanel1.SuspendLayout();
+            this.panBottom.SuspendLayout();
             this.aPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).BeginInit();
@@ -66,23 +67,23 @@
             this.panBoxing.SuspendLayout();
             this.SuspendLayout();
             // 
-            // aLabel_Header1
+            // panBottom
             // 
-            this.aLabel_Header1.Text = "작업지시 현황";
-            // 
-            // aPanel1
-            // 
-            this.aPanel1.Location = new System.Drawing.Point(0, 585);
-            this.aPanel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panBottom.Location = new System.Drawing.Point(0, 585);
+            this.panBottom.Margin = new System.Windows.Forms.Padding(4);
             // 
             // btnNoActive
             // 
             this.btnNoActive.Tag = typeof(AxxenClient.Forms.POP_PRD_016);
             this.btnNoActive.Click += new System.EventHandler(this.btnClick);
             // 
-            // timetimer
+            // aLabel_Header1
             // 
-            this.timetimer.Tick += new System.EventHandler(this.timetimer_Tick);
+            this.aLabel_Header1.Text = "작업지시 현황";
+            // 
+            // btnMachineRun
+            // 
+            this.btnMachineRun.Click += new System.EventHandler(this.btnMachineRun_Click);
             // 
             // dgvMain
             // 
@@ -216,7 +217,7 @@
             // 
             this.panLoad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panLoad.Controls.Add(this.btnWorkOrderOnOff2);
+            this.panLoad.Controls.Add(this.btnWorkOrderOnOff0);
             this.panLoad.Controls.Add(this.btnWorkOrderQuit2);
             this.panLoad.Controls.Add(this.btnWorkOrderCreate2);
             this.panLoad.Controls.Add(this.btnSetWorker2);
@@ -231,19 +232,19 @@
             this.panLoad.TabIndex = 6;
             this.panLoad.Visible = false;
             // 
-            // btnWorkOrderOnOff2
+            // btnWorkOrderOnOff0
             // 
-            this.btnWorkOrderOnOff2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnWorkOrderOnOff2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.btnWorkOrderOnOff2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnWorkOrderOnOff2.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnWorkOrderOnOff2.Location = new System.Drawing.Point(3, 3);
-            this.btnWorkOrderOnOff2.Name = "btnWorkOrderOnOff2";
-            this.btnWorkOrderOnOff2.Size = new System.Drawing.Size(126, 118);
-            this.btnWorkOrderOnOff2.TabIndex = 15;
-            this.btnWorkOrderOnOff2.Text = "작업시작/종료";
-            this.btnWorkOrderOnOff2.UseVisualStyleBackColor = false;
-            this.btnWorkOrderOnOff2.Click += new System.EventHandler(this.btnWorkOrderToggle);
+            this.btnWorkOrderOnOff0.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnWorkOrderOnOff0.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.btnWorkOrderOnOff0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWorkOrderOnOff0.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnWorkOrderOnOff0.Location = new System.Drawing.Point(4, 3);
+            this.btnWorkOrderOnOff0.Name = "btnWorkOrderOnOff0";
+            this.btnWorkOrderOnOff0.Size = new System.Drawing.Size(126, 118);
+            this.btnWorkOrderOnOff0.TabIndex = 16;
+            this.btnWorkOrderOnOff0.Text = "작업시작/종료";
+            this.btnWorkOrderOnOff0.UseVisualStyleBackColor = false;
+            this.btnWorkOrderOnOff0.Click += new System.EventHandler(this.btnClick);
             // 
             // btnWorkOrderQuit2
             // 
@@ -356,6 +357,20 @@
             this.btnQualityMeasure2.Text = "품질\r\n측정값\r\n등록";
             this.btnQualityMeasure2.UseVisualStyleBackColor = false;
             this.btnQualityMeasure2.Click += new System.EventHandler(this.btnClick);
+            // 
+            // btnWorkOrderOnOff2
+            // 
+            this.btnWorkOrderOnOff2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnWorkOrderOnOff2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.btnWorkOrderOnOff2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWorkOrderOnOff2.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnWorkOrderOnOff2.Location = new System.Drawing.Point(3, 3);
+            this.btnWorkOrderOnOff2.Name = "btnWorkOrderOnOff2";
+            this.btnWorkOrderOnOff2.Size = new System.Drawing.Size(126, 118);
+            this.btnWorkOrderOnOff2.TabIndex = 15;
+            this.btnWorkOrderOnOff2.Text = "작업시작/종료";
+            this.btnWorkOrderOnOff2.UseVisualStyleBackColor = false;
+            this.btnWorkOrderOnOff2.Click += new System.EventHandler(this.btnWorkOrderToggle);
             // 
             // panBoxing
             // 
@@ -504,7 +519,6 @@
             // 
             // POP_PRD_001
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1210, 621);
             this.Controls.Add(this.panBoxing);
             this.Controls.Add(this.panLoad);
@@ -520,9 +534,9 @@
             this.Controls.SetChildIndex(this.panLoad, 0);
             this.Controls.SetChildIndex(this.panBoxing, 0);
             this.Controls.SetChildIndex(this.aPanel2, 0);
-            this.Controls.SetChildIndex(this.aPanel1, 0);
-            this.aPanel1.ResumeLayout(false);
-            this.aPanel1.PerformLayout();
+            this.Controls.SetChildIndex(this.panBottom, 0);
+            this.panBottom.ResumeLayout(false);
+            this.panBottom.PerformLayout();
             this.aPanel2.ResumeLayout(false);
             this.aPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
@@ -565,5 +579,6 @@
         private Axxen.CustomControls.AButton btnWarehousing;
         private Axxen.CustomControls.AButton btnUnload;
         private Axxen.CustomControls.AButton btnQualityMeasure1;
+        private Axxen.CustomControls.AButton btnWorkOrderOnOff0;
     }
 }

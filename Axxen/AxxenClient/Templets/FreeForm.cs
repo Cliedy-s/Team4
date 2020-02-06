@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AxxenClient.Templets
 {
-    public partial class FreeForm : BaseForm
+    public partial class ClientFreeForm : Form
     {
-        public FreeForm()
+        public ClientFreeForm()
         {
             InitializeComponent();
         }

@@ -43,7 +43,7 @@
             this.btnToSearch = new Axxen.CustomControls.AButton();
             this.txtFromGVSearch = new Axxen.CustomControls.ABigTextBox_Labeled();
             this.txtToGVSearch = new Axxen.CustomControls.ABigTextBox_Labeled();
-            this.aPanel1.SuspendLayout();
+            this.panBottom.SuspendLayout();
             this.aPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGVFrom)).BeginInit();
@@ -55,10 +55,10 @@
             // 
             this.aLabel_Header1.Text = "성형 생산 대차 선택";
             // 
-            // aPanel1
+            // panBottom
             // 
-            this.aPanel1.Location = new System.Drawing.Point(0, 593);
-            this.aPanel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panBottom.Location = new System.Drawing.Point(0, 593);
+            this.panBottom.Margin = new System.Windows.Forms.Padding(2);
             // 
             // btnLoading
             // 
@@ -219,6 +219,7 @@
             this.btnFromSearch.TabIndex = 39;
             this.btnFromSearch.Text = "검색";
             this.btnFromSearch.UseVisualStyleBackColor = false;
+            this.btnFromSearch.Click += new System.EventHandler(this.btnFromSearch_Click);
             // 
             // btnToSearch
             // 
@@ -232,6 +233,7 @@
             this.btnToSearch.TabIndex = 38;
             this.btnToSearch.Text = "검색";
             this.btnToSearch.UseVisualStyleBackColor = false;
+            this.btnToSearch.Click += new System.EventHandler(this.btnToSearch_Click);
             // 
             // txtFromGVSearch
             // 
@@ -262,7 +264,6 @@
             // 
             // POP_PRD_007
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1210, 629);
             this.Controls.Add(this.btnFromSearch);
             this.Controls.Add(this.btnToSearch);
@@ -282,13 +283,13 @@
             this.Controls.SetChildIndex(this.btnLoading, 0);
             this.Controls.SetChildIndex(this.txtLoading, 0);
             this.Controls.SetChildIndex(this.aPanel2, 0);
-            this.Controls.SetChildIndex(this.aPanel1, 0);
+            this.Controls.SetChildIndex(this.panBottom, 0);
             this.Controls.SetChildIndex(this.txtToGVSearch, 0);
             this.Controls.SetChildIndex(this.txtFromGVSearch, 0);
             this.Controls.SetChildIndex(this.btnToSearch, 0);
             this.Controls.SetChildIndex(this.btnFromSearch, 0);
-            this.aPanel1.ResumeLayout(false);
-            this.aPanel1.PerformLayout();
+            this.panBottom.ResumeLayout(false);
+            this.panBottom.PerformLayout();
             this.aPanel2.ResumeLayout(false);
             this.aPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();

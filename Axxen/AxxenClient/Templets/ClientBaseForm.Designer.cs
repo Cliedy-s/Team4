@@ -28,62 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.lblTime = new Axxen.CustomControls.ALabel();
-            this.aLabel_Header1 = new Axxen.CustomControls.ALabel_Header();
-            this.aPanel1 = new Axxen.CustomControls.APanel();
+            this.panBottom = new Axxen.CustomControls.APanel();
             this.btnNoActive = new Axxen.CustomControls.AButton();
             this.btnConfig = new Axxen.CustomControls.AButton();
             this.txtPronounce = new Axxen.CustomControls.ALabel();
             this.aPanel2 = new Axxen.CustomControls.APanel();
+            this.lblTime = new Axxen.CustomControls.ALabel();
             this.aPanel3 = new Axxen.CustomControls.APanel();
+            this.aLabel_Header1 = new Axxen.CustomControls.ALabel_Header();
             this.btnClose = new System.Windows.Forms.PictureBox();
-            this.timetimer = new System.Windows.Forms.Timer(this.components);
-            this.aPanel1.SuspendLayout();
+            this.btnMachineRun = new Axxen.CustomControls.AButton();
+            this.panBottom.SuspendLayout();
             this.aPanel2.SuspendLayout();
             this.aPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblTime
+            // panBottom
             // 
-            this.lblTime.AutoSize = true;
-            this.lblTime.BackColor = System.Drawing.Color.White;
-            this.lblTime.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblTime.ForeColor = System.Drawing.Color.Orange;
-            this.lblTime.Location = new System.Drawing.Point(25, 20);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(127, 60);
-            this.lblTime.TabIndex = 0;
-            this.lblTime.Text = "2020-01-13\r\n18:26:32";
-            this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // aLabel_Header1
-            // 
-            this.aLabel_Header1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.aLabel_Header1.BackColor = System.Drawing.Color.White;
-            this.aLabel_Header1.Font = new System.Drawing.Font("나눔고딕", 25F, System.Drawing.FontStyle.Bold);
-            this.aLabel_Header1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.aLabel_Header1.Location = new System.Drawing.Point(183, 29);
-            this.aLabel_Header1.Name = "aLabel_Header1";
-            this.aLabel_Header1.Size = new System.Drawing.Size(898, 39);
-            this.aLabel_Header1.TabIndex = 1;
-            this.aLabel_Header1.Text = "aLabel_Header1";
-            this.aLabel_Header1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // aPanel1
-            // 
-            this.aPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.aPanel1.Controls.Add(this.btnNoActive);
-            this.aPanel1.Controls.Add(this.btnConfig);
-            this.aPanel1.Controls.Add(this.txtPronounce);
-            this.aPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.aPanel1.Location = new System.Drawing.Point(0, 681);
-            this.aPanel1.Name = "aPanel1";
-            this.aPanel1.Size = new System.Drawing.Size(1210, 36);
-            this.aPanel1.TabIndex = 2;
+            this.panBottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panBottom.Controls.Add(this.btnNoActive);
+            this.panBottom.Controls.Add(this.btnConfig);
+            this.panBottom.Controls.Add(this.txtPronounce);
+            this.panBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panBottom.Location = new System.Drawing.Point(0, 681);
+            this.panBottom.Name = "panBottom";
+            this.panBottom.Size = new System.Drawing.Size(1210, 36);
+            this.panBottom.TabIndex = 2;
             // 
             // btnNoActive
             // 
@@ -115,17 +86,17 @@
             this.txtPronounce.AutoSize = true;
             this.txtPronounce.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtPronounce.ForeColor = System.Drawing.Color.Yellow;
-            this.txtPronounce.Location = new System.Drawing.Point(857, 11);
+            this.txtPronounce.Location = new System.Drawing.Point(8, 10);
             this.txtPronounce.Name = "txtPronounce";
             this.txtPronounce.Size = new System.Drawing.Size(78, 17);
             this.txtPronounce.TabIndex = 5;
             this.txtPronounce.Text = "~공지사항~";
+            this.txtPronounce.Visible = false;
             // 
             // aPanel2
             // 
             this.aPanel2.BackColor = System.Drawing.Color.Gray;
             this.aPanel2.Controls.Add(this.lblTime);
-            this.aPanel2.Controls.Add(this.aLabel_Header1);
             this.aPanel2.Controls.Add(this.aPanel3);
             this.aPanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.aPanel2.Location = new System.Drawing.Point(0, 0);
@@ -133,15 +104,45 @@
             this.aPanel2.Size = new System.Drawing.Size(1210, 99);
             this.aPanel2.TabIndex = 3;
             // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.BackColor = System.Drawing.Color.White;
+            this.lblTime.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblTime.ForeColor = System.Drawing.Color.Orange;
+            this.lblTime.Location = new System.Drawing.Point(25, 20);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(127, 60);
+            this.lblTime.TabIndex = 0;
+            this.lblTime.Text = "2020-01-13\r\n18:26:32";
+            this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // aPanel3
             // 
             this.aPanel3.BackColor = System.Drawing.Color.White;
+            this.aPanel3.Controls.Add(this.btnMachineRun);
+            this.aPanel3.Controls.Add(this.aLabel_Header1);
             this.aPanel3.Controls.Add(this.btnClose);
             this.aPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.aPanel3.Location = new System.Drawing.Point(0, 0);
             this.aPanel3.Name = "aPanel3";
             this.aPanel3.Size = new System.Drawing.Size(1210, 97);
             this.aPanel3.TabIndex = 4;
+            // 
+            // aLabel_Header1
+            // 
+            this.aLabel_Header1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.aLabel_Header1.BackColor = System.Drawing.Color.White;
+            this.aLabel_Header1.Font = new System.Drawing.Font("나눔고딕", 25F, System.Drawing.FontStyle.Bold);
+            this.aLabel_Header1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.aLabel_Header1.Location = new System.Drawing.Point(169, 28);
+            this.aLabel_Header1.Name = "aLabel_Header1";
+            this.aLabel_Header1.Size = new System.Drawing.Size(946, 39);
+            this.aLabel_Header1.TabIndex = 1;
+            this.aLabel_Header1.Text = "aLabel_Header1";
+            this.aLabel_Header1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnClose
             // 
@@ -155,25 +156,32 @@
             this.btnClose.TabStop = false;
             this.btnClose.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // timetimer
+            // btnMachineRun
             // 
-            this.timetimer.Interval = 1000;
-            this.timetimer.Tick += new System.EventHandler(this.timetimer_Tick);
+            this.btnMachineRun.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.btnMachineRun.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMachineRun.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnMachineRun.Location = new System.Drawing.Point(176, 2);
+            this.btnMachineRun.Name = "btnMachineRun";
+            this.btnMachineRun.Size = new System.Drawing.Size(95, 92);
+            this.btnMachineRun.TabIndex = 17;
+            this.btnMachineRun.Text = "기계\r\n시작/종료";
+            this.btnMachineRun.UseVisualStyleBackColor = false;
+            this.btnMachineRun.Visible = false;
             // 
             // ClientBaseForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1210, 717);
-            this.Controls.Add(this.aPanel1);
+            this.Controls.Add(this.panBottom);
             this.Controls.Add(this.aPanel2);
             this.KeyPreview = true;
             this.Name = "ClientBaseForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
-            this.Activated += new System.EventHandler(this.ClientBaseForm_Activated);
-            this.Deactivate += new System.EventHandler(this.ClientBaseForm_Deactivate);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ClientBaseForm_FormClosing);
-            this.aPanel1.ResumeLayout(false);
-            this.aPanel1.PerformLayout();
+            this.Load += new System.EventHandler(this.ClientBaseForm_Load);
+            this.panBottom.ResumeLayout(false);
+            this.panBottom.PerformLayout();
             this.aPanel2.ResumeLayout(false);
             this.aPanel2.PerformLayout();
             this.aPanel3.ResumeLayout(false);
@@ -183,16 +191,15 @@
         }
 
         #endregion
-
-        protected Axxen.CustomControls.ALabel lblTime;
-        protected Axxen.CustomControls.ALabel_Header aLabel_Header1;
-        protected Axxen.CustomControls.APanel aPanel1;
+        protected Axxen.CustomControls.APanel panBottom;
         protected Axxen.CustomControls.AButton btnNoActive;
         protected Axxen.CustomControls.AButton btnConfig;
         protected Axxen.CustomControls.ALabel txtPronounce;
         protected Axxen.CustomControls.APanel aPanel2;
         private Axxen.CustomControls.APanel aPanel3;
         protected System.Windows.Forms.PictureBox btnClose;
-        protected System.Windows.Forms.Timer timetimer;
+        protected Axxen.CustomControls.ALabel lblTime;
+        protected Axxen.CustomControls.ALabel_Header aLabel_Header1;
+        protected Axxen.CustomControls.AButton btnMachineRun;
     }
 }

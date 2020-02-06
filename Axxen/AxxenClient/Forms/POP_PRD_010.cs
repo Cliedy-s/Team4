@@ -57,7 +57,7 @@ namespace AxxenClient.Forms
             List<GVStatusVO> list = service.GetGVCurrentStatus();
             dgvGVFrom.DataSource =
                 (from item in list
-                 where (item.GV_Status =="적재" || item.GV_Status == "언로딩")
+                 where (item.GV_Status == "적재" || item.GV_Status == "언로딩")
                  select item).ToList();
             // 해당 작업장의 모든 빈대차를 가져온다.
             //dgvGVTo.DataSource = service.GetGVCurrentStatus(wccode: GlobalUsage.WcCode, gvStatus: "빈대차");
@@ -65,17 +65,22 @@ namespace AxxenClient.Forms
         }
         private void btnMove_Click(object sender, EventArgs e)
         {
-            string loadinggvcode = dgvGVTo.SelectedRows[0].Cells[0].Value.ToString();
-            string unloadgvcode = dgvGVFrom.SelectedRows[0].Cells[0].Value.ToString();
-            GV_HistoryService service = new GV_HistoryService();
 
-            // 옮겨타기
-            if (service.UpdateMoveGvItem(unloadgvcode, loadinggvcode, Convert.ToInt32(txtMove.TextBoxText), GlobalUsage.UserID, GlobalUsage.WcCode, GlobalUsage.WorkOrderNo))
+            if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
             {
-                GetDatas();
+                string loadinggvcode = dgvGVTo.SelectedRows[0].Cells[0].Value.ToString();
+                string unloadgvcode = dgvGVFrom.SelectedRows[0].Cells[0].Value.ToString();
+                GV_HistoryService service = new GV_HistoryService();
+
+                // 옮겨타기
+                if (service.UpdateMoveGvItem(unloadgvcode, loadinggvcode, Convert.ToInt32(txtMove.TextBoxText), GlobalUsage.UserID, GlobalUsage.WcCode, GlobalUsage.WorkOrderNo))
+                {
+                    GetDatas();
+                }
+                else
+                    MessageBox.Show("옮길 수 없는 대차 입니다.");
             }
-            else
-                MessageBox.Show("옮길 수 없는 대차 입니다.");
+            else MessageBox.Show("작업을 시작해주세요");
         }
         private void dgvGVFrom_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -86,25 +91,30 @@ namespace AxxenClient.Forms
         }
         private void btnClearGV_Click(object sender, EventArgs e)
         {   // 대차 비우기
-            if (dgvGVFrom.SelectedRows.Count < 1)
+
+            if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
             {
-                MessageBox.Show("대차를 선택해주세요");
-                return;
+                if (dgvGVFrom.SelectedRows.Count < 1)
+                {
+                    MessageBox.Show("대차를 선택해주세요");
+                    return;
+                }
+                GV_HistoryService service = new GV_HistoryService();
+                GVClearVO clearvo = new GVClearVO()
+                {
+                    Clear_Cause = "적재문제",
+                    Clear_Item = dgvGVFrom.SelectedRows[0].Cells[4].Value == null ? "" : dgvGVFrom.SelectedRows[0].Cells[4].Value.ToString(),
+                    Clear_Qty = dgvGVFrom.SelectedRows[0].Cells[3].Value == null ? 0 : Convert.ToInt32(dgvGVFrom.SelectedRows[0].Cells[3].Value),
+                    Clear_wc = GlobalUsage.WcCode,
+                    GV_Code = dgvGVFrom.SelectedRows[0].Cells[0].Value.ToString(),
+                    Up_Emp = GlobalUsage.UserID
+                };
+                if (service.UpdateClearGV(clearvo))
+                    GetDatas();
+                else
+                    MessageBox.Show("대차 비우기에 실패하였습니다.");
             }
-            GV_HistoryService service = new GV_HistoryService();
-            GVClearVO clearvo = new GVClearVO()
-            {
-                Clear_Cause = "적재문제",
-                Clear_Item = dgvGVFrom.SelectedRows[0].Cells[4].Value == null ? "" : dgvGVFrom.SelectedRows[0].Cells[4].Value.ToString(),
-                Clear_Qty = dgvGVFrom.SelectedRows[0].Cells[3].Value == null ? 0 : Convert.ToInt32(dgvGVFrom.SelectedRows[0].Cells[3].Value),
-                Clear_wc = GlobalUsage.WcCode,
-                GV_Code = dgvGVFrom.SelectedRows[0].Cells[0].Value.ToString(),
-                Up_Emp = GlobalUsage.UserID
-            };
-            if (service.UpdateClearGV(clearvo))
-                GetDatas();
-            else
-                MessageBox.Show("대차 비우기에 실패하였습니다.");
+            else MessageBox.Show("작업을 시작해주세요");
         }
         private void btnToSearch_Click(object sender, EventArgs e)
         {   // 빈대차 목록 검색

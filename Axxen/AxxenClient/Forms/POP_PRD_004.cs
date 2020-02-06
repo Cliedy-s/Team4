@@ -60,21 +60,25 @@ namespace AxxenClient.Forms
         /// <param name="e"></param>
         private void btnBarcodeRecreate(object sender, EventArgs e)
         {
-            Pallet_MasterService service = new Pallet_MasterService();
-            if (!service.IsExistPallet(txtPalletNo.TextBoxText))
+            if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
             {
-                MessageBox.Show("팔레트 번호를 확인해주세요");
-                return;
-            }
-            string barcodeno = DateTime.Now.Date.ToString("yyyyMMddHHmmssffffff");
-            if (!service.UpdateBarcodeNo(txtPalletNo.TextBoxText, barcodeno))
-            {
-                MessageBox.Show("바코드 재발행에 실패했습니다.");
-                return;
-            }
+                Pallet_MasterService service = new Pallet_MasterService();
+                if (!service.IsExistPallet(txtPalletNo.TextBoxText))
+                {
+                    MessageBox.Show("팔레트 번호를 확인해주세요");
+                    return;
+                }
+                string barcodeno = DateTime.Now.Date.ToString("yyyyMMddHHmmssffffff");
+                if (!service.UpdateBarcodeNo(txtPalletNo.TextBoxText, barcodeno))
+                {
+                    MessageBox.Show("바코드 재발행에 실패했습니다.");
+                    return;
+                }
 
-            GetDatas();
-            PrintPallet(barcodeno, Convert.ToInt32(txtCurrentQty.TextBoxText));
+                GetDatas();
+                PrintPallet(barcodeno, Convert.ToInt32(txtCurrentQty.TextBoxText));
+            }
+            else MessageBox.Show("작업을 시작해주세요");
         }
         /// <summary>
         /// 팔레트 바코드 출력
@@ -111,7 +115,7 @@ namespace AxxenClient.Forms
         /// <param name="e"></param>
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("정말로 삭제하시겠습니까?","팔레트삭제",MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.OK)
+            if (MessageBox.Show("정말로 삭제하시겠습니까?", "팔레트삭제", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.OK)
             {
                 Pallet_MasterService service = new Pallet_MasterService();
                 if (service.DeletePallet(txtPalletNo.TextBoxText))
@@ -129,10 +133,15 @@ namespace AxxenClient.Forms
         /// <param name="e"></param>
         private void btnSearchByDate_Click(object sender, EventArgs e)
         {
-            ProgressForm frm = new ProgressForm(() => { Thread.Sleep(500);  GetSearch();  });
-            frm.ShowInTaskbar = false;
-            frm.StartPosition = FormStartPosition.CenterParent;
-            frm.ShowDialog();
+
+            if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
+            {
+                ProgressForm frm = new ProgressForm(() => { Thread.Sleep(500); GetSearch(); });
+                frm.ShowInTaskbar = false;
+                frm.StartPosition = FormStartPosition.CenterParent;
+                frm.ShowDialog();
+            }
+            else MessageBox.Show("작업을 시작해주세요");
         }
         private void GetSearch()
         {

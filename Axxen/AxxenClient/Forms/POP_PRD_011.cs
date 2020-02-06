@@ -47,23 +47,33 @@ namespace AxxenClient.Forms
         }
         private void btnInput_Click(object sender, EventArgs e)
         {   // 요입
-            GV_Current_StatusService service = new GV_Current_StatusService();
-            if (service.UpdateGVIn(GlobalUsage.UserID, dgvGVList.SelectedRows[0].Cells[0].Value.ToString(), GlobalUsage.WorkOrderNo))
+
+            if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
             {
-                GetDatas();
+                GV_Current_StatusService service = new GV_Current_StatusService();
+                if (service.UpdateGVIn(GlobalUsage.UserID, dgvGVList.SelectedRows[0].Cells[0].Value.ToString(), GlobalUsage.WorkOrderNo))
+                {
+                    GetDatas();
+                }
+                else
+                    MessageBox.Show("요입할 수 없는 대차 입니다.");
             }
-            else
-                MessageBox.Show("요입할 수 없는 대차 입니다.");
+            else MessageBox.Show("작업을 시작해주세요");
         }
         private void btnOutput_Click(object sender, EventArgs e)
         {   // 요출
-            GV_Current_StatusService service = new GV_Current_StatusService();
-            if (service.UpdateGVOut(GlobalUsage.UserID, dgvGVList.SelectedRows[0].Cells[0].Value.ToString(), GlobalUsage.WorkOrderNo))
+
+            if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
             {
-                GetDatas();
+                GV_Current_StatusService service = new GV_Current_StatusService();
+                if (service.UpdateGVOut(GlobalUsage.UserID, dgvGVList.SelectedRows[0].Cells[0].Value.ToString(), GlobalUsage.WorkOrderNo))
+                {
+                    GetDatas();
+                }
+                else
+                    MessageBox.Show("요입할 수 없는 대차 입니다.");
             }
-            else
-                MessageBox.Show("요입할 수 없는 대차 입니다.");
+            else MessageBox.Show("작업을 시작해주세요");
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
@@ -71,7 +81,7 @@ namespace AxxenClient.Forms
             // TODO - 조건에 맞게 변경하기
             //dgvGVFrom.DataSource = service.GetGVCurrentStatus(wccode:GlobalUsage.WcCode, workorderno:GlobalUsage.WorkOrderNo, gvStatus:"적재");
             dgvGVList.DataSource = service.GetGVCurrentStatus(gvStatus: "적재", gvName: txtGVSearch.TextBoxText);
-            
+
         }
     }
 }

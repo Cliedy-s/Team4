@@ -15,27 +15,28 @@ namespace Axxen
 {
     public partial class MainForm : Form
     {
-
         public event EventHandler InsertFormEvent; //추가 폼 이벤트
         public event EventHandler RefreshFormEvent; //새로고침 폼 이벤트
         public event EventHandler MyUpdateEvent; //수정 이벤트
+        public event EventHandler MyDeleteEvent; //삭젱
 
-
-        int CheckBtnIndex = 7;
+        int CheckBtnIndex = 20;
         bool BookmarkCheck = true; //즐겨찾기 
         bool open = true;
       //  int SegCnt =0; //화면 사용이력 순번
 
         Image CloseImage;
-
+        UserGroupService service = new UserGroupService();
         List<MenuTree_Master_VO> menulist; //메뉴
         List<BookMark_VO> booklist;
-
-
+        MainForm_Service Mainservice = new MainForm_Service();
+        ScreenItemService screenservice = new ScreenItemService();
         UserInfo_Service userservice = new UserInfo_Service();
         List<UserGroup_MappingVO> userinfoGrouplist; //유저가속한 그룹
         List<ScreenItem_AuthorityVO> userinfoScreenItem;//그룹에속한 화면들
         List<ScreenItem_MasterVO> screenitemlist; //모든 스크린 
+
+        List<Button> myButtons = new List<Button>();
         public MainForm()
         {
             InitializeComponent();
@@ -47,12 +48,9 @@ namespace Axxen
 
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                MainForm_Service service = new MainForm_Service();
-                menulist = service.GetAll_MenuTree_Master();
-                booklist = service.GetAll_BookMark(UserInfo.User_ID);
-
                 lblName.Text = UserInfo.User_Name;
 
+                tvMenu.Visible = false;
                 ImageList imgList = new ImageList();
                 //imgList.Images.Add(Bitmap.FromFile("treeimg.png"));
                 imgList.Images.Add(Properties.Resources.treeimg);
@@ -61,8 +59,8 @@ namespace Axxen
                 this.tabControl2.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
                 CloseImage = Properties.Resources.x;
                 this.tabControl2.Padding = new Point(10, 3);
-
-                UserInformation();
+                Setting();
+                booklist = Mainservice.GetAll_BookMark(UserInfo.User_ID);
             }
             else
             {
@@ -70,13 +68,44 @@ namespace Axxen
             }
         }
 
-        private void UserInformation()
+         public  void Setting()
         {
-            UserGroupService service = new UserGroupService();
+      
+          
+            menulist = Mainservice.GetAll_MenuTree_Master();
+            
+            UserInformation();
+
+            var pa = menulist.FindAll(item => item.Parent_Screen_Code == null);
+            int sLocation = 0;
+
+            myButtons.Clear();
+            for (int i = 0; i < pa.Count; i++)
+            {
+                myButtons.Add(new Button());
+                myButtons[i].BackColor = System.Drawing.Color.White;
+                myButtons[i].Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+                myButtons[i].ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+                myButtons[i].Location = new System.Drawing.Point(3, 45 + sLocation);
+                myButtons[i].Margin = new System.Windows.Forms.Padding(5);
+                myButtons[i].Name = pa[i].Screen_Code;
+                myButtons[i].Size = new System.Drawing.Size(261, 37);
+                myButtons[i].TabIndex = i;
+                myButtons[i].Text = pa[i].Screen_Name;
+                myButtons[i].UseVisualStyleBackColor = false;
+                myButtons[i].Click += new EventHandler(BtnMenu_Click);
+                // 생성한 버튼을 화면 컨트롤에 추가해서 보이게 함
+                panelMenu.Controls.Add(myButtons[i]);
+                sLocation += 35;
+            }
+        }
+        public void UserInformation()
+        {
+        
           
             userinfoGrouplist = service.GetUserInfoGroup(UserInfo.User_ID); //로그인한 사용자의 그룹권한들
 
-            ScreenItemService screenservice = new ScreenItemService();
+      
             userinfoScreenItem = screenservice.GetUserInfoScreenItem(userinfoGrouplist); // 로그인한 사용자의 그룹권한에 사용되는 화면들
 
             screenitemlist = screenservice.GetALLScreenItem(); //모든스크린
@@ -285,7 +314,7 @@ namespace Axxen
                                         tsbtnDelete.Enabled = false;
                                     }
 
-                                    break;
+                                  
                                 }
 
                             childForm.Activate();
@@ -616,10 +645,18 @@ namespace Axxen
                 MyUpdateEvent(this, null);
         }
 
+
         private void BtnSetting_Click(object sender, EventArgs e)
         {
             UserSettingForm frm = new UserSettingForm();
             frm.ShowDialog();
+        }
+
+        private void TsbtnDelete_Click(object sender, EventArgs e)
+        {
+            if (this.MyDeleteEvent != null)
+                MyDeleteEvent(this, null);
+            
         }
     }
 }

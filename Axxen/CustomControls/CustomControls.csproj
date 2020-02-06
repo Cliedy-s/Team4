@@ -44,11 +44,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseForm.cs">
+    <Compile Include="CustomControlBase.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BaseForm.Designer.cs">
-      <DependentUpon>BaseForm.cs</DependentUpon>
+    <Compile Include="CustomControlBase.Designer.cs">
+      <DependentUpon>CustomControlBase.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomControls\ABigHeaderBox.cs">
       <SubType>UserControl</SubType>
@@ -204,8 +204,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="BaseForm.resx">
-      <DependentUpon>BaseForm.cs</DependentUpon>
+    <EmbeddedResource Include="CustomControlBase.resx">
+      <DependentUpon>CustomControlBase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\ABigHeaderBox.resx">
       <DependentUpon>ABigHeaderBox.cs</DependentUpon>

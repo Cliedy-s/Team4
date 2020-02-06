@@ -50,34 +50,41 @@ namespace AxxenClient.Forms
         }
         private void btnPalletPrint_Click(object sender, EventArgs e)
         {
-            DateTime now = DateTime.Now;
-            Random rand = new Random(now.Millisecond);
-            Pallet_MasterService service = new Pallet_MasterService();
-            if (!service.IsExistPallet(txtPalletNo.TextBoxText))
+            if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
             {
-                bool IsSuccess = service.InsertPallet(
-                    new VO.PalletVO()
+                DateTime now = DateTime.Now;
+                Random rand = new Random(now.Millisecond);
+                Pallet_MasterService service = new Pallet_MasterService();
+                if (!service.IsExistPallet(txtPalletNo.TextBoxText))
+                {
+                    bool IsSuccess = service.InsertPallet(
+                        new VO.PalletVO()
+                        {
+                            Pallet_No = txtPalletNo.TextBoxText,
+                            Barcode_No = DateTime.Now.Date.ToString("yyyyMMddHHmmssffffff"),
+                            WorkOrderNo = GlobalUsage.WorkOrderNo,
+                            CurrentQty = Convert.ToInt32(txtPrintPallet.TextBoxText),
+                            Grade_Detail_Code = txtBoxingDegailGrade.TextBoxText,
+                            Boxing_Grade_Code = txtBoxingGrade.TextBoxText,
+                            Size_Code = "3",
+                        });
+                    if (IsSuccess)
                     {
-                        Pallet_No = txtPalletNo.TextBoxText,
-                        Barcode_No = DateTime.Now.Date.ToString("yyyyMMddHHmmssffffff"),
-                        WorkOrderNo = GlobalUsage.WorkOrderNo,
-                        CurrentQty = Convert.ToInt32(txtPrintPallet.TextBoxText),
-                        Grade_Detail_Code = txtBoxingDegailGrade.TextBoxText,
-                        Boxing_Grade_Code = txtBoxingGrade.TextBoxText,
-                        Size_Code = "3",
-                    });
-                if (IsSuccess)
-                {
-                    MessageBox.Show("팔레트가 생성되었습니다.");
-                    GetDatas();
+                        MessageBox.Show("팔레트가 생성되었습니다.");
+                        GetDatas();
+                    }
+                    else
+                    {
+                        MessageBox.Show("팔레트 생성에 실패하였습니다.");
+                        return;
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("팔레트 생성에 실패하였습니다.");
-                    return;
-                }
+                PrintPallet(txtPalletNo.TextBoxText, Convert.ToInt32(txtPrintPallet.TextBoxText));
             }
-            PrintPallet(txtPalletNo.TextBoxText, Convert.ToInt32(txtPrintPallet.TextBoxText));
+            else
+            {
+                MessageBox.Show("작업을 시작해주세요");
+            }
         }
         /// <summary>
         /// 팔레트 바코드 출력

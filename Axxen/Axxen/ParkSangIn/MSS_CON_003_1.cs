@@ -57,12 +57,6 @@ namespace Axxen
         }
 
    
-        private void TxtName_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsNumber(e.KeyChar) && e.KeyChar != 8)
-            {
-                e.Handled = true;
-            }
-        }
+
     }
 }

@@ -64,7 +64,7 @@ namespace DAC
 
                 }
             }
-            catch (Exception err)
+            catch
             {
             
                 return false;

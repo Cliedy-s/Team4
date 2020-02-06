@@ -38,7 +38,7 @@
             this.txtPalletNo = new Axxen.CustomControls.ABigTextBox_Searchable();
             this.btnIn = new Axxen.CustomControls.AButton();
             this.aLabel_SubHeader1 = new Axxen.CustomControls.ALabel_SubHeader();
-            this.aPanel1.SuspendLayout();
+            this.panBottom.SuspendLayout();
             this.aPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInPallet)).BeginInit();
@@ -49,10 +49,10 @@
             // 
             this.aLabel_Header1.Text = "포장 입고등록";
             // 
-            // aPanel1
+            // panBottom
             // 
-            this.aPanel1.Location = new System.Drawing.Point(0, 593);
-            this.aPanel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panBottom.Location = new System.Drawing.Point(0, 593);
+            this.panBottom.Margin = new System.Windows.Forms.Padding(2);
             // 
             // dgvInPallet
             // 
@@ -88,9 +88,10 @@
             this.lblBarcodeNo.AutoSize = true;
             this.lblBarcodeNo.Location = new System.Drawing.Point(39, 21);
             this.lblBarcodeNo.Name = "lblBarcodeNo";
-            this.lblBarcodeNo.Size = new System.Drawing.Size(79, 15);
+            this.lblBarcodeNo.Size = new System.Drawing.Size(81, 12);
             this.lblBarcodeNo.TabIndex = 35;
             this.lblBarcodeNo.Text = "lblBarcodeNo";
+            this.lblBarcodeNo.Visible = false;
             this.lblBarcodeNo.TextChanged += new System.EventHandler(this.lblBarcodeNo_TextChanged);
             // 
             // txtPalletQty
@@ -193,7 +194,6 @@
             // 
             // POP_PRD_005
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1210, 629);
             this.Controls.Add(this.aLabel_SubHeader1);
             this.Controls.Add(this.aPanel4);
@@ -208,9 +208,9 @@
             this.Controls.SetChildIndex(this.aPanel4, 0);
             this.Controls.SetChildIndex(this.aLabel_SubHeader1, 0);
             this.Controls.SetChildIndex(this.aPanel2, 0);
-            this.Controls.SetChildIndex(this.aPanel1, 0);
-            this.aPanel1.ResumeLayout(false);
-            this.aPanel1.PerformLayout();
+            this.Controls.SetChildIndex(this.panBottom, 0);
+            this.panBottom.ResumeLayout(false);
+            this.panBottom.PerformLayout();
             this.aPanel2.ResumeLayout(false);
             this.aPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
