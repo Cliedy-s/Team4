@@ -891,7 +891,7 @@
             this.xrTable3,
             this.xrTable2});
             this.Detail1.Dpi = 254F;
-            this.Detail1.HeightF = 254F;
+            this.Detail1.HeightF = 87.18742F;
             this.Detail1.HierarchyPrintOptions.Indent = 50.8F;
             this.Detail1.Name = "Detail1";
             // 

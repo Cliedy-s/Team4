@@ -13,7 +13,7 @@ using static Axxen.CustomControls.ATextBox_FindNameByCode;
 
 namespace Axxen.CustomControls
 {
-    public partial class SearchForm : Axxen.FreeForm
+    public partial class SearchForm : Axxen.CustomControlFree
     {
         public string ResultCode { get; set; }
         public string ResultName { get; set; }

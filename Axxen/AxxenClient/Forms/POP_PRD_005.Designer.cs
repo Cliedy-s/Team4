@@ -38,7 +38,7 @@
             this.txtPalletNo = new Axxen.CustomControls.ABigTextBox_Searchable();
             this.btnIn = new Axxen.CustomControls.AButton();
             this.aLabel_SubHeader1 = new Axxen.CustomControls.ALabel_SubHeader();
-            this.aPanel1.SuspendLayout();
+            this.panBottom.SuspendLayout();
             this.aPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInPallet)).BeginInit();
@@ -51,8 +51,8 @@
             // 
             // aPanel1
             // 
-            this.aPanel1.Location = new System.Drawing.Point(0, 593);
-            this.aPanel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panBottom.Location = new System.Drawing.Point(0, 593);
+            this.panBottom.Margin = new System.Windows.Forms.Padding(2);
             // 
             // dgvInPallet
             // 
@@ -208,9 +208,9 @@
             this.Controls.SetChildIndex(this.aPanel4, 0);
             this.Controls.SetChildIndex(this.aLabel_SubHeader1, 0);
             this.Controls.SetChildIndex(this.aPanel2, 0);
-            this.Controls.SetChildIndex(this.aPanel1, 0);
-            this.aPanel1.ResumeLayout(false);
-            this.aPanel1.PerformLayout();
+            this.Controls.SetChildIndex(this.panBottom, 0);
+            this.panBottom.ResumeLayout(false);
+            this.panBottom.PerformLayout();
             this.aPanel2.ResumeLayout(false);
             this.aPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();

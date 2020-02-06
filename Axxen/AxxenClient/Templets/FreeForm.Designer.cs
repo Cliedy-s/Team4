@@ -1,6 +1,6 @@
 ﻿namespace AxxenClient.Templets
 {
-    partial class FreeForm
+    partial class ClientFreeForm
     {
         /// <summary>
         /// Required designer variable.

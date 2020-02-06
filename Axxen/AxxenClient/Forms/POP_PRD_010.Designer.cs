@@ -44,7 +44,7 @@
             this.txtFromGVSearch = new Axxen.CustomControls.ABigTextBox_Labeled();
             this.btnToSearch = new Axxen.CustomControls.AButton();
             this.btnFromSearch = new Axxen.CustomControls.AButton();
-            this.aPanel1.SuspendLayout();
+            this.panBottom.SuspendLayout();
             this.aPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGVTo)).BeginInit();
@@ -58,8 +58,8 @@
             // 
             // aPanel1
             // 
-            this.aPanel1.Location = new System.Drawing.Point(0, 593);
-            this.aPanel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panBottom.Location = new System.Drawing.Point(0, 593);
+            this.panBottom.Margin = new System.Windows.Forms.Padding(2);
             // 
             // dgvGVTo
             // 
@@ -299,15 +299,15 @@
             this.Controls.SetChildIndex(this.btnClearGV, 0);
             this.Controls.SetChildIndex(this.btnMove, 0);
             this.Controls.SetChildIndex(this.aPanel2, 0);
-            this.Controls.SetChildIndex(this.aPanel1, 0);
+            this.Controls.SetChildIndex(this.panBottom, 0);
             this.Controls.SetChildIndex(this.aPanel6, 0);
             this.Controls.SetChildIndex(this.txtMove, 0);
             this.Controls.SetChildIndex(this.txtToGVSearch, 0);
             this.Controls.SetChildIndex(this.txtFromGVSearch, 0);
             this.Controls.SetChildIndex(this.btnToSearch, 0);
             this.Controls.SetChildIndex(this.btnFromSearch, 0);
-            this.aPanel1.ResumeLayout(false);
-            this.aPanel1.PerformLayout();
+            this.panBottom.ResumeLayout(false);
+            this.panBottom.PerformLayout();
             this.aPanel2.ResumeLayout(false);
             this.aPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();

@@ -43,7 +43,7 @@
             this.lblProcesscode = new Axxen.CustomControls.ALabel();
             this.lblItemCode = new Axxen.CustomControls.ALabel();
             this.lblInspectcode = new Axxen.CustomControls.ALabel();
-            this.aPanel1.SuspendLayout();
+            this.panBottom.SuspendLayout();
             this.aPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInspectMeasure)).BeginInit();
@@ -55,10 +55,10 @@
             // 
             this.aLabel_Header1.Text = "품질 측정값 등록";
             // 
-            // aPanel1
+            // panBottom
             // 
-            this.aPanel1.Location = new System.Drawing.Point(0, 593);
-            this.aPanel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panBottom.Location = new System.Drawing.Point(0, 593);
+            this.panBottom.Margin = new System.Windows.Forms.Padding(2);
             // 
             // btnDeleteMeasure
             // 
@@ -225,31 +225,33 @@
             this.lblProcesscode.AutoSize = true;
             this.lblProcesscode.Location = new System.Drawing.Point(12, 271);
             this.lblProcesscode.Name = "lblProcesscode";
-            this.lblProcesscode.Size = new System.Drawing.Size(86, 15);
+            this.lblProcesscode.Size = new System.Drawing.Size(93, 12);
             this.lblProcesscode.TabIndex = 44;
             this.lblProcesscode.Text = "lblProcesscode";
+            this.lblProcesscode.Visible = false;
             // 
             // lblItemCode
             // 
             this.lblItemCode.AutoSize = true;
             this.lblItemCode.Location = new System.Drawing.Point(12, 239);
             this.lblItemCode.Name = "lblItemCode";
-            this.lblItemCode.Size = new System.Drawing.Size(72, 15);
+            this.lblItemCode.Size = new System.Drawing.Size(72, 12);
             this.lblItemCode.TabIndex = 43;
             this.lblItemCode.Text = "lblItemCode";
+            this.lblItemCode.Visible = false;
             // 
             // lblInspectcode
             // 
             this.lblInspectcode.AutoSize = true;
             this.lblInspectcode.Location = new System.Drawing.Point(12, 211);
             this.lblInspectcode.Name = "lblInspectcode";
-            this.lblInspectcode.Size = new System.Drawing.Size(84, 15);
+            this.lblInspectcode.Size = new System.Drawing.Size(87, 12);
             this.lblInspectcode.TabIndex = 42;
             this.lblInspectcode.Text = "lblInspectcode";
+            this.lblInspectcode.Visible = false;
             // 
             // POP_PRD_015
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1210, 629);
             this.Controls.Add(this.lblProcesscode);
             this.Controls.Add(this.lblItemCode);
@@ -265,7 +267,7 @@
             this.Load += new System.EventHandler(this.POP_PRD_015_Load);
             this.Controls.SetChildIndex(this.aPanel6, 0);
             this.Controls.SetChildIndex(this.aPanel2, 0);
-            this.Controls.SetChildIndex(this.aPanel1, 0);
+            this.Controls.SetChildIndex(this.panBottom, 0);
             this.Controls.SetChildIndex(this.dgvInspect, 0);
             this.Controls.SetChildIndex(this.dgvInspectMeasure, 0);
             this.Controls.SetChildIndex(this.btnInsertMeasure, 0);
@@ -274,8 +276,8 @@
             this.Controls.SetChildIndex(this.lblInspectcode, 0);
             this.Controls.SetChildIndex(this.lblItemCode, 0);
             this.Controls.SetChildIndex(this.lblProcesscode, 0);
-            this.aPanel1.ResumeLayout(false);
-            this.aPanel1.PerformLayout();
+            this.panBottom.ResumeLayout(false);
+            this.panBottom.PerformLayout();
             this.aPanel2.ResumeLayout(false);
             this.aPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
