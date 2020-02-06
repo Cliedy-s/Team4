@@ -12,7 +12,7 @@ namespace Axxen
 {
     public partial class QAM_SQC_002 : Axxen.GridGridGridForm
     {
-
+        DataTable dt;
         List<InspectMeasure_History_MasterVO> lhm;
         List<InspectMeasure_History_MasterVO> lhmList;
         InspectMeasure_History_MasterService lhmservice = new InspectMeasure_History_MasterService();
@@ -25,6 +25,7 @@ namespace Axxen
         {
             ((MainForm)this.MdiParent).RefreshFormEvent += new System.EventHandler(this.RefreshFormShow); // 새로고침
             dgvMainGrid.CellDoubleClick += DgvMainGrid_CellDoubleClick; //메인그리드뷰 더블클릭
+            dgvSubGrid.CellDoubleClick += DgvSubGrid_CellDoubleClick; //서브그리드뷰 더블클릭
 
             #region 그리드뷰
             DatagridviewDesigns.SetDesign(dgvMainGrid);
@@ -46,15 +47,33 @@ namespace Axxen
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "측정항목", "Inspect_name", true, 100, default, false);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "기준값", "SL", true, 100, default, false);
             #endregion
+
+
+            #region 서브서브그리드뷰
+            DatagridviewDesigns.SetDesign(dgvSubSubGrid);
+            dgvSubSubGrid.AutoGenerateColumns = true;
+            dgvSubSubGrid.AllowUserToAddRows = false;
+            dgvSubSubGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubSubGrid, "측정일시", "Inspect_datetime", true, 100, default, false);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubSubGrid, "품목코드", "Item_code", true, 100, default, false);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubSubGrid, "품목명", "Item_Name", true, 100, default, false);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubSubGrid, "측정일자", "Inspect_date", true, 100, default, false);
+            #endregion
+
         }
 
-        private void DgvMainGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void DgvMainGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e) //메인그리드뷰 더블클릭
         {
             lhm = lhmservice.GetSubInspectMeasure_History_Master(dgvMainGrid.SelectedRows[0].Cells[0].Value.ToString() , dgvMainGrid.SelectedRows[0].Cells[2].Value.ToString()
                 , dgvMainGrid.SelectedRows[0].Cells[5].Value.ToString(), dgvMainGrid.SelectedRows[0].Cells[7].Value.ToString()); //서브그리드뷰 조회
             dgvSubGrid.DataSource = lhm;
         }
-
+        private void DgvSubGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e) //서브그리드뷰 더블클릭
+        {
+            dt = lhmservice.GetSubSubInspectMeasure_History_Master(dgvMainGrid.SelectedRows[0].Cells[0].Value.ToString(), dgvMainGrid.SelectedRows[0].Cells[2].Value.ToString()
+                , dgvMainGrid.SelectedRows[0].Cells[5].Value.ToString(), dgvMainGrid.SelectedRows[0].Cells[7].Value.ToString()); //서브서브그리드뷰 조회
+            dgvSubSubGrid.DataSource = dt;
+        }
         private void RefreshFormShow(object sender, EventArgs e)
         {
             throw new NotImplementedException();
