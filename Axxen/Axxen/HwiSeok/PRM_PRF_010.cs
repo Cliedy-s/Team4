@@ -47,6 +47,7 @@ namespace Axxen
                 MessageBox.Show("선택하신 날짜에 근무이력이 없습니다.","근무이력",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
             #region 서브그리드뷰
+            DatagridviewDesigns.SetDesign(dgvSubGrid);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "작업지시번호", "Workorderno", true, 100, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "작업장코드", "Wc_Code", true, 100, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "작업장명", "Wc_Name", true, 100, default, true);
