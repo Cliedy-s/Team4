@@ -68,6 +68,9 @@ namespace AxxenClient.Forms
 
         private void btnInsertMeasure_Click(object sender, EventArgs e)
         {
+
+            if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
+            {
             if (!string.IsNullOrEmpty(lblConditionCode.Text))
             {
                 Condition_Measure_HistoryService service = new Condition_Measure_HistoryService();
@@ -83,18 +86,25 @@ namespace AxxenClient.Forms
                     txtMeasure.TextBoxText = "";
                 }
                 else MessageBox.Show("입력할 수 없는 항목입니다.");
+            }
+            else MessageBox.Show("작업을 시작해주세요");
 
             }
         }
 
         private void btnDeleteMeasure_Click(object sender, EventArgs e)
         {
+
+            if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
+            {
             if (dgvConditionMeasureList.SelectedRows.Count > 0)
             {
                 Condition_Measure_HistoryService service = new Condition_Measure_HistoryService();
                 if (service.DeleteConditionMeasure(Convert.ToInt32(dgvConditionMeasureList.SelectedRows[0].Cells[3].Value))) SearchData();
                 else MessageBox.Show("삭제할 수 없는 항목입니다.");
             }
+            }
+            else MessageBox.Show("작업을 시작해주세요");
         }
 
         private void dgvConditionList_CellClick(object sender, DataGridViewCellEventArgs e)

@@ -23,6 +23,7 @@ namespace AxxenClient.Forms
             InitControls();
             TopPanelSet();
             GetDatas();
+            btnMachineRun.Visible = true;
         }
         private void TopPanelSet()
         {
@@ -75,32 +76,47 @@ namespace AxxenClient.Forms
 
         private void btnInsertMeasure_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(lblInspectcode.Text))
+
+            if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
             {
-                Inspect_Measure_HistoryService service = new Inspect_Measure_HistoryService();
-                InspectHistoryVO item = new InspectHistoryVO();
-                item.Inspect_code = lblInspectcode.Text;
-                item.Item_code = lblItemCode.Text;
-                item.Inspect_val = Convert.ToDecimal(txtMeasure.TextBoxText);
-                item.Process_code = lblProcesscode.Text;
-                item.Workorderno = GlobalUsage.WorkOrderNo;
-                if (service.InsertInspect_Measure(item, GlobalUsage.UserID))
+                if (!string.IsNullOrEmpty(lblInspectcode.Text))
                 {
-                    txtMeasure.TextBoxText = "";
-                    SearchData();
+                    Inspect_Measure_HistoryService service = new Inspect_Measure_HistoryService();
+                    InspectHistoryVO item = new InspectHistoryVO();
+                    item.Inspect_code = lblInspectcode.Text;
+                    item.Item_code = lblItemCode.Text;
+                    item.Inspect_val = Convert.ToDecimal(txtMeasure.TextBoxText);
+                    item.Process_code = lblProcesscode.Text;
+                    item.Workorderno = GlobalUsage.WorkOrderNo;
+                    if (service.InsertInspect_Measure(item, GlobalUsage.UserID))
+                    {
+                        txtMeasure.TextBoxText = "";
+                        SearchData();
+                    }
+                    else MessageBox.Show("입력할 수 없는 항목입니다.");
                 }
-                else MessageBox.Show("입력할 수 없는 항목입니다.");
+                else MessageBox.Show("작업을 시작해주세요");
             }
         }
 
         private void btnDeleteMeasure_Click(object sender, EventArgs e)
         {
-            if (dgvInspectMeasure.SelectedRows.Count > 0)
+
+            if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
             {
-                Inspect_Measure_HistoryService service = new Inspect_Measure_HistoryService();
-                if (service.DeleteInspect_MeasureBySeq(Convert.ToInt32(dgvInspectMeasure.SelectedRows[0].Cells[2].Value))) SearchData();
-                else MessageBox.Show("삭제할 수 없는 항목입니다.");
+                if (dgvInspectMeasure.SelectedRows.Count > 0)
+                {
+                    Inspect_Measure_HistoryService service = new Inspect_Measure_HistoryService();
+                    if (service.DeleteInspect_MeasureBySeq(Convert.ToInt32(dgvInspectMeasure.SelectedRows[0].Cells[2].Value))) SearchData();
+                    else MessageBox.Show("삭제할 수 없는 항목입니다.");
+                }
             }
+            else MessageBox.Show("작업을 시작해주세요");
+        }
+
+        private void btnMachineRun_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

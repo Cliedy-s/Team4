@@ -55,7 +55,7 @@
             // 
             this.aLabel_Header1.Text = "공정조건 등록";
             // 
-            // aPanel1
+            // panBottom
             // 
             this.panBottom.Location = new System.Drawing.Point(0, 593);
             this.panBottom.Margin = new System.Windows.Forms.Padding(2);
@@ -225,31 +225,33 @@
             this.lblConditionCode.AutoSize = true;
             this.lblConditionCode.Location = new System.Drawing.Point(12, 211);
             this.lblConditionCode.Name = "lblConditionCode";
-            this.lblConditionCode.Size = new System.Drawing.Size(101, 15);
+            this.lblConditionCode.Size = new System.Drawing.Size(101, 12);
             this.lblConditionCode.TabIndex = 36;
             this.lblConditionCode.Text = "lblConditionCode";
+            this.lblConditionCode.Visible = false;
             // 
             // lblItemCode
             // 
             this.lblItemCode.AutoSize = true;
             this.lblItemCode.Location = new System.Drawing.Point(12, 239);
             this.lblItemCode.Name = "lblItemCode";
-            this.lblItemCode.Size = new System.Drawing.Size(72, 15);
+            this.lblItemCode.Size = new System.Drawing.Size(72, 12);
             this.lblItemCode.TabIndex = 37;
             this.lblItemCode.Text = "lblItemCode";
+            this.lblItemCode.Visible = false;
             // 
             // lblWcCode
             // 
             this.lblWcCode.AutoSize = true;
             this.lblWcCode.Location = new System.Drawing.Point(12, 271);
             this.lblWcCode.Name = "lblWcCode";
-            this.lblWcCode.Size = new System.Drawing.Size(65, 15);
+            this.lblWcCode.Size = new System.Drawing.Size(65, 12);
             this.lblWcCode.TabIndex = 38;
             this.lblWcCode.Text = "lblWcCode";
+            this.lblWcCode.Visible = false;
             // 
             // POP_PRD_014
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1210, 629);
             this.Controls.Add(this.lblWcCode);
             this.Controls.Add(this.lblItemCode);

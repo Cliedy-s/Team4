@@ -15,7 +15,6 @@ namespace Axxen
 {
     public partial class MainForm : Form
     {
-
         public event EventHandler InsertFormEvent; //추가 폼 이벤트
         public event EventHandler RefreshFormEvent; //새로고침 폼 이벤트
         public event EventHandler MyUpdateEvent; //수정 이벤트

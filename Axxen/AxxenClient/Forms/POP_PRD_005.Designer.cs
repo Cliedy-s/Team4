@@ -49,7 +49,7 @@
             // 
             this.aLabel_Header1.Text = "포장 입고등록";
             // 
-            // aPanel1
+            // panBottom
             // 
             this.panBottom.Location = new System.Drawing.Point(0, 593);
             this.panBottom.Margin = new System.Windows.Forms.Padding(2);
@@ -88,9 +88,10 @@
             this.lblBarcodeNo.AutoSize = true;
             this.lblBarcodeNo.Location = new System.Drawing.Point(39, 21);
             this.lblBarcodeNo.Name = "lblBarcodeNo";
-            this.lblBarcodeNo.Size = new System.Drawing.Size(79, 15);
+            this.lblBarcodeNo.Size = new System.Drawing.Size(81, 12);
             this.lblBarcodeNo.TabIndex = 35;
             this.lblBarcodeNo.Text = "lblBarcodeNo";
+            this.lblBarcodeNo.Visible = false;
             this.lblBarcodeNo.TextChanged += new System.EventHandler(this.lblBarcodeNo_TextChanged);
             // 
             // txtPalletQty
@@ -193,7 +194,6 @@
             // 
             // POP_PRD_005
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1210, 629);
             this.Controls.Add(this.aLabel_SubHeader1);
             this.Controls.Add(this.aPanel4);

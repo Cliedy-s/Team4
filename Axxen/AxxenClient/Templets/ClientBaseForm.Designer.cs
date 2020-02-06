@@ -34,9 +34,10 @@
             this.txtPronounce = new Axxen.CustomControls.ALabel();
             this.aPanel2 = new Axxen.CustomControls.APanel();
             this.lblTime = new Axxen.CustomControls.ALabel();
-            this.aLabel_Header1 = new Axxen.CustomControls.ALabel_Header();
             this.aPanel3 = new Axxen.CustomControls.APanel();
+            this.aLabel_Header1 = new Axxen.CustomControls.ALabel_Header();
             this.btnClose = new System.Windows.Forms.PictureBox();
+            this.btnMachineRun = new Axxen.CustomControls.AButton();
             this.panBottom.SuspendLayout();
             this.aPanel2.SuspendLayout();
             this.aPanel3.SuspendLayout();
@@ -85,7 +86,7 @@
             this.txtPronounce.AutoSize = true;
             this.txtPronounce.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtPronounce.ForeColor = System.Drawing.Color.Yellow;
-            this.txtPronounce.Location = new System.Drawing.Point(-100, 10);
+            this.txtPronounce.Location = new System.Drawing.Point(8, 10);
             this.txtPronounce.Name = "txtPronounce";
             this.txtPronounce.Size = new System.Drawing.Size(78, 17);
             this.txtPronounce.TabIndex = 5;
@@ -96,7 +97,6 @@
             // 
             this.aPanel2.BackColor = System.Drawing.Color.Gray;
             this.aPanel2.Controls.Add(this.lblTime);
-            this.aPanel2.Controls.Add(this.aLabel_Header1);
             this.aPanel2.Controls.Add(this.aPanel3);
             this.aPanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.aPanel2.Location = new System.Drawing.Point(0, 0);
@@ -117,6 +117,18 @@
             this.lblTime.Text = "2020-01-13\r\n18:26:32";
             this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // aPanel3
+            // 
+            this.aPanel3.BackColor = System.Drawing.Color.White;
+            this.aPanel3.Controls.Add(this.btnMachineRun);
+            this.aPanel3.Controls.Add(this.aLabel_Header1);
+            this.aPanel3.Controls.Add(this.btnClose);
+            this.aPanel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.aPanel3.Location = new System.Drawing.Point(0, 0);
+            this.aPanel3.Name = "aPanel3";
+            this.aPanel3.Size = new System.Drawing.Size(1210, 97);
+            this.aPanel3.TabIndex = 4;
+            // 
             // aLabel_Header1
             // 
             this.aLabel_Header1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -125,22 +137,12 @@
             this.aLabel_Header1.BackColor = System.Drawing.Color.White;
             this.aLabel_Header1.Font = new System.Drawing.Font("나눔고딕", 25F, System.Drawing.FontStyle.Bold);
             this.aLabel_Header1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.aLabel_Header1.Location = new System.Drawing.Point(183, 29);
+            this.aLabel_Header1.Location = new System.Drawing.Point(169, 28);
             this.aLabel_Header1.Name = "aLabel_Header1";
-            this.aLabel_Header1.Size = new System.Drawing.Size(898, 39);
+            this.aLabel_Header1.Size = new System.Drawing.Size(946, 39);
             this.aLabel_Header1.TabIndex = 1;
             this.aLabel_Header1.Text = "aLabel_Header1";
             this.aLabel_Header1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // aPanel3
-            // 
-            this.aPanel3.BackColor = System.Drawing.Color.White;
-            this.aPanel3.Controls.Add(this.btnClose);
-            this.aPanel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.aPanel3.Location = new System.Drawing.Point(0, 0);
-            this.aPanel3.Name = "aPanel3";
-            this.aPanel3.Size = new System.Drawing.Size(1210, 97);
-            this.aPanel3.TabIndex = 4;
             // 
             // btnClose
             // 
@@ -153,6 +155,19 @@
             this.btnClose.TabIndex = 0;
             this.btnClose.TabStop = false;
             this.btnClose.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // btnMachineRun
+            // 
+            this.btnMachineRun.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.btnMachineRun.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMachineRun.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnMachineRun.Location = new System.Drawing.Point(176, 2);
+            this.btnMachineRun.Name = "btnMachineRun";
+            this.btnMachineRun.Size = new System.Drawing.Size(95, 92);
+            this.btnMachineRun.TabIndex = 17;
+            this.btnMachineRun.Text = "기계\r\n시작/종료";
+            this.btnMachineRun.UseVisualStyleBackColor = false;
+            this.btnMachineRun.Visible = false;
             // 
             // ClientBaseForm
             // 
@@ -176,9 +191,6 @@
         }
 
         #endregion
-
-        protected Axxen.CustomControls.ALabel lblTime;
-        protected Axxen.CustomControls.ALabel_Header aLabel_Header1;
         protected Axxen.CustomControls.APanel panBottom;
         protected Axxen.CustomControls.AButton btnNoActive;
         protected Axxen.CustomControls.AButton btnConfig;
@@ -186,5 +198,8 @@
         protected Axxen.CustomControls.APanel aPanel2;
         private Axxen.CustomControls.APanel aPanel3;
         protected System.Windows.Forms.PictureBox btnClose;
+        protected Axxen.CustomControls.ALabel lblTime;
+        protected Axxen.CustomControls.ALabel_Header aLabel_Header1;
+        protected Axxen.CustomControls.AButton btnMachineRun;
     }
 }

@@ -21,33 +21,38 @@ namespace AxxenClient.Templets
         {
             this.Close();
         }
+        public int NoticeLocation { get { return txtPronounce.Location.X; } set { txtPronounce.Location = new Point(value, txtPronounce.Location.Y); } }
         public int GetPronounceX()
         {
-            return panBottom.Size.Width-100;
+            return panBottom.Size.Width - 100;
             //return txtPronounce.Location.X;
         }
-        public void MainTimerTick(int pronouncex, int originalx)
+        public void MainTimerTick(int pronouncex, int originalx, bool runNotice)
         {
+            // 위 패널 시간 설정
             lblTime.Text = DateTime.Now.ToString("yyyy-MM-dd\nHH:mm:ss");
-            if (pronouncex <= 0)
+
+            if (runNotice)
             {
-                MainForm parent = (this.MdiParent as MainForm);
-                parent.pronouncex = originalx;
-                parent.sysnoticeseq++;
-                txtPronounce.Text = parent.GetCurrentSysNotice();
-                txtPronounce.Location = new Point(originalx, txtPronounce.Location.Y);
-                return;
+                // 아래 패널 공지사항 설정
+                if (!txtPronounce.Visible) txtPronounce.Visible = true;
+                if (pronouncex <= 0)
+                {
+                    MainForm parent = (this.MdiParent as MainForm);
+                    txtPronounce.Text = parent.GetCurrentSysNotice();
+                    parent.pronouncex = originalx;
+                    parent.sysnoticeseq++;
+                    NoticeLocation = originalx;
+                    return;
+                }
+                txtPronounce.Location = new Point(pronouncex, txtPronounce.Location.Y);
             }
-            txtPronounce.Location = new Point(pronouncex, txtPronounce.Location.Y);
         }
         private void ClientBaseForm_Load(object sender, EventArgs e)
         {
             if (this.MdiParent is MainForm parent)
             {
-                txtPronounce.Location = new Point(panBottom.Size.Width - 100, txtPronounce.Location.Y);
                 txtPronounce.Text = parent.GetCurrentSysNotice();
-                txtPronounce.Visible = true;
-                parent.sysnoticeseq++;
             }
         }
         private void ClientBaseForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -59,11 +64,16 @@ namespace AxxenClient.Templets
                     if (item is POP_PRD_001 frm)
                     {
                         frm.GetDatas();
+                        frm.NoticeLocation = (this.MdiParent as MainForm).pronouncex;
                         break;
                     }
                 }
             }
         }
 
+        private void btnMachineRun_Click(object sender, EventArgs e)
+        {
+            // TODO - 파일 만들기
+        }
     }
 }

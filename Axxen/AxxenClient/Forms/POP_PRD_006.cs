@@ -52,46 +52,56 @@ namespace AxxenClient.Forms
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            GV_Current_StatusService service = new GV_Current_StatusService();
-            //dgvBoxing.DataSource = service.GetGVCurrentStatus(wocode:GlobalUsage.WcCode, ProcessName:"소성", gvName:txtSearch.TextBoxText);
-            //dgvBoxing.DataSource = service.GetGVCurrentStatus(gvStatus: "적재", gvName: txtSearch.TextBoxText);
-            dgvBoxing.DataSource = service.GetGVCurrentStatus(gvName: txtSearch.TextBoxText);
+                GV_Current_StatusService service = new GV_Current_StatusService();
+                //dgvBoxing.DataSource = service.GetGVCurrentStatus(wocode:GlobalUsage.WcCode, ProcessName:"소성", gvName:txtSearch.TextBoxText);
+                //dgvBoxing.DataSource = service.GetGVCurrentStatus(gvStatus: "적재", gvName: txtSearch.TextBoxText);
+                dgvBoxing.DataSource = service.GetGVCurrentStatus(gvName: txtSearch.TextBoxText);
         }
         private void btnUnload_Click(object sender, EventArgs e)
         {
-            if(dgvBoxing.SelectedRows.Count < 1)
+
+            if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
             {
-                MessageBox.Show("대차를 선택해주세요");
-                return;
+                if (dgvBoxing.SelectedRows.Count < 1)
+                {
+                    MessageBox.Show("대차를 선택해주세요");
+                    return;
+                }
+                GV_HistoryService service = new GV_HistoryService();
+                if (service.UpdateUnload(GlobalUsage.UserID, dgvBoxing.SelectedRows[0].Cells[0].Value.ToString(), null, GlobalUsage.WcCode, Convert.ToInt32(dgvBoxing.SelectedRows[0].Cells[5].Value)))
+                    GetDatas();
+                else
+                    MessageBox.Show("언로딩에 실패하였습니다.");
             }
-            GV_HistoryService service = new GV_HistoryService();
-            if (service.UpdateUnload(GlobalUsage.UserID, dgvBoxing.SelectedRows[0].Cells[0].Value.ToString(), null ,GlobalUsage.WcCode, Convert.ToInt32(dgvBoxing.SelectedRows[0].Cells[5].Value)))
-                GetDatas();
-            else
-                MessageBox.Show("언로딩에 실패하였습니다.");
+            else MessageBox.Show("작업을 시작해주세요");
         }
         private void btnGVClear_Click(object sender, EventArgs e)
         {
-            if (dgvBoxing.SelectedRows.Count < 1)
+
+            if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
             {
-                MessageBox.Show("대차를 선택해주세요");
-                return;
+                if (dgvBoxing.SelectedRows.Count < 1)
+                {
+                    MessageBox.Show("대차를 선택해주세요");
+                    return;
+                }
+                GV_HistoryService service = new GV_HistoryService();
+                GVClearVO clearvo = new GVClearVO()
+                {
+                    Clear_Cause = "포장문제",
+                    Clear_Item = dgvBoxing.SelectedRows[0].Cells[3].Value == null ? "" : dgvBoxing.SelectedRows[0].Cells[3].Value.ToString(),
+                    Clear_Qty = dgvBoxing.SelectedRows[0].Cells[5].Value == null ? 0 : Convert.ToInt32(dgvBoxing.SelectedRows[0].Cells[5].Value),
+                    Clear_wc = GlobalUsage.WcCode,
+                    GV_Code = dgvBoxing.SelectedRows[0].Cells[0].Value.ToString(),
+                    Up_Emp = GlobalUsage.UserID
+                };
+                if (service.UpdateClearGV(clearvo))
+                    GetDatas();
+                else
+                    MessageBox.Show("대차 비우기에 실패하였습니다.");
             }
-            GV_HistoryService service = new GV_HistoryService();
-            GVClearVO clearvo = new GVClearVO()
-            {
-                Clear_Cause = "포장문제",
-                Clear_Item = dgvBoxing.SelectedRows[0].Cells[3].Value==null ? "" : dgvBoxing.SelectedRows[0].Cells[3].Value.ToString(),
-                Clear_Qty = dgvBoxing.SelectedRows[0].Cells[5].Value == null ? 0 : Convert.ToInt32(dgvBoxing.SelectedRows[0].Cells[5].Value),
-                Clear_wc = GlobalUsage.WcCode,
-                GV_Code = dgvBoxing.SelectedRows[0].Cells[0].Value.ToString(),
-                Up_Emp = GlobalUsage.UserID
-            };
-            if (service.UpdateClearGV(clearvo))
-                GetDatas();
-            else
-                MessageBox.Show("대차 비우기에 실패하였습니다.");
-            
+            else MessageBox.Show("작업을 시작해주세요");
+
         }
     }
 }

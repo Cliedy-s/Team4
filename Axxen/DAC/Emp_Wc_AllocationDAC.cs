@@ -29,7 +29,7 @@ namespace DAC
 	, um.[User_Name]
 FROM Emp_Wc_Allocation AS ewa
 	JOIN User_Master AS um ON ewa.[User_ID] = um.[User_ID]
-	WHERE ewa.Wc_Code = @wccode AND ewa.Release_datetime = null; ";
+	WHERE ewa.Wc_Code = @wccode AND ewa.Release_datetime IS null; ";
                 comm.CommandType = CommandType.Text;
                 comm.Parameters.AddWithValue("@wccode", wccode);
 
@@ -52,17 +52,17 @@ FROM Emp_Wc_Allocation AS ewa
             {
                 comm.Connection = new SqlConnection(Connstr);
                 comm.CommandText =
- @" SELECT 
-	um.User_ID
-	, um.User_Name
-	, um.Default_Process_Code
-	, wcm2.[Wc_Name]
-FROM User_Master AS um
-  RIGHT OUTER JOIN Emp_Wc_Allocation AS ewa ON ewa.User_ID = um.User_ID AND ewa.Release_datetime = null
-  JOIN [WorkCenter_Master] as wcm ON um.Default_Process_Code = wcm.[Process_Code]
-  JOIN [WorkCenter_Master] as wcm2 ON wcm2.[Wc_Code] = ewa.Wc_Code
-	WHERE um.Use_YN = 'Y'
-		AND wcm.[Wc_Code] =@wccode; ";
+ @"     
+ SELECT * FROM (
+  SELECT UM.User_ID,
+  UM.User_Name,
+  CASE WHEN Release_datetime IS NOT NULL THEN NULL WHEN Release_datetime IS NULL THEN WCM2.Wc_Name END AS NOWWC,
+  CASE WHEN Release_datetime IS NOT NULL THEN NULL WHEN Release_datetime IS NULL THEN WCM2.Wc_Code END AS NOWWCcode
+  FROM Emp_Wc_Allocation AS EWA
+	JOIN User_Master AS UM ON UM.User_ID = EWA.User_ID
+	JOIN WorkCenter_Master AS WCM ON WCM.Process_Code = UM.Default_Process_Code
+	JOIN WorkCenter_Master AS WCM2 ON WCM2.Wc_Code = EWA.Wc_Code
+  WHERE WCM.Wc_Code = 'WC1') as currentt WHERE (currentt.NOWWCcode != 'WC1' or currentt.NOWWCcode is null) ";
                 comm.CommandType = CommandType.Text;
                 comm.Parameters.AddWithValue("@wccode", wccode);
 

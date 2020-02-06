@@ -14,13 +14,15 @@ namespace AxxenClient.Forms
     public partial class MainForm : ClientFreeForm
     {
         public int sysnoticeseq = 1;
-        public int pronouncex =0;
+        public int pronouncex = 0;
         public int originalx = 0;
+        public bool runNotice = true;
         public MainForm()
         {
             InitializeComponent();
         }
-        private class Typesss{
+        private class Typesss
+        {
             public Typesss(string value1, WorkType value2)
             {
                 this.value1 = value1;
@@ -54,7 +56,7 @@ namespace AxxenClient.Forms
             childfrm.Show();
 
             // 공지를 위한 라벨 로케이션
-            originalx = pronouncex = childfrm.GetPronounceX();
+            childfrm.NoticeLocation = originalx = pronouncex = childfrm.GetPronounceX();
             timetimer.Start();
 
             //foreach (Form item in this.MdiChildren)
@@ -74,9 +76,9 @@ namespace AxxenClient.Forms
 
         private void timetimer_Tick(object sender, EventArgs e)
         {
-            if(ActiveMdiChild is ClientBaseForm activatedchild)
+            if (ActiveMdiChild is ClientBaseForm activatedchild)
             {
-                activatedchild.MainTimerTick(pronouncex, originalx);
+                activatedchild.MainTimerTick(pronouncex, originalx, runNotice);
                 pronouncex = pronouncex - 30;
             }
         }
@@ -90,11 +92,16 @@ namespace AxxenClient.Forms
             Sys_NoticeService service = new Sys_NoticeService();
             Sys_NoticeVO notice = service.GetCurrentSysNotice(sysnoticeseq);
             if (notice != null)
-               return notice.Description;
+                return notice.Description;
             else
             {
-               sysnoticeseq = 1;
-               return service.GetCurrentSysNotice(1).Description;
+                if (sysnoticeseq == 1)
+                {
+                    runNotice = false;
+                    return "~공지사항~";
+                }
+                sysnoticeseq = 1;
+                return service.GetCurrentSysNotice(1).Description;
             }
         }
     }

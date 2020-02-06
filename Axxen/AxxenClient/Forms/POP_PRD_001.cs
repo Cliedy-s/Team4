@@ -119,6 +119,7 @@ namespace AxxenClient.Forms
         private void WorkOrderForm_Load(object sender, EventArgs e)
         {
             InitControl();
+            btnMachineRun.Visible = true;
         }
         private void btnClick(object sender, EventArgs e)
         {
@@ -257,6 +258,11 @@ namespace AxxenClient.Forms
             {
                 WorkOrderEnd();
             }
+        }
+
+        private void btnMachineRun_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

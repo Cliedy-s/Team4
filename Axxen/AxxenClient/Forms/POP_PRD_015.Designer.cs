@@ -39,6 +39,7 @@
             this.txtItemName = new Axxen.CustomControls.ABigTextBox_Labeled();
             this.txtWorkOrderDate = new Axxen.CustomControls.ABigTextBox_Labeled();
             this.txtWorkOrderno = new Axxen.CustomControls.ABigTextBox_Labeled();
+            this.aButton1 = new Axxen.CustomControls.AButton();
             this.txtMeasure = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
             this.lblProcesscode = new Axxen.CustomControls.ALabel();
             this.lblItemCode = new Axxen.CustomControls.ALabel();
@@ -51,14 +52,19 @@
             this.aPanel6.SuspendLayout();
             this.SuspendLayout();
             // 
-            // aLabel_Header1
-            // 
-            this.aLabel_Header1.Text = "품질 측정값 등록";
-            // 
             // panBottom
             // 
             this.panBottom.Location = new System.Drawing.Point(0, 593);
             this.panBottom.Margin = new System.Windows.Forms.Padding(2);
+            // 
+            // aLabel_Header1
+            // 
+            this.aLabel_Header1.Location = new System.Drawing.Point(183, 30);
+            this.aLabel_Header1.Text = "품질 측정값 등록";
+            // 
+            // btnMachineRun
+            // 
+            this.btnMachineRun.Click += new System.EventHandler(this.btnMachineRun_Click);
             // 
             // btnDeleteMeasure
             // 
@@ -206,6 +212,18 @@
             this.txtWorkOrderno.TextBoxText = "";
             this.txtWorkOrderno.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
+            // aButton1
+            // 
+            this.aButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.aButton1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aButton1.Location = new System.Drawing.Point(273, 3);
+            this.aButton1.Name = "aButton1";
+            this.aButton1.Size = new System.Drawing.Size(98, 92);
+            this.aButton1.TabIndex = 45;
+            this.aButton1.Text = "품질기계\r\n시작/종료";
+            this.aButton1.UseVisualStyleBackColor = false;
+            // 
             // txtMeasure
             // 
             this.txtMeasure.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -306,5 +324,6 @@
         private Axxen.CustomControls.ALabel lblProcesscode;
         private Axxen.CustomControls.ALabel lblItemCode;
         private Axxen.CustomControls.ALabel lblInspectcode;
+        private Axxen.CustomControls.AButton aButton1;
     }
 }

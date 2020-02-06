@@ -55,7 +55,7 @@
             // 
             this.aLabel_Header1.Text = "성형 생산 대차 선택";
             // 
-            // aPanel1
+            // panBottom
             // 
             this.panBottom.Location = new System.Drawing.Point(0, 593);
             this.panBottom.Margin = new System.Windows.Forms.Padding(2);
@@ -219,6 +219,7 @@
             this.btnFromSearch.TabIndex = 39;
             this.btnFromSearch.Text = "검색";
             this.btnFromSearch.UseVisualStyleBackColor = false;
+            this.btnFromSearch.Click += new System.EventHandler(this.btnFromSearch_Click);
             // 
             // btnToSearch
             // 
@@ -232,6 +233,7 @@
             this.btnToSearch.TabIndex = 38;
             this.btnToSearch.Text = "검색";
             this.btnToSearch.UseVisualStyleBackColor = false;
+            this.btnToSearch.Click += new System.EventHandler(this.btnToSearch_Click);
             // 
             // txtFromGVSearch
             // 
@@ -262,7 +264,6 @@
             // 
             // POP_PRD_007
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1210, 629);
             this.Controls.Add(this.btnFromSearch);
             this.Controls.Add(this.btnToSearch);

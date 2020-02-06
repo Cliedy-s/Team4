@@ -16,12 +16,14 @@ namespace AxxenClient.Forms
     public partial class POP_PRD_005 : AxxenClient.Templets.ClientBaseForm
     {
         int palletqty;
-        int palletQty { 
+        int palletQty
+        {
             get { return palletqty; }
-            set {
+            set
+            {
                 palletqty = value;
                 txtPalletQty.TextBoxText = palletqty.ToString();
-            } 
+            }
         }
         public POP_PRD_005()
         {
@@ -53,20 +55,25 @@ namespace AxxenClient.Forms
         }
         private void btnIn_Click(object sender, EventArgs e)
         {
-            Pallet_MasterService service = new Pallet_MasterService();
-            if (!service.IsExistPallet(txtPalletNo.TextBoxText))
+
+            if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
             {
-                MessageBox.Show("팔레트 번호를 확인해주세요");
-                return;
+                Pallet_MasterService service = new Pallet_MasterService();
+                if (!service.IsExistPallet(txtPalletNo.TextBoxText))
+                {
+                    MessageBox.Show("팔레트 번호를 확인해주세요");
+                    return;
+                }
+                bool isSuccess = service.InputPallet(GlobalUsage.UserID, GlobalUsage.WorkOrderNo, txtPalletNo.TextBoxText);
+                if (!isSuccess)
+                {
+                    MessageBox.Show("입고에 실패하였습니다.");
+                    return;
+                }
+                GetDatas();
+                lblBarcodeNo.Text = "";
             }
-            bool isSuccess = service.InputPallet(GlobalUsage.UserID, GlobalUsage.WorkOrderNo, txtPalletNo.TextBoxText);
-            if (!isSuccess)
-            {
-                MessageBox.Show("입고에 실패하였습니다.");
-                return;
-            }
-            GetDatas();
-            lblBarcodeNo.Text = "";
+            else MessageBox.Show("작업을 시작해주세요");
 
         }
         private void txtPalletNo_searchclick(object sender, EventArgs e)
@@ -158,7 +165,7 @@ namespace AxxenClient.Forms
                 _Strings.AppendLine(value);
                 beforecode = lblBarcodeNo.Text;
                 lblBarcodeNo.Text = "";
-                lblBarcodeNo.Text = _Strings.ToString().Replace("+", "").Replace("\n","").Replace("\r","");
+                lblBarcodeNo.Text = _Strings.ToString().Replace("+", "").Replace("\n", "").Replace("\r", "");
             }
         }
         #endregion
@@ -179,9 +186,8 @@ namespace AxxenClient.Forms
                     // 연결
                     Port.Open();
                 }
-                catch (Exception ex)
+                catch
                 {
-                    MessageBox.Show("[ERR] {0}", ex.Message);
                 }
             }
             else
@@ -206,7 +212,7 @@ namespace AxxenClient.Forms
         string beforecode { get; set; }
         private void lblBarcodeNo_TextChanged(object sender, EventArgs e)
         {
-            if(lblBarcodeNo.Text.Length >= 8) //TODO - 20으로 변경
+            if (lblBarcodeNo.Text.Length >= 8) //TODO - 20으로 변경
             {
                 Pallet_MasterService service = new Pallet_MasterService();
                 PalletVO item = service.GetPalletByBarcode(lblBarcodeNo.Text);
