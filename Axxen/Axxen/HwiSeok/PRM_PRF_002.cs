@@ -84,6 +84,7 @@ namespace Axxen
             #endregion
 
             #region 서브그리드뷰
+            DatagridviewDesigns.SetDesign(dgvSubGrid);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "팔렛트번호", "Pallet_No", true, 100, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "등급", "Grade_Code", true, 100, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "등급상세 코드", "Grade_Detail_Code", true, 100, default, true);

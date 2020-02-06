@@ -1,6 +1,7 @@
 ﻿using DAC;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,12 @@ namespace Service
         {
             InspectMeasure_History_MasterDAC dac = new InspectMeasure_History_MasterDAC();
             return dac.GetSubInspectMeasure_History_Master(Workorderno, Process_code, Item_Code, Inspect_code);
+        }
+
+        public DataTable GetSubSubInspectMeasure_History_Master(string Workorderno, string Process_code, string Item_Code, string Inspect_code) // QAM_SQC_002 서브서브그리드뷰 조회
+        {
+            InspectMeasure_History_MasterDAC dac = new InspectMeasure_History_MasterDAC();
+            return dac.GetSubSubInspectMeasure_History_Master(Workorderno, Process_code, Item_Code, Inspect_code);
         }
 
         public List<InspectMeasure_History_MasterVO> GetAllInspectMeasure_History_Master() // QAM_SQC_004 전체 조회

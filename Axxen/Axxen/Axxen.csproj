@@ -198,6 +198,12 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ParkSangIn\MSS_SYS_001_1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkSangIn\MSS_SYS_001_1.Designer.cs">
+      <DependentUpon>MSS_SYS_001_1.cs</DependentUpon>
+    </Compile>
     <Compile Include="ParkSangIn\MDS_ODS_002_1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -619,6 +625,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParkSangIn\MSS_SYS_001_1.resx">
+      <DependentUpon>MSS_SYS_001_1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ParkSangIn\MDS_CDS_004.resx">
       <DependentUpon>MDS_CDS_004.cs</DependentUpon>

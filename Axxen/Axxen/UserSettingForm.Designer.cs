@@ -49,12 +49,12 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.label23 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.label23 = new System.Windows.Forms.Label();
+            this.panel10 = new System.Windows.Forms.Panel();
             this.cbbscreen = new Axxen.CustomControls.AComboBox();
+            this.panel9 = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -62,10 +62,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.panel10.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel7.SuspendLayout();
+            this.panel10.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -290,35 +290,6 @@
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
-            // panel9
-            // 
-            this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel9.Controls.Add(this.cbbscreen);
-            this.panel9.Location = new System.Drawing.Point(145, 25);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(455, 45);
-            this.panel9.TabIndex = 19;
-            // 
-            // panel10
-            // 
-            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel10.Controls.Add(this.label23);
-            this.panel10.Location = new System.Drawing.Point(37, 25);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(109, 45);
-            this.panel10.TabIndex = 18;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label23.Location = new System.Drawing.Point(16, 15);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(60, 17);
-            this.label23.TabIndex = 5;
-            this.label23.Text = "기본화면";
-            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.panel7);
@@ -343,6 +314,26 @@
             this.panel7.Size = new System.Drawing.Size(418, 45);
             this.panel7.TabIndex = 82;
             // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label23.Location = new System.Drawing.Point(16, 15);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(60, 17);
+            this.label23.TabIndex = 5;
+            this.label23.Text = "기본화면";
+            // 
+            // panel10
+            // 
+            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel10.Controls.Add(this.label23);
+            this.panel10.Location = new System.Drawing.Point(37, 25);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(109, 45);
+            this.panel10.TabIndex = 18;
+            // 
             // cbbscreen
             // 
             this.cbbscreen.FormattingEnabled = true;
@@ -350,6 +341,15 @@
             this.cbbscreen.Name = "cbbscreen";
             this.cbbscreen.Size = new System.Drawing.Size(165, 20);
             this.cbbscreen.TabIndex = 0;
+            // 
+            // panel9
+            // 
+            this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel9.Controls.Add(this.cbbscreen);
+            this.panel9.Location = new System.Drawing.Point(145, 25);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(455, 45);
+            this.panel9.TabIndex = 19;
             // 
             // UserSettingForm
             // 
@@ -370,12 +370,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
+            this.panel9.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -402,12 +402,12 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.TextBox txtNewid;
+        private System.Windows.Forms.Panel panel9;
         private CustomControls.AComboBox cbbscreen;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Label label23;
     }
 }

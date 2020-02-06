@@ -26,23 +26,23 @@ namespace Axxen
             ((MainForm)this.MdiParent).RefreshFormEvent += new System.EventHandler(this.RefreshFormShow); // 새로고침
 
             DatagridviewDesigns.SetDesign(dgvMainGrid);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "대차코드", "GV_Code", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "대차명", "GV_Name", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "대차그룹명", "GV_Group", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "작업지시번호", "Workorderno", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "품목코드", "Item_Code", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "품목명", "Item_Name", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "대차상태", "GV_Status", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "대차수량", "GV_Qty", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "로딩일자", "Loading_date", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "로딩시간", "Loading_time", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "로딩작업장", "Loading_Wc", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "언로딩일자", "Unloading_date", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "언로딩시간", "Unloading_time", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "언로딩작업장", "Unloading_Wc", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "요입시간", "In_Time", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "중간시간", "Center_Time", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "요출시간", "Out_Time", true, 100, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "대차코드", "GV_Code", true, 100, default, false);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "대차명", "GV_Name", true, 100, default, false);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "대차그룹명", "GV_Group", true, 100, default, false);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "작업지시번호", "Workorderno", true, 120, default, false);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "품목코드", "Item_Code", true, 100, default, false);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "품목명", "Item_Name", true, 100, default, false);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "대차상태", "GV_Status", true, 100, default, false);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "대차수량", "GV_Qty", true, 100, default, false);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "로딩일자", "Loading_date", true, 100, default, false);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "로딩시간", "Loading_time", true, 150, default, false);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "로딩작업장", "Loading_Wc", true, 120, default, false);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "언로딩일자", "Unloading_date", true, 120, default, false);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "언로딩시간", "Unloading_time", true, 120, default, false);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "언로딩작업장", "Unloading_Wc", true, 150, default, false);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "요입시간", "In_Time", true, 150, default, false);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "중간시간", "Center_Time", true, 150, default, false);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "요출시간", "Out_Time", true, 150, default, false);
 
             gvwi = gvwiservice.GetAllGV_Work_Item();
             dgvMainGrid.DataSource = gvwi;
