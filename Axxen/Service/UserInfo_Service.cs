@@ -45,6 +45,7 @@ namespace Service
 
         }
 
+
             public List<UserInfoVO> UserID_UserName() //유저 아이디 / 닉네임 서치
         {
 
@@ -55,6 +56,15 @@ namespace Service
         {
             return dac.InsertUser(user);
         }
-    }
+
+        /// <summary>
+        /// 사용자 삭제
+        /// </summary>
+        /// <returns></returns>
+        public bool DeleteUserInfoVO(string userid)
+        {
+            return dac.DeleteUserInfoVO(userid);
+        }
+        }
 }
  

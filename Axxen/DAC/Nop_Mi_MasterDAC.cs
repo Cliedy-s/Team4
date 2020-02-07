@@ -173,6 +173,7 @@ END";
             }
         }
 
+        private bood DeleteNopMiMasterVO
 
         public List<NopMiMasterVO> GetCombo() //PRM_PRF_008_1 비가동상세분류코드
         {
