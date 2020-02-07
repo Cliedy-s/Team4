@@ -244,7 +244,7 @@
             this.btnWorkOrderOnOff0.TabIndex = 16;
             this.btnWorkOrderOnOff0.Text = "작업시작/종료";
             this.btnWorkOrderOnOff0.UseVisualStyleBackColor = false;
-            this.btnWorkOrderOnOff0.Click += new System.EventHandler(this.btnClick);
+            this.btnWorkOrderOnOff0.Click += new System.EventHandler(this.btnWorkOrderToggle);
             // 
             // btnWorkOrderQuit2
             // 

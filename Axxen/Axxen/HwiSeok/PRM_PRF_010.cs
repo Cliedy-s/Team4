@@ -81,8 +81,19 @@ namespace Axxen
                     aTextBox_FindNameByCode1.txtCodeText = "";
                     aTextBox_FindNameByCode1.txtNameText = "";
 
-                    whcu = whcuservice.GetAllUserDetails((dgvMainGrid.SelectedRows[0].Cells[1].Value).ToString());
-                    dgvSubGrid.DataSource = whcu;
+                    dgvSubGrid.DataSource = null;
+                    if (dgvSubGrid.Columns.Count == 0)
+                    {
+                        DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "작업지시번호", "Workorderno", true, 100, default, true);
+                        DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "작업장코드", "Wc_Code", true, 100, default, true);
+                        DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "작업장명", "Wc_Name", true, 100, default, true);
+                        DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "품목코드", "Item_Code", true, 100, default, true);
+                        DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "품목명", "Item_Name", true, 100, default, true);
+                        DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "작업지삭일시", "Prd_Starttime", true, 100, default, true);
+                        DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "작업종료일시", "Prd_Endtime", true, 100, default, true);
+                        DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "생산수량", "Prd_Qty", true, 100, default, true);
+                        DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "할당작업자", "User_Name", true, 100, default, true);
+                    }
                 }
             }
             catch (Exception err)
@@ -105,6 +116,20 @@ namespace Axxen
                 dgvMainGrid.DataSource = dt;
                 aTextBox_FindNameByCode1.txtCodeText = "";
                 aTextBox_FindNameByCode1.txtNameText = "";
+
+                dgvSubGrid.DataSource = null;
+                if (dgvSubGrid.Columns.Count == 0)
+                {
+                    DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "작업지시번호", "Workorderno", true, 100, default, true);
+                    DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "작업장코드", "Wc_Code", true, 100, default, true);
+                    DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "작업장명", "Wc_Name", true, 100, default, true);
+                    DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "품목코드", "Item_Code", true, 100, default, true);
+                    DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "품목명", "Item_Name", true, 100, default, true);
+                    DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "작업지삭일시", "Prd_Starttime", true, 100, default, true);
+                    DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "작업종료일시", "Prd_Endtime", true, 100, default, true);
+                    DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "생산수량", "Prd_Qty", true, 100, default, true);
+                    DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "할당작업자", "User_Name", true, 100, default, true);
+                }
             }
             catch
             {

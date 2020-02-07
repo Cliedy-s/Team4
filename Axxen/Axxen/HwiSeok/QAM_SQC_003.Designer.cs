@@ -137,8 +137,8 @@
             // 
             // aDateTimePickerSearch1
             // 
-            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 1, 30, 15, 14, 53, 495);
-            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 2, 6, 15, 14, 53, 495);
+            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 1, 31, 14, 15, 4, 290);
+            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 2, 7, 14, 15, 4, 290);
             this.aDateTimePickerSearch1.ButtonText = "조회";
             this.aDateTimePickerSearch1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aDateTimePickerSearch1.Location = new System.Drawing.Point(88, 23);
@@ -146,6 +146,7 @@
             this.aDateTimePickerSearch1.Name = "aDateTimePickerSearch1";
             this.aDateTimePickerSearch1.Size = new System.Drawing.Size(324, 32);
             this.aDateTimePickerSearch1.TabIndex = 34;
+            this.aDateTimePickerSearch1.btnDateTimeSearch_Click += new Axxen.CustomControls.ADateTimePickerSearch.SearchButtonClick(this.aDateTimePickerSearch1_btnDateTimeSearch_Click);
             // 
             // QAM_SQC_003
             // 
@@ -153,6 +154,7 @@
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.Name = "QAM_SQC_003";
             this.Text = "공정조건등록";
+            this.Load += new System.EventHandler(this.QAM_SQC_003_Load);
             this.aSplitContainer1.Panel1.ResumeLayout(false);
             this.aSplitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.aSplitContainer1)).EndInit();
