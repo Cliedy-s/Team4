@@ -92,11 +92,12 @@ namespace Axxen
                     aTextBox_FindNameByCode2.txtNameText = "";
 
                     dgvSubGrid.DataSource = null;
-                 
-                    if (dgvSubSubGrid.DataSource != null&& dgvSubSubGrid.Columns.Count==0)
+
+                    dgvSubSubGrid.DataSource = null;
+                    if (dgvSubSubGrid.Columns.Count==0)
                     {
-                        dgvSubSubGrid.DataSource = null;
-                        DatagridviewDesigns.SetDesign(dgvSubSubGrid);
+                      
+                    
                         DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubSubGrid, "측정일시", "Inspect_datetime", true, 100, default, false);
                         DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubSubGrid, "품목코드", "Item_code", true, 100, default, false);
                         DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubSubGrid, "품목명", "Item_Name", true, 100, default, false);
