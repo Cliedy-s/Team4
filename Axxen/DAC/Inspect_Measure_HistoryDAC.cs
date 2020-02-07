@@ -146,7 +146,7 @@ where A.Workorderno=B.Workorderno and B.Workorderno=C.Workorderno and C.Workorde
                     trans.Commit();
                     comm.Connection.Close();
                 }
-                catch(Exception)
+                catch (Exception)
                 {
                     trans.Rollback();
                     comm.Connection.Close();

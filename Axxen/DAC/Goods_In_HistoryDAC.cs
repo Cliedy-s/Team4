@@ -43,8 +43,7 @@ namespace DAC
             using (SqlCommand comm = new SqlCommand())
             {
                 comm.Connection = new SqlConnection(Connstr);
-                comm.CommandText = @"select ROW_NUMBER() OVER(ORDER BY In_Date) AS Num,g.Workorderno,Pallet_No,g.In_Date,Item_Name,g.Remark ,g.Closed_Time
- from WorkOrder w, WorkCenter_Master wc, Item_Master i, Goods_In_History g where w.Wc_Code=wc.Wc_Code and i.Item_Code=w.Item_Code and g.Workorderno=w.Workorderno and  wc.Process_Code='PC2'; ";
+                comm.CommandText = "select ROW_NUMBER() OVER(ORDER BY In_Date) AS Num,g.Workorderno,Pallet_No,g.In_Date,Item_Name,g.Remark ,g.Closed_Time from WorkOrder w, WorkCenter_Master wc, Item_Master i, Goods_In_History g where w.Wc_Code=wc.Wc_Code and i.Item_Code=w.Item_Code and g.Workorderno=w.Workorderno and  wc.Process_Code='PC2'";
                 comm.CommandType = CommandType.Text;
                 comm.Connection.Open();
                 SqlDataReader reader = comm.ExecuteReader();

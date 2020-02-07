@@ -55,6 +55,7 @@ namespace Axxen
 
             foreach (var item in searchlist)
             {
+                if(item.)
                 workno.Add(item.Workorderno);
             }
             Inspect_Measure_HistoryService inservice = new Inspect_Measure_HistoryService();
