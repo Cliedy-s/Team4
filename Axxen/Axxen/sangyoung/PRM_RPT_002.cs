@@ -28,7 +28,6 @@ namespace Axxen
         private void PRM_RPT_002_Load(object sender, EventArgs e)
         {
             Goods_In_HistorySercive service = new Goods_In_HistorySercive();
-          
             figList = service.GetFigurationHistory();
         }
 
