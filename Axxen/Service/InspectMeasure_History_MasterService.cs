@@ -16,6 +16,13 @@ namespace Service
             InspectMeasure_History_MasterDAC dac = new InspectMeasure_History_MasterDAC();
             return dac.GetMainInspectMeasure_History_Master();
         }
+
+        public List<InspectMeasure_History_MasterVO> PickerMainInspectMeasure_History_Master(string ADateTimePickerValue1, string ADateTimePickerValue2) // QAM_SQC_002 날짜별 조회
+        {
+            InspectMeasure_History_MasterDAC dac = new InspectMeasure_History_MasterDAC();
+            return dac.PickerMainInspectMeasure_History_Master(ADateTimePickerValue1, ADateTimePickerValue2);
+        }
+
         public List<InspectMeasure_History_MasterVO> GetSubInspectMeasure_History_Master(string Workorderno, string Process_code, string Item_Code, string Inspect_code) // QAM_SQC_002 서브그리드뷰 조회
         {
             InspectMeasure_History_MasterDAC dac = new InspectMeasure_History_MasterDAC();
