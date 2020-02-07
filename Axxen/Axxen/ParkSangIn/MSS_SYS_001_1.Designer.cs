@@ -46,7 +46,6 @@
             this.aPanel17 = new Axxen.CustomControls.APanel();
             this.aLabel11 = new Axxen.CustomControls.ALabel();
             this.aPanel19 = new Axxen.CustomControls.APanel();
-            this.txtsonname = new CLIP.eForm.Consent.Standard.Management.UI.PlaceHolderTextBox();
             this.aPanel20 = new Axxen.CustomControls.APanel();
             this.aLabel13 = new Axxen.CustomControls.ALabel();
             this.aPanel21 = new Axxen.CustomControls.APanel();
@@ -57,7 +56,6 @@
             this.aPanel24 = new Axxen.CustomControls.APanel();
             this.aLabel15 = new Axxen.CustomControls.ALabel();
             this.aPanel25 = new Axxen.CustomControls.APanel();
-            this.txtsoncode = new CLIP.eForm.Consent.Standard.Management.UI.PlaceHolderTextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.aButton1 = new Axxen.CustomControls.AButton();
             this.aPanel1 = new Axxen.CustomControls.APanel();
@@ -78,6 +76,9 @@
             this.aLabel12 = new Axxen.CustomControls.ALabel();
             this.aPanel18 = new Axxen.CustomControls.APanel();
             this.txtparentcode = new CLIP.eForm.Consent.Standard.Management.UI.PlaceHolderTextBox();
+            this.cbbScreenname = new Axxen.CustomControls.AComboBox();
+            this.aPanel26 = new Axxen.CustomControls.APanel();
+            this.lblscreencode = new Axxen.CustomControls.ALabel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.aPanel2.SuspendLayout();
@@ -106,6 +107,7 @@
             this.aPanel15.SuspendLayout();
             this.aPanel16.SuspendLayout();
             this.aPanel18.SuspendLayout();
+            this.aPanel26.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -257,7 +259,7 @@
             // 
             this.aPanel8.BackColor = System.Drawing.SystemColors.Info;
             this.aPanel8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.aPanel8.Controls.Add(this.aLabel10);
+            this.aPanel8.Controls.Add(this.aLabel11);
             this.aPanel8.Location = new System.Drawing.Point(26, 95);
             this.aPanel8.Name = "aPanel8";
             this.aPanel8.Size = new System.Drawing.Size(120, 35);
@@ -268,7 +270,7 @@
             this.aLabel10.AutoSize = true;
             this.aLabel10.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aLabel10.Location = new System.Drawing.Point(29, 8);
+            this.aLabel10.Location = new System.Drawing.Point(26, 6);
             this.aLabel10.Name = "aLabel10";
             this.aLabel10.Size = new System.Drawing.Size(80, 17);
             this.aLabel10.TabIndex = 55;
@@ -278,7 +280,7 @@
             // 
             this.aPanel17.BackColor = System.Drawing.SystemColors.Info;
             this.aPanel17.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.aPanel17.Controls.Add(this.aLabel11);
+            this.aPanel17.Controls.Add(this.aLabel10);
             this.aPanel17.Location = new System.Drawing.Point(26, 130);
             this.aPanel17.Name = "aPanel17";
             this.aPanel17.Size = new System.Drawing.Size(120, 35);
@@ -289,32 +291,20 @@
             this.aLabel11.AutoSize = true;
             this.aLabel11.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aLabel11.Location = new System.Drawing.Point(30, 8);
+            this.aLabel11.Location = new System.Drawing.Point(26, 6);
             this.aLabel11.Name = "aLabel11";
-            this.aLabel11.Size = new System.Drawing.Size(53, 17);
+            this.aLabel11.Size = new System.Drawing.Size(67, 17);
             this.aLabel11.TabIndex = 53;
-            this.aLabel11.Text = "*메뉴명";
+            this.aLabel11.Text = "*Screen명";
             // 
             // aPanel19
             // 
             this.aPanel19.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.aPanel19.Controls.Add(this.txtsonname);
+            this.aPanel19.Controls.Add(this.aPanel26);
             this.aPanel19.Location = new System.Drawing.Point(148, 130);
             this.aPanel19.Name = "aPanel19";
             this.aPanel19.Size = new System.Drawing.Size(170, 35);
             this.aPanel19.TabIndex = 223;
-            // 
-            // txtsonname
-            // 
-            this.txtsonname.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Italic);
-            this.txtsonname.ForeColor = System.Drawing.Color.Gray;
-            this.txtsonname.Location = new System.Drawing.Point(3, 3);
-            this.txtsonname.MaxLength = 30;
-            this.txtsonname.Name = "txtsonname";
-            this.txtsonname.PlaceHolderText = "이름을 입력하세요.";
-            this.txtsonname.Size = new System.Drawing.Size(160, 25);
-            this.txtsonname.TabIndex = 62;
-            this.txtsonname.Text = "메뉴명을 입력하세요.";
             // 
             // aPanel20
             // 
@@ -406,23 +396,11 @@
             // aPanel25
             // 
             this.aPanel25.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.aPanel25.Controls.Add(this.txtsoncode);
+            this.aPanel25.Controls.Add(this.cbbScreenname);
             this.aPanel25.Location = new System.Drawing.Point(148, 95);
             this.aPanel25.Name = "aPanel25";
             this.aPanel25.Size = new System.Drawing.Size(170, 35);
             this.aPanel25.TabIndex = 225;
-            // 
-            // txtsoncode
-            // 
-            this.txtsoncode.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Italic);
-            this.txtsoncode.ForeColor = System.Drawing.Color.Gray;
-            this.txtsoncode.Location = new System.Drawing.Point(3, 3);
-            this.txtsoncode.MaxLength = 20;
-            this.txtsoncode.Name = "txtsoncode";
-            this.txtsoncode.PlaceHolderText = "이름을 입력하세요.";
-            this.txtsoncode.Size = new System.Drawing.Size(160, 25);
-            this.txtsoncode.TabIndex = 63;
-            this.txtsoncode.Text = "코드를 입력하세요.";
             // 
             // tabPage2
             // 
@@ -635,6 +613,33 @@
             this.txtparentcode.TabIndex = 63;
             this.txtparentcode.Text = "검사코드를 입력하세요.";
             // 
+            // cbbScreenname
+            // 
+            this.cbbScreenname.FormattingEnabled = true;
+            this.cbbScreenname.Location = new System.Drawing.Point(3, 6);
+            this.cbbScreenname.Name = "cbbScreenname";
+            this.cbbScreenname.Size = new System.Drawing.Size(160, 20);
+            this.cbbScreenname.TabIndex = 231;
+            this.cbbScreenname.SelectedIndexChanged += new System.EventHandler(this.CbbScreenname_SelectedIndexChanged);
+            // 
+            // aPanel26
+            // 
+            this.aPanel26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.aPanel26.Controls.Add(this.lblscreencode);
+            this.aPanel26.Location = new System.Drawing.Point(3, 2);
+            this.aPanel26.Name = "aPanel26";
+            this.aPanel26.Size = new System.Drawing.Size(160, 27);
+            this.aPanel26.TabIndex = 152;
+            // 
+            // lblscreencode
+            // 
+            this.lblscreencode.AutoSize = true;
+            this.lblscreencode.Location = new System.Drawing.Point(11, 3);
+            this.lblscreencode.Name = "lblscreencode";
+            this.lblscreencode.Size = new System.Drawing.Size(49, 12);
+            this.lblscreencode.TabIndex = 150;
+            this.lblscreencode.Text = "aLabel3";
+            // 
             // MSS_SYS_001_1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -661,7 +666,6 @@
             this.aPanel17.ResumeLayout(false);
             this.aPanel17.PerformLayout();
             this.aPanel19.ResumeLayout(false);
-            this.aPanel19.PerformLayout();
             this.aPanel20.ResumeLayout(false);
             this.aPanel20.PerformLayout();
             this.aPanel21.ResumeLayout(false);
@@ -671,7 +675,6 @@
             this.aPanel24.ResumeLayout(false);
             this.aPanel24.PerformLayout();
             this.aPanel25.ResumeLayout(false);
-            this.aPanel25.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.aPanel1.ResumeLayout(false);
             this.aPanel1.PerformLayout();
@@ -691,6 +694,8 @@
             this.aPanel16.PerformLayout();
             this.aPanel18.ResumeLayout(false);
             this.aPanel18.PerformLayout();
+            this.aPanel26.ResumeLayout(false);
+            this.aPanel26.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -715,7 +720,6 @@
         private CustomControls.APanel aPanel17;
         private CustomControls.ALabel aLabel11;
         private CustomControls.APanel aPanel19;
-        private CLIP.eForm.Consent.Standard.Management.UI.PlaceHolderTextBox txtsonname;
         private CustomControls.APanel aPanel20;
         private CustomControls.ALabel aLabel13;
         private CustomControls.APanel aPanel21;
@@ -726,7 +730,6 @@
         private CustomControls.APanel aPanel24;
         private CustomControls.ALabel aLabel15;
         private CustomControls.APanel aPanel25;
-        private CLIP.eForm.Consent.Standard.Management.UI.PlaceHolderTextBox txtsoncode;
         private CustomControls.APanel aPanel1;
         private CustomControls.ALabel aLabel3;
         private CustomControls.APanel aPanel9;
@@ -747,5 +750,8 @@
         private CLIP.eForm.Consent.Standard.Management.UI.PlaceHolderTextBox txtparentcode;
         private CustomControls.AButton btnson;
         private CustomControls.AButton aButton1;
+        private CustomControls.APanel aPanel26;
+        private CustomControls.ALabel lblscreencode;
+        private CustomControls.AComboBox cbbScreenname;
     }
 }

@@ -35,10 +35,19 @@ namespace Service
             return dac.GetUpdateUserGroup(groupcode, check);
         }
         /// <summary>
-        /// 그룹 저장
+        /// 유저 그룹삭제
         /// </summary>
+        /// <param name="code"></param>
         /// <returns></returns>
-        public bool GetInsertUserGroup(string groupcode, string UserGroup_Name , string user)
+        public bool DeleteUserGroup_MasterVO(string code)
+        {
+            return dac.DeleteUserGroup_MasterVO(code);
+        }
+            /// <summary>
+            /// 그룹 저장
+            /// </summary>
+            /// <returns></returns>
+            public bool GetInsertUserGroup(string groupcode, string UserGroup_Name , string user)
         {
 
             return dac.GetInsertUserGroup(groupcode, UserGroup_Name, user);
