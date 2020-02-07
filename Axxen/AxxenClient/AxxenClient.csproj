@@ -198,6 +198,12 @@
       <DependentUpon>ReportPreview.cs</DependentUpon>
     </Compile>
     <Compile Include="GlobalUsage.cs" />
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Util\LoggingUtility.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -273,6 +279,9 @@
     <EmbeddedResource Include="Forms\BarcodeReport.resx">
       <DependentUpon>BarcodeReport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -307,6 +316,10 @@
       <Project>{d5cc387b-b513-4d54-831f-e252c8eae1df}</Project>
       <Name>CustomControls</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DAC\DAC.csproj">
+      <Project>{B6677E46-71D2-4FDA-B66B-E03B68C97C7D}</Project>
+      <Name>DAC</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Service\Service.csproj">
       <Project>{AF54ACA3-DA6E-4A15-9BAC-DA1B72DD7B93}</Project>
       <Name>Service</Name>
@@ -318,6 +331,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Image\X.png" />
+    <None Include="Image\MianLoGo.png" />
     <Content Include="Image\progress.gif" />
     <Content Include="Team4Connect_DEV.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

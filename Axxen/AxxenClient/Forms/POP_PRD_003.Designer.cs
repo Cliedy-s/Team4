@@ -30,10 +30,8 @@
         {
             this.dgvPalletList = new Axxen.CustomControls.ADataGridView();
             this.aPanel4 = new Axxen.CustomControls.APanel();
-            this.aBigTextBox_Searchable1 = new Axxen.CustomControls.ABigTextBox_Searchable();
             this.txtPrintPallet = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
             this.txtSizeCode = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
-            this.txtBoxingDegailGrade = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
             this.txtBoxingGrade = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
             this.txtPalletNo = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
             this.btnPalletPrint = new Axxen.CustomControls.AButton();
@@ -44,6 +42,7 @@
             this.txtItemName = new Axxen.CustomControls.ABigTextBox_Labeled();
             this.txtWorkOrderDate = new Axxen.CustomControls.ABigTextBox_Labeled();
             this.txtWorkOrderno = new Axxen.CustomControls.ABigTextBox_Labeled();
+            this.txtBoxingGradeDetail = new Axxen.CustomControls.ABigTextBox_Searchable();
             this.panBottom.SuspendLayout();
             this.aPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
@@ -79,32 +78,16 @@
             // 
             this.aPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.aPanel4.Controls.Add(this.aBigTextBox_Searchable1);
             this.aPanel4.Controls.Add(this.txtPrintPallet);
             this.aPanel4.Controls.Add(this.txtSizeCode);
-            this.aPanel4.Controls.Add(this.txtBoxingDegailGrade);
             this.aPanel4.Controls.Add(this.txtBoxingGrade);
             this.aPanel4.Controls.Add(this.txtPalletNo);
             this.aPanel4.Controls.Add(this.btnPalletPrint);
+            this.aPanel4.Controls.Add(this.txtBoxingGradeDetail);
             this.aPanel4.Location = new System.Drawing.Point(652, 212);
             this.aPanel4.Name = "aPanel4";
             this.aPanel4.Size = new System.Drawing.Size(549, 373);
             this.aPanel4.TabIndex = 6;
-            // 
-            // aBigTextBox_Searchable1
-            // 
-            this.aBigTextBox_Searchable1.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aBigTextBox_Searchable1.CodeText = null;
-            this.aBigTextBox_Searchable1.DataType = Axxen.CustomControls.DataType.BoxingDetail;
-            this.aBigTextBox_Searchable1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aBigTextBox_Searchable1.LabelText = "등급상세";
-            this.aBigTextBox_Searchable1.Location = new System.Drawing.Point(39, 111);
-            this.aBigTextBox_Searchable1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.aBigTextBox_Searchable1.Name = "aBigTextBox_Searchable1";
-            this.aBigTextBox_Searchable1.Size = new System.Drawing.Size(469, 42);
-            this.aBigTextBox_Searchable1.TabIndex = 36;
-            this.aBigTextBox_Searchable1.TextBoxText = "";
-            this.aBigTextBox_Searchable1.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
             // txtPrintPallet
             // 
@@ -133,20 +116,6 @@
             this.txtSizeCode.TabIndex = 34;
             this.txtSizeCode.TextBoxText = "";
             this.txtSizeCode.TextBoxType = Axxen.CustomControls.TextType.Normal;
-            // 
-            // txtBoxingDegailGrade
-            // 
-            this.txtBoxingDegailGrade.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtBoxingDegailGrade.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtBoxingDegailGrade.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtBoxingDegailGrade.LabelText = "등급상세";
-            this.txtBoxingDegailGrade.Location = new System.Drawing.Point(39, 111);
-            this.txtBoxingDegailGrade.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.txtBoxingDegailGrade.Name = "txtBoxingDegailGrade";
-            this.txtBoxingDegailGrade.Size = new System.Drawing.Size(469, 42);
-            this.txtBoxingDegailGrade.TabIndex = 33;
-            this.txtBoxingDegailGrade.TextBoxText = "";
-            this.txtBoxingDegailGrade.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
             // txtBoxingGrade
             // 
@@ -282,6 +251,22 @@
             this.txtWorkOrderno.TextBoxText = "";
             this.txtWorkOrderno.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
+            // txtBoxingGradeDetail
+            // 
+            this.txtBoxingGradeDetail.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtBoxingGradeDetail.CodeText = null;
+            this.txtBoxingGradeDetail.DataType = Axxen.CustomControls.DataType.BoxingDetail;
+            this.txtBoxingGradeDetail.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtBoxingGradeDetail.LabelText = "등급상세";
+            this.txtBoxingGradeDetail.Location = new System.Drawing.Point(39, 111);
+            this.txtBoxingGradeDetail.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtBoxingGradeDetail.Name = "txtBoxingGradeDetail";
+            this.txtBoxingGradeDetail.Size = new System.Drawing.Size(469, 42);
+            this.txtBoxingGradeDetail.TabIndex = 36;
+            this.txtBoxingGradeDetail.TextBoxText = "";
+            this.txtBoxingGradeDetail.TextBoxType = Axxen.CustomControls.TextType.Normal;
+            this.txtBoxingGradeDetail.searchclick += new Axxen.CustomControls.ABigTextBox_Searchable.SearchClick(this.txtBoxingGradeDetail_searchclick);
+            // 
             // POP_PRD_003
             // 
             this.ClientSize = new System.Drawing.Size(1210, 629);
@@ -322,9 +307,8 @@
         private Axxen.CustomControls.ABigTextBox_Labeled txtWorkOrderno;
         private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox txtPrintPallet;
         private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox txtSizeCode;
-        private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox txtBoxingDegailGrade;
         private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox txtBoxingGrade;
         private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox txtPalletNo;
-        private Axxen.CustomControls.ABigTextBox_Searchable aBigTextBox_Searchable1;
+        private Axxen.CustomControls.ABigTextBox_Searchable txtBoxingGradeDetail;
     }
 }

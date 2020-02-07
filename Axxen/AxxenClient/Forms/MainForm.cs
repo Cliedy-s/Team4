@@ -34,6 +34,12 @@ namespace AxxenClient.Forms
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            LoginForm login = new LoginForm();
+            if(login.ShowDialog() != DialogResult.OK)
+            {
+                this.Close();
+            }
+            
             // 개발자용 콤보박스 설정
             List<Typesss> dic = new List<Typesss>();
             dic.Add(new Typesss("Molding", WorkType.Molding));

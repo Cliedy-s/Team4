@@ -41,15 +41,6 @@ namespace Axxen
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvProcess, "비고", "Remark", true, 210, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvProcess, "입력일자", "Ins_Date", true, 210, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvProcess, "사용여부", "Use_YN", true, 210, default, true);
-            GetAllProcess();
-            ///
-            ControlSetting();
-        }
-        /// <summary>
-        /// 그리드뷰 버튼, 콤보박스세팅
-        /// </summary>
-        private void ControlSetting()
-        {
 
             DataGridViewButtonColumn gridbtn = new DataGridViewButtonColumn();
             gridbtn.HeaderText = "사용여부";
@@ -62,6 +53,18 @@ namespace Axxen
             gridbtn.UseColumnTextForButtonValue = true;
             dgvProcess.Columns.Add(gridbtn);
 
+
+            GetAllProcess();
+            ///
+            ControlSetting();
+        }
+        /// <summary>
+        /// 그리드뷰 버튼, 콤보박스세팅
+        /// </summary>
+        private void ControlSetting()
+        {
+
+          
             ///combobox
             Dictionary<string, string> cbblist = processlist.ToDictionary(item => item.Process_code, item => item.Process_name);
             cbbProcess.DisplayMember = "Value";
