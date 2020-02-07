@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="AllocationHistoryVO.cs" />
     <Compile Include="AllocationWCVO.cs" />
+    <Compile Include="BoxingGrade_Detail_MasterVO.cs" />
     <Compile Include="ConditionMeasureVO.cs" />
     <Compile Include="ConditionSpecVO.cs" />
     <Compile Include="Condition_History_MasterVO.cs" />
