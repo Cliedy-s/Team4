@@ -91,6 +91,9 @@ namespace Axxen
         {
             ((MainForm)this.MdiParent).MyUpdateEvent -= new System.EventHandler(this.MyUpdateShow);
             ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow);
+       
+
+        //    ToolStripManager.RevertMerge(TryCast(Me.MdiParent, frmMain).ToolStrip)
         }
 
         private void BtnWoFinish_Click(object sender, EventArgs e)
@@ -171,7 +174,7 @@ namespace Axxen
         {
             ((MainForm)this.MdiParent).MyUpdateEvent -= new System.EventHandler(this.MyUpdateShow); //수정이벤트
             ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow); //새로고침
-            ToolStripManager.RevertMerge(toolStrip1, ((MainForm)this.MdiParent).toolStrip1); //저장버튼 추가
+            ToolStripManager.RevertMerge( ((MainForm)this.MdiParent).toolStrip1); //저장버튼 추가
         }
 
         private void TsbtnSave_Click(object sender, EventArgs e)
@@ -200,5 +203,7 @@ namespace Axxen
                 RefreshFormShow(null, null);
             }
         }
+
+  
     }
 }

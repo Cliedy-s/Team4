@@ -385,6 +385,7 @@
             this.Controls.Add(this.panTop);
             this.Name = "MDS_CDS_004";
             this.Text = "비가동상세분류";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MDS_CDS_004_FormClosing);
             this.Load += new System.EventHandler(this.MDS_CDS_004_Load);
             this.panelNopMaMaste.ResumeLayout(false);
             this.aPanel3.ResumeLayout(false);

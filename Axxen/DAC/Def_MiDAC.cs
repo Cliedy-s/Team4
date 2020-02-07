@@ -72,7 +72,13 @@ namespace DAC
 
         }
 
-        public bool UsedDef_Mi_Master(string groupcode, string used)
+        /// <summary>
+        ///  불량 상세 사용유무
+        /// </summary>
+        /// <param name="micode"></param>
+        /// <param name="used"></param>
+        /// <returns></returns>
+        public bool UsedDef_Mi_Master(string micode, string used)
         {
             try
             {
@@ -81,11 +87,44 @@ namespace DAC
                     comm.Connection = new SqlConnection(Connstr);
                     comm.CommandText = "UsedDef_Mi_Master";
                     comm.CommandType = CommandType.StoredProcedure;
-                    comm.Parameters.AddWithValue("@Def_Mi_Code", groupcode);
+                    comm.Parameters.AddWithValue("@Def_Mi_Code", micode);
                     comm.Parameters.AddWithValue("@Use_YN", used);
 
                     comm.Connection.Open();
-                    int result = Convert.ToInt32(comm.ExecuteScalar());
+                    int result = Convert.ToInt32(comm.ExecuteNonQuery());
+                    comm.Connection.Close();
+
+                    if (result > 0)
+                        return true;
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// 불량상세 삭제
+        /// </summary>
+        /// <param name="micode"></param>
+        /// <returns></returns>
+        public bool DeleteDef_MiVO(string micode)
+        {
+            try
+            {
+                using (SqlCommand comm = new SqlCommand())
+                {
+                    comm.Connection = new SqlConnection(Connstr);
+                    comm.CommandText = "delete from Def_Mi_Master where @Def_Mi_Code=Def_Mi_Code";
+                    comm.CommandType = CommandType.Text;
+                    comm.Parameters.AddWithValue("@Def_Mi_Code", micode);
+               
+
+                    comm.Connection.Open();
+                    int result = Convert.ToInt32(comm.ExecuteNonQuery());
                     comm.Connection.Close();
 
                     if (result > 0)

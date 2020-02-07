@@ -250,7 +250,7 @@ namespace Axxen
                     if (parentcode.Parent_Screen_Code != null) //부모코드에 널값이있는 메뉴를 제외하고
                     {
                         string form = parentcode.Screen_Code.Trim();
-                        newForm(form, tvMenu.SelectedNode.Text);
+                        newForm(form, tvMenu.SelectedNode.Text.Trim());
 
                     }
                 }

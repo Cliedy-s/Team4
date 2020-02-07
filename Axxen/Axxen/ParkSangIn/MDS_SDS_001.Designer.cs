@@ -40,6 +40,7 @@
             this.aLabel23 = new Axxen.CustomControls.ALabel();
             this.btnSave = new Axxen.CustomControls.AButton();
             this.aPanel6 = new Axxen.CustomControls.APanel();
+            this.txtCode = new Axxen.CustomControls.ATextBox();
             this.aPanel22 = new Axxen.CustomControls.APanel();
             this.nudBox_Qty = new System.Windows.Forms.NumericUpDown();
             this.aPanel24 = new Axxen.CustomControls.APanel();
@@ -55,6 +56,7 @@
             this.aPanel7 = new Axxen.CustomControls.APanel();
             this.aLabel10 = new Axxen.CustomControls.ALabel();
             this.aPanel5 = new Axxen.CustomControls.APanel();
+            this.txtName = new Axxen.CustomControls.ATextBox();
             this.aPanel4 = new Axxen.CustomControls.APanel();
             this.aLabel9 = new Axxen.CustomControls.ALabel();
             this.aLabel5 = new Axxen.CustomControls.ALabel();
@@ -67,8 +69,6 @@
             this.lblGroup = new Axxen.CustomControls.ALabel();
             this.btnSearch = new Axxen.CustomControls.AButton();
             this.aLabel1 = new Axxen.CustomControls.ALabel();
-            this.txtCode = new Axxen.CustomControls.ATextBox();
-            this.txtName = new Axxen.CustomControls.ATextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -222,6 +222,17 @@
             this.aPanel6.Size = new System.Drawing.Size(172, 35);
             this.aPanel6.TabIndex = 201;
             // 
+            // txtCode
+            // 
+            this.txtCode.BackColor = System.Drawing.Color.White;
+            this.txtCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCode.errorp = null;
+            this.txtCode.Location = new System.Drawing.Point(3, 5);
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Size = new System.Drawing.Size(160, 23);
+            this.txtCode.TabIndex = 24;
+            this.txtCode.txtType = Axxen.CustomControls.TextType.Normal;
+            // 
             // aPanel22
             // 
             this.aPanel22.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -364,6 +375,17 @@
             this.aPanel5.Size = new System.Drawing.Size(172, 35);
             this.aPanel5.TabIndex = 203;
             // 
+            // txtName
+            // 
+            this.txtName.BackColor = System.Drawing.Color.White;
+            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtName.errorp = null;
+            this.txtName.Location = new System.Drawing.Point(4, 4);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(160, 23);
+            this.txtName.TabIndex = 25;
+            this.txtName.txtType = Axxen.CustomControls.TextType.Normal;
+            // 
             // aPanel4
             // 
             this.aPanel4.BackColor = System.Drawing.SystemColors.Info;
@@ -498,28 +520,6 @@
             this.aLabel1.TabIndex = 15;
             this.aLabel1.Text = "사용자 그룹목록";
             // 
-            // txtCode
-            // 
-            this.txtCode.BackColor = System.Drawing.Color.White;
-            this.txtCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCode.errorp = null;
-            this.txtCode.Location = new System.Drawing.Point(3, 5);
-            this.txtCode.Name = "txtCode";
-            this.txtCode.Size = new System.Drawing.Size(160, 23);
-            this.txtCode.TabIndex = 24;
-            this.txtCode.txtType = Axxen.CustomControls.TextType.Normal;
-            // 
-            // txtName
-            // 
-            this.txtName.BackColor = System.Drawing.Color.White;
-            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtName.errorp = null;
-            this.txtName.Location = new System.Drawing.Point(4, 4);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(160, 23);
-            this.txtName.TabIndex = 25;
-            this.txtName.txtType = Axxen.CustomControls.TextType.Normal;
-            // 
             // MDS_SDS_001
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -535,6 +535,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "MDS_SDS_001";
             this.Text = "품목분류정보";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MDS_SDS_001_FormClosing);
             this.Load += new System.EventHandler(this.MDS_SDS_001_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

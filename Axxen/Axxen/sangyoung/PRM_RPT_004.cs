@@ -73,7 +73,7 @@ namespace Axxen
 
         private void PRM_RPT_004_Deactivate(object sender, EventArgs e)
         {
-            ToolStripManager.RevertMerge(toolStrip1, ((MainForm)this.MdiParent).toolStrip1); //저장버튼 삭제
+            ToolStripManager.RevertMerge(((MainForm)this.MdiParent).toolStrip1); //저장버튼 삭제
         }
     }
 }

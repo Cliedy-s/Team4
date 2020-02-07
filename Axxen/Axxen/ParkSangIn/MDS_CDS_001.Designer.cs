@@ -293,6 +293,7 @@
             this.Controls.Add(this.panTop);
             this.Name = "MDS_CDS_001";
             this.Text = "불량현상대분류";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MDS_CDS_001_FormClosing);
             this.Load += new System.EventHandler(this.MDS_CDS_001_1_Load);
             this.panelDefma.ResumeLayout(false);
             this.aPanel6.ResumeLayout(false);
