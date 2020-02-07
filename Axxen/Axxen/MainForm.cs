@@ -23,7 +23,7 @@ namespace Axxen
         int CheckBtnIndex = 20;
         bool BookmarkCheck = true; //즐겨찾기 
         bool open = true;
-      //  int SegCnt =0; //화면 사용이력 순번
+        //  int SegCnt =0; //화면 사용이력 순번
 
         Image CloseImage;
         UserGroupService service = new UserGroupService();
@@ -68,12 +68,12 @@ namespace Axxen
             }
         }
 
-         public  void Setting()
+        public void Setting()
         {
-      
-          
+
+
             menulist = Mainservice.GetAll_MenuTree_Master();
-            
+
             UserInformation();
 
             var pa = menulist.FindAll(item => item.Parent_Screen_Code == null);
@@ -101,11 +101,11 @@ namespace Axxen
         }
         public void UserInformation()
         {
-        
-          
+
+
             userinfoGrouplist = service.GetUserInfoGroup(UserInfo.User_ID); //로그인한 사용자의 그룹권한들
 
-      
+
             userinfoScreenItem = screenservice.GetUserInfoScreenItem(userinfoGrouplist); // 로그인한 사용자의 그룹권한에 사용되는 화면들
 
             screenitemlist = screenservice.GetALLScreenItem(); //모든스크린
@@ -129,7 +129,7 @@ namespace Axxen
             tvMenu.Visible = true;
             // 누르는 버튼
             Button btn = (Button)sender;
-         
+
             btn.BackColor = Color.FromArgb(201, 228, 232);
             // 열려있는 트리뷰가 존재하고
             // 현재 열려있는 버튼과 누르는 버튼이 같을 경우(트리뷰를 닫는다)
@@ -246,10 +246,10 @@ namespace Axxen
                 if (tvMenu.SelectedNode.Text != null)
                 {
                     MenuTree_Master_VO parentcode = menulist.Find(item => item.Screen_Name == tvMenu.SelectedNode.Text);
-                
+
                     if (parentcode.Parent_Screen_Code != null) //부모코드에 널값이있는 메뉴를 제외하고
                     {
-                        string form = parentcode.Screen_Code;
+                        string form = parentcode.Screen_Code.Trim();
                         newForm(form, tvMenu.SelectedNode.Text);
 
                     }
@@ -269,72 +269,25 @@ namespace Axxen
         {
             try
             {
-               if (userinfoScreenItem.Count(item => item.Screen_Code == formName.ToString())>0) {
+                if (userinfoScreenItem.Count(item => item.Screen_Code.Trim().Equals(formName.Trim())) > 0)
+                {
 
 
 
                     string nameSpace = "Axxen"; //네임스페이스 명
-                Assembly cuasm = Assembly.GetExecutingAssembly();
-                //string Format 의 따옴표와 마침표 주의!!
-                string childFormName = string.Format("{0}.{1}", nameSpace, formName);
-                Form frm = (Form)cuasm.CreateInstance(childFormName);
+                    Assembly cuasm = Assembly.GetExecutingAssembly();
+                    //string Format 의 따옴표와 마침표 주의!!
+                    string childFormName = string.Format("{0}.{1}", nameSpace, formName);
+                    Form frm = (Form)cuasm.CreateInstance(childFormName);
 
-                foreach (Form childForm in Application.OpenForms)
-                {
-                    if (childForm.Tag.ToString().Equals(formName))
-                    {
-                      
-                            
-                                ScreenItem_AuthorityVO screentype = new ScreenItem_AuthorityVO();
-                                screentype = userinfoScreenItem.Find(item => item.Screen_Code == formName);
-                                if (screentype != null)
-                                {
-                                    if (screentype.Pre_Type[0] == 'Y')
-                                    {
-                                        tsbInsert.Enabled = true;
-                                    }
-                                    else
-                                    {
-                                        tsbInsert.Enabled = false;
-                                    }
-                                    if (screentype.Pre_Type[2] == 'Y')
-                                    {
-                                        tsbtnUpdate.Enabled = true;
-                                    }
-                                    else
-                                    {
-                                        tsbtnUpdate.Enabled = false;
-                                    }
-                                    if (screentype.Pre_Type[3] == 'Y')
-                                    {
-                                        tsbtnDelete.Enabled = true;
-                                    }
-                                    else
-                                    {
-                                        tsbtnDelete.Enabled = false;
-                                    }
-
-                                  
-                                }
-
-                            childForm.Activate();
-                            return;
-                    }
-                }
-                frm.MdiParent = this;
-                frm.WindowState = FormWindowState.Maximized;
-                frm.Tag = formName;
-                TabPage newTab = new TabPage();
-                newTab.Tag = formName;
-                newTab.Text = formText;
-                tabControl2.TabPages.Add(newTab);
-                    frm.Show();
-
-/////////////////// 메뉴클릭시 
                     foreach (Form childForm in Application.OpenForms)
-                    {                  
+                    {
+                        if (childForm.Tag.ToString().Trim().Equals(formName.Trim()))
+                        {
+
+
                             ScreenItem_AuthorityVO screentype = new ScreenItem_AuthorityVO();
-                            screentype = userinfoScreenItem.Find(item => item.Screen_Code == formName);
+                            screentype = userinfoScreenItem.Find(item => item.Screen_Code == formName.Trim());
                             if (screentype != null)
                             {
                                 if (screentype.Pre_Type[0] == 'Y')
@@ -345,8 +298,6 @@ namespace Axxen
                                 {
                                     tsbInsert.Enabled = false;
                                 }
-
-
                                 if (screentype.Pre_Type[2] == 'Y')
                                 {
                                     tsbtnUpdate.Enabled = true;
@@ -363,7 +314,57 @@ namespace Axxen
                                 {
                                     tsbtnDelete.Enabled = false;
                                 }
-                                                                       
+
+
+                            }
+
+                            childForm.Activate();
+                            return;
+                        }
+                    }
+                    frm.MdiParent = this;
+                    frm.WindowState = FormWindowState.Maximized;
+                    frm.Tag = formName;
+                    TabPage newTab = new TabPage();
+                    newTab.Tag = formName;
+                    newTab.Text = formText;
+                    tabControl2.TabPages.Add(newTab);
+                    frm.Show();
+
+                    /////////////////// 메뉴클릭시 
+                    foreach (Form childForm in Application.OpenForms)
+                    {
+                        ScreenItem_AuthorityVO screentype = new ScreenItem_AuthorityVO();
+                        screentype = userinfoScreenItem.Find(item => item.Screen_Code == formName.Trim());
+                        if (screentype != null)
+                        {
+                            if (screentype.Pre_Type[0] == 'Y')
+                            {
+                                tsbInsert.Enabled = true;
+                            }
+                            else
+                            {
+                                tsbInsert.Enabled = false;
+                            }
+
+
+                            if (screentype.Pre_Type[2] == 'Y')
+                            {
+                                tsbtnUpdate.Enabled = true;
+                            }
+                            else
+                            {
+                                tsbtnUpdate.Enabled = false;
+                            }
+                            if (screentype.Pre_Type[3] == 'Y')
+                            {
+                                tsbtnDelete.Enabled = true;
+                            }
+                            else
+                            {
+                                tsbtnDelete.Enabled = false;
+                            }
+
                             break;
                         }
                     }
@@ -371,11 +372,11 @@ namespace Axxen
 
                     //  tabControl2.TabPages.Tag=formName;
                     //  MessageBox.Show(tabControl2.SelectedTab.Tag.ToString());
-                  //  SegCnt++;
+                    //  SegCnt++;
                     Login_Screen_HistoryVO loginscreen = new Login_Screen_HistoryVO()
                     {
                         Session_ID = UserInfo.Session_ID,
-                    //    Seg =SegCnt,
+                        //    Seg =SegCnt,
                         Open_Day = Convert.ToDateTime(DateTime.Now.ToShortDateString()),
                         Open_Date = DateTime.Now,
                         User_ID = UserInfo.User_ID,
@@ -383,8 +384,8 @@ namespace Axxen
                     };
                     userservice.InsertLogin_Screen_History(loginscreen);
 
-                    lblSubtitle.Text =  screenitemlist.Find(item => item.Screen_Code == formName.ToString()).Screen_Path.ToString();
-               
+                    lblSubtitle.Text = screenitemlist.Find(item => item.Screen_Code == formName.ToString()).Screen_Path.ToString();
+
                 }
                 else
                 {
@@ -393,7 +394,7 @@ namespace Axxen
             }
             catch (Exception err)
             {
-                MessageBox.Show("사용할 수 없는 메뉴"+err.Message + formName);
+                MessageBox.Show("사용할 수 없는 메뉴" + err.Message + formName);
                 throw;
             }
         }
@@ -460,26 +461,27 @@ namespace Axxen
             bookmark.User_ID = UserInfo.User_ID;
             bookmark.Type = parentname.Screen_Name;
 
-            if (!string.IsNullOrEmpty(parentname.Parent_Screen_Code)) { 
-
-            if (!service.InsertBookMark(bookmark))
-            {
-                MessageBox.Show("이미등록된 항목입니다.","알림",MessageBoxButtons.OK,MessageBoxIcon.Information);
-            }
-            else
+            if (!string.IsNullOrEmpty(parentname.Parent_Screen_Code))
             {
 
-                tvBookMark.Nodes.Clear();
-                booklist = service.GetAll_BookMark(UserInfo.User_ID);
-                tvBookMark.Nodes.Add("즐겨찾기");
-
-                for (int i = 0; i < booklist.Count; i++)
+                if (!service.InsertBookMark(bookmark))
                 {
-                    tvBookMark.TopNode.Nodes.Add(booklist[i].Type);
+                    MessageBox.Show("이미등록된 항목입니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                else
+                {
 
-                tvBookMark.ExpandAll();
-            }
+                    tvBookMark.Nodes.Clear();
+                    booklist = service.GetAll_BookMark(UserInfo.User_ID);
+                    tvBookMark.Nodes.Add("즐겨찾기");
+
+                    for (int i = 0; i < booklist.Count; i++)
+                    {
+                        tvBookMark.TopNode.Nodes.Add(booklist[i].Type);
+                    }
+
+                    tvBookMark.ExpandAll();
+                }
 
             }
             else
@@ -570,8 +572,9 @@ namespace Axxen
                         if (childForm.Tag.ToString().Equals(tabControl2.SelectedTab.Tag.ToString()))
                         {
                             ScreenItem_AuthorityVO screentype = new ScreenItem_AuthorityVO();
-                            screentype =  userinfoScreenItem.Find(item => item.Screen_Code == tabControl2.SelectedTab.Tag.ToString());
-                            if (screentype != null) {
+                            screentype = userinfoScreenItem.Find(item => item.Screen_Code == tabControl2.SelectedTab.Tag.ToString());
+                            if (screentype != null)
+                            {
                                 if (screentype.Pre_Type[0] == 'Y')
                                 {
                                     tsbInsert.Enabled = true;
@@ -661,7 +664,7 @@ namespace Axxen
         {
             if (this.MyDeleteEvent != null)
                 MyDeleteEvent(this, null);
-            
+
         }
 
         private void TvBookMark_DoubleClick(object sender, EventArgs e)

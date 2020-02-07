@@ -69,6 +69,7 @@ namespace Axxen
         private void PRM_RPT_004_Activated(object sender, EventArgs e)
         {
             ToolStripManager.Merge(toolStrip1, ((MainForm)this.MdiParent).toolStrip1); //출력버튼추가
+            toolStrip1.Visible = false;
         }
 
         private void PRM_RPT_004_Deactivate(object sender, EventArgs e)

@@ -238,6 +238,7 @@ namespace Axxen
         {
             ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow);
             ((MainForm)this.MdiParent).InsertFormEvent -= new System.EventHandler(this.InsertFormShow);
+            ToolStripManager.RevertMerge(toolStrip1, ((MainForm)this.MdiParent).toolStrip1); //저장버튼 삭제
         }
 
         private void ADateTimePickerSearch1_btnDateTimeSearch_Click(object sender, EventArgs args)
@@ -291,6 +292,7 @@ namespace Axxen
             ((MainForm)this.MdiParent).InsertFormEvent += new System.EventHandler(this.InsertFormShow); //추가
             ((MainForm)this.MdiParent).RefreshFormEvent += new EventHandler(this.RefreshFormShow); //새로고침
             ToolStripManager.Merge(toolStrip1, ((MainForm)this.MdiParent).toolStrip1); //저장버튼 추가
+            toolStrip1.Visible = false;
         }
 
         private void PPS_SCH_001_Deactivate(object sender, EventArgs e)
