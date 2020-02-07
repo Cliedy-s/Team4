@@ -122,7 +122,7 @@
             // lblDay
             // 
             this.lblDay.AutoSize = true;
-            this.lblDay.Location = new System.Drawing.Point(396, 12);
+            this.lblDay.Location = new System.Drawing.Point(322, 14);
             this.lblDay.Name = "lblDay";
             this.lblDay.Size = new System.Drawing.Size(79, 15);
             this.lblDay.TabIndex = 60;
