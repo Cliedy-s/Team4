@@ -173,6 +173,36 @@ END";
             }
         }
 
+       private bool DeleteNopMiMasterVO(string Micode)
+        {
+            try
+            {
+                using (SqlCommand comm = new SqlCommand())
+                {
+                    comm.Connection = new SqlConnection(Connstr);
+                    comm.CommandText = "";
+                       
+                    comm.CommandType = CommandType.Text;    
+                    comm.Parameters.AddWithValue("@Nop_Mi_Code", Micode);
+             
+               
+                    comm.Connection.Open();
+                    int result = comm.ExecuteNonQuery();
+
+                    comm.Connection.Close();
+
+                    if (result > 0)
+                        return true;
+                    else
+                        return false;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
 
         public List<NopMiMasterVO> GetCombo() //PRM_PRF_008_1 비가동상세분류코드
         {

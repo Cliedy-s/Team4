@@ -74,7 +74,7 @@ namespace DAC
         /// 그룹 사용유무update 
         /// </summary>
         /// <returns></returns>
-        public bool GetUseNopservice(string groupcode, string used)
+        public bool GetUseNopservice(string macode, string used)
         {
 
             using (SqlCommand comm = new SqlCommand())
@@ -82,7 +82,7 @@ namespace DAC
                 comm.Connection = new SqlConnection(Connstr);
                 comm.CommandText = $"update Nop_Ma_Master set Use_YN=@Use_YN where Nop_Ma_Code=@Nop_Ma_Code";
                 comm.CommandType = CommandType.Text;
-                comm.Parameters.AddWithValue("@Nop_Ma_Code", groupcode);
+                comm.Parameters.AddWithValue("@Nop_Ma_Code", macode);
                 comm.Parameters.AddWithValue("@Use_YN", used);
 
                 comm.Connection.Open();
@@ -91,6 +91,41 @@ namespace DAC
 
                 if (result > 0)
                     return true;
+                return false;
+            }
+
+        }
+        
+        /// <summary>
+        /// 비가동대분류 삭제
+        /// </summary>
+        /// <returns></returns>
+        public bool DeleteNopMaMasterVO(string macode)
+        {
+            try
+            {
+
+            
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText = $"delete from Nop_Ma_Master  where Nop_Ma_Code=@Nop_Ma_Code";
+                comm.CommandType = CommandType.Text;
+                comm.Parameters.AddWithValue("@Nop_Ma_Code", macode);
+            
+
+                comm.Connection.Open();
+                int result = Convert.ToInt32(comm.ExecuteNonQuery());
+                comm.Connection.Close();
+
+                if (result > 0)
+                    return true;
+                return false;
+            }
+            }
+            catch (Exception)
+            {
+
                 return false;
             }
 

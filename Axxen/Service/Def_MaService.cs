@@ -24,6 +24,19 @@ namespace Service
         {
             return DAC.GetUpdateDef_Ma_Master(groupcode, used);
         }
+        public bool InsertUpdateDef_MaVO(Def_MaVO def)
+        {
+            return DAC.InsertUpdateDef_MaVO(def);
+        }
+        /// <summary>
+        /// 불량현상대분류 삭제
+        /// </summary>
+        /// <param name="def"></param>
+        /// <returns></returns>
+        public bool DeleteDef_MaVO(string defmacode)
+        {
+            return DAC.DeleteDef_MaVO(defmacode);
+        }
 
         }
 }

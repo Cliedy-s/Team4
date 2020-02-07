@@ -13,7 +13,7 @@ namespace DAC
     {
         
 
-             public List<InspectMeasure_History_MasterVO> GetMainInspectMeasure_History_Master() //메인 그리드뷰
+             public List<InspectMeasure_History_MasterVO> GetMainInspectMeasure_History_Master() //QAM 002 메인 그리드뷰
         {
             using (SqlCommand comm = new SqlCommand())
             {
@@ -34,7 +34,32 @@ namespace DAC
             }
         }
 
-        public List<InspectMeasure_History_MasterVO> GetSubInspectMeasure_History_Master(string Workorderno, string Process_code, string Item_Code, string Inspect_code) //서브 그리드뷰
+        public List<InspectMeasure_History_MasterVO> PickerMainInspectMeasure_History_Master(string ADateTimePickerValue1, string ADateTimePickerValue2) //QAM 002 날짜별
+        {
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText = @"Select imh.Workorderno , Prd_Date ,imh.Process_code, Process_name , Wc_Name , imh.Item_Code , Item_Name , imh.Inspect_code
+                                from Inspect_Measure_History imh INNER JOIN Process_Master pm ON imh.Process_code = pm.Process_code
+								 INNER JOIN WorkOrder wo ON imh.Workorderno = wo.Workorderno
+								 INNER JOIN WorkCenter_Master wcm ON wo.Wc_Code = wcm.Wc_Code
+								 INNER JOIN Item_Master im ON imh.Item_code = im.Item_Code
+								 where Prd_Date BETWEEN @ADateTimePickerValue1 AND @ADateTimePickerValue2
+								 Order by Prd_Date Desc;";
+                comm.CommandType = CommandType.Text;
+                comm.Parameters.AddWithValue("@ADateTimePickerValue1", ADateTimePickerValue1);
+                comm.Parameters.AddWithValue("@ADateTimePickerValue2", ADateTimePickerValue2);
+                comm.Connection.Open();
+                SqlDataReader reader = comm.ExecuteReader();
+                List<InspectMeasure_History_MasterVO> list = Helper.DataReaderMapToList<InspectMeasure_History_MasterVO>(reader);
+                comm.Connection.Close();
+
+                return list;
+            }
+        }
+        
+
+        public List<InspectMeasure_History_MasterVO> GetSubInspectMeasure_History_Master(string Workorderno, string Process_code, string Item_Code, string Inspect_code) //QAM 002 서브 그리드뷰
         {
             using (SqlCommand comm = new SqlCommand())
             {
@@ -60,7 +85,7 @@ namespace DAC
             }
         }
 
-        public DataTable GetSubSubInspectMeasure_History_Master(string Workorderno, string Process_code, string Item_Code, string Inspect_code) //서브서브 그리드뷰
+        public DataTable GetSubSubInspectMeasure_History_Master(string Workorderno, string Process_code, string Item_Code, string Inspect_code) //QAM 002 서브서브 그리드뷰
         {
             try
             {

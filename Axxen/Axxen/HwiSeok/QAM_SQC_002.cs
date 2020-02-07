@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using VO;
@@ -74,9 +75,95 @@ namespace Axxen
                 , dgvMainGrid.SelectedRows[0].Cells[5].Value.ToString(), dgvMainGrid.SelectedRows[0].Cells[7].Value.ToString()); //서브서브그리드뷰 조회
             dgvSubSubGrid.DataSource = dt;
         }
-        private void RefreshFormShow(object sender, EventArgs e)
+        private void RefreshFormShow(object sender, EventArgs e) //새로고침
+        {        
+            try
+            {
+                if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
+                {
+                    lhm = lhmservice.GetMainInspectMeasure_History_Master(); //메인그리드뷰 조회
+                    dgvMainGrid.DataSource = lhm;
+
+                    aDateTimePickerSearch1.ADateTimePickerValue1 = Convert.ToDateTime(DateTime.Now.AddDays(-7).ToShortDateString());
+                    aDateTimePickerSearch1.ADateTimePickerValue2 = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+                    aTextBox_FindNameByCode1.txtCodeText = "";
+                    aTextBox_FindNameByCode1.txtNameText = "";
+                    aTextBox_FindNameByCode2.txtCodeText = "";
+                    aTextBox_FindNameByCode2.txtNameText = "";
+
+                    dgvSubGrid.DataSource = null;
+
+                    dgvSubSubGrid.DataSource = null;
+                    if (dgvSubSubGrid.Columns.Count==0)
+                    {
+                      
+                    
+                        DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubSubGrid, "측정일시", "Inspect_datetime", true, 100, default, false);
+                        DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubSubGrid, "품목코드", "Item_code", true, 100, default, false);
+                        DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubSubGrid, "품목명", "Item_Name", true, 100, default, false);
+                        DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubSubGrid, "측정일자", "Inspect_date", true, 100, default, false);
+                    }
+                   
+
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+                Program.Log.WriteError(err.Message);
+            }
+        }
+
+        private void aDateTimePickerSearch1_btnDateTimeSearch_Click(object sender, EventArgs args) //날짜별 조회
         {
-            throw new NotImplementedException();
+            lhm = lhmservice.PickerMainInspectMeasure_History_Master(aDateTimePickerSearch1.ADateTimePickerValue1.ToShortDateString(), aDateTimePickerSearch1.ADateTimePickerValue2.ToShortDateString()); //메인그리드뷰 조회
+            dgvMainGrid.DataSource = lhm;
+
+            aTextBox_FindNameByCode1.txtCodeText = "";
+            aTextBox_FindNameByCode1.txtNameText = "";
+            aTextBox_FindNameByCode2.txtCodeText = "";
+            aTextBox_FindNameByCode2.txtNameText = "";
+        }
+
+        private void aTextBox_FindNameByCode1_DotDotDotFormClosing(object sender, CustomControls.SearchFormClosingArgs args)
+        {
+            if (aTextBox_FindNameByCode2.txtCodeText == "")
+            {
+                lhmList = (from date in lhm
+                           where date.Process_name == aTextBox_FindNameByCode1.txtNameText
+                           select date).ToList();
+                dgvMainGrid.DataSource = lhmList;
+            }
+            else
+            {
+                lhmList = (from date in lhm
+                           where date.Process_name == aTextBox_FindNameByCode1.txtNameText && date.Wc_Name == aTextBox_FindNameByCode2.txtNameText
+                           select date).ToList();
+                dgvMainGrid.DataSource = lhmList;
+            }
+        }
+
+        private void aTextBox_FindNameByCode2_DotDotDotFormClosing(object sender, CustomControls.SearchFormClosingArgs args)
+        {
+            if (aTextBox_FindNameByCode1.txtCodeText == "")
+            {
+                lhmList = (from date in lhm
+                           where date.Wc_Name == aTextBox_FindNameByCode2.txtNameText
+                           select date).ToList();
+                dgvMainGrid.DataSource = lhmList;
+            }
+            else
+            {
+                lhmList = (from date in lhm
+                           where date.Wc_Name == aTextBox_FindNameByCode2.txtNameText && date.Process_name == aTextBox_FindNameByCode1.txtNameText
+                           select date).ToList();
+                dgvMainGrid.DataSource = lhmList;
+            }
+        }
+
+        private void QAM_SQC_002_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ((MainForm)this.MdiParent).RefreshFormEvent -= new System.EventHandler(this.RefreshFormShow); // 새로고침
         }
     }
 }

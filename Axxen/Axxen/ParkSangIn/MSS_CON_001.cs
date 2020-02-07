@@ -91,7 +91,7 @@ namespace Axxen
         }
         private void MyDelete(object sender, EventArgs e)
         {
-            if (MessageBox.Show(dgvGroup.SelectedRows[0].Cells[0].Value.ToString() + "하위항목도 모두 삭제됩니다. 메뉴를 삭제하시겠습니까?", "알림", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show(dgvGroup.SelectedRows[0].Cells[0].Value.ToString() + "를 삭제하시겠습니까?", "알림", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 //   MessageBox.Show(dgvParent.SelectedRows[0].Cells[0].Value.ToString());
                 if (userservice.DeleteUserGroup_MasterVO(dgvGroup.SelectedRows[0].Cells[0].Value.ToString()))

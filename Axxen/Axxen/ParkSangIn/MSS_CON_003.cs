@@ -30,6 +30,7 @@ namespace Axxen
 
             ((MainForm)this.MdiParent).InsertFormEvent += new System.EventHandler(this.InsertFormShow);//입력이벤트 등록
             ((MainForm)this.MdiParent).RefreshFormEvent += new EventHandler(this.RefreshFormShow);
+            ((MainForm)this.MdiParent).MyDeleteEvent += new EventHandler(this.MyDelete);
 
             DatagridviewDesigns.SetDesign(dgvUser);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvUser, "아이디", "User_ID", true, 200, default, true);
@@ -119,6 +120,25 @@ namespace Axxen
             {
                 MessageBox.Show(err.Message);
             }
+        }
+        private void MyDelete(object sender, EventArgs e)
+        {
+            if (MessageBox.Show(dgvUser.SelectedRows[0].Cells[0].Value.ToString() + "를 삭제하시겠습니까?", "알림", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                //   MessageBox.Show(dgvParent.SelectedRows[0].Cells[0].Value.ToString());
+                if (userService.DeleteUserInfoVO(dgvUser.SelectedRows[0].Cells[0].Value.ToString()))
+                {
+                    GetAllUser();
+                    GetAllUserGroup();
+                    ControlSetting();//콤보박스
+
+                }
+                else
+                {
+                    MessageBox.Show("삭제실패");
+                }
+            }
+
         }
         /// <summary>
         /// 새로고침

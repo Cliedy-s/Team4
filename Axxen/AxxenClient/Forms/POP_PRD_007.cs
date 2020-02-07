@@ -23,7 +23,10 @@ namespace AxxenClient.Forms
             TopPanelSet();
             GetDatas();
 
-            txtLoading.TextBoxText = dgvGVFrom.SelectedRows[0].Cells[3].Value.ToString();
+            if(dgvGVFrom.SelectedRows.Count > 0)
+            {
+                txtLoading.TextBoxText = dgvGVFrom.SelectedRows[0].Cells[3].Value.ToString();
+            }
         }
         private void TopPanelSet()
         {
