@@ -56,6 +56,44 @@ namespace DAC
                 
             }
         }
+        
+        /// <summary>
+        /// 사용자 삭제
+        /// </summary>
+        /// <returns></returns>
+        public bool DeleteUserInfoVO(string userid)
+        {
+            try
+            {
+
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText = "delete from User_Master where User_ID=@User_ID";
+                comm.CommandType = CommandType.Text;
+            
+                comm.Parameters.AddWithValue("@User_ID", userid);
+            
+                comm.Connection.Open();
+               int result= comm.ExecuteNonQuery();
+                comm.Connection.Close();
+
+                if (result>0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            }
+            catch (Exception)
+            {
+
+               return false;
+            }
+        }
         /// <summary>
         /// 유저 저장
         /// </summary>

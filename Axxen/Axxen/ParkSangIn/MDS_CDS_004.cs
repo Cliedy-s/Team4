@@ -32,7 +32,7 @@ namespace Axxen
             ((MainForm)this.MdiParent).MyUpdateEvent += new System.EventHandler(this.MyUpdateShow);//입력이벤트 등록
             ((MainForm)this.MdiParent).InsertFormEvent += new System.EventHandler(this.InsertFormShow);//입력이벤트 등록
             ((MainForm)this.MdiParent).RefreshFormEvent += new EventHandler(this.RefreshFormShow);
-
+            ((MainForm)this.MdiParent).MyDeleteEvent += new EventHandler(this.MyDelete);
 
             DatagridviewDesigns.SetDesign(dgvMa);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMa, "대분류코드", "Nop_Ma_Code", true, 210, default, true);
@@ -49,7 +49,7 @@ namespace Axxen
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMi, "사용여부", "Use_YN", true, 210, default, true);
 
          
-            GetAllUserGroup();
+            GetAllDefMaMi();
             DataGridViewButtonColumn gridbtn = new DataGridViewButtonColumn();
             gridbtn.HeaderText = "사용여부";
             gridbtn.Text = "변경";
@@ -64,7 +64,7 @@ namespace Axxen
         /// <summary>
         /// 모든 그룹정보 GET
         /// </summary>
-        private void GetAllUserGroup()
+        private void GetAllDefMaMi()
         {
             NopMalist = new List<NopMaMasterVO>();
             NopMalist = MApservice.GetAllNopMA();
@@ -74,6 +74,7 @@ namespace Axxen
             NopMilist = MIservice.GetAllNopMi2();
             dgvMi.DataSource = NopMilist.FindAll(item=>item.Nop_Ma_Code==dgvMa.SelectedRows[0].Cells[0].Value.ToString());
         }
+
 
         /// <summary>
         /// 입력 이벤트 메서드
@@ -121,6 +122,23 @@ namespace Axxen
                 MessageBox.Show(err.Message);
             }
         }
+        private void MyDelete(object sender, EventArgs e)
+        {
+            //if (MessageBox.Show(dgvMi.SelectedRows[0].Cells[0].Value.ToString() + "를 삭제하시겠습니까?", "알림", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            ////{
+            ////    //   MessageBox.Show(dgvParent.SelectedRows[0].Cells[0].Value.ToString());
+            ////    //if (MIservice.DeleteNopMiMasterVO(dgvMi.SelectedRows[0].Cells[0].Value.ToString()))
+            ////    //{
+            ////    //    GetAllDefMaMi();
+                 
+            ////    //}
+            ////    else
+            ////    {
+            ////        MessageBox.Show("삭제실패");
+            ////    }
+            //}
+
+        }
         /// <summary>
         /// 새로고침 이벤트 메서드
         /// </summary>
@@ -132,7 +150,7 @@ namespace Axxen
             {
                 if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
                 {
-                    GetAllUserGroup();     
+                    GetAllDefMaMi();     
                 }
             }
             catch (Exception err)
@@ -156,7 +174,7 @@ namespace Axxen
                     {
                         MIservice.UsedNop_Mi_Masterservice((dgvMi.SelectedRows[0].Cells[1].Value).ToString(), "Y");
                     }
-                    GetAllUserGroup();
+                    GetAllDefMaMi();
                 }
 
             }
@@ -210,7 +228,7 @@ namespace Axxen
                     if (MIservice.InsertUpdateNop_Mi_Masterservice(additem))
                     {
                         MessageBox.Show("저장되었습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        GetAllUserGroup();                     
+                        GetAllDefMaMi();                     
                         ResetUtillity.ResetPanelControl(panelNopMaMaste);
 
                     }

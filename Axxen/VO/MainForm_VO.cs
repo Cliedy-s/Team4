@@ -63,6 +63,8 @@ namespace VO
         /// 화면코드
         /// </summary>
         public string  Screen_Code { get; set; }//화면코드
+
+        public string Screen_Name { get; set; }
         /// <summary>
         /// 부모코드
         /// </summary>

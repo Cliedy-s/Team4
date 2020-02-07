@@ -436,7 +436,7 @@ namespace Axxen
 
                 for (int i = 0; i < booklist.Count; i++)
                 {
-                    tvBookMark.TopNode.Nodes.Add(booklist[i].Screen_Code);
+                    tvBookMark.TopNode.Nodes.Add(booklist[i].Type);
                 }
 
                 tvBookMark.ExpandAll();
@@ -458,12 +458,13 @@ namespace Axxen
             bookmark.Parent_Screen_Code = parentname.Parent_Screen_Code;
             bookmark.Screen_Code = parentname.Screen_Code;
             bookmark.User_ID = UserInfo.User_ID;
+            bookmark.Type = parentname.Screen_Name;
 
-
+            if (!string.IsNullOrEmpty(parentname.Parent_Screen_Code)) { 
 
             if (!service.InsertBookMark(bookmark))
             {
-                MessageBox.Show("이미등록된 항목입니다.");
+                MessageBox.Show("이미등록된 항목입니다.","알림",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
             else
             {
@@ -474,13 +475,17 @@ namespace Axxen
 
                 for (int i = 0; i < booklist.Count; i++)
                 {
-                    tvBookMark.TopNode.Nodes.Add(booklist[i].Screen_Code);
+                    tvBookMark.TopNode.Nodes.Add(booklist[i].Type);
                 }
 
                 tvBookMark.ExpandAll();
             }
 
-
+            }
+            else
+            {
+                MessageBox.Show("등록할 수 없는 항목입니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
 
 
         }
@@ -657,6 +662,30 @@ namespace Axxen
             if (this.MyDeleteEvent != null)
                 MyDeleteEvent(this, null);
             
+        }
+
+        private void TvBookMark_DoubleClick(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (tvBookMark.SelectedNode.Text != null)
+                {
+                    MenuTree_Master_VO parentcode = menulist.Find(item => item.Screen_Name == tvBookMark.SelectedNode.Text);
+
+                    if (parentcode.Parent_Screen_Code != null) //부모코드에 널값이있는 메뉴를 제외하고
+                    {
+                        string form = parentcode.Screen_Code;
+                        newForm(form, tvBookMark.SelectedNode.Text);
+
+                    }
+                }
+            }
+            catch
+            {
+
+
+            }
         }
     }
 }

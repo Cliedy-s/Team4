@@ -140,7 +140,7 @@
             this.aHeaderBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.aHeaderBox1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aHeaderBox1.HeaderBoxText = "비가동대분류 목록";
-            this.aHeaderBox1.Location = new System.Drawing.Point(0, 77);
+            this.aHeaderBox1.Location = new System.Drawing.Point(0, 80);
             this.aHeaderBox1.Name = "aHeaderBox1";
             this.aHeaderBox1.Size = new System.Drawing.Size(243, 30);
             this.aHeaderBox1.TabIndex = 8;

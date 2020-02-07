@@ -149,6 +149,39 @@ namespace DAC
 
             }
         }
+
+        /// <summary>
+        /// 유저 그룹삭제
+        /// </summary>
+        /// <param name="code"></param>
+        /// <returns></returns>
+        public bool DeleteUserGroup_MasterVO(string code)
+        {
+            try
+            {
+                using (SqlCommand comm = new SqlCommand())
+                {
+                    comm.Connection = new SqlConnection(Connstr);
+                    comm.CommandText = "delete from UserGroup_Master where  UserGroup_Code=@UserGroup_Code";
+                    comm.CommandType = CommandType.Text;
+                    comm.Parameters.AddWithValue("@UserGroup_Code", code);
+               
+                    comm.Connection.Open();
+                    int result = Convert.ToInt32(comm.ExecuteNonQuery());
+                    comm.Connection.Close();
+
+                    if (result > 0)
+                        return true;
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+                throw;
+
+            }
+        }
         /// <summary>
         /// 그룹맵핑 
         /// </summary>
