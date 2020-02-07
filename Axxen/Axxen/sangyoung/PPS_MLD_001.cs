@@ -88,13 +88,6 @@ namespace Axxen
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "비고", "Wc_Code", false, 160);
         }
 
-        private void PPS_MLD_001_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            ((MainForm)this.MdiParent).InsertFormEvent -= new System.EventHandler(this.InsertFormShow);//입력이벤트
-            ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow);//새로고침이벤트
-            ToolStripManager.RevertMerge(toolStrip1, ((MainForm)this.MdiParent).toolStrip1); //저장버튼 추가
-        }
-
         private void RefreshFormShow(object sender, EventArgs e)
         {
             moldList = service.SelectMoldAll();
@@ -183,7 +176,7 @@ namespace Axxen
         {
             ((MainForm)this.MdiParent).InsertFormEvent -= new System.EventHandler(this.InsertFormShow);//입력이벤트 등록
             ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow);//새로고침이벤트
-            ToolStripManager.RevertMerge(toolStrip1, ((MainForm)this.MdiParent).toolStrip1); //저장버튼 추가
+            ToolStripManager.RevertMerge(((MainForm)this.MdiParent).toolStrip1); //저장버튼삭제
         }
 
         /// <summary>

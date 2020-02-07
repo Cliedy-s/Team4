@@ -34,7 +34,7 @@ namespace Axxen
 
         private void PPS_SCH_001_Report_Deactivate(object sender, EventArgs e)
         {
-            ToolStripManager.RevertMerge(((MainForm)this.MdiParent).toolStrip1, toolStrip1);
+            ToolStripManager.RevertMerge(((MainForm)this.MdiParent).toolStrip1);
         }
 
         private void TsbtnPrint_Click(object sender, EventArgs e)
@@ -45,11 +45,6 @@ namespace Axxen
             {
                 printTool.ShowRibbonPreviewDialog();
             }
-        }
-
-        private void PPS_SCH_001_Report_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            ToolStripManager.RevertMerge(((MainForm)this.MdiParent).toolStrip1, toolStrip1);
         }
     }
 }
