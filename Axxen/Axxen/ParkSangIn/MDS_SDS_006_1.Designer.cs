@@ -63,6 +63,7 @@
             this.lbltitle = new Axxen.CustomControls.ALabel();
             this.aLabel5 = new Axxen.CustomControls.ALabel();
             this.aPanel1 = new Axxen.CustomControls.APanel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblDay = new Axxen.CustomControls.ALabel();
             this.lblManager = new Axxen.CustomControls.ALabel();
             this.aPanel7 = new Axxen.CustomControls.APanel();
@@ -88,7 +89,6 @@
             this.aLabel8 = new Axxen.CustomControls.ALabel();
             this.aPanel20 = new Axxen.CustomControls.APanel();
             this.txtInspect_code = new Axxen.CustomControls.ATextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudsample)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudlsl)).BeginInit();
             this.aPanel29.SuspendLayout();
@@ -107,6 +107,7 @@
             this.aPanel12.SuspendLayout();
             this.aPanel9.SuspendLayout();
             this.aPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.aPanel7.SuspendLayout();
             this.aPanel6.SuspendLayout();
             this.aPanel4.SuspendLayout();
@@ -121,7 +122,6 @@
             this.aPanel16.SuspendLayout();
             this.aPanel19.SuspendLayout();
             this.aPanel20.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // nudsample
@@ -476,6 +476,15 @@
             this.aPanel1.Size = new System.Drawing.Size(499, 41);
             this.aPanel1.TabIndex = 121;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(18, 9);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(23, 22);
+            this.pictureBox2.TabIndex = 16;
+            this.pictureBox2.TabStop = false;
+            // 
             // lblDay
             // 
             this.lblDay.AutoSize = true;
@@ -719,15 +728,6 @@
             this.txtInspect_code.TabIndex = 156;
             this.txtInspect_code.txtType = Axxen.CustomControls.TextType.Normal;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(18, 9);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(23, 22);
-            this.pictureBox2.TabIndex = 16;
-            this.pictureBox2.TabStop = false;
-            // 
             // MDS_SDS_006_1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -762,6 +762,7 @@
             this.Controls.Add(this.aPanel5);
             this.Name = "MDS_SDS_006_1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "품질규격등록";
             this.Load += new System.EventHandler(this.MDS_SDS_006_1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudsample)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudlsl)).EndInit();
@@ -790,6 +791,7 @@
             this.aPanel9.ResumeLayout(false);
             this.aPanel1.ResumeLayout(false);
             this.aPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.aPanel7.ResumeLayout(false);
             this.aPanel7.PerformLayout();
             this.aPanel6.ResumeLayout(false);
@@ -814,7 +816,6 @@
             this.aPanel19.PerformLayout();
             this.aPanel20.ResumeLayout(false);
             this.aPanel20.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

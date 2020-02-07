@@ -716,6 +716,7 @@
             this.Controls.Add(this.aPanel20);
             this.Name = "MDS_SDS_007_1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "공정규격등록";
             this.Load += new System.EventHandler(this.MDS_SDS_007_1_Load);
             this.aPanel19.ResumeLayout(false);
             this.aPanel19.PerformLayout();
