@@ -27,6 +27,7 @@ namespace Axxen
         private void PPS_SCH_002_Load(object sender, EventArgs e)
         {
             MainDataLoad();
+            dgvMainGrid.MultiSelect = true;
             woList = service.GetWoReqOrder();
             dgvMainGrid.DataSource = woList;
             dgvMainGrid.CellDoubleClick += dgvMainGrid_CellDoubleClick;
@@ -91,6 +92,7 @@ namespace Axxen
         {
             ((MainForm)this.MdiParent).MyUpdateEvent -= new System.EventHandler(this.MyUpdateShow);
             ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow);
+            ToolStripManager.RevertMerge(toolStrip1, ((MainForm)this.MdiParent).toolStrip1); //저장버튼 삭제
         }
 
         private void BtnWoFinish_Click(object sender, EventArgs e)
@@ -156,8 +158,6 @@ namespace Axxen
                 dotWorkCenter.txtNameText = "";
             }
             dgvMainGrid.DataSource = woSearchList;
-
-
         }
 
         private void PPS_SCH_002_Activated(object sender, EventArgs e)
@@ -165,13 +165,16 @@ namespace Axxen
             ((MainForm)this.MdiParent).MyUpdateEvent += new System.EventHandler(this.MyUpdateShow); //수정이벤트
             ((MainForm)this.MdiParent).RefreshFormEvent += new EventHandler(this.RefreshFormShow); //새로고침
             ToolStripManager.Merge(toolStrip1, ((MainForm)this.MdiParent).toolStrip1); //저장버튼 추가
+            //toolStrip1.Visible = false;
         }
 
         private void PPS_SCH_002_Deactivate(object sender, EventArgs e)
         {
             ((MainForm)this.MdiParent).MyUpdateEvent -= new System.EventHandler(this.MyUpdateShow); //수정이벤트
             ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow); //새로고침
-            ToolStripManager.RevertMerge(toolStrip1, ((MainForm)this.MdiParent).toolStrip1); //저장버튼 추가
+            bool result = ToolStripManager.RevertMerge(toolStrip1, ((MainForm)this.MdiParent).toolStrip1); //저장버튼 삭제
+            if(!result)
+                MessageBox.Show("Test");
         }
 
         private void TsbtnSave_Click(object sender, EventArgs e)
@@ -199,6 +202,33 @@ namespace Axxen
             {
                 RefreshFormShow(null, null);
             }
+        }
+
+        private void BtnExcel_Click(object sender, EventArgs e)
+        {
+            copyAlltoClipboard();
+
+            Microsoft.Office.Interop.Excel.Application xlexcel;
+            Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
+            Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
+            object misValue = System.Reflection.Missing.Value;
+            xlexcel = new Microsoft.Office.Interop.Excel.Application();
+            xlexcel.Visible = true;
+            xlWorkBook = xlexcel.Workbooks.Add(misValue);
+            xlWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+            Microsoft.Office.Interop.Excel.Range CR = (Microsoft.Office.Interop.Excel.Range)xlWorkSheet.Cells[1, 1];
+            CR.Select();
+            xlWorkSheet.PasteSpecial(CR, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);
+
+            dgvMainGrid.ClearSelection();
+        }
+
+        private void copyAlltoClipboard()
+        {
+            dgvMainGrid.SelectAll();
+            DataObject dataObj = dgvMainGrid.GetClipboardContent();
+            if (dataObj != null)
+                Clipboard.SetDataObject(dataObj);
         }
     }
 }
