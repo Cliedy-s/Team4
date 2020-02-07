@@ -1,4 +1,6 @@
 ﻿using Axxen.CustomControls;
+using AxxenClient.Util;
+using log4net.Core;
 using Service;
 using System;
 using System.Collections.Generic;
@@ -14,6 +16,13 @@ namespace AxxenClient.Forms
 {
     public partial class POP_PRD_001 : AxxenClient.Templets.ClientBaseForm
     {
+        #region Log
+
+        #endregion
+        private static LoggingUtility _loggingUtility = LoggingUtility.GetLoggingUtility("WorkerClient", Level.Info, 30);
+        internal static LoggingUtility Log { get { return _loggingUtility; } }
+
+        bool isMachineRun = false;
         string selectedrowwono { get; set; }
         int columnno { get; set; }
         public Color runningDefaultColor { get; set; }
@@ -40,6 +49,7 @@ namespace AxxenClient.Forms
                     break;
                 case WorkType.Load:
                     panLoad.Visible = true;
+                    btnMachineRun.Visible = false;
                     break;
                 case WorkType.Boxing:
                     panBoxing.Visible = true;
@@ -214,6 +224,7 @@ namespace AxxenClient.Forms
             else //실패
                 MessageBox.Show("작업지시 종료에 실패하였습니다.");
             return;
+            // TODO - 기계 종료하기
         }
         /// <summary>
         /// 작업지시 마감
@@ -240,6 +251,7 @@ namespace AxxenClient.Forms
             }
             else
                 MessageBox.Show("마감할 수 없는 작업지시입니다.");
+            // TODO - 기계 종료하기
         }
         /// <summary>
         /// 매 초마다 작업 현황 가져오기
@@ -258,9 +270,17 @@ namespace AxxenClient.Forms
             {
                 WorkOrderEnd();
             }
+            // TODO - 기계 종료하기
         }
-
         private void btnMachineRun_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void MachineStop()
+        {
+
+        }
+        private void MachineStart()
         {
 
         }
