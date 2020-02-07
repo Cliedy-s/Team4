@@ -33,10 +33,10 @@ namespace Axxen.CustomControls
             {
                 TextBoxText = search.ResultName;
                 CodeText = search.ResultCode;
-                searchclick?.Invoke(this, e);
+                searchclick?.Invoke(this, new SearchFormClosingArgs() { ResultCode = search.ResultCode, ResultName = search.ResultName });
             }
         }
-        public delegate void SearchClick(object sender, EventArgs e);
+        public delegate void SearchClick(object sender, SearchFormClosingArgs e);
         public event SearchClick searchclick;
     }
 }

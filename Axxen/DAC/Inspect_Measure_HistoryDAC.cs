@@ -122,12 +122,12 @@ getdate() ,
             using (SqlCommand comm = new SqlCommand())
             {
                 comm.Connection = new SqlConnection(Connstr);
-                comm.CommandText = @" SELECT A.Workorderno, adate, aval, bdate, bval, cdate, cval, ddate, dval, edate, eval FROM 
-(select Workorderno,inspect_DateTime adate,Inspect_Val aval from Inspect_Measure_history where Inspect_Code = 'SP1' and workorderno = @Workorderno) AS A
-,(select Workorderno,inspect_DateTime bdate,Inspect_Val bval from Inspect_Measure_history where Inspect_Code = 'SP2' and workorderno = @Workorderno) AS B
-,(select Workorderno,inspect_DateTime cdate,Inspect_Val cval from Inspect_Measure_history where Inspect_Code = 'SP3' and workorderno = @Workorderno) AS C
-,(select Workorderno,inspect_DateTime ddate,Inspect_Val dval from Inspect_Measure_history where Inspect_Code = 'SP4' and workorderno = @Workorderno) AS D
-,(select Workorderno,inspect_DateTime as edate ,Inspect_Val eval from Inspect_Measure_history where Inspect_Code = 'SP5' and workorderno = @Workorderno) AS E
+                comm.CommandText = @" SELECT A.Workorderno, Adate, Aval, Bdate, Bval, Cdate, Cval, Ddate, Dval, Edate, Eval FROM 
+(select Workorderno,inspect_DateTime Adate,Inspect_Val Aval from Inspect_Measure_history where Inspect_Code = 'SP1' and workorderno = @Workorderno) AS A
+,(select Workorderno,inspect_DateTime Bdate,Inspect_Val Bval from Inspect_Measure_history where Inspect_Code = 'SP2' and workorderno = @Workorderno) AS B
+,(select Workorderno,inspect_DateTime Cdate,Inspect_Val Cval from Inspect_Measure_history where Inspect_Code = 'SP3' and workorderno = @Workorderno) AS C
+,(select Workorderno,inspect_DateTime Ddate,Inspect_Val Dval from Inspect_Measure_history where Inspect_Code = 'SP4' and workorderno = @Workorderno) AS D
+,(select Workorderno,inspect_DateTime Edate ,Inspect_Val Eval from Inspect_Measure_history where Inspect_Code = 'SP5' and workorderno = @Workorderno) AS E
 where A.Workorderno=B.Workorderno and B.Workorderno=C.Workorderno and C.Workorderno=D.Workorderno and D.Workorderno=E.Workorderno";
                 comm.CommandType = CommandType.Text;
                 comm.Connection.Open();

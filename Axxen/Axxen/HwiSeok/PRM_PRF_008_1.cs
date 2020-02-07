@@ -28,6 +28,8 @@ namespace Axxen
 
         private void PRM_PRF_008_1_Load(object sender, EventArgs e)
         {
+            lblManager.Text = UserInfo.User_Name;
+            lblDay.Text = DateTime.Now.ToString();
             GetAllItem();
             ControlSetting();
         }

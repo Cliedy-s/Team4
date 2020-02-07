@@ -26,14 +26,14 @@ namespace VO
     {
         public string Workorderno { get; set; } //작업지시번호
         public DateTime Adate { get; set; } //길이측정시간
-        public decimal AVal { get; set; } //길이측정값
+        public decimal Aval { get; set; } //길이측정값
         public DateTime Bdate { get; set; } //너비측정시간
-        public decimal BVal { get; set; } //너비측정값
+        public decimal Bval { get; set; } //너비측정값
         public DateTime Cdate { get; set; } //두께측정시간
-        public decimal CVal { get; set; } //두께측정값
+        public decimal Cval { get; set; } //두께측정값
         public DateTime Ddate { get; set; } //진공압측정시간
-        public decimal DVal { get; set; } //진공압측정값
+        public decimal Dval { get; set; } //진공압측정값
         public DateTime Edate { get; set; } //성형압측정시간
-        public decimal EVal { get; set; } //성형압측정값
+        public decimal Eval { get; set; } //성형압측정값
     }
 }

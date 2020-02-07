@@ -63,15 +63,15 @@ namespace Axxen
                                   join val in imhList on req.Workorderno equals val.Workorderno
                                   where req.Workorderno == val.Workorderno
                                   select new { Num = req.Num, Pallet_No = req.Pallet_No, Item_Name = req.Item_Name, Closed_Time = req.Closed_Time
-                                              ,Workorderno = val.Workorderno, ADate = val.Adate, AVal = val.AVal, BDate = val.Bdate, BVal = val.BVal
-                                              ,CDate = val.Cdate, CVal = val.CVal, DDate = val.Ddate, DVal = val.DVal, EDate = val.Edate, EVal = val.EVal
+                                              ,Workorderno = val.Workorderno, ADate = val.Adate, AVal = val.Aval, BDate = val.Bdate, BVal = val.Bval
+                                              ,CDate = val.Cdate, CVal = val.Cval, DDate = val.Ddate, DVal = val.Dval, EDate = val.Edate, EVal = val.Eval
                                   }).ToList();
 
 
             dt = ListToDataTable.ToDataTable(figurationList);
             dsFiguration ds = new dsFiguration();
             ds.Tables.Add(dt);
-            rpt.DataSource = ds.Tables[0];
+            rpt.DataSource = ds.Tables[1];
             rpt.Parameters["Ins_Date"].Value = dtpDate.Value.ToString("yyyy-MM-dd");
             rpt.Parameters["Ins_Date"].Visible = false; //파라미터 바로 넘기기
             documentViewer1.DocumentSource = rpt;
