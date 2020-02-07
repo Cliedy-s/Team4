@@ -8,27 +8,23 @@ using VO;
 
 namespace Service
 {
-   public class UserInfo_Service
+    public class UserInfo_Service
     {
         UserInfoDAC dac;
         public UserInfo_Service()
         {
-             dac = new UserInfoDAC();
+            dac = new UserInfoDAC();
 
         }
-
-
-        
-
         public List<UserInfoVO> GetAllUser()
         {
-        
+
             return dac.GetAllUser();
         }
         public void InsertLogin_History(Login_History login)
         {
 
-             dac.InsertLogin_History(login);
+            dac.InsertLogin_History(login);
         }
         public void InsertLogin_Screen_History(Login_Screen_HistoryVO loginscreen)
         {
@@ -41,22 +37,18 @@ namespace Service
         /// <returns></returns>
         public List<SearchLogin_Screen_HistoryVO> GetUser_Screen_Login(DateTime start, DateTime end, string screencode, string userid)
         {
-          return dac.GetUser_Screen_Login(start, end, screencode, userid);
+            return dac.GetUser_Screen_Login(start, end, screencode, userid);
 
         }
-
-
-            public List<UserInfoVO> UserID_UserName() //유저 아이디 / 닉네임 서치
+        public List<UserInfoVO> UserID_UserName() //유저 아이디 / 닉네임 서치
         {
 
             return dac.UserID_UserName();
         }
-        
         public bool InsertUser(UserInfoVO user)
         {
             return dac.InsertUser(user);
         }
-
         /// <summary>
         /// 사용자 삭제
         /// </summary>
@@ -65,6 +57,15 @@ namespace Service
         {
             return dac.DeleteUserInfoVO(userid);
         }
+        /// <summary>
+        /// POP 로그인하기 return null : 실패 x : 성공  => User_Name, User_Type 리턴
+        /// </summary>
+        /// <param name="userID"></param>
+        /// <param name="userPassword"></param>
+        /// <returns></returns>
+        public UserInfoVO GetLoginInfo(string userID, string userPassword)
+        {
+            return dac.GetLoginInfo(userID, userPassword);
         }
+    }
 }
- 

@@ -42,7 +42,6 @@
             this.aComboBox1.Name = "aComboBox1";
             this.aComboBox1.Size = new System.Drawing.Size(121, 20);
             this.aComboBox1.TabIndex = 1;
-            this.aComboBox1.Visible = false;
             // 
             // aButton1
             // 
@@ -55,7 +54,6 @@
             this.aButton1.TabIndex = 2;
             this.aButton1.Text = "열기";
             this.aButton1.UseVisualStyleBackColor = false;
-            this.aButton1.Visible = false;
             this.aButton1.Click += new System.EventHandler(this.aButton1_Click);
             // 
             // timetimer

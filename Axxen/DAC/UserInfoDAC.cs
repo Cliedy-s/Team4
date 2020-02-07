@@ -56,7 +56,6 @@ namespace DAC
                 
             }
         }
-        
         /// <summary>
         /// 사용자 삭제
         /// </summary>
@@ -132,7 +131,6 @@ namespace DAC
                 return false;
             }
         }
-
         public List<UserInfoVO> UserID_UserName()
         {
             using (SqlCommand comm = new SqlCommand())
@@ -149,7 +147,6 @@ namespace DAC
                 return list;
             }
         }
-
         /// <summary>
         /// 화면 사용내역 저장
         /// </summary>
@@ -190,8 +187,6 @@ namespace DAC
                 throw;
             }
         }
-
-
         /// <summary>
         /// 기간별 사용자 화면 사용 로그인 내역
         /// </summary>
@@ -228,6 +223,39 @@ namespace DAC
                 throw;
             }
         }
+        /// <summary>
+        /// POP 로그인하기 return null : 실패 x : 성공  => User_Name, User_Type 리턴
+        /// </summary>
+        /// <param name="userID"></param>
+        /// <param name="userPassword"></param>
+        /// <returns></returns>
+        public UserInfoVO GetLoginInfo(string userID, string userPassword)
+        {
+            UserInfoVO item = null;
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText =
+@"
+    SELECT TOP(1)
+          User_Name
+          ,[User_Type]
+      FROM [dbo].[User_Master];
+";
+                comm.CommandType = CommandType.StoredProcedure;
 
+                comm.Connection.Open();
+                SqlDataReader reader = comm.ExecuteReader();
+                if (reader.Read())
+                {
+                    item = new UserInfoVO();
+                    item.User_Name = reader[0].ToString();
+                    item.User_Type = reader[1].ToString();
+                }
+                comm.Connection.Close();
+
+                return item;
+            }
+        }
     }
 }
