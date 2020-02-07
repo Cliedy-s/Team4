@@ -1,10 +1,12 @@
 ﻿using log4net;
 using log4net.Appender;
+using log4net.Config;
 using log4net.Core;
 using log4net.Repository;
 using log4net.Repository.Hierarchy;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -15,21 +17,26 @@ namespace Axxen.Util
     public class LoggingUtility
     {
         private static LoggingUtility _loggingUtility = null;
-        private ILog log; // install log4net
+        private ILog log;
         private RollingFileAppender roller;
         private string logFileName = "Axxen.log";
+        private int logSaveDays = 30; // 30일 기준
         private bool runAsConsole = false;
-        public static LoggingUtility GetLoggingUtility(string loggerName, Level logLevel)
+
+        public static LoggingUtility GetLoggingUtility(string loggerName, Level logLevel, int saveDays)
         {
             if (_loggingUtility == null)
             {
-                _loggingUtility = new LoggingUtility(loggerName, logLevel);
+                _loggingUtility = new LoggingUtility(loggerName, logLevel, saveDays);
             }
 
             return _loggingUtility;
         }
-        private LoggingUtility(string loggerName, Level logLevel)
+
+        private LoggingUtility(string loggerName, Level logLevel, int saveDays)
         {
+            logFileName = $"{loggerName}.log";
+            logSaveDays = saveDays;
             SetupLog4net(logLevel, loggerName);
         }
 
@@ -54,6 +61,7 @@ namespace Axxen.Util
 
             this.log = new LogImpl(logger);
         }
+
         private void CreateFileAppender(string loggerName)
         {
             if (roller != null)
@@ -66,18 +74,20 @@ namespace Axxen.Util
             //rollingAppender.DatePattern = "_yyyyMMdd\".log\""; // 날짜가 지나간 경우 이전 로그에 붙을 이름 구성
             //log4net.Layout.PatternLayout layout = new log4net.Layout.PatternLayout("%date [%property{buildversion}] %-5level %logger - %message%newline");
 
-            roller = new RollingFileAppender
+            roller = new RollingDateAppender
             {
                 Name = loggerName + "FileAppender",
                 File = GetLoggingFilePath(),
                 LockingModel = new FileAppender.MinimalLock(),
                 AppendToFile = true,
-                RollingStyle = RollingFileAppender.RollingMode.Composite, // 날짜 + 사이즈?
-                DatePattern = "_yyyyMMdd\".log\"",
+                RollingStyle = RollingFileAppender.RollingMode.Composite,
+                DatePattern = "_yyyyMMdd",
+                MaxAgeRollBackups = TimeSpan.FromDays(logSaveDays),
                 MaxSizeRollBackups = -1,
                 MaximumFileSize = "1MB",
                 StaticLogFileName = true,
-                Layout = new log4net.Layout.PatternLayout("[%level] %date %-20logger %newline%message%newline") //[INFO] 2020-01-19 21:39:49,388 MyProject 
+                //Layout = new log4net.Layout.PatternLayout("[%level] %date %-20logger %newline%message%newline") //[INFO] 2020-01-19 21:39:49,388 MyProject 
+                Layout = new log4net.Layout.PatternLayout("[%level] %date %logger -> %message%newline") //[INFO] 2020-01-19 21:39:49,388 MyProject 
 
                 //Name = loggerName + "FileAppender",
                 //File = GetLoggingFilePath(),
@@ -90,7 +100,9 @@ namespace Axxen.Util
                 //Layout = new log4net.Layout.PatternLayout("[%level] %date %-20logger %newline%message%newline") //[INFO] 2020-01-19 21:39:49,388 MyProject   
             };
             roller.ActivateOptions();
+            BasicConfigurator.Configure(roller);
         }
+
         public void CloseRoller()
         {
             if (this != null && this.roller != null && !runAsConsole)
@@ -109,6 +121,7 @@ namespace Axxen.Util
             if (!runAsConsole)
                 log.Debug(message, ex);
         }
+
         /// <summary>
         /// 디버그 정보 쓰기
         /// </summary>
@@ -129,6 +142,8 @@ namespace Axxen.Util
             if (!runAsConsole)
                 log.Info(message, ex);
         }
+
+
         /// <summary>
         /// 실행 정보 쓰기
         /// </summary>
@@ -149,6 +164,7 @@ namespace Axxen.Util
             if (!runAsConsole)
                 log.Warn(message, ex);
         }
+
         /// <summary>
         /// 경고 로그 쓰기
         /// </summary>
@@ -169,6 +185,7 @@ namespace Axxen.Util
             if (!runAsConsole)
                 log.Error(message, ex);
         }
+
         /// <summary>
         /// 오류 로그 쓰기
         /// </summary>
@@ -189,6 +206,7 @@ namespace Axxen.Util
             if (!runAsConsole)
                 log.Fatal(message, ex);
         }
+
         /// <summary>
         /// 치명적인 오류 쓰기
         /// </summary>
@@ -199,8 +217,9 @@ namespace Axxen.Util
                 log.Fatal(message);
         }
 
+
         /// <summary>
-        /// %AppData%\ClipSoft\ClipSoft.eForm.Viewer\Logs 폴더 존재 확인 후 생성
+        /// Logs 폴더 존재 확인 후 생성
         /// </summary>
         private void CheckAndCreateLoggingFolder()
         {
@@ -211,6 +230,7 @@ namespace Axxen.Util
                 Directory.CreateDirectory(tempFolder);
             }
         }
+
         /// <summary>
         /// .\Logs 폴더를 구함
         /// </summary>
@@ -219,6 +239,7 @@ namespace Axxen.Util
         {
             return @".\Logs"; // string.Format(@"\{0}\{1}\Logs", this.company, this.product);
         }
+
         /// <summary>
         /// 로깅 파일의 위치를 구함
         /// </summary>
@@ -227,5 +248,31 @@ namespace Axxen.Util
         {
             return string.Format(@"{0}\{1}", GetLoggingFolder(), this.logFileName);
         }
+    }
+
+    public class RollingDateAppender : RollingFileAppender
+    {
+        public TimeSpan MaxAgeRollBackups { get; set; }
+
+        public RollingDateAppender()
+          : base()
+        {
+            PreserveLogFileNameExtension = true;
+            StaticLogFileName = false;
+        }
+
+        protected override void AdjustFileBeforeAppend() // 날짜로 파일을 주더라도 MaxAgeRollBackups옵션 이용가능
+        {
+            base.AdjustFileBeforeAppend();
+
+            string LogFolder = Path.GetDirectoryName(File);
+            var CheckTime = DateTime.Now.Subtract(MaxAgeRollBackups);
+            foreach (string file in Directory.GetFiles(LogFolder, "*.log"))
+            {
+                if (System.IO.File.GetLastWriteTime(file) < CheckTime)
+                    DeleteFile(file); // 해당 파일을 삭제한다.
+            }
+        }
+
     }
 }

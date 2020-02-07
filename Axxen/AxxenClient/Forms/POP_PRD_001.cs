@@ -17,11 +17,9 @@ namespace AxxenClient.Forms
     public partial class POP_PRD_001 : AxxenClient.Templets.ClientBaseForm
     {
         #region Log
-
-        #endregion
         private static LoggingUtility _loggingUtility = LoggingUtility.GetLoggingUtility("WorkerClient", Level.Info, 30);
         internal static LoggingUtility Log { get { return _loggingUtility; } }
-
+        #endregion
         bool isMachineRun = false;
         string selectedrowwono { get; set; }
         int columnno { get; set; }
@@ -273,15 +271,18 @@ namespace AxxenClient.Forms
             // TODO - 기계 종료하기
         }
         private void btnMachineRun_Click(object sender, EventArgs e)
-        {
-
+        { // 토글 기계
+            if (isMachineRun) MachineStop();
+            else MachineStart();
         }
         private void MachineStop()
         {
+            isMachineRun = false;
 
         }
         private void MachineStart()
         {
+            isMachineRun = true;
 
         }
     }
