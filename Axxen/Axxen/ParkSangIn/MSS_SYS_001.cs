@@ -282,5 +282,12 @@ namespace Axxen
             lbldeletecheck1.Text = "0";
             lbldeletecheck2.Text = "1";
         }
+
+        private void MSS_SYS_001_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ((MainForm)this.MdiParent).InsertFormEvent -= new System.EventHandler(this.InsertFormShow);//입력이벤트 등록
+            ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow);
+            ((MainForm)this.MdiParent).MyDeleteEvent -= new EventHandler(this.MyDelete);
+        }
     }
 }
