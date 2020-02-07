@@ -113,17 +113,21 @@ namespace Axxen
                     };
                     if (itemservice.InsertUpdateAllItem_Master(item))
                     {
-                        MessageBox.Show("저장 완료", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                      
+                        this.Close();
+                        this.DialogResult = DialogResult.OK;
                     }
                     else
                     {
                         MessageBox.Show("저장 실패", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
                     }
 
                 }
                 else
                 {
                     MessageBox.Show("필수 항목을 입력해주세요.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
                 }
 
 

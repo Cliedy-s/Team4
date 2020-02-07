@@ -129,10 +129,43 @@ VALUES(@GV_Code,@GV_Name,@GV_GroupCode,@GV_Group,@GV_Status,GETDATE(),@Ins_Emp)
                 throw;
             }
         }
-            /// <summary>
-            /// 대차리스트 작업장별로 가져오기
-            /// </summary>
-            public List<GVWorkItemVO> GetAllByWC(string wccode, string woinichar)
+        /// <summary>
+        /// 대차삭제
+        /// </summary>
+        /// <param name="gvcode"></param>
+        /// <returns></returns>
+        public bool DeleteGVMasterVO(string gvcode)
+        {
+            try
+            {
+                using (SqlCommand comm = new SqlCommand())
+                {
+                    comm.Connection = new SqlConnection(Connstr);
+                    comm.CommandText = @"delete from GV_Master where GV_Code=@GV_Code";
+
+                    comm.CommandType = CommandType.Text;
+                    comm.Parameters.AddWithValue("@GV_Code", gvcode);
+            
+
+                    comm.Connection.Open();
+                    int result = Convert.ToInt32(comm.ExecuteNonQuery());
+                    comm.Connection.Close();
+
+                    if (result > 0)
+                        return true;
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        /// <summary>
+        /// 대차리스트 작업장별로 가져오기
+        /// </summary>
+        public List<GVWorkItemVO> GetAllByWC(string wccode, string woinichar)
         {
             using (SqlCommand comm = new SqlCommand())
             {

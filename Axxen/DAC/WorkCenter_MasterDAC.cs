@@ -25,7 +25,7 @@ namespace DAC
                 comm.CommandText =
  @" select Wc_Code,Wc_Name,w.Process_Code,Process_name,Wo_Status,Last_Cnt_Time,Prd_Req_Type,Pallet_YN,Item_Code,Prd_Unit,Mold_Setup_YN,w.Use_YN,w.Remark
 from WorkCenter_Master w , Process_Master p
-where w.Process_Code = p.Process_Code";
+where w.Process_Code = p.Process_Code and p.Use_YN='Y'";
                 comm.CommandType = CommandType.Text;
 
                 comm.Connection.Open();
@@ -102,8 +102,36 @@ where w.Process_Code = p.Process_Code";
                 throw;
             }
         }
+       
+        /// <summary>
+        /// 작업장삭제
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
+        public bool DeleteWorkCenter_Master2VO(string workcode)
+        {
+            try
+            {
+                using (SqlCommand comm = new SqlCommand())
+                {
+                    comm.Connection = new SqlConnection(Connstr);
+                    comm.CommandText = $"delete from WorkCenter_Master where Wc_Code=@Wc_Code";
+                    comm.CommandType = CommandType.Text;
+                    comm.Parameters.AddWithValue("@Wc_Code", workcode);               
+                    comm.Connection.Open();
+                    int result = Convert.ToInt32(comm.ExecuteNonQuery());
+                    comm.Connection.Close();
 
-
+                    if (result > 0)
+                        return true;
+                    return false;
+                }
+            }
+            catch
+            {
+                throw;
+            }
+        }
 
         /// <summary>
         /// 모든 작업장정보를 가져오는 메소드

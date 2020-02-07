@@ -38,6 +38,11 @@ namespace Service
         {
             return DAC.Use_YNItem_Level_Master(groupcode, used);
         }
+        public bool DeleteItem_Level_Master(string itemcode)
+        {
+            return DAC.DeleteItem_Level_Master(itemcode);
+        }
+
 
         /// <summary>
         /// 품목정보 전체
@@ -54,6 +59,10 @@ namespace Service
         {
             
             return DAC.InsertUpdateAllItem_Master(item);
+        }
+        public bool DeleteItem_MasterVO(string itemcode)
+        {
+            return DAC.DeleteItem_MasterVO(itemcode);
         }
 
         public List<Item_Goods_HistoryVO> GetworkOrder_Item_Goods()

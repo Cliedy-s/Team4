@@ -42,7 +42,9 @@ namespace Axxen
       
             if (service.InsertUser(user))
             {
-                MessageBox.Show("등록","알림",MessageBoxButtons.OK,MessageBoxIcon.Information);
+
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
             }
             else
             {

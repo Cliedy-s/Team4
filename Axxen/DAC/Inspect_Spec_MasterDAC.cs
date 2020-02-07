@@ -87,12 +87,36 @@ namespace DAC
                 }
             }
         }
+        public bool DeleteInspectSpecVO(string Item_Code, string Process_code, string Inspect_code)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = new SqlConnection(Connstr);
+                    cmd.CommandText = $"delete from Inspect_Spec_Master where Item_Code=@Item_Code and Process_code=@Process_code and Inspect_code=@Inspect_code";
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Connection.Open();
+                    cmd.Parameters.AddWithValue("@Item_Code", Item_Code);
+                    cmd.Parameters.AddWithValue("@Process_code", Process_code);
+                    cmd.Parameters.AddWithValue("@Inspect_code", Inspect_code);
+                    int resualt = cmd.ExecuteNonQuery();
+                    cmd.Connection.Close();
 
-        /// <summary>
-        /// 검사항목규격설정 사용
-        /// </summary>
-        /// <returns></returns>
-        public bool UseInspectSpec(InspectSpecVO inspect,string use)
+                    return resualt > 0;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+            /// <summary>
+            /// 검사항목규격설정 사용
+            /// </summary>
+            /// <returns></returns>
+            public bool UseInspectSpec(InspectSpecVO inspect,string use)
         {
             try
             { 

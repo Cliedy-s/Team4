@@ -177,7 +177,7 @@
             this.cbbLevel.Location = new System.Drawing.Point(2, 3);
             this.cbbLevel.Name = "cbbLevel";
             this.cbbLevel.Size = new System.Drawing.Size(160, 23);
-            this.cbbLevel.TabIndex = 154;
+            this.cbbLevel.TabIndex = 5;
             // 
             // aPanel41
             // 
@@ -208,7 +208,7 @@
             this.btnSave.Location = new System.Drawing.Point(1046, 66);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(88, 33);
-            this.btnSave.TabIndex = 4;
+            this.btnSave.TabIndex = 6;
             this.btnSave.Text = "저장";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
@@ -230,7 +230,7 @@
             this.txtCode.Location = new System.Drawing.Point(3, 5);
             this.txtCode.Name = "txtCode";
             this.txtCode.Size = new System.Drawing.Size(160, 23);
-            this.txtCode.TabIndex = 24;
+            this.txtCode.TabIndex = 0;
             this.txtCode.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // aPanel22
@@ -247,7 +247,7 @@
             this.nudBox_Qty.Location = new System.Drawing.Point(3, 2);
             this.nudBox_Qty.Name = "nudBox_Qty";
             this.nudBox_Qty.Size = new System.Drawing.Size(160, 23);
-            this.nudBox_Qty.TabIndex = 1;
+            this.nudBox_Qty.TabIndex = 2;
             // 
             // aPanel24
             // 
@@ -285,7 +285,7 @@
             this.nudMat_Qty.Location = new System.Drawing.Point(3, 2);
             this.nudMat_Qty.Name = "nudMat_Qty";
             this.nudMat_Qty.Size = new System.Drawing.Size(160, 23);
-            this.nudMat_Qty.TabIndex = 1;
+            this.nudMat_Qty.TabIndex = 4;
             // 
             // aPanel17
             // 
@@ -301,7 +301,7 @@
             this.nudPcs_Qty.Location = new System.Drawing.Point(3, 2);
             this.nudPcs_Qty.Name = "nudPcs_Qty";
             this.nudPcs_Qty.Size = new System.Drawing.Size(160, 23);
-            this.nudPcs_Qty.TabIndex = 1;
+            this.nudPcs_Qty.TabIndex = 3;
             // 
             // aPanel23
             // 
@@ -383,7 +383,7 @@
             this.txtName.Location = new System.Drawing.Point(4, 4);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(160, 23);
-            this.txtName.TabIndex = 25;
+            this.txtName.TabIndex = 1;
             this.txtName.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // aPanel4
@@ -474,7 +474,7 @@
             this.cbbGroup.Location = new System.Drawing.Point(63, 6);
             this.cbbGroup.Name = "cbbGroup";
             this.cbbGroup.Size = new System.Drawing.Size(152, 23);
-            this.cbbGroup.TabIndex = 3;
+            this.cbbGroup.TabIndex = 0;
             this.cbbGroup.SelectedIndexChanged += new System.EventHandler(this.CbbGroup_SelectedIndexChanged);
             // 
             // aPanel1
@@ -504,7 +504,7 @@
             this.btnSearch.Location = new System.Drawing.Point(490, 7);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearch.TabIndex = 4;
+            this.btnSearch.TabIndex = 1;
             this.btnSearch.Text = "조회";
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);

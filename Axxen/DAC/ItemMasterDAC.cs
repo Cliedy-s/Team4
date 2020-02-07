@@ -105,17 +105,37 @@ namespace DAC
             }
 
         }
-
-
-
-
         /// <summary>
-        /// 품목정보 전체
+        /// 품목그룹삭제
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="pwd"></param>
+        /// <param name="itemcode"></param>
         /// <returns></returns>
-        public List<Item_MasterVO> GetAllItem_Master()
+        public bool DeleteItem_Level_Master(string itemcode)
+        {
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText = "delete from Item_Level_Master where Level_Code=@Level_Code";
+                comm.CommandType = CommandType.Text;
+                comm.Parameters.AddWithValue("@Level_Code", itemcode);
+
+                comm.Connection.Open();
+                int result = Convert.ToInt32(comm.ExecuteNonQuery());
+                comm.Connection.Close();
+
+                if (result > 0)
+                    return true;
+                return false;
+            }
+        }
+
+            /// <summary>
+            /// 품목정보 전체
+            /// </summary>
+            /// <param name="id"></param>
+            /// <param name="pwd"></param>
+            /// <returns></returns>
+            public List<Item_MasterVO> GetAllItem_Master()
         {
             try
             {
@@ -142,14 +162,38 @@ namespace DAC
                 throw;
             }
         }
-
         /// <summary>
-        /// 품목정보 수정 캐비티, 성형, shot수 mds_sds_002
+        /// 품목삭제
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="pwd"></param>
+        /// <param name="itemcode"></param>
         /// <returns></returns>
-        public bool InsertUpdateAllItem_Master(Item_MasterVO item)
+        public bool DeleteItem_MasterVO(string itemcode)
+        {
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText = "delete from Item_Master where Item_Code=@Item_Code";
+                comm.CommandType = CommandType.Text;
+                comm.Parameters.AddWithValue("@Item_Code", itemcode);
+
+                comm.Connection.Open();
+                int result = Convert.ToInt32(comm.ExecuteNonQuery());
+                comm.Connection.Close();
+
+                if (result > 0)
+                    return true;
+                return false;
+            }
+
+        }
+
+            /// <summary>
+            /// 품목정보 수정 캐비티, 성형, shot수 mds_sds_002
+            /// </summary>
+            /// <param name="id"></param>
+            /// <param name="pwd"></param>
+            /// <returns></returns>
+            public bool InsertUpdateAllItem_Master(Item_MasterVO item)
         {
             try
             {

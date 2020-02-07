@@ -84,14 +84,14 @@ namespace Axxen
             // combobox  품목명
             List<Item_MasterVO> dictionname = Itemlist.GroupBy(name => name.Item_Code).Select(grp => grp.First()).ToList();
 
-            Dictionary<string, string> cbblistname = dictionname.ToDictionary(code => code.Item_Code, name => name.Item_Name);
+            Dictionary<string, string> cbblistname =  dictionname.FindAll(ite=>ite.Use_YN.Equals("Y")).ToDictionary(code => code.Item_Code, name => name.Item_Name);
             cbbItem.DisplayMember = "Value";
             cbbItem.ValueMember = "Key";
             cbbItem.DataSource = new BindingSource(cbblistname, null);
             lblItem.Text = cbbItem.SelectedValue.ToString();
 
 
-            Dictionary<string, string> cbblist = processlist.ToDictionary(item => item.Process_code, item => item.Process_name);
+            Dictionary<string, string> cbblist = processlist.FindAll(ite => ite.Use_YN.Equals("Y")).ToDictionary(item => item.Process_code, item => item.Process_name);
             cbbProcess.DisplayMember = "Value";
             cbbProcess.ValueMember = "Key";
             cbbProcess.DataSource = new BindingSource(cbblist, null);
@@ -139,18 +139,20 @@ namespace Axxen
                     additem.Add(inspect);
                     if (service.InsertInspectSpec(additem))
                     {
-
-
-                        MessageBox.Show("저장 완료", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                      
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
                     }
                     else
                     {
                         MessageBox.Show("이미 등록된 검사항목입니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
                     }
                 }
                 else
                 {
                     MessageBox.Show("필수 항목을 입력하세요.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
                 }
             }
             catch (Exception err)

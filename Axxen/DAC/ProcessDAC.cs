@@ -108,8 +108,38 @@ namespace DAC
 
             }
         }
+        public bool DeleteProcess_MasterVO(string processcode)
+        {
+            try
+            {
+                using (SqlCommand comm = new SqlCommand())
+                {
+
+                
+                    comm.CommandText = "delete from Process_Master where Process_code=@Process_code";
+                    comm.Connection = new SqlConnection(Connstr);
+                    comm.CommandType = CommandType.Text;
+                    comm.Parameters.AddWithValue("@Process_code", processcode);
+     
+
+                    comm.Connection.Open();
+                    int result = Convert.ToInt32(comm.ExecuteNonQuery());
+                    comm.Connection.Close();
+
+                    if (result > 0)
+                        return true;
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+                throw;
+
+            }
+        }
 
 
 
-    }
+        }
 }

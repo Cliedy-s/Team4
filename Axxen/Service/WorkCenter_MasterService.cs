@@ -37,11 +37,17 @@ namespace Service
             return dac.InsertWorkservice(item);
         }
 
+        public bool DeleteWorkCenter_Master2VO(string workcode)
+        {
+            WorkCenter_MasterDAC dac = new WorkCenter_MasterDAC();
+            return dac.DeleteWorkCenter_Master2VO(workcode);
+        }
+
             /// <summary>
             /// 모든 작업장정보를 가져오는 메소드
             /// </summary>
             /// <returns></returns>
-            public List<WorkCenter_MasterVO> GetAll()
+        public List<WorkCenter_MasterVO> GetAll()
         {
             WorkCenter_MasterDAC dac = new WorkCenter_MasterDAC();
             return dac.GetAll();

@@ -215,12 +215,7 @@ namespace Axxen
             }
 
         }
-
-        private void DgvUseScreen_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //MessageBox.Show(dgvUseScreen.SelectedCells[2].ToString());
-        }
-
+    
         private void BtnSave_Click(object sender, EventArgs e)
         {
           //  MessageBox.Show(DeleteScreenlist.Count.ToString());

@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.aButton3 = new Axxen.CustomControls.AButton();
             this.btnson = new Axxen.CustomControls.AButton();
             this.aPanel2 = new Axxen.CustomControls.APanel();
             this.aLabel1 = new Axxen.CustomControls.ALabel();
@@ -42,10 +43,12 @@
             this.aPanel7 = new Axxen.CustomControls.APanel();
             this.aLabel8 = new Axxen.CustomControls.ALabel();
             this.aPanel8 = new Axxen.CustomControls.APanel();
-            this.aLabel10 = new Axxen.CustomControls.ALabel();
-            this.aPanel17 = new Axxen.CustomControls.APanel();
             this.aLabel11 = new Axxen.CustomControls.ALabel();
+            this.aPanel17 = new Axxen.CustomControls.APanel();
+            this.aLabel10 = new Axxen.CustomControls.ALabel();
             this.aPanel19 = new Axxen.CustomControls.APanel();
+            this.aPanel26 = new Axxen.CustomControls.APanel();
+            this.lblscreencode = new Axxen.CustomControls.ALabel();
             this.aPanel20 = new Axxen.CustomControls.APanel();
             this.aLabel13 = new Axxen.CustomControls.ALabel();
             this.aPanel21 = new Axxen.CustomControls.APanel();
@@ -56,7 +59,9 @@
             this.aPanel24 = new Axxen.CustomControls.APanel();
             this.aLabel15 = new Axxen.CustomControls.ALabel();
             this.aPanel25 = new Axxen.CustomControls.APanel();
+            this.cbbScreenname = new Axxen.CustomControls.AComboBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.aButton2 = new Axxen.CustomControls.AButton();
             this.aButton1 = new Axxen.CustomControls.AButton();
             this.aPanel1 = new Axxen.CustomControls.APanel();
             this.aLabel3 = new Axxen.CustomControls.ALabel();
@@ -76,9 +81,6 @@
             this.aLabel12 = new Axxen.CustomControls.ALabel();
             this.aPanel18 = new Axxen.CustomControls.APanel();
             this.txtparentcode = new CLIP.eForm.Consent.Standard.Management.UI.PlaceHolderTextBox();
-            this.cbbScreenname = new Axxen.CustomControls.AComboBox();
-            this.aPanel26 = new Axxen.CustomControls.APanel();
-            this.lblscreencode = new Axxen.CustomControls.ALabel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.aPanel2.SuspendLayout();
@@ -90,6 +92,7 @@
             this.aPanel8.SuspendLayout();
             this.aPanel17.SuspendLayout();
             this.aPanel19.SuspendLayout();
+            this.aPanel26.SuspendLayout();
             this.aPanel20.SuspendLayout();
             this.aPanel21.SuspendLayout();
             this.aPanel22.SuspendLayout();
@@ -107,7 +110,6 @@
             this.aPanel15.SuspendLayout();
             this.aPanel16.SuspendLayout();
             this.aPanel18.SuspendLayout();
-            this.aPanel26.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -126,6 +128,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.aButton3);
             this.tabPage1.Controls.Add(this.btnson);
             this.tabPage1.Controls.Add(this.aPanel2);
             this.tabPage1.Controls.Add(this.aPanel3);
@@ -147,13 +150,25 @@
             this.tabPage1.Text = "자식메뉴등록";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // aButton3
+            // 
+            this.aButton3.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.aButton3.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.aButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.aButton3.Location = new System.Drawing.Point(183, 264);
+            this.aButton3.Name = "aButton3";
+            this.aButton3.Size = new System.Drawing.Size(120, 44);
+            this.aButton3.TabIndex = 231;
+            this.aButton3.Text = "취소";
+            this.aButton3.UseVisualStyleBackColor = false;
+            // 
             // btnson
             // 
             this.btnson.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnson.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnson.Location = new System.Drawing.Point(76, 264);
+            this.btnson.Location = new System.Drawing.Point(57, 264);
             this.btnson.Name = "btnson";
-            this.btnson.Size = new System.Drawing.Size(195, 44);
+            this.btnson.Size = new System.Drawing.Size(120, 44);
             this.btnson.TabIndex = 230;
             this.btnson.Text = "등록";
             this.btnson.UseVisualStyleBackColor = false;
@@ -265,27 +280,6 @@
             this.aPanel8.Size = new System.Drawing.Size(120, 35);
             this.aPanel8.TabIndex = 224;
             // 
-            // aLabel10
-            // 
-            this.aLabel10.AutoSize = true;
-            this.aLabel10.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aLabel10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aLabel10.Location = new System.Drawing.Point(26, 6);
-            this.aLabel10.Name = "aLabel10";
-            this.aLabel10.Size = new System.Drawing.Size(80, 17);
-            this.aLabel10.TabIndex = 55;
-            this.aLabel10.Text = "*Screen코드";
-            // 
-            // aPanel17
-            // 
-            this.aPanel17.BackColor = System.Drawing.SystemColors.Info;
-            this.aPanel17.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.aPanel17.Controls.Add(this.aLabel10);
-            this.aPanel17.Location = new System.Drawing.Point(26, 130);
-            this.aPanel17.Name = "aPanel17";
-            this.aPanel17.Size = new System.Drawing.Size(120, 35);
-            this.aPanel17.TabIndex = 222;
-            // 
             // aLabel11
             // 
             this.aLabel11.AutoSize = true;
@@ -297,6 +291,27 @@
             this.aLabel11.TabIndex = 53;
             this.aLabel11.Text = "*Screen명";
             // 
+            // aPanel17
+            // 
+            this.aPanel17.BackColor = System.Drawing.SystemColors.Info;
+            this.aPanel17.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.aPanel17.Controls.Add(this.aLabel10);
+            this.aPanel17.Location = new System.Drawing.Point(26, 130);
+            this.aPanel17.Name = "aPanel17";
+            this.aPanel17.Size = new System.Drawing.Size(120, 35);
+            this.aPanel17.TabIndex = 222;
+            // 
+            // aLabel10
+            // 
+            this.aLabel10.AutoSize = true;
+            this.aLabel10.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aLabel10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.aLabel10.Location = new System.Drawing.Point(26, 6);
+            this.aLabel10.Name = "aLabel10";
+            this.aLabel10.Size = new System.Drawing.Size(80, 17);
+            this.aLabel10.TabIndex = 55;
+            this.aLabel10.Text = "*Screen코드";
+            // 
             // aPanel19
             // 
             this.aPanel19.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -305,6 +320,24 @@
             this.aPanel19.Name = "aPanel19";
             this.aPanel19.Size = new System.Drawing.Size(170, 35);
             this.aPanel19.TabIndex = 223;
+            // 
+            // aPanel26
+            // 
+            this.aPanel26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.aPanel26.Controls.Add(this.lblscreencode);
+            this.aPanel26.Location = new System.Drawing.Point(3, 2);
+            this.aPanel26.Name = "aPanel26";
+            this.aPanel26.Size = new System.Drawing.Size(160, 27);
+            this.aPanel26.TabIndex = 152;
+            // 
+            // lblscreencode
+            // 
+            this.lblscreencode.AutoSize = true;
+            this.lblscreencode.Location = new System.Drawing.Point(11, 3);
+            this.lblscreencode.Name = "lblscreencode";
+            this.lblscreencode.Size = new System.Drawing.Size(49, 12);
+            this.lblscreencode.TabIndex = 150;
+            this.lblscreencode.Text = "aLabel3";
             // 
             // aPanel20
             // 
@@ -402,8 +435,18 @@
             this.aPanel25.Size = new System.Drawing.Size(170, 35);
             this.aPanel25.TabIndex = 225;
             // 
+            // cbbScreenname
+            // 
+            this.cbbScreenname.FormattingEnabled = true;
+            this.cbbScreenname.Location = new System.Drawing.Point(3, 6);
+            this.cbbScreenname.Name = "cbbScreenname";
+            this.cbbScreenname.Size = new System.Drawing.Size(160, 20);
+            this.cbbScreenname.TabIndex = 231;
+            this.cbbScreenname.SelectedIndexChanged += new System.EventHandler(this.CbbScreenname_SelectedIndexChanged);
+            // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.aButton2);
             this.tabPage2.Controls.Add(this.aButton1);
             this.tabPage2.Controls.Add(this.aPanel1);
             this.tabPage2.Controls.Add(this.aPanel9);
@@ -421,13 +464,25 @@
             this.tabPage2.Text = "부모메뉴등록";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // aButton2
+            // 
+            this.aButton2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.aButton2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.aButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.aButton2.Location = new System.Drawing.Point(171, 269);
+            this.aButton2.Name = "aButton2";
+            this.aButton2.Size = new System.Drawing.Size(120, 44);
+            this.aButton2.TabIndex = 202;
+            this.aButton2.Text = "취소";
+            this.aButton2.UseVisualStyleBackColor = false;
+            // 
             // aButton1
             // 
             this.aButton1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton1.Location = new System.Drawing.Point(65, 265);
+            this.aButton1.Location = new System.Drawing.Point(46, 269);
             this.aButton1.Name = "aButton1";
-            this.aButton1.Size = new System.Drawing.Size(195, 44);
+            this.aButton1.Size = new System.Drawing.Size(122, 44);
             this.aButton1.TabIndex = 201;
             this.aButton1.Text = "등록";
             this.aButton1.UseVisualStyleBackColor = false;
@@ -613,37 +668,11 @@
             this.txtparentcode.TabIndex = 63;
             this.txtparentcode.Text = "검사코드를 입력하세요.";
             // 
-            // cbbScreenname
-            // 
-            this.cbbScreenname.FormattingEnabled = true;
-            this.cbbScreenname.Location = new System.Drawing.Point(3, 6);
-            this.cbbScreenname.Name = "cbbScreenname";
-            this.cbbScreenname.Size = new System.Drawing.Size(160, 20);
-            this.cbbScreenname.TabIndex = 231;
-            this.cbbScreenname.SelectedIndexChanged += new System.EventHandler(this.CbbScreenname_SelectedIndexChanged);
-            // 
-            // aPanel26
-            // 
-            this.aPanel26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.aPanel26.Controls.Add(this.lblscreencode);
-            this.aPanel26.Location = new System.Drawing.Point(3, 2);
-            this.aPanel26.Name = "aPanel26";
-            this.aPanel26.Size = new System.Drawing.Size(160, 27);
-            this.aPanel26.TabIndex = 152;
-            // 
-            // lblscreencode
-            // 
-            this.lblscreencode.AutoSize = true;
-            this.lblscreencode.Location = new System.Drawing.Point(11, 3);
-            this.lblscreencode.Name = "lblscreencode";
-            this.lblscreencode.Size = new System.Drawing.Size(49, 12);
-            this.lblscreencode.TabIndex = 150;
-            this.lblscreencode.Text = "aLabel3";
-            // 
             // MSS_SYS_001_1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(384, 411);
+            this.ControlBox = false;
             this.Controls.Add(this.tabControl1);
             this.Name = "MSS_SYS_001_1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -666,6 +695,8 @@
             this.aPanel17.ResumeLayout(false);
             this.aPanel17.PerformLayout();
             this.aPanel19.ResumeLayout(false);
+            this.aPanel26.ResumeLayout(false);
+            this.aPanel26.PerformLayout();
             this.aPanel20.ResumeLayout(false);
             this.aPanel20.PerformLayout();
             this.aPanel21.ResumeLayout(false);
@@ -694,8 +725,6 @@
             this.aPanel16.PerformLayout();
             this.aPanel18.ResumeLayout(false);
             this.aPanel18.PerformLayout();
-            this.aPanel26.ResumeLayout(false);
-            this.aPanel26.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -753,5 +782,7 @@
         private CustomControls.APanel aPanel26;
         private CustomControls.ALabel lblscreencode;
         private CustomControls.AComboBox cbbScreenname;
+        private CustomControls.AButton aButton3;
+        private CustomControls.AButton aButton2;
     }
 }

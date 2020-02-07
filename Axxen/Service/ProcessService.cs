@@ -18,6 +18,10 @@ namespace Service
         {
             DAC = new ProcessDAC();
         }
+        public bool DeleteProcess_MasterVO(string processcode)
+        {
+            return DAC.DeleteProcess_MasterVO(processcode);
+        }
         public List<Process_MasterVO> GetAllProcess_Master()
         {
 

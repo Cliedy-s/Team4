@@ -129,7 +129,7 @@
             this.nudsample.Location = new System.Drawing.Point(3, 2);
             this.nudsample.Name = "nudsample";
             this.nudsample.Size = new System.Drawing.Size(160, 23);
-            this.nudsample.TabIndex = 1;
+            this.nudsample.TabIndex = 7;
             // 
             // nudlsl
             // 
@@ -137,7 +137,7 @@
             this.nudlsl.Location = new System.Drawing.Point(3, 2);
             this.nudlsl.Name = "nudlsl";
             this.nudlsl.Size = new System.Drawing.Size(160, 23);
-            this.nudlsl.TabIndex = 1;
+            this.nudlsl.TabIndex = 6;
             // 
             // aPanel29
             // 
@@ -158,7 +158,7 @@
             this.txtRemark.Multiline = true;
             this.txtRemark.Name = "txtRemark";
             this.txtRemark.Size = new System.Drawing.Size(338, 72);
-            this.txtRemark.TabIndex = 159;
+            this.txtRemark.TabIndex = 9;
             this.txtRemark.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // aPanel21
@@ -209,7 +209,7 @@
             this.txttype.MaxLength = 20;
             this.txttype.Name = "txttype";
             this.txttype.Size = new System.Drawing.Size(160, 23);
-            this.txttype.TabIndex = 158;
+            this.txttype.TabIndex = 8;
             this.txttype.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // aPanel34
@@ -269,7 +269,7 @@
             this.nudsl.Location = new System.Drawing.Point(1, 2);
             this.nudsl.Name = "nudsl";
             this.nudsl.Size = new System.Drawing.Size(160, 23);
-            this.nudsl.TabIndex = 0;
+            this.nudsl.TabIndex = 5;
             // 
             // aPanel26
             // 
@@ -337,7 +337,7 @@
             this.nudusl.Location = new System.Drawing.Point(1, 3);
             this.nudusl.Name = "nudusl";
             this.nudusl.Size = new System.Drawing.Size(160, 23);
-            this.nudusl.TabIndex = 150;
+            this.nudusl.TabIndex = 4;
             // 
             // aPanel12
             // 
@@ -376,7 +376,6 @@
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnSave.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Location = new System.Drawing.Point(332, 11);
@@ -531,7 +530,7 @@
             this.txtInspect_name.MaxLength = 20;
             this.txtInspect_name.Name = "txtInspect_name";
             this.txtInspect_name.Size = new System.Drawing.Size(160, 23);
-            this.txtInspect_name.TabIndex = 157;
+            this.txtInspect_name.TabIndex = 1;
             this.txtInspect_name.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // aPanel4
@@ -586,7 +585,7 @@
             this.cbbItem.Location = new System.Drawing.Point(2, 3);
             this.cbbItem.Name = "cbbItem";
             this.cbbItem.Size = new System.Drawing.Size(160, 23);
-            this.cbbItem.TabIndex = 154;
+            this.cbbItem.TabIndex = 2;
             this.cbbItem.SelectedIndexChanged += new System.EventHandler(this.CbbItem_SelectedIndexChanged);
             // 
             // aPanel5
@@ -662,7 +661,7 @@
             this.cbbProcess.Location = new System.Drawing.Point(2, 3);
             this.cbbProcess.Name = "cbbProcess";
             this.cbbProcess.Size = new System.Drawing.Size(160, 23);
-            this.cbbProcess.TabIndex = 154;
+            this.cbbProcess.TabIndex = 3;
             this.cbbProcess.SelectedIndexChanged += new System.EventHandler(this.CbbProcess_SelectedIndexChanged);
             // 
             // aPanel16
@@ -725,13 +724,14 @@
             this.txtInspect_code.MaxLength = 20;
             this.txtInspect_code.Name = "txtInspect_code";
             this.txtInspect_code.Size = new System.Drawing.Size(160, 23);
-            this.txtInspect_code.TabIndex = 156;
+            this.txtInspect_code.TabIndex = 0;
             this.txtInspect_code.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // MDS_SDS_006_1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(499, 604);
+            this.ControlBox = false;
             this.Controls.Add(this.aPanel19);
             this.Controls.Add(this.aPanel20);
             this.Controls.Add(this.aPanel10);

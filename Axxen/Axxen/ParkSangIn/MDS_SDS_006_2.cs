@@ -151,11 +151,14 @@ namespace Axxen
                 }
                 if (service.InsertInspectSpec(addlist))
                 {
-                    MessageBox.Show("저장 완료", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+
                 }
                 else
                 {
                     MessageBox.Show("이미 등록된 검사항목입니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
                 }
             }
             catch (Exception err)

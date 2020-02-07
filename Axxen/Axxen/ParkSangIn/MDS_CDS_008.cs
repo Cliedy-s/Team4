@@ -15,7 +15,7 @@ namespace Axxen
     public partial class MDS_CDS_008 : Axxen.BaseForm
     {
 
-        List<GVMasterVO> GVlist; //비가동 대분류
+        List<GVMasterVO> GVlist; //대차
         GV_MasterService GVservice = new GV_MasterService();
         RadioButton rdbgroup;
         public MDS_CDS_008()
@@ -31,7 +31,7 @@ namespace Axxen
             ((MainForm)this.MdiParent).MyUpdateEvent += new System.EventHandler(this.MyUpdateShow);//입력이벤트 등록
             ((MainForm)this.MdiParent).InsertFormEvent += new System.EventHandler(this.InsertFormShow);//입력이벤트 등록
             ((MainForm)this.MdiParent).RefreshFormEvent += new EventHandler(this.RefreshFormShow);
-
+            ((MainForm)this.MdiParent).MyDeleteEvent += new EventHandler(this.MyDelete);
 
             DatagridviewDesigns.SetDesign(dgvGroup);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "대차코드", "GV_Code", true, 210, default, true);
@@ -125,6 +125,34 @@ namespace Axxen
                 MessageBox.Show(err.Message);
             }
         }
+        private void MyDelete(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
+                {
+                    if (MessageBox.Show(dgvGroup.SelectedRows[0].Cells[1].Value.ToString() + "를 삭제하시겠습니까?", "알림", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+             
+                //    MessageBox.Show(dgvMi.SelectedRows[0].Cells[0].Value.ToString());
+                if (GVservice.DeleteGVMasterVO(dgvGroup.SelectedRows[0].Cells[0].Value.ToString()))
+                {
+                    GetAllUserGroup();
+                    ControlSetting();
+                }
+                else
+                {
+                    MessageBox.Show("삭제실패");
+                }
+                    }
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
+
+        }
         /// <summary>
         /// 새로고침 이벤트 메서드
         /// </summary>
@@ -168,6 +196,7 @@ namespace Axxen
             ((MainForm)this.MdiParent).MyUpdateEvent -= new System.EventHandler(this.MyUpdateShow);//입력이벤트 등록
             ((MainForm)this.MdiParent).InsertFormEvent -= new System.EventHandler(this.InsertFormShow);//입력이벤트 등록
             ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow);
+            ((MainForm)this.MdiParent).MyDeleteEvent -= new EventHandler(this.MyDelete);
         }
 
         private void DgvGroup_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

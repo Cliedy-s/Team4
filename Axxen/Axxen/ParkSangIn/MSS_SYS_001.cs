@@ -99,9 +99,12 @@ namespace Axxen
         private void MyDelete(object sender, EventArgs e)
         {
 
+            try
+            {
+                if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
+                {
 
-
-            if (lbldeletecheck1.Text == "1")
+                    if (lbldeletecheck1.Text == "1")
             {
                 if (MessageBox.Show(dgvParent.SelectedRows[0].Cells[0].Value.ToString() + "하위항목도 모두 삭제됩니다. 메뉴를 삭제하시겠습니까?", "알림", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
@@ -126,6 +129,13 @@ namespace Axxen
                         MessageBox.Show(dgvParent.SelectedRows[0].Cells[0].Value.ToString() + "가 삭제되었습니다.", "알림", MessageBoxButtons.YesNo);
                               }
                 }
+                    }
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+                Program.Log.WriteError(err.Message);
             }
 
         }

@@ -182,7 +182,7 @@
             this.txtCode.Name = "txtCode";
             this.txtCode.PlaceHolderText = "이름을 입력하세요.";
             this.txtCode.Size = new System.Drawing.Size(160, 25);
-            this.txtCode.TabIndex = 61;
+            this.txtCode.TabIndex = 0;
             this.txtCode.Text = "품목코드를 입력하세요.";
             // 
             // lblDay
@@ -312,20 +312,19 @@
             this.btnCencle.Location = new System.Drawing.Point(562, 7);
             this.btnCencle.Name = "btnCencle";
             this.btnCencle.Size = new System.Drawing.Size(75, 23);
-            this.btnCencle.TabIndex = 45;
+            this.btnCencle.TabIndex = 21;
             this.btnCencle.Text = "취소";
             this.btnCencle.UseVisualStyleBackColor = false;
             // 
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnSave.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Location = new System.Drawing.Point(481, 7);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 0;
+            this.btnSave.TabIndex = 20;
             this.btnSave.Text = "저장";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
@@ -499,7 +498,7 @@
             this.txtName.Name = "txtName";
             this.txtName.PlaceHolderText = "이름을 입력하세요.";
             this.txtName.Size = new System.Drawing.Size(160, 25);
-            this.txtName.TabIndex = 62;
+            this.txtName.TabIndex = 1;
             this.txtName.Text = "품목명을 입력하세요.";
             // 
             // aPanel4
@@ -529,7 +528,7 @@
             this.txteng.Name = "txteng";
             this.txteng.PlaceHolderText = "이름을 입력하세요.";
             this.txteng.Size = new System.Drawing.Size(160, 25);
-            this.txteng.TabIndex = 62;
+            this.txteng.TabIndex = 2;
             this.txteng.Text = "영문명을 입력하세요.";
             // 
             // aPanel7
@@ -559,7 +558,7 @@
             this.txtengAs.Name = "txtengAs";
             this.txtengAs.PlaceHolderText = "이름을 입력하세요.";
             this.txtengAs.Size = new System.Drawing.Size(160, 25);
-            this.txtengAs.TabIndex = 62;
+            this.txtengAs.TabIndex = 3;
             this.txtengAs.Text = "약어를 입력하세요.";
             // 
             // aPanel10
@@ -589,7 +588,7 @@
             this.txtType.Name = "txtType";
             this.txtType.PlaceHolderText = "이름을 입력하세요.";
             this.txtType.Size = new System.Drawing.Size(160, 25);
-            this.txtType.TabIndex = 62;
+            this.txtType.TabIndex = 4;
             this.txtType.Text = "유형을 입력하세요.";
             // 
             // aPanel12
@@ -619,7 +618,7 @@
             this.txtSpec.Name = "txtSpec";
             this.txtSpec.PlaceHolderText = "이름을 입력하세요.";
             this.txtSpec.Size = new System.Drawing.Size(160, 25);
-            this.txtSpec.TabIndex = 62;
+            this.txtSpec.TabIndex = 5;
             this.txtSpec.Text = "규격을 입력하세요.";
             // 
             // aPanel14
@@ -649,7 +648,7 @@
             this.nudunit.Name = "nudunit";
             this.nudunit.PlaceHolderText = "이름을 입력하세요.";
             this.nudunit.Size = new System.Drawing.Size(160, 25);
-            this.nudunit.TabIndex = 62;
+            this.nudunit.TabIndex = 6;
             this.nudunit.Text = "단위를 입력하세요.";
             // 
             // aPanel16
@@ -677,7 +676,7 @@
             this.nudStock.Location = new System.Drawing.Point(3, 2);
             this.nudStock.Name = "nudStock";
             this.nudStock.Size = new System.Drawing.Size(160, 23);
-            this.nudStock.TabIndex = 1;
+            this.nudStock.TabIndex = 7;
             // 
             // aPanel18
             // 
@@ -703,7 +702,7 @@
             this.nudcavity.Location = new System.Drawing.Point(3, 2);
             this.nudcavity.Name = "nudcavity";
             this.nudcavity.Size = new System.Drawing.Size(160, 23);
-            this.nudcavity.TabIndex = 1;
+            this.nudcavity.TabIndex = 10;
             // 
             // aPanel20
             // 
@@ -730,7 +729,7 @@
             this.nudbatch.Location = new System.Drawing.Point(3, 2);
             this.nudbatch.Name = "nudbatch";
             this.nudbatch.Size = new System.Drawing.Size(160, 23);
-            this.nudbatch.TabIndex = 1;
+            this.nudbatch.TabIndex = 9;
             // 
             // aPanel22
             // 
@@ -747,7 +746,7 @@
             this.nudhour.Location = new System.Drawing.Point(3, 2);
             this.nudhour.Name = "nudhour";
             this.nudhour.Size = new System.Drawing.Size(160, 23);
-            this.nudhour.TabIndex = 1;
+            this.nudhour.TabIndex = 8;
             // 
             // aPanel23
             // 
@@ -783,7 +782,7 @@
             this.nudheatgv.Location = new System.Drawing.Point(3, 2);
             this.nudheatgv.Name = "nudheatgv";
             this.nudheatgv.Size = new System.Drawing.Size(160, 23);
-            this.nudheatgv.TabIndex = 1;
+            this.nudheatgv.TabIndex = 14;
             // 
             // aPanel28
             // 
@@ -809,7 +808,7 @@
             this.nuddrgdv.Location = new System.Drawing.Point(3, 2);
             this.nuddrgdv.Name = "nuddrgdv";
             this.nuddrgdv.Size = new System.Drawing.Size(160, 23);
-            this.nuddrgdv.TabIndex = 1;
+            this.nuddrgdv.TabIndex = 13;
             // 
             // aPanel30
             // 
@@ -825,7 +824,7 @@
             this.nudshotper.Location = new System.Drawing.Point(3, 2);
             this.nudshotper.Name = "nudshotper";
             this.nudshotper.Size = new System.Drawing.Size(160, 23);
-            this.nudshotper.TabIndex = 1;
+            this.nudshotper.TabIndex = 12;
             // 
             // aPanel31
             // 
@@ -861,7 +860,7 @@
             this.nudlinper.Location = new System.Drawing.Point(3, 2);
             this.nudlinper.Name = "nudlinper";
             this.nudlinper.Size = new System.Drawing.Size(160, 23);
-            this.nudlinper.TabIndex = 1;
+            this.nudlinper.TabIndex = 11;
             // 
             // aPanel34
             // 
@@ -888,7 +887,7 @@
             this.cbbLevel_1.Location = new System.Drawing.Point(2, 3);
             this.cbbLevel_1.Name = "cbbLevel_1";
             this.cbbLevel_1.Size = new System.Drawing.Size(160, 23);
-            this.cbbLevel_1.TabIndex = 154;
+            this.cbbLevel_1.TabIndex = 15;
             // 
             // aPanel36
             // 
@@ -947,7 +946,7 @@
             this.cbbLevel_3.Location = new System.Drawing.Point(2, 3);
             this.cbbLevel_3.Name = "cbbLevel_3";
             this.cbbLevel_3.Size = new System.Drawing.Size(160, 23);
-            this.cbbLevel_3.TabIndex = 154;
+            this.cbbLevel_3.TabIndex = 17;
             // 
             // aPanel43
             // 
@@ -964,7 +963,7 @@
             this.cbbLevel_4.Location = new System.Drawing.Point(2, 3);
             this.cbbLevel_4.Name = "cbbLevel_4";
             this.cbbLevel_4.Size = new System.Drawing.Size(160, 23);
-            this.cbbLevel_4.TabIndex = 154;
+            this.cbbLevel_4.TabIndex = 18;
             // 
             // aPanel44
             // 
@@ -1002,7 +1001,7 @@
             this.cbbLevel_2.Location = new System.Drawing.Point(2, 3);
             this.cbbLevel_2.Name = "cbbLevel_2";
             this.cbbLevel_2.Size = new System.Drawing.Size(160, 23);
-            this.cbbLevel_2.TabIndex = 154;
+            this.cbbLevel_2.TabIndex = 16;
             // 
             // aPanel38
             // 
@@ -1040,7 +1039,7 @@
             this.cbbLevel_5.Location = new System.Drawing.Point(2, 3);
             this.cbbLevel_5.Name = "cbbLevel_5";
             this.cbbLevel_5.Size = new System.Drawing.Size(160, 23);
-            this.cbbLevel_5.TabIndex = 154;
+            this.cbbLevel_5.TabIndex = 19;
             // 
             // aPanel40
             // 
@@ -1076,6 +1075,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(642, 503);
+            this.ControlBox = false;
             this.Controls.Add(this.aLabel10);
             this.Controls.Add(this.aPanel39);
             this.Controls.Add(this.aPanel37);

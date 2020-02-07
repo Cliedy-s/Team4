@@ -50,7 +50,7 @@
             this.aPanel7 = new Axxen.CustomControls.APanel();
             this.aLabel2 = new Axxen.CustomControls.ALabel();
             this.aPanel6 = new Axxen.CustomControls.APanel();
-            this.txtCondition_Name = new CLIP.eForm.Consent.Standard.Management.UI.PlaceHolderTextBox();
+            this.txtCondition_Name = new Axxen.CustomControls.ATextBox();
             this.aPanel4 = new Axxen.CustomControls.APanel();
             this.aLabel4 = new Axxen.CustomControls.ALabel();
             this.aPanel2 = new Axxen.CustomControls.APanel();
@@ -60,14 +60,13 @@
             this.cbbItem = new Axxen.CustomControls.AComboBox();
             this.aPanel5 = new Axxen.CustomControls.APanel();
             this.aLabel1 = new Axxen.CustomControls.ALabel();
-            this.txtCondition_Code = new CLIP.eForm.Consent.Standard.Management.UI.PlaceHolderTextBox();
             this.nudlsl = new System.Windows.Forms.NumericUpDown();
             this.aPanel29 = new Axxen.CustomControls.APanel();
-            this.txtRemark = new CLIP.eForm.Consent.Standard.Management.UI.PlaceHolderTextBox();
+            this.txtRemark = new Axxen.CustomControls.ATextBox();
             this.aPanel31 = new Axxen.CustomControls.APanel();
             this.aLabel16 = new Axxen.CustomControls.ALabel();
             this.aPanel33 = new Axxen.CustomControls.APanel();
-            this.txttype = new CLIP.eForm.Consent.Standard.Management.UI.PlaceHolderTextBox();
+            this.txttype = new Axxen.CustomControls.ATextBox();
             this.aPanel34 = new Axxen.CustomControls.APanel();
             this.aLabel18 = new Axxen.CustomControls.ALabel();
             this.aPanel25 = new Axxen.CustomControls.APanel();
@@ -85,6 +84,7 @@
             this.btnSave = new Axxen.CustomControls.AButton();
             this.aPanel9 = new Axxen.CustomControls.APanel();
             this.aPanel20 = new Axxen.CustomControls.APanel();
+            this.txtCondition_Code = new Axxen.CustomControls.ATextBox();
             this.aPanel19.SuspendLayout();
             this.aPanel15.SuspendLayout();
             this.aPanel16.SuspendLayout();
@@ -153,7 +153,7 @@
             this.aLabel8.AutoSize = true;
             this.aLabel8.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aLabel8.Location = new System.Drawing.Point(29, 5);
+            this.aLabel8.Location = new System.Drawing.Point(26, 7);
             this.aLabel8.Name = "aLabel8";
             this.aLabel8.Size = new System.Drawing.Size(66, 17);
             this.aLabel8.TabIndex = 55;
@@ -174,7 +174,7 @@
             this.cbbwork.Location = new System.Drawing.Point(2, 3);
             this.cbbwork.Name = "cbbwork";
             this.cbbwork.Size = new System.Drawing.Size(160, 23);
-            this.cbbwork.TabIndex = 154;
+            this.cbbwork.TabIndex = 3;
             this.cbbwork.SelectedIndexChanged += new System.EventHandler(this.Cbbwork_SelectedIndexChanged);
             // 
             // aPanel16
@@ -192,7 +192,7 @@
             this.aLabel12.AutoSize = true;
             this.aLabel12.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel12.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aLabel12.Location = new System.Drawing.Point(30, 5);
+            this.aLabel12.Location = new System.Drawing.Point(29, 6);
             this.aLabel12.Name = "aLabel12";
             this.aLabel12.Size = new System.Drawing.Size(66, 17);
             this.aLabel12.TabIndex = 54;
@@ -254,7 +254,7 @@
             this.aLabel3.AutoSize = true;
             this.aLabel3.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aLabel3.Location = new System.Drawing.Point(29, 5);
+            this.aLabel3.Location = new System.Drawing.Point(28, 7);
             this.aLabel3.Name = "aLabel3";
             this.aLabel3.Size = new System.Drawing.Size(79, 17);
             this.aLabel3.TabIndex = 55;
@@ -311,7 +311,7 @@
             this.aLabel2.AutoSize = true;
             this.aLabel2.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aLabel2.Location = new System.Drawing.Point(26, 5);
+            this.aLabel2.Location = new System.Drawing.Point(28, 7);
             this.aLabel2.Name = "aLabel2";
             this.aLabel2.Size = new System.Drawing.Size(53, 17);
             this.aLabel2.TabIndex = 53;
@@ -328,15 +328,15 @@
             // 
             // txtCondition_Name
             // 
-            this.txtCondition_Name.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Italic);
-            this.txtCondition_Name.ForeColor = System.Drawing.Color.Gray;
-            this.txtCondition_Name.Location = new System.Drawing.Point(3, 3);
+            this.txtCondition_Name.BackColor = System.Drawing.Color.White;
+            this.txtCondition_Name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCondition_Name.errorp = null;
+            this.txtCondition_Name.Location = new System.Drawing.Point(3, 4);
             this.txtCondition_Name.MaxLength = 30;
             this.txtCondition_Name.Name = "txtCondition_Name";
-            this.txtCondition_Name.PlaceHolderText = "이름을 입력하세요.";
-            this.txtCondition_Name.Size = new System.Drawing.Size(160, 25);
-            this.txtCondition_Name.TabIndex = 62;
-            this.txtCondition_Name.Text = "검사항목명을 입력하세요.";
+            this.txtCondition_Name.Size = new System.Drawing.Size(160, 23);
+            this.txtCondition_Name.TabIndex = 1;
+            this.txtCondition_Name.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // aPanel4
             // 
@@ -353,7 +353,7 @@
             this.aLabel4.AutoSize = true;
             this.aLabel4.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aLabel4.Location = new System.Drawing.Point(29, 5);
+            this.aLabel4.Location = new System.Drawing.Point(29, 7);
             this.aLabel4.Name = "aLabel4";
             this.aLabel4.Size = new System.Drawing.Size(66, 17);
             this.aLabel4.TabIndex = 55;
@@ -401,7 +401,7 @@
             this.cbbItem.Location = new System.Drawing.Point(2, 3);
             this.cbbItem.Name = "cbbItem";
             this.cbbItem.Size = new System.Drawing.Size(160, 23);
-            this.cbbItem.TabIndex = 154;
+            this.cbbItem.TabIndex = 2;
             this.cbbItem.SelectedIndexChanged += new System.EventHandler(this.CbbItem_SelectedIndexChanged);
             // 
             // aPanel5
@@ -419,23 +419,11 @@
             this.aLabel1.AutoSize = true;
             this.aLabel1.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aLabel1.Location = new System.Drawing.Point(26, 5);
+            this.aLabel1.Location = new System.Drawing.Point(28, 7);
             this.aLabel1.Name = "aLabel1";
             this.aLabel1.Size = new System.Drawing.Size(53, 17);
             this.aLabel1.TabIndex = 54;
             this.aLabel1.Text = "*품목명";
-            // 
-            // txtCondition_Code
-            // 
-            this.txtCondition_Code.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Italic);
-            this.txtCondition_Code.ForeColor = System.Drawing.Color.Gray;
-            this.txtCondition_Code.Location = new System.Drawing.Point(3, 3);
-            this.txtCondition_Code.MaxLength = 20;
-            this.txtCondition_Code.Name = "txtCondition_Code";
-            this.txtCondition_Code.PlaceHolderText = "이름을 입력하세요.";
-            this.txtCondition_Code.Size = new System.Drawing.Size(160, 25);
-            this.txtCondition_Code.TabIndex = 63;
-            this.txtCondition_Code.Text = "검사코드를 입력하세요.";
             // 
             // nudlsl
             // 
@@ -443,36 +431,36 @@
             this.nudlsl.Location = new System.Drawing.Point(3, 2);
             this.nudlsl.Name = "nudlsl";
             this.nudlsl.Size = new System.Drawing.Size(160, 23);
-            this.nudlsl.TabIndex = 1;
+            this.nudlsl.TabIndex = 6;
             // 
             // aPanel29
             // 
             this.aPanel29.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.aPanel29.Controls.Add(this.txtRemark);
-            this.aPanel29.Location = new System.Drawing.Point(142, 443);
+            this.aPanel29.Location = new System.Drawing.Point(142, 439);
             this.aPanel29.Name = "aPanel29";
             this.aPanel29.Size = new System.Drawing.Size(348, 82);
             this.aPanel29.TabIndex = 175;
             // 
             // txtRemark
             // 
-            this.txtRemark.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Italic);
-            this.txtRemark.ForeColor = System.Drawing.Color.Gray;
-            this.txtRemark.Location = new System.Drawing.Point(3, 3);
+            this.txtRemark.BackColor = System.Drawing.Color.White;
+            this.txtRemark.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtRemark.errorp = null;
+            this.txtRemark.Location = new System.Drawing.Point(3, 2);
             this.txtRemark.MaxLength = 100;
             this.txtRemark.Multiline = true;
             this.txtRemark.Name = "txtRemark";
-            this.txtRemark.PlaceHolderText = "이름을 입력하세요.";
             this.txtRemark.Size = new System.Drawing.Size(338, 72);
-            this.txtRemark.TabIndex = 151;
-            this.txtRemark.Text = "비고.";
+            this.txtRemark.TabIndex = 8;
+            this.txtRemark.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // aPanel31
             // 
             this.aPanel31.BackColor = System.Drawing.SystemColors.Info;
             this.aPanel31.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.aPanel31.Controls.Add(this.aLabel16);
-            this.aPanel31.Location = new System.Drawing.Point(21, 441);
+            this.aPanel31.Location = new System.Drawing.Point(21, 437);
             this.aPanel31.Name = "aPanel31";
             this.aPanel31.Size = new System.Drawing.Size(120, 35);
             this.aPanel31.TabIndex = 174;
@@ -482,7 +470,7 @@
             this.aLabel16.AutoSize = true;
             this.aLabel16.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel16.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aLabel16.Location = new System.Drawing.Point(1, 6);
+            this.aLabel16.Location = new System.Drawing.Point(30, 8);
             this.aLabel16.Name = "aLabel16";
             this.aLabel16.Size = new System.Drawing.Size(34, 17);
             this.aLabel16.TabIndex = 82;
@@ -492,29 +480,29 @@
             // 
             this.aPanel33.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.aPanel33.Controls.Add(this.txttype);
-            this.aPanel33.Location = new System.Drawing.Point(142, 408);
+            this.aPanel33.Location = new System.Drawing.Point(142, 404);
             this.aPanel33.Name = "aPanel33";
             this.aPanel33.Size = new System.Drawing.Size(170, 35);
             this.aPanel33.TabIndex = 177;
             // 
             // txttype
             // 
-            this.txttype.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Italic);
-            this.txttype.ForeColor = System.Drawing.Color.Gray;
-            this.txttype.Location = new System.Drawing.Point(3, 3);
+            this.txttype.BackColor = System.Drawing.Color.White;
+            this.txttype.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txttype.errorp = null;
+            this.txttype.Location = new System.Drawing.Point(2, 4);
             this.txttype.MaxLength = 20;
             this.txttype.Name = "txttype";
-            this.txttype.PlaceHolderText = "이름을 입력하세요.";
-            this.txttype.Size = new System.Drawing.Size(160, 25);
-            this.txttype.TabIndex = 150;
-            this.txttype.Text = "단위를 입력하세요.";
+            this.txttype.Size = new System.Drawing.Size(160, 23);
+            this.txttype.TabIndex = 3;
+            this.txttype.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // aPanel34
             // 
             this.aPanel34.BackColor = System.Drawing.SystemColors.Info;
             this.aPanel34.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.aPanel34.Controls.Add(this.aLabel18);
-            this.aPanel34.Location = new System.Drawing.Point(20, 406);
+            this.aPanel34.Location = new System.Drawing.Point(20, 402);
             this.aPanel34.Name = "aPanel34";
             this.aPanel34.Size = new System.Drawing.Size(120, 35);
             this.aPanel34.TabIndex = 176;
@@ -524,7 +512,7 @@
             this.aLabel18.AutoSize = true;
             this.aLabel18.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel18.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aLabel18.Location = new System.Drawing.Point(2, 3);
+            this.aLabel18.Location = new System.Drawing.Point(31, 7);
             this.aLabel18.Name = "aLabel18";
             this.aLabel18.Size = new System.Drawing.Size(34, 17);
             this.aLabel18.TabIndex = 84;
@@ -545,7 +533,7 @@
             this.nudsl.Location = new System.Drawing.Point(1, 2);
             this.nudsl.Name = "nudsl";
             this.nudsl.Size = new System.Drawing.Size(160, 23);
-            this.nudsl.TabIndex = 0;
+            this.nudsl.TabIndex = 5;
             // 
             // aPanel26
             // 
@@ -562,7 +550,7 @@
             this.aLabel10.AutoSize = true;
             this.aLabel10.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aLabel10.Location = new System.Drawing.Point(17, 8);
+            this.aLabel10.Location = new System.Drawing.Point(18, 7);
             this.aLabel10.Name = "aLabel10";
             this.aLabel10.Size = new System.Drawing.Size(87, 17);
             this.aLabel10.TabIndex = 70;
@@ -592,7 +580,7 @@
             this.aLabel11.AutoSize = true;
             this.aLabel11.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aLabel11.Location = new System.Drawing.Point(17, 6);
+            this.aLabel11.Location = new System.Drawing.Point(14, 7);
             this.aLabel11.Name = "aLabel11";
             this.aLabel11.Size = new System.Drawing.Size(94, 17);
             this.aLabel11.TabIndex = 71;
@@ -613,7 +601,7 @@
             this.nudusl.Location = new System.Drawing.Point(1, 3);
             this.nudusl.Name = "nudusl";
             this.nudusl.Size = new System.Drawing.Size(160, 23);
-            this.nudusl.TabIndex = 150;
+            this.nudusl.TabIndex = 4;
             // 
             // aPanel12
             // 
@@ -630,7 +618,7 @@
             this.aLabel6.AutoSize = true;
             this.aLabel6.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aLabel6.Location = new System.Drawing.Point(14, 9);
+            this.aLabel6.Location = new System.Drawing.Point(14, 7);
             this.aLabel6.Name = "aLabel6";
             this.aLabel6.Size = new System.Drawing.Size(97, 17);
             this.aLabel6.TabIndex = 65;
@@ -645,20 +633,19 @@
             this.btnCencle.Location = new System.Drawing.Point(413, 11);
             this.btnCencle.Name = "btnCencle";
             this.btnCencle.Size = new System.Drawing.Size(75, 23);
-            this.btnCencle.TabIndex = 45;
+            this.btnCencle.TabIndex = 10;
             this.btnCencle.Text = "취소";
             this.btnCencle.UseVisualStyleBackColor = false;
             // 
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnSave.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Location = new System.Drawing.Point(332, 11);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 0;
+            this.btnSave.TabIndex = 9;
             this.btnSave.Text = "저장";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
@@ -684,10 +671,23 @@
             this.aPanel20.Size = new System.Drawing.Size(170, 35);
             this.aPanel20.TabIndex = 183;
             // 
+            // txtCondition_Code
+            // 
+            this.txtCondition_Code.BackColor = System.Drawing.Color.White;
+            this.txtCondition_Code.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCondition_Code.errorp = null;
+            this.txtCondition_Code.Location = new System.Drawing.Point(3, 3);
+            this.txtCondition_Code.MaxLength = 20;
+            this.txtCondition_Code.Name = "txtCondition_Code";
+            this.txtCondition_Code.Size = new System.Drawing.Size(160, 23);
+            this.txtCondition_Code.TabIndex = 0;
+            this.txtCondition_Code.txtType = Axxen.CustomControls.TextType.Normal;
+            // 
             // MDS_SDS_007_1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(509, 581);
+            this.ControlBox = false;
             this.Controls.Add(this.aPanel19);
             this.Controls.Add(this.aPanel15);
             this.Controls.Add(this.aPanel16);
@@ -794,7 +794,6 @@
         private CustomControls.APanel aPanel7;
         private CustomControls.ALabel aLabel2;
         private CustomControls.APanel aPanel6;
-        private CLIP.eForm.Consent.Standard.Management.UI.PlaceHolderTextBox txtCondition_Name;
         private CustomControls.APanel aPanel4;
         private CustomControls.ALabel aLabel4;
         private CustomControls.APanel aPanel2;
@@ -804,14 +803,11 @@
         private CustomControls.AComboBox cbbItem;
         private CustomControls.APanel aPanel5;
         private CustomControls.ALabel aLabel1;
-        private CLIP.eForm.Consent.Standard.Management.UI.PlaceHolderTextBox txtCondition_Code;
         private System.Windows.Forms.NumericUpDown nudlsl;
         private CustomControls.APanel aPanel29;
-        private CLIP.eForm.Consent.Standard.Management.UI.PlaceHolderTextBox txtRemark;
         private CustomControls.APanel aPanel31;
         private CustomControls.ALabel aLabel16;
         private CustomControls.APanel aPanel33;
-        private CLIP.eForm.Consent.Standard.Management.UI.PlaceHolderTextBox txttype;
         private CustomControls.APanel aPanel34;
         private CustomControls.ALabel aLabel18;
         private CustomControls.APanel aPanel25;
@@ -829,5 +825,9 @@
         private CustomControls.AButton btnSave;
         private CustomControls.APanel aPanel9;
         private CustomControls.APanel aPanel20;
+        private CustomControls.ATextBox txtCondition_Name;
+        private CustomControls.ATextBox txtRemark;
+        private CustomControls.ATextBox txttype;
+        private CustomControls.ATextBox txtCondition_Code;
     }
 }

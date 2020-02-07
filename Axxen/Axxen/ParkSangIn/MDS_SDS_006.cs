@@ -32,7 +32,7 @@ namespace Axxen
             ((MainForm)this.MdiParent).MyUpdateEvent += new System.EventHandler(this.MyUpdateShow);//입력이벤트 등록
             ((MainForm)this.MdiParent).InsertFormEvent += new System.EventHandler(this.InsertFormShow);//입력이벤트 등록
             ((MainForm)this.MdiParent).RefreshFormEvent += new EventHandler(this.RefreshFormShow);// 수정
-
+            ((MainForm)this.MdiParent).MyDeleteEvent += new EventHandler(this.MyDelete);
 
             DatagridviewDesigns.SetDesign(dgvItem);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "품목코드", "Item_Code", true, 210, default, true);
@@ -76,13 +76,13 @@ namespace Axxen
 
                 Itemlist = new List<Item_MasterVO>(); //품목전체
                 Itemlist = itemservice.GetAllItem_Master();
-                dgvItem.DataSource = Itemlist;
+                dgvItem.DataSource = Itemlist.FindAll(item=>item.Use_YN.Equals("Y"));
 
                 inspectlist = new List<InspectSpecVO>();
-                inspectlist= inspectservice.GetAll();//품목규격전체
+                inspectlist= inspectservice.GetAll().FindAll(item => item.Use_YN.Equals("Y")); ;//품목규격전체
 
                 processlist = new List<Process_MasterVO>(); //공정 목록
-                processlist = processService.GetAllProcess_Master();
+                processlist = processService.GetAllProcess_Master().FindAll(item => item.Use_YN.Equals("Y"));
         
                 dgvinspect.DataSource = inspectlist.FindAll(item => item.Item_Code == dgvItem.SelectedRows[0].Cells[0].Value.ToString()); 
             }
@@ -125,18 +125,21 @@ namespace Axxen
             {
                 if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
                 {
-                   if (dgvinspect.SelectedRows[0].Cells[0].Value != null)
+                   if (dgvinspect.RowCount>0)
                     {
                         MDS_SDS_006_1 frm = new MDS_SDS_006_1();
 
                         frm.updateinspectitem = inspectlist.Find(item => item.Item_Code == dgvinspect.SelectedRows[0].Cells[0].Value.ToString() && item.Process_code == dgvinspect.SelectedRows[0].Cells[1].Value.ToString() && item.Inspect_code == dgvinspect.SelectedRows[0].Cells[2].Value.ToString());
-                     
-             
-                        frm.ShowDialog();
+
+                        if (frm.ShowDialog() == DialogResult.OK)
+                        {
+
+                            MessageBox.Show("저장 완료", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("품질귝격을 선택해주세요.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("품질규격이 없습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
                 }
@@ -163,7 +166,38 @@ namespace Axxen
                 {
                     MDS_SDS_006_1 frm = new MDS_SDS_006_1();
 
-                    frm.ShowDialog();
+                 if(frm.ShowDialog() == DialogResult.OK) { 
+
+                    MessageBox.Show("저장 완료", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+                Program.Log.WriteError(err.Message);
+            }
+        }
+        private void MyDelete(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
+                {
+
+                    if (MessageBox.Show(dgvinspect.SelectedRows[0].Cells[3].Value.ToString() + "를 삭제하시겠습니까?", "알림", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {                
+                        // MessageBox.Show(dgvMainGrid.SelectedRows[0].Cells[0].Value.ToString());
+                        if (inspectservice.DeleteInspectSpecVO(dgvinspect.SelectedRows[0].Cells[0].Value.ToString(), dgvinspect.SelectedRows[0].Cells[1].Value.ToString(), dgvinspect.SelectedRows[0].Cells[2].Value.ToString()))
+                        {
+                            GetAllItem();
+                            ControlSetting();//콤보박스 
+                        }
+                        else
+                        {
+                            MessageBox.Show("삭제실패");
+                        }
+                    }
                 }
             }
             catch (Exception err)
@@ -218,7 +252,10 @@ namespace Axxen
 
             frm.itemCode = lblItem.Text;
             frm.Process_code = lblprocess.Text;
-            frm.ShowDialog();
+          if(  frm.ShowDialog()  == DialogResult.OK)
+            {
+                MessageBox.Show("품목이 복사되었습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
 
@@ -271,6 +308,7 @@ namespace Axxen
             ((MainForm)this.MdiParent).MyUpdateEvent -= new System.EventHandler(this.MyUpdateShow);//입력이벤트 등록
             ((MainForm)this.MdiParent).InsertFormEvent -= new System.EventHandler(this.InsertFormShow);//입력이벤트 등록
             ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow);// 수정
+            ((MainForm)this.MdiParent).MyDeleteEvent -= new EventHandler(this.MyDelete);
         }
     }
 }

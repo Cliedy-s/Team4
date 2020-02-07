@@ -84,10 +84,13 @@ namespace Axxen
         private void MyDelete(object sender, EventArgs e)
         {
 
-      
 
+            try
+            {
+                if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
+                {
 
-            if (MessageBox.Show(aDataGridView2.SelectedRows[0].Cells[1].Value.ToString() + "를 삭제하시겠습니까?", "알림", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show(aDataGridView2.SelectedRows[0].Cells[1].Value.ToString() + "를 삭제하시겠습니까?", "알림", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 //    MessageBox.Show(dgvMi.SelectedRows[0].Cells[0].Value.ToString());
                 if (miservice.DeleteDef_MiVO(aDataGridView2.SelectedRows[0].Cells[0].Value.ToString()))
@@ -98,6 +101,13 @@ namespace Axxen
                 {
                     MessageBox.Show("삭제실패");
                 }
+            }
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+                Program.Log.WriteError(err.Message);
             }
 
         }
