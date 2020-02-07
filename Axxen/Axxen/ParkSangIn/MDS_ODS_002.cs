@@ -93,12 +93,12 @@ namespace Axxen
                 {
                     if (dgvWork.SelectedRows[0].Cells[0].Value != null)
                     {
-                        MDS_SDS_006_1 frm = new MDS_SDS_006_1();
+                       // MDS_SDS_006_1 frm = new MDS_SDS_006_1();
 
                         //frm.updateinspectitem = worklist.Find(item => item.Item_Code == dgvinspect.SelectedRows[0].Cells[0].Value.ToString() && item.Process_code == dgvinspect.SelectedRows[0].Cells[1].Value.ToString() && item.Inspect_code == dgvinspect.SelectedRows[0].Cells[2].Value.ToString());
 
 
-                        frm.ShowDialog();
+                      //  frm.ShowDialog();
                     }
                     else
                     {
