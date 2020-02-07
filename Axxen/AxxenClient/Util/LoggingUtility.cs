@@ -12,7 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Axxen
+namespace AxxenClient.Util
 {
     public class LoggingUtility
     {

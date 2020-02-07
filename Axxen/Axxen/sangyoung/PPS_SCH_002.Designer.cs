@@ -44,6 +44,7 @@
             this.aLabel5 = new Axxen.CustomControls.ALabel();
             this.numPlanQuantity = new System.Windows.Forms.NumericUpDown();
             this.aDateTimePickerSearch1 = new Axxen.CustomControls.ADateTimePickerSearch();
+            this.btnExcel = new Axxen.CustomControls.AButton();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsbtnSave = new System.Windows.Forms.ToolStripButton();
             this.aPanel2.SuspendLayout();
@@ -57,12 +58,15 @@
             // 
             // aPanel2
             // 
+            this.aPanel2.Controls.Add(this.btnExcel);
             this.aPanel2.Controls.Add(this.aDateTimePickerSearch1);
             this.aPanel2.Controls.Add(this.dotWorkCenter);
             this.aPanel2.Controls.Add(this.dotProcess);
             this.aPanel2.Controls.Add(this.btnWorkCancle);
             this.aPanel2.Controls.Add(this.btnWoFinish);
             this.aPanel2.Controls.Add(this.aLabel1);
+            this.aPanel2.Location = new System.Drawing.Point(12, 18);
+            this.aPanel2.Size = new System.Drawing.Size(1129, 74);
             // 
             // aSplitContainer1
             // 
@@ -103,7 +107,7 @@
             this.dotWorkCenter.CodeType = Axxen.CustomControls.DataType.WorkCenters;
             this.dotWorkCenter.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dotWorkCenter.lblNameText = "작업장";
-            this.dotWorkCenter.Location = new System.Drawing.Point(702, 26);
+            this.dotWorkCenter.Location = new System.Drawing.Point(664, 26);
             this.dotWorkCenter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dotWorkCenter.Name = "dotWorkCenter";
             this.dotWorkCenter.Size = new System.Drawing.Size(229, 27);
@@ -118,7 +122,7 @@
             this.dotProcess.CodeType = Axxen.CustomControls.DataType.Processes;
             this.dotProcess.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dotProcess.lblNameText = "공정";
-            this.dotProcess.Location = new System.Drawing.Point(454, 26);
+            this.dotProcess.Location = new System.Drawing.Point(437, 26);
             this.dotProcess.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dotProcess.Name = "dotProcess";
             this.dotProcess.Size = new System.Drawing.Size(221, 27);
@@ -132,9 +136,9 @@
             this.btnWorkCancle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnWorkCancle.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnWorkCancle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnWorkCancle.Location = new System.Drawing.Point(963, 42);
+            this.btnWorkCancle.Location = new System.Drawing.Point(899, 39);
             this.btnWorkCancle.Name = "btnWorkCancle";
-            this.btnWorkCancle.Size = new System.Drawing.Size(130, 23);
+            this.btnWorkCancle.Size = new System.Drawing.Size(120, 23);
             this.btnWorkCancle.TabIndex = 16;
             this.btnWorkCancle.Text = "작업지시 마감취소";
             this.btnWorkCancle.UseVisualStyleBackColor = false;
@@ -145,9 +149,9 @@
             this.btnWoFinish.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnWoFinish.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnWoFinish.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnWoFinish.Location = new System.Drawing.Point(963, 13);
+            this.btnWoFinish.Location = new System.Drawing.Point(899, 10);
             this.btnWoFinish.Name = "btnWoFinish";
-            this.btnWoFinish.Size = new System.Drawing.Size(130, 23);
+            this.btnWoFinish.Size = new System.Drawing.Size(120, 23);
             this.btnWoFinish.TabIndex = 17;
             this.btnWoFinish.Text = "작업지시 마감";
             this.btnWoFinish.UseVisualStyleBackColor = false;
@@ -267,8 +271,8 @@
             // 
             // aDateTimePickerSearch1
             // 
-            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 1, 24, 17, 52, 39, 816);
-            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 1, 31, 17, 52, 39, 816);
+            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 1, 31, 12, 16, 14, 428);
+            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 2, 7, 12, 16, 14, 428);
             this.aDateTimePickerSearch1.ButtonText = "조회";
             this.aDateTimePickerSearch1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aDateTimePickerSearch1.Location = new System.Drawing.Point(107, 23);
@@ -277,6 +281,19 @@
             this.aDateTimePickerSearch1.Size = new System.Drawing.Size(324, 32);
             this.aDateTimePickerSearch1.TabIndex = 21;
             this.aDateTimePickerSearch1.btnDateTimeSearch_Click += new Axxen.CustomControls.ADateTimePickerSearch.SearchButtonClick(this.ADateTimePickerSearch1_btnDateTimeSearch_Click);
+            // 
+            // btnExcel
+            // 
+            this.btnExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExcel.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcel.Location = new System.Drawing.Point(1044, 10);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(76, 52);
+            this.btnExcel.TabIndex = 22;
+            this.btnExcel.Text = "   엑셀   다운로드";
+            this.btnExcel.UseVisualStyleBackColor = false;
+            this.btnExcel.Click += new System.EventHandler(this.BtnExcel_Click);
             // 
             // toolStrip1
             // 
@@ -351,6 +368,7 @@
         private CustomControls.ADateTimePicker dtpPlanDate;
         private CustomControls.ALabel aLabel3;
         private CustomControls.ADateTimePickerSearch aDateTimePickerSearch1;
+        private CustomControls.AButton btnExcel;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton tsbtnSave;
     }
