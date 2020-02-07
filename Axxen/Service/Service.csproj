@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BoxingGrade_Detail_MasterService.cs" />
     <Compile Include="Condition_History_MasterSerivce.cs" />
     <Compile Include="Condition_Measure_HistoryService.cs" />
     <Compile Include="Condition_Spec_MasterService.cs" />

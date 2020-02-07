@@ -58,8 +58,8 @@
             // 
             // aDateTimePickerSearch1
             // 
-            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 1, 31, 14, 34, 17, 189);
-            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 2, 7, 14, 34, 17, 189);
+            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 1, 31, 15, 39, 11, 630);
+            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 2, 7, 15, 39, 11, 630);
             this.aDateTimePickerSearch1.ButtonText = "조회";
             this.aDateTimePickerSearch1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aDateTimePickerSearch1.Location = new System.Drawing.Point(88, 23);
@@ -88,11 +88,11 @@
             // 
             this.btnExecl.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnExecl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExecl.Location = new System.Drawing.Point(817, 28);
+            this.btnExecl.Location = new System.Drawing.Point(874, 28);
             this.btnExecl.Name = "btnExecl";
-            this.btnExecl.Size = new System.Drawing.Size(75, 23);
+            this.btnExecl.Size = new System.Drawing.Size(168, 23);
             this.btnExecl.TabIndex = 17;
-            this.btnExecl.Text = "aButton1";
+            this.btnExecl.Text = "엑셀 저장";
             this.btnExecl.UseVisualStyleBackColor = false;
             this.btnExecl.Click += new System.EventHandler(this.btnExecl_Click);
             // 

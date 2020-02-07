@@ -5,12 +5,15 @@ using Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using VO;
+using System.Timers;
+using System.IO;
 
 namespace AxxenClient.Forms
 {
@@ -273,17 +276,136 @@ namespace AxxenClient.Forms
         private void btnMachineRun_Click(object sender, EventArgs e)
         { // 토글 기계
             if (isMachineRun) MachineStop();
-            else MachineStart();
+            else MachineStart(GlobalUsage.WorkType);
         }
+        /// <summary>
+        /// 기계 종료
+        /// </summary>
         private void MachineStop()
         {
             isMachineRun = false;
 
         }
-        private void MachineStart()
+        /// <summary>
+        /// 기계 시작
+        /// </summary>
+        /// <param name="work"></param>
+        private void MachineStart(WorkType work)
         {
             isMachineRun = true;
 
         }
     }
+    enum MachineType { Molding, Boxing, Inspect_Measure }
+    class Machine
+    {
+        private static LoggingUtility _loggingUtility = LoggingUtility.GetLoggingUtility("WorkerClient", Level.Info, 30);
+        internal static LoggingUtility Log { get { return _loggingUtility; } }
+
+        System.Timers.Timer timer;
+        string writefolder = ConfigurationManager.AppSettings["WriteFolder"];
+        int interval = int.Parse(ConfigurationManager.AppSettings["LogCreateMillisecond"]);
+        int machineID = 0;
+        int iCnt = 0;
+        public Machine(int machineID)
+        {
+            this.machineID = machineID;
+            if (!Directory.Exists(writefolder))
+                Directory.CreateDirectory(writefolder);
+        }
+        private void MachineStartMold(string workorderno, string moldcode)
+        {
+            Log.WriteInfo("성형생산 시작...");
+            timer = new System.Timers.Timer(interval);
+            timer.Enabled = true;
+            timer.Elapsed += Mold_Elapsed;
+            timer.AutoReset = true;
+        }
+        private void MachineStartBoxing(string workorderno)
+        {
+            Log.WriteInfo("포장 시작...");
+            timer = new System.Timers.Timer(interval);
+            timer.Enabled = true;
+            timer.Elapsed += Boxing_Elapsed;
+            timer.AutoReset = true;
+        }
+        private void MachineStartInspectMeasure(string workorderno)
+        {
+            Log.WriteInfo("품질측정 시작...");
+            timer = new System.Timers.Timer(interval);
+            timer.Enabled = true;
+            timer.Elapsed += Inspect_Measure_Elapsed;
+            timer.AutoReset = true;
+        }
+        private void MachineStop()
+        {
+            timer.Stop();
+            timer.Dispose();
+            Console.WriteLine("생산량 파일 로그 기록 종료...");
+        }
+        private void Mold_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            Random rnd = new Random((int)DateTime.UtcNow.Ticks);
+            StreamWriter sw = null;
+            try
+            {
+                sw = new StreamWriter($"{writefolder}\\MoldingLog_{machineID}_{iCnt}.log", false);
+                string msg = $"{DateTime.Now.ToString("yyyyMMdd HH:mm:ss")}/Machine/{machineID}/{rnd.Next(1, 77)}/{rnd.Next(100, 130)}/{rnd.Next(0, 5)}";
+                sw.WriteLine(msg);
+                sw.Flush();
+                sw.Close();
+            }
+            catch (Exception ee)
+            {
+                Console.WriteLine(ee.Message);
+            }
+            finally
+            {
+                iCnt++;
+            }
+        }
+        private void Boxing_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            Random rnd = new Random((int)DateTime.UtcNow.Ticks);
+            StreamWriter sw = null;
+            try
+            {
+                sw = new StreamWriter($"{writefolder}\\WorkerLogMachine_{machineID}_{iCnt}.log", false);
+                string msg = $"{DateTime.Now.ToString("yyyyMMdd HH:mm:ss")}/Machine/{machineID}/{rnd.Next(1, 77)}/{rnd.Next(100, 130)}/{rnd.Next(0, 5)}";
+                sw.WriteLine(msg);
+                sw.Flush();
+                sw.Close();
+            }
+            catch (Exception ee)
+            {
+                Console.WriteLine(ee.Message);
+            }
+            finally
+            {
+                iCnt++;
+            }
+        }
+        private void Inspect_Measure_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            Random rnd = new Random((int)DateTime.UtcNow.Ticks);
+            StreamWriter sw = null;
+            try
+            {
+                sw = new StreamWriter($"{writefolder}\\WorkerLogMachine_{machineID}_{iCnt}.log", false);
+                string msg = $"{DateTime.Now.ToString("yyyyMMdd HH:mm:ss")}/Machine/{machineID}/{rnd.Next(1, 77)}/{rnd.Next(100, 130)}/{rnd.Next(0, 5)}";
+                sw.WriteLine(msg);
+                sw.Flush();
+                sw.Close();
+            }
+            catch (Exception ee)
+            {
+                Console.WriteLine(ee.Message);
+            }
+            finally
+            {
+                iCnt++;
+            }
+        }
+    }
+
 }
