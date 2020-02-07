@@ -31,11 +31,14 @@
             this.aLabel1 = new Axxen.CustomControls.ALabel();
             this.aDateTimePickerSearch1 = new Axxen.CustomControls.ADateTimePickerSearch();
             this.aTextBox_FindNameByCode1 = new Axxen.CustomControls.ATextBox_FindNameByCode();
+            this.btnExecl = new Axxen.CustomControls.AButton();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panTop.SuspendLayout();
             this.SuspendLayout();
             // 
             // panTop
             // 
+            this.panTop.Controls.Add(this.btnExecl);
             this.panTop.Controls.Add(this.aTextBox_FindNameByCode1);
             this.panTop.Controls.Add(this.aDateTimePickerSearch1);
             this.panTop.Controls.Add(this.aLabel1);
@@ -55,8 +58,8 @@
             // 
             // aDateTimePickerSearch1
             // 
-            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 1, 27, 15, 10, 49, 370);
-            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 2, 3, 15, 10, 49, 370);
+            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 1, 31, 14, 34, 17, 189);
+            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 2, 7, 14, 34, 17, 189);
             this.aDateTimePickerSearch1.ButtonText = "조회";
             this.aDateTimePickerSearch1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aDateTimePickerSearch1.Location = new System.Drawing.Point(88, 23);
@@ -81,6 +84,18 @@
             this.aTextBox_FindNameByCode1.txtNameText = "";
             this.aTextBox_FindNameByCode1.DotDotDotFormClosing += new Axxen.CustomControls.ATextBox_FindNameByCode.SearchFormClosing(this.aTextBox_FindNameByCode1_DotDotDotFormClosing);
             // 
+            // btnExecl
+            // 
+            this.btnExecl.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnExecl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExecl.Location = new System.Drawing.Point(817, 28);
+            this.btnExecl.Name = "btnExecl";
+            this.btnExecl.Size = new System.Drawing.Size(75, 23);
+            this.btnExecl.TabIndex = 17;
+            this.btnExecl.Text = "aButton1";
+            this.btnExecl.UseVisualStyleBackColor = false;
+            this.btnExecl.Click += new System.EventHandler(this.btnExecl_Click);
+            // 
             // PRM_PRF_009
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -99,5 +114,7 @@
         private CustomControls.ALabel aLabel1;
         private CustomControls.ATextBox_FindNameByCode aTextBox_FindNameByCode1;
         private CustomControls.ADateTimePickerSearch aDateTimePickerSearch1;
+        private CustomControls.AButton btnExecl;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }

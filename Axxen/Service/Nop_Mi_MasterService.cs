@@ -52,6 +52,12 @@ namespace Service
             Nop_Mi_MasterDAC dac = new Nop_Mi_MasterDAC();
             return dac.GetCombo();
         }
+        public bool DeleteNopMiMasterVO(string code)
+        {
+            Nop_Mi_MasterDAC dac = new Nop_Mi_MasterDAC();
+            return dac.DeleteNopMiMasterVO(code);
+        }
         
+
     }
 }

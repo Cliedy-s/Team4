@@ -36,7 +36,8 @@ namespace Axxen
             ((MainForm)this.MdiParent).MyUpdateEvent += new System.EventHandler(this.MyUpdateShow);//입력이벤트 등록
             ((MainForm)this.MdiParent).InsertFormEvent += new System.EventHandler(this.InsertFormShow);//입력이벤트 등록
             ((MainForm)this.MdiParent).RefreshFormEvent += new EventHandler(this.RefreshFormShow);
-
+   
+            ((MainForm)this.MdiParent).MyDeleteEvent += new EventHandler(this.MyDelete);
             ///gridview
             DatagridviewDesigns.SetDesign(aDataGridView1);
             DatagridviewDesigns.AddNewColumnToDataGridView(aDataGridView1, "불량현상대분류코드", "Def_Ma_Code", true, 210, default, true);
@@ -80,7 +81,26 @@ namespace Axxen
             
         }
 
+        private void MyDelete(object sender, EventArgs e)
+        {
 
+      
+
+
+            if (MessageBox.Show(aDataGridView2.SelectedRows[0].Cells[1].Value.ToString() + "를 삭제하시겠습니까?", "알림", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                //    MessageBox.Show(dgvMi.SelectedRows[0].Cells[0].Value.ToString());
+                if (miservice.DeleteDef_MiVO(aDataGridView2.SelectedRows[0].Cells[0].Value.ToString()))
+                {
+                    GetAllUserGroup();
+                }
+                else
+                {
+                    MessageBox.Show("삭제실패");
+                }
+            }
+
+        }
 
         /// <summary>
         /// 수정
@@ -135,7 +155,18 @@ namespace Axxen
         /// <param name="e"></param>
         public void RefreshFormShow(object sender, EventArgs e)
         {
-            GetAllUserGroup();
+            try
+            {
+                if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
+                {
+                    GetAllUserGroup();
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+                Program.Log.WriteError(err.Message);
+            }
         }
 
         private void DgvMainGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -222,7 +253,7 @@ namespace Axxen
             ((MainForm)this.MdiParent).MyUpdateEvent -= new System.EventHandler(this.MyUpdateShow);//입력이벤트 등록
             ((MainForm)this.MdiParent).InsertFormEvent -= new System.EventHandler(this.InsertFormShow);//입력이벤트 등록
             ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow);
-
+            ((MainForm)this.MdiParent).MyDeleteEvent -= new EventHandler(this.MyDelete);
             aDataGridView1.CellDoubleClick -= DgvMainGrid_CellDoubleClick;
             aDataGridView2.CellDoubleClick -= aDataGridView2_CellDoubleClick;
             aDataGridView2.CellContentClick -= aDataGridView2_CellContentClick;

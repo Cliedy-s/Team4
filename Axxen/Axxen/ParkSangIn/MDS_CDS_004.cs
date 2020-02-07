@@ -124,18 +124,17 @@ namespace Axxen
         }
         private void MyDelete(object sender, EventArgs e)
         {
-            if (MessageBox.Show(dgvMi.SelectedRows[0].Cells[0].Value.ToString() + "를 삭제하시겠습니까?", "알림", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show(dgvMi.SelectedRows[0].Cells[1].Value.ToString() + "를 삭제하시겠습니까?", "알림", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                //MessageBox.Show(dgvParent.SelectedRows[0].Cells[0].Value.ToString());
-                //if (MIservice.DeleteNopMiMasterVO(dgvMi.SelectedRows[0].Cells[0].Value.ToString()))
-                //{
-                //    GetAllDefMaMi();
-
-                //}
-                //else
-                //{
-                //    MessageBox.Show("삭제실패");
-                //}
+            //    MessageBox.Show(dgvMi.SelectedRows[0].Cells[0].Value.ToString());
+                if (MIservice.DeleteNopMiMasterVO(dgvMi.SelectedRows[0].Cells[1].Value.ToString()))
+                {
+                    GetAllDefMaMi();
+                }
+                else
+                {
+                    MessageBox.Show("삭제실패");
+                }
             }
 
         }
@@ -267,6 +266,14 @@ namespace Axxen
 
             dgvMi.DataSource = null;
             dgvMi.DataSource = NopMilist.FindAll(item => item.Nop_Ma_Code == dgvMa.SelectedRows[0].Cells[0].Value.ToString());
+        }
+
+        private void MDS_CDS_004_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ((MainForm)this.MdiParent).MyUpdateEvent -= new System.EventHandler(this.MyUpdateShow);//입력이벤트 등록
+            ((MainForm)this.MdiParent).InsertFormEvent -= new System.EventHandler(this.InsertFormShow);//입력이벤트 등록
+            ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow);
+            ((MainForm)this.MdiParent).MyDeleteEvent -= new EventHandler(this.MyDelete);
         }
     }
 }

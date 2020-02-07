@@ -238,6 +238,7 @@
             this.Controls.Add(this.aPanel2);
             this.Name = "MDS_SDS_007";
             this.Text = "공정조건 설정";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MDS_SDS_007_FormClosing);
             this.Load += new System.EventHandler(this.MDS_SDS_007_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

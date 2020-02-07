@@ -184,6 +184,7 @@
             this.Controls.Add(this.dgvParent);
             this.Name = "MSS_SYS_001";
             this.Text = "메뉴관리";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MSS_SYS_001_FormClosing);
             this.Load += new System.EventHandler(this.MSS_SYS_001_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
