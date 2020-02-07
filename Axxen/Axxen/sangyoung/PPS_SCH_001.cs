@@ -131,7 +131,7 @@ namespace Axxen
         {
             bool result = false;
             string woNo = string.Empty;
-
+            
             foreach (DataGridViewRow row in dgvMainGrid.Rows)
             {
                 DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
@@ -148,7 +148,7 @@ namespace Axxen
             if (result)
                 MessageBox.Show("의뢰가 마감되었습니다.", "생산의뢰관리", MessageBoxButtons.OK);
             else
-                MessageBox.Show("의뢰가 마감되지 않았습니다.", "생산의뢰관리", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("의뢰가 마감되지 않았습니다.\n마감할 의뢰를 선택해 주세요.", "생산의뢰관리", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             RefreshFormShow(null, null);
 
