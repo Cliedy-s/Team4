@@ -202,5 +202,12 @@ namespace Axxen
             dgvCondition.DataSource = null;
             dgvCondition.DataSource = Conditionlist.FindAll(item => item.Item_Code == itemcode);
         }
+
+        private void MDS_SDS_007_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ((MainForm)this.MdiParent).MyUpdateEvent -= new System.EventHandler(this.MyUpdateShow);//입력이벤트 등록
+            ((MainForm)this.MdiParent).InsertFormEvent -= new System.EventHandler(this.InsertFormShow);//입력이벤트 등록
+            ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow);
+        }
     }
 }

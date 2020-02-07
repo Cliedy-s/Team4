@@ -171,7 +171,7 @@ namespace Axxen
                                 conBtn.Location = new Point(0, conBtn.Location.Y + tvMenu.Size.Height);
                             }
                         }
-
+                        //
                         // 열려있는 버튼과 현재 누른 사이의 버튼들의 위치 재조정
                         if (conBtn.TabIndex <= btn.TabIndex && conBtn.TabIndex > CheckBtnIndex)
                         {
@@ -250,7 +250,7 @@ namespace Axxen
                     if (parentcode.Parent_Screen_Code != null) //부모코드에 널값이있는 메뉴를 제외하고
                     {
                         string form = parentcode.Screen_Code.Trim();
-                        newForm(form, tvMenu.SelectedNode.Text);
+                        newForm(form, tvMenu.SelectedNode.Text.Trim());
 
                     }
                 }

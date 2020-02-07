@@ -19,7 +19,7 @@ namespace Axxen
         private static LoggingUtility _loggingUtility = null;
         private ILog log;
         private RollingFileAppender roller;
-        private string logFileName = "service.log";
+        private string logFileName = "Axxen.log";
         private int logSaveDays = 30; // 30일 기준
         private bool runAsConsole = false;
 

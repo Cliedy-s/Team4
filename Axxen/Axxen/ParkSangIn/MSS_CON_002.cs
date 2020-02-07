@@ -154,7 +154,9 @@ namespace Axxen
         }
         #endregion
 
-        private void MSS_CON_002_FormClosed(object sender, FormClosedEventArgs e)
+    
+
+        private void MSS_CON_002_FormClosed(object sender, FormClosingEventArgs e)
         {
             ((MainForm)this.MdiParent).InsertFormEvent -= new System.EventHandler(this.InsertFormShow);//입력이벤트 등록
             ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow);

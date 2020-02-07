@@ -27,7 +27,8 @@ namespace Service
         {
             return dac.GetUseNopservice(groupcode, used);
         }
-   
+        
+
             /// <summary>
             /// 비가동대분류 삭제
             /// </summary>

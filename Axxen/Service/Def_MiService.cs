@@ -35,5 +35,14 @@ namespace Service
         {
             return DAC.UsedDef_Mi_Master(Def_Ma_Code, used);
         }
+        /// <summary>
+        /// 불량상세 삭제
+        /// </summary>
+        /// <param name="micode"></param>
+        /// <returns></returns>
+        public bool DeleteDef_MiVO(string micode)
+        {
+            return DAC.DeleteDef_MiVO(micode);
+        }
         }
 }

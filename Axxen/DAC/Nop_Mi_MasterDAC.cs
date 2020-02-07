@@ -173,14 +173,14 @@ END";
             }
         }
 
-       private bool DeleteNopMiMasterVO(string Micode)
+       public bool DeleteNopMiMasterVO(string Micode)
         {
             try
             {
                 using (SqlCommand comm = new SqlCommand())
                 {
                     comm.Connection = new SqlConnection(Connstr);
-                    comm.CommandText = "";
+                    comm.CommandText = "delete from Nop_Mi_Master  where Nop_Mi_Code=@Nop_Mi_Code";
                        
                     comm.CommandType = CommandType.Text;    
                     comm.Parameters.AddWithValue("@Nop_Mi_Code", Micode);
