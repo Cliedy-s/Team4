@@ -131,10 +131,8 @@ getdate() ,
 where A.Workorderno=B.Workorderno and B.Workorderno=C.Workorderno and C.Workorderno=D.Workorderno and D.Workorderno=E.Workorderno";
                 comm.CommandType = CommandType.Text;
                 comm.Connection.Open();
-                SqlTransaction trans = comm.Connection.BeginTransaction();
                 try
                 {
-                    comm.Transaction = trans;
                     foreach (var item in workno)
                     {
                         comm.Parameters.Clear();
@@ -142,13 +140,11 @@ where A.Workorderno=B.Workorderno and B.Workorderno=C.Workorderno and C.Workorde
 
                         SqlDataReader reader = comm.ExecuteReader();
                         list = Helper.DataReaderMapToList<InspectMeasureHistoryVO>(reader);
+                        comm.Connection.Close();
                     }
-                    trans.Commit();
-                    comm.Connection.Close();
                 }
                 catch (Exception)
                 {
-                    trans.Rollback();
                     comm.Connection.Close();
                 }
                 return list;

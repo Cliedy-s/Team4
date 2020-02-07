@@ -35,7 +35,7 @@ namespace Axxen
         {
             documentViewer1.DocumentSource = null;
             threadmethod += ReportBinding;
-            using (WaitForm waitfrm = new WaitForm(() => { Thread.Sleep(2000); dtpDate.Invoke(threadmethod); }))
+            using (WaitForm waitfrm = new WaitForm(() => { /*Thread.Sleep(2000);*/ dtpDate.Invoke(threadmethod); }))
             {
                 waitfrm.ShowDialog(this);
             }
@@ -44,7 +44,6 @@ namespace Axxen
         threadDelegate threadmethod;
         private void ReportBinding()
         {
-            DataSet ds = new DataSet();
             List<string> workno = new List<string>();
             string date = dtpDate.Value.ToString("yyyyMMdd");
 
@@ -60,7 +59,7 @@ namespace Axxen
             Inspect_Measure_HistoryService inservice = new Inspect_Measure_HistoryService();
             imhList = inservice.GetFiguration(workno);
 
-            var figurationList = (from req in figList
+            var figurationList = (from req in searchlist
                                   join val in imhList on req.Workorderno equals val.Workorderno
                                   where req.Workorderno == val.Workorderno
                                   select new { Num = req.Num, Pallet_No = req.Pallet_No, Item_Name = req.Item_Name, Closed_Time = req.Closed_Time
@@ -70,7 +69,9 @@ namespace Axxen
 
 
             dt = ListToDataTable.ToDataTable(figurationList);
-            rpt.DataSource = dt;
+            dsFiguration ds = new dsFiguration();
+            ds.Tables.Add(dt);
+            rpt.DataSource = ds.Tables[0];
             rpt.Parameters["Ins_Date"].Value = dtpDate.Value.ToString("yyyy-MM-dd");
             rpt.Parameters["Ins_Date"].Visible = false; //파라미터 바로 넘기기
             documentViewer1.DocumentSource = rpt;

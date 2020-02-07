@@ -92,6 +92,7 @@ namespace Axxen
         {
             ((MainForm)this.MdiParent).InsertFormEvent -= new System.EventHandler(this.InsertFormShow);//입력이벤트
             ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow);//새로고침이벤트
+            ToolStripManager.RevertMerge(toolStrip1, ((MainForm)this.MdiParent).toolStrip1); //저장버튼 추가
         }
 
         private void RefreshFormShow(object sender, EventArgs e)
