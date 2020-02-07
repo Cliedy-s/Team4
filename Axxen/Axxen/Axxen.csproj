@@ -365,6 +365,14 @@
     <Compile Include="PlaceHolderTextBox.designer.cs">
       <DependentUpon>PlaceHolderTextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="sangyoung\dsFiguration.cs">
+      <DependentUpon>dsFiguration.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="sangyoung\dsFiguration.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsFiguration.xsd</DependentUpon>
+    </Compile>
     <Compile Include="UserSettingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -826,6 +834,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="sangyoung\dsFiguration.xsc">
+      <DependentUpon>dsFiguration.xsd</DependentUpon>
+    </None>
+    <None Include="sangyoung\dsFiguration.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsFiguration.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="sangyoung\dsFiguration.xss">
+      <DependentUpon>dsFiguration.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

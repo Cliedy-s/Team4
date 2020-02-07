@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Axxen.CustomControls
 {
-    public enum DataType { Users, Authoritys, Systems, Processes, Items, Facility, Errors, NonOperations, UserDefinitions, PackingGrades, WorkCenters, GVs, GVGroups, Workers, Pallet, InablePallet }
+    public enum DataType { Users, Authoritys, Systems, Processes, Items, Facility, Errors, NonOperations, UserDefinitions, PackingGrades, WorkCenters, GVs, GVGroups, Workers, Pallet, InablePallet , BoxingDetail }
     public partial class ATextBox_FindNameByCode : UserControl
     {
         public string lblNameText { get { return lblName.Text; } set { lblName.Text = value; } }
@@ -76,6 +76,9 @@ namespace Axxen.CustomControls
                         break;
                     case DataType.Workers:
                         lblNameText = "작업자";
+                        break;
+                    case DataType.BoxingDetail:
+                        lblNameText = "등급상세";
                         break;
                     default:
                         break;

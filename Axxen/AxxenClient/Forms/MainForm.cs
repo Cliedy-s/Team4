@@ -48,6 +48,7 @@ namespace AxxenClient.Forms
             GlobalUsage.WoIniChar = "W";
             GlobalUsage.WorkType = WorkType.Boxing;
             GlobalUsage.UserID = "master";
+            GlobalUsage.UserName = "Master";
             GlobalUsage.WcCode = "WC1";
 
             POP_PRD_001 childfrm = new POP_PRD_001();
@@ -67,7 +68,16 @@ namespace AxxenClient.Forms
 
         private void aButton1_Click(object sender, EventArgs e)
         { // 열기 버튼
+            // 열려있는 폼들 닫기
+            foreach (var item in this.MdiChildren)
+            {
+                item.Close();
+            }   
+
+            // 일 설정
             GlobalUsage.WorkType = (WorkType)aComboBox1.SelectedValue;
+
+            // 폼 열기
             POP_PRD_001 childfrm = new POP_PRD_001();
             childfrm.WindowState = FormWindowState.Maximized;
             childfrm.MdiParent = this;

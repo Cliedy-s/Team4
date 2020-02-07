@@ -89,6 +89,11 @@ namespace Axxen.CustomControls
                     dgvSearchResult.DataSource = GetData<Pallet_MasterService, PalletTodayInVO>("GetInablePallet");
                     lblSearch.Text = "입고 대상 팔레트 목록";
                     break;
+                case DataType.BoxingDetail:
+                    InitControls("Grade_Detail_Code", "Grade_Detail_Name");
+                    dgvSearchResult.DataSource = GetData<BoxingGrade_Detail_MasterService, BoxingGrade_Detail_MasterVO>("GetAll");
+                    lblSearch.Text = "포장등급 목록";
+                    break;
                 default:
                     break;
             }

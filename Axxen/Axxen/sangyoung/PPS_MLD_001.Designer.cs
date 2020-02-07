@@ -339,7 +339,6 @@
             this.Text = "";
             this.Activated += new System.EventHandler(this.PPS_MLD_001_Activated);
             this.Deactivate += new System.EventHandler(this.PPS_MLD_001_Deactivate);
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PPS_MLD_001_FormClosed);
             this.Load += new System.EventHandler(this.PPS_MLD_001_Load);
             this.Controls.SetChildIndex(this.aHeaderBox1, 0);
             this.Controls.SetChildIndex(this.aSplitContainer1, 0);

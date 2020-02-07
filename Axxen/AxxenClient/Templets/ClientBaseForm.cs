@@ -50,6 +50,7 @@ namespace AxxenClient.Templets
         }
         private void ClientBaseForm_Load(object sender, EventArgs e)
         {
+            lblUserName.Text = GlobalUsage.UserName;
             if (this.MdiParent is MainForm parent)
             {
                 txtPronounce.Text = parent.GetCurrentSysNotice();

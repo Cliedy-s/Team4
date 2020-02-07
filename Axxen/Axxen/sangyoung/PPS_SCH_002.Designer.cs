@@ -267,8 +267,8 @@
             // 
             // aDateTimePickerSearch1
             // 
-            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 1, 31, 14, 16, 18, 912);
-            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 2, 7, 14, 16, 18, 912);
+            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 1, 31, 14, 44, 50, 571);
+            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 2, 7, 14, 44, 50, 571);
             this.aDateTimePickerSearch1.ButtonText = "조회";
             this.aDateTimePickerSearch1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aDateTimePickerSearch1.Location = new System.Drawing.Point(107, 23);
@@ -314,7 +314,6 @@
             this.Text = "작업지시생성및마감";
             this.Activated += new System.EventHandler(this.PPS_SCH_002_Activated);
             this.Deactivate += new System.EventHandler(this.PPS_SCH_002_Deactivate);
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PPS_SCH_002_FormClosed);
             this.Load += new System.EventHandler(this.PPS_SCH_002_Load);
             this.Controls.SetChildIndex(this.aHeaderBox1, 0);
             this.Controls.SetChildIndex(this.aSplitContainer1, 0);

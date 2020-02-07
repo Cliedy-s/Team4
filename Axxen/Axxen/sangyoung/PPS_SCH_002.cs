@@ -90,8 +90,6 @@ namespace Axxen
 
         private void PPS_SCH_002_FormClosed(object sender, FormClosedEventArgs e)
         {
-            ((MainForm)this.MdiParent).MyUpdateEvent -= new System.EventHandler(this.MyUpdateShow);
-            ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow);
         }
 
         private void BtnWoFinish_Click(object sender, EventArgs e)
@@ -171,7 +169,7 @@ namespace Axxen
         {
             ((MainForm)this.MdiParent).MyUpdateEvent -= new System.EventHandler(this.MyUpdateShow); //수정이벤트
             ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow); //새로고침
-            ToolStripManager.RevertMerge(toolStrip1, ((MainForm)this.MdiParent).toolStrip1); //저장버튼 추가
+            ToolStripManager.RevertMerge(((MainForm)this.MdiParent).toolStrip1); //저장버튼삭제
         }
 
         private void TsbtnSave_Click(object sender, EventArgs e)
@@ -227,7 +225,5 @@ namespace Axxen
             if (dataObj != null)
                 Clipboard.SetDataObject(dataObj);
         }
-
-  
     }
 }

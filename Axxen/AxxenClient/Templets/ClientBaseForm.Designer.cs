@@ -35,9 +35,11 @@
             this.aPanel2 = new Axxen.CustomControls.APanel();
             this.lblTime = new Axxen.CustomControls.ALabel();
             this.aPanel3 = new Axxen.CustomControls.APanel();
+            this.aLabel2 = new Axxen.CustomControls.ALabel();
+            this.lblUserName = new Axxen.CustomControls.ALabel();
+            this.btnMachineRun = new Axxen.CustomControls.AButton();
             this.aLabel_Header1 = new Axxen.CustomControls.ALabel_Header();
             this.btnClose = new System.Windows.Forms.PictureBox();
-            this.btnMachineRun = new Axxen.CustomControls.AButton();
             this.panBottom.SuspendLayout();
             this.aPanel2.SuspendLayout();
             this.aPanel3.SuspendLayout();
@@ -120,6 +122,8 @@
             // aPanel3
             // 
             this.aPanel3.BackColor = System.Drawing.Color.White;
+            this.aPanel3.Controls.Add(this.aLabel2);
+            this.aPanel3.Controls.Add(this.lblUserName);
             this.aPanel3.Controls.Add(this.btnMachineRun);
             this.aPanel3.Controls.Add(this.aLabel_Header1);
             this.aPanel3.Controls.Add(this.btnClose);
@@ -128,6 +132,41 @@
             this.aPanel3.Name = "aPanel3";
             this.aPanel3.Size = new System.Drawing.Size(1210, 97);
             this.aPanel3.TabIndex = 4;
+            // 
+            // aLabel2
+            // 
+            this.aLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.aLabel2.AutoSize = true;
+            this.aLabel2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aLabel2.Location = new System.Drawing.Point(1038, 41);
+            this.aLabel2.Name = "aLabel2";
+            this.aLabel2.Size = new System.Drawing.Size(26, 21);
+            this.aLabel2.TabIndex = 19;
+            this.aLabel2.Text = "님";
+            // 
+            // lblUserName
+            // 
+            this.lblUserName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblUserName.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblUserName.Location = new System.Drawing.Point(863, 40);
+            this.lblUserName.Name = "lblUserName";
+            this.lblUserName.Size = new System.Drawing.Size(172, 23);
+            this.lblUserName.TabIndex = 18;
+            this.lblUserName.Text = "lblUserName";
+            this.lblUserName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // btnMachineRun
+            // 
+            this.btnMachineRun.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.btnMachineRun.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMachineRun.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnMachineRun.Location = new System.Drawing.Point(176, 2);
+            this.btnMachineRun.Name = "btnMachineRun";
+            this.btnMachineRun.Size = new System.Drawing.Size(95, 92);
+            this.btnMachineRun.TabIndex = 17;
+            this.btnMachineRun.Text = "기계\r\n시작/종료";
+            this.btnMachineRun.UseVisualStyleBackColor = false;
+            this.btnMachineRun.Visible = false;
             // 
             // aLabel_Header1
             // 
@@ -156,19 +195,6 @@
             this.btnClose.TabStop = false;
             this.btnClose.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // btnMachineRun
-            // 
-            this.btnMachineRun.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.btnMachineRun.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMachineRun.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnMachineRun.Location = new System.Drawing.Point(176, 2);
-            this.btnMachineRun.Name = "btnMachineRun";
-            this.btnMachineRun.Size = new System.Drawing.Size(95, 92);
-            this.btnMachineRun.TabIndex = 17;
-            this.btnMachineRun.Text = "기계\r\n시작/종료";
-            this.btnMachineRun.UseVisualStyleBackColor = false;
-            this.btnMachineRun.Visible = false;
-            // 
             // ClientBaseForm
             // 
             this.BackColor = System.Drawing.Color.White;
@@ -185,6 +211,7 @@
             this.aPanel2.ResumeLayout(false);
             this.aPanel2.PerformLayout();
             this.aPanel3.ResumeLayout(false);
+            this.aPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             this.ResumeLayout(false);
 
@@ -201,5 +228,7 @@
         protected Axxen.CustomControls.ALabel lblTime;
         protected Axxen.CustomControls.ALabel_Header aLabel_Header1;
         protected Axxen.CustomControls.AButton btnMachineRun;
+        private Axxen.CustomControls.ALabel aLabel2;
+        private Axxen.CustomControls.ALabel lblUserName;
     }
 }
