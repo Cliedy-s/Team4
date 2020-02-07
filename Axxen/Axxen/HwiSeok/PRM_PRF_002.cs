@@ -199,8 +199,16 @@ namespace Axxen
 
                     DataLoad();
 
-                    ghpb = woservice.GetGoodsIH_PalletM_Boxing((dgvMainGrid.SelectedRows[0].Cells[3].Value).ToString());
-                    dgvSubGrid.DataSource = ghpb; ;
+                    dgvSubGrid.DataSource = null;
+                    if (dgvSubGrid.Columns.Count == 0)
+                    {
+                        DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "팔렛트번호", "Pallet_No", true, 100, default, true);
+                        DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "등급", "Grade_Code", true, 100, default, true);
+                        DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "등급상세 코드", "Grade_Detail_Code", true, 100, default, true);
+                        DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "등급상세명", "Grade_Detail_Name", true, 100, default, true);
+                        DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "수량", "In_Qty", true, 100, default, true);
+                        DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "팔렛트 마감 여부", "Use_YN", true, 100, default, true);
+                    }
                 }
             }
             catch (Exception err)
@@ -250,9 +258,16 @@ namespace Axxen
             wowc = woservice.GetDatePicker_WorkOrder_Item_WC(aDateTimePickerSearch1.ADateTimePickerValue1.ToShortDateString(), aDateTimePickerSearch1.ADateTimePickerValue2.ToShortDateString());
             dgvMainGrid.DataSource = wowc;
 
-            ghpb = woservice.GetGoodsIH_PalletM_Boxing((dgvMainGrid.SelectedRows[0].Cells[3].Value).ToString());
-            dgvSubGrid.DataSource = ghpb;
-
+            dgvSubGrid.DataSource = null;
+            if (dgvSubGrid.Columns.Count == 0)
+            {
+                DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "팔렛트번호", "Pallet_No", true, 100, default, true);
+                DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "등급", "Grade_Code", true, 100, default, true);
+                DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "등급상세 코드", "Grade_Detail_Code", true, 100, default, true);
+                DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "등급상세명", "Grade_Detail_Name", true, 100, default, true);
+                DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "수량", "In_Qty", true, 100, default, true);
+                DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "팔렛트 마감 여부", "Use_YN", true, 100, default, true);
+            }
         }
 
         private void btnPallet_Click(object sender, EventArgs e) //팔렛트 마감
