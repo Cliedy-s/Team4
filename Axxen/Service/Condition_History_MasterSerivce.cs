@@ -25,7 +25,7 @@ namespace Service
 
         public List<Condition_History_MasterVO> PickerMainCondition_History_Master(string ADateTimePickerValue1, string ADateTimePickerValue2) // QAM_SQC_002 날짜별 조회
         {
-            InspectMeasure_History_MasterDAC dac = new InspectMeasure_History_MasterDAC();
+            Condition_History_MasterDAC dac = new Condition_History_MasterDAC();
             return dac.PickerMainCondition_History_Master(ADateTimePickerValue1, ADateTimePickerValue2);
         }
         
