@@ -131,32 +131,6 @@ namespace Service
             WorkOrderDAC dac = new WorkOrderDAC();
             return dac.UpdateWorkOrderClose( username,  workorderno);
         }
-        /// <summary>
-        /// 옮겨타기
-        /// </summary>
-        /// <param name="workorderno"></param>
-        /// <param name="qty"></param>
-        /// <returns></returns>
-        public bool UpdateTransferQty(string togvcode, string fromgvcode, int qty, string workorderno, string wccode, string username)
-        {
-            WorkOrderDAC dac = new WorkOrderDAC();
-            return dac.UpdateTransferQty(togvcode, fromgvcode, qty, workorderno, wccode, username);
-        }
-        /// <summary>
-        /// 로딩
-        /// </summary>
-        /// <param name="togvcode"></param>
-        /// <param name="fromgvcode"></param>
-        /// <param name="qty"></param>
-        /// <param name="workorderno"></param>
-        /// <param name="wccode"></param>
-        /// <param name="username"></param>
-        /// <returns></returns>
-        public bool InsertLoadQty(string togvcode, int qty, string workorderno, string wccode, string username)
-        {
-            WorkOrderDAC dac = new WorkOrderDAC();
-            return dac.InsertLoadQty(togvcode, qty, workorderno, wccode, username);
-        }
 
     }
 }
