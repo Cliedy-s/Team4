@@ -85,7 +85,6 @@ namespace DAC
                 return result > 0;
             }
         }
-
         /// <summary>
         /// 대차비우기
         /// </summary>

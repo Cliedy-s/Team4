@@ -148,7 +148,7 @@ namespace AxxenClient.Forms
             if (dgvMain.SelectedRows.Count <= 0)
             { // 선택한 작업지시가 없을 경우
                 MessageBox.Show("작업지시를 선택해주세요.");
-                Program.Log.WriteWarn($"{GlobalUsage.UserName}이(가) 작업지시를 선택하지 않고 작업지시를 실행하려함.");
+                Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 작업지시를 선택하지 않고 작업지시를 실행하려함.");
                 return;
             }
             // 시작한 작업지시가 있을 경우 - 작업지시를 끝냄
@@ -183,7 +183,7 @@ namespace AxxenClient.Forms
                 Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 작업지시 {GlobalUsage.WorkOrderNo}를 실행함");
             }
             else 
-                MessageBox.Show("작업지시 시작에 실패하였습니다.");
+                MessageBox.Show("존재하지 않는 작업지시 입니다.");
         }
         private void SetColor(string wokrorderno)
         {
@@ -209,6 +209,7 @@ namespace AxxenClient.Forms
             if (service.UpdateWorkOrderEnd(GlobalUsage.WorkOrderNo, GlobalUsage.Out_Qty, GlobalUsage.Prd_Qty, GlobalUsage.UserID))
             { // 성공
               //해당 프로그램의 전역에 설정해줌
+                Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 작업지시 {GlobalUsage.WorkOrderNo}를 종료함");
                 GlobalUsage.WorkOrderNo = "설정안됨";
                 GlobalUsage.WorkorderDate = null;
                 GlobalUsage.ItemName = "설정안됨";
@@ -218,9 +219,9 @@ namespace AxxenClient.Forms
 
                 GetDatas();
             }
-            else // 실패?
+            else
             {
-                MessageBox.Show("작업지시 종료에 실패하였습니다.");
+                MessageBox.Show("존재하지 않는 작업지시 입니다.");
             }
             return;
             // TODO - 기계 종료하기
@@ -234,11 +235,13 @@ namespace AxxenClient.Forms
         {
             if (dgvMain.SelectedRows.Count <= 0)
             {
+                Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 작업지시를 선택하지 않고 마감하려함");
                 MessageBox.Show("작업지시를 선택해주세요.");
                 return;
             }
             if (!(dgvMain.SelectedRows[0].Cells[0].Value.ToString().Equals("생산중지")))
             {
+                Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 중지되지 않는 작업지시를 마감하려함.");
                 MessageBox.Show("생산중인 작업지시입니다.");
                 return;
             }

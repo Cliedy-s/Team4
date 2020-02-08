@@ -39,7 +39,9 @@ namespace Service
         {
             GV_MasterDAC dac = new GV_MasterDAC();
             return dac.GetAllByWC(wccode, woinichar);
-        } // TODO : 프로시저로 빼기
+        }
+
+
         /// <summary>
         /// 대차리스트 대차그룹, 대차상태 따라 가져오기
         /// </summary>

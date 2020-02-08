@@ -19,7 +19,7 @@ namespace DAC
         private static LoggingUtility _loggingUtility = null;
         private ILog log;
         private RollingFileAppender roller;
-        private string logFileName = "Axxen.log";
+        private string logFileName = "AxxenDAC.log";
         private int logSaveDays = 30; // 30일 기준
         private bool runAsConsole = false;
 

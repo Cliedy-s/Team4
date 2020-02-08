@@ -13,7 +13,7 @@ namespace AxxenClient
     static class Program
     {
         #region Log
-        private static LoggingUtility _loggingUtility = LoggingUtility.GetLoggingUtility("WorkerClient", Level.Info, 30);
+        private static LoggingUtility _loggingUtility = LoggingUtility.GetLoggingUtility("AxxenClient", Level.Info, 30);
         internal static LoggingUtility Log { get { return _loggingUtility; } }
         #endregion
         /// <summary>

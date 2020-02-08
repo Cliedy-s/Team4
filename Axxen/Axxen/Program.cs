@@ -9,7 +9,7 @@ namespace Axxen
 {
     static class Program
     {
-        private static LoggingUtility _logging = LoggingUtility.GetLoggingUtility("MyProject", Level.Info, 30);
+        private static LoggingUtility _logging = LoggingUtility.GetLoggingUtility("Axxen", Level.Info, 30);
         internal static LoggingUtility Log
         {
             get { return _logging; }
