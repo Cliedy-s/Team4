@@ -343,7 +343,7 @@
             // 
             this.aPanel20.BackColor = System.Drawing.SystemColors.Info;
             this.aPanel20.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.aPanel20.Controls.Add(this.aLabel13);
+            this.aPanel20.Controls.Add(this.aLabel15);
             this.aPanel20.Location = new System.Drawing.Point(26, 59);
             this.aPanel20.Name = "aPanel20";
             this.aPanel20.Size = new System.Drawing.Size(120, 35);
@@ -354,7 +354,7 @@
             this.aLabel13.AutoSize = true;
             this.aLabel13.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel13.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aLabel13.Location = new System.Drawing.Point(29, 5);
+            this.aLabel13.Location = new System.Drawing.Point(23, 6);
             this.aLabel13.Name = "aLabel13";
             this.aLabel13.Size = new System.Drawing.Size(66, 17);
             this.aLabel13.TabIndex = 55;
@@ -409,7 +409,7 @@
             // 
             this.aPanel24.BackColor = System.Drawing.SystemColors.Info;
             this.aPanel24.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.aPanel24.Controls.Add(this.aLabel15);
+            this.aPanel24.Controls.Add(this.aLabel13);
             this.aPanel24.Location = new System.Drawing.Point(26, 24);
             this.aPanel24.Name = "aPanel24";
             this.aPanel24.Size = new System.Drawing.Size(120, 35);
@@ -420,7 +420,7 @@
             this.aLabel15.AutoSize = true;
             this.aLabel15.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel15.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aLabel15.Location = new System.Drawing.Point(26, 5);
+            this.aLabel15.Location = new System.Drawing.Point(23, 7);
             this.aLabel15.Name = "aLabel15";
             this.aLabel15.Size = new System.Drawing.Size(66, 17);
             this.aLabel15.TabIndex = 54;

@@ -76,11 +76,18 @@ namespace Axxen
                 this.Close();
             }
         }
-
+        public void DeleteButon()
+        {
+         //   myButtons.Find(btn => btn.Text.Equals(taget)).Dispose();
+            for (int i = 0; i < myButtons.Count; i++)
+            {
+                myButtons[i].Dispose();
+            }
+        }
         public void Setting()
         {
 
-
+            myButtons.Clear();
             menulist = Mainservice.GetAll_MenuTree_Master();
 
             UserInformation();
@@ -88,7 +95,8 @@ namespace Axxen
             var pa = menulist.FindAll(item => item.Parent_Screen_Code == null);
             int sLocation = 0;
 
-            myButtons.Clear();
+
+   
             for (int i = 0; i < pa.Count; i++)
             {
                 myButtons.Add(new Button());
@@ -711,6 +719,12 @@ namespace Axxen
         private void Timer_Tick(object sender, EventArgs e)
         {
             toolStripLabel.Text =  UserInfo.User_Name + "님 환영합니다.\n"+ DateTime.Now.ToShortDateString()+" "+ DateTime.Now.ToLongTimeString();
+        }
+
+        private void Button9_Click(object sender, EventArgs e)
+        {
+            DeleteButon();
+          //  Setting();
         }
     }
 }

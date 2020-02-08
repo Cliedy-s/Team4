@@ -127,9 +127,9 @@
             this.pnBookmark = new Axxen.CustomControls.APanel();
             this.toolbook = new System.Windows.Forms.ToolStrip();
             this.toolStripButtoncencle = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.tvBookMark = new System.Windows.Forms.TreeView();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.panelMenu.SuspendLayout();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
@@ -179,6 +179,7 @@
             this.button9.TabIndex = 8;
             this.button9.Text = "메뉴";
             this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.Button9_Click);
             // 
             // aPanel2
             // 
@@ -968,6 +969,12 @@
             this.toolStripButtoncencle.ToolTipText = "닫기";
             this.toolStripButtoncencle.Click += new System.EventHandler(this.ToolStripButtoncencle_Click);
             // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(55, 22);
+            this.toolStripLabel1.Text = "즐겨찾기";
+            // 
             // tvBookMark
             // 
             this.tvBookMark.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -981,12 +988,6 @@
             // timer
             // 
             this.timer.Tick += new System.EventHandler(this.Timer_Tick);
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(55, 22);
-            this.toolStripLabel1.Text = "즐겨찾기";
             // 
             // MainForm
             // 
