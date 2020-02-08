@@ -40,7 +40,7 @@ namespace Axxen
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "규격", "Item_Spec", true, 210, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "단위", "Item_Unit", true, 210, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "안전재고", "Item_Stock", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "갯수", "LotSize", true, 210, default, true);
+         //   DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "갯수", "LotSize", true, 210, DataGridViewContentAlignment.MiddleRight, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "시간당생산수", "PrdQty_Per_Hour", true, 210, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "배치당생산수", "PrdQTy_Per_Batch", true, 210, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "캐비티수", "Cavity", true, 210, default, true);
