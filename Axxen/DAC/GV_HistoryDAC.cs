@@ -113,7 +113,7 @@ namespace DAC
                     return result > 0;
                 }
             }
-            catch (Exception EE)
+            catch (Exception )
             {
                 return false;
             }

@@ -14,8 +14,12 @@ namespace Axxen
     public partial class UserSettingForm : Axxen.BaseForm
     {
 
-          List<ScreenItem_MasterVO> Screenlist;
+        List<ScreenItem_MasterVO> Screenlist;
         ScreenItemService screenservice = new ScreenItemService();
+
+
+        UserInfo_Service userservice = new UserInfo_Service();
+
         public UserSettingForm()
         {
             InitializeComponent();
@@ -27,12 +31,12 @@ namespace Axxen
         {
             Screenlist = new List<ScreenItem_MasterVO>();
             Screenlist = screenservice.GetALLScreenItem();
-     
+
             Dictionary<string, string> cbblist = Screenlist.FindAll(item => item.Use_YN == "Y").ToDictionary(item => item.Screen_Code, item => item.Type); //사용을 하는 그룹만
             cbbscreen.DisplayMember = "Value";
             cbbscreen.ValueMember = "Key";
             cbbscreen.DataSource = new BindingSource(cbblist, null);
-         //   lblGroup.Text = cbbGroup.SelectedValue.ToString();
+            //   lblGroup.Text = cbbGroup.SelectedValue.ToString();
         }
 
 
@@ -75,7 +79,27 @@ namespace Axxen
 
         private void BtnUpdate_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (userservice.Default_Screen_Code(UserInfo.User_ID, cbbscreen.SelectedValue.ToString()))
+                {
+                    MessageBox.Show("기본화면이 설정되었습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
 
+                }
+            }
+            catch (Exception err)
+            {
+
+                MessageBox.Show(err.Message,"알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void Btnclose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

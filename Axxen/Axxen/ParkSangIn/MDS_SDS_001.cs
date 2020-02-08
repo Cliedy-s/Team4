@@ -37,9 +37,9 @@ namespace Axxen
             DatagridviewDesigns.SetDesign(dgvGroup);
             DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvGroup, "품목그룹코드", "Level_Code", true, 210, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvGroup, "품목그룹명", "Level_Name", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvGroup, "팔렛당박스수", "Box_Qty", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvGroup, "박스당pcs수", "Pcs_Qty", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvGroup, "PCS당소재량", "Mat_Qty", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvGroup, "팔렛당박스수", "Box_Qty", true, 210, DataGridViewContentAlignment.MiddleRight, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvGroup, "박스당pcs수", "Pcs_Qty", true, 210, DataGridViewContentAlignment.MiddleRight, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvGroup, "PCS당소재량", "Mat_Qty", true, 210, DataGridViewContentAlignment.MiddleRight, true);
             DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvGroup, "사용유무", "Use_YN", true, 210, default, true);
 
             DataGridViewButtonColumn gridbtn = new DataGridViewButtonColumn();
@@ -221,6 +221,7 @@ namespace Axxen
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(txtCode.Text.Trim()) && !string.IsNullOrEmpty(txtName.Text.Trim())) { 
             string level = null;
 
             if (cbbLevel.Text == "Level1")
@@ -242,18 +243,21 @@ namespace Axxen
             else if (cbbLevel.Text == "Level5")
             {
                 level = "NNNNY";
-
-            }
+                }
+                else
+                {
+                    level = "NNNNN";
+                }
 
             Item_Level_Master additem = new Item_Level_Master()
             {
-                Level_Code = txtCode.Text,
-                Level_Name = txtName.Text,
-                Item_lvl1 = level[0].ToString(),
-                Item_lvl2 = level[1].ToString(),
-                Item_lvl3 = level[2].ToString(),
-                Item_lvl4 = level[3].ToString(),
-                Item_lvl5 = level[4].ToString(),
+                Level_Code = txtCode.Text.Trim(),
+                Level_Name = txtName.Text.Trim(),
+                Item_lvl1 = level[0].ToString().Trim(),
+                Item_lvl2 = level[1].ToString().Trim(),
+                Item_lvl3 = level[2].ToString().Trim(),
+                Item_lvl4 = level[3].ToString().Trim(),
+                Item_lvl5 = level[4].ToString().Trim(),
                 Box_Qty = Convert.ToInt32(nudBox_Qty.Value),
                 Pcs_Qty = Convert.ToInt32(nudPcs_Qty.Value),
                 Mat_Qty = nudMat_Qty.Value,
@@ -271,6 +275,11 @@ namespace Axxen
             else
             {
                 MessageBox.Show("db실패", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            }
+            else
+            {
+                MessageBox.Show("필수 항목을 입력해주세요.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

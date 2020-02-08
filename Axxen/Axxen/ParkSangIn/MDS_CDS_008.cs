@@ -34,14 +34,14 @@ namespace Axxen
             ((MainForm)this.MdiParent).MyDeleteEvent += new EventHandler(this.MyDelete);
 
             DatagridviewDesigns.SetDesign(dgvGroup);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "대차코드", "GV_Code", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "대차명", "GV_Name", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "대차그룹명", "GV_Group", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "대차그룹코드", "GV_Group", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "대차상태", "GV_Status", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "언로딩작업장", "Unloading_Wc", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "입력일자", "Ins_Date", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "사용여부", "Use_YN", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvGroup, "대차코드", "GV_Code", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvGroup, "대차명", "GV_Name", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvGroup, "대차그룹명", "GV_Group", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvGroup, "대차그룹코드", "GV_Group", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvGroup, "대차상태", "GV_Status", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvGroup, "언로딩작업장", "Unloading_Wc", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvGroup, "입력일자", "Ins_Date", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvGroup, "사용여부", "Use_YN", true, 210, default, true);
 
             DataGridViewButtonColumn gridbtn = new DataGridViewButtonColumn();
             gridbtn.HeaderText = "사용여부";

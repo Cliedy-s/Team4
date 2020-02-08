@@ -31,10 +31,10 @@ namespace Axxen
 
             ///gridview
             DatagridviewDesigns.SetDesign(dgvMainGrid);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "불량현상대분류코드", "Def_Ma_Code", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "불량현상대분류 명", "Def_Ma_Name", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "입력일자", "Ins_Date", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "사용여부", "Use_YN", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "불량현상대분류코드", "Def_Ma_Code", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "불량현상대분류 명", "Def_Ma_Name", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "입력일자", "Ins_Date", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "사용여부", "Use_YN", true, 210, default, true);
 
 
 

@@ -111,7 +111,6 @@
             // dtpstart
             // 
             this.dtpstart.Location = new System.Drawing.Point(25, 12);
-            this.dtpstart.MaxDate = new System.DateTime(2020, 2, 5, 0, 0, 0, 0);
             this.dtpstart.Name = "dtpstart";
             this.dtpstart.Size = new System.Drawing.Size(200, 23);
             this.dtpstart.TabIndex = 17;

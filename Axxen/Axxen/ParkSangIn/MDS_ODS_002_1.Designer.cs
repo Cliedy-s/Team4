@@ -196,7 +196,7 @@
             this.aPanel6.Location = new System.Drawing.Point(137, 125);
             this.aPanel6.Name = "aPanel6";
             this.aPanel6.Size = new System.Drawing.Size(272, 35);
-            this.aPanel6.TabIndex = 165;
+            this.aPanel6.TabIndex = 1;
             // 
             // txtwork_name
             // 
@@ -267,7 +267,7 @@
             this.aPanel3.Location = new System.Drawing.Point(137, 160);
             this.aPanel3.Name = "aPanel3";
             this.aPanel3.Size = new System.Drawing.Size(272, 35);
-            this.aPanel3.TabIndex = 161;
+            this.aPanel3.TabIndex = 2;
             // 
             // cbbProcess
             // 
@@ -320,7 +320,7 @@
             this.aPanel29.Location = new System.Drawing.Point(137, 233);
             this.aPanel29.Name = "aPanel29";
             this.aPanel29.Size = new System.Drawing.Size(348, 82);
-            this.aPanel29.TabIndex = 175;
+            this.aPanel29.TabIndex = 3;
             // 
             // txtRemark
             // 
@@ -402,7 +402,7 @@
             this.aPanel20.Location = new System.Drawing.Point(137, 90);
             this.aPanel20.Name = "aPanel20";
             this.aPanel20.Size = new System.Drawing.Size(272, 35);
-            this.aPanel20.TabIndex = 183;
+            this.aPanel20.TabIndex = 0;
             // 
             // MDS_ODS_002_1
             // 

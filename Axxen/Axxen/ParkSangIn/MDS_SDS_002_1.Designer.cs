@@ -67,7 +67,7 @@
             this.txtengAs = new CLIP.eForm.Consent.Standard.Management.UI.PlaceHolderTextBox();
             this.aPanel10 = new Axxen.CustomControls.APanel();
             this.aPanel11 = new Axxen.CustomControls.APanel();
-            this.txtType = new CLIP.eForm.Consent.Standard.Management.UI.PlaceHolderTextBox();
+            this.cbbType = new Axxen.CustomControls.AComboBox();
             this.aPanel12 = new Axxen.CustomControls.APanel();
             this.aPanel13 = new Axxen.CustomControls.APanel();
             this.txtSpec = new CLIP.eForm.Consent.Standard.Management.UI.PlaceHolderTextBox();
@@ -468,7 +468,7 @@
             this.aPanel3.Location = new System.Drawing.Point(142, 57);
             this.aPanel3.Name = "aPanel3";
             this.aPanel3.Size = new System.Drawing.Size(170, 35);
-            this.aPanel3.TabIndex = 91;
+            this.aPanel3.TabIndex = 0;
             // 
             // aPanel5
             // 
@@ -487,7 +487,7 @@
             this.aPanel2.Location = new System.Drawing.Point(445, 57);
             this.aPanel2.Name = "aPanel2";
             this.aPanel2.Size = new System.Drawing.Size(170, 35);
-            this.aPanel2.TabIndex = 93;
+            this.aPanel2.TabIndex = 1;
             // 
             // txtName
             // 
@@ -518,7 +518,7 @@
             this.aPanel6.Location = new System.Drawing.Point(142, 92);
             this.aPanel6.Name = "aPanel6";
             this.aPanel6.Size = new System.Drawing.Size(170, 35);
-            this.aPanel6.TabIndex = 95;
+            this.aPanel6.TabIndex = 2;
             // 
             // txteng
             // 
@@ -548,7 +548,7 @@
             this.aPanel8.Location = new System.Drawing.Point(445, 92);
             this.aPanel8.Name = "aPanel8";
             this.aPanel8.Size = new System.Drawing.Size(170, 35);
-            this.aPanel8.TabIndex = 97;
+            this.aPanel8.TabIndex = 3;
             // 
             // txtengAs
             // 
@@ -574,22 +574,23 @@
             // aPanel11
             // 
             this.aPanel11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.aPanel11.Controls.Add(this.txtType);
+            this.aPanel11.Controls.Add(this.cbbType);
             this.aPanel11.Location = new System.Drawing.Point(142, 127);
             this.aPanel11.Name = "aPanel11";
             this.aPanel11.Size = new System.Drawing.Size(170, 35);
-            this.aPanel11.TabIndex = 99;
+            this.aPanel11.TabIndex = 4;
             // 
-            // txtType
+            // cbbType
             // 
-            this.txtType.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Italic);
-            this.txtType.ForeColor = System.Drawing.Color.Gray;
-            this.txtType.Location = new System.Drawing.Point(3, 2);
-            this.txtType.Name = "txtType";
-            this.txtType.PlaceHolderText = "이름을 입력하세요.";
-            this.txtType.Size = new System.Drawing.Size(160, 25);
-            this.txtType.TabIndex = 4;
-            this.txtType.Text = "유형을 입력하세요.";
+            this.cbbType.FormattingEnabled = true;
+            this.cbbType.Items.AddRange(new object[] {
+            "PR",
+            "PT",
+            "SA"});
+            this.cbbType.Location = new System.Drawing.Point(3, 3);
+            this.cbbType.Name = "cbbType";
+            this.cbbType.Size = new System.Drawing.Size(160, 23);
+            this.cbbType.TabIndex = 4;
             // 
             // aPanel12
             // 
@@ -608,7 +609,7 @@
             this.aPanel13.Location = new System.Drawing.Point(445, 127);
             this.aPanel13.Name = "aPanel13";
             this.aPanel13.Size = new System.Drawing.Size(170, 35);
-            this.aPanel13.TabIndex = 101;
+            this.aPanel13.TabIndex = 5;
             // 
             // txtSpec
             // 
@@ -638,7 +639,7 @@
             this.aPanel15.Location = new System.Drawing.Point(445, 162);
             this.aPanel15.Name = "aPanel15";
             this.aPanel15.Size = new System.Drawing.Size(170, 35);
-            this.aPanel15.TabIndex = 95;
+            this.aPanel15.TabIndex = 6;
             // 
             // nudunit
             // 
@@ -668,7 +669,7 @@
             this.aPanel17.Location = new System.Drawing.Point(142, 197);
             this.aPanel17.Name = "aPanel17";
             this.aPanel17.Size = new System.Drawing.Size(170, 35);
-            this.aPanel17.TabIndex = 103;
+            this.aPanel17.TabIndex = 7;
             // 
             // nudStock
             // 
@@ -695,7 +696,7 @@
             this.aPanel19.Location = new System.Drawing.Point(445, 232);
             this.aPanel19.Name = "aPanel19";
             this.aPanel19.Size = new System.Drawing.Size(170, 35);
-            this.aPanel19.TabIndex = 111;
+            this.aPanel19.TabIndex = 10;
             // 
             // nudcavity
             // 
@@ -721,7 +722,7 @@
             this.aPanel21.Location = new System.Drawing.Point(142, 231);
             this.aPanel21.Name = "aPanel21";
             this.aPanel21.Size = new System.Drawing.Size(170, 35);
-            this.aPanel21.TabIndex = 105;
+            this.aPanel21.TabIndex = 9;
             // 
             // nudbatch
             // 
@@ -738,7 +739,7 @@
             this.aPanel22.Location = new System.Drawing.Point(445, 197);
             this.aPanel22.Name = "aPanel22";
             this.aPanel22.Size = new System.Drawing.Size(170, 35);
-            this.aPanel22.TabIndex = 109;
+            this.aPanel22.TabIndex = 8;
             // 
             // nudhour
             // 
@@ -775,7 +776,7 @@
             this.aPanel27.Location = new System.Drawing.Point(445, 304);
             this.aPanel27.Name = "aPanel27";
             this.aPanel27.Size = new System.Drawing.Size(170, 35);
-            this.aPanel27.TabIndex = 119;
+            this.aPanel27.TabIndex = 14;
             // 
             // nudheatgv
             // 
@@ -801,7 +802,7 @@
             this.aPanel29.Location = new System.Drawing.Point(142, 304);
             this.aPanel29.Name = "aPanel29";
             this.aPanel29.Size = new System.Drawing.Size(170, 35);
-            this.aPanel29.TabIndex = 113;
+            this.aPanel29.TabIndex = 13;
             // 
             // nuddrgdv
             // 
@@ -817,7 +818,7 @@
             this.aPanel30.Location = new System.Drawing.Point(445, 267);
             this.aPanel30.Name = "aPanel30";
             this.aPanel30.Size = new System.Drawing.Size(170, 35);
-            this.aPanel30.TabIndex = 117;
+            this.aPanel30.TabIndex = 12;
             // 
             // nudshotper
             // 
@@ -853,7 +854,7 @@
             this.aPanel33.Location = new System.Drawing.Point(142, 269);
             this.aPanel33.Name = "aPanel33";
             this.aPanel33.Size = new System.Drawing.Size(170, 35);
-            this.aPanel33.TabIndex = 115;
+            this.aPanel33.TabIndex = 11;
             // 
             // nudlinper
             // 
@@ -879,7 +880,7 @@
             this.aPanel35.Location = new System.Drawing.Point(142, 340);
             this.aPanel35.Name = "aPanel35";
             this.aPanel35.Size = new System.Drawing.Size(170, 35);
-            this.aPanel35.TabIndex = 125;
+            this.aPanel35.TabIndex = 15;
             // 
             // cbbLevel_1
             // 
@@ -938,7 +939,7 @@
             this.aPanel42.Location = new System.Drawing.Point(142, 375);
             this.aPanel42.Name = "aPanel42";
             this.aPanel42.Size = new System.Drawing.Size(170, 35);
-            this.aPanel42.TabIndex = 156;
+            this.aPanel42.TabIndex = 17;
             // 
             // cbbLevel_3
             // 
@@ -955,7 +956,7 @@
             this.aPanel43.Location = new System.Drawing.Point(445, 375);
             this.aPanel43.Name = "aPanel43";
             this.aPanel43.Size = new System.Drawing.Size(170, 35);
-            this.aPanel43.TabIndex = 156;
+            this.aPanel43.TabIndex = 18;
             // 
             // cbbLevel_4
             // 
@@ -993,7 +994,7 @@
             this.aPanel37.Location = new System.Drawing.Point(445, 340);
             this.aPanel37.Name = "aPanel37";
             this.aPanel37.Size = new System.Drawing.Size(170, 35);
-            this.aPanel37.TabIndex = 158;
+            this.aPanel37.TabIndex = 16;
             // 
             // cbbLevel_2
             // 
@@ -1031,7 +1032,7 @@
             this.aPanel39.Location = new System.Drawing.Point(142, 410);
             this.aPanel39.Name = "aPanel39";
             this.aPanel39.Size = new System.Drawing.Size(170, 35);
-            this.aPanel39.TabIndex = 125;
+            this.aPanel39.TabIndex = 19;
             // 
             // cbbLevel_5
             // 
@@ -1144,7 +1145,6 @@
             this.aPanel10.ResumeLayout(false);
             this.aPanel10.PerformLayout();
             this.aPanel11.ResumeLayout(false);
-            this.aPanel11.PerformLayout();
             this.aPanel12.ResumeLayout(false);
             this.aPanel12.PerformLayout();
             this.aPanel13.ResumeLayout(false);
@@ -1246,7 +1246,6 @@
         private CLIP.eForm.Consent.Standard.Management.UI.PlaceHolderTextBox txtengAs;
         private CustomControls.APanel aPanel10;
         private CustomControls.APanel aPanel11;
-        private CLIP.eForm.Consent.Standard.Management.UI.PlaceHolderTextBox txtType;
         private CustomControls.APanel aPanel12;
         private CustomControls.APanel aPanel13;
         private CLIP.eForm.Consent.Standard.Management.UI.PlaceHolderTextBox txtSpec;
@@ -1299,5 +1298,6 @@
         private CustomControls.APanel aPanel40;
         private CustomControls.ALabel aLabel22;
         private CustomControls.ALabel aLabel10;
+        private CustomControls.AComboBox cbbType;
     }
 }

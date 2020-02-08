@@ -26,7 +26,7 @@ namespace Axxen
         private void BtnSave_Click(object sender, EventArgs e)
         {
 
-            if(string.IsNullOrEmpty(txtName.Text) && string.IsNullOrEmpty(txtID.Text) && string.IsNullOrEmpty(txtPwd.Text))
+            if(!string.IsNullOrEmpty(txtName.Text) && !string.IsNullOrEmpty(txtID.Text) && !string.IsNullOrEmpty(txtPwd.Text))
             {
 
             UserInfoVO user = new UserInfoVO
@@ -54,7 +54,7 @@ namespace Axxen
             }
             else
             {
-                MessageBox.Show(".", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("필수항목을 입력해주세요.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

@@ -24,9 +24,8 @@ namespace Axxen
 
         private void MSS_CON_001_Load(object sender, EventArgs e)
         {
-            txtName.Enabled = false;
-            txtCode.Enabled = false;
-            btnSave.Enabled = false;
+            panelusersetting.Enabled = false;
+       
 
             ((MainForm)this.MdiParent).MyUpdateEvent += new System.EventHandler(this.MyUpdateShow);//입력이벤트 등록
             ((MainForm)this.MdiParent).InsertFormEvent += new System.EventHandler(this.InsertFormShow);//입력이벤트 등록
@@ -35,10 +34,10 @@ namespace Axxen
 
             ///gridview
             DatagridviewDesigns.SetDesign(dgvGroup);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "사용자그룹코드", "UserGroup_Code", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "사용자그룹명", "UserGroup_Name", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "입력일자", "Ins_Date", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "사용여부", "Use_YN", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvGroup, "사용자그룹코드", "UserGroup_Code", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvGroup, "사용자그룹명", "UserGroup_Name", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvGroup, "입력일자", "Ins_Date", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvGroup, "사용여부", "Use_YN", true, 210, default, true);
             DataGridViewButtonColumn gridbtn = new DataGridViewButtonColumn();
             gridbtn.HeaderText = "사용여부";
             gridbtn.Text = "변경";
@@ -77,9 +76,10 @@ namespace Axxen
             {
                 if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
                 {
-                    txtName.Enabled = true;
+                    ResetUtillity.ResetPanelControl(panelusersetting);
+                    panelusersetting.Enabled = true;
                     txtCode.Enabled = true;
-                    btnSave.Enabled = true;
+                  
                     btnSave.Text = "저장";
                 }
             }
@@ -129,9 +129,10 @@ namespace Axxen
             {
                 if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
                 {
-                    txtName.Enabled = true;
+                    panelusersetting.Enabled = true;
+                  
             txtCode.Enabled = false;
-            btnSave.Enabled = true;
+        
             btnSave.Text = "수정";
                 }
             }
@@ -195,28 +196,7 @@ namespace Axxen
         /// <param name="e"></param>
         private void DgvGroup_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
-            {
-
-                if (e.ColumnIndex == dgvGroup.Columns["btn"].Index)//눌러서 사용과 사용안함 변경
-                {
-                    if ((dgvGroup.SelectedRows[0].Cells[3].Value).ToString() == "Y") //사용안함
-                    {
-                        userservice.GetUpdateUserGroup((dgvGroup.SelectedRows[0].Cells[0].Value).ToString(), "N");
-                    }
-                    else //사용함
-                    {
-                        userservice.GetUpdateUserGroup((dgvGroup.SelectedRows[0].Cells[0].Value).ToString(), "Y");
-                    }
-                    GetAllUserGroup();
-                }
-
-            }
-            catch (Exception err)
-            {
-
-                MessageBox.Show(err.Message);
-            }
+          
         }
 
         private void BtnSave_Click(object sender, EventArgs e)
@@ -244,7 +224,7 @@ namespace Axxen
                     }
                   
                 }
-                ResetUtillity.ResetPanelControl(aPanel3);
+                ResetUtillity.ResetPanelControl(panelusersetting);
                 GetAllUserGroup();
             }
 
@@ -266,8 +246,38 @@ namespace Axxen
 
         private void DgvGroup_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtName.Text = dgvGroup.SelectedRows[0].Cells[1].Value.ToString();
-            txtCode.Text = dgvGroup.SelectedRows[0].Cells[0].Value.ToString();
+            if (btnSave.Text.Equals("수정"))
+            {
+                txtName.Text = dgvGroup.SelectedRows[0].Cells[1].Value.ToString();
+                txtCode.Text = dgvGroup.SelectedRows[0].Cells[0].Value.ToString();
+            }
+           
+        }
+
+        private void DgvGroup_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+
+                if (e.ColumnIndex == dgvGroup.Columns["btn"].Index)//눌러서 사용과 사용안함 변경
+                {
+                    if ((dgvGroup.SelectedRows[0].Cells[3].Value).ToString() == "Y") //사용안함
+                    {
+                        userservice.GetUpdateUserGroup((dgvGroup.SelectedRows[0].Cells[0].Value).ToString(), "N");
+                    }
+                    else //사용함
+                    {
+                        userservice.GetUpdateUserGroup((dgvGroup.SelectedRows[0].Cells[0].Value).ToString(), "Y");
+                    }
+                    GetAllUserGroup();
+                }
+
+            }
+            catch (Exception err)
+            {
+
+                MessageBox.Show(err.Message);
+            }
         }
     }
 }

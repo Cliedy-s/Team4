@@ -32,7 +32,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.aLabel7 = new Axxen.CustomControls.ALabel();
-            this.aPanel3 = new Axxen.CustomControls.APanel();
+            this.panelusersetting = new Axxen.CustomControls.APanel();
             this.txtCode = new Axxen.CustomControls.ATextBox();
             this.txtName = new Axxen.CustomControls.ATextBox();
             this.aLabel4 = new Axxen.CustomControls.ALabel();
@@ -49,7 +49,7 @@
             this.dgvGroup = new Axxen.CustomControls.ADataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.aPanel3.SuspendLayout();
+            this.panelusersetting.SuspendLayout();
             this.aPanel2.SuspendLayout();
             this.aPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGroup)).BeginInit();
@@ -84,27 +84,27 @@
             this.aLabel7.TabIndex = 11;
             this.aLabel7.Text = "사용자 그룹설정";
             // 
-            // aPanel3
+            // panelusersetting
             // 
-            this.aPanel3.BackColor = System.Drawing.SystemColors.Info;
-            this.aPanel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.aPanel3.Controls.Add(this.txtCode);
-            this.aPanel3.Controls.Add(this.txtName);
-            this.aPanel3.Controls.Add(this.aLabel4);
-            this.aPanel3.Controls.Add(this.aLabel5);
-            this.aPanel3.Controls.Add(this.btnSave);
-            this.aPanel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.aPanel3.Location = new System.Drawing.Point(0, 701);
-            this.aPanel3.Name = "aPanel3";
-            this.aPanel3.Size = new System.Drawing.Size(1141, 64);
-            this.aPanel3.TabIndex = 10;
+            this.panelusersetting.BackColor = System.Drawing.SystemColors.Info;
+            this.panelusersetting.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelusersetting.Controls.Add(this.txtCode);
+            this.panelusersetting.Controls.Add(this.txtName);
+            this.panelusersetting.Controls.Add(this.aLabel4);
+            this.panelusersetting.Controls.Add(this.aLabel5);
+            this.panelusersetting.Controls.Add(this.btnSave);
+            this.panelusersetting.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelusersetting.Location = new System.Drawing.Point(0, 701);
+            this.panelusersetting.Name = "panelusersetting";
+            this.panelusersetting.Size = new System.Drawing.Size(1141, 64);
+            this.panelusersetting.TabIndex = 10;
             // 
             // txtCode
             // 
             this.txtCode.BackColor = System.Drawing.Color.White;
             this.txtCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCode.errorp = null;
-            this.txtCode.Location = new System.Drawing.Point(467, 18);
+            this.txtCode.Location = new System.Drawing.Point(154, 19);
             this.txtCode.MaxLength = 20;
             this.txtCode.Name = "txtCode";
             this.txtCode.Size = new System.Drawing.Size(149, 23);
@@ -116,7 +116,7 @@
             this.txtName.BackColor = System.Drawing.Color.White;
             this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtName.errorp = null;
-            this.txtName.Location = new System.Drawing.Point(132, 18);
+            this.txtName.Location = new System.Drawing.Point(425, 19);
             this.txtName.MaxLength = 100;
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(149, 23);
@@ -127,7 +127,7 @@
             // 
             this.aLabel4.AutoSize = true;
             this.aLabel4.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aLabel4.Location = new System.Drawing.Point(328, 24);
+            this.aLabel4.Location = new System.Drawing.Point(15, 22);
             this.aLabel4.Name = "aLabel4";
             this.aLabel4.Size = new System.Drawing.Size(123, 17);
             this.aLabel4.TabIndex = 10;
@@ -137,7 +137,7 @@
             // 
             this.aLabel5.AutoSize = true;
             this.aLabel5.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aLabel5.Location = new System.Drawing.Point(11, 23);
+            this.aLabel5.Location = new System.Drawing.Point(322, 21);
             this.aLabel5.Name = "aLabel5";
             this.aLabel5.Size = new System.Drawing.Size(97, 17);
             this.aLabel5.TabIndex = 7;
@@ -255,7 +255,7 @@
             this.dgvGroup.RowTemplate.Height = 23;
             this.dgvGroup.Size = new System.Drawing.Size(1124, 591);
             this.dgvGroup.TabIndex = 5;
-            this.dgvGroup.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvGroup_CellClick);
+            this.dgvGroup.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvGroup_CellContentClick);
             this.dgvGroup.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvGroup_CellDoubleClick);
             // 
             // MSS_CON_001
@@ -265,7 +265,7 @@
             this.ClientSize = new System.Drawing.Size(1141, 765);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.aLabel7);
-            this.Controls.Add(this.aPanel3);
+            this.Controls.Add(this.panelusersetting);
             this.Controls.Add(this.aPanel2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.aLabel1);
@@ -278,8 +278,8 @@
             this.Load += new System.EventHandler(this.MSS_CON_001_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.aPanel3.ResumeLayout(false);
-            this.aPanel3.PerformLayout();
+            this.panelusersetting.ResumeLayout(false);
+            this.panelusersetting.PerformLayout();
             this.aPanel2.ResumeLayout(false);
             this.aPanel2.PerformLayout();
             this.aPanel1.ResumeLayout(false);
@@ -301,7 +301,7 @@
         private CustomControls.APanel aPanel2;
         private CustomControls.ALabel aLabel3;
         private CustomControls.ALabel aLabel2;
-        private CustomControls.APanel aPanel3;
+        private CustomControls.APanel panelusersetting;
         private CustomControls.ALabel aLabel4;
         private CustomControls.ALabel aLabel5;
         private CustomControls.AButton btnSave;

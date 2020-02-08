@@ -131,7 +131,43 @@ namespace DAC
                 return false;
             }
         }
-        public List<UserInfoVO> UserID_UserName()
+        /// <summary>
+        /// 사용자 기본화명설정
+        /// </summary>
+        /// <param name="screencode"></param>
+        /// <returns></returns>
+        public bool Default_Screen_Code(string id, string screencode)
+        {
+            try
+            {
+
+                using (SqlCommand com = new SqlCommand())
+                {
+                    com.Connection = new SqlConnection(Connstr);
+                    com.CommandText = @"UPDATE User_Master SET Default_Screen_Code=@Default_Screen_Code WHERE User_ID=@User_ID ";
+                    com.CommandType = CommandType.Text;
+                   
+                    com.Parameters.AddWithValue("@User_ID", id);
+                    com.Parameters.AddWithValue("@Default_Screen_Code", screencode);
+
+
+                    com.Connection.Open();
+
+                    int resault = Convert.ToInt32(com.ExecuteNonQuery());
+
+                    com.Connection.Close();
+
+                    return resault > 0;
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+            public List<UserInfoVO> UserID_UserName()
         {
             using (SqlCommand comm = new SqlCommand())
             {

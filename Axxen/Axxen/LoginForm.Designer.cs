@@ -28,72 +28,142 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtPwd = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnLogin = new Axxen.CustomControls.AButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.linkquestion = new System.Windows.Forms.LinkLabel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnLogin = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(268, 135);
+            this.txtID.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtID.Location = new System.Drawing.Point(18, 59);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(151, 21);
+            this.txtID.Size = new System.Drawing.Size(303, 26);
             this.txtID.TabIndex = 0;
             this.txtID.Text = "master";
             // 
             // txtPwd
             // 
-            this.txtPwd.Location = new System.Drawing.Point(268, 184);
+            this.txtPwd.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtPwd.Location = new System.Drawing.Point(18, 125);
             this.txtPwd.Name = "txtPwd";
-            this.txtPwd.Size = new System.Drawing.Size(151, 21);
+            this.txtPwd.Size = new System.Drawing.Size(303, 26);
             this.txtPwd.TabIndex = 1;
             this.txtPwd.Text = "1234";
             // 
-            // label1
+            // panel1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(197, 138);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 12);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "아이디";
+            this.panel1.Controls.Add(this.linkquestion);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.btnLogin);
+            this.panel1.Controls.Add(this.txtPwd);
+            this.panel1.Controls.Add(this.txtID);
+            this.panel1.Location = new System.Drawing.Point(42, 209);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(348, 330);
+            this.panel1.TabIndex = 15;
             // 
-            // label2
+            // linkquestion
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(197, 187);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 12);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "비밀번호";
+            this.linkquestion.AutoSize = true;
+            this.linkquestion.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.linkquestion.Location = new System.Drawing.Point(142, 307);
+            this.linkquestion.Name = "linkquestion";
+            this.linkquestion.Size = new System.Drawing.Size(53, 12);
+            this.linkquestion.TabIndex = 6;
+            this.linkquestion.TabStop = true;
+            this.linkquestion.Text = "문의하기";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.DarkOrange;
+            this.label3.Location = new System.Drawing.Point(16, 39);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(45, 12);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "아이디 ";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.DarkOrange;
+            this.label4.Location = new System.Drawing.Point(16, 101);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 12);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "비밀번호";
             // 
             // btnLogin
             // 
-            this.btnLogin.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Location = new System.Drawing.Point(344, 234);
+            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnLogin.Location = new System.Drawing.Point(50, 177);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(75, 23);
-            this.btnLogin.TabIndex = 4;
-            this.btnLogin.Text = "확인";
+            this.btnLogin.Size = new System.Drawing.Size(236, 44);
+            this.btnLogin.TabIndex = 3;
+            this.btnLogin.Text = "로그인";
             this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
+            this.btnLogin.Click += new System.EventHandler(this.BtnLogin_Click_1);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(238, 164);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(34, 32);
+            this.pictureBox1.TabIndex = 16;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("맑은 고딕", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label5.ForeColor = System.Drawing.Color.DarkOrange;
+            this.label5.Location = new System.Drawing.Point(148, 159);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(98, 37);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "로그인";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Axxen.Properties.Resources.MianLoGo;
+            this.pictureBox2.Location = new System.Drawing.Point(55, 22);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(331, 121);
+            this.pictureBox2.TabIndex = 17;
+            this.pictureBox2.TabStop = false;
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtPwd);
-            this.Controls.Add(this.txtID);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(440, 573);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.label5);
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginForm";
+            this.Load += new System.EventHandler(this.LoginForm_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -103,8 +173,13 @@
 
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.TextBox txtPwd;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private CustomControls.AButton btnLogin;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.LinkLabel linkquestion;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

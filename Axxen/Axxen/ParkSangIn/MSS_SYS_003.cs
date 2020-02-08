@@ -28,11 +28,11 @@ namespace Axxen
 
             ///gridview
             DatagridviewDesigns.SetDesign(dgvScreen);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvScreen, "화면코드", "Screen_Code", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvScreen, "화면명", "Type", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvScreen, "화면경로", "Screen_Path", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvScreen, "입력일자", "Ins_Date", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvScreen, "사용여부", "Use_YN", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvScreen, "화면코드", "Screen_Code", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvScreen, "화면명", "Type", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvScreen, "화면경로", "Screen_Path", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvScreen, "입력일자", "Ins_Date", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvScreen, "사용여부", "Use_YN", true, 210, default, true);
 
             DataGridViewButtonColumn gridbtn = new DataGridViewButtonColumn();
             gridbtn.HeaderText = "사용여부";

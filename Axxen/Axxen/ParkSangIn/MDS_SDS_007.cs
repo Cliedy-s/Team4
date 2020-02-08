@@ -39,20 +39,20 @@ namespace Axxen
             ((MainForm)this.MdiParent).MyDeleteEvent += new EventHandler(this.MyDelete);
 
             DatagridviewDesigns.SetDesign(dgvItem);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "품목코드", "Item_Code", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "품목명", "Item_Name", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvItem, "품목코드", "Item_Code", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvItem, "품목명", "Item_Name", true, 210, default, true);
 
 
             DatagridviewDesigns.SetDesign(dgvCondition);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvCondition, "품목코드", "Item_Code", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvCondition, "작어장코드", "Wc_Code", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvCondition, "검사항목코드", "Condition_Code", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvCondition, "검사항목명", "Condition_Name", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvCondition, "규격상한값", "USL", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvCondition, "규격기준값", "SL", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvCondition, "규격하한값", "LSL", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvCondition, "단위", "Condition_Unit", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvCondition, "비고", "Remark", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvCondition, "품목코드", "Item_Code", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvCondition, "작어장코드", "Wc_Code", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvCondition, "검사항목코드", "Condition_Code", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvCondition, "검사항목명", "Condition_Name", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvCondition, "규격상한값", "USL", true, 210, DataGridViewContentAlignment.MiddleRight, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvCondition, "규격기준값", "SL", true, 210, DataGridViewContentAlignment.MiddleRight, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvCondition, "규격하한값", "LSL", true, 210, DataGridViewContentAlignment.MiddleRight, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvCondition, "단위", "Condition_Unit", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvCondition, "비고", "Remark", true, 210, default, true);
 
             GetAllItem();
             ControlSetting();

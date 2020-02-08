@@ -32,10 +32,10 @@ namespace Axxen
             ((MainForm)this.MdiParent).MyDeleteEvent += new EventHandler(this.MyDelete);
 
             DatagridviewDesigns.SetDesign(dgvGroup);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "비가동대분류코드", "Nop_Ma_Code", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "비가동대분류 명", "Nop_Ma_Name", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "입력일자", "Ins_Date", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "사용여부", "Use_YN", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvGroup, "비가동대분류코드", "Nop_Ma_Code", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvGroup, "비가동대분류 명", "Nop_Ma_Name", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvGroup, "입력일자", "Ins_Date", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvGroup, "사용여부", "Use_YN", true, 210, default, true);
 
             DataGridViewButtonColumn gridbtn = new DataGridViewButtonColumn();
             gridbtn.HeaderText = "사용여부";

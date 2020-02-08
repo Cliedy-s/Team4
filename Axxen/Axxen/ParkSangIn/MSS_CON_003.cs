@@ -33,18 +33,18 @@ namespace Axxen
             ((MainForm)this.MdiParent).MyDeleteEvent += new EventHandler(this.MyDelete);
 
             DatagridviewDesigns.SetDesign(dgvUser);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvUser, "아이디", "User_ID", true, 200, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvUser, "이름", "User_Name", true, 200, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvUser, "사용유무", "Use_YN", true, 200, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvUser, "아이디", "User_ID", true, 200, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvUser, "이름", "User_Name", true, 200, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvUser, "사용유무", "Use_YN", true, 200, default, true);
 
             DatagridviewDesigns.SetDesign(dgvGroup);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "사용자그룹코드", "UserGroup_Code", true, 200, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "사용자그룹명", "UserGroup_Name", true, 100, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvGroup, "사용자그룹코드", "UserGroup_Code", true, 200, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvGroup, "사용자그룹명", "UserGroup_Name", true, 100, default, true);
 
             DatagridviewDesigns.SetDesign(dgvJoin);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvJoin, "아이디", "User_ID", true, 200, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvJoin, "이름", "User_Name", true, 200, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvJoin, "사용유무", "Use_YN", true, 200, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvJoin, "아이디", "User_ID", true, 200, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvJoin, "이름", "User_Name", true, 200, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvJoin, "사용유무", "Use_YN", true, 200, default, true);
 
 
             DataGridViewCheckBoxColumn gridcheckbox = new DataGridViewCheckBoxColumn();
@@ -56,6 +56,7 @@ namespace Axxen
 
             GetAllUser();
             GetAllUserGroup();
+          
             ControlSetting();
         }
         /// <summary>
@@ -67,7 +68,7 @@ namespace Axxen
             userlist = userService.GetAllUser();
             dgvUser.DataSource = userlist;
 
-            dgvJoin.DataSource = userlist;
+           dgvJoin.DataSource = userlist;
 
         }
         /// <summary>
@@ -79,7 +80,10 @@ namespace Axxen
             grouplist = groupservice.GetAllUserGroup();
             dgvGroup.DataSource = grouplist.FindAll(item=>item.Use_YN =="Y");
             groupMappinglist = new List<UserGroup_MappingVO>();
-            groupMappinglist = groupservice.GetAllUserGroup_Mapping();   
+            groupMappinglist = groupservice.GetAllUserGroup_Mapping();
+
+         
+
         }
         /// <summary>
         /// 콤보박스 세팅

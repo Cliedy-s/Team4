@@ -34,18 +34,18 @@ namespace Axxen
 
 
             DatagridviewDesigns.SetDesign(dgvParent);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvParent, "코드", "Screen_Code", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvParent, "이름", "Screen_Name", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvParent, "날자", "Ins_Date", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvParent, "입력자", "Ins_Emp", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvParent, "코드", "Screen_Code", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvParent, "이름", "Screen_Name", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvParent, "날자", "Ins_Date", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvParent, "입력자", "Ins_Emp", true, 210, default, true);
 
 
             DatagridviewDesigns.SetDesign(dgvSon);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSon, "부모코드", "Parent_Screen_Code", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSon, "화면코드", "Screen_Code", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSon, "화면이름", "Screen_Name", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSon, "날자", "Ins_Date", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSon, "입력자", "Ins_Emp", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvSon, "부모코드", "Parent_Screen_Code", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvSon, "화면코드", "Screen_Code", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvSon, "화면이름", "Screen_Name", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvSon, "날자", "Ins_Date", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvSon, "입력자", "Ins_Emp", true, 210, default, true);
             datagridviewsetting();
         }
 

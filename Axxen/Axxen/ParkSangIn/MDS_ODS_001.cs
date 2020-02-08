@@ -33,11 +33,11 @@ namespace Axxen
             ((MainForm)this.MdiParent).MyDeleteEvent += new EventHandler(this.MyDelete);
             ///gridview
             DatagridviewDesigns.SetDesign(dgvProcess);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvProcess, "공정코드", "Process_code", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvProcess, "공정이름", "Process_name", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvProcess, "비고", "Remark", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvProcess, "입력일자", "Ins_Date", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvProcess, "사용여부", "Use_YN", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvProcess, "공정코드", "Process_code", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvProcess, "공정이름", "Process_name", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvProcess, "비고", "Remark", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvProcess, "입력일자", "Ins_Date", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvProcess, "사용여부", "Use_YN", true, 210, default, true);
 
             DataGridViewButtonColumn gridbtn = new DataGridViewButtonColumn();
             gridbtn.HeaderText = "사용여부";

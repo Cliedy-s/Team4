@@ -158,7 +158,7 @@
             this.aButton3.Location = new System.Drawing.Point(183, 264);
             this.aButton3.Name = "aButton3";
             this.aButton3.Size = new System.Drawing.Size(120, 44);
-            this.aButton3.TabIndex = 231;
+            this.aButton3.TabIndex = 4;
             this.aButton3.Text = "취소";
             this.aButton3.UseVisualStyleBackColor = false;
             // 
@@ -169,7 +169,7 @@
             this.btnson.Location = new System.Drawing.Point(57, 264);
             this.btnson.Name = "btnson";
             this.btnson.Size = new System.Drawing.Size(120, 44);
-            this.btnson.TabIndex = 230;
+            this.btnson.TabIndex = 3;
             this.btnson.Text = "등록";
             this.btnson.UseVisualStyleBackColor = false;
             this.btnson.Click += new System.EventHandler(this.Btnson_Click);
@@ -376,7 +376,7 @@
             this.aPanel22.Location = new System.Drawing.Point(4, 3);
             this.aPanel22.Name = "aPanel22";
             this.aPanel22.Size = new System.Drawing.Size(160, 27);
-            this.aPanel22.TabIndex = 151;
+            this.aPanel22.TabIndex = 1;
             // 
             // lblParent
             // 
@@ -394,7 +394,7 @@
             this.aPanel23.Location = new System.Drawing.Point(148, 24);
             this.aPanel23.Name = "aPanel23";
             this.aPanel23.Size = new System.Drawing.Size(170, 35);
-            this.aPanel23.TabIndex = 219;
+            this.aPanel23.TabIndex = 0;
             // 
             // cbbParent
             // 
@@ -433,7 +433,7 @@
             this.aPanel25.Location = new System.Drawing.Point(148, 95);
             this.aPanel25.Name = "aPanel25";
             this.aPanel25.Size = new System.Drawing.Size(170, 35);
-            this.aPanel25.TabIndex = 225;
+            this.aPanel25.TabIndex = 2;
             // 
             // cbbScreenname
             // 
@@ -472,7 +472,7 @@
             this.aButton2.Location = new System.Drawing.Point(171, 269);
             this.aButton2.Name = "aButton2";
             this.aButton2.Size = new System.Drawing.Size(120, 44);
-            this.aButton2.TabIndex = 202;
+            this.aButton2.TabIndex = 3;
             this.aButton2.Text = "취소";
             this.aButton2.UseVisualStyleBackColor = false;
             // 
@@ -483,7 +483,7 @@
             this.aButton1.Location = new System.Drawing.Point(46, 269);
             this.aButton1.Name = "aButton1";
             this.aButton1.Size = new System.Drawing.Size(122, 44);
-            this.aButton1.TabIndex = 201;
+            this.aButton1.TabIndex = 2;
             this.aButton1.Text = "등록";
             this.aButton1.UseVisualStyleBackColor = false;
             this.aButton1.Click += new System.EventHandler(this.AButton1_Click);
@@ -537,7 +537,7 @@
             this.aPanel10.Location = new System.Drawing.Point(152, 72);
             this.aPanel10.Name = "aPanel10";
             this.aPanel10.Size = new System.Drawing.Size(170, 35);
-            this.aPanel10.TabIndex = 197;
+            this.aPanel10.TabIndex = 1;
             // 
             // txtparentname
             // 
@@ -654,7 +654,7 @@
             this.aPanel18.Location = new System.Drawing.Point(152, 37);
             this.aPanel18.Name = "aPanel18";
             this.aPanel18.Size = new System.Drawing.Size(170, 35);
-            this.aPanel18.TabIndex = 199;
+            this.aPanel18.TabIndex = 0;
             // 
             // txtparentcode
             // 

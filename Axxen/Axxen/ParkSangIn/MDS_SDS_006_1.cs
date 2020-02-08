@@ -123,17 +123,17 @@ namespace Axxen
 
                     InspectSpecVO inspect = new InspectSpecVO
                     {
-                        Item_Code = lblItem.Text,
-                        Process_code = lblProcess.Text,
-                        Inspect_code = txtInspect_code.Text,
-                        Inspect_name = txtInspect_name.Text,
+                        Item_Code = lblItem.Text.Trim(),
+                        Process_code = lblProcess.Text.Trim(),
+                        Inspect_code = txtInspect_code.Text.Trim(),
+                        Inspect_name = txtInspect_name.Text.Trim(),
                         //Spec_Desc    =                     ,
                         USL = nudusl.Value,
                         SL = nudsl.Value,
                         LSL = nudlsl.Value,
                         Sample_size = Convert.ToInt32(nudsample.Value),
-                        Inspect_Unit = txttype.Text,
-                        Remark = txtRemark.Text
+                        Inspect_Unit = txttype.Text.Trim(),
+                        Remark = txtRemark.Text.Trim()
 
                     };
                     additem.Add(inspect);

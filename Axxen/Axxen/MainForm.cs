@@ -48,7 +48,14 @@ namespace Axxen
 
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                lblName.Text = UserInfo.User_Name;
+                toolStripButtoncencle.Alignment =
+   System.Windows.Forms.ToolStripItemAlignment.Right; //즐겨찾기 툴스트립 버튼 오른쪽으로 배치
+
+
+                toolStripButtonSetting.Alignment = ToolStripItemAlignment.Right; //세팅버튼
+                toolStripLabel.Text = UserInfo.User_Name + "님 환영합니다.";
+                toolStripLabel.Alignment = ToolStripItemAlignment.Right; //세팅버튼
+               
 
                 tvMenu.Visible = false;
                 ImageList imgList = new ImageList();
@@ -61,10 +68,14 @@ namespace Axxen
                 this.tabControl2.Padding = new Point(10, 3);
                 Setting();
                 booklist = Mainservice.GetAll_BookMark(UserInfo.User_ID);
+
+                if(!UserInfo.Default_Screen_Code.Equals("0"))
+                newForm(UserInfo.Default_Screen_Code, UserInfo.Default_Screen_Code);
+
             }
             else
             {
-                MessageBox.Show("zz");
+                this.Close();
             }
         }
 
@@ -654,11 +665,7 @@ namespace Axxen
         }
 
 
-        private void BtnSetting_Click(object sender, EventArgs e)
-        {
-            UserSettingForm frm = new UserSettingForm();
-            frm.ShowDialog();
-        }
+   
 
         private void TsbtnDelete_Click(object sender, EventArgs e)
         {
@@ -686,9 +693,20 @@ namespace Axxen
             }
             catch
             {
-
+               
 
             }
+        }
+
+        private void ToolStripButtoncencle_Click(object sender, EventArgs e)
+        {
+            pnBookmark.Visible = false;
+        }
+
+        private void ToolStripButtonSetting_Click(object sender, EventArgs e)
+        {
+            UserSettingForm frm = new UserSettingForm();
+            frm.ShowDialog();
         }
     }
 }
