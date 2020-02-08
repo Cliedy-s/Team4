@@ -208,10 +208,10 @@ namespace Axxen
         /// <param name="colindex">체크박스선택</param>
         private void Check_Wo_Req(string reqno, int colindex, bool check)
         {
-            if (colindex == dgvMainGrid.Columns["check"].Index)
-            {
-                if (colindex == dgvMainGrid.Columns["check"].Index)
-                {
+            //if (colindex == dgvMainGrid.Columns["check"].Index)
+            //{
+            //    if (colindex == dgvMainGrid.Columns["check"].Index)
+            //    {
                     var list = (from work in workList
                                 where work.Wo_Req_No.Contains(reqno)
                                 select work).ToList();
@@ -230,8 +230,8 @@ namespace Axxen
                         dgvSubGrid.DataSource = null;
                         dgvSubGrid.DataSource = addlist;
                     }
-                }
-            }
+            //    }
+            //}
         }
 
         private void PPS_SCH_001_FormClosed(object sender, FormClosedEventArgs e)
