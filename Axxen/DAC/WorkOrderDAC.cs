@@ -110,7 +110,7 @@ namespace DAC
             }
         }
 
-        public bool UPDATE_Grade_Detail_Name(string Workorderno,string Pallet_No, string Grade_Detail_Name)
+        public bool UPDATE_Grade_Detail_Name(string Workorderno, string Pallet_No, string Grade_Detail_Name)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -138,18 +138,18 @@ namespace DAC
                 conn.Open();
                 SqlTransaction tran = conn.BeginTransaction();
                 using (SqlCommand cmd = new SqlCommand("UPDATE Pallet_Master SET Use_YN='Y' where Pallet_No = @Pallet_No AND Use_YN<>'Y' ", conn))
-                {                    
+                {
                     try
                     {
                         cmd.Transaction = tran;
                         for (int i = 0; i < chkPalletNo.Count; i++)
-                        {              
-                           //cmd.CommandType = CommandType.Text;
+                        {
+                            //cmd.CommandType = CommandType.Text;
                             cmd.Parameters.AddWithValue("@Pallet_No", chkPalletNo[i]);
                             int iResult = cmd.ExecuteNonQuery();
                             if (iResult < 1)
                                 throw new Exception("오류");
-                            
+
                             cmd.Parameters.Clear();
                         }
 
@@ -198,7 +198,7 @@ namespace DAC
                             INNER JOIN Process_Master pm ON wm.Process_code = pm.Process_code) 
                             UPDATE PRM_PRF_002 SET Wo_Status='현장마감' WHERE Wo_Status<>'현장마감' and Workorderno=@Workorderno and Item_Code=@Item_Code;";
                     using (SqlCommand cmd = new SqlCommand(Stsql, conn))
-                    {                            
+                    {
                         cmd.Transaction = tran;
                         for (int i = 0; i < list.Count; i++)
                         {
@@ -213,7 +213,7 @@ namespace DAC
                             cmd.Parameters.Clear();
                         }
 
-                        tran.Commit();                            
+                        tran.Commit();
                         return "OK";
                     }
                 }
@@ -386,7 +386,7 @@ namespace DAC
                 comm.Connection.Open();
                 int result = comm.ExecuteNonQuery();
                 comm.Connection.Close();
-                if(result <= 0)
+                if (result <= 0)
                 {
                     Log.WriteFatal($"{item.Ins_Emp}이(가) 작업지시를 생성하다 DB오류남");
                 }
@@ -486,7 +486,7 @@ namespace DAC
             }
             return false;
         }
-        }
     }
-
 }
+
+
