@@ -23,7 +23,6 @@ namespace VO
     }
     public class WorkOrderNewVO
     { 
-        public string Workorderno { get; set; }          // 작업지시번호
         public string Item_Code { get; set; }              // 품목번호
         public string Wc_Code { get; set; }                // 작업장코드
         public int Plan_Qty { get; set; }                // 계획수량

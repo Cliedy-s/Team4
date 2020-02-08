@@ -55,25 +55,30 @@ namespace AxxenClient.Forms
         }
         private void btnIn_Click(object sender, EventArgs e)
         {
-
             if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
             {
                 Pallet_MasterService service = new Pallet_MasterService();
                 if (!service.IsExistPallet(txtPalletNo.TextBoxText))
                 {
+                    Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 존재하지 않는 팔레트({txtPalletNo.TextBoxText})를 입고하려함");
                     MessageBox.Show("팔레트 번호를 확인해주세요");
                     return;
                 }
                 bool isSuccess = service.InputPallet(GlobalUsage.UserID, GlobalUsage.WorkOrderNo, txtPalletNo.TextBoxText);
                 if (!isSuccess)
                 {
+                    Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 팔레트를 입고하려했지만 작업지시번호({GlobalUsage.WorkOrderNo})와 팔레트번호({txtPalletNo.TextBoxText})가 일치하는 포장이력이 존재하지 않음");
                     MessageBox.Show("입고에 실패하였습니다.");
                     return;
                 }
                 GetDatas();
                 lblBarcodeNo.Text = "";
             }
-            else MessageBox.Show("작업을 시작해주세요");
+            else
+            {
+                Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 팔레트를 입고하려했지만 작업을 시작하지 않음");
+                MessageBox.Show("작업을 시작해주세요");
+            }
 
         }
         private void txtPalletNo_searchclick(object sender, EventArgs e)
