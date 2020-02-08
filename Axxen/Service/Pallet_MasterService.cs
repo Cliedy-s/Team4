@@ -115,6 +115,15 @@ namespace Service
             return dac.InputPallet(username, workorderno, palletno);
         }
         /// <summary>
+        /// 팔레트입고 여부
+        /// </summary>
+        /// <returns></returns>
+        public bool IsPalletInput(string palletno)
+        {
+            Pallet_MasterDAC dac = new Pallet_MasterDAC();
+            return dac.IsPalletInput(palletno);
+        }
+        /// <summary>
         /// 바코드번호 변경
         /// </summary>
         /// <param name="palletNo"></param>

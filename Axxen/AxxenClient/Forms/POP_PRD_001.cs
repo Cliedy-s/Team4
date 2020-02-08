@@ -182,8 +182,11 @@ namespace AxxenClient.Forms
                 SetColor(GlobalUsage.WorkOrderNo);
                 Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 작업지시 {GlobalUsage.WorkOrderNo}를 실행함");
             }
-            else 
+            else
+            {
+                Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 존재하지 않는 작업지시를 실행하려함");
                 MessageBox.Show("존재하지 않는 작업지시 입니다.");
+            } 
         }
         private void SetColor(string wokrorderno)
         {
@@ -221,6 +224,7 @@ namespace AxxenClient.Forms
             }
             else
             {
+                Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 존재하지 않는 작업지시를 중지하려함");
                 MessageBox.Show("존재하지 않는 작업지시 입니다.");
             }
             return;
@@ -241,7 +245,7 @@ namespace AxxenClient.Forms
             }
             if (!(dgvMain.SelectedRows[0].Cells[0].Value.ToString().Equals("생산중지")))
             {
-                Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 중지되지 않는 작업지시를 마감하려함.");
+                Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 중지되지 않는 작업지시를 마감하려함");
                 MessageBox.Show("생산중인 작업지시입니다.");
                 return;
             }
@@ -252,7 +256,10 @@ namespace AxxenClient.Forms
                 GetDatas();
             }
             else
+            {
+                Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 존재하지 않는 작업지시를 마감하려함");
                 MessageBox.Show("마감할 수 없는 작업지시입니다.");
+            }
             // TODO - 기계 종료하기
         }
         /// <summary>

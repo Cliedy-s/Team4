@@ -68,14 +68,20 @@ namespace AxxenClient.Forms
                         Prd_Unit = lblItem_Unit.Text
                     });
                 if (IsSuccess)
+                {
                     MessageBox.Show("성공적으로 생성하였습니다.", "작업지시생성");
+                    Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 작업지시를 생성함");
+                }
                 else
+                {
                     MessageBox.Show("생성에 실패하였습니다.", "작업지시생성");
+                    Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 작업지시 생성에 실패함");
+                }
                 this.Close();
             }
             catch(Exception ee)
             {
-                Debug.WriteLine(ee.ToString());
+                Program.Log.WriteFatal($"{GlobalUsage.UserName}이(가) 작업지시 생성에 실패함", ee);
                 MessageBox.Show("다시 입력해주세요");
             }
 

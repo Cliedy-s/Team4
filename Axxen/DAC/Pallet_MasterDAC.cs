@@ -102,7 +102,6 @@ namespace DAC
                 return item;
             }
         }
-
         /// <summary>
         /// 바코드 번호로 팔레트 검색
         /// </summary>
@@ -160,7 +159,6 @@ namespace DAC
                 return item;
             }
         }
-
         /// <summary>
         /// 팔레트 검색하기
         /// </summary>
@@ -494,7 +492,7 @@ namespace DAC
         /// 팔레트입고
         /// </summary>
         /// <returns></returns>
-        public bool InputPallet(string username, string workorderno, string palletno)
+        public bool InputPallet(string userid, string workorderno, string palletno)
         {
             using (SqlCommand comm = new SqlCommand())
             {
@@ -510,7 +508,7 @@ namespace DAC
             AND [Pallet_No] =@palletno ;  ";
 
                 comm.CommandType = CommandType.Text;
-                comm.Parameters.AddWithValue("@username", username);
+                comm.Parameters.AddWithValue("@username", userid);
                 comm.Parameters.AddWithValue("@workorderno", workorderno);
                 comm.Parameters.AddWithValue("@palletno", palletno);
 
@@ -518,7 +516,37 @@ namespace DAC
                 int result = comm.ExecuteNonQuery();
                 comm.Connection.Close();
 
+                if(result <= 0)
+                {
+                    Log.WriteInfo($"{userid}이(가) 팔레트를 입고하려했지만 작업지시번호({workorderno})와 팔레트번호({palletno})가 일치하는 포장이력이 존재하지 않음");
+                }
                 return result > 0;
+            }
+        }
+        /// <summary>
+        /// 팔레트 입고여부
+        /// </summary>
+        /// <param name="palletno"></param>
+        /// <returns></returns>
+        public bool IsPalletInput(string palletno)
+        {
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText =
+ @" SELECT TOP(1) [In_YN]
+  FROM [dbo].[Goods_In_History]
+  WHERE Pallet_No = @palletno
+  ORDER BY In_YN DESC; ";
+
+                comm.CommandType = CommandType.Text;
+                comm.Parameters.AddWithValue("@palletno", palletno);
+
+                comm.Connection.Open();
+                string result = (comm.ExecuteScalar() ?? string.Empty).ToString();
+                comm.Connection.Close();
+
+                return result.Equals("Y");
             }
         }
         /// <summary>
@@ -540,6 +568,7 @@ namespace DAC
                 int result = comm.ExecuteNonQuery();
                 comm.Connection.Close();
 
+                Log.WriteError($"존재하지않는 팔레트({palletno})를 제거하려함");
                 return result > 0;
             }
         }

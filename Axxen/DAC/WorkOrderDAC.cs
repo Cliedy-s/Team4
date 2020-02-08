@@ -386,6 +386,10 @@ namespace DAC
                 comm.Connection.Open();
                 int result = comm.ExecuteNonQuery();
                 comm.Connection.Close();
+                if(result <= 0)
+                {
+                    Log.WriteFatal($"{item.Ins_Emp}이(가) 작업지시를 생성하다 DB오류남");
+                }
 
                 return result > 0;
             }
