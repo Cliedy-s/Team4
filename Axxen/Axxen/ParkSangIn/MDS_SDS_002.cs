@@ -32,30 +32,28 @@ namespace Axxen
             ((MainForm)this.MdiParent).MyDeleteEvent += new EventHandler(this.MyDelete);
 
             DatagridviewDesigns.SetDesign(dgvItem);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "품목코드", "Item_Code", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "품목명", "Item_Name", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "영문명", "Item_Name_Eng", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "약어", "Item_Name_Eng_Alias", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "유형", "Item_Type", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "규격", "Item_Spec", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "단위", "Item_Unit", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "안전재고", "Item_Stock", true, 210, default, true);
-         //   DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "갯수", "LotSize", true, 210, DataGridViewContentAlignment.MiddleRight, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "시간당생산수", "PrdQty_Per_Hour", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "배치당생산수", "PrdQTy_Per_Batch", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "캐비티수", "Cavity", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "성형줄당PCS수", "Line_Per_Qty", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "포장Shot당PCS수", "Shot_Per_Qty", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "건조대차기본수량", "Dry_GV_Qty", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "소성대차기본수량", "Heat_GV_Qty", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "Level1", "Level_1", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "Level2", "Level_2", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "Level3", "Level_3", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "Level4", "Level_4", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "Level5", "Level_5", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "품목코드", "Item_Code", true, 80, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "품목명", "Item_Name", true, 150, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "영문명", "Item_Name_Eng", true, 80, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "약어", "Item_Name_Eng_Alias", true, 80, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "유형", "Item_Type", true, 80, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "규격", "Item_Spec", true, 150, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "단위", "Item_Unit", true, 80, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "안전재고", "Item_Stock", true, 80, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "시간당생산수", "PrdQty_Per_Hour", true, 90, DataGridViewContentAlignment.MiddleRight, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "배치당생산수", "PrdQTy_Per_Batch", true, 90, DataGridViewContentAlignment.MiddleRight, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "캐비티수", "Cavity", true, 80, DataGridViewContentAlignment.MiddleRight, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "성형줄당갯수", "Line_Per_Qty", true, 90, DataGridViewContentAlignment.MiddleRight, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "포장샷당갯수", "Shot_Per_Qty", true, 90, DataGridViewContentAlignment.MiddleRight, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "건조대차수량", "Dry_GV_Qty", true, 100, DataGridViewContentAlignment.MiddleRight, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "소성대차수량", "Heat_GV_Qty", true, 100, DataGridViewContentAlignment.MiddleRight, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "Level1", "Level_1", true, 90, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "Level2", "Level_2", true, 90, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "Level3", "Level_3", true, 90, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "Level4", "Level_4", true, 90, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "Level5", "Level_5", true, 90, default, true);
 
             GetAllItem();
-            ///
             ControlSetting();
         }
 

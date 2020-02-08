@@ -11,7 +11,6 @@ namespace Axxen
         public static void AddNewColumnToDataGridView(DataGridView dgv, string headerText,
       string dataPropertyName, bool visibility, int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContentAlignment.MiddleLeft, bool isFillAll =false  )
         {
-
             DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
             col.HeaderText = headerText;
             col.DataPropertyName = dataPropertyName;
@@ -21,6 +20,23 @@ namespace Axxen
             col.ReadOnly = true;
             col.DefaultCellStyle.Alignment = textAlign;
           //  col.AutoSizeMode = isFillAll ? DataGridViewAutoSizeColumnMode.Fill : default(DataGridViewAutoSizeColumnMode);
+            dgv.Columns.Add(col);
+        }
+        /// <summary>
+        /// 그리드뷰 기본설정
+        /// </summary>
+        public static void AddNewColumnToDataGridView_Autosize(DataGridView dgv, string headerText,
+      string dataPropertyName, bool visibility, int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContentAlignment.MiddleLeft, bool isFillAll = false)
+        {
+            DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
+            col.HeaderText = headerText;
+            col.DataPropertyName = dataPropertyName;
+            col.Width = colWidth;
+            col.Visible = visibility;
+            col.ValueType = typeof(string);
+            col.ReadOnly = true;
+            col.DefaultCellStyle.Alignment = textAlign;
+             col.AutoSizeMode = isFillAll ? DataGridViewAutoSizeColumnMode.Fill : default(DataGridViewAutoSizeColumnMode);
             dgv.Columns.Add(col);
         }
         public static void SetDesign(DataGridView dgv)

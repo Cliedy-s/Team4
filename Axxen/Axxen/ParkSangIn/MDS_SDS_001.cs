@@ -35,12 +35,12 @@ namespace Axxen
 
 
             DatagridviewDesigns.SetDesign(dgvGroup);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "품목그룹코드", "Level_Code", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "품목그룹명", "Level_Name", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "팔렛당박스수", "Box_Qty", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "박스당pcs수", "Pcs_Qty", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "PCS당소재량", "Mat_Qty", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "사용유무", "Use_YN", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvGroup, "품목그룹코드", "Level_Code", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvGroup, "품목그룹명", "Level_Name", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvGroup, "팔렛당박스수", "Box_Qty", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvGroup, "박스당pcs수", "Pcs_Qty", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvGroup, "PCS당소재량", "Mat_Qty", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvGroup, "사용유무", "Use_YN", true, 210, default, true);
 
             DataGridViewButtonColumn gridbtn = new DataGridViewButtonColumn();
             gridbtn.HeaderText = "사용여부";
