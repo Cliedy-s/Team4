@@ -100,6 +100,7 @@
             this.cbbUser.Name = "cbbUser";
             this.cbbUser.Size = new System.Drawing.Size(179, 23);
             this.cbbUser.TabIndex = 3;
+            this.cbbUser.SelectedIndexChanged += new System.EventHandler(this.CbbUser_SelectedIndexChanged);
             // 
             // aPanel1
             // 
@@ -132,6 +133,7 @@
             this.btnSearch.TabIndex = 4;
             this.btnSearch.Text = "조회";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
             // aLabel2
             // 

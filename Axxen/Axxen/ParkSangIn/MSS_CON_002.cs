@@ -118,6 +118,7 @@ namespace Axxen
             grouplist = new List<UserGroup_MasterVO>();
             grouplist = userservice.GetAllUserGroup();
             dgvGroup.DataSource = grouplist;
+            GetGroupScreenItem(dgvGroup.SelectedRows[0].Cells[0].Value.ToString());
         }
 
         private void CbbGroup_SelectedIndexChanged(object sender, EventArgs e)

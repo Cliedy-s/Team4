@@ -15,6 +15,7 @@ namespace Axxen
     {
 
         List<UserInfoVO> userlist;
+        List<UserInfoVO> groupuserlist; //권한부여받은 유저들
         UserInfo_Service userService = new UserInfo_Service();
         List<UserGroup_MasterVO> grouplist;
         List<UserGroup_MappingVO> groupMappinglist;
@@ -68,7 +69,8 @@ namespace Axxen
             userlist = userService.GetAllUser();
             dgvUser.DataSource = userlist;
 
-           dgvJoin.DataSource = userlist;
+           groupuserlist = userlist;//권한부여받은 유저들
+           dgvJoin.DataSource = groupuserlist;
 
         }
         /// <summary>
@@ -82,7 +84,8 @@ namespace Axxen
             groupMappinglist = new List<UserGroup_MappingVO>();
             groupMappinglist = groupservice.GetAllUserGroup_Mapping();
 
-         
+            subMappinglist = new List<UserGroup_MappingVO>(); //맵핑된전체유저들중 선택그룹에해당하는 유저들
+            subMappinglist = groupMappinglist.FindAll(item => item.UserGroup_Code == dgvGroup.SelectedRows[0].Cells[0].Value.ToString());//맵핑된전체유저들중 하나의그룹에해당하는 애들만
 
         }
         /// <summary>
@@ -186,11 +189,11 @@ namespace Axxen
             }
 
 
-            for (int i = 0; i < userlist.Count; i++)
+            for (int i = 0; i < groupuserlist.Count; i++)
             {
                 for (int j = 0; j < subMappinglist.Count; j++)
                 {
-                    if (userlist[i].User_ID == subMappinglist[j].User_ID)
+                    if (groupuserlist[i].User_ID == subMappinglist[j].User_ID)
                     {
                         dgvJoin.Rows[i].Cells[0].Value = true;
                     }
@@ -255,5 +258,20 @@ namespace Axxen
             ((MainForm)this.MdiParent).MyDeleteEvent -= new EventHandler(this.MyDelete);
         }
 
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvUser.Rows)
+            {
+                if (row.Cells[0].Value.ToString().Contains(lblUser.Text))
+                {
+                    row.Cells[0].Selected = true;
+                }
+            }
+        }
+
+        private void CbbUser_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblUser.Text = cbbUser.SelectedValue.ToString();
+        }
     }
 }
