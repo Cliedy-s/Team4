@@ -203,7 +203,6 @@
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnSave.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Location = new System.Drawing.Point(773, 8);

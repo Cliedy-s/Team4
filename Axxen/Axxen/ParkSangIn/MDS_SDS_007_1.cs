@@ -23,12 +23,34 @@ namespace Axxen
             InitializeComponent();
         }
 
+        public ConditionSpecVO upadatecondition { get; set; }
+
         private void MDS_SDS_007_1_Load(object sender, EventArgs e)
         {
             GetAllItem();
             ControlSetting();
             lblManager.Text = UserInfo.User_Name;
             lblDay.Text = DateTime.Now.ToShortDateString();
+
+            if (upadatecondition != null)//수정이라면
+            {
+                txtCondition_Code.Text = upadatecondition.Condition_Code;
+                txtCondition_Name.Text = upadatecondition.Condition_Name;
+                cbbItem.Text = Itemlist.Find(item => item.Item_Code.Equals(upadatecondition.Item_Code)).Item_Name;
+                lblItem.Text = cbbItem.SelectedValue.ToString();
+                cbbwork.Text = upadatecondition.Wc_Code;
+                lblwork.Text = cbbwork.SelectedValue.ToString();
+                nudusl.Value = upadatecondition.USL;
+                nudsl.Value = upadatecondition.SL;
+                nudlsl.Value = upadatecondition.LSL;
+                txtRemark.Text = upadatecondition.Remark;
+                txttype.Text = upadatecondition.Condition_Unit;
+                txtCondition_Code.Enabled = false;
+                cbbItem.Enabled = false;
+                lblItem.Enabled = false;
+                cbbwork.Enabled = false;
+                lblwork.Enabled = false;
+            }
         }
 
         /// <summary>
@@ -110,21 +132,24 @@ namespace Axxen
                 addlist.Add(inspect);
                 if (service.InsertConditionSpec(addlist))
                 {
-                    MessageBox.Show("저장 완료", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                      
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
                 else
                 {
                     MessageBox.Show("이미 등록된 검사항목입니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
                 }
                 }
                 else
                 {
                     MessageBox.Show("필수 항목을 입력해주세요.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
                 }
             }
             catch (Exception err)
             {
-
                 Program.Log.WriteError(err.Message);
                 MessageBox.Show(err.ToString(), "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

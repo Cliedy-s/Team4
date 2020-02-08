@@ -31,16 +31,16 @@ namespace Axxen
             ((MainForm)this.MdiParent).MyUpdateEvent += new System.EventHandler(this.MyUpdateShow);//입력이벤트 등록
             ((MainForm)this.MdiParent).InsertFormEvent += new System.EventHandler(this.InsertFormShow);//입력이벤트 등록
             ((MainForm)this.MdiParent).RefreshFormEvent += new EventHandler(this.RefreshFormShow);
+            ((MainForm)this.MdiParent).MyDeleteEvent += new EventHandler(this.MyDelete);
 
-           
 
             DatagridviewDesigns.SetDesign(dgvGroup);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "품목그룹코드", "Level_Code", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "품목그룹명", "Level_Name", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "팔렛당박스수", "Box_Qty", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "박스당pcs수", "Pcs_Qty", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "PCS당소재량", "Mat_Qty", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "사용유무", "Use_YN", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvGroup, "품목그룹코드", "Level_Code", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvGroup, "품목그룹명", "Level_Name", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvGroup, "팔렛당박스수", "Box_Qty", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvGroup, "박스당pcs수", "Pcs_Qty", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvGroup, "PCS당소재량", "Mat_Qty", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvGroup, "사용유무", "Use_YN", true, 210, default, true);
 
             DataGridViewButtonColumn gridbtn = new DataGridViewButtonColumn();
             gridbtn.HeaderText = "사용여부";
@@ -67,9 +67,9 @@ namespace Axxen
             {
                 if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
                 {
+                    ResetUtillity.ResetPanelControl(panelsetting);
                     panelsetting.Enabled = true;
-
-
+                    txtCode.Enabled = true;
                     btnSave.Text = "저장";
                 }
             }
@@ -91,6 +91,7 @@ namespace Axxen
                 if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
                 {
                     panelsetting.Enabled = true;
+                    txtCode.Enabled = false;
                     btnSave.Text = "수정";
                 }
             }
@@ -98,6 +99,38 @@ namespace Axxen
             {
                 MessageBox.Show(err.Message);
             }
+        }
+        private void MyDelete(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
+                {
+                  
+                    if (MessageBox.Show(dgvGroup.SelectedRows[0].Cells[1].Value.ToString() + "를 삭제하시겠습니까?", "알림", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        // MessageBox.Show(dgvMainGrid.SelectedRows[0].Cells[0].Value.ToString());
+                        if (itemservice.DeleteItem_Level_Master(dgvGroup.SelectedRows[0].Cells[0].Value.ToString()))
+                        {
+                            GetAllItemGroup();
+                            ControlSetting();//콤보박스 
+
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("삭제실패");
+                        }
+                    }
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+                Program.Log.WriteError(err.Message);
+            }
+
         }
         /// <summary>
         /// 새로고침 이벤트 메서드
@@ -282,6 +315,7 @@ namespace Axxen
             ((MainForm)this.MdiParent).MyUpdateEvent -= new System.EventHandler(this.MyUpdateShow);//입력이벤트 등록
             ((MainForm)this.MdiParent).InsertFormEvent -= new System.EventHandler(this.InsertFormShow);//입력이벤트 등록
             ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow);
+            ((MainForm)this.MdiParent).MyDeleteEvent -= new EventHandler(this.MyDelete);
         }
     }
    }

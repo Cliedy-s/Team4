@@ -75,18 +75,11 @@ namespace Axxen
         /// </summary>
         private void GetAllUserGroup()// 사용자그룹목록
         {
-
             grouplist = new List<UserGroup_MasterVO>();
             grouplist = groupservice.GetAllUserGroup();
-
             dgvGroup.DataSource = grouplist.FindAll(item=>item.Use_YN =="Y");
-
             groupMappinglist = new List<UserGroup_MappingVO>();
-            groupMappinglist = groupservice.GetAllUserGroup_Mapping();
-
-
-
-        
+            groupMappinglist = groupservice.GetAllUserGroup_Mapping();   
         }
         /// <summary>
         /// 콤보박스 세팅
@@ -113,7 +106,13 @@ namespace Axxen
                 {
                     MSS_CON_003_1 frm = new MSS_CON_003_1();
 
-                    frm.ShowDialog();
+                  if(frm.ShowDialog() == DialogResult.OK)
+                    {
+                        MessageBox.Show("등록", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        GetAllUser();
+                        GetAllUserGroup();
+                        ControlSetting();//콤보박스
+                    }
                 }
             }
             catch (Exception err)
@@ -123,7 +122,11 @@ namespace Axxen
         }
         private void MyDelete(object sender, EventArgs e)
         {
-            if (MessageBox.Show(dgvUser.SelectedRows[0].Cells[0].Value.ToString() + "를 삭제하시겠습니까?", "알림", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            try
+            {
+                if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
+                {
+                    if (MessageBox.Show(dgvUser.SelectedRows[0].Cells[1].Value.ToString() + "를 삭제하시겠습니까?", "알림", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 //   MessageBox.Show(dgvParent.SelectedRows[0].Cells[0].Value.ToString());
                 if (userService.DeleteUserInfoVO(dgvUser.SelectedRows[0].Cells[0].Value.ToString()))
@@ -137,6 +140,12 @@ namespace Axxen
                 {
                     MessageBox.Show("삭제실패");
                 }
+                    }
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
             }
 
         }

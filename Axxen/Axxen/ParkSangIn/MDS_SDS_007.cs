@@ -36,7 +36,7 @@ namespace Axxen
             ((MainForm)this.MdiParent).MyUpdateEvent += new System.EventHandler(this.MyUpdateShow);//입력이벤트 등록
             ((MainForm)this.MdiParent).InsertFormEvent += new System.EventHandler(this.InsertFormShow);//입력이벤트 등록
             ((MainForm)this.MdiParent).RefreshFormEvent += new EventHandler(this.RefreshFormShow);
-
+            ((MainForm)this.MdiParent).MyDeleteEvent += new EventHandler(this.MyDelete);
 
             DatagridviewDesigns.SetDesign(dgvItem);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "품목코드", "Item_Code", true, 210, default, true);
@@ -51,7 +51,6 @@ namespace Axxen
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvCondition, "규격상한값", "USL", true, 210, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvCondition, "규격기준값", "SL", true, 210, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvCondition, "규격하한값", "LSL", true, 210, default, true);
-  
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvCondition, "단위", "Condition_Unit", true, 210, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvCondition, "비고", "Remark", true, 210, default, true);
 
@@ -68,15 +67,15 @@ namespace Axxen
             {
 
                 Itemlist = new List<Item_MasterVO>(); //품목전체
-                Itemlist = itemservice.GetAllItem_Master();
+                Itemlist = itemservice.GetAllItem_Master().FindAll(item=>item.Item_Type.Trim().Equals("PR"));
                 dgvItem.DataSource = Itemlist;
 
 
                 workcenterlist = new List<WorkCenter_MasterVO>(); //작업장
-                workcenterlist = workcenterservice.GetAll();
+                workcenterlist = workcenterservice.GetAll().FindAll(work=>work.Use_YN.Equals("Y"));
 
                 Conditionlist = new List<ConditionSpecVO>();
-                Conditionlist=Conditionservice.GetAll();
+                Conditionlist = Conditionservice.GetAll();
 
             }
             catch (Exception err)
@@ -113,11 +112,31 @@ namespace Axxen
         /// <param name="e"></param>
         public void MyUpdateShow(object sender, EventArgs e)
         {
+            try
+            {
+                if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
+                {
+                    if (dgvCondition.RowCount > 0) { 
+                    MDS_SDS_007_1 frm = new MDS_SDS_007_1();
+                    frm.upadatecondition = Conditionlist.Find(item => item.Item_Code.Trim().Equals(dgvCondition.SelectedRows[0].Cells[0].Value.ToString())
+                    && item.Wc_Code.Trim().Equals(dgvCondition.SelectedRows[0].Cells[1].Value.ToString())
+                    && item.Condition_Code.Trim().Equals(dgvCondition.SelectedRows[0].Cells[2].Value.ToString()));
 
-            //nudCavity.Enabled = true;
-            //nudLine_Per_Qty.Enabled = true;
-            //nudShot_Per_Qty.Enabled = true;
-            //btnSave.Enabled = true;
+              
+                    if (frm.ShowDialog() == DialogResult.OK)
+                    {
+                        GetAllItem();
+                        ControlSetting();//콤보박스 
+                        MessageBox.Show("저장 완료", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    }
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+                Program.Log.WriteError(err.Message);
+            }
         }
         /// <summary>
         /// 입력 이벤트 메서드
@@ -132,8 +151,41 @@ namespace Axxen
                 if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
                 {
                     MDS_SDS_007_1 frm = new MDS_SDS_007_1();
+                   if(frm.ShowDialog() == DialogResult.OK) { 
+                    GetAllItem();
+                    ControlSetting();//콤보박스 
+                        MessageBox.Show("저장 완료", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+                Program.Log.WriteError(err.Message);
+            }
 
-                    frm.ShowDialog();
+        }
+        private void MyDelete(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
+                {
+
+                    if (MessageBox.Show(dgvCondition.SelectedRows[0].Cells[3].Value.ToString() + "를 삭제하시겠습니까?", "알림", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        
+                        // MessageBox.Show(dgvMainGrid.SelectedRows[0].Cells[0].Value.ToString());
+                        if (Conditionservice.DeleteConditionSpecVO(dgvCondition.SelectedRows[0].Cells[0].Value.ToString(), dgvCondition.SelectedRows[0].Cells[1].Value.ToString(), dgvCondition.SelectedRows[0].Cells[2].Value.ToString()))
+                        {
+                            GetAllItem();
+                            ControlSetting();//콤보박스 
+                        }
+                        else
+                        {
+                            MessageBox.Show("삭제실패");
+                        }
+                    }
                 }
             }
             catch (Exception err)
@@ -155,7 +207,6 @@ namespace Axxen
                 if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
                 {
                     GetAllItem();
-                    ///
                     ControlSetting();
                 }
             }
@@ -172,8 +223,10 @@ namespace Axxen
 
             frm.itemCode = lblItem.Text;
             frm.WorkCode = lblwork.Text;
+        
             if (frm.ShowDialog() == DialogResult.OK)
             {
+                MessageBox.Show("저장 완료", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 GetAllItem();
                 ControlSetting();
             };
@@ -208,6 +261,7 @@ namespace Axxen
             ((MainForm)this.MdiParent).MyUpdateEvent -= new System.EventHandler(this.MyUpdateShow);//입력이벤트 등록
             ((MainForm)this.MdiParent).InsertFormEvent -= new System.EventHandler(this.InsertFormShow);//입력이벤트 등록
             ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow);
+            ((MainForm)this.MdiParent).MyDeleteEvent -= new EventHandler(this.MyDelete);
         }
     }
 }

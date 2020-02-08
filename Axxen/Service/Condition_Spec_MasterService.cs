@@ -30,5 +30,10 @@ namespace Service
         {
             return dac.InsertConditionSpec(condition);
         }
+
+        public bool DeleteConditionSpecVO(string Item_Code,string Wc_Code, string Condition_Code)
+        {
+            return dac.DeleteConditionSpecVO(Item_Code, Wc_Code, Condition_Code);
+        }
     }
 }

@@ -70,9 +70,9 @@
             this.dgvProcess.Location = new System.Drawing.Point(12, 69);
             this.dgvProcess.Name = "dgvProcess";
             this.dgvProcess.RowTemplate.Height = 23;
-            this.dgvProcess.Size = new System.Drawing.Size(1124, 533);
+            this.dgvProcess.Size = new System.Drawing.Size(1124, 498);
             this.dgvProcess.TabIndex = 10;
-            this.dgvProcess.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvProcess_CellClick);
+            this.dgvProcess.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvProcess_CellContentClick);
             this.dgvProcess.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvProcess_CellDoubleClick);
             // 
             // cbbProcess
@@ -81,7 +81,7 @@
             this.cbbProcess.Location = new System.Drawing.Point(109, 6);
             this.cbbProcess.Name = "cbbProcess";
             this.cbbProcess.Size = new System.Drawing.Size(152, 23);
-            this.cbbProcess.TabIndex = 3;
+            this.cbbProcess.TabIndex = 0;
             this.cbbProcess.SelectedIndexChanged += new System.EventHandler(this.CbbProcess_SelectedIndexChanged);
             // 
             // aPanel1
@@ -111,7 +111,7 @@
             this.btnSearch.Location = new System.Drawing.Point(649, 7);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearch.TabIndex = 4;
+            this.btnSearch.TabIndex = 1;
             this.btnSearch.Text = "조회";
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
@@ -175,10 +175,11 @@
             // 
             // aLabel7
             // 
+            this.aLabel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.aLabel7.AutoSize = true;
             this.aLabel7.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel7.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.aLabel7.Location = new System.Drawing.Point(37, 605);
+            this.aLabel7.Location = new System.Drawing.Point(37, 570);
             this.aLabel7.Name = "aLabel7";
             this.aLabel7.Size = new System.Drawing.Size(128, 21);
             this.aLabel7.TabIndex = 17;
@@ -196,9 +197,9 @@
             this.aPanel3.Controls.Add(this.aLabel6);
             this.aPanel3.Controls.Add(this.btnSave);
             this.aPanel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.aPanel3.Location = new System.Drawing.Point(0, 636);
+            this.aPanel3.Location = new System.Drawing.Point(0, 597);
             this.aPanel3.Name = "aPanel3";
-            this.aPanel3.Size = new System.Drawing.Size(1148, 64);
+            this.aPanel3.Size = new System.Drawing.Size(1148, 103);
             this.aPanel3.TabIndex = 16;
             // 
             // txtremark
@@ -210,8 +211,8 @@
             this.txtremark.MaxLength = 100;
             this.txtremark.Multiline = true;
             this.txtremark.Name = "txtremark";
-            this.txtremark.Size = new System.Drawing.Size(225, 39);
-            this.txtremark.TabIndex = 14;
+            this.txtremark.Size = new System.Drawing.Size(225, 71);
+            this.txtremark.TabIndex = 2;
             this.txtremark.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // aLabel8
@@ -229,11 +230,11 @@
             this.txtCode.BackColor = System.Drawing.Color.White;
             this.txtCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCode.errorp = null;
-            this.txtCode.Location = new System.Drawing.Point(371, 18);
+            this.txtCode.Location = new System.Drawing.Point(112, 19);
             this.txtCode.MaxLength = 20;
             this.txtCode.Name = "txtCode";
             this.txtCode.Size = new System.Drawing.Size(149, 23);
-            this.txtCode.TabIndex = 12;
+            this.txtCode.TabIndex = 0;
             this.txtCode.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // txtName
@@ -241,18 +242,18 @@
             this.txtName.BackColor = System.Drawing.Color.White;
             this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtName.errorp = null;
-            this.txtName.Location = new System.Drawing.Point(109, 18);
+            this.txtName.Location = new System.Drawing.Point(359, 19);
             this.txtName.MaxLength = 100;
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(149, 23);
-            this.txtName.TabIndex = 11;
+            this.txtName.TabIndex = 1;
             this.txtName.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // aLabel5
             // 
             this.aLabel5.AutoSize = true;
             this.aLabel5.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aLabel5.Location = new System.Drawing.Point(282, 19);
+            this.aLabel5.Location = new System.Drawing.Point(23, 20);
             this.aLabel5.Name = "aLabel5";
             this.aLabel5.Size = new System.Drawing.Size(71, 17);
             this.aLabel5.TabIndex = 10;
@@ -262,7 +263,7 @@
             // 
             this.aLabel6.AutoSize = true;
             this.aLabel6.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aLabel6.Location = new System.Drawing.Point(34, 19);
+            this.aLabel6.Location = new System.Drawing.Point(284, 20);
             this.aLabel6.Name = "aLabel6";
             this.aLabel6.Size = new System.Drawing.Size(58, 17);
             this.aLabel6.TabIndex = 7;
@@ -273,18 +274,19 @@
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Location = new System.Drawing.Point(1036, 11);
+            this.btnSave.Location = new System.Drawing.Point(1036, 50);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(88, 33);
-            this.btnSave.TabIndex = 4;
+            this.btnSave.TabIndex = 3;
             this.btnSave.Text = "저장";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(12, 604);
+            this.pictureBox3.Location = new System.Drawing.Point(12, 569);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(23, 22);
             this.pictureBox3.TabIndex = 18;

@@ -12,14 +12,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AxxenClient.Util
+namespace DAC
 {
     public class LoggingUtility
     {
         private static LoggingUtility _loggingUtility = null;
         private ILog log;
         private RollingFileAppender roller;
-        private string logFileName = "AxxenClient.log";
+        private string logFileName = "AxxenDAC.log";
         private int logSaveDays = 30; // 30일 기준
         private bool runAsConsole = false;
 

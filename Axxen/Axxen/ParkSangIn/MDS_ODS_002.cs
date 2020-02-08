@@ -28,6 +28,7 @@ namespace Axxen
             ((MainForm)this.MdiParent).MyUpdateEvent += new System.EventHandler(this.MyUpdateShow);//입력이벤트 등록
             ((MainForm)this.MdiParent).InsertFormEvent += new System.EventHandler(this.InsertFormShow);//입력이벤트 등록
             ((MainForm)this.MdiParent).RefreshFormEvent += new EventHandler(this.RefreshFormShow);// 수정
+            ((MainForm)this.MdiParent).MyDeleteEvent += new EventHandler(this.MyDelete);
             ///gridview
             DatagridviewDesigns.SetDesign(dgvWork);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvWork, "작업장코드", "Wc_Code", true, 210, default, true);
@@ -93,17 +94,19 @@ namespace Axxen
                 {
                     if (dgvWork.SelectedRows[0].Cells[0].Value != null)
                     {
-                       // MDS_SDS_006_1 frm = new MDS_SDS_006_1();
+                        MDS_ODS_002_1 frm = new MDS_ODS_002_1();
 
-                        //frm.updateinspectitem = worklist.Find(item => item.Item_Code == dgvinspect.SelectedRows[0].Cells[0].Value.ToString() && item.Process_code == dgvinspect.SelectedRows[0].Cells[1].Value.ToString() && item.Inspect_code == dgvinspect.SelectedRows[0].Cells[2].Value.ToString());
+                        frm.updateworkitem = worklist.Find(item => item.Wc_Code == dgvWork.SelectedRows[0].Cells[0].Value.ToString());
 
 
-                      //  frm.ShowDialog();
+                        if (frm.ShowDialog() == DialogResult.OK)
+                        {
+                            MessageBox.Show("저장 완료", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            GetAllWork();
+                            ControlSetting();
+                        }
                     }
-                    else
-                    {
-                        MessageBox.Show("품질귝격을 선택해주세요.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+
 
                 }
             }
@@ -113,6 +116,35 @@ namespace Axxen
                 Program.Log.WriteError(err.Message);
             }
 
+
+        }
+        private void MyDelete(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
+                {
+                    if (MessageBox.Show(dgvWork.SelectedRows[0].Cells[1].Value.ToString() + "를 삭제하시겠습니까?", "알림", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+
+                        // MessageBox.Show(dgvMainGrid.SelectedRows[0].Cells[0].Value.ToString());
+                        if (Workservice.DeleteWorkCenter_Master2VO(dgvWork.SelectedRows[0].Cells[0].Value.ToString()))
+                        {
+                            GetAllWork();
+                            ControlSetting();//콤보박스
+                        }
+                        else
+                        {
+                            MessageBox.Show("삭제실패");
+                        }
+                    }
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+                Program.Log.WriteError(err.Message);
+            }
 
         }
         /// <summary>
@@ -127,9 +159,15 @@ namespace Axxen
             {
                 if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
                 {
-                   MDS_ODS_002_1 frm = new MDS_ODS_002_1();
+                    MDS_ODS_002_1 frm = new MDS_ODS_002_1();
 
-                    frm.ShowDialog();
+                    if (frm.ShowDialog() == DialogResult.OK)
+                    {
+                        MessageBox.Show("저장 완료", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        GetAllWork();
+                        ControlSetting();
+
+                    }
                 }
             }
             catch (Exception err)
@@ -232,6 +270,7 @@ namespace Axxen
             ((MainForm)this.MdiParent).MyUpdateEvent -= new System.EventHandler(this.MyUpdateShow);//입력이벤트 등록
             ((MainForm)this.MdiParent).InsertFormEvent -= new System.EventHandler(this.InsertFormShow);//입력이벤트 등록
             ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow);// 수정
+            ((MainForm)this.MdiParent).MyDeleteEvent -= new EventHandler(this.MyDelete);
         }
     }
 }

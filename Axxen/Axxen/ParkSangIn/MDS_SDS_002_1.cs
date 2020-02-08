@@ -103,27 +103,31 @@ namespace Axxen
                         Shot_Per_Qty = int.Parse(nudshotper.Value.ToString()),
                         Dry_GV_Qty = int.Parse(nuddrgdv.Value.ToString()),
                         Heat_GV_Qty = int.Parse(nudheatgv.Value.ToString()),
-                        Level_1 = cbbLevel_1.ValueMember,
-                        Level_2 = cbbLevel_2.ValueMember,
-                        Level_3 = cbbLevel_3.ValueMember,
-                        Level_4 = cbbLevel_4.ValueMember,
-                        Level_5 = cbbLevel_5.ValueMember,
+                        Level_1 = cbbLevel_1.SelectedValue.ToString(),
+                        Level_2 = cbbLevel_2.SelectedValue.ToString(),
+                        Level_3 = cbbLevel_3.SelectedValue.ToString(),
+                        Level_4 = cbbLevel_4.SelectedValue.ToString(),
+                        Level_5 = cbbLevel_5.SelectedValue.ToString(),
                         Ins_Date = Convert.ToDateTime(lblDay.Text),
                         Ins_Emp = lblManager.Text,
                     };
                     if (itemservice.InsertUpdateAllItem_Master(item))
                     {
-                        MessageBox.Show("저장 완료", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                      
+                        this.Close();
+                        this.DialogResult = DialogResult.OK;
                     }
                     else
                     {
                         MessageBox.Show("저장 실패", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
                     }
 
                 }
                 else
                 {
                     MessageBox.Show("필수 항목을 입력해주세요.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
                 }
 
 

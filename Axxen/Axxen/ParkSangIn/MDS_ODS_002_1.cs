@@ -21,6 +21,8 @@ namespace Axxen
             InitializeComponent();
         }
 
+     public WorkCenter_Master2VO updateworkitem { get; set; }
+
         private void MDS_ODS_002_1_Load(object sender, EventArgs e)
         {
             GetAllItem();
@@ -28,26 +30,15 @@ namespace Axxen
             lblManager.Text = UserInfo.User_Name;
             lblDay.Text = DateTime.Now.ToShortDateString();
 
-            //if (updateinspectitem != null)//수정이라면
-            //{
-            //    cbb.Text = Itemlist.Find(itemname => itemname.Item_Code == updateinspectitem.Item_Code).Item_Name;
-            //    lblItem.Text = updateinspectitem.Item_Code;
-            //    cbbProcess.Text = processlist.Find(proname => proname.Process_code == updateinspectitem.Process_code).Process_name;
-            //    lblProcess.Text = updateinspectitem.Process_code;
-            //    txtInspect_code.Text = updateinspectitem.Inspect_code;
-            //    txtInspect_name.Text = updateinspectitem.Inspect_name;
-
-            //    nudusl.Value = updateinspectitem.USL;
-            //    nudsl.Value = updateinspectitem.SL;
-            //    nudlsl.Value = updateinspectitem.LSL;
-            //    nudsample.Value = updateinspectitem.Sample_size;
-            //    txttype.Text = updateinspectitem.Inspect_Unit;
-            //    txtRemark.Text = updateinspectitem.Remark;
-
-
-            //    cbbItem.Enabled = false;
-            //    cbbProcess.Enabled = false;
-            //}
+            if (updateworkitem != null)//수정이라면
+            {
+                txtwork_code.Text = updateworkitem.Wc_Code;
+                txtwork_name.Text = updateworkitem.Wc_Name;
+                cbbProcess.Text = updateworkitem.Process_name;
+                lblprocess.Text = cbbProcess.SelectedValue.ToString();
+                txtRemark.Text = updateworkitem.Remark;
+                txtwork_code.Enabled = false;      
+            }
         }
 
         /// <summary>
@@ -88,8 +79,6 @@ namespace Axxen
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
-
-
             try
             {
 
@@ -109,13 +98,13 @@ namespace Axxen
                     if (Workservice.InsertWorkservice(additem))
                     {
 
-
-                        MessageBox.Show("저장 완료", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                       
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
                     }
                     else
                     {
                         MessageBox.Show("이미 등록된 검사항목입니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
                     }
 
                 }

@@ -38,6 +38,7 @@ namespace AxxenClient.Forms
             if(login.ShowDialog() != DialogResult.OK)
             {
                 this.Close();
+                return;
             }
             
             // 개발자용 콤보박스 설정

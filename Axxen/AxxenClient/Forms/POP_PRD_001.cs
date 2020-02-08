@@ -19,10 +19,6 @@ namespace AxxenClient.Forms
 {
     public partial class POP_PRD_001 : AxxenClient.Templets.ClientBaseForm
     {
-        #region Log
-        private static LoggingUtility _loggingUtility = LoggingUtility.GetLoggingUtility("WorkerClient", Level.Info, 30);
-        internal static LoggingUtility Log { get { return _loggingUtility; } }
-        #endregion
         bool isMachineRun = false;
         string selectedrowwono { get; set; }
         int columnno { get; set; }
@@ -152,9 +148,9 @@ namespace AxxenClient.Forms
             if (dgvMain.SelectedRows.Count <= 0)
             { // 선택한 작업지시가 없을 경우
                 MessageBox.Show("작업지시를 선택해주세요.");
+                Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 작업지시를 선택하지 않고 작업지시를 실행하려함.");
                 return;
             }
-
             // 시작한 작업지시가 있을 경우 - 작업지시를 끝냄
             if (GlobalUsage.WorkOrderNo != "설정안됨")
             {
@@ -174,7 +170,6 @@ namespace AxxenClient.Forms
             // 작업지시 시작하기
             if (service.UpdateWorkOrderStart(row.Cells[1].Value.ToString(), row.Cells[5].Value.ToString(), GlobalUsage.UserID))
             { // 성공
-
                 //해당 프로그램의 전역에 설정해줌
                 GlobalUsage.WorkOrderNo = row.Cells[1].Value.ToString();
                 GlobalUsage.WorkorderDate = Convert.ToDateTime(row.Cells[10].Value);
@@ -185,9 +180,13 @@ namespace AxxenClient.Forms
 
                 GetDatas();
                 SetColor(GlobalUsage.WorkOrderNo);
+                Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 작업지시 {GlobalUsage.WorkOrderNo}를 실행함");
             }
             else
-                MessageBox.Show("작업지시 시작에 실패하였습니다.");
+            {
+                Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 존재하지 않는 작업지시를 실행하려함");
+                MessageBox.Show("존재하지 않는 작업지시 입니다.");
+            } 
         }
         private void SetColor(string wokrorderno)
         {
@@ -213,6 +212,7 @@ namespace AxxenClient.Forms
             if (service.UpdateWorkOrderEnd(GlobalUsage.WorkOrderNo, GlobalUsage.Out_Qty, GlobalUsage.Prd_Qty, GlobalUsage.UserID))
             { // 성공
               //해당 프로그램의 전역에 설정해줌
+                Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 작업지시 {GlobalUsage.WorkOrderNo}를 종료함");
                 GlobalUsage.WorkOrderNo = "설정안됨";
                 GlobalUsage.WorkorderDate = null;
                 GlobalUsage.ItemName = "설정안됨";
@@ -222,8 +222,11 @@ namespace AxxenClient.Forms
 
                 GetDatas();
             }
-            else //실패
-                MessageBox.Show("작업지시 종료에 실패하였습니다.");
+            else
+            {
+                Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 존재하지 않는 작업지시를 중지하려함");
+                MessageBox.Show("존재하지 않는 작업지시 입니다.");
+            }
             return;
             // TODO - 기계 종료하기
         }
@@ -236,11 +239,13 @@ namespace AxxenClient.Forms
         {
             if (dgvMain.SelectedRows.Count <= 0)
             {
+                Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 작업지시를 선택하지 않고 마감하려함");
                 MessageBox.Show("작업지시를 선택해주세요.");
                 return;
             }
             if (!(dgvMain.SelectedRows[0].Cells[0].Value.ToString().Equals("생산중지")))
             {
+                Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 중지되지 않는 작업지시를 마감하려함");
                 MessageBox.Show("생산중인 작업지시입니다.");
                 return;
             }
@@ -251,7 +256,10 @@ namespace AxxenClient.Forms
                 GetDatas();
             }
             else
+            {
+                Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 존재하지 않는 작업지시를 마감하려함");
                 MessageBox.Show("마감할 수 없는 작업지시입니다.");
+            }
             // TODO - 기계 종료하기
         }
         /// <summary>
@@ -294,117 +302,6 @@ namespace AxxenClient.Forms
         {
             isMachineRun = true;
 
-        }
-    }
-    enum MachineType { Molding, Boxing, Inspect_Measure }
-    class Machine
-    {
-        private static LoggingUtility _loggingUtility = LoggingUtility.GetLoggingUtility("WorkerClient", Level.Info, 30);
-        internal static LoggingUtility Log { get { return _loggingUtility; } }
-
-        System.Timers.Timer timer;
-        string writefolder = ConfigurationManager.AppSettings["WriteFolder"];
-        int interval = int.Parse(ConfigurationManager.AppSettings["LogCreateMillisecond"]);
-        int machineID = 0;
-        int iCnt = 0;
-        public Machine(int machineID)
-        {
-            this.machineID = machineID;
-            if (!Directory.Exists(writefolder))
-                Directory.CreateDirectory(writefolder);
-        }
-        private void MachineStartMold(string workorderno, string moldcode)
-        {
-            Log.WriteInfo("성형생산 시작...");
-            timer = new System.Timers.Timer(interval);
-            timer.Enabled = true;
-            timer.Elapsed += Mold_Elapsed;
-            timer.AutoReset = true;
-        }
-        private void MachineStartBoxing(string workorderno)
-        {
-            Log.WriteInfo("포장 시작...");
-            timer = new System.Timers.Timer(interval);
-            timer.Enabled = true;
-            timer.Elapsed += Boxing_Elapsed;
-            timer.AutoReset = true;
-        }
-        private void MachineStartInspectMeasure(string workorderno)
-        {
-            Log.WriteInfo("품질측정 시작...");
-            timer = new System.Timers.Timer(interval);
-            timer.Enabled = true;
-            timer.Elapsed += Inspect_Measure_Elapsed;
-            timer.AutoReset = true;
-        }
-        private void MachineStop()
-        {
-            timer.Stop();
-            timer.Dispose();
-            Console.WriteLine("생산량 파일 로그 기록 종료...");
-        }
-        private void Mold_Elapsed(object sender, ElapsedEventArgs e)
-        {
-            Random rnd = new Random((int)DateTime.UtcNow.Ticks);
-            StreamWriter sw = null;
-            try
-            {
-                sw = new StreamWriter($"{writefolder}\\MoldingLog_{machineID}_{iCnt}.log", false);
-                string msg = $"{DateTime.Now.ToString("yyyyMMdd HH:mm:ss")}/Machine/{machineID}/{rnd.Next(1, 77)}/{rnd.Next(100, 130)}/{rnd.Next(0, 5)}";
-                sw.WriteLine(msg);
-                sw.Flush();
-                sw.Close();
-            }
-            catch (Exception ee)
-            {
-                Console.WriteLine(ee.Message);
-            }
-            finally
-            {
-                iCnt++;
-            }
-        }
-        private void Boxing_Elapsed(object sender, ElapsedEventArgs e)
-        {
-            Random rnd = new Random((int)DateTime.UtcNow.Ticks);
-            StreamWriter sw = null;
-            try
-            {
-                sw = new StreamWriter($"{writefolder}\\WorkerLogMachine_{machineID}_{iCnt}.log", false);
-                string msg = $"{DateTime.Now.ToString("yyyyMMdd HH:mm:ss")}/Machine/{machineID}/{rnd.Next(1, 77)}/{rnd.Next(100, 130)}/{rnd.Next(0, 5)}";
-                sw.WriteLine(msg);
-                sw.Flush();
-                sw.Close();
-            }
-            catch (Exception ee)
-            {
-                Console.WriteLine(ee.Message);
-            }
-            finally
-            {
-                iCnt++;
-            }
-        }
-        private void Inspect_Measure_Elapsed(object sender, ElapsedEventArgs e)
-        {
-            Random rnd = new Random((int)DateTime.UtcNow.Ticks);
-            StreamWriter sw = null;
-            try
-            {
-                sw = new StreamWriter($"{writefolder}\\WorkerLogMachine_{machineID}_{iCnt}.log", false);
-                string msg = $"{DateTime.Now.ToString("yyyyMMdd HH:mm:ss")}/Machine/{machineID}/{rnd.Next(1, 77)}/{rnd.Next(100, 130)}/{rnd.Next(0, 5)}";
-                sw.WriteLine(msg);
-                sw.Flush();
-                sw.Close();
-            }
-            catch (Exception ee)
-            {
-                Console.WriteLine(ee.Message);
-            }
-            finally
-            {
-                iCnt++;
-            }
         }
     }
 

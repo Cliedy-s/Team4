@@ -59,7 +59,7 @@
             this.txtPwd.Name = "txtPwd";
             this.txtPwd.PlaceHolderText = "비밀번호를 입력하세요.";
             this.txtPwd.Size = new System.Drawing.Size(300, 29);
-            this.txtPwd.TabIndex = 52;
+            this.txtPwd.TabIndex = 2;
             this.txtPwd.Text = "비밀번호를 입력하세요.";
             // 
             // txtID
@@ -71,7 +71,7 @@
             this.txtID.Name = "txtID";
             this.txtID.PlaceHolderText = "아이디를 입력하세요.";
             this.txtID.Size = new System.Drawing.Size(300, 29);
-            this.txtID.TabIndex = 51;
+            this.txtID.TabIndex = 1;
             this.txtID.Text = "아이디를 입력하세요.";
             // 
             // txtName
@@ -83,7 +83,7 @@
             this.txtName.Name = "txtName";
             this.txtName.PlaceHolderText = "이름을 입력하세요.";
             this.txtName.Size = new System.Drawing.Size(300, 29);
-            this.txtName.TabIndex = 50;
+            this.txtName.TabIndex = 0;
             this.txtName.Text = "아이디를 입력하세요.";
             // 
             // lblDay
@@ -192,23 +192,23 @@
             // btnCencle
             // 
             this.btnCencle.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnCencle.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCencle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCencle.Location = new System.Drawing.Point(246, 8);
             this.btnCencle.Name = "btnCencle";
             this.btnCencle.Size = new System.Drawing.Size(75, 23);
-            this.btnCencle.TabIndex = 45;
+            this.btnCencle.TabIndex = 4;
             this.btnCencle.Text = "취소";
             this.btnCencle.UseVisualStyleBackColor = false;
             // 
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnSave.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Location = new System.Drawing.Point(165, 8);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 0;
+            this.btnSave.TabIndex = 3;
             this.btnSave.Text = "저장";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
@@ -226,6 +226,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(327, 483);
+            this.ControlBox = false;
             this.Controls.Add(this.txtPwd);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.txtName);

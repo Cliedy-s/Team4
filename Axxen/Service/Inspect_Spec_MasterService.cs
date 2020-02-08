@@ -38,5 +38,9 @@ namespace Service
         {
             return dac.UseInspectSpec(inspect, use);
         }
+        public bool DeleteInspectSpecVO(string Item_Code,string Process_code,string Inspect_code)
+        {
+            return dac.DeleteInspectSpecVO(Item_Code, Process_code, Inspect_code);
+        }
         }
 }

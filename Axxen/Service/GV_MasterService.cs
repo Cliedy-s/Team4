@@ -25,15 +25,23 @@ namespace Service
             GV_MasterDAC dac = new GV_MasterDAC();
             return dac.UsedGV_Master(GV_Code, used);
         }
+        public bool DeleteGVMasterVO(string gvcode)
+        {
+
+            GV_MasterDAC dac = new GV_MasterDAC();
+            return dac.DeleteGVMasterVO(gvcode);
+        }
 
             /// <summary>
             /// 대차리스트 작업장별로 가져오기
             /// </summary>
-            public List<GVWorkItemVO> GetAllByWC(string wccode, string woinichar)
+        public List<GVWorkItemVO> GetAllByWC(string wccode, string woinichar)
         {
             GV_MasterDAC dac = new GV_MasterDAC();
             return dac.GetAllByWC(wccode, woinichar);
-        } // TODO : 프로시저로 빼기
+        }
+
+
         /// <summary>
         /// 대차리스트 대차그룹, 대차상태 따라 가져오기
         /// </summary>

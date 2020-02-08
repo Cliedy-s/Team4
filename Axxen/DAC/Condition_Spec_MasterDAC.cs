@@ -89,5 +89,34 @@ namespace DAC
                 }     
             }
         }
-    }
+        /// <summary>
+        /// 공정조건 설정
+        /// </summary>
+        /// <param name="Item_Code"></param>
+        /// <param name="Wc_Code"></param>
+        /// <param name="Condition_Code"></param>
+        /// <returns></returns>
+        public bool DeleteConditionSpecVO(string Item_Code, string Wc_Code, string Condition_Code)
+        {
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText = "delete from Condition_Spec_Master where Item_Code=@Item_Code and Wc_Code=@Wc_Code and Condition_Code=@Condition_Code";
+                comm.CommandType = CommandType.Text;
+                comm.Parameters.AddWithValue("@Item_Code", Item_Code);
+                comm.Parameters.AddWithValue("@Wc_Code", Wc_Code);
+                comm.Parameters.AddWithValue("@Condition_Code", Condition_Code);
+                comm.Connection.Open();
+                int result = comm.ExecuteNonQuery();
+            
+                comm.Connection.Close();
+
+                if (result > 0)
+                    return true;
+                else
+                    return false;
+             
+            }
+        }
+        }
 }

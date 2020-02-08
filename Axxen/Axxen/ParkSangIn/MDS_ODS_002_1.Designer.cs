@@ -195,7 +195,7 @@
             this.aPanel6.Controls.Add(this.txtwork_name);
             this.aPanel6.Location = new System.Drawing.Point(137, 125);
             this.aPanel6.Name = "aPanel6";
-            this.aPanel6.Size = new System.Drawing.Size(170, 35);
+            this.aPanel6.Size = new System.Drawing.Size(272, 35);
             this.aPanel6.TabIndex = 165;
             // 
             // txtwork_name
@@ -203,11 +203,12 @@
             this.txtwork_name.BackColor = System.Drawing.Color.White;
             this.txtwork_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtwork_name.errorp = null;
+            this.txtwork_name.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtwork_name.Location = new System.Drawing.Point(2, 4);
             this.txtwork_name.MaxLength = 50;
             this.txtwork_name.Name = "txtwork_name";
-            this.txtwork_name.Size = new System.Drawing.Size(160, 23);
-            this.txtwork_name.TabIndex = 157;
+            this.txtwork_name.Size = new System.Drawing.Size(262, 25);
+            this.txtwork_name.TabIndex = 1;
             this.txtwork_name.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // aPanel4
@@ -237,7 +238,7 @@
             this.aPanel2.Controls.Add(this.aPanel8);
             this.aPanel2.Location = new System.Drawing.Point(137, 195);
             this.aPanel2.Name = "aPanel2";
-            this.aPanel2.Size = new System.Drawing.Size(170, 35);
+            this.aPanel2.Size = new System.Drawing.Size(272, 35);
             this.aPanel2.TabIndex = 163;
             // 
             // aPanel8
@@ -246,15 +247,16 @@
             this.aPanel8.Controls.Add(this.lblprocess);
             this.aPanel8.Location = new System.Drawing.Point(4, 3);
             this.aPanel8.Name = "aPanel8";
-            this.aPanel8.Size = new System.Drawing.Size(160, 27);
+            this.aPanel8.Size = new System.Drawing.Size(262, 27);
             this.aPanel8.TabIndex = 151;
             // 
             // lblprocess
             // 
             this.lblprocess.AutoSize = true;
-            this.lblprocess.Location = new System.Drawing.Point(11, 3);
+            this.lblprocess.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblprocess.Location = new System.Drawing.Point(3, 4);
             this.lblprocess.Name = "lblprocess";
-            this.lblprocess.Size = new System.Drawing.Size(48, 15);
+            this.lblprocess.Size = new System.Drawing.Size(53, 17);
             this.lblprocess.TabIndex = 150;
             this.lblprocess.Text = "aLabel3";
             // 
@@ -264,16 +266,17 @@
             this.aPanel3.Controls.Add(this.cbbProcess);
             this.aPanel3.Location = new System.Drawing.Point(137, 160);
             this.aPanel3.Name = "aPanel3";
-            this.aPanel3.Size = new System.Drawing.Size(170, 35);
+            this.aPanel3.Size = new System.Drawing.Size(272, 35);
             this.aPanel3.TabIndex = 161;
             // 
             // cbbProcess
             // 
+            this.cbbProcess.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.cbbProcess.FormattingEnabled = true;
             this.cbbProcess.Location = new System.Drawing.Point(2, 3);
             this.cbbProcess.Name = "cbbProcess";
-            this.cbbProcess.Size = new System.Drawing.Size(160, 23);
-            this.cbbProcess.TabIndex = 154;
+            this.cbbProcess.Size = new System.Drawing.Size(262, 25);
+            this.cbbProcess.TabIndex = 2;
             this.cbbProcess.SelectedIndexChanged += new System.EventHandler(this.CbbProcess_SelectedIndexChanged);
             // 
             // aPanel5
@@ -302,11 +305,12 @@
             this.txtwork_code.BackColor = System.Drawing.Color.White;
             this.txtwork_code.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtwork_code.errorp = null;
+            this.txtwork_code.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtwork_code.Location = new System.Drawing.Point(3, 3);
             this.txtwork_code.MaxLength = 20;
             this.txtwork_code.Name = "txtwork_code";
-            this.txtwork_code.Size = new System.Drawing.Size(160, 23);
-            this.txtwork_code.TabIndex = 156;
+            this.txtwork_code.Size = new System.Drawing.Size(262, 25);
+            this.txtwork_code.TabIndex = 0;
             this.txtwork_code.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // aPanel29
@@ -323,12 +327,13 @@
             this.txtRemark.BackColor = System.Drawing.Color.White;
             this.txtRemark.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtRemark.errorp = null;
+            this.txtRemark.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtRemark.Location = new System.Drawing.Point(3, 3);
             this.txtRemark.MaxLength = 100;
             this.txtRemark.Multiline = true;
             this.txtRemark.Name = "txtRemark";
             this.txtRemark.Size = new System.Drawing.Size(338, 72);
-            this.txtRemark.TabIndex = 159;
+            this.txtRemark.TabIndex = 3;
             this.txtRemark.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // aPanel31
@@ -361,20 +366,19 @@
             this.btnCencle.Location = new System.Drawing.Point(413, 11);
             this.btnCencle.Name = "btnCencle";
             this.btnCencle.Size = new System.Drawing.Size(75, 23);
-            this.btnCencle.TabIndex = 45;
+            this.btnCencle.TabIndex = 5;
             this.btnCencle.Text = "취소";
             this.btnCencle.UseVisualStyleBackColor = false;
             // 
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnSave.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Location = new System.Drawing.Point(332, 11);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 0;
+            this.btnSave.TabIndex = 4;
             this.btnSave.Text = "저장";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
@@ -397,13 +401,14 @@
             this.aPanel20.Controls.Add(this.txtwork_code);
             this.aPanel20.Location = new System.Drawing.Point(137, 90);
             this.aPanel20.Name = "aPanel20";
-            this.aPanel20.Size = new System.Drawing.Size(170, 35);
+            this.aPanel20.Size = new System.Drawing.Size(272, 35);
             this.aPanel20.TabIndex = 183;
             // 
             // MDS_ODS_002_1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(497, 384);
+            this.ControlBox = false;
             this.Controls.Add(this.aPanel19);
             this.Controls.Add(this.aLabel5);
             this.Controls.Add(this.aPanel1);

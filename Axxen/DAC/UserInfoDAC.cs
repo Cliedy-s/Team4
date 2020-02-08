@@ -9,9 +9,9 @@ using VO;
 
 namespace DAC
 {
-  public  class UserInfoDAC :DACParent
+    public class UserInfoDAC : DACParent
     {
-       
+
         /// <summary>
         /// 유저전체목록
         /// </summary>
@@ -49,11 +49,11 @@ namespace DAC
                 comm.Parameters.AddWithValue("@Login_Date", login.Login_Date);
                 comm.Parameters.AddWithValue("@Login_Success", login.Login_Success);
 
-                 comm.Connection.Open();
+                comm.Connection.Open();
                 comm.ExecuteNonQuery();
                 comm.Connection.Close();
 
-                
+
             }
         }
         /// <summary>
@@ -65,32 +65,32 @@ namespace DAC
             try
             {
 
-            using (SqlCommand comm = new SqlCommand())
-            {
-                comm.Connection = new SqlConnection(Connstr);
-                comm.CommandText = "delete from User_Master where User_ID=@User_ID";
-                comm.CommandType = CommandType.Text;
-            
-                comm.Parameters.AddWithValue("@User_ID", userid);
-            
-                comm.Connection.Open();
-               int result= comm.ExecuteNonQuery();
-                comm.Connection.Close();
+                using (SqlCommand comm = new SqlCommand())
+                {
+                    comm.Connection = new SqlConnection(Connstr);
+                    comm.CommandText = "delete from User_Master where User_ID=@User_ID";
+                    comm.CommandType = CommandType.Text;
 
-                if (result>0)
-                {
-                    return true;
+                    comm.Parameters.AddWithValue("@User_ID", userid);
+
+                    comm.Connection.Open();
+                    int result = comm.ExecuteNonQuery();
+                    comm.Connection.Close();
+
+                    if (result > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
-                else
-                {
-                    return false;
-                }
-            }
             }
             catch (Exception)
             {
 
-               return false;
+                return false;
             }
         }
         /// <summary>
@@ -104,25 +104,25 @@ namespace DAC
             try
             {
 
-            using (SqlCommand com = new SqlCommand())
-            {
-                com.Connection = new SqlConnection(Connstr);
-                com.CommandText = "InsertUser";
-                com.CommandType = CommandType.StoredProcedure;
-                com.Parameters.AddWithValue("@User_ID", user.User_ID);
-                com.Parameters.AddWithValue("@User_Name", user.User_Name);
-                com.Parameters.AddWithValue("@User_PW", user.User_PW);
-                com.Parameters.AddWithValue("@Ins_Date", user.Ins_Date);
-                com.Parameters.AddWithValue("@Ins_Emp", user.Ins_Emp);
+                using (SqlCommand com = new SqlCommand())
+                {
+                    com.Connection = new SqlConnection(Connstr);
+                    com.CommandText = "InsertUser";
+                    com.CommandType = CommandType.StoredProcedure;
+                    com.Parameters.AddWithValue("@User_ID", user.User_ID);
+                    com.Parameters.AddWithValue("@User_Name", user.User_Name);
+                    com.Parameters.AddWithValue("@User_PW", user.User_PW);
+                    com.Parameters.AddWithValue("@Ins_Date", user.Ins_Date);
+                    com.Parameters.AddWithValue("@Ins_Emp", user.Ins_Emp);
 
-                com.Connection.Open();
+                    com.Connection.Open();
 
-               int resault = Convert.ToInt32(com.ExecuteNonQuery());
+                    int resault = Convert.ToInt32(com.ExecuteNonQuery());
 
-                com.Connection.Close();
+                    com.Connection.Close();
 
-                return resault>0;
-            }
+                    return resault > 0;
+                }
 
             }
             catch (Exception)
@@ -164,14 +164,14 @@ namespace DAC
                                     values(@Session_ID,@Open_Day,@Open_Date,@User_ID,@Screen_Code)";
                     com.CommandType = CommandType.Text;
                     com.Parameters.AddWithValue("@Session_ID", loginscreen.Session_ID);
-                // com.Parameters.AddWithValue("@Seg", loginscreen.Seg);
+                    // com.Parameters.AddWithValue("@Seg", loginscreen.Seg);
                     com.Parameters.AddWithValue("@Open_Day", loginscreen.Open_Day);
                     com.Parameters.AddWithValue("@Open_Date", loginscreen.Open_Date);
                     com.Parameters.AddWithValue("@User_ID", loginscreen.User_ID);
                     com.Parameters.AddWithValue("@Screen_Code", loginscreen.Screen_Code);
 
 
-                 com.Connection.Open();
+                    com.Connection.Open();
 
                     int resault = Convert.ToInt32(com.ExecuteNonQuery());
 
@@ -202,12 +202,12 @@ namespace DAC
                     com.Connection = new SqlConnection(Connstr);
                     com.CommandText = "GetUser_Screen_Login";
                     com.CommandType = CommandType.StoredProcedure;
-                    com.Parameters.AddWithValue("@User_ID", userid);                 
+                    com.Parameters.AddWithValue("@User_ID", userid);
                     com.Parameters.AddWithValue("@start", start.ToShortDateString());
-                    com.Parameters.AddWithValue("@end",end.ToShortDateString());
+                    com.Parameters.AddWithValue("@end", end.ToShortDateString());
                     com.Parameters.AddWithValue("@Screen_Code", screencode);
-             
-                     com.Connection.Open();
+
+                    com.Connection.Open();
 
                     SqlDataReader reader = com.ExecuteReader();
                     List<SearchLogin_Screen_HistoryVO> list = Helper.DataReaderMapToList<SearchLogin_Screen_HistoryVO>(reader);
@@ -237,20 +237,76 @@ namespace DAC
                 comm.Connection = new SqlConnection(Connstr);
                 comm.CommandText =
 @"
-    SELECT TOP(1)
-          User_Name
-          ,[User_Type]
-      FROM [dbo].[User_Master];
+    SELECT TOP(1) [User_ID]
+      ,[User_Name]
+      ,[User_PW]
+      ,[Customer_Code]
+      ,[DefaultLanguage]
+      ,[User_Type]
+      ,[Price_Visible_YN]
+      ,[IP_Security_YN]
+      ,[Pw_Reset_Count]
+      ,[Default_Screen_Code]
+      ,[Default_Process_Code]
+      ,[Monitoring_YN]
+      ,[Use_YN]
+      ,[S01]
+      ,[S02]
+      ,[S03]
+      ,[S04]
+      ,[S05]
+      ,[S06]
+      ,[S07]
+      ,[S08]
+      ,[S09]
+      ,[S10]
+      ,[S11]
+      ,[S12]
+      ,[Ins_Date]
+      ,[Ins_Emp]
+      ,[Up_Date]
+      ,[Up_Emp]
+  FROM [dbo].[User_Master]
+    WHERE User_ID = @User_ID AND User_PW = @User_PW ;
 ";
-                comm.CommandType = CommandType.StoredProcedure;
+                comm.CommandType = CommandType.Text;
+                comm.Parameters.AddWithValue("@User_ID", userID);
+                comm.Parameters.AddWithValue("@User_PW", userPassword);
 
                 comm.Connection.Open();
                 SqlDataReader reader = comm.ExecuteReader();
                 if (reader.Read())
                 {
                     item = new UserInfoVO();
-                    item.User_Name = reader[0].ToString();
-                    item.User_Type = reader[1].ToString();
+                    item.User_ID = reader[0].ToString();
+                    item.User_Name = reader[1].ToString();
+                    item.User_PW = reader[2].ToString();
+                    item.Customer_Code = reader[3].ToString();
+                    item.DefaultLanguage = reader[4].ToString();
+                    item.User_Type = reader[5].ToString();
+                    item.Price_Visible_YN = reader[6].ToString();
+                    item.IP_Security_YN = reader[7].ToString();
+                    item.Pw_Reset_Count = Convert.ToInt32(reader[8]);
+                    item.Default_Screen_Code = reader[9].ToString();
+                    item.Default_Process_Code = reader[10].ToString();
+                    item.Monitoring_YN = reader[11].ToString();
+                    item.Use_YN = reader[12].ToString();
+                    item.S01 = reader[13].ToString();
+                    item.S02 = reader[14].ToString();
+                    item.S03 = reader[15].ToString();
+                    item.S04 = reader[16].ToString();
+                    item.S05 = reader[17].ToString();
+                    item.S06 = reader[18].ToString();
+                    item.S07 = reader[19].ToString();
+                    item.S08 = reader[20].ToString();
+                    item.S09 = reader[21].ToString();
+                    item.S10 = reader[22].ToString();
+                    item.S11 = reader[23].ToString();
+                    item.S12 = reader[24].ToString();
+                    item.Ins_Date = Convert.ToDateTime(reader[25]);
+                    item.Ins_Emp = reader[26].ToString();
+                    item.Up_Date = Convert.ToDateTime(reader[27]);
+                    item.Up_Emp = reader[28].ToString();
                 }
                 comm.Connection.Close();
 

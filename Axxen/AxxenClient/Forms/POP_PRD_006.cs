@@ -64,14 +64,22 @@ namespace AxxenClient.Forms
             {
                 if (dgvBoxing.SelectedRows.Count < 1)
                 {
+                    Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 언로딩하려 했지만 대차를 선택하지 않음");
                     MessageBox.Show("대차를 선택해주세요");
                     return;
                 }
                 GV_HistoryService service = new GV_HistoryService();
                 if (service.UpdateUnload(GlobalUsage.UserID, dgvBoxing.SelectedRows[0].Cells[0].Value.ToString(), null, GlobalUsage.WcCode, Convert.ToInt32(dgvBoxing.SelectedRows[0].Cells[5].Value)))
+                {
+                    // TODO - 2020-02-09 시작 로그쓰기
+                    Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 대차({dgvBoxing.SelectedRows[0].Cells[0].Value.ToString()}) 언로딩에 성공함");
                     GetDatas();
+                }
                 else
+                {
+                    Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 대차({dgvBoxing.SelectedRows[0].Cells[0].Value.ToString()}) 언로딩에 성공함");
                     MessageBox.Show("언로딩에 실패하였습니다.");
+                }
             }
             else MessageBox.Show("작업을 시작해주세요");
         }

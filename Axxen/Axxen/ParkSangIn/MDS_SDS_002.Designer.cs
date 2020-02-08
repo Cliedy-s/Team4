@@ -54,12 +54,12 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.aPanel4 = new Axxen.CustomControls.APanel();
             this.aPanel5 = new Axxen.CustomControls.APanel();
-            this.aPanel6 = new Axxen.CustomControls.APanel();
-            this.aPanel7 = new Axxen.CustomControls.APanel();
-            this.aLabel9 = new Axxen.CustomControls.ALabel();
             this.aLabel6 = new Axxen.CustomControls.ALabel();
+            this.aPanel6 = new Axxen.CustomControls.APanel();
             this.aLabel7 = new Axxen.CustomControls.ALabel();
+            this.aPanel7 = new Axxen.CustomControls.APanel();
             this.aLabel10 = new Axxen.CustomControls.ALabel();
+            this.aLabel9 = new Axxen.CustomControls.ALabel();
             this.aPanel3 = new Axxen.CustomControls.APanel();
             this.aPanel8 = new Axxen.CustomControls.APanel();
             this.aPanel9 = new Axxen.CustomControls.APanel();
@@ -68,6 +68,7 @@
             this.aPanel10 = new Axxen.CustomControls.APanel();
             this.aPanel11 = new Axxen.CustomControls.APanel();
             this.aPanel12 = new Axxen.CustomControls.APanel();
+            this.panelsetting = new Axxen.CustomControls.APanel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItem)).BeginInit();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
@@ -87,6 +88,7 @@
             this.aPanel10.SuspendLayout();
             this.aPanel11.SuspendLayout();
             this.aPanel12.SuspendLayout();
+            this.panelsetting.SuspendLayout();
             this.SuspendLayout();
             // 
             // cbbItem
@@ -95,7 +97,7 @@
             this.cbbItem.Location = new System.Drawing.Point(77, 9);
             this.cbbItem.Name = "cbbItem";
             this.cbbItem.Size = new System.Drawing.Size(152, 23);
-            this.cbbItem.TabIndex = 3;
+            this.cbbItem.TabIndex = 0;
             this.cbbItem.SelectedIndexChanged += new System.EventHandler(this.CbbItem_SelectedIndexChanged);
             // 
             // btnSearch
@@ -256,15 +258,14 @@
             // 
             // btnSave
             // 
-            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSave.Location = new System.Drawing.Point(1107, 82);
+            this.btnSave.Location = new System.Drawing.Point(1100, 3);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(96, 28);
-            this.btnSave.TabIndex = 18;
+            this.btnSave.TabIndex = 3;
             this.btnSave.Text = "저장";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
@@ -274,21 +275,21 @@
             this.nudShot_Per_Qty.Location = new System.Drawing.Point(17, 3);
             this.nudShot_Per_Qty.Name = "nudShot_Per_Qty";
             this.nudShot_Per_Qty.Size = new System.Drawing.Size(192, 23);
-            this.nudShot_Per_Qty.TabIndex = 36;
+            this.nudShot_Per_Qty.TabIndex = 2;
             // 
             // nudLine_Per_Qty
             // 
             this.nudLine_Per_Qty.Location = new System.Drawing.Point(17, 3);
             this.nudLine_Per_Qty.Name = "nudLine_Per_Qty";
             this.nudLine_Per_Qty.Size = new System.Drawing.Size(192, 23);
-            this.nudLine_Per_Qty.TabIndex = 35;
+            this.nudLine_Per_Qty.TabIndex = 1;
             // 
             // nudCavity
             // 
             this.nudCavity.Location = new System.Drawing.Point(17, 4);
             this.nudCavity.Name = "nudCavity";
             this.nudCavity.Size = new System.Drawing.Size(192, 23);
-            this.nudCavity.TabIndex = 34;
+            this.nudCavity.TabIndex = 0;
             // 
             // aLabel5
             // 
@@ -340,7 +341,7 @@
             this.aPanel4.BackColor = System.Drawing.SystemColors.Info;
             this.aPanel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.aPanel4.Controls.Add(this.aLabel4);
-            this.aPanel4.Location = new System.Drawing.Point(12, 82);
+            this.aPanel4.Location = new System.Drawing.Point(5, 3);
             this.aPanel4.Name = "aPanel4";
             this.aPanel4.Size = new System.Drawing.Size(140, 34);
             this.aPanel4.TabIndex = 29;
@@ -350,40 +351,10 @@
             this.aPanel5.BackColor = System.Drawing.SystemColors.Info;
             this.aPanel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.aPanel5.Controls.Add(this.aLabel6);
-            this.aPanel5.Location = new System.Drawing.Point(12, 115);
+            this.aPanel5.Location = new System.Drawing.Point(5, 36);
             this.aPanel5.Name = "aPanel5";
             this.aPanel5.Size = new System.Drawing.Size(140, 34);
             this.aPanel5.TabIndex = 33;
-            // 
-            // aPanel6
-            // 
-            this.aPanel6.BackColor = System.Drawing.SystemColors.Info;
-            this.aPanel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.aPanel6.Controls.Add(this.aLabel7);
-            this.aPanel6.Location = new System.Drawing.Point(12, 148);
-            this.aPanel6.Name = "aPanel6";
-            this.aPanel6.Size = new System.Drawing.Size(140, 34);
-            this.aPanel6.TabIndex = 32;
-            // 
-            // aPanel7
-            // 
-            this.aPanel7.BackColor = System.Drawing.SystemColors.Info;
-            this.aPanel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.aPanel7.Controls.Add(this.aLabel10);
-            this.aPanel7.Controls.Add(this.aLabel9);
-            this.aPanel7.Location = new System.Drawing.Point(12, 182);
-            this.aPanel7.Name = "aPanel7";
-            this.aPanel7.Size = new System.Drawing.Size(140, 34);
-            this.aPanel7.TabIndex = 32;
-            // 
-            // aLabel9
-            // 
-            this.aLabel9.AutoSize = true;
-            this.aLabel9.Location = new System.Drawing.Point(26, 7);
-            this.aLabel9.Name = "aLabel9";
-            this.aLabel9.Size = new System.Drawing.Size(55, 15);
-            this.aLabel9.TabIndex = 31;
-            this.aLabel9.Text = "품목코드";
             // 
             // aLabel6
             // 
@@ -394,6 +365,16 @@
             this.aLabel6.TabIndex = 24;
             this.aLabel6.Text = "캐비티수";
             // 
+            // aPanel6
+            // 
+            this.aPanel6.BackColor = System.Drawing.SystemColors.Info;
+            this.aPanel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.aPanel6.Controls.Add(this.aLabel7);
+            this.aPanel6.Location = new System.Drawing.Point(5, 69);
+            this.aPanel6.Name = "aPanel6";
+            this.aPanel6.Size = new System.Drawing.Size(140, 34);
+            this.aPanel6.TabIndex = 32;
+            // 
             // aLabel7
             // 
             this.aLabel7.AutoSize = true;
@@ -402,6 +383,17 @@
             this.aLabel7.Size = new System.Drawing.Size(103, 15);
             this.aLabel7.TabIndex = 25;
             this.aLabel7.Text = "성형줄당캐비티수";
+            // 
+            // aPanel7
+            // 
+            this.aPanel7.BackColor = System.Drawing.SystemColors.Info;
+            this.aPanel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.aPanel7.Controls.Add(this.aLabel10);
+            this.aPanel7.Controls.Add(this.aLabel9);
+            this.aPanel7.Location = new System.Drawing.Point(5, 103);
+            this.aPanel7.Name = "aPanel7";
+            this.aPanel7.Size = new System.Drawing.Size(140, 34);
+            this.aPanel7.TabIndex = 32;
             // 
             // aLabel10
             // 
@@ -412,38 +404,38 @@
             this.aLabel10.TabIndex = 32;
             this.aLabel10.Text = "Shot당PCS수";
             // 
+            // aLabel9
+            // 
+            this.aLabel9.AutoSize = true;
+            this.aLabel9.Location = new System.Drawing.Point(26, 7);
+            this.aLabel9.Name = "aLabel9";
+            this.aLabel9.Size = new System.Drawing.Size(55, 15);
+            this.aLabel9.TabIndex = 31;
+            this.aLabel9.Text = "품목코드";
+            // 
             // aPanel3
             // 
-            this.aPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.aPanel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.aPanel3.Controls.Add(this.nudCavity);
-            this.aPanel3.Location = new System.Drawing.Point(149, 115);
+            this.aPanel3.Location = new System.Drawing.Point(142, 36);
             this.aPanel3.Name = "aPanel3";
             this.aPanel3.Size = new System.Drawing.Size(1053, 34);
             this.aPanel3.TabIndex = 37;
             // 
             // aPanel8
             // 
-            this.aPanel8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.aPanel8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.aPanel8.Controls.Add(this.nudLine_Per_Qty);
-            this.aPanel8.Location = new System.Drawing.Point(149, 148);
+            this.aPanel8.Location = new System.Drawing.Point(142, 69);
             this.aPanel8.Name = "aPanel8";
             this.aPanel8.Size = new System.Drawing.Size(1053, 34);
             this.aPanel8.TabIndex = 38;
             // 
             // aPanel9
             // 
-            this.aPanel9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.aPanel9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.aPanel9.Controls.Add(this.nudShot_Per_Qty);
-            this.aPanel9.Location = new System.Drawing.Point(149, 182);
+            this.aPanel9.Location = new System.Drawing.Point(142, 103);
             this.aPanel9.Name = "aPanel9";
             this.aPanel9.Size = new System.Drawing.Size(1053, 34);
             this.aPanel9.TabIndex = 38;
@@ -469,7 +461,7 @@
             this.aPanel10.BackColor = System.Drawing.SystemColors.Info;
             this.aPanel10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.aPanel10.Controls.Add(this.aLabel5);
-            this.aPanel10.Location = new System.Drawing.Point(261, 82);
+            this.aPanel10.Location = new System.Drawing.Point(254, 3);
             this.aPanel10.Name = "aPanel10";
             this.aPanel10.Size = new System.Drawing.Size(140, 34);
             this.aPanel10.TabIndex = 32;
@@ -479,7 +471,7 @@
             this.aPanel11.BackColor = System.Drawing.Color.White;
             this.aPanel11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.aPanel11.Controls.Add(this.lblupdateCode);
-            this.aPanel11.Location = new System.Drawing.Point(149, 82);
+            this.aPanel11.Location = new System.Drawing.Point(142, 3);
             this.aPanel11.Name = "aPanel11";
             this.aPanel11.Size = new System.Drawing.Size(112, 34);
             this.aPanel11.TabIndex = 41;
@@ -489,26 +481,37 @@
             this.aPanel12.BackColor = System.Drawing.Color.White;
             this.aPanel12.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.aPanel12.Controls.Add(this.lblupdateName);
-            this.aPanel12.Location = new System.Drawing.Point(400, 82);
+            this.aPanel12.Location = new System.Drawing.Point(393, 3);
             this.aPanel12.Name = "aPanel12";
             this.aPanel12.Size = new System.Drawing.Size(112, 34);
             this.aPanel12.TabIndex = 42;
+            // 
+            // panelsetting
+            // 
+            this.panelsetting.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelsetting.Controls.Add(this.aPanel11);
+            this.panelsetting.Controls.Add(this.aPanel12);
+            this.panelsetting.Controls.Add(this.aPanel4);
+            this.panelsetting.Controls.Add(this.aPanel5);
+            this.panelsetting.Controls.Add(this.aPanel10);
+            this.panelsetting.Controls.Add(this.aPanel7);
+            this.panelsetting.Controls.Add(this.aPanel8);
+            this.panelsetting.Controls.Add(this.aPanel6);
+            this.panelsetting.Controls.Add(this.aPanel9);
+            this.panelsetting.Controls.Add(this.btnSave);
+            this.panelsetting.Controls.Add(this.aPanel3);
+            this.panelsetting.Location = new System.Drawing.Point(12, 77);
+            this.panelsetting.Name = "panelsetting";
+            this.panelsetting.Size = new System.Drawing.Size(1200, 141);
+            this.panelsetting.TabIndex = 43;
             // 
             // MDS_SDS_002
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1212, 758);
-            this.Controls.Add(this.aPanel12);
-            this.Controls.Add(this.aPanel11);
-            this.Controls.Add(this.aPanel10);
-            this.Controls.Add(this.aPanel8);
-            this.Controls.Add(this.aPanel9);
-            this.Controls.Add(this.aPanel3);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.aPanel6);
-            this.Controls.Add(this.aPanel7);
-            this.Controls.Add(this.aPanel5);
-            this.Controls.Add(this.aPanel4);
+            this.Controls.Add(this.panelsetting);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.aLabel2);
             this.Controls.Add(this.pictureBox2);
@@ -549,6 +552,7 @@
             this.aPanel11.PerformLayout();
             this.aPanel12.ResumeLayout(false);
             this.aPanel12.PerformLayout();
+            this.panelsetting.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -595,5 +599,6 @@
         private CustomControls.APanel aPanel10;
         private CustomControls.APanel aPanel11;
         private CustomControls.APanel aPanel12;
+        private CustomControls.APanel panelsetting;
     }
 }

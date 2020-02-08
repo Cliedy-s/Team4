@@ -122,19 +122,30 @@ namespace Axxen
         }
         private void MyDelete(object sender, EventArgs e)
         {
-            if (MessageBox.Show(dgvMainGrid.SelectedRows[0].Cells[0].Value.ToString() + "를 삭제하시겠습니까?", "알림", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            try
             {
-               // MessageBox.Show(dgvMainGrid.SelectedRows[0].Cells[0].Value.ToString());
-                if (Defservice.DeleteDef_MaVO(dgvMainGrid.SelectedRows[0].Cells[0].Value.ToString()))
+                if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
                 {
-                    GetAllDefMa();
-                    ControlSetting();//콤보박스
+                    if (MessageBox.Show(dgvMainGrid.SelectedRows[0].Cells[1].Value.ToString() + "를 삭제하시겠습니까?", "알림", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        // MessageBox.Show(dgvMainGrid.SelectedRows[0].Cells[0].Value.ToString());
+                        if (Defservice.DeleteDef_MaVO(dgvMainGrid.SelectedRows[0].Cells[0].Value.ToString()))
+                        {
+                            GetAllDefMa();
+                            ControlSetting();//콤보박스
 
+                        }
+                        else
+                        {
+                            MessageBox.Show("삭제실패");
+                        }
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("삭제실패");
-                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+                Program.Log.WriteError(err.Message);
             }
 
         }

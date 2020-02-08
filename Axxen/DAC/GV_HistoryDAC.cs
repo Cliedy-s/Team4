@@ -57,7 +57,7 @@ namespace DAC
                 int result = comm.ExecuteNonQuery();
                 comm.Connection.Close();
 
-                return result > 0;
+                return result > 1;
             }
         }
         /// <summary>
@@ -85,7 +85,6 @@ namespace DAC
                 return result > 0;
             }
         }
-
         /// <summary>
         /// 대차비우기
         /// </summary>

@@ -84,7 +84,6 @@ namespace AxxenClient.Forms
             item.Req_Seq = Convert.ToInt32(lblReqSeq.Text);
             item.Wc_Code = txtWcSearch.CodeText;
             item.Wo_Order = "2";
-            item.Workorderno = "WK" + now.ToString("yyyyMMddHHmmffffff");
             item.Wo_Status = "생산대기";
             item.Prd_Unit = lblUnit.Text;
             if (service.InsertWorkOrder(item))
