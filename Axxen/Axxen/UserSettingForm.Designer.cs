@@ -374,6 +374,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "UserSettingForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "환경설정";
             this.Load += new System.EventHandler(this.UserSettingForm_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();

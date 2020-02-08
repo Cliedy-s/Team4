@@ -26,7 +26,7 @@ namespace Axxen
         //  int SegCnt =0; //화면 사용이력 순번
 
         Image CloseImage;
-        UserGroupService service = new UserGroupService();
+        UserGroupService UserGroupservice = new UserGroupService();
         List<MenuTree_Master_VO> menulist; //메뉴
         List<BookMark_VO> booklist;
         MainForm_Service Mainservice = new MainForm_Service();
@@ -47,15 +47,12 @@ namespace Axxen
             LoginForm frm = new LoginForm();
 
             if (frm.ShowDialog() == DialogResult.OK)
-            {
-                toolStripButtoncencle.Alignment =
-   System.Windows.Forms.ToolStripItemAlignment.Right; //즐겨찾기 툴스트립 버튼 오른쪽으로 배치
-
-
+            {                    
+                toolStripButtoncencle.Alignment = ToolStripItemAlignment.Right; //즐겨찾기 툴스트립 버튼 오른쪽으로 배치
                 toolStripButtonSetting.Alignment = ToolStripItemAlignment.Right; //세팅버튼
-                toolStripLabel.Text = UserInfo.User_Name + "님 환영합니다.";
                 toolStripLabel.Alignment = ToolStripItemAlignment.Right; //세팅버튼
-               
+                timer.Start();
+                timer.Interval = 1000;
 
                 tvMenu.Visible = false;
                 ImageList imgList = new ImageList();
@@ -69,9 +66,10 @@ namespace Axxen
                 Setting();
                 booklist = Mainservice.GetAll_BookMark(UserInfo.User_ID);
 
-                if(!UserInfo.Default_Screen_Code.Equals("0"))
-                newForm(UserInfo.Default_Screen_Code, UserInfo.Default_Screen_Code);
-
+                if(!UserInfo.Default_Screen_Code.Equals("0")) //사용자의 디폴트 화면 가져오기
+                {              
+                newForm(UserInfo.Default_Screen_Code, screenitemlist.Find(item => item.Screen_Code == UserInfo.Default_Screen_Code).Type);
+                }
             }
             else
             {
@@ -114,7 +112,7 @@ namespace Axxen
         {
 
 
-            userinfoGrouplist = service.GetUserInfoGroup(UserInfo.User_ID); //로그인한 사용자의 그룹권한들
+            userinfoGrouplist = UserGroupservice.GetUserInfoGroup(UserInfo.User_ID); //로그인한 사용자의 그룹권한들
 
 
             userinfoScreenItem = screenservice.GetUserInfoScreenItem(userinfoGrouplist); // 로그인한 사용자의 그룹권한에 사용되는 화면들
@@ -340,6 +338,7 @@ namespace Axxen
                     newTab.Tag = formName;
                     newTab.Text = formText;
                     tabControl2.TabPages.Add(newTab);
+                 
                     frm.Show();
 
                     /////////////////// 메뉴클릭시 
@@ -707,6 +706,11 @@ namespace Axxen
         {
             UserSettingForm frm = new UserSettingForm();
             frm.ShowDialog();
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            toolStripLabel.Text =  UserInfo.User_Name + "님 환영합니다.\n"+ DateTime.Now.ToShortDateString()+" "+ DateTime.Now.ToLongTimeString();
         }
     }
 }

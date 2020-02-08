@@ -13,12 +13,13 @@ namespace Axxen
 {
     public partial class UserSettingForm : Axxen.BaseForm
     {
-
-        List<ScreenItem_MasterVO> Screenlist;
+        UserGroupService UserGroupservice = new UserGroupService();
         ScreenItemService screenservice = new ScreenItemService();
-
-
         UserInfo_Service userservice = new UserInfo_Service();
+
+        List<UserGroup_MappingVO> userinfoGrouplist; //유저가속한 그룹
+        List<ScreenItem_AuthorityVO> AutorScreenlist;
+        List<ScreenItem_MasterVO> Screenlist;
 
         public UserSettingForm()
         {
@@ -29,14 +30,41 @@ namespace Axxen
 
         private void UserSettingForm_Load(object sender, EventArgs e)
         {
-            Screenlist = new List<ScreenItem_MasterVO>();
+            userinfoGrouplist = UserGroupservice.GetUserInfoGroup(UserInfo.User_ID); //로그인한 사용자의 그룹권한들
+            AutorScreenlist = new List<ScreenItem_AuthorityVO>();
+            AutorScreenlist = screenservice.GetUserInfoScreenItem(userinfoGrouplist); //사용자의 권한에 해당하는 스크린코드를 가져온다
+
             Screenlist = screenservice.GetALLScreenItem();
 
-            Dictionary<string, string> cbblist = Screenlist.FindAll(item => item.Use_YN == "Y").ToDictionary(item => item.Screen_Code, item => item.Type); //사용을 하는 그룹만
-            cbbscreen.DisplayMember = "Value";
-            cbbscreen.ValueMember = "Key";
-            cbbscreen.DataSource = new BindingSource(cbblist, null);
-            //   lblGroup.Text = cbbGroup.SelectedValue.ToString();
+
+            List<ScreenItem_MasterVO> tagetscreen=new List<ScreenItem_MasterVO>(); //사용자권한과 스크린비교해서 맞는 스크린만 추출
+            for (int i = 0; i < Screenlist.Count; i++)
+            {
+                for (int j = 0; j < AutorScreenlist.Count; j++)
+                {
+                    if (Screenlist[i].Screen_Code.Equals(AutorScreenlist[j].Screen_Code))
+                    {
+                        tagetscreen.Add(Screenlist[i]);
+                        break;
+                    }
+                }
+            }
+
+
+            
+            ScreenItem_MasterVO first = new ScreenItem_MasterVO()
+            {
+                Screen_Code = "0",
+                Type = ""
+            };
+            var level1list = tagetscreen.FindAll(level => level.Use_YN == "Y");
+            level1list.Insert(0, first);
+            cbbscreen.DisplayMember = "Type";
+            cbbscreen.ValueMember = "Screen_Code";
+            cbbscreen.DataSource = level1list;
+
+            if (!UserInfo.Default_Screen_Code.Equals("0"))//사용자가 기본설정을 해놓지않았다면 콤보박스에 기본설정 값을 보여주지 않아도된다.
+            cbbscreen.Text = tagetscreen.Find(level => level.Screen_Code == UserInfo.Default_Screen_Code).Type; 
         }
 
 

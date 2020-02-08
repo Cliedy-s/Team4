@@ -46,6 +46,7 @@
             // 
             // txtID
             // 
+            this.txtID.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtID.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtID.Location = new System.Drawing.Point(18, 59);
             this.txtID.Name = "txtID";
@@ -55,6 +56,7 @@
             // 
             // txtPwd
             // 
+            this.txtPwd.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPwd.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtPwd.Location = new System.Drawing.Point(18, 125);
             this.txtPwd.Name = "txtPwd";
@@ -64,19 +66,21 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.Controls.Add(this.linkquestion);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.btnLogin);
             this.panel1.Controls.Add(this.txtPwd);
             this.panel1.Controls.Add(this.txtID);
-            this.panel1.Location = new System.Drawing.Point(42, 209);
+            this.panel1.Location = new System.Drawing.Point(33, 223);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(348, 330);
             this.panel1.TabIndex = 15;
             // 
             // linkquestion
             // 
+            this.linkquestion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.linkquestion.AutoSize = true;
             this.linkquestion.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.linkquestion.Location = new System.Drawing.Point(142, 307);
@@ -88,6 +92,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.DarkOrange;
             this.label3.Location = new System.Drawing.Point(16, 39);
@@ -98,6 +103,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.DarkOrange;
             this.label4.Location = new System.Drawing.Point(16, 101);
@@ -108,6 +114,7 @@
             // 
             // btnLogin
             // 
+            this.btnLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btnLogin.Location = new System.Drawing.Point(50, 177);
             this.btnLogin.Name = "btnLogin";
@@ -119,8 +126,9 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(238, 164);
+            this.pictureBox1.Location = new System.Drawing.Point(224, 178);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(34, 32);
             this.pictureBox1.TabIndex = 16;
@@ -128,10 +136,11 @@
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("맑은 고딕", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label5.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label5.Location = new System.Drawing.Point(148, 159);
+            this.label5.Location = new System.Drawing.Point(134, 173);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(98, 37);
             this.label5.TabIndex = 14;
@@ -139,8 +148,9 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.Image = global::Axxen.Properties.Resources.MianLoGo;
-            this.pictureBox2.Location = new System.Drawing.Point(55, 22);
+            this.pictureBox2.Location = new System.Drawing.Point(28, 31);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(331, 121);
             this.pictureBox2.TabIndex = 17;
@@ -151,14 +161,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(440, 573);
+            this.ClientSize = new System.Drawing.Size(413, 601);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label5);
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "LoginForm";
+            this.Text = "로그인";
             this.Load += new System.EventHandler(this.LoginForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

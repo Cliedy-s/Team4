@@ -122,12 +122,13 @@
             this.tsbtnDelete = new System.Windows.Forms.ToolStripButton();
             this.tsbtnRefresh = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.pnBookmark = new Axxen.CustomControls.APanel();
-            this.tvBookMark = new System.Windows.Forms.TreeView();
-            this.toolbook = new System.Windows.Forms.ToolStrip();
-            this.toolStripButtoncencle = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonSetting = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel = new System.Windows.Forms.ToolStripLabel();
+            this.pnBookmark = new Axxen.CustomControls.APanel();
+            this.toolbook = new System.Windows.Forms.ToolStrip();
+            this.toolStripButtoncencle = new System.Windows.Forms.ToolStripButton();
+            this.tvBookMark = new System.Windows.Forms.TreeView();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.panelMenu.SuspendLayout();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
@@ -907,49 +908,6 @@
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 97);
             // 
-            // pnBookmark
-            // 
-            this.pnBookmark.BackColor = System.Drawing.Color.White;
-            this.pnBookmark.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnBookmark.Controls.Add(this.toolbook);
-            this.pnBookmark.Controls.Add(this.tvBookMark);
-            this.pnBookmark.Location = new System.Drawing.Point(268, 450);
-            this.pnBookmark.Name = "pnBookmark";
-            this.pnBookmark.Size = new System.Drawing.Size(253, 467);
-            this.pnBookmark.TabIndex = 7;
-            this.pnBookmark.Visible = false;
-            // 
-            // tvBookMark
-            // 
-            this.tvBookMark.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tvBookMark.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tvBookMark.Location = new System.Drawing.Point(0, 27);
-            this.tvBookMark.Name = "tvBookMark";
-            this.tvBookMark.Size = new System.Drawing.Size(251, 438);
-            this.tvBookMark.TabIndex = 0;
-            this.tvBookMark.DoubleClick += new System.EventHandler(this.TvBookMark_DoubleClick);
-            // 
-            // toolbook
-            // 
-            this.toolbook.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButtoncencle});
-            this.toolbook.Location = new System.Drawing.Point(0, 0);
-            this.toolbook.Name = "toolbook";
-            this.toolbook.Size = new System.Drawing.Size(251, 25);
-            this.toolbook.TabIndex = 1;
-            this.toolbook.Text = "toolStrip2";
-            // 
-            // toolStripButtoncencle
-            // 
-            this.toolStripButtoncencle.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtoncencle.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtoncencle.Image")));
-            this.toolStripButtoncencle.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtoncencle.Name = "toolStripButtoncencle";
-            this.toolStripButtoncencle.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtoncencle.Text = "취소";
-            this.toolStripButtoncencle.ToolTipText = "닫기";
-            this.toolStripButtoncencle.Click += new System.EventHandler(this.ToolStripButtoncencle_Click);
-            // 
             // toolStripButtonSetting
             // 
             this.toolStripButtonSetting.AutoSize = false;
@@ -974,6 +932,53 @@
             this.toolStripLabel.Size = new System.Drawing.Size(111, 94);
             this.toolStripLabel.Text = "환영합니다.";
             this.toolStripLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // pnBookmark
+            // 
+            this.pnBookmark.BackColor = System.Drawing.Color.White;
+            this.pnBookmark.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnBookmark.Controls.Add(this.toolbook);
+            this.pnBookmark.Controls.Add(this.tvBookMark);
+            this.pnBookmark.Location = new System.Drawing.Point(268, 450);
+            this.pnBookmark.Name = "pnBookmark";
+            this.pnBookmark.Size = new System.Drawing.Size(253, 467);
+            this.pnBookmark.TabIndex = 7;
+            this.pnBookmark.Visible = false;
+            // 
+            // toolbook
+            // 
+            this.toolbook.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButtoncencle});
+            this.toolbook.Location = new System.Drawing.Point(0, 0);
+            this.toolbook.Name = "toolbook";
+            this.toolbook.Size = new System.Drawing.Size(251, 25);
+            this.toolbook.TabIndex = 1;
+            this.toolbook.Text = "toolStrip2";
+            // 
+            // toolStripButtoncencle
+            // 
+            this.toolStripButtoncencle.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtoncencle.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtoncencle.Image")));
+            this.toolStripButtoncencle.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtoncencle.Name = "toolStripButtoncencle";
+            this.toolStripButtoncencle.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtoncencle.Text = "취소";
+            this.toolStripButtoncencle.ToolTipText = "닫기";
+            this.toolStripButtoncencle.Click += new System.EventHandler(this.ToolStripButtoncencle_Click);
+            // 
+            // tvBookMark
+            // 
+            this.tvBookMark.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tvBookMark.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tvBookMark.Location = new System.Drawing.Point(0, 27);
+            this.tvBookMark.Name = "tvBookMark";
+            this.tvBookMark.Size = new System.Drawing.Size(251, 438);
+            this.tvBookMark.TabIndex = 0;
+            this.tvBookMark.DoubleClick += new System.EventHandler(this.TvBookMark_DoubleClick);
+            // 
+            // timer
+            // 
+            this.timer.Tick += new System.EventHandler(this.Timer_Tick);
             // 
             // MainForm
             // 
@@ -1113,5 +1118,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButtoncencle;
         private System.Windows.Forms.ToolStripButton toolStripButtonSetting;
         private System.Windows.Forms.ToolStripLabel toolStripLabel;
+        private System.Windows.Forms.Timer timer;
     }
 }
