@@ -354,7 +354,7 @@ namespace DAC
            ,[Ins_Emp]
            ,[Prd_Unit])
      VALUES
-           (@Workorderno 
+           ('WK' + format(getdate(),'yyMMddHHmmss')
            ,@Item_Code 
            ,@Wc_Code 
            ,@Plan_Qty 
@@ -371,7 +371,6 @@ namespace DAC
 );  ";
 
                 comm.CommandType = CommandType.Text;
-                comm.Parameters.AddWithValue("@Workorderno", item.Workorderno);
                 comm.Parameters.AddWithValue("@Item_Code", item.Item_Code);
                 comm.Parameters.AddWithValue("@Wc_Code", item.Wc_Code);
                 comm.Parameters.AddWithValue("@Plan_Qty", item.Plan_Qty);
@@ -409,7 +408,11 @@ namespace DAC
 
                 conn.Open();
                 int result = comm.ExecuteNonQuery();
-                return result > 0;
+                if (result == 0)
+                {
+                    Log.WriteWarn($"{userid}가 없는 작업지시 {workorderno}를 실행하려함");
+                }
+                return result > 1;
             }
         }
         /// <summary>

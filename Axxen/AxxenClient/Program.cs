@@ -1,5 +1,7 @@
 ﻿using AxxenClient.Forms;
 using AxxenClient.Templets;
+using AxxenClient.Util;
+using log4net.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +12,10 @@ namespace AxxenClient
 {
     static class Program
     {
+        #region Log
+        private static LoggingUtility _loggingUtility = LoggingUtility.GetLoggingUtility("WorkerClient", Level.Info, 30);
+        internal static LoggingUtility Log { get { return _loggingUtility; } }
+        #endregion
         /// <summary>
         /// 해당 애플리케이션의 주 진입점입니다.
         /// </summary>

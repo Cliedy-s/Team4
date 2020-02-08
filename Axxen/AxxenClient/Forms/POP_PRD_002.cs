@@ -63,7 +63,6 @@ namespace AxxenClient.Forms
                         Wo_Req_No = txtReqNo.TextBoxText,
                         Req_Seq = Convert.ToInt32(lblReq_Seq.Text),
                         Wc_Code = txtWcSearch.CodeText,
-                        Workorderno = "WK" + now.ToString("yyyyMMddHHmmffffff"),
                         Wo_Status = "생산대기",
                         Wo_Order = "1",
                         Prd_Unit = lblItem_Unit.Text

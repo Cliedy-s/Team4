@@ -1,4 +1,5 @@
 ﻿
+using log4net.Core;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
@@ -11,6 +12,11 @@ namespace DAC
     /// </summary>
     public abstract class DACParent
     {
+        #region Log
+        private static LoggingUtility _loggingUtility = LoggingUtility.GetLoggingUtility("WorkerClient", Level.Info, 30);
+        internal static LoggingUtility Log { get { return _loggingUtility; } }
+        #endregion
+
         protected string Connstr
         {
             get
