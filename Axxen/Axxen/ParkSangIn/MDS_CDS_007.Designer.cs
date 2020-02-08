@@ -46,6 +46,9 @@
             this.aLabel9 = new Axxen.CustomControls.ALabel();
             this.aDataGridView1 = new Axxen.CustomControls.ADataGridView();
             this.aHeaderBox3 = new Axxen.CustomControls.AHeaderBox();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.panTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMainGrid)).BeginInit();
             this.panelDefma.SuspendLayout();
@@ -103,7 +106,7 @@
             this.dgvMainGrid.Location = new System.Drawing.Point(2, 117);
             this.dgvMainGrid.Name = "dgvMainGrid";
             this.dgvMainGrid.RowTemplate.Height = 23;
-            this.dgvMainGrid.Size = new System.Drawing.Size(368, 537);
+            this.dgvMainGrid.Size = new System.Drawing.Size(241, 537);
             this.dgvMainGrid.TabIndex = 21;
             // 
             // aHeaderBox1
@@ -111,7 +114,7 @@
             this.aHeaderBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.aHeaderBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.aHeaderBox1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aHeaderBox1.HeaderBoxText = "포장";
+            this.aHeaderBox1.HeaderBoxText = "포장등급";
             this.aHeaderBox1.Location = new System.Drawing.Point(0, 84);
             this.aHeaderBox1.Name = "aHeaderBox1";
             this.aHeaderBox1.Size = new System.Drawing.Size(243, 30);
@@ -132,6 +135,9 @@
             // panelDefma
             // 
             this.panelDefma.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelDefma.Controls.Add(this.radioButton3);
+            this.panelDefma.Controls.Add(this.radioButton2);
+            this.panelDefma.Controls.Add(this.radioButton1);
             this.panelDefma.Controls.Add(this.btnSave);
             this.panelDefma.Controls.Add(this.aPanel6);
             this.panelDefma.Controls.Add(this.aPanel7);
@@ -153,6 +159,7 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(88, 33);
             this.btnSave.TabIndex = 210;
+            this.btnSave.Tag = "2";
             this.btnSave.Text = "저장";
             this.btnSave.UseVisualStyleBackColor = false;
             // 
@@ -164,6 +171,7 @@
             this.aPanel6.Name = "aPanel6";
             this.aPanel6.Size = new System.Drawing.Size(172, 35);
             this.aPanel6.TabIndex = 212;
+            this.aPanel6.Tag = "0";
             // 
             // txtCode
             // 
@@ -191,11 +199,11 @@
             this.aLabel10.AutoSize = true;
             this.aLabel10.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.aLabel10.Location = new System.Drawing.Point(1, 8);
+            this.aLabel10.Location = new System.Drawing.Point(13, 5);
             this.aLabel10.Name = "aLabel10";
-            this.aLabel10.Size = new System.Drawing.Size(118, 17);
+            this.aLabel10.Size = new System.Drawing.Size(92, 17);
             this.aLabel10.TabIndex = 55;
-            this.aLabel10.Text = "*불량현상대분류명";
+            this.aLabel10.Text = "*포장등급코드";
             // 
             // aPanel5
             // 
@@ -205,6 +213,7 @@
             this.aPanel5.Name = "aPanel5";
             this.aPanel5.Size = new System.Drawing.Size(172, 35);
             this.aPanel5.TabIndex = 214;
+            this.aPanel5.Tag = "1";
             // 
             // txtName
             // 
@@ -236,7 +245,7 @@
             this.aLabel9.Name = "aLabel9";
             this.aLabel9.Size = new System.Drawing.Size(92, 17);
             this.aLabel9.TabIndex = 54;
-            this.aLabel9.Text = "*불량현상코드";
+            this.aLabel9.Text = "*포장등급코드";
             // 
             // aDataGridView1
             // 
@@ -245,10 +254,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.aDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.aDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.aDataGridView1.Location = new System.Drawing.Point(375, 116);
+            this.aDataGridView1.Location = new System.Drawing.Point(249, 116);
             this.aDataGridView1.Name = "aDataGridView1";
             this.aDataGridView1.RowTemplate.Height = 23;
-            this.aDataGridView1.Size = new System.Drawing.Size(845, 537);
+            this.aDataGridView1.Size = new System.Drawing.Size(971, 537);
             this.aDataGridView1.TabIndex = 25;
             // 
             // aHeaderBox3
@@ -256,16 +265,50 @@
             this.aHeaderBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.aHeaderBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.aHeaderBox3.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aHeaderBox3.HeaderBoxText = "불량현상대분류 목록";
-            this.aHeaderBox3.Location = new System.Drawing.Point(376, 83);
+            this.aHeaderBox3.HeaderBoxText = "포장등급상세";
+            this.aHeaderBox3.Location = new System.Drawing.Point(249, 84);
             this.aHeaderBox3.Name = "aHeaderBox3";
             this.aHeaderBox3.Size = new System.Drawing.Size(243, 30);
             this.aHeaderBox3.TabIndex = 24;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(604, 12);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(95, 19);
+            this.radioButton1.TabIndex = 215;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "radioButton1";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(705, 13);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(95, 19);
+            this.radioButton2.TabIndex = 216;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "radioButton2";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(806, 13);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(95, 19);
+            this.radioButton3.TabIndex = 217;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "radioButton3";
+            this.radioButton3.UseVisualStyleBackColor = true;
             // 
             // MDS_CDS_007
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1229, 774);
+            this.ControlBox = false;
             this.Controls.Add(this.aDataGridView1);
             this.Controls.Add(this.aHeaderBox3);
             this.Controls.Add(this.aHeaderBox2);
@@ -278,6 +321,7 @@
             this.panTop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMainGrid)).EndInit();
             this.panelDefma.ResumeLayout(false);
+            this.panelDefma.PerformLayout();
             this.aPanel6.ResumeLayout(false);
             this.aPanel6.PerformLayout();
             this.aPanel7.ResumeLayout(false);
@@ -311,5 +355,8 @@
         private CustomControls.ALabel aLabel9;
         private CustomControls.ADataGridView aDataGridView1;
         protected CustomControls.AHeaderBox aHeaderBox3;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
     }
 }

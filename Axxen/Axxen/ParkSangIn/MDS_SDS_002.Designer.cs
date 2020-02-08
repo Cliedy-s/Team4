@@ -511,6 +511,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1212, 758);
+            this.ControlBox = false;
             this.Controls.Add(this.panelsetting);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.aLabel2);

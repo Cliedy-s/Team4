@@ -129,6 +129,7 @@
             this.toolStripButtoncencle = new System.Windows.Forms.ToolStripButton();
             this.tvBookMark = new System.Windows.Forms.TreeView();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.panelMenu.SuspendLayout();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
@@ -948,7 +949,8 @@
             // toolbook
             // 
             this.toolbook.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButtoncencle});
+            this.toolStripButtoncencle,
+            this.toolStripLabel1});
             this.toolbook.Location = new System.Drawing.Point(0, 0);
             this.toolbook.Name = "toolbook";
             this.toolbook.Size = new System.Drawing.Size(251, 25);
@@ -979,6 +981,12 @@
             // timer
             // 
             this.timer.Tick += new System.EventHandler(this.Timer_Tick);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(55, 22);
+            this.toolStripLabel1.Text = "즐겨찾기";
             // 
             // MainForm
             // 
@@ -1119,5 +1127,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButtonSetting;
         private System.Windows.Forms.ToolStripLabel toolStripLabel;
         private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
     }
 }

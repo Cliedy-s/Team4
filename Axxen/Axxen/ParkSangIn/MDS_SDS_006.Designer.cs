@@ -230,6 +230,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1248, 700);
+            this.ControlBox = false;
             this.Controls.Add(this.aLabel4);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.aPanel2);

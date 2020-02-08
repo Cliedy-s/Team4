@@ -171,6 +171,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1299, 719);
+            this.ControlBox = false;
             this.Controls.Add(this.lbldeletecheck2);
             this.Controls.Add(this.lbldeletecheck1);
             this.Controls.Add(this.pictureBox3);
