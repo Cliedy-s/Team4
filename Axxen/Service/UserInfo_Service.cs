@@ -73,5 +73,10 @@ namespace Service
 
          return   dac.Default_Screen_Code(id,screencode);
         }
-    }
+
+        public bool UpdateUserPassword(string id, string User_PW)
+        {
+            return dac.UpdateUserPassword(id, User_PW);
+        }
+        }
 }

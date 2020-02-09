@@ -10,6 +10,14 @@ namespace Service
 {
     public class Sys_NoticeService
     {
+        public List<Sys_NoticeVO> GetAllSys_notice()
+        {
+            Sys_NoticeDAC dac = new Sys_NoticeDAC();
+            return dac.GetAllSys_notice();
+        }
+
+
+
         /// <summary>
         /// 현재 공지사항 가져오기
         /// </summary>

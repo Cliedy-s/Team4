@@ -11,12 +11,52 @@ namespace DAC
 {
     public class Sys_NoticeDAC : DACParent
     {
+
         /// <summary>
-        /// 현재 공지사항 가져오기
+        /// 공지\사항전체
         /// </summary>
-        /// <param name="Seq"></param>
         /// <returns></returns>
-        public Sys_NoticeVO GetCurrentSysNotice(int Seq) 
+        public List<Sys_NoticeVO> GetAllSys_notice()
+        {
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText = @"
+SELECT TOP (1000) [Seq]
+      ,[Notice_Date]
+      ,[Notice_End]
+      ,[Title]
+      ,[Description]
+      ,[Notice_Rtf]
+      ,[Reg_Type]
+      ,[Email_Recipients]
+      ,[Email_Send_Code]
+      ,[Use_YN]
+      ,[Remark]
+      ,[Ins_Date]
+      ,[Ins_Emp]
+      ,[Up_Date]
+      ,[Up_Emp]
+  FROM [TEAM4].[dbo].[Sys_Notice]";
+                comm.CommandType = CommandType.Text;
+
+                comm.Connection.Open();
+                SqlDataReader reader = comm.ExecuteReader();
+                List<Sys_NoticeVO> list = Helper.DataReaderMapToList<Sys_NoticeVO>(reader);
+                comm.Connection.Close();
+
+                return list;
+            }
+
+        }
+
+
+            /// <summary>
+            /// 현재 공지사항 가져오기
+            /// </summary>
+            /// <param name="Seq"></param>
+            /// <returns></returns>
+            public Sys_NoticeVO GetCurrentSysNotice(int Seq) 
         {
             Sys_NoticeVO item = null;
             using (SqlCommand comm = new SqlCommand())

@@ -28,5 +28,20 @@ namespace Service
             BoxingGrade_Detail_MasterDAC dac = new BoxingGrade_Detail_MasterDAC();
             return dac.GellBoxing_Grade( boxingDetailCode);
         }
-    }
+        public bool DeleteBoxingGrade_Detail_MasterVO(string boxcode)
+        {
+            BoxingGrade_Detail_MasterDAC dac = new BoxingGrade_Detail_MasterDAC();
+            return dac.DeleteBoxingGrade_Detail_MasterVO(boxcode);
+        }
+        public bool UsedBoxingGrade_Detail_MasterVO(string code, string use)
+        {
+            BoxingGrade_Detail_MasterDAC dac = new BoxingGrade_Detail_MasterDAC();
+            return dac.UsedBoxingGrade_Detail_MasterVO(code, use);
+        }
+        public bool GetInsertUpdateBoxingGrade_Detail_MasterVO(string check, string code, string Name, string bigcode, string user)
+        {
+            BoxingGrade_Detail_MasterDAC dac = new BoxingGrade_Detail_MasterDAC();
+            return dac.GetInsertUpdateBoxingGrade_Detail_MasterVO(check, code, Name, bigcode, user);
+        }
+        }
 }

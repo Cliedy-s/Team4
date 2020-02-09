@@ -349,5 +349,36 @@ namespace DAC
                 return item;
             }
         }
+
+        public bool UpdateUserPassword(string id,string User_PW)
+        {
+            try
+            {
+                using (SqlCommand com = new SqlCommand())
+                {
+                    com.Connection = new SqlConnection(Connstr);
+                    com.CommandText = @"update User_Master set User_PW=@User_PW, Pw_Reset_Count=Pw_Reset_Count+1 where User_ID=@User_ID";
+                    com.CommandType = CommandType.Text;
+                  
+                    com.Parameters.AddWithValue("@User_ID", id);
+                    com.Parameters.AddWithValue("@User_PW", User_PW);
+
+
+                    com.Connection.Open();
+
+                    int resault = Convert.ToInt32(com.ExecuteNonQuery());
+
+                    com.Connection.Close();
+
+                    return resault > 0;
+                }
+
+            }
+            catch (Exception)
+            {
+                return false;
+                throw;
+            }
+        }
     }
 }

@@ -25,7 +25,6 @@ namespace Axxen
         private void MSS_SYS_004_Load(object sender, EventArgs e)
         {
             dtpstart.Value = DateTime.Now;
-
             dtpEnd.MaxDate = DateTime.Now;
 
             userlist = new List<UserInfoVO>();

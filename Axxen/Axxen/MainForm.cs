@@ -724,7 +724,7 @@ namespace Axxen
         private void Button9_Click(object sender, EventArgs e)
         {
             DeleteButon();
-          //  Setting();
+           Setting();
         }
     }
 }

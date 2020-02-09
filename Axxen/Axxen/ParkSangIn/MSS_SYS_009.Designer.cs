@@ -29,108 +29,52 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MSS_SYS_009));
-            this.dgvGroup = new Axxen.CustomControls.ADataGridView();
-            this.cbbGroup = new Axxen.CustomControls.AComboBox();
-            this.aPanel1 = new Axxen.CustomControls.APanel();
-            this.lblGroup = new Axxen.CustomControls.ALabel();
-            this.btnSearch = new Axxen.CustomControls.AButton();
+            this.dgvsys = new Axxen.CustomControls.ADataGridView();
             this.aPanel2 = new Axxen.CustomControls.APanel();
-            this.aLabel3 = new Axxen.CustomControls.ALabel();
-            this.aLabel2 = new Axxen.CustomControls.ALabel();
             this.aLabel1 = new Axxen.CustomControls.ALabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGroup)).BeginInit();
-            this.aPanel1.SuspendLayout();
+            this.aLabel2 = new Axxen.CustomControls.ALabel();
+            this.dtpEnd = new Axxen.CustomControls.ADateTimePicker();
+            this.dtpstart = new Axxen.CustomControls.ADateTimePicker();
+            this.aLabel3 = new Axxen.CustomControls.ALabel();
+            this.btnSearch = new Axxen.CustomControls.AButton();
+            this.aTextBox1 = new Axxen.CustomControls.ATextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.aLabel4 = new Axxen.CustomControls.ALabel();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvsys)).BeginInit();
             this.aPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvGroup
+            // dgvsys
             // 
-            this.dgvGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvsys.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvGroup.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvGroup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGroup.Location = new System.Drawing.Point(9, 78);
-            this.dgvGroup.Name = "dgvGroup";
-            this.dgvGroup.RowTemplate.Height = 23;
-            this.dgvGroup.Size = new System.Drawing.Size(1124, 652);
-            this.dgvGroup.TabIndex = 10;
-            // 
-            // cbbGroup
-            // 
-            this.cbbGroup.FormattingEnabled = true;
-            this.cbbGroup.Location = new System.Drawing.Point(109, 6);
-            this.cbbGroup.Name = "cbbGroup";
-            this.cbbGroup.Size = new System.Drawing.Size(152, 23);
-            this.cbbGroup.TabIndex = 3;
-            // 
-            // aPanel1
-            // 
-            this.aPanel1.BackColor = System.Drawing.Color.White;
-            this.aPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.aPanel1.Controls.Add(this.lblGroup);
-            this.aPanel1.Location = new System.Drawing.Point(451, 6);
-            this.aPanel1.Name = "aPanel1";
-            this.aPanel1.Size = new System.Drawing.Size(165, 24);
-            this.aPanel1.TabIndex = 6;
-            // 
-            // lblGroup
-            // 
-            this.lblGroup.AutoSize = true;
-            this.lblGroup.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblGroup.Location = new System.Drawing.Point(3, 3);
-            this.lblGroup.Name = "lblGroup";
-            this.lblGroup.Size = new System.Drawing.Size(53, 17);
-            this.lblGroup.TabIndex = 0;
-            this.lblGroup.Text = "aLabel1";
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Location = new System.Drawing.Point(649, 7);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearch.TabIndex = 4;
-            this.btnSearch.Text = "조회";
-            this.btnSearch.UseVisualStyleBackColor = false;
+            this.dgvsys.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvsys.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvsys.Location = new System.Drawing.Point(12, 69);
+            this.dgvsys.Name = "dgvsys";
+            this.dgvsys.RowTemplate.Height = 23;
+            this.dgvsys.Size = new System.Drawing.Size(1124, 652);
+            this.dgvsys.TabIndex = 10;
             // 
             // aPanel2
             // 
             this.aPanel2.BackColor = System.Drawing.SystemColors.Info;
             this.aPanel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.aPanel2.Controls.Add(this.aLabel3);
+            this.aPanel2.Controls.Add(this.aTextBox1);
             this.aPanel2.Controls.Add(this.aLabel2);
-            this.aPanel2.Controls.Add(this.cbbGroup);
-            this.aPanel2.Controls.Add(this.aPanel1);
+            this.aPanel2.Controls.Add(this.dtpEnd);
+            this.aPanel2.Controls.Add(this.dtpstart);
+            this.aPanel2.Controls.Add(this.aLabel3);
             this.aPanel2.Controls.Add(this.btnSearch);
             this.aPanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.aPanel2.Location = new System.Drawing.Point(0, 0);
             this.aPanel2.Name = "aPanel2";
             this.aPanel2.Size = new System.Drawing.Size(1148, 39);
             this.aPanel2.TabIndex = 13;
-            // 
-            // aLabel3
-            // 
-            this.aLabel3.AutoSize = true;
-            this.aLabel3.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aLabel3.Location = new System.Drawing.Point(332, 10);
-            this.aLabel3.Name = "aLabel3";
-            this.aLabel3.Size = new System.Drawing.Size(91, 17);
-            this.aLabel3.TabIndex = 10;
-            this.aLabel3.Text = "공지사항 코드";
-            // 
-            // aLabel2
-            // 
-            this.aLabel2.AutoSize = true;
-            this.aLabel2.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aLabel2.Location = new System.Drawing.Point(15, 9);
-            this.aLabel2.Name = "aLabel2";
-            this.aLabel2.Size = new System.Drawing.Size(73, 17);
-            this.aLabel2.TabIndex = 7;
-            this.aLabel2.Text = "공지사항명";
             // 
             // aLabel1
             // 
@@ -152,23 +96,102 @@
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
+            // aLabel2
+            // 
+            this.aLabel2.AutoSize = true;
+            this.aLabel2.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aLabel2.Location = new System.Drawing.Point(223, 8);
+            this.aLabel2.Name = "aLabel2";
+            this.aLabel2.Size = new System.Drawing.Size(17, 17);
+            this.aLabel2.TabIndex = 24;
+            this.aLabel2.Text = "~";
+            // 
+            // dtpEnd
+            // 
+            this.dtpEnd.Location = new System.Drawing.Point(242, 5);
+            this.dtpEnd.Name = "dtpEnd";
+            this.dtpEnd.Size = new System.Drawing.Size(200, 23);
+            this.dtpEnd.TabIndex = 26;
+            // 
+            // dtpstart
+            // 
+            this.dtpstart.Location = new System.Drawing.Point(19, 5);
+            this.dtpstart.Name = "dtpstart";
+            this.dtpstart.Size = new System.Drawing.Size(200, 23);
+            this.dtpstart.TabIndex = 25;
+            this.dtpstart.Value = new System.DateTime(2020, 2, 5, 0, 0, 0, 0);
+            // 
+            // aLabel3
+            // 
+            this.aLabel3.AutoSize = true;
+            this.aLabel3.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aLabel3.Location = new System.Drawing.Point(502, 9);
+            this.aLabel3.Name = "aLabel3";
+            this.aLabel3.Size = new System.Drawing.Size(47, 17);
+            this.aLabel3.TabIndex = 23;
+            this.aLabel3.Text = "검색어";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Location = new System.Drawing.Point(1050, 6);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 22;
+            this.btnSearch.Text = "조회";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            // 
+            // aTextBox1
+            // 
+            this.aTextBox1.BackColor = System.Drawing.Color.White;
+            this.aTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.aTextBox1.errorp = null;
+            this.aTextBox1.Location = new System.Drawing.Point(555, 6);
+            this.aTextBox1.Name = "aTextBox1";
+            this.aTextBox1.Size = new System.Drawing.Size(167, 23);
+            this.aTextBox1.TabIndex = 27;
+            this.aTextBox1.txtType = Axxen.CustomControls.TextType.Normal;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(12, 41);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(23, 22);
+            this.pictureBox2.TabIndex = 17;
+            this.pictureBox2.TabStop = false;
+            // 
+            // aLabel4
+            // 
+            this.aLabel4.AutoSize = true;
+            this.aLabel4.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aLabel4.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.aLabel4.Location = new System.Drawing.Point(37, 42);
+            this.aLabel4.Name = "aLabel4";
+            this.aLabel4.Size = new System.Drawing.Size(106, 21);
+            this.aLabel4.TabIndex = 16;
+            this.aLabel4.Text = "공지사항목록";
+            // 
             // MSS_SYS_009
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.ControlBox = false;
-            this.Controls.Add(this.dgvGroup);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.aLabel4);
+            this.Controls.Add(this.dgvsys);
             this.Controls.Add(this.aPanel2);
             this.Controls.Add(this.aLabel1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "MSS_SYS_009";
             this.Text = "공지사항등록";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGroup)).EndInit();
-            this.aPanel1.ResumeLayout(false);
-            this.aPanel1.PerformLayout();
+            this.Load += new System.EventHandler(this.MSS_SYS_009_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvsys)).EndInit();
             this.aPanel2.ResumeLayout(false);
             this.aPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -176,15 +199,17 @@
 
         #endregion
 
-        private CustomControls.ADataGridView dgvGroup;
-        private CustomControls.AComboBox cbbGroup;
-        private CustomControls.APanel aPanel1;
-        private CustomControls.ALabel lblGroup;
-        private CustomControls.AButton btnSearch;
+        private CustomControls.ADataGridView dgvsys;
         private CustomControls.APanel aPanel2;
-        private CustomControls.ALabel aLabel3;
-        private CustomControls.ALabel aLabel2;
         private CustomControls.ALabel aLabel1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private CustomControls.ATextBox aTextBox1;
+        private CustomControls.ALabel aLabel2;
+        private CustomControls.ADateTimePicker dtpEnd;
+        private CustomControls.ADateTimePicker dtpstart;
+        private CustomControls.ALabel aLabel3;
+        private CustomControls.AButton btnSearch;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private CustomControls.ALabel aLabel4;
     }
 }

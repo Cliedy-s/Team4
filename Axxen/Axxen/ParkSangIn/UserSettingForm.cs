@@ -129,5 +129,35 @@ namespace Axxen
         {
             this.Close();
         }
+
+        private void BtnPwd_Click(object sender, EventArgs e)
+        {
+            if (txtPwd.Text.Count() > 7)
+            {
+                if (txtPwd.Text.Equals(txtPwdChack.Text))
+                {
+                    if(userservice.UpdateUserPassword(UserInfo.User_ID, txtPwd.Text))
+                    {
+                        txtPwd.Text = string.Empty;
+                        txtPwdChack.Text = string.Empty;
+                        MessageBox.Show("비밀번호가 변경되었습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               
+                    }
+                    else
+                    {
+                        MessageBox.Show("오류", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("비밀번호가 같지 않습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("비밀번호는 8자리 이상 15자리 이하를 입력하세요.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }
