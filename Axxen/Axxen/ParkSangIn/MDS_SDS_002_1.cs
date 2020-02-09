@@ -35,7 +35,10 @@ namespace Axxen
         {
             ///combobox
     
-            Item_Level_Master first = new Item_Level_Master();
+            Item_Level_Master first = new Item_Level_Master() {
+           Level_Name="",
+            Level_Code=""
+            };
             var level1list = itemgrouplist.FindAll(level => level.Item_lvl1 == "Y");
             level1list.Insert(0, first);
             cbbLevel_1.DisplayMember = "Level_Name";
@@ -82,34 +85,34 @@ namespace Axxen
         {
             try
             {
-                if (!string.IsNullOrEmpty(txtCode.Text) && !string.IsNullOrEmpty(txtName.Text) && !string.IsNullOrEmpty(txtType.Text))
+                if (!string.IsNullOrEmpty(txtCode.Text) && !string.IsNullOrEmpty(txtName.Text) && !string.IsNullOrEmpty(cbbType.Text))
                 {
 
                     Item_MasterVO item = new Item_MasterVO()
                     {
 
-                        Item_Code = txtCode.Text,
-                        Item_Name = txtName.Text,
+                        Item_Code = txtCode.Text.Trim(),
+                        Item_Name = txtName.Text.Trim(),
                         Item_Name_Eng = txteng.Text,
-                        Item_Name_Eng_Alias = txtengAs.Text,
-                        Item_Type = txtType.Text,
-                        Item_Spec = txtSpec.Text,
-                        Item_Unit = nudunit.Text,
+                        Item_Name_Eng_Alias = txtengAs.Text.Trim(),
+                        Item_Type = cbbType.Text.Trim(),
+                        Item_Spec = txtSpec.Text.Trim(),
+                        Item_Unit = nudunit.Text.Trim(),
                         Item_Stock = nudStock.Value,
                         PrdQty_Per_Hour = nudhour.Value,
                         PrdQTy_Per_Batch = nudbatch.Value,
-                        Cavity = int.Parse(nudcavity.Value.ToString()),
-                        Line_Per_Qty = int.Parse(nudlinper.Value.ToString()),
-                        Shot_Per_Qty = int.Parse(nudshotper.Value.ToString()),
-                        Dry_GV_Qty = int.Parse(nuddrgdv.Value.ToString()),
-                        Heat_GV_Qty = int.Parse(nudheatgv.Value.ToString()),
-                        Level_1 = cbbLevel_1.ValueMember,
-                        Level_2 = cbbLevel_2.ValueMember,
-                        Level_3 = cbbLevel_3.ValueMember,
-                        Level_4 = cbbLevel_4.ValueMember,
-                        Level_5 = cbbLevel_5.ValueMember,
-                        Ins_Date = Convert.ToDateTime(lblDay.Text),
-                        Ins_Emp = lblManager.Text,
+                        Cavity = int.Parse(nudcavity.Value.ToString().Trim()),
+                        Line_Per_Qty = int.Parse(nudlinper.Value.ToString().Trim()),
+                        Shot_Per_Qty = int.Parse(nudshotper.Value.ToString().Trim()),
+                        Dry_GV_Qty = int.Parse(nuddrgdv.Value.ToString().Trim()),
+                        Heat_GV_Qty = int.Parse(nudheatgv.Value.ToString().Trim()),
+                        Level_1 = cbbLevel_1.SelectedValue.ToString().Trim(),
+                        Level_2 = cbbLevel_2.SelectedValue.ToString().Trim(),
+                        Level_3 = cbbLevel_3.SelectedValue.ToString().Trim(),
+                        Level_4 = cbbLevel_4.SelectedValue.ToString().Trim(),
+                        Level_5 = cbbLevel_5.SelectedValue.ToString().Trim(),
+                        Ins_Date = Convert.ToDateTime(lblDay.Text.Trim()),
+                        Ins_Emp = lblManager.Text.Trim(),
                     };
                     if (itemservice.InsertUpdateAllItem_Master(item))
                     {
@@ -135,7 +138,7 @@ namespace Axxen
             catch (Exception err)
             {
 
-                MessageBox.Show("db 오류 저장 실패", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("db 오류 저장 실패"+ err.Message, "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Program.Log.WriteError(err.Message);
             }
         }

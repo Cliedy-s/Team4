@@ -475,6 +475,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1297, 780);
+            this.ControlBox = false;
             this.Controls.Add(this.dgvUseScreen);
             this.Controls.Add(this.aPanel8);
             this.Controls.Add(this.pictureBox3);

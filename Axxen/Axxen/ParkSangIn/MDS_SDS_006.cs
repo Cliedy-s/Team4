@@ -35,22 +35,22 @@ namespace Axxen
             ((MainForm)this.MdiParent).MyDeleteEvent += new EventHandler(this.MyDelete);
 
             DatagridviewDesigns.SetDesign(dgvItem);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "품목코드", "Item_Code", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvItem, "품목명", "Item_Name", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvItem, "품목코드", "Item_Code", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvItem, "품목명", "Item_Name", true, 210, default, true);
 
 
             DatagridviewDesigns.SetDesign(dgvinspect);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvinspect, "품목코드", "Item_Code", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvinspect, "공정코드", "Process_code", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvinspect, "검사항목코드", "Inspect_code", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvinspect, "검사항목명", "Inspect_name", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvinspect, "규격상한값", "USL", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvinspect, "규격기준값", "SL", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvinspect, "규격하한값", "LSL", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvinspect, "샘플크기", "Sample_size", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvinspect, "단위", "Inspect_Unit", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvinspect, "비고", "Remark", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvinspect, "사용여부", "Use_YN", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvinspect, "검사항목코드", "Inspect_code", true, 110, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvinspect, "검사항목명", "Inspect_name", true, 150, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvinspect, "품목코드", "Item_Code", true, 80, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvinspect, "공정코드", "Process_code", true, 80, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvinspect, "규격상한값", "USL", true, 100, DataGridViewContentAlignment.MiddleRight, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvinspect, "규격기준값", "SL", true, 100, DataGridViewContentAlignment.MiddleRight, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvinspect, "규격하한값", "LSL", true, 100, DataGridViewContentAlignment.MiddleRight, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvinspect, "샘플크기", "Sample_size", true, 130, DataGridViewContentAlignment.MiddleRight, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvinspect, "단위", "Inspect_Unit", true, 65, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvinspect, "비고", "Remark", true, 150, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvinspect, "사용여부", "Use_YN", true, 85, default, true);
 
             DataGridViewButtonColumn gridbtn = new DataGridViewButtonColumn();
             gridbtn.HeaderText = "사용여부";
@@ -79,7 +79,7 @@ namespace Axxen
                 dgvItem.DataSource = Itemlist.FindAll(item=>item.Use_YN.Equals("Y"));
 
                 inspectlist = new List<InspectSpecVO>();
-                inspectlist= inspectservice.GetAll().FindAll(item => item.Use_YN.Equals("Y")); ;//품목규격전체
+                inspectlist = inspectservice.GetAll();//품목규격전체
 
                 processlist = new List<Process_MasterVO>(); //공정 목록
                 processlist = processService.GetAllProcess_Master().FindAll(item => item.Use_YN.Equals("Y"));
@@ -129,11 +129,13 @@ namespace Axxen
                     {
                         MDS_SDS_006_1 frm = new MDS_SDS_006_1();
 
-                        frm.updateinspectitem = inspectlist.Find(item => item.Item_Code == dgvinspect.SelectedRows[0].Cells[0].Value.ToString() && item.Process_code == dgvinspect.SelectedRows[0].Cells[1].Value.ToString() && item.Inspect_code == dgvinspect.SelectedRows[0].Cells[2].Value.ToString());
+                        frm.updateinspectitem = inspectlist.Find(item => item.Item_Code == dgvinspect.SelectedRows[0].Cells[2].Value.ToString() && item.Process_code == dgvinspect.SelectedRows[0].Cells[3].Value.ToString() && item.Inspect_code == dgvinspect.SelectedRows[0].Cells[0].Value.ToString());
+
 
                         if (frm.ShowDialog() == DialogResult.OK)
                         {
-
+                            GetAllItem();
+                            ControlSetting();//콤보박스 
                             MessageBox.Show("저장 완료", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
@@ -166,9 +168,10 @@ namespace Axxen
                 {
                     MDS_SDS_006_1 frm = new MDS_SDS_006_1();
 
-                 if(frm.ShowDialog() == DialogResult.OK) { 
-
-                    MessageBox.Show("저장 완료", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                 if(frm.ShowDialog() == DialogResult.OK) {
+                        GetAllItem();
+                        ControlSetting();//콤보박스 
+                        MessageBox.Show("저장 완료", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
@@ -188,8 +191,9 @@ namespace Axxen
                     if (MessageBox.Show(dgvinspect.SelectedRows[0].Cells[3].Value.ToString() + "를 삭제하시겠습니까?", "알림", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {                
                         // MessageBox.Show(dgvMainGrid.SelectedRows[0].Cells[0].Value.ToString());
-                        if (inspectservice.DeleteInspectSpecVO(dgvinspect.SelectedRows[0].Cells[0].Value.ToString(), dgvinspect.SelectedRows[0].Cells[1].Value.ToString(), dgvinspect.SelectedRows[0].Cells[2].Value.ToString()))
+                        if (inspectservice.DeleteInspectSpecVO(dgvinspect.SelectedRows[0].Cells[2].Value.ToString(), dgvinspect.SelectedRows[0].Cells[3].Value.ToString(), dgvinspect.SelectedRows[0].Cells[0].Value.ToString()))
                         {
+
                             GetAllItem();
                             ControlSetting();//콤보박스 
                         }
@@ -255,6 +259,7 @@ namespace Axxen
           if(  frm.ShowDialog()  == DialogResult.OK)
             {
                 MessageBox.Show("품목이 복사되었습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                GetAllItem();
             }
         }
 
@@ -278,9 +283,9 @@ namespace Axxen
                 if (e.ColumnIndex == dgvinspect.Columns["btn"].Index)//눌러서 사용과 사용안함 변경
                 {
 
-                    useitem.Item_Code = dgvinspect.SelectedRows[0].Cells[0].Value.ToString();
-                    useitem.Process_code = dgvinspect.SelectedRows[0].Cells[1].Value.ToString();
-                    useitem.Inspect_code = dgvinspect.SelectedRows[0].Cells[2].Value.ToString();
+                    useitem.Item_Code = dgvinspect.SelectedRows[0].Cells[2].Value.ToString();
+                    useitem.Process_code = dgvinspect.SelectedRows[0].Cells[3].Value.ToString();
+                    useitem.Inspect_code = dgvinspect.SelectedRows[0].Cells[0].Value.ToString();
 
                 
                     if ((dgvinspect.SelectedRows[0].Cells[10].Value).ToString() == "Y") //사용안함

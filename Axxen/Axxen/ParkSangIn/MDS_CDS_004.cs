@@ -35,18 +35,18 @@ namespace Axxen
             ((MainForm)this.MdiParent).MyDeleteEvent += new EventHandler(this.MyDelete);
 
             DatagridviewDesigns.SetDesign(dgvMa);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMa, "대분류코드", "Nop_Ma_Code", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMa, "대분류명", "Nop_Ma_Name", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMa, "입력일자", "Ins_Date", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMa, "사용여부", "Use_YN", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMa, "대분류코드", "Nop_Ma_Code", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMa, "대분류명", "Nop_Ma_Name", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMa, "입력일자", "Ins_Date", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMa, "사용여부", "Use_YN", true, 210, default, true);
 
             DatagridviewDesigns.SetDesign(dgvMi);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMi, "대분류코드", "Nop_Ma_Code", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMi, "상세코드", "Nop_Mi_Code", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMi, "상세명", "Nop_Mi_Name", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMi, "입력일자", "Ins_Date", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMi, "비고", "Remark", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMi, "사용여부", "Use_YN", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMi, "대분류코드", "Nop_Ma_Code", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMi, "상세코드", "Nop_Mi_Code", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMi, "상세명", "Nop_Mi_Name", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMi, "입력일자", "Ins_Date", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMi, "비고", "Remark", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMi, "사용여부", "Use_YN", true, 210, default, true);
 
          
             GetAllDefMaMi();

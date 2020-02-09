@@ -330,6 +330,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1225, 769);
+            this.ControlBox = false;
             this.Controls.Add(this.aHeaderBox2);
             this.Controls.Add(this.dgvGroup);
             this.Controls.Add(this.aHeaderBox1);

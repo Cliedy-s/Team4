@@ -111,7 +111,6 @@
             // dtpstart
             // 
             this.dtpstart.Location = new System.Drawing.Point(25, 12);
-            this.dtpstart.MaxDate = new System.DateTime(2020, 2, 5, 0, 0, 0, 0);
             this.dtpstart.Name = "dtpstart";
             this.dtpstart.Size = new System.Drawing.Size(200, 23);
             this.dtpstart.TabIndex = 17;
@@ -175,6 +174,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1148, 700);
+            this.ControlBox = false;
             this.Controls.Add(this.aPanel2);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.aLabel4);

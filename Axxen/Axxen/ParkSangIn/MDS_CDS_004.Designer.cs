@@ -376,6 +376,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1228, 818);
+            this.ControlBox = false;
             this.Controls.Add(this.aHeaderBox3);
             this.Controls.Add(this.panelNopMaMaste);
             this.Controls.Add(this.aHeaderBox2);

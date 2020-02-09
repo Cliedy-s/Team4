@@ -31,19 +31,19 @@ namespace Axxen
             ((MainForm)this.MdiParent).MyDeleteEvent += new EventHandler(this.MyDelete);
             ///gridview
             DatagridviewDesigns.SetDesign(dgvWork);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvWork, "작업장코드", "Wc_Code", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvWork, "작업장명 명", "Wc_Name", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvWork, "공정코드", "Process_Code", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvWork, "공정이름", "Process_name", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvWork, "비가동상태", "Wo_Status", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvWork, "최종실적처리시간", "Last_Cnt_Time", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvWork, "실적등록유형", "Prd_Req_Type", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvWork, "팔렛생성여부", "Pallet_YN", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvWork, "최종작업품목", "Item_Code", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvWork, "실적단위", "Prd_Unit", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvWork, "금형장착여부", "Mold_Setup_YN", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvWork, "사용여부", "Use_YN", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvWork, "비고", "Remark", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvWork, "작업장코드", "Wc_Code", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvWork, "작업장명 명", "Wc_Name", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvWork, "공정코드", "Process_Code", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvWork, "공정이름", "Process_name", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvWork, "비가동상태", "Wo_Status", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvWork, "최종실적처리시간", "Last_Cnt_Time", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvWork, "실적등록유형", "Prd_Req_Type", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvWork, "팔렛생성여부", "Pallet_YN", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvWork, "최종작업품목", "Item_Code", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvWork, "실적단위", "Prd_Unit", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvWork, "금형장착여부", "Mold_Setup_YN", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvWork, "사용여부", "Use_YN", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvWork, "비고", "Remark", true, 210, default, true);
 
             DataGridViewButtonColumn gridbtn = new DataGridViewButtonColumn();
             gridbtn.HeaderText = "사용여부";

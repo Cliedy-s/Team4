@@ -29,7 +29,7 @@ namespace Axxen
             InitializeComponent();
         }
 
-        private void BtnLogin_Click(object sender, EventArgs e)
+        private void BtnLogin_Click_1(object sender, EventArgs e)
         {
             //using (WaitForm frm = new WaitForm(wait))
             //{
@@ -37,10 +37,6 @@ namespace Axxen
             //}
             wait();
         }
- 
-
-
-
         private void wait()
         {
 
@@ -208,5 +204,11 @@ namespace Axxen
 
         }
 
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+    
     }
 }

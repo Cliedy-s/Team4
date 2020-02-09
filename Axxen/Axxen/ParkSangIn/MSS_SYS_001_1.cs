@@ -15,7 +15,10 @@ namespace Axxen
     {
         List<MenuTree_Master_VO> menulist; //메뉴
         MainForm_Service service = new MainForm_Service();
-     
+
+        List<ScreenItem_MasterVO> screanlist;
+        ScreenItemService screenservice = new ScreenItemService();
+
         public MSS_SYS_001_1()
         {
             InitializeComponent();
@@ -44,10 +47,13 @@ namespace Axxen
             lblParent.Text = cbbParent.SelectedValue.ToString();
 
 
-            Dictionary<string, string> ccbblist = menulist.FindAll(item => item.Parent_Screen_Code != null).ToDictionary(item => item.Screen_Code, item => item.Screen_Name);
+
+            screanlist = new List<ScreenItem_MasterVO>();
+            screanlist = screenservice.GetALLScreenItem();
+            Dictionary<string, string> cbblist = screanlist.ToDictionary(item => item.Screen_Code, item => item.Type);
             cbbScreenname.DisplayMember = "Value";
             cbbScreenname.ValueMember = "Key";
-            cbbScreenname.DataSource = new BindingSource(ccbblist, null);
+            cbbScreenname.DataSource = new BindingSource(cbblist, null);
             lblscreencode.Text = cbbScreenname.SelectedValue.ToString();
         }
         private void tab_JOlist_DrawItem2(Object sender, System.Windows.Forms.DrawItemEventArgs e)
@@ -112,8 +118,6 @@ namespace Axxen
 
                     if (service.InsertMenuTree_Master_VO(additem))
                     {
-
-
                         MessageBox.Show("저장 완료", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.DialogResult = DialogResult.OK;
                         this.Close();
@@ -155,8 +159,8 @@ namespace Axxen
                     MenuTree_Master_VO additem = new MenuTree_Master_VO()
                     {
                         Parent_Screen_Code = "0",
-                        Screen_Code = lblscreencode.Text,
-                        Screen_Name = cbbScreenname.Text,
+                        Screen_Code = txtparentcode.Text,
+                        Screen_Name = txtparentname.Text,
                         Ins_Date = Convert.ToDateTime(lblday2.Text),
                         Ins_Emp = lblemp2.Text
                     };
@@ -166,8 +170,10 @@ namespace Axxen
 
 
                         MessageBox.Show("저장 완료", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.DialogResult = DialogResult.OK;
+                     
+           
                         this.Close();
+                        this.DialogResult = DialogResult.OK;
                     }
                     else
                     {

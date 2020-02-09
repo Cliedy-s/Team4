@@ -146,7 +146,7 @@
             this.aPanel29.Location = new System.Drawing.Point(142, 472);
             this.aPanel29.Name = "aPanel29";
             this.aPanel29.Size = new System.Drawing.Size(348, 82);
-            this.aPanel29.TabIndex = 147;
+            this.aPanel29.TabIndex = 9;
             // 
             // txtRemark
             // 
@@ -168,7 +168,7 @@
             this.aPanel21.Location = new System.Drawing.Point(142, 399);
             this.aPanel21.Name = "aPanel21";
             this.aPanel21.Size = new System.Drawing.Size(170, 35);
-            this.aPanel21.TabIndex = 139;
+            this.aPanel21.TabIndex = 7;
             // 
             // aPanel31
             // 
@@ -198,7 +198,7 @@
             this.aPanel33.Location = new System.Drawing.Point(142, 437);
             this.aPanel33.Name = "aPanel33";
             this.aPanel33.Size = new System.Drawing.Size(170, 35);
-            this.aPanel33.TabIndex = 149;
+            this.aPanel33.TabIndex = 8;
             // 
             // txttype
             // 
@@ -261,7 +261,7 @@
             this.aPanel25.Location = new System.Drawing.Point(142, 330);
             this.aPanel25.Name = "aPanel25";
             this.aPanel25.Size = new System.Drawing.Size(170, 35);
-            this.aPanel25.TabIndex = 141;
+            this.aPanel25.TabIndex = 5;
             // 
             // nudsl
             // 
@@ -299,7 +299,7 @@
             this.aPanel17.Location = new System.Drawing.Point(142, 365);
             this.aPanel17.Name = "aPanel17";
             this.aPanel17.Size = new System.Drawing.Size(170, 35);
-            this.aPanel17.TabIndex = 137;
+            this.aPanel17.TabIndex = 6;
             // 
             // aPanel18
             // 
@@ -329,7 +329,7 @@
             this.aPanel11.Location = new System.Drawing.Point(142, 295);
             this.aPanel11.Name = "aPanel11";
             this.aPanel11.Size = new System.Drawing.Size(170, 35);
-            this.aPanel11.TabIndex = 133;
+            this.aPanel11.TabIndex = 4;
             // 
             // nudusl
             // 
@@ -369,7 +369,7 @@
             this.btnCencle.Location = new System.Drawing.Point(413, 11);
             this.btnCencle.Name = "btnCencle";
             this.btnCencle.Size = new System.Drawing.Size(75, 23);
-            this.btnCencle.TabIndex = 45;
+            this.btnCencle.TabIndex = 11;
             this.btnCencle.Text = "취소";
             this.btnCencle.UseVisualStyleBackColor = false;
             // 
@@ -381,7 +381,7 @@
             this.btnSave.Location = new System.Drawing.Point(332, 11);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 0;
+            this.btnSave.TabIndex = 10;
             this.btnSave.Text = "저장";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
@@ -519,7 +519,7 @@
             this.aPanel6.Location = new System.Drawing.Point(142, 120);
             this.aPanel6.Name = "aPanel6";
             this.aPanel6.Size = new System.Drawing.Size(170, 35);
-            this.aPanel6.TabIndex = 129;
+            this.aPanel6.TabIndex = 1;
             // 
             // txtInspect_name
             // 
@@ -577,7 +577,7 @@
             this.aPanel3.Location = new System.Drawing.Point(142, 155);
             this.aPanel3.Name = "aPanel3";
             this.aPanel3.Size = new System.Drawing.Size(170, 35);
-            this.aPanel3.TabIndex = 123;
+            this.aPanel3.TabIndex = 2;
             // 
             // cbbItem
             // 
@@ -653,7 +653,7 @@
             this.aPanel15.Location = new System.Drawing.Point(142, 225);
             this.aPanel15.Name = "aPanel15";
             this.aPanel15.Size = new System.Drawing.Size(170, 35);
-            this.aPanel15.TabIndex = 151;
+            this.aPanel15.TabIndex = 3;
             // 
             // cbbProcess
             // 
@@ -713,7 +713,7 @@
             this.aPanel20.Location = new System.Drawing.Point(142, 85);
             this.aPanel20.Name = "aPanel20";
             this.aPanel20.Size = new System.Drawing.Size(170, 35);
-            this.aPanel20.TabIndex = 155;
+            this.aPanel20.TabIndex = 0;
             // 
             // txtInspect_code
             // 

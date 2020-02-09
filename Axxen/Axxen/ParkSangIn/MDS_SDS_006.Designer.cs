@@ -75,7 +75,7 @@
             // 
             this.aButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton1.Location = new System.Drawing.Point(812, 9);
+            this.aButton1.Location = new System.Drawing.Point(812, 7);
             this.aButton1.Name = "aButton1";
             this.aButton1.Size = new System.Drawing.Size(175, 23);
             this.aButton1.TabIndex = 51;
@@ -168,7 +168,7 @@
             this.dgvItem.Location = new System.Drawing.Point(0, 68);
             this.dgvItem.Name = "dgvItem";
             this.dgvItem.RowTemplate.Height = 23;
-            this.dgvItem.Size = new System.Drawing.Size(273, 628);
+            this.dgvItem.Size = new System.Drawing.Size(339, 628);
             this.dgvItem.TabIndex = 42;
             this.dgvItem.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvItem_CellDoubleClick);
             // 
@@ -190,10 +190,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvinspect.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvinspect.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvinspect.Location = new System.Drawing.Point(279, 68);
+            this.dgvinspect.Location = new System.Drawing.Point(345, 68);
             this.dgvinspect.Name = "dgvinspect";
             this.dgvinspect.RowTemplate.Height = 23;
-            this.dgvinspect.Size = new System.Drawing.Size(969, 628);
+            this.dgvinspect.Size = new System.Drawing.Size(903, 628);
             this.dgvinspect.TabIndex = 47;
             this.dgvinspect.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgvinspect_CellContentClick);
             // 
@@ -202,7 +202,7 @@
             this.aLabel4.AutoSize = true;
             this.aLabel4.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel4.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.aLabel4.Location = new System.Drawing.Point(307, 41);
+            this.aLabel4.Location = new System.Drawing.Point(372, 41);
             this.aLabel4.Name = "aLabel4";
             this.aLabel4.Size = new System.Drawing.Size(112, 21);
             this.aLabel4.TabIndex = 49;
@@ -211,7 +211,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(282, 40);
+            this.pictureBox2.Location = new System.Drawing.Point(347, 40);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(23, 22);
             this.pictureBox2.TabIndex = 50;
@@ -230,6 +230,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1248, 700);
+            this.ControlBox = false;
             this.Controls.Add(this.aLabel4);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.aPanel2);

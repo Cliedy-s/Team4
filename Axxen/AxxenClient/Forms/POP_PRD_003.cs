@@ -70,11 +70,13 @@ namespace AxxenClient.Forms
                         });
                     if (IsSuccess)
                     {
+                        Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 팔레트를 생성함");
                         MessageBox.Show("팔레트가 생성되었습니다.");
                         GetDatas();
                     }
                     else
                     {
+                        Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 팔레트 생성에 실패함");
                         MessageBox.Show("팔레트 생성에 실패하였습니다.");
                         return;
                     }
@@ -83,6 +85,7 @@ namespace AxxenClient.Forms
             }
             else
             {
+                Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 작업을 시작하지 않고 팔레트 생성하려함");
                 MessageBox.Show("작업을 시작해주세요");
             }
         }
@@ -93,6 +96,7 @@ namespace AxxenClient.Forms
         /// <param name="count"></param>
         public void PrintPallet(string palletno, int count)
         {
+            Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 팔레트({palletno}) 바코드 {count}개를 인쇄함");
             Pallet_MasterService service = new Pallet_MasterService();
             DataTable table = service.GetPalletToDT(palletno);
             if (table != null)
@@ -126,9 +130,12 @@ namespace AxxenClient.Forms
             }
         }
 
-        private void txtBoxingGradeDetail_searchclick(object sender, EventArgs e)
+        private void txtBoxingGradeDetail_searchclick(object sender, SearchFormClosingArgs e)
         {
-
+            txtBoxingGradeDetail.CodeText = e.ResultCode;
+            txtBoxingGradeDetail.TextBoxText = e.ResultName;
+            BoxingGrade_Detail_MasterService service = new BoxingGrade_Detail_MasterService();
+            txtBoxingGrade.TextBoxText = service.GellBoxing_Grade(e.ResultCode);
         }
     }
 }

@@ -67,5 +67,11 @@ namespace Service
         {
             return dac.GetLoginInfo(userID, userPassword);
         }
+        public bool Default_Screen_Code(string id,string screencode)
+        {
+        
+
+         return   dac.Default_Screen_Code(id,screencode);
+        }
     }
 }

@@ -62,5 +62,7 @@ namespace Service
 
             dac.DeleteGroupUseScreenItem_Authority(group,List);
         }
+
+      
     }
 }

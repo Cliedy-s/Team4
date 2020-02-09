@@ -34,18 +34,18 @@ namespace Axxen
 
 
             DatagridviewDesigns.SetDesign(dgvParent);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvParent, "코드", "Screen_Code", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvParent, "이름", "Screen_Name", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvParent, "날자", "Ins_Date", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvParent, "입력자", "Ins_Emp", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvParent, "코드", "Screen_Code", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvParent, "이름", "Screen_Name", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvParent, "날자", "Ins_Date", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvParent, "입력자", "Ins_Emp", true, 210, default, true);
 
 
             DatagridviewDesigns.SetDesign(dgvSon);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSon, "부모코드", "Parent_Screen_Code", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSon, "화면코드", "Screen_Code", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSon, "화면이름", "Screen_Name", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSon, "날자", "Ins_Date", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSon, "입력자", "Ins_Emp", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvSon, "부모코드", "Parent_Screen_Code", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvSon, "화면코드", "Screen_Code", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvSon, "화면이름", "Screen_Name", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvSon, "날자", "Ins_Date", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvSon, "입력자", "Ins_Emp", true, 210, default, true);
             datagridviewsetting();
         }
 
@@ -85,8 +85,15 @@ namespace Axxen
                 {
                     MSS_SYS_001_1 frm = new MSS_SYS_001_1();
 
-                    frm.ShowDialog();
-                    datagridviewsetting();
+                   if( frm.ShowDialog() == DialogResult.OK)
+                    {
+
+                        ((MainForm)this.MdiParent).Setting();
+                        treeview();
+                        datagridviewsetting();
+                
+                    }
+              
                 }
             }
             catch (Exception err)
@@ -106,14 +113,16 @@ namespace Axxen
 
                     if (lbldeletecheck1.Text == "1")
             {
-                if (MessageBox.Show(dgvParent.SelectedRows[0].Cells[0].Value.ToString() + "하위항목도 모두 삭제됩니다. 메뉴를 삭제하시겠습니까?", "알림", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show(dgvParent.SelectedRows[0].Cells[1].Value.ToString() + "하위항목도 모두 삭제됩니다. 메뉴를 삭제하시겠습니까?", "알림", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     //   MessageBox.Show(dgvParent.SelectedRows[0].Cells[0].Value.ToString());
                     if (service.DeleteMenuTree_Master_VO(dgvParent.SelectedRows[0].Cells[0].Value.ToString(), dgvParent.SelectedRows[0].Cells[0].Value.ToString()))
                     {
-                        treeview();
+                                ((MainForm)this.MdiParent).DeleteButon();
+                                ((MainForm)this.MdiParent).Setting();
+                                treeview();
                         datagridviewsetting();
-                        MessageBox.Show(dgvParent.SelectedRows[0].Cells[0].Value.ToString() + "가 삭제되었습니다.", "알림", MessageBoxButtons.YesNo);
+                        //MessageBox.Show(dgvParent.SelectedRows[0].Cells[0].Value.ToString() + "가 삭제되었습니다.", "알림", MessageBoxButtons.YesNo);
                     }
                 }
             }
@@ -122,11 +131,12 @@ namespace Axxen
                 if (MessageBox.Show(dgvSon.SelectedRows[0].Cells[1].Value.ToString() + "메뉴를 삭제하시겠습니까?", "알림", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     //      MessageBox.Show(dgvSon.SelectedRows[0].Cells[1].Value.ToString());
-                    if (service.DeleteMenuTree_Master_VO("-1", dgvSon.SelectedRows[0].Cells[1].Value.ToString()))
+                    if (service.DeleteMenuTree_Master_VO("-1", dgvSon.SelectedRows[0].Cells[2].Value.ToString()))
                     {
-                        treeview();
+                                ((MainForm)this.MdiParent).Setting();
+                                treeview();
                         datagridviewsetting();
-                        MessageBox.Show(dgvParent.SelectedRows[0].Cells[0].Value.ToString() + "가 삭제되었습니다.", "알림", MessageBoxButtons.YesNo);
+                      //  MessageBox.Show(dgvParent.SelectedRows[0].Cells[0].Value.ToString() + "가 삭제되었습니다.", "알림", MessageBoxButtons.YesNo);
                               }
                 }
                     }

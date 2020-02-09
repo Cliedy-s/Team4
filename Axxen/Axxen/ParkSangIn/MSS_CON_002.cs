@@ -30,16 +30,16 @@ namespace Axxen
             ((MainForm)this.MdiParent).RefreshFormEvent += new EventHandler(this.RefreshFormShow);
             ///gridview
             DatagridviewDesigns.SetDesign(dgvGroup);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "사용자그룹코드", "UserGroup_Code", true, 200, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "사용자그룹명", "UserGroup_Name", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "입력일자", "Ins_Date", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "사용여부", "Use_YN", true, 60, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvGroup, "사용자그룹코드", "UserGroup_Code", true, 200, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvGroup, "사용자그룹명", "UserGroup_Name", true, 100, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvGroup, "입력일자", "Ins_Date", true, 100, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvGroup, "사용여부", "Use_YN", true, 60, default, true);
 
 
             DatagridviewDesigns.SetDesign(dgvScreen);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvScreen, "화면코드", "Screen_Code", true, 200, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvScreen, "화면명", "Type", true, 200, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvScreen, "설정자", "Ins_Emp", true, 200, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvScreen, "화면코드", "Screen_Code", true, 200, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvScreen, "화면명", "Type", true, 200, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvScreen, "설정자", "Ins_Emp", true, 200, default, true);
 
 
             GetAllUserGroup(); //유저그룹전체
@@ -118,6 +118,7 @@ namespace Axxen
             grouplist = new List<UserGroup_MasterVO>();
             grouplist = userservice.GetAllUserGroup();
             dgvGroup.DataSource = grouplist;
+            GetGroupScreenItem(dgvGroup.SelectedRows[0].Cells[0].Value.ToString());
         }
 
         private void CbbGroup_SelectedIndexChanged(object sender, EventArgs e)

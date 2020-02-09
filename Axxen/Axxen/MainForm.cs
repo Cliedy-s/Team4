@@ -26,7 +26,7 @@ namespace Axxen
         //  int SegCnt =0; //화면 사용이력 순번
 
         Image CloseImage;
-        UserGroupService service = new UserGroupService();
+        UserGroupService UserGroupservice = new UserGroupService();
         List<MenuTree_Master_VO> menulist; //메뉴
         List<BookMark_VO> booklist;
         MainForm_Service Mainservice = new MainForm_Service();
@@ -47,8 +47,12 @@ namespace Axxen
             LoginForm frm = new LoginForm();
 
             if (frm.ShowDialog() == DialogResult.OK)
-            {
-                lblName.Text = UserInfo.User_Name;
+            {                    
+                toolStripButtoncencle.Alignment = ToolStripItemAlignment.Right; //즐겨찾기 툴스트립 버튼 오른쪽으로 배치
+                toolStripButtonSetting.Alignment = ToolStripItemAlignment.Right; //세팅버튼
+                toolStripLabel.Alignment = ToolStripItemAlignment.Right; //세팅버튼
+                timer.Start();
+                timer.Interval = 1000;
 
                 tvMenu.Visible = false;
                 ImageList imgList = new ImageList();
@@ -61,17 +65,29 @@ namespace Axxen
                 this.tabControl2.Padding = new Point(10, 3);
                 Setting();
                 booklist = Mainservice.GetAll_BookMark(UserInfo.User_ID);
+
+                if(!UserInfo.Default_Screen_Code.Equals("0")) //사용자의 디폴트 화면 가져오기
+                {              
+                newForm(UserInfo.Default_Screen_Code, screenitemlist.Find(item => item.Screen_Code == UserInfo.Default_Screen_Code).Type);
+                }
             }
             else
             {
-                MessageBox.Show("zz");
+                this.Close();
             }
         }
-
+        public void DeleteButon()
+        {
+         //   myButtons.Find(btn => btn.Text.Equals(taget)).Dispose();
+            for (int i = 0; i < myButtons.Count; i++)
+            {
+                myButtons[i].Dispose();
+            }
+        }
         public void Setting()
         {
 
-
+            myButtons.Clear();
             menulist = Mainservice.GetAll_MenuTree_Master();
 
             UserInformation();
@@ -79,7 +95,8 @@ namespace Axxen
             var pa = menulist.FindAll(item => item.Parent_Screen_Code == null);
             int sLocation = 0;
 
-            myButtons.Clear();
+
+   
             for (int i = 0; i < pa.Count; i++)
             {
                 myButtons.Add(new Button());
@@ -103,7 +120,7 @@ namespace Axxen
         {
 
 
-            userinfoGrouplist = service.GetUserInfoGroup(UserInfo.User_ID); //로그인한 사용자의 그룹권한들
+            userinfoGrouplist = UserGroupservice.GetUserInfoGroup(UserInfo.User_ID); //로그인한 사용자의 그룹권한들
 
 
             userinfoScreenItem = screenservice.GetUserInfoScreenItem(userinfoGrouplist); // 로그인한 사용자의 그룹권한에 사용되는 화면들
@@ -329,6 +346,7 @@ namespace Axxen
                     newTab.Tag = formName;
                     newTab.Text = formText;
                     tabControl2.TabPages.Add(newTab);
+                 
                     frm.Show();
 
                     /////////////////// 메뉴클릭시 
@@ -654,11 +672,7 @@ namespace Axxen
         }
 
 
-        private void BtnSetting_Click(object sender, EventArgs e)
-        {
-            UserSettingForm frm = new UserSettingForm();
-            frm.ShowDialog();
-        }
+   
 
         private void TsbtnDelete_Click(object sender, EventArgs e)
         {
@@ -686,9 +700,31 @@ namespace Axxen
             }
             catch
             {
-
+               
 
             }
+        }
+
+        private void ToolStripButtoncencle_Click(object sender, EventArgs e)
+        {
+            pnBookmark.Visible = false;
+        }
+
+        private void ToolStripButtonSetting_Click(object sender, EventArgs e)
+        {
+            UserSettingForm frm = new UserSettingForm();
+            frm.ShowDialog();
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            toolStripLabel.Text =  UserInfo.User_Name + "님 환영합니다.\n"+ DateTime.Now.ToShortDateString()+" "+ DateTime.Now.ToLongTimeString();
+        }
+
+        private void Button9_Click(object sender, EventArgs e)
+        {
+            DeleteButon();
+          //  Setting();
         }
     }
 }

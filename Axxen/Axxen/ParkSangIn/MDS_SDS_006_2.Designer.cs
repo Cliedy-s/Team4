@@ -129,7 +129,7 @@
             this.aPanel3.Location = new System.Drawing.Point(137, 12);
             this.aPanel3.Name = "aPanel3";
             this.aPanel3.Size = new System.Drawing.Size(170, 35);
-            this.aPanel3.TabIndex = 127;
+            this.aPanel3.TabIndex = 0;
             // 
             // cbbItem
             // 
@@ -196,7 +196,7 @@
             this.btnCencle.Location = new System.Drawing.Point(854, 8);
             this.btnCencle.Name = "btnCencle";
             this.btnCencle.Size = new System.Drawing.Size(75, 23);
-            this.btnCencle.TabIndex = 45;
+            this.btnCencle.TabIndex = 2;
             this.btnCencle.Text = "취소";
             this.btnCencle.UseVisualStyleBackColor = false;
             // 
@@ -208,7 +208,7 @@
             this.btnSave.Location = new System.Drawing.Point(773, 8);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 0;
+            this.btnSave.TabIndex = 1;
             this.btnSave.Text = "저장";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);

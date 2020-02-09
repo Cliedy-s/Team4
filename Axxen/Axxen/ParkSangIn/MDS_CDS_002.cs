@@ -40,20 +40,20 @@ namespace Axxen
             ((MainForm)this.MdiParent).MyDeleteEvent += new EventHandler(this.MyDelete);
             ///gridview
             DatagridviewDesigns.SetDesign(aDataGridView1);
-            DatagridviewDesigns.AddNewColumnToDataGridView(aDataGridView1, "불량현상대분류코드", "Def_Ma_Code", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(aDataGridView1, "불량현상대분류 명", "Def_Ma_Name", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(aDataGridView1, "입력일자", "Ins_Date", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(aDataGridView1, "사용여부", "Use_YN", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(aDataGridView1, "불량현상대분류코드", "Def_Ma_Code", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(aDataGridView1, "불량현상대분류 명", "Def_Ma_Name", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(aDataGridView1, "입력일자", "Ins_Date", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(aDataGridView1, "사용여부", "Use_YN", true, 210, default, true);
 
 
 
 
             DatagridviewDesigns.SetDesign(aDataGridView2);
-            DatagridviewDesigns.AddNewColumnToDataGridView(aDataGridView2, "불량현상상세분류코드", "Def_Mi_Code", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(aDataGridView2, "불량현상상세분류 명", "Def_Mi_Name", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(aDataGridView2, "비고", "Remark", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(aDataGridView2, "입력일자", "Ins_Date", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(aDataGridView2, "사용여부", "Use_YN", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(aDataGridView2, "불량현상상세분류코드", "Def_Mi_Code", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(aDataGridView2, "불량현상상세분류 명", "Def_Mi_Name", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(aDataGridView2, "비고", "Remark", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(aDataGridView2, "입력일자", "Ins_Date", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(aDataGridView2, "사용여부", "Use_YN", true, 210, default, true);
             DataGridViewButtonColumn gridbtn = new DataGridViewButtonColumn();
             gridbtn.HeaderText = "사용여부";
             gridbtn.Text = "변경";

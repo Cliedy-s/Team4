@@ -49,12 +49,13 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnUpdate = new System.Windows.Forms.Button();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.cbbscreen = new Axxen.CustomControls.AComboBox();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.label23 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.label23 = new System.Windows.Forms.Label();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.cbbscreen = new Axxen.CustomControls.AComboBox();
-            this.panel9 = new System.Windows.Forms.Panel();
+            this.btnclose = new Axxen.CustomControls.AButton();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -62,10 +63,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel10.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel7.SuspendLayout();
-            this.panel10.SuspendLayout();
-            this.panel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -290,6 +291,43 @@
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
+            // panel9
+            // 
+            this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel9.Controls.Add(this.cbbscreen);
+            this.panel9.Location = new System.Drawing.Point(145, 25);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(455, 45);
+            this.panel9.TabIndex = 19;
+            // 
+            // cbbscreen
+            // 
+            this.cbbscreen.FormattingEnabled = true;
+            this.cbbscreen.Location = new System.Drawing.Point(6, 12);
+            this.cbbscreen.Name = "cbbscreen";
+            this.cbbscreen.Size = new System.Drawing.Size(165, 20);
+            this.cbbscreen.TabIndex = 0;
+            // 
+            // panel10
+            // 
+            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel10.Controls.Add(this.label23);
+            this.panel10.Location = new System.Drawing.Point(37, 25);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(109, 45);
+            this.panel10.TabIndex = 18;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label23.Location = new System.Drawing.Point(16, 15);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(60, 17);
+            this.label23.TabIndex = 5;
+            this.label23.Text = "기본화면";
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.panel7);
@@ -314,50 +352,29 @@
             this.panel7.Size = new System.Drawing.Size(418, 45);
             this.panel7.TabIndex = 82;
             // 
-            // label23
+            // btnclose
             // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label23.Location = new System.Drawing.Point(16, 15);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(60, 17);
-            this.label23.TabIndex = 5;
-            this.label23.Text = "기본화면";
-            // 
-            // panel10
-            // 
-            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel10.Controls.Add(this.label23);
-            this.panel10.Location = new System.Drawing.Point(37, 25);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(109, 45);
-            this.panel10.TabIndex = 18;
-            // 
-            // cbbscreen
-            // 
-            this.cbbscreen.FormattingEnabled = true;
-            this.cbbscreen.Location = new System.Drawing.Point(6, 12);
-            this.cbbscreen.Name = "cbbscreen";
-            this.cbbscreen.Size = new System.Drawing.Size(165, 20);
-            this.cbbscreen.TabIndex = 0;
-            // 
-            // panel9
-            // 
-            this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel9.Controls.Add(this.cbbscreen);
-            this.panel9.Location = new System.Drawing.Point(145, 25);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(455, 45);
-            this.panel9.TabIndex = 19;
+            this.btnclose.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnclose.Location = new System.Drawing.Point(558, 453);
+            this.btnclose.Name = "btnclose";
+            this.btnclose.Size = new System.Drawing.Size(75, 23);
+            this.btnclose.TabIndex = 51;
+            this.btnclose.Text = "닫기";
+            this.btnclose.UseVisualStyleBackColor = false;
+            this.btnclose.Click += new System.EventHandler(this.Btnclose_Click);
             // 
             // UserSettingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.ClientSize = new System.Drawing.Size(662, 471);
+            this.ClientSize = new System.Drawing.Size(644, 487);
+            this.ControlBox = false;
+            this.Controls.Add(this.btnclose);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tabControl1);
             this.Name = "UserSettingForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "환경설정";
             this.Load += new System.EventHandler(this.UserSettingForm_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -370,12 +387,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
-            this.panel9.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -409,5 +426,6 @@
         private CustomControls.AComboBox cbbscreen;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Label label23;
+        private CustomControls.AButton btnclose;
     }
 }

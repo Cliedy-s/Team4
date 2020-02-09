@@ -199,7 +199,15 @@ namespace Axxen
             }
         }
 
-        private void BtnExcel_Click(object sender, EventArgs e)
+        private void copyAlltoClipboard()
+        {
+            dgvMainGrid.SelectAll();
+            DataObject dataObj = dgvMainGrid.GetClipboardContent();
+            if (dataObj != null)
+                Clipboard.SetDataObject(dataObj);
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
         {
             copyAlltoClipboard();
 
@@ -216,14 +224,6 @@ namespace Axxen
             xlWorkSheet.PasteSpecial(CR, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);
 
             dgvMainGrid.ClearSelection();
-        }
-
-        private void copyAlltoClipboard()
-        {
-            dgvMainGrid.SelectAll();
-            DataObject dataObj = dgvMainGrid.GetClipboardContent();
-            if (dataObj != null)
-                Clipboard.SetDataObject(dataObj);
         }
     }
 }

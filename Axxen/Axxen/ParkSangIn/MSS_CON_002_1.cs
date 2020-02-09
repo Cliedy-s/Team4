@@ -32,16 +32,16 @@ namespace Axxen
         {
         
             DatagridviewDesigns.SetDesign(dgvNotUseScreen);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvNotUseScreen, "화면코드", "Screen_Code", true, 200, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvNotUseScreen, "화면명", "Type", true, 200, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvNotUseScreen, "화면코드", "Screen_Code", true, 100, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvNotUseScreen, "화면명", "Type", true, 150, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvNotUseScreen, "화면경로", "Screen_Path", true, 200, default, true);
 
             DatagridviewDesigns.SetDesign(dgvUseScreen);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvUseScreen, "화면코드", "Screen_Code", true, 200, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvUseScreen, "화면명", "Type", true, 200, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvNotUseScreen, "화면경로", "Screen_Path", true, 200, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvUseScreen, "설정자", "Ins_Emp", true, 200, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvUseScreen, "입력일", "Ins_Date", true, 200, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvUseScreen, "화면코드", "Screen_Code", true, 100, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvUseScreen, "화면명", "Type", true, 150, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvUseScreen, "화면경로", "Screen_Path", true, 200, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvUseScreen, "설정자", "Ins_Emp", true, 80, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvUseScreen, "입력일", "Ins_Date", true, 100, default, true);
             ControlSetting();
         }
 
@@ -54,33 +54,37 @@ namespace Axxen
             DataGridViewCheckBoxColumn gridcheckbox = new DataGridViewCheckBoxColumn();
             gridcheckbox.HeaderText = "선택";
             gridcheckbox.Name = "checkbtn";
+            gridcheckbox.Width = 60;
             dgvNotUseScreen.Columns.Insert(0, gridcheckbox);
 
             DataGridViewCheckBoxColumn gridcheckbox2 = new DataGridViewCheckBoxColumn();
             gridcheckbox2.HeaderText = "선택";
             gridcheckbox2.Name = "checkbtn2";
-
+            gridcheckbox2.Width = 60;
             dgvUseScreen.Columns.Insert(0, gridcheckbox2);
 
             DataGridViewCheckBoxColumn gridC = new DataGridViewCheckBoxColumn();
             gridC.HeaderText = "추가";
             gridC.Name = "gridC";
+            gridC.Width = 60;
             dgvUseScreen.Columns.Insert(4, gridC);
 
             DataGridViewCheckBoxColumn gridR = new DataGridViewCheckBoxColumn();
             gridR.HeaderText = "조회";
             gridR.Name = "gridR";
-
+            gridR.Width = 60;
             dgvUseScreen.Columns.Insert(5, gridR);
 
             DataGridViewCheckBoxColumn gridU = new DataGridViewCheckBoxColumn();
             gridU.HeaderText = "수정";
             gridU.Name = "gridU";
+            gridU.Width = 60;
             dgvUseScreen.Columns.Insert(6, gridU);
 
             DataGridViewCheckBoxColumn gridD = new DataGridViewCheckBoxColumn();
             gridD.HeaderText = "삭제";
             gridD.Name = "gridD";
+            gridD.Width = 60;
             dgvUseScreen.Columns.Insert(7, gridD);
             ///combobox
             grouplist = new List<UserGroup_MasterVO>();

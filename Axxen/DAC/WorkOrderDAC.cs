@@ -110,7 +110,7 @@ namespace DAC
             }
         }
 
-        public bool UPDATE_Grade_Detail_Name(string Workorderno,string Pallet_No, string Grade_Detail_Name)
+        public bool UPDATE_Grade_Detail_Name(string Workorderno, string Pallet_No, string Grade_Detail_Name)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -138,18 +138,18 @@ namespace DAC
                 conn.Open();
                 SqlTransaction tran = conn.BeginTransaction();
                 using (SqlCommand cmd = new SqlCommand("UPDATE Pallet_Master SET Use_YN='Y' where Pallet_No = @Pallet_No AND Use_YN<>'Y' ", conn))
-                {                    
+                {
                     try
                     {
                         cmd.Transaction = tran;
                         for (int i = 0; i < chkPalletNo.Count; i++)
-                        {              
-                           //cmd.CommandType = CommandType.Text;
+                        {
+                            //cmd.CommandType = CommandType.Text;
                             cmd.Parameters.AddWithValue("@Pallet_No", chkPalletNo[i]);
                             int iResult = cmd.ExecuteNonQuery();
                             if (iResult < 1)
                                 throw new Exception("오류");
-                            
+
                             cmd.Parameters.Clear();
                         }
 
@@ -198,7 +198,7 @@ namespace DAC
                             INNER JOIN Process_Master pm ON wm.Process_code = pm.Process_code) 
                             UPDATE PRM_PRF_002 SET Wo_Status='현장마감' WHERE Wo_Status<>'현장마감' and Workorderno=@Workorderno and Item_Code=@Item_Code;";
                     using (SqlCommand cmd = new SqlCommand(Stsql, conn))
-                    {                            
+                    {
                         cmd.Transaction = tran;
                         for (int i = 0; i < list.Count; i++)
                         {
@@ -213,7 +213,7 @@ namespace DAC
                             cmd.Parameters.Clear();
                         }
 
-                        tran.Commit();                            
+                        tran.Commit();
                         return "OK";
                     }
                 }
@@ -354,7 +354,7 @@ namespace DAC
            ,[Ins_Emp]
            ,[Prd_Unit])
      VALUES
-           (@Workorderno 
+           ('WK' + format(getdate(),'yyMMddHHmmss')
            ,@Item_Code 
            ,@Wc_Code 
            ,@Plan_Qty 
@@ -371,7 +371,6 @@ namespace DAC
 );  ";
 
                 comm.CommandType = CommandType.Text;
-                comm.Parameters.AddWithValue("@Workorderno", item.Workorderno);
                 comm.Parameters.AddWithValue("@Item_Code", item.Item_Code);
                 comm.Parameters.AddWithValue("@Wc_Code", item.Wc_Code);
                 comm.Parameters.AddWithValue("@Plan_Qty", item.Plan_Qty);
@@ -387,6 +386,10 @@ namespace DAC
                 comm.Connection.Open();
                 int result = comm.ExecuteNonQuery();
                 comm.Connection.Close();
+                if (result <= 0)
+                {
+                    Log.WriteFatal($"{item.Ins_Emp}이(가) 작업지시를 생성하다 DB오류남");
+                }
 
                 return result > 0;
             }
@@ -409,7 +412,11 @@ namespace DAC
 
                 conn.Open();
                 int result = comm.ExecuteNonQuery();
-                return result > 0;
+                if (result == 0)
+                {
+                    Log.WriteWarn($"{userid}가 없는 작업지시 {workorderno}를 실행하려함");
+                }
+                return result > 1;
             }
         }
         /// <summary>
@@ -431,14 +438,18 @@ namespace DAC
 
                 conn.Open();
                 int result = comm.ExecuteNonQuery();
-                return result >= 2;
+                if (result == 0)
+                {
+                    Log.WriteWarn($"{userid}가 없는 작업지시 {workorderno}를 종료하려함");
+                }
+                return result > 1;
             }
         }
         /// <summary>
         /// 작업지시 현장 마감
         /// </summary>
         /// <returns></returns>
-        public bool UpdateWorkOrderClose(string username, string workorderno)
+        public bool UpdateWorkOrderClose(string userid, string workorderno)
         {
             try
             {
@@ -454,13 +465,17 @@ namespace DAC
       ,[Up_Emp] = @username
  WHERE [Workorderno] = @Workorderno ;
 ";
-                    comm.Parameters.AddWithValue("@username", username);
+                    comm.Parameters.AddWithValue("@username", userid);
                     comm.Parameters.AddWithValue("@workorderno", workorderno);
 
                     comm.Connection.Open();
                     int result = comm.ExecuteNonQuery();
                     comm.Connection.Close();
 
+                    if (result == 0)
+                    {
+                        Log.WriteWarn($"{userid}가 없는 작업지시 {workorderno}를 마감하려함.");
+                    }
                     return result > 0;
                 }
 
@@ -471,178 +486,7 @@ namespace DAC
             }
             return false;
         }
-        /// <summary>
-        /// 옮겨타기
-        /// </summary>
-        /// <param name="workorderno"></param>
-        /// <param name="qty"></param>
-        /// <returns></returns>
-        public bool UpdateTransferQty(string togvcode, string fromgvcode, int qty, string workorderno, string wccode, string username)
-        {
-            using (SqlCommand comm = new SqlCommand())
-            {
-                comm.Connection = new SqlConnection(Connstr);
-                comm.CommandText =
-                 @"UpdateTransferQty";
-                //                INSERT INTO[dbo].[GV_History]
-                //        ([GV_Code]
-                //          ,[Workorderno]
-                //          ,[Loading_Date]
-                //          ,[Loading_time]
-                //          ,[Loading_Qty]
-                //          ,[Loading_Wc]
-                //          ,[Ins_Date]
-                //          ,[Ins_Emp]
-                //          ,[Up_Date]
-                //          ,[Up_Emp])
-                //    VALUES
-                //          (@togvcode
-                //          , @workorderno
-                //          , getdate()
-                //          , getdate()
-                //          , @qty
-                //          , @wccode
-                //          , getdate()
-                //          , @username
-                //          , getdate()
-                //          , @username)
-                // INSERT INTO[dbo].[GV_Current_Status]
-                //        ([GV_Code]
-                //          ,[Workorderno]
-                //          ,[GV_Qty]
-                //          ,[GV_Rest_Qty]
-                //          ,[Loading_date]
-                //          ,[Loading_time]
-                //          ,[Loading_Wc]
-                //          ,[Ins_Date]
-                //          ,[Ins_Emp]
-                //          ,[Up_Date]
-                //          ,[Up_Emp])
-                //    VALUES
-                //          (@togvcode
-                //          , @workorderno
-                //          , @qty
-                //          , 100
-                //          , getdate()
-                //          , getdate()
-                //          , @wccode
-                //          , getdate()
-                //          , @username
-                //          , getdate()
-                //          , @username)
-                //UPDATE[dbo].[GV_History]
-                //        SET[Unloading_Qty] = @qty
-                //      ,[Unloading_date] = getdate()
-                //      ,[Unloading_datetime] = getdate()
-                //      ,[Unloading_wc] = @wccode
-                //      ,[Target_GV] = @togvcode
-                //      ,[Up_Date] = getdate()
-                //      ,[Up_Emp] = @username
-                //WHERE[GV_Code] = @fromgvcode
-                //,[Workorderno] = @workorderno
-                //,[Unloading_datetime] is null
-                // UPDATE[dbo].[GV_Current_Status]
-                //        SET[GV_Qty] = @qty
-                //      ,[GV_Rest_Qty] = [GV_Rest_Qty]+1
-                //      ,[Unloading_date] = getdate()
-                //      ,[Unloading_time] = getdate()
-                //      ,[Up_Date] = getdate()
-                //      ,[Up_Emp] = @username
-                //WHERE[GV_Code] = @fromgvcode
-                //,[Workorderno] = @workorderno
-                //,[Unloading_time] is null
-                comm.CommandType = CommandType.StoredProcedure;
-                comm.Parameters.AddWithValue("@togvcode", togvcode);
-                comm.Parameters.AddWithValue("@workorderno", workorderno);
-                comm.Parameters.AddWithValue("@qty", qty);
-                comm.Parameters.AddWithValue("@wccode", wccode);
-                comm.Parameters.AddWithValue("@username", username);
-                comm.Parameters.AddWithValue("@fromgvcode", fromgvcode);
-
-                comm.Connection.Open();
-                int result = comm.ExecuteNonQuery();
-                comm.Connection.Close();
-
-                return result > 0;
-            }
-        } // TODO : 프로시저 생성하기
-        /// <summary>
-        /// 로딩
-        /// </summary>
-        /// <param name="togvcode"></param>
-        /// <param name="fromgvcode"></param>
-        /// <param name="qty"></param>
-        /// <param name="workorderno"></param>
-        /// <param name="wccode"></param>
-        /// <param name="username"></param>
-        /// <returns></returns>
-        public bool InsertLoadQty(string togvcode, int qty, string workorderno, string wccode, string username)
-        {
-            using (SqlCommand comm = new SqlCommand())
-            {
-                comm.Connection = new SqlConnection(Connstr);
-                comm.CommandText =
-                 @"InsertLoadQty";
-                // INSERT INTO[dbo].[GV_History]
-                //        ([GV_Code]
-                //          ,[Workorderno]
-                //          ,[Loading_Date]
-                //          ,[Loading_time]
-                //          ,[Loading_Qty]
-                //          ,[Loading_Wc]
-                //          ,[Ins_Date]
-                //          ,[Ins_Emp]
-                //          ,[Up_Date]
-                //          ,[Up_Emp])
-                //    VALUES
-                //          (@togvcode
-                //          , @workorderno
-                //          , getdate()
-                //          , getdate()
-                //          , @qty
-                //          , @wccode
-                //          , getdate()
-                //          , @username
-                //          , getdate()
-                //          , @username)
-                // INSERT INTO[dbo].[GV_Current_Status]
-                //        ([GV_Code]
-                //          ,[Workorderno]
-                //          ,[GV_Qty]
-                //          ,[GV_Rest_Qty]
-                //          ,[Loading_date]
-                //          ,[Loading_time]
-                //          ,[Loading_Wc]
-                //          ,[Ins_Date]
-                //          ,[Ins_Emp]
-                //          ,[Up_Date]
-                //          ,[Up_Emp])
-                //    VALUES
-                //          (@togvcode
-                //          , @workorderno
-                //          , @qty
-                //          , 100
-                //          , getdate()
-                //          , getdate()
-                //          , @wccode
-                //          , getdate()
-                //          , @username
-                //          , getdate()
-                //          , @username)
-                comm.CommandType = CommandType.StoredProcedure;
-                comm.Parameters.AddWithValue("@togvcode", togvcode);
-                comm.Parameters.AddWithValue("@workorderno", workorderno);
-                comm.Parameters.AddWithValue("@qty", qty);
-                comm.Parameters.AddWithValue("@wccode", wccode);
-                comm.Parameters.AddWithValue("@username", username);
-
-                comm.Connection.Open();
-                int result = comm.ExecuteNonQuery();
-                comm.Connection.Close();
-
-                return result > 0;
-            } // TODO - 프로시저 만들기
-        }
     }
-
 }
+
+

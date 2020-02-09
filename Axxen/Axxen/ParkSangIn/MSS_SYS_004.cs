@@ -24,6 +24,10 @@ namespace Axxen
 
         private void MSS_SYS_004_Load(object sender, EventArgs e)
         {
+            dtpstart.Value = DateTime.Now;
+
+            dtpEnd.MaxDate = DateTime.Now;
+
             userlist = new List<UserInfoVO>();
             userlist = userservice.GetAllUser();
             screenitemlist = new List<ScreenItem_MasterVO>();
@@ -44,11 +48,11 @@ namespace Axxen
 
    
         DatagridviewDesigns.SetDesign(dgvGroup);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "이름", "User_Name", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "세션아이디", "Session_ID", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "화면명", "Type", true, 210, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "로그인", "Login_Date", true, 210, default, true);
-     DatagridviewDesigns.AddNewColumnToDataGridView(dgvGroup, "화면오픈", "Open_Date", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvGroup, "이름", "User_Name", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvGroup, "세션아이디", "Session_ID", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvGroup, "화면명", "Type", true, 210, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvGroup, "로그인", "Login_Date", true, 210, default, true);
+     DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvGroup, "화면오픈", "Open_Date", true, 210, default, true);
             }
 
         private void BtnSearch_Click(object sender, EventArgs e)

@@ -166,7 +166,7 @@
             this.aPanel15.Location = new System.Drawing.Point(142, 227);
             this.aPanel15.Name = "aPanel15";
             this.aPanel15.Size = new System.Drawing.Size(170, 35);
-            this.aPanel15.TabIndex = 179;
+            this.aPanel15.TabIndex = 3;
             // 
             // cbbwork
             // 
@@ -324,7 +324,7 @@
             this.aPanel6.Location = new System.Drawing.Point(142, 122);
             this.aPanel6.Name = "aPanel6";
             this.aPanel6.Size = new System.Drawing.Size(170, 35);
-            this.aPanel6.TabIndex = 165;
+            this.aPanel6.TabIndex = 1;
             // 
             // txtCondition_Name
             // 
@@ -393,7 +393,7 @@
             this.aPanel3.Location = new System.Drawing.Point(142, 157);
             this.aPanel3.Name = "aPanel3";
             this.aPanel3.Size = new System.Drawing.Size(170, 35);
-            this.aPanel3.TabIndex = 161;
+            this.aPanel3.TabIndex = 2;
             // 
             // cbbItem
             // 
@@ -440,7 +440,7 @@
             this.aPanel29.Location = new System.Drawing.Point(142, 439);
             this.aPanel29.Name = "aPanel29";
             this.aPanel29.Size = new System.Drawing.Size(348, 82);
-            this.aPanel29.TabIndex = 175;
+            this.aPanel29.TabIndex = 8;
             // 
             // txtRemark
             // 
@@ -483,7 +483,7 @@
             this.aPanel33.Location = new System.Drawing.Point(142, 404);
             this.aPanel33.Name = "aPanel33";
             this.aPanel33.Size = new System.Drawing.Size(170, 35);
-            this.aPanel33.TabIndex = 177;
+            this.aPanel33.TabIndex = 7;
             // 
             // txttype
             // 
@@ -525,7 +525,7 @@
             this.aPanel25.Location = new System.Drawing.Point(142, 332);
             this.aPanel25.Name = "aPanel25";
             this.aPanel25.Size = new System.Drawing.Size(170, 35);
-            this.aPanel25.TabIndex = 173;
+            this.aPanel25.TabIndex = 5;
             // 
             // nudsl
             // 
@@ -563,7 +563,7 @@
             this.aPanel17.Location = new System.Drawing.Point(142, 367);
             this.aPanel17.Name = "aPanel17";
             this.aPanel17.Size = new System.Drawing.Size(170, 35);
-            this.aPanel17.TabIndex = 169;
+            this.aPanel17.TabIndex = 6;
             // 
             // aPanel18
             // 
@@ -593,7 +593,7 @@
             this.aPanel11.Location = new System.Drawing.Point(142, 297);
             this.aPanel11.Name = "aPanel11";
             this.aPanel11.Size = new System.Drawing.Size(170, 35);
-            this.aPanel11.TabIndex = 167;
+            this.aPanel11.TabIndex = 4;
             // 
             // nudusl
             // 
@@ -669,7 +669,7 @@
             this.aPanel20.Location = new System.Drawing.Point(142, 87);
             this.aPanel20.Name = "aPanel20";
             this.aPanel20.Size = new System.Drawing.Size(170, 35);
-            this.aPanel20.TabIndex = 183;
+            this.aPanel20.TabIndex = 0;
             // 
             // txtCondition_Code
             // 
