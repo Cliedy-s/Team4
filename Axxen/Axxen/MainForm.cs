@@ -77,15 +77,7 @@ namespace Axxen
                 this.Close();
             }
         }
-        public void DeleteButon()
-        {
-            //myButtons.Find(btn => btn.Text.Equals(taget)).Dispose();
-            //for (int i = myButtons.Count - 1; i > -1; i--)
-            //{
-            //    myButtons[i].Visible = false;
-            //    myButtons[i].Dispose();
-            //}
-        }
+
         public void Setting()
         {
 
@@ -737,9 +729,9 @@ namespace Axxen
         }
 
         private void Button9_Click(object sender, EventArgs e)
-        {
-            DeleteButon();
-           Setting();
+        { 
+             Setting();
+            btnManuReflash.Text = "메뉴";
         }
     }
 }
