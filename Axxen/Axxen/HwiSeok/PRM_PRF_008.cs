@@ -25,23 +25,29 @@ namespace Axxen
         {
             ((MainForm)this.MdiParent).RefreshFormEvent += new System.EventHandler(this.RefreshFormShow); // 새로고침
             ((MainForm)this.MdiParent).InsertFormEvent += new System.EventHandler(this.InsertFormShow); // 추가
+            ((MainForm)this.MdiParent).MyDeleteEvent += new System.EventHandler(this.DeleteFormShow); // 삭제
 
             #region 그리드뷰
             DatagridviewDesigns.SetDesign(dgvMainGrid);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "비가동일자", "Nop_Date", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "작업장코드", "Wc_Code", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "작업장명", "Wc_Name", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "비가동대분류", "Nop_Ma_Name", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "비가동상세분류", "Nop_Mi_Name", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "비가동발생시각", "Nop_Happentime", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "비가동종료시각", "Nop_Canceltime", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "비가동시간", "Nop_Time", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "비고", "Remark", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "발생유형", "Nop_Type", true, 100, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "비가동일자", "Nop_Date", true, 100, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "작업장코드", "Wc_Code", true, 100, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "작업장명", "Wc_Name", true, 100, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "비가동대분류", "Nop_Ma_Name", true, 100, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "비가동상세분류", "Nop_Mi_Name", true, 100, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "비가동발생시각", "Nop_Happentime", true, 100, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "비가동종료시각", "Nop_Canceltime", true, 100, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "비가동시간", "Nop_Time", true, 100, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "비고", "Remark", true, 100, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "발생유형", "Nop_Type", true, 100, default, true);
             #endregion
 
             nohm = nohmservice.GetAllNop_History_Mi_Ma();
             dgvMainGrid.DataSource = nohm;
+        }
+
+        private void DeleteFormShow(object sender, EventArgs e) // 삭제
+        {
+            throw new NotImplementedException();
         }
 
         private void InsertFormShow(object sender, EventArgs e) //비가동 등록
@@ -51,7 +57,11 @@ namespace Axxen
                 if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
                 {
                     PRM_PRF_008_1 frm = new PRM_PRF_008_1();
-                    frm.ShowDialog();
+                    if (frm.ShowDialog() == DialogResult.OK)
+                    {
+                        nohm = nohmservice.GetAllNop_History_Mi_Ma();
+                        dgvMainGrid.DataSource = nohm;
+                    }
                 }
             }
             catch (Exception err)
@@ -105,6 +115,7 @@ namespace Axxen
         {
             ((MainForm)this.MdiParent).RefreshFormEvent -= new System.EventHandler(this.RefreshFormShow); // 새로고침
             ((MainForm)this.MdiParent).InsertFormEvent -= new System.EventHandler(this.InsertFormShow); // 추가
+            ((MainForm)this.MdiParent).MyDeleteEvent -= new System.EventHandler(this.DeleteFormShow); // 삭제
         }
     }
 }
