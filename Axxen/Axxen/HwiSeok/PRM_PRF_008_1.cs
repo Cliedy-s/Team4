@@ -80,15 +80,17 @@ namespace Axxen
                 nop.Remark = txtRemark.Text;
                 nop.Ins_Emp = lblManager.Text;
 
-                if (Nop_HistoryService.InsertNop_History(nop))
+                string msg = Nop_HistoryService.InsertNop_History(nop);
+
+                if (msg == "OK")
                 {
-                    MessageBox.Show("비가동 등록 성공","성공",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    MessageBox.Show("성공적으로 등록하였습니다.", "비동기 성공", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("비가동 등록 실패","실패",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    MessageBox.Show($"{msg}", "비동기 오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     this.Close();
                 }
             }
