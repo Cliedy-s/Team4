@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panelMenu = new System.Windows.Forms.Panel();
             this.aPanel1 = new Axxen.CustomControls.APanel();
-            this.button9 = new System.Windows.Forms.Button();
+            this.btnManuReflash = new System.Windows.Forms.Button();
             this.aPanel2 = new Axxen.CustomControls.APanel();
             this.btnBookmark = new System.Windows.Forms.Button();
             this.tvMenu = new System.Windows.Forms.TreeView();
@@ -158,28 +158,28 @@
             // 
             // aPanel1
             // 
-            this.aPanel1.Controls.Add(this.button9);
+            this.aPanel1.Controls.Add(this.btnManuReflash);
             this.aPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.aPanel1.Location = new System.Drawing.Point(0, 0);
             this.aPanel1.Name = "aPanel1";
             this.aPanel1.Size = new System.Drawing.Size(267, 43);
             this.aPanel1.TabIndex = 10;
             // 
-            // button9
+            // btnManuReflash
             // 
-            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.button9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button9.ForeColor = System.Drawing.Color.Black;
-            this.button9.Location = new System.Drawing.Point(0, 0);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(267, 43);
-            this.button9.TabIndex = 8;
-            this.button9.Text = "메뉴";
-            this.button9.UseVisualStyleBackColor = false;
-            this.button9.Click += new System.EventHandler(this.Button9_Click);
+            this.btnManuReflash.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.btnManuReflash.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnManuReflash.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnManuReflash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnManuReflash.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnManuReflash.ForeColor = System.Drawing.Color.Black;
+            this.btnManuReflash.Location = new System.Drawing.Point(0, 0);
+            this.btnManuReflash.Name = "btnManuReflash";
+            this.btnManuReflash.Size = new System.Drawing.Size(267, 43);
+            this.btnManuReflash.TabIndex = 8;
+            this.btnManuReflash.Text = "메뉴";
+            this.btnManuReflash.UseVisualStyleBackColor = false;
+            this.btnManuReflash.Click += new System.EventHandler(this.Button9_Click);
             // 
             // aPanel2
             // 
@@ -1037,7 +1037,6 @@
         private System.Windows.Forms.ContextMenuStrip ctmBookMark;
         private System.Windows.Forms.ToolStripMenuItem 즐겨찾기ToolStripMenuItem;
         private CustomControls.APanel aPanel1;
-        private System.Windows.Forms.Button button9;
         private CustomControls.ALabel lblSubtitle;
         private CustomControls.ALabel aLabel2;
         private System.Windows.Forms.Panel panel1;
@@ -1129,5 +1128,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButtonSetting;
         private System.Windows.Forms.ToolStripLabel toolStripLabel;
         public System.Windows.Forms.ToolStrip toolStrip1;
+        public System.Windows.Forms.Button btnManuReflash;
     }
 }
