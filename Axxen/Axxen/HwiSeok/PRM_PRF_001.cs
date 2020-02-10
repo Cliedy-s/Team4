@@ -32,17 +32,17 @@ namespace Axxen
 
             #region 그리드뷰 설정
             DatagridviewDesigns.SetDesign(dgvMainGrid);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "번호", "Num", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "작업지시일자", "Prd_Date", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "작업지시상태", "Wo_Status", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "작업지시번호", "Workorderno", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "품목코드", "Item_Code", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "품목명", "Item_Name", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "작업장", "Wc_Name", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "공정명", "Process_name", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "투입수량", "In_Qty_Main", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "산출수량", "Out_Qty_Main", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "생산수량", "Prd_Qty", true, 100, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "번호", "Num", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "작업지시일자", "Prd_Date", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "작업지시상태", "Wo_Status", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "작업지시번호", "Workorderno", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "품목코드", "Item_Code", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "품목명", "Item_Name", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "작업장", "Wc_Name", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "공정명", "Process_name", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "투입수량", "In_Qty_Main", true, 100, DataGridViewContentAlignment.MiddleRight, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "산출수량", "Out_Qty_Main", true, 100, DataGridViewContentAlignment.MiddleRight, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "생산수량", "Prd_Qty", true, 100, DataGridViewContentAlignment.MiddleRight, true);
             #endregion
 
             DataLoad(); //메인 초기화

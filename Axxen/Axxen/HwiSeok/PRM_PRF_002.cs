@@ -72,25 +72,25 @@ namespace Axxen
 
             #region 메인그리드뷰
             DatagridviewDesigns.SetDesign(dgvMainGrid);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "생산일자", "Prd_Date", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "작업지시상태", "Wo_Status", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "작업지시번호", "Workorderno", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "품목코드", "Item_Code", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "품목명", "Item_Name", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "작업장", "Wc_Name", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "투입수량", "In_Qty_Main", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "산출수량", "Out_Qty_Main", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "생산수량", "Prd_Qty", true, 100, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "생산일자", "Prd_Date", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "작업지시상태", "Wo_Status", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "작업지시번호", "Workorderno", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "품목코드", "Item_Code", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "품목명", "Item_Name", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "작업장", "Wc_Name", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "투입수량", "In_Qty_Main", true, 100, DataGridViewContentAlignment.MiddleRight, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "산출수량", "Out_Qty_Main", true, 100, DataGridViewContentAlignment.MiddleRight, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "생산수량", "Prd_Qty", true, 100, DataGridViewContentAlignment.MiddleRight, true);
             #endregion
 
             #region 서브그리드뷰
             DatagridviewDesigns.SetDesign(dgvSubGrid);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvSubGrid, "팔렛트번호", "Pallet_No", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvSubGrid, "등급", "Grade_Code", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvSubGrid, "등급상세 코드", "Grade_Detail_Code", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvSubGrid, "등급상세명", "Grade_Detail_Name", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvSubGrid, "수량", "In_Qty", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvSubGrid, "팔렛트 마감 여부", "Use_YN", true, 100, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvSubGrid, "팔렛트번호", "Pallet_No", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvSubGrid, "등급", "Grade_Code", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvSubGrid, "등급상세 코드", "Grade_Detail_Code", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvSubGrid, "등급상세명", "Grade_Detail_Name", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvSubGrid, "수량", "In_Qty", true, 100, DataGridViewContentAlignment.MiddleRight, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvSubGrid, "팔렛트 마감 여부", "Use_YN", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
             #endregion
 
             DataLoad(); // 그리드뷰
@@ -202,12 +202,12 @@ namespace Axxen
                     dgvSubGrid.DataSource = null;
                     if (dgvSubGrid.Columns.Count == 0)
                     {
-                        DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvSubGrid, "팔렛트번호", "Pallet_No", true, 100, default, true);
-                        DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvSubGrid, "등급", "Grade_Code", true, 100, default, true);
-                        DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvSubGrid, "등급상세 코드", "Grade_Detail_Code", true, 100, default, true);
-                        DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvSubGrid, "등급상세명", "Grade_Detail_Name", true, 100, default, true);
-                        DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvSubGrid, "수량", "In_Qty", true, 100, default, true);
-                        DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvSubGrid, "팔렛트 마감 여부", "Use_YN", true, 100, default, true);
+                        DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvSubGrid, "팔렛트번호", "Pallet_No", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+                        DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvSubGrid, "등급", "Grade_Code", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+                        DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvSubGrid, "등급상세 코드", "Grade_Detail_Code", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+                        DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvSubGrid, "등급상세명", "Grade_Detail_Name", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+                        DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvSubGrid, "수량", "In_Qty", true, 100, DataGridViewContentAlignment.MiddleRight, true);
+                        DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvSubGrid, "팔렛트 마감 여부", "Use_YN", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
                     }
                 }
             }
@@ -260,12 +260,12 @@ namespace Axxen
             dgvSubGrid.DataSource = null;
             if (dgvSubGrid.Columns.Count == 0)
             {
-                DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvSubGrid, "팔렛트번호", "Pallet_No", true, 100, default, true);
-                DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvSubGrid, "등급", "Grade_Code", true, 100, default, true);
-                DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvSubGrid, "등급상세 코드", "Grade_Detail_Code", true, 100, default, true);
-                DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvSubGrid, "등급상세명", "Grade_Detail_Name", true, 100, default, true);
-                DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvSubGrid, "수량", "In_Qty", true, 100, default, true);
-                DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvSubGrid, "팔렛트 마감 여부", "Use_YN", true, 100, default, true);
+                DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvSubGrid, "팔렛트번호", "Pallet_No", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+                DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvSubGrid, "등급", "Grade_Code", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+                DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvSubGrid, "등급상세 코드", "Grade_Detail_Code", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+                DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvSubGrid, "등급상세명", "Grade_Detail_Name", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+                DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvSubGrid, "수량", "In_Qty", true, 100, DataGridViewContentAlignment.MiddleRight, true);
+                DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvSubGrid, "팔렛트 마감 여부", "Use_YN", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
             }
         }
 
