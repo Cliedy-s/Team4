@@ -110,6 +110,10 @@ namespace DAC
                     int result = comm.ExecuteNonQuery();
                     comm.Connection.Close();
 
+                    if(result == 0)
+                    {
+                        Log.WriteError($"{item.Up_Emp}이(가) 대차비우기를 시도하였으나 GV_History와 GV_Master와 GV_Current_Status에 존재하지 않는 대차코드({item.GV_Code})였음");
+                    }
                     return result > 0;
                 }
             }
