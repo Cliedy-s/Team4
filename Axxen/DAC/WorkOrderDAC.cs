@@ -110,18 +110,17 @@ namespace DAC
             }
         }
 
-        public bool UPDATE_Grade_Detail_Name(string Workorderno, string Pallet_No, string Grade_Detail_Name)
+        public bool UPDATE_Grade_Detail_Name(string Grade_Detail_Name, string Grade_Detail_Code)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
 
                 cmd.Connection = new SqlConnection(Connstr);
-                cmd.CommandText = $"UPDATE Pallet_Master SET Grade_Detail_Name=@Grade_Detail_Name where Workorderno = @Workorderno AND Pallet_No=@Pallet_No";
+                cmd.CommandText = $"UPDATE BoxingGrade_Detail_Master SET Grade_Detail_Name=@Grade_Detail_Name where Grade_Detail_Code=@Grade_Detail_Code";
 
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@Grade_Detail_Name", Grade_Detail_Name);
-                cmd.Parameters.AddWithValue("@Pallet_No", Pallet_No);
-                cmd.Parameters.AddWithValue("@Workorderno", Workorderno);
+                cmd.Parameters.AddWithValue("@Grade_Detail_Code", Grade_Detail_Code);
 
                 cmd.Connection.Open();
                 int result = cmd.ExecuteNonQuery();

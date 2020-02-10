@@ -8,6 +8,8 @@ namespace VO
 {
     public class Nop_History_Mi_MaVO //PRM_PRF_008
     {
+        
+        public long Nop_Seq { get; set; } //발생순번
         public DateTime Nop_Date { get; set; } //비가동일자
         public string Wc_Code { get; set; } // 작업장코드
         public string Wc_Name { get; set; } // 작업장명

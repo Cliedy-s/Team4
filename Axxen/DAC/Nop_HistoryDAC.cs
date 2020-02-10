@@ -79,33 +79,121 @@ namespace DAC
 
         }
 
-        public bool InsertNop_History(NopHistoryVO nop)
+        public string InsertNop_History(NopHistoryVO nop)
         {
-            using (SqlCommand comm = new SqlCommand())
+
+            using (SqlConnection conn = new SqlConnection(Connstr))
             {
-                comm.Connection = new SqlConnection(Connstr);
-                comm.CommandText = @"INSERT INTO Nop_History(Nop_Date, Nop_Happentime, Nop_Canceltime, Wc_Code, Nop_Mi_Code, Nop_Type, Nop_Time, Remark, Ins_Date, Ins_Emp) values(@Nop_Date, @Nop_Happentime, @Nop_Canceltime, @Wc_Code, @Nop_Mi_Code, @Nop_Type, @Nop_Time, @Remark, @Ins_Date, @Ins_Emp)";
-                comm.CommandType = CommandType.Text;
-                comm.Parameters.AddWithValue("@Nop_Date", nop.Nop_Date);
-                comm.Parameters.AddWithValue("@Nop_Happentime", nop.Nop_Happentime);
-                comm.Parameters.AddWithValue("@Nop_Canceltime", nop.Nop_Canceltime);
-                comm.Parameters.AddWithValue("@Wc_Code", nop.Wc_Code);
-                comm.Parameters.AddWithValue("@Nop_Mi_Code", nop.Nop_Mi_Code);
-                comm.Parameters.AddWithValue("@Nop_Type", nop.Nop_Type);
-                comm.Parameters.AddWithValue("@Nop_Time", nop.Nop_Time);
-                comm.Parameters.AddWithValue("@Remark", nop.Remark);
-                comm.Parameters.AddWithValue("@Ins_Date", nop.Ins_Date);
-                comm.Parameters.AddWithValue("@Ins_Emp", nop.Ins_Emp);
+                conn.Open();
+                SqlTransaction tran = conn.BeginTransaction();
 
-                comm.Connection.Open();
-                int result = comm.ExecuteNonQuery();
-                comm.Connection.Close();
+                try
+                {
+                    string chksql = "INSERT INTO Nop_History(Wc_Code, Nop_Mi_Code, Nop_Type, Nop_Time, Remark, Ins_Emp) values(@Wc_Code, @Nop_Mi_Code, @Nop_Type, @Nop_Time, @Remark, @Ins_Emp)";
+                    using (SqlCommand cmdchk = new SqlCommand(chksql, conn))
+                    {
+                        cmdchk.Transaction = tran;
 
-                return result > 0;
+                        cmdchk.Parameters.AddWithValue("@Wc_Code", nop.Wc_Code);
+                        cmdchk.Parameters.AddWithValue("@Nop_Mi_Code", nop.Nop_Mi_Code);
+                        cmdchk.Parameters.AddWithValue("@Nop_Type", nop.Nop_Type);
+                        cmdchk.Parameters.AddWithValue("@Nop_Time", nop.Nop_Time);
+                        cmdchk.Parameters.AddWithValue("@Remark", nop.Remark);
+                        cmdchk.Parameters.AddWithValue("@Ins_Emp", nop.Ins_Emp);
+                        int iResult = Convert.ToInt32(cmdchk.ExecuteScalar());
+                        if (iResult > 0)
+                            throw new Exception("비가동 등록 중 오류가 발생했습니다.");
+
+                        cmdchk.Parameters.Clear();
+
+                    }
+                    //------------------------------------------------------------- 
+                    string Stsql = @"UPDATE WorkCenter_Master SET Use_YN = 'N' Where Wc_Code=@Wc_Code";
+                    using (SqlCommand cmd = new SqlCommand(Stsql, conn))
+                    {
+                        cmd.Transaction = tran;
+
+                        cmd.Parameters.AddWithValue("@Wc_Code", nop.Wc_Code);
+
+                        int iResult = cmd.ExecuteNonQuery();
+                        if (iResult < 1)
+                            throw new Exception("비가동 등록 중 오류가 발생했습니다.");
+
+                        cmd.Parameters.Clear();
+
+
+                        tran.Commit();
+                        return "OK";
+                    }
+                }
+                catch (Exception err)
+                {
+                    tran.Rollback();
+                    return err.Message;
+                }
+                finally
+                {
+                    conn.Close();
+                }
             }
-
         }
 
+
+        public string DeleteNop_Histroy(string WcCode,string Nop_Seq)
+        {
+
+            using (SqlConnection conn = new SqlConnection(Connstr))
+            {
+                conn.Open();
+                SqlTransaction tran = conn.BeginTransaction();
+
+                try
+                {
+                    string chksql = "UPDATE Nop_History SET Nop_Canceltime=@Nop_Canceltime where Nop_Seq=@Nop_Seq";
+                    using (SqlCommand cmdchk = new SqlCommand(chksql, conn))
+                    {
+                        cmdchk.Transaction = tran;
+
+                        cmdchk.Parameters.AddWithValue("@Nop_Canceltime", DateTime.Now);
+                        cmdchk.Parameters.AddWithValue("@Nop_Seq", Nop_Seq);
+
+                        int iResult = Convert.ToInt32(cmdchk.ExecuteScalar());
+                        if (iResult > 0)
+                            throw new Exception("비가동 삭제 중 오류가 발생했습니다.");
+
+                        cmdchk.Parameters.Clear();
+
+                    }
+                    //------------------------------------------------------------- 
+                    string Stsql = @"UPDATE WorkCenter_Master SET Use_YN = 'Y' Where Wc_Code=@Wc_Code";
+                    using (SqlCommand cmd = new SqlCommand(Stsql, conn))
+                    {
+                        cmd.Transaction = tran;
+
+                        cmd.Parameters.AddWithValue("@Wc_Code", WcCode);
+
+                        int iResult = cmd.ExecuteNonQuery();
+                        if (iResult < 1)
+                            throw new Exception("비가동 삭제 중 오류가 발생했습니다.");
+
+                        cmd.Parameters.Clear();
+
+
+                        tran.Commit();
+                        return "OK";
+                    }
+                }
+                catch (Exception err)
+                {
+                    tran.Rollback();
+                    return err.Message;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
         
     }
 }

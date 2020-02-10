@@ -63,6 +63,7 @@ namespace Axxen
                 this.tabControl2.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
                 CloseImage = Properties.Resources.x;
                 this.tabControl2.Padding = new Point(10, 3);
+                UserInformation();
                 Setting();
                 booklist = Mainservice.GetAll_BookMark(UserInfo.User_ID);
 
@@ -76,55 +77,61 @@ namespace Axxen
                 this.Close();
             }
         }
-        public void DeleteButon()
-        {
-         //   myButtons.Find(btn => btn.Text.Equals(taget)).Dispose();
-            for (int i = 0; i < myButtons.Count; i++)
-            {
-                myButtons[i].Dispose();
-            }
-        }
+
         public void Setting()
         {
 
-            myButtons.Clear();
-            menulist = Mainservice.GetAll_MenuTree_Master();
+           // myButtons.Clear();
 
-            UserInformation();
+
+            foreach (Control item in panelMenu.Controls)
+            {
+                if (item is Button)
+                {
+                    if (!item.Name.Equals("메뉴"))
+                        panelMenu.Controls.Remove(item);
+                }
+            }
+            //panelMenu.Update();
+            //panelMenu.Invalidate();
+            //this.Invalidate();
+
+            menulist = Mainservice.GetAll_MenuTree_Master();
 
             var pa = menulist.FindAll(item => item.Parent_Screen_Code == null);
             int sLocation = 0;
 
-
-   
             for (int i = 0; i < pa.Count; i++)
             {
-                myButtons.Add(new Button());
-                myButtons[i].BackColor = System.Drawing.Color.White;
-                myButtons[i].Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-                myButtons[i].ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-                myButtons[i].Location = new System.Drawing.Point(3, 45 + sLocation);
-                myButtons[i].Margin = new System.Windows.Forms.Padding(5);
-                myButtons[i].Name = pa[i].Screen_Code;
-                myButtons[i].Size = new System.Drawing.Size(261, 37);
-                myButtons[i].TabIndex = i;
-                myButtons[i].Text = pa[i].Screen_Name;
-                myButtons[i].UseVisualStyleBackColor = false;
-                myButtons[i].Click += new EventHandler(BtnMenu_Click);
+                Button menuBtn = new Button();
+                menuBtn.BackColor = System.Drawing.Color.White;
+                menuBtn.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+                menuBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+                menuBtn.Location = new System.Drawing.Point(3, 45 + sLocation);
+                menuBtn.Margin = new System.Windows.Forms.Padding(5);
+                menuBtn.Name = pa[i].Screen_Code;
+                menuBtn.Size = new System.Drawing.Size(261, 37);
+                menuBtn.TabIndex = i;
+                menuBtn.Text = pa[i].Screen_Name;
+                menuBtn.UseVisualStyleBackColor = false;
+                menuBtn.Click += new EventHandler(BtnMenu_Click);
+               // myButtons.Add(menuBtn);
                 // 생성한 버튼을 화면 컨트롤에 추가해서 보이게 함
-                panelMenu.Controls.Add(myButtons[i]);
+                panelMenu.Controls.Add(menuBtn);
                 sLocation += 35;
             }
+
+            panelMenu.Update();            
+            panelMenu.Invalidate();
+            this.Refresh();
+            this.Invalidate();
         }
         public void UserInformation()
         {
 
 
             userinfoGrouplist = UserGroupservice.GetUserInfoGroup(UserInfo.User_ID); //로그인한 사용자의 그룹권한들
-
-
             userinfoScreenItem = screenservice.GetUserInfoScreenItem(userinfoGrouplist); // 로그인한 사용자의 그룹권한에 사용되는 화면들
-
             screenitemlist = screenservice.GetALLScreenItem(); //모든스크린
 
         }
@@ -401,9 +408,9 @@ namespace Axxen
                         Screen_Code = formName
                     };
                     userservice.InsertLogin_Screen_History(loginscreen);
-
+                    int a = 1;
                     lblSubtitle.Text = screenitemlist.Find(item => item.Screen_Code == formName.ToString()).Screen_Path.ToString();
-
+                     a = 1;
                 }
                 else
                 {
@@ -722,9 +729,9 @@ namespace Axxen
         }
 
         private void Button9_Click(object sender, EventArgs e)
-        {
-            DeleteButon();
-           Setting();
+        { 
+             Setting();
+            btnManuReflash.Text = "메뉴";
         }
     }
 }

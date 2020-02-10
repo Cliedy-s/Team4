@@ -32,10 +32,10 @@ namespace Service
             return dac.UPDATE_Prd_Qty(Prd_Qty, Num, Wo_Status, Workorderno, Item_Code);
         }
 
-        public bool UPDATE_Grade_Detail_Name(string Workorderno,string Pallet_No, string Grade_Detail_Name) //PRM_PRF_002_1 생산수량 업데이트
+        public bool UPDATE_Grade_Detail_Name(string Grade_Detail_Name, string Grade_Detail_Code) //PRM_PRF_002_1 등급상세명 업데이트
         {
             WorkOrderDAC dac = new WorkOrderDAC();
-            return dac.UPDATE_Grade_Detail_Name(Workorderno, Pallet_No, Grade_Detail_Name);
+            return dac.UPDATE_Grade_Detail_Name(Grade_Detail_Name, Grade_Detail_Code);
         }
 
         public bool UpdatePalletUse(List<string> chkPalletNo) //PRM_PRF_002 팔렛트 마감 업데이트
