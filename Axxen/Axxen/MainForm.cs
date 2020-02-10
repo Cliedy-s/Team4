@@ -63,6 +63,7 @@ namespace Axxen
                 this.tabControl2.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
                 CloseImage = Properties.Resources.x;
                 this.tabControl2.Padding = new Point(10, 3);
+                UserInformation();
                 Setting();
                 booklist = Mainservice.GetAll_BookMark(UserInfo.User_ID);
 
@@ -104,7 +105,6 @@ namespace Axxen
             //this.Invalidate();
 
             menulist = Mainservice.GetAll_MenuTree_Master();
-            UserInformation();
 
             var pa = menulist.FindAll(item => item.Parent_Screen_Code == null);
             int sLocation = 0;
@@ -139,10 +139,7 @@ namespace Axxen
 
 
             userinfoGrouplist = UserGroupservice.GetUserInfoGroup(UserInfo.User_ID); //로그인한 사용자의 그룹권한들
-
-
             userinfoScreenItem = screenservice.GetUserInfoScreenItem(userinfoGrouplist); // 로그인한 사용자의 그룹권한에 사용되는 화면들
-
             screenitemlist = screenservice.GetALLScreenItem(); //모든스크린
 
         }
@@ -419,9 +416,9 @@ namespace Axxen
                         Screen_Code = formName
                     };
                     userservice.InsertLogin_Screen_History(loginscreen);
-
+                    int a = 1;
                     lblSubtitle.Text = screenitemlist.Find(item => item.Screen_Code == formName.ToString()).Screen_Path.ToString();
-
+                     a = 1;
                 }
                 else
                 {
