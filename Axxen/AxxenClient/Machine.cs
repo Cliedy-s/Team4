@@ -109,7 +109,7 @@ namespace AxxenClient
             try
             {
                 sw = new StreamWriter($"{writefolder}\\MoldingLog_{machineID}_{iCnt}.log", false);
-                string msg = $"{DateTime.Now.ToString("yyyyMMdd HH:mm:ss")}/Machine_{machineID}/{workorderno}/{pair.Moldcode}/{pair.Itemcode}/{pair.Line_Per_Qty - badcnt}/{badcnt}";
+                string msg = $"{DateTime.Now.ToString("yyyyMMdd HH:mm:ss")}/Machine_{machineID}/{workorderno}/{pair.Moldcode}/{pair.Itemcode}/{pair.Line_Per_Qty}/{badcnt}";
                 sw.WriteLine(msg);
                 sw.Flush();
                 sw.Close();
@@ -130,8 +130,8 @@ namespace AxxenClient
             StreamWriter sw = null;
             try
             {
-                sw = new StreamWriter($"{writefolder}\\Boxing_Log{machineID}_{iCnt}.log", false);
-                string msg = $"{DateTime.Now.ToString("yyyyMMdd HH:mm:ss")}/Machine_{machineID}/{workorderno}/Boxing/{itemcode}/{shotQty - badcnt}/{badcnt}";
+                sw = new StreamWriter($"{writefolder}\\BoxingLog_{machineID}_{iCnt}.log", false);
+                string msg = $"{DateTime.Now.ToString("yyyyMMdd HH:mm:ss")}/Machine_{machineID}/{workorderno}/Boxing/{itemcode}/{shotQty}/{badcnt}";
                 sw.WriteLine(msg);
                 sw.Flush();
                 sw.Close();
@@ -159,8 +159,8 @@ namespace AxxenClient
             }
             try
             {
-                sw = new StreamWriter($"{writefolder}\\Inspect_Measure_Log{machineID}_{iCnt}.log", false);
-                string msg = $"{DateTime.Now.ToString("yyyyMMdd HH:mm:ss")}/Machine_{machineID}/{workorderno}/Inspect_Measure/{pair.Itemcode}/{pair.Inspectcode}/{rnd.Next(pair.USLx1000, pair.SLx1000) / 1000m}";
+                sw = new StreamWriter($"{writefolder}\\Inspect_MeasureLog_{machineID}_{iCnt}.log", false);
+                string msg = $"{DateTime.Now.ToString("yyyyMMdd HH:mm:ss")}/Machine_{machineID}/{workorderno}/{pair.Inspectcode}/{pair.Itemcode}/{rnd.Next(pair.USLx1000, pair.SLx1000) / 1000m}";
                 sw.WriteLine(msg);
                 sw.Flush();
                 sw.Close();

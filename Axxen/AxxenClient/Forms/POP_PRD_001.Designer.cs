@@ -38,9 +38,9 @@
             this.btnSetPressCondition2 = new Axxen.CustomControls.AButton();
             this.btnQualityMeasure3 = new Axxen.CustomControls.AButton();
             this.panLoad = new Axxen.CustomControls.APanel();
+            this.btnWorkOrderCreate2 = new Axxen.CustomControls.AButton();
             this.btnWorkOrderOnOff0 = new Axxen.CustomControls.AButton();
             this.btnWorkOrderQuit2 = new Axxen.CustomControls.AButton();
-            this.btnWorkOrderCreate2 = new Axxen.CustomControls.AButton();
             this.btnSetWorker2 = new Axxen.CustomControls.AButton();
             this.btnLoadRecordRegister = new Axxen.CustomControls.AButton();
             this.btnFiringInOut = new Axxen.CustomControls.AButton();
@@ -232,6 +232,20 @@
             this.panLoad.TabIndex = 6;
             this.panLoad.Visible = false;
             // 
+            // btnWorkOrderCreate2
+            // 
+            this.btnWorkOrderCreate2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnWorkOrderCreate2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.btnWorkOrderCreate2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWorkOrderCreate2.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnWorkOrderCreate2.Location = new System.Drawing.Point(265, 3);
+            this.btnWorkOrderCreate2.Name = "btnWorkOrderCreate2";
+            this.btnWorkOrderCreate2.Size = new System.Drawing.Size(126, 118);
+            this.btnWorkOrderCreate2.TabIndex = 13;
+            this.btnWorkOrderCreate2.Text = "작업지시 생성";
+            this.btnWorkOrderCreate2.UseVisualStyleBackColor = false;
+            this.btnWorkOrderCreate2.Click += new System.EventHandler(this.btnClick);
+            // 
             // btnWorkOrderOnOff0
             // 
             this.btnWorkOrderOnOff0.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -259,20 +273,6 @@
             this.btnWorkOrderQuit2.Text = "현장마감";
             this.btnWorkOrderQuit2.UseVisualStyleBackColor = false;
             this.btnWorkOrderQuit2.Click += new System.EventHandler(this.btnWorkOrderClose);
-            // 
-            // btnWorkOrderCreate2
-            // 
-            this.btnWorkOrderCreate2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnWorkOrderCreate2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.btnWorkOrderCreate2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnWorkOrderCreate2.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnWorkOrderCreate2.Location = new System.Drawing.Point(265, 3);
-            this.btnWorkOrderCreate2.Name = "btnWorkOrderCreate2";
-            this.btnWorkOrderCreate2.Size = new System.Drawing.Size(126, 118);
-            this.btnWorkOrderCreate2.TabIndex = 13;
-            this.btnWorkOrderCreate2.Text = "작업지시 생성";
-            this.btnWorkOrderCreate2.UseVisualStyleBackColor = false;
-            this.btnWorkOrderCreate2.Click += new System.EventHandler(this.btnClick);
             // 
             // btnSetWorker2
             // 

@@ -15,7 +15,7 @@ namespace VO
         public string Grade_Detail_Name { get; set; }   // 포장등급상세명
         public string Boxing_Grade_Code { get; set; }  // 포장등급
         public string Size_Code { get; set; }               // 사이즈
-        public int In_Qty { get; set; }                   // 생산수량
+        public int In_Qty { get; set; }                   // 입고수량
         public int CurrentQty { get; set; }             // 이용가능수량
         public string Use_YN { get; set; }                  // 사용여부
         public string Item_Code { get; set; }              // 품목코드

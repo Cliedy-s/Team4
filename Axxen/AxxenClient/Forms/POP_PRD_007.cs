@@ -40,11 +40,11 @@ namespace AxxenClient.Forms
         private void InitControls()
         {
             InitControlUtil.SetPOPDGVDesign(dgvGVTo);
-            InitControlUtil.AddNewColumnToDataGridView(dgvGVTo, "코드", "GV_Code", true, 80);
+            InitControlUtil.AddNewColumnToDataGridView(dgvGVTo, "코드", "GV_Code", true, 100);
             InitControlUtil.AddNewColumnToDataGridView(dgvGVTo, "대차명", "GV_Name", true, 100, DataGridViewContentAlignment.MiddleLeft, true);
 
             InitControlUtil.SetPOPDGVDesign(dgvGVFrom);
-            InitControlUtil.AddNewColumnToDataGridView(dgvGVFrom, "코드", "GV_Code", true, 80);
+            InitControlUtil.AddNewColumnToDataGridView(dgvGVFrom, "코드", "GV_Code", true, 100);
             InitControlUtil.AddNewColumnToDataGridView(dgvGVFrom, "대차명", "GV_Name", true, 100, DataGridViewContentAlignment.MiddleLeft, true);
             InitControlUtil.AddNewColumnToDataGridView(dgvGVFrom, "적재시각", "Loading_time", true, 200);
             InitControlUtil.AddNewColumnToDataGridView(dgvGVFrom, "수량", "Loading_Qty", true, 80, DataGridViewContentAlignment.MiddleRight);
@@ -55,26 +55,19 @@ namespace AxxenClient.Forms
         {
             GV_Current_StatusService service = new GV_Current_StatusService();
             // 해당 작업지시에서 생성한 모든 대차
-            // TODO - 조건에 맞게 변경하기
-            //dgvGVFrom.DataSource = service.GetGVCurrentStatus(wccode:GlobalUsage.WcCode, workorderno:GlobalUsage.WorkOrderNo, gvStatus:"적재");
-            dgvGVFrom.DataSource = service.GetGVCurrentStatus(gvStatus: "적재");
+            dgvGVFrom.DataSource = service.GetGVCurrentStatus(workorderno: GlobalUsage.WorkOrderNo, gvStatus: "적재");
             // 해당 작업장의 모든 빈대차를 가져온다.
-            //dgvGVTo.DataSource = service.GetGVCurrentStatus(wccode: GlobalUsage.WcCode, gvStatus: "빈대차");
-            dgvGVTo.DataSource = service.GetGVCurrentStatus(gvStatus: "빈대차");
+            dgvGVTo.DataSource = service.GetGVCurrentStatus(gvStatus: "빈대차", gvGroup:"건조그룹");
         }
         private void btnToSearch_Click(object sender, EventArgs e)
         { // 검색
-
             GV_Current_StatusService service = new GV_Current_StatusService();
-            // TODO - 조건에 맞게 변경하기
-            dgvGVTo.DataSource = service.GetGVCurrentStatus(gvStatus: "빈대차", gvName: txtToGVSearch.TextBoxText);
+            dgvGVTo.DataSource = service.GetGVCurrentStatus(gvStatus: "빈대차", gvName: txtToGVSearch.TextBoxText, gvGroup: "건조그룹");
         }
         private void btnFromSearch_Click(object sender, EventArgs e)
         { // 검색
-
             GV_Current_StatusService service = new GV_Current_StatusService();
-            // TODO - 조건에 맞게 변경하기
-            dgvGVFrom.DataSource = service.GetGVCurrentStatus(gvStatus: "적재", gvName: txtFromGVSearch.TextBoxText);
+            dgvGVFrom.DataSource = service.GetGVCurrentStatus(workorderno: GlobalUsage.WorkOrderNo, gvStatus: "적재", gvName: txtFromGVSearch.TextBoxText);
         }
         private void btnLoad_Click(object sender, EventArgs e)
         {

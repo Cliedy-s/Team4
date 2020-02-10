@@ -48,7 +48,8 @@ namespace AxxenClient.Forms
                     break;
                 case WorkType.Load:
                     panLoad.Visible = true;
-                    btnMachineRun.Visible = false;
+                    btnMachineRun.Enabled = false;
+                    btnMachineRun.BackColor = Color.FromArgb(188, 209, 215);
                     break;
                 case WorkType.Boxing:
                     machinet = MachineType.Boxing;
@@ -90,8 +91,7 @@ namespace AxxenClient.Forms
         {
             // 데이터를 가져온다.
             WorkOrder_Service service = new WorkOrder_Service();
-            string woinichar = string.Empty;
-            dgvMain.DataSource = service.GetAllWorkOrder_AlloHisDetail_Item_Wc(woinichar);
+            dgvMain.DataSource = service.GetAllWorkOrder_AlloHisDetail_Item_Wc(GlobalUsage.WcCode);
 
             // 실행중인 작업 및 선택했던 로우를 선택한다
             if (!GlobalUsage.WorkOrderNo.Equals("설정안함"))
@@ -186,6 +186,9 @@ namespace AxxenClient.Forms
                 GetDatas();
                 SetColor(GlobalUsage.WorkOrderNo);
                 Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 작업지시 {GlobalUsage.WorkOrderNo}를 실행함");
+
+                // 전역 할당
+                selectedrowwono = GlobalUsage.WorkOrderNo;
             }
             else
             {
@@ -225,6 +228,8 @@ namespace AxxenClient.Forms
                 GlobalUsage.Out_Qty = 0;
                 GlobalUsage.Prd_Unit = "설정안됨";
 
+                // 전역 할당
+                selectedrowwono = "설정안됨";
                 GetDatas();
             }
             else
@@ -279,14 +284,6 @@ namespace AxxenClient.Forms
             columnno = dgvMain.CurrentCell.ColumnIndex;
             GetDatas();
         }
-        private void POP_PRD_001_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            // 작업 종료
-            if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
-            {
-                WorkOrderEnd();
-            }
-        }
         private void btnMachineRun_Click(object sender, EventArgs e)
         { // 토글 기계
             if (isMachineRun) MachineStop(machinet);
@@ -315,27 +312,28 @@ namespace AxxenClient.Forms
             {
                 if (!isMachineRun)
                 {
+                    // 공통
                     btnMachineRun.BackColor = Color.FromArgb(188, 220, 244);
                     isMachineRun = true;
 
-                    MoldService service = new MoldService();
-                    List<MoldVO> moldlist = service.GetMoldList(wccode: GlobalUsage.WcCode);
-                    if (moldlist.Count < 1)
-                    {
-                        MessageBox.Show("작업장에 장착된 금형이 없습니다.");
-                        btnMachineRun.BackColor = Color.FromArgb(218, 239, 245);
-                        isMachineRun = false;
-                        return;
-                    }
-                    MoldVO mold = moldlist[0];
-                    WorkOrderVO workorder = (dgvMain.DataSource as List<WorkOrderVO>).Find(x => x.Workorderno == selectedrowwono);
+                    WorkOrderVO workorder = (dgvMain.DataSource as List<WorkOrderVO>).Find(x => x.Workorderno == GlobalUsage.WorkOrderNo);
                     switch (machinet)
                     {
-                        case MachineType.Molding:
+                        case MachineType.Molding: // 성형일경우
+                            MoldService service = new MoldService();
+                            List<MoldVO> moldlist = service.GetMoldList(wccode: GlobalUsage.WcCode);
+                            if (moldlist.Count < 1)
+                            {
+                                MessageBox.Show("작업장에 장착된 금형이 없습니다.");
+                                btnMachineRun.BackColor = Color.FromArgb(218, 239, 245);
+                                isMachineRun = false;
+                                return;
+                            }
+                            MoldVO mold = moldlist[0];
                             Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 작업({GlobalUsage.WorkOrderNo})의 성형기계로 금형({mold.Mold_Code})을 이용해 품목({workorder.Item_Code})을 생산함");
                             machine0.MachineStartMold(GlobalUsage.WorkOrderNo, new Item_MoldPair(workorder.Item_Code, mold.Mold_Code, workorder.Line_Per_Qty));
                             break;
-                        case MachineType.Boxing:
+                        case MachineType.Boxing: // 포장일경우
                             Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 작업({GlobalUsage.WorkOrderNo})의 포장기계로 품목({workorder.Item_Code})을 생산함");
                             machine0.MachineStartBoxing(GlobalUsage.WorkOrderNo, workorder.Item_Code, workorder.Shot_Per_Qty);
                             break;
@@ -346,6 +344,16 @@ namespace AxxenClient.Forms
             {
                 Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 작업지시를 시작하지 않고 기계를 시작하려함");
                 MessageBox.Show("작업지시를 시작해주세요");
+            }
+        }
+
+
+        private void POP_PRD_001_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // 작업 종료
+            if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
+            {
+                WorkOrderEnd();
             }
         }
     }

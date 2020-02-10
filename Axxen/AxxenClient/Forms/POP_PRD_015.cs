@@ -126,9 +126,54 @@ namespace AxxenClient.Forms
             }
         }
 
+        bool isMachineRun = false;
+        MachineType machinet = MachineType.Inspect_Measure;
         private void btnMachineRun_Click(object sender, EventArgs e)
-        {
-
+        {// 토글 기계
+            if (isMachineRun) MachineStop(machinet);
+            else MachineStart(machinet);
         }
+        /// <summary>
+        /// 기계 종료
+        /// </summary>
+        private void MachineStop(MachineType machinet)
+        {
+            if (isMachineRun)
+            {
+                //btnMachineRun.BackColor = Color.FromArgb(218, 239, 245);
+                //isMachineRun = false;
+                //machine0.MachineStop(machinet);
+            }
+        }
+        /// <summary>
+        /// 기계 시작
+        /// </summary>
+        /// <param name="work"></param>
+        Machine machine1 = new Machine(1);
+        private void MachineStart(MachineType machinet)
+        {
+            //if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
+            //{
+            //    if (!isMachineRun)
+            //    {
+            //        btnMachineRun.BackColor = Color.FromArgb(188, 220, 244);
+            //        isMachineRun = true;
+
+            //        switch (machinet)
+            //        {
+            //            case MachineType.Inspect_Measure:
+            //                Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 작업({GlobalUsage.WorkOrderNo})의 성형기계로 금형({mold.Mold_Code})을 이용해 품목({workorder.Item_Code})을 생산함");
+            //                machine1.MachineStartInspectMeasure(GlobalUsage.WorkOrderNo, new Item_MoldPair(workorder.Item_Code, mold.Mold_Code, workorder.Line_Per_Qty));
+            //                break;
+            //        }
+            //    }
+            //}
+            //else
+            //{
+            //    Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 작업지시를 시작하지 않고 기계를 시작하려함");
+            //    MessageBox.Show("작업지시를 시작해주세요");
+            //}
+        }
+
     }
 }

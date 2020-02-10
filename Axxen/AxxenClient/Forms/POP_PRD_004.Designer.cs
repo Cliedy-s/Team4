@@ -35,6 +35,7 @@
             this.txtPalletNo = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
             this.btnDelete = new Axxen.CustomControls.AButton();
             this.btnPalletPrint = new Axxen.CustomControls.AButton();
+            this.txtBoxingGradeDetail = new Axxen.CustomControls.ABigTextBox_Searchable();
             this.dgvPalletList = new Axxen.CustomControls.ADataGridView();
             this.aPanel5 = new Axxen.CustomControls.APanel();
             this.btnSearchByDate = new Axxen.CustomControls.AButton();
@@ -42,7 +43,6 @@
             this.aLabel3 = new Axxen.CustomControls.ALabel();
             this.dtpFromdate = new System.Windows.Forms.DateTimePicker();
             this.aLabel2 = new Axxen.CustomControls.ALabel();
-            this.txtBoxingGradeDetail = new Axxen.CustomControls.ABigTextBox_Searchable();
             this.panBottom.SuspendLayout();
             this.aPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
@@ -160,6 +160,21 @@
             this.btnPalletPrint.UseVisualStyleBackColor = false;
             this.btnPalletPrint.Click += new System.EventHandler(this.btnBarcodeRecreate);
             // 
+            // txtBoxingGradeDetail
+            // 
+            this.txtBoxingGradeDetail.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtBoxingGradeDetail.CodeText = null;
+            this.txtBoxingGradeDetail.DataType = Axxen.CustomControls.DataType.BoxingDetail;
+            this.txtBoxingGradeDetail.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtBoxingGradeDetail.LabelText = "등급상세";
+            this.txtBoxingGradeDetail.Location = new System.Drawing.Point(40, 126);
+            this.txtBoxingGradeDetail.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtBoxingGradeDetail.Name = "txtBoxingGradeDetail";
+            this.txtBoxingGradeDetail.Size = new System.Drawing.Size(469, 42);
+            this.txtBoxingGradeDetail.TabIndex = 41;
+            this.txtBoxingGradeDetail.TextBoxText = "";
+            this.txtBoxingGradeDetail.TextBoxType = Axxen.CustomControls.TextType.Normal;
+            // 
             // dgvPalletList
             // 
             this.dgvPalletList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -187,10 +202,6 @@
             this.aPanel5.Name = "aPanel5";
             this.aPanel5.Size = new System.Drawing.Size(636, 54);
             this.aPanel5.TabIndex = 8;
-            this.aPanel5.Controls.SetChildIndex(this.dtpFromdate, 0);
-            this.aPanel5.Controls.SetChildIndex(this.aLabel3, 0);
-            this.aPanel5.Controls.SetChildIndex(this.dtpTodate, 0);
-            this.aPanel5.Controls.SetChildIndex(this.btnSearchByDate, 0);
             // 
             // btnSearchByDate
             // 
@@ -198,7 +209,7 @@
             this.btnSearchByDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnSearchByDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchByDate.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSearchByDate.Location = new System.Drawing.Point(465, 14);
+            this.btnSearchByDate.Location = new System.Drawing.Point(417, 11);
             this.btnSearchByDate.Name = "btnSearchByDate";
             this.btnSearchByDate.Size = new System.Drawing.Size(75, 29);
             this.btnSearchByDate.TabIndex = 16;
@@ -211,7 +222,7 @@
             this.dtpTodate.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dtpTodate.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dtpTodate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpTodate.Location = new System.Drawing.Point(348, 14);
+            this.dtpTodate.Location = new System.Drawing.Point(300, 11);
             this.dtpTodate.Name = "dtpTodate";
             this.dtpTodate.Size = new System.Drawing.Size(111, 29);
             this.dtpTodate.TabIndex = 15;
@@ -221,7 +232,7 @@
             this.aLabel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.aLabel3.AutoSize = true;
             this.aLabel3.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aLabel3.Location = new System.Drawing.Point(308, 18);
+            this.aLabel3.Location = new System.Drawing.Point(260, 15);
             this.aLabel3.Name = "aLabel3";
             this.aLabel3.Size = new System.Drawing.Size(21, 21);
             this.aLabel3.TabIndex = 14;
@@ -232,7 +243,7 @@
             this.dtpFromdate.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dtpFromdate.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dtpFromdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFromdate.Location = new System.Drawing.Point(172, 14);
+            this.dtpFromdate.Location = new System.Drawing.Point(124, 11);
             this.dtpFromdate.Name = "dtpFromdate";
             this.dtpFromdate.Size = new System.Drawing.Size(121, 29);
             this.dtpFromdate.TabIndex = 13;
@@ -247,21 +258,6 @@
             this.aLabel2.Size = new System.Drawing.Size(74, 21);
             this.aLabel2.TabIndex = 12;
             this.aLabel2.Text = "생산일자";
-            // 
-            // txtBoxingGradeDetail
-            // 
-            this.txtBoxingGradeDetail.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtBoxingGradeDetail.CodeText = null;
-            this.txtBoxingGradeDetail.DataType = Axxen.CustomControls.DataType.BoxingDetail;
-            this.txtBoxingGradeDetail.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtBoxingGradeDetail.LabelText = "등급상세";
-            this.txtBoxingGradeDetail.Location = new System.Drawing.Point(40, 126);
-            this.txtBoxingGradeDetail.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.txtBoxingGradeDetail.Name = "txtBoxingGradeDetail";
-            this.txtBoxingGradeDetail.Size = new System.Drawing.Size(469, 42);
-            this.txtBoxingGradeDetail.TabIndex = 41;
-            this.txtBoxingGradeDetail.TextBoxText = "";
-            this.txtBoxingGradeDetail.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
             // POP_PRD_004
             // 

@@ -36,8 +36,8 @@ namespace AxxenClient.Forms
         {
             InitControlUtil.SetPOPDGVDesign(dgvPalletList);
             InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "팔레트번호", "Pallet_No", true, 100, DataGridViewContentAlignment.MiddleLeft, true);
-            InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "제품", "Item_Name", true);
-            InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "등급", "Boxing_Grade_Code", true, 100, DataGridViewContentAlignment.MiddleCenter);
+            InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "제품", "Item_Name", true, 200);
+            InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "등급", "Boxing_Grade_Code", true, 200, DataGridViewContentAlignment.MiddleCenter);
             InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "수량", "CurrentQty", true, 100, DataGridViewContentAlignment.MiddleRight);
             InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "등급상세", "Grade_Detail_Code", false);
             InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "사이즈", "Size_Code", false);
@@ -80,6 +80,11 @@ namespace AxxenClient.Forms
                         MessageBox.Show("팔레트 생성에 실패하였습니다.");
                         return;
                     }
+                }
+                else
+                {
+                    service.UpdatePallet(txtPalletNo.TextBoxText, Convert.ToInt32(txtPrintPallet.TextBoxText));
+                    GetDatas();
                 }
                 PrintPallet(txtPalletNo.TextBoxText, Convert.ToInt32(txtPrintPallet.TextBoxText));
             }

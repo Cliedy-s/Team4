@@ -359,7 +359,7 @@ namespace DAC
         /// </summary>
         /// <param name="woinichar"></param>
         /// <returns></returns>
-        public List<WorkOrderVO> GetAllWorkOrder_AlloHisDetail_Item_Wc(string woinichar)
+        public List<WorkOrderVO> GetAllWorkOrder_AlloHisDetail_Item_Wc(string wocode)
         {
             using (SqlCommand comm = new SqlCommand())
             {
@@ -382,9 +382,9 @@ namespace DAC
   FROM [WorkOrder] wo 
     LEFT OUTER JOIN [WorkCenter_Master] as wcm ON wcm.[Wc_Code] = wo.[Wc_Code] 
     LEFT OUTER JOIN [Item_Master] as im ON im.[Item_Code] = wo.[Item_Code] 
-   WHERE wo.[Wo_Status]  NOT IN ('현장마감','작업지시마감') AND wcm.[Wo_Ini_Char] =@woinichar; ";
+   WHERE wo.[Wo_Status]  NOT IN ('현장마감','작업지시마감') AND wo.Wc_Code =@wocode; ";
                 comm.CommandType = CommandType.Text;
-                comm.Parameters.AddWithValue("@woinichar", woinichar);
+                comm.Parameters.AddWithValue("@wocode", wocode);
                 comm.Connection.Open();
                 SqlDataReader reader = comm.ExecuteReader();
                 List<WorkOrderVO> list = Helper.DataReaderMapToList<WorkOrderVO>(reader);

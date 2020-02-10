@@ -36,7 +36,7 @@ namespace AxxenClient.Forms
         private void InitControls()
         {
             InitControlUtil.SetPOPDGVDesign(dgvGVTo);
-            InitControlUtil.AddNewColumnToDataGridView(dgvGVTo, "코드", "GV_Code", true, 80);
+            InitControlUtil.AddNewColumnToDataGridView(dgvGVTo, "코드", "GV_Code", true, 100);
             InitControlUtil.AddNewColumnToDataGridView(dgvGVTo, "대차명", "GV_Name", true, 100, DataGridViewContentAlignment.MiddleLeft, true);
 
             InitControlUtil.SetPOPDGVDesign(dgvGVFrom);
@@ -52,16 +52,13 @@ namespace AxxenClient.Forms
         {
             GV_Current_StatusService service = new GV_Current_StatusService();
             // 해당 작업지시에서 생성한 모든 대차
-            // TODO - 조건에 맞게 변경하기
-            //dgvGVFrom.DataSource = service.GetGVCurrentStatus(wccode:GlobalUsage.WcCode, workorderno:GlobalUsage.WorkOrderNo, gvStatus:"적재");
-            List<GVStatusVO> list = service.GetGVCurrentStatus();
+            List<GVStatusVO> list = service.GetGVCurrentStatus(gvGroup: "건조그룹");
             dgvGVFrom.DataSource =
                 (from item in list
                  where (item.GV_Status == "적재" || item.GV_Status == "언로딩")
                  select item).ToList();
-            // 해당 작업장의 모든 빈대차를 가져온다.
-            //dgvGVTo.DataSource = service.GetGVCurrentStatus(wccode: GlobalUsage.WcCode, gvStatus: "빈대차");
-            dgvGVTo.DataSource = service.GetGVCurrentStatus(gvStatus: "빈대차");
+            // 소성대차의 모든 빈대차를 가져온다.
+            dgvGVTo.DataSource = service.GetGVCurrentStatus(gvStatus: "빈대차", gvGroup: "소성그룹");
         }
         private void btnMove_Click(object sender, EventArgs e)
         {

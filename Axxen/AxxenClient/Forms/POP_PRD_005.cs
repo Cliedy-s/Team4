@@ -41,7 +41,8 @@ namespace AxxenClient.Forms
             InitControlUtil.AddNewColumnToDataGridView(dgvInPallet, "팔레트번호", "Pallet_No", true, 100, DataGridViewContentAlignment.MiddleLeft, true);
             InitControlUtil.AddNewColumnToDataGridView(dgvInPallet, "제품", "Item_Name", true);
             InitControlUtil.AddNewColumnToDataGridView(dgvInPallet, "등급", "Boxing_Grade_Code", true, 100, DataGridViewContentAlignment.MiddleCenter);
-            InitControlUtil.AddNewColumnToDataGridView(dgvInPallet, "수량", "CurrentQty", true, 100, DataGridViewContentAlignment.MiddleRight);
+            InitControlUtil.AddNewColumnToDataGridView(dgvInPallet, "입고수", "In_Qty", true, 100, DataGridViewContentAlignment.MiddleRight);
+            InitControlUtil.AddNewColumnToDataGridView(dgvInPallet, "남은수", "CurrentQty", true, 100, DataGridViewContentAlignment.MiddleRight);
             InitControlUtil.AddNewColumnToDataGridView(dgvInPallet, "등급상세", "Grade_Detail_Code", false);
             InitControlUtil.AddNewColumnToDataGridView(dgvInPallet, "사이즈", "Size_Code", false);
             InitControlUtil.AddNewColumnToDataGridView(dgvInPallet, "계획날짜", "Plan_Date", false);
@@ -64,13 +65,14 @@ namespace AxxenClient.Forms
                     MessageBox.Show("팔레트 번호를 확인해주세요");
                     return;
                 }
-                bool isSuccess = service.InputPallet(GlobalUsage.UserID, GlobalUsage.WorkOrderNo, txtPalletNo.TextBoxText);
+                bool isSuccess = service.InputPallet(GlobalUsage.UserID, GlobalUsage.WorkOrderNo, txtPalletNo.TextBoxText, Convert.ToInt32(txtPalletQty.TextBoxText));
                 if (!isSuccess)
                 {
                     Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 팔레트를 입고하려했지만 작업지시번호({GlobalUsage.WorkOrderNo})와 팔레트번호({txtPalletNo.TextBoxText})가 일치하는 포장이력이 존재하지 않음");
-                    MessageBox.Show("입고에 실패하였습니다.");
+                    MessageBox.Show("포장이력이 존재하지 않은 팔레트입니다.");
                     return;
                 }
+                Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 작업지시번호({GlobalUsage.WorkOrderNo})와 팔레트번호({txtPalletNo.TextBoxText})에 대해 팔레트 {txtPalletQty.TextBoxText}개를 입고함");
                 GetDatas();
                 lblBarcodeNo.Text = "";
             }
@@ -217,7 +219,7 @@ namespace AxxenClient.Forms
         string beforecode { get; set; }
         private void lblBarcodeNo_TextChanged(object sender, EventArgs e)
         {
-            if (lblBarcodeNo.Text.Length >= 8) //TODO - 20으로 변경
+            if (lblBarcodeNo.Text.Length >= 8) //TODO - 바코드 길이로 변경
             {
                 Pallet_MasterService service = new Pallet_MasterService();
                 PalletVO item = service.GetPalletByBarcode(lblBarcodeNo.Text);

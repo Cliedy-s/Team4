@@ -46,20 +46,15 @@ namespace AxxenClient.Forms
         private void GetDatas()
         {
             GV_Current_StatusService service = new GV_Current_StatusService();
-            //dgvBoxing.DataSource = service.GetGVCurrentStatus(wocode: GlobalUsage.WcCode, ProcessName: "소성", gvStatus: "적재");
-            //dgvBoxing.DataSource = service.GetGVCurrentStatus(gvStatus: "적재");
-            dgvBoxing.DataSource = service.GetGVCurrentStatus();
+            dgvBoxing.DataSource = service.GetGVCurrentStatus(gvStatus: "적재", workorderno: GlobalUsage.WorkOrderNo);
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
-                GV_Current_StatusService service = new GV_Current_StatusService();
-                //dgvBoxing.DataSource = service.GetGVCurrentStatus(wocode:GlobalUsage.WcCode, ProcessName:"소성", gvName:txtSearch.TextBoxText);
-                //dgvBoxing.DataSource = service.GetGVCurrentStatus(gvStatus: "적재", gvName: txtSearch.TextBoxText);
-                dgvBoxing.DataSource = service.GetGVCurrentStatus(gvName: txtSearch.TextBoxText);
+            GV_Current_StatusService service = new GV_Current_StatusService();
+            dgvBoxing.DataSource = service.GetGVCurrentStatus(gvStatus: "적재", gvName: txtSearch.TextBoxText, workorderno: GlobalUsage.WorkOrderNo);
         }
         private void btnUnload_Click(object sender, EventArgs e)
         {
-
             if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
             {
                 if (dgvBoxing.SelectedRows.Count < 1)
@@ -76,7 +71,7 @@ namespace AxxenClient.Forms
                 }
                 else
                 {
-                    Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 대차({dgvBoxing.SelectedRows[0].Cells[0].Value.ToString()}) 언로딩에 성공함");
+                    Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 대차({dgvBoxing.SelectedRows[0].Cells[0].Value.ToString()}) 언로딩에 실패함");
                     MessageBox.Show("언로딩에 실패하였습니다.");
                 }
             }
