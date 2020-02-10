@@ -55,8 +55,8 @@
             // 
             // aDateTimePickerSearch2
             // 
-            this.aDateTimePickerSearch2.ADateTimePickerValue1 = new System.DateTime(2020, 1, 24, 15, 41, 25, 607);
-            this.aDateTimePickerSearch2.ADateTimePickerValue2 = new System.DateTime(2020, 1, 31, 15, 41, 25, 607);
+            this.aDateTimePickerSearch2.ADateTimePickerValue1 = new System.DateTime(2020, 2, 3, 12, 9, 7, 224);
+            this.aDateTimePickerSearch2.ADateTimePickerValue2 = new System.DateTime(2020, 2, 10, 12, 9, 7, 224);
             this.aDateTimePickerSearch2.ButtonText = "조회";
             this.aDateTimePickerSearch2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aDateTimePickerSearch2.Location = new System.Drawing.Point(100, 23);
@@ -85,6 +85,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1148, 700);
+            this.ControlBox = false;
             this.Margin = new System.Windows.Forms.Padding(4, 7, 4, 7);
             this.Name = "PRM_PRF_008";
             this.Text = "비가동 등록";
