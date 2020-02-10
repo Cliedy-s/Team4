@@ -73,24 +73,23 @@ namespace Axxen
             if (aTextBox1.Text.Length>0 && aTextBox2.Text.Length > 0 && placeHolderTextBox1.Text.Length>0) 
             {
                 NopHistoryVO nop = new NopHistoryVO();
-                nop.Nop_Date = Convert.ToDateTime(aDateTimePicker1.Text);
-                nop.Nop_Happentime = Convert.ToDateTime(aDateTimePicker2.Text);
-                nop.Nop_Canceltime = Convert.ToDateTime(aDateTimePicker3.Text);
                 nop.Wc_Code = aComboBox1.SelectedValue.ToString();
                 nop.Nop_Mi_Code = aComboBox2.SelectedValue.ToString();
                 nop.Nop_Type = placeHolderTextBox1.Text;
                 nop.Nop_Time = nudusl.Value;
                 nop.Remark = txtRemark.Text;
-                nop.Ins_Date = DateTime.Now;
                 nop.Ins_Emp = lblManager.Text;
 
                 if (Nop_HistoryService.InsertNop_History(nop))
                 {
-                    MessageBox.Show("성공");
+                    MessageBox.Show("비가동 등록 성공","성공",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("실패");
+                    MessageBox.Show("비가동 등록 실패","실패",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    this.Close();
                 }
             }
             else
