@@ -32,10 +32,10 @@ namespace Service
             return dac.UPDATE_Prd_Qty(Prd_Qty, Num, Wo_Status, Workorderno, Item_Code);
         }
 
-        public bool UPDATE_Grade_Detail_Name(string Workorderno,string Pallet_No, string Grade_Detail_Name) //PRM_PRF_002_1 생산수량 업데이트
+        public bool UPDATE_Grade_Detail_Name(string Grade_Detail_Name, string Grade_Detail_Code) //PRM_PRF_002_1 등급상세명 업데이트
         {
             WorkOrderDAC dac = new WorkOrderDAC();
-            return dac.UPDATE_Grade_Detail_Name(Workorderno, Pallet_No, Grade_Detail_Name);
+            return dac.UPDATE_Grade_Detail_Name(Grade_Detail_Name, Grade_Detail_Code);
         }
 
         public bool UpdatePalletUse(List<string> chkPalletNo) //PRM_PRF_002 팔렛트 마감 업데이트
@@ -66,10 +66,32 @@ namespace Service
         /// </summary>
         /// <param name="order">작업지시입력정보VO</param>
         /// <returns></returns>
-        public bool InsertPPSWorkorder(WorkOrderAllVO order)
+        public bool InsertPPSWorkorder(WorkOrderAllVO order,string user)
         {
             WorkOrderDAC dac = new WorkOrderDAC();
-            return dac.InsertPPSWorkorder(order);
+            return dac.InsertPPSWorkorder(order,user);
+        }
+
+        /// <summary>
+        /// PPS_SCH_001 생산의뢰삭제
+        /// </summary>
+        /// <param name="woreqno"></param>
+        /// <returns></returns>
+        public bool DeletePPSWoReq(string woreqno)
+        {
+            WorkOrderDAC dac = new WorkOrderDAC();
+            return dac.DeletePPSWoReq(woreqno);
+        }
+
+        /// <summary>
+        /// PPS_SCH_001 작업지시삭제
+        /// </summary>
+        /// <param name="workno"></param>
+        /// <returns></returns>
+        public bool DeletePPSWorkorder(string workno)
+        {
+            WorkOrderDAC dac = new WorkOrderDAC();
+            return dac.DeletePPSWorkorder(workno);
         }
 
         /// <summary>

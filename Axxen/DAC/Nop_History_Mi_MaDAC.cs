@@ -16,10 +16,10 @@ namespace DAC
             using (SqlCommand comm = new SqlCommand())
             {
                 comm.Connection = new SqlConnection(Connstr);
-                comm.CommandText = "select noh.Nop_Date,noh.Wc_Code,wcm.Wc_Name,noma.Nop_Ma_Name,nomi.Nop_Mi_Name,noh.Nop_Happentime,Nop_Canceltime,Nop_Time,noh.Remark,Nop_Type " +
-                    "from Nop_History noh INNER JOIN Nop_Mi_Master nomi ON noh.Nop_Mi_Code = nomi.Nop_Mi_Code " +
-                    "INNER JOIN Nop_Ma_Master noma ON nomi.Nop_Ma_Code = noma.Nop_Ma_Code " +
-                    "INNER JOIN WorkCenter_Master wcm ON noh.Wc_Code = wcm.Wc_Code";
+                comm.CommandText = @"select Nop_Seq,noh.Nop_Date,noh.Wc_Code,wcm.Wc_Name,noma.Nop_Ma_Name,nomi.Nop_Mi_Name,noh.Nop_Happentime,Nop_Canceltime,Nop_Time,noh.Remark,Nop_Type
+                    from Nop_History noh INNER JOIN Nop_Mi_Master nomi ON noh.Nop_Mi_Code = nomi.Nop_Mi_Code
+                    INNER JOIN Nop_Ma_Master noma ON nomi.Nop_Ma_Code = noma.Nop_Ma_Code
+                    INNER JOIN WorkCenter_Master wcm ON noh.Wc_Code = wcm.Wc_Code";
                 comm.CommandType = CommandType.Text;
 
                 comm.Connection.Open();

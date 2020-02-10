@@ -25,11 +25,11 @@ namespace Axxen
 
             #region 그리드뷰
             DatagridviewDesigns.SetDesign(dgvMainGrid);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "생산년도", "YYYY", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "레벨코드", "Level_Code", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "레벨명", "Level_Name", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "차수", "Prd_Order", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "원자재LOT번호", "Mat_LotNo", true, 100, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "생산년도", "YYYY", true, 100, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "레벨코드", "Level_Code", true, 100, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "레벨명", "Level_Name", true, 100, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "차수", "Prd_Order", true, 100, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "원자재LOT번호", "Mat_LotNo", true, 100, default, true);
             #endregion
 
             mlmilm = mlmilmservice.GetAllMatLotMaster_ItemLevelMaster(); //전체 조회

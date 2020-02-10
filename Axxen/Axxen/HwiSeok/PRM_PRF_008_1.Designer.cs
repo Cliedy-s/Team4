@@ -32,9 +32,6 @@
             this.btnCencle = new Axxen.CustomControls.AButton();
             this.lblDay = new Axxen.CustomControls.ALabel();
             this.btnSave = new Axxen.CustomControls.AButton();
-            this.aPanel19 = new Axxen.CustomControls.APanel();
-            this.aLabel8 = new Axxen.CustomControls.ALabel();
-            this.aPanel20 = new Axxen.CustomControls.APanel();
             this.aPanel10 = new Axxen.CustomControls.APanel();
             this.aLabel3 = new Axxen.CustomControls.ALabel();
             this.aPanel13 = new Axxen.CustomControls.APanel();
@@ -60,19 +57,10 @@
             this.aLabel7 = new Axxen.CustomControls.ALabel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.aLabel9 = new Axxen.CustomControls.ALabel();
-            this.aPanel7 = new Axxen.CustomControls.APanel();
-            this.aLabel2 = new Axxen.CustomControls.ALabel();
-            this.aPanel6 = new Axxen.CustomControls.APanel();
-            this.aDateTimePicker2 = new Axxen.CustomControls.ADateTimePicker();
             this.aPanel4 = new Axxen.CustomControls.APanel();
             this.aLabel4 = new Axxen.CustomControls.ALabel();
             this.aPanel2 = new Axxen.CustomControls.APanel();
             this.aComboBox1 = new Axxen.CustomControls.AComboBox();
-            this.aPanel3 = new Axxen.CustomControls.APanel();
-            this.aDateTimePicker3 = new Axxen.CustomControls.ADateTimePicker();
-            this.aPanel5 = new Axxen.CustomControls.APanel();
-            this.aLabel1 = new Axxen.CustomControls.ALabel();
-            this.aDateTimePicker1 = new Axxen.CustomControls.ADateTimePicker();
             this.aPanel8 = new Axxen.CustomControls.APanel();
             this.aLabel10 = new Axxen.CustomControls.ALabel();
             this.aPanel17 = new Axxen.CustomControls.APanel();
@@ -80,7 +68,6 @@
             this.aPanel18 = new Axxen.CustomControls.APanel();
             this.aLabel11 = new Axxen.CustomControls.ALabel();
             this.aPanel21 = new Axxen.CustomControls.APanel();
-            this.aPanel19.SuspendLayout();
             this.aPanel10.SuspendLayout();
             this.aPanel13.SuspendLayout();
             this.aPanel14.SuspendLayout();
@@ -94,12 +81,8 @@
             this.aPanel9.SuspendLayout();
             this.aPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.aPanel7.SuspendLayout();
-            this.aPanel6.SuspendLayout();
             this.aPanel4.SuspendLayout();
             this.aPanel2.SuspendLayout();
-            this.aPanel3.SuspendLayout();
-            this.aPanel5.SuspendLayout();
             this.aPanel8.SuspendLayout();
             this.aPanel17.SuspendLayout();
             this.aPanel18.SuspendLayout();
@@ -141,41 +124,12 @@
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // aPanel19
-            // 
-            this.aPanel19.BackColor = System.Drawing.SystemColors.Info;
-            this.aPanel19.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.aPanel19.Controls.Add(this.aLabel8);
-            this.aPanel19.Location = new System.Drawing.Point(12, 85);
-            this.aPanel19.Name = "aPanel19";
-            this.aPanel19.Size = new System.Drawing.Size(140, 35);
-            this.aPanel19.TabIndex = 182;
-            // 
-            // aLabel8
-            // 
-            this.aLabel8.AutoSize = true;
-            this.aLabel8.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aLabel8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aLabel8.Location = new System.Drawing.Point(41, 5);
-            this.aLabel8.Name = "aLabel8";
-            this.aLabel8.Size = new System.Drawing.Size(60, 17);
-            this.aLabel8.TabIndex = 55;
-            this.aLabel8.Text = "발생일자";
-            // 
-            // aPanel20
-            // 
-            this.aPanel20.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.aPanel20.Location = new System.Drawing.Point(153, 84);
-            this.aPanel20.Name = "aPanel20";
-            this.aPanel20.Size = new System.Drawing.Size(170, 35);
-            this.aPanel20.TabIndex = 183;
-            // 
             // aPanel10
             // 
             this.aPanel10.BackColor = System.Drawing.SystemColors.Info;
             this.aPanel10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.aPanel10.Controls.Add(this.aLabel3);
-            this.aPanel10.Location = new System.Drawing.Point(12, 331);
+            this.aPanel10.Location = new System.Drawing.Point(12, 228);
             this.aPanel10.Name = "aPanel10";
             this.aPanel10.Size = new System.Drawing.Size(140, 35);
             this.aPanel10.TabIndex = 180;
@@ -195,7 +149,7 @@
             // 
             this.aPanel13.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.aPanel13.Controls.Add(this.aPanel14);
-            this.aPanel13.Location = new System.Drawing.Point(153, 330);
+            this.aPanel13.Location = new System.Drawing.Point(153, 227);
             this.aPanel13.Name = "aPanel13";
             this.aPanel13.Size = new System.Drawing.Size(170, 35);
             this.aPanel13.TabIndex = 181;
@@ -225,7 +179,7 @@
             // 
             this.aPanel15.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.aPanel15.Controls.Add(this.aTextBox2);
-            this.aPanel15.Location = new System.Drawing.Point(153, 295);
+            this.aPanel15.Location = new System.Drawing.Point(153, 192);
             this.aPanel15.Name = "aPanel15";
             this.aPanel15.Size = new System.Drawing.Size(170, 35);
             this.aPanel15.TabIndex = 179;
@@ -258,7 +212,7 @@
             this.aPanel16.BackColor = System.Drawing.SystemColors.Info;
             this.aPanel16.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.aPanel16.Controls.Add(this.aLabel12);
-            this.aPanel16.Location = new System.Drawing.Point(12, 296);
+            this.aPanel16.Location = new System.Drawing.Point(12, 193);
             this.aPanel16.Name = "aPanel16";
             this.aPanel16.Size = new System.Drawing.Size(140, 35);
             this.aPanel16.TabIndex = 178;
@@ -278,7 +232,7 @@
             // 
             this.aPanel29.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.aPanel29.Controls.Add(this.txtRemark);
-            this.aPanel29.Location = new System.Drawing.Point(153, 400);
+            this.aPanel29.Location = new System.Drawing.Point(153, 297);
             this.aPanel29.Name = "aPanel29";
             this.aPanel29.Size = new System.Drawing.Size(348, 82);
             this.aPanel29.TabIndex = 175;
@@ -301,7 +255,7 @@
             this.aPanel31.BackColor = System.Drawing.SystemColors.Info;
             this.aPanel31.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.aPanel31.Controls.Add(this.aLabel16);
-            this.aPanel31.Location = new System.Drawing.Point(12, 399);
+            this.aPanel31.Location = new System.Drawing.Point(12, 296);
             this.aPanel31.Name = "aPanel31";
             this.aPanel31.Size = new System.Drawing.Size(141, 35);
             this.aPanel31.TabIndex = 174;
@@ -339,7 +293,7 @@
             // 
             this.aPanel11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.aPanel11.Controls.Add(this.nudusl);
-            this.aPanel11.Location = new System.Drawing.Point(153, 365);
+            this.aPanel11.Location = new System.Drawing.Point(153, 262);
             this.aPanel11.Name = "aPanel11";
             this.aPanel11.Size = new System.Drawing.Size(170, 35);
             this.aPanel11.TabIndex = 167;
@@ -362,7 +316,7 @@
             this.aPanel12.BackColor = System.Drawing.SystemColors.Info;
             this.aPanel12.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.aPanel12.Controls.Add(this.aLabel6);
-            this.aPanel12.Location = new System.Drawing.Point(12, 366);
+            this.aPanel12.Location = new System.Drawing.Point(12, 263);
             this.aPanel12.Name = "aPanel12";
             this.aPanel12.Size = new System.Drawing.Size(140, 35);
             this.aPanel12.TabIndex = 166;
@@ -385,7 +339,7 @@
             this.aPanel9.Controls.Add(this.btnCencle);
             this.aPanel9.Controls.Add(this.btnSave);
             this.aPanel9.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.aPanel9.Location = new System.Drawing.Point(0, 488);
+            this.aPanel9.Location = new System.Drawing.Point(0, 396);
             this.aPanel9.Name = "aPanel9";
             this.aPanel9.Size = new System.Drawing.Size(510, 41);
             this.aPanel9.TabIndex = 158;
@@ -434,51 +388,12 @@
             this.aLabel9.TabIndex = 35;
             this.aLabel9.Text = "비가동 등록";
             // 
-            // aPanel7
-            // 
-            this.aPanel7.BackColor = System.Drawing.SystemColors.Info;
-            this.aPanel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.aPanel7.Controls.Add(this.aLabel2);
-            this.aPanel7.Location = new System.Drawing.Point(12, 120);
-            this.aPanel7.Name = "aPanel7";
-            this.aPanel7.Size = new System.Drawing.Size(140, 35);
-            this.aPanel7.TabIndex = 164;
-            // 
-            // aLabel2
-            // 
-            this.aLabel2.AutoSize = true;
-            this.aLabel2.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aLabel2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aLabel2.Location = new System.Drawing.Point(41, 5);
-            this.aLabel2.Name = "aLabel2";
-            this.aLabel2.Size = new System.Drawing.Size(60, 17);
-            this.aLabel2.TabIndex = 53;
-            this.aLabel2.Text = "발생일시";
-            // 
-            // aPanel6
-            // 
-            this.aPanel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.aPanel6.Controls.Add(this.aDateTimePicker2);
-            this.aPanel6.Location = new System.Drawing.Point(153, 119);
-            this.aPanel6.Name = "aPanel6";
-            this.aPanel6.Size = new System.Drawing.Size(170, 35);
-            this.aPanel6.TabIndex = 165;
-            // 
-            // aDateTimePicker2
-            // 
-            this.aDateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.aDateTimePicker2.Location = new System.Drawing.Point(4, 4);
-            this.aDateTimePicker2.Name = "aDateTimePicker2";
-            this.aDateTimePicker2.ShowUpDown = true;
-            this.aDateTimePicker2.Size = new System.Drawing.Size(160, 23);
-            this.aDateTimePicker2.TabIndex = 1;
-            // 
             // aPanel4
             // 
             this.aPanel4.BackColor = System.Drawing.SystemColors.Info;
             this.aPanel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.aPanel4.Controls.Add(this.aLabel4);
-            this.aPanel4.Location = new System.Drawing.Point(12, 190);
+            this.aPanel4.Location = new System.Drawing.Point(12, 87);
             this.aPanel4.Name = "aPanel4";
             this.aPanel4.Size = new System.Drawing.Size(140, 35);
             this.aPanel4.TabIndex = 162;
@@ -498,7 +413,7 @@
             // 
             this.aPanel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.aPanel2.Controls.Add(this.aComboBox1);
-            this.aPanel2.Location = new System.Drawing.Point(153, 189);
+            this.aPanel2.Location = new System.Drawing.Point(153, 86);
             this.aPanel2.Name = "aPanel2";
             this.aPanel2.Size = new System.Drawing.Size(170, 35);
             this.aPanel2.TabIndex = 163;
@@ -513,58 +428,12 @@
             this.aComboBox1.TabIndex = 155;
             this.aComboBox1.SelectedIndexChanged += new System.EventHandler(this.aComboBox1_SelectedIndexChanged);
             // 
-            // aPanel3
-            // 
-            this.aPanel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.aPanel3.Controls.Add(this.aDateTimePicker3);
-            this.aPanel3.Location = new System.Drawing.Point(153, 154);
-            this.aPanel3.Name = "aPanel3";
-            this.aPanel3.Size = new System.Drawing.Size(170, 35);
-            this.aPanel3.TabIndex = 161;
-            // 
-            // aDateTimePicker3
-            // 
-            this.aDateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.aDateTimePicker3.Location = new System.Drawing.Point(4, 4);
-            this.aDateTimePicker3.Name = "aDateTimePicker3";
-            this.aDateTimePicker3.Size = new System.Drawing.Size(160, 23);
-            this.aDateTimePicker3.TabIndex = 1;
-            // 
-            // aPanel5
-            // 
-            this.aPanel5.BackColor = System.Drawing.SystemColors.Info;
-            this.aPanel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.aPanel5.Controls.Add(this.aLabel1);
-            this.aPanel5.Location = new System.Drawing.Point(12, 155);
-            this.aPanel5.Name = "aPanel5";
-            this.aPanel5.Size = new System.Drawing.Size(140, 35);
-            this.aPanel5.TabIndex = 160;
-            // 
-            // aLabel1
-            // 
-            this.aLabel1.AutoSize = true;
-            this.aLabel1.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aLabel1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aLabel1.Location = new System.Drawing.Point(41, 8);
-            this.aLabel1.Name = "aLabel1";
-            this.aLabel1.Size = new System.Drawing.Size(60, 17);
-            this.aLabel1.TabIndex = 54;
-            this.aLabel1.Text = "해제일시";
-            // 
-            // aDateTimePicker1
-            // 
-            this.aDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.aDateTimePicker1.Location = new System.Drawing.Point(158, 92);
-            this.aDateTimePicker1.Name = "aDateTimePicker1";
-            this.aDateTimePicker1.Size = new System.Drawing.Size(161, 23);
-            this.aDateTimePicker1.TabIndex = 0;
-            // 
             // aPanel8
             // 
             this.aPanel8.BackColor = System.Drawing.SystemColors.Info;
             this.aPanel8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.aPanel8.Controls.Add(this.aLabel10);
-            this.aPanel8.Location = new System.Drawing.Point(12, 225);
+            this.aPanel8.Location = new System.Drawing.Point(12, 122);
             this.aPanel8.Name = "aPanel8";
             this.aPanel8.Size = new System.Drawing.Size(140, 35);
             this.aPanel8.TabIndex = 164;
@@ -584,7 +453,7 @@
             // 
             this.aPanel17.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.aPanel17.Controls.Add(this.aTextBox1);
-            this.aPanel17.Location = new System.Drawing.Point(153, 224);
+            this.aPanel17.Location = new System.Drawing.Point(153, 121);
             this.aPanel17.Name = "aPanel17";
             this.aPanel17.Size = new System.Drawing.Size(170, 35);
             this.aPanel17.TabIndex = 165;
@@ -607,7 +476,7 @@
             this.aPanel18.BackColor = System.Drawing.SystemColors.Info;
             this.aPanel18.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.aPanel18.Controls.Add(this.aLabel11);
-            this.aPanel18.Location = new System.Drawing.Point(12, 261);
+            this.aPanel18.Location = new System.Drawing.Point(12, 158);
             this.aPanel18.Name = "aPanel18";
             this.aPanel18.Size = new System.Drawing.Size(140, 35);
             this.aPanel18.TabIndex = 166;
@@ -627,7 +496,7 @@
             // 
             this.aPanel21.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.aPanel21.Controls.Add(this.aComboBox2);
-            this.aPanel21.Location = new System.Drawing.Point(153, 260);
+            this.aPanel21.Location = new System.Drawing.Point(153, 157);
             this.aPanel21.Name = "aPanel21";
             this.aPanel21.Size = new System.Drawing.Size(170, 35);
             this.aPanel21.TabIndex = 167;
@@ -635,14 +504,11 @@
             // PRM_PRF_008_1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.ClientSize = new System.Drawing.Size(510, 529);
+            this.ClientSize = new System.Drawing.Size(510, 437);
             this.Controls.Add(this.aPanel18);
             this.Controls.Add(this.aPanel8);
             this.Controls.Add(this.aPanel21);
-            this.Controls.Add(this.aDateTimePicker1);
             this.Controls.Add(this.aPanel17);
-            this.Controls.Add(this.aPanel19);
-            this.Controls.Add(this.aPanel20);
             this.Controls.Add(this.aPanel10);
             this.Controls.Add(this.aPanel13);
             this.Controls.Add(this.aPanel15);
@@ -655,17 +521,11 @@
             this.Controls.Add(this.aPanel12);
             this.Controls.Add(this.aPanel9);
             this.Controls.Add(this.aPanel1);
-            this.Controls.Add(this.aPanel7);
-            this.Controls.Add(this.aPanel6);
             this.Controls.Add(this.aPanel4);
             this.Controls.Add(this.aPanel2);
-            this.Controls.Add(this.aPanel3);
-            this.Controls.Add(this.aPanel5);
             this.Name = "PRM_PRF_008_1";
             this.Text = "비가동 등록";
             this.Load += new System.EventHandler(this.PRM_PRF_008_1_Load);
-            this.aPanel19.ResumeLayout(false);
-            this.aPanel19.PerformLayout();
             this.aPanel10.ResumeLayout(false);
             this.aPanel10.PerformLayout();
             this.aPanel13.ResumeLayout(false);
@@ -687,15 +547,9 @@
             this.aPanel1.ResumeLayout(false);
             this.aPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.aPanel7.ResumeLayout(false);
-            this.aPanel7.PerformLayout();
-            this.aPanel6.ResumeLayout(false);
             this.aPanel4.ResumeLayout(false);
             this.aPanel4.PerformLayout();
             this.aPanel2.ResumeLayout(false);
-            this.aPanel3.ResumeLayout(false);
-            this.aPanel5.ResumeLayout(false);
-            this.aPanel5.PerformLayout();
             this.aPanel8.ResumeLayout(false);
             this.aPanel8.PerformLayout();
             this.aPanel17.ResumeLayout(false);
@@ -713,9 +567,6 @@
         private CustomControls.AButton btnCencle;
         private CustomControls.ALabel lblDay;
         private CustomControls.AButton btnSave;
-        private CustomControls.APanel aPanel19;
-        private CustomControls.ALabel aLabel8;
-        private CustomControls.APanel aPanel20;
         private CustomControls.APanel aPanel10;
         private CustomControls.ALabel aLabel3;
         private CustomControls.APanel aPanel13;
@@ -740,19 +591,10 @@
         private CustomControls.ALabel aLabel7;
         private System.Windows.Forms.PictureBox pictureBox2;
         private CustomControls.ALabel aLabel9;
-        private CustomControls.APanel aPanel7;
-        private CustomControls.ALabel aLabel2;
-        private CustomControls.APanel aPanel6;
-        private CustomControls.ADateTimePicker aDateTimePicker2;
         private CustomControls.APanel aPanel4;
         private CustomControls.ALabel aLabel4;
         private CustomControls.APanel aPanel2;
         private CustomControls.AComboBox aComboBox1;
-        private CustomControls.APanel aPanel3;
-        private CustomControls.ADateTimePicker aDateTimePicker3;
-        private CustomControls.APanel aPanel5;
-        private CustomControls.ALabel aLabel1;
-        private CustomControls.ADateTimePicker aDateTimePicker1;
         private CustomControls.ATextBox aTextBox2;
         private CustomControls.APanel aPanel8;
         private CustomControls.ALabel aLabel10;
