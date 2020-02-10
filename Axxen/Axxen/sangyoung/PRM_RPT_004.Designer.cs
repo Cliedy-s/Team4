@@ -110,6 +110,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1148, 700);
+            this.ControlBox = false;
             this.Controls.Add(this.toolStrip1);
             this.Name = "PRM_RPT_004";
             this.Activated += new System.EventHandler(this.PRM_RPT_004_Activated);
