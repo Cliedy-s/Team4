@@ -24,6 +24,7 @@ namespace Axxen
         List<WorkOrder_WC_ItemVO> workList;
         List<WorkOrder_WC_ItemVO> addlist = new List<WorkOrder_WC_ItemVO>();
         Wo_ReqService service = new Wo_ReqService();
+        WorkOrder_Service workservice = new WorkOrder_Service();
         PPS_SCH_001_Insert frm;
 
         public PPS_SCH_001()
@@ -40,6 +41,7 @@ namespace Axxen
             workList = service.GetWorkOrder();
             dgvMainGrid.DataSource = reqList;
 
+            btnPrFinish.Focus();
             dgvMainGrid.CellContentClick += DgvMainGrid_CellContentClick;
         }
 
@@ -60,6 +62,7 @@ namespace Axxen
         private void RefreshFormShow(object sender, EventArgs e)
         {
             reqList = service.GetAllWoReq();
+            workList = service.GetWorkOrder();
             dgvMainGrid.DataSource = reqList;
         }
 
@@ -102,6 +105,8 @@ namespace Axxen
             chk.FalseValue = false;
             chk.Width = 50;
             dgvMainGrid.Columns.Insert(0, chk);
+
+
         }
 
         private void SubDataLoad()
@@ -120,6 +125,8 @@ namespace Axxen
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "산출수량", "Out_Qty_Main", true, 60, DataGridViewContentAlignment.MiddleRight);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "생산수량", "Prd_Qty", true, 60, DataGridViewContentAlignment.MiddleRight);
             DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvSubGrid, "비고", "Remark", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+
+            
         }
 
         private void BtnPrFinish_Click(object sender, EventArgs e)
@@ -280,17 +287,54 @@ namespace Axxen
         {
             ((MainForm)this.MdiParent).InsertFormEvent += new System.EventHandler(this.InsertFormShow); //추가
             ((MainForm)this.MdiParent).RefreshFormEvent += new EventHandler(this.RefreshFormShow); //새로고침
+            ((MainForm)this.MdiParent).MyDeleteEvent += new EventHandler(this.DeleteFormShow); //삭제
             ToolStripManager.Merge(toolStrip1, ((MainForm)this.MdiParent).toolStrip1); //저장버튼 추가
             toolStrip1.Visible = false;
+
+            dgvMainGrid.ClearSelection();
+            dgvSubGrid.ClearSelection();
+            btnPrFinish.Focus();
         }
 
+       
         private void PPS_SCH_001_Deactivate(object sender, EventArgs e)
         {
             ((MainForm)this.MdiParent).InsertFormEvent -= new System.EventHandler(this.InsertFormShow);
             ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow);
+            ((MainForm)this.MdiParent).MyDeleteEvent -= new EventHandler(this.DeleteFormShow); 
             ToolStripManager.RevertMerge(((MainForm)this.MdiParent).toolStrip1, toolStrip1); //저장버튼 제거
             reportList.Clear();
         }
+
+        private void DeleteFormShow(object sender, EventArgs e)
+        {
+            if(dgvMainGrid.Focus())
+            {
+                string woreqno = dgvMainGrid[2, dgvMainGrid.CurrentRow.Index].Value.ToString();
+                bool result = workservice.DeletePPSWoReq(woreqno);
+                if(result)
+                {
+                    MessageBox.Show("Success");
+                    dgvSubGrid.DataSource = null;
+                }
+                else
+                    MessageBox.Show("Fail");
+            }
+            else if(dgvSubGrid.Focus())
+            {
+                string workno = dgvSubGrid[3, dgvSubGrid.CurrentRow.Index].Value.ToString();
+                bool result = workservice.DeletePPSWorkorder(workno);
+                if(result)
+                    MessageBox.Show("Success");
+                else
+                    MessageBox.Show("Fail");
+            }
+            else
+            {
+                MessageBox.Show("삭제할 항목을 선택해 주세요.","생산의뢰관리",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+            }
+        }
+
 
         /// <summary>
         /// 작업지시생성 - 저장버튼클릭
@@ -303,22 +347,21 @@ namespace Axxen
             WorkOrderAllVO order = new WorkOrderAllVO();
             order.Req_Seq = Convert.ToInt32(frm.txtSeq.Text);
             order.Wo_Req_No = frm.txtReqNo.Text;
-            order.Workorderno = frm.txtWoorderno.Text;
             order.Wo_Status = "생산대기";
             order.Wc_Code = frm.cboWorkCenter.SelectedValue.ToString();
             order.Remark = frm.txtRemark.Text;
             order.Plan_Qty = Convert.ToInt32(frm.txtPlanQty.Text);
-            order.Out_Qty_Main = Convert.ToInt32(frm.txtOutQty.Text);
-            order.In_Qty_Main = Convert.ToInt32(frm.txtInQty.Text);
-            order.Prd_Qty = Convert.ToInt32(frm.txtPrdQty.Text);
-            order.Prd_Date = frm.dtpDate.Value;
+            order.Out_Qty_Main =0;
+            order.In_Qty_Main = 0;
+            order.Prd_Qty =0;
+            order.Plan_Date = frm.dtpDate.Value;
             order.Item_Code = frm.txtItemCode.Text;
             order.Plan_Unit = frm.txtPlanUnit.Text;
-
+            order.Prd_Unit = frm.txtPlanUnit.Text;
             try
             {
-                WorkOrder_Service service = new WorkOrder_Service();
-                bool result = service.InsertPPSWorkorder(order);
+                
+                bool result = workservice.InsertPPSWorkorder(order,UserInfo.User_ID);
                 if (result)
                 {
                     MessageBox.Show("Success");

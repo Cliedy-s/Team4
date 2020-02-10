@@ -43,10 +43,6 @@ namespace Axxen.sangyoung
 
         private void InitControl()
         {
-            txtInQty.Text = "0";
-            txtPrdQty.Text = "0";
-            txtOutQty.Text = "0";
-
             txtSeq.Text = seq;
             txtReqNo.Text = reqno;
             txtItemCode.Text = code;
@@ -58,33 +54,11 @@ namespace Axxen.sangyoung
             txtItemName.Enabled = false;
             txtItemCode.Enabled = false;
             txtPlanQty.Enabled = false;
-            txtInQty.Enabled = false;
-            txtOutQty.Enabled = false;
-            txtPrdQty.Enabled = false;
 
             cboWorkCenter.DataSource = namelist;
             cboWorkCenter.DisplayMember = "Wc_Name";
             cboWorkCenter.ValueMember = "Wc_Code";
             cboWorkCenter.Text = "==선택==";
-        }
-
-        private void BtnOK_Click(object sender, EventArgs e)
-        {
-            WorkOrderAllVO work = new WorkOrderAllVO();
-            work.Req_Seq = Convert.ToInt32(txtSeq.Text);
-            work.Wo_Req_No = txtReqNo.Text;
-            work.Workorderno = txtWoorderno.Text;
-            work.Wo_Status = "생산대기";
-            work.Wc_Code = cboWorkCenter.SelectedValue.ToString();
-            work.Remark = txtRemark.Text;
-            work.Plan_Qty = Convert.ToInt32(txtPlanQty.Text);
-            work.Out_Qty_Main = Convert.ToInt32(txtOutQty.Text);
-            work.In_Qty_Main = Convert.ToInt32(txtInQty.Text);
-            work.Prd_Qty = Convert.ToInt32(txtPrdQty.Text);
-            work.Prd_Date = dtpDate.Value;
-            work.Item_Code = txtItemCode.Text;
-            work.Plan_Unit = txtPlanUnit.Text;
-
         }
     }
 }
