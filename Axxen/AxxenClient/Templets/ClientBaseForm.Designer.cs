@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientBaseForm));
             this.panBottom = new Axxen.CustomControls.APanel();
             this.btnNoActive = new Axxen.CustomControls.AButton();
             this.btnConfig = new Axxen.CustomControls.AButton();
@@ -199,12 +200,11 @@
             // 
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1210, 717);
-            this.ControlBox = false;
             this.Controls.Add(this.panBottom);
             this.Controls.Add(this.aPanel2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Name = "ClientBaseForm";
-            this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ClientBaseForm_FormClosing);
             this.Load += new System.EventHandler(this.ClientBaseForm_Load);

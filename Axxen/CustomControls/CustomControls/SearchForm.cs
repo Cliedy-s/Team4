@@ -25,7 +25,6 @@ namespace Axxen.CustomControls
         }
         private void SearchForm_Load(object sender, EventArgs e)
         {
-            //TODO - ( SearchForm ) 검색 결과 출력하기
             switch (type)
             {
                 case DataType.Users:

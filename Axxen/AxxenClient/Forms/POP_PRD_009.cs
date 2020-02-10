@@ -88,10 +88,15 @@ namespace AxxenClient.Forms
             item.Prd_Unit = lblUnit.Text;
             if (service.InsertWorkOrder(item))
             {
+
+                Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 생산지시({lblReqNo.Text})에 관한 작업장({GlobalUsage.WcCode})의 작업지시를 {now.ToString("yyyy-MM-dd HH:mm:ss")}에 생성하였음");
                 this.Close();
-                return;
             }
-            MessageBox.Show("작업지시 생성에 실패하였습니다.");
+            else
+            {
+                Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 생산지시({lblReqNo.Text})에 관한 작업장({GlobalUsage.WcCode})의 작업지시를 {now.ToString("yyyy-MM-dd HH:mm:ss")}에 생성하려했으나 실패하였음");
+                MessageBox.Show("작업지시 생성에 실패하였습니다.");
+            }
 
         }
     }

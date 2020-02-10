@@ -20,6 +20,8 @@ namespace VO
         public DateTime? Prd_Starttime { get; set; }     // 작업시작시간
         public DateTime? Prd_Endtime { get; set; }      // 작업종료시간
         public string Wo_Ini_Char { get; set; }           //  작업지시이니셜
+        public int Line_Per_Qty { get; set; }               // 성형 줄 수
+        public int Shot_Per_Qty { get; set; }           // 포장 샷당 pcs수
     }
     public class WorkOrderNewVO
     { 

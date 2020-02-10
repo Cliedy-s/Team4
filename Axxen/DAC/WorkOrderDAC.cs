@@ -312,11 +312,12 @@ namespace DAC
 		,wo.[Prd_Starttime] 
 		,wo.[Prd_Endtime] 
 		,wcm.[Wo_Ini_Char] 
+		,im.Line_Per_Qty 
+        ,im.Shot_Per_Qty 
   FROM [WorkOrder] wo 
     LEFT OUTER JOIN [WorkCenter_Master] as wcm ON wcm.[Wc_Code] = wo.[Wc_Code] 
     LEFT OUTER JOIN [Item_Master] as im ON im.[Item_Code] = wo.[Item_Code] 
-   WHERE wo.[Wo_Status]  NOT IN ('현장마감','작업지시마감') ;";
-                // TODO - 작업장 생성될 시 추가해주기 //WHERE wcm.[Wo_Ini_Char] =@woinichar; ";
+   WHERE wo.[Wo_Status]  NOT IN ('현장마감','작업지시마감') AND wcm.[Wo_Ini_Char] =@woinichar; ";
                 comm.CommandType = CommandType.Text;
                 comm.Parameters.AddWithValue("@woinichar", woinichar);
                 comm.Connection.Open();

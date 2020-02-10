@@ -78,22 +78,29 @@ namespace AxxenClient.Forms
         }
         private void btnLoad_Click(object sender, EventArgs e)
         {
-
+            string loadinggvcode = dgvGVTo.SelectedRows[0].Cells[0].Value.ToString();
+            string unloadgvcode = dgvGVFrom.SelectedRows[0].Cells[0].Value.ToString();
             if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
             {
-                string loadinggvcode = dgvGVTo.SelectedRows[0].Cells[0].Value.ToString();
-                string unloadgvcode = dgvGVFrom.SelectedRows[0].Cells[0].Value.ToString();
                 GV_HistoryService service = new GV_HistoryService();
 
                 // 옮겨타기
                 if (service.UpdateMoveGvItem(unloadgvcode, loadinggvcode, Convert.ToInt32(txtLoading.TextBoxText), GlobalUsage.UserID, GlobalUsage.WcCode, GlobalUsage.WorkOrderNo))
                 {
                     GetDatas();
+                    Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 대차({unloadgvcode})에서 대차({loadinggvcode})로 옮겨타기에 성공함");
                 }
                 else
+                {
+                    Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 대차({unloadgvcode})에서 대차({loadinggvcode})로 옮겨타기 하려했으나 GV_Current_Status와 GV_History에 언로딩할 대차가 존재하지 않음");
                     MessageBox.Show("옮길 수 없는 대차 입니다.");
+                }
             }
-            else MessageBox.Show("작업을 시작해주세요");
+            else
+            {
+                Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 대차({unloadgvcode})에서 대차({loadinggvcode})로 옮겨타기 하려했으나 작업을 시작하지 않음");
+                MessageBox.Show("작업을 시작해주세요");
+            }
         }
         private void dgvGVFrom_CellClick(object sender, DataGridViewCellEventArgs e)
         {

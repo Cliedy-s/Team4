@@ -47,18 +47,25 @@ namespace AxxenClient.Forms
         }
         private void btnInput_Click(object sender, EventArgs e)
         {   // 요입
-
             if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
             {
                 GV_Current_StatusService service = new GV_Current_StatusService();
                 if (service.UpdateGVIn(GlobalUsage.UserID, dgvGVList.SelectedRows[0].Cells[0].Value.ToString(), GlobalUsage.WorkOrderNo))
                 {
+                    Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 작업지시({GlobalUsage.WorkOrderNo})에서 대차({dgvGVList.SelectedRows[0].Cells[0].Value.ToString()}) 요입에 성공하였음");
                     GetDatas();
                 }
                 else
+                {
+                    Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 작업지시({GlobalUsage.WorkOrderNo})에서 대차({dgvGVList.SelectedRows[0].Cells[0].Value.ToString()}) 요입에 실패하였음");
                     MessageBox.Show("요입할 수 없는 대차 입니다.");
+                }
             }
-            else MessageBox.Show("작업을 시작해주세요");
+            else
+            {
+                Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 작업시작을 하지않고 대차 요입을 하려하였음");
+                MessageBox.Show("작업을 시작해주세요");
+            }
         }
         private void btnOutput_Click(object sender, EventArgs e)
         {   // 요출
@@ -68,12 +75,20 @@ namespace AxxenClient.Forms
                 GV_Current_StatusService service = new GV_Current_StatusService();
                 if (service.UpdateGVOut(GlobalUsage.UserID, dgvGVList.SelectedRows[0].Cells[0].Value.ToString(), GlobalUsage.WorkOrderNo))
                 {
+                    Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 작업지시({GlobalUsage.WorkOrderNo})에서 대차({dgvGVList.SelectedRows[0].Cells[0].Value.ToString()}) 요출에 성공하였음");
                     GetDatas();
                 }
                 else
-                    MessageBox.Show("요입할 수 없는 대차 입니다.");
+                {
+                    Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 작업지시({GlobalUsage.WorkOrderNo})에서 대차({dgvGVList.SelectedRows[0].Cells[0].Value.ToString()}) 요출에 실패하였음");
+                    MessageBox.Show("요출할 수 없는 대차 입니다.");
+                }
             }
-            else MessageBox.Show("작업을 시작해주세요");
+            else
+            {
+                Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 작업시작을 하지않고 대차 요출을 하려하였음");
+                MessageBox.Show("작업을 시작해주세요");
+            }
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {

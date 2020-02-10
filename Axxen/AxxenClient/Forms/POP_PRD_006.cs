@@ -82,13 +82,12 @@ namespace AxxenClient.Forms
             }
             else
             {
-                Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 대차({ dgvBoxing.SelectedRows[0].Cells[0].Value.ToString()})를 언로딩 하려했으나 작업을 시작하지 않고 시도함");
+                Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 대차({ dgvBoxing.SelectedRows[0].Cells[0].Value.ToString()})를 언로딩 하려했으나 작업을 시작하지 않음");
                 MessageBox.Show("작업을 시작해주세요");
             }
         }
         private void btnGVClear_Click(object sender, EventArgs e)
         {
-            // TODO - 2020-02-09 시작 로그쓰기
             if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
             {
                 if (dgvBoxing.SelectedRows.Count < 1)
@@ -120,7 +119,7 @@ namespace AxxenClient.Forms
             }
             else
             {
-                Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 대차({ dgvBoxing.SelectedRows[0].Cells[0].Value.ToString()})를 비우려고 하였으나 작업을 시작하지 않고 시도함");
+                Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 대차({ dgvBoxing.SelectedRows[0].Cells[0].Value.ToString()})를 비우려고 하였으나 작업을 시작하지 않음");
                 MessageBox.Show("작업을 시작해주세요");
             }
 

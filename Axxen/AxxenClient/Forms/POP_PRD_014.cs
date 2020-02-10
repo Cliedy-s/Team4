@@ -71,40 +71,52 @@ namespace AxxenClient.Forms
 
             if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
             {
-            if (!string.IsNullOrEmpty(lblConditionCode.Text))
-            {
-                Condition_Measure_HistoryService service = new Condition_Measure_HistoryService();
-                ConditionMeasureVO item = new ConditionMeasureVO();
-                item.Item_code = lblItemCode.Text;
-                item.Wc_Code = lblWcCode.Text;
-                item.Condition_Code = lblConditionCode.Text;
-                item.Condition_Val = Convert.ToDecimal(txtMeasure.TextBoxText);
-                item.Workorderno = GlobalUsage.WorkOrderNo;
-                if (service.InsertConditionMeasure(item, GlobalUsage.UserID))
+                if (!string.IsNullOrEmpty(lblConditionCode.Text))
                 {
-                    SearchData();
-                    txtMeasure.TextBoxText = "";
+                    Condition_Measure_HistoryService service = new Condition_Measure_HistoryService();
+                    ConditionMeasureVO item = new ConditionMeasureVO();
+                    item.Item_code = lblItemCode.Text;
+                    item.Wc_Code = lblWcCode.Text;
+                    item.Condition_Code = lblConditionCode.Text;
+                    item.Condition_Val = Convert.ToDecimal(txtMeasure.TextBoxText);
+                    item.Workorderno = GlobalUsage.WorkOrderNo;
+                    if (service.InsertConditionMeasure(item, GlobalUsage.UserID))
+                    {
+                        Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 공정조건({lblConditionCode.Text})에 값({txtMeasure.TextBoxText})을 넣는데에 성공하였음");
+                        SearchData();
+                        txtMeasure.TextBoxText = "";
+                    }
+                    else
+                    {
+                        Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 공정조건({lblConditionCode.Text})에 값({txtMeasure.TextBoxText})을 넣으려 하였으나 실패하였음");
+                        MessageBox.Show("입력할 수 없는 항목입니다.");
+                    }
                 }
-                else MessageBox.Show("입력할 수 없는 항목입니다.");
-            }
-            else MessageBox.Show("작업을 시작해주세요");
-
+                else
+                {
+                    Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 작업시작을 하지않고 공정조건에 값을 등록 하려하였음");
+                    MessageBox.Show("작업을 시작해주세요");
+                }
             }
         }
 
         private void btnDeleteMeasure_Click(object sender, EventArgs e)
         {
 
-            if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
-            {
             if (dgvConditionMeasureList.SelectedRows.Count > 0)
             {
                 Condition_Measure_HistoryService service = new Condition_Measure_HistoryService();
-                if (service.DeleteConditionMeasure(Convert.ToInt32(dgvConditionMeasureList.SelectedRows[0].Cells[3].Value))) SearchData();
-                else MessageBox.Show("삭제할 수 없는 항목입니다.");
+                if (service.DeleteConditionMeasure(Convert.ToInt32(dgvConditionMeasureList.SelectedRows[0].Cells[3].Value)))
+                {
+                    Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 공정조건({lblConditionCode.Text})의 값({txtMeasure.TextBoxText})을 삭제에 성공함");
+                }
+                else
+                {
+                    Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 공정조건({lblConditionCode.Text})의 값({txtMeasure.TextBoxText})을 삭제에 하려했으나 실패함");
+                    MessageBox.Show("삭제할 수 없는 항목입니다.");
+                }
+                SearchData();
             }
-            }
-            else MessageBox.Show("작업을 시작해주세요");
         }
 
         private void dgvConditionList_CellClick(object sender, DataGridViewCellEventArgs e)

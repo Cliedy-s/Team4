@@ -90,28 +90,40 @@ namespace AxxenClient.Forms
                     item.Workorderno = GlobalUsage.WorkOrderNo;
                     if (service.InsertInspect_Measure(item, GlobalUsage.UserID))
                     {
+                        Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 품질측정 조건({lblInspectcode.Text})에 값({txtMeasure.TextBoxText})를 넣는데에 성공하였음");
                         txtMeasure.TextBoxText = "";
                         SearchData();
                     }
-                    else MessageBox.Show("입력할 수 없는 항목입니다.");
+                    else
+                    {
+                        Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 품질측정 조건({lblInspectcode.Text})에 값({txtMeasure.TextBoxText})를 넣는데에 실패하였음");
+                        MessageBox.Show("입력할 수 없는 항목입니다.");
+                    }
                 }
-                else MessageBox.Show("작업을 시작해주세요");
+                else
+                {
+                    Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 작업시작을 하지않고 품질측정값을 등록하려하였음");
+                    MessageBox.Show("작업을 시작해주세요");
+                }
             }
         }
 
         private void btnDeleteMeasure_Click(object sender, EventArgs e)
         {
-
-            if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
+            if (dgvInspectMeasure.SelectedRows.Count > 0)
             {
-                if (dgvInspectMeasure.SelectedRows.Count > 0)
+                Inspect_Measure_HistoryService service = new Inspect_Measure_HistoryService();
+                if (service.DeleteInspect_MeasureBySeq(Convert.ToInt32(dgvInspectMeasure.SelectedRows[0].Cells[2].Value)))
                 {
-                    Inspect_Measure_HistoryService service = new Inspect_Measure_HistoryService();
-                    if (service.DeleteInspect_MeasureBySeq(Convert.ToInt32(dgvInspectMeasure.SelectedRows[0].Cells[2].Value))) SearchData();
-                    else MessageBox.Show("삭제할 수 없는 항목입니다.");
+                    Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 품질측정 조건({lblInspectcode.Text})의 값({txtMeasure.TextBoxText})을 삭제하는데 성공하였음");
+                    SearchData();
+                }
+                else
+                {
+                    Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 품질측정 조건({lblInspectcode.Text})의 값({txtMeasure.TextBoxText})을 삭제하는데 실패하였음");
+                    MessageBox.Show("입력할 수 없는 항목입니다.");
                 }
             }
-            else MessageBox.Show("작업을 시작해주세요");
         }
 
         private void btnMachineRun_Click(object sender, EventArgs e)

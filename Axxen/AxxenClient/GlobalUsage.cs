@@ -12,7 +12,6 @@ namespace AxxenClient
         static public string UserName { get; set; }
         static public string UserID { get; set; }
         static public WorkType WorkType { get; set; } = WorkType.Molding;
-        static public string WoIniChar { get; set; } = "설정안됨";
         static public string WcCode { get; set; } = "설정안됨";
 
         static public string WorkOrderNo { get; set; } = "설정안됨";

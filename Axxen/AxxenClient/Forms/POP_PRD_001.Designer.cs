@@ -217,9 +217,9 @@
             // 
             this.panLoad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panLoad.Controls.Add(this.btnWorkOrderCreate2);
             this.panLoad.Controls.Add(this.btnWorkOrderOnOff0);
             this.panLoad.Controls.Add(this.btnWorkOrderQuit2);
-            this.panLoad.Controls.Add(this.btnWorkOrderCreate2);
             this.panLoad.Controls.Add(this.btnSetWorker2);
             this.panLoad.Controls.Add(this.btnLoadRecordRegister);
             this.panLoad.Controls.Add(this.btnFiringInOut);
