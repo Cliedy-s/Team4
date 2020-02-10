@@ -44,13 +44,14 @@ namespace Axxen.Util
             // dgv.RowHeadersWidth = 20;     // 맨왼쪽에 있는 컬럼 사이즈 변경   
 
             dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect; // 한줄전체선택
-            dgv.CellBorderStyle = DataGridViewCellBorderStyle.None; //테두리삭제
+            dgv.CellBorderStyle = DataGridViewCellBorderStyle.Single; //테두리삭제
 
             dgv.BackgroundColor = Color.White; // Color.FromArgb(248, 241, 233); //그리드뷰 배경색
-            // dgv.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(255, 175, 175);   // 로우 해더 색설정     
-            dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(243, 228, 231); //홀수 행 색
-            dgv.DefaultCellStyle.BackColor = Color.FromArgb(248, 241,233);//Color.FromArgb(248, 241, 233); // 전체 행 색
-            dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(145, 224, 244); // 선택 로우 색
+                                               // dgv.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(255, 175, 175);   // 로우 해더 색설정     
+            dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(218, 239, 245);//홀수행 색변경
+            dgv.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(218, 239, 245);   //컬럼 해더 색설정     
+            dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(160, 239, 245); //컬럼색설정
+            dgv.DefaultCellStyle.SelectionForeColor = Color.Black; //글리드뷰 안 글자색
 
             dgv.DefaultCellStyle.WrapMode = DataGridViewTriState.False;
         }
