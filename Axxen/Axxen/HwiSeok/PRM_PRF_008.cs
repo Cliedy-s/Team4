@@ -16,6 +16,8 @@ namespace Axxen
         List<Nop_History_Mi_MaVO> nohm;
         List<Nop_History_Mi_MaVO> nohmList;
         Nop_History_Mi_MaService nohmservice = new Nop_History_Mi_MaService();
+        
+        Nop_HistoryService Nop_HistoryService = new Nop_HistoryService();
         public PRM_PRF_008()
         {
             InitializeComponent();
@@ -29,6 +31,7 @@ namespace Axxen
 
             #region 그리드뷰
             DatagridviewDesigns.SetDesign(dgvMainGrid);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "발생순번", "Nop_Seq", true, 100, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "비가동일자", "Nop_Date", true, 100, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "작업장코드", "Wc_Code", true, 100, default, true);
             DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "작업장명", "Wc_Name", true, 100, default, true);
@@ -47,7 +50,26 @@ namespace Axxen
 
         private void DeleteFormShow(object sender, EventArgs e) // 삭제
         {
-            throw new NotImplementedException();
+            if (dgvMainGrid.SelectedRows[0].Cells[7].Value.ToString().Substring(0, 10) == "0001-01-01")
+            {
+                string msg = Nop_HistoryService.DeleteNop_Histroy((dgvMainGrid.SelectedRows[0].Cells[2].Value).ToString(), (dgvMainGrid.SelectedRows[0].Cells[0].Value).ToString());
+
+                if (msg == "OK")
+                {
+                    MessageBox.Show("성공적으로 해제하였습니다.", "비동기 해제 성공", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    nohm = nohmservice.GetAllNop_History_Mi_Ma();
+                    dgvMainGrid.DataSource = nohm;
+                }
+                else
+                {
+                    MessageBox.Show($"{msg}", "비동기 삭제 오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("비가동 중 입니다.", "비동기 해제 오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void InsertFormShow(object sender, EventArgs e) //비가동 등록

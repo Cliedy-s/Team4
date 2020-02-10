@@ -31,7 +31,13 @@ namespace Service
             return dac.UpdateNop_History(nopMiCode, username, nopseq);
         }
 
-        public bool InsertNop_History(NopHistoryVO nop) //PRM_PRF_008_1
+        public string DeleteNop_Histroy(string WcCode, string Nop_Seq)
+        {
+            Nop_HistoryDAC dac = new Nop_HistoryDAC();
+            return dac.DeleteNop_Histroy(WcCode, Nop_Seq);
+        }
+
+        public string InsertNop_History(NopHistoryVO nop) //PRM_PRF_008_1
         {
             Nop_HistoryDAC dac = new Nop_HistoryDAC();
             return dac.InsertNop_History(nop);
