@@ -81,51 +81,56 @@ namespace DAC
 
         public bool InsertNop_History(NopHistoryVO nop)
         {
-            //using (SqlConnection conn = new SqlConnection(Connstr))
-            //{
-            //    conn.Open();
-            //    SqlTransaction tran = conn.BeginTransaction();
+            using (SqlConnection conn = new SqlConnection(Connstr))
+            {
+                conn.Open();
+                SqlTransaction tran = conn.BeginTransaction();
 
-            //    try
-            //    {
-            //        string chksql = "INSERT INTO Nop_History(Wc_Code, Nop_Mi_Code, Nop_Type, Nop_Time, Remark, Ins_Emp) values(@Wc_Code, @Nop_Mi_Code, @Nop_Type, @Nop_Time, @Remark, @Ins_Emp)";
-            //        using (SqlCommand cmdchk = new SqlCommand(chksql, conn))
-            //        {
-            //            cmdchk.Transaction = tran;
+                try
+                {
+                    string chksql = "INSERT INTO Nop_History(Wc_Code, Nop_Mi_Code, Nop_Type, Nop_Time, Remark, Ins_Emp) values(@Wc_Code, @Nop_Mi_Code, @Nop_Type, @Nop_Time, @Remark, @Ins_Emp); UPDATE WorkCenter_Master SET Use_YN = 'N' Where Wc_Code = @Wc_Code";
+                    using (SqlCommand cmdchk = new SqlCommand(chksql, conn))
+                    {
+                        cmdchk.Transaction = tran;
 
-            //            cmdchk.Parameters.AddWithValue("@Wc_Code", nop.Wc_Code);
-            //            cmdchk.Parameters.AddWithValue("@Nop_Mi_Code", nop.Nop_Mi_Code);
-            //            cmdchk.Parameters.AddWithValue("@Nop_Type", nop.Nop_Type);
-            //            cmdchk.Parameters.AddWithValue("@Nop_Time", nop.Nop_Time);
-            //            cmdchk.Parameters.AddWithValue("@Remark", nop.Remark);
-            //            cmdchk.Parameters.AddWithValue("@Ins_Emp", nop.Ins_Emp);
-            //            int result = cmdchk.ExecuteNonQuery();
+                        cmdchk.Parameters.AddWithValue("@Wc_Code", nop.Wc_Code);
+                        cmdchk.Parameters.AddWithValue("@Nop_Mi_Code", nop.Nop_Mi_Code);
+                        cmdchk.Parameters.AddWithValue("@Nop_Type", nop.Nop_Type);
+                        cmdchk.Parameters.AddWithValue("@Nop_Time", nop.Nop_Time);
+                        cmdchk.Parameters.AddWithValue("@Remark", nop.Remark);
+                     
+                        cmdchk.Parameters.AddWithValue("@Ins_Emp", nop.Ins_Emp);
+                        int result = cmdchk.ExecuteNonQuery();
 
-            //        }
-            //        //------------------------------------------------------------- 
-            //        string Stsql = @"  UPDATE WorkCenter_Master SET Use_YN = 'N' Where Wc_Code=@Wc_Code";
-            //        using (SqlCommand cmd = new SqlCommand(Stsql, conn))
-            //        {
-            //            cmd.Transaction = tran;
+                        return result > 0;
+                    }
 
-            //            cmd.Parameters.AddWithValue("@Wc_Code", nop.Wc_Code);
-            //            int iResult = cmd.ExecuteNonQuery();
+                    //------------------------------------------------------------- 
+                    //string Stsql = @"  UPDATE WorkCenter_Master SET Use_YN = 'N' Where Wc_Code=@Wc_Code";
+                    //using (SqlCommand cmd = new SqlCommand(Stsql, conn))
+                    //{
+                    //    cmd.Transaction = tran;
 
-            //            tran.Commit();
-            //            return iResult > 0;
-            //        }
+                    //    cmd.Parameters.AddWithValue("@Wc_Code", nop.Wc_Code);
+                    //    int iResult = cmd.ExecuteNonQuery();
 
-            //    }
-            //    catch (Exception err)
-            //    {
-            //        tran.Rollback();
-            //    }
-            //    finally
-            //    {
-            //        conn.Close();
-            //    }
-            //}
-            return true;
+                    //    tran.Commit();
+                    //    return iResult > 0;
+                    //}
+
+                }
+                catch (Exception err)
+                {
+                    tran.Rollback();
+                    return false ;
+                }
+                finally
+                {
+                    conn.Close();
+                   
+                }
+            }
+
         }
 
         
