@@ -77,6 +77,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1148, 700);
+            this.ControlBox = false;
             this.Name = "PRM_PRF_005";
             this.Text = "대차현황";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PRM_PRF_005_FormClosing);

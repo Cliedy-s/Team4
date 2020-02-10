@@ -71,7 +71,6 @@ namespace AxxenClient.Forms
                 GV_HistoryService service = new GV_HistoryService();
                 if (service.UpdateUnload(GlobalUsage.UserID, dgvBoxing.SelectedRows[0].Cells[0].Value.ToString(), null, GlobalUsage.WcCode, Convert.ToInt32(dgvBoxing.SelectedRows[0].Cells[5].Value)))
                 {
-                    // TODO - 2020-02-09 시작 로그쓰기
                     Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 대차({dgvBoxing.SelectedRows[0].Cells[0].Value.ToString()}) 언로딩에 성공함");
                     GetDatas();
                 }
@@ -81,15 +80,20 @@ namespace AxxenClient.Forms
                     MessageBox.Show("언로딩에 실패하였습니다.");
                 }
             }
-            else MessageBox.Show("작업을 시작해주세요");
+            else
+            {
+                Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 대차({ dgvBoxing.SelectedRows[0].Cells[0].Value.ToString()})를 언로딩 하려했으나 작업을 시작하지 않고 시도함");
+                MessageBox.Show("작업을 시작해주세요");
+            }
         }
         private void btnGVClear_Click(object sender, EventArgs e)
         {
-
+            // TODO - 2020-02-09 시작 로그쓰기
             if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
             {
                 if (dgvBoxing.SelectedRows.Count < 1)
                 {
+                    Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 대차를 선택하지 않고 대차 비우기를 시도함");
                     MessageBox.Show("대차를 선택해주세요");
                     return;
                 }
@@ -104,11 +108,21 @@ namespace AxxenClient.Forms
                     Up_Emp = GlobalUsage.UserID
                 };
                 if (service.UpdateClearGV(clearvo))
+                {
+                    Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 대차({clearvo.GV_Code}) 대차비우기에 성공함");
                     GetDatas();
+                }
                 else
+                {
+                    Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 대차({clearvo.GV_Code})를 비우려고 하였으나 모종의 이유로 실패함");
                     MessageBox.Show("대차 비우기에 실패하였습니다.");
+                }
             }
-            else MessageBox.Show("작업을 시작해주세요");
+            else
+            {
+                Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 대차({ dgvBoxing.SelectedRows[0].Cells[0].Value.ToString()})를 비우려고 하였으나 작업을 시작하지 않고 시도함");
+                MessageBox.Show("작업을 시작해주세요");
+            }
 
         }
     }
