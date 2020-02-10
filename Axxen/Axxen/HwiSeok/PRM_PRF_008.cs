@@ -27,7 +27,8 @@ namespace Axxen
         {
             ((MainForm)this.MdiParent).RefreshFormEvent += new System.EventHandler(this.RefreshFormShow); // 새로고침
             ((MainForm)this.MdiParent).InsertFormEvent += new System.EventHandler(this.InsertFormShow); // 추가
-            ((MainForm)this.MdiParent).MyDeleteEvent += new System.EventHandler(this.DeleteFormShow); // 삭제
+            ((MainForm)this.MdiParent).MyUpdateEvent += new System.EventHandler(this.UpdateFormShow); // 수정
+            dgvMainGrid.CellDoubleClick += DgvMainGrid_CellDoubleClick; //메인그리드뷰 더블클릭
 
             #region 그리드뷰
             DatagridviewDesigns.SetDesign(dgvMainGrid);
@@ -48,7 +49,34 @@ namespace Axxen
             dgvMainGrid.DataSource = nohm;
         }
 
-        private void DeleteFormShow(object sender, EventArgs e) // 삭제
+        private void DgvMainGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(MessageBox.Show("비동기 해제하시겠습니까?", "비동기 해제", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (dgvMainGrid.SelectedRows[0].Cells[7].Value.ToString().Substring(0, 10) == "0001-01-01")
+                {
+                    string msg = Nop_HistoryService.DeleteNop_Histroy((dgvMainGrid.SelectedRows[0].Cells[2].Value).ToString(), (dgvMainGrid.SelectedRows[0].Cells[0].Value).ToString());
+
+                    if (msg == "OK")
+                    {
+                        MessageBox.Show("성공적으로 해제하였습니다.", "비동기 해제 성공", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        nohm = nohmservice.GetAllNop_History_Mi_Ma();
+                        dgvMainGrid.DataSource = nohm;
+                    }
+                    else
+                    {
+                        MessageBox.Show($"{msg}", "비동기 삭제 오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("비가동 중 입니다.", "비동기 해제 오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void UpdateFormShow(object sender, EventArgs e) // 수정
         {
             if (dgvMainGrid.SelectedRows[0].Cells[7].Value.ToString().Substring(0, 10) == "0001-01-01")
             {
@@ -137,7 +165,7 @@ namespace Axxen
         {
             ((MainForm)this.MdiParent).RefreshFormEvent -= new System.EventHandler(this.RefreshFormShow); // 새로고침
             ((MainForm)this.MdiParent).InsertFormEvent -= new System.EventHandler(this.InsertFormShow); // 추가
-            ((MainForm)this.MdiParent).MyDeleteEvent -= new System.EventHandler(this.DeleteFormShow); // 삭제
+            ((MainForm)this.MdiParent).MyDeleteEvent -= new System.EventHandler(this.UpdateFormShow); // 삭제
         }
     }
 }
