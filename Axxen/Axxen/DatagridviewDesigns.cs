@@ -20,7 +20,7 @@ namespace Axxen
             col.ValueType = typeof(string);
             col.ReadOnly = true;
             col.DefaultCellStyle.Alignment = textAlign;
-          //  col.AutoSizeMode = isFillAll ? DataGridViewAutoSizeColumnMode.Fill : default(DataGridViewAutoSizeColumnMode);
+          //col.AutoSizeMode = isFillAll ? DataGridViewAutoSizeColumnMode.Fill : default(DataGridViewAutoSizeColumnMode);
             dgv.Columns.Add(col);
         }
         /// <summary>
