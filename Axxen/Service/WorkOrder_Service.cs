@@ -66,10 +66,32 @@ namespace Service
         /// </summary>
         /// <param name="order">작업지시입력정보VO</param>
         /// <returns></returns>
-        public bool InsertPPSWorkorder(WorkOrderAllVO order)
+        public bool InsertPPSWorkorder(WorkOrderAllVO order,string user)
         {
             WorkOrderDAC dac = new WorkOrderDAC();
-            return dac.InsertPPSWorkorder(order);
+            return dac.InsertPPSWorkorder(order,user);
+        }
+
+        /// <summary>
+        /// PPS_SCH_001 생산의뢰삭제
+        /// </summary>
+        /// <param name="woreqno"></param>
+        /// <returns></returns>
+        public bool DeletePPSWoReq(string woreqno)
+        {
+            WorkOrderDAC dac = new WorkOrderDAC();
+            return dac.DeletePPSWoReq(woreqno);
+        }
+
+        /// <summary>
+        /// PPS_SCH_001 작업지시삭제
+        /// </summary>
+        /// <param name="workno"></param>
+        /// <returns></returns>
+        public bool DeletePPSWorkorder(string workno)
+        {
+            WorkOrderDAC dac = new WorkOrderDAC();
+            return dac.DeletePPSWorkorder(workno);
         }
 
         /// <summary>

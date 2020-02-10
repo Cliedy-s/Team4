@@ -229,36 +229,102 @@ namespace DAC
         }
 
         /// <summary>
-        /// 생산의뢰에 따른 작업지시생성
+        /// PPS_SCH_001 생산의뢰에 따른 작업지시생성
         /// </summary>
         /// <param name="order"></param>
         /// <returns></returns>
-        public bool InsertPPSWorkorder(WorkOrderAllVO order)
+        public bool InsertPPSWorkorder(WorkOrderAllVO order, string user)
+        {
+            int result = 0;
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(Connstr);
+                for (int i = 1; i < 6; i++)
+                {
+                    cmd.CommandText = "InsertPPSWorkOrder";
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@Req_Seq", order.Req_Seq);
+                    cmd.Parameters.AddWithValue("@Wo_Req_No", order.Wo_Req_No);
+                    cmd.Parameters.AddWithValue("@Workorderno", "WK" + DateTime.Now.AddSeconds(i).ToString("yyMMddHHmmss"));
+                    cmd.Parameters.AddWithValue("@Wo_Status", order.Wo_Status);
+                    cmd.Parameters.AddWithValue("@Wc_Code", "WC" + i.ToString() + order.Wc_Code.Substring(3, 4));
+                    cmd.Parameters.AddWithValue("@Remark", order.Remark);
+                    cmd.Parameters.AddWithValue("@Plan_Qty", order.Plan_Qty);
+                    cmd.Parameters.AddWithValue("@Out_Qty_Main", order.Out_Qty_Main);
+                    cmd.Parameters.AddWithValue("@In_Qty_Main", order.In_Qty_Main);
+                    cmd.Parameters.AddWithValue("@Prd_Qty", order.Prd_Qty);
+                    cmd.Parameters.AddWithValue("@Plan_Date", order.Plan_Date);
+                    cmd.Parameters.AddWithValue("@Item_Code", order.Item_Code);
+                    cmd.Parameters.AddWithValue("@Plan_Unit", order.Plan_Unit);
+                    cmd.Parameters.AddWithValue("@User", user);
+                    cmd.Parameters.AddWithValue("@Wo_Order", i);
+                    cmd.Parameters.AddWithValue("@Prd_Unit", order.Prd_Unit);
+
+                    cmd.Connection.Open();
+                    result = cmd.ExecuteNonQuery();
+                    cmd.Connection.Close();
+                }
+                return result > 0;
+            }
+        }
+
+        /// <summary>
+        /// PPS_SCH_001 생산의뢰삭제
+        /// </summary>
+        /// <param name="woreqno"></param>
+        /// <returns></returns>
+        public bool DeletePPSWoReq(string woreqno)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(Connstr);
-                cmd.CommandText = "insert into WorkOrder(Req_Seq,Wo_Req_No,Workorderno,Wo_Status,Wc_Code,Remark,Plan_Qty,Out_Qty_Main,In_Qty_Main,Prd_Qty,Prd_Date,Item_Code,Plan_Unit) values(@Req_Seq,@Wo_Req_No,@Workorderno,@Wo_Status,@Wc_Code,@Remark,@Plan_Qty,@Out_Qty_Main,@In_Qty_Main,@Prd_Qty,@Prd_Date,@Item_Code,@Plan_Unit)";
-                cmd.CommandType = CommandType.Text;
-                cmd.Parameters.AddWithValue("@Req_Seq", order.Req_Seq);
-                cmd.Parameters.AddWithValue("@Wo_Req_No", order.Wo_Req_No);
-                cmd.Parameters.AddWithValue("@Workorderno", order.Workorderno);
-                cmd.Parameters.AddWithValue("@Wo_Status", order.Wo_Status);
-                cmd.Parameters.AddWithValue("@Wc_Code", order.Wc_Code);
-                cmd.Parameters.AddWithValue("@Remark", order.Remark);
-                cmd.Parameters.AddWithValue("@Plan_Qty", order.Plan_Qty);
-                cmd.Parameters.AddWithValue("@Out_Qty_Main", order.Out_Qty_Main);
-                cmd.Parameters.AddWithValue("@In_Qty_Main", order.In_Qty_Main);
-                cmd.Parameters.AddWithValue("@Prd_Qty", order.Prd_Qty);
-                cmd.Parameters.AddWithValue("@Prd_Date", order.Prd_Date);
-                cmd.Parameters.AddWithValue("@Item_Code", order.Item_Code);
-                cmd.Parameters.AddWithValue("@Plan_Unit", order.Plan_Unit);
-
                 cmd.Connection.Open();
+                SqlTransaction trans = cmd.Connection.BeginTransaction();
+                try
+                {
+                    cmd.Transaction = trans;
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = "delete from Wo_Req where Wo_Req_no=@Wo_Req_No";
+                    cmd.Parameters.AddWithValue("@Wo_Req_No", woreqno);
+                    cmd.ExecuteNonQuery();
+
+                    cmd.CommandText = "delete from WorkOrder where Wo_Req_No=@Wo_Req_No";
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@Wo_Req_No", woreqno);
+                    cmd.ExecuteNonQuery();
+
+                    trans.Commit();
+                    cmd.Connection.Close();
+                    
+                    return true;
+                }
+                catch 
+                {
+                    trans.Rollback();
+                    cmd.Connection.Close();
+                    return false;
+                }
+            }
+        }
+
+        /// <summary>
+        /// PPS_SCH_001 작업지시삭제
+        /// </summary>
+        /// <param name="workno"></param>
+        /// <returns></returns>
+        public bool DeletePPSWorkorder(string workno)
+        {
+            using(SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(Connstr);
+                cmd.Connection.Open();
+                cmd.CommandText = "delete from WorkOrder where Workorderno=@Workorderno";
+                cmd.Parameters.AddWithValue("@Workorderno", workno);
                 int result = cmd.ExecuteNonQuery();
                 cmd.Connection.Close();
-
-                return result > 0;
+                return result > 0; 
             }
         }
 

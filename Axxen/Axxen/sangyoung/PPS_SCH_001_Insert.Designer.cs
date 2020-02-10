@@ -36,16 +36,9 @@
             this.txtSeq = new Axxen.CustomControls.ATextBox();
             this.aLabel12 = new Axxen.CustomControls.ALabel();
             this.txtReqNo = new Axxen.CustomControls.ATextBox();
-            this.btnOK = new Axxen.CustomControls.AButton();
             this.dtpDate = new Axxen.CustomControls.ADateTimePicker();
             this.aLabel11 = new Axxen.CustomControls.ALabel();
             this.txtRemark = new Axxen.CustomControls.ATextBox();
-            this.aLabel10 = new Axxen.CustomControls.ALabel();
-            this.txtPrdQty = new Axxen.CustomControls.ATextBox();
-            this.aLabel9 = new Axxen.CustomControls.ALabel();
-            this.txtOutQty = new Axxen.CustomControls.ATextBox();
-            this.aLabel8 = new Axxen.CustomControls.ALabel();
-            this.txtInQty = new Axxen.CustomControls.ATextBox();
             this.aLabel7 = new Axxen.CustomControls.ALabel();
             this.txtPlanQty = new Axxen.CustomControls.ATextBox();
             this.aLabel5 = new Axxen.CustomControls.ALabel();
@@ -53,8 +46,6 @@
             this.aLabel4 = new Axxen.CustomControls.ALabel();
             this.txtItemCode = new Axxen.CustomControls.ATextBox();
             this.aLabel3 = new Axxen.CustomControls.ALabel();
-            this.aLabel2 = new Axxen.CustomControls.ALabel();
-            this.txtWoorderno = new Axxen.CustomControls.ATextBox();
             this.SuspendLayout();
             // 
             // txtPlanUnit
@@ -135,22 +126,10 @@
             this.txtReqNo.TabIndex = 25;
             this.txtReqNo.txtType = Axxen.CustomControls.TextType.Normal;
             // 
-            // btnOK
-            // 
-            this.btnOK.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOK.Location = new System.Drawing.Point(354, 409);
-            this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(86, 33);
-            this.btnOK.TabIndex = 24;
-            this.btnOK.Text = "확인";
-            this.btnOK.UseVisualStyleBackColor = false;
-            this.btnOK.Click += new System.EventHandler(this.BtnOK_Click);
-            // 
             // dtpDate
             // 
             this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDate.Location = new System.Drawing.Point(120, 263);
+            this.dtpDate.Location = new System.Drawing.Point(120, 132);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(100, 21);
             this.dtpDate.TabIndex = 23;
@@ -158,7 +137,7 @@
             // aLabel11
             // 
             this.aLabel11.AutoSize = true;
-            this.aLabel11.Location = new System.Drawing.Point(34, 311);
+            this.aLabel11.Location = new System.Drawing.Point(34, 238);
             this.aLabel11.Name = "aLabel11";
             this.aLabel11.Size = new System.Drawing.Size(53, 12);
             this.aLabel11.TabIndex = 21;
@@ -169,75 +148,12 @@
             this.txtRemark.BackColor = System.Drawing.Color.White;
             this.txtRemark.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtRemark.errorp = null;
-            this.txtRemark.Location = new System.Drawing.Point(120, 309);
+            this.txtRemark.Location = new System.Drawing.Point(120, 236);
             this.txtRemark.Multiline = true;
             this.txtRemark.Name = "txtRemark";
             this.txtRemark.Size = new System.Drawing.Size(320, 79);
             this.txtRemark.TabIndex = 20;
             this.txtRemark.txtType = Axxen.CustomControls.TextType.Normal;
-            // 
-            // aLabel10
-            // 
-            this.aLabel10.AutoSize = true;
-            this.aLabel10.Location = new System.Drawing.Point(258, 267);
-            this.aLabel10.Name = "aLabel10";
-            this.aLabel10.Size = new System.Drawing.Size(53, 12);
-            this.aLabel10.TabIndex = 19;
-            this.aLabel10.Text = "생산수량";
-            // 
-            // txtPrdQty
-            // 
-            this.txtPrdQty.BackColor = System.Drawing.Color.White;
-            this.txtPrdQty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPrdQty.errorp = null;
-            this.txtPrdQty.Location = new System.Drawing.Point(341, 263);
-            this.txtPrdQty.Name = "txtPrdQty";
-            this.txtPrdQty.Size = new System.Drawing.Size(100, 21);
-            this.txtPrdQty.TabIndex = 18;
-            this.txtPrdQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtPrdQty.txtType = Axxen.CustomControls.TextType.Normal;
-            // 
-            // aLabel9
-            // 
-            this.aLabel9.AutoSize = true;
-            this.aLabel9.Location = new System.Drawing.Point(258, 225);
-            this.aLabel9.Name = "aLabel9";
-            this.aLabel9.Size = new System.Drawing.Size(53, 12);
-            this.aLabel9.TabIndex = 17;
-            this.aLabel9.Text = "산출수량";
-            // 
-            // txtOutQty
-            // 
-            this.txtOutQty.BackColor = System.Drawing.Color.White;
-            this.txtOutQty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtOutQty.errorp = null;
-            this.txtOutQty.Location = new System.Drawing.Point(341, 221);
-            this.txtOutQty.Name = "txtOutQty";
-            this.txtOutQty.Size = new System.Drawing.Size(100, 21);
-            this.txtOutQty.TabIndex = 16;
-            this.txtOutQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtOutQty.txtType = Axxen.CustomControls.TextType.Normal;
-            // 
-            // aLabel8
-            // 
-            this.aLabel8.AutoSize = true;
-            this.aLabel8.Location = new System.Drawing.Point(34, 225);
-            this.aLabel8.Name = "aLabel8";
-            this.aLabel8.Size = new System.Drawing.Size(53, 12);
-            this.aLabel8.TabIndex = 15;
-            this.aLabel8.Text = "투입수량";
-            // 
-            // txtInQty
-            // 
-            this.txtInQty.BackColor = System.Drawing.Color.White;
-            this.txtInQty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtInQty.errorp = null;
-            this.txtInQty.Location = new System.Drawing.Point(120, 221);
-            this.txtInQty.Name = "txtInQty";
-            this.txtInQty.Size = new System.Drawing.Size(100, 21);
-            this.txtInQty.TabIndex = 14;
-            this.txtInQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtInQty.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // aLabel7
             // 
@@ -303,37 +219,17 @@
             // aLabel3
             // 
             this.aLabel3.AutoSize = true;
-            this.aLabel3.Location = new System.Drawing.Point(34, 267);
+            this.aLabel3.Location = new System.Drawing.Point(34, 136);
             this.aLabel3.Name = "aLabel3";
             this.aLabel3.Size = new System.Drawing.Size(65, 12);
             this.aLabel3.TabIndex = 5;
             this.aLabel3.Text = "작업지시일";
             // 
-            // aLabel2
-            // 
-            this.aLabel2.AutoSize = true;
-            this.aLabel2.Location = new System.Drawing.Point(34, 138);
-            this.aLabel2.Name = "aLabel2";
-            this.aLabel2.Size = new System.Drawing.Size(77, 12);
-            this.aLabel2.TabIndex = 3;
-            this.aLabel2.Text = "작업지시번호";
-            // 
-            // txtWoorderno
-            // 
-            this.txtWoorderno.BackColor = System.Drawing.Color.White;
-            this.txtWoorderno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtWoorderno.errorp = null;
-            this.txtWoorderno.Location = new System.Drawing.Point(120, 134);
-            this.txtWoorderno.Name = "txtWoorderno";
-            this.txtWoorderno.Size = new System.Drawing.Size(100, 21);
-            this.txtWoorderno.TabIndex = 2;
-            this.txtWoorderno.txtType = Axxen.CustomControls.TextType.Normal;
-            // 
             // PPS_SCH_001_Insert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(479, 454);
+            this.ClientSize = new System.Drawing.Size(479, 338);
             this.Controls.Add(this.txtPlanUnit);
             this.Controls.Add(this.aLabel13);
             this.Controls.Add(this.cboWorkCenter);
@@ -342,16 +238,9 @@
             this.Controls.Add(this.txtSeq);
             this.Controls.Add(this.aLabel12);
             this.Controls.Add(this.txtReqNo);
-            this.Controls.Add(this.btnOK);
             this.Controls.Add(this.dtpDate);
             this.Controls.Add(this.aLabel11);
             this.Controls.Add(this.txtRemark);
-            this.Controls.Add(this.aLabel10);
-            this.Controls.Add(this.txtPrdQty);
-            this.Controls.Add(this.aLabel9);
-            this.Controls.Add(this.txtOutQty);
-            this.Controls.Add(this.aLabel8);
-            this.Controls.Add(this.txtInQty);
             this.Controls.Add(this.aLabel7);
             this.Controls.Add(this.txtPlanQty);
             this.Controls.Add(this.aLabel5);
@@ -359,8 +248,6 @@
             this.Controls.Add(this.aLabel4);
             this.Controls.Add(this.txtItemCode);
             this.Controls.Add(this.aLabel3);
-            this.Controls.Add(this.aLabel2);
-            this.Controls.Add(this.txtWoorderno);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "PPS_SCH_001_Insert";
             this.Text = "PPS_SCH_001_Insert";
@@ -371,28 +258,19 @@
         }
 
         #endregion
-        private CustomControls.ALabel aLabel2;
         private CustomControls.ALabel aLabel3;
         private CustomControls.ALabel aLabel4;
         private CustomControls.ALabel aLabel5;
         private CustomControls.ALabel aLabel7;
-        private CustomControls.ALabel aLabel8;
-        private CustomControls.ALabel aLabel9;
-        private CustomControls.ALabel aLabel10;
         private CustomControls.ALabel aLabel11;
-        private CustomControls.AButton btnOK;
         private CustomControls.ALabel aLabel12;
         private CustomControls.ALabel aLabel1;
         private CustomControls.ALabel aLabel13;
         private CustomControls.ALabel aLabel6;
         public CustomControls.ATextBox txtSeq;
         public CustomControls.ATextBox txtItemCode;
-        public CustomControls.ATextBox txtWoorderno;
         public CustomControls.ATextBox txtItemName;
         public CustomControls.ATextBox txtPlanQty;
-        public CustomControls.ATextBox txtInQty;
-        public CustomControls.ATextBox txtOutQty;
-        public CustomControls.ATextBox txtPrdQty;
         public CustomControls.ATextBox txtRemark;
         public CustomControls.ADateTimePicker dtpDate;
         public CustomControls.ATextBox txtReqNo;

@@ -103,7 +103,7 @@ namespace DAC
             using (SqlConnection conn = new SqlConnection(Connstr))
             {
                 conn.Open();
-                string sql = "select Wc_Code, Wc_Name from WorkCenter_Master";
+                string sql = "select Wc_Code, Wc_Name from WorkCenter_Master where Process_Code = 'PC10001'";
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
                     list = Helper.DataReaderMapToList<WorkOrder_J_WC_ItmeVO>(cmd.ExecuteReader());
