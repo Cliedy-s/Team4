@@ -20,7 +20,6 @@ namespace Axxen
             col.ValueType = typeof(string);
             col.ReadOnly = true;
             col.DefaultCellStyle.Alignment = textAlign;
-
           //col.AutoSizeMode = isFillAll ? DataGridViewAutoSizeColumnMode.Fill : default(DataGridViewAutoSizeColumnMode);
             dgv.Columns.Add(col);
         }
@@ -55,7 +54,7 @@ namespace Axxen
     //    dgv.RowHeadersVisible = false; // 맨왼쪽에 있는 컬럼 삭제
             dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect; // 한줄전체선택
             dgv.DefaultCellStyle.WrapMode = DataGridViewTriState.False;
-           //  dgv.CellBorderStyle = DataGridViewCellBorderStyle.None; //테두리삭제
+             dgv.CellBorderStyle = DataGridViewCellBorderStyle.Single; //테두리삭제
 
             dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(218, 239, 245);//홀수행 색변경
             dgv.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(218, 239, 245);   //컬럼 해더 색설정     
