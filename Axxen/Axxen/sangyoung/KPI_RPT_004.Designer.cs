@@ -33,7 +33,7 @@
             this.panTop.SuspendLayout();
             this.SuspendLayout();
             // 
-            // aPanel1
+            // panTop
             // 
             this.panTop.Controls.Add(this.aComboBox1);
             this.panTop.Controls.Add(this.aLabel1);
@@ -63,6 +63,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1148, 700);
+            this.ControlBox = false;
             this.Name = "KPI_RPT_004";
             this.panTop.ResumeLayout(false);
             this.panTop.PerformLayout();

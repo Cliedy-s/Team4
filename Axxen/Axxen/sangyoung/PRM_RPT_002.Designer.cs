@@ -79,6 +79,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1148, 700);
+            this.ControlBox = false;
             this.Name = "PRM_RPT_002";
             this.Load += new System.EventHandler(this.PRM_RPT_002_Load);
             this.aPanel1.ResumeLayout(false);

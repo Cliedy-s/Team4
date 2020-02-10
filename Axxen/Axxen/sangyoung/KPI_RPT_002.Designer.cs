@@ -63,6 +63,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1148, 700);
+            this.ControlBox = false;
             this.Name = "KPI_RPT_002";
             this.Load += new System.EventHandler(this.KPI_RPT_002_Load);
             this.panTop.ResumeLayout(false);
