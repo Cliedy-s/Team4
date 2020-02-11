@@ -39,7 +39,7 @@ namespace Axxen
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "LSL", "LSL", true, 100, DataGridViewContentAlignment.MiddleRight, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "측정일시", "Condition_Datetime", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "측정회차", "Condition_Date", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "측정값", "Condition_Val", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "측정값", "Condition_Val", true, 100, DataGridViewContentAlignment.MiddleRight, true);
             #endregion
 
             chm = chmservice.GetAllCondition_History_Master(); //전체 조회

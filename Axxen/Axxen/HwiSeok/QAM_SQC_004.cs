@@ -41,7 +41,7 @@ namespace Axxen
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "측정일시", "Inspect_datetime", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "측정회차", "Inspect_date", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "측정순번", "Inspect_measure_seq", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "측정값", "Inspect_val", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "측정값", "Inspect_val", true, 100, DataGridViewContentAlignment.MiddleRight, true);
             #endregion
 
             lhm = lhmservice.GetAllInspectMeasure_History_Master(); //전체 조회

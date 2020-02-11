@@ -87,49 +87,56 @@ namespace Axxen
 
         private void btnExecl_Click(object sender, EventArgs e) //엑셀 저장
         {
-            Excel.Application xlApp;
-            Excel.Workbook xlWorkBook;
-            Excel.Worksheet xlWorkSheet;
-
-            int i, j;
-
             saveFileDialog1.Filter = "Excel Files (*.xls)|*.xls";
             saveFileDialog1.InitialDirectory = "C:";
             saveFileDialog1.Title = "Save";
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                xlApp = new Excel.Application();
-                xlWorkBook = xlApp.Workbooks.Add();
-                xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
-
-                xlWorkSheet.Cells[1, 2] = "근무일";
-                xlWorkSheet.Cells[1, 3] = "작업장";
-                xlWorkSheet.Cells[1, 4] = "작업자";
-                xlWorkSheet.Cells[1, 5] = "근무시작시간";
-                xlWorkSheet.Cells[1, 6] = "근무종료시간";
-                xlWorkSheet.Cells[1, 7] = "근무시간";
-
-                for (i = 0; i <= dgvMainGrid.RowCount - 1; i++)
+                using (WaitForm frm = new WaitForm(ExportOrderList))
                 {
-                    for (j = 0; j <= dgvMainGrid.ColumnCount - 1; j++)
-                    {
-                        xlWorkSheet.Cells[i + 2, j + 2] = dgvMainGrid[j, i].Value.ToString();
-                    }
+                    frm.ShowDialog(this);
                 }
-
-                xlWorkSheet.Columns.AutoFit();
-                xlWorkBook.SaveAs(saveFileDialog1.FileName, Excel.XlFileFormat.xlWorkbookNormal);
-                xlWorkBook.Close(true);
-                xlApp.Quit();
-
-                releaseObject(xlWorkSheet);
-                releaseObject(xlWorkBook);
-                releaseObject(xlApp);
 
                 MessageBox.Show("엑셀 저장 완료", "엑셀 저장", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
         }
+
+        private void ExportOrderList()
+        {
+            Excel.Application xlApp;
+            Excel.Workbook xlWorkBook;
+            Excel.Worksheet xlWorkSheet;
+            int i, j;
+
+            xlApp = new Excel.Application();
+            xlWorkBook = xlApp.Workbooks.Add();
+            xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+
+            xlWorkSheet.Cells[1, 2] = "근무일";
+            xlWorkSheet.Cells[1, 3] = "작업장";
+            xlWorkSheet.Cells[1, 4] = "작업자";
+            xlWorkSheet.Cells[1, 5] = "근무시작시간";
+            xlWorkSheet.Cells[1, 6] = "근무종료시간";
+            xlWorkSheet.Cells[1, 7] = "근무시간";
+
+            for (i = 0; i <= dgvMainGrid.RowCount - 1; i++)
+            {
+                for (j = 0; j <= dgvMainGrid.ColumnCount - 1; j++)
+                {
+                    xlWorkSheet.Cells[i + 2, j + 2] = dgvMainGrid[j, i].Value.ToString();
+                }
+            }
+
+            xlWorkSheet.Columns.AutoFit();
+            xlWorkBook.SaveAs(saveFileDialog1.FileName, Excel.XlFileFormat.xlWorkbookNormal);
+            xlWorkBook.Close(true);
+            xlApp.Quit();
+
+            releaseObject(xlWorkSheet);
+            releaseObject(xlWorkBook);
+            releaseObject(xlApp);
+        }
+
         private void releaseObject(object obj)
         {
             try
