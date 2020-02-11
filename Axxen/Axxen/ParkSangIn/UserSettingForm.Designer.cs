@@ -41,12 +41,21 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.aComboBox7 = new Axxen.CustomControls.AComboBox();
+            this.aComboBox8 = new Axxen.CustomControls.AComboBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.aComboBox4 = new Axxen.CustomControls.AComboBox();
+            this.aComboBox6 = new Axxen.CustomControls.AComboBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.aComboBox2 = new Axxen.CustomControls.AComboBox();
+            this.aComboBox3 = new Axxen.CustomControls.AComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -57,19 +66,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.cbbscreen = new Axxen.CustomControls.AComboBox();
             this.panel10 = new System.Windows.Forms.Panel();
             this.label23 = new System.Windows.Forms.Label();
             this.btnclose = new Axxen.CustomControls.AButton();
-            this.cbbscreen = new Axxen.CustomControls.AComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.aComboBox2 = new Axxen.CustomControls.AComboBox();
-            this.aComboBox3 = new Axxen.CustomControls.AComboBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.aComboBox4 = new Axxen.CustomControls.AComboBox();
-            this.aComboBox6 = new Axxen.CustomControls.AComboBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.aComboBox7 = new Axxen.CustomControls.AComboBox();
-            this.aComboBox8 = new Axxen.CustomControls.AComboBox();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -233,6 +233,62 @@
             this.panel5.Size = new System.Drawing.Size(455, 45);
             this.panel5.TabIndex = 57;
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(177, 18);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(14, 12);
+            this.label12.TabIndex = 5;
+            this.label12.Text = "~";
+            // 
+            // aComboBox7
+            // 
+            this.aComboBox7.FormattingEnabled = true;
+            this.aComboBox7.Items.AddRange(new object[] {
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G",
+            "H",
+            "I",
+            "J",
+            "K",
+            "L",
+            "M",
+            "N",
+            "O",
+            "P",
+            "Q",
+            "R",
+            "X",
+            "T",
+            "U",
+            "V",
+            "W",
+            "X",
+            "W",
+            "Z"});
+            this.aComboBox7.Location = new System.Drawing.Point(198, 12);
+            this.aComboBox7.Name = "aComboBox7";
+            this.aComboBox7.Size = new System.Drawing.Size(165, 20);
+            this.aComboBox7.TabIndex = 4;
+            // 
+            // aComboBox8
+            // 
+            this.aComboBox8.FormattingEnabled = true;
+            this.aComboBox8.Items.AddRange(new object[] {
+            "Ctrl",
+            "Alt",
+            "Shift"});
+            this.aComboBox8.Location = new System.Drawing.Point(6, 12);
+            this.aComboBox8.Name = "aComboBox8";
+            this.aComboBox8.Size = new System.Drawing.Size(165, 20);
+            this.aComboBox8.TabIndex = 3;
+            // 
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -264,6 +320,62 @@
             this.panel7.Size = new System.Drawing.Size(455, 45);
             this.panel7.TabIndex = 55;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(177, 17);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(14, 12);
+            this.label11.TabIndex = 5;
+            this.label11.Text = "~";
+            // 
+            // aComboBox4
+            // 
+            this.aComboBox4.FormattingEnabled = true;
+            this.aComboBox4.Items.AddRange(new object[] {
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G",
+            "H",
+            "I",
+            "J",
+            "K",
+            "L",
+            "M",
+            "N",
+            "O",
+            "P",
+            "Q",
+            "R",
+            "X",
+            "T",
+            "U",
+            "V",
+            "W",
+            "X",
+            "W",
+            "Z"});
+            this.aComboBox4.Location = new System.Drawing.Point(198, 11);
+            this.aComboBox4.Name = "aComboBox4";
+            this.aComboBox4.Size = new System.Drawing.Size(165, 20);
+            this.aComboBox4.TabIndex = 4;
+            // 
+            // aComboBox6
+            // 
+            this.aComboBox6.FormattingEnabled = true;
+            this.aComboBox6.Items.AddRange(new object[] {
+            "Ctrl",
+            "Alt",
+            "Shift"});
+            this.aComboBox6.Location = new System.Drawing.Point(6, 11);
+            this.aComboBox6.Name = "aComboBox6";
+            this.aComboBox6.Size = new System.Drawing.Size(165, 20);
+            this.aComboBox6.TabIndex = 3;
+            // 
             // panel8
             // 
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -294,6 +406,62 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(455, 45);
             this.panel3.TabIndex = 53;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(177, 18);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(14, 12);
+            this.label10.TabIndex = 5;
+            this.label10.Text = "~";
+            // 
+            // aComboBox2
+            // 
+            this.aComboBox2.FormattingEnabled = true;
+            this.aComboBox2.Items.AddRange(new object[] {
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G",
+            "H",
+            "I",
+            "J",
+            "K",
+            "L",
+            "M",
+            "N",
+            "O",
+            "P",
+            "Q",
+            "R",
+            "X",
+            "T",
+            "U",
+            "V",
+            "W",
+            "X",
+            "W",
+            "Z"});
+            this.aComboBox2.Location = new System.Drawing.Point(198, 12);
+            this.aComboBox2.Name = "aComboBox2";
+            this.aComboBox2.Size = new System.Drawing.Size(165, 20);
+            this.aComboBox2.TabIndex = 4;
+            // 
+            // aComboBox3
+            // 
+            this.aComboBox3.FormattingEnabled = true;
+            this.aComboBox3.Items.AddRange(new object[] {
+            "Ctrl",
+            "Alt",
+            "Shift"});
+            this.aComboBox3.Location = new System.Drawing.Point(6, 12);
+            this.aComboBox3.Name = "aComboBox3";
+            this.aComboBox3.Size = new System.Drawing.Size(165, 20);
+            this.aComboBox3.TabIndex = 3;
             // 
             // panel4
             // 
@@ -424,6 +592,14 @@
             this.panel9.Size = new System.Drawing.Size(455, 45);
             this.panel9.TabIndex = 19;
             // 
+            // cbbscreen
+            // 
+            this.cbbscreen.FormattingEnabled = true;
+            this.cbbscreen.Location = new System.Drawing.Point(6, 12);
+            this.cbbscreen.Name = "cbbscreen";
+            this.cbbscreen.Size = new System.Drawing.Size(165, 20);
+            this.cbbscreen.TabIndex = 0;
+            // 
             // panel10
             // 
             this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -455,182 +631,6 @@
             this.btnclose.Text = "닫기";
             this.btnclose.UseVisualStyleBackColor = false;
             this.btnclose.Click += new System.EventHandler(this.Btnclose_Click);
-            // 
-            // cbbscreen
-            // 
-            this.cbbscreen.FormattingEnabled = true;
-            this.cbbscreen.Location = new System.Drawing.Point(6, 12);
-            this.cbbscreen.Name = "cbbscreen";
-            this.cbbscreen.Size = new System.Drawing.Size(165, 20);
-            this.cbbscreen.TabIndex = 0;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(177, 18);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(14, 12);
-            this.label10.TabIndex = 5;
-            this.label10.Text = "~";
-            // 
-            // aComboBox2
-            // 
-            this.aComboBox2.FormattingEnabled = true;
-            this.aComboBox2.Items.AddRange(new object[] {
-            "A",
-            "B",
-            "C",
-            "D",
-            "E",
-            "F",
-            "G",
-            "H",
-            "I",
-            "J",
-            "K",
-            "L",
-            "M",
-            "N",
-            "O",
-            "P",
-            "Q",
-            "R",
-            "X",
-            "T",
-            "U",
-            "V",
-            "W",
-            "X",
-            "W",
-            "Z"});
-            this.aComboBox2.Location = new System.Drawing.Point(198, 12);
-            this.aComboBox2.Name = "aComboBox2";
-            this.aComboBox2.Size = new System.Drawing.Size(165, 20);
-            this.aComboBox2.TabIndex = 4;
-            // 
-            // aComboBox3
-            // 
-            this.aComboBox3.FormattingEnabled = true;
-            this.aComboBox3.Items.AddRange(new object[] {
-            "Ctrl",
-            "Alt",
-            "Shift"});
-            this.aComboBox3.Location = new System.Drawing.Point(6, 12);
-            this.aComboBox3.Name = "aComboBox3";
-            this.aComboBox3.Size = new System.Drawing.Size(165, 20);
-            this.aComboBox3.TabIndex = 3;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(177, 17);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(14, 12);
-            this.label11.TabIndex = 5;
-            this.label11.Text = "~";
-            // 
-            // aComboBox4
-            // 
-            this.aComboBox4.FormattingEnabled = true;
-            this.aComboBox4.Items.AddRange(new object[] {
-            "A",
-            "B",
-            "C",
-            "D",
-            "E",
-            "F",
-            "G",
-            "H",
-            "I",
-            "J",
-            "K",
-            "L",
-            "M",
-            "N",
-            "O",
-            "P",
-            "Q",
-            "R",
-            "X",
-            "T",
-            "U",
-            "V",
-            "W",
-            "X",
-            "W",
-            "Z"});
-            this.aComboBox4.Location = new System.Drawing.Point(198, 11);
-            this.aComboBox4.Name = "aComboBox4";
-            this.aComboBox4.Size = new System.Drawing.Size(165, 20);
-            this.aComboBox4.TabIndex = 4;
-            // 
-            // aComboBox6
-            // 
-            this.aComboBox6.FormattingEnabled = true;
-            this.aComboBox6.Items.AddRange(new object[] {
-            "Ctrl",
-            "Alt",
-            "Shift"});
-            this.aComboBox6.Location = new System.Drawing.Point(6, 11);
-            this.aComboBox6.Name = "aComboBox6";
-            this.aComboBox6.Size = new System.Drawing.Size(165, 20);
-            this.aComboBox6.TabIndex = 3;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(177, 18);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(14, 12);
-            this.label12.TabIndex = 5;
-            this.label12.Text = "~";
-            // 
-            // aComboBox7
-            // 
-            this.aComboBox7.FormattingEnabled = true;
-            this.aComboBox7.Items.AddRange(new object[] {
-            "A",
-            "B",
-            "C",
-            "D",
-            "E",
-            "F",
-            "G",
-            "H",
-            "I",
-            "J",
-            "K",
-            "L",
-            "M",
-            "N",
-            "O",
-            "P",
-            "Q",
-            "R",
-            "X",
-            "T",
-            "U",
-            "V",
-            "W",
-            "X",
-            "W",
-            "Z"});
-            this.aComboBox7.Location = new System.Drawing.Point(198, 12);
-            this.aComboBox7.Name = "aComboBox7";
-            this.aComboBox7.Size = new System.Drawing.Size(165, 20);
-            this.aComboBox7.TabIndex = 4;
-            // 
-            // aComboBox8
-            // 
-            this.aComboBox8.FormattingEnabled = true;
-            this.aComboBox8.Items.AddRange(new object[] {
-            "Ctrl",
-            "Alt",
-            "Shift"});
-            this.aComboBox8.Location = new System.Drawing.Point(6, 12);
-            this.aComboBox8.Name = "aComboBox8";
-            this.aComboBox8.Size = new System.Drawing.Size(165, 20);
-            this.aComboBox8.TabIndex = 3;
             // 
             // UserSettingForm
             // 

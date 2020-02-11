@@ -825,6 +825,9 @@ namespace Axxen
         private void BtnManuReflash_Click(object sender, EventArgs e) //메뉴세로고침
         {
             Setting();
+            Setting();
+            Setting();
+ 
             btnManuReflash.Text = "메뉴";
         }
 
