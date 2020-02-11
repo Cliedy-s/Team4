@@ -227,6 +227,79 @@ namespace DAC
                 throw;
             }
         }
-        
+
+        /// <summary>
+        /// 근무 시작
+        /// </summary>
+        /// <param name="insertitem"></param>
+        /// <returns></returns>
+        public bool InsertStartWork(string processcode, string userid)
+        {
+            try
+            {
+                using (SqlCommand comm = new SqlCommand())
+                {
+
+                    comm.CommandText = @"InsertUpdateStartWork";
+                    comm.Connection = new SqlConnection(Connstr);
+                    comm.CommandType = CommandType.StoredProcedure;
+                    comm.Parameters.AddWithValue("@processcode", processcode);
+                    comm.Parameters.AddWithValue("@userid", userid);
+
+                    comm.Connection.Open();
+                    int result = comm.ExecuteNonQuery();
+                    comm.Connection.Close();
+
+                    return (result > 0);
+                }
+            }
+            catch (Exception ee)
+            {
+                Log.WriteFatal("오류 : ", ee);
+                return false;
+            }
+        }
+        /// <summary>
+        /// 근무 종료
+        /// </summary>
+        /// <param name="insertitem"></param>
+        /// <returns></returns>
+        public bool UpdateEndWork(string processcode, string userid)
+        {
+            try
+            {
+                using (SqlCommand comm = new SqlCommand())
+                {
+                    
+                    comm.CommandText = @"
+   UPDATE [dbo].[Work_History]
+   SET [Work_EndTime] = getdate()
+      ,[Work_Time] = DATEDIFF(HOUR, [Work_StartTime], getdate())
+      ,[Remark] = '근무종료'
+      ,[Up_Date] = getdate()
+      ,[Up_Emp] = @userid
+ WHERE DATEDIFF(DD, [Work_Date] ,getdate()) = 0
+      AND [Process_Code] = @processcode
+      AND [User_ID] = @userid; 
+    ";
+                    comm.Connection = new SqlConnection(Connstr);
+                    comm.CommandType = CommandType.Text;
+                    comm.Parameters.AddWithValue("@userid", userid);
+                    comm.Parameters.AddWithValue("@processcode", processcode);
+
+                    comm.Connection.Open();
+                    int result = comm.ExecuteNonQuery();
+                    comm.Connection.Close();
+
+                    return (result > 0);
+                }
+            }
+            catch (Exception ee)
+            {
+                Log.WriteFatal("오류 : ", ee);
+                return false;
+            }
+        }
+
     }
 }

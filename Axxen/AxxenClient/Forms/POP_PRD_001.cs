@@ -29,6 +29,12 @@ namespace AxxenClient.Forms
             InitializeComponent();
             panBoxing.Location = panLoad.Location = panMolding.Location;
         }
+        private void WorkOrderForm_Load(object sender, EventArgs e)
+        {
+            InitControl();
+            btnMachineRun.Visible = true;
+        }
+
         /// <summary>
         /// 컨트롤들 기본설정
         /// </summary>
@@ -76,10 +82,11 @@ namespace AxxenClient.Forms
             InitControlUtil.AddNewColumnToDataGridView(dgvMain, "실적수량", "Prd_Qty", true, 110, DataGridViewContentAlignment.MiddleRight, false);
             InitControlUtil.AddNewColumnToDataGridView(dgvMain, "생산시작시간", "Prd_Starttime", true, 200, DataGridViewContentAlignment.MiddleLeft, false);
             InitControlUtil.AddNewColumnToDataGridView(dgvMain, "생산종료시간", "Prd_Endtime", true, 200);
-            InitControlUtil.AddNewColumnToDataGridView(dgvMain, "계획 날짜", "Plan_Date", false, 200);
-            InitControlUtil.AddNewColumnToDataGridView(dgvMain, "계획수량", "Prd_Qty", false, 200, DataGridViewContentAlignment.MiddleRight, false);
-            InitControlUtil.AddNewColumnToDataGridView(dgvMain, "성형 줄 수", "Line_Per_Qty", false, 200, DataGridViewContentAlignment.MiddleRight, false);
-            InitControlUtil.AddNewColumnToDataGridView(dgvMain, "포장 샷당 pcs수", "Shot_Per_Qty", false, 200, DataGridViewContentAlignment.MiddleRight, false);
+            InitControlUtil.AddNewColumnToDataGridView(dgvMain, "계획 날짜", "Plan_Date", false);
+            InitControlUtil.AddNewColumnToDataGridView(dgvMain, "계획수량", "Prd_Qty", false);
+            InitControlUtil.AddNewColumnToDataGridView(dgvMain, "성형 줄 수", "Line_Per_Qty", false);
+            InitControlUtil.AddNewColumnToDataGridView(dgvMain, "포장 샷당 pcs수", "Shot_Per_Qty", false);
+            InitControlUtil.AddNewColumnToDataGridView(dgvMain, "공정코드", "Process_Code", false);
 
             dgvMain.Columns[8].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm:ss";
             dgvMain.Columns[9].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm:ss";
@@ -92,21 +99,23 @@ namespace AxxenClient.Forms
             // 데이터를 가져온다.
             WorkOrder_Service service = new WorkOrder_Service();
             dgvMain.DataSource = service.GetAllWorkOrder_AlloHisDetail_Item_Wc(GlobalUsage.WcCode);
+            SetRowsForTimer();
 
-            // 실행중인 작업 및 선택했던 로우를 선택한다
-            if (!GlobalUsage.WorkOrderNo.Equals("설정안함"))
-                SetColor(GlobalUsage.WorkOrderNo);
-            if (!string.IsNullOrEmpty(selectedrowwono))
+        }
+        /// <summary>
+        /// 폼이 닫힐 때
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void POP_PRD_001_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // 작업 종료
+            if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
             {
-                for (int i = 0; i < dgvMain.Rows.Count; i++)
-                {
-                    if (dgvMain.Rows[i].Cells[1].Value.ToString().Equals(selectedrowwono))
-                    {
-                        dgvMain.CurrentCell = dgvMain.Rows[i].Cells[columnno];
-                    }
-                }
+                WorkOrderEnd();
             }
         }
+
         /// <summary>
         /// 버튼에 폼을 연결한다.
         /// </summary>
@@ -128,11 +137,11 @@ namespace AxxenClient.Forms
             btnQualityMeasure1.Tag = btnQualityMeasure2.Tag = btnQualityMeasure3.Tag = typeof(POP_PRD_015);
             btnNoActive.Tag = typeof(POP_PRD_016);
         }
-        private void WorkOrderForm_Load(object sender, EventArgs e)
-        {
-            InitControl();
-            btnMachineRun.Visible = true;
-        }
+        /// <summary>
+        /// 폼을 여는 버튼 클릭
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnClick(object sender, EventArgs e)
         {
             if (sender is Button btn)
@@ -143,6 +152,7 @@ namespace AxxenClient.Forms
                 frm.Show();
             }
         }
+
         /// <summary>
         /// 작업지시 토글
         /// </summary>
@@ -182,13 +192,15 @@ namespace AxxenClient.Forms
                 GlobalUsage.Prd_Qty = 0;
                 GlobalUsage.Out_Qty = 0;
                 GlobalUsage.Prd_Unit = row.Cells[5].Value.ToString();
+                GlobalUsage.ProcessCode = row.Cells[14].Value.ToString();
 
                 GetDatas();
-                SetColor(GlobalUsage.WorkOrderNo);
+                SetColor(GlobalUsage.WorkOrderNo, true);
                 Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 작업지시 {GlobalUsage.WorkOrderNo}를 실행함");
 
-                // 전역 할당
-                selectedrowwono = GlobalUsage.WorkOrderNo;
+                // 근무 정보 넣어주기
+                WorkHistory_Center_UserMasterService wservice = new WorkHistory_Center_UserMasterService();
+                wservice.InsertStartWork(dgvMain.SelectedRows[0].Cells[14].Value.ToString(), GlobalUsage.UserID);
             }
             else
             {
@@ -196,17 +208,35 @@ namespace AxxenClient.Forms
                 MessageBox.Show("존재하지 않는 작업지시 입니다.");
             }
         }
-        private void SetColor(string wokrorderno)
+        /// <summary>
+        /// 로우 배경색 변경
+        /// </summary>
+        /// <param name="wokrorderno"></param>
+        private void SetColor(string wokrorderno, bool IsRun)
         {
-            //색상 변경
-            for (int i = 0; i < dgvMain.RowCount; i++)
-            {
-                DataGridViewRow row2 = dgvMain.Rows[i];
-                if (row2.Cells[1].Value.ToString().Equals(wokrorderno))
+            if (IsRun)
+            { // 색상 변경 ( 실행 )
+                for (int i = 0; i < dgvMain.RowCount; i++)
                 {
-                    runningDefaultColor = row2.DefaultCellStyle.BackColor;
-                    row2.DefaultCellStyle.BackColor = Color.FromArgb(188, 220, 244);
-                    break;
+                    DataGridViewRow row2 = dgvMain.Rows[i];
+                    if (row2.Cells[1].Value.ToString().Equals(wokrorderno))
+                    {
+                        runningDefaultColor = row2.DefaultCellStyle.BackColor;
+                        row2.DefaultCellStyle.BackColor = Color.FromArgb(188, 220, 244);
+                        break;
+                    }
+                }
+            }
+            else
+            { // 색상 변경 ( 실행 중지 )
+                for (int i = 0; i < dgvMain.RowCount; i++)
+                {
+                    DataGridViewRow row2 = dgvMain.Rows[i];
+                    if (row2.Cells[1].Value.ToString().Equals(wokrorderno))
+                    {
+                        row2.DefaultCellStyle.BackColor = runningDefaultColor;
+                        break;
+                    }
                 }
             }
         }
@@ -219,7 +249,14 @@ namespace AxxenClient.Forms
             // 작업지시 끝내기
             if (service.UpdateWorkOrderEnd(GlobalUsage.WorkOrderNo, GlobalUsage.Out_Qty, GlobalUsage.Prd_Qty, GlobalUsage.UserID))
             { // 성공
-              //해당 프로그램의 전역에 설정해줌
+                // 색상 변경하기
+                SetColor(GlobalUsage.WorkOrderNo, false);
+
+                // 근무 정보 넣어주기
+                WorkHistory_Center_UserMasterService wservice = new WorkHistory_Center_UserMasterService();
+                wservice.UpdateEndWork(GlobalUsage.ProcessCode, GlobalUsage.UserID);
+
+                //해당 프로그램의 전역에 설정해줌
                 Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 작업지시 {GlobalUsage.WorkOrderNo}를 종료함");
                 GlobalUsage.WorkOrderNo = "설정안됨";
                 GlobalUsage.WorkorderDate = null;
@@ -227,6 +264,7 @@ namespace AxxenClient.Forms
                 GlobalUsage.Prd_Qty = 0;
                 GlobalUsage.Out_Qty = 0;
                 GlobalUsage.Prd_Unit = "설정안됨";
+                GlobalUsage.ProcessCode = null;
 
                 // 전역 할당
                 selectedrowwono = "설정안됨";
@@ -241,6 +279,7 @@ namespace AxxenClient.Forms
             // 기계 종료
             if(isMachineRun) MachineStop(machinet);
             return;
+
         }
         /// <summary>
         /// 작업지시 마감
@@ -280,10 +319,40 @@ namespace AxxenClient.Forms
         /// <param name="e"></param>
         private void timetimer_Tick(object sender, EventArgs e)
         {
+            // 작업지시번호(row) currentcell.Column(Column)
             selectedrowwono = dgvMain.SelectedRows[0].Cells[1].Value.ToString();
             columnno = dgvMain.CurrentCell.ColumnIndex;
+
+            // 데이터 가져오기
             GetDatas();
         }
+        /// <summary>
+        /// 작업지시를 가져올 때 실행중인 로우 색상변경, 선택중이던 로우 재선택
+        /// </summary>
+        private void SetRowsForTimer()
+        {
+            // 작업이 실행중이면 색상을 변경해줌
+            if (!GlobalUsage.WorkOrderNo.Equals("설정안함"))
+                SetColor(GlobalUsage.WorkOrderNo, true);
+
+            // 선택 중이던 로우 재선택
+            if (!string.IsNullOrEmpty(selectedrowwono))
+            {
+                for (int i = 0; i < dgvMain.Rows.Count; i++)
+                {
+                    if (dgvMain.Rows[i].Cells[1].Value.ToString().Equals(selectedrowwono))
+                    {
+                        dgvMain.CurrentCell = dgvMain.Rows[i].Cells[columnno];
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// 기계 토글
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnMachineRun_Click(object sender, EventArgs e)
         { // 토글 기계
             if (isMachineRun) MachineStop(machinet);
@@ -347,14 +416,5 @@ namespace AxxenClient.Forms
             }
         }
 
-
-        private void POP_PRD_001_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            // 작업 종료
-            if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
-            {
-                WorkOrderEnd();
-            }
-        }
     }
 }
