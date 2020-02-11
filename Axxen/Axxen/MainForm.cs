@@ -550,12 +550,14 @@ namespace Axxen
                 {
                     tabRect = GetRTLCoordinates(this.tabControl2.ClientRectangle, tabRect);
                     imageRect = GetRTLCoordinates(this.tabControl2.ClientRectangle, imageRect);
-                    sf.FormatFlags |= StringFormatFlags.DirectionRightToLeft;
+                    ///  sf.FormatFlags |= StringFormatFlags.DirectionRightToLeft;
+                  sf.FormatFlags |= StringFormatFlags.DirectionVertical;
                 }
-              
-                if(this.tabControl2.TabPages[e.Index] == tabControl2.SelectedTab) { 
+
+                if (this.tabControl2.TabPages[e.Index] == tabControl2.SelectedTab) { 
              
                     e.Graphics.FillRectangle(Brushes.LightSkyBlue, e.Bounds); //텝페이지 색
+                    //LightSkyBlue
                 }
                 else
                 {
@@ -566,7 +568,7 @@ namespace Axxen
                 e.Graphics.DrawString(this.tabControl2.TabPages[e.Index].Text,
                                       this.Font, Brushes.Black, tabRect, sf);//텝페이지 폰트랑 글자 색
 
-                e.Graphics.DrawImage(CloseImage, imageRect.Location); //텝페이지 취소이미지 생성
+                e.Graphics.DrawImage(CloseImage, imageRect.Location.X-4,imageRect.Location.Y-4); //텝페이지 취소이미지 생성
 
 
 
@@ -703,9 +705,6 @@ namespace Axxen
                 MyUpdateEvent(this, null);
         }
 
-
-   
-
         private void TsbtnDelete_Click(object sender, EventArgs e)
         {
             if (this.MyDeleteEvent != null)
@@ -759,9 +758,10 @@ namespace Axxen
             btnManuReflash.Text = "메뉴";
         }
 
-        private void TabControl2_SelectedIndexChanged(object sender, EventArgs e)
+        private void BtnManuReflash_Click(object sender, EventArgs e) //메뉴세로고침
         {
-          
+            Setting();
+            btnManuReflash.Text = "메뉴";
         }
     }
 }
