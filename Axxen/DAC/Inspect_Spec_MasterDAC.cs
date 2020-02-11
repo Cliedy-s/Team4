@@ -36,6 +36,36 @@ namespace DAC
                 return list;
             }
         }
+        /// <summary>
+        /// 작업장 별로 검색
+        /// </summary>
+        /// <param name="group"></param>
+        /// <returns></returns>
+        public List<InspectSpecVO> GetAllByWcCode(string wccode)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(Connstr);
+                cmd.CommandText =
+                    @"
+SELECT ism.Item_Code, ism.Process_code, ism.Inspect_code, ism.Inspect_name, 
+                     ism.Spec_Desc, ism.USL, ism.SL, ism.LSL, ism.Sample_size, ism.Inspect_Unit, ism.Use_YN, 
+                     ism.Remark 
+FROM Inspect_Spec_Master AS ism 
+	JOIN WorkCenter_Master AS WCM ON WCM.Process_Code = ism.Process_code
+WHERE WCM.Wc_Code = @wccode ;
+";
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@wccode", wccode);
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<InspectSpecVO> list = Helper.DataReaderMapToList<InspectSpecVO>(reader);
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
 
         /// <summary>
         /// 품목규격 설정 

@@ -69,6 +69,7 @@
             this.Controls.Add(this.aComboBox1);
             this.IsMdiContainer = true;
             this.Name = "MainForm";
+            this.Text = "POP";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);

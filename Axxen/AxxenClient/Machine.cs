@@ -25,6 +25,19 @@ namespace AxxenClient
             SLx1000 = Convert.ToInt32(SL * 1000);
         }
     }
+    public class Item_MoldPair
+    {
+        public string Itemcode { get; set; }
+        public string Moldcode { get; set; }
+        public int Line_Per_Qty { get; set; }
+        public Item_MoldPair(string itemcode, string moldcode, int line_Per_Qty)
+        {
+            Itemcode = itemcode;
+            Moldcode = moldcode;
+            Line_Per_Qty = line_Per_Qty;
+        }
+    }
+
     class Machine
     {
         private static LoggingUtility _loggingUtility = LoggingUtility.GetLoggingUtility("WorkerClient", Level.Info, 30);
@@ -42,20 +55,20 @@ namespace AxxenClient
             if (!Directory.Exists(writefolder))
                 Directory.CreateDirectory(writefolder);
         }
-        public void MachineStartMold(string workorderno, string moldcode, string itemcode)
+        public void MachineStartMold(string workorderno, Item_MoldPair pair)
         {
-            Log.WriteInfo("성형생산 시작...");
+            Log.WriteInfo("성형 시작...");
             timer = new System.Timers.Timer(interval);
             timer.Enabled = true;
-            timer.Elapsed += (sender, eventargs) => { Mold_Elapsed( workorderno,  moldcode,  itemcode); };
+            timer.Elapsed += (sender, eventargs) => { Mold_Elapsed( workorderno, pair); };
             timer.AutoReset = true;
         }
-        public void MachineStartBoxing(string workorderno, string itemcode)
+        public void MachineStartBoxing(string workorderno, string itemcode, int shotQty)
         {
             Log.WriteInfo("포장 시작...");
             timer = new System.Timers.Timer(interval);
             timer.Enabled = true;
-            timer.Elapsed += (sender, eventargs) => { Boxing_Elapsed(workorderno, itemcode); };
+            timer.Elapsed += (sender, eventargs) => { Boxing_Elapsed(workorderno, itemcode, shotQty); };
             timer.AutoReset = true;
         }
         public void MachineStartInspectMeasure(string workorderno, List<Item_inspectPair> item_inspectcodes)
@@ -66,20 +79,37 @@ namespace AxxenClient
             timer.Elapsed += (sender, eventargs) => { Inspect_Measure_Elapsed( workorderno, item_inspectcodes); };
             timer.AutoReset = true;
         }
-        public void MachineStop(string msg)
+        public void MachineStop(MachineType work)
         {
             timer.Stop();
             timer.Dispose();
-            Log.WriteInfo(msg+" 파일 로그 기록 종료...");
+            string msg = string.Empty;
+            switch (work)
+            {
+                case MachineType.Molding:
+                    msg = "성형";
+                    break;
+                case MachineType.Boxing:
+                    msg = "포장";
+                    break;
+                case MachineType.Inspect_Measure:
+                    msg = "품질측정";
+                    break;
+                default:
+                    msg = "";
+                    break;
+            }
+            Log.WriteInfo(msg+" 로그 기록 종료...");
         }
-        private void Mold_Elapsed(string workorderno, string moldcode, string itemcode)
+        private void Mold_Elapsed(string workorderno, Item_MoldPair pair)
         {
             Random rnd = new Random((int)DateTime.UtcNow.Ticks);
+            int badcnt = rnd.Next(0, 5);
             StreamWriter sw = null;
             try
             {
                 sw = new StreamWriter($"{writefolder}\\MoldingLog_{machineID}_{iCnt}.log", false);
-                string msg = $"{DateTime.Now.ToString("yyyyMMdd HH:mm:ss")}/Machine_{machineID}/Mold/{itemcode}/{rnd.Next(100, 130)}/{rnd.Next(0, 5)}";
+                string msg = $"{DateTime.Now.ToString("yyyyMMdd HH:mm:ss")}/Machine_{machineID}/{workorderno}/{pair.Moldcode}/{pair.Itemcode}/{pair.Line_Per_Qty}/{badcnt}";
                 sw.WriteLine(msg);
                 sw.Flush();
                 sw.Close();
@@ -93,14 +123,15 @@ namespace AxxenClient
                 iCnt++;
             }
         }
-        private void Boxing_Elapsed(string workorderno, string itemcode)
+        private void Boxing_Elapsed(string workorderno, string itemcode, int shotQty)
         {
             Random rnd = new Random((int)DateTime.UtcNow.Ticks);
+            int badcnt = rnd.Next(0, 5);
             StreamWriter sw = null;
             try
             {
-                sw = new StreamWriter($"{writefolder}\\Boxing_Log{machineID}_{iCnt}.log", false);
-                string msg = $"{DateTime.Now.ToString("yyyyMMdd HH:mm:ss")}/Machine_{machineID}/Boxing/{itemcode}/{rnd.Next(100, 130)}/{rnd.Next(0, 5)}";
+                sw = new StreamWriter($"{writefolder}\\BoxingLog_{machineID}_{iCnt}.log", false);
+                string msg = $"{DateTime.Now.ToString("yyyyMMdd HH:mm:ss")}/Machine_{machineID}/{workorderno}/Boxing/{itemcode}/{shotQty}/{badcnt}";
                 sw.WriteLine(msg);
                 sw.Flush();
                 sw.Close();
@@ -123,13 +154,13 @@ namespace AxxenClient
             Item_inspectPair pair = item_inspectcodes[cnt++];
             if (pair == null)
             {
-                MachineStop("품질 측정");
+                MachineStop(MachineType.Inspect_Measure);
                 return;
             }
             try
             {
-                sw = new StreamWriter($"{writefolder}\\Inspect_Measure_Log{machineID}_{iCnt}.log", false);
-                string msg = $"{DateTime.Now.ToString("yyyyMMdd HH:mm:ss")}/Machine_{machineID}/Inspect_Measure/{pair.Itemcode}/{pair.Inspectcode}/{rnd.Next(pair.USLx1000, pair.SLx1000) / 1000m}";
+                sw = new StreamWriter($"{writefolder}\\Inspect_MeasureLog_{machineID}_{iCnt}.log", false);
+                string msg = $"{DateTime.Now.ToString("yyyyMMdd HH:mm:ss")}/Machine_{machineID}/{workorderno}/{pair.Inspectcode}/{pair.Itemcode}/{rnd.Next(pair.USLx1000, pair.SLx1000) / 1000m}";
                 sw.WriteLine(msg);
                 sw.Flush();
                 sw.Close();

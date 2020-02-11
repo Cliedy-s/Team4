@@ -36,8 +36,8 @@ namespace AxxenClient.Forms
         {
             InitControlUtil.SetPOPDGVDesign(dgvPalletList);
             InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "팔레트번호", "Pallet_No", true, 100, DataGridViewContentAlignment.MiddleLeft, true);
-            InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "제품", "Item_Name", true);
-            InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "등급", "Boxing_Grade_Code", true, 100, DataGridViewContentAlignment.MiddleCenter);
+            InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "제품", "Item_Name", true, 200);
+            InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "등급", "Boxing_Grade_Code", true, 200, DataGridViewContentAlignment.MiddleCenter);
             InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "수량", "CurrentQty", true, 100, DataGridViewContentAlignment.MiddleRight);
             InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "등급상세", "Grade_Detail_Code", false);
             InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "사이즈", "Size_Code", false);
@@ -56,7 +56,8 @@ namespace AxxenClient.Forms
                 Random rand = new Random(now.Millisecond);
                 Pallet_MasterService service = new Pallet_MasterService();
                 if (!service.IsExistPallet(txtPalletNo.TextBoxText))
-                {
+                { // 팔레트가 존재하면
+                    // insert 시도
                     bool IsSuccess = service.InsertPallet(
                         new VO.PalletVO()
                         {
@@ -69,17 +70,22 @@ namespace AxxenClient.Forms
                             Size_Code = "3",
                         });
                     if (IsSuccess)
-                    {
+                    { // 성공
                         Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 팔레트를 생성함");
                         MessageBox.Show("팔레트가 생성되었습니다.");
                         GetDatas();
                     }
                     else
-                    {
+                    { // 실패
                         Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 팔레트 생성에 실패함");
                         MessageBox.Show("팔레트 생성에 실패하였습니다.");
                         return;
                     }
+                }
+                else
+                { // 팔레트가 존재하지 않을 때
+                    service.UpdatePallet(txtPalletNo.TextBoxText, Convert.ToInt32(txtPrintPallet.TextBoxText));
+                    GetDatas();
                 }
                 PrintPallet(txtPalletNo.TextBoxText, Convert.ToInt32(txtPrintPallet.TextBoxText));
             }

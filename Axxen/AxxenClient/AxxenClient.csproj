@@ -334,6 +334,7 @@
   <ItemGroup>
     <None Include="Image\X.png" />
     <None Include="Image\MianLoGo.png" />
+    <Content Include="Image\blankicon.ico" />
     <Content Include="Image\progress.gif" />
     <Content Include="Team4Connect_DEV.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

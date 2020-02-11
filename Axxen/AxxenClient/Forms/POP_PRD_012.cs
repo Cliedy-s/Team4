@@ -42,10 +42,8 @@ namespace AxxenClient.Forms
         }
         private void GetDatas()
         {
-            // TODO - 조건에 맞게 변경하기
-            //dgvGVFrom.DataSource = service.GetGVCurrentStatus(wccode:GlobalUsage.WcCode, workorderno:GlobalUsage.WorkOrderNo, gvStatus:"적재");
             GV_Current_StatusService service = new GV_Current_StatusService();
-            List<GVStatusVO> list = service.GetGVCurrentStatus();
+            List<GVStatusVO> list = service.GetGVCurrentStatus(gvGroup:"건조그룹");
             dgvGVList.DataSource =
                 (from item in list
                  where (item.GV_Status == "적재" || item.GV_Status == "언로딩")
@@ -54,10 +52,8 @@ namespace AxxenClient.Forms
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            // TODO - 조건에 맞게 변경하기
-            //dgvGVFrom.DataSource = service.GetGVCurrentStatus(wccode:GlobalUsage.WcCode, workorderno:GlobalUsage.WorkOrderNo, gvStatus:"적재");
             GV_Current_StatusService service = new GV_Current_StatusService();
-            List<GVStatusVO> list = service.GetGVCurrentStatus(gvName: txtGVSearch.TextBoxText);
+            List<GVStatusVO> list = service.GetGVCurrentStatus(gvGroup: "건조그룹", gvName: txtGVSearch.TextBoxText);
             dgvGVList.DataSource =
                 (from item in list
                  where (item.GV_Status == "적재" || item.GV_Status == "언로딩")
@@ -85,11 +81,21 @@ namespace AxxenClient.Forms
                     Up_Emp = GlobalUsage.UserID
                 };
                 if (service.UpdateClearGV(clearvo))
+                {
+                    Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 대차({clearvo.GV_Code}) 대차비우기에 성공함");
                     GetDatas();
+                }
                 else
+                {
+                    Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 대차({clearvo.GV_Code})를 비우려고 하였으나 모종의 이유로 실패함");
                     MessageBox.Show("대차 비우기에 실패하였습니다.");
+                }
             }
-            else MessageBox.Show("작업을 시작해주세요");
+            else
+            {
+                Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 작업시작을 하지않고 대차 비우기를 하려하였음");
+                MessageBox.Show("작업을 시작해주세요");
+            }
         }
     }
 }

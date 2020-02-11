@@ -52,11 +52,10 @@ namespace AxxenClient.Forms
             aComboBox1.ValueMember = "value2";
 
             // 초반 값 
-            GlobalUsage.WoIniChar = "W";
             GlobalUsage.WorkType = WorkType.Boxing;
             GlobalUsage.UserID = "master";
             GlobalUsage.UserName = "Master";
-            GlobalUsage.WcCode = "WC1";
+            GlobalUsage.WcCode = "WC20001";
 
             POP_PRD_001 childfrm = new POP_PRD_001();
             childfrm.WindowState = FormWindowState.Maximized;

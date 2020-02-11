@@ -16,7 +16,7 @@ namespace DAC
         /// </summary>
         /// <param name="wccode"></param>
         /// <returns></returns>
-        public List<GVStatusVO> GetGVCurrentStatus(string wccode = null, string ProcessName = null, string workorderno = null, string gvStatus = null, string gvName = null)
+        public List<GVStatusVO> GetGVCurrentStatus(string wccode = null, string ProcessName = null, string workorderno = null, string gvStatus = null, string gvName = null, string gvGroup = null)
         {
             using (SqlCommand comm = new SqlCommand())
             {
@@ -28,6 +28,7 @@ namespace DAC
                 comm.Parameters.AddWithValue("@gvStatus", gvStatus);
                 comm.Parameters.AddWithValue("@workorderno", workorderno);
                 comm.Parameters.AddWithValue("@GVName", gvName);
+                comm.Parameters.AddWithValue("@GVGroup", gvGroup);
 
                 comm.Connection.Open();
                 SqlDataReader reader = comm.ExecuteReader();

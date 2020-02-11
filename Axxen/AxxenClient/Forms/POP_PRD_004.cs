@@ -28,8 +28,8 @@ namespace AxxenClient.Forms
             InitControlUtil.SetPOPDGVDesign(dgvPalletList);
             InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "작업지시번호", "WorkOrderNo", false);
             InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "팔레트번호", "Pallet_No", true, 100, DataGridViewContentAlignment.MiddleLeft, true);
-            InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "제품", "Item_Name", true);
-            InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "등급", "Boxing_Grade_Code", true, 100, DataGridViewContentAlignment.MiddleCenter);
+            InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "제품", "Item_Name", true, 200);
+            InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "등급", "Boxing_Grade_Code", true, 200, DataGridViewContentAlignment.MiddleCenter);
             InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "수량", "CurrentQty", true, 100, DataGridViewContentAlignment.MiddleRight);
             InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "등급상세", "Grade_Detail_Code", false);
             InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "사이즈", "Size_Code", false);
@@ -40,7 +40,7 @@ namespace AxxenClient.Forms
         private void GetDatas()
         {
             Pallet_MasterService service = new Pallet_MasterService();
-            dgvPalletList.DataSource = service.GetAll();
+            dgvPalletList.DataSource = service.GetNotInputed();
         }
         private void dgvPalletList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -67,6 +67,7 @@ namespace AxxenClient.Forms
                 {
                     Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 존재하지 않는 팔레트({txtPalletNo.TextBoxText})의 바코드를 재발행하려함");
                     MessageBox.Show("팔레트 번호를 확인해주세요");
+                    GetDatas();
                     return;
                 }
                 string barcodeno = DateTime.Now.Date.ToString("yyyyMMddHHmmssffffff");
@@ -152,15 +153,10 @@ namespace AxxenClient.Forms
         /// <param name="e"></param>
         private void btnSearchByDate_Click(object sender, EventArgs e)
         {
-
-            if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
-            {
-                ProgressForm frm = new ProgressForm(() => { Thread.Sleep(500); GetSearch(); });
-                frm.ShowInTaskbar = false;
-                frm.StartPosition = FormStartPosition.CenterParent;
-                frm.ShowDialog();
-            }
-            else MessageBox.Show("작업을 시작해주세요");
+            ProgressForm frm = new ProgressForm(() => { Thread.Sleep(500); GetSearch(); });
+            frm.ShowInTaskbar = false;
+            frm.StartPosition = FormStartPosition.CenterParent;
+            frm.ShowDialog();
         }
         private void GetSearch()
         {

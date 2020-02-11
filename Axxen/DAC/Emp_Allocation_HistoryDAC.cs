@@ -124,12 +124,12 @@ UPDATE Emp_Wc_Allocation SET
 		/// <param name="username"></param>
 		/// <param name="wcCode"></param>
 		/// <returns></returns>
-		public bool UpdateWorkerDeallocateAll(List<string> targetUserIds, string username, string wcCode)
+		public bool UpdateWorkerDeallocateAll(List<string> targets, string username, string wcCode)
 		{
-			StringBuilder sb = new StringBuilder();
-			foreach (string item in targetUserIds)
+			StringBuilder targetids = new StringBuilder();
+			foreach (string item in targets)
 			{
-				sb.Append(item + "@");
+				targetids.Append(item + "@");
 			}
 
 			using (SqlCommand comm = new SqlCommand())
@@ -138,15 +138,17 @@ UPDATE Emp_Wc_Allocation SET
 				comm.CommandText = @"UpdateWorkerDeallocateAll";
 				comm.CommandType = CommandType.StoredProcedure;
 				comm.Parameters.AddWithValue("@Up_Emp", username);
-				comm.Parameters.AddWithValue("@UserID", targetUserIds.ToString().TrimEnd('@'));
+				comm.Parameters.AddWithValue("@UserID", targetids.ToString().TrimEnd('@'));
 				comm.Parameters.AddWithValue("@wccode", wcCode);
 				comm.Parameters.AddWithValue("@splitchar", '@');
+				comm.Parameters.Add("@O_CheckResult", SqlDbType.NVarChar, 100).Direction = ParameterDirection.Output;
 
 				comm.Connection.Open();
 				int result = comm.ExecuteNonQuery();
+				string sResult = comm.Parameters["@O_CheckResult"].Value.ToString();
 				comm.Connection.Close();
 
-				return result > 0;
+				return result >= targets.Count* 2;
 			}
 
 		}

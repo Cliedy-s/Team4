@@ -15,10 +15,10 @@ namespace Service
         /// </summary>
         /// <param name="wccode"></param>
         /// <returns></returns>
-        public List<GVStatusVO> GetGVCurrentStatus(string wccode = null, string ProcessName = null, string workorderno = null, string gvStatus = null, string gvName = null)
+        public List<GVStatusVO> GetGVCurrentStatus(string wccode = null, string ProcessName = null, string workorderno = null, string gvStatus = null, string gvName = null, string gvGroup = null)
         {
             GV_Current_StatusDAC dac = new GV_Current_StatusDAC();
-            return dac.GetGVCurrentStatus( wccode ,  ProcessName ,  workorderno ,  gvStatus ,  gvName );
+            return dac.GetGVCurrentStatus( wccode ,  ProcessName ,  workorderno ,  gvStatus ,  gvName , gvGroup);
         }
         /// <summary>
         /// 요입현황

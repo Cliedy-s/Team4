@@ -62,7 +62,7 @@ FROM Emp_Wc_Allocation AS ewa
 	JOIN User_Master AS UM ON UM.User_ID = EWA.User_ID
 	JOIN WorkCenter_Master AS WCM ON WCM.Process_Code = UM.Default_Process_Code
 	JOIN WorkCenter_Master AS WCM2 ON WCM2.Wc_Code = EWA.Wc_Code
-  WHERE WCM.Wc_Code = 'WC1') as currentt WHERE (currentt.NOWWCcode != 'WC1' or currentt.NOWWCcode is null) ";
+  WHERE WCM.Wc_Code = @wccode) as currentt WHERE (currentt.NOWWCcode != @wccode or currentt.NOWWCcode is null) ";
                 comm.CommandType = CommandType.Text;
                 comm.Parameters.AddWithValue("@wccode", wccode);
 

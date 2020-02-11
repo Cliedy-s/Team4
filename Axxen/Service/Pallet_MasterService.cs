@@ -21,6 +21,14 @@ namespace Service
             return dac.GetAll();
         }
         /// <summary>
+        /// 입고안된 팔레트목록 가져오기
+        /// </summary>
+        public List<PalletVO> GetNotInputed()
+        {
+            Pallet_MasterDAC dac = new Pallet_MasterDAC();
+            return dac.GetNotInputed();
+        }
+        /// <summary>
         /// 팔레트 검색
         /// </summary>
         public PalletVO GetPallet(string palletno)
@@ -106,13 +114,21 @@ namespace Service
             return dac.InsertPallet(item);
         }
         /// <summary>
+        /// 팔레트 수량 추가
+        /// </summary>
+        public bool UpdatePallet(string palletno, int qty)
+        {
+            Pallet_MasterDAC dac = new Pallet_MasterDAC();
+            return dac.UpdatePallet(palletno, qty);
+        }
+        /// <summary>
         /// 팔레트입고
         /// </summary>
         /// <returns></returns>
-        public bool InputPallet(string username, string workorderno, string palletno)
+        public bool InputPallet(string username, string workorderno, string palletno, int inqty)
         {
             Pallet_MasterDAC dac = new Pallet_MasterDAC();
-            return dac.InputPallet(username, workorderno, palletno);
+            return dac.InputPallet(username, workorderno, palletno, inqty);
         }
         /// <summary>
         /// 팔레트입고 여부

@@ -82,6 +82,9 @@ namespace DAC
                 int result = comm.ExecuteNonQuery();
                 comm.Connection.Close();
 
+                if(result ==0)
+                    Log.WriteInfo($"{userid}이(가) 대차({unloadgvcode})에서 대차({loadgvcode})로 옮겨타기 하려했으나 GV_Current_Status와 GV_History에 언로딩할 대차가 존재하지 않음");
+
                 return result > 0;
             }
         }

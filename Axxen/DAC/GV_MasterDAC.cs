@@ -163,55 +163,6 @@ VALUES(@GV_Code,@GV_Name,@GV_GroupCode,@GV_Group,@GV_Status,GETDATE(),@Ins_Emp)
             }
         }
         /// <summary>
-        /// 대차리스트 작업장별로 가져오기
-        /// </summary>
-        public List<GVWorkItemVO> GetAllByWC(string wccode, string woinichar)
-        {
-            using (SqlCommand comm = new SqlCommand())
-            {
-                comm.Connection = new SqlConnection(Connstr);
-                comm.CommandText =
- @" SELECT tab1.[GV_Code] 
-      ,tab1.[GV_Name] 
-      ,tab1.[GV_Group] 
-      ,tab1.[GV_Status] 
-      ,tab1.[Unloading_Wc] 
-      ,tab1.WorkOrderNo 
-      ,wo.[Prd_Qty]  
-      ,wo.[Prd_Unit] 
-      ,wo.[Item_Code] 
-      ,im.[Item_Name] 
- FROM (SELECT gv.[GV_Code] 
-                    ,gv.[GV_Name] 
-                    ,gv.[GV_Group] 
-                    ,gv.[GV_Status]  
-                    ,gv.[Unloading_Wc] 
-                    ,GetCurrentWorkOrderNoByGVCode(gv.[GV_Code]) as WorkOrderNo 
-            FROM [GV_Master] as gv 
-            WHERE  
-                  gv.[Unloading_Wc] = @UnloadingWc 
-                  AND  gv.[Use_YN] = 'Y' 
-                  AND (gv.[GV_Status] = '적재' OR gv.[GV_Status] = '언로딩') 
-                  AND @Wo_Ini_Char = (SELECT [Wo_Ini_Char]  
-                                                            FROM [WorkCenter_Master] 
-                                                             WHERE gv.[Unloading_Wc] = [Wc_Code] 
-                  AND gv.[Use_YN] = 1) 
-             ) as tab1 
-                JOIN [WorkOrder] as wo ON tab1.WorkOrderNo = wo.[Workorderno] 
-                JOIN [Item_Master] as im ON wo.[Workorderno] = im.[Item_Code];  ";
-                comm.CommandType = CommandType.Text;
-                comm.Parameters.AddWithValue("@UnloadingWc", wccode);
-                comm.Parameters.AddWithValue("@Wo_Ini_Char", woinichar);
-
-                comm.Connection.Open();
-                SqlDataReader reader = comm.ExecuteReader();
-                List<GVWorkItemVO> list = Helper.DataReaderMapToList<GVWorkItemVO>(reader);
-                comm.Connection.Close();
-
-                return list;
-            }
-        } // TODO : 프로시저로 빼기
-        /// <summary>
         /// 대차리스트 대차그룹, 대차상태 따라 가져오기
         /// </summary>
         /// <param name="gvgroup"></param>

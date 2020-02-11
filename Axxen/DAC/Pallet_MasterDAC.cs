@@ -35,8 +35,45 @@ namespace DAC
   FROM [Pallet_Master] as pal
         LEFT OUTER JOIN  [WorkOrder] as wo ON pal.[WorkorderNo] = wo.[Workorderno]
         LEFT OUTER JOIN [Item_Master] as im ON im.[Item_Code] = wo.[Item_Code]
-		LEFT OUTER JOIN [BoxingGrade_Detail_Master] as bdm ON  bdm.[Use_YN] = 'Y' AND pal.Grade_Detail_Code = bdm.Boxing_Grade_Code
+		LEFT OUTER JOIN [BoxingGrade_Detail_Master] as bdm ON  bdm.[Use_YN] = 'Y' AND pal.Grade_Detail_Code = bdm.Grade_Detail_Code
   WHERE pal.[Use_YN] = 'Y';  ";
+                comm.CommandType = CommandType.Text;
+
+                comm.Connection.Open();
+                SqlDataReader reader = comm.ExecuteReader();
+                List<PalletVO> list = Helper.DataReaderMapToList<PalletVO>(reader);
+                comm.Connection.Close();
+
+                return list;
+            }
+        }
+        /// <summary>
+        /// 입고안된 팔레트목록 가져오기
+        /// </summary>
+        public List<PalletVO> GetNotInputed()
+        {
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText =
+ @"  SELECT pal.[Pallet_No]
+      ,pal.[WorkOrderNo]
+      ,pal.[Barcode_No]
+      ,pal.[Grade_Detail_Code]
+      ,bdm.[Grade_Detail_Name]
+      ,bdm.[Boxing_Grade_Code]
+      ,pal.[Size_Code]
+      ,pal.[In_Qty]
+      ,pal.[CurrentQty]
+      ,pal.[Use_YN]
+      ,wo.[Item_Code]
+      ,im.[Item_Name]
+  FROM [Pallet_Master] as pal
+        LEFT OUTER JOIN  [WorkOrder] as wo ON pal.[WorkorderNo] = wo.[Workorderno]
+        LEFT OUTER JOIN [Item_Master] as im ON im.[Item_Code] = wo.[Item_Code]
+		LEFT OUTER JOIN [BoxingGrade_Detail_Master] as bdm ON  bdm.[Use_YN] = 'Y' AND pal.Grade_Detail_Code = bdm.Grade_Detail_Code
+		JOIN [dbo].[Goods_In_History] AS GIH ON GIH.Pallet_No = pal.Pallet_No 
+  WHERE pal.[Use_YN] = 'Y' AND In_YN = 'N'; ";
                 comm.CommandType = CommandType.Text;
 
                 comm.Connection.Open();
@@ -358,8 +395,7 @@ namespace DAC
   RIGHT OUTER JOIN [Goods_In_History] as gih ON gih.[Workorderno] = wo.[Workorderno]
   LEFT OUTER JOIN [Pallet_Master] as pal ON pal.[Pallet_No] = gih.[Pallet_No] AND pal.[Use_YN] = 'Y'
   LEFT OUTER JOIN [BoxingGrade_Detail_Master] as bdm ON bdm.[Grade_Detail_Code] = pal.[Grade_Detail_Code] AND bdm.[Use_YN] = 'Y'
-    WHERE In_YN = 'Y';";
-                //WHERE gih.[In_Date] = CAST(GETDATE() AS DATE) AND gih.[In_YN] = 'Y'; ";
+    WHERE  gih.[In_Date] = CAST(GETDATE() AS DATE) ; ";
                 comm.CommandType = CommandType.Text;
 
                 comm.Connection.Open();
@@ -489,28 +525,46 @@ namespace DAC
             }
         }
         /// <summary>
-        /// 팔레트입고
+        /// 팔레트 수량 증가
         /// </summary>
-        /// <returns></returns>
-        public bool InputPallet(string userid, string workorderno, string palletno)
+        public bool UpdatePallet(string palletno, int qty)
         {
             using (SqlCommand comm = new SqlCommand())
             {
                 comm.Connection = new SqlConnection(Connstr);
                 comm.CommandText =
- @" UPDATE [dbo].[Goods_In_History] 
-   SET 
-      [In_Date] = getdate() 
-      ,[In_YN] = 'Y' 
-      ,[Up_Date] = getdate() 
-      ,[Up_Emp] = @username 
- WHERE [Workorderno] = @workorderno 
-            AND [Pallet_No] =@palletno ;  ";
+ @"
+UPDATE [dbo].[Pallet_Master]
+   SET [CurrentQty] = CurrentQty + @qty
+ WHERE [Pallet_No] = @Pallet_No ; ";
 
                 comm.CommandType = CommandType.Text;
+                comm.Parameters.AddWithValue("@Pallet_No", palletno);
+                comm.Parameters.AddWithValue("@qty", qty);
+
+                comm.Connection.Open();
+                int result = comm.ExecuteNonQuery();
+                comm.Connection.Close();
+
+                return result > 0;
+            }
+        }
+        /// <summary>
+        /// 팔레트입고
+        /// </summary>
+        /// <returns></returns>
+        public bool InputPallet(string userid, string workorderno, string palletno, int inqty)
+        {
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText = "InsertUpdatePalletInput";
+
+                comm.CommandType = CommandType.StoredProcedure;
                 comm.Parameters.AddWithValue("@username", userid);
                 comm.Parameters.AddWithValue("@workorderno", workorderno);
                 comm.Parameters.AddWithValue("@palletno", palletno);
+                comm.Parameters.AddWithValue("@In_Qty", inqty);
 
                 comm.Connection.Open();
                 int result = comm.ExecuteNonQuery();
