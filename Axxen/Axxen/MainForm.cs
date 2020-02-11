@@ -168,6 +168,7 @@ namespace Axxen
                         if (conBtn.TabIndex > CheckBtnIndex)
                         {
                             conBtn.Location = new Point(0, conBtn.Location.Y - tvMenu.Size.Height);
+                         
                         }
                     }
                 }
@@ -193,6 +194,7 @@ namespace Axxen
                             if (btn.TabIndex < conBtn.TabIndex && CheckBtnIndex >= conBtn.TabIndex)
                             {
                                 conBtn.Location = new Point(0, conBtn.Location.Y + tvMenu.Size.Height);
+                     
                             }
                         }
                         //
@@ -204,6 +206,7 @@ namespace Axxen
                             //{
                             //    conBtn.Location = new Point(0, conBtn.Location.Y - trvMenu.Size.Height);
                             //}
+                            conBtn.BackColor = Color.White;
                         }
                     }
                 }
@@ -221,6 +224,7 @@ namespace Axxen
                         if (conBtn.TabIndex > btn.TabIndex)
                         {
                             conBtn.Location = new Point(0, conBtn.Location.Y + tvMenu.Size.Height);
+                            conBtn.BackColor = Color.White;
                         }
                     }
                 }
@@ -338,10 +342,20 @@ namespace Axxen
                                 {
                                     tsbtnDelete.Enabled = false;
                                 }
-
-
                             }
 
+
+
+                            for(int i=0; i<tabControl2.TabPages.Count; i++) //활성화된 메뉴의 탭페이지눌릴수 있도록
+                            {
+                                if (tabControl2.TabPages[i].Tag.Equals(formName))
+                                {
+                                
+                                    tabControl2.SelectedIndex = i;
+                                    break;
+                                }
+                    
+                            }
                             childForm.Activate();
                             return;
                         }
@@ -352,8 +366,9 @@ namespace Axxen
                     TabPage newTab = new TabPage();
                     newTab.Tag = formName;
                     newTab.Text = formText;
+          
                     tabControl2.TabPages.Add(newTab);
-                 
+                    tabControl2.SelectedTab= newTab; //새로연 메뉴의 화면 텝페이지 눌릴 수 있도록
                     frm.Show();
 
                     /////////////////// 메뉴클릭시 
@@ -407,10 +422,8 @@ namespace Axxen
                         User_ID = UserInfo.User_ID,
                         Screen_Code = formName
                     };
-                    userservice.InsertLogin_Screen_History(loginscreen);
-                    int a = 1;
+                    userservice.InsertLogin_Screen_History(loginscreen);  
                     lblSubtitle.Text = screenitemlist.Find(item => item.Screen_Code == formName.ToString()).Screen_Path.ToString();
-                     a = 1;
                 }
                 else
                 {
@@ -539,12 +552,23 @@ namespace Axxen
                     imageRect = GetRTLCoordinates(this.tabControl2.ClientRectangle, imageRect);
                     sf.FormatFlags |= StringFormatFlags.DirectionRightToLeft;
                 }
+              
+                if(this.tabControl2.TabPages[e.Index] == tabControl2.SelectedTab) { 
+             
+                    e.Graphics.FillRectangle(Brushes.LightSkyBlue, e.Bounds); //텝페이지 색
+                }
+                else
+                {
+                    e.Graphics.FillRectangle(Brushes.PaleTurquoise, e.Bounds); //텝페이지 색
+                }
 
-                e.Graphics.FillRectangle(Brushes.Aquamarine, e.Bounds); //텝페이지 색
+
                 e.Graphics.DrawString(this.tabControl2.TabPages[e.Index].Text,
                                       this.Font, Brushes.Black, tabRect, sf);//텝페이지 폰트랑 글자 색
 
                 e.Graphics.DrawImage(CloseImage, imageRect.Location); //텝페이지 취소이미지 생성
+
+
 
             }
             catch (Exception) { }
@@ -627,6 +651,7 @@ namespace Axxen
                                     tsbtnDelete.Enabled = false;
                                 }
                             }
+                        //    tabControl2.SelectedTab. = Color.Red; //텝페이지 색
                             childForm.Activate();
                             lblSubtitle.Text = screenitemlist.Find(item => item.Screen_Code == tabControl2.SelectedTab.Tag.ToString()).Screen_Path.ToString();
 
@@ -732,6 +757,11 @@ namespace Axxen
         { 
              Setting();
             btnManuReflash.Text = "메뉴";
+        }
+
+        private void TabControl2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+          
         }
     }
 }
