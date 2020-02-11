@@ -52,7 +52,7 @@ namespace AxxenClient.Forms
         {
             GV_Current_StatusService service = new GV_Current_StatusService();
             // 해당 작업지시에서 생성한 모든 대차
-            List<GVStatusVO> list = service.GetGVCurrentStatus(gvGroup: "건조그룹");
+            List<GVStatusVO> list = service.GetGVCurrentStatus(gvGroup: "건조그룹", workorderno:GlobalUsage.WorkOrderNo);
             dgvGVFrom.DataSource =
                 (from item in list
                  where (item.GV_Status == "적재" || item.GV_Status == "언로딩")
@@ -132,15 +132,13 @@ namespace AxxenClient.Forms
         }
         private void btnToSearch_Click(object sender, EventArgs e)
         {   // 빈대차 목록 검색
-            // TODO - 조건에 맞게 변경하기
             GV_Current_StatusService service = new GV_Current_StatusService();
-            dgvGVTo.DataSource = service.GetGVCurrentStatus(gvStatus: "빈대차", gvName: txtToGVSearch.TextBoxText);
+            dgvGVTo.DataSource = service.GetGVCurrentStatus(gvStatus: "빈대차", gvGroup: "소성그룹", gvName: txtToGVSearch.TextBoxText);
         }
         private void btnFromSearch_Click(object sender, EventArgs e)
         {   // 적재된 목록 검색
-            // TODO - 조건에 맞게 변경하기
             GV_Current_StatusService service = new GV_Current_StatusService();
-            List<GVStatusVO> list = service.GetGVCurrentStatus(gvName: txtFromGVSearch.TextBoxText);
+            List<GVStatusVO> list = service.GetGVCurrentStatus(gvGroup: "건조그룹", workorderno: GlobalUsage.WorkOrderNo, gvName: txtFromGVSearch.TextBoxText);
             dgvGVFrom.DataSource =
                 (from item in list
                  where (item.GV_Status == "적재" || item.GV_Status == "언로딩")

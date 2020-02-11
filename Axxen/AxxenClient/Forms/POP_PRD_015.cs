@@ -57,7 +57,20 @@ namespace AxxenClient.Forms
         private void GetDatas()
         {
             Inspect_Spec_MasterService sservice = new Inspect_Spec_MasterService();
-            dgvInspect.DataSource = sservice.GetAll();
+            switch (GlobalUsage.WorkType) // TODO - 개발용 지우기
+            {
+                case WorkType.Molding:
+                    dgvInspect.DataSource = sservice.GetAllByWcCode("WC20001");
+                    break;
+                case WorkType.Load:
+                    dgvInspect.DataSource = sservice.GetAllByWcCode("WC40001");
+                    break;
+                case WorkType.Boxing:
+                    dgvInspect.DataSource = sservice.GetAllByWcCode("WC50001");
+                    break;
+            }
+
+            //dgvInspect.DataSource = sservice.GetAllByWcCode(GlobalUsage.WcCode);
         }
         private void SearchData()
         {
@@ -76,7 +89,6 @@ namespace AxxenClient.Forms
 
         private void btnInsertMeasure_Click(object sender, EventArgs e)
         {
-
             if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
             {
                 if (!string.IsNullOrEmpty(lblInspectcode.Text))

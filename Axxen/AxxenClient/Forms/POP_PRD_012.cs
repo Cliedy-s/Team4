@@ -42,10 +42,8 @@ namespace AxxenClient.Forms
         }
         private void GetDatas()
         {
-            // TODO - 조건에 맞게 변경하기
-            //dgvGVFrom.DataSource = service.GetGVCurrentStatus(wccode:GlobalUsage.WcCode, workorderno:GlobalUsage.WorkOrderNo, gvStatus:"적재");
             GV_Current_StatusService service = new GV_Current_StatusService();
-            List<GVStatusVO> list = service.GetGVCurrentStatus();
+            List<GVStatusVO> list = service.GetGVCurrentStatus(gvGroup:"건조그룹");
             dgvGVList.DataSource =
                 (from item in list
                  where (item.GV_Status == "적재" || item.GV_Status == "언로딩")
@@ -54,10 +52,8 @@ namespace AxxenClient.Forms
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            // TODO - 조건에 맞게 변경하기
-            //dgvGVFrom.DataSource = service.GetGVCurrentStatus(wccode:GlobalUsage.WcCode, workorderno:GlobalUsage.WorkOrderNo, gvStatus:"적재");
             GV_Current_StatusService service = new GV_Current_StatusService();
-            List<GVStatusVO> list = service.GetGVCurrentStatus(gvName: txtGVSearch.TextBoxText);
+            List<GVStatusVO> list = service.GetGVCurrentStatus(gvGroup: "건조그룹", gvName: txtGVSearch.TextBoxText);
             dgvGVList.DataSource =
                 (from item in list
                  where (item.GV_Status == "적재" || item.GV_Status == "언로딩")

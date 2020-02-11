@@ -25,6 +25,14 @@ namespace Service
           
             return dac.GetAll();
         }
+        /// <summary>
+        /// 작업장별로검색
+        /// </summary>
+        /// <returns></returns>
+        public List<InspectSpecVO> GetAllByWcCode(string wccode)
+        {
+            return dac.GetAllByWcCode(wccode);
+        }
 
         public bool InsertInspectSpec(List<InspectSpecVO> inspctspec)
         {

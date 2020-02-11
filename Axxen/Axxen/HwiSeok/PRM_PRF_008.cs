@@ -32,17 +32,17 @@ namespace Axxen
 
             #region 그리드뷰
             DatagridviewDesigns.SetDesign(dgvMainGrid);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "발생순번", "Nop_Seq", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "비가동일자", "Nop_Date", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "작업장코드", "Wc_Code", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "작업장명", "Wc_Name", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "비가동대분류", "Nop_Ma_Name", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "비가동상세분류", "Nop_Mi_Name", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "비가동발생시각", "Nop_Happentime", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "비가동종료시각", "Nop_Canceltime", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "비가동시간", "Nop_Time", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "비고", "Remark", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "발생유형", "Nop_Type", true, 100, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "발생순번", "Nop_Seq", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "비가동일자", "Nop_Date", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "작업장코드", "Wc_Code", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "작업장명", "Wc_Name", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "비가동대분류", "Nop_Ma_Name", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "비가동상세분류", "Nop_Mi_Name", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "비가동발생시각", "Nop_Happentime", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "비가동종료시각", "Nop_Canceltime", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "비가동시간", "Nop_Time", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "비고", "Remark", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "발생유형", "Nop_Type", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
             #endregion
 
             nohm = nohmservice.GetAllNop_History_Mi_Ma();
@@ -78,26 +78,37 @@ namespace Axxen
 
         private void UpdateFormShow(object sender, EventArgs e) // 수정
         {
-            if (dgvMainGrid.SelectedRows[0].Cells[7].Value.ToString().Substring(0, 10) == "0001-01-01")
+            try
             {
-                string msg = Nop_HistoryService.DeleteNop_Histroy((dgvMainGrid.SelectedRows[0].Cells[2].Value).ToString(), (dgvMainGrid.SelectedRows[0].Cells[0].Value).ToString());
-
-                if (msg == "OK")
+                if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
                 {
-                    MessageBox.Show("성공적으로 해제하였습니다.", "비동기 해제 성공", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (dgvMainGrid.SelectedRows[0].Cells[7].Value.ToString().Substring(0, 10) == "0001-01-01")
+                    {
+                        string msg = Nop_HistoryService.DeleteNop_Histroy((dgvMainGrid.SelectedRows[0].Cells[2].Value).ToString(), (dgvMainGrid.SelectedRows[0].Cells[0].Value).ToString());
 
-                    nohm = nohmservice.GetAllNop_History_Mi_Ma();
-                    dgvMainGrid.DataSource = nohm;
-                }
-                else
-                {
-                    MessageBox.Show($"{msg}", "비동기 삭제 오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        if (msg == "OK")
+                        {
+                            MessageBox.Show("성공적으로 해제하였습니다.", "비동기 해제 성공", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            nohm = nohmservice.GetAllNop_History_Mi_Ma();
+                            dgvMainGrid.DataSource = nohm;
+                        }
+                        else
+                        {
+                            MessageBox.Show($"{msg}", "비동기 삭제 오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("비가동 중 입니다.", "비동기 해제 오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
-            else
+            catch (Exception err)
             {
-                MessageBox.Show("비가동 중 입니다.", "비동기 해제 오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                MessageBox.Show(err.Message);
+                Program.Log.WriteError(err.Message);
+            }        
         }
 
         private void InsertFormShow(object sender, EventArgs e) //비가동 등록

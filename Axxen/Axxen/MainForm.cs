@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using VO;
 using Service;
+using System.Runtime.InteropServices; //winapi 핫키
+using System.Diagnostics;
+
 namespace Axxen
 {
     public partial class MainForm : Form
@@ -42,12 +45,72 @@ namespace Axxen
             InitializeComponent();
 
         }
+
+        //[DllImport("user32.dll")]
+        //public static extern bool RegisterHotKey(IntPtr hWnd, int id, KeyModifiers fsModifiers, Keys vk);
+
+        //[DllImport("user32.dll")]
+        //public static extern bool UnregisterHotKey(IntPtr hWnd, int id);
+        //const int HOTKEY_ID = 31197; //Any number to use to identify the hotkey instance
+
+        [DllImport("user32.dll")]
+        public static extern bool RegisterHotKey(IntPtr hWnd, int id, int fsModifiers, int vk);
+
+        [DllImport("user32.dll")]
+        public static extern bool UnregisterHotKey(IntPtr hWnd, int id);
+        const int HOTKEY_ID = 31197; //Any number to use to identify the hotkey instance
+
+        private class UserDante
+        {
+            public string Userkey { get; set; }
+        }
+
         private void MainForm_Load(object sender, EventArgs e)
         {
             LoginForm frm = new LoginForm();
 
             if (frm.ShowDialog() == DialogResult.OK)
-            {                    
+            {               
+                List<UserDante> userDantelist = new List<UserDante>();
+                UserDante userdante1 = new UserDante();
+                UserDante userdante2 = new UserDante();
+                UserDante userdante3 = new UserDante();
+                UserDante userdante4 = new UserDante();
+
+                userdante1.Userkey = UserInfo.S01;
+                userDantelist.Add(userdante1);
+                userdante2.Userkey = UserInfo.S02;
+                userDantelist.Add(userdante2);
+                userdante3.Userkey = UserInfo.S03;
+                userDantelist.Add(userdante3);
+                userdante4.Userkey = UserInfo.S04;
+                userDantelist.Add(userdante4);
+
+                int firstkey=0;
+                for (int i = 0; i < userDantelist.Count; i++)
+                {
+                    string[] chuserkey = userDantelist[i].Userkey.Split('/');
+                    if (chuserkey[0] == "Alt")
+                    {         
+                        firstkey = 0x1;
+                        RegisterHotKey(this.Handle, i, firstkey, Convert.ToChar(chuserkey[1]));
+                    }
+                    else if (chuserkey[0] == "Ctrl")
+                    {
+                        firstkey = 0x2;
+                        RegisterHotKey(this.Handle, i, firstkey, Convert.ToChar(chuserkey[1]));
+                    }
+                    else if (chuserkey[0] == "Shift")
+                    {
+                        firstkey = 0x3;
+                        RegisterHotKey(this.Handle, i, firstkey, Convert.ToChar(chuserkey[1]));
+                    }
+                    else
+                    {
+                      //  RegisterHotKey(this.Handle, i, 0x0, Convert.ToChar(chuserkey[1]));
+                    }
+                }             
+
                 toolStripButtoncencle.Alignment = ToolStripItemAlignment.Right; //즐겨찾기 툴스트립 버튼 오른쪽으로 배치
                 toolStripButtonSetting.Alignment = ToolStripItemAlignment.Right; //세팅버튼
                 toolStripLabel.Alignment = ToolStripItemAlignment.Right; //세팅버튼
@@ -67,9 +130,9 @@ namespace Axxen
                 Setting();
                 booklist = Mainservice.GetAll_BookMark(UserInfo.User_ID);
 
-                if(!UserInfo.Default_Screen_Code.Equals("0")) //사용자의 디폴트 화면 가져오기
-                {              
-                newForm(UserInfo.Default_Screen_Code, screenitemlist.Find(item => item.Screen_Code == UserInfo.Default_Screen_Code).Type);
+                if (!UserInfo.Default_Screen_Code.Equals("0")) //사용자의 디폴트 화면 가져오기
+                {
+                    newForm(UserInfo.Default_Screen_Code, screenitemlist.Find(item => item.Screen_Code == UserInfo.Default_Screen_Code).Type);
                 }
             }
             else
@@ -81,7 +144,7 @@ namespace Axxen
         public void Setting()
         {
 
-           // myButtons.Clear();
+            // myButtons.Clear();
 
 
             foreach (Control item in panelMenu.Controls)
@@ -115,13 +178,13 @@ namespace Axxen
                 menuBtn.Text = pa[i].Screen_Name;
                 menuBtn.UseVisualStyleBackColor = false;
                 menuBtn.Click += new EventHandler(BtnMenu_Click);
-               // myButtons.Add(menuBtn);
+                // myButtons.Add(menuBtn);
                 // 생성한 버튼을 화면 컨트롤에 추가해서 보이게 함
                 panelMenu.Controls.Add(menuBtn);
                 sLocation += 35;
             }
 
-            panelMenu.Update();            
+            panelMenu.Update();
             panelMenu.Invalidate();
             this.Refresh();
             this.Invalidate();
@@ -168,6 +231,7 @@ namespace Axxen
                         if (conBtn.TabIndex > CheckBtnIndex)
                         {
                             conBtn.Location = new Point(0, conBtn.Location.Y - tvMenu.Size.Height);
+
                         }
                     }
                 }
@@ -193,6 +257,7 @@ namespace Axxen
                             if (btn.TabIndex < conBtn.TabIndex && CheckBtnIndex >= conBtn.TabIndex)
                             {
                                 conBtn.Location = new Point(0, conBtn.Location.Y + tvMenu.Size.Height);
+
                             }
                         }
                         //
@@ -204,6 +269,7 @@ namespace Axxen
                             //{
                             //    conBtn.Location = new Point(0, conBtn.Location.Y - trvMenu.Size.Height);
                             //}
+                            conBtn.BackColor = Color.White;
                         }
                     }
                 }
@@ -221,6 +287,7 @@ namespace Axxen
                         if (conBtn.TabIndex > btn.TabIndex)
                         {
                             conBtn.Location = new Point(0, conBtn.Location.Y + tvMenu.Size.Height);
+                            conBtn.BackColor = Color.White;
                         }
                     }
                 }
@@ -338,10 +405,20 @@ namespace Axxen
                                 {
                                     tsbtnDelete.Enabled = false;
                                 }
-
-
                             }
 
+
+
+                            for (int i = 0; i < tabControl2.TabPages.Count; i++) //활성화된 메뉴의 탭페이지눌릴수 있도록
+                            {
+                                if (tabControl2.TabPages[i].Tag.Equals(formName))
+                                {
+
+                                    tabControl2.SelectedIndex = i;
+                                    break;
+                                }
+
+                            }
                             childForm.Activate();
                             return;
                         }
@@ -352,8 +429,9 @@ namespace Axxen
                     TabPage newTab = new TabPage();
                     newTab.Tag = formName;
                     newTab.Text = formText;
+
                     tabControl2.TabPages.Add(newTab);
-                 
+                    tabControl2.SelectedTab = newTab; //새로연 메뉴의 화면 텝페이지 눌릴 수 있도록
                     frm.Show();
 
                     /////////////////// 메뉴클릭시 
@@ -408,9 +486,7 @@ namespace Axxen
                         Screen_Code = formName
                     };
                     userservice.InsertLogin_Screen_History(loginscreen);
-                    int a = 1;
                     lblSubtitle.Text = screenitemlist.Find(item => item.Screen_Code == formName.ToString()).Screen_Path.ToString();
-                     a = 1;
                 }
                 else
                 {
@@ -537,14 +613,28 @@ namespace Axxen
                 {
                     tabRect = GetRTLCoordinates(this.tabControl2.ClientRectangle, tabRect);
                     imageRect = GetRTLCoordinates(this.tabControl2.ClientRectangle, imageRect);
-                    sf.FormatFlags |= StringFormatFlags.DirectionRightToLeft;
+                    ///  sf.FormatFlags |= StringFormatFlags.DirectionRightToLeft;
+                    sf.FormatFlags |= StringFormatFlags.DirectionVertical;
                 }
 
-                e.Graphics.FillRectangle(Brushes.Aquamarine, e.Bounds); //텝페이지 색
+                if (this.tabControl2.TabPages[e.Index] == tabControl2.SelectedTab)
+                {
+
+                    e.Graphics.FillRectangle(Brushes.LightSkyBlue, e.Bounds); //텝페이지 색
+                    //LightSkyBlue
+                }
+                else
+                {
+                    e.Graphics.FillRectangle(Brushes.PaleTurquoise, e.Bounds); //텝페이지 색
+                }
+
+
                 e.Graphics.DrawString(this.tabControl2.TabPages[e.Index].Text,
                                       this.Font, Brushes.Black, tabRect, sf);//텝페이지 폰트랑 글자 색
 
-                e.Graphics.DrawImage(CloseImage, imageRect.Location); //텝페이지 취소이미지 생성
+                e.Graphics.DrawImage(CloseImage, imageRect.Location.X - 4, imageRect.Location.Y - 4); //텝페이지 취소이미지 생성
+
+
 
             }
             catch (Exception) { }
@@ -627,6 +717,7 @@ namespace Axxen
                                     tsbtnDelete.Enabled = false;
                                 }
                             }
+                            //    tabControl2.SelectedTab. = Color.Red; //텝페이지 색
                             childForm.Activate();
                             lblSubtitle.Text = screenitemlist.Find(item => item.Screen_Code == tabControl2.SelectedTab.Tag.ToString()).Screen_Path.ToString();
 
@@ -678,9 +769,6 @@ namespace Axxen
                 MyUpdateEvent(this, null);
         }
 
-
-   
-
         private void TsbtnDelete_Click(object sender, EventArgs e)
         {
             if (this.MyDeleteEvent != null)
@@ -707,7 +795,7 @@ namespace Axxen
             }
             catch
             {
-               
+
 
             }
         }
@@ -725,13 +813,83 @@ namespace Axxen
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            toolStripLabel.Text =  UserInfo.User_Name + "님 환영합니다.\n"+ DateTime.Now.ToShortDateString()+" "+ DateTime.Now.ToLongTimeString();
+            toolStripLabel.Text = UserInfo.User_Name + "님 환영합니다.\n" + DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToLongTimeString();
         }
 
         private void Button9_Click(object sender, EventArgs e)
-        { 
-             Setting();
+        {
+            Setting();
             btnManuReflash.Text = "메뉴";
+        }
+
+        private void BtnManuReflash_Click(object sender, EventArgs e) //메뉴세로고침
+        {
+            Setting();
+            Setting();
+            Setting();
+ 
+            btnManuReflash.Text = "메뉴";
+        }
+
+
+        public enum KeyModifiers
+        {
+            Alt = 1,
+            Control = 2,
+            Shift = 4
+        }
+
+
+
+        const int WM_HOTKEY = 0x0312;
+        const int MOD_ALT1 = 0x0001;
+        protected override void WndProc(ref Message message)
+        {
+            base.WndProc(ref message);
+
+
+            if (message.Msg == (int)0x312) //핫키가 눌러지면 312 정수 메세지를 받게됨
+            {
+                if (message.WParam == (IntPtr)0x0) // 0x0아이디 추가
+                {
+                    tsbInsert.PerformClick();
+                } 
+                else if (message.WParam == (IntPtr)0x1) // 수정
+                {
+                    tsbtnUpdate.PerformClick();
+                }
+                else if (message.WParam == (IntPtr)0x2) // 삭제
+                {
+                    tsbtnDelete.PerformClick();
+                }
+                else if (message.WParam == (IntPtr)0x3) //새로고침
+                {
+                    tsbtnRefresh.PerformClick();
+                }
+            }
+
+
+        }
+
+        private void 메모장ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start("notepad.exe");
+        }
+
+        private void 계산기ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start("calc.exe");
+        }
+
+        private void 지뢰찾기ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+          //  Process.Start("winmin");
+        }
+
+        private void 문자표ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+              //   Process.Start("clipbrd.exe");
         }
     }
 }

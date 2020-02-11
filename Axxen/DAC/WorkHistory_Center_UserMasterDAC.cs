@@ -18,7 +18,7 @@ namespace DAC
                 comm.Connection = new SqlConnection(Connstr);
                 comm.CommandText = @"select Work_Date,Wc_Name,User_Name,Work_StartTime,Work_EndTime,Work_Time 
                                     from Work_History wh INNER JOIN WorkCenter_Master wcm ON wh.Process_Code = wcm.Process_Code
-					                                     INNER JOIN User_Master um ON wh.User_ID = um.User_ID";
+					                                     INNER JOIN User_Master um ON wh.User_ID = um.User_ID Order by Work_Date Desc";
                 comm.CommandType = CommandType.Text;
 
                 comm.Connection.Open();
@@ -55,11 +55,15 @@ namespace DAC
             using (SqlConnection conn = new SqlConnection(Connstr))
             {
                 conn.Open();
-                string sql = $"select emp.Workorderno,wo.Wc_Code,Wc_Name,wo.Item_Code,Item_Name,emp.Prd_Starttime,emp.Prd_Endtime,emp.Prd_Qty,User_Name " +
-                    $"from Emp_Allocation_History_Detail emp INNER JOIN WorkOrder wo ON emp.Workorderno = wo.Workorderno " +
+                string sql = $"select eahd.Workorderno,wcm.Wc_Code,Wc_Name,im.Item_Code,Item_Name,eahd.Prd_Starttime,eahd.Prd_Endtime,eahd.Prd_Qty,User_Name " +
+                    $"from Work_History wh " +
+                    $"INNER JOIN Emp_Allocation_History_Detail eahd ON wh.User_ID = eahd.User_ID " +
+                    $"INNER JOIN WorkOrder wo ON eahd.Workorderno = wo.Workorderno " +
                     $"INNER JOIN WorkCenter_Master wcm ON wo.Wc_Code = wcm.Wc_Code " +
                     $"INNER JOIN Item_Master im ON wo.Item_Code = im.Item_Code " +
-                    $"INNER JOIN User_Master um ON emp.User_ID = um.User_ID where User_Name = '{UserName}'";
+                    $"INNER JOIN User_Master um ON wh.User_ID = um.User_ID " +
+                    $"where Work_Date = CONVERT(CHAR(10), eahd.Prd_Starttime, 23) AND User_Name = '{UserName}'";
+
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
                     list = Helper.DataReaderMapToList<WorkHistory_Center_UserMasterVO>(cmd.ExecuteReader());
@@ -227,6 +231,79 @@ namespace DAC
                 throw;
             }
         }
-        
+
+        /// <summary>
+        /// 근무 시작
+        /// </summary>
+        /// <param name="insertitem"></param>
+        /// <returns></returns>
+        public bool InsertStartWork(string processcode, string userid)
+        {
+            try
+            {
+                using (SqlCommand comm = new SqlCommand())
+                {
+
+                    comm.CommandText = @"InsertUpdateStartWork";
+                    comm.Connection = new SqlConnection(Connstr);
+                    comm.CommandType = CommandType.StoredProcedure;
+                    comm.Parameters.AddWithValue("@processcode", processcode);
+                    comm.Parameters.AddWithValue("@userid", userid);
+
+                    comm.Connection.Open();
+                    int result = comm.ExecuteNonQuery();
+                    comm.Connection.Close();
+
+                    return (result > 0);
+                }
+            }
+            catch (Exception ee)
+            {
+                Log.WriteFatal("오류 : ", ee);
+                return false;
+            }
+        }
+        /// <summary>
+        /// 근무 종료
+        /// </summary>
+        /// <param name="insertitem"></param>
+        /// <returns></returns>
+        public bool UpdateEndWork(string processcode, string userid)
+        {
+            try
+            {
+                using (SqlCommand comm = new SqlCommand())
+                {
+                    
+                    comm.CommandText = @"
+   UPDATE [dbo].[Work_History]
+   SET [Work_EndTime] = getdate()
+      ,[Work_Time] = DATEDIFF(HOUR, [Work_StartTime], getdate())
+      ,[Remark] = '근무종료'
+      ,[Up_Date] = getdate()
+      ,[Up_Emp] = @userid
+ WHERE DATEDIFF(DD, [Work_Date] ,getdate()) = 0
+      AND [Process_Code] = @processcode
+      AND [User_ID] = @userid; 
+    ";
+                    comm.Connection = new SqlConnection(Connstr);
+                    comm.CommandType = CommandType.Text;
+                    comm.Parameters.AddWithValue("@userid", userid);
+                    comm.Parameters.AddWithValue("@processcode", processcode);
+
+                    comm.Connection.Open();
+                    int result = comm.ExecuteNonQuery();
+                    comm.Connection.Close();
+
+                    return (result > 0);
+                }
+            }
+            catch (Exception ee)
+            {
+                Log.WriteFatal("오류 : ", ee);
+                return false;
+            }
+        }
+
     }
 }

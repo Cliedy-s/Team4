@@ -377,6 +377,7 @@ namespace DAC
 		,wo.[Prd_Starttime] 
 		,wo.[Prd_Endtime] 
 		,wcm.[Wo_Ini_Char] 
+		,wcm.Process_Code
 		,im.Line_Per_Qty 
         ,im.Shot_Per_Qty 
   FROM [WorkOrder] wo 
