@@ -48,5 +48,16 @@ namespace Service
             Inspect_Measure_HistoryDAC dac = new Inspect_Measure_HistoryDAC();
             return dac.GetFiguration(workno);
         }
+
+        /// <summary>
+        /// PRM_RPT_001 건조작업일지
+        /// </summary>
+        /// <param name="workno"></param>
+        /// <returns></returns>
+        public List<InspectMeasureHistoryVO> GetDrying(List<string> workno)
+        {
+            Inspect_Measure_HistoryDAC dac = new Inspect_Measure_HistoryDAC();
+            return dac.GetDrying(workno);
+        }
     }
 }

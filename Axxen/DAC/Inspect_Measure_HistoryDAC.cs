@@ -118,32 +118,78 @@ getdate() ,
         /// <returns></returns>
         public List<InspectMeasureHistoryVO> GetFiguration(List<string> workno)
         {
-            List<InspectMeasureHistoryVO> list = null;
+            List<InspectMeasureHistoryVO> list = new List<InspectMeasureHistoryVO>();
             using (SqlCommand comm = new SqlCommand())
             {
                 comm.Connection = new SqlConnection(Connstr);
                 comm.CommandText = @" SELECT A.Workorderno, Adate, Aval, Bdate, Bval, Cdate, Cval, Ddate, Dval, Edate, Eval FROM 
-(select Workorderno,inspect_DateTime Adate,Inspect_Val Aval from Inspect_Measure_history where Inspect_Code = 'SP1' and workorderno = @Workorderno) AS A
-,(select Workorderno,inspect_DateTime Bdate,Inspect_Val Bval from Inspect_Measure_history where Inspect_Code = 'SP2' and workorderno = @Workorderno) AS B
-,(select Workorderno,inspect_DateTime Cdate,Inspect_Val Cval from Inspect_Measure_history where Inspect_Code = 'SP3' and workorderno = @Workorderno) AS C
-,(select Workorderno,inspect_DateTime Ddate,Inspect_Val Dval from Inspect_Measure_history where Inspect_Code = 'SP4' and workorderno = @Workorderno) AS D
-,(select Workorderno,inspect_DateTime Edate ,Inspect_Val Eval from Inspect_Measure_history where Inspect_Code = 'SP5' and workorderno = @Workorderno) AS E
+(select Workorderno,Convert(Varchar,inspect_DateTime,8) Adate,cast(Inspect_Val as numeric(12,2)) Aval from Inspect_Measure_history where Inspect_Code = 'ES20001' and workorderno = @Workorderno) AS A
+,(select Workorderno,Convert(Varchar,inspect_DateTime,8) Bdate,cast(Inspect_Val as numeric(12,2)) Bval from Inspect_Measure_history where Inspect_Code = 'ES20002' and workorderno = @Workorderno) AS B
+,(select Workorderno,Convert(Varchar,inspect_DateTime,8) Cdate,cast(Inspect_Val as numeric(12,2)) Cval from Inspect_Measure_history where Inspect_Code = 'ES20003' and workorderno = @Workorderno) AS C
+,(select Workorderno,Convert(Varchar,inspect_DateTime,8) Ddate,cast(Inspect_Val as numeric(12,2)) Dval from Inspect_Measure_history where Inspect_Code = 'ES20004' and workorderno = @Workorderno) AS D
+,(select Workorderno,Convert(Varchar,inspect_DateTime,8) Edate ,cast(Inspect_Val as numeric(12,2)) Eval from Inspect_Measure_history where Inspect_Code = 'ES20005' and workorderno = @Workorderno) AS E
 where A.Workorderno=B.Workorderno and B.Workorderno=C.Workorderno and C.Workorderno=D.Workorderno and D.Workorderno=E.Workorderno";
                 comm.CommandType = CommandType.Text;
-                comm.Connection.Open();
                 try
                 {
                     foreach (var item in workno)
                     {
+                        comm.Connection.Open();
                         comm.Parameters.Clear();
                         comm.Parameters.AddWithValue("@Workorderno", item);
 
                         SqlDataReader reader = comm.ExecuteReader();
-                        list = Helper.DataReaderMapToList<InspectMeasureHistoryVO>(reader);
+                        List<InspectMeasureHistoryVO> readlist = Helper.DataReaderMapToList<InspectMeasureHistoryVO>(reader);
+                        foreach (var rlist in readlist)
+                        {
+                            list.Add(rlist);
+                        }
                         comm.Connection.Close();
                     }
                 }
-                catch (Exception)
+                catch (Exception err)
+                {
+                    comm.Connection.Close();
+                }
+                return list;
+            }
+        }
+
+        /// <summary>
+        /// PRM_RPT_001 건조작업일지
+        /// </summary>
+        /// <param name="workno"></param>
+        /// <returns></returns>
+        public List<InspectMeasureHistoryVO> GetDrying(List<string> workno)
+        {
+            List<InspectMeasureHistoryVO> list = new List<InspectMeasureHistoryVO>() ;
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText = @" SELECT A.Workorderno, Adate, Aval, Bdate, Bval, Cdate, Cval FROM 
+(select Workorderno,Convert(Varchar,inspect_DateTime,8) Adate,cast(Inspect_Val as numeric(12,2)) Aval from Inspect_Measure_history where Inspect_Code = 'ES30001' and workorderno = @Workorderno) AS A
+,(select Workorderno,Convert(Varchar,inspect_DateTime,8) Bdate,cast(Inspect_Val as numeric(12,2)) Bval from Inspect_Measure_history where Inspect_Code = 'ES30002' and workorderno = @Workorderno) AS B
+,(select Workorderno,Convert(Varchar,inspect_DateTime,8) Cdate,cast(Inspect_Val as numeric(12,2)) Cval from Inspect_Measure_history where Inspect_Code = 'ES30003' and workorderno = @Workorderno) AS C
+where A.Workorderno=B.Workorderno and B.Workorderno=C.Workorderno";
+                comm.CommandType = CommandType.Text;
+                try
+                {
+                    foreach (var item in workno)
+                    {
+                        comm.Connection.Open();
+                        comm.Parameters.Clear();
+                        comm.Parameters.AddWithValue("@Workorderno", item);
+
+                        SqlDataReader reader = comm.ExecuteReader();
+                        List<InspectMeasureHistoryVO> readlist = Helper.DataReaderMapToList<InspectMeasureHistoryVO>(reader);
+                        foreach (var rlist in readlist)
+                        {
+                            list.Add(rlist);
+                        }
+                        comm.Connection.Close();
+                    }
+                }
+                catch (Exception err)
                 {
                     comm.Connection.Close();
                 }

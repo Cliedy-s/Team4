@@ -19,7 +19,7 @@ namespace Axxen
     {
         List<Goods_In_HistoryVO> boxlist;
         DataTable dt = new DataTable();
-        BoxingGrade rpt = new BoxingGrade();
+        PackingLog rpt = new PackingLog();
         public PRM_RPT_004()
         {
             InitializeComponent();
@@ -74,7 +74,7 @@ namespace Axxen
 
         private void PRM_RPT_004_Deactivate(object sender, EventArgs e)
         {
-            ToolStripManager.RevertMerge(((MainForm)this.MdiParent).toolStrip1); //저장버튼 삭제
+            ToolStripManager.RevertMerge(((MainForm)this.MdiParent).toolStrip1);
         }
     }
 }

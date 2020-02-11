@@ -379,23 +379,29 @@
     <Compile Include="ParkSangIn\UserSettingForm.Designer.cs">
       <DependentUpon>UserSettingForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="sangyoung\DryingLog.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="sangyoung\DryingLog.Designer.cs">
+      <DependentUpon>DryingLog.cs</DependentUpon>
+    </Compile>
     <Compile Include="WaitForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="WaitForm.Designer.cs">
       <DependentUpon>WaitForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="sangyoung\BoxingGrade.cs">
+    <Compile Include="sangyoung\PackingLog.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="sangyoung\BoxingGrade.Designer.cs">
-      <DependentUpon>BoxingGrade.cs</DependentUpon>
+    <Compile Include="sangyoung\PackingLog.Designer.cs">
+      <DependentUpon>PackingLog.cs</DependentUpon>
     </Compile>
-    <Compile Include="sangyoung\FigurationRequest.cs">
+    <Compile Include="sangyoung\FigurationLog.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="sangyoung\FigurationRequest.Designer.cs">
-      <DependentUpon>FigurationRequest.cs</DependentUpon>
+    <Compile Include="sangyoung\FigurationLog.Designer.cs">
+      <DependentUpon>FigurationLog.cs</DependentUpon>
     </Compile>
     <Compile Include="sangyoung\KPI_RPT_001.cs">
       <SubType>Form</SubType>
@@ -720,15 +726,18 @@
     <EmbeddedResource Include="ParkSangIn\UserSettingForm.resx">
       <DependentUpon>UserSettingForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="sangyoung\DryingLog.resx">
+      <DependentUpon>DryingLog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WaitForm.resx">
       <DependentUpon>WaitForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
-    <EmbeddedResource Include="sangyoung\BoxingGrade.resx">
-      <DependentUpon>BoxingGrade.cs</DependentUpon>
+    <EmbeddedResource Include="sangyoung\PackingLog.resx">
+      <DependentUpon>PackingLog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="sangyoung\FigurationRequest.resx">
-      <DependentUpon>FigurationRequest.cs</DependentUpon>
+    <EmbeddedResource Include="sangyoung\FigurationLog.resx">
+      <DependentUpon>FigurationLog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="sangyoung\KPI_RPT_001.resx">
       <DependentUpon>KPI_RPT_001.cs</DependentUpon>
