@@ -870,5 +870,26 @@ namespace Axxen
 
 
         }
+
+        private void 메모장ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start("notepad.exe");
+        }
+
+        private void 계산기ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start("calc.exe");
+        }
+
+        private void 지뢰찾기ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+          //  Process.Start("winmin");
+        }
+
+        private void 문자표ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+              //   Process.Start("clipbrd.exe");
+        }
     }
 }
