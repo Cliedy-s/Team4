@@ -78,26 +78,37 @@ namespace Axxen
 
         private void UpdateFormShow(object sender, EventArgs e) // 수정
         {
-            if (dgvMainGrid.SelectedRows[0].Cells[7].Value.ToString().Substring(0, 10) == "0001-01-01")
+            try
             {
-                string msg = Nop_HistoryService.DeleteNop_Histroy((dgvMainGrid.SelectedRows[0].Cells[2].Value).ToString(), (dgvMainGrid.SelectedRows[0].Cells[0].Value).ToString());
-
-                if (msg == "OK")
+                if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
                 {
-                    MessageBox.Show("성공적으로 해제하였습니다.", "비동기 해제 성공", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (dgvMainGrid.SelectedRows[0].Cells[7].Value.ToString().Substring(0, 10) == "0001-01-01")
+                    {
+                        string msg = Nop_HistoryService.DeleteNop_Histroy((dgvMainGrid.SelectedRows[0].Cells[2].Value).ToString(), (dgvMainGrid.SelectedRows[0].Cells[0].Value).ToString());
 
-                    nohm = nohmservice.GetAllNop_History_Mi_Ma();
-                    dgvMainGrid.DataSource = nohm;
-                }
-                else
-                {
-                    MessageBox.Show($"{msg}", "비동기 삭제 오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        if (msg == "OK")
+                        {
+                            MessageBox.Show("성공적으로 해제하였습니다.", "비동기 해제 성공", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            nohm = nohmservice.GetAllNop_History_Mi_Ma();
+                            dgvMainGrid.DataSource = nohm;
+                        }
+                        else
+                        {
+                            MessageBox.Show($"{msg}", "비동기 삭제 오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("비가동 중 입니다.", "비동기 해제 오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
-            else
+            catch (Exception err)
             {
-                MessageBox.Show("비가동 중 입니다.", "비동기 해제 오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                MessageBox.Show(err.Message);
+                Program.Log.WriteError(err.Message);
+            }        
         }
 
         private void InsertFormShow(object sender, EventArgs e) //비가동 등록

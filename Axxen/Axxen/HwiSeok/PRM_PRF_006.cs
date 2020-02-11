@@ -46,7 +46,7 @@ namespace Axxen
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "대상대차코드", "Target_GV", true, 120, DataGridViewContentAlignment.MiddleCenter, false);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "대차비우기일자", "Clear_Date", true, 150, DataGridViewContentAlignment.MiddleCenter, false);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "대차비우기일시", "Clear_Datetime", true, 150, DataGridViewContentAlignment.MiddleCenter, false);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "대차비우기수량", "Clear_Qty", true, 150, DataGridViewContentAlignment.MiddleCenter, false);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "대차비우기수량", "Clear_Qty", true, 150, DataGridViewContentAlignment.MiddleRight, false);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "대차비우기원인", "Clear_Cause", true, 150, DataGridViewContentAlignment.MiddleCenter, false);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "대상작업장", "Clear_wc", true, 100, DataGridViewContentAlignment.MiddleCenter, false);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "대상작업장품목", "Clear_Item", true, 150, DataGridViewContentAlignment.MiddleCenter, false);

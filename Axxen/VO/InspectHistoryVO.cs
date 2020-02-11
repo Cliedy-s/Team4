@@ -25,15 +25,15 @@ namespace VO
     public class InspectMeasureHistoryVO //PRM_RPT_002 사용
     {
         public string Workorderno { get; set; } //작업지시번호
-        public DateTime Adate { get; set; } //길이측정시간
+        public string Adate { get; set; } //길이측정시간
         public decimal Aval { get; set; } //길이측정값
-        public DateTime Bdate { get; set; } //너비측정시간
+        public string Bdate { get; set; } //너비측정시간
         public decimal Bval { get; set; } //너비측정값
-        public DateTime Cdate { get; set; } //두께측정시간
+        public string Cdate { get; set; } //두께측정시간
         public decimal Cval { get; set; } //두께측정값
-        public DateTime Ddate { get; set; } //진공압측정시간
+        public string Ddate { get; set; } //진공압측정시간
         public decimal Dval { get; set; } //진공압측정값
-        public DateTime Edate { get; set; } //성형압측정시간
+        public string Edate { get; set; } //성형압측정시간
         public decimal Eval { get; set; } //성형압측정값
     }
 }

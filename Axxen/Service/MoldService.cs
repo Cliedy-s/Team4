@@ -62,6 +62,17 @@ namespace Service
             return dac.MoldWorkCenter();
         }
 
+        /// <summary>
+        /// 금형정보삭제
+        /// </summary>
+        /// <param name="moldno"></param>
+        /// <returns></returns>
+        public bool DeleteMolde(string moldno)
+        {
+            MoldDAC dac = new MoldDAC();
+            return dac.DeleteMold(moldno);
+        }
+
         //pop
         /// <summary>
         /// 금형 검색

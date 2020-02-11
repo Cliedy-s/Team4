@@ -20,10 +20,42 @@ namespace Axxen
         }
         private void PRM_PRF_007_Load(object sender, EventArgs e)
         {
+            ((MainForm)this.MdiParent).RefreshFormEvent += new System.EventHandler(this.RefreshFormShow); // 새로고침
             GV_Current_YesStatus(); // 사용중인 대차 현황
             GV_Current_NOStatus(); // 빈 현황 그리드뷰
         }
 
+        private void RefreshFormShow(object sender, EventArgs e) //새로고침
+        {
+            try
+            {
+                if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
+                {
+                    gvhwi = gvwiservice.GV_Current_YesStatus();
+                    this.flowLayoutPanel1.Controls.Clear();
+                    foreach (var item in gvhwi)
+                    {
+                        Label lab = new Label();
+                        lab.Text = $"대차명: {item.GV_Name}\n대차상태: {item.GV_Status}\n작업지시번호: {item.Workorderno}\n품목코드: {item.Item_Code}\n품목명: {item.Item_Name }\n로딩시간: {item.Loading_time}";
+                        lab.Margin = new Padding(10);
+                        lab.TextAlign = ContentAlignment.MiddleCenter;
+                        lab.BorderStyle = BorderStyle.FixedSingle;
+                        lab.Font = new System.Drawing.Font("맑은 고딕", 10.00F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+                        lab.AutoSize = true;
+
+                        this.flowLayoutPanel1.Controls.Add(lab);
+                    }
+                    
+                    gvhwi = gvwiservice.GetGV_Current_NO_Status();
+                    dataGridView1.DataSource = gvhwi;
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+                Program.Log.WriteError(err.Message);
+            }
+        }
 
         private void GV_Current_YesStatus() // 사용중인 대차 현황
         {
@@ -53,6 +85,8 @@ namespace Axxen
             gvhwi = gvwiservice.GetGV_Current_NO_Status();
             dataGridView1.DataSource = gvhwi;
         }
+
+
     }
 
     

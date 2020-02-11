@@ -24,10 +24,21 @@ namespace Service
         /// PRM_RPT_002 성형작업일지
         /// </summary>
         /// <returns></returns>
-        public List<Goods_In_HistoryVO> GetFigurationHistory()
+        public List<Goods_In_HistoryVO> GetFigurationHistory(string date)
         {
             Goods_In_HistoryDAC dac = new Goods_In_HistoryDAC();
-            return dac.GetFigurationHistory();
+            return dac.GetFigurationHistory(date);
+        }
+
+        /// <summary>
+        /// PRM_RPT_001 건조작업일지
+        /// </summary>
+        /// <param name="date"></param>
+        /// <returns></returns>
+        public List<Goods_In_HistoryVO> GetDryingHistory(string date)
+        {
+            Goods_In_HistoryDAC dac = new Goods_In_HistoryDAC();
+            return dac.GetDryingHistory(date);
         }
     }
 }

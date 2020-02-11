@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -12,21 +13,19 @@ namespace DAC
     {
         public List<GV_Work_ItemVO> GetAllGV_Work_Item() //PRM_PRF_005 
         {
-            List<GV_Work_ItemVO> list = null;
-            using (SqlConnection conn = new SqlConnection(Connstr))
+            using (SqlCommand comm = new SqlCommand())
             {
-                conn.Open();
-                string sql = $"select gvcs.GV_Code,GV_Name,GV_Group,gvcs.Workorderno,wo.Item_Code,Item_Name,GV_Status,GV_Qty,Loading_date,Loading_time,Loading_Wc,Unloading_date,Unloading_time,Unloading_Wc,In_Time,Center_Time,Out_Time " +
-                             $"from GV_Current_Status gvcs INNER JOIN GV_Master gvm ON gvcs.GV_Code = gvm.GV_Code " +
-                             $"INNER JOIN WorkOrder wo ON gvcs.Workorderno = wo.Workorderno " +
-                             $"INNER JOIN Item_Master im ON wo.Item_Code = im.Item_Code";
-                using (SqlCommand cmd = new SqlCommand(sql, conn))
-                {
-                    list = Helper.DataReaderMapToList<GV_Work_ItemVO>(cmd.ExecuteReader());
-                }
-                conn.Close();
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText = "GetGVCurrentStatusPRM005";
+                comm.CommandType = CommandType.StoredProcedure;
+
+                comm.Connection.Open();
+                SqlDataReader reader = comm.ExecuteReader();
+                List<GV_Work_ItemVO> list = Helper.DataReaderMapToList<GV_Work_ItemVO>(reader);
+                comm.Connection.Close();
+
+                return list;
             }
-            return list;
         }
 
         public List<GV_History_Work_ItemVO> GetAllGV_History_Work_Item() //PRM_PRF_006 
@@ -70,38 +69,36 @@ namespace DAC
       
         public List<GV_History_Work_ItemVO> GV_Current_YesStatus() //PRM_PRF_007 사용중 대차 현황 
         {
-            List<GV_History_Work_ItemVO> list = null;
-            using (SqlConnection conn = new SqlConnection(Connstr))
+            using (SqlCommand comm = new SqlCommand())
             {
-                conn.Open();
-                string sql = "select GV_Name,GV_Status,gvm.Use_YN,gvcs.Workorderno,wo.Item_Code,Item_Name,Loading_time " +
-                             "from GV_Current_Status gvcs INNER JOIN GV_Master gvm ON gvm.GV_Code = gvcs.GV_Code " +
-                             "INNER JOIN WorkOrder wo ON gvcs.Workorderno = wo.Workorderno " +
-                             "INNER JOIN Item_Master im ON wo.Item_Code = im.Item_Code " +
-                             "where gvm.Use_YN = 'N'";
-                using (SqlCommand cmd = new SqlCommand(sql, conn))
-                {
-                    list = Helper.DataReaderMapToList<GV_History_Work_ItemVO>(cmd.ExecuteReader());
-                }
-                conn.Close();
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText = "GetGVCurrentStatusPRM007";
+                comm.CommandType = CommandType.StoredProcedure;
+
+                comm.Connection.Open();
+                SqlDataReader reader = comm.ExecuteReader();
+                List<GV_History_Work_ItemVO> list = Helper.DataReaderMapToList<GV_History_Work_ItemVO>(reader);
+                comm.Connection.Close();
+
+                return list;
             }
-            return list;
         }
 
         public List<GV_History_Work_ItemVO> GetGV_Current_NO_Status() //PRM_PRF_007 빈 대차 현황 
         {
-            List<GV_History_Work_ItemVO> list = null;
-            using (SqlConnection conn = new SqlConnection(Connstr))
+            using (SqlCommand comm = new SqlCommand())
             {
-                conn.Open();
-                string sql = "select GV_Code,GV_Name from GV_Master gvcs where Use_YN = 'Y'";
-                using (SqlCommand cmd = new SqlCommand(sql, conn))
-                {
-                    list = Helper.DataReaderMapToList<GV_History_Work_ItemVO>(cmd.ExecuteReader());
-                }
-                conn.Close();
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText = "GetGVCurrentStatusPRM007bin";
+                comm.CommandType = CommandType.StoredProcedure;
+
+                comm.Connection.Open();
+                SqlDataReader reader = comm.ExecuteReader();
+                List<GV_History_Work_ItemVO> list = Helper.DataReaderMapToList<GV_History_Work_ItemVO>(reader);
+                comm.Connection.Close();
+
+                return list;
             }
-            return list;
         }
         
     }

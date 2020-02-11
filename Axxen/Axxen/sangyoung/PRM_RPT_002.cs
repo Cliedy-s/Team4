@@ -19,7 +19,8 @@ namespace Axxen
         List<Goods_In_HistoryVO> figList;
         List<InspectMeasureHistoryVO> imhList;
         DataTable dt = new DataTable();
-        FigurationRequest rpt = new FigurationRequest();
+        FigurationLog rpt = new FigurationLog();
+        Goods_In_HistorySercive service = new Goods_In_HistorySercive();
         public PRM_RPT_002()
         {
             InitializeComponent();
@@ -27,8 +28,8 @@ namespace Axxen
 
         private void PRM_RPT_002_Load(object sender, EventArgs e)
         {
-            Goods_In_HistorySercive service = new Goods_In_HistorySercive();
-            figList = service.GetFigurationHistory();
+           
+            
         }
 
         private void ADateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -44,34 +45,31 @@ namespace Axxen
         threadDelegate threadmethod;
         private void ReportBinding()
         {
+            
             List<string> workno = new List<string>();
-            string date = dtpDate.Value.ToString("yyyyMMdd");
+            string date = dtpDate.Value.ToString("yyyy-MM-dd");
+            figList = service.GetFigurationHistory(date);
 
-            var searchlist = (from data in figList
-                              where data.In_Date.ToString("yyyyMMdd") == date
-                              select data).ToList();
-
-            foreach (var item in searchlist)
+            foreach (var item in figList)
             {
-                //if(item.)
                 workno.Add(item.Workorderno);
             }
             Inspect_Measure_HistoryService inservice = new Inspect_Measure_HistoryService();
             imhList = inservice.GetFiguration(workno);
 
-            var figurationList = (from req in searchlist
+            var figurationList = (from req in figList
                                   join val in imhList on req.Workorderno equals val.Workorderno
                                   where req.Workorderno == val.Workorderno
-                                  select new { Num = req.Num, Pallet_No = req.Pallet_No, Item_Name = req.Item_Name, Closed_Time = req.Closed_Time
+                                  select new { Num = req.Num, Pallet_No = req.Pallet_No, Item_Name = req.Item_Name, Closed_Time = req.Closed_Time.ToString("HH:mm")
                                               ,Workorderno = val.Workorderno, ADate = val.Adate, AVal = val.Aval, BDate = val.Bdate, BVal = val.Bval
                                               ,CDate = val.Cdate, CVal = val.Cval, DDate = val.Ddate, DVal = val.Dval, EDate = val.Edate, EVal = val.Eval
                                   }).ToList();
 
-
             dt = ListToDataTable.ToDataTable(figurationList);
+            dt.TableName = "datFiguration";
             dsFiguration ds = new dsFiguration();
             ds.Tables.Add(dt);
-            rpt.DataSource = ds.Tables[1];
+            rpt.DataSource = ds.Tables["datFiguration"];
             rpt.Parameters["Ins_Date"].Value = dtpDate.Value.ToString("yyyy-MM-dd");
             rpt.Parameters["Ins_Date"].Visible = false; //파라미터 바로 넘기기
             documentViewer1.DocumentSource = rpt;

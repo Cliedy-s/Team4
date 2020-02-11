@@ -28,6 +28,8 @@ namespace Axxen
         {
             ((MainForm)this.MdiParent).InsertFormEvent += new System.EventHandler(this.InsertFormShow);//입력이벤트 등록
             ((MainForm)this.MdiParent).RefreshFormEvent += new EventHandler(this.RefreshFormShow);
+            ((MainForm)this.MdiParent).MyUpdateEvent += new System.EventHandler(this.MyUpdateShow);//입력이벤트 등록
+            ((MainForm)this.MdiParent).MyDeleteEvent += new EventHandler(this.MyDelete);
             ///gridview
             DatagridviewDesigns.SetDesign(dgvGroup);
             DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvGroup, "사용자그룹코드", "UserGroup_Code", true, 200, default, true);
@@ -71,7 +73,46 @@ namespace Axxen
             }
           
         }
-     
+        private void MyDelete(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
+                {
+                    MSS_CON_002_1 frm = new MSS_CON_002_1();
+
+                    frm.ShowDialog();
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+                Program.Log.WriteError(err.Message);
+            }
+
+        }
+        /// <summary>
+        /// 수정
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void MyUpdateShow(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
+                {
+                    MSS_CON_002_1 frm = new MSS_CON_002_1();
+
+                    frm.ShowDialog();
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
+        }
+
         /// <summary>
         /// 새로고침 이벤트 메서드
         /// </summary>

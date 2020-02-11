@@ -131,6 +131,27 @@ namespace DAC
             return ds;
         }
 
+        /// <summary>
+        /// 금형정보삭제
+        /// </summary>
+        /// <param name="moldno"></param>
+        /// <returns></returns>
+        public bool DeleteMold(string moldno)
+        {
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText = "Delete from Mold_Master where Mold_Code = @Mold_Code";
+                comm.CommandType = CommandType.Text;
+                comm.Parameters.AddWithValue("@Mold_Code", moldno);
+                comm.Connection.Open();
+                int result = comm.ExecuteNonQuery();
+                comm.Connection.Close();
+
+                return result > 0;
+            }
+        }
+
         //pop
         /// <summary>
         /// 금형 검색
