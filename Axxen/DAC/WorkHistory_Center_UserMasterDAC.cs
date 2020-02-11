@@ -18,7 +18,7 @@ namespace DAC
                 comm.Connection = new SqlConnection(Connstr);
                 comm.CommandText = @"select Work_Date,Wc_Name,User_Name,Work_StartTime,Work_EndTime,Work_Time 
                                     from Work_History wh INNER JOIN WorkCenter_Master wcm ON wh.Process_Code = wcm.Process_Code
-					                                     INNER JOIN User_Master um ON wh.User_ID = um.User_ID";
+					                                     INNER JOIN User_Master um ON wh.User_ID = um.User_ID Order by Work_Date Desc";
                 comm.CommandType = CommandType.Text;
 
                 comm.Connection.Open();

@@ -23,7 +23,7 @@ namespace VO
         public DateTime Unloading_time { get; set; } //언로딩시간
         public string Unloading_Wc { get; set; }//언로딩작업장 
         public DateTime In_Time { get; set; }//요입시간 
-        public int Center_Time { get; set; }//중간시간 
+        public DateTime Center_Time { get; set; }//중간시간 
         public DateTime Out_Time { get; set; }//요출시간 
     }
 }
