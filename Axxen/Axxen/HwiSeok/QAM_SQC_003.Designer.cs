@@ -111,6 +111,7 @@
             this.aTextBox_FindNameByCode2.TabIndex = 33;
             this.aTextBox_FindNameByCode2.txtCodeText = "";
             this.aTextBox_FindNameByCode2.txtNameText = "";
+            this.aTextBox_FindNameByCode2.DotDotDotFormClosing += new Axxen.CustomControls.ATextBox_FindNameByCode.SearchFormClosing(this.aTextBox_FindNameByCode2_DotDotDotFormClosing);
             // 
             // aTextBox_FindNameByCode1
             // 
@@ -125,6 +126,7 @@
             this.aTextBox_FindNameByCode1.TabIndex = 32;
             this.aTextBox_FindNameByCode1.txtCodeText = "";
             this.aTextBox_FindNameByCode1.txtNameText = "";
+            this.aTextBox_FindNameByCode1.DotDotDotFormClosing += new Axxen.CustomControls.ATextBox_FindNameByCode.SearchFormClosing(this.aTextBox_FindNameByCode1_DotDotDotFormClosing);
             // 
             // aLabel1
             // 
@@ -137,8 +139,8 @@
             // 
             // aDateTimePickerSearch1
             // 
-            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 2, 3, 12, 10, 18, 9);
-            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 2, 10, 12, 10, 18, 9);
+            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 2, 4, 17, 43, 53, 906);
+            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 2, 11, 17, 43, 53, 906);
             this.aDateTimePickerSearch1.ButtonText = "조회";
             this.aDateTimePickerSearch1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aDateTimePickerSearch1.Location = new System.Drawing.Point(88, 23);
@@ -155,6 +157,7 @@
             this.ControlBox = false;
             this.Name = "QAM_SQC_003";
             this.Text = "공정조건등록";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.QAM_SQC_003_FormClosing);
             this.Load += new System.EventHandler(this.QAM_SQC_003_Load);
             this.aSplitContainer1.Panel1.ResumeLayout(false);
             this.aSplitContainer1.Panel2.ResumeLayout(false);

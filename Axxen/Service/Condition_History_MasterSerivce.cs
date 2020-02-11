@@ -1,6 +1,7 @@
 ﻿using DAC;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,11 +18,18 @@ namespace Service
             return dac.GetMainCondition_History_Master();
         }
 
-        public List<Condition_History_MasterVO> GetSubCondition_History_Master(string Workorderno, string Process_code, string Item_Code, string Inspect_code) // QAM_SQC_003 서브그리드뷰조회
+        public List<Condition_History_MasterVO> GetSubCondition_History_Master(string Workorderno, string Process_code, string Item_Code, string Condition_Code) // QAM_SQC_003 서브그리드뷰조회
         {
             Condition_History_MasterDAC dac = new Condition_History_MasterDAC();
-            return dac.GetSubCondition_History_Master(Workorderno, Process_code, Item_Code, Inspect_code);
+            return dac.GetSubCondition_History_Master(Workorderno, Process_code, Item_Code, Condition_Code);
         }
+
+        public DataTable GetSubSubCondition_History_Master(string Workorderno, string Process_code, string Item_Code, string Condition_Code) // QAM_SQC_003 서브그리드뷰조회
+        {
+            Condition_History_MasterDAC dac = new Condition_History_MasterDAC();
+            return dac.GetSubSubCondition_History_Master(Workorderno, Process_code, Item_Code, Condition_Code);
+        }
+        
 
         public List<Condition_History_MasterVO> PickerMainCondition_History_Master(string ADateTimePickerValue1, string ADateTimePickerValue2) // QAM_SQC_002 날짜별 조회
         {
