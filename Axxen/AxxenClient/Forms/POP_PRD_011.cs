@@ -31,7 +31,6 @@ namespace AxxenClient.Forms
             InitControlUtil.AddNewColumnToDataGridView(dgvGVList, "요입시각", "In_Time", true, 200);
             InitControlUtil.AddNewColumnToDataGridView(dgvGVList, "요출시각", "Out_Time", true, 200);
             InitControlUtil.AddNewColumnToDataGridView(dgvGVList, "소요시간", "Center_Time", true, 110);
-            InitControlUtil.AddNewColumnToDataGridView(dgvGVList, "소요시간", "Center_Time", true, 110);
             dgvGVList.Columns[4].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm:ss";
             dgvGVList.Columns[5].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm:ss";
             dgvGVList.Columns[2].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm:ss";

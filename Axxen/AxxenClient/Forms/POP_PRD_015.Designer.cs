@@ -40,16 +40,18 @@
             this.txtWorkOrderDate = new Axxen.CustomControls.ABigTextBox_Labeled();
             this.txtWorkOrderno = new Axxen.CustomControls.ABigTextBox_Labeled();
             this.aButton1 = new Axxen.CustomControls.AButton();
-            this.txtMeasure = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
             this.lblProcesscode = new Axxen.CustomControls.ALabel();
             this.lblItemCode = new Axxen.CustomControls.ALabel();
             this.lblInspectcode = new Axxen.CustomControls.ALabel();
+            this.nudMeasure = new System.Windows.Forms.NumericUpDown();
+            this.aLabel1 = new Axxen.CustomControls.ALabel();
             this.panBottom.SuspendLayout();
             this.aPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInspectMeasure)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInspect)).BeginInit();
             this.aPanel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMeasure)).BeginInit();
             this.SuspendLayout();
             // 
             // panBottom
@@ -224,20 +226,6 @@
             this.aButton1.Text = "품질기계\r\n시작/종료";
             this.aButton1.UseVisualStyleBackColor = false;
             // 
-            // txtMeasure
-            // 
-            this.txtMeasure.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtMeasure.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMeasure.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtMeasure.LabelText = "측정값";
-            this.txtMeasure.Location = new System.Drawing.Point(628, 430);
-            this.txtMeasure.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.txtMeasure.Name = "txtMeasure";
-            this.txtMeasure.Size = new System.Drawing.Size(469, 42);
-            this.txtMeasure.TabIndex = 41;
-            this.txtMeasure.TextBoxText = "";
-            this.txtMeasure.TextBoxType = Axxen.CustomControls.TextType.Numeric;
-            // 
             // lblProcesscode
             // 
             this.lblProcesscode.AutoSize = true;
@@ -268,13 +256,45 @@
             this.lblInspectcode.Text = "lblInspectcode";
             this.lblInspectcode.Visible = false;
             // 
+            // nudMeasure
+            // 
+            this.nudMeasure.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudMeasure.DecimalPlaces = 5;
+            this.nudMeasure.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.nudMeasure.Location = new System.Drawing.Point(711, 436);
+            this.nudMeasure.Maximum = new decimal(new int[] {
+            2147483647,
+            0,
+            0,
+            0});
+            this.nudMeasure.Minimum = new decimal(new int[] {
+            -2147483648,
+            0,
+            0,
+            -2147483648});
+            this.nudMeasure.Name = "nudMeasure";
+            this.nudMeasure.Size = new System.Drawing.Size(342, 29);
+            this.nudMeasure.TabIndex = 45;
+            // 
+            // aLabel1
+            // 
+            this.aLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.aLabel1.AutoSize = true;
+            this.aLabel1.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.aLabel1.Location = new System.Drawing.Point(633, 440);
+            this.aLabel1.Name = "aLabel1";
+            this.aLabel1.Size = new System.Drawing.Size(58, 21);
+            this.aLabel1.TabIndex = 46;
+            this.aLabel1.Text = "측정값";
+            // 
             // POP_PRD_015
             // 
             this.ClientSize = new System.Drawing.Size(1210, 629);
+            this.Controls.Add(this.aLabel1);
+            this.Controls.Add(this.nudMeasure);
             this.Controls.Add(this.lblProcesscode);
             this.Controls.Add(this.lblItemCode);
             this.Controls.Add(this.lblInspectcode);
-            this.Controls.Add(this.txtMeasure);
             this.Controls.Add(this.btnDeleteMeasure);
             this.Controls.Add(this.btnInsertMeasure);
             this.Controls.Add(this.dgvInspectMeasure);
@@ -290,10 +310,11 @@
             this.Controls.SetChildIndex(this.dgvInspectMeasure, 0);
             this.Controls.SetChildIndex(this.btnInsertMeasure, 0);
             this.Controls.SetChildIndex(this.btnDeleteMeasure, 0);
-            this.Controls.SetChildIndex(this.txtMeasure, 0);
             this.Controls.SetChildIndex(this.lblInspectcode, 0);
             this.Controls.SetChildIndex(this.lblItemCode, 0);
             this.Controls.SetChildIndex(this.lblProcesscode, 0);
+            this.Controls.SetChildIndex(this.nudMeasure, 0);
+            this.Controls.SetChildIndex(this.aLabel1, 0);
             this.panBottom.ResumeLayout(false);
             this.panBottom.PerformLayout();
             this.aPanel2.ResumeLayout(false);
@@ -302,6 +323,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvInspectMeasure)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInspect)).EndInit();
             this.aPanel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nudMeasure)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -320,10 +342,11 @@
         private Axxen.CustomControls.ABigTextBox_Labeled txtItemName;
         private Axxen.CustomControls.ABigTextBox_Labeled txtWorkOrderDate;
         private Axxen.CustomControls.ABigTextBox_Labeled txtWorkOrderno;
-        private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox txtMeasure;
         private Axxen.CustomControls.ALabel lblProcesscode;
         private Axxen.CustomControls.ALabel lblItemCode;
         private Axxen.CustomControls.ALabel lblInspectcode;
         private Axxen.CustomControls.AButton aButton1;
+        private System.Windows.Forms.NumericUpDown nudMeasure;
+        private Axxen.CustomControls.ALabel aLabel1;
     }
 }

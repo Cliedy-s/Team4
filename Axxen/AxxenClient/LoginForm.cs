@@ -12,6 +12,9 @@ namespace AxxenClient
 {
     public partial class LoginForm : AxxenClient.Templets.ClientFreeForm
     {
+        public string Username {get;set; }
+        public string UserID { get; set; }
+
         public LoginForm()
         {
             InitializeComponent();

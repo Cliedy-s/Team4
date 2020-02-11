@@ -39,26 +39,28 @@
             this.txtItemName = new Axxen.CustomControls.ABigTextBox_Labeled();
             this.txtWorkOrderDate = new Axxen.CustomControls.ABigTextBox_Labeled();
             this.txtWorkOrderno = new Axxen.CustomControls.ABigTextBox_Labeled();
-            this.txtMeasure = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
             this.lblConditionCode = new Axxen.CustomControls.ALabel();
             this.lblItemCode = new Axxen.CustomControls.ALabel();
             this.lblWcCode = new Axxen.CustomControls.ALabel();
+            this.aLabel1 = new Axxen.CustomControls.ALabel();
+            this.nudMeasure = new System.Windows.Forms.NumericUpDown();
             this.panBottom.SuspendLayout();
             this.aPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConditionMeasureList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConditionList)).BeginInit();
             this.aPanel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMeasure)).BeginInit();
             this.SuspendLayout();
-            // 
-            // aLabel_Header1
-            // 
-            this.aLabel_Header1.Text = "공정조건 등록";
             // 
             // panBottom
             // 
             this.panBottom.Location = new System.Drawing.Point(0, 593);
             this.panBottom.Margin = new System.Windows.Forms.Padding(2);
+            // 
+            // aLabel_Header1
+            // 
+            this.aLabel_Header1.Text = "공정조건 등록";
             // 
             // btnInsertMeasure
             // 
@@ -206,20 +208,6 @@
             this.txtWorkOrderno.TextBoxText = "";
             this.txtWorkOrderno.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
-            // txtMeasure
-            // 
-            this.txtMeasure.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtMeasure.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMeasure.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtMeasure.LabelText = "측정값";
-            this.txtMeasure.Location = new System.Drawing.Point(628, 430);
-            this.txtMeasure.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.txtMeasure.Name = "txtMeasure";
-            this.txtMeasure.Size = new System.Drawing.Size(469, 42);
-            this.txtMeasure.TabIndex = 35;
-            this.txtMeasure.TextBoxText = "";
-            this.txtMeasure.TextBoxType = Axxen.CustomControls.TextType.Numeric;
-            // 
             // lblConditionCode
             // 
             this.lblConditionCode.AutoSize = true;
@@ -250,13 +238,45 @@
             this.lblWcCode.Text = "lblWcCode";
             this.lblWcCode.Visible = false;
             // 
+            // aLabel1
+            // 
+            this.aLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.aLabel1.AutoSize = true;
+            this.aLabel1.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.aLabel1.Location = new System.Drawing.Point(633, 440);
+            this.aLabel1.Name = "aLabel1";
+            this.aLabel1.Size = new System.Drawing.Size(58, 21);
+            this.aLabel1.TabIndex = 48;
+            this.aLabel1.Text = "측정값";
+            // 
+            // nudMeasure
+            // 
+            this.nudMeasure.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudMeasure.DecimalPlaces = 5;
+            this.nudMeasure.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.nudMeasure.Location = new System.Drawing.Point(711, 436);
+            this.nudMeasure.Maximum = new decimal(new int[] {
+            2147483647,
+            0,
+            0,
+            0});
+            this.nudMeasure.Minimum = new decimal(new int[] {
+            -2147483648,
+            0,
+            0,
+            -2147483648});
+            this.nudMeasure.Name = "nudMeasure";
+            this.nudMeasure.Size = new System.Drawing.Size(342, 29);
+            this.nudMeasure.TabIndex = 47;
+            // 
             // POP_PRD_014
             // 
             this.ClientSize = new System.Drawing.Size(1210, 629);
+            this.Controls.Add(this.aLabel1);
+            this.Controls.Add(this.nudMeasure);
             this.Controls.Add(this.lblWcCode);
             this.Controls.Add(this.lblItemCode);
             this.Controls.Add(this.lblConditionCode);
-            this.Controls.Add(this.txtMeasure);
             this.Controls.Add(this.btnDeleteMeasure);
             this.Controls.Add(this.btnInsertMeasure);
             this.Controls.Add(this.dgvConditionMeasureList);
@@ -266,16 +286,17 @@
             this.Name = "POP_PRD_014";
             this.Load += new System.EventHandler(this.POP_PRD_014_Load);
             this.Controls.SetChildIndex(this.aPanel6, 0);
-            this.Controls.SetChildIndex(this.aPanel2, 0);
-            this.Controls.SetChildIndex(this.panBottom, 0);
             this.Controls.SetChildIndex(this.dgvConditionList, 0);
             this.Controls.SetChildIndex(this.dgvConditionMeasureList, 0);
             this.Controls.SetChildIndex(this.btnInsertMeasure, 0);
             this.Controls.SetChildIndex(this.btnDeleteMeasure, 0);
-            this.Controls.SetChildIndex(this.txtMeasure, 0);
             this.Controls.SetChildIndex(this.lblConditionCode, 0);
             this.Controls.SetChildIndex(this.lblItemCode, 0);
             this.Controls.SetChildIndex(this.lblWcCode, 0);
+            this.Controls.SetChildIndex(this.aPanel2, 0);
+            this.Controls.SetChildIndex(this.panBottom, 0);
+            this.Controls.SetChildIndex(this.nudMeasure, 0);
+            this.Controls.SetChildIndex(this.aLabel1, 0);
             this.panBottom.ResumeLayout(false);
             this.panBottom.PerformLayout();
             this.aPanel2.ResumeLayout(false);
@@ -284,6 +305,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvConditionMeasureList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConditionList)).EndInit();
             this.aPanel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nudMeasure)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -302,9 +324,10 @@
         private Axxen.CustomControls.ABigTextBox_Labeled txtItemName;
         private Axxen.CustomControls.ABigTextBox_Labeled txtWorkOrderDate;
         private Axxen.CustomControls.ABigTextBox_Labeled txtWorkOrderno;
-        private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox txtMeasure;
         private Axxen.CustomControls.ALabel lblConditionCode;
         private Axxen.CustomControls.ALabel lblItemCode;
         private Axxen.CustomControls.ALabel lblWcCode;
+        private Axxen.CustomControls.ALabel aLabel1;
+        private System.Windows.Forms.NumericUpDown nudMeasure;
     }
 }

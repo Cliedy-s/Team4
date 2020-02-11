@@ -88,11 +88,16 @@ namespace AxxenClient.Forms
         }// 작업지시생성버튼
         private void dgvWorkOrder_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            txtPlanQty.TextBoxText = dgvWoReq.SelectedRows[0].Cells[4].Value.ToString();
             txtItemSearch.TextBoxText = dgvWoReq.SelectedRows[0].Cells[3].Value.ToString();
             txtItemSearch.CodeText = dgvWoReq.SelectedRows[0].Cells[2].Value.ToString();
             txtReqNo.TextBoxText = dgvWoReq.SelectedRows[0].Cells[1].Value.ToString();
             lblReq_Seq.Text = dgvWoReq.SelectedRows[0].Cells[0].Value.ToString();
             lblItem_Unit.Text = dgvWoReq.SelectedRows[0].Cells[8].Value.ToString();
+            txtProcessSearch.TextBoxText = GlobalUsage.ProcessName;
+            txtProcessSearch.CodeText = GlobalUsage.ProcessCode;
+            txtWcSearch.TextBoxText = GlobalUsage.WcName;
+            txtWcSearch.CodeText = GlobalUsage.WcCode;
         }
 
     }

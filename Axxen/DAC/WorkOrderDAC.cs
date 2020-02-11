@@ -409,6 +409,7 @@ namespace DAC
            ([Workorderno]
            ,[Item_Code]
            ,[Wc_Code]
+           ,[In_Qty_Main]
            ,[Plan_Qty]
            ,[Plan_Unit]
            ,[Plan_Date]
@@ -424,6 +425,7 @@ namespace DAC
            ('WK' + format(getdate(),'yyMMddHHmmss')
            ,@Item_Code 
            ,@Wc_Code 
+           ,@Plan_Qty 
            ,@Plan_Qty 
            ,@Plan_Unit
            ,getdate()

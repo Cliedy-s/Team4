@@ -78,17 +78,17 @@ namespace AxxenClient.Forms
                     item.Item_code = lblItemCode.Text;
                     item.Wc_Code = lblWcCode.Text;
                     item.Condition_Code = lblConditionCode.Text;
-                    item.Condition_Val = Convert.ToDecimal(txtMeasure.TextBoxText);
+                    item.Condition_Val = nudMeasure.Value;
                     item.Workorderno = GlobalUsage.WorkOrderNo;
                     if (service.InsertConditionMeasure(item, GlobalUsage.UserID))
                     {
-                        Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 공정조건({lblConditionCode.Text})에 값({txtMeasure.TextBoxText})을 넣는데에 성공하였음");
+                        Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 공정조건({lblConditionCode.Text})에 값({nudMeasure.Value})을 넣는데에 성공하였음");
                         SearchData();
-                        txtMeasure.TextBoxText = "";
+                        nudMeasure.Value = 0;
                     }
                     else
                     {
-                        Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 공정조건({lblConditionCode.Text})에 값({txtMeasure.TextBoxText})을 넣으려 하였으나 실패하였음");
+                        Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 공정조건({lblConditionCode.Text})에 값({nudMeasure.Value})을 넣으려 하였으나 실패하였음");
                         MessageBox.Show("입력할 수 없는 항목입니다.");
                     }
                 }
@@ -108,11 +108,11 @@ namespace AxxenClient.Forms
                 Condition_Measure_HistoryService service = new Condition_Measure_HistoryService();
                 if (service.DeleteConditionMeasure(Convert.ToInt32(dgvConditionMeasureList.SelectedRows[0].Cells[3].Value)))
                 {
-                    Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 공정조건({lblConditionCode.Text})의 값({txtMeasure.TextBoxText})을 삭제에 성공함");
+                    Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 공정조건({lblConditionCode.Text})의 값({nudMeasure.Value})을 삭제에 성공함");
                 }
                 else
                 {
-                    Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 공정조건({lblConditionCode.Text})의 값({txtMeasure.TextBoxText})을 삭제에 하려했으나 실패함");
+                    Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 공정조건({lblConditionCode.Text})의 값({nudMeasure.Value})을 삭제에 하려했으나 실패함");
                     MessageBox.Show("삭제할 수 없는 항목입니다.");
                 }
                 SearchData();
@@ -124,6 +124,14 @@ namespace AxxenClient.Forms
             lblItemCode.Text = dgvConditionList.SelectedRows[0].Cells[4].Value.ToString();
             lblConditionCode.Text = dgvConditionList.SelectedRows[0].Cells[5].Value.ToString();
             lblWcCode.Text = dgvConditionList.SelectedRows[0].Cells[6].Value.ToString();
+
+            decimal usl, sl, lsl;
+            usl = Convert.ToDecimal(dgvConditionList.SelectedRows[0].Cells[1].Value);
+            sl = Convert.ToDecimal(dgvConditionList.SelectedRows[0].Cells[2].Value);
+            if (usl - sl <= 0) nudMeasure.Increment = 1;
+            else nudMeasure.Increment = (usl - sl) / 10m;
+
+            nudMeasure.Value = sl;
 
             SearchData();
         }

@@ -143,5 +143,10 @@ namespace AxxenClient.Forms
             BoxingGrade_Detail_MasterService service = new BoxingGrade_Detail_MasterService();
             txtBoxingGrade.TextBoxText = service.GellBoxing_Grade(e.ResultCode);
         }
+
+        private void txtBoxingGrade_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
