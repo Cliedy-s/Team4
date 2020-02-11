@@ -32,17 +32,17 @@ namespace Axxen
 
             #region 그리드뷰
             DatagridviewDesigns.SetDesign(dgvMainGrid);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "발생순번", "Nop_Seq", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "비가동일자", "Nop_Date", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "작업장코드", "Wc_Code", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "작업장명", "Wc_Name", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "비가동대분류", "Nop_Ma_Name", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "비가동상세분류", "Nop_Mi_Name", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "비가동발생시각", "Nop_Happentime", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "비가동종료시각", "Nop_Canceltime", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "비가동시간", "Nop_Time", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "비고", "Remark", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "발생유형", "Nop_Type", true, 100, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "발생순번", "Nop_Seq", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "비가동일자", "Nop_Date", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "작업장코드", "Wc_Code", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "작업장명", "Wc_Name", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "비가동대분류", "Nop_Ma_Name", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "비가동상세분류", "Nop_Mi_Name", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "비가동발생시각", "Nop_Happentime", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "비가동종료시각", "Nop_Canceltime", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "비가동시간", "Nop_Time", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "비고", "Remark", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "발생유형", "Nop_Type", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
             #endregion
 
             nohm = nohmservice.GetAllNop_History_Mi_Ma();
