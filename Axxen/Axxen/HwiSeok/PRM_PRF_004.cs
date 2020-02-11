@@ -27,12 +27,12 @@ namespace Axxen
             ((MainForm)this.MdiParent).RefreshFormEvent += new System.EventHandler(this.RefreshFormShow); // 새로고침
 
             DatagridviewDesigns.SetDesign(dgvMainGrid);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "이력순번", "Seq", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "기준일자", "Std_Date", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "작업코드", "Wc_Code", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "작업장명", "Wc_Name", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "GAS사용량", "Gas_Val", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "비고", "Remark", true, 100, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "이력순번", "Seq", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "기준일자", "Std_Date", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "작업코드", "Wc_Code", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "작업장명", "Wc_Name", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "GAS사용량", "Gas_Val", true, 100, DataGridViewContentAlignment.MiddleRight, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "비고", "Remark", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
 
             guho = ghservice.GetAllGasUse_History();
             dgvMainGrid.DataSource = guho;

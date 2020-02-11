@@ -28,12 +28,12 @@ namespace Axxen
 
             #region 그리드뷰
             DatagridviewDesigns.SetDesign(dgvMainGrid);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "근무일", "Work_Date", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "작업장", "Wc_Name", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "작업자", "User_Name", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "근무시작시간", "Work_StartTime", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "근무종료시간", "Work_EndTime", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "근무시간", "Work_Time", true, 100, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "근무일", "Work_Date", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "작업장", "Wc_Name", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "작업자", "User_Name", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "근무시작시간", "Work_StartTime", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "근무종료시간", "Work_EndTime", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "근무시간", "Work_Time", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
             #endregion
 
             whcu = whcuservice.GetAllWorkHistory_Center_UserMaster(); //전체 조회

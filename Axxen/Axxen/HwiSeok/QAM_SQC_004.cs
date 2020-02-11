@@ -28,20 +28,20 @@ namespace Axxen
 
             #region 그리드뷰
             DatagridviewDesigns.SetDesign(dgvMainGrid);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "작업지시번호", "Workorderno", true, 150, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "생산일", "Prd_Date", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "공정", "Process_name", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "작업장", "Wc_Name", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "품목코드", "Item_Code", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "품목명", "Item_Name", true, 150, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "측정항목", "Inspect_name", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "USL", "USL", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "SL", "SL", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "LSL", "LSL", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "측정일시", "Inspect_datetime", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "측정회차", "Inspect_date", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "측정순번", "Inspect_measure_seq", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "측정값", "Inspect_val", true, 100, default, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "작업지시번호", "Workorderno", true, 150, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "생산일", "Prd_Date", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "공정", "Process_name", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "작업장", "Wc_Name", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "품목코드", "Item_Code", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "품목명", "Item_Name", true, 150, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "측정항목", "Inspect_name", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "USL", "USL", true, 100, DataGridViewContentAlignment.MiddleRight, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "SL", "SL", true, 100, DataGridViewContentAlignment.MiddleRight, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "LSL", "LSL", true, 100, DataGridViewContentAlignment.MiddleRight, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "측정일시", "Inspect_datetime", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "측정회차", "Inspect_date", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "측정순번", "Inspect_measure_seq", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "측정값", "Inspect_val", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
             #endregion
 
             lhm = lhmservice.GetAllInspectMeasure_History_Master(); //전체 조회
