@@ -40,16 +40,48 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.aComboBox5 = new Axxen.CustomControls.AComboBox();
+            this.aComboBox1 = new Axxen.CustomControls.AComboBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.cbbscreen = new Axxen.CustomControls.AComboBox();
             this.panel10 = new System.Windows.Forms.Panel();
             this.label23 = new System.Windows.Forms.Label();
             this.btnclose = new Axxen.CustomControls.AButton();
+            this.cbbscreen = new Axxen.CustomControls.AComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.aComboBox2 = new Axxen.CustomControls.AComboBox();
+            this.aComboBox3 = new Axxen.CustomControls.AComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.aComboBox4 = new Axxen.CustomControls.AComboBox();
+            this.aComboBox6 = new Axxen.CustomControls.AComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.aComboBox7 = new Axxen.CustomControls.AComboBox();
+            this.aComboBox8 = new Axxen.CustomControls.AComboBox();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
             this.SuspendLayout();
@@ -171,6 +203,14 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.panel5);
+            this.tabPage1.Controls.Add(this.panel6);
+            this.tabPage1.Controls.Add(this.panel7);
+            this.tabPage1.Controls.Add(this.panel8);
+            this.tabPage1.Controls.Add(this.panel3);
+            this.tabPage1.Controls.Add(this.panel4);
+            this.tabPage1.Controls.Add(this.panel1);
+            this.tabPage1.Controls.Add(this.panel2);
             this.tabPage1.Controls.Add(this.btnUpdate);
             this.tabPage1.Controls.Add(this.panel9);
             this.tabPage1.Controls.Add(this.panel10);
@@ -181,6 +221,186 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "기본 정보";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // panel5
+            // 
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.label12);
+            this.panel5.Controls.Add(this.aComboBox7);
+            this.panel5.Controls.Add(this.aComboBox8);
+            this.panel5.Location = new System.Drawing.Point(145, 201);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(455, 45);
+            this.panel5.TabIndex = 57;
+            // 
+            // panel6
+            // 
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.label4);
+            this.panel6.Location = new System.Drawing.Point(37, 201);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(109, 45);
+            this.panel6.TabIndex = 56;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label4.Location = new System.Drawing.Point(5, 15);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(99, 17);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "새로고침단축키";
+            // 
+            // panel7
+            // 
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel7.Controls.Add(this.label11);
+            this.panel7.Controls.Add(this.aComboBox4);
+            this.panel7.Controls.Add(this.aComboBox6);
+            this.panel7.Location = new System.Drawing.Point(145, 157);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(455, 45);
+            this.panel7.TabIndex = 55;
+            // 
+            // panel8
+            // 
+            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel8.Controls.Add(this.label5);
+            this.panel8.Location = new System.Drawing.Point(37, 157);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(109, 45);
+            this.panel8.TabIndex = 54;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label5.Location = new System.Drawing.Point(16, 14);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(73, 17);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "삭제단축키";
+            // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.label10);
+            this.panel3.Controls.Add(this.aComboBox2);
+            this.panel3.Controls.Add(this.aComboBox3);
+            this.panel3.Location = new System.Drawing.Point(145, 113);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(455, 45);
+            this.panel3.TabIndex = 53;
+            // 
+            // panel4
+            // 
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.label3);
+            this.panel4.Location = new System.Drawing.Point(37, 113);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(109, 45);
+            this.panel4.TabIndex = 52;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label3.Location = new System.Drawing.Point(16, 15);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(73, 17);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "수정단축키";
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.aComboBox5);
+            this.panel1.Controls.Add(this.aComboBox1);
+            this.panel1.Location = new System.Drawing.Point(145, 69);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(455, 45);
+            this.panel1.TabIndex = 51;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(177, 18);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(14, 12);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "~";
+            // 
+            // aComboBox5
+            // 
+            this.aComboBox5.FormattingEnabled = true;
+            this.aComboBox5.Items.AddRange(new object[] {
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G",
+            "H",
+            "I",
+            "J",
+            "K",
+            "L",
+            "M",
+            "N",
+            "O",
+            "P",
+            "Q",
+            "R",
+            "X",
+            "T",
+            "U",
+            "V",
+            "W",
+            "X",
+            "W",
+            "Z"});
+            this.aComboBox5.Location = new System.Drawing.Point(198, 12);
+            this.aComboBox5.Name = "aComboBox5";
+            this.aComboBox5.Size = new System.Drawing.Size(165, 20);
+            this.aComboBox5.TabIndex = 1;
+            // 
+            // aComboBox1
+            // 
+            this.aComboBox1.FormattingEnabled = true;
+            this.aComboBox1.Items.AddRange(new object[] {
+            "Ctrl",
+            "Alt",
+            "Shift"});
+            this.aComboBox1.Location = new System.Drawing.Point(6, 12);
+            this.aComboBox1.Name = "aComboBox1";
+            this.aComboBox1.Size = new System.Drawing.Size(165, 20);
+            this.aComboBox1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Location = new System.Drawing.Point(37, 69);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(109, 45);
+            this.panel2.TabIndex = 50;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label2.Location = new System.Drawing.Point(16, 15);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(73, 17);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "추가단축키";
             // 
             // btnUpdate
             // 
@@ -203,14 +423,6 @@
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(455, 45);
             this.panel9.TabIndex = 19;
-            // 
-            // cbbscreen
-            // 
-            this.cbbscreen.FormattingEnabled = true;
-            this.cbbscreen.Location = new System.Drawing.Point(6, 12);
-            this.cbbscreen.Name = "cbbscreen";
-            this.cbbscreen.Size = new System.Drawing.Size(165, 20);
-            this.cbbscreen.TabIndex = 0;
             // 
             // panel10
             // 
@@ -244,6 +456,182 @@
             this.btnclose.UseVisualStyleBackColor = false;
             this.btnclose.Click += new System.EventHandler(this.Btnclose_Click);
             // 
+            // cbbscreen
+            // 
+            this.cbbscreen.FormattingEnabled = true;
+            this.cbbscreen.Location = new System.Drawing.Point(6, 12);
+            this.cbbscreen.Name = "cbbscreen";
+            this.cbbscreen.Size = new System.Drawing.Size(165, 20);
+            this.cbbscreen.TabIndex = 0;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(177, 18);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(14, 12);
+            this.label10.TabIndex = 5;
+            this.label10.Text = "~";
+            // 
+            // aComboBox2
+            // 
+            this.aComboBox2.FormattingEnabled = true;
+            this.aComboBox2.Items.AddRange(new object[] {
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G",
+            "H",
+            "I",
+            "J",
+            "K",
+            "L",
+            "M",
+            "N",
+            "O",
+            "P",
+            "Q",
+            "R",
+            "X",
+            "T",
+            "U",
+            "V",
+            "W",
+            "X",
+            "W",
+            "Z"});
+            this.aComboBox2.Location = new System.Drawing.Point(198, 12);
+            this.aComboBox2.Name = "aComboBox2";
+            this.aComboBox2.Size = new System.Drawing.Size(165, 20);
+            this.aComboBox2.TabIndex = 4;
+            // 
+            // aComboBox3
+            // 
+            this.aComboBox3.FormattingEnabled = true;
+            this.aComboBox3.Items.AddRange(new object[] {
+            "Ctrl",
+            "Alt",
+            "Shift"});
+            this.aComboBox3.Location = new System.Drawing.Point(6, 12);
+            this.aComboBox3.Name = "aComboBox3";
+            this.aComboBox3.Size = new System.Drawing.Size(165, 20);
+            this.aComboBox3.TabIndex = 3;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(177, 17);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(14, 12);
+            this.label11.TabIndex = 5;
+            this.label11.Text = "~";
+            // 
+            // aComboBox4
+            // 
+            this.aComboBox4.FormattingEnabled = true;
+            this.aComboBox4.Items.AddRange(new object[] {
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G",
+            "H",
+            "I",
+            "J",
+            "K",
+            "L",
+            "M",
+            "N",
+            "O",
+            "P",
+            "Q",
+            "R",
+            "X",
+            "T",
+            "U",
+            "V",
+            "W",
+            "X",
+            "W",
+            "Z"});
+            this.aComboBox4.Location = new System.Drawing.Point(198, 11);
+            this.aComboBox4.Name = "aComboBox4";
+            this.aComboBox4.Size = new System.Drawing.Size(165, 20);
+            this.aComboBox4.TabIndex = 4;
+            // 
+            // aComboBox6
+            // 
+            this.aComboBox6.FormattingEnabled = true;
+            this.aComboBox6.Items.AddRange(new object[] {
+            "Ctrl",
+            "Alt",
+            "Shift"});
+            this.aComboBox6.Location = new System.Drawing.Point(6, 11);
+            this.aComboBox6.Name = "aComboBox6";
+            this.aComboBox6.Size = new System.Drawing.Size(165, 20);
+            this.aComboBox6.TabIndex = 3;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(177, 18);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(14, 12);
+            this.label12.TabIndex = 5;
+            this.label12.Text = "~";
+            // 
+            // aComboBox7
+            // 
+            this.aComboBox7.FormattingEnabled = true;
+            this.aComboBox7.Items.AddRange(new object[] {
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G",
+            "H",
+            "I",
+            "J",
+            "K",
+            "L",
+            "M",
+            "N",
+            "O",
+            "P",
+            "Q",
+            "R",
+            "X",
+            "T",
+            "U",
+            "V",
+            "W",
+            "X",
+            "W",
+            "Z"});
+            this.aComboBox7.Location = new System.Drawing.Point(198, 12);
+            this.aComboBox7.Name = "aComboBox7";
+            this.aComboBox7.Size = new System.Drawing.Size(165, 20);
+            this.aComboBox7.TabIndex = 4;
+            // 
+            // aComboBox8
+            // 
+            this.aComboBox8.FormattingEnabled = true;
+            this.aComboBox8.Items.AddRange(new object[] {
+            "Ctrl",
+            "Alt",
+            "Shift"});
+            this.aComboBox8.Location = new System.Drawing.Point(6, 12);
+            this.aComboBox8.Name = "aComboBox8";
+            this.aComboBox8.Size = new System.Drawing.Size(165, 20);
+            this.aComboBox8.TabIndex = 3;
+            // 
             // UserSettingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -261,6 +649,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
@@ -284,9 +688,33 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Panel panel9;
-        private CustomControls.AComboBox cbbscreen;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Label label23;
         private CustomControls.AButton btnclose;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel1;
+        private CustomControls.AComboBox aComboBox1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label6;
+        private CustomControls.AComboBox aComboBox5;
+        private System.Windows.Forms.Label label12;
+        private CustomControls.AComboBox aComboBox7;
+        private CustomControls.AComboBox aComboBox8;
+        private System.Windows.Forms.Label label11;
+        private CustomControls.AComboBox aComboBox4;
+        private CustomControls.AComboBox aComboBox6;
+        private System.Windows.Forms.Label label10;
+        private CustomControls.AComboBox aComboBox2;
+        private CustomControls.AComboBox aComboBox3;
+        private CustomControls.AComboBox cbbscreen;
     }
 }
