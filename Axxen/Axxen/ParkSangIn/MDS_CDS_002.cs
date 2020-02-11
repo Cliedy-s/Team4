@@ -196,6 +196,7 @@ namespace Axxen
             if (btnSave.Text.Equals("수정"))
             {
 
+
                 txtDef_Micode.Text = aDataGridView2.SelectedRows[0].Cells[0].Value.ToString();
                 txtDef_Miname.Text = aDataGridView2.SelectedRows[0].Cells[1].Value.ToString();
                 txtRemark.Text = aDataGridView2.SelectedRows[0].Cells[2].Value.ToString();
