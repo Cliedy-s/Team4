@@ -44,6 +44,27 @@ namespace Service
 
             return dac.GetAllUserDetails(UserName);
         }
-        
+
+        /// <summary>
+        /// 근무 시작
+        /// </summary>
+        /// <param name="insertitem"></param>
+        /// <returns></returns>
+        public bool InsertStartWork(string processcode, string userid)
+        {
+            WorkHistory_Center_UserMasterDAC dac = new WorkHistory_Center_UserMasterDAC();
+            return dac.InsertStartWork(processcode, userid);
+        }
+        /// <summary>
+        /// 근무 종료
+        /// </summary>
+        /// <param name="insertitem"></param>
+        /// <returns></returns>
+        public bool UpdateEndWork(string processcode, string userid)
+        {
+            WorkHistory_Center_UserMasterDAC dac = new WorkHistory_Center_UserMasterDAC();
+            return dac.UpdateEndWork(processcode, userid);
+        }
+
     }
 }

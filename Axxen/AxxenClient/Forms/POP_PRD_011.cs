@@ -41,9 +41,7 @@ namespace AxxenClient.Forms
         {
             GV_Current_StatusService service = new GV_Current_StatusService();
             // 해당 작업지시에서 생성한 모든 대차
-            // TODO - 조건에 맞게 변경하기
-            //dgvGVFrom.DataSource = service.GetGVCurrentStatus(wccode:GlobalUsage.WcCode, workorderno:GlobalUsage.WorkOrderNo, gvStatus:"적재");
-            dgvGVList.DataSource = service.GetGVCurrentStatus(gvStatus: "적재");
+            dgvGVList.DataSource = service.GetGVCurrentStatus(workorderno:GlobalUsage.WorkOrderNo, gvStatus: "적재");
         }
         private void btnInput_Click(object sender, EventArgs e)
         {   // 요입
@@ -93,9 +91,7 @@ namespace AxxenClient.Forms
         private void btnSearch_Click(object sender, EventArgs e)
         {
             GV_Current_StatusService service = new GV_Current_StatusService();
-            // TODO - 조건에 맞게 변경하기
-            //dgvGVFrom.DataSource = service.GetGVCurrentStatus(wccode:GlobalUsage.WcCode, workorderno:GlobalUsage.WorkOrderNo, gvStatus:"적재");
-            dgvGVList.DataSource = service.GetGVCurrentStatus(gvStatus: "적재", gvName: txtGVSearch.TextBoxText);
+            dgvGVList.DataSource = service.GetGVCurrentStatus(workorderno: GlobalUsage.WorkOrderNo, gvStatus: "적재", gvName: txtGVSearch.TextBoxText);
 
         }
     }

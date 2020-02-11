@@ -56,7 +56,8 @@ namespace AxxenClient.Forms
                 Random rand = new Random(now.Millisecond);
                 Pallet_MasterService service = new Pallet_MasterService();
                 if (!service.IsExistPallet(txtPalletNo.TextBoxText))
-                {
+                { // 팔레트가 존재하면
+                    // insert 시도
                     bool IsSuccess = service.InsertPallet(
                         new VO.PalletVO()
                         {
@@ -69,20 +70,20 @@ namespace AxxenClient.Forms
                             Size_Code = "3",
                         });
                     if (IsSuccess)
-                    {
+                    { // 성공
                         Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 팔레트를 생성함");
                         MessageBox.Show("팔레트가 생성되었습니다.");
                         GetDatas();
                     }
                     else
-                    {
+                    { // 실패
                         Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 팔레트 생성에 실패함");
                         MessageBox.Show("팔레트 생성에 실패하였습니다.");
                         return;
                     }
                 }
                 else
-                {
+                { // 팔레트가 존재하지 않을 때
                     service.UpdatePallet(txtPalletNo.TextBoxText, Convert.ToInt32(txtPrintPallet.TextBoxText));
                     GetDatas();
                 }
