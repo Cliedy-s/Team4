@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientBaseForm));
             this.panBottom = new Axxen.CustomControls.APanel();
             this.btnNoActive = new Axxen.CustomControls.AButton();
-            this.btnConfig = new Axxen.CustomControls.AButton();
             this.txtPronounce = new Axxen.CustomControls.ALabel();
             this.aPanel2 = new Axxen.CustomControls.APanel();
             this.lblTime = new Axxen.CustomControls.ALabel();
@@ -51,7 +50,6 @@
             // 
             this.panBottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panBottom.Controls.Add(this.btnNoActive);
-            this.panBottom.Controls.Add(this.btnConfig);
             this.panBottom.Controls.Add(this.txtPronounce);
             this.panBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panBottom.Location = new System.Drawing.Point(0, 681);
@@ -64,24 +62,12 @@
             this.btnNoActive.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNoActive.BackColor = System.Drawing.Color.White;
             this.btnNoActive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNoActive.Location = new System.Drawing.Point(1019, 0);
+            this.btnNoActive.Location = new System.Drawing.Point(1114, 0);
             this.btnNoActive.Name = "btnNoActive";
             this.btnNoActive.Size = new System.Drawing.Size(96, 36);
             this.btnNoActive.TabIndex = 4;
             this.btnNoActive.Text = "비가동 등록";
             this.btnNoActive.UseVisualStyleBackColor = false;
-            // 
-            // btnConfig
-            // 
-            this.btnConfig.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnConfig.BackColor = System.Drawing.Color.White;
-            this.btnConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfig.Location = new System.Drawing.Point(1114, 0);
-            this.btnConfig.Name = "btnConfig";
-            this.btnConfig.Size = new System.Drawing.Size(96, 36);
-            this.btnConfig.TabIndex = 3;
-            this.btnConfig.Text = "Config";
-            this.btnConfig.UseVisualStyleBackColor = false;
             // 
             // txtPronounce
             // 
@@ -222,7 +208,6 @@
         #endregion
         protected Axxen.CustomControls.APanel panBottom;
         protected Axxen.CustomControls.AButton btnNoActive;
-        protected Axxen.CustomControls.AButton btnConfig;
         protected Axxen.CustomControls.ALabel txtPronounce;
         protected Axxen.CustomControls.APanel aPanel2;
         private Axxen.CustomControls.APanel aPanel3;

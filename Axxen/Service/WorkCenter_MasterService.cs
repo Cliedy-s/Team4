@@ -20,12 +20,21 @@ namespace Service
             return dac.GetAll_WorkCenter_Master();
         }
         /// <summary>
-        /// 작업장사용유무
+        /// 작업장 검색
         /// </summary>
-        /// <param name="code"></param>
-        /// <param name="use"></param>
         /// <returns></returns>
-        public bool UsedWorkCenter_Master2VO(string code, string use)
+        public WorkCenter_Master2VO GetAll_WorkCenter_Master(string wccode)
+        {
+            WorkCenter_MasterDAC dac = new WorkCenter_MasterDAC();
+            return dac.GetAll_WorkCenter_Master(wccode);
+        }
+            /// <summary>
+            /// 작업장사용유무
+            /// </summary>
+            /// <param name="code"></param>
+            /// <param name="use"></param>
+            /// <returns></returns>
+            public bool UsedWorkCenter_Master2VO(string code, string use)
         {
             WorkCenter_MasterDAC dac = new WorkCenter_MasterDAC();
             return dac.UsedWorkCenter_Master2VO(code, use);

@@ -6,9 +6,9 @@ using DevExpress.XtraReports.UI;
 
 namespace Axxen.sangyoung
 {
-    public partial class BoxingGrade : DevExpress.XtraReports.UI.XtraReport
+    public partial class PackingLog : DevExpress.XtraReports.UI.XtraReport
     {
-        public BoxingGrade()
+        public PackingLog()
         {
             InitializeComponent();
         }

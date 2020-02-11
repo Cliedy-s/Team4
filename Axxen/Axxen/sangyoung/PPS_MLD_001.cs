@@ -49,15 +49,10 @@ namespace Axxen
                 cboGroup.Items.Add(item.Mold_Group);
             }
 
-            //DataRow row = ds.Tables["Wc"].NewRow();
-            //row[0] = 0;
-            //row[1] = "==선택==";*/
-            /*ds.Tables["Wc"].Rows.InsertAt(row, 0);*/
             cboWorkCenter.DisplayMember = "Wc_Name";
             cboWorkCenter.ValueMember = "Wc_Code";
             cboWorkCenter.DataSource = ds.Tables["Wc"];
             cboWorkCenter.Text = "==선택==";
-            //cboWorkCenter.SelectedIndex = 0;
         }
         
         public void InsertFormShow(object sender, EventArgs e)
@@ -72,19 +67,19 @@ namespace Axxen
         private void MainDataLoad()
         {
             InitControlUtil.SetDGVDesign(dgvMainGrid);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형코드", "Mold_Code", true, 100);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형명", "Mold_Name", true, 110, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형그룹", "Mold_Group", true, 100);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형상태", "Mold_Status", true, 80);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형누적타수", "Cum_Shot_Cnt", true, 90);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형누적생산량", "Cum_Prd_Qty", true, 100);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형누적사용시간", "Cum_Time", true, 110);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "보장타수", "Guar_Shot_Cnt", true, 90);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "구입금액", "Purchase_Amt", true, 90);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "입고일자", "In_Date", true, 100);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "최종장착일시", "Last_Setup_Time", true, 140);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "사용여부", "Use_YN", true, 60);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "비고", "Remark", true, 140);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형코드", "Mold_Code", true, 100, DataGridViewContentAlignment.MiddleCenter);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "금형명", "Mold_Name", true, 110, DataGridViewContentAlignment.MiddleRight, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형그룹", "Mold_Group", true, 100, DataGridViewContentAlignment.MiddleCenter);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형상태", "Mold_Status", true, 80, DataGridViewContentAlignment.MiddleCenter);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형누적타수", "Cum_Shot_Cnt", true, 90, DataGridViewContentAlignment.MiddleRight);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형누적생산량", "Cum_Prd_Qty", true, 100, DataGridViewContentAlignment.MiddleRight);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형누적사용시간", "Cum_Time", true, 110, DataGridViewContentAlignment.MiddleCenter);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "보장타수", "Guar_Shot_Cnt", true, 90, DataGridViewContentAlignment.MiddleRight);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "구입금액", "Purchase_Amt", true, 90, DataGridViewContentAlignment.MiddleRight);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "입고일자", "In_Date", true, 100, DataGridViewContentAlignment.MiddleCenter);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "최종장착일시", "Last_Setup_Time", true, 140, DataGridViewContentAlignment.MiddleCenter);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "사용여부", "Use_YN", true, 60, DataGridViewContentAlignment.MiddleCenter);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "비고", "Remark", true, 140, DataGridViewContentAlignment.MiddleCenter);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "비고", "Wc_Code", false, 160);
         }
 
@@ -168,14 +163,37 @@ namespace Axxen
         {
             ((MainForm)this.MdiParent).InsertFormEvent += new System.EventHandler(this.InsertFormShow);//입력이벤트 등록
             ((MainForm)this.MdiParent).RefreshFormEvent += new EventHandler(this.RefreshFormShow);//새로고침이벤트
+            ((MainForm)this.MdiParent).MyDeleteEvent += new EventHandler(this.DeleteFormShow); //삭제 이벤트
             ToolStripManager.Merge(toolStrip1, ((MainForm)this.MdiParent).toolStrip1); //저장버튼 추가
             toolStrip1.Visible = false;
+            dgvMainGrid.ClearSelection();
+        }
+
+        private void DeleteFormShow(object sender, EventArgs e)
+        {
+            if(dgvMainGrid.Focused)
+            {
+                string moldno = dgvMainGrid[0, dgvMainGrid.CurrentRow.Index].Value.ToString();
+                bool result = service.DeleteMolde(moldno);
+                if(result)
+                {
+                    MessageBox.Show("Success");
+                    RefreshFormShow(null, null);
+                }
+                else
+                    MessageBox.Show("Fail");
+            }
+            else
+            {
+                MessageBox.Show("삭제할 목록을 선택해 주세요.","금형정보관리",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            }
         }
 
         private void PPS_MLD_001_Deactivate(object sender, EventArgs e)
         {
             ((MainForm)this.MdiParent).InsertFormEvent -= new System.EventHandler(this.InsertFormShow);//입력이벤트 등록
             ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow);//새로고침이벤트
+            ((MainForm)this.MdiParent).MyDeleteEvent -= new EventHandler(this.DeleteFormShow);
             ToolStripManager.RevertMerge(((MainForm)this.MdiParent).toolStrip1); //저장버튼삭제
         }
 

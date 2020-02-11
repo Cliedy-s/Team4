@@ -80,10 +80,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.aPanel4.Controls.Add(this.txtPrintPallet);
             this.aPanel4.Controls.Add(this.txtSizeCode);
-            this.aPanel4.Controls.Add(this.txtBoxingGrade);
             this.aPanel4.Controls.Add(this.txtPalletNo);
             this.aPanel4.Controls.Add(this.btnPalletPrint);
             this.aPanel4.Controls.Add(this.txtBoxingGradeDetail);
+            this.aPanel4.Controls.Add(this.txtBoxingGrade);
             this.aPanel4.Location = new System.Drawing.Point(652, 212);
             this.aPanel4.Name = "aPanel4";
             this.aPanel4.Size = new System.Drawing.Size(549, 373);
@@ -123,13 +123,14 @@
             this.txtBoxingGrade.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBoxingGrade.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtBoxingGrade.LabelText = "등급";
-            this.txtBoxingGrade.Location = new System.Drawing.Point(39, 64);
+            this.txtBoxingGrade.Location = new System.Drawing.Point(39, 111);
             this.txtBoxingGrade.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtBoxingGrade.Name = "txtBoxingGrade";
             this.txtBoxingGrade.Size = new System.Drawing.Size(469, 42);
             this.txtBoxingGrade.TabIndex = 32;
             this.txtBoxingGrade.TextBoxText = "";
             this.txtBoxingGrade.TextBoxType = Axxen.CustomControls.TextType.Normal;
+            this.txtBoxingGrade.Load += new System.EventHandler(this.txtBoxingGrade_Load);
             // 
             // txtPalletNo
             // 
@@ -166,7 +167,7 @@
             this.txtBoxingGradeDetail.DataType = Axxen.CustomControls.DataType.BoxingDetail;
             this.txtBoxingGradeDetail.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtBoxingGradeDetail.LabelText = "등급상세";
-            this.txtBoxingGradeDetail.Location = new System.Drawing.Point(39, 111);
+            this.txtBoxingGradeDetail.Location = new System.Drawing.Point(39, 64);
             this.txtBoxingGradeDetail.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtBoxingGradeDetail.Name = "txtBoxingGradeDetail";
             this.txtBoxingGradeDetail.Size = new System.Drawing.Size(469, 42);

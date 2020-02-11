@@ -78,6 +78,12 @@
     <Compile Include="Forms\ChangeNopReason.Designer.cs">
       <DependentUpon>ChangeNopReason.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\KeypadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\KeypadForm.Designer.cs">
+      <DependentUpon>KeypadForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ProgressForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,6 +229,9 @@
     </Compile>
     <EmbeddedResource Include="Forms\ChangeNopReason.resx">
       <DependentUpon>ChangeNopReason.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\KeypadForm.resx">
+      <DependentUpon>KeypadForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProgressForm.resx">
       <DependentUpon>ProgressForm.cs</DependentUpon>

@@ -308,7 +308,7 @@ namespace Axxen
 
         private void DeleteFormShow(object sender, EventArgs e)
         {
-            if(dgvMainGrid.Focus())
+            if(dgvMainGrid.Focused)
             {
                 string woreqno = dgvMainGrid[2, dgvMainGrid.CurrentRow.Index].Value.ToString();
                 bool result = workservice.DeletePPSWoReq(woreqno);
@@ -320,7 +320,7 @@ namespace Axxen
                 else
                     MessageBox.Show("Fail");
             }
-            else if(dgvSubGrid.Focus())
+            else if(dgvSubGrid.Focused)
             {
                 string workno = dgvSubGrid[3, dgvSubGrid.CurrentRow.Index].Value.ToString();
                 bool result = workservice.DeletePPSWorkorder(workno);

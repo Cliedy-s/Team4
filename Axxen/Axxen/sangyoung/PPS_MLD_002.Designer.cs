@@ -106,7 +106,6 @@
             this.Name = "PPS_MLD_002";
             this.Activated += new System.EventHandler(this.PPS_MLD_002_Activated);
             this.Deactivate += new System.EventHandler(this.PPS_MLD_002_Deactivate);
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PPS_MLD_002_FormClosed);
             this.Load += new System.EventHandler(this.PPS_MLD_002_Load);
             this.panTop.ResumeLayout(false);
             this.panTop.PerformLayout();

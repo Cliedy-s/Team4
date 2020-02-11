@@ -28,7 +28,6 @@ namespace Axxen
             MainGridLoad();
             molditemList = service.SelectMold_Item_Wc_Muse();
             DataLoad(molditemList);
-            
         }
 
         private void RefreshFormShow(object sender, EventArgs e)
@@ -48,19 +47,19 @@ namespace Axxen
         private void MainGridLoad()
         {
             InitControlUtil.SetDGVDesign(dgvMainGrid);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "생산일자", "Prd_Date", true, 110);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형코드", "Mold_Code", true, 100);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형명", "Mold_Name", true, 100, default, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "작업지시번호", "Workorderno", true, 110);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "품목코드", "Item_Code", true, 100);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "품목명", "Item_Name", true, 90);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "작업장코드", "Wc_Code", true, 100);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "작업장이름", "Wc_Name", true, 100);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형타수", "Mold_Shot_Cnt", true, 80);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형생산량", "Mold_Prd_Qty", true, 100);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형사용시작시간", "Use_Starttime", true, 140);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형사용종료시간", "Use_Endtime", true, 140);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형사용시간", "Use_time", true, 80);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "작업지시번호", "Workorderno", true, 110, DataGridViewContentAlignment.MiddleCenter);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "품목코드", "Item_Code", true, 90, DataGridViewContentAlignment.MiddleCenter);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "품목명", "Item_Name", true, 90, DataGridViewContentAlignment.MiddleCenter);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "생산일자", "Prd_Date", true, 100, DataGridViewContentAlignment.MiddleCenter);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "작업장코드", "Wc_Code", true, 90, DataGridViewContentAlignment.MiddleCenter);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "작업장이름", "Wc_Name", true, 90, DataGridViewContentAlignment.MiddleCenter);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형코드", "Mold_Code", true, 100, DataGridViewContentAlignment.MiddleCenter);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형명", "Mold_Name", true, 100, DataGridViewContentAlignment.MiddleCenter);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형타수", "Mold_Shot_Cnt", true, 80, DataGridViewContentAlignment.MiddleRight);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형생산량", "Mold_Prd_Qty", true, 100, DataGridViewContentAlignment.MiddleRight);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형사용시작시간", "Use_Starttime", true, 135, DataGridViewContentAlignment.MiddleCenter);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형사용종료시간", "Use_Endtime", true, 135, DataGridViewContentAlignment.MiddleCenter);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "금형사용시간", "Use_time", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
         }
 
         /// <summary>
@@ -114,12 +113,6 @@ namespace Axxen
 
             DataLoad(moldSearchList);
         }
-        
-        private void PPS_MLD_002_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow);
-        }
-
 
         /// <summary>
         /// 그리드뷰 데이터 바인딩

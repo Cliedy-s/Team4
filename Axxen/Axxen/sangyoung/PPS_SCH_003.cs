@@ -125,10 +125,6 @@ namespace Axxen
             }
         }
 
-        private void PPS_SCH_003_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow);
-        }
 
         private void DotWorkCenter_DotDotDotFormClosing(object sender, CustomControls.SearchFormClosingArgs args)
         {

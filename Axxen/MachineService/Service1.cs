@@ -34,16 +34,16 @@ namespace MachineService
             timer.Enabled = true;
             timer.Elapsed += Timer_Elapsed;
             timer.AutoReset = true;
-            Program.Log.WriteInfo("윈도우 서비스 프로그램 시작...");
+            Program.Log.WriteInfo("Machine 서비스 프로그램 시작...");
         }
         protected override void OnStop()
         {
             timer.Enabled = false;
-            Program.Log.WriteInfo("윈도우 서비스 프로그램 종료...");
+            Program.Log.WriteInfo("Machine 서비스 프로그램 종료...");
         }
         private void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
-            Program.Log.WriteInfo("윈도우 서비스 타이머 호출 시작");
+            Program.Log.WriteInfo("Machine 서비스 타이머 호출 시작");
             int icnt = 0;
             try
             { // orgFolder 안의 파일을 선택(1초 이전에 최종수정된 파일 목록)
@@ -58,16 +58,7 @@ namespace MachineService
                        //20200131 10:50:45/Machine/1/62/104/1
                         string[] arrData = File.ReadAllText(file).Split('/');
 
-                        if (filename.StartsWith("MoldingLog")) {
 
-                        }
-                        else if (filename.StartsWith("BoxingLog")) {
-                        
-                        }
-                        else if (filename.StartsWith("Inspect_MeasureLog")) {
-                        
-                        }
-                        
                         if (arrData.Length >= 5)
                         {
                             try
@@ -75,7 +66,20 @@ namespace MachineService
                                 using (SqlCommand comm = new SqlCommand())
                                 {
                                     comm.Connection = new SqlConnection(strconn);
-                                    comm.CommandText = "INSERT INTO WorkQtyLog (ProductID, MachineID, Qty, BadQty) VALUES(@ProductID, @MachineID, @Qty, @BadQty); ";
+                                    if (filename.StartsWith("MoldingLog"))
+                                    {
+                                        comm.CommandText = "INSERT INTO WorkQtyLog (ProductID, MachineID, Qty, BadQty) VALUES(@ProductID, @MachineID, @Qty, @BadQty); ";
+                                    }
+                                    else if (filename.StartsWith("BoxingLog"))
+                                    {
+                                        comm.CommandText = "INSERT INTO WorkQtyLog (ProductID, MachineID, Qty, BadQty) VALUES(@ProductID, @MachineID, @Qty, @BadQty); ";
+                                    }
+                                    else if (filename.StartsWith("Inspect_MeasureLog"))
+                                    {
+                                        comm.CommandText = "INSERT INTO WorkQtyLog (ProductID, MachineID, Qty, BadQty) VALUES(@ProductID, @MachineID, @Qty, @BadQty); ";
+                                    }
+
+                                    comm.CommandType = CommandType.StoredProcedure;
                                     comm.Parameters.AddWithValue("@ProductID", int.Parse(arrData[3]));
                                     comm.Parameters.AddWithValue("@MachineID", int.Parse(arrData[2]));
                                     comm.Parameters.AddWithValue("@Qty", int.Parse(arrData[4]));

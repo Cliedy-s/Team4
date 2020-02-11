@@ -189,6 +189,7 @@ namespace AxxenClient.Forms
                 GlobalUsage.WorkOrderNo = row.Cells[1].Value.ToString();
                 GlobalUsage.WorkorderDate = Convert.ToDateTime(row.Cells[10].Value);
                 GlobalUsage.ItemName = row.Cells[4].Value.ToString();
+                GlobalUsage.ItemCode = row.Cells[3].Value.ToString();
                 GlobalUsage.Prd_Qty = 0;
                 GlobalUsage.Out_Qty = 0;
                 GlobalUsage.Prd_Unit = row.Cells[5].Value.ToString();
@@ -261,6 +262,7 @@ namespace AxxenClient.Forms
                 GlobalUsage.WorkOrderNo = "설정안됨";
                 GlobalUsage.WorkorderDate = null;
                 GlobalUsage.ItemName = "설정안됨";
+                GlobalUsage.ItemCode = null;
                 GlobalUsage.Prd_Qty = 0;
                 GlobalUsage.Out_Qty = 0;
                 GlobalUsage.Prd_Unit = "설정안됨";
@@ -400,11 +402,11 @@ namespace AxxenClient.Forms
                             }
                             MoldVO mold = moldlist[0];
                             Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 작업({GlobalUsage.WorkOrderNo})의 성형기계로 금형({mold.Mold_Code})을 이용해 품목({workorder.Item_Code})을 생산함");
-                            machine0.MachineStartMold(GlobalUsage.WorkOrderNo, new Item_MoldPair(workorder.Item_Code, mold.Mold_Code, workorder.Line_Per_Qty));
+                            machine0.MachineStart(GlobalUsage.WorkOrderNo, new Item_MoldPair(workorder.Item_Code, mold.Mold_Code, workorder.Line_Per_Qty));
                             break;
                         case MachineType.Boxing: // 포장일경우
                             Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 작업({GlobalUsage.WorkOrderNo})의 포장기계로 품목({workorder.Item_Code})을 생산함");
-                            machine0.MachineStartBoxing(GlobalUsage.WorkOrderNo, workorder.Item_Code, workorder.Shot_Per_Qty);
+                            machine0.MachineStart(GlobalUsage.WorkOrderNo, workorder.Item_Code, workorder.Shot_Per_Qty);
                             break;
                     }
                 }

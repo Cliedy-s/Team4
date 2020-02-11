@@ -6,9 +6,9 @@ using DevExpress.XtraReports.UI;
 
 namespace Axxen.sangyoung
 {
-    public partial class FigurationRequest : DevExpress.XtraReports.UI.XtraReport
+    public partial class FigurationLog : DevExpress.XtraReports.UI.XtraReport
     {
-        public FigurationRequest()
+        public FigurationLog()
         {
             InitializeComponent();
         }

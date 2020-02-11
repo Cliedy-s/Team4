@@ -33,6 +33,19 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="dtDrying" msprop:Generator_TableClassName="dtDryingDataTable" msprop:Generator_TableVarName="tabledtDrying" msprop:Generator_TablePropName="dtDrying" msprop:Generator_RowDeletingName="dtDryingRowDeleting" msprop:Generator_RowChangingName="dtDryingRowChanging" msprop:Generator_RowEvHandlerName="dtDryingRowChangeEventHandler" msprop:Generator_RowDeletedName="dtDryingRowDeleted" msprop:Generator_UserTableName="dtDrying" msprop:Generator_RowChangedName="dtDryingRowChanged" msprop:Generator_RowEvArgName="dtDryingRowChangeEvent" msprop:Generator_RowClassName="dtDryingRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Num" msprop:Generator_ColumnVarNameInTable="columnNum" msprop:Generator_ColumnPropNameInRow="Num" msprop:Generator_ColumnPropNameInTable="NumColumn" msprop:Generator_UserColumnName="Num" type="xs:string" minOccurs="0" />
+              <xs:element name="Pallet_No" msprop:Generator_ColumnVarNameInTable="columnPallet_No" msprop:Generator_ColumnPropNameInRow="Pallet_No" msprop:Generator_ColumnPropNameInTable="Pallet_NoColumn" msprop:Generator_UserColumnName="Pallet_No" type="xs:string" minOccurs="0" />
+              <xs:element name="Item_Name" msprop:Generator_ColumnVarNameInTable="columnItem_Name" msprop:Generator_ColumnPropNameInRow="Item_Name" msprop:Generator_ColumnPropNameInTable="Item_NameColumn" msprop:Generator_UserColumnName="Item_Name" type="xs:string" minOccurs="0" />
+              <xs:element name="Closed_Time" msprop:Generator_ColumnVarNameInTable="columnClosed_Time" msprop:Generator_ColumnPropNameInRow="Closed_Time" msprop:Generator_ColumnPropNameInTable="Closed_TimeColumn" msprop:Generator_UserColumnName="Closed_Time" type="xs:string" minOccurs="0" />
+              <xs:element name="AVal" msprop:Generator_ColumnVarNameInTable="columnAVal" msprop:Generator_ColumnPropNameInRow="AVal" msprop:Generator_ColumnPropNameInTable="AValColumn" msprop:Generator_UserColumnName="AVal" type="xs:string" minOccurs="0" />
+              <xs:element name="BVal" msprop:Generator_ColumnVarNameInTable="columnBVal" msprop:Generator_ColumnPropNameInRow="BVal" msprop:Generator_ColumnPropNameInTable="BValColumn" msprop:Generator_UserColumnName="BVal" type="xs:string" minOccurs="0" />
+              <xs:element name="CVal" msprop:Generator_ColumnVarNameInTable="columnCVal" msprop:Generator_ColumnPropNameInRow="CVal" msprop:Generator_ColumnPropNameInTable="CValColumn" msprop:Generator_UserColumnName="CVal" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>
