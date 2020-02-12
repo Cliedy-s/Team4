@@ -128,7 +128,6 @@ namespace Axxen
 
         private void DotWorkCenter_DotDotDotFormClosing(object sender, CustomControls.SearchFormClosingArgs args)
         {
-
             string pcode = dotProcess.txtCodeText;
             string wName = dotWorkCenter.txtNameText;
 

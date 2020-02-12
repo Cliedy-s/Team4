@@ -39,7 +39,7 @@ namespace DAC
             using (SqlCommand comm = new SqlCommand())
             {
                 comm.Connection = new SqlConnection(Connstr);
-                comm.CommandText = "update Wo_Req set Req_Status ='완료' where Wo_Req_No = @Wo_Req_No ";
+                comm.CommandText = "update Wo_Req set Req_Status ='마감' where Wo_Req_No = @Wo_Req_No ";
                 comm.Parameters.AddWithValue("@Wo_Req_No", woNo);
 
                 comm.Connection.Open();
@@ -103,7 +103,7 @@ namespace DAC
             using (SqlConnection conn = new SqlConnection(Connstr))
             {
                 conn.Open();
-                string sql = "select Wc_Code, Wc_Name from WorkCenter_Master where Process_Code = 'PC10001'";
+                string sql = "select Wc_Code, Wc_Name from WorkCenter_Master where Process_Code = 'PC10002'";
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
                     list = Helper.DataReaderMapToList<WorkOrder_J_WC_ItmeVO>(cmd.ExecuteReader());
@@ -139,20 +139,51 @@ namespace DAC
         /// </summary>
         /// <param name="wono">작업지시번호</param>
         /// <returns></returns>
-        public bool UpdateWoReqOrder(string wono)
+        public bool UpdateWoReqOrder(string wono, string code, string woreqno)
         {
             int result = 0;
             using (SqlCommand comm = new SqlCommand())
             {
-                comm.Connection = new SqlConnection(Connstr);
-                comm.CommandText = "update WorkOrder set Wo_Status = '작업지시마감' where Workorderno = @Workorderno ";
-                comm.Parameters.AddWithValue("@Workorderno", wono);
+                if (code == "PC10005")
+                {
+                    comm.Connection = new SqlConnection(Connstr);
+                    comm.Connection.Open();
+                    SqlTransaction trans = comm.Connection.BeginTransaction();
+                    try
+                    {
+                        comm.Transaction = trans;
+                        comm.CommandType = CommandType.Text;
+                        comm.CommandText = "update WorkOrder set Wo_Status = '작업지시마감' where Workorderno = @Workorderno ";
+                        comm.Parameters.AddWithValue("@Workorderno", wono);
+                        comm.ExecuteNonQuery();
 
-                comm.Connection.Open();
-                result = comm.ExecuteNonQuery();
-                comm.Connection.Close();
+                        comm.CommandText = "update Wo_Req set Req_Status ='완료' where Wo_Req_No=@Wo_Req_No";
+                        comm.Parameters.Clear();
+                        comm.Parameters.AddWithValue("@Wo_Req_No", woreqno);
+                        comm.ExecuteNonQuery();
 
-                return (result > 0);
+                        trans.Commit();
+                        comm.Connection.Close();
+
+                        return true;
+                    }
+                    catch
+                    {
+                        trans.Rollback();
+                        comm.Connection.Close();
+                        return false;
+                    }
+                }
+                else
+                {
+                    comm.Connection = new SqlConnection(Connstr);
+                    comm.Connection.Open();
+                    comm.CommandType = CommandType.Text;
+                    comm.CommandText = "update WorkOrder set Wo_Status = '작업지시마감' where Workorderno = @Workorderno ";
+                    comm.Parameters.AddWithValue("@Workorderno", wono);
+                    result = comm.ExecuteNonQuery();
+                }
+                return result > 0;
             }
         }
 

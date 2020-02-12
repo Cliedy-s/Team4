@@ -86,16 +86,17 @@ namespace Axxen
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "생산의뢰번호", "Wo_Req_No", true, 80);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "프로젝트명", "Project_Name", true, 100);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "공정코드", "Process_Code", false, 100);
-        }
 
-        private void PPS_SCH_002_FormClosed(object sender, FormClosedEventArgs e)
-        {
+            dgvMainGrid.Columns[9].DefaultCellStyle.Format = "HH:mm:ss";
+            dgvMainGrid.Columns[10].DefaultCellStyle.Format = "HH:mm:ss";
         }
 
         private void BtnWoFinish_Click(object sender, EventArgs e)
         {
             string wono = dgvMainGrid[1, dgvMainGrid.CurrentRow.Index].Value.ToString();
-            bool result = service.UpdateWoReqOrder(wono);
+            string code = dgvMainGrid[17, dgvMainGrid.CurrentRow.Index].Value.ToString();
+            string woreqno = dgvMainGrid[15, dgvMainGrid.CurrentRow.Index].Value.ToString();
+            bool result = service.UpdateWoReqOrder(wono, code, woreqno);
             if (result)
                 MessageBox.Show("작업이 마감되었습니다.","작업지시관리",MessageBoxButtons.OK);
             else

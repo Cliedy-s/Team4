@@ -16,6 +16,11 @@ namespace Service
             return dac.GetAllWoReq();
         }
 
+        /// <summary>
+        /// 생산의뢰마감
+        /// </summary>
+        /// <param name="woNo"></param>
+        /// <returns></returns>
         public bool UpdateWoReq(string woNo)
         {
             Wo_ReqDAC dac = new Wo_ReqDAC();
@@ -40,10 +45,16 @@ namespace Service
             return dac.GetWoReqOrder();
         }
 
-        public bool UpdateWoReqOrder(string wono)
+        /// <summary>
+        /// 작업지시마감
+        /// </summary>
+        /// <param name="wono"></param>
+        /// <param name="state"></param>
+        /// <returns></returns>
+        public bool UpdateWoReqOrder(string wono, string code, string woreqno)
         {
             Wo_ReqDAC dac = new Wo_ReqDAC();
-            return dac.UpdateWoReqOrder(wono);
+            return dac.UpdateWoReqOrder(wono, code ,woreqno);
         }
 
         public bool CancleWoReqOrder(string wono)
@@ -58,6 +69,10 @@ namespace Service
             return dac.GetWO_WC_Production_Items();
         }
 
+        /// <summary>
+        /// 작업장조회
+        /// </summary>
+        /// <returns></returns>
         public List<WorkOrder_J_WC_ItmeVO> GetWorkCenterName()
         {
             Wo_ReqDAC dac = new Wo_ReqDAC();

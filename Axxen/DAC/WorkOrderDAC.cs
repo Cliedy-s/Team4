@@ -71,7 +71,7 @@ namespace DAC
             using (SqlConnection conn = new SqlConnection(Connstr))
             {
                 conn.Open();
-                string sql = "select Workorderno, Prd_Date, Start_Hour, In_Qty_Main, Out_Qty_Main, Prd_Qty from Time_Production_History_Day t where Workorderno = @Workorderno";
+                string sql = @"select Workorderno, Prd_Date, Start_Hour, In_Qty_Main, Out_Qty_Main, Prd_Qty from Time_Production_History_Day where Workorderno = @Workorderno order by Start_Hour";
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
                     cmd.Parameters.AddWithValue("@Workorderno", wono);
@@ -238,8 +238,34 @@ namespace DAC
             int result = 0;
             using (SqlCommand cmd = new SqlCommand())
             {
+                //cmd.Connection = new SqlConnection(Connstr);
+                //cmd.CommandText = "InsertPPSWorkOrder";
+                //cmd.CommandType = CommandType.StoredProcedure;
+
+                //cmd.Parameters.AddWithValue("@Req_Seq", order.Req_Seq);
+                //cmd.Parameters.AddWithValue("@Wo_Req_No", order.Wo_Req_No);
+                //cmd.Parameters.AddWithValue("@Workorderno", "WK" + DateTime.Now.ToString("yyMMddHHmmss"));
+                //cmd.Parameters.AddWithValue("@Wo_Status", order.Wo_Status);
+                //cmd.Parameters.AddWithValue("@Wc_Code", order.Wc_Code);
+                //cmd.Parameters.AddWithValue("@Remark", order.Remark);
+                //cmd.Parameters.AddWithValue("@Plan_Qty", order.Plan_Qty);
+                //cmd.Parameters.AddWithValue("@Out_Qty_Main", order.Out_Qty_Main);
+                //cmd.Parameters.AddWithValue("@In_Qty_Main", order.In_Qty_Main);
+                //cmd.Parameters.AddWithValue("@Prd_Qty", order.Prd_Qty);
+                //cmd.Parameters.AddWithValue("@Plan_Date", order.Plan_Date);
+                //cmd.Parameters.AddWithValue("@Item_Code", order.Item_Code);
+                //cmd.Parameters.AddWithValue("@Plan_Unit", order.Plan_Unit);
+                //cmd.Parameters.AddWithValue("@User", user);
+                //cmd.Parameters.AddWithValue("@Wo_Order", 2);
+                //cmd.Parameters.AddWithValue("@Prd_Unit", order.Prd_Unit);
+
+                //cmd.Connection.Open();
+                //result = cmd.ExecuteNonQuery();
+                //cmd.Connection.Close();
+
+                //return result > 0;
                 cmd.Connection = new SqlConnection(Connstr);
-                for (int i = 1; i < 6; i++)
+                for (int i = 2; i < 6; i++)
                 {
                     cmd.CommandText = "InsertPPSWorkOrder";
                     cmd.CommandType = CommandType.StoredProcedure;
