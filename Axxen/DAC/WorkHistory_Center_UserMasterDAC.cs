@@ -17,7 +17,7 @@ namespace DAC
             {
                 comm.Connection = new SqlConnection(Connstr);
                 comm.CommandText = @"select Work_Date,Wc_Name,User_Name,Work_StartTime,Work_EndTime,Work_Time 
-                                    from Work_History wh INNER JOIN WorkCenter_Master wcm ON wh.Process_Code = wcm.Process_Code
+                                    from Work_History wh INNER JOIN WorkCenter_Master wcm ON wcm.Wc_Code = wh.Wc_Code
 					                                     INNER JOIN User_Master um ON wh.User_ID = um.User_ID Order by Work_Date Desc";
                 comm.CommandType = CommandType.Text;
 
@@ -62,7 +62,8 @@ namespace DAC
                     $"INNER JOIN WorkCenter_Master wcm ON wo.Wc_Code = wcm.Wc_Code " +
                     $"INNER JOIN Item_Master im ON wo.Item_Code = im.Item_Code " +
                     $"INNER JOIN User_Master um ON wh.User_ID = um.User_ID " +
-                    $"where Work_Date = CONVERT(CHAR(10), eahd.Prd_Starttime, 23) AND User_Name = '{UserName}'";
+                    $"where Work_Date = CONVERT(CHAR(10), eahd.Prd_Starttime, 23) AND User_Name = '{UserName}' " +
+                    $"order by eahd.Prd_Starttime Desc";
 
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
