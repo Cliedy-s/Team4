@@ -115,7 +115,7 @@ namespace Axxen
 
                 // Draw a different background color, and don't paint a focus rectangle.
                 _textBrush = new SolidBrush(Color.Black);
-                g.FillRectangle(Brushes.NavajoWhite, e.Bounds);
+                g.FillRectangle(Brushes.LightSkyBlue, e.Bounds);
 
             }
             else

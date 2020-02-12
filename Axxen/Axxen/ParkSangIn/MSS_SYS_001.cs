@@ -120,8 +120,8 @@ namespace Axxen
                     {
                                 //((MainForm)this.MdiParent).DeleteButon();
                                 //((MainForm)this.MdiParent).Setting();
-                                //((MainForm)this.MdiParent).button9.PerformClick();
-                                ((MainForm)this.MdiParent).btnManuReflash.Text = "새로고침";
+                                ((MainForm)this.MdiParent).btnManuReflash.PerformClick();
+                                //((MainForm)this.MdiParent).btnManuReflash.Text = "새로고침";
                                 treeview();
                         datagridviewsetting();
                         //MessageBox.Show(dgvParent.SelectedRows[0].Cells[0].Value.ToString() + "가 삭제되었습니다.", "알림", MessageBoxButtons.YesNo);

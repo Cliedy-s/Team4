@@ -86,7 +86,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(21, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(346, 24);
@@ -138,7 +138,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label9.ForeColor = System.Drawing.Color.Black;
             this.label9.Location = new System.Drawing.Point(161, 142);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(91, 17);
@@ -149,7 +149,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(161, 73);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(78, 17);
@@ -158,7 +158,7 @@
             // 
             // btnPwd
             // 
-            this.btnPwd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnPwd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnPwd.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnPwd.Location = new System.Drawing.Point(223, 255);
             this.btnPwd.Name = "btnPwd";
@@ -172,7 +172,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.Location = new System.Drawing.Point(154, 214);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(304, 17);
@@ -220,10 +220,10 @@
             // 
             // panel5
             // 
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel5.Controls.Add(this.cbbshortcutsub4);
             this.panel5.Controls.Add(this.cbbshortcut4);
-            this.panel5.Location = new System.Drawing.Point(139, 193);
+            this.panel5.Location = new System.Drawing.Point(139, 203);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(455, 45);
             this.panel5.TabIndex = 57;
@@ -277,9 +277,10 @@
             // 
             // panel6
             // 
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.BackColor = System.Drawing.SystemColors.Info;
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel6.Controls.Add(this.label4);
-            this.panel6.Location = new System.Drawing.Point(31, 193);
+            this.panel6.Location = new System.Drawing.Point(31, 203);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(109, 45);
             this.panel6.TabIndex = 56;
@@ -288,8 +289,8 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label4.Location = new System.Drawing.Point(5, 15);
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(6, 14);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(99, 17);
             this.label4.TabIndex = 5;
@@ -297,10 +298,10 @@
             // 
             // panel7
             // 
-            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel7.Controls.Add(this.cbbshortcutsub3);
             this.panel7.Controls.Add(this.cbbshortcut3);
-            this.panel7.Location = new System.Drawing.Point(139, 149);
+            this.panel7.Location = new System.Drawing.Point(139, 159);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(455, 45);
             this.panel7.TabIndex = 55;
@@ -354,9 +355,10 @@
             // 
             // panel8
             // 
-            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel8.BackColor = System.Drawing.SystemColors.Info;
+            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel8.Controls.Add(this.label5);
-            this.panel8.Location = new System.Drawing.Point(31, 149);
+            this.panel8.Location = new System.Drawing.Point(31, 159);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(109, 45);
             this.panel8.TabIndex = 54;
@@ -365,8 +367,8 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label5.Location = new System.Drawing.Point(16, 14);
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(17, 13);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(73, 17);
             this.label5.TabIndex = 5;
@@ -374,10 +376,10 @@
             // 
             // panel3
             // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Controls.Add(this.cbbshortcutsub2);
             this.panel3.Controls.Add(this.cbbshortcut2);
-            this.panel3.Location = new System.Drawing.Point(139, 105);
+            this.panel3.Location = new System.Drawing.Point(139, 115);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(455, 45);
             this.panel3.TabIndex = 53;
@@ -431,9 +433,10 @@
             // 
             // panel4
             // 
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.BackColor = System.Drawing.SystemColors.Info;
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel4.Controls.Add(this.label3);
-            this.panel4.Location = new System.Drawing.Point(31, 105);
+            this.panel4.Location = new System.Drawing.Point(31, 115);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(109, 45);
             this.panel4.TabIndex = 52;
@@ -442,8 +445,8 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(16, 15);
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(17, 13);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 17);
             this.label3.TabIndex = 5;
@@ -451,10 +454,10 @@
             // 
             // panel1
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.cbbshortcutsub1);
             this.panel1.Controls.Add(this.cbbshortcut1);
-            this.panel1.Location = new System.Drawing.Point(139, 61);
+            this.panel1.Location = new System.Drawing.Point(139, 71);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(455, 45);
             this.panel1.TabIndex = 51;
@@ -508,9 +511,10 @@
             // 
             // panel2
             // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.BackColor = System.Drawing.SystemColors.Info;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(31, 61);
+            this.panel2.Location = new System.Drawing.Point(31, 71);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(109, 45);
             this.panel2.TabIndex = 50;
@@ -519,8 +523,8 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(16, 15);
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(18, 14);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 17);
             this.label2.TabIndex = 5;
@@ -528,7 +532,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnUpdate.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnUpdate.Location = new System.Drawing.Point(526, 297);
             this.btnUpdate.Name = "btnUpdate";
@@ -541,9 +545,9 @@
             // 
             // panel9
             // 
-            this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel9.Controls.Add(this.cbbscreen);
-            this.panel9.Location = new System.Drawing.Point(139, 17);
+            this.panel9.Location = new System.Drawing.Point(139, 27);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(455, 45);
             this.panel9.TabIndex = 19;
@@ -558,9 +562,10 @@
             // 
             // panel10
             // 
-            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel10.BackColor = System.Drawing.SystemColors.Info;
+            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel10.Controls.Add(this.label23);
-            this.panel10.Location = new System.Drawing.Point(31, 17);
+            this.panel10.Location = new System.Drawing.Point(31, 27);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(109, 45);
             this.panel10.TabIndex = 18;
@@ -569,8 +574,8 @@
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label23.Location = new System.Drawing.Point(16, 15);
+            this.label23.ForeColor = System.Drawing.Color.Black;
+            this.label23.Location = new System.Drawing.Point(23, 13);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(60, 17);
             this.label23.TabIndex = 5;
@@ -578,11 +583,12 @@
             // 
             // btnclose
             // 
-            this.btnclose.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnclose.BackColor = System.Drawing.SystemColors.Info;
+            this.btnclose.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlLight;
             this.btnclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnclose.Location = new System.Drawing.Point(563, 463);
+            this.btnclose.Location = new System.Drawing.Point(558, 453);
             this.btnclose.Name = "btnclose";
-            this.btnclose.Size = new System.Drawing.Size(75, 23);
+            this.btnclose.Size = new System.Drawing.Size(80, 33);
             this.btnclose.TabIndex = 51;
             this.btnclose.Text = "닫기";
             this.btnclose.UseVisualStyleBackColor = false;
