@@ -144,8 +144,8 @@
             // 
             // aDateTimePickerSearch1
             // 
-            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 2, 5, 14, 16, 38, 453);
-            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 2, 12, 14, 16, 38, 453);
+            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 2, 5, 18, 34, 50, 374);
+            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 2, 12, 18, 34, 50, 374);
             this.aDateTimePickerSearch1.ButtonText = "조회";
             this.aDateTimePickerSearch1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aDateTimePickerSearch1.Location = new System.Drawing.Point(88, 23);
@@ -160,10 +160,8 @@
             this.lblnum.AutoSize = true;
             this.lblnum.Location = new System.Drawing.Point(261, 27);
             this.lblnum.Name = "lblnum";
-            this.lblnum.Size = new System.Drawing.Size(31, 15);
+            this.lblnum.Size = new System.Drawing.Size(0, 15);
             this.lblnum.TabIndex = 3;
-            this.lblnum.Text = "순번";
-            this.lblnum.Visible = false;
             // 
             // QAM_SQC_002
             // 

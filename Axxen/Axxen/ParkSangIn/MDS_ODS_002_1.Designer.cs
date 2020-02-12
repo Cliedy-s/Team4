@@ -256,9 +256,9 @@
             this.lblprocess.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblprocess.Location = new System.Drawing.Point(3, 4);
             this.lblprocess.Name = "lblprocess";
-            this.lblprocess.Size = new System.Drawing.Size(53, 17);
+            this.lblprocess.Size = new System.Drawing.Size(18, 17);
             this.lblprocess.TabIndex = 150;
-            this.lblprocess.Text = "aLabel3";
+            this.lblprocess.Text = "  ";
             // 
             // aPanel3
             // 
