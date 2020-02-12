@@ -162,6 +162,7 @@
             this.lblnum.Name = "lblnum";
             this.lblnum.Size = new System.Drawing.Size(0, 15);
             this.lblnum.TabIndex = 3;
+            this.lblnum.Visible = false;
             // 
             // QAM_SQC_002
             // 
