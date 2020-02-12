@@ -64,7 +64,7 @@ namespace DAC
             using (SqlCommand comm = new SqlCommand())
             {
                 comm.Connection = new SqlConnection(Connstr);
-                comm.CommandText = @"Select Inspect_name, SL
+                comm.CommandText = @"Select DISTINCT Inspect_name, SL ,Inspect_measure_seq
                                 from Inspect_Measure_History imh INNER JOIN Process_Master pm ON imh.Process_code = pm.Process_code
 								 INNER JOIN Inspect_Spec_Master ism ON imh.Item_code = ism.Item_Code 
 								 and imh.Process_code = ism.Process_code

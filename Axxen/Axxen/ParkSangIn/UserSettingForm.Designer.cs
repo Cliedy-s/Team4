@@ -41,27 +41,23 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
-            this.aComboBox7 = new Axxen.CustomControls.AComboBox();
-            this.aComboBox8 = new Axxen.CustomControls.AComboBox();
+            this.cbbshortcutsub4 = new Axxen.CustomControls.AComboBox();
+            this.cbbshortcut4 = new Axxen.CustomControls.AComboBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.aComboBox4 = new Axxen.CustomControls.AComboBox();
-            this.aComboBox6 = new Axxen.CustomControls.AComboBox();
+            this.cbbshortcutsub3 = new Axxen.CustomControls.AComboBox();
+            this.cbbshortcut3 = new Axxen.CustomControls.AComboBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.aComboBox2 = new Axxen.CustomControls.AComboBox();
-            this.aComboBox3 = new Axxen.CustomControls.AComboBox();
+            this.cbbshortcutsub2 = new Axxen.CustomControls.AComboBox();
+            this.cbbshortcut2 = new Axxen.CustomControls.AComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.aComboBox5 = new Axxen.CustomControls.AComboBox();
-            this.aComboBox1 = new Axxen.CustomControls.AComboBox();
+            this.cbbshortcutsub1 = new Axxen.CustomControls.AComboBox();
+            this.cbbshortcut1 = new Axxen.CustomControls.AComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -225,27 +221,17 @@
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.label12);
-            this.panel5.Controls.Add(this.aComboBox7);
-            this.panel5.Controls.Add(this.aComboBox8);
-            this.panel5.Location = new System.Drawing.Point(145, 201);
+            this.panel5.Controls.Add(this.cbbshortcutsub4);
+            this.panel5.Controls.Add(this.cbbshortcut4);
+            this.panel5.Location = new System.Drawing.Point(139, 193);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(455, 45);
             this.panel5.TabIndex = 57;
             // 
-            // label12
+            // cbbshortcutsub4
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(177, 18);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(14, 12);
-            this.label12.TabIndex = 5;
-            this.label12.Text = "~";
-            // 
-            // aComboBox7
-            // 
-            this.aComboBox7.FormattingEnabled = true;
-            this.aComboBox7.Items.AddRange(new object[] {
+            this.cbbshortcutsub4.FormattingEnabled = true;
+            this.cbbshortcutsub4.Items.AddRange(new object[] {
             "A",
             "B",
             "C",
@@ -264,36 +250,36 @@
             "P",
             "Q",
             "R",
-            "X",
+            "S",
             "T",
             "U",
             "V",
             "W",
             "X",
-            "W",
+            "Y",
             "Z"});
-            this.aComboBox7.Location = new System.Drawing.Point(198, 12);
-            this.aComboBox7.Name = "aComboBox7";
-            this.aComboBox7.Size = new System.Drawing.Size(165, 20);
-            this.aComboBox7.TabIndex = 4;
+            this.cbbshortcutsub4.Location = new System.Drawing.Point(91, 12);
+            this.cbbshortcutsub4.Name = "cbbshortcutsub4";
+            this.cbbshortcutsub4.Size = new System.Drawing.Size(80, 20);
+            this.cbbshortcutsub4.TabIndex = 8;
             // 
-            // aComboBox8
+            // cbbshortcut4
             // 
-            this.aComboBox8.FormattingEnabled = true;
-            this.aComboBox8.Items.AddRange(new object[] {
+            this.cbbshortcut4.FormattingEnabled = true;
+            this.cbbshortcut4.Items.AddRange(new object[] {
             "Ctrl",
             "Alt",
             "Shift"});
-            this.aComboBox8.Location = new System.Drawing.Point(6, 12);
-            this.aComboBox8.Name = "aComboBox8";
-            this.aComboBox8.Size = new System.Drawing.Size(165, 20);
-            this.aComboBox8.TabIndex = 3;
+            this.cbbshortcut4.Location = new System.Drawing.Point(6, 12);
+            this.cbbshortcut4.Name = "cbbshortcut4";
+            this.cbbshortcut4.Size = new System.Drawing.Size(79, 20);
+            this.cbbshortcut4.TabIndex = 7;
             // 
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel6.Controls.Add(this.label4);
-            this.panel6.Location = new System.Drawing.Point(37, 201);
+            this.panel6.Location = new System.Drawing.Point(31, 193);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(109, 45);
             this.panel6.TabIndex = 56;
@@ -312,27 +298,17 @@
             // panel7
             // 
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel7.Controls.Add(this.label11);
-            this.panel7.Controls.Add(this.aComboBox4);
-            this.panel7.Controls.Add(this.aComboBox6);
-            this.panel7.Location = new System.Drawing.Point(145, 157);
+            this.panel7.Controls.Add(this.cbbshortcutsub3);
+            this.panel7.Controls.Add(this.cbbshortcut3);
+            this.panel7.Location = new System.Drawing.Point(139, 149);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(455, 45);
             this.panel7.TabIndex = 55;
             // 
-            // label11
+            // cbbshortcutsub3
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(177, 17);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(14, 12);
-            this.label11.TabIndex = 5;
-            this.label11.Text = "~";
-            // 
-            // aComboBox4
-            // 
-            this.aComboBox4.FormattingEnabled = true;
-            this.aComboBox4.Items.AddRange(new object[] {
+            this.cbbshortcutsub3.FormattingEnabled = true;
+            this.cbbshortcutsub3.Items.AddRange(new object[] {
             "A",
             "B",
             "C",
@@ -351,36 +327,36 @@
             "P",
             "Q",
             "R",
-            "X",
+            "S",
             "T",
             "U",
             "V",
             "W",
             "X",
-            "W",
+            "Y",
             "Z"});
-            this.aComboBox4.Location = new System.Drawing.Point(198, 11);
-            this.aComboBox4.Name = "aComboBox4";
-            this.aComboBox4.Size = new System.Drawing.Size(165, 20);
-            this.aComboBox4.TabIndex = 4;
+            this.cbbshortcutsub3.Location = new System.Drawing.Point(91, 11);
+            this.cbbshortcutsub3.Name = "cbbshortcutsub3";
+            this.cbbshortcutsub3.Size = new System.Drawing.Size(80, 20);
+            this.cbbshortcutsub3.TabIndex = 9;
             // 
-            // aComboBox6
+            // cbbshortcut3
             // 
-            this.aComboBox6.FormattingEnabled = true;
-            this.aComboBox6.Items.AddRange(new object[] {
+            this.cbbshortcut3.FormattingEnabled = true;
+            this.cbbshortcut3.Items.AddRange(new object[] {
             "Ctrl",
             "Alt",
             "Shift"});
-            this.aComboBox6.Location = new System.Drawing.Point(6, 11);
-            this.aComboBox6.Name = "aComboBox6";
-            this.aComboBox6.Size = new System.Drawing.Size(165, 20);
-            this.aComboBox6.TabIndex = 3;
+            this.cbbshortcut3.Location = new System.Drawing.Point(6, 11);
+            this.cbbshortcut3.Name = "cbbshortcut3";
+            this.cbbshortcut3.Size = new System.Drawing.Size(79, 20);
+            this.cbbshortcut3.TabIndex = 8;
             // 
             // panel8
             // 
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel8.Controls.Add(this.label5);
-            this.panel8.Location = new System.Drawing.Point(37, 157);
+            this.panel8.Location = new System.Drawing.Point(31, 149);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(109, 45);
             this.panel8.TabIndex = 54;
@@ -399,27 +375,17 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.label10);
-            this.panel3.Controls.Add(this.aComboBox2);
-            this.panel3.Controls.Add(this.aComboBox3);
-            this.panel3.Location = new System.Drawing.Point(145, 113);
+            this.panel3.Controls.Add(this.cbbshortcutsub2);
+            this.panel3.Controls.Add(this.cbbshortcut2);
+            this.panel3.Location = new System.Drawing.Point(139, 105);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(455, 45);
             this.panel3.TabIndex = 53;
             // 
-            // label10
+            // cbbshortcutsub2
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(177, 18);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(14, 12);
-            this.label10.TabIndex = 5;
-            this.label10.Text = "~";
-            // 
-            // aComboBox2
-            // 
-            this.aComboBox2.FormattingEnabled = true;
-            this.aComboBox2.Items.AddRange(new object[] {
+            this.cbbshortcutsub2.FormattingEnabled = true;
+            this.cbbshortcutsub2.Items.AddRange(new object[] {
             "A",
             "B",
             "C",
@@ -438,36 +404,36 @@
             "P",
             "Q",
             "R",
-            "X",
+            "S",
             "T",
             "U",
             "V",
             "W",
             "X",
-            "W",
+            "Y",
             "Z"});
-            this.aComboBox2.Location = new System.Drawing.Point(198, 12);
-            this.aComboBox2.Name = "aComboBox2";
-            this.aComboBox2.Size = new System.Drawing.Size(165, 20);
-            this.aComboBox2.TabIndex = 4;
+            this.cbbshortcutsub2.Location = new System.Drawing.Point(91, 12);
+            this.cbbshortcutsub2.Name = "cbbshortcutsub2";
+            this.cbbshortcutsub2.Size = new System.Drawing.Size(80, 20);
+            this.cbbshortcutsub2.TabIndex = 8;
             // 
-            // aComboBox3
+            // cbbshortcut2
             // 
-            this.aComboBox3.FormattingEnabled = true;
-            this.aComboBox3.Items.AddRange(new object[] {
+            this.cbbshortcut2.FormattingEnabled = true;
+            this.cbbshortcut2.Items.AddRange(new object[] {
             "Ctrl",
             "Alt",
             "Shift"});
-            this.aComboBox3.Location = new System.Drawing.Point(6, 12);
-            this.aComboBox3.Name = "aComboBox3";
-            this.aComboBox3.Size = new System.Drawing.Size(165, 20);
-            this.aComboBox3.TabIndex = 3;
+            this.cbbshortcut2.Location = new System.Drawing.Point(6, 12);
+            this.cbbshortcut2.Name = "cbbshortcut2";
+            this.cbbshortcut2.Size = new System.Drawing.Size(79, 20);
+            this.cbbshortcut2.TabIndex = 7;
             // 
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.label3);
-            this.panel4.Location = new System.Drawing.Point(37, 113);
+            this.panel4.Location = new System.Drawing.Point(31, 105);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(109, 45);
             this.panel4.TabIndex = 52;
@@ -486,27 +452,17 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.aComboBox5);
-            this.panel1.Controls.Add(this.aComboBox1);
-            this.panel1.Location = new System.Drawing.Point(145, 69);
+            this.panel1.Controls.Add(this.cbbshortcutsub1);
+            this.panel1.Controls.Add(this.cbbshortcut1);
+            this.panel1.Location = new System.Drawing.Point(139, 61);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(455, 45);
             this.panel1.TabIndex = 51;
             // 
-            // label6
+            // cbbshortcutsub1
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(177, 18);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(14, 12);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "~";
-            // 
-            // aComboBox5
-            // 
-            this.aComboBox5.FormattingEnabled = true;
-            this.aComboBox5.Items.AddRange(new object[] {
+            this.cbbshortcutsub1.FormattingEnabled = true;
+            this.cbbshortcutsub1.Items.AddRange(new object[] {
             "A",
             "B",
             "C",
@@ -525,36 +481,36 @@
             "P",
             "Q",
             "R",
-            "X",
+            "S",
             "T",
             "U",
             "V",
             "W",
             "X",
-            "W",
+            "Y",
             "Z"});
-            this.aComboBox5.Location = new System.Drawing.Point(198, 12);
-            this.aComboBox5.Name = "aComboBox5";
-            this.aComboBox5.Size = new System.Drawing.Size(165, 20);
-            this.aComboBox5.TabIndex = 1;
+            this.cbbshortcutsub1.Location = new System.Drawing.Point(91, 12);
+            this.cbbshortcutsub1.Name = "cbbshortcutsub1";
+            this.cbbshortcutsub1.Size = new System.Drawing.Size(80, 20);
+            this.cbbshortcutsub1.TabIndex = 1;
             // 
-            // aComboBox1
+            // cbbshortcut1
             // 
-            this.aComboBox1.FormattingEnabled = true;
-            this.aComboBox1.Items.AddRange(new object[] {
+            this.cbbshortcut1.FormattingEnabled = true;
+            this.cbbshortcut1.Items.AddRange(new object[] {
             "Ctrl",
             "Alt",
             "Shift"});
-            this.aComboBox1.Location = new System.Drawing.Point(6, 12);
-            this.aComboBox1.Name = "aComboBox1";
-            this.aComboBox1.Size = new System.Drawing.Size(165, 20);
-            this.aComboBox1.TabIndex = 0;
+            this.cbbshortcut1.Location = new System.Drawing.Point(6, 12);
+            this.cbbshortcut1.Name = "cbbshortcut1";
+            this.cbbshortcut1.Size = new System.Drawing.Size(79, 20);
+            this.cbbshortcut1.TabIndex = 0;
             // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(37, 69);
+            this.panel2.Location = new System.Drawing.Point(31, 61);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(109, 45);
             this.panel2.TabIndex = 50;
@@ -574,7 +530,7 @@
             // 
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btnUpdate.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnUpdate.Location = new System.Drawing.Point(532, 294);
+            this.btnUpdate.Location = new System.Drawing.Point(526, 297);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(68, 23);
             this.btnUpdate.TabIndex = 49;
@@ -587,7 +543,7 @@
             // 
             this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel9.Controls.Add(this.cbbscreen);
-            this.panel9.Location = new System.Drawing.Point(145, 25);
+            this.panel9.Location = new System.Drawing.Point(139, 17);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(455, 45);
             this.panel9.TabIndex = 19;
@@ -604,7 +560,7 @@
             // 
             this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel10.Controls.Add(this.label23);
-            this.panel10.Location = new System.Drawing.Point(37, 25);
+            this.panel10.Location = new System.Drawing.Point(31, 17);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(109, 45);
             this.panel10.TabIndex = 18;
@@ -624,7 +580,7 @@
             // 
             this.btnclose.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnclose.Location = new System.Drawing.Point(558, 453);
+            this.btnclose.Location = new System.Drawing.Point(563, 463);
             this.btnclose.Name = "btnclose";
             this.btnclose.Size = new System.Drawing.Size(75, 23);
             this.btnclose.TabIndex = 51;
@@ -635,7 +591,7 @@
             // UserSettingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.ClientSize = new System.Drawing.Size(644, 487);
+            this.ClientSize = new System.Drawing.Size(650, 497);
             this.ControlBox = false;
             this.Controls.Add(this.btnclose);
             this.Controls.Add(this.label1);
@@ -650,19 +606,15 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel9.ResumeLayout(false);
@@ -701,20 +653,16 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;
-        private CustomControls.AComboBox aComboBox1;
+        private CustomControls.AComboBox cbbshortcut1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label6;
-        private CustomControls.AComboBox aComboBox5;
-        private System.Windows.Forms.Label label12;
-        private CustomControls.AComboBox aComboBox7;
-        private CustomControls.AComboBox aComboBox8;
-        private System.Windows.Forms.Label label11;
-        private CustomControls.AComboBox aComboBox4;
-        private CustomControls.AComboBox aComboBox6;
-        private System.Windows.Forms.Label label10;
-        private CustomControls.AComboBox aComboBox2;
-        private CustomControls.AComboBox aComboBox3;
+        private CustomControls.AComboBox cbbshortcutsub1;
         private CustomControls.AComboBox cbbscreen;
+        private CustomControls.AComboBox cbbshortcutsub4;
+        private CustomControls.AComboBox cbbshortcut4;
+        private CustomControls.AComboBox cbbshortcutsub3;
+        private CustomControls.AComboBox cbbshortcut3;
+        private CustomControls.AComboBox cbbshortcutsub2;
+        private CustomControls.AComboBox cbbshortcut2;
     }
 }

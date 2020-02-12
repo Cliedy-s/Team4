@@ -18,8 +18,9 @@ namespace Axxen
         UserInfo_Service userservice = new UserInfo_Service();
 
         List<UserGroup_MappingVO> userinfoGrouplist; //유저가속한 그룹
-        List<ScreenItem_AuthorityVO> AutorScreenlist;
+        List<ScreenItem_AuthorityVO> AutorScreenlist; //사용자가 허용된 화면만
         List<ScreenItem_MasterVO> Screenlist;
+
 
         public UserSettingForm()
         {
@@ -63,8 +64,37 @@ namespace Axxen
             cbbscreen.ValueMember = "Screen_Code";
             cbbscreen.DataSource = level1list;
 
+            Process_MasterVO pfirst = new Process_MasterVO()
+            {
+
+            };
+
+
+
+
+            string[] s01 = UserInfo.S01.Split('/');
+            string[] s02 = UserInfo.S02.Split('/');
+            string[] s03 = UserInfo.S03.Split('/');
+            string[] s04 = UserInfo.S04.Split('/');
+
+            cbbshortcut1.Text = s01[0];
+            cbbshortcutsub1.Text = s01[1];
+
+            cbbshortcut2.Text = s02[0];
+            cbbshortcutsub2.Text = s02[1];
+
+            cbbshortcut3.Text = s03[0];
+            cbbshortcutsub3.Text = s03[1];
+
+            cbbshortcut4.Text = s04[0];
+            cbbshortcutsub4.Text = s04[1];
+
             if (!UserInfo.Default_Screen_Code.Equals("0"))//사용자가 기본설정을 해놓지않았다면 콤보박스에 기본설정 값을 보여주지 않아도된다.
-            cbbscreen.Text = tagetscreen.Find(level => level.Screen_Code == UserInfo.Default_Screen_Code).Type; 
+            cbbscreen.Text = tagetscreen.Find(level => level.Screen_Code == UserInfo.Default_Screen_Code).Type;
+
+
+       
+
         }
 
 
@@ -111,12 +141,22 @@ namespace Axxen
             {
                 if (userservice.Default_Screen_Code(UserInfo.User_ID, cbbscreen.SelectedValue.ToString()))
                 {
-                    MessageBox.Show("기본화면이 설정되었습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (userservice.UpdateShortcutUser_Master(UserInfo.User_ID, cbbshortcut1.Text, cbbshortcutsub1.Text, cbbshortcut2.Text, cbbshortcutsub2.Text, cbbshortcut3.Text, cbbshortcutsub3.Text, cbbshortcut4.Text, cbbshortcutsub4.Text))
+                    {
+                        MessageBox.Show("기본설정이 저장되었습니다. 다음 로그인부터 적용됩니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                     
+                    }
+                   
                 }
                 else
                 {
 
                 }
+              
+                
             }
             catch (Exception err)
             {

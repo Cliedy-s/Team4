@@ -45,6 +45,8 @@
             this.btnCencle = new Axxen.CustomControls.AButton();
             this.btnSave = new Axxen.CustomControls.AButton();
             this.aLabel5 = new Axxen.CustomControls.ALabel();
+            this.aLabel3 = new Axxen.CustomControls.ALabel();
+            this.aComboBox1 = new Axxen.CustomControls.AComboBox();
             this.aPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.aPanel9.SuspendLayout();
@@ -222,11 +224,31 @@
             this.aLabel5.TabIndex = 43;
             this.aLabel5.Text = "담당자";
             // 
+            // aLabel3
+            // 
+            this.aLabel3.AutoSize = true;
+            this.aLabel3.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aLabel3.Location = new System.Drawing.Point(12, 321);
+            this.aLabel3.Name = "aLabel3";
+            this.aLabel3.Size = new System.Drawing.Size(81, 21);
+            this.aLabel3.TabIndex = 50;
+            this.aLabel3.Text = "*기본공정";
+            // 
+            // aComboBox1
+            // 
+            this.aComboBox1.FormattingEnabled = true;
+            this.aComboBox1.Location = new System.Drawing.Point(13, 358);
+            this.aComboBox1.Name = "aComboBox1";
+            this.aComboBox1.Size = new System.Drawing.Size(300, 23);
+            this.aComboBox1.TabIndex = 51;
+            // 
             // MSS_CON_003_1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(327, 483);
             this.ControlBox = false;
+            this.Controls.Add(this.aComboBox1);
+            this.Controls.Add(this.aLabel3);
             this.Controls.Add(this.txtPwd);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.txtName);
@@ -268,5 +290,7 @@
         private CLIP.eForm.Consent.Standard.Management.UI.PlaceHolderTextBox txtName;
         private CLIP.eForm.Consent.Standard.Management.UI.PlaceHolderTextBox txtID;
         private CLIP.eForm.Consent.Standard.Management.UI.PlaceHolderTextBox txtPwd;
+        private CustomControls.ALabel aLabel3;
+        private CustomControls.AComboBox aComboBox1;
     }
 }

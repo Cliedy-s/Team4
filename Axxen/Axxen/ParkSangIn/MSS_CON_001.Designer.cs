@@ -66,8 +66,9 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(0, 670);
+            this.pictureBox2.Location = new System.Drawing.Point(1, 630);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(23, 22);
             this.pictureBox2.TabIndex = 12;
@@ -75,10 +76,11 @@
             // 
             // aLabel7
             // 
+            this.aLabel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.aLabel7.AutoSize = true;
             this.aLabel7.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel7.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.aLabel7.Location = new System.Drawing.Point(25, 671);
+            this.aLabel7.Location = new System.Drawing.Point(26, 631);
             this.aLabel7.Name = "aLabel7";
             this.aLabel7.Size = new System.Drawing.Size(128, 21);
             this.aLabel7.TabIndex = 11;
@@ -94,9 +96,9 @@
             this.panelusersetting.Controls.Add(this.aLabel5);
             this.panelusersetting.Controls.Add(this.btnSave);
             this.panelusersetting.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelusersetting.Location = new System.Drawing.Point(0, 701);
+            this.panelusersetting.Location = new System.Drawing.Point(0, 658);
             this.panelusersetting.Name = "panelusersetting";
-            this.panelusersetting.Size = new System.Drawing.Size(1141, 64);
+            this.panelusersetting.Size = new System.Drawing.Size(1141, 107);
             this.panelusersetting.TabIndex = 10;
             // 
             // txtCode
@@ -107,7 +109,7 @@
             this.txtCode.Location = new System.Drawing.Point(154, 19);
             this.txtCode.MaxLength = 20;
             this.txtCode.Name = "txtCode";
-            this.txtCode.Size = new System.Drawing.Size(149, 23);
+            this.txtCode.Size = new System.Drawing.Size(196, 23);
             this.txtCode.TabIndex = 12;
             this.txtCode.txtType = Axxen.CustomControls.TextType.Normal;
             // 
@@ -116,10 +118,10 @@
             this.txtName.BackColor = System.Drawing.Color.White;
             this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtName.errorp = null;
-            this.txtName.Location = new System.Drawing.Point(425, 19);
+            this.txtName.Location = new System.Drawing.Point(480, 19);
             this.txtName.MaxLength = 100;
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(149, 23);
+            this.txtName.Size = new System.Drawing.Size(244, 23);
             this.txtName.TabIndex = 11;
             this.txtName.txtType = Axxen.CustomControls.TextType.Normal;
             // 
@@ -137,7 +139,7 @@
             // 
             this.aLabel5.AutoSize = true;
             this.aLabel5.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aLabel5.Location = new System.Drawing.Point(322, 21);
+            this.aLabel5.Location = new System.Drawing.Point(377, 21);
             this.aLabel5.Name = "aLabel5";
             this.aLabel5.Size = new System.Drawing.Size(97, 17);
             this.aLabel5.TabIndex = 7;
@@ -148,7 +150,7 @@
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Location = new System.Drawing.Point(1029, 11);
+            this.btnSave.Location = new System.Drawing.Point(1025, 54);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(88, 33);
             this.btnSave.TabIndex = 4;
@@ -253,7 +255,7 @@
             this.dgvGroup.Location = new System.Drawing.Point(9, 66);
             this.dgvGroup.Name = "dgvGroup";
             this.dgvGroup.RowTemplate.Height = 23;
-            this.dgvGroup.Size = new System.Drawing.Size(1124, 591);
+            this.dgvGroup.Size = new System.Drawing.Size(1124, 558);
             this.dgvGroup.TabIndex = 5;
             this.dgvGroup.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvGroup_CellContentClick);
             this.dgvGroup.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvGroup_CellDoubleClick);

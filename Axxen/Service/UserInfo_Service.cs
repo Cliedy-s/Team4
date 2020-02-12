@@ -78,5 +78,10 @@ namespace Service
         {
             return dac.UpdateUserPassword(id, User_PW);
         }
+
+        public bool UpdateShortcutUser_Master(string userid,string shortcut1,string subshortcut1,string shortcut2, string subshortcut2,string shortcut3, string subshortcut3,string shortcut4, string subshortcut4)
+        {
+            return dac.UpdateShortcutUser_Master(userid,shortcut1, shortcut2, shortcut3, shortcut4, subshortcut1, subshortcut2, subshortcut3, subshortcut4);
+        }
         }
 }

@@ -46,6 +46,8 @@
             this.aLabel2 = new Axxen.CustomControls.ALabel();
             this.lblSubtitle = new Axxen.CustomControls.ALabel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.메모장ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.계산기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -63,10 +65,7 @@
             this.toolStripButtoncencle = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.tvBookMark = new System.Windows.Forms.TreeView();
-            this.메모장ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.계산기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.지뢰찾기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.문자표ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.그림판ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelMenu.SuspendLayout();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
@@ -243,13 +242,26 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.메모장ToolStripMenuItem,
             this.계산기ToolStripMenuItem,
-            this.지뢰찾기ToolStripMenuItem,
-            this.문자표ToolStripMenuItem});
+            this.그림판ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1622, 34);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // 메모장ToolStripMenuItem
+            // 
+            this.메모장ToolStripMenuItem.Name = "메모장ToolStripMenuItem";
+            this.메모장ToolStripMenuItem.Size = new System.Drawing.Size(55, 30);
+            this.메모장ToolStripMenuItem.Text = "메모장";
+            this.메모장ToolStripMenuItem.Click += new System.EventHandler(this.메모장ToolStripMenuItem_Click);
+            // 
+            // 계산기ToolStripMenuItem
+            // 
+            this.계산기ToolStripMenuItem.Name = "계산기ToolStripMenuItem";
+            this.계산기ToolStripMenuItem.Size = new System.Drawing.Size(55, 30);
+            this.계산기ToolStripMenuItem.Text = "계산기";
+            this.계산기ToolStripMenuItem.Click += new System.EventHandler(this.계산기ToolStripMenuItem_Click);
             // 
             // timer
             // 
@@ -456,33 +468,12 @@
             this.tvBookMark.TabIndex = 0;
             this.tvBookMark.DoubleClick += new System.EventHandler(this.TvBookMark_DoubleClick);
             // 
-            // 메모장ToolStripMenuItem
+            // 그림판ToolStripMenuItem
             // 
-            this.메모장ToolStripMenuItem.Name = "메모장ToolStripMenuItem";
-            this.메모장ToolStripMenuItem.Size = new System.Drawing.Size(55, 30);
-            this.메모장ToolStripMenuItem.Text = "메모장";
-            this.메모장ToolStripMenuItem.Click += new System.EventHandler(this.메모장ToolStripMenuItem_Click);
-            // 
-            // 계산기ToolStripMenuItem
-            // 
-            this.계산기ToolStripMenuItem.Name = "계산기ToolStripMenuItem";
-            this.계산기ToolStripMenuItem.Size = new System.Drawing.Size(55, 30);
-            this.계산기ToolStripMenuItem.Text = "계산기";
-            this.계산기ToolStripMenuItem.Click += new System.EventHandler(this.계산기ToolStripMenuItem_Click);
-            // 
-            // 지뢰찾기ToolStripMenuItem
-            // 
-            this.지뢰찾기ToolStripMenuItem.Name = "지뢰찾기ToolStripMenuItem";
-            this.지뢰찾기ToolStripMenuItem.Size = new System.Drawing.Size(67, 30);
-            this.지뢰찾기ToolStripMenuItem.Text = "지뢰찾기";
-            this.지뢰찾기ToolStripMenuItem.Click += new System.EventHandler(this.지뢰찾기ToolStripMenuItem_Click);
-            // 
-            // 문자표ToolStripMenuItem
-            // 
-            this.문자표ToolStripMenuItem.Name = "문자표ToolStripMenuItem";
-            this.문자표ToolStripMenuItem.Size = new System.Drawing.Size(55, 30);
-            this.문자표ToolStripMenuItem.Text = "문자표";
-            this.문자표ToolStripMenuItem.Click += new System.EventHandler(this.문자표ToolStripMenuItem_Click);
+            this.그림판ToolStripMenuItem.Name = "그림판ToolStripMenuItem";
+            this.그림판ToolStripMenuItem.Size = new System.Drawing.Size(55, 30);
+            this.그림판ToolStripMenuItem.Text = "그림판";
+            this.그림판ToolStripMenuItem.Click += new System.EventHandler(this.그림판ToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -559,7 +550,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripMenuItem 메모장ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 계산기ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 지뢰찾기ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 문자표ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 그림판ToolStripMenuItem;
     }
 }

@@ -349,7 +349,12 @@ namespace DAC
                 return item;
             }
         }
-
+        /// <summary>
+        /// 사용자 페스워드 변경
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="User_PW"></param>
+        /// <returns></returns>
         public bool UpdateUserPassword(string id,string User_PW)
         {
             try
@@ -380,5 +385,50 @@ namespace DAC
                 throw;
             }
         }
-    }
+        /// <summary>
+        /// 사용자 단축기변경
+        /// </summary>
+        /// <param name="shortcut1"></param>
+        /// <param name="shortcut2"></param>
+        /// <param name="shortcut3"></param>
+        /// <param name="shortcut4"></param>
+        /// <param name="subshortcut1"></param>
+        /// <param name="subshortcut2"></param>
+        /// <param name="subshortcut3"></param>
+        /// <param name="subshortcut4"></param>
+        /// <returns></returns>
+        public bool UpdateShortcutUser_Master(string userid,string shortcut1, string shortcut2, string shortcut3, string shortcut4, string subshortcut1, string subshortcut2, string subshortcut3, string subshortcut4)
+        {
+
+            try
+            {
+                using (SqlCommand com = new SqlCommand())
+                {
+                    com.Connection = new SqlConnection(Connstr);
+                    com.CommandText = @"update User_Master set S01=@S01, S02=@S02 , S03=@S03 , S04=@S04 where User_ID=@User_ID";
+                    com.CommandType = CommandType.Text;
+
+                    com.Parameters.AddWithValue("@User_ID", userid);
+                    com.Parameters.AddWithValue("@S01", shortcut1+"/"+subshortcut1);
+                    com.Parameters.AddWithValue("@S02", shortcut2 + "/" + subshortcut2);
+                    com.Parameters.AddWithValue("@S03", shortcut3 + "/" + subshortcut3);
+                    com.Parameters.AddWithValue("@S04", shortcut4 + "/" + subshortcut4);
+
+                    com.Connection.Open();
+
+                    int resault = Convert.ToInt32(com.ExecuteNonQuery());
+
+                    com.Connection.Close();
+
+                    return resault > 0;
+                }
+
+            }
+            catch (Exception )
+            {
+               // return false;
+                throw;
+            }
+        }
+        }
 }

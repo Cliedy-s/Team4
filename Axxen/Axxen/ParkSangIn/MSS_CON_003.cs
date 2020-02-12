@@ -152,7 +152,7 @@ namespace Axxen
             }
             catch (Exception err)
             {
-                MessageBox.Show(err.Message);
+             //   MessageBox.Show(err.Message);
             }
 
         }
