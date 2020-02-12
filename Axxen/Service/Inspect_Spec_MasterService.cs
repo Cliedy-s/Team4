@@ -22,16 +22,23 @@ namespace Service
         /// <returns></returns>
         public List<InspectSpecVO> GetAll()
         {
-          
             return dac.GetAll();
         }
         /// <summary>
-        /// 작업장별로검색
+        /// 검사항목규격설정 아이템, 작업장별로 검색
         /// </summary>
         /// <returns></returns>
-        public List<InspectSpecVO> GetAllByWcCode(string wccode)
+        public List<InspectSpecVO> GetAll(string itemcode, string wccode)
         {
-            return dac.GetAllByWcCode(wccode);
+            return dac.GetAll( itemcode,  wccode);
+        }
+        /// <summary>
+        /// 작업장과 품목 코드로 검색
+        /// </summary>
+        /// <returns></returns>
+        public List<InspectSpecVO> GetAllByWcCode(string wccode, string itemcode)
+        {
+            return dac.GetAllByWcCode(wccode, itemcode);
         }
 
         public bool InsertInspectSpec(List<InspectSpecVO> inspctspec)

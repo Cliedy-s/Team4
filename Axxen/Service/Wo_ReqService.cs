@@ -84,10 +84,10 @@ namespace Service
         /// 생산의뢰목록 가져오기
         /// </summary>
         /// <returns></returns>
-        public List<Wo_Req_ItemUnitVO> GetAllWoReqUnit()
+        public List<Wo_Req_ItemUnitVO> GetAllWoReqUnit(string woorder)
         {
             Wo_ReqDAC dac = new Wo_ReqDAC();
-            return dac.GetAllWoReqUnit();
+            return dac.GetAllWoReqUnit(woorder);
         }
 
 

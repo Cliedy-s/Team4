@@ -166,6 +166,12 @@
     <Compile Include="HwiSeok\QAM_SQC_002.Designer.cs">
       <DependentUpon>QAM_SQC_002.cs</DependentUpon>
     </Compile>
+    <Compile Include="HwiSeok\QAM_SQC_002_1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HwiSeok\QAM_SQC_002_1.Designer.cs">
+      <DependentUpon>QAM_SQC_002_1.cs</DependentUpon>
+    </Compile>
     <Compile Include="HwiSeok\QAM_SQC_003.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -617,6 +623,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HwiSeok\QAM_SQC_002.resx">
       <DependentUpon>QAM_SQC_002.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HwiSeok\QAM_SQC_002_1.resx">
+      <DependentUpon>QAM_SQC_002_1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HwiSeok\QAM_SQC_003.resx">
       <DependentUpon>QAM_SQC_003.cs</DependentUpon>

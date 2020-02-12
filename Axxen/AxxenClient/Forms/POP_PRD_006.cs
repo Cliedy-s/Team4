@@ -64,7 +64,7 @@ namespace AxxenClient.Forms
                     return;
                 }
                 GV_HistoryService service = new GV_HistoryService();
-                if (service.UpdateUnload(GlobalUsage.UserID, dgvBoxing.SelectedRows[0].Cells[0].Value.ToString(), null, GlobalUsage.WcCode, Convert.ToInt32(dgvBoxing.SelectedRows[0].Cells[5].Value)))
+                if (service.UpdateUnload(GlobalUsage.WorkOrderNo,GlobalUsage.UserID, dgvBoxing.SelectedRows[0].Cells[0].Value.ToString(), null, GlobalUsage.WcCode, Convert.ToInt32(dgvBoxing.SelectedRows[0].Cells[5].Value)))
                 {
                     Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 대차({dgvBoxing.SelectedRows[0].Cells[0].Value.ToString()}) 언로딩에 성공함");
                     GetDatas();

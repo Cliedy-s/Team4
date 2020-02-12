@@ -40,7 +40,7 @@ namespace DAC
             using (SqlCommand comm = new SqlCommand())
             {
                 comm.Connection = new SqlConnection(Connstr);
-                comm.CommandText = @"select Condition_Name, SL 
+                comm.CommandText = @"select DISTINCT Condition_Name, SL 
                                    from Condition_Measure_History cmh INNER JOIN Condition_Spec_Master csm ON cmh.Condition_Code = csm.Condition_Code
 								   INNER JOIN WorkOrder wo ON cmh.Workorderno = wo.Workorderno
 								   INNER JOIN WorkCenter_Master wcm ON wo.Wc_Code = wcm.Wc_Code

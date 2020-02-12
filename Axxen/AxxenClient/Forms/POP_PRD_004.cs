@@ -33,6 +33,7 @@ namespace AxxenClient.Forms
             InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "수량", "CurrentQty", true, 100, DataGridViewContentAlignment.MiddleRight);
             InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "등급상세", "Grade_Detail_Code", false);
             InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "사이즈", "Size_Code", false);
+            InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "등급상세명", "Grade_Detail_Name", false);
 
             dtpTodate.Value = DateTime.Now;
             dtpFromdate.Value = DateTime.Now.AddDays(-7);
@@ -48,7 +49,7 @@ namespace AxxenClient.Forms
             {
                 txtPalletNo.TextBoxText = dgvPalletList.SelectedRows[0].Cells[1].Value.ToString();
                 txtBoxingGrade.TextBoxText = dgvPalletList.SelectedRows[0].Cells[3].Value == null ? "" : dgvPalletList.SelectedRows[0].Cells[3].Value.ToString();
-                txtBoxingGradeDetail.TextBoxText = dgvPalletList.SelectedRows[0].Cells[5].Value == null ? "" : dgvPalletList.SelectedRows[0].Cells[5].Value.ToString();
+                txtBoxingGradeDetail.TextBoxText = dgvPalletList.SelectedRows[0].Cells[7].Value == null ? "" : dgvPalletList.SelectedRows[0].Cells[7].Value.ToString();
                 txtSizeCode.TextBoxText = dgvPalletList.SelectedRows[0].Cells[6].Value == null ? "" : dgvPalletList.SelectedRows[0].Cells[6].Value.ToString();
                 txtCurrentQty.TextBoxText = dgvPalletList.SelectedRows[0].Cells[4].Value.ToString();
             }

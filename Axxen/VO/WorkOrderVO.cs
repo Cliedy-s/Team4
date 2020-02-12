@@ -12,6 +12,7 @@ namespace VO
         public string Wc_Code { get; set; }               // 작업장번호
         public string Wo_Status { get; set; }             // 작업지시상태
         public DateTime Plan_Date { get; set; }         // 계획 날짜
+        public int Plan_Qty { get; set; }         // 계획 수량
         public string User_ID { get; set; }                 // 사용자ID
         public string Item_Code { get; set; }             // 품목코드
         public string Item_Name { get; set; }            // 품목명

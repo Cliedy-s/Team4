@@ -57,20 +57,14 @@ namespace AxxenClient.Forms
         private void GetDatas()
         {
             Inspect_Spec_MasterService sservice = new Inspect_Spec_MasterService();
-            switch (GlobalUsage.WorkType) // TODO - 개발용 지우기
+            if (!(GlobalUsage.WorkOrderNo == "설정안됨"))
             {
-                case WorkType.Molding:
-                    dgvInspect.DataSource = sservice.GetAllByWcCode("WC20001");
-                    break;
-                case WorkType.Load:
-                    dgvInspect.DataSource = sservice.GetAllByWcCode("WC40001");
-                    break;
-                case WorkType.Boxing:
-                    dgvInspect.DataSource = sservice.GetAllByWcCode("WC50001");
-                    break;
+                dgvInspect.DataSource = sservice.GetAllByWcCode(GlobalUsage.WcCode, GlobalUsage.ItemCode);
             }
+            else
+            {
 
-            //dgvInspect.DataSource = sservice.GetAllByWcCode(GlobalUsage.WcCode);
+            }
         }
         private void SearchData()
         {
@@ -83,6 +77,14 @@ namespace AxxenClient.Forms
             lblItemCode.Text = dgvInspect.SelectedRows[0].Cells[4].Value.ToString();
             lblProcesscode.Text = dgvInspect.SelectedRows[0].Cells[5].Value.ToString();
             lblInspectcode.Text = dgvInspect.SelectedRows[0].Cells[6].Value.ToString();
+
+            decimal usl, sl, lsl;
+            usl = Convert.ToDecimal(dgvInspect.SelectedRows[0].Cells[1].Value);
+            sl = Convert.ToDecimal(dgvInspect.SelectedRows[0].Cells[2].Value);
+            if (usl - sl <= 0) nudMeasure.Increment = 1;
+            else nudMeasure.Increment = (usl - sl) / 10m;
+
+            nudMeasure.Value = sl;
 
             SearchData();
         }
@@ -97,18 +99,18 @@ namespace AxxenClient.Forms
                     InspectHistoryVO item = new InspectHistoryVO();
                     item.Inspect_code = lblInspectcode.Text;
                     item.Item_code = lblItemCode.Text;
-                    item.Inspect_val = Convert.ToDecimal(txtMeasure.TextBoxText);
+                    item.Inspect_val = Convert.ToDecimal(nudMeasure.Value);
                     item.Process_code = lblProcesscode.Text;
                     item.Workorderno = GlobalUsage.WorkOrderNo;
                     if (service.InsertInspect_Measure(item, GlobalUsage.UserID))
                     {
-                        Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 품질측정 조건({lblInspectcode.Text})에 값({txtMeasure.TextBoxText})를 넣는데에 성공하였음");
-                        txtMeasure.TextBoxText = "";
+                        Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 품질측정 조건({lblInspectcode.Text})에 값({nudMeasure.Value})를 넣는데에 성공하였음");
+                        nudMeasure.Value = 0;
                         SearchData();
                     }
                     else
                     {
-                        Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 품질측정 조건({lblInspectcode.Text})에 값({txtMeasure.TextBoxText})를 넣는데에 실패하였음");
+                        Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 품질측정 조건({lblInspectcode.Text})에 값({nudMeasure.Value})를 넣는데에 실패하였음");
                         MessageBox.Show("입력할 수 없는 항목입니다.");
                     }
                 }
@@ -127,12 +129,12 @@ namespace AxxenClient.Forms
                 Inspect_Measure_HistoryService service = new Inspect_Measure_HistoryService();
                 if (service.DeleteInspect_MeasureBySeq(Convert.ToInt32(dgvInspectMeasure.SelectedRows[0].Cells[2].Value)))
                 {
-                    Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 품질측정 조건({lblInspectcode.Text})의 값({txtMeasure.TextBoxText})을 삭제하는데 성공하였음");
+                    Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 품질측정 조건({lblInspectcode.Text})의 값({nudMeasure.Value})을 삭제하는데 성공하였음");
                     SearchData();
                 }
                 else
                 {
-                    Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 품질측정 조건({lblInspectcode.Text})의 값({txtMeasure.TextBoxText})을 삭제하는데 실패하였음");
+                    Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 품질측정 조건({lblInspectcode.Text})의 값({nudMeasure.Value})을 삭제하는데 실패하였음");
                     MessageBox.Show("입력할 수 없는 항목입니다.");
                 }
             }
@@ -152,39 +154,52 @@ namespace AxxenClient.Forms
         {
             if (isMachineRun)
             {
-                //btnMachineRun.BackColor = Color.FromArgb(218, 239, 245);
-                //isMachineRun = false;
-                //machine0.MachineStop(machinet);
+                btnMachineRun.BackColor = Color.FromArgb(218, 239, 245);
+                isMachineRun = false;
+                machine2.MachineStop(machinet);
             }
         }
         /// <summary>
         /// 기계 시작
         /// </summary>
         /// <param name="work"></param>
-        Machine machine1 = new Machine(1);
+        Machine machine2 = new Machine(2);
         private void MachineStart(MachineType machinet)
         {
-            //if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
-            //{
-            //    if (!isMachineRun)
-            //    {
-            //        btnMachineRun.BackColor = Color.FromArgb(188, 220, 244);
-            //        isMachineRun = true;
+            if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
+            {
+                if (!isMachineRun)
+                {
+                    btnMachineRun.BackColor = Color.FromArgb(188, 220, 244);
+                    isMachineRun = true;
+                    List<InspectSpecVO> list = (new Inspect_Spec_MasterService()).GetAll(GlobalUsage.ItemCode, GlobalUsage.WcCode);
+                    List<Item_inspectPair> pairlist = new List<Item_inspectPair>();
+                    StringBuilder forlog = new StringBuilder();
+                    foreach (var item in list)
+                    {
+                        pairlist.Add(new Item_inspectPair(item.Item_Code, item.Inspect_code, item.USL, item.LSL));
+                        forlog.Append(item.Inspect_name + " ");
+                    }
 
-            //        switch (machinet)
-            //        {
-            //            case MachineType.Inspect_Measure:
-            //                Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 작업({GlobalUsage.WorkOrderNo})의 성형기계로 금형({mold.Mold_Code})을 이용해 품목({workorder.Item_Code})을 생산함");
-            //                machine1.MachineStartInspectMeasure(GlobalUsage.WorkOrderNo, new Item_MoldPair(workorder.Item_Code, mold.Mold_Code, workorder.Line_Per_Qty));
-            //                break;
-            //        }
-            //    }
-            //}
-            //else
-            //{
-            //    Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 작업지시를 시작하지 않고 기계를 시작하려함");
-            //    MessageBox.Show("작업지시를 시작해주세요");
-            //}
+                    if (pairlist == null) {
+                        MessageBox.Show("항목이 없습니다.");
+                        return;
+                    }
+
+                    switch (machinet)
+                    {
+                        case MachineType.Inspect_Measure:
+                            Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 작업({GlobalUsage.WorkOrderNo})의 품질 측정기계로 품목({pairlist[0].Itemcode})에 대한 항목({forlog.ToString()})들을 측정함");
+                            machine2.MachineStart(GlobalUsage.WorkOrderNo, pairlist, MachineStop);
+                            break;
+                    }
+                }
+            }
+            else
+            {
+                Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 작업지시를 시작하지 않고 기계를 시작하려함");
+                MessageBox.Show("작업지시를 시작해주세요");
+            }
         }
 
     }

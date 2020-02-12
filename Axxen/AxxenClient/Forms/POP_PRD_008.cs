@@ -38,40 +38,46 @@ namespace AxxenClient.Forms
         private void GetDatas()
         {
             MoldService service = new MoldService();
-            dgvEquipMoldList.DataSource = service.GetMoldList(moldstatus:"양호", wccode:null);
-            dgvEquipedMoldList.DataSource = service.GetMoldList(wccode:GlobalUsage.WcCode);
+            dgvEquipMoldList.DataSource = service.GetMoldList(moldstatus: "양호", wccode: null);
+            dgvEquipedMoldList.DataSource = service.GetMoldList(wccode: GlobalUsage.WcCode);
         }
 
         private void btnEquip_Click(object sender, EventArgs e)
         {
             // 장착
-            MoldService service = new MoldService();
-            if(service.UpdateEquipMold(GlobalUsage.WcCode, dgvEquipMoldList.SelectedRows[0].Cells[0].Value.ToString()))
+            if (dgvEquipMoldList.SelectedRows.Count > 0)
             {
-                Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 금형({dgvEquipMoldList.SelectedRows[0].Cells[0].Value.ToString()})를 작업장({GlobalUsage.WcCode})에 장착하였음");
-                GetDatas();
-            }
-            else
-            {
-                Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 금형({dgvEquipMoldList.SelectedRows[0].Cells[0].Value.ToString()})를 작업장({GlobalUsage.WcCode})에 장착하려 하였으나 해당 코드가 테이블Mold_Master에 존재하지 않음");
-                MessageBox.Show("금형 장착에 실패하였습니다");
+                MoldService service = new MoldService();
+                if (service.UpdateEquipMold(GlobalUsage.WcCode, dgvEquipMoldList.SelectedRows[0].Cells[0].Value.ToString()))
+                {
+                    Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 금형({dgvEquipMoldList.SelectedRows[0].Cells[0].Value.ToString()})를 작업장({GlobalUsage.WcCode})에 장착하였음");
+                    GetDatas();
+                }
+                else
+                {
+                    Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 금형({dgvEquipMoldList.SelectedRows[0].Cells[0].Value.ToString()})를 작업장({GlobalUsage.WcCode})에 장착하려 하였으나 해당 코드가 테이블Mold_Master에 존재하지 않음");
+                    MessageBox.Show("금형 장착에 실패하였습니다");
+                }
             }
         }
 
         private void btnUnEquip_Click(object sender, EventArgs e)
         {
             // 탈착
-            MoldService service = new MoldService();
-            if (service.UpdateEquipMold(dgvEquipedMoldList.SelectedRows[0].Cells[0].Value.ToString()))
+            if (dgvEquipedMoldList.SelectedRows.Count > 0)
             {
-                Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 금형({dgvEquipMoldList.SelectedRows[0].Cells[0].Value.ToString()})를 작업장({GlobalUsage.WcCode})에 장착해제하였음");
-                GetDatas();
+                MoldService service = new MoldService();
+                if (service.UpdateEquipMold(dgvEquipedMoldList.SelectedRows[0].Cells[0].Value.ToString()))
+                {
+                    Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 금형({dgvEquipedMoldList.SelectedRows[0].Cells[0].Value.ToString()})를 작업장({GlobalUsage.WcCode})에 장착해제하였음");
+                    GetDatas();
+                }
+                else
+                {
+                    Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 금형({dgvEquipMoldList.SelectedRows[0].Cells[0].Value.ToString()})를 작업장({GlobalUsage.WcCode})에 장착해제하려 하였으나 해당 코드가 테이블Mold_Master에 존재하지 않음");
+                    MessageBox.Show("금형 장착에 실패하였습니다");
+                }
             }
-            else
-            {
-                Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 금형({dgvEquipMoldList.SelectedRows[0].Cells[0].Value.ToString()})를 작업장({GlobalUsage.WcCode})에 장착해제하려 하였으나 해당 코드가 테이블Mold_Master에 존재하지 않음");
-                MessageBox.Show("금형 장착에 실패하였습니다");
-            }
-}
+        }
     }
 }

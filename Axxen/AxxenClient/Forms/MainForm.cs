@@ -3,6 +3,7 @@ using Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Text;
@@ -52,10 +53,15 @@ namespace AxxenClient.Forms
             aComboBox1.ValueMember = "value2";
 
             // 초반 값 
-            GlobalUsage.WorkType = WorkType.Boxing;
-            GlobalUsage.UserID = "master";
-            GlobalUsage.UserName = "Master";
-            GlobalUsage.WcCode = "WC20001";
+            GlobalUsage.WcCode = ConfigurationManager.AppSettings["WcCode"];
+
+            WorkCenter_MasterService service = new WorkCenter_MasterService();
+            WorkCenter_Master2VO item = service.GetAll_WorkCenter_Master(GlobalUsage.WcCode);
+
+            GlobalUsage.WcName = item.Wc_Name;
+            GlobalUsage.WorkType = WorkType.Molding;
+            GlobalUsage.ProcessCode = item.Process_Code;
+            GlobalUsage.ProcessName = item.Process_name;
 
             POP_PRD_001 childfrm = new POP_PRD_001();
             childfrm.WindowState = FormWindowState.Maximized;
@@ -65,11 +71,6 @@ namespace AxxenClient.Forms
             // 공지를 위한 라벨 로케이션
             childfrm.NoticeLocation = originalx = pronouncex = childfrm.GetPronounceX();
             timetimer.Start();
-
-            //foreach (Form item in this.MdiChildren)
-            //{
-            //    item.FormBorderStyle = FormBorderStyle.None;
-            //} 
         }
 
         private void aButton1_Click(object sender, EventArgs e)
@@ -80,8 +81,25 @@ namespace AxxenClient.Forms
                 item.Close();
             }   
 
+            WorkType work = (WorkType)aComboBox1.SelectedValue;
             // 일 설정
-            GlobalUsage.WorkType = (WorkType)aComboBox1.SelectedValue;
+            GlobalUsage.WorkType = work;
+
+            // 작업장 설정
+           switch (work)
+            {
+                case WorkType.Molding:
+                    GlobalUsage.WcCode = "WC20001";
+                    break;
+                case WorkType.Load:
+                    GlobalUsage.WcCode = "WC40001";
+                    break;
+                case WorkType.Boxing:
+                    GlobalUsage.WcCode = "WC50001";
+                    break;
+                default:
+                    break;
+            }
 
             // 폼 열기
             POP_PRD_001 childfrm = new POP_PRD_001();

@@ -39,7 +39,7 @@ namespace DAC
         /// <summary>
         /// 언로딩
         /// </summary>
-        public bool UpdateUnload(string username, string gvcode, string targetgvcode, string wccode, int qty)
+        public bool UpdateUnload(string workorderno, string username, string gvcode, string targetgvcode, string wccode, int qty)
         {
             using (SqlCommand comm = new SqlCommand())
             {
@@ -47,6 +47,7 @@ namespace DAC
                 comm.CommandText = @"UpdateUnloading"; 
 
                 comm.CommandType = CommandType.StoredProcedure;
+                comm.Parameters.AddWithValue("@workorderno", workorderno);
                 comm.Parameters.AddWithValue("@username", username);
                 comm.Parameters.AddWithValue("@gvcode", gvcode);
                 comm.Parameters.AddWithValue("@wccode", wccode);

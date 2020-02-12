@@ -73,12 +73,12 @@ namespace AxxenClient.Forms
         {
             InitControlUtil.SetPOPDGVDesign(dgvMain);
             InitControlUtil.AddNewColumnToDataGridView(dgvMain, "상태", "Wo_Status", true, 80, DataGridViewContentAlignment.MiddleCenter, false);
-            InitControlUtil.AddNewColumnToDataGridView(dgvMain, "작업지시번호", "Workorderno", true, 200, DataGridViewContentAlignment.MiddleLeft, false);
+            InitControlUtil.AddNewColumnToDataGridView(dgvMain, "작업지시번호", "Workorderno", true, 180, DataGridViewContentAlignment.MiddleLeft, false);
             InitControlUtil.AddNewColumnToDataGridView(dgvMain, "할당작업자", "User_ID", true, 130, DataGridViewContentAlignment.MiddleLeft, false);
             InitControlUtil.AddNewColumnToDataGridView(dgvMain, "품목코드", "Item_Code", true, 110, DataGridViewContentAlignment.MiddleLeft, false);
             InitControlUtil.AddNewColumnToDataGridView(dgvMain, "품목명", "Item_Name", true, 80, DataGridViewContentAlignment.MiddleLeft, true);
             InitControlUtil.AddNewColumnToDataGridView(dgvMain, "단위", "Prd_Unit", true, 70, DataGridViewContentAlignment.MiddleCenter, false);
-            InitControlUtil.AddNewColumnToDataGridView(dgvMain, "계획수량", "Prd_Qty", true, 110, DataGridViewContentAlignment.MiddleRight, false);
+            InitControlUtil.AddNewColumnToDataGridView(dgvMain, "계획수량", "Plan_Qty", true, 110, DataGridViewContentAlignment.MiddleRight, false);
             InitControlUtil.AddNewColumnToDataGridView(dgvMain, "실적수량", "Prd_Qty", true, 110, DataGridViewContentAlignment.MiddleRight, false);
             InitControlUtil.AddNewColumnToDataGridView(dgvMain, "생산시작시간", "Prd_Starttime", true, 200, DataGridViewContentAlignment.MiddleLeft, false);
             InitControlUtil.AddNewColumnToDataGridView(dgvMain, "생산종료시간", "Prd_Endtime", true, 200);
@@ -189,6 +189,7 @@ namespace AxxenClient.Forms
                 GlobalUsage.WorkOrderNo = row.Cells[1].Value.ToString();
                 GlobalUsage.WorkorderDate = Convert.ToDateTime(row.Cells[10].Value);
                 GlobalUsage.ItemName = row.Cells[4].Value.ToString();
+                GlobalUsage.ItemCode = row.Cells[3].Value.ToString();
                 GlobalUsage.Prd_Qty = 0;
                 GlobalUsage.Out_Qty = 0;
                 GlobalUsage.Prd_Unit = row.Cells[5].Value.ToString();
@@ -200,7 +201,7 @@ namespace AxxenClient.Forms
 
                 // 근무 정보 넣어주기
                 WorkHistory_Center_UserMasterService wservice = new WorkHistory_Center_UserMasterService();
-                wservice.InsertStartWork(dgvMain.SelectedRows[0].Cells[14].Value.ToString(), GlobalUsage.UserID);
+                wservice.InsertStartWork(dgvMain.SelectedRows[0].Cells[14].Value.ToString(), GlobalUsage.UserID, GlobalUsage.WcCode);
             }
             else
             {
@@ -254,13 +255,14 @@ namespace AxxenClient.Forms
 
                 // 근무 정보 넣어주기
                 WorkHistory_Center_UserMasterService wservice = new WorkHistory_Center_UserMasterService();
-                wservice.UpdateEndWork(GlobalUsage.ProcessCode, GlobalUsage.UserID);
+                wservice.UpdateEndWork(GlobalUsage.ProcessCode, GlobalUsage.UserID, GlobalUsage.WcCode);
 
                 //해당 프로그램의 전역에 설정해줌
                 Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 작업지시 {GlobalUsage.WorkOrderNo}를 종료함");
                 GlobalUsage.WorkOrderNo = "설정안됨";
                 GlobalUsage.WorkorderDate = null;
                 GlobalUsage.ItemName = "설정안됨";
+                GlobalUsage.ItemCode = null;
                 GlobalUsage.Prd_Qty = 0;
                 GlobalUsage.Out_Qty = 0;
                 GlobalUsage.Prd_Unit = "설정안됨";
@@ -302,7 +304,7 @@ namespace AxxenClient.Forms
             }
 
             WorkOrder_Service service = new WorkOrder_Service();
-            if (service.UpdateWorkOrderClose(GlobalUsage.UserID, dgvMain.SelectedRows[0].Cells[1].Value.ToString()))
+            if (service.UpdateWorkOrderClose(GlobalUsage.UserID, dgvMain.SelectedRows[0].Cells[1].Value.ToString(), GlobalUsage.WorkType== WorkType.Boxing))
             { // 성공
                 GetDatas();
             }
@@ -400,11 +402,11 @@ namespace AxxenClient.Forms
                             }
                             MoldVO mold = moldlist[0];
                             Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 작업({GlobalUsage.WorkOrderNo})의 성형기계로 금형({mold.Mold_Code})을 이용해 품목({workorder.Item_Code})을 생산함");
-                            machine0.MachineStartMold(GlobalUsage.WorkOrderNo, new Item_MoldPair(workorder.Item_Code, mold.Mold_Code, workorder.Line_Per_Qty));
+                            machine0.MachineStart(GlobalUsage.WorkOrderNo, new Item_MoldPair(workorder.Item_Code, mold.Mold_Code, workorder.Line_Per_Qty));
                             break;
                         case MachineType.Boxing: // 포장일경우
                             Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 작업({GlobalUsage.WorkOrderNo})의 포장기계로 품목({workorder.Item_Code})을 생산함");
-                            machine0.MachineStartBoxing(GlobalUsage.WorkOrderNo, workorder.Item_Code, workorder.Shot_Per_Qty);
+                            machine0.MachineStart(GlobalUsage.WorkOrderNo, workorder.Item_Code, workorder.Shot_Per_Qty);
                             break;
                     }
                 }

@@ -36,12 +36,25 @@ namespace Axxen
                     foreach (var item in gvhwi)
                     {
                         Label lab = new Label();
-                        lab.Text = $"대차명: {item.GV_Name}\n대차상태: {item.GV_Status}\n작업지시번호: {item.Workorderno}\n품목코드: {item.Item_Code}\n품목명: {item.Item_Name }\n로딩시간: {item.Loading_time}";
-                        lab.Margin = new Padding(10);
-                        lab.TextAlign = ContentAlignment.MiddleCenter;
-                        lab.BorderStyle = BorderStyle.FixedSingle;
-                        lab.Font = new System.Drawing.Font("맑은 고딕", 10.00F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-                        lab.AutoSize = true;
+                        if (item.Loading_time.ToShortDateString() == "0001-01-01")
+                        {
+                            lab.Text = $"대차명: {item.GV_Name}\n대차상태: {item.GV_Status}\n작업지시번호: {item.Workorderno}\n품목코드: {item.Item_Code}\n품목명: {item.Item_Name }\n로딩시간: 로딩전";
+                            lab.Margin = new Padding(10);
+                            lab.TextAlign = ContentAlignment.MiddleCenter;
+                            lab.BorderStyle = BorderStyle.FixedSingle;
+                            lab.Font = new System.Drawing.Font("맑은 고딕", 10.00F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+                            lab.AutoSize = true;
+                        }
+                        else
+                        {
+                            lab.Text = $"대차명: {item.GV_Name}\n대차상태: {item.GV_Status}\n작업지시번호: {item.Workorderno}\n품목코드: {item.Item_Code}\n품목명: {item.Item_Name }\n로딩시간: {item.Loading_time}";
+                            lab.Margin = new Padding(10);
+                            lab.TextAlign = ContentAlignment.MiddleCenter;
+                            lab.BorderStyle = BorderStyle.FixedSingle;
+                            lab.Font = new System.Drawing.Font("맑은 고딕", 10.00F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+                            lab.AutoSize = true;
+                        }
+                       
 
                         this.flowLayoutPanel1.Controls.Add(lab);
                     }
@@ -64,13 +77,26 @@ namespace Axxen
             foreach (var item in gvhwi)
             {
                 Label lab = new Label();
-                lab.Text = $"대차명: {item.GV_Name}\n대차상태: {item.GV_Status}\n작업지시번호: {item.Workorderno}\n품목코드: {item.Item_Code}\n품목명: {item.Item_Name }\n로딩시간: {item.Loading_time}";
-                lab.Margin = new Padding(10);
-                lab.TextAlign = ContentAlignment.MiddleCenter;
-                lab.BorderStyle = BorderStyle.FixedSingle;
-                lab.Font = new System.Drawing.Font("맑은 고딕", 10.00F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-                lab.AutoSize = true;
-                
+                if (item.Loading_time.ToShortDateString() == "0001-01-01")
+                {
+                    lab.Text = $"대차명: {item.GV_Name}\n대차상태: {item.GV_Status}\n작업지시번호: {item.Workorderno}\n품목코드: {item.Item_Code}\n품목명: {item.Item_Name }\n로딩시간: 로딩전";
+                    lab.Margin = new Padding(10);
+                    lab.TextAlign = ContentAlignment.MiddleCenter;
+                    lab.BorderStyle = BorderStyle.FixedSingle;
+                    lab.Font = new System.Drawing.Font("맑은 고딕", 10.00F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+                    lab.AutoSize = true;
+                }
+                else
+                {
+                    lab.Text = $"대차명: {item.GV_Name}\n대차상태: {item.GV_Status}\n작업지시번호: {item.Workorderno}\n품목코드: {item.Item_Code}\n품목명: {item.Item_Name }\n로딩시간: {item.Loading_time}";
+                    lab.Margin = new Padding(10);
+                    lab.TextAlign = ContentAlignment.MiddleCenter;
+                    lab.BorderStyle = BorderStyle.FixedSingle;
+                    lab.Font = new System.Drawing.Font("맑은 고딕", 10.00F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+                    lab.AutoSize = true;
+                }
+
+
                 this.flowLayoutPanel1.Controls.Add(lab);
             }
 

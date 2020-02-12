@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace VO
 {
     public class InspectMeasure_History_MasterVO
-    {
+    {   
         public string Workorderno { get; set; } //작업지시번호
         public DateTime Prd_Date { get; set; } //생산일
         public string Process_code { get; set; } //공정코드

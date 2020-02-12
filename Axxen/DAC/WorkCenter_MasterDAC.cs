@@ -36,6 +36,30 @@ where w.Process_Code = p.Process_Code and p.Use_YN='Y'";
                 return list;
             }
         }
+        /// <summary>
+        /// 작업장 검색
+        /// </summary>
+        /// <returns></returns>
+        public WorkCenter_Master2VO GetAll_WorkCenter_Master(string wccode)
+        {
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText =
+ @" select Wc_Code,Wc_Name,w.Process_Code,Process_name,Wo_Status,Last_Cnt_Time,Prd_Req_Type,Pallet_YN,Item_Code,Prd_Unit,Mold_Setup_YN,w.Use_YN,w.Remark
+from WorkCenter_Master w , Process_Master p
+where w.Process_Code = p.Process_Code and p.Use_YN='Y' and w.Wc_Code = @wccode AND w.Use_YN = 'Y'; ";
+                comm.CommandType = CommandType.Text;
+                comm.Parameters.AddWithValue("@wccode", wccode);    
+
+                comm.Connection.Open();
+                SqlDataReader reader = comm.ExecuteReader();
+                List<WorkCenter_Master2VO> list = Helper.DataReaderMapToList<WorkCenter_Master2VO>(reader);
+                comm.Connection.Close();
+
+                return list==null ? null: list[0];
+            }
+        }
 
         /// <summary>
         /// 작업장사용유무
@@ -164,7 +188,7 @@ where w.Process_Code = p.Process_Code and p.Use_YN='Y'";
       ,[Wo_Ini_Char]
       ,[Use_YN]
       ,[Remark]
-        FROM[dbo].[WorkCenter_Master]; ";
+        FROM[dbo].[WorkCenter_Master]  WHERE Use_YN = 'Y'; ";
                 comm.CommandType = CommandType.Text;
 
                 comm.Connection.Open();

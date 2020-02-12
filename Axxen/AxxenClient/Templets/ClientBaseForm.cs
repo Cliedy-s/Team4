@@ -71,10 +71,5 @@ namespace AxxenClient.Templets
                 }
             }
         }
-
-        private void btnMachineRun_Click(object sender, EventArgs e)
-        {
-            // TODO - 파일 만들기
-        }
     }
 }
