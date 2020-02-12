@@ -96,7 +96,7 @@
             this.tsbtnPrint.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnPrint.Image")));
             this.tsbtnPrint.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.tsbtnPrint.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            //this.tsbtnPrint.Image.TransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnPrint.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtnPrint.Name = "tsbtnPrint";
             this.tsbtnPrint.Size = new System.Drawing.Size(50, 57);
             this.tsbtnPrint.Text = "출력";
