@@ -19,47 +19,7 @@ namespace DAC
             using (SqlCommand comm = new SqlCommand())
             {
                 comm.Connection = new SqlConnection(Connstr);
-                comm.CommandText =
- @"InsertWorkerAllocate";
-				/*
-INSERT INTO Emp_Allocation_History(
-	User_ID
-	, Allocation_date
-	, Allocation_datetime
-	, Release_datetime
-	, Ins_Date
-	, Ins_Emp
-	, Up_Date
-	, Up_Emp)
-	VALUES(
-	@User_ID
-	, getdate()
-	, getdate()
-	, null
-	, getdate()
-	, @Ins_Emp
-	, getdate()
-	,@Up_Emp);
-INSERT INTO Emp_Wc_Allocation (
-	Wc_Code
-	, User_ID
-	, Allocation_datetime
-	, Release_datetime
-	, Ins_Date
-	, Ins_Emp
-	, Up_Date
-	, Up_Emp
-	)	
-	VALUES(
-	@Wc_Code
-	, @User_ID
-	, getdate()
-	, null
-	, getdate()
-	, @Ins_Emp
-	, getdate()
-	, @Up_Emp);
-                 */
+                comm.CommandText = @"InsertWorkerAllocate";
 				comm.CommandType = CommandType.StoredProcedure;
                 comm.Parameters.AddWithValue("@User_ID", targetUserId);
                 comm.Parameters.AddWithValue("@Wc_Code", wcCode);

@@ -26,12 +26,6 @@ namespace Axxen
             InitializeComponent();
         }
 
-        private void PRM_RPT_002_Load(object sender, EventArgs e)
-        {
-           
-            
-        }
-
         private void ADateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             documentViewer1.DocumentSource = null;
@@ -68,7 +62,10 @@ namespace Axxen
             dt = ListToDataTable.ToDataTable(figurationList);
             dt.TableName = "datFiguration";
             dsFiguration ds = new dsFiguration();
+            //ds.Tables.Clear();
             ds.Tables.Add(dt);
+            //ds.Tables[0].TableName = "datFiguration";
+            //ds.AcceptChanges();
             rpt.DataSource = ds.Tables["datFiguration"];
             rpt.Parameters["Ins_Date"].Value = dtpDate.Value.ToString("yyyy-MM-dd");
             rpt.Parameters["Ins_Date"].Visible = false; //파라미터 바로 넘기기

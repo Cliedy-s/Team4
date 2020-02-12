@@ -230,13 +230,6 @@ namespace Axxen
             }
         }
 
-        private void PPS_SCH_001_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow);
-            ((MainForm)this.MdiParent).InsertFormEvent -= new System.EventHandler(this.InsertFormShow);
-            ToolStripManager.RevertMerge(toolStrip1, ((MainForm)this.MdiParent).toolStrip1); //저장버튼 삭제
-        }
-
         private void ADateTimePickerSearch1_btnDateTimeSearch_Click(object sender, EventArgs args)
         {
             DateTime startT = aDateTimePickerSearch1.ADateTimePickerValue1;

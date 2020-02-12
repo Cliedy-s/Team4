@@ -27,8 +27,6 @@ namespace Axxen
 
         private void PRM_RPT_004_Load(object sender, EventArgs e)
         {
-            Goods_In_HistorySercive sercive = new Goods_In_HistorySercive();
-            boxlist = sercive.GetBoxingHistory();
         }
 
         private void ADateTimePicker1_ValueChanged(object sender, EventArgs e)
