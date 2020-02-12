@@ -33,7 +33,6 @@
             this.aLabel7 = new Axxen.CustomControls.ALabel();
             this.aPanel31 = new Axxen.CustomControls.APanel();
             this.aLabel16 = new Axxen.CustomControls.ALabel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.aPanel29 = new Axxen.CustomControls.APanel();
             this.txtwork = new Axxen.CustomControls.ATextBox();
             this.aLabel9 = new Axxen.CustomControls.ALabel();
@@ -58,8 +57,8 @@
             this.aPanel12 = new Axxen.CustomControls.APanel();
             this.lblManager = new Axxen.CustomControls.ALabel();
             this.aLabel5 = new Axxen.CustomControls.ALabel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.aPanel31.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.aPanel29.SuspendLayout();
             this.aPanel8.SuspendLayout();
             this.aPanel17.SuspendLayout();
@@ -72,6 +71,7 @@
             this.aPanel9.SuspendLayout();
             this.aPanel1.SuspendLayout();
             this.aPanel12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // aLabel6
@@ -116,15 +116,6 @@
             this.aLabel16.TabIndex = 82;
             this.aLabel16.Text = "작업지시번호";
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(18, 9);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(23, 22);
-            this.pictureBox2.TabIndex = 16;
-            this.pictureBox2.TabStop = false;
-            // 
             // aPanel29
             // 
             this.aPanel29.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -153,9 +144,9 @@
             this.aLabel9.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.aLabel9.Location = new System.Drawing.Point(49, 9);
             this.aLabel9.Name = "aLabel9";
-            this.aLabel9.Size = new System.Drawing.Size(112, 21);
+            this.aLabel9.Size = new System.Drawing.Size(144, 21);
             this.aLabel9.TabIndex = 35;
-            this.aLabel9.Text = "측정회차 추가";
+            this.aLabel9.Text = "공정검사 측정추가";
             // 
             // aLabel4
             // 
@@ -384,6 +375,15 @@
             this.aLabel5.TabIndex = 200;
             this.aLabel5.Text = "담당자";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(18, 9);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(23, 22);
+            this.pictureBox2.TabIndex = 16;
+            this.pictureBox2.TabStop = false;
+            // 
             // QAM_SQC_002_1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -403,11 +403,10 @@
             this.Controls.Add(this.aPanel1);
             this.Controls.Add(this.aPanel12);
             this.Name = "QAM_SQC_002_1";
-            this.Text = "측정회차추가";
+            this.Text = "공정검사 측정추가";
             this.Load += new System.EventHandler(this.QAM_SQC_002_1_Load);
             this.aPanel31.ResumeLayout(false);
             this.aPanel31.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.aPanel29.ResumeLayout(false);
             this.aPanel29.PerformLayout();
             this.aPanel8.ResumeLayout(false);
@@ -429,6 +428,7 @@
             this.aPanel1.PerformLayout();
             this.aPanel12.ResumeLayout(false);
             this.aPanel12.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

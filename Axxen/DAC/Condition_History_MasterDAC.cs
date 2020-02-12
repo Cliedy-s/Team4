@@ -18,7 +18,7 @@ namespace DAC
             using (SqlCommand comm = new SqlCommand())
             {
                 comm.Connection = new SqlConnection(Connstr);
-                comm.CommandText = @"select cmh.Workorderno,Prd_Date ,pm.Process_code, Process_name,  Wc_Name , cmh.Item_Code , Item_Name ,cmh.Condition_Code
+                comm.CommandText = @"select Condition_measure_seq,cmh.Workorderno,Prd_Date ,pm.Process_code, Process_name, cmh.Wc_Code ,Wc_Name , cmh.Item_Code , Item_Name ,cmh.Condition_Code
                                    from Condition_Measure_History cmh INNER JOIN Condition_Spec_Master csm ON cmh.Condition_Code = csm.Condition_Code
 								   INNER JOIN WorkOrder wo ON cmh.Workorderno = wo.Workorderno
 								   INNER JOIN WorkCenter_Master wcm ON wo.Wc_Code = wcm.Wc_Code
@@ -40,7 +40,7 @@ namespace DAC
             using (SqlCommand comm = new SqlCommand())
             {
                 comm.Connection = new SqlConnection(Connstr);
-                comm.CommandText = @"select DISTINCT Condition_Name, SL 
+                comm.CommandText = @"select DISTINCT Condition_measure_seq,Condition_Name, SL 
                                    from Condition_Measure_History cmh INNER JOIN Condition_Spec_Master csm ON cmh.Condition_Code = csm.Condition_Code
 								   INNER JOIN WorkOrder wo ON cmh.Workorderno = wo.Workorderno
 								   INNER JOIN WorkCenter_Master wcm ON wo.Wc_Code = wcm.Wc_Code
@@ -116,7 +116,7 @@ namespace DAC
                             SET @QRY = ''
                             SET @QRY = @QRY + '
                               SELECT *
-                            FROM (select Condition_Datetime , cmh.Item_code, Item_Name, Condition_Val,ROW_NUMBER() over (order by Condition_Date ASC) NumCheck, CONVERT(VARCHAR,Condition_Date,23) Condition_Date
+                            FROM (select Condition_measure_seq,Condition_Datetime , cmh.Item_code, Item_Name, Condition_Val,ROW_NUMBER() over (order by Condition_Date ASC) NumCheck, CONVERT(VARCHAR,Condition_Date,23) Condition_Date
                                    from Condition_Measure_History cmh INNER JOIN Condition_Spec_Master csm ON cmh.Condition_Code = csm.Condition_Code
 								   INNER JOIN WorkOrder wo ON cmh.Workorderno = wo.Workorderno
 								   INNER JOIN WorkCenter_Master wcm ON wo.Wc_Code = wcm.Wc_Code
@@ -147,7 +147,7 @@ namespace DAC
             using (SqlCommand comm = new SqlCommand())
             {
                 comm.Connection = new SqlConnection(Connstr);
-                comm.CommandText = @"select cmh.Workorderno,Prd_Date ,pm.Process_code, Process_name,  Wc_Name , cmh.Item_Code , Item_Name ,cmh.Condition_Code
+                comm.CommandText = @"select Condition_measure_seq,cmh.Workorderno,Prd_Date ,pm.Process_code, Process_name,  Wc_Name , cmh.Item_Code , Item_Name ,cmh.Condition_Code
                                    from Condition_Measure_History cmh INNER JOIN Condition_Spec_Master csm ON cmh.Condition_Code = csm.Condition_Code
 								   INNER JOIN WorkOrder wo ON cmh.Workorderno = wo.Workorderno
 								   INNER JOIN WorkCenter_Master wcm ON wo.Wc_Code = wcm.Wc_Code

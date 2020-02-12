@@ -100,8 +100,7 @@ namespace Axxen
                             else
                                 MessageBox.Show("삭제에 실패하였습니다.", "삭제오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
-                    }
-                    lblnum.Text = "";
+                    }                   
                 }
             }
             catch (Exception err)
@@ -127,10 +126,18 @@ namespace Axxen
                     {
                         lhm1 = lhmservice.GetMainInspectMeasure_History_Master(); //추가
                         dgvMainGrid.DataSource = lhm1;
+                        lblnum.Text = "";
                     }
                     dgvSubGrid.DataSource = null;
                     dgvSubSubGrid.DataSource = null;
-                    lblnum.Text = "";
+                    if (dgvSubSubGrid.Columns.Count == 0)
+                    {
+                        DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubSubGrid, "측정순번", "Inspect_measure_seq", true, 100, default, false);
+                        DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubSubGrid, "측정일시", "Inspect_datetime", true, 150, default, false);
+                        DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubSubGrid, "품목코드", "Item_code", true, 100, default, false);
+                        DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubSubGrid, "품목명", "Item_Name", true, 150, default, false);
+                        DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubSubGrid, "측정일자", "Inspect_date", true, 100, default, false);
+                    }
                 }
             }
             catch (Exception err)
@@ -313,6 +320,14 @@ namespace Axxen
             }
             dgvSubGrid.DataSource = null;
             dgvSubSubGrid.DataSource = null;
+            if (dgvSubSubGrid.Columns.Count == 0)
+            {
+                DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubSubGrid, "측정순번", "Inspect_measure_seq", true, 100, default, false);
+                DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubSubGrid, "측정일시", "Inspect_datetime", true, 150, default, false);
+                DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubSubGrid, "품목코드", "Item_code", true, 100, default, false);
+                DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubSubGrid, "품목명", "Item_Name", true, 150, default, false);
+                DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubSubGrid, "측정일자", "Inspect_date", true, 100, default, false);
+            }
             lblnum.Text = "";
         }
 
@@ -336,6 +351,14 @@ namespace Axxen
 
                         dgvSubGrid.DataSource = null;
                         dgvSubSubGrid.DataSource = null;
+                        if (dgvSubSubGrid.Columns.Count == 0)
+                        {
+                            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubSubGrid, "측정순번", "Inspect_measure_seq", true, 100, default, false);
+                            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubSubGrid, "측정일시", "Inspect_datetime", true, 150, default, false);
+                            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubSubGrid, "품목코드", "Item_code", true, 100, default, false);
+                            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubSubGrid, "품목명", "Item_Name", true, 150, default, false);
+                            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubSubGrid, "측정일자", "Inspect_date", true, 100, default, false);
+                        }
                     }
                     else
                         MessageBox.Show("삭제에 실패하였습니다.", "삭제오류", MessageBoxButtons.OK, MessageBoxIcon.Error);

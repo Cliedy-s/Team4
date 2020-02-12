@@ -10,24 +10,24 @@ using VO;
 
 namespace Axxen
 {
-    public partial class QAM_SQC_002_1 : Axxen.BaseForm
+    public partial class QAM_SQC_003_1 : Axxen.BaseForm
     {
-        Inspect_Measure_HistoryService ihService = new Inspect_Measure_HistoryService();
+        Condition_Measure_HistoryService cmhService = new Condition_Measure_HistoryService();
         public string Item_code { get; set; }
-        public string Process_code { get; set; }
-        public string Inspect_code { get; set; }
+        public string Wc_Code { get; set; }
+        public string Condition_Code { get; set; }
         public string Workorderno { get; set; }
-        public QAM_SQC_002_1()
+        public QAM_SQC_003_1()
         {
             InitializeComponent();
         }
 
-        private void QAM_SQC_002_1_Load(object sender, EventArgs e)
+        private void QAM_SQC_003_1_Load(object sender, EventArgs e)
         {
             lblManager.Text = UserInfo.User_Name;
             txtitem.Text = Item_code;
-            txtprocess.Text = Process_code;
-            txtinspect.Text = Inspect_code;
+            txtwccode.Text = Wc_Code;
+            txtCondition.Text = Condition_Code;
             txtwork.Text = Workorderno;
         }
 
@@ -35,14 +35,14 @@ namespace Axxen
         {
             if (MessageBox.Show("추가하시겠습니까?", "추가여부", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                InspectHistoryVO item = new InspectHistoryVO();
+                ConditionMeasureVO item = new ConditionMeasureVO();
                 item.Item_code = Item_code;
-                item.Process_code = Process_code;
-                item.Inspect_code = Inspect_code;
-                item.Inspect_val = nudusl.Value;
+                item.Wc_Code = Wc_Code;
+                item.Condition_Code = Condition_Code;
+                item.Condition_Val = nudusl.Value;
                 item.Workorderno = Workorderno;
 
-                bool IsSuccess = ihService.InsertInspect_Measure(item, lblManager.Text); //품질측정 추가 조회
+                bool IsSuccess = cmhService.InsertConditionMeasure(item, lblManager.Text); //품질측정 추가 조회
 
                 if (IsSuccess)
                 {
