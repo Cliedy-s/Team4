@@ -14,10 +14,10 @@ namespace Service
         /// PRM_RPT_004 포장작업일지
         /// </summary>
         /// <returns></returns>
-        public List<Goods_In_HistoryVO> GetBoxingHistory()
+        public List<Goods_In_HistoryVO> GetBoxingHistory(string date)
         {
             Goods_In_HistoryDAC dac = new Goods_In_HistoryDAC();
-            return dac.GetBoxingHistory();
+            return dac.GetBoxingHistory(date);
         }
 
         /// <summary>

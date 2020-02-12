@@ -238,7 +238,7 @@ namespace DAC
         /// </summary>
         /// <param name="insertitem"></param>
         /// <returns></returns>
-        public bool InsertStartWork(string processcode, string userid)
+        public bool InsertStartWork(string processcode, string userid, string wccode)
         {
             try
             {
@@ -250,6 +250,7 @@ namespace DAC
                     comm.CommandType = CommandType.StoredProcedure;
                     comm.Parameters.AddWithValue("@processcode", processcode);
                     comm.Parameters.AddWithValue("@userid", userid);
+                    comm.Parameters.AddWithValue("@wccode", wccode);
 
                     comm.Connection.Open();
                     int result = comm.ExecuteNonQuery();
@@ -269,7 +270,7 @@ namespace DAC
         /// </summary>
         /// <param name="insertitem"></param>
         /// <returns></returns>
-        public bool UpdateEndWork(string processcode, string userid)
+        public bool UpdateEndWork(string processcode, string userid, string wccode)
         {
             try
             {
@@ -280,6 +281,7 @@ namespace DAC
    UPDATE [dbo].[Work_History]
    SET [Work_EndTime] = getdate()
       ,[Work_Time] = DATEDIFF(HOUR, [Work_StartTime], getdate())
+      ,Wc_Code = @wccode
       ,[Remark] = '근무종료'
       ,[Up_Date] = getdate()
       ,[Up_Emp] = @userid
@@ -291,6 +293,7 @@ namespace DAC
                     comm.CommandType = CommandType.Text;
                     comm.Parameters.AddWithValue("@userid", userid);
                     comm.Parameters.AddWithValue("@processcode", processcode);
+                    comm.Parameters.AddWithValue("@wccode", wccode);
 
                     comm.Connection.Open();
                     int result = comm.ExecuteNonQuery();

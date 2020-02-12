@@ -259,8 +259,9 @@ namespace DAC
   FROM [Pallet_Master] as pal
         LEFT OUTER JOIN  [WorkOrder] as wo ON pal.[WorkorderNo] = wo.[Workorderno]
         LEFT OUTER JOIN [Item_Master] as im ON im.[Item_Code] = wo.[Item_Code]
-		LEFT OUTER JOIN [BoxingGrade_Detail_Master] as bdm ON  bdm.[Use_YN] = 'Y' AND pal.Grade_Detail_Code = bdm.Boxing_Grade_Code
-  WHERE pal.[Use_YN] = 'Y'
+		LEFT OUTER JOIN [BoxingGrade_Detail_Master] as bdm ON  bdm.[Use_YN] = 'Y' AND pal.Grade_Detail_Code = bdm.Grade_Detail_Code
+		JOIN [dbo].[Goods_In_History] AS GIH ON GIH.Pallet_No = pal.Pallet_No 
+  WHERE pal.[Use_YN] = 'Y' AND In_YN = 'N'
     AND Barcode_PublishDate BETWEEN @fromdate AND @todate;  ";
                 comm.CommandType = CommandType.Text;
                 comm.Parameters.AddWithValue("@fromdate", fromdate.Date);
@@ -494,6 +495,7 @@ namespace DAC
            ,[Workorderno]
            ,[Barcode_No]
            ,[Grade_Detail_Code]
+           ,[Grade_Code]
            ,[Size_Code]
            ,[In_Qty]
            ,[CurrentQty]
@@ -503,6 +505,7 @@ namespace DAC
            ,@Workorderno
            ,@Barcode_No
            ,@Grade_Detail_Code
+           ,@Grade_Code
            ,@Size_Code
            ,@In_Qty
            ,@CurrentQty
@@ -513,6 +516,7 @@ namespace DAC
                 comm.Parameters.AddWithValue("@Workorderno", item.WorkOrderNo);
                 comm.Parameters.AddWithValue("@Barcode_No", item.Barcode_No);
                 comm.Parameters.AddWithValue("@Grade_Detail_Code", item.Grade_Detail_Code);
+                comm.Parameters.AddWithValue("@Grade_Code", item.Boxing_Grade_Code);
                 comm.Parameters.AddWithValue("@Size_Code", item.Size_Code);
                 comm.Parameters.AddWithValue("@In_Qty", item.In_Qty);
                 comm.Parameters.AddWithValue("@CurrentQty", item.CurrentQty);

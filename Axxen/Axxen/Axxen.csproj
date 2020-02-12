@@ -505,12 +505,6 @@
     <Compile Include="sangyoung\PRM_RPT_004.Designer.cs">
       <DependentUpon>PRM_RPT_004.cs</DependentUpon>
     </Compile>
-    <Compile Include="sangyoung\PRM_RPT_005.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="sangyoung\PRM_RPT_005.Designer.cs">
-      <DependentUpon>PRM_RPT_005.cs</DependentUpon>
-    </Compile>
     <Compile Include="sangyoung\ProductionRequest.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -795,9 +789,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="sangyoung\PRM_RPT_004.resx">
       <DependentUpon>PRM_RPT_004.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="sangyoung\PRM_RPT_005.resx">
-      <DependentUpon>PRM_RPT_005.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="sangyoung\ProductionRequest.resx">
       <DependentUpon>ProductionRequest.cs</DependentUpon>
