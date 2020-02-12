@@ -55,7 +55,7 @@ namespace DAC
             using (SqlConnection conn = new SqlConnection(Connstr))
             {
                 conn.Open();
-                string sql = $"select eahd.Workorderno,wcm.Wc_Code,Wc_Name,im.Item_Code,Item_Name,eahd.Prd_Starttime,eahd.Prd_Endtime,eahd.Prd_Qty,User_Name " +
+                string sql = $"select DISTINCT eahd.Workorderno,wcm.Wc_Code,Wc_Name,im.Item_Code,Item_Name,eahd.Prd_Starttime,eahd.Prd_Endtime,eahd.Prd_Qty,User_Name " +
                     $"from Work_History wh " +
                     $"INNER JOIN Emp_Allocation_History_Detail eahd ON wh.User_ID = eahd.User_ID " +
                     $"INNER JOIN WorkOrder wo ON eahd.Workorderno = wo.Workorderno " +

@@ -50,7 +50,14 @@ namespace Axxen
 
         private void DgvMainGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e) //그리드뷰 더블클릭 이벤트
         {
-            UPDATE_Prd_Qtys();
+            if (dgvMainGrid.SelectedRows[0].Cells[2].Value.ToString() == "현장마감")
+            {
+                
+            }
+            else
+            {
+                UPDATE_Prd_Qtys();
+            }
         }
         public void MyUpdateShow(object sender, EventArgs e) //생산 수량 수정
         {
@@ -58,7 +65,14 @@ namespace Axxen
             {
                 if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
                 {
-                    UPDATE_Prd_Qtys();
+                    if (dgvMainGrid.SelectedRows[0].Cells[2].Value.ToString() == "현장마감")
+                    {
+
+                    }
+                    else
+                    {
+                        UPDATE_Prd_Qtys();
+                    }
                 }
             }
             catch (Exception err)
