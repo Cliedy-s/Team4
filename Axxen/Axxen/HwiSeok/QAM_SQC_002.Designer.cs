@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.aLabel1 = new Axxen.CustomControls.ALabel();
-            this.aButton1 = new Axxen.CustomControls.AButton();
-            this.aButton2 = new Axxen.CustomControls.AButton();
+            this.btnadd = new Axxen.CustomControls.AButton();
+            this.btndelete = new Axxen.CustomControls.AButton();
             this.aTextBox_FindNameByCode1 = new Axxen.CustomControls.ATextBox_FindNameByCode();
             this.aTextBox_FindNameByCode2 = new Axxen.CustomControls.ATextBox_FindNameByCode();
             this.aDateTimePickerSearch1 = new Axxen.CustomControls.ADateTimePickerSearch();
+            this.lblnum = new Axxen.CustomControls.ALabel();
             ((System.ComponentModel.ISupportInitialize)(this.aSplitContainer1)).BeginInit();
             this.aSplitContainer1.Panel1.SuspendLayout();
             this.aSplitContainer1.Panel2.SuspendLayout();
@@ -61,13 +62,15 @@
             // 
             // aGroupBox2
             // 
-            this.aGroupBox2.Controls.Add(this.aButton2);
-            this.aGroupBox2.Controls.Add(this.aButton1);
+            this.aGroupBox2.Controls.Add(this.lblnum);
+            this.aGroupBox2.Controls.Add(this.btndelete);
+            this.aGroupBox2.Controls.Add(this.btnadd);
             this.aGroupBox2.Location = new System.Drawing.Point(206, 0);
             this.aGroupBox2.Size = new System.Drawing.Size(653, 561);
             this.aGroupBox2.Text = "측정값";
-            this.aGroupBox2.Controls.SetChildIndex(this.aButton1, 0);
-            this.aGroupBox2.Controls.SetChildIndex(this.aButton2, 0);
+            this.aGroupBox2.Controls.SetChildIndex(this.btnadd, 0);
+            this.aGroupBox2.Controls.SetChildIndex(this.btndelete, 0);
+            this.aGroupBox2.Controls.SetChildIndex(this.lblnum, 0);
             // 
             // aPanel2
             // 
@@ -85,27 +88,29 @@
             this.aLabel1.TabIndex = 22;
             this.aLabel1.Text = "생산일자";
             // 
-            // aButton1
+            // btnadd
             // 
-            this.aButton1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton1.Location = new System.Drawing.Point(6, 23);
-            this.aButton1.Name = "aButton1";
-            this.aButton1.Size = new System.Drawing.Size(115, 23);
-            this.aButton1.TabIndex = 1;
-            this.aButton1.Text = "측정회차 추가";
-            this.aButton1.UseVisualStyleBackColor = false;
+            this.btnadd.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnadd.Location = new System.Drawing.Point(6, 23);
+            this.btnadd.Name = "btnadd";
+            this.btnadd.Size = new System.Drawing.Size(115, 23);
+            this.btnadd.TabIndex = 1;
+            this.btnadd.Text = "측정회차 추가";
+            this.btnadd.UseVisualStyleBackColor = false;
+            this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
             // 
-            // aButton2
+            // btndelete
             // 
-            this.aButton2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.aButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton2.Location = new System.Drawing.Point(127, 23);
-            this.aButton2.Name = "aButton2";
-            this.aButton2.Size = new System.Drawing.Size(115, 23);
-            this.aButton2.TabIndex = 2;
-            this.aButton2.Text = "측정회차 삭제";
-            this.aButton2.UseVisualStyleBackColor = false;
+            this.btndelete.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btndelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btndelete.Location = new System.Drawing.Point(127, 23);
+            this.btndelete.Name = "btndelete";
+            this.btndelete.Size = new System.Drawing.Size(115, 23);
+            this.btndelete.TabIndex = 2;
+            this.btndelete.Text = "측정회차 삭제";
+            this.btndelete.UseVisualStyleBackColor = false;
+            this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
             // 
             // aTextBox_FindNameByCode1
             // 
@@ -139,8 +144,8 @@
             // 
             // aDateTimePickerSearch1
             // 
-            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 2, 3, 12, 10, 19, 631);
-            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 2, 10, 12, 10, 19, 631);
+            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 2, 5, 14, 16, 38, 453);
+            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 2, 12, 14, 16, 38, 453);
             this.aDateTimePickerSearch1.ButtonText = "조회";
             this.aDateTimePickerSearch1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aDateTimePickerSearch1.Location = new System.Drawing.Point(88, 23);
@@ -149,6 +154,16 @@
             this.aDateTimePickerSearch1.Size = new System.Drawing.Size(324, 32);
             this.aDateTimePickerSearch1.TabIndex = 28;
             this.aDateTimePickerSearch1.btnDateTimeSearch_Click += new Axxen.CustomControls.ADateTimePickerSearch.SearchButtonClick(this.aDateTimePickerSearch1_btnDateTimeSearch_Click);
+            // 
+            // lblnum
+            // 
+            this.lblnum.AutoSize = true;
+            this.lblnum.Location = new System.Drawing.Point(261, 27);
+            this.lblnum.Name = "lblnum";
+            this.lblnum.Size = new System.Drawing.Size(31, 15);
+            this.lblnum.TabIndex = 3;
+            this.lblnum.Text = "순번";
+            this.lblnum.Visible = false;
             // 
             // QAM_SQC_002
             // 
@@ -164,6 +179,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.aSplitContainer1)).EndInit();
             this.aSplitContainer1.ResumeLayout(false);
             this.aGroupBox2.ResumeLayout(false);
+            this.aGroupBox2.PerformLayout();
             this.aPanel2.ResumeLayout(false);
             this.aPanel2.PerformLayout();
             this.ResumeLayout(false);
@@ -172,11 +188,12 @@
 
         #endregion
 
-        private CustomControls.AButton aButton2;
-        private CustomControls.AButton aButton1;
+        private CustomControls.AButton btndelete;
+        private CustomControls.AButton btnadd;
         private CustomControls.ALabel aLabel1;
         private CustomControls.ATextBox_FindNameByCode aTextBox_FindNameByCode2;
         private CustomControls.ATextBox_FindNameByCode aTextBox_FindNameByCode1;
         private CustomControls.ADateTimePickerSearch aDateTimePickerSearch1;
+        private CustomControls.ALabel lblnum;
     }
 }

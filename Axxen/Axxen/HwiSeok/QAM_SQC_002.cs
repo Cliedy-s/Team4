@@ -17,6 +17,7 @@ namespace Axxen
         List<InspectMeasure_History_MasterVO> lhm1;
         List<InspectMeasure_History_MasterVO> lhm2;
         List<InspectMeasure_History_MasterVO> lhmList;
+        Inspect_Measure_HistoryService ihService;
         InspectMeasure_History_MasterService lhmservice = new InspectMeasure_History_MasterService();
         public QAM_SQC_002()
         {
@@ -48,8 +49,8 @@ namespace Axxen
             DatagridviewDesigns.SetDesign(dgvSubGrid);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "측정항목", "Inspect_name", true, 100, default, false);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "기준값", "SL", true, 100, default, false);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "순번", "Inspect_measure_seq", true, 100, default, false);
             #endregion
-
 
             #region 서브서브그리드뷰
             DatagridviewDesigns.SetDesign(dgvSubSubGrid);
@@ -66,6 +67,7 @@ namespace Axxen
 
         private void DgvMainGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e) //메인그리드뷰 더블클릭
         {
+            lblnum.Text = dgvSubGrid.SelectedRows[0].Cells[2].Value.ToString();
             lhm2 = lhmservice.GetSubInspectMeasure_History_Master(dgvMainGrid.SelectedRows[0].Cells[0].Value.ToString() , dgvMainGrid.SelectedRows[0].Cells[2].Value.ToString()
                 , dgvMainGrid.SelectedRows[0].Cells[5].Value.ToString(), dgvMainGrid.SelectedRows[0].Cells[7].Value.ToString()); //서브그리드뷰 조회
             dgvSubGrid.DataSource = lhm2;
@@ -199,6 +201,27 @@ namespace Axxen
         private void QAM_SQC_002_FormClosing(object sender, FormClosingEventArgs e)
         {
             ((MainForm)this.MdiParent).RefreshFormEvent -= new System.EventHandler(this.RefreshFormShow); // 새로고침
+        }
+
+        private void btnadd_Click(object sender, EventArgs e)
+        {
+            QAM_SQC_002_1 frm = new QAM_SQC_002_1();
+           
+                frm.Item_code = dgvMainGrid.SelectedRows[0].Cells[5].Value.ToString();
+                frm.Process_code = dgvMainGrid.SelectedRows[0].Cells[2].Value.ToString();
+                frm.Inspect_code = dgvMainGrid.SelectedRows[0].Cells[7].Value.ToString();
+                frm.Workorderno = dgvMainGrid.SelectedRows[0].Cells[0].Value.ToString();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                dt = lhmservice.GetSubSubInspectMeasure_History_Master(dgvMainGrid.SelectedRows[0].Cells[0].Value.ToString(), dgvMainGrid.SelectedRows[0].Cells[2].Value.ToString()
+                , dgvMainGrid.SelectedRows[0].Cells[5].Value.ToString(), dgvMainGrid.SelectedRows[0].Cells[7].Value.ToString()); //서브서브그리드뷰 조회
+                dgvSubSubGrid.DataSource = dt;
+            }            
+        }
+
+        private void btndelete_Click(object sender, EventArgs e)
+        {
+            ihService.DeleteInspect_MeasureBySeq(int.Parse(lblnum.Text));
         }
     }
 }
