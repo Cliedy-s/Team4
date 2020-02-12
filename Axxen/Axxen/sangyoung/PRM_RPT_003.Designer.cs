@@ -34,6 +34,7 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsbtnPrint = new System.Windows.Forms.ToolStripButton();
             this.documentViewer1 = new DevExpress.XtraPrinting.Preview.DocumentViewer();
+            this.btnSearch = new Axxen.CustomControls.AButton();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -45,6 +46,7 @@
             // 
             // aPanel1
             // 
+            this.aPanel1.Controls.Add(this.btnSearch);
             this.aPanel1.Controls.Add(this.dtpDate);
             this.aPanel1.Controls.Add(this.aLabel1);
             // 
@@ -106,6 +108,20 @@
             this.documentViewer1.Size = new System.Drawing.Size(1122, 555);
             this.documentViewer1.TabIndex = 0;
             // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.Transparent;
+            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.btnSearch.Image = global::Axxen.Properties.Resources.forsearch;
+            this.btnSearch.Location = new System.Drawing.Point(193, 18);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(38, 44);
+            this.btnSearch.TabIndex = 16;
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
+            // 
             // PRM_RPT_003
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -136,5 +152,6 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton tsbtnPrint;
         private DevExpress.XtraPrinting.Preview.DocumentViewer documentViewer1;
+        private CustomControls.AButton btnSearch;
     }
 }

@@ -877,10 +877,12 @@
     <Content Include="Content\PagedList.css" />
     <None Include="Image\MainBar.png" />
     <None Include="Image\MianLoGo.png" />
+    <None Include="Image\forsearch.png" />
     <Content Include="Image\newlogo.png" />
     <Content Include="Image\treeimg.png" />
     <None Include="Image\winch.png" />
     <Content Include="Image\x.png" />
+    <None Include="Resources\forsearch.png" />
     <Content Include="Team4Connect_DEV.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

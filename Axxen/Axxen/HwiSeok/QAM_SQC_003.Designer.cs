@@ -141,7 +141,7 @@
             // 
             this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 2, 4, 17, 43, 53, 906);
             this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 2, 11, 17, 43, 53, 906);
-            this.aDateTimePickerSearch1.ButtonText = "조회";
+            
             this.aDateTimePickerSearch1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aDateTimePickerSearch1.Location = new System.Drawing.Point(88, 23);
             this.aDateTimePickerSearch1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);

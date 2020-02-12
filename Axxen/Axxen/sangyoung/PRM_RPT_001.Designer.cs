@@ -28,12 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PRM_RPT_001));
             this.dtpDate = new Axxen.CustomControls.ADateTimePicker();
             this.aLabel1 = new Axxen.CustomControls.ALabel();
             this.documentViewer1 = new DevExpress.XtraPrinting.Preview.DocumentViewer();
-            this.aButton1 = new Axxen.CustomControls.AButton();
+            this.btnSearch = new Axxen.CustomControls.AButton();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tsbtnPrint = new System.Windows.Forms.ToolStripButton();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // aHeaderBox1
@@ -42,7 +46,8 @@
             // 
             // aPanel1
             // 
-            this.aPanel1.Controls.Add(this.aButton1);
+            this.aPanel1.Controls.Add(this.toolStrip1);
+            this.aPanel1.Controls.Add(this.btnSearch);
             this.aPanel1.Controls.Add(this.dtpDate);
             this.aPanel1.Controls.Add(this.aLabel1);
             // 
@@ -77,17 +82,47 @@
             this.documentViewer1.Size = new System.Drawing.Size(1122, 555);
             this.documentViewer1.TabIndex = 0;
             // 
-            // aButton1
+            // btnSearch
             // 
-            this.aButton1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton1.Location = new System.Drawing.Point(207, 28);
-            this.aButton1.Name = "aButton1";
-            this.aButton1.Size = new System.Drawing.Size(61, 23);
-            this.aButton1.TabIndex = 15;
-            this.aButton1.Text = "조회";
-            this.aButton1.UseVisualStyleBackColor = false;
-            this.aButton1.Click += new System.EventHandler(this.AButton1_Click);
+            this.btnSearch.BackColor = System.Drawing.Color.Transparent;
+            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.btnSearch.Image = global::Axxen.Properties.Resources.forsearch;
+            this.btnSearch.Location = new System.Drawing.Point(193, 18);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(37, 44);
+            this.btnSearch.TabIndex = 15;
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbtnPrint});
+            this.toolStrip1.Location = new System.Drawing.Point(1073, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(51, 74);
+            this.toolStrip1.TabIndex = 16;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // tsbtnPrint
+            // 
+            this.tsbtnPrint.AutoSize = false;
+            this.tsbtnPrint.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tsbtnPrint.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnPrint.Image")));
+            this.tsbtnPrint.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.tsbtnPrint.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbtnPrint.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnPrint.Name = "tsbtnPrint";
+            this.tsbtnPrint.Size = new System.Drawing.Size(50, 57);
+            this.tsbtnPrint.Text = "출력";
+            this.tsbtnPrint.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.tsbtnPrint.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            this.tsbtnPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbtnPrint.ToolTipText = "조회";
+            this.tsbtnPrint.Click += new System.EventHandler(this.TsbtnPrint_Click);
             // 
             // PRM_RPT_001
             // 
@@ -95,9 +130,13 @@
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.ControlBox = false;
             this.Name = "PRM_RPT_001";
+            this.Activated += new System.EventHandler(this.PRM_RPT_001_Activated);
+            this.Deactivate += new System.EventHandler(this.PRM_RPT_001_Deactivate);
             this.aPanel1.ResumeLayout(false);
             this.aPanel1.PerformLayout();
             this.aPanel2.ResumeLayout(false);
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -107,6 +146,8 @@
         private CustomControls.ADateTimePicker dtpDate;
         private CustomControls.ALabel aLabel1;
         private DevExpress.XtraPrinting.Preview.DocumentViewer documentViewer1;
-        private CustomControls.AButton aButton1;
+        private CustomControls.AButton btnSearch;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton tsbtnPrint;
     }
 }
