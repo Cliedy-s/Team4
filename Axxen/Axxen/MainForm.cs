@@ -832,17 +832,6 @@ namespace Axxen
         }
 
 
-        public enum KeyModifiers
-        {
-            Alt = 1,
-            Control = 2,
-            Shift = 4
-        }
-
-
-
-        const int WM_HOTKEY = 0x0312;
-        const int MOD_ALT1 = 0x0001;
         protected override void WndProc(ref Message message)
         {
             base.WndProc(ref message);

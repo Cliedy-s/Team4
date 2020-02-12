@@ -41,12 +41,18 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.cbbshortcutsub4 = new Axxen.CustomControls.AComboBox();
+            this.cbbshortcut4 = new Axxen.CustomControls.AComboBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.cbbshortcutsub3 = new Axxen.CustomControls.AComboBox();
+            this.cbbshortcut3 = new Axxen.CustomControls.AComboBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.cbbshortcutsub2 = new Axxen.CustomControls.AComboBox();
+            this.cbbshortcut2 = new Axxen.CustomControls.AComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -60,12 +66,6 @@
             this.panel10 = new System.Windows.Forms.Panel();
             this.label23 = new System.Windows.Forms.Label();
             this.btnclose = new Axxen.CustomControls.AButton();
-            this.cbbshortcut2 = new Axxen.CustomControls.AComboBox();
-            this.cbbshortcut3 = new Axxen.CustomControls.AComboBox();
-            this.cbbshortcut4 = new Axxen.CustomControls.AComboBox();
-            this.cbbshortcutsub2 = new Axxen.CustomControls.AComboBox();
-            this.cbbshortcutsub3 = new Axxen.CustomControls.AComboBox();
-            this.cbbshortcutsub4 = new Axxen.CustomControls.AComboBox();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -223,16 +223,63 @@
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.cbbshortcutsub4);
             this.panel5.Controls.Add(this.cbbshortcut4);
-            this.panel5.Location = new System.Drawing.Point(145, 201);
+            this.panel5.Location = new System.Drawing.Point(139, 193);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(455, 45);
             this.panel5.TabIndex = 57;
+            // 
+            // cbbshortcutsub4
+            // 
+            this.cbbshortcutsub4.FormattingEnabled = true;
+            this.cbbshortcutsub4.Items.AddRange(new object[] {
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G",
+            "H",
+            "I",
+            "J",
+            "K",
+            "L",
+            "M",
+            "N",
+            "O",
+            "P",
+            "Q",
+            "R",
+            "S",
+            "T",
+            "U",
+            "V",
+            "W",
+            "X",
+            "Y",
+            "Z"});
+            this.cbbshortcutsub4.Location = new System.Drawing.Point(91, 12);
+            this.cbbshortcutsub4.Name = "cbbshortcutsub4";
+            this.cbbshortcutsub4.Size = new System.Drawing.Size(80, 20);
+            this.cbbshortcutsub4.TabIndex = 8;
+            // 
+            // cbbshortcut4
+            // 
+            this.cbbshortcut4.FormattingEnabled = true;
+            this.cbbshortcut4.Items.AddRange(new object[] {
+            "Ctrl",
+            "Alt",
+            "Shift"});
+            this.cbbshortcut4.Location = new System.Drawing.Point(6, 12);
+            this.cbbshortcut4.Name = "cbbshortcut4";
+            this.cbbshortcut4.Size = new System.Drawing.Size(79, 20);
+            this.cbbshortcut4.TabIndex = 7;
             // 
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel6.Controls.Add(this.label4);
-            this.panel6.Location = new System.Drawing.Point(37, 201);
+            this.panel6.Location = new System.Drawing.Point(31, 193);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(109, 45);
             this.panel6.TabIndex = 56;
@@ -253,16 +300,63 @@
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel7.Controls.Add(this.cbbshortcutsub3);
             this.panel7.Controls.Add(this.cbbshortcut3);
-            this.panel7.Location = new System.Drawing.Point(145, 157);
+            this.panel7.Location = new System.Drawing.Point(139, 149);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(455, 45);
             this.panel7.TabIndex = 55;
+            // 
+            // cbbshortcutsub3
+            // 
+            this.cbbshortcutsub3.FormattingEnabled = true;
+            this.cbbshortcutsub3.Items.AddRange(new object[] {
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G",
+            "H",
+            "I",
+            "J",
+            "K",
+            "L",
+            "M",
+            "N",
+            "O",
+            "P",
+            "Q",
+            "R",
+            "S",
+            "T",
+            "U",
+            "V",
+            "W",
+            "X",
+            "Y",
+            "Z"});
+            this.cbbshortcutsub3.Location = new System.Drawing.Point(91, 11);
+            this.cbbshortcutsub3.Name = "cbbshortcutsub3";
+            this.cbbshortcutsub3.Size = new System.Drawing.Size(80, 20);
+            this.cbbshortcutsub3.TabIndex = 9;
+            // 
+            // cbbshortcut3
+            // 
+            this.cbbshortcut3.FormattingEnabled = true;
+            this.cbbshortcut3.Items.AddRange(new object[] {
+            "Ctrl",
+            "Alt",
+            "Shift"});
+            this.cbbshortcut3.Location = new System.Drawing.Point(6, 11);
+            this.cbbshortcut3.Name = "cbbshortcut3";
+            this.cbbshortcut3.Size = new System.Drawing.Size(79, 20);
+            this.cbbshortcut3.TabIndex = 8;
             // 
             // panel8
             // 
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel8.Controls.Add(this.label5);
-            this.panel8.Location = new System.Drawing.Point(37, 157);
+            this.panel8.Location = new System.Drawing.Point(31, 149);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(109, 45);
             this.panel8.TabIndex = 54;
@@ -283,16 +377,63 @@
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.cbbshortcutsub2);
             this.panel3.Controls.Add(this.cbbshortcut2);
-            this.panel3.Location = new System.Drawing.Point(145, 113);
+            this.panel3.Location = new System.Drawing.Point(139, 105);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(455, 45);
             this.panel3.TabIndex = 53;
+            // 
+            // cbbshortcutsub2
+            // 
+            this.cbbshortcutsub2.FormattingEnabled = true;
+            this.cbbshortcutsub2.Items.AddRange(new object[] {
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G",
+            "H",
+            "I",
+            "J",
+            "K",
+            "L",
+            "M",
+            "N",
+            "O",
+            "P",
+            "Q",
+            "R",
+            "S",
+            "T",
+            "U",
+            "V",
+            "W",
+            "X",
+            "Y",
+            "Z"});
+            this.cbbshortcutsub2.Location = new System.Drawing.Point(91, 12);
+            this.cbbshortcutsub2.Name = "cbbshortcutsub2";
+            this.cbbshortcutsub2.Size = new System.Drawing.Size(80, 20);
+            this.cbbshortcutsub2.TabIndex = 8;
+            // 
+            // cbbshortcut2
+            // 
+            this.cbbshortcut2.FormattingEnabled = true;
+            this.cbbshortcut2.Items.AddRange(new object[] {
+            "Ctrl",
+            "Alt",
+            "Shift"});
+            this.cbbshortcut2.Location = new System.Drawing.Point(6, 12);
+            this.cbbshortcut2.Name = "cbbshortcut2";
+            this.cbbshortcut2.Size = new System.Drawing.Size(79, 20);
+            this.cbbshortcut2.TabIndex = 7;
             // 
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.label3);
-            this.panel4.Location = new System.Drawing.Point(37, 113);
+            this.panel4.Location = new System.Drawing.Point(31, 105);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(109, 45);
             this.panel4.TabIndex = 52;
@@ -313,7 +454,7 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.cbbshortcutsub1);
             this.panel1.Controls.Add(this.cbbshortcut1);
-            this.panel1.Location = new System.Drawing.Point(145, 69);
+            this.panel1.Location = new System.Drawing.Point(139, 61);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(455, 45);
             this.panel1.TabIndex = 51;
@@ -369,7 +510,7 @@
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(37, 69);
+            this.panel2.Location = new System.Drawing.Point(31, 61);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(109, 45);
             this.panel2.TabIndex = 50;
@@ -389,7 +530,7 @@
             // 
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btnUpdate.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnUpdate.Location = new System.Drawing.Point(532, 294);
+            this.btnUpdate.Location = new System.Drawing.Point(526, 297);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(68, 23);
             this.btnUpdate.TabIndex = 49;
@@ -402,7 +543,7 @@
             // 
             this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel9.Controls.Add(this.cbbscreen);
-            this.panel9.Location = new System.Drawing.Point(145, 25);
+            this.panel9.Location = new System.Drawing.Point(139, 17);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(455, 45);
             this.panel9.TabIndex = 19;
@@ -419,7 +560,7 @@
             // 
             this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel10.Controls.Add(this.label23);
-            this.panel10.Location = new System.Drawing.Point(37, 25);
+            this.panel10.Location = new System.Drawing.Point(31, 17);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(109, 45);
             this.panel10.TabIndex = 18;
@@ -439,7 +580,7 @@
             // 
             this.btnclose.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnclose.Location = new System.Drawing.Point(558, 453);
+            this.btnclose.Location = new System.Drawing.Point(563, 463);
             this.btnclose.Name = "btnclose";
             this.btnclose.Size = new System.Drawing.Size(75, 23);
             this.btnclose.TabIndex = 51;
@@ -447,151 +588,10 @@
             this.btnclose.UseVisualStyleBackColor = false;
             this.btnclose.Click += new System.EventHandler(this.Btnclose_Click);
             // 
-            // cbbshortcut2
-            // 
-            this.cbbshortcut2.FormattingEnabled = true;
-            this.cbbshortcut2.Items.AddRange(new object[] {
-            "Ctrl",
-            "Alt",
-            "Shift"});
-            this.cbbshortcut2.Location = new System.Drawing.Point(6, 12);
-            this.cbbshortcut2.Name = "cbbshortcut2";
-            this.cbbshortcut2.Size = new System.Drawing.Size(79, 20);
-            this.cbbshortcut2.TabIndex = 7;
-            // 
-            // cbbshortcut3
-            // 
-            this.cbbshortcut3.FormattingEnabled = true;
-            this.cbbshortcut3.Items.AddRange(new object[] {
-            "Ctrl",
-            "Alt",
-            "Shift"});
-            this.cbbshortcut3.Location = new System.Drawing.Point(6, 11);
-            this.cbbshortcut3.Name = "cbbshortcut3";
-            this.cbbshortcut3.Size = new System.Drawing.Size(79, 20);
-            this.cbbshortcut3.TabIndex = 8;
-            // 
-            // cbbshortcut4
-            // 
-            this.cbbshortcut4.FormattingEnabled = true;
-            this.cbbshortcut4.Items.AddRange(new object[] {
-            "Ctrl",
-            "Alt",
-            "Shift"});
-            this.cbbshortcut4.Location = new System.Drawing.Point(6, 12);
-            this.cbbshortcut4.Name = "cbbshortcut4";
-            this.cbbshortcut4.Size = new System.Drawing.Size(79, 20);
-            this.cbbshortcut4.TabIndex = 7;
-            // 
-            // cbbshortcutsub2
-            // 
-            this.cbbshortcutsub2.FormattingEnabled = true;
-            this.cbbshortcutsub2.Items.AddRange(new object[] {
-            "A",
-            "B",
-            "C",
-            "D",
-            "E",
-            "F",
-            "G",
-            "H",
-            "I",
-            "J",
-            "K",
-            "L",
-            "M",
-            "N",
-            "O",
-            "P",
-            "Q",
-            "R",
-            "S",
-            "T",
-            "U",
-            "V",
-            "W",
-            "X",
-            "Y",
-            "Z"});
-            this.cbbshortcutsub2.Location = new System.Drawing.Point(91, 12);
-            this.cbbshortcutsub2.Name = "cbbshortcutsub2";
-            this.cbbshortcutsub2.Size = new System.Drawing.Size(80, 20);
-            this.cbbshortcutsub2.TabIndex = 8;
-            // 
-            // cbbshortcutsub3
-            // 
-            this.cbbshortcutsub3.FormattingEnabled = true;
-            this.cbbshortcutsub3.Items.AddRange(new object[] {
-            "A",
-            "B",
-            "C",
-            "D",
-            "E",
-            "F",
-            "G",
-            "H",
-            "I",
-            "J",
-            "K",
-            "L",
-            "M",
-            "N",
-            "O",
-            "P",
-            "Q",
-            "R",
-            "S",
-            "T",
-            "U",
-            "V",
-            "W",
-            "X",
-            "Y",
-            "Z"});
-            this.cbbshortcutsub3.Location = new System.Drawing.Point(91, 11);
-            this.cbbshortcutsub3.Name = "cbbshortcutsub3";
-            this.cbbshortcutsub3.Size = new System.Drawing.Size(80, 20);
-            this.cbbshortcutsub3.TabIndex = 9;
-            // 
-            // cbbshortcutsub4
-            // 
-            this.cbbshortcutsub4.FormattingEnabled = true;
-            this.cbbshortcutsub4.Items.AddRange(new object[] {
-            "A",
-            "B",
-            "C",
-            "D",
-            "E",
-            "F",
-            "G",
-            "H",
-            "I",
-            "J",
-            "K",
-            "L",
-            "M",
-            "N",
-            "O",
-            "P",
-            "Q",
-            "R",
-            "S",
-            "T",
-            "U",
-            "V",
-            "W",
-            "X",
-            "Y",
-            "Z"});
-            this.cbbshortcutsub4.Location = new System.Drawing.Point(91, 12);
-            this.cbbshortcutsub4.Name = "cbbshortcutsub4";
-            this.cbbshortcutsub4.Size = new System.Drawing.Size(80, 20);
-            this.cbbshortcutsub4.TabIndex = 8;
-            // 
             // UserSettingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.ClientSize = new System.Drawing.Size(644, 487);
+            this.ClientSize = new System.Drawing.Size(650, 497);
             this.ControlBox = false;
             this.Controls.Add(this.btnclose);
             this.Controls.Add(this.label1);
