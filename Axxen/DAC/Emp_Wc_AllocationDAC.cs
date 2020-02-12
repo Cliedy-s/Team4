@@ -59,10 +59,11 @@ FROM Emp_Wc_Allocation AS ewa
   CASE WHEN Release_datetime IS NOT NULL THEN NULL WHEN Release_datetime IS NULL THEN WCM2.Wc_Name END AS NOWWC,
   CASE WHEN Release_datetime IS NOT NULL THEN NULL WHEN Release_datetime IS NULL THEN WCM2.Wc_Code END AS NOWWCcode
   FROM Emp_Wc_Allocation AS EWA
-	JOIN User_Master AS UM ON UM.User_ID = EWA.User_ID
-	JOIN WorkCenter_Master AS WCM ON WCM.Process_Code = UM.Default_Process_Code
-	JOIN WorkCenter_Master AS WCM2 ON WCM2.Wc_Code = EWA.Wc_Code
-  WHERE WCM.Wc_Code = @wccode) as currentt WHERE (currentt.NOWWCcode != @wccode or currentt.NOWWCcode is null) ";
+	RIGHT OUTER JOIN User_Master AS UM ON UM.User_ID = EWA.User_ID
+	LEFT OUTER JOIN WorkCenter_Master AS WCM ON WCM.Process_Code = UM.Default_Process_Code
+	LEFT OUTER JOIN WorkCenter_Master AS WCM2 ON WCM2.Wc_Code = EWA.Wc_Code
+  WHERE WCM.Wc_Code = @wccode)
+  as currentt WHERE (currentt.NOWWCcode != @wccode or currentt.NOWWCcode is null) ";
                 comm.CommandType = CommandType.Text;
                 comm.Parameters.AddWithValue("@wccode", wccode);
 

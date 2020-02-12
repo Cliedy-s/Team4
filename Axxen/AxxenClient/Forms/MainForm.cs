@@ -59,7 +59,7 @@ namespace AxxenClient.Forms
             WorkCenter_Master2VO item = service.GetAll_WorkCenter_Master(GlobalUsage.WcCode);
 
             GlobalUsage.WcName = item.Wc_Name;
-            GlobalUsage.WorkType = WorkType.Boxing;
+            GlobalUsage.WorkType = WorkType.Molding;
             GlobalUsage.ProcessCode = item.Process_Code;
             GlobalUsage.ProcessName = item.Process_name;
 
@@ -81,8 +81,25 @@ namespace AxxenClient.Forms
                 item.Close();
             }   
 
+            WorkType work = (WorkType)aComboBox1.SelectedValue;
             // 일 설정
-            GlobalUsage.WorkType = (WorkType)aComboBox1.SelectedValue;
+            GlobalUsage.WorkType = work;
+
+            // 작업장 설정
+           switch (work)
+            {
+                case WorkType.Molding:
+                    GlobalUsage.WcCode = "WC20001";
+                    break;
+                case WorkType.Load:
+                    GlobalUsage.WcCode = "WC40001";
+                    break;
+                case WorkType.Boxing:
+                    GlobalUsage.WcCode = "WC50001";
+                    break;
+                default:
+                    break;
+            }
 
             // 폼 열기
             POP_PRD_001 childfrm = new POP_PRD_001();

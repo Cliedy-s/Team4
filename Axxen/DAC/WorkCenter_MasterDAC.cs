@@ -48,7 +48,7 @@ where w.Process_Code = p.Process_Code and p.Use_YN='Y'";
                 comm.CommandText =
  @" select Wc_Code,Wc_Name,w.Process_Code,Process_name,Wo_Status,Last_Cnt_Time,Prd_Req_Type,Pallet_YN,Item_Code,Prd_Unit,Mold_Setup_YN,w.Use_YN,w.Remark
 from WorkCenter_Master w , Process_Master p
-where w.Process_Code = p.Process_Code and p.Use_YN='Y' and w.Wc_Code = @wccode; ";
+where w.Process_Code = p.Process_Code and p.Use_YN='Y' and w.Wc_Code = @wccode AND w.Use_YN = 'Y'; ";
                 comm.CommandType = CommandType.Text;
                 comm.Parameters.AddWithValue("@wccode", wccode);    
 
@@ -188,7 +188,7 @@ where w.Process_Code = p.Process_Code and p.Use_YN='Y' and w.Wc_Code = @wccode; 
       ,[Wo_Ini_Char]
       ,[Use_YN]
       ,[Remark]
-        FROM[dbo].[WorkCenter_Master]; ";
+        FROM[dbo].[WorkCenter_Master]  WHERE Use_YN = 'Y'; ";
                 comm.CommandType = CommandType.Text;
 
                 comm.Connection.Open();

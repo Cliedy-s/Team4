@@ -59,18 +59,6 @@ namespace AxxenClient.Forms
             Inspect_Spec_MasterService sservice = new Inspect_Spec_MasterService();
             if (!(GlobalUsage.WorkOrderNo == "설정안됨"))
             {
-                //switch (GlobalUsage.WorkType) // TODO - 개발용 지우기
-                //{
-                //    case WorkType.Molding:
-                //        dgvInspect.DataSource = sservice.GetAllByWcCode("WC20001", GlobalUsage.ItemCode);
-                //        break;
-                //    case WorkType.Load:
-                //        dgvInspect.DataSource = sservice.GetAllByWcCode("WC40001", GlobalUsage.ItemCode);
-                //        break;
-                //    case WorkType.Boxing:
-                //        dgvInspect.DataSource = sservice.GetAllByWcCode("WC50001", GlobalUsage.ItemCode);
-                //        break;
-                //}
                 dgvInspect.DataSource = sservice.GetAllByWcCode(GlobalUsage.WcCode, GlobalUsage.ItemCode);
             }
             else

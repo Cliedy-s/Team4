@@ -32,10 +32,10 @@
             this.aPanel4 = new Axxen.CustomControls.APanel();
             this.txtPrintPallet = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
             this.txtSizeCode = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
-            this.txtBoxingGrade = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
             this.txtPalletNo = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
             this.btnPalletPrint = new Axxen.CustomControls.AButton();
             this.txtBoxingGradeDetail = new Axxen.CustomControls.ABigTextBox_Searchable();
+            this.txtBoxingGrade = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
             this.aPanel6 = new Axxen.CustomControls.APanel();
             this.txtUnit = new Axxen.CustomControls.ABigTextBox_Labeled();
             this.txtWcCode = new Axxen.CustomControls.ABigTextBox_Labeled();
@@ -117,21 +117,6 @@
             this.txtSizeCode.TextBoxText = "";
             this.txtSizeCode.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
-            // txtBoxingGrade
-            // 
-            this.txtBoxingGrade.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtBoxingGrade.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtBoxingGrade.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtBoxingGrade.LabelText = "등급";
-            this.txtBoxingGrade.Location = new System.Drawing.Point(39, 111);
-            this.txtBoxingGrade.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.txtBoxingGrade.Name = "txtBoxingGrade";
-            this.txtBoxingGrade.Size = new System.Drawing.Size(469, 42);
-            this.txtBoxingGrade.TabIndex = 32;
-            this.txtBoxingGrade.TextBoxText = "";
-            this.txtBoxingGrade.TextBoxType = Axxen.CustomControls.TextType.Normal;
-            this.txtBoxingGrade.Load += new System.EventHandler(this.txtBoxingGrade_Load);
-            // 
             // txtPalletNo
             // 
             this.txtPalletNo.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -175,6 +160,21 @@
             this.txtBoxingGradeDetail.TextBoxText = "";
             this.txtBoxingGradeDetail.TextBoxType = Axxen.CustomControls.TextType.Normal;
             this.txtBoxingGradeDetail.searchclick += new Axxen.CustomControls.ABigTextBox_Searchable.SearchClick(this.txtBoxingGradeDetail_searchclick);
+            // 
+            // txtBoxingGrade
+            // 
+            this.txtBoxingGrade.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtBoxingGrade.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtBoxingGrade.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtBoxingGrade.LabelText = "등급";
+            this.txtBoxingGrade.Location = new System.Drawing.Point(39, 111);
+            this.txtBoxingGrade.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtBoxingGrade.Name = "txtBoxingGrade";
+            this.txtBoxingGrade.Size = new System.Drawing.Size(469, 42);
+            this.txtBoxingGrade.TabIndex = 32;
+            this.txtBoxingGrade.TextBoxText = "";
+            this.txtBoxingGrade.TextBoxType = Axxen.CustomControls.TextType.Normal;
+            this.txtBoxingGrade.Load += new System.EventHandler(this.txtBoxingGrade_Load);
             // 
             // aPanel6
             // 

@@ -148,10 +148,10 @@ namespace Service
         /// 작업지시 마감
         /// </summary>
         /// <returns></returns>
-        public bool UpdateWorkOrderClose(string username, string workorderno)
+        public bool UpdateWorkOrderClose(string username, string workorderno, bool isBoxing)
         {
             WorkOrderDAC dac = new WorkOrderDAC();
-            return dac.UpdateWorkOrderClose( username,  workorderno);
+            return dac.UpdateWorkOrderClose( username,  workorderno, isBoxing);
         }
 
     }

@@ -37,7 +37,7 @@ namespace AxxenClient.Forms
             InitControlUtil.SetPOPDGVDesign(dgvPalletList);
             InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "팔레트번호", "Pallet_No", true, 100, DataGridViewContentAlignment.MiddleLeft, true);
             InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "제품", "Item_Name", true, 200);
-            InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "등급", "Boxing_Grade_Code", true, 200, DataGridViewContentAlignment.MiddleCenter);
+            InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "등급", "Grade_Detail_Name", true, 200, DataGridViewContentAlignment.MiddleCenter);
             InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "수량", "CurrentQty", true, 100, DataGridViewContentAlignment.MiddleRight);
             InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "등급상세", "Grade_Detail_Code", false);
             InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "사이즈", "Size_Code", false);
@@ -56,7 +56,7 @@ namespace AxxenClient.Forms
                 Random rand = new Random(now.Millisecond);
                 Pallet_MasterService service = new Pallet_MasterService();
                 if (!service.IsExistPallet(txtPalletNo.TextBoxText))
-                { // 팔레트가 존재하면
+                { // 팔레트가 존재하지않으면
                     // insert 시도
                     bool IsSuccess = service.InsertPallet(
                         new VO.PalletVO()
@@ -65,9 +65,9 @@ namespace AxxenClient.Forms
                             Barcode_No = DateTime.Now.Date.ToString("yyyyMMddHHmmssffffff"),
                             WorkOrderNo = GlobalUsage.WorkOrderNo,
                             CurrentQty = Convert.ToInt32(txtPrintPallet.TextBoxText),
-                            Grade_Detail_Code = txtBoxingGradeDetail.TextBoxText,
+                            Grade_Detail_Code = txtBoxingGradeDetail.CodeText,
                             Boxing_Grade_Code = txtBoxingGrade.TextBoxText,
-                            Size_Code = "3",
+                            Size_Code = txtSizeCode.TextBoxText,
                         });
                     if (IsSuccess)
                     { // 성공
@@ -83,7 +83,7 @@ namespace AxxenClient.Forms
                     }
                 }
                 else
-                { // 팔레트가 존재하지 않을 때
+                { // 팔레트가 존재하면
                     service.UpdatePallet(txtPalletNo.TextBoxText, Convert.ToInt32(txtPrintPallet.TextBoxText));
                     GetDatas();
                 }

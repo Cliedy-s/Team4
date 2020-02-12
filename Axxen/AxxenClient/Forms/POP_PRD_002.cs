@@ -28,7 +28,7 @@ namespace AxxenClient.Forms
         private void GetDatas()
         {
             Wo_ReqService service = new Wo_ReqService();
-            dgvWoReq.DataSource = service.GetAllWoReqUnit();
+            dgvWoReq.DataSource = service.GetAllWoReqUnit("5");
         }
         /// <summary>
         /// 컨트롤 설정
@@ -40,7 +40,7 @@ namespace AxxenClient.Forms
             InitControlUtil.AddNewColumnToDataGridView(dgvWoReq, "생산의뢰번호", "Wo_Req_No", true, 160, DataGridViewContentAlignment.MiddleLeft, false);
             InitControlUtil.AddNewColumnToDataGridView(dgvWoReq, "품목코드", "Item_Code", false, 100, DataGridViewContentAlignment.MiddleLeft, false);
             InitControlUtil.AddNewColumnToDataGridView(dgvWoReq, "품목명", "Item_Name", true, 200, DataGridViewContentAlignment.MiddleLeft, true);
-            InitControlUtil.AddNewColumnToDataGridView(dgvWoReq, "의뢰수량", "Req_Qty", true, 80, DataGridViewContentAlignment.MiddleRight, false);
+            InitControlUtil.AddNewColumnToDataGridView(dgvWoReq, "수량", "Req_Qty", true, 80, DataGridViewContentAlignment.MiddleRight, false);
             InitControlUtil.AddNewColumnToDataGridView(dgvWoReq, "날짜", "Prd_Plan_Date", true, 120, DataGridViewContentAlignment.MiddleLeft, false);
             InitControlUtil.AddNewColumnToDataGridView(dgvWoReq, "거래처", "Cust_Name", true, 100, DataGridViewContentAlignment.MiddleLeft, false);
             InitControlUtil.AddNewColumnToDataGridView(dgvWoReq, "상태", "Req_Status", true, 100, DataGridViewContentAlignment.MiddleCenter, false);
@@ -64,17 +64,16 @@ namespace AxxenClient.Forms
                         Req_Seq = Convert.ToInt32(lblReq_Seq.Text),
                         Wc_Code = txtWcSearch.CodeText,
                         Wo_Status = "생산대기",
-                        Wo_Order = "1",
+                        Wo_Order = "5",
                         Prd_Unit = lblItem_Unit.Text
                     });
                 if (IsSuccess)
                 {
-                    MessageBox.Show("성공적으로 생성하였습니다.", "작업지시생성");
                     Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 작업지시를 생성함");
                 }
                 else
                 {
-                    MessageBox.Show("생성에 실패하였습니다.", "작업지시생성");
+                    MessageBox.Show("생성실패", "작업지시생성");
                     Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 작업지시 생성에 실패함");
                 }
                 this.Close();
@@ -82,7 +81,7 @@ namespace AxxenClient.Forms
             catch(Exception ee)
             {
                 Program.Log.WriteFatal($"{GlobalUsage.UserName}이(가) 작업지시 생성에 실패함", ee);
-                MessageBox.Show("다시 입력해주세요");
+                MessageBox.Show("생성실패", "작업지시생성");
             }
 
         }// 작업지시생성버튼

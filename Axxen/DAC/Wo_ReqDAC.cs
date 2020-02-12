@@ -203,14 +203,19 @@ namespace DAC
         /// 생산의뢰 목록 가져오기
         /// </summary>
         /// <returns></returns>
-        public List<Wo_Req_ItemUnitVO> GetAllWoReqUnit() 
+        public List<Wo_Req_ItemUnitVO> GetAllWoReqUnit(string woorder) 
         {
             using (SqlCommand comm = new SqlCommand())
             {
                 comm.Connection = new SqlConnection(Connstr);
                 comm.CommandText =
- @"select [Wo_Req_No], [Req_Seq], i.[Item_Code],i.Item_Name, i.Item_Unit, [Req_Qty], [Prd_Plan_Date], [Cust_Name], [Project_Name], [Sale_Emp], [Req_Status], w.Ins_Date
-from Wo_Req w Inner join Item_Master i on w.Item_Code = i.Item_Code order by Req_Seq DESC; ";
+ @"select W.[Wo_Req_No], w.[Req_Seq], i.[Item_Code],i.Item_Name, i.Item_Unit, [Req_Qty], [Prd_Plan_Date], [Cust_Name], [Project_Name], [Sale_Emp], [Req_Status], w.Ins_Date
+from Wo_Req w 
+	Inner join Item_Master i on w.Item_Code = i.Item_Code 
+	WHERE Req_Seq not in (select distinct Req_Seq from workorder where Wo_Order ='5')
+	order by w.Req_Seq DESC; 
+";
+                comm.Parameters.AddWithValue("@woorder", woorder);
 
                 comm.Connection.Open();
                 SqlDataReader reader = comm.ExecuteReader();

@@ -369,6 +369,7 @@ namespace DAC
 		,wo.[Wc_Code] 
 		,wo.[Wo_Status] 
         ,wo.[Plan_Date]
+        ,wo.[Plan_Qty]
 		,(SELECT TOP(1) [User_ID] FROM [Emp_Allocation_History_Detail] ahd WHERE ahd.[Workorderno] = wo.[Workorderno] AND ahd.Prd_Endtime IS null ORDER BY Detail_Seq DESC ) AS [User_ID]
 		,im.[Item_Code] 
 		,im.[Item_Name] 
@@ -381,7 +382,7 @@ namespace DAC
 		,im.Line_Per_Qty 
         ,im.Shot_Per_Qty 
   FROM [WorkOrder] wo 
-    LEFT OUTER JOIN [WorkCenter_Master] as wcm ON wcm.[Wc_Code] = wo.[Wc_Code] 
+    LEFT OUTER JOIN [WorkCenter_Master] as wcm ON wcm.[Wc_Code] = wo.[Wc_Code] AND wcm.Use_YN = 'Y' 
     LEFT OUTER JOIN [Item_Master] as im ON im.[Item_Code] = wo.[Item_Code] 
    WHERE wo.[Wo_Status]  NOT IN ('현장마감','작업지시마감') AND wo.Wc_Code =@wocode; ";
                 comm.CommandType = CommandType.Text;
@@ -420,7 +421,9 @@ namespace DAC
            ,[Mat_LotNo]
            ,[Ins_Date]
            ,[Ins_Emp]
-           ,[Prd_Unit])
+           ,[Prd_Unit]
+           ,[Plan_Starttime]
+           ,[Plan_Endtime])
      VALUES
            ('WK' + format(getdate(),'yyMMddHHmmss')
            ,@Item_Code 
@@ -437,7 +440,13 @@ namespace DAC
            ,getdate()
            ,@Ins_Emp
            ,@Prd_Unit
-);  ";
+           ,getdate()
+           , dateadd(hour, 3, getdate())
+);
+       UPDATE Wo_Req
+        SET Req_Status = '진행중'
+        WHERE Wo_Req_No = @Wo_Req_No;
+";
 
                 comm.CommandType = CommandType.Text;
                 comm.Parameters.AddWithValue("@Item_Code", item.Item_Code);
@@ -460,7 +469,7 @@ namespace DAC
                     Log.WriteFatal($"{item.Ins_Emp}이(가) 작업지시를 생성하다 DB오류남");
                 }
 
-                return result > 0;
+                return result > 1;
             }
         }
         /// <summary>
@@ -518,24 +527,19 @@ namespace DAC
         /// 작업지시 현장 마감
         /// </summary>
         /// <returns></returns>
-        public bool UpdateWorkOrderClose(string userid, string workorderno)
+        public bool UpdateWorkOrderClose(string userid, string workorderno, bool isBoxing)
         {
             try
             {
                 using (SqlCommand comm = new SqlCommand())
                 {
                     comm.Connection = new SqlConnection(Connstr);
-                    comm.CommandText =
-     @"  UPDATE [dbo].[WorkOrder]
-   SET 
-      [Wo_Status] = '현장마감'
-      ,[Worker_CloseTime] = getdate()
-      ,[Up_Date] = getdate()
-      ,[Up_Emp] = @username
- WHERE [Workorderno] = @Workorderno ;
-";
+                    comm.CommandText =@"UpdateEndWorkOrder";
+
+                    comm.CommandType = CommandType.StoredProcedure;
                     comm.Parameters.AddWithValue("@username", userid);
                     comm.Parameters.AddWithValue("@workorderno", workorderno);
+                    comm.Parameters.AddWithValue("@isBoxing", isBoxing ? 1 : 0);
 
                     comm.Connection.Open();
                     int result = comm.ExecuteNonQuery();

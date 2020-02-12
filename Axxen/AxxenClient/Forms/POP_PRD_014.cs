@@ -102,20 +102,27 @@ namespace AxxenClient.Forms
 
         private void btnDeleteMeasure_Click(object sender, EventArgs e)
         {
-
-            if (dgvConditionMeasureList.SelectedRows.Count > 0)
+            if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
             {
-                Condition_Measure_HistoryService service = new Condition_Measure_HistoryService();
-                if (service.DeleteConditionMeasure(Convert.ToInt32(dgvConditionMeasureList.SelectedRows[0].Cells[3].Value)))
+                if (dgvConditionMeasureList.SelectedRows.Count > 0)
                 {
-                    Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 공정조건({lblConditionCode.Text})의 값({nudMeasure.Value})을 삭제에 성공함");
+                    Condition_Measure_HistoryService service = new Condition_Measure_HistoryService();
+                    if (service.DeleteConditionMeasure(Convert.ToInt32(dgvConditionMeasureList.SelectedRows[0].Cells[3].Value)))
+                    {
+                        Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 공정조건({lblConditionCode.Text})의 값({nudMeasure.Value})을 삭제에 성공함");
+                    }
+                    else
+                    {
+                        Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 공정조건({lblConditionCode.Text})의 값({nudMeasure.Value})을 삭제에 하려했으나 실패함");
+                        MessageBox.Show("삭제할 수 없는 항목입니다.");
+                    }
+                    SearchData();
                 }
-                else
-                {
-                    Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 공정조건({lblConditionCode.Text})의 값({nudMeasure.Value})을 삭제에 하려했으나 실패함");
-                    MessageBox.Show("삭제할 수 없는 항목입니다.");
-                }
-                SearchData();
+            }
+            else
+            {
+                Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 작업시작을 하지않고 공정조건에 값을 등록 하려하였음");
+                MessageBox.Show("작업을 시작해주세요");
             }
         }
 
