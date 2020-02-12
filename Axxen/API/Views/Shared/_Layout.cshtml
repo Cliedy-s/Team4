@@ -26,15 +26,12 @@
         <!-- Main Header -->
         <header class="main-header">
 
-
-
-
             <!-- Logo -->
             <a href="index2.html" class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
                 <span class="logo-mini"><b>A</b>LT</span>
                 <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg"><b>Admin</b>LTE</span>
+                <span class="logo-lg"><b>SPOK</b></span>
             </a>
 
             <!-- Header Navbar -->
@@ -90,10 +87,7 @@
                         <!-- Tasks Menu -->
                         <li class="dropdown tasks-menu">
                             <!-- Menu Toggle Button -->
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-flag-o"></i>
-                                <span class="label label-danger">9</span>
-                            </a>
+                         
                             <ul class="dropdown-menu">
                                 <li class="header">You have 9 tasks</li>
                                 <li>
@@ -170,10 +164,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <!-- Control Sidebar Toggle Button -->
-                        <li>
-                            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-                        </li>
+                        
                     </ul>
                 </div>
             </nav>
@@ -213,17 +204,18 @@
                     <li class="header">HEADER</li>
                     <!-- Optionally, you can add icons to the links -->
                     <li class="active"><a href="/HOME/Index"><i class="fa fa-link"></i> <span>홈</span></a></li>
-                    <li><a href="/HOME/Member"><i class="fa fa-link"></i> <span>회원</span></a></li>
-                    <li><a href="/Product/List"><i class="fa fa-link"></i> <span>상품</span></a></li>
+                    <li><a href="/HOME/Member"><i class="fa fa-link"></i> <span>제품</span></span></a></li>
+                    <li><a href="/Sys_Notice/Index"><i class="fa fa-link"></i> <span>공지사항등록</span></a></li>
+                    <li><a href="/Product/List"><i class="fa fa-link"></i> <span>불량이력조회</span></a></li>
 
                     <li class="treeview">
                         <a href="/Product/List">
-                            <i class="fa fa-link"></i> <span>상품</span>
+                            <i class="fa fa-link"></i> <span>차트조회</span>
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-left pull-right"></i>
                             </span>
                         </a>
-                        @*@Html.Action("Menu", "Nav")*@
+                        @Html.Action("Menu", "Nav")
 
                     </li>
 
@@ -241,10 +233,7 @@
                     Page Header
                     <small>Optional description</small>
                 </h1>
-                <ol class="breadcrumb">
-                    <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-                    <li class="active">Here</li>
-                </ol>
+              
             </section>
 
             <!-- Main content -->
