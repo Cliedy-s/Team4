@@ -56,7 +56,7 @@ namespace Axxen
             dgvSubSubGrid.AutoGenerateColumns = true;
             dgvSubSubGrid.AllowUserToAddRows = false;
             dgvSubSubGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubSubGrid, "측정일시", "Inspect_datetime", true, 100, default, false);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubSubGrid, "측정일시", "Inspect_datetime", true, 150, default, false);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubSubGrid, "품목코드", "Item_code", true, 100, default, false);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubSubGrid, "품목명", "Item_Name", true, 150, default, false);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubSubGrid, "측정일자", "Inspect_date", true, 100, default, false);
