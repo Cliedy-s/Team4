@@ -32,6 +32,7 @@ namespace Axxen
             lblDay.Text = DateTime.Now.ToString();
             GetAllItem();
             ControlSetting();
+            
         }
 
         private void GetAllItem()
