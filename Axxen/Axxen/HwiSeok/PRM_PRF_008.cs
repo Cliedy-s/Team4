@@ -71,7 +71,7 @@ namespace Axxen
                 }
                 else
                 {
-                    MessageBox.Show("비가동 중 입니다.", "비동기 해제 오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("이미 해제된 비가동 입니다.", "비동기 해제", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
