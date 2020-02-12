@@ -170,12 +170,12 @@ namespace DAC
             using (SqlCommand comm = new SqlCommand())
             {
                 comm.Connection = new SqlConnection(Connstr);
-                comm.CommandText = @"select imh.Workorderno,Prd_Date , Process_name , Wc_Name , imh.Item_Code , Item_Name ,Inspect_name, USL , SL , LSL , Inspect_datetime ,Inspect_date , Inspect_measure_seq , Inspect_val
-                                 from Inspect_Measure_History imh INNER JOIN Process_Master pm ON imh.Process_code = pm.Process_code
-								 INNER JOIN WorkOrder wo ON imh.Workorderno = wo.Workorderno
-								 INNER JOIN Item_Master im ON imh.Item_Code = im.Item_Code
-								 INNER JOIN Inspect_Spec_Master ism ON imh.Inspect_code = ism.Inspect_code
-								 INNER JOIN WorkCenter_Master wcm ON wo.Wc_Code = wcm.Wc_Code";
+                comm.CommandText = @"select imh.Workorderno,Prd_Date,Process_name,Wc_Name,imh.Item_Code,Item_Name,Inspect_name,USL , SL ,LSL ,Inspect_datetime,Inspect_date,Inspect_measure_seq,Inspect_val
+						from Inspect_Spec_Master ism INNER JOIN Inspect_Measure_History imh ON ism.Item_Code=imh.Item_code AND ism.Process_code = imh.Process_code AND ism.Inspect_code = imh.Inspect_code
+                      INNER JOIN Item_Master im ON ism.Item_Code = im.Item_Code
+                      INNER JOIN WorkOrder wo ON imh.Workorderno = wo.Workorderno
+                      INNER JOIN Process_Master pm ON imh.Process_code = pm.Process_code
+                      INNER JOIN WorkCenter_Master wcm ON wo.Wc_Code = wcm.Wc_Code";
                 comm.CommandType = CommandType.Text;
 
                 comm.Connection.Open();
