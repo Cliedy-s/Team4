@@ -33,11 +33,7 @@ namespace Axxen
         private void ADateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             documentViewer1.DocumentSource = null;
-            threadmethod += ReportBinding;
-            using (WaitForm waitfrm = new WaitForm(() => { /*Thread.Sleep(2000);*/ dtpDate.Invoke(threadmethod); }))
-            {
-                waitfrm.ShowDialog(this);
-            }
+            
         }
 
         private void ReportBinding()
@@ -83,6 +79,15 @@ namespace Axxen
             rpt.Parameters["Ins_Date"].Visible = false; //파라미터 바로 넘기기
             documentViewer1.DocumentSource = rpt;
             rpt.CreateDocument();
+        }
+
+        private void AButton1_Click(object sender, EventArgs e)
+        {
+            threadmethod += ReportBinding;
+            using (WaitForm waitfrm = new WaitForm(() => { /*Thread.Sleep(2000);*/ dtpDate.Invoke(threadmethod); }))
+            {
+                waitfrm.ShowDialog(this);
+            }
         }
     }
 }

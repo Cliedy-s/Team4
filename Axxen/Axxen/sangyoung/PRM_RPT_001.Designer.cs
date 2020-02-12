@@ -31,6 +31,7 @@
             this.dtpDate = new Axxen.CustomControls.ADateTimePicker();
             this.aLabel1 = new Axxen.CustomControls.ALabel();
             this.documentViewer1 = new DevExpress.XtraPrinting.Preview.DocumentViewer();
+            this.aButton1 = new Axxen.CustomControls.AButton();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -41,6 +42,7 @@
             // 
             // aPanel1
             // 
+            this.aPanel1.Controls.Add(this.aButton1);
             this.aPanel1.Controls.Add(this.dtpDate);
             this.aPanel1.Controls.Add(this.aLabel1);
             // 
@@ -75,6 +77,18 @@
             this.documentViewer1.Size = new System.Drawing.Size(1122, 555);
             this.documentViewer1.TabIndex = 0;
             // 
+            // aButton1
+            // 
+            this.aButton1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.aButton1.Location = new System.Drawing.Point(207, 28);
+            this.aButton1.Name = "aButton1";
+            this.aButton1.Size = new System.Drawing.Size(61, 23);
+            this.aButton1.TabIndex = 15;
+            this.aButton1.Text = "조회";
+            this.aButton1.UseVisualStyleBackColor = false;
+            this.aButton1.Click += new System.EventHandler(this.AButton1_Click);
+            // 
             // PRM_RPT_001
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -93,5 +107,6 @@
         private CustomControls.ADateTimePicker dtpDate;
         private CustomControls.ALabel aLabel1;
         private DevExpress.XtraPrinting.Preview.DocumentViewer documentViewer1;
+        private CustomControls.AButton aButton1;
     }
 }
