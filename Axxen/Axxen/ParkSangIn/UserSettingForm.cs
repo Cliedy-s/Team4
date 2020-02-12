@@ -18,8 +18,9 @@ namespace Axxen
         UserInfo_Service userservice = new UserInfo_Service();
 
         List<UserGroup_MappingVO> userinfoGrouplist; //유저가속한 그룹
-        List<ScreenItem_AuthorityVO> AutorScreenlist;
+        List<ScreenItem_AuthorityVO> AutorScreenlist; //사용자가 허용된 화면만
         List<ScreenItem_MasterVO> Screenlist;
+
 
         public UserSettingForm()
         {
@@ -62,6 +63,14 @@ namespace Axxen
             cbbscreen.DisplayMember = "Type";
             cbbscreen.ValueMember = "Screen_Code";
             cbbscreen.DataSource = level1list;
+
+            Process_MasterVO pfirst = new Process_MasterVO()
+            {
+
+            };
+
+
+
 
             string[] s01 = UserInfo.S01.Split('/');
             string[] s02 = UserInfo.S02.Split('/');
