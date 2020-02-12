@@ -191,12 +191,9 @@ namespace Axxen
         }
         public void UserInformation()
         {
-
-
             userinfoGrouplist = UserGroupservice.GetUserInfoGroup(UserInfo.User_ID); //로그인한 사용자의 그룹권한들
             userinfoScreenItem = screenservice.GetUserInfoScreenItem(userinfoGrouplist); // 로그인한 사용자의 그룹권한에 사용되는 화면들
             screenitemlist = screenservice.GetALLScreenItem(); //모든스크린
-
         }
 
 
@@ -625,7 +622,7 @@ namespace Axxen
                 }
                 else
                 {
-                    e.Graphics.FillRectangle(Brushes.PaleTurquoise, e.Bounds); //텝페이지 색
+                   // e.Graphics.FillRectangle(Brushes.PaleTurquoise, e.Bounds); //텝페이지 색
                 }
 
 
