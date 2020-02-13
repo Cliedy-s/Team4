@@ -27,14 +27,17 @@ namespace API.Controllers
         {
             return View();
         }
-        
+
+
         public ActionResult DefectiveCreate()
         {
             Def_HistoryDAC def = new Def_HistoryDAC();
 
             ViewBag.WorkOrderno = new SelectList(def.GetDefHistoryWorkorderno());
+            ViewBag.CodeName = def.GetDefMiMasterCodeName();
+            List<Def_HistoryVO> fruits = def.GetDefMiMasterCodeName();
 
-            return View();
+            return View(fruits);
         }
 
         // POST: DefHistory/Create
