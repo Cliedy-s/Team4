@@ -1,4 +1,11 @@
 ﻿
+
+<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+    <i class="fa fa-envelope-o"></i>
+    <span class="label label-success">4111</span>
+</a>
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -31,31 +38,10 @@
             </table>
 
             <div>
-                <a href='#' onClick='fn_write()' class="btn btn-success">글쓰기</a>
+                <a href="/Sys_Notice/Create"  class="btn btn-success">글쓰기</a>
             </div>
         </form>
     </div>
-    <script>
-//글쓰기
-function fn_write(){
 
-    var form = document.getElementById("boardForm");
-
-    form.action = "<c:url value='/board/writeForm.do'/>";
-    form.submit();
-
-}
-
-//글조회
-function fn_view(code){
-
-    var form = document.getElementById("boardForm");
-    var url = "<c:url value='/board/viewContent.do'/>";
-    url = url + "?code=" + code;
-
-    form.action = url;
-    form.submit();
-}
-    </script>
 </body>
 </html>

@@ -164,6 +164,7 @@
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="DAC\DACParent.cs" />
     <Compile Include="DAC\Item_MasterDac.cs" />
+    <Compile Include="DAC\Sys_NoticeDac.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -171,6 +172,7 @@
     <Compile Include="Models\MoldVO.cs" />
     <Compile Include="Models\Mold_J_Item_Wc_MuseVO.cs" />
     <Compile Include="Models\ScreenItemVO.cs" />
+    <Compile Include="Models\Sys_NoticeVO.cs" />
     <Compile Include="Models\UserGroupVO.cs" />
     <Compile Include="Models\UserInfoVO.cs" />
     <Compile Include="Models\WorkOrder_J_WC_ItmeVO.cs" />
@@ -7408,6 +7410,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Nav\Menu.cshtml" />
     <Content Include="Views\Sys_Notice\Index.cshtml" />
+    <Content Include="Views\Sys_Notice\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
