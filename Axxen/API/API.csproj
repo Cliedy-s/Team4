@@ -167,6 +167,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Def_HistoryVO.cs" />
     <Compile Include="Models\MainForm_VO.cs" />
     <Compile Include="Models\MoldVO.cs" />
     <Compile Include="Models\Mold_J_Item_Wc_MuseVO.cs" />
