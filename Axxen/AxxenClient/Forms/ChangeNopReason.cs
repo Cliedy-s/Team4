@@ -21,6 +21,7 @@ namespace AxxenClient.Forms
         private void ChangeNopReason_Load(object sender, EventArgs e)
         {
             lblWcName.Text = WcName;
+            GetDatas();
         }
         private void GetDatas()
         {

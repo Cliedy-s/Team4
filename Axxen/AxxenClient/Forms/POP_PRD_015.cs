@@ -31,7 +31,7 @@ namespace AxxenClient.Forms
             txtItemName.TextBoxText = GlobalUsage.ItemName;
             txtQty.TextBoxText = GlobalUsage.Prd_Qty.ToString();
             txtUnit.TextBoxText = GlobalUsage.Prd_Unit.ToString();
-            txtWcCode.TextBoxText = GlobalUsage.WcCode;
+            txtWcCode.TextBoxText =GlobalUsage.WcName;
             txtWorkOrderDate.TextBoxText = (GlobalUsage.WorkorderDate == null) ? "" : GlobalUsage.WorkorderDate.Value.ToString("yyyy-MM-dd HH:mm:ss");
         }
         private void InitControls()
@@ -163,9 +163,10 @@ namespace AxxenClient.Forms
         /// 기계 시작
         /// </summary>
         /// <param name="work"></param>
-        Machine machine2 = new Machine(2);
+        Machine machine2;
         private void MachineStart(MachineType machinet)
         {
+            machine2 = new Machine(2, GlobalUsage.WorkOrderNo, GlobalUsage.UserID, GlobalUsage.WcCode, MachineStop);
             if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
             {
                 if (!isMachineRun)
@@ -190,7 +191,7 @@ namespace AxxenClient.Forms
                     {
                         case MachineType.Inspect_Measure:
                             Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 작업({GlobalUsage.WorkOrderNo})의 품질 측정기계로 품목({pairlist[0].Itemcode})에 대한 항목({forlog.ToString()})들을 측정함");
-                            machine2.MachineStart(GlobalUsage.WorkOrderNo, pairlist, MachineStop);
+                            machine2.MachineStart(pairlist);
                             break;
                     }
                 }

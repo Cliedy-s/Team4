@@ -64,7 +64,7 @@ namespace DAC
         /// <summary>
         ///  옮겨타기
         /// </summary>
-        public bool UpdateMoveGvItem(string unloadgvcode, string loadgvcode, int unloadqty, string userid, string wccode, string workorderno)
+        public bool UpdateMoveGvItem(string unloadgvcode, string loadgvcode, int unloadqty, string userid, string wccode, string workorderno, string fromworkorderno)
         {
             using (SqlCommand comm = new SqlCommand())
             {
@@ -78,6 +78,7 @@ namespace DAC
                 comm.Parameters.AddWithValue("@userid", userid);
                 comm.Parameters.AddWithValue("@wccode", wccode);
                 comm.Parameters.AddWithValue("@workorderno", workorderno);
+                comm.Parameters.AddWithValue("@fromworkorderno", fromworkorderno);
 
                 comm.Connection.Open();
                 int result = comm.ExecuteNonQuery();

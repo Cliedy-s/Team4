@@ -54,7 +54,8 @@ namespace AxxenClient.Forms
                     if (!string.IsNullOrEmpty(frm.NopMiCode))
                     {
                         Nop_HistoryService service = new Nop_HistoryService();
-                        dgvNopList.DataSource = service.UpdateNop_History(frm.NopMiCode, GlobalUsage.UserID, Convert.ToInt32(dgvNopList.SelectedRows[0].Cells[7].Value));
+                        service.UpdateNop_History(frm.NopMiCode, GlobalUsage.UserID, Convert.ToInt32(dgvNopList.SelectedRows[0].Cells[7].Value));
+                        GetDatas();
                     }
                 }
             }

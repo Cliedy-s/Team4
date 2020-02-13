@@ -58,6 +58,10 @@ namespace MachineService
                        //20200131 10:50:45/Machine/1/62/104/1
                         string[] arrData = File.ReadAllText(file).Split('/');
 
+                        // 파일 폴더 이동 (orgfolder/file.log -> orgfolder/donefolder/file.log)
+                        Console.WriteLine($"move to {file} -> {Path.Combine(donefolder, Path.GetFileName(file))} ");
+                        File.Move(file, Path.Combine(donefolder, Path.GetFileName(file)));
+                        icnt++;
 
                         if (arrData.Length >= 5)
                         {
@@ -66,27 +70,37 @@ namespace MachineService
                                 using (SqlCommand comm = new SqlCommand())
                                 {
                                     comm.Connection = new SqlConnection(strconn);
+                                    comm.CommandType = CommandType.StoredProcedure;
+                                    filename = filename.Substring(14);
                                     if (filename.StartsWith("MoldingLog"))
                                     {
-                                        comm.CommandText = "INSERT INTO WorkQtyLog (ProductID, MachineID, Qty, BadQty) VALUES(@ProductID, @MachineID, @Qty, @BadQty); ";
+                                        // 20200212 20:19:33/Machine_0/WK200212145548/master/WC20001/MOLD003/IC0001/10/0
+                                        comm.CommandText = "InsertUpdateMoldWork";
+                                        comm.Parameters.AddWithValue("@userid", arrData[3]);
+                                        comm.Parameters.AddWithValue("@moldcode", arrData[5]);
+                                        comm.Parameters.AddWithValue("@wccode", arrData[4]);
+                                        comm.Parameters.AddWithValue("@workorderno", arrData[2]);
+                                        comm.Parameters.AddWithValue("@itemcode", arrData[6]);
+                                        comm.Parameters.AddWithValue("@outqty", Convert.ToInt32(arrData[7]));
+                                        comm.Parameters.AddWithValue("@badqty", Convert.ToInt32(arrData[8]));
+
+
+                                        comm.CommandType = CommandType.StoredProcedure;
+                                        comm.Connection.Open();
+                                        comm.ExecuteNonQuery();
+                                        comm.Connection.Close();
                                     }
                                     else if (filename.StartsWith("BoxingLog"))
                                     {
-                                        comm.CommandText = "INSERT INTO WorkQtyLog (ProductID, MachineID, Qty, BadQty) VALUES(@ProductID, @MachineID, @Qty, @BadQty); ";
+                                        // 20200212 20:33:36/Machine_0/WK200212145551/master/WC50001/Blank/IC0001/10/4
+                                        //  comm.CommandText = "INSERT INTO WorkQtyLog (ProductID, MachineID, Qty, BadQty) VALUES(@ProductID, @MachineID, @Qty, @BadQty); ";
                                     }
                                     else if (filename.StartsWith("Inspect_MeasureLog"))
                                     {
-                                        comm.CommandText = "INSERT INTO WorkQtyLog (ProductID, MachineID, Qty, BadQty) VALUES(@ProductID, @MachineID, @Qty, @BadQty); ";
+                                        // 20200212 20:54:23/Machine_2/WK200212145551/master/WC50001/ES50002/IC0001/10/Blank
+                                        //comm.CommandText = "INSERT INTO WorkQtyLog (ProductID, MachineID, Qty, BadQty) VALUES(@ProductID, @MachineID, @Qty, @BadQty); ";
                                     }
 
-                                    comm.CommandType = CommandType.StoredProcedure;
-                                    comm.Parameters.AddWithValue("@ProductID", int.Parse(arrData[3]));
-                                    comm.Parameters.AddWithValue("@MachineID", int.Parse(arrData[2]));
-                                    comm.Parameters.AddWithValue("@Qty", int.Parse(arrData[4]));
-                                    comm.Parameters.AddWithValue("@BadQty", int.Parse(arrData[5]));
-                                    comm.Connection.Open();
-                                    comm.ExecuteNonQuery();
-                                    comm.Connection.Close();
                                 }
                             }
                             catch (Exception ee)
@@ -94,10 +108,6 @@ namespace MachineService
                                 Program.Log.WriteError("오류 : ", ee);
                                 continue;
                             }
-                            // 파일 폴더 이동 (orgfolder/file.log -> orgfolder/donefolder/file.log)
-                            Console.WriteLine($"move to {file} -> {Path.Combine(donefolder, Path.GetFileName(file))} ");
-                            File.Move(file, Path.Combine(donefolder, Path.GetFileName(file)));
-                            icnt++;
                         }
                     }
                 }

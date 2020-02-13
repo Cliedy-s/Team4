@@ -20,6 +20,15 @@ namespace Service
             MoldDAC dac = new MoldDAC();
             return dac.SelectMoldAll();
         }
+        /// <summary>
+        /// 성형작업 종료
+        /// </summary>
+        /// <returns></returns>
+        public bool InsertUpdateEndMoldWork(string userid, string moldcode, string workorderno, int prdcnt, int shotcnt)
+        {
+            MoldDAC dac = new MoldDAC();
+            return dac.InsertUpdateEndMoldWork(userid, moldcode, workorderno, prdcnt, shotcnt);
+        }
 
         /// <summary>
         /// 금형그룹조회

@@ -37,7 +37,7 @@
             // aComboBox1
             // 
             this.aComboBox1.FormattingEnabled = true;
-            this.aComboBox1.Location = new System.Drawing.Point(12, 10);
+            this.aComboBox1.Location = new System.Drawing.Point(12, 11);
             this.aComboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.aComboBox1.Name = "aComboBox1";
             this.aComboBox1.Size = new System.Drawing.Size(121, 20);
@@ -47,7 +47,7 @@
             // 
             this.aButton1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton1.Location = new System.Drawing.Point(139, 10);
+            this.aButton1.Location = new System.Drawing.Point(139, 11);
             this.aButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.aButton1.Name = "aButton1";
             this.aButton1.Size = new System.Drawing.Size(75, 18);

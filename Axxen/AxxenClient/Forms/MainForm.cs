@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Configuration;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using VO;
@@ -32,7 +33,23 @@ namespace AxxenClient.Forms
             public string value1 { get; set; }
             public WorkType value2 { get; set; }
         }
-
+        protected override void OnLoad(EventArgs e)
+        {
+            var mdiclient = this.Controls.OfType<MdiClient>().Single();
+            this.SuspendLayout();
+            mdiclient.SuspendLayout();
+            var hdiff = mdiclient.Size.Width - mdiclient.ClientSize.Width;
+            var vdiff = mdiclient.Size.Height - mdiclient.ClientSize.Height;
+            var size = new Size(mdiclient.Width + hdiff, mdiclient.Height + vdiff);
+            var location = new Point(mdiclient.Left - (hdiff / 2), mdiclient.Top - (vdiff / 2));
+            mdiclient.Dock = DockStyle.None;
+            mdiclient.Size = size;
+            mdiclient.Location = location;
+            mdiclient.Anchor = AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Bottom;
+            mdiclient.ResumeLayout(true);
+            this.ResumeLayout(true);
+            base.OnLoad(e);
+        }
         private void MainForm_Load(object sender, EventArgs e)
         {
             LoginForm login = new LoginForm();
@@ -54,14 +71,6 @@ namespace AxxenClient.Forms
 
             // 초반 값 
             GlobalUsage.WcCode = ConfigurationManager.AppSettings["WcCode"];
-
-            WorkCenter_MasterService service = new WorkCenter_MasterService();
-            WorkCenter_Master2VO item = service.GetAll_WorkCenter_Master(GlobalUsage.WcCode);
-
-            GlobalUsage.WcName = item.Wc_Name;
-            GlobalUsage.WorkType = WorkType.Molding;
-            GlobalUsage.ProcessCode = item.Process_Code;
-            GlobalUsage.ProcessName = item.Process_name;
 
             POP_PRD_001 childfrm = new POP_PRD_001();
             childfrm.WindowState = FormWindowState.Maximized;
@@ -89,13 +98,13 @@ namespace AxxenClient.Forms
            switch (work)
             {
                 case WorkType.Molding:
-                    GlobalUsage.WcCode = "WC20001";
+                    GlobalUsage.WcCode = "WC20003";
                     break;
                 case WorkType.Load:
-                    GlobalUsage.WcCode = "WC40001";
+                    GlobalUsage.WcCode = "WC40003";
                     break;
                 case WorkType.Boxing:
-                    GlobalUsage.WcCode = "WC50001";
+                    GlobalUsage.WcCode = "WC50003";
                     break;
                 default:
                     break;
@@ -114,6 +123,7 @@ namespace AxxenClient.Forms
             {
                 activatedchild.MainTimerTick(pronouncex, originalx, runNotice);
                 pronouncex = pronouncex - 30;
+                if (ActiveMdiChild is POP_PRD_001 frm1) frm1.MainTimerTick(sender, e);
             }
         }
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
