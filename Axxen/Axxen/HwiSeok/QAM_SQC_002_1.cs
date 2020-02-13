@@ -12,8 +12,7 @@ namespace Axxen
 {
     public partial class QAM_SQC_002_1 : Axxen.BaseForm
     {
-        List<InspectHistoryVO> ihvo;
-        Inspect_Measure_HistoryService ihService;
+        Inspect_Measure_HistoryService ihService = new Inspect_Measure_HistoryService();
         public string Item_code { get; set; }
         public string Process_code { get; set; }
         public string Inspect_code { get; set; }
@@ -34,14 +33,27 @@ namespace Axxen
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            InspectHistoryVO item = new InspectHistoryVO();
-            item.Item_code = Item_code;
-            item.Process_code = Process_code;
-            item.Inspect_code = Inspect_code;
-            item.Inspect_val = nudusl.Value;
-            item.Workorderno = Workorderno;
-            ihService.InsertInspect_Measure(item,lblManager.Text); //메인그리드뷰 조회
-            this.DialogResult = DialogResult.OK;
+            if (MessageBox.Show("추가하시겠습니까?", "추가여부", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                InspectHistoryVO item = new InspectHistoryVO();
+                item.Item_code = Item_code;
+                item.Process_code = Process_code;
+                item.Inspect_code = Inspect_code;
+                item.Inspect_val = nudusl.Value;
+                item.Workorderno = Workorderno;
+
+                bool IsSuccess = ihService.InsertInspect_Measure(item, lblManager.Text); //품질측정 추가 조회
+
+                if (IsSuccess)
+                {
+                    MessageBox.Show("성공적으로 추가하였습니다.", "추가성공", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.DialogResult = DialogResult.OK;
+                }
+                else
+                {
+                    MessageBox.Show("추가에 실패하였습니다.", "추가오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }

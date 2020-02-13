@@ -112,7 +112,6 @@ namespace Axxen
         {
             try
             {
-                dgvMainGrid.DataSource = null;
                 dt = whcuservice.PickerWorkHistory_UserMaster(aDateTimePickerSearch2.ADateTimePickerValue1.ToShortDateString().Replace("-", ""), aDateTimePickerSearch2.ADateTimePickerValue2.ToShortDateString().Replace("-", "")); 
                 dgvMainGrid.DataSource = dt;
                 aTextBox_FindNameByCode1.txtCodeText = "";

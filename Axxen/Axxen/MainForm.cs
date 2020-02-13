@@ -70,7 +70,10 @@ namespace Axxen
             LoginForm frm = new LoginForm();
 
             if (frm.ShowDialog() == DialogResult.OK)
-            {               
+            {
+                toolStripButtonLogin.Text = "로그아웃";
+
+
                 List<UserDante> userDantelist = new List<UserDante>();
                 UserDante userdante1 = new UserDante();
                 UserDante userdante2 = new UserDante();
@@ -113,7 +116,9 @@ namespace Axxen
 
                 toolStripButtoncencle.Alignment = ToolStripItemAlignment.Right; //즐겨찾기 툴스트립 버튼 오른쪽으로 배치
                 toolStripButtonSetting.Alignment = ToolStripItemAlignment.Right; //세팅버튼
+                toolStripButtonLogin.Alignment = ToolStripItemAlignment.Right;
                 toolStripLabel.Alignment = ToolStripItemAlignment.Right; //세팅버튼
+                toolStripSeparator3.Alignment = ToolStripItemAlignment.Right;
                 timer.Start();
                 timer.Interval = 1000;
 
@@ -428,6 +433,7 @@ namespace Axxen
                     newTab.Text = formText;
 
                     tabControl2.TabPages.Add(newTab);
+                    
                     tabControl2.SelectedTab = newTab; //새로연 메뉴의 화면 텝페이지 눌릴 수 있도록
                     frm.Show();
 
@@ -716,6 +722,7 @@ namespace Axxen
                             }
                             //    tabControl2.SelectedTab. = Color.Red; //텝페이지 색
                             childForm.Activate();
+                        
                             lblSubtitle.Text = screenitemlist.Find(item => item.Screen_Code == tabControl2.SelectedTab.Tag.ToString()).Screen_Path.ToString();
 
                             break;
@@ -734,6 +741,8 @@ namespace Axxen
         {
             foreach (Form children in this.MdiChildren)
             {
+
+                children.Dispose();
                 children.Close();
             }
 
@@ -750,26 +759,60 @@ namespace Axxen
         /// <param name="e"></param>
         private void TsbInsert_Click(object sender, EventArgs e)
         {
-            if (this.InsertFormEvent != null)
-                InsertFormEvent(this, null);
+            try
+            {
+                if (this.InsertFormEvent != null)
+                    InsertFormEvent(this, null);
+
+            }
+            catch (Exception err)
+            {
+
+                MessageBox.Show(err.Message);
+            }
         }
 
         private void TsbtnRefresh_Click(object sender, EventArgs e)
         {
-            if (this.RefreshFormEvent != null)
-                RefreshFormEvent(this, null);
+            try
+            {
+                if (this.RefreshFormEvent != null)
+                    RefreshFormEvent(this, null);
+            }
+            catch (Exception err)
+            {
+
+                MessageBox.Show(err.Message);
+            }
         }
 
         private void TsbtnUpdate_Click_1(object sender, EventArgs e)
         {
-            if (this.MyUpdateEvent != null)
+            
+                try
+                {
+                    if (this.MyUpdateEvent != null)
                 MyUpdateEvent(this, null);
-        }
+                }
+                catch (Exception err)
+                {
+
+                    MessageBox.Show(err.Message);
+                }
+            }
 
         private void TsbtnDelete_Click(object sender, EventArgs e)
         {
-            if (this.MyDeleteEvent != null)
+                try
+                {
+                    if (this.MyDeleteEvent != null)
                 MyDeleteEvent(this, null);
+            }
+            catch (Exception err)
+            {
+
+                MessageBox.Show(err.Message);
+            }
 
         }
 
@@ -811,6 +854,7 @@ namespace Axxen
         private void Timer_Tick(object sender, EventArgs e)
         {
             toolStripLabel.Text = UserInfo.User_Name + "님 환영합니다.\n" + DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToLongTimeString();
+         
         }
 
         private void Button9_Click(object sender, EventArgs e)

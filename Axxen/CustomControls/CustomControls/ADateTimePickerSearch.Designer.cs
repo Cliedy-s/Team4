@@ -36,21 +36,22 @@
             // 
             // aButton1
             // 
-            this.aButton1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.aButton1.BackColor = System.Drawing.Color.Transparent;
             this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton1.Location = new System.Drawing.Point(244, 4);
+            this.aButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.aButton1.Image = global::CustomControls.Properties.Resources.forsearch;
+            this.aButton1.Location = new System.Drawing.Point(242, 0);
             this.aButton1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.aButton1.Name = "aButton1";
-            this.aButton1.Size = new System.Drawing.Size(75, 23);
+            this.aButton1.Size = new System.Drawing.Size(41, 34);
             this.aButton1.TabIndex = 3;
-            this.aButton1.Text = "조회";
             this.aButton1.UseVisualStyleBackColor = false;
             this.aButton1.Click += new System.EventHandler(this.btnSearch_Click_1);
             // 
             // aLabel1
             // 
             this.aLabel1.AutoSize = true;
-            this.aLabel1.Location = new System.Drawing.Point(112, 8);
+            this.aLabel1.Location = new System.Drawing.Point(112, 11);
             this.aLabel1.Name = "aLabel1";
             this.aLabel1.Size = new System.Drawing.Size(15, 15);
             this.aLabel1.TabIndex = 2;
@@ -59,7 +60,7 @@
             // aDateTimePicker2
             // 
             this.aDateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.aDateTimePicker2.Location = new System.Drawing.Point(133, 4);
+            this.aDateTimePicker2.Location = new System.Drawing.Point(133, 7);
             this.aDateTimePicker2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.aDateTimePicker2.Name = "aDateTimePicker2";
             this.aDateTimePicker2.Size = new System.Drawing.Size(105, 23);
@@ -68,7 +69,7 @@
             // aDateTimePicker1
             // 
             this.aDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.aDateTimePicker1.Location = new System.Drawing.Point(3, 4);
+            this.aDateTimePicker1.Location = new System.Drawing.Point(3, 7);
             this.aDateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.aDateTimePicker1.Name = "aDateTimePicker1";
             this.aDateTimePicker1.Size = new System.Drawing.Size(103, 23);
@@ -85,7 +86,7 @@
             this.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ADateTimePickerSearch";
-            this.Size = new System.Drawing.Size(324, 32);
+            this.Size = new System.Drawing.Size(324, 38);
             this.Load += new System.EventHandler(this.ADateTimePickerSearch_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -45,11 +45,7 @@ namespace Axxen
         private void DtpDate_ValueChanged(object sender, EventArgs e)
         {
             documentViewer1.DocumentSource = null;
-            threadmethod += ReportBinding;
-            using (WaitForm waitfrm = new WaitForm(() => { Thread.Sleep(2000); dtpDate.Invoke(threadmethod); }))
-            {
-                waitfrm.ShowDialog(this);
-            }
+           
         }
 
         private void ReportBinding()
@@ -71,6 +67,15 @@ namespace Axxen
             using (ReportPrintTool printTool = new ReportPrintTool(rpt))
             {
                 printTool.ShowRibbonPreviewDialog();
+            }
+        }
+
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            threadmethod += ReportBinding;
+            using (WaitForm waitfrm = new WaitForm(() => { Thread.Sleep(2000); dtpDate.Invoke(threadmethod); }))
+            {
+                waitfrm.ShowDialog(this);
             }
         }
     }

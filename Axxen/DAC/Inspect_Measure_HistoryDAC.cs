@@ -98,8 +98,7 @@ getdate() ,
             {
                 comm.Connection = new SqlConnection(Connstr);
                 comm.CommandText = 
- @" DELETE FROM Inspect_Measure_History 
- WHERE Inspect_measure_seq = @Inspect_measure_seq; ";
+                @"DELETE FROM Inspect_Measure_History WHERE Inspect_measure_seq = @Inspect_measure_seq ";
                 comm.CommandType = CommandType.Text;
                 comm.Parameters.AddWithValue("@Inspect_measure_seq", seq);
 

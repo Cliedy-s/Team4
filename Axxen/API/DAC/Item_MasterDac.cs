@@ -7,7 +7,7 @@ using System.Web;
 
 namespace API.DAC
 {
-    public class Item_MasterDac : DACParent
+    public class Item_MasterDAC : DACParent
     {
 
         /// <summary>

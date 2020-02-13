@@ -38,7 +38,7 @@ namespace Axxen
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "USL", "USL", true, 100, DataGridViewContentAlignment.MiddleRight, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "SL", "SL", true, 100, DataGridViewContentAlignment.MiddleRight, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "LSL", "LSL", true, 100, DataGridViewContentAlignment.MiddleRight, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "측정일시", "Inspect_datetime", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "측정일시", "Inspect_datetime", true, 150, DataGridViewContentAlignment.MiddleCenter, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "측정회차", "Inspect_date", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "측정순번", "Inspect_measure_seq", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "측정값", "Inspect_val", true, 100, DataGridViewContentAlignment.MiddleRight, true);

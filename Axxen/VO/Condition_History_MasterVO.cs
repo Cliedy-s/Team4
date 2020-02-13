@@ -12,7 +12,8 @@ namespace VO
         public DateTime Prd_Date { get; set; } //생산일
         public string Process_code { get; set; } //공정코드
         public string Process_name { get; set; } //공정명
-        public string Wc_Name { get; set; } //작업장
+        public string Wc_Code { get; set; } //작업장
+        public string Wc_Name { get; set; } //작업장명
         public string Item_Code { get; set; } //품목코드
         public string Item_Name { get; set; } //품목명
         public string Condition_Code { get; set; } //측정항목코드

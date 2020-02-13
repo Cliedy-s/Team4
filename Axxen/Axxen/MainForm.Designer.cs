@@ -48,6 +48,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.메모장ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.계산기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.그림판ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -65,7 +66,8 @@
             this.toolStripButtoncencle = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.tvBookMark = new System.Windows.Forms.TreeView();
-            this.그림판ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripButtonLogin = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.panelMenu.SuspendLayout();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
@@ -128,11 +130,13 @@
             // 
             // btnBookmark
             // 
-            this.btnBookmark.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnBookmark.BackColor = System.Drawing.SystemColors.Info;
             this.btnBookmark.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnBookmark.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnBookmark.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBookmark.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnBookmark.Image = ((System.Drawing.Image)(resources.GetObject("btnBookmark.Image")));
+            this.btnBookmark.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBookmark.Location = new System.Drawing.Point(0, 0);
             this.btnBookmark.Name = "btnBookmark";
             this.btnBookmark.Size = new System.Drawing.Size(267, 43);
@@ -238,6 +242,7 @@
             // menuStrip1
             // 
             this.menuStrip1.AutoSize = false;
+            this.menuStrip1.BackColor = System.Drawing.Color.White;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.메모장ToolStripMenuItem,
@@ -262,6 +267,13 @@
             this.계산기ToolStripMenuItem.Size = new System.Drawing.Size(55, 30);
             this.계산기ToolStripMenuItem.Text = "계산기";
             this.계산기ToolStripMenuItem.Click += new System.EventHandler(this.계산기ToolStripMenuItem_Click);
+            // 
+            // 그림판ToolStripMenuItem
+            // 
+            this.그림판ToolStripMenuItem.Name = "그림판ToolStripMenuItem";
+            this.그림판ToolStripMenuItem.Size = new System.Drawing.Size(55, 30);
+            this.그림판ToolStripMenuItem.Text = "그림판";
+            this.그림판ToolStripMenuItem.Click += new System.EventHandler(this.그림판ToolStripMenuItem_Click);
             // 
             // timer
             // 
@@ -365,11 +377,10 @@
             this.toolStripButtonSetting.AutoSize = false;
             this.toolStripButtonSetting.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.toolStripButtonSetting.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonSetting.Image")));
-            this.toolStripButtonSetting.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.toolStripButtonSetting.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButtonSetting.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonSetting.Name = "toolStripButtonSetting";
-            this.toolStripButtonSetting.Size = new System.Drawing.Size(85, 85);
+            this.toolStripButtonSetting.Size = new System.Drawing.Size(60, 57);
             this.toolStripButtonSetting.Text = "환경설정";
             this.toolStripButtonSetting.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolStripButtonSetting.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
@@ -379,11 +390,10 @@
             // 
             // toolStripLabel
             // 
-            this.toolStripLabel.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.toolStripLabel.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.toolStripLabel.Name = "toolStripLabel";
-            this.toolStripLabel.Size = new System.Drawing.Size(111, 94);
+            this.toolStripLabel.Size = new System.Drawing.Size(87, 94);
             this.toolStripLabel.Text = "환영합니다.";
-            this.toolStripLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // toolStrip1
             // 
@@ -401,6 +411,8 @@
             this.tsbtnRefresh,
             this.toolStripSeparator2,
             this.toolStripButtonSetting,
+            this.toolStripButtonLogin,
+            this.toolStripSeparator3,
             this.toolStripLabel});
             this.toolStrip1.Location = new System.Drawing.Point(0, 34);
             this.toolStrip1.Name = "toolStrip1";
@@ -468,17 +480,31 @@
             this.tvBookMark.TabIndex = 0;
             this.tvBookMark.DoubleClick += new System.EventHandler(this.TvBookMark_DoubleClick);
             // 
-            // 그림판ToolStripMenuItem
+            // toolStripButtonLogin
             // 
-            this.그림판ToolStripMenuItem.Name = "그림판ToolStripMenuItem";
-            this.그림판ToolStripMenuItem.Size = new System.Drawing.Size(55, 30);
-            this.그림판ToolStripMenuItem.Text = "그림판";
-            this.그림판ToolStripMenuItem.Click += new System.EventHandler(this.그림판ToolStripMenuItem_Click);
+            this.toolStripButtonLogin.AutoSize = false;
+            this.toolStripButtonLogin.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.toolStripButtonLogin.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonLogin.Image")));
+            this.toolStripButtonLogin.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButtonLogin.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonLogin.Name = "toolStripButtonLogin";
+            this.toolStripButtonLogin.Size = new System.Drawing.Size(60, 57);
+            this.toolStripButtonLogin.Text = "로그인";
+            this.toolStripButtonLogin.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolStripButtonLogin.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            this.toolStripButtonLogin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButtonLogin.ToolTipText = "새로고침";
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 97);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1622, 964);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControl2);
@@ -492,7 +518,6 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Tag = " ";
-            this.Text = "SPOK-MES";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.panelMenu.ResumeLayout(false);
             this.aPanel1.ResumeLayout(false);
@@ -551,5 +576,7 @@
         private System.Windows.Forms.ToolStripMenuItem 메모장ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 계산기ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 그림판ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton toolStripButtonLogin;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
     }
 }

@@ -178,6 +178,12 @@
     <Compile Include="HwiSeok\QAM_SQC_003.Designer.cs">
       <DependentUpon>QAM_SQC_003.cs</DependentUpon>
     </Compile>
+    <Compile Include="HwiSeok\QAM_SQC_003_1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HwiSeok\QAM_SQC_003_1.Designer.cs">
+      <DependentUpon>QAM_SQC_003_1.cs</DependentUpon>
+    </Compile>
     <Compile Include="HwiSeok\QAM_SQC_004.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -630,6 +636,9 @@
     <EmbeddedResource Include="HwiSeok\QAM_SQC_003.resx">
       <DependentUpon>QAM_SQC_003.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HwiSeok\QAM_SQC_003_1.resx">
+      <DependentUpon>QAM_SQC_003_1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HwiSeok\QAM_SQC_004.resx">
       <DependentUpon>QAM_SQC_004.cs</DependentUpon>
     </EmbeddedResource>
@@ -877,10 +886,12 @@
     <Content Include="Content\PagedList.css" />
     <None Include="Image\MainBar.png" />
     <None Include="Image\MianLoGo.png" />
+    <None Include="Image\forsearch.png" />
     <Content Include="Image\newlogo.png" />
     <Content Include="Image\treeimg.png" />
     <None Include="Image\winch.png" />
     <Content Include="Image\x.png" />
+    <None Include="Resources\forsearch.png" />
     <Content Include="Team4Connect_DEV.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
