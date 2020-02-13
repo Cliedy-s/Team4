@@ -9,9 +9,8 @@ namespace API.DAC
 {
     public class Sys_NoticeDAC : DACParent
     {
-        public List<Sys_NoticeVO> Sys_noticeAll(){
-     
-
+        public List<Sys_NoticeVO> Sys_noticeAll()
+        {
         string sql = "select Seq, Notice_Date, Notice_End, Title from Sys_Notice";
         List<Sys_NoticeVO> list = new List<Sys_NoticeVO>();
             using (SqlConnection conn = new SqlConnection(Connstr))
@@ -25,6 +24,6 @@ namespace API.DAC
                 conn.Close();
             }
             return list;
-    }
+         }
     }
 }
