@@ -45,7 +45,7 @@ namespace AxxenClient.Forms
             InitControlUtil.AddNewColumnToDataGridView(dgvGVFrom, "대차명", "GV_Name", true, 100, DataGridViewContentAlignment.MiddleLeft, true);
             InitControlUtil.AddNewColumnToDataGridView(dgvGVFrom, "적재시각", "Loading_time", true, 200);
             InitControlUtil.AddNewColumnToDataGridView(dgvGVFrom, "수량", "Loading_Qty", true, 80, DataGridViewContentAlignment.MiddleRight);
-            InitControlUtil.AddNewColumnToDataGridView(dgvGVFrom, "작업지시번호", "Workorderno", true, 80, DataGridViewContentAlignment.MiddleRight);
+            InitControlUtil.AddNewColumnToDataGridView(dgvGVFrom, "작업지시번호", "Workorderno", true, 200, DataGridViewContentAlignment.MiddleRight);
             dgvGVFrom.Columns[2].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm:ss";
 
         }

@@ -70,7 +70,7 @@
             this.dgvGVTo.Name = "dgvGVTo";
             this.dgvGVTo.RowHeadersWidth = 51;
             this.dgvGVTo.RowTemplate.Height = 23;
-            this.dgvGVTo.Size = new System.Drawing.Size(448, 338);
+            this.dgvGVTo.Size = new System.Drawing.Size(381, 338);
             this.dgvGVTo.TabIndex = 8;
             // 
             // dgvGVFrom
@@ -79,11 +79,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvGVFrom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGVFrom.Location = new System.Drawing.Point(742, 247);
+            this.dgvGVFrom.Location = new System.Drawing.Point(675, 247);
             this.dgvGVFrom.Name = "dgvGVFrom";
             this.dgvGVFrom.RowHeadersWidth = 51;
             this.dgvGVFrom.RowTemplate.Height = 23;
-            this.dgvGVFrom.Size = new System.Drawing.Size(456, 338);
+            this.dgvGVFrom.Size = new System.Drawing.Size(523, 338);
             this.dgvGVFrom.TabIndex = 11;
             this.dgvGVFrom.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGVFrom_CellClick);
             // 
@@ -93,7 +93,7 @@
             this.btnClearGV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnClearGV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClearGV.Font = new System.Drawing.Font("맑은 고딕", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnClearGV.Location = new System.Drawing.Point(464, 490);
+            this.btnClearGV.Location = new System.Drawing.Point(397, 487);
             this.btnClearGV.Name = "btnClearGV";
             this.btnClearGV.Size = new System.Drawing.Size(271, 95);
             this.btnClearGV.TabIndex = 14;
@@ -107,7 +107,7 @@
             this.btnMove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnMove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMove.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnMove.Location = new System.Drawing.Point(464, 288);
+            this.btnMove.Location = new System.Drawing.Point(397, 285);
             this.btnMove.Name = "btnMove";
             this.btnMove.Size = new System.Drawing.Size(271, 196);
             this.btnMove.TabIndex = 15;
@@ -213,7 +213,7 @@
             this.txtMove.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtMove.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtMove.LabelText = "수량";
-            this.txtMove.Location = new System.Drawing.Point(465, 247);
+            this.txtMove.Location = new System.Drawing.Point(398, 244);
             this.txtMove.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtMove.Name = "txtMove";
             this.txtMove.Size = new System.Drawing.Size(270, 41);
@@ -239,7 +239,7 @@
             this.txtFromGVSearch.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtFromGVSearch.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtFromGVSearch.LabelText = "대차검색";
-            this.txtFromGVSearch.Location = new System.Drawing.Point(743, 206);
+            this.txtFromGVSearch.Location = new System.Drawing.Point(676, 206);
             this.txtFromGVSearch.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtFromGVSearch.Name = "txtFromGVSearch";
             this.txtFromGVSearch.Size = new System.Drawing.Size(292, 41);
@@ -266,7 +266,7 @@
             this.btnFromSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnFromSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFromSearch.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnFromSearch.Location = new System.Drawing.Point(1032, 212);
+            this.btnFromSearch.Location = new System.Drawing.Point(965, 212);
             this.btnFromSearch.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnFromSearch.Name = "btnFromSearch";
             this.btnFromSearch.Size = new System.Drawing.Size(69, 29);

@@ -75,7 +75,7 @@ namespace AxxenClient.Forms
                     GV_HistoryService service = new GV_HistoryService();
 
                     // 옮겨타기
-                    if (service.UpdateMoveGvItem(unloadgvcode, loadinggvcode, Convert.ToInt32(txtMove.TextBoxText), GlobalUsage.UserID, GlobalUsage.WcCode, GlobalUsage.WorkOrderNo, dgvGVFrom.SelectedRows[0].Cells[0].Value.ToString()))
+                    if (service.UpdateMoveGvItem(unloadgvcode, loadinggvcode, Convert.ToInt32(txtMove.TextBoxText), GlobalUsage.UserID, GlobalUsage.WcCode, GlobalUsage.WorkOrderNo, dgvGVFrom.SelectedRows[0].Cells[5].Value.ToString()))
                     {
                         Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 작업지시({GlobalUsage.WorkOrderNo})에서 대차({unloadgvcode})에서 대차({loadinggvcode})로 {txtMove.TextBoxText}개 대차 옮겨타기를 하였음");
                         GetDatas();
