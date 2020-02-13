@@ -1,8 +1,10 @@
-﻿using System;
+﻿using API.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using API.DAC;
 
 namespace API.Controllers
 {
@@ -11,7 +13,9 @@ namespace API.Controllers
         // GET: Sys_Notice
         public ActionResult Index()
         {
-            return View();
+
+            Sys_NoticeDAC dac = new Sys_NoticeDAC();
+            return View(dac.Sys_noticeAll());
         }
 
         // GET: Sys_Notice/Details/5
@@ -28,7 +32,7 @@ namespace API.Controllers
 
         // POST: Sys_Notice/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Sys_NoticeVO notice)
         {
             try
             {
