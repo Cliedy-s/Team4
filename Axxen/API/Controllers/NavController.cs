@@ -13,7 +13,7 @@ namespace API.Controllers
         public ActionResult Menu(string category = null)
         {
             ViewBag.SelectedCategory = category;
-            Item_MasterDac dac = new Item_MasterDac();
+            Item_MasterDAC dac = new Item_MasterDAC();
             List<string> categories = dac.GetAllItem_Master();
 
             return PartialView(categories);

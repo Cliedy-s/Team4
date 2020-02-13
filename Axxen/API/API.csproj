@@ -160,12 +160,13 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NavController.cs" />
+    <Compile Include="Controllers\NoticeShowController.cs" />
     <Compile Include="Controllers\Sys_NoticeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="DAC\DACParent.cs" />
     <Compile Include="DAC\Helper.cs" />
-    <Compile Include="DAC\Item_MasterDac.cs" />
-    <Compile Include="DAC\Sys_NoticeDac.cs" />
+    <Compile Include="DAC\Item_MasterDAC.cs" />
+    <Compile Include="DAC\Sys_NoticeDAC.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -175,6 +176,7 @@
     <Compile Include="Models\ScreenItemVO.cs" />
     <Compile Include="Models\Sys_NoticeVO.cs" />
     <Compile Include="Models\UserGroupVO.cs" />
+    <Compile Include="Models\UserInfo.cs" />
     <Compile Include="Models\UserInfoVO.cs" />
     <Compile Include="Models\WorkOrder_J_WC_ItmeVO.cs" />
     <Compile Include="Models\WorkOrder_J_WC_Time_DayVO.cs" />
@@ -7412,6 +7414,10 @@
     <Content Include="Views\Nav\Menu.cshtml" />
     <Content Include="Views\Sys_Notice\Create.cshtml" />
     <Content Include="Views\Sys_Notice\Index.cshtml" />
+    <Content Include="Views\Sys_Notice\Details.cshtml" />
+    <Content Include="Views\Sys_Notice\Edit.cshtml" />
+    <Content Include="Views\Sys_Notice\Delete.cshtml" />
+    <Content Include="Views\NoticeShow\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
