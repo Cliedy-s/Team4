@@ -1,4 +1,12 @@
 ﻿
+@model IEnumerable<API.Models.Sys_NoticeVO>
+
+@{
+    ViewBag.Title = "공지사항";
+}
+
+<h2>Index</h2>
+
 
 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
     <i class="fa fa-envelope-o"></i>
@@ -18,8 +26,7 @@
                 <thead>
                     <tr>
                         <th>번호</th>
-                        <th>제목</th>
-                        <th>작성자</th>
+                        <th>제목</th>                     
                         <th>날짜</th>
                         <th>조회수</th>
                     </tr>
@@ -33,15 +40,42 @@
                             <td><c:out value="${result.reg_datetime }" /></td>
                             <td></td>
                         </tr>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Seq)
+                                </td>
+                               
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Title)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Notice_Date)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Notice_End)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("수정", "Edit", new { id = item.Seq }) |
+                                    @Html.ActionLink("보기", "Details", new { id = item.Seq }) |
+                                    @Html.ActionLink("삭제", "Delete", new { id = item.Seq })
+                                </td>
+                            </tr>
+                        }
                     </c:forEach>
                 </tbody>
             </table>
 
             <div>
-                <a href="/Sys_Notice/Create"  class="btn btn-success">글쓰기</a>
+                <a href="/Sys_Notice/Create" class="btn btn-success">글쓰기</a>
             </div>
         </form>
     </div>
 
-</body>
+</body
 </html>
+
+
+

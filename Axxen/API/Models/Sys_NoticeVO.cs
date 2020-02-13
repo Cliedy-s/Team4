@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -7,10 +8,14 @@ namespace API.Models
 {
     public class Sys_NoticeVO
     {     
-            public string Req { get; set; }
-            public string Notice_Date { get; set; }
-            public string Notice_End { get; set; }
-            public string Title { get; set; }
-            public string Description { get; set; }        
+        public int Seq { get; set; }
+        [Display(Name = "시작일")]
+        public DateTime Notice_Date { get; set; }
+        [Display(Name = "종료일")]
+        public DateTime Notice_End { get; set; }
+        [Display(Name = "제목")]
+        public string Title { get; set; }
+        [Display(Name = "공지내역")]
+        public string Description { get; set; }        
     }
 }

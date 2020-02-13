@@ -163,6 +163,7 @@
     <Compile Include="Controllers\Sys_NoticeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="DAC\DACParent.cs" />
+    <Compile Include="DAC\Helper.cs" />
     <Compile Include="DAC\Item_MasterDac.cs" />
     <Compile Include="DAC\Sys_NoticeDac.cs" />
     <Compile Include="Global.asax.cs">
@@ -7409,8 +7410,8 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Nav\Menu.cshtml" />
-    <Content Include="Views\Sys_Notice\Index.cshtml" />
     <Content Include="Views\Sys_Notice\Create.cshtml" />
+    <Content Include="Views\Sys_Notice\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -7449,6 +7450,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAC\DAC.csproj">
+      <Project>{B6677E46-71D2-4FDA-B66B-E03B68C97C7D}</Project>
+      <Name>DAC</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
