@@ -29,7 +29,7 @@ namespace AxxenClient.Forms
             txtItemName.TextBoxText = GlobalUsage.ItemName;
             txtQty.TextBoxText = GlobalUsage.Prd_Qty.ToString();
             txtUnit.TextBoxText = GlobalUsage.Prd_Unit.ToString();
-            txtWcCode.TextBoxText = GlobalUsage.WcCode;
+            txtWcCode.TextBoxText = GlobalUsage.WcName;
             txtWorkOrderDate.TextBoxText = (GlobalUsage.WorkorderDate == null) ? "" : GlobalUsage.WorkorderDate.Value.ToString("yyyy-MM-dd HH:mm:ss");
         }
         private void InitControls()

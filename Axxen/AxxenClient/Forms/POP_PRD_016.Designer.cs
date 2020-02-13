@@ -36,14 +36,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvNopList)).BeginInit();
             this.SuspendLayout();
             // 
-            // aLabel_Header1
-            // 
-            this.aLabel_Header1.Text = "비가동 등록";
-            // 
-            // aPanel1
+            // panBottom
             // 
             this.panBottom.Location = new System.Drawing.Point(0, 593);
             this.panBottom.Margin = new System.Windows.Forms.Padding(2);
+            // 
+            // btnNoActive
+            // 
+            this.btnNoActive.Visible = false;
+            // 
+            // aLabel_Header1
+            // 
+            this.aLabel_Header1.Text = "비가동 등록";
             // 
             // dgvNopList
             // 
@@ -75,7 +79,6 @@
             // 
             // POP_PRD_016
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1210, 629);
             this.Controls.Add(this.btnChangeReason);
             this.Controls.Add(this.dgvNopList);
