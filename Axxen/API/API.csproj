@@ -159,6 +159,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\NavController.cs" />
     <Compile Include="Controllers\NoticeShowController.cs" />
     <Compile Include="Controllers\Sys_NoticeController.cs" />
@@ -167,6 +168,7 @@
     <Compile Include="DAC\Helper.cs" />
     <Compile Include="DAC\Item_MasterDAC.cs" />
     <Compile Include="DAC\Sys_NoticeDAC.cs" />
+    <Compile Include="DAC\UserInfoDAC.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -7418,6 +7420,9 @@
     <Content Include="Views\Sys_Notice\Edit.cshtml" />
     <Content Include="Views\Sys_Notice\Delete.cshtml" />
     <Content Include="Views\NoticeShow\Index.cshtml" />
+    <Content Include="Views\Nav\Message.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Login\userbox.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
