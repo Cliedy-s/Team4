@@ -129,6 +129,7 @@
             this.ControlBox = false;
             this.Controls.Add(this.toolStrip1);
             this.Name = "PRM_RPT_003";
+            this.Text = "포장작업일지";
             this.Activated += new System.EventHandler(this.PRM_RPT_003_Activated);
             this.Deactivate += new System.EventHandler(this.PRM_RPT_003_Deactivate);
             this.Controls.SetChildIndex(this.aPanel2, 0);

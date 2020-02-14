@@ -131,8 +131,9 @@
             // 
             // aDateTimePickerSearch1
             // 
-            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 2, 5, 14, 2, 43, 329);
-            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 2, 12, 14, 2, 43, 329);
+            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 2, 7, 12, 3, 57, 683);
+            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 2, 14, 12, 3, 57, 683);
+            this.aDateTimePickerSearch1.ButtonText = "";
             this.aDateTimePickerSearch1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aDateTimePickerSearch1.Location = new System.Drawing.Point(112, 23);
             this.aDateTimePickerSearch1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -175,6 +176,7 @@
             this.ControlBox = false;
             this.Controls.Add(this.toolStrip1);
             this.Name = "PPS_SCH_001";
+            this.Text = "성형작업지시생성";
             this.Activated += new System.EventHandler(this.PPS_SCH_001_Activated);
             this.Deactivate += new System.EventHandler(this.PPS_SCH_001_Deactivate);
             this.Load += new System.EventHandler(this.PPS_SCH_001_Load);

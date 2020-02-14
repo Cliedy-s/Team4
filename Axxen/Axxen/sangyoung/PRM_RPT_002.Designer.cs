@@ -129,6 +129,7 @@
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.ControlBox = false;
             this.Name = "PRM_RPT_002";
+            this.Text = "성형작업일지";
             this.Activated += new System.EventHandler(this.PRM_RPT_002_Activated);
             this.Deactivate += new System.EventHandler(this.PRM_RPT_002_Deactivate);
             this.aPanel1.ResumeLayout(false);

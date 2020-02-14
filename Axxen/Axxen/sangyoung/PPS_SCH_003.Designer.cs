@@ -79,9 +79,9 @@
             // 
             // aDateTimePickerSearch1
             // 
-            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 2, 4, 13, 43, 19, 673);
-            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 2, 11, 13, 43, 19, 673);
-            
+            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 2, 7, 12, 4, 37, 406);
+            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 2, 14, 12, 4, 37, 406);
+            this.aDateTimePickerSearch1.ButtonText = "";
             this.aDateTimePickerSearch1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aDateTimePickerSearch1.Location = new System.Drawing.Point(105, 23);
             this.aDateTimePickerSearch1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -211,6 +211,7 @@
             this.Controls.Add(this.dgvMainGrid);
             this.Controls.Add(this.aPanel1);
             this.Name = "PPS_SCH_003";
+            this.Text = "일단위시간대별실적조회";
             this.Activated += new System.EventHandler(this.PPS_SCH_003_Activated);
             this.Deactivate += new System.EventHandler(this.PPS_SCH_003_Deactivate);
             this.Load += new System.EventHandler(this.PPS_SCH_003_Load);

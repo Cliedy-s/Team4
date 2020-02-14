@@ -43,17 +43,17 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.aLabel9 = new Axxen.CustomControls.ALabel();
             this.aPanel19 = new Axxen.CustomControls.APanel();
+            this.aLabel8 = new Axxen.CustomControls.ALabel();
             this.aPanel7 = new Axxen.CustomControls.APanel();
+            this.aLabel10 = new Axxen.CustomControls.ALabel();
             this.aPanel6 = new Axxen.CustomControls.APanel();
             this.aPanel4 = new Axxen.CustomControls.APanel();
+            this.aLabel14 = new Axxen.CustomControls.ALabel();
             this.aPanel2 = new Axxen.CustomControls.APanel();
             this.aPanel3 = new Axxen.CustomControls.APanel();
             this.aPanel5 = new Axxen.CustomControls.APanel();
-            this.aPanel20 = new Axxen.CustomControls.APanel();
-            this.aLabel14 = new Axxen.CustomControls.ALabel();
             this.aLabel15 = new Axxen.CustomControls.ALabel();
-            this.aLabel10 = new Axxen.CustomControls.ALabel();
-            this.aLabel8 = new Axxen.CustomControls.ALabel();
+            this.aPanel20 = new Axxen.CustomControls.APanel();
             this.aPanel9 = new Axxen.CustomControls.APanel();
             this.aLabel16 = new Axxen.CustomControls.ALabel();
             this.aPanel10 = new Axxen.CustomControls.APanel();
@@ -240,6 +240,17 @@
             this.aPanel19.Size = new System.Drawing.Size(120, 35);
             this.aPanel19.TabIndex = 190;
             // 
+            // aLabel8
+            // 
+            this.aLabel8.AutoSize = true;
+            this.aLabel8.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aLabel8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.aLabel8.Location = new System.Drawing.Point(18, 7);
+            this.aLabel8.Name = "aLabel8";
+            this.aLabel8.Size = new System.Drawing.Size(86, 17);
+            this.aLabel8.TabIndex = 55;
+            this.aLabel8.Text = "생산의뢰순번";
+            // 
             // aPanel7
             // 
             this.aPanel7.BackColor = System.Drawing.SystemColors.Info;
@@ -249,6 +260,17 @@
             this.aPanel7.Name = "aPanel7";
             this.aPanel7.Size = new System.Drawing.Size(120, 35);
             this.aPanel7.TabIndex = 189;
+            // 
+            // aLabel10
+            // 
+            this.aLabel10.AutoSize = true;
+            this.aLabel10.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aLabel10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.aLabel10.Location = new System.Drawing.Point(20, 7);
+            this.aLabel10.Name = "aLabel10";
+            this.aLabel10.Size = new System.Drawing.Size(60, 17);
+            this.aLabel10.TabIndex = 53;
+            this.aLabel10.Text = "품목코드";
             // 
             // aPanel6
             // 
@@ -268,6 +290,17 @@
             this.aPanel4.Name = "aPanel4";
             this.aPanel4.Size = new System.Drawing.Size(120, 35);
             this.aPanel4.TabIndex = 187;
+            // 
+            // aLabel14
+            // 
+            this.aLabel14.AutoSize = true;
+            this.aLabel14.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aLabel14.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.aLabel14.Location = new System.Drawing.Point(21, 7);
+            this.aLabel14.Name = "aLabel14";
+            this.aLabel14.Size = new System.Drawing.Size(60, 17);
+            this.aLabel14.TabIndex = 55;
+            this.aLabel14.Text = "계획수량";
             // 
             // aPanel2
             // 
@@ -297,26 +330,6 @@
             this.aPanel5.Size = new System.Drawing.Size(120, 35);
             this.aPanel5.TabIndex = 186;
             // 
-            // aPanel20
-            // 
-            this.aPanel20.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.aPanel20.Controls.Add(this.txtSeq);
-            this.aPanel20.Location = new System.Drawing.Point(142, 55);
-            this.aPanel20.Name = "aPanel20";
-            this.aPanel20.Size = new System.Drawing.Size(142, 35);
-            this.aPanel20.TabIndex = 183;
-            // 
-            // aLabel14
-            // 
-            this.aLabel14.AutoSize = true;
-            this.aLabel14.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aLabel14.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aLabel14.Location = new System.Drawing.Point(21, 7);
-            this.aLabel14.Name = "aLabel14";
-            this.aLabel14.Size = new System.Drawing.Size(60, 17);
-            this.aLabel14.TabIndex = 55;
-            this.aLabel14.Text = "계획수량";
-            // 
             // aLabel15
             // 
             this.aLabel15.AutoSize = true;
@@ -328,27 +341,14 @@
             this.aLabel15.TabIndex = 54;
             this.aLabel15.Text = "작업지시일";
             // 
-            // aLabel10
+            // aPanel20
             // 
-            this.aLabel10.AutoSize = true;
-            this.aLabel10.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aLabel10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aLabel10.Location = new System.Drawing.Point(20, 7);
-            this.aLabel10.Name = "aLabel10";
-            this.aLabel10.Size = new System.Drawing.Size(60, 17);
-            this.aLabel10.TabIndex = 53;
-            this.aLabel10.Text = "품목코드";
-            // 
-            // aLabel8
-            // 
-            this.aLabel8.AutoSize = true;
-            this.aLabel8.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aLabel8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aLabel8.Location = new System.Drawing.Point(18, 7);
-            this.aLabel8.Name = "aLabel8";
-            this.aLabel8.Size = new System.Drawing.Size(86, 17);
-            this.aLabel8.TabIndex = 55;
-            this.aLabel8.Text = "생산의뢰순번";
+            this.aPanel20.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.aPanel20.Controls.Add(this.txtSeq);
+            this.aPanel20.Location = new System.Drawing.Point(142, 55);
+            this.aPanel20.Name = "aPanel20";
+            this.aPanel20.Size = new System.Drawing.Size(142, 35);
+            this.aPanel20.TabIndex = 183;
             // 
             // aPanel9
             // 
@@ -527,7 +527,7 @@
             this.Controls.Add(this.aPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "PPS_SCH_001_Insert";
-            this.Text = "PPS_SCH_001_Insert";
+            this.Text = "성형작업지시생성";
             this.Load += new System.EventHandler(this.PPS_SCH_001_Insert_Load);
             this.aPanel1.ResumeLayout(false);
             this.aPanel1.PerformLayout();

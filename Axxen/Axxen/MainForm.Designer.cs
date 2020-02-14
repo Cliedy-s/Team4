@@ -31,6 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.aPanel1 = new Axxen.CustomControls.APanel();
+            this.btnManuReflash = new System.Windows.Forms.Button();
+            this.aPanel2 = new Axxen.CustomControls.APanel();
+            this.btnBookmark = new System.Windows.Forms.Button();
             this.tvMenu = new System.Windows.Forms.TreeView();
             this.ctmBookMark = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.즐겨찾기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -38,7 +42,10 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.전체닫기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblLogin = new Axxen.CustomControls.ALabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.aLabel2 = new Axxen.CustomControls.ALabel();
+            this.lblSubtitle = new Axxen.CustomControls.ALabel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.메모장ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.계산기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,20 +62,15 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonLogin = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.aLabel2 = new Axxen.CustomControls.ALabel();
-            this.lblSubtitle = new Axxen.CustomControls.ALabel();
             this.pnBookmark = new Axxen.CustomControls.APanel();
             this.toolbook = new System.Windows.Forms.ToolStrip();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtoncencle = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.tvBookMark = new System.Windows.Forms.TreeView();
-            this.aPanel1 = new Axxen.CustomControls.APanel();
-            this.btnManuReflash = new System.Windows.Forms.Button();
-            this.aPanel2 = new Axxen.CustomControls.APanel();
-            this.btnBookmark = new System.Windows.Forms.Button();
-            this.lblLogin = new Axxen.CustomControls.ALabel();
             this.panelMenu.SuspendLayout();
+            this.aPanel1.SuspendLayout();
+            this.aPanel2.SuspendLayout();
             this.ctmBookMark.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -77,8 +79,6 @@
             this.toolStrip1.SuspendLayout();
             this.pnBookmark.SuspendLayout();
             this.toolbook.SuspendLayout();
-            this.aPanel1.SuspendLayout();
-            this.aPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -93,6 +93,57 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(267, 833);
             this.panelMenu.TabIndex = 5;
+            // 
+            // aPanel1
+            // 
+            this.aPanel1.Controls.Add(this.btnManuReflash);
+            this.aPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.aPanel1.Location = new System.Drawing.Point(0, 0);
+            this.aPanel1.Name = "aPanel1";
+            this.aPanel1.Size = new System.Drawing.Size(267, 43);
+            this.aPanel1.TabIndex = 10;
+            // 
+            // btnManuReflash
+            // 
+            this.btnManuReflash.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.btnManuReflash.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnManuReflash.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnManuReflash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnManuReflash.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnManuReflash.ForeColor = System.Drawing.Color.Black;
+            this.btnManuReflash.Location = new System.Drawing.Point(0, 0);
+            this.btnManuReflash.Name = "btnManuReflash";
+            this.btnManuReflash.Size = new System.Drawing.Size(267, 43);
+            this.btnManuReflash.TabIndex = 8;
+            this.btnManuReflash.Text = "메뉴";
+            this.btnManuReflash.UseVisualStyleBackColor = false;
+            this.btnManuReflash.Click += new System.EventHandler(this.BtnManuReflash_Click);
+            // 
+            // aPanel2
+            // 
+            this.aPanel2.Controls.Add(this.btnBookmark);
+            this.aPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.aPanel2.Location = new System.Drawing.Point(0, 790);
+            this.aPanel2.Name = "aPanel2";
+            this.aPanel2.Size = new System.Drawing.Size(267, 43);
+            this.aPanel2.TabIndex = 9;
+            // 
+            // btnBookmark
+            // 
+            this.btnBookmark.BackColor = System.Drawing.SystemColors.Info;
+            this.btnBookmark.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnBookmark.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnBookmark.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBookmark.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnBookmark.Image = ((System.Drawing.Image)(resources.GetObject("btnBookmark.Image")));
+            this.btnBookmark.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBookmark.Location = new System.Drawing.Point(0, 0);
+            this.btnBookmark.Name = "btnBookmark";
+            this.btnBookmark.Size = new System.Drawing.Size(267, 43);
+            this.btnBookmark.TabIndex = 8;
+            this.btnBookmark.Text = "즐겨찾기";
+            this.btnBookmark.UseVisualStyleBackColor = false;
+            this.btnBookmark.Click += new System.EventHandler(this.BtnBookmark_Click);
             // 
             // tvMenu
             // 
@@ -161,6 +212,17 @@
             this.panel1.Size = new System.Drawing.Size(1355, 46);
             this.panel1.TabIndex = 20;
             // 
+            // lblLogin
+            // 
+            this.lblLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblLogin.AutoSize = true;
+            this.lblLogin.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblLogin.Location = new System.Drawing.Point(1227, 12);
+            this.lblLogin.Name = "lblLogin";
+            this.lblLogin.Size = new System.Drawing.Size(66, 21);
+            this.lblLogin.TabIndex = 22;
+            this.lblLogin.Text = "aLabel1";
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -169,6 +231,25 @@
             this.pictureBox1.Size = new System.Drawing.Size(40, 30);
             this.pictureBox1.TabIndex = 21;
             this.pictureBox1.TabStop = false;
+            // 
+            // aLabel2
+            // 
+            this.aLabel2.AutoSize = true;
+            this.aLabel2.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aLabel2.Location = new System.Drawing.Point(53, 18);
+            this.aLabel2.Name = "aLabel2";
+            this.aLabel2.Size = new System.Drawing.Size(73, 17);
+            this.aLabel2.TabIndex = 20;
+            this.aLabel2.Text = "위치 정보 :";
+            // 
+            // lblSubtitle
+            // 
+            this.lblSubtitle.AutoSize = true;
+            this.lblSubtitle.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblSubtitle.Location = new System.Drawing.Point(132, 18);
+            this.lblSubtitle.Name = "lblSubtitle";
+            this.lblSubtitle.Size = new System.Drawing.Size(0, 17);
+            this.lblSubtitle.TabIndex = 0;
             // 
             // menuStrip1
             // 
@@ -217,6 +298,7 @@
             this.toolStripButton1.BackgroundImage = global::Axxen.Properties.Resources.MianLoGo;
             this.toolStripButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Enabled = false;
             this.toolStripButton1.ForeColor = System.Drawing.Color.Transparent;
             this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -363,25 +445,6 @@
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 97);
             // 
-            // aLabel2
-            // 
-            this.aLabel2.AutoSize = true;
-            this.aLabel2.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aLabel2.Location = new System.Drawing.Point(53, 18);
-            this.aLabel2.Name = "aLabel2";
-            this.aLabel2.Size = new System.Drawing.Size(73, 17);
-            this.aLabel2.TabIndex = 20;
-            this.aLabel2.Text = "위치 정보 :";
-            // 
-            // lblSubtitle
-            // 
-            this.lblSubtitle.AutoSize = true;
-            this.lblSubtitle.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblSubtitle.Location = new System.Drawing.Point(132, 18);
-            this.lblSubtitle.Name = "lblSubtitle";
-            this.lblSubtitle.Size = new System.Drawing.Size(0, 17);
-            this.lblSubtitle.TabIndex = 0;
-            // 
             // pnBookmark
             // 
             this.pnBookmark.BackColor = System.Drawing.Color.White;
@@ -442,68 +505,6 @@
             this.tvBookMark.TabIndex = 0;
             this.tvBookMark.DoubleClick += new System.EventHandler(this.TvBookMark_DoubleClick);
             // 
-            // aPanel1
-            // 
-            this.aPanel1.Controls.Add(this.btnManuReflash);
-            this.aPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.aPanel1.Location = new System.Drawing.Point(0, 0);
-            this.aPanel1.Name = "aPanel1";
-            this.aPanel1.Size = new System.Drawing.Size(267, 43);
-            this.aPanel1.TabIndex = 10;
-            // 
-            // btnManuReflash
-            // 
-            this.btnManuReflash.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.btnManuReflash.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnManuReflash.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnManuReflash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnManuReflash.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnManuReflash.ForeColor = System.Drawing.Color.Black;
-            this.btnManuReflash.Location = new System.Drawing.Point(0, 0);
-            this.btnManuReflash.Name = "btnManuReflash";
-            this.btnManuReflash.Size = new System.Drawing.Size(267, 43);
-            this.btnManuReflash.TabIndex = 8;
-            this.btnManuReflash.Text = "메뉴";
-            this.btnManuReflash.UseVisualStyleBackColor = false;
-            this.btnManuReflash.Click += new System.EventHandler(this.BtnManuReflash_Click);
-            // 
-            // aPanel2
-            // 
-            this.aPanel2.Controls.Add(this.btnBookmark);
-            this.aPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.aPanel2.Location = new System.Drawing.Point(0, 790);
-            this.aPanel2.Name = "aPanel2";
-            this.aPanel2.Size = new System.Drawing.Size(267, 43);
-            this.aPanel2.TabIndex = 9;
-            // 
-            // btnBookmark
-            // 
-            this.btnBookmark.BackColor = System.Drawing.SystemColors.Info;
-            this.btnBookmark.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnBookmark.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnBookmark.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBookmark.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnBookmark.Image = ((System.Drawing.Image)(resources.GetObject("btnBookmark.Image")));
-            this.btnBookmark.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBookmark.Location = new System.Drawing.Point(0, 0);
-            this.btnBookmark.Name = "btnBookmark";
-            this.btnBookmark.Size = new System.Drawing.Size(267, 43);
-            this.btnBookmark.TabIndex = 8;
-            this.btnBookmark.Text = "즐겨찾기";
-            this.btnBookmark.UseVisualStyleBackColor = false;
-            this.btnBookmark.Click += new System.EventHandler(this.BtnBookmark_Click);
-            // 
-            // lblLogin
-            // 
-            this.lblLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblLogin.AutoSize = true;
-            this.lblLogin.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblLogin.Location = new System.Drawing.Point(1227, 14);
-            this.lblLogin.Name = "lblLogin";
-            this.lblLogin.Size = new System.Drawing.Size(66, 21);
-            this.lblLogin.TabIndex = 22;
-            this.lblLogin.Text = "aLabel1";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -522,8 +523,11 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Tag = " ";
+            this.Text = "SPOK";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.panelMenu.ResumeLayout(false);
+            this.aPanel1.ResumeLayout(false);
+            this.aPanel2.ResumeLayout(false);
             this.ctmBookMark.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -537,8 +541,6 @@
             this.pnBookmark.PerformLayout();
             this.toolbook.ResumeLayout(false);
             this.toolbook.PerformLayout();
-            this.aPanel1.ResumeLayout(false);
-            this.aPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
