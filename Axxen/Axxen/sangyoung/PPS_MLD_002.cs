@@ -48,17 +48,17 @@ namespace Axxen
         {
             InitControlUtil.SetDGVDesign(dgvMainGrid);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "작업지시번호", "Workorderno", true, 110, DataGridViewContentAlignment.MiddleCenter);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "품목코드", "Item_Code", true, 90, DataGridViewContentAlignment.MiddleCenter);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "품목명", "Item_Name", true, 90, DataGridViewContentAlignment.MiddleCenter);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "생산일자", "Prd_Date", true, 100, DataGridViewContentAlignment.MiddleCenter);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "작업장코드", "Wc_Code", true, 90, DataGridViewContentAlignment.MiddleCenter);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "작업장이름", "Wc_Name", true, 90, DataGridViewContentAlignment.MiddleCenter);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "품목코드", "Item_Code", true, 85, DataGridViewContentAlignment.MiddleCenter);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "품목명", "Item_Name", true, 85, DataGridViewContentAlignment.MiddleCenter);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "생산일자", "Prd_Date", true, 95, DataGridViewContentAlignment.MiddleCenter);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "작업장코드", "Wc_Code", true, 95, DataGridViewContentAlignment.MiddleCenter);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "작업장이름", "Wc_Name", true, 95, DataGridViewContentAlignment.MiddleCenter);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형코드", "Mold_Code", true, 100, DataGridViewContentAlignment.MiddleCenter);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형명", "Mold_Name", true, 100, DataGridViewContentAlignment.MiddleCenter);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형명", "Mold_Name", true, 90, DataGridViewContentAlignment.MiddleCenter);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형타수", "Mold_Shot_Cnt", true, 80, DataGridViewContentAlignment.MiddleRight);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형생산량", "Mold_Prd_Qty", true, 100, DataGridViewContentAlignment.MiddleRight);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형사용시작시간", "Use_Starttime", true, 135, DataGridViewContentAlignment.MiddleCenter);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형사용종료시간", "Use_Endtime", true, 135, DataGridViewContentAlignment.MiddleCenter);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형생산량", "Mold_Prd_Qty", true, 90, DataGridViewContentAlignment.MiddleRight);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형사용시작시간", "Use_Starttime", true, 145, DataGridViewContentAlignment.MiddleCenter);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형사용종료시간", "Use_Endtime", true, 145, DataGridViewContentAlignment.MiddleCenter);
             DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "금형사용시간", "Use_time", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
         }
 
