@@ -71,7 +71,6 @@ namespace AxxenClient.Forms
             Inspect_Measure_HistoryService mservice = new Inspect_Measure_HistoryService();
             dgvInspectMeasure.DataSource = mservice.GetAll(lblItemCode.Text, lblProcesscode.Text, lblInspectcode.Text);
         }
-
         private void dgvInspect_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             lblItemCode.Text = dgvInspect.SelectedRows[0].Cells[4].Value.ToString();
@@ -88,10 +87,9 @@ namespace AxxenClient.Forms
 
             SearchData();
         }
-
         private void btnInsertMeasure_Click(object sender, EventArgs e)
         {
-            if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
+            if (GlobalUsage.WorkOrderNo.Equals("설정안됨"))
             {
                 if (!string.IsNullOrEmpty(lblInspectcode.Text))
                 {
@@ -121,7 +119,6 @@ namespace AxxenClient.Forms
                 }
             }
         }
-
         private void btnDeleteMeasure_Click(object sender, EventArgs e)
         {
             if (dgvInspectMeasure.SelectedRows.Count > 0)
@@ -139,7 +136,6 @@ namespace AxxenClient.Forms
                 }
             }
         }
-
         bool isMachineRun = false;
         MachineType machinet = MachineType.Inspect_Measure;
         private void btnMachineRun_Click(object sender, EventArgs e)
@@ -147,16 +143,18 @@ namespace AxxenClient.Forms
             if (isMachineRun) MachineStop(machinet);
             else MachineStart(machinet);
         }
+
         /// <summary>
         /// 기계 종료
         /// </summary>
+        Action<MachineType> machineStop;
         private void MachineStop(MachineType machinet)
         {
             if (isMachineRun)
             {
                 btnMachineRun.BackColor = Color.FromArgb(218, 239, 245);
                 isMachineRun = false;
-                machine2.MachineStop(machinet);
+                progressMachine.Visible = false;
             }
         }
         /// <summary>
@@ -166,7 +164,9 @@ namespace AxxenClient.Forms
         Machine machine2;
         private void MachineStart(MachineType machinet)
         {
-            machine2 = new Machine(2, GlobalUsage.WorkOrderNo, GlobalUsage.UserID, GlobalUsage.WcCode, MachineStop);
+            setProgress += SetProgress;
+            machineStop += MachineStop;
+            machine2 = new Machine(2, GlobalUsage.WorkOrderNo, GlobalUsage.UserID, GlobalUsage.WcCode, (value) => btnMachineRun.Invoke(machineStop, value), (value) => progressMachine.Invoke(setProgress, value));
             if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
             {
                 if (!isMachineRun)
@@ -201,6 +201,11 @@ namespace AxxenClient.Forms
                 Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 작업지시를 시작하지 않고 기계를 시작하려함");
                 MessageBox.Show("작업지시를 시작해주세요");
             }
+        }
+        Action<int> setProgress;
+        private void SetProgress(int value)
+        {
+            progressMachine.Value = value % 101;
         }
 
     }

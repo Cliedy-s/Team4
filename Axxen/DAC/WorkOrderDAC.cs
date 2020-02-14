@@ -428,7 +428,7 @@ namespace DAC
         /// </summary>
         /// <param name="item"></param>
         /// <returns></returns>
-        public bool InsertWorkOrder(WorkOrderNewVO item)
+        public bool InsertWorkOrder(WorkOrderNewVO item, string histcode = null)
         {
             using (SqlCommand comm = new SqlCommand())
             {
@@ -449,6 +449,8 @@ namespace DAC
            ,[Mat_LotNo]
            ,[Ins_Date]
            ,[Ins_Emp]
+           ,[Up_Date]
+           ,[Up_Emp]
            ,[Prd_Unit]
            ,[Plan_Starttime]
            ,[Plan_Endtime])
@@ -467,6 +469,8 @@ namespace DAC
            ,@Mat_LotNo
            ,getdate()
            ,@Ins_Emp
+           ,getdate()
+           ,@Ins_Emp
            ,@Prd_Unit
            ,getdate()
            , dateadd(hour, 3, getdate())
@@ -474,6 +478,10 @@ namespace DAC
        UPDATE Wo_Req
         SET Req_Status = '진행중'
         WHERE Wo_Req_No = @Wo_Req_No;
+
+	    UPDATE GV_History
+	    SET Unloading_Qty = 0
+	    WHERE Hist_Seq = @histSeq;
 ";
 
                 comm.CommandType = CommandType.Text;
@@ -488,6 +496,10 @@ namespace DAC
                 comm.Parameters.AddWithValue("@Mat_LotNo", item.Mat_LotNo);
                 comm.Parameters.AddWithValue("@Ins_Emp", item.Ins_Emp);
                 comm.Parameters.AddWithValue("@Prd_Unit", item.Prd_Unit);
+                if(histcode == null)
+                    comm.Parameters.AddWithValue("@histSeq", DBNull.Value);
+                else
+                    comm.Parameters.AddWithValue("@histSeq", histcode);
 
                 comm.Connection.Open();
                 int result = comm.ExecuteNonQuery();

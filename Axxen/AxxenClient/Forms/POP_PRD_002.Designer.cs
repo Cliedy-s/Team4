@@ -29,14 +29,15 @@
         private void InitializeComponent()
         {
             this.aPanel4 = new Axxen.CustomControls.APanel();
+            this.lblHistReq = new Axxen.CustomControls.ALabel();
             this.lblItem_Unit = new Axxen.CustomControls.ALabel();
             this.lblReq_Seq = new Axxen.CustomControls.ALabel();
-            this.txtReqNo = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
-            this.txtPlanQty = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
             this.txtWcSearch = new Axxen.CustomControls.ABigTextBox_Searchable();
             this.txtProcessSearch = new Axxen.CustomControls.ABigTextBox_Searchable();
             this.txtItemSearch = new Axxen.CustomControls.ABigTextBox_Searchable();
             this.btnCreateWorkOrder = new Axxen.CustomControls.AButton();
+            this.txtReqNo = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
+            this.txtPlanQty = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
             this.dgvWoReq = new Axxen.CustomControls.ADataGridView();
             this.panBottom.SuspendLayout();
             this.aPanel2.SuspendLayout();
@@ -60,6 +61,7 @@
             // 
             this.aPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.aPanel4.Controls.Add(this.lblHistReq);
             this.aPanel4.Controls.Add(this.lblItem_Unit);
             this.aPanel4.Controls.Add(this.lblReq_Seq);
             this.aPanel4.Controls.Add(this.txtWcSearch);
@@ -73,12 +75,22 @@
             this.aPanel4.Size = new System.Drawing.Size(549, 482);
             this.aPanel4.TabIndex = 7;
             // 
+            // lblHistReq
+            // 
+            this.lblHistReq.AutoSize = true;
+            this.lblHistReq.Location = new System.Drawing.Point(181, 314);
+            this.lblHistReq.Name = "lblHistReq";
+            this.lblHistReq.Size = new System.Drawing.Size(72, 15);
+            this.lblHistReq.TabIndex = 29;
+            this.lblHistReq.Text = "lblHistReq";
+            this.lblHistReq.Visible = false;
+            // 
             // lblItem_Unit
             // 
             this.lblItem_Unit.AutoSize = true;
             this.lblItem_Unit.Location = new System.Drawing.Point(109, 314);
             this.lblItem_Unit.Name = "lblItem_Unit";
-            this.lblItem_Unit.Size = new System.Drawing.Size(56, 12);
+            this.lblItem_Unit.Size = new System.Drawing.Size(66, 15);
             this.lblItem_Unit.TabIndex = 28;
             this.lblItem_Unit.Text = "Item_Unit";
             this.lblItem_Unit.Visible = false;
@@ -88,38 +100,10 @@
             this.lblReq_Seq.AutoSize = true;
             this.lblReq_Seq.Location = new System.Drawing.Point(39, 314);
             this.lblReq_Seq.Name = "lblReq_Seq";
-            this.lblReq_Seq.Size = new System.Drawing.Size(55, 12);
+            this.lblReq_Seq.Size = new System.Drawing.Size(67, 15);
             this.lblReq_Seq.TabIndex = 27;
             this.lblReq_Seq.Text = "Req_Seq";
             this.lblReq_Seq.Visible = false;
-            // 
-            // txtReqNo
-            // 
-            this.txtReqNo.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtReqNo.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtReqNo.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtReqNo.LabelText = "작업지시일";
-            this.txtReqNo.Location = new System.Drawing.Point(42, 212);
-            this.txtReqNo.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.txtReqNo.Name = "txtReqNo";
-            this.txtReqNo.Size = new System.Drawing.Size(469, 42);
-            this.txtReqNo.TabIndex = 26;
-            this.txtReqNo.TextBoxText = "";
-            this.txtReqNo.TextBoxType = Axxen.CustomControls.TextType.Normal;
-            // 
-            // txtPlanQty
-            // 
-            this.txtPlanQty.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtPlanQty.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtPlanQty.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtPlanQty.LabelText = "계획수량";
-            this.txtPlanQty.Location = new System.Drawing.Point(42, 266);
-            this.txtPlanQty.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.txtPlanQty.Name = "txtPlanQty";
-            this.txtPlanQty.Size = new System.Drawing.Size(469, 42);
-            this.txtPlanQty.TabIndex = 25;
-            this.txtPlanQty.TextBoxText = "";
-            this.txtPlanQty.TextBoxType = Axxen.CustomControls.TextType.Numeric;
             // 
             // txtWcSearch
             // 
@@ -183,6 +167,34 @@
             this.btnCreateWorkOrder.UseVisualStyleBackColor = false;
             this.btnCreateWorkOrder.Click += new System.EventHandler(this.btnCreateWorkOrder_Click);
             // 
+            // txtReqNo
+            // 
+            this.txtReqNo.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtReqNo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtReqNo.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtReqNo.LabelText = "작업지시일";
+            this.txtReqNo.Location = new System.Drawing.Point(42, 212);
+            this.txtReqNo.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtReqNo.Name = "txtReqNo";
+            this.txtReqNo.Size = new System.Drawing.Size(469, 42);
+            this.txtReqNo.TabIndex = 26;
+            this.txtReqNo.TextBoxText = "";
+            this.txtReqNo.TextBoxType = Axxen.CustomControls.TextType.Normal;
+            // 
+            // txtPlanQty
+            // 
+            this.txtPlanQty.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtPlanQty.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtPlanQty.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtPlanQty.LabelText = "계획수량";
+            this.txtPlanQty.Location = new System.Drawing.Point(42, 266);
+            this.txtPlanQty.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtPlanQty.Name = "txtPlanQty";
+            this.txtPlanQty.Size = new System.Drawing.Size(469, 42);
+            this.txtPlanQty.TabIndex = 25;
+            this.txtPlanQty.TextBoxText = "";
+            this.txtPlanQty.TextBoxType = Axxen.CustomControls.TextType.Numeric;
+            // 
             // dgvWoReq
             // 
             this.dgvWoReq.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -234,5 +246,6 @@
         private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox txtPlanQty;
         private Axxen.CustomControls.ALabel lblReq_Seq;
         private Axxen.CustomControls.ALabel lblItem_Unit;
+        private Axxen.CustomControls.ALabel lblHistReq;
     }
 }
