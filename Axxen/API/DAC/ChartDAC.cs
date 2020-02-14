@@ -1,4 +1,5 @@
-﻿using System;
+﻿using API.Models;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -9,46 +10,40 @@ namespace API.DAC
 {
     public class ChartDAC : DACParent
     {
-        public List<string> GetItemOutputChart()
+        public List<ChartOutputVO> GetItemOutputChart(string name)
         {
-            List<string> list = new List<string>();
-            string sql = "GetItemOutput";
-            using (SqlConnection conn = new SqlConnection(Connstr))
+            using (SqlCommand comm = new SqlCommand())
             {
-                conn.Open();
-                using (SqlCommand cmd = new SqlCommand(sql, conn))
-                {
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    SqlDataReader reader = cmd.ExecuteReader();
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText = "GetItemOutput";
+                comm.CommandType = CommandType.StoredProcedure;
+                comm.Parameters.AddWithValue("@Item_Name", name);
 
-                    while (reader.Read())
-                    {
-                        list.Add(reader[1].ToString());
-                    }
-                }
+                comm.Connection.Open();
+                SqlDataReader reader = comm.ExecuteReader();
+                List<ChartOutputVO> list = Helper.DataReaderMapToList<ChartOutputVO>(reader);
+                comm.Connection.Close();
+
+                return list;
             }
-            return list;
         }
 
-        public List<string> GetItemBoxPackageChart()
+        public List<ChartBoxPackageVO> GetItemBoxPackageChart(string name)
         {
-            List<string> list = new List<string>();
-            string sql = "GetItemBoxPackage";
-            using (SqlConnection conn = new SqlConnection(Connstr))
+            using (SqlCommand comm = new SqlCommand())
             {
-                conn.Open();
-                using (SqlCommand cmd = new SqlCommand(sql, conn))
-                {
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    SqlDataReader reader = cmd.ExecuteReader();
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText = "GetItemBoxPackage";
+                comm.CommandType = CommandType.StoredProcedure;
+                comm.Parameters.AddWithValue("@Item_Name", name);
 
-                    while (reader.Read())
-                    {
-                        list.Add(reader[1].ToString());
-                    }
-                }
+                comm.Connection.Open();
+                SqlDataReader reader = comm.ExecuteReader();
+                List<ChartBoxPackageVO> list = Helper.DataReaderMapToList<ChartBoxPackageVO>(reader);
+                comm.Connection.Close();
+
+                return list;
             }
-            return list;
         }
     }
 }
