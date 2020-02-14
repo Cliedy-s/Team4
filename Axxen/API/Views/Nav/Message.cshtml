@@ -1,0 +1,31 @@
+﻿
+@model IEnumerable<API.Models.Sys_NoticeVO>
+
+    <ul class="dropdown-menu">
+        <li class="header">You have @Model.Count() messages</li>
+        @foreach (var item in Model)
+        {
+            <li>
+                <!-- inner menu: contains the messages -->
+                <ul class="menu">
+                    <li>
+                        <!-- start message -->
+                        @*@Html.Action("Sys_Notice", "Index")*@
+                        <a href="#">
+
+                            <!-- Message title and timestamp -->
+                            <h4>
+                                @Html.DisplayFor(modelItem => item.Title)
+                                <small><i class="fa fa-clock-o"></i> @Html.DisplayFor(modelItem=>item.Notice_Date)</small>
+                            </h4>
+                            <!-- The message -->
+                            <p> @Html.DisplayFor(modelItem => item.Description)</p>
+                        </a>
+                    </li>
+                    <!-- end message -->
+                </ul>
+                <!-- /.menu -->
+            </li>
+        }
+        <li class="footer"><a href="/Sys_Notice/Index">See All Messages</a></li>
+    </ul>

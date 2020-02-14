@@ -45,16 +45,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvWoReq)).BeginInit();
             this.SuspendLayout();
             // 
+            // panBottom
+            // 
+            this.panBottom.Location = new System.Drawing.Point(0, 593);
+            this.panBottom.Margin = new System.Windows.Forms.Padding(2);
+            // 
             // aLabel_Header1
             // 
             this.aLabel_Header1.Location = new System.Drawing.Point(184, 29);
             this.aLabel_Header1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.aLabel_Header1.Text = "작업지시 생성";
-            // 
-            // aPanel1
-            // 
-            this.panBottom.Location = new System.Drawing.Point(0, 593);
-            this.panBottom.Margin = new System.Windows.Forms.Padding(2);
             // 
             // aPanel4
             // 
@@ -62,12 +62,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.aPanel4.Controls.Add(this.lblItem_Unit);
             this.aPanel4.Controls.Add(this.lblReq_Seq);
-            this.aPanel4.Controls.Add(this.txtReqNo);
-            this.aPanel4.Controls.Add(this.txtPlanQty);
             this.aPanel4.Controls.Add(this.txtWcSearch);
             this.aPanel4.Controls.Add(this.txtProcessSearch);
             this.aPanel4.Controls.Add(this.txtItemSearch);
             this.aPanel4.Controls.Add(this.btnCreateWorkOrder);
+            this.aPanel4.Controls.Add(this.txtReqNo);
+            this.aPanel4.Controls.Add(this.txtPlanQty);
             this.aPanel4.Location = new System.Drawing.Point(649, 105);
             this.aPanel4.Name = "aPanel4";
             this.aPanel4.Size = new System.Drawing.Size(549, 482);
@@ -78,7 +78,7 @@
             this.lblItem_Unit.AutoSize = true;
             this.lblItem_Unit.Location = new System.Drawing.Point(109, 314);
             this.lblItem_Unit.Name = "lblItem_Unit";
-            this.lblItem_Unit.Size = new System.Drawing.Size(58, 15);
+            this.lblItem_Unit.Size = new System.Drawing.Size(56, 12);
             this.lblItem_Unit.TabIndex = 28;
             this.lblItem_Unit.Text = "Item_Unit";
             this.lblItem_Unit.Visible = false;
@@ -88,7 +88,7 @@
             this.lblReq_Seq.AutoSize = true;
             this.lblReq_Seq.Location = new System.Drawing.Point(39, 314);
             this.lblReq_Seq.Name = "lblReq_Seq";
-            this.lblReq_Seq.Size = new System.Drawing.Size(52, 15);
+            this.lblReq_Seq.Size = new System.Drawing.Size(55, 12);
             this.lblReq_Seq.TabIndex = 27;
             this.lblReq_Seq.Text = "Req_Seq";
             this.lblReq_Seq.Visible = false;
@@ -98,8 +98,8 @@
             this.txtReqNo.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtReqNo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtReqNo.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtReqNo.LabelText = "생산의뢰 번호";
-            this.txtReqNo.Location = new System.Drawing.Point(42, 266);
+            this.txtReqNo.LabelText = "작업지시일";
+            this.txtReqNo.Location = new System.Drawing.Point(42, 212);
             this.txtReqNo.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtReqNo.Name = "txtReqNo";
             this.txtReqNo.Size = new System.Drawing.Size(469, 42);
@@ -113,7 +113,7 @@
             this.txtPlanQty.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtPlanQty.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtPlanQty.LabelText = "계획수량";
-            this.txtPlanQty.Location = new System.Drawing.Point(42, 212);
+            this.txtPlanQty.Location = new System.Drawing.Point(42, 266);
             this.txtPlanQty.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtPlanQty.Name = "txtPlanQty";
             this.txtPlanQty.Size = new System.Drawing.Size(469, 42);
@@ -199,7 +199,6 @@
             // 
             // POP_PRD_002
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1210, 629);
             this.Controls.Add(this.aPanel4);
             this.Controls.Add(this.dgvWoReq);

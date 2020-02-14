@@ -31,7 +31,31 @@ namespace DAC
                 return list;
             }
         }
+        /// <summary>
+        /// 성형작업 종료
+        /// </summary>
+        /// <returns></returns>
+        public bool InsertUpdateEndMoldWork(string userid, string moldcode, string workorderno, int prdcnt, int shotcnt)
+        {
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText = "InsertUpdateEndMoldWork";
+                comm.CommandType = CommandType.StoredProcedure;
 
+                comm.Parameters.AddWithValue("@userid", userid);
+                comm.Parameters.AddWithValue("@moldcode", moldcode);
+                comm.Parameters.AddWithValue("@workorderno", workorderno);
+                comm.Parameters.AddWithValue("@prdcnt", prdcnt);
+                comm.Parameters.AddWithValue("@shotcnt", shotcnt);
+
+                comm.Connection.Open();
+                int result = comm.ExecuteNonQuery();
+                comm.Connection.Close();
+
+                return result > 0;
+            }
+        }
         /// <summary>
         /// 금형그룹 조회
         /// </summary>

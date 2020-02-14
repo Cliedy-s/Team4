@@ -17,6 +17,10 @@ namespace VO
         public string Item_Name { get; set; } //품목명 //PRM_PRF_010
         public DateTime Prd_Starttime { get; set; } //작업시작시간 //PRM_PRF_010
         public DateTime Prd_Endtime { get; set; } //작업종료시간 //PRM_PRF_010
+
+        public string Prd_Starttime_string { get; set; } //작업시작시간 //PRM_PRF_010
+        public string Prd_Endtime_string { get; set; } //작업종료시간 //PRM_PRF_010
+
         public int Prd_Qty { get; set; } //작업수량 //PRM_PRF_010
         public DateTime Work_Date { get; set; } //근무일 //PRM_PRF_009        
         public DateTime Work_StartTime { get; set; } //근무시작시간 //PRM_PRF_009

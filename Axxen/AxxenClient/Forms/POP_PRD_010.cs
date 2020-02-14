@@ -23,6 +23,8 @@ namespace AxxenClient.Forms
             InitControls();
             TopPanelSet();
             GetDatas();
+
+            dgvGVFrom_CellClick(sender, null);
         }
         private void TopPanelSet()
         {
@@ -30,7 +32,7 @@ namespace AxxenClient.Forms
             txtItemName.TextBoxText = GlobalUsage.ItemName;
             txtQty.TextBoxText = GlobalUsage.Prd_Qty.ToString();
             txtUnit.TextBoxText = GlobalUsage.Prd_Unit.ToString();
-            txtWcCode.TextBoxText = GlobalUsage.WcCode;
+            txtWcCode.TextBoxText = GlobalUsage.WcName;
             txtWorkOrderDate.TextBoxText = (GlobalUsage.WorkorderDate == null) ? "" : GlobalUsage.WorkorderDate.Value.ToString("yyyy-MM-dd HH:mm:ss");
         }
         private void InitControls()
@@ -40,11 +42,12 @@ namespace AxxenClient.Forms
             InitControlUtil.AddNewColumnToDataGridView(dgvGVTo, "대차명", "GV_Name", true, 100, DataGridViewContentAlignment.MiddleLeft, true);
 
             InitControlUtil.SetPOPDGVDesign(dgvGVFrom);
-            InitControlUtil.AddNewColumnToDataGridView(dgvGVFrom, "코드", "GV_Code", true, 80);
+            InitControlUtil.AddNewColumnToDataGridView(dgvGVFrom, "코드", "GV_Code", true, 150);
             InitControlUtil.AddNewColumnToDataGridView(dgvGVFrom, "대차명", "GV_Name", true, 120, DataGridViewContentAlignment.MiddleLeft, true);
             InitControlUtil.AddNewColumnToDataGridView(dgvGVFrom, "적재시각", "Loading_time", true, 200);
             InitControlUtil.AddNewColumnToDataGridView(dgvGVFrom, "수량", "Loading_Qty", true, 80, DataGridViewContentAlignment.MiddleCenter);
             InitControlUtil.AddNewColumnToDataGridView(dgvGVFrom, "", "Item_Code", false, 50);
+            InitControlUtil.AddNewColumnToDataGridView(dgvGVFrom, "작업지시번호", "Workorderno", true, 200);
             dgvGVFrom.Columns[2].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm:ss";
 
         }
@@ -52,43 +55,48 @@ namespace AxxenClient.Forms
         {
             GV_Current_StatusService service = new GV_Current_StatusService();
             // 해당 작업지시에서 생성한 모든 대차
-            List<GVStatusVO> list = service.GetGVCurrentStatus(gvGroup: "건조그룹", workorderno:GlobalUsage.WorkOrderNo);
+            List<GVStatusVO> list = service.GetGVCurrentStatus(gvGroup: "건조그룹");
             dgvGVFrom.DataSource =
                 (from item in list
                  where (item.GV_Status == "적재" || item.GV_Status == "언로딩")
                  select item).ToList();
             // 소성대차의 모든 빈대차를 가져온다.
-            dgvGVTo.DataSource = service.GetGVCurrentStatus(gvStatus: "빈대차", gvGroup: "소성그룹");
+            GV_MasterService mservice = new GV_MasterService();
+            dgvGVTo.DataSource = mservice.GetGVs(gvStatus: "빈대차", gvGroup: "소성그룹");
         }
         private void btnMove_Click(object sender, EventArgs e)
         {
-            if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
+            if (dgvGVTo.SelectedRows.Count > 0 && dgvGVFrom.SelectedRows.Count > 0)
             {
-                string loadinggvcode = dgvGVTo.SelectedRows[0].Cells[0].Value.ToString();
-                string unloadgvcode = dgvGVFrom.SelectedRows[0].Cells[0].Value.ToString();
-                GV_HistoryService service = new GV_HistoryService();
-
-                // 옮겨타기
-                if (service.UpdateMoveGvItem(unloadgvcode, loadinggvcode, Convert.ToInt32(txtMove.TextBoxText), GlobalUsage.UserID, GlobalUsage.WcCode, GlobalUsage.WorkOrderNo))
+                if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
                 {
-                    Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 작업지시({GlobalUsage.WorkOrderNo})에서 대차({unloadgvcode})에서 대차({loadinggvcode})로 {txtMove.TextBoxText}개 대차 옮겨타기를 하였음");
-                    GetDatas();
+                    string loadinggvcode = dgvGVTo.SelectedRows[0].Cells[0].Value.ToString();
+                    string unloadgvcode = dgvGVFrom.SelectedRows[0].Cells[0].Value.ToString();
+                    GV_HistoryService service = new GV_HistoryService();
+
+                    // 옮겨타기
+                    if (service.UpdateMoveGvItem(unloadgvcode, loadinggvcode, Convert.ToInt32(txtMove.TextBoxText), GlobalUsage.UserID, GlobalUsage.WcCode, GlobalUsage.WorkOrderNo, dgvGVFrom.SelectedRows[0].Cells[5].Value.ToString()))
+                    {
+                        Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 작업지시({GlobalUsage.WorkOrderNo})에서 대차({unloadgvcode})에서 대차({loadinggvcode})로 {txtMove.TextBoxText}개 대차 옮겨타기를 하였음");
+                        GetDatas();
+                    }
+                    else
+                    {
+                        Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 작업지시({GlobalUsage.WorkOrderNo})에서 대차({unloadgvcode})에서 대차({loadinggvcode})로 {txtMove.TextBoxText}개 대차 옮겨타기를 하려했으나 실패하였음");
+                        MessageBox.Show("옮길 수 없는 대차 입니다.");
+                    }
                 }
                 else
                 {
-                    Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 작업지시({GlobalUsage.WorkOrderNo})에서 대차({unloadgvcode})에서 대차({loadinggvcode})로 {txtMove.TextBoxText}개 대차 옮겨타기를 하려했으나 실패하였음");
-                    MessageBox.Show("옮길 수 없는 대차 입니다.");
+                    Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 작업시작을 하지않고 대차 옮겨타기를 하려하였음");
+                    MessageBox.Show("작업을 시작해주세요");
                 }
-            }
-            else
-            {
-                Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 작업시작을 하지않고 대차 옮겨타기를 하려하였음");
-                MessageBox.Show("작업을 시작해주세요");
+                dgvGVFrom_CellClick(sender, null);
             }
         }
         private void dgvGVFrom_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex > -1)
+            if (dgvGVFrom.SelectedRows.Count > 0)
             {
                 txtMove.TextBoxText = dgvGVFrom.SelectedRows[0].Cells[3].Value.ToString();
             }
@@ -132,8 +140,8 @@ namespace AxxenClient.Forms
         }
         private void btnToSearch_Click(object sender, EventArgs e)
         {   // 빈대차 목록 검색
-            GV_Current_StatusService service = new GV_Current_StatusService();
-            dgvGVTo.DataSource = service.GetGVCurrentStatus(gvStatus: "빈대차", gvGroup: "소성그룹", gvName: txtToGVSearch.TextBoxText);
+            GV_MasterService mservice = new GV_MasterService();
+            dgvGVTo.DataSource = mservice.GetGVs(gvStatus: "빈대차", gvGroup: "소성그룹", gvName: txtToGVSearch.TextBoxText);
         }
         private void btnFromSearch_Click(object sender, EventArgs e)
         {   // 적재된 목록 검색

@@ -50,7 +50,7 @@ namespace Axxen
 
         private void DgvMainGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e) //그리드뷰 더블클릭 이벤트
         {
-            if (dgvMainGrid.SelectedRows[0].Cells[2].Value.ToString() == "현장마감")
+            if (dgvMainGrid.SelectedRows[0].Cells[2].Value.ToString() == "현장마감" || dgvMainGrid.SelectedRows[0].Cells[2].Value.ToString() == "작업지시마감")
             {
                 
             }
@@ -65,7 +65,7 @@ namespace Axxen
             {
                 if (this == ((MainForm)this.MdiParent).ActiveMdiChild)
                 {
-                    if (dgvMainGrid.SelectedRows[0].Cells[2].Value.ToString() == "현장마감")
+                    if (dgvMainGrid.SelectedRows[0].Cells[2].Value.ToString() == "현장마감" || dgvMainGrid.SelectedRows[0].Cells[2].Value.ToString() == "작업지시마감")
                     {
 
                     }

@@ -51,22 +51,22 @@
             this.aPanel6.SuspendLayout();
             this.SuspendLayout();
             // 
-            // aLabel_Header1
-            // 
-            this.aLabel_Header1.Text = "성형 생산 대차 선택";
-            // 
             // panBottom
             // 
             this.panBottom.Location = new System.Drawing.Point(0, 593);
             this.panBottom.Margin = new System.Windows.Forms.Padding(2);
             // 
+            // aLabel_Header1
+            // 
+            this.aLabel_Header1.Text = "성형 생산 대차 선택";
+            // 
             // btnLoading
             // 
-            this.btnLoading.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnLoading.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnLoading.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnLoading.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoading.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnLoading.Location = new System.Drawing.Point(388, 339);
+            this.btnLoading.Location = new System.Drawing.Point(387, 312);
             this.btnLoading.Name = "btnLoading";
             this.btnLoading.Size = new System.Drawing.Size(306, 246);
             this.btnLoading.TabIndex = 22;
@@ -76,7 +76,8 @@
             // 
             // dgvGVFrom
             // 
-            this.dgvGVFrom.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvGVFrom.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvGVFrom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGVFrom.Location = new System.Drawing.Point(700, 247);
@@ -89,9 +90,8 @@
             // 
             // dgvGVTo
             // 
-            this.dgvGVTo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvGVTo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvGVTo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGVTo.Location = new System.Drawing.Point(7, 247);
             this.dgvGVTo.Name = "dgvGVTo";
@@ -195,10 +195,10 @@
             // txtLoading
             // 
             this.txtLoading.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtLoading.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtLoading.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtLoading.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtLoading.LabelText = "옮겨타기 수량";
-            this.txtLoading.Location = new System.Drawing.Point(388, 296);
+            this.txtLoading.Location = new System.Drawing.Point(387, 269);
             this.txtLoading.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtLoading.Name = "txtLoading";
             this.txtLoading.Size = new System.Drawing.Size(306, 41);
@@ -208,7 +208,6 @@
             // 
             // btnFromSearch
             // 
-            this.btnFromSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnFromSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnFromSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFromSearch.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -238,7 +237,6 @@
             // txtFromGVSearch
             // 
             this.txtFromGVSearch.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtFromGVSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFromGVSearch.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtFromGVSearch.LabelText = "대차검색";
             this.txtFromGVSearch.Location = new System.Drawing.Point(700, 206);

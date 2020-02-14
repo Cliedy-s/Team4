@@ -24,7 +24,9 @@ namespace VO
         public string Process_Code { get; set; }        // 공정 코드
         public int Line_Per_Qty { get; set; }               // 성형 줄 수
         public int Shot_Per_Qty { get; set; }           // 포장 샷당 pcs수
-    }
+        public int Dry_GV_Qty { get; set; }             // 건조대차 기본수량
+        public int Heat_GV_Qty { get; set; }            // 성형대차 기본수량
+    }                
     public class WorkOrderNewVO
     { 
         public string Item_Code { get; set; }              // 품목번호

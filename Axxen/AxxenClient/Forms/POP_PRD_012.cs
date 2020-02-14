@@ -43,7 +43,9 @@ namespace AxxenClient.Forms
         private void GetDatas()
         {
             GV_Current_StatusService service = new GV_Current_StatusService();
-            List<GVStatusVO> list = service.GetGVCurrentStatus(gvGroup:"건조그룹");
+            // TODO - 원래대로 변경하기
+            //List<GVStatusVO> list = service.GetGVCurrentStatus(gvGroup:"건조대차");
+            List<GVStatusVO> list = service.GetGVCurrentStatus();
             dgvGVList.DataSource =
                 (from item in list
                  where (item.GV_Status == "적재" || item.GV_Status == "언로딩")

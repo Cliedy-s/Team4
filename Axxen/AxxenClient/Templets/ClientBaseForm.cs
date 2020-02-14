@@ -71,5 +71,13 @@ namespace AxxenClient.Templets
                 }
             }
         }
+
+        private void btnNoActive_Click(object sender, EventArgs e)
+        {
+            POP_PRD_016 frm = new POP_PRD_016();
+            frm.WindowState = FormWindowState.Maximized;
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
     }
 }

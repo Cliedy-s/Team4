@@ -407,6 +407,8 @@ namespace DAC
 		,wcm.Process_Code
 		,im.Line_Per_Qty 
         ,im.Shot_Per_Qty 
+		,im.Dry_GV_Qty
+        ,im.Heat_GV_Qty
   FROM [WorkOrder] wo 
     LEFT OUTER JOIN [WorkCenter_Master] as wcm ON wcm.[Wc_Code] = wo.[Wc_Code] AND wcm.Use_YN = 'Y' 
     LEFT OUTER JOIN [Item_Master] as im ON im.[Item_Code] = wo.[Item_Code] 
@@ -560,7 +562,7 @@ namespace DAC
                 using (SqlCommand comm = new SqlCommand())
                 {
                     comm.Connection = new SqlConnection(Connstr);
-                    comm.CommandText =@"UpdateEndWorkOrder";
+                    comm.CommandText =@"UpdateCloseWorkOrder";
 
                     comm.CommandType = CommandType.StoredProcedure;
                     comm.Parameters.AddWithValue("@username", userid);

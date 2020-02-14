@@ -65,7 +65,7 @@ namespace DAC
 	, Up_Date = getdate() 
 	, Up_Emp = @username 
 	WHERE Nop_Seq = @nopseq; ";
-                comm.CommandType = CommandType.StoredProcedure;
+                comm.CommandType = CommandType.Text;
                 comm.Parameters.AddWithValue("@Nop_Mi_Code", nopMiCode);
                 comm.Parameters.AddWithValue("@username", username);
                 comm.Parameters.AddWithValue("@nopseq", nopseq);
