@@ -97,6 +97,7 @@ namespace MachineService
                                     }
                                     else if (filename.StartsWith("Inspect_MeasureLog"))
                                     {
+                                        // TODO - 품질 측정 서비스 만들기
                                         // 20200212 20:54:23/Machine_2/WK200212145551/master/WC50001/ES50002/IC0001/10/Blank
                                         //comm.CommandText = "INSERT INTO WorkQtyLog (ProductID, MachineID, Qty, BadQty) VALUES(@ProductID, @MachineID, @Qty, @BadQty); ";
                                     }
