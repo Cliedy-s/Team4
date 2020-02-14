@@ -38,7 +38,7 @@ namespace Axxen.CustomControls
         {
             if(e.KeyChar == 13)
             {
-                TextKeyPress.Invoke(sender, e);
+                TextKeyPress?.Invoke(sender, e);
             }
         }
     }

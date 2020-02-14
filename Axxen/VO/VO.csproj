@@ -75,6 +75,7 @@
     <Compile Include="NopMaMasterVO.cs" />
     <Compile Include="NopMiMasterVO.cs" />
     <Compile Include="Nop_History_Mi_MaVO.cs" />
+    <Compile Include="OutputVO.cs" />
     <Compile Include="PalletVO.cs" />
     <Compile Include="Process_J_Nop_History_Gas_WC_Time_DayVO.cs" />
     <Compile Include="Process_J_WC_Item_WO_Time_DayVO.cs" />

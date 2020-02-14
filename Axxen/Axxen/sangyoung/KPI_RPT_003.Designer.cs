@@ -28,27 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.aComboBox1 = new Axxen.CustomControls.AComboBox();
             this.aLabel1 = new Axxen.CustomControls.ALabel();
+            this.btnSearch = new Axxen.CustomControls.AButton();
+            this.dtpDate = new Axxen.CustomControls.ADateTimePicker();
             this.panTop.SuspendLayout();
             this.SuspendLayout();
             // 
             // panTop
             // 
-            this.panTop.Controls.Add(this.aComboBox1);
+            this.panTop.Controls.Add(this.dtpDate);
+            this.panTop.Controls.Add(this.btnSearch);
             this.panTop.Controls.Add(this.aLabel1);
             // 
             // aHeaderBox1
             // 
             this.aHeaderBox1.HeaderBoxText = "조회내역";
-            // 
-            // aComboBox1
-            // 
-            this.aComboBox1.FormattingEnabled = true;
-            this.aComboBox1.Location = new System.Drawing.Point(87, 28);
-            this.aComboBox1.Name = "aComboBox1";
-            this.aComboBox1.Size = new System.Drawing.Size(106, 23);
-            this.aComboBox1.TabIndex = 8;
             // 
             // aLabel1
             // 
@@ -59,12 +53,38 @@
             this.aLabel1.TabIndex = 7;
             this.aLabel1.Text = "생산월";
             // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.Transparent;
+            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.btnSearch.Image = global::Axxen.Properties.Resources.forsearch;
+            this.btnSearch.Location = new System.Drawing.Point(181, 18);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(38, 44);
+            this.btnSearch.TabIndex = 17;
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
+            // 
+            // dtpDate
+            // 
+            this.dtpDate.CustomFormat = "yyyy-MM";
+            this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpDate.Location = new System.Drawing.Point(76, 28);
+            this.dtpDate.Name = "dtpDate";
+            this.dtpDate.ShowUpDown = true;
+            this.dtpDate.Size = new System.Drawing.Size(101, 23);
+            this.dtpDate.TabIndex = 18;
+            // 
             // KPI_RPT_003
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.ControlBox = false;
             this.Name = "KPI_RPT_003";
+            this.Activated += new System.EventHandler(this.KPI_RPT_003_Activated);
+            this.Deactivate += new System.EventHandler(this.KPI_RPT_003_Deactivate);
             this.Load += new System.EventHandler(this.KPI_RPT_003_Load);
             this.panTop.ResumeLayout(false);
             this.panTop.PerformLayout();
@@ -73,8 +93,8 @@
         }
 
         #endregion
-
-        private CustomControls.AComboBox aComboBox1;
         private CustomControls.ALabel aLabel1;
+        private CustomControls.AButton btnSearch;
+        private CustomControls.ADateTimePicker dtpDate;
     }
 }
