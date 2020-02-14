@@ -60,14 +60,14 @@
             this.toolStripButtonSetting = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButtonLogin = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.pnBookmark = new Axxen.CustomControls.APanel();
             this.toolbook = new System.Windows.Forms.ToolStrip();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtoncencle = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.tvBookMark = new System.Windows.Forms.TreeView();
-            this.toolStripButtonLogin = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.panelMenu.SuspendLayout();
             this.aPanel1.SuspendLayout();
             this.aPanel2.SuspendLayout();
@@ -420,6 +420,26 @@
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // toolStripButtonLogin
+            // 
+            this.toolStripButtonLogin.AutoSize = false;
+            this.toolStripButtonLogin.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.toolStripButtonLogin.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonLogin.Image")));
+            this.toolStripButtonLogin.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButtonLogin.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonLogin.Name = "toolStripButtonLogin";
+            this.toolStripButtonLogin.Size = new System.Drawing.Size(60, 57);
+            this.toolStripButtonLogin.Text = "로그인";
+            this.toolStripButtonLogin.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolStripButtonLogin.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            this.toolStripButtonLogin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButtonLogin.ToolTipText = "로그아웃";
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 97);
+            // 
             // pnBookmark
             // 
             this.pnBookmark.BackColor = System.Drawing.Color.White;
@@ -479,26 +499,6 @@
             this.tvBookMark.Size = new System.Drawing.Size(251, 438);
             this.tvBookMark.TabIndex = 0;
             this.tvBookMark.DoubleClick += new System.EventHandler(this.TvBookMark_DoubleClick);
-            // 
-            // toolStripButtonLogin
-            // 
-            this.toolStripButtonLogin.AutoSize = false;
-            this.toolStripButtonLogin.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.toolStripButtonLogin.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonLogin.Image")));
-            this.toolStripButtonLogin.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButtonLogin.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonLogin.Name = "toolStripButtonLogin";
-            this.toolStripButtonLogin.Size = new System.Drawing.Size(60, 57);
-            this.toolStripButtonLogin.Text = "로그인";
-            this.toolStripButtonLogin.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.toolStripButtonLogin.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
-            this.toolStripButtonLogin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButtonLogin.ToolTipText = "새로고침";
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 97);
             // 
             // MainForm
             // 
