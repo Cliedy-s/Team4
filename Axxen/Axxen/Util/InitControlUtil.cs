@@ -18,6 +18,7 @@ namespace Axxen.Util
         {
             DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
             col.HeaderText = headerText;
+            dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             col.DataPropertyName = dataPropertyName;
             col.Width = colWidth;
             col.Visible = visibility;

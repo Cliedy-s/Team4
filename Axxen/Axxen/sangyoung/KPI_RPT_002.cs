@@ -43,6 +43,8 @@ namespace Axxen
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "당월생산시간(h)", "Prd_Time", true, 120, DataGridViewContentAlignment.MiddleCenter);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "당월달성률", "Attain", true, 95, DataGridViewContentAlignment.MiddleRight);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "전월대비증감량", "Inde", true, 90, DataGridViewContentAlignment.MiddleRight);
+
+            
         }
 
         private void BtnSearch_Click(object sender, EventArgs e)

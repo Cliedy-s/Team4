@@ -164,6 +164,7 @@
     <Compile Include="Controllers\NoticeShowController.cs" />
     <Compile Include="Controllers\Sys_NoticeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="DAC\ChartDAC.cs" />
     <Compile Include="DAC\DACParent.cs" />
     <Compile Include="DAC\Helper.cs" />
     <Compile Include="DAC\Item_MasterDAC.cs" />
