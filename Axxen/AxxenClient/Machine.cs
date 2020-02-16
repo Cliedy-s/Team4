@@ -55,11 +55,12 @@ namespace AxxenClient
         string workorderno = string.Empty;
         string userid = string.Empty;
         string wccode = string.Empty;
+        string processcode = string.Empty;
 
         public Action<MachineType> stopevent { get; set; }
-        public Action<int> runevent { get; set; }
+        public Action<int, int, int, int> runevent { get; set; }
 
-        public Machine(int machineID, string workorderno, string userid, string wccode, Action<MachineType> stopevent = null, Action<int> runevent = null)
+        public Machine(int machineID, string workorderno, string userid, string wccode, Action<MachineType> stopevent = null, Action<int, int, int, int> runevent = null)
         {
             this.stopevent = stopevent;
             this.runevent = runevent;
@@ -101,8 +102,9 @@ namespace AxxenClient
         /// <summary>
         /// 품질측정 기계시작
         /// </summary>
-        public void MachineStart(List<Item_inspectPair> item_inspectcodes)
+        public void MachineStart(string processcode, List<Item_inspectPair> item_inspectcodes)
         {
+            this.processcode = processcode;
             this.stopevent = stopevent;
 
             Log.WriteInfo("품질측정 시작...");
@@ -138,6 +140,10 @@ namespace AxxenClient
         }
 
         int prdcnt = 0;
+        /// <summary>
+        /// 성형기계
+        /// </summary>
+        /// <param name="pair"></param>
         private void Mold_Elapsed(Item_MoldPair pair)
         {
             iCnt++;
@@ -145,12 +151,13 @@ namespace AxxenClient
             int badcnt = rnd.Next(0, 3);
             int outqty = pair.Line_Per_Qty;
             prdcnt = outqty - badcnt;
-            stackqty += prdcnt; 
 
+            stackqty += prdcnt; 
+            
             StreamWriter sw = null;
-            runevent?.Invoke(stackqty*100 / totalqty);
             toqty = toqty - prdcnt;
-            if(toqty < 0) { outqty = outqty + toqty; }
+            if(toqty < 0) { outqty = outqty + toqty; prdcnt = prdcnt + toqty; }
+            runevent?.Invoke(stackqty, totalqty, prdcnt, outqty);
             try
             {
                 DateTime now = DateTime.Now;
@@ -166,6 +173,11 @@ namespace AxxenClient
             }
             if (toqty < 0) { MachineStop(MachineType.Molding, pair.Moldcode); }
         }
+        /// <summary>
+        /// 포장기계
+        /// </summary>
+        /// <param name="itemcode"></param>
+        /// <param name="shotQty"></param>
         private void Boxing_Elapsed(string itemcode, int shotQty)
         {
             iCnt++;
@@ -178,7 +190,8 @@ namespace AxxenClient
             if (toqty < 0) { outqty = outqty + toqty; }
             try
             {
-                sw = new StreamWriter($"{writefolder}\\BoxingLog_{machineID}_{iCnt}.log", false);
+                DateTime now = DateTime.Now;
+                sw = new StreamWriter($"{writefolder}\\{now.ToString("yyyyMMddHHmmss")}BoxingLog_{machineID}_{iCnt}.log", false);
                 string msg = $"{DateTime.Now.ToString("yyyyMMdd HH:mm:ss")}/Machine_{machineID}/{workorderno}/{userid}/{wccode}/Blank/{itemcode}/{outqty}/{badcnt}";
                 sw.WriteLine(msg);
                 sw.Flush();
@@ -191,17 +204,23 @@ namespace AxxenClient
             if (toqty < 0) { MachineStop(MachineType.Molding); }
         }
         int measurecnt = 0;
+        /// <summary>
+        /// 품질측정기계
+        /// </summary>
+        /// <param name="item_inspectcodes"></param>
         private void Inspect_Measure_Elapsed(List<Item_inspectPair> item_inspectcodes)
         {
             iCnt++;
             Random rnd = new Random((int)DateTime.UtcNow.Ticks);
             StreamWriter sw = null;
-            
+            runevent?.Invoke(measurecnt, item_inspectcodes.Count, 0, 0);
+
             try
             {
                 Item_inspectPair pair = item_inspectcodes.ElementAt(measurecnt++);
-                sw = new StreamWriter($"{writefolder}\\Inspect_MeasureLog_{machineID}_{iCnt}.log", false);
-                string msg = $"{DateTime.Now.ToString("yyyyMMdd HH:mm:ss")}/Machine_{machineID}/{workorderno}/{userid}/{wccode}/{pair.Inspectcode}/{pair.Itemcode}/{rnd.Next(pair.LSLx1000, pair.USLx1000) / 1000m}/Blank";
+                DateTime now = DateTime.Now;
+                sw = new StreamWriter($"{writefolder}\\{now.ToString("yyyyMMddHHmmss")}Inspect_MeasureLog_{machineID}_{iCnt}.log", false);
+                string msg = $"{DateTime.Now.ToString("yyyyMMdd HH:mm:ss")}/Machine_{machineID}/{workorderno}/{userid}/{wccode}/{processcode}/{pair.Inspectcode}/{pair.Itemcode}/{rnd.Next(pair.LSLx1000, pair.USLx1000) / 1000m}";
                 sw.WriteLine(msg);
                 sw.Flush();
                 sw.Close();

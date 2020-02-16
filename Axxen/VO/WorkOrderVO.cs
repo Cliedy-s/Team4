@@ -18,6 +18,7 @@ namespace VO
         public string Item_Name { get; set; }            // 품목명
         public string Prd_Unit { get; set; }               // 단위
         public int Prd_Qty { get; set; }                     // 생산수량
+        public int Out_Qty_Main { get; set; }               // 산출수량
         public DateTime? Prd_Starttime { get; set; }     // 작업시작시간
         public DateTime? Prd_Endtime { get; set; }      // 작업종료시간
         public string Wo_Ini_Char { get; set; }           //  작업지시이니셜

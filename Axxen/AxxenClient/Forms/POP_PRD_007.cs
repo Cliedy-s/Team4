@@ -5,8 +5,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using VO;
 
 namespace AxxenClient.Forms
 {
@@ -53,7 +55,11 @@ namespace AxxenClient.Forms
         {
             GV_Current_StatusService service = new GV_Current_StatusService();
             // 해당 작업지시에서 생성한 모든 대차
-            dgvGVFrom.DataSource = service.GetGVCurrentStatus(workorderno: GlobalUsage.WorkOrderNo, gvStatus: "적재", gvGroup:"성형그룹");
+            List<GVStatusVO> list = service.GetGVCurrentStatus(workorderno: GlobalUsage.WorkOrderNo, gvGroup: "성형그룹");
+            dgvGVFrom.DataSource =
+                (from gvs in list
+                 where (gvs.GV_Status == "적재" || gvs.GV_Status == "언로딩")
+                 select gvs).ToList();
             // 해당 작업장의 모든 빈대차를 가져온다.
             GV_MasterService mservice = new GV_MasterService();
             dgvGVTo.DataSource = mservice.GetGVs(gvStatus: "빈대차", gvGroup: "건조그룹");
@@ -79,7 +85,7 @@ namespace AxxenClient.Forms
                     GV_HistoryService service = new GV_HistoryService();
 
                     // 옮겨타기
-                    if (service.UpdateMoveGvItem(unloadgvcode, loadinggvcode, Convert.ToInt32(txtLoading.TextBoxText), GlobalUsage.UserID, GlobalUsage.WcCode, GlobalUsage.WorkOrderNo, dgvGVFrom.SelectedRows[0].Cells[0].Value.ToString()))
+                    if (service.UpdateMoveGvItem(unloadgvcode, loadinggvcode, Convert.ToInt32(txtLoading.TextBoxText), GlobalUsage.UserID, GlobalUsage.WcCode, GlobalUsage.WorkOrderNo, dgvGVFrom.SelectedRows[0].Cells[4].Value.ToString()))
                     {
                         GetDatas();
                         Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 대차({unloadgvcode})에서 대차({loadinggvcode})로 옮겨타기에 성공함");

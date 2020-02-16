@@ -385,7 +385,7 @@ namespace DAC
         /// </summary>
         /// <param name="woinichar"></param>
         /// <returns></returns>
-        public List<WorkOrderVO> GetAllWorkOrder_AlloHisDetail_Item_Wc(string wocode)
+        public List<WorkOrderVO> GetAllWorkOrder_AlloHisDetail_Item_Wc(string wccode)
         {
             using (SqlCommand comm = new SqlCommand())
             {
@@ -400,6 +400,7 @@ namespace DAC
 		,im.[Item_Code] 
 		,im.[Item_Name] 
 		,wo.[Prd_Unit] 
+		,wo.Out_Qty_Main
 		,wo.[Prd_Qty] 
 		,wo.[Prd_Starttime] 
 		,wo.[Prd_Endtime] 
@@ -412,9 +413,9 @@ namespace DAC
   FROM [WorkOrder] wo 
     LEFT OUTER JOIN [WorkCenter_Master] as wcm ON wcm.[Wc_Code] = wo.[Wc_Code] AND wcm.Use_YN = 'Y' 
     LEFT OUTER JOIN [Item_Master] as im ON im.[Item_Code] = wo.[Item_Code] 
-   WHERE wo.[Wo_Status]  NOT IN ('현장마감','작업지시마감') AND wo.Wc_Code =@wocode; ";
+   WHERE wo.[Wo_Status]  NOT IN ('현장마감','작업지시마감') AND wo.Wc_Code =@wccode; ";
                 comm.CommandType = CommandType.Text;
-                comm.Parameters.AddWithValue("@wocode", wocode);
+                comm.Parameters.AddWithValue("@wccode", wccode);
                 comm.Connection.Open();
                 SqlDataReader reader = comm.ExecuteReader();
                 List<WorkOrderVO> list = Helper.DataReaderMapToList<WorkOrderVO>(reader);
@@ -433,58 +434,10 @@ namespace DAC
             using (SqlCommand comm = new SqlCommand())
             {
                 comm.Connection = new SqlConnection(Connstr);
-                comm.CommandText =
- @"   INSERT INTO [WorkOrder]
-           ([Workorderno]
-           ,[Item_Code]
-           ,[Wc_Code]
-           ,[In_Qty_Main]
-           ,[Plan_Qty]
-           ,[Plan_Unit]
-           ,[Plan_Date]
-           ,[Wo_Status]
-           ,[Wo_Order]
-           ,[Wo_Req_No]
-           ,[Req_Seq]
-           ,[Mat_LotNo]
-           ,[Ins_Date]
-           ,[Ins_Emp]
-           ,[Up_Date]
-           ,[Up_Emp]
-           ,[Prd_Unit]
-           ,[Plan_Starttime]
-           ,[Plan_Endtime])
-     VALUES
-           ('WK' + format(getdate(),'yyMMddHHmmss')
-           ,@Item_Code 
-           ,@Wc_Code 
-           ,@Plan_Qty 
-           ,@Plan_Qty 
-           ,@Plan_Unit
-           ,getdate()
-           ,@Wo_Status
-           ,@Wo_Order
-           ,@Wo_Req_No
-           ,@Req_Seq
-           ,@Mat_LotNo
-           ,getdate()
-           ,@Ins_Emp
-           ,getdate()
-           ,@Ins_Emp
-           ,@Prd_Unit
-           ,getdate()
-           , dateadd(hour, 3, getdate())
-);
-       UPDATE Wo_Req
-        SET Req_Status = '진행중'
-        WHERE Wo_Req_No = @Wo_Req_No;
+                comm.CommandText = "InsertWorkOrder";
+                comm.CommandType = CommandType.StoredProcedure;
 
-	    UPDATE GV_History
-	    SET Unloading_Qty = 0
-	    WHERE Hist_Seq = @histSeq;
-";
-
-                comm.CommandType = CommandType.Text;
+                comm.Parameters.AddWithValue("@WokrOrderNo", "WK" + DateTime.Now.ToString("yyMMddHHmmss"));
                 comm.Parameters.AddWithValue("@Item_Code", item.Item_Code);
                 comm.Parameters.AddWithValue("@Wc_Code", item.Wc_Code);
                 comm.Parameters.AddWithValue("@Plan_Qty", item.Plan_Qty);
@@ -499,7 +452,7 @@ namespace DAC
                 if(histcode == null)
                     comm.Parameters.AddWithValue("@histSeq", DBNull.Value);
                 else
-                    comm.Parameters.AddWithValue("@histSeq", histcode);
+                    comm.Parameters.AddWithValue("@histSeq", Convert.ToInt64(histcode));
 
                 comm.Connection.Open();
                 int result = comm.ExecuteNonQuery();

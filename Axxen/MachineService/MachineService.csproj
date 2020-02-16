@@ -65,5 +65,15 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Service\Service.csproj">
+      <Project>{AF54ACA3-DA6E-4A15-9BAC-DA1B72DD7B93}</Project>
+      <Name>Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VO\VO.csproj">
+      <Project>{40A3C251-AD92-44A6-A387-367AA57772F7}</Project>
+      <Name>VO</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

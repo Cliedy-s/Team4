@@ -55,7 +55,7 @@ namespace AxxenClient.Forms
         {
             GV_Current_StatusService service = new GV_Current_StatusService();
             // 해당 작업지시에서 생성한 모든 대차
-            List<GVStatusVO> list = service.GetGVCurrentStatus(gvGroup: "건조그룹");
+            List<GVStatusVO> list = service.GetGVCurrentStatus(gvGroup: "건조그룹", workorderno:GlobalUsage.WorkOrderNo);
             dgvGVFrom.DataSource =
                 (from item in list
                  where (item.GV_Status == "적재" || item.GV_Status == "언로딩")
@@ -75,7 +75,7 @@ namespace AxxenClient.Forms
                     GV_HistoryService service = new GV_HistoryService();
 
                     // 옮겨타기
-                    if (service.UpdateMoveGvItem(unloadgvcode, loadinggvcode, Convert.ToInt32(txtMove.TextBoxText), GlobalUsage.UserID, GlobalUsage.WcCode, GlobalUsage.WorkOrderNo, dgvGVFrom.SelectedRows[0].Cells[5].Value.ToString()))
+                    if (service.UpdateMoveGvItem(unloadgvcode, loadinggvcode, Convert.ToInt32(txtMove.TextBoxText), GlobalUsage.UserID, GlobalUsage.WcCode, GlobalUsage.WorkOrderNo, dgvGVFrom.SelectedRows[0].Cells[5].Value.ToString(), true))
                     {
                         Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 작업지시({GlobalUsage.WorkOrderNo})에서 대차({unloadgvcode})에서 대차({loadinggvcode})로 {txtMove.TextBoxText}개 대차 옮겨타기를 하였음");
                         GetDatas();
