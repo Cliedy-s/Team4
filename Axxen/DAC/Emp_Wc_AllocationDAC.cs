@@ -22,14 +22,14 @@ namespace DAC
             {
                 comm.Connection = new SqlConnection(Connstr);
                 comm.CommandText =
- @" SELECT 
-	ewa.Wc_Code
-	, ewa.[User_ID]
-	, ewa.Allocation_datetime
-	, um.[User_Name]
-FROM Emp_Wc_Allocation AS ewa
-	JOIN User_Master AS um ON ewa.[User_ID] = um.[User_ID]
-	WHERE ewa.Wc_Code = @wccode AND ewa.Release_datetime IS null; ";
+ @" 	SELECT CASE WHEN ((Allocation_datetime IS NOT NULL) AND (Release_datetime IS NULL)) THEN WCM.Wc_Code ELSE NULL END AS NOWWCcode
+			, um.User_ID
+			, Allocation_datetime
+			, um.User_Name
+	FROM User_Master as UM
+	LEFT OUTER JOIN (SELECT * FROM Emp_Wc_Allocation as ewa1 WHERE Allocation_datetime= (SELECT MAX(Allocation_datetime) FROM Emp_Wc_Allocation as ewa2 WHERE ewa1.User_ID = ewa2.User_ID)) AS EWA ON UM.User_ID = EWA.User_ID
+	JOIN WorkCenter_Master AS WCM ON WCM.Process_Code = UM.Default_Process_Code
+	WHERE WCM.Wc_Code = @wccode AND (CASE WHEN ((Allocation_datetime IS NOT NULL) AND (Release_datetime IS NULL)) THEN WCM.Wc_Code ELSE NULL END) = @wccode ";
                 comm.CommandType = CommandType.Text;
                 comm.Parameters.AddWithValue("@wccode", wccode);
 
@@ -53,17 +53,15 @@ FROM Emp_Wc_Allocation AS ewa
                 comm.Connection = new SqlConnection(Connstr);
                 comm.CommandText =
  @"     
- SELECT * FROM (
-  SELECT UM.User_ID,
-  UM.User_Name,
-  CASE WHEN Release_datetime IS NOT NULL THEN NULL WHEN Release_datetime IS NULL THEN WCM2.Wc_Name END AS NOWWC,
-  CASE WHEN Release_datetime IS NOT NULL THEN NULL WHEN Release_datetime IS NULL THEN WCM2.Wc_Code END AS NOWWCcode
-  FROM Emp_Wc_Allocation AS EWA
-	RIGHT OUTER JOIN User_Master AS UM ON UM.User_ID = EWA.User_ID
-	LEFT OUTER JOIN WorkCenter_Master AS WCM ON WCM.Process_Code = UM.Default_Process_Code
-	LEFT OUTER JOIN WorkCenter_Master AS WCM2 ON WCM2.Wc_Code = EWA.Wc_Code
-  WHERE WCM.Wc_Code = @wccode)
-  as currentt WHERE (currentt.NOWWCcode != @wccode or currentt.NOWWCcode is null) ";
+	SELECT UM.User_ID,
+		   UM.User_Name,
+			CASE WHEN ((Allocation_datetime IS NOT NULL) AND (Release_datetime IS NULL)) THEN WCM.Wc_Name ELSE NULL END AS NOWWC
+			,CASE WHEN ((Allocation_datetime IS NOT NULL) AND (Release_datetime IS NULL)) THEN WCM.Wc_Code ELSE NULL END AS NOWWCcode
+	FROM User_Master as UM
+	LEFT OUTER JOIN (SELECT * FROM Emp_Wc_Allocation as ewa1 WHERE Allocation_datetime= (SELECT MAX(Allocation_datetime) FROM Emp_Wc_Allocation as ewa2 WHERE ewa1.User_ID = ewa2.User_ID)) AS EWA ON UM.User_ID = EWA.User_ID
+	JOIN WorkCenter_Master AS WCM ON WCM.Process_Code = UM.Default_Process_Code
+	WHERE WCM.Wc_Code = @wccode AND (((CASE WHEN ((Allocation_datetime IS NOT NULL) AND (Release_datetime IS NULL)) THEN WCM.Wc_Code ELSE NULL END) IS NULL) OR (CASE WHEN ((Allocation_datetime IS NOT NULL) AND (Release_datetime IS NULL)) THEN WCM.Wc_Code ELSE NULL END) <> @wccode)
+ ";
                 comm.CommandType = CommandType.Text;
                 comm.Parameters.AddWithValue("@wccode", wccode);
 

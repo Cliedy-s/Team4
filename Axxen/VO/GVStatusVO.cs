@@ -14,6 +14,8 @@ namespace VO
         public string GV_Status { get; set; }       // 대차상태
         public string Item_Code { get; set; }      // 품목코드
         public string Item_Name { get; set; }     // 품목명
+        public int Box_Qty { get; set; }            // 팔렛당 박스수
+        public int Pcs_Qty { get; set; }            // 박스당 pcs수
         public DateTime? Loading_time { get; set; }  // 적재시간
         public int Loading_Qty { get; set; }            // 적재수량
         public string Workorderno { get; set; }   // 작업지시번호
