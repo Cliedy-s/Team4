@@ -55,13 +55,14 @@
             // 
             // aDateTimePickerSearch2
             // 
-            this.aDateTimePickerSearch2.ADateTimePickerValue1 = new System.DateTime(2020, 2, 3, 12, 9, 7, 224);
-            this.aDateTimePickerSearch2.ADateTimePickerValue2 = new System.DateTime(2020, 2, 10, 12, 9, 7, 224);
+            this.aDateTimePickerSearch2.ADateTimePickerValue1 = new System.DateTime(2020, 2, 10, 0, 0, 0, 0);
+            this.aDateTimePickerSearch2.ADateTimePickerValue2 = new System.DateTime(2020, 2, 17, 0, 0, 0, 0);
+            this.aDateTimePickerSearch2.ButtonText = "";
             this.aDateTimePickerSearch2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aDateTimePickerSearch2.Location = new System.Drawing.Point(100, 23);
             this.aDateTimePickerSearch2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.aDateTimePickerSearch2.Name = "aDateTimePickerSearch2";
-            this.aDateTimePickerSearch2.Size = new System.Drawing.Size(324, 32);
+            this.aDateTimePickerSearch2.Size = new System.Drawing.Size(291, 32);
             this.aDateTimePickerSearch2.TabIndex = 20;
             this.aDateTimePickerSearch2.btnDateTimeSearch_Click += new Axxen.CustomControls.ADateTimePickerSearch.SearchButtonClick(this.ADateTimePickerSearch2_btnDateTimeSearch_Click);
             // 
@@ -71,10 +72,10 @@
             this.aTextBox_FindNameByCode2.CodeType = Axxen.CustomControls.DataType.WorkCenters;
             this.aTextBox_FindNameByCode2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aTextBox_FindNameByCode2.lblNameText = "작업장";
-            this.aTextBox_FindNameByCode2.Location = new System.Drawing.Point(458, 26);
+            this.aTextBox_FindNameByCode2.Location = new System.Drawing.Point(412, 28);
             this.aTextBox_FindNameByCode2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.aTextBox_FindNameByCode2.Name = "aTextBox_FindNameByCode2";
-            this.aTextBox_FindNameByCode2.Size = new System.Drawing.Size(240, 27);
+            this.aTextBox_FindNameByCode2.Size = new System.Drawing.Size(328, 27);
             this.aTextBox_FindNameByCode2.TabIndex = 19;
             this.aTextBox_FindNameByCode2.txtCodeText = "";
             this.aTextBox_FindNameByCode2.txtNameText = "";

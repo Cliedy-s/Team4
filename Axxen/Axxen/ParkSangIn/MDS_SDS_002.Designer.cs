@@ -483,7 +483,7 @@
             this.aPanel12.Controls.Add(this.lblupdateName);
             this.aPanel12.Location = new System.Drawing.Point(393, 3);
             this.aPanel12.Name = "aPanel12";
-            this.aPanel12.Size = new System.Drawing.Size(112, 34);
+            this.aPanel12.Size = new System.Drawing.Size(231, 34);
             this.aPanel12.TabIndex = 42;
             // 
             // panelsetting

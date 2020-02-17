@@ -60,10 +60,10 @@
             this.aTextBox_FindNameByCode1.CodeType = Axxen.CustomControls.DataType.Items;
             this.aTextBox_FindNameByCode1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aTextBox_FindNameByCode1.lblNameText = "품목";
-            this.aTextBox_FindNameByCode1.Location = new System.Drawing.Point(430, 26);
+            this.aTextBox_FindNameByCode1.Location = new System.Drawing.Point(404, 28);
             this.aTextBox_FindNameByCode1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.aTextBox_FindNameByCode1.Name = "aTextBox_FindNameByCode1";
-            this.aTextBox_FindNameByCode1.Size = new System.Drawing.Size(216, 27);
+            this.aTextBox_FindNameByCode1.Size = new System.Drawing.Size(311, 27);
             this.aTextBox_FindNameByCode1.TabIndex = 14;
             this.aTextBox_FindNameByCode1.txtCodeText = "";
             this.aTextBox_FindNameByCode1.txtNameText = "";
@@ -71,13 +71,14 @@
             // 
             // aDateTimePickerSearch2
             // 
-            this.aDateTimePickerSearch2.ADateTimePickerValue1 = new System.DateTime(2020, 2, 3, 12, 8, 42, 235);
-            this.aDateTimePickerSearch2.ADateTimePickerValue2 = new System.DateTime(2020, 2, 10, 12, 8, 42, 235);
+            this.aDateTimePickerSearch2.ADateTimePickerValue1 = new System.DateTime(2020, 2, 10, 0, 0, 0, 0);
+            this.aDateTimePickerSearch2.ADateTimePickerValue2 = new System.DateTime(2020, 2, 17, 0, 0, 0, 0);
+            this.aDateTimePickerSearch2.ButtonText = "";
             this.aDateTimePickerSearch2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aDateTimePickerSearch2.Location = new System.Drawing.Point(88, 23);
             this.aDateTimePickerSearch2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.aDateTimePickerSearch2.Name = "aDateTimePickerSearch2";
-            this.aDateTimePickerSearch2.Size = new System.Drawing.Size(324, 32);
+            this.aDateTimePickerSearch2.Size = new System.Drawing.Size(283, 32);
             this.aDateTimePickerSearch2.TabIndex = 15;
             this.aDateTimePickerSearch2.btnDateTimeSearch_Click += new Axxen.CustomControls.ADateTimePickerSearch.SearchButtonClick(this.aDateTimePickerSearch2_btnDateTimeSearch_Click);
             // 
