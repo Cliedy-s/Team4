@@ -141,7 +141,7 @@
             this.txtUnit.Size = new System.Drawing.Size(365, 41);
             this.txtUnit.TabIndex = 5;
             this.txtUnit.TextBoxText = "";
-            this.txtUnit.TextBoxType = Axxen.CustomControls.TextType.Normal;
+            this.txtUnit.TextBoxType = Axxen.CustomControls.TextType.ReadOnly;
             // 
             // txtWcCode
             // 
@@ -154,7 +154,7 @@
             this.txtWcCode.Size = new System.Drawing.Size(365, 41);
             this.txtWcCode.TabIndex = 4;
             this.txtWcCode.TextBoxText = "";
-            this.txtWcCode.TextBoxType = Axxen.CustomControls.TextType.Normal;
+            this.txtWcCode.TextBoxType = Axxen.CustomControls.TextType.ReadOnly;
             // 
             // txtQty
             // 
@@ -167,7 +167,7 @@
             this.txtQty.Size = new System.Drawing.Size(365, 41);
             this.txtQty.TabIndex = 3;
             this.txtQty.TextBoxText = "";
-            this.txtQty.TextBoxType = Axxen.CustomControls.TextType.Normal;
+            this.txtQty.TextBoxType = Axxen.CustomControls.TextType.ReadOnly;
             // 
             // txtItemName
             // 
@@ -180,7 +180,7 @@
             this.txtItemName.Size = new System.Drawing.Size(365, 41);
             this.txtItemName.TabIndex = 2;
             this.txtItemName.TextBoxText = "";
-            this.txtItemName.TextBoxType = Axxen.CustomControls.TextType.Normal;
+            this.txtItemName.TextBoxType = Axxen.CustomControls.TextType.ReadOnly;
             // 
             // txtWorkOrderDate
             // 
@@ -193,7 +193,7 @@
             this.txtWorkOrderDate.Size = new System.Drawing.Size(365, 41);
             this.txtWorkOrderDate.TabIndex = 1;
             this.txtWorkOrderDate.TextBoxText = "";
-            this.txtWorkOrderDate.TextBoxType = Axxen.CustomControls.TextType.Normal;
+            this.txtWorkOrderDate.TextBoxType = Axxen.CustomControls.TextType.ReadOnly;
             // 
             // txtWorkOrderno
             // 
@@ -206,7 +206,7 @@
             this.txtWorkOrderno.Size = new System.Drawing.Size(365, 41);
             this.txtWorkOrderno.TabIndex = 0;
             this.txtWorkOrderno.TextBoxText = "";
-            this.txtWorkOrderno.TextBoxType = Axxen.CustomControls.TextType.Normal;
+            this.txtWorkOrderno.TextBoxType = Axxen.CustomControls.TextType.ReadOnly;
             // 
             // lblConditionCode
             // 

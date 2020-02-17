@@ -2,6 +2,7 @@
 using API.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -28,24 +29,34 @@ namespace API.Controllers
             return View();
         }
 
-
         public ActionResult DefectiveCreate()
         {
             Def_HistoryDAC def = new Def_HistoryDAC();
 
             ViewBag.WorkOrderno = new SelectList(def.GetDefHistoryWorkorderno());
             ViewBag.CodeName = def.GetDefMiMasterCodeName();
-            List<Def_HistoryVO> fruits = def.GetDefMiMasterCodeName();
+            //List<Def_HistoryVO> fruits = def.GetDefMiMasterCodeName();
 
-            return View(fruits);
+            return View();
         }
 
         // POST: DefHistory/Create
         [HttpPost]
-        public ActionResult DefectiveCreate(Def_HistoryVO definfo)
+        public ActionResult DefectiveCreate(Def_HistoryVO definfo, HttpPostedFileBase files)
         {
             try
             {
+                //
+                // Verify that the user selected a file
+                if (files != null && files.ContentLength > 0)
+                {
+                    // extract only the filename
+                    var fileName = Path.GetFileName(files.FileName);
+                    // store the file inside ~/App_Data/uploads folder
+                    var path = Path.Combine(Server.MapPath("~/App_Start/uploads"), fileName);
+                    files.SaveAs(path);
+                }
+
                 // TODO: Add insert logic here
                 Def_HistoryDAC def = new Def_HistoryDAC();
                 if (def.SaveDef(definfo))

@@ -41,21 +41,21 @@
             this.txtCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCode.errorp = null;
             this.txtCode.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtCode.Location = new System.Drawing.Point(115, 2);
+            this.txtCode.Location = new System.Drawing.Point(104, 2);
             this.txtCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCode.Name = "txtCode";
             this.txtCode.ReadOnly = true;
-            this.txtCode.Size = new System.Drawing.Size(38, 23);
+            this.txtCode.Size = new System.Drawing.Size(85, 23);
             this.txtCode.TabIndex = 0;
             this.txtCode.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // aButton1
             // 
             this.aButton1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.aButton1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.aButton1.BackColor = System.Drawing.SystemColors.Info;
             this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.aButton1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aButton1.Location = new System.Drawing.Point(156, 2);
+            this.aButton1.Location = new System.Drawing.Point(195, 2);
             this.aButton1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.aButton1.Name = "aButton1";
             this.aButton1.Size = new System.Drawing.Size(34, 23);
@@ -71,11 +71,11 @@
             this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtName.errorp = null;
             this.txtName.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtName.Location = new System.Drawing.Point(193, 2);
+            this.txtName.Location = new System.Drawing.Point(235, 2);
             this.txtName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtName.Name = "txtName";
             this.txtName.ReadOnly = true;
-            this.txtName.Size = new System.Drawing.Size(97, 23);
+            this.txtName.Size = new System.Drawing.Size(135, 23);
             this.txtName.TabIndex = 2;
             this.txtName.txtType = Axxen.CustomControls.TextType.Normal;
             // 
@@ -84,7 +84,7 @@
             this.lblName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblName.Location = new System.Drawing.Point(0, 2);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(109, 23);
+            this.lblName.Size = new System.Drawing.Size(98, 23);
             this.lblName.TabIndex = 3;
             this.lblName.Text = "lblName";
             this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -100,7 +100,7 @@
             this.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ATextBox_FindNameByCode";
-            this.Size = new System.Drawing.Size(293, 27);
+            this.Size = new System.Drawing.Size(373, 27);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -31,7 +31,6 @@ namespace Axxen
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "시간당생산량", "", true, 80);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "가스사용량", "Dorm_Gas", true, 110);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "비가동시간", "Nop_Time", true, 90);
-            
         }
     }
 }

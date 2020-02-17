@@ -30,5 +30,15 @@ namespace Service
             Emp_Wc_AllocationDAC dac = new Emp_Wc_AllocationDAC();
             return dac.GetAllocatableWorker(wccode);
         }
+        /// <summary>
+        /// 작업장에 할당된 유저인지 확인함
+        /// </summary>
+        /// <param name="userid"></param>
+        /// <returns></returns>
+        public bool IsAllocated(string userid, string wccode)
+        {
+            Emp_Wc_AllocationDAC dac = new Emp_Wc_AllocationDAC();
+            return dac.IsAllocated(userid, wccode);
+        }
     }
 }

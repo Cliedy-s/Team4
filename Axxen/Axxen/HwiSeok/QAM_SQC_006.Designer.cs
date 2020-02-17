@@ -65,13 +65,15 @@
             // 
             // aButton1
             // 
-            this.aButton1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.aButton1.BackColor = System.Drawing.Color.Transparent;
+            this.aButton1.BackgroundImage = global::Axxen.Properties.Resources.forsearch;
+            this.aButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.aButton1.FlatAppearance.BorderSize = 0;
             this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton1.Location = new System.Drawing.Point(168, 28);
+            this.aButton1.Location = new System.Drawing.Point(154, 16);
             this.aButton1.Name = "aButton1";
-            this.aButton1.Size = new System.Drawing.Size(75, 23);
+            this.aButton1.Size = new System.Drawing.Size(42, 47);
             this.aButton1.TabIndex = 30;
-            this.aButton1.Text = "조회";
             this.aButton1.UseVisualStyleBackColor = false;
             this.aButton1.Click += new System.EventHandler(this.aButton1_Click);
             // 
