@@ -90,7 +90,7 @@
             // 
             // btnadd
             // 
-            this.btnadd.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnadd.BackColor = System.Drawing.SystemColors.Info;
             this.btnadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnadd.Location = new System.Drawing.Point(6, 23);
             this.btnadd.Name = "btnadd";
@@ -102,7 +102,7 @@
             // 
             // btndelete
             // 
-            this.btndelete.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btndelete.BackColor = System.Drawing.SystemColors.Info;
             this.btndelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btndelete.Location = new System.Drawing.Point(127, 23);
             this.btndelete.Name = "btndelete";

@@ -52,7 +52,7 @@
             // aButton1
             // 
             this.aButton1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.aButton1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.aButton1.BackColor = System.Drawing.SystemColors.Info;
             this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.aButton1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aButton1.Location = new System.Drawing.Point(195, 2);

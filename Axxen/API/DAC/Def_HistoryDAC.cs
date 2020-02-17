@@ -39,7 +39,7 @@ namespace API.DAC
 
         public List<Def_HistoryVO> GetDefMiMasterCodeName() //상세 코드 ,코드명 가지고오는 쿼리
         {
-            string sql = "select Def_Mi_Code,Def_Mi_Name from Def_Mi_Master";
+            string sql = "select Def_Mi_Name,Def_Mi_Code from Def_Mi_Master";
             List<Def_HistoryVO> list = new List<Def_HistoryVO>();
             using (SqlConnection conn = new SqlConnection(Connstr))
             {
@@ -55,7 +55,7 @@ namespace API.DAC
 
         public List<string> GetDefHistoryWorkorderno() //작업지시번호만 가지고오는 쿼리
         {
-            string sql = "select DISTINCT Workorderno from WorkOrder";
+            string sql = "select DISTINCT Workorderno from Workorder";
             List<string> list = new List<string>();
             using (SqlConnection conn = new SqlConnection(Connstr))
             {
