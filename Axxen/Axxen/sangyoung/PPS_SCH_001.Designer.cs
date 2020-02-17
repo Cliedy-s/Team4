@@ -70,7 +70,7 @@
             // 
             // btnPrDown
             // 
-            this.btnPrDown.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnPrDown.BackColor = System.Drawing.SystemColors.Info;
             this.btnPrDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrDown.Location = new System.Drawing.Point(981, 14);
             this.btnPrDown.Name = "btnPrDown";
@@ -82,7 +82,7 @@
             // 
             // btnPrFinish
             // 
-            this.btnPrFinish.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnPrFinish.BackColor = System.Drawing.SystemColors.Info;
             this.btnPrFinish.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrFinish.Location = new System.Drawing.Point(981, 43);
             this.btnPrFinish.Name = "btnPrFinish";
@@ -131,8 +131,8 @@
             // 
             // aDateTimePickerSearch1
             // 
-            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 2, 10, 11, 49, 31, 254);
-            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 2, 17, 11, 49, 31, 254);
+            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 2, 10, 0, 0, 0, 0);
+            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 2, 17, 0, 0, 0, 0);
             this.aDateTimePickerSearch1.ButtonText = "";
             this.aDateTimePickerSearch1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aDateTimePickerSearch1.Location = new System.Drawing.Point(112, 23);
