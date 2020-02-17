@@ -35,9 +35,9 @@ namespace API.Controllers
 
             ViewBag.WorkOrderno = new SelectList(def.GetDefHistoryWorkorderno());
             ViewBag.CodeName = def.GetDefMiMasterCodeName();
-            List<Def_HistoryVO> fruits = def.GetDefMiMasterCodeName();
+            //List<Def_HistoryVO> fruits = def.GetDefMiMasterCodeName();
 
-            return View(fruits);
+            return View();
         }
 
         // POST: DefHistory/Create
