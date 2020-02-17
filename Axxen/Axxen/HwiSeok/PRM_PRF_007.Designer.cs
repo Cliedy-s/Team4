@@ -82,7 +82,7 @@
             this.Controls.Add(this.aLabel_SubHeader1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "PRM_PRF_007";
-            this.Text = "대차현황모니터링";
+            this.Text = "";
             this.Load += new System.EventHandler(this.PRM_PRF_007_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

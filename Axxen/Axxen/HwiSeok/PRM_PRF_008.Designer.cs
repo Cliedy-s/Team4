@@ -88,7 +88,7 @@
             this.ControlBox = false;
             this.Margin = new System.Windows.Forms.Padding(4, 7, 4, 7);
             this.Name = "PRM_PRF_008";
-            this.Text = "비가동 등록";
+            this.Text = "";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PRM_PRF_008_FormClosing);
             this.Load += new System.EventHandler(this.PRM_PRF_008_Load);
             this.panTop.ResumeLayout(false);

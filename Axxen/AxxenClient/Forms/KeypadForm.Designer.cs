@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.aButton1 = new Axxen.CustomControls.AButton();
+            this.btnOK = new Axxen.CustomControls.AButton();
             this.aButton5 = new Axxen.CustomControls.AButton();
             this.aButton6 = new Axxen.CustomControls.AButton();
             this.aButton7 = new Axxen.CustomControls.AButton();
@@ -38,22 +38,24 @@
             this.aButton11 = new Axxen.CustomControls.AButton();
             this.aButton12 = new Axxen.CustomControls.AButton();
             this.aButton13 = new Axxen.CustomControls.AButton();
-            this.aButton15 = new Axxen.CustomControls.AButton();
+            this.btnDot = new Axxen.CustomControls.AButton();
             this.aButton16 = new Axxen.CustomControls.AButton();
-            this.aTextBox1 = new Axxen.CustomControls.ATextBox();
+            this.txtNum = new Axxen.CustomControls.ATextBox();
+            this.btnDelete = new Axxen.CustomControls.AButton();
             this.SuspendLayout();
             // 
-            // aButton1
+            // btnOK
             // 
-            this.aButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton1.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aButton1.Location = new System.Drawing.Point(186, 306);
-            this.aButton1.Name = "aButton1";
-            this.aButton1.Size = new System.Drawing.Size(81, 71);
-            this.aButton1.TabIndex = 0;
-            this.aButton1.Text = "↵";
-            this.aButton1.UseVisualStyleBackColor = false;
+            this.btnOK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOK.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnOK.Location = new System.Drawing.Point(186, 307);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(81, 71);
+            this.btnOK.TabIndex = 0;
+            this.btnOK.Text = "↵";
+            this.btnOK.UseVisualStyleBackColor = false;
+            this.btnOK.Click += new System.EventHandler(this.BtnOK_Click);
             // 
             // aButton5
             // 
@@ -66,6 +68,7 @@
             this.aButton5.TabIndex = 4;
             this.aButton5.Text = "7";
             this.aButton5.UseVisualStyleBackColor = false;
+            this.aButton5.Click += new System.EventHandler(this.Button_Click);
             // 
             // aButton6
             // 
@@ -78,6 +81,7 @@
             this.aButton6.TabIndex = 5;
             this.aButton6.Text = "8";
             this.aButton6.UseVisualStyleBackColor = false;
+            this.aButton6.Click += new System.EventHandler(this.Button_Click);
             // 
             // aButton7
             // 
@@ -90,6 +94,7 @@
             this.aButton7.TabIndex = 6;
             this.aButton7.Text = "9";
             this.aButton7.UseVisualStyleBackColor = false;
+            this.aButton7.Click += new System.EventHandler(this.Button_Click);
             // 
             // aButton8
             // 
@@ -102,6 +107,7 @@
             this.aButton8.TabIndex = 9;
             this.aButton8.Text = "6";
             this.aButton8.UseVisualStyleBackColor = false;
+            this.aButton8.Click += new System.EventHandler(this.Button_Click);
             // 
             // aButton9
             // 
@@ -114,6 +120,7 @@
             this.aButton9.TabIndex = 8;
             this.aButton9.Text = "5";
             this.aButton9.UseVisualStyleBackColor = false;
+            this.aButton9.Click += new System.EventHandler(this.Button_Click);
             // 
             // aButton10
             // 
@@ -126,6 +133,7 @@
             this.aButton10.TabIndex = 7;
             this.aButton10.Text = "4";
             this.aButton10.UseVisualStyleBackColor = false;
+            this.aButton10.Click += new System.EventHandler(this.Button_Click);
             // 
             // aButton11
             // 
@@ -138,6 +146,7 @@
             this.aButton11.TabIndex = 12;
             this.aButton11.Text = "3";
             this.aButton11.UseVisualStyleBackColor = false;
+            this.aButton11.Click += new System.EventHandler(this.Button_Click);
             // 
             // aButton12
             // 
@@ -150,6 +159,7 @@
             this.aButton12.TabIndex = 11;
             this.aButton12.Text = "2";
             this.aButton12.UseVisualStyleBackColor = false;
+            this.aButton12.Click += new System.EventHandler(this.Button_Click);
             // 
             // aButton13
             // 
@@ -162,18 +172,20 @@
             this.aButton13.TabIndex = 10;
             this.aButton13.Text = "1";
             this.aButton13.UseVisualStyleBackColor = false;
+            this.aButton13.Click += new System.EventHandler(this.Button_Click);
             // 
-            // aButton15
+            // btnDot
             // 
-            this.aButton15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.aButton15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton15.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aButton15.Location = new System.Drawing.Point(99, 306);
-            this.aButton15.Name = "aButton15";
-            this.aButton15.Size = new System.Drawing.Size(81, 71);
-            this.aButton15.TabIndex = 14;
-            this.aButton15.Text = ".";
-            this.aButton15.UseVisualStyleBackColor = false;
+            this.btnDot.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.btnDot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDot.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnDot.Location = new System.Drawing.Point(99, 307);
+            this.btnDot.Name = "btnDot";
+            this.btnDot.Size = new System.Drawing.Size(81, 71);
+            this.btnDot.TabIndex = 14;
+            this.btnDot.Text = ".";
+            this.btnDot.UseVisualStyleBackColor = false;
+            this.btnDot.Click += new System.EventHandler(this.BtnDot_Click);
             // 
             // aButton16
             // 
@@ -186,26 +198,40 @@
             this.aButton16.TabIndex = 13;
             this.aButton16.Text = "0";
             this.aButton16.UseVisualStyleBackColor = false;
+            this.aButton16.Click += new System.EventHandler(this.Button_Click);
             // 
-            // aTextBox1
+            // txtNum
             // 
-            this.aTextBox1.BackColor = System.Drawing.Color.White;
-            this.aTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.aTextBox1.errorp = null;
-            this.aTextBox1.Font = new System.Drawing.Font("맑은 고딕", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aTextBox1.Location = new System.Drawing.Point(12, 12);
-            this.aTextBox1.Name = "aTextBox1";
-            this.aTextBox1.Size = new System.Drawing.Size(255, 57);
-            this.aTextBox1.TabIndex = 15;
-            this.aTextBox1.Text = "1234567890";
-            this.aTextBox1.txtType = Axxen.CustomControls.TextType.Normal;
+            this.txtNum.BackColor = System.Drawing.Color.White;
+            this.txtNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNum.errorp = null;
+            this.txtNum.Font = new System.Drawing.Font("맑은 고딕", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtNum.Location = new System.Drawing.Point(12, 12);
+            this.txtNum.Name = "txtNum";
+            this.txtNum.Size = new System.Drawing.Size(168, 57);
+            this.txtNum.TabIndex = 15;
+            this.txtNum.txtType = Axxen.CustomControls.TextType.Normal;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnDelete.Location = new System.Drawing.Point(186, 12);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(81, 57);
+            this.btnDelete.TabIndex = 16;
+            this.btnDelete.Text = "←";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // KeypadForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(285, 390);
-            this.Controls.Add(this.aTextBox1);
-            this.Controls.Add(this.aButton15);
+            this.ClientSize = new System.Drawing.Size(278, 390);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.txtNum);
+            this.Controls.Add(this.btnDot);
             this.Controls.Add(this.aButton16);
             this.Controls.Add(this.aButton11);
             this.Controls.Add(this.aButton12);
@@ -216,7 +242,7 @@
             this.Controls.Add(this.aButton7);
             this.Controls.Add(this.aButton6);
             this.Controls.Add(this.aButton5);
-            this.Controls.Add(this.aButton1);
+            this.Controls.Add(this.btnOK);
             this.Name = "KeypadForm";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -225,7 +251,7 @@
 
         #endregion
 
-        private Axxen.CustomControls.AButton aButton1;
+        private Axxen.CustomControls.AButton btnOK;
         private Axxen.CustomControls.AButton aButton5;
         private Axxen.CustomControls.AButton aButton6;
         private Axxen.CustomControls.AButton aButton7;
@@ -235,8 +261,9 @@
         private Axxen.CustomControls.AButton aButton11;
         private Axxen.CustomControls.AButton aButton12;
         private Axxen.CustomControls.AButton aButton13;
-        private Axxen.CustomControls.AButton aButton15;
+        private Axxen.CustomControls.AButton btnDot;
         private Axxen.CustomControls.AButton aButton16;
-        private Axxen.CustomControls.ATextBox aTextBox1;
+        private Axxen.CustomControls.ATextBox txtNum;
+        private Axxen.CustomControls.AButton btnDelete;
     }
 }

@@ -102,7 +102,7 @@
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.ControlBox = false;
             this.Name = "PRM_PRF_009";
-            this.Text = "근태정보 조회";
+            this.Text = "";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PRM_PRF_009_FormClosing);
             this.Load += new System.EventHandler(this.PRM_PRF_009_Load);
             this.panTop.ResumeLayout(false);

@@ -176,7 +176,7 @@
             this.ControlBox = false;
             this.Controls.Add(this.toolStrip1);
             this.Name = "PPS_SCH_001";
-            this.Text = "성형작업지시생성";
+            this.Text = "";
             this.Activated += new System.EventHandler(this.PPS_SCH_001_Activated);
             this.Deactivate += new System.EventHandler(this.PPS_SCH_001_Deactivate);
             this.Load += new System.EventHandler(this.PPS_SCH_001_Load);

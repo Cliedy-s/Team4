@@ -170,7 +170,7 @@
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.ControlBox = false;
             this.Name = "QAM_SQC_003";
-            this.Text = "공정조건등록";
+            this.Text = "";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.QAM_SQC_003_FormClosing);
             this.Load += new System.EventHandler(this.QAM_SQC_003_Load);
             this.aSplitContainer1.Panel1.ResumeLayout(false);

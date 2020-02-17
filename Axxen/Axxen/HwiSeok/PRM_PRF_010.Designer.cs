@@ -98,7 +98,7 @@
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.ControlBox = false;
             this.Name = "PRM_PRF_010";
-            this.Text = "근태현황 분석";
+            this.Text = "";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PRM_PRF_010_FormClosing);
             this.Load += new System.EventHandler(this.PRM_PRF_010_Load);
             this.aPanel1.ResumeLayout(false);

@@ -337,7 +337,7 @@
             this.ControlBox = false;
             this.Controls.Add(this.toolStrip1);
             this.Name = "PPS_MLD_001";
-            this.Text = "금형정보등록";
+            this.Text = "";
             this.Activated += new System.EventHandler(this.PPS_MLD_001_Activated);
             this.Deactivate += new System.EventHandler(this.PPS_MLD_001_Deactivate);
             this.Load += new System.EventHandler(this.PPS_MLD_001_Load);

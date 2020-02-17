@@ -104,7 +104,7 @@
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.ControlBox = false;
             this.Name = "PRM_PRF_001";
-            this.Text = "실적조회";
+            this.Text = "";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PRM_PRF_001_FormClosing);
             this.Load += new System.EventHandler(this.PRM_PRF_001_Load);
             this.panTop.ResumeLayout(false);
