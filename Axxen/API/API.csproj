@@ -161,6 +161,7 @@
     <Compile Include="Controllers\ChartController.cs" />
     <Compile Include="Controllers\DefHistoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ItemController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\NavController.cs" />
     <Compile Include="Controllers\NoticeShowController.cs" />
@@ -178,6 +179,7 @@
     </Compile>
     <Compile Include="Models\ChartOutputVO.cs" />
     <Compile Include="Models\Def_HistoryVO.cs" />
+    <Compile Include="Models\Item_MasterVO.cs" />
     <Compile Include="Models\MainForm_VO.cs" />
     <Compile Include="Models\MoldVO.cs" />
     <Compile Include="Models\Mold_J_Item_Wc_MuseVO.cs" />
@@ -7439,6 +7441,7 @@
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Login\userbox.cshtml" />
     <Content Include="Views\Nav\Message.cshtml" />
+    <Content Include="Views\Item\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
