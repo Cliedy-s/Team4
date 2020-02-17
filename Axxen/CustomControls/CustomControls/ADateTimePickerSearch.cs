@@ -32,10 +32,12 @@ namespace Axxen.CustomControls
 
         private void ADateTimePickerSearch_Load(object sender, EventArgs e)
         {
-            aDateTimePicker1.Value = DateTime.Now.AddDays(-7);
-            aDateTimePicker2.Value = DateTime.Now;
-            aDateTimePicker2.MaxDate = DateTime.Now;
-
+            if (LicenseManager.UsageMode != LicenseUsageMode.Designtime)
+            {
+                aDateTimePicker1.Value = Convert.ToDateTime(DateTime.Now.AddDays(-7).ToShortDateString());
+                aDateTimePicker2.Value = Convert.ToDateTime(DateTime.Now.ToLongDateString());
+                aDateTimePicker2.MaxDate = DateTime.Now;
+            }
         }
 
         private void aDateTimePicker2_ValueChanged(object sender, EventArgs e)
