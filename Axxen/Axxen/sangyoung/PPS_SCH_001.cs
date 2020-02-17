@@ -26,6 +26,7 @@ namespace Axxen
         Wo_ReqService service = new Wo_ReqService();
         WorkOrder_Service workservice = new WorkOrder_Service();
         PPS_SCH_001_Insert frm;
+        bool cFlag = false;
 
         public PPS_SCH_001()
         {
@@ -56,6 +57,7 @@ namespace Axxen
 
             frm = new PPS_SCH_001_Insert(woitem.Req_Seq, woitem.Wo_Req_No, woitem.Item_Code, woitem.Item_Name, woitem.Req_Qty);
             frm.StartPosition = FormStartPosition.CenterScreen;
+            cFlag = true;
             frm.Show();
         }
 
@@ -125,8 +127,6 @@ namespace Axxen
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "산출수량", "Out_Qty_Main", true, 60, DataGridViewContentAlignment.MiddleRight);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvSubGrid, "생산수량", "Prd_Qty", true, 60, DataGridViewContentAlignment.MiddleRight);
             DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvSubGrid, "비고", "Remark", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
-
-            
         }
 
         private void BtnPrFinish_Click(object sender, EventArgs e)
@@ -148,9 +148,9 @@ namespace Axxen
                 }
             }
             if (result)
-                MessageBox.Show("의뢰가 마감되었습니다.", "생산의뢰관리", MessageBoxButtons.OK);
+                MessageBox.Show("의뢰가 마감되었습니다.", "작업지시관리", MessageBoxButtons.OK);
             else
-                MessageBox.Show("의뢰가 마감되지 않았습니다.\n마감할 의뢰를 선택해 주세요.", "생산의뢰관리", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("의뢰가 마감되지 않았습니다.\n마감할 의뢰를 선택해 주세요.", "작업지시관리", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             RefreshFormShow(null, null);
 
@@ -242,6 +242,7 @@ namespace Axxen
 
         private void BtnPrDown_Click(object sender, EventArgs e)
         {
+            bool bFlag = false;
             DataTable dt = new DataTable();
 
             List<Wo_Req_ItemVO> list = dgvMainGrid.DataSource as List<Wo_Req_ItemVO>;
@@ -249,8 +250,10 @@ namespace Axxen
             {
                 if (dgvMainGrid.Rows[i].Cells[0] is DataGridViewCheckBoxCell chk)
                 {
+                  
                     if (Convert.ToBoolean(chk.Value))
                     {
+                        bFlag = true;
                         reportList.Add(list[i]);
                     }
                     else
@@ -262,18 +265,25 @@ namespace Axxen
             dt = ListToDataTable.ToDataTable(reportList);
             ProductionRequest rpt = new ProductionRequest();
             rpt.DataSource = dt;
-            PPS_SCH_001_Report frm = new PPS_SCH_001_Report(dt);
-            frm.documentViewer1.DocumentSource = null;
-            frm.documentViewer1.DocumentSource = rpt;
-            frm.MdiParent = MdiParent;
-            frm.WindowState = FormWindowState.Maximized;
-            frm.Show();
+            if(bFlag)
+            {
+                PPS_SCH_001_Report frm = new PPS_SCH_001_Report(dt);
+                frm.documentViewer1.DocumentSource = null;
+                frm.documentViewer1.DocumentSource = rpt;
+                frm.MdiParent = MdiParent;
+                frm.WindowState = FormWindowState.Maximized;
+                frm.Show();
 
-            TabPage newTab = new TabPage();
-            newTab.Tag = frm.Name;
-            newTab.Text = "생산의뢰목록";
-            frm.Tag = frm.Name;
-            ((MainForm)this.MdiParent).tabControl2.TabPages.Add(newTab);
+                TabPage newTab = new TabPage();
+                newTab.Tag = frm.Name;
+                newTab.Text = "생산의뢰목록";
+                frm.Tag = frm.Name;
+                ((MainForm)this.MdiParent).tabControl2.TabPages.Add(newTab);
+            }
+            else
+            {
+                MessageBox.Show("목록을 선택해 주세요.","작업지시관리",MessageBoxButtons.OK);
+            }
         }
 
         private void PPS_SCH_001_Activated(object sender, EventArgs e)
@@ -307,24 +317,24 @@ namespace Axxen
                 bool result = workservice.DeletePPSWoReq(woreqno);
                 if(result)
                 {
-                    MessageBox.Show("Success");
+                    MessageBox.Show("생산의뢰가 삭제되었습니다.","작업지시관리");
                     dgvSubGrid.DataSource = null;
                 }
                 else
-                    MessageBox.Show("Fail");
+                    MessageBox.Show("생산의뢰가 삭제되지 않았습니다.","작업지시관리",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             else if(dgvSubGrid.Focused)
             {
                 string workno = dgvSubGrid[3, dgvSubGrid.CurrentRow.Index].Value.ToString();
                 bool result = workservice.DeletePPSWorkorder(workno);
                 if(result)
-                    MessageBox.Show("Success");
+                    MessageBox.Show("작업지시가 삭제되었습니다.", "작업지시관리", MessageBoxButtons.OK);
                 else
-                    MessageBox.Show("Fail");
+                    MessageBox.Show("작업지시가 삭제되지 않았습니다.", "작업지시관리", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show("삭제할 항목을 선택해 주세요.","생산의뢰관리",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                MessageBox.Show("삭제할 항목을 선택해 주세요.","작업지시관리",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
             }
         }
 
@@ -336,41 +346,47 @@ namespace Axxen
         /// <param name="e"></param>
         private void TsbtnSave_Click(object sender, EventArgs e)
         {
-            //error
-            frm.Owner = this;
-            WorkOrderAllVO order = new WorkOrderAllVO();
-            order.Req_Seq = Convert.ToInt32(frm.txtSeq.Text);
-            order.Wo_Req_No = frm.txtReqNo.Text;
-            order.Wo_Status = "생산대기";
-            order.Wc_Code = frm.cboWorkCenter.SelectedValue.ToString();
-            order.Remark = frm.txtRemark.Text;
-            order.Plan_Qty = Convert.ToInt32(frm.txtPlanQty.Text);
-            order.Out_Qty_Main =0;
-            order.In_Qty_Main = 0;
-            order.Prd_Qty =0;
-            order.Plan_Date = frm.dtpDate.Value;
-            order.Item_Code = frm.txtItemCode.Text;
-            order.Plan_Unit = frm.txtPlanUnit.Text;
-            order.Prd_Unit = frm.txtPlanUnit.Text;
-            try
+            if (cFlag)
             {
-                
-                bool result = workservice.InsertPPSWorkorder(order,UserInfo.User_ID);
-                if (result)
+                frm.Owner = this;
+                WorkOrderAllVO order = new WorkOrderAllVO();
+                order.Req_Seq = Convert.ToInt32(frm.txtSeq.Text);
+                order.Wo_Req_No = frm.txtReqNo.Text;
+                order.Wo_Status = "생산대기";
+                order.Wc_Code = frm.cboWorkCenter.SelectedValue.ToString();
+                order.Remark = frm.txtRemark.Text;
+                order.Plan_Qty = Convert.ToInt32(frm.txtPlanQty.Text);
+                order.Out_Qty_Main = 0;
+                order.In_Qty_Main = 0;
+                order.Prd_Qty = 0;
+                order.Plan_Date = frm.dtpDate.Value;
+                order.Item_Code = frm.txtItemCode.Text;
+                order.Plan_Unit = frm.txtPlanUnit.Text;
+                order.Prd_Unit = frm.txtPlanUnit.Text;
+                try
                 {
-                    MessageBox.Show("Success");
-                    frm.Close();
+
+                    bool result = workservice.InsertPPSWorkorder(order, UserInfo.User_ID);
+                    if (result)
+                    {
+                        MessageBox.Show("작업지시가 생성되었습니다.","작업지시관리",MessageBoxButtons.OK);
+                        frm.Close();
+                    }
+                    else
+                        MessageBox.Show("작업지시가 생성되지 않았습니다.", "작업지시관리", MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
-                else
-                    MessageBox.Show("Fail");
+                catch (Exception err)
+                {
+                    Program.Log.WriteError(err.Message);
+                }
+                finally
+                {
+                    RefreshFormShow(null, null);
+                }
             }
-            catch (Exception err)
+            else
             {
-                MessageBox.Show(err.Message);
-            }
-            finally
-            {
-                RefreshFormShow(null, null);
+                return;
             }
         }
     }

@@ -24,8 +24,9 @@ namespace Axxen
 
         private void MSS_SYS_004_Load(object sender, EventArgs e)
         {
-            dtpstart.Value = DateTime.Now;
             dtpEnd.MaxDate = DateTime.Now;
+          
+          
 
             userlist = new List<UserInfoVO>();
             userlist = userservice.GetAllUser();
@@ -56,6 +57,15 @@ namespace Axxen
 
         private void BtnSearch_Click(object sender, EventArgs e)
         {
+
+            int dayresult = DateTime.Compare(dtpstart.Value, dtpEnd.Value);
+            if (dayresult>0)
+            { 
+                MessageBox.Show("날짜가 올바르지 않습니다.","알림",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                return;
+            }
+
+
 
                if (cbbUser.SelectedValue == null && cbbScreen.SelectedValue == null) //날짜만골랏을때
             {

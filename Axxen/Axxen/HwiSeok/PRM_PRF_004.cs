@@ -54,7 +54,7 @@ namespace Axxen
             }
             catch (Exception err)
             {
-                MessageBox.Show(err.Message);
+            
                 Program.Log.WriteError(err.Message);
             }
         }

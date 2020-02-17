@@ -158,20 +158,25 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\ChartController.cs" />
     <Compile Include="Controllers\DefHistoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\NavController.cs" />
     <Compile Include="Controllers\NoticeShowController.cs" />
     <Compile Include="Controllers\Sys_NoticeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="DAC\ChartDAC.cs" />
     <Compile Include="DAC\DACParent.cs" />
     <Compile Include="DAC\Def_HistoryDAC.cs" />
     <Compile Include="DAC\Helper.cs" />
     <Compile Include="DAC\Item_MasterDAC.cs" />
     <Compile Include="DAC\Sys_NoticeDAC.cs" />
+    <Compile Include="DAC\UserInfoDAC.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ChartOutputVO.cs" />
     <Compile Include="Models\Def_HistoryVO.cs" />
     <Compile Include="Models\MainForm_VO.cs" />
     <Compile Include="Models\MoldVO.cs" />
@@ -6780,6 +6785,9 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="obj\Debug\API.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\API.dll" />
+    <Content Include="obj\Debug\API.pdb" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
@@ -7394,6 +7402,11 @@
     <Content Include="bower_components\select2\src\scss\_dropdown.scss" />
     <Content Include="bower_components\select2\src\scss\_multiple.scss" />
     <Content Include="bower_components\select2\src\scss\_single.scss" />
+    <Content Include="obj\Debug\API.csproj.CopyComplete" />
+    <Content Include="obj\Debug\API.csproj.CoreCompileInputs.cache" />
+    <Content Include="obj\Debug\API.csprojAssemblyReference.cache" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\Tsc.out" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -7421,9 +7434,16 @@
     <Content Include="Views\Sys_Notice\Edit.cshtml" />
     <Content Include="Views\Sys_Notice\Delete.cshtml" />
     <Content Include="Views\NoticeShow\Index.cshtml" />
+    <Content Include="Views\Chart\Index.cshtml" />
+    <Content Include="Views\DefHistory\DefectiveCreate.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Login\userbox.cshtml" />
+    <Content Include="Views\Nav\Message.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="App_Start\uploads\" />
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

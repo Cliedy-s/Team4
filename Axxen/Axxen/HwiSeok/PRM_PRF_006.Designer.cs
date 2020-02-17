@@ -61,10 +61,10 @@
             this.aTextBox_FindNameByCode2.CodeType = Axxen.CustomControls.DataType.Items;
             this.aTextBox_FindNameByCode2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aTextBox_FindNameByCode2.lblNameText = "품목";
-            this.aTextBox_FindNameByCode2.Location = new System.Drawing.Point(687, 26);
+            this.aTextBox_FindNameByCode2.Location = new System.Drawing.Point(712, 26);
             this.aTextBox_FindNameByCode2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.aTextBox_FindNameByCode2.Name = "aTextBox_FindNameByCode2";
-            this.aTextBox_FindNameByCode2.Size = new System.Drawing.Size(220, 27);
+            this.aTextBox_FindNameByCode2.Size = new System.Drawing.Size(306, 27);
             this.aTextBox_FindNameByCode2.TabIndex = 15;
             this.aTextBox_FindNameByCode2.txtCodeText = "";
             this.aTextBox_FindNameByCode2.txtNameText = "";
@@ -76,10 +76,10 @@
             this.aTextBox_FindNameByCode1.CodeType = Axxen.CustomControls.DataType.GVs;
             this.aTextBox_FindNameByCode1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aTextBox_FindNameByCode1.lblNameText = "대차";
-            this.aTextBox_FindNameByCode1.Location = new System.Drawing.Point(443, 26);
+            this.aTextBox_FindNameByCode1.Location = new System.Drawing.Point(398, 26);
             this.aTextBox_FindNameByCode1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.aTextBox_FindNameByCode1.Name = "aTextBox_FindNameByCode1";
-            this.aTextBox_FindNameByCode1.Size = new System.Drawing.Size(224, 27);
+            this.aTextBox_FindNameByCode1.Size = new System.Drawing.Size(308, 27);
             this.aTextBox_FindNameByCode1.TabIndex = 16;
             this.aTextBox_FindNameByCode1.txtCodeText = "";
             this.aTextBox_FindNameByCode1.txtNameText = "";
@@ -87,14 +87,14 @@
             // 
             // aDateTimePickerSearch1
             // 
-            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 2, 3, 12, 9, 2, 44);
-            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 2, 10, 12, 9, 2, 44);
-            
+            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 2, 10, 0, 0, 0, 0);
+            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 2, 17, 0, 0, 0, 0);
+            this.aDateTimePickerSearch1.ButtonText = "";
             this.aDateTimePickerSearch1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aDateTimePickerSearch1.Location = new System.Drawing.Point(88, 23);
             this.aDateTimePickerSearch1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.aDateTimePickerSearch1.Name = "aDateTimePickerSearch1";
-            this.aDateTimePickerSearch1.Size = new System.Drawing.Size(324, 32);
+            this.aDateTimePickerSearch1.Size = new System.Drawing.Size(286, 32);
             this.aDateTimePickerSearch1.TabIndex = 17;
             this.aDateTimePickerSearch1.btnDateTimeSearch_Click += new Axxen.CustomControls.ADateTimePickerSearch.SearchButtonClick(this.aDateTimePickerSearch1_btnDateTimeSearch_Click);
             // 

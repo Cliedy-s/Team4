@@ -118,9 +118,8 @@
             // 
             // btnCencle
             // 
-            this.btnCencle.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnCencle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnCencle.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCencle.FlatAppearance.BorderSize = 0;
             this.btnCencle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCencle.Location = new System.Drawing.Point(245, 8);
             this.btnCencle.Name = "btnCencle";
@@ -131,8 +130,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Location = new System.Drawing.Point(164, 8);
             this.btnSave.Name = "btnSave";
@@ -403,6 +401,7 @@
             this.Controls.Add(this.aPanel31);
             this.Controls.Add(this.aPanel18);
             this.Name = "QAM_SQC_003_1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "공정조건 측정추가";
             this.Load += new System.EventHandler(this.QAM_SQC_003_1_Load);
             this.aPanel4.ResumeLayout(false);

@@ -98,7 +98,7 @@ namespace Axxen
             }
             catch (Exception err)
             {
-                MessageBox.Show(err.Message);
+             
                 Program.Log.WriteError(err.Message);
             }
 
@@ -116,7 +116,7 @@ namespace Axxen
                 if (MessageBox.Show(dgvParent.SelectedRows[0].Cells[1].Value.ToString() + "하위항목도 모두 삭제됩니다. 메뉴를 삭제하시겠습니까?", "알림", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     //   MessageBox.Show(dgvParent.SelectedRows[0].Cells[0].Value.ToString());
-                    if (service.DeleteMenuTree_Master_VO(dgvParent.SelectedRows[0].Cells[0].Value.ToString(), dgvParent.SelectedRows[0].Cells[0].Value.ToString()))
+                    if (service.DeleteMenuTree_Master_VO("1",dgvParent.SelectedRows[0].Cells[0].Value.ToString(), dgvParent.SelectedRows[0].Cells[0].Value.ToString()))
                     {
                                 //((MainForm)this.MdiParent).DeleteButon();
                                 //((MainForm)this.MdiParent).Setting();
@@ -132,8 +132,8 @@ namespace Axxen
             {
                 if (MessageBox.Show(dgvSon.SelectedRows[0].Cells[1].Value.ToString() + "메뉴를 삭제하시겠습니까?", "알림", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    //      MessageBox.Show(dgvSon.SelectedRows[0].Cells[1].Value.ToString());
-                    if (service.DeleteMenuTree_Master_VO("-1", dgvSon.SelectedRows[0].Cells[2].Value.ToString()))
+                       MessageBox.Show(dgvSon.SelectedRows[0].Cells[1].Value.ToString());
+                    if (service.DeleteMenuTree_Master_VO("-1", dgvSon.SelectedRows[0].Cells[0].Value.ToString(), dgvSon.SelectedRows[0].Cells[1].Value.ToString()))
                     {
                                 ((MainForm)this.MdiParent).Setting();
                                 treeview();
@@ -146,7 +146,7 @@ namespace Axxen
             }
             catch (Exception err)
             {
-                MessageBox.Show(err.Message);
+             
                 Program.Log.WriteError(err.Message);
             }
 
@@ -168,7 +168,7 @@ namespace Axxen
             }
             catch (Exception err)
             {
-                MessageBox.Show(err.Message);
+         
                 Program.Log.WriteError(err.Message);
             }
         }

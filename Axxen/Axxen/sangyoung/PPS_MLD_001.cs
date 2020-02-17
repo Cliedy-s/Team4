@@ -177,15 +177,15 @@ namespace Axxen
                 bool result = service.DeleteMolde(moldno);
                 if(result)
                 {
-                    MessageBox.Show("Success");
+                    MessageBox.Show("금형정보가 삭제되었습니다.", "금형관리");
                     RefreshFormShow(null, null);
                 }
                 else
-                    MessageBox.Show("Fail");
+                    MessageBox.Show("금형정보가 삭제되지 않았습니다.", "금형관리", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show("삭제할 목록을 선택해 주세요.","금형정보관리",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                MessageBox.Show("삭제할 목록을 선택해 주세요.", "금형관리", MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
         }
 
@@ -221,9 +221,9 @@ namespace Axxen
             };
             bool result = service.InsertMold(minfo);
             if (result)
-                MessageBox.Show("성공");
+                MessageBox.Show("금형정보가 등록되었습니다.", "금형관리");
             else
-                MessageBox.Show("실패");
+                MessageBox.Show("금형정보등록에 실패하였습니다.", "금형관리", MessageBoxButtons.OK,MessageBoxIcon.Error);
 
             RefreshFormShow(null, null);
         }
