@@ -29,10 +29,15 @@ namespace AxxenClient
                 MessageBox.Show("아이디 비밀번호를 확인해주세요");
                 return;
             }
+            Emp_Wc_AllocationService service = new Emp_Wc_AllocationService();
+            if((!service.IsAllocated(logininfo.User_ID, GlobalUsage.WcCode)) && !logininfo.User_ID.Equals("master"))
+            {
+                MessageBox.Show("할당되지 않은 작업자입니다.");
+                return;
+            }
 
             GlobalUsage.UserID = txtID.Text;
             GlobalUsage.UserName = logininfo.User_Name;
-
 
             // 세션 set
             Random r = new Random();
@@ -64,6 +69,14 @@ namespace AxxenClient
             this.DialogResult = DialogResult.OK;
 
 
+        }
+
+        private void txtPwd_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                btnLogin.PerformClick();
+            }
         }
     }
 }

@@ -100,13 +100,20 @@ namespace AxxenClient.Forms
         public void GetDatas()
         {
             // 작업지시번호(row) currentcell.Column(Column)
+            int scrollPosition = 0;
             if (IsLoaded)
             {
-                selectedrowwono = dgvMain.SelectedRows[0].Cells[1].Value.ToString();
-                columnno = dgvMain.CurrentCell.ColumnIndex;
+                if(dgvMain.Rows.Count > 0)
+                {
+                    selectedrowwono = dgvMain.SelectedRows[0].Cells[1].Value.ToString();
+                    columnno = dgvMain.CurrentCell.ColumnIndex;
+                }
+                scrollPosition= dgvMain.FirstDisplayedScrollingRowIndex;  // 스크롤 문제
             }
             // 데이터를 가져온다.
             dgvMain.DataSource = wservice.GetAllWorkOrder_AlloHisDetail_Item_Wc(GlobalUsage.WcCode);
+            dgvMain.FirstDisplayedScrollingRowIndex = scrollPosition;  // 스크롤 문제
+
             if (!IsLoaded) IsLoaded = true;
             SetRowsForTimer();
         }
@@ -424,7 +431,7 @@ namespace AxxenClient.Forms
                             break;
                     }
                     // 공통
-                    btnMachineRun.BackColor = Color.FromArgb(188, 220, 244);
+                    btnMachineRun.BackColor = Color.FromArgb(243, 228, 231);
                     isMachineRun = true;
                     progressMachine.Visible = true;
                 }

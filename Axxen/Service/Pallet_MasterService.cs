@@ -20,13 +20,18 @@ namespace Service
             Pallet_MasterDAC dac = new Pallet_MasterDAC();
             return dac.GetAll();
         }
+        public List<PalletVO> GetAll(string workOrderNo)
+        {
+            Pallet_MasterDAC dac = new Pallet_MasterDAC();
+            return dac.GetAll( workOrderNo);
+        }
         /// <summary>
         /// 입고안된 팔레트목록 가져오기
         /// </summary>
-        public List<PalletVO> GetNotInputed()
+        public List<PalletVO> GetNotInputed(string workOrderNo)
         {
             Pallet_MasterDAC dac = new Pallet_MasterDAC();
-            return dac.GetNotInputed();
+            return dac.GetNotInputed(workOrderNo);
         }
         /// <summary>
         /// 팔레트 검색
@@ -39,18 +44,18 @@ namespace Service
         /// <summary>
         /// 팔레트 검색하기
         /// </summary>
-        public DataTable GetPalletToDT(string palletno)
+        public DataTable GetPalletToDT(string palletno, string workOrderNo, int count)
         {
             Pallet_MasterDAC dac = new Pallet_MasterDAC();
-            return dac.GetPalletToDT(palletno);
+            return dac.GetPalletToDT(palletno, workOrderNo, count);
         }
         /// <summary>
         /// 팔레트목록 날짜로 가져오기
         /// </summary>
-        public List<PalletVO> GetAllByDateTime(DateTime fromdate, DateTime todate)
+        public List<PalletVO> GetAllByDateTime(string workOrderNo, DateTime fromdate, DateTime todate)
         {
             Pallet_MasterDAC dac = new Pallet_MasterDAC();
-            return dac.GetAllByDateTime(fromdate, todate);
+            return dac.GetAllByDateTime(workOrderNo, fromdate, todate);
         }
         /// <summary>
         /// 금일 입고 팔레트 목록
@@ -70,6 +75,7 @@ namespace Service
             Pallet_MasterDAC dac = new Pallet_MasterDAC();
             return dac.GetPalletInfo(palletno);
         }
+
         /// <summary>
         /// 입고가능한 팔레트 목록
         /// </summary>
@@ -82,10 +88,10 @@ namespace Service
         /// <summary>
         /// 존재하는 팔레트인지 확인
         /// </summary>
-        public bool IsExistPallet(string palletNo)
+        public bool IsExistPallet(string palletNo, string workorderno)
         {
             Pallet_MasterDAC dac = new Pallet_MasterDAC();
-            return dac.IsExistPallet(palletNo);
+            return dac.IsExistPallet(palletNo, workorderno);
         }
         /// <summary>
         /// 바코드번호 가져오기
@@ -108,18 +114,18 @@ namespace Service
         /// <summary>
         /// 팔레트 생성
         /// </summary>
-        public bool InsertPallet(PalletVO item)
+        public bool InsertPallet(PalletVO item, string userid)
         {
             Pallet_MasterDAC dac = new Pallet_MasterDAC();
-            return dac.InsertPallet(item);
+            return dac.InsertPallet(item, userid);
         }
         /// <summary>
         /// 팔레트 수량 추가
         /// </summary>
-        public bool UpdatePallet(string palletno, int qty)
+        public bool UpdatePallet(string palletno, int qty, string workorderno, string sizecode, string userid)
         {
             Pallet_MasterDAC dac = new Pallet_MasterDAC();
-            return dac.UpdatePallet(palletno, qty);
+            return dac.UpdatePallet(palletno, qty, workorderno, sizecode, userid);
         }
         /// <summary>
         /// 팔레트입고
@@ -134,10 +140,10 @@ namespace Service
         /// 팔레트입고 여부
         /// </summary>
         /// <returns></returns>
-        public bool IsPalletInput(string palletno)
+        public bool IsPalletInput(string palletno, string workorderno)
         {
             Pallet_MasterDAC dac = new Pallet_MasterDAC();
-            return dac.IsPalletInput(palletno);
+            return dac.IsPalletInput(palletno, workorderno);
         }
         /// <summary>
         /// 바코드번호 변경

@@ -70,6 +70,10 @@ namespace AxxenClient.Forms
             {
                 if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
                 {
+                    if (Convert.ToInt32(txtMove.TextBoxText) == 0)
+                    {
+                        MessageBox.Show("0개를 로딩할 수는 없습니다.");
+                    }
                     string loadinggvcode = dgvGVTo.SelectedRows[0].Cells[0].Value.ToString();
                     string unloadgvcode = dgvGVFrom.SelectedRows[0].Cells[0].Value.ToString();
                     GV_HistoryService service = new GV_HistoryService();

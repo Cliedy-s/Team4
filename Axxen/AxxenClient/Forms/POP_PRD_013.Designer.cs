@@ -44,14 +44,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllocatedWorker)).BeginInit();
             this.SuspendLayout();
             // 
-            // aLabel_Header1
-            // 
-            this.aLabel_Header1.Text = "작업자 할당";
-            // 
-            // aPanel1
+            // panBottom
             // 
             this.panBottom.Location = new System.Drawing.Point(0, 593);
             this.panBottom.Margin = new System.Windows.Forms.Padding(2);
+            // 
+            // aLabel_Header1
+            // 
+            this.aLabel_Header1.Text = "작업자 할당";
             // 
             // btnDeallocateAll
             // 
@@ -155,7 +155,7 @@
             this.txtWc.Size = new System.Drawing.Size(469, 42);
             this.txtWc.TabIndex = 39;
             this.txtWc.TextBoxText = "";
-            this.txtWc.TextBoxType = Axxen.CustomControls.TextType.Normal;
+            this.txtWc.TextBoxType = Axxen.CustomControls.TextType.ReadOnly;
             // 
             // txtWorkerCnt
             // 
@@ -168,11 +168,10 @@
             this.txtWorkerCnt.Size = new System.Drawing.Size(469, 42);
             this.txtWorkerCnt.TabIndex = 40;
             this.txtWorkerCnt.TextBoxText = "";
-            this.txtWorkerCnt.TextBoxType = Axxen.CustomControls.TextType.Numeric;
+            this.txtWorkerCnt.TextBoxType = Axxen.CustomControls.TextType.ReadOnly;
             // 
             // POP_PRD_013
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1210, 629);
             this.Controls.Add(this.txtWorkerCnt);
             this.Controls.Add(this.txtWc);
