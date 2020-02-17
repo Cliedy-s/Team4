@@ -227,7 +227,7 @@
             this.Controls.Add(this.pictureBox2);
             this.Name = "MDS_SDS_006_2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "품질규격복사";
+            this.Text = "";
             this.Load += new System.EventHandler(this.MDS_SDS_006_2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.aPanel4.ResumeLayout(false);

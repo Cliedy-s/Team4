@@ -425,7 +425,7 @@
             this.Controls.Add(this.aPanel20);
             this.Name = "MDS_ODS_002_1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "작업장 설정";
+            this.Text = "";
             this.Load += new System.EventHandler(this.MDS_ODS_002_1_Load);
             this.aPanel19.ResumeLayout(false);
             this.aPanel19.PerformLayout();

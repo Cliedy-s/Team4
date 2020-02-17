@@ -120,6 +120,7 @@
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.ControlBox = false;
             this.Name = "KPI_RPT_001";
+            this.Text = "";
             this.Load += new System.EventHandler(this.KPI_RPT_001_Load);
             this.panTop.ResumeLayout(false);
             this.panTop.PerformLayout();

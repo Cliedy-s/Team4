@@ -330,7 +330,7 @@
             this.ControlBox = false;
             this.Controls.Add(this.toolStrip1);
             this.Name = "PPS_SCH_002";
-            this.Text = "작업지시마감관리";
+            this.Text = "";
             this.Activated += new System.EventHandler(this.PPS_SCH_002_Activated);
             this.Deactivate += new System.EventHandler(this.PPS_SCH_002_Deactivate);
             this.Load += new System.EventHandler(this.PPS_SCH_002_Load);

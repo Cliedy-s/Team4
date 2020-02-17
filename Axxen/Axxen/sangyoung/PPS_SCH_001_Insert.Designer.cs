@@ -527,7 +527,6 @@
             this.Controls.Add(this.aPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "PPS_SCH_001_Insert";
-            this.Text = "성형작업지시생성";
             this.Load += new System.EventHandler(this.PPS_SCH_001_Insert_Load);
             this.aPanel1.ResumeLayout(false);
             this.aPanel1.PerformLayout();

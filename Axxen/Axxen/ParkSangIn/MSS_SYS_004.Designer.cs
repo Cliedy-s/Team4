@@ -181,7 +181,7 @@
             this.Controls.Add(this.aLabel4);
             this.Controls.Add(this.dgvGroup);
             this.Name = "MSS_SYS_004";
-            this.Text = "로그인이력정보";
+            this.Text = "";
             this.Load += new System.EventHandler(this.MSS_SYS_004_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.aPanel2.ResumeLayout(false);

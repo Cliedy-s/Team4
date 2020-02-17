@@ -110,7 +110,7 @@
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.ControlBox = false;
             this.Name = "PRM_PRF_002";
-            this.Text = "포장 팔렛트 마감";
+            this.Text = "";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PRM_PRF_002_FormClosing);
             this.Load += new System.EventHandler(this.PRM_PRF_002_Load);
             this.aPanel1.ResumeLayout(false);
