@@ -32,7 +32,6 @@
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtPwd = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.linkquestion = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
@@ -49,6 +48,7 @@
             this.txtID.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtID.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtID.Location = new System.Drawing.Point(18, 59);
+            this.txtID.MaxLength = 20;
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(303, 26);
             this.txtID.TabIndex = 0;
@@ -59,6 +59,7 @@
             this.txtPwd.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPwd.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtPwd.Location = new System.Drawing.Point(18, 125);
+            this.txtPwd.MaxLength = 20;
             this.txtPwd.Name = "txtPwd";
             this.txtPwd.Size = new System.Drawing.Size(303, 26);
             this.txtPwd.TabIndex = 1;
@@ -67,7 +68,6 @@
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel1.Controls.Add(this.linkquestion);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.btnLogin);
@@ -77,18 +77,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(348, 330);
             this.panel1.TabIndex = 15;
-            // 
-            // linkquestion
-            // 
-            this.linkquestion.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.linkquestion.AutoSize = true;
-            this.linkquestion.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.linkquestion.Location = new System.Drawing.Point(142, 307);
-            this.linkquestion.Name = "linkquestion";
-            this.linkquestion.Size = new System.Drawing.Size(53, 12);
-            this.linkquestion.TabIndex = 6;
-            this.linkquestion.TabStop = true;
-            this.linkquestion.Text = "문의하기";
             // 
             // label3
             // 
@@ -116,7 +104,7 @@
             // 
             this.btnLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.btnLogin.Location = new System.Drawing.Point(50, 177);
+            this.btnLogin.Location = new System.Drawing.Point(54, 262);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(236, 44);
             this.btnLogin.TabIndex = 3;
@@ -184,7 +172,6 @@
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.TextBox txtPwd;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.LinkLabel linkquestion;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox1;

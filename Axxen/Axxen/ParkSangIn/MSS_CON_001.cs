@@ -85,7 +85,7 @@ namespace Axxen
             }
             catch (Exception err)
             {
-                MessageBox.Show(err.Message);
+                Program.Log.WriteError(err.Message);
             }
 
         }
@@ -113,7 +113,7 @@ namespace Axxen
             }
             catch (Exception err)
             {
-                MessageBox.Show(err.Message);
+              
                 Program.Log.WriteError(err.Message);
             }
 
@@ -138,7 +138,7 @@ namespace Axxen
             }
             catch (Exception err)
             {
-                MessageBox.Show(err.Message);
+                Program.Log.WriteError(err.Message); MessageBox.Show(err.Message);
             }
         }
         /// <summary>
@@ -158,7 +158,7 @@ namespace Axxen
             }
             catch (Exception err)
             {
-                MessageBox.Show(err.Message);
+                Program.Log.WriteError(err.Message);
             }
         }
 

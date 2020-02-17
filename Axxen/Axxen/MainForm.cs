@@ -147,10 +147,7 @@ namespace Axxen
 
         public void Setting()
         {
-
             // myButtons.Clear();
-
-
             foreach (Control item in panelMenu.Controls)
             {
                 if (item is Button)

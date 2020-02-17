@@ -31,14 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MSS_SYS_009));
             this.dgvsys = new Axxen.CustomControls.ADataGridView();
             this.aPanel2 = new Axxen.CustomControls.APanel();
-            this.aLabel1 = new Axxen.CustomControls.ALabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.aTextBox1 = new Axxen.CustomControls.ATextBox();
             this.aLabel2 = new Axxen.CustomControls.ALabel();
             this.dtpEnd = new Axxen.CustomControls.ADateTimePicker();
             this.dtpstart = new Axxen.CustomControls.ADateTimePicker();
             this.aLabel3 = new Axxen.CustomControls.ALabel();
             this.btnSearch = new Axxen.CustomControls.AButton();
-            this.aTextBox1 = new Axxen.CustomControls.ATextBox();
+            this.aLabel1 = new Axxen.CustomControls.ALabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.aLabel4 = new Axxen.CustomControls.ALabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvsys)).BeginInit();
@@ -76,25 +76,16 @@
             this.aPanel2.Size = new System.Drawing.Size(1148, 39);
             this.aPanel2.TabIndex = 13;
             // 
-            // aLabel1
+            // aTextBox1
             // 
-            this.aLabel1.AutoSize = true;
-            this.aLabel1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aLabel1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.aLabel1.Location = new System.Drawing.Point(37, 13);
-            this.aLabel1.Name = "aLabel1";
-            this.aLabel1.Size = new System.Drawing.Size(128, 21);
-            this.aLabel1.TabIndex = 11;
-            this.aLabel1.Text = "사용자 그룹목록";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(23, 22);
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
+            this.aTextBox1.BackColor = System.Drawing.Color.White;
+            this.aTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.aTextBox1.errorp = null;
+            this.aTextBox1.Location = new System.Drawing.Point(555, 6);
+            this.aTextBox1.Name = "aTextBox1";
+            this.aTextBox1.Size = new System.Drawing.Size(167, 23);
+            this.aTextBox1.TabIndex = 27;
+            this.aTextBox1.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // aLabel2
             // 
@@ -109,17 +100,20 @@
             // dtpEnd
             // 
             this.dtpEnd.Location = new System.Drawing.Point(242, 5);
+            this.dtpEnd.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
             this.dtpEnd.Name = "dtpEnd";
             this.dtpEnd.Size = new System.Drawing.Size(200, 23);
             this.dtpEnd.TabIndex = 26;
+            this.dtpEnd.Value = new System.DateTime(2020, 2, 17, 13, 31, 18, 0);
             // 
             // dtpstart
             // 
             this.dtpstart.Location = new System.Drawing.Point(19, 5);
+            this.dtpstart.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
             this.dtpstart.Name = "dtpstart";
             this.dtpstart.Size = new System.Drawing.Size(200, 23);
             this.dtpstart.TabIndex = 25;
-            this.dtpstart.Value = new System.DateTime(2020, 2, 5, 0, 0, 0, 0);
+            this.dtpstart.Value = new System.DateTime(2020, 2, 17, 0, 0, 0, 0);
             // 
             // aLabel3
             // 
@@ -141,17 +135,27 @@
             this.btnSearch.TabIndex = 22;
             this.btnSearch.Text = "조회";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
-            // aTextBox1
+            // aLabel1
             // 
-            this.aTextBox1.BackColor = System.Drawing.Color.White;
-            this.aTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.aTextBox1.errorp = null;
-            this.aTextBox1.Location = new System.Drawing.Point(555, 6);
-            this.aTextBox1.Name = "aTextBox1";
-            this.aTextBox1.Size = new System.Drawing.Size(167, 23);
-            this.aTextBox1.TabIndex = 27;
-            this.aTextBox1.txtType = Axxen.CustomControls.TextType.Normal;
+            this.aLabel1.AutoSize = true;
+            this.aLabel1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aLabel1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.aLabel1.Location = new System.Drawing.Point(37, 13);
+            this.aLabel1.Name = "aLabel1";
+            this.aLabel1.Size = new System.Drawing.Size(128, 21);
+            this.aLabel1.TabIndex = 11;
+            this.aLabel1.Text = "사용자 그룹목록";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(23, 22);
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 

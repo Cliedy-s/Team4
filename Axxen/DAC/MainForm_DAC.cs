@@ -110,7 +110,7 @@ namespace DAC
         /// <param name="parent"></param>
         /// <param name="son"></param>
         /// <returns></returns>
-        public bool DeleteMenuTree_Master_VO(string parent, string code)
+        public bool DeleteMenuTree_Master_VO(string check,string parent, string code)
         {
 
             using (SqlCommand comm = new SqlCommand())
@@ -121,7 +121,7 @@ namespace DAC
 
                 comm.Parameters.AddWithValue("@Parent_Screen_Code", parent);
                 comm.Parameters.AddWithValue("@Screen_Code", code);
-
+                comm.Parameters.AddWithValue("@Check", check);
                 comm.Connection.Open();
                 int result = comm.ExecuteNonQuery();
 

@@ -156,7 +156,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvGroup.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvGroup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGroup.Location = new System.Drawing.Point(1, 111);
+            this.dgvGroup.Location = new System.Drawing.Point(0, 107);
             this.dgvGroup.Name = "dgvGroup";
             this.dgvGroup.RowTemplate.Height = 23;
             this.dgvGroup.Size = new System.Drawing.Size(1225, 551);
