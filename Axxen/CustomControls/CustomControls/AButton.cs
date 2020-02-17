@@ -15,9 +15,11 @@ namespace Axxen.CustomControls
         public AButton()
         {
             InitializeComponent();
+
             //Design
             this.FlatStyle = FlatStyle.Flat;
-            this.BackColor = SystemColors.ControlLight;
+            this.BackColor = SystemColors.Info;
+            this.Invalidate();
         }
 
         protected override void OnPaint(PaintEventArgs pe)
