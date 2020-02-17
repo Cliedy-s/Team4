@@ -118,7 +118,7 @@ namespace Axxen
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void RefreshFormShow(object sender,EventArgs e)
+        public void RefreshFormShow(object sender, EventArgs e)
         {
             try
             {
@@ -132,7 +132,7 @@ namespace Axxen
             {
                 Program.Log.WriteError(err.Message);
             }
-
+        }
         /// <summary>
         /// 그리드뷰 버튼, 콤보박스세팅
         /// </summary>
