@@ -33,7 +33,7 @@ namespace API.Controllers
         {
             Def_HistoryDAC def = new Def_HistoryDAC();
 
-            ViewBag.WorkOrderno = new SelectList(def.GetDefHistoryWorkorderno());
+            ViewBag.Workorderno = new SelectList(def.GetDefHistoryWorkorderno());
             ViewBag.CodeName = def.GetDefMiMasterCodeName();
             //List<Def_HistoryVO> fruits = def.GetDefMiMasterCodeName();
 
@@ -61,7 +61,7 @@ namespace API.Controllers
                 Def_HistoryDAC def = new Def_HistoryDAC();
                 if (def.SaveDef(definfo))
                 {
-                    return RedirectToAction("Index"); //인서트가 성공적으로 됐다면. 목록으로 가라 indexview가 목록임.
+                    return RedirectToAction("Index", "Home"); //인서트가 성공적으로 됐다면. 목록으로 가라 indexview가 목록임.
                 }
                 else
                 {

@@ -26,8 +26,8 @@ namespace API.DAC
                     cmd.Parameters.AddWithValue("@Def_Qty", definfo.Def_Qty);
                     cmd.Parameters.AddWithValue("@Def_Image_Name", definfo.Def_Image_Name);
                     cmd.Parameters.AddWithValue("@Def_Image_Path", definfo.Def_Image_Path);
-                    cmd.Parameters.AddWithValue("@Ins_Emp", definfo.Ins_Emp);
-                    cmd.Parameters.AddWithValue("@Up_Emp", definfo.Up_Emp);
+                    cmd.Parameters.AddWithValue("@Ins_Emp", "오휘석");
+                    cmd.Parameters.AddWithValue("@Up_Emp", "오휘석");
                     conn.Open();
                     int iResult = cmd.ExecuteNonQuery();
                     conn.Close();

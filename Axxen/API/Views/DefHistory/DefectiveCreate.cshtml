@@ -17,8 +17,9 @@
     @* 작업지시번호 *@
     <div class="form-group">
         @Html.LabelFor(model => model.Workorderno, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DropDownList("Workorderno", (IEnumerable<SelectListItem>)ViewBag.WorkOrderno, "작업지시번호")
+        <div class="col-md-3">
+            @Html.DropDownListFor(model => model.Workorderno, (IEnumerable<SelectListItem>)ViewBag.Workorderno, "작업지시번호")
+            @Html.ValidationMessageFor(model => model.Workorderno, "", new { @class = "text-danger" })
         </div>
     </div>
 
@@ -45,6 +46,7 @@
         @Html.LabelFor(model => model.Def_Mi_Code, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-3">
             @Html.TextBoxFor(model => model.Def_Mi_Code, new { @id = "Def_Mi_Code", @class = "form-control", @readonly = "readonly" })
+            @Html.ValidationMessageFor(model => model.Def_Mi_Code, "", new { @class = "text-danger" })
         </div>
     </div>
 
@@ -54,14 +56,16 @@
         <div class="col-md-3">
             <input type="date" name="Def_Date" required pattern="\d{4}-\d{2}-\d{2}">
             <span class="validity"></span>
-        </div>
+            @Html.ValidationMessageFor(model => model.Def_Date, "", new { @class = "text-danger" })
+        </div>      
     </div>
 
     @* 불량수량 *@
     <div class="form-group">
         @Html.LabelFor(model => model.Def_Qty, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-2">
-            <input type="number" min="0"/>
+            <input type="number" min="0" name="Def_Qty" />
+            @Html.ValidationMessageFor(model => model.Def_Qty, "", new { @class = "text-danger" })
         </div>
     </div>
 
@@ -69,7 +73,7 @@
     <div class="form-group">
         @Html.LabelFor(model => model.Def_Image_Name, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-3">
-                <input type="file" name="files" />
+            <input type="file" name="Def_Image_Name" />
         </div>
     </div>
 
