@@ -82,7 +82,11 @@ namespace AxxenClient.Forms
                 string unloadgvcode = dgvGVFrom.SelectedRows[0].Cells[0].Value.ToString();
                 if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
                 {
-                    GV_HistoryService service = new GV_HistoryService();
+                    if (Convert.ToInt32(txtLoading.TextBoxText) == 0)
+                    {
+                        MessageBox.Show("0개를 로딩할 수는 없습니다.");
+                    }
+                        GV_HistoryService service = new GV_HistoryService();
 
                     // 옮겨타기
                     if (service.UpdateMoveGvItem(unloadgvcode, loadinggvcode, Convert.ToInt32(txtLoading.TextBoxText), GlobalUsage.UserID, GlobalUsage.WcCode, GlobalUsage.WorkOrderNo, dgvGVFrom.SelectedRows[0].Cells[4].Value.ToString()))

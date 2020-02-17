@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Axxen.CustomControls
 {
-    public enum TextType { Normal, Numeric, Required }
+    public enum TextType { Normal, Numeric, Required, ReadOnly }
     public partial class ATextBox : TextBox
     {
 
@@ -38,6 +38,9 @@ namespace Axxen.CustomControls
                     case TextType.Required:
                         this.BackColor = Color.FromArgb(255, 255, 190);
                         this.Validating += Team4TextBox_Validating;
+                        break;
+                    case TextType.ReadOnly:
+                        this.ReadOnly = true;
                         break;
                     default:
                         break;

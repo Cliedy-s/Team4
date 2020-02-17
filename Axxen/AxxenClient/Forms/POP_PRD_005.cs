@@ -42,7 +42,7 @@ namespace AxxenClient.Forms
             InitControlUtil.AddNewColumnToDataGridView(dgvInPallet, "제품", "Item_Name", true);
             InitControlUtil.AddNewColumnToDataGridView(dgvInPallet, "등급", "Boxing_Grade_Code", true, 100, DataGridViewContentAlignment.MiddleCenter);
             InitControlUtil.AddNewColumnToDataGridView(dgvInPallet, "입고수", "In_Qty", true, 100, DataGridViewContentAlignment.MiddleRight);
-            InitControlUtil.AddNewColumnToDataGridView(dgvInPallet, "남은수", "CurrentQty", true, 100, DataGridViewContentAlignment.MiddleRight);
+            InitControlUtil.AddNewColumnToDataGridView(dgvInPallet, "수량", "CurrentQty", true, 100, DataGridViewContentAlignment.MiddleRight);
             InitControlUtil.AddNewColumnToDataGridView(dgvInPallet, "등급상세", "Grade_Detail_Code", false);
             InitControlUtil.AddNewColumnToDataGridView(dgvInPallet, "사이즈", "Size_Code", false);
             InitControlUtil.AddNewColumnToDataGridView(dgvInPallet, "계획날짜", "Plan_Date", false);
@@ -59,7 +59,7 @@ namespace AxxenClient.Forms
             if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
             {
                 Pallet_MasterService service = new Pallet_MasterService();
-                if (!service.IsExistPallet(txtPalletNo.TextBoxText))
+                if (!service.IsExistPallet(txtPalletNo.TextBoxText, GlobalUsage.WorkOrderNo))
                 {
                     Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 존재하지 않는 팔레트({txtPalletNo.TextBoxText})를 입고하려함");
                     MessageBox.Show("팔레트 번호를 확인해주세요");
@@ -219,22 +219,28 @@ namespace AxxenClient.Forms
         string beforecode { get; set; }
         private void lblBarcodeNo_TextChanged(object sender, EventArgs e)
         {
-            if (lblBarcodeNo.Text.Length >= 8) //TODO - 바코드 길이로 변경
+            if (lblBarcodeNo.Text.Length >= 8)
             {
                 Pallet_MasterService service = new Pallet_MasterService();
                 PalletVO item = service.GetPalletByBarcode(lblBarcodeNo.Text);
-
-                txtPalletNo.TextBoxText = item.Pallet_No;
-                txtBoxingGrade.TextBoxText = item.Boxing_Grade_Code;
-                txtBoxingGradeDatail.TextBoxText = item.Grade_Detail_Name;
-                txtSize.TextBoxText = item.Size_Code;
-                if (beforecode.Equals(lblBarcodeNo.Text))
+                if(item != null)
                 {
-                    palletQty++;
+                    txtPalletNo.TextBoxText = item.Pallet_No;
+                    txtBoxingGrade.TextBoxText = item.Boxing_Grade_Code;
+                    txtBoxingGradeDatail.TextBoxText = item.Grade_Detail_Name;
+                    txtSize.TextBoxText = item.Size_Code;
+                    if (beforecode.Equals(lblBarcodeNo.Text))
+                    {
+                        palletQty++;
+                    }
+                    else
+                    {
+                        palletQty = 1;
+                    }
                 }
                 else
                 {
-                    palletQty = 1;
+                    MessageBox.Show("존재하지 않는 팔레트 입니다.");
                 }
             }
         }

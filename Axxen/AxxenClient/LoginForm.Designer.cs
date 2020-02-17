@@ -75,6 +75,7 @@
             this.txtPwd.Size = new System.Drawing.Size(151, 21);
             this.txtPwd.TabIndex = 6;
             this.txtPwd.Text = "1234";
+            this.txtPwd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPwd_KeyDown);
             // 
             // txtID
             // 
@@ -105,7 +106,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPwd);
             this.Controls.Add(this.txtID);
-            this.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.Margin = new System.Windows.Forms.Padding(3);
             this.Name = "LoginForm";
             this.Text = "로그인";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
