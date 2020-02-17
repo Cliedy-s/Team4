@@ -69,7 +69,7 @@
             // 
             // btnWorkorderno
             // 
-            this.btnWorkorderno.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnWorkorderno.BackColor = System.Drawing.SystemColors.Info;
             this.btnWorkorderno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWorkorderno.Location = new System.Drawing.Point(849, 28);
             this.btnWorkorderno.Name = "btnWorkorderno";
@@ -81,7 +81,7 @@
             // 
             // btnPallet
             // 
-            this.btnPallet.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnPallet.BackColor = System.Drawing.SystemColors.Info;
             this.btnPallet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPallet.Location = new System.Drawing.Point(986, 28);
             this.btnPallet.Name = "btnPallet";

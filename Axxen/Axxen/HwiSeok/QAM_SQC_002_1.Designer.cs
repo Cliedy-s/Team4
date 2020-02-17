@@ -54,10 +54,10 @@
             this.aPanel4 = new Axxen.CustomControls.APanel();
             this.aPanel9 = new Axxen.CustomControls.APanel();
             this.aPanel1 = new Axxen.CustomControls.APanel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.aPanel12 = new Axxen.CustomControls.APanel();
             this.lblManager = new Axxen.CustomControls.ALabel();
             this.aLabel5 = new Axxen.CustomControls.ALabel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.aPanel31.SuspendLayout();
             this.aPanel29.SuspendLayout();
             this.aPanel8.SuspendLayout();
@@ -70,8 +70,8 @@
             this.aPanel4.SuspendLayout();
             this.aPanel9.SuspendLayout();
             this.aPanel1.SuspendLayout();
-            this.aPanel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.aPanel12.SuspendLayout();
             this.SuspendLayout();
             // 
             // aLabel6
@@ -267,9 +267,8 @@
             // 
             // btnCencle
             // 
-            this.btnCencle.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnCencle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnCencle.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCencle.FlatAppearance.BorderSize = 0;
             this.btnCencle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCencle.Location = new System.Drawing.Point(245, 8);
             this.btnCencle.Name = "btnCencle";
@@ -280,8 +279,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Location = new System.Drawing.Point(164, 8);
             this.btnSave.Name = "btnSave";
@@ -347,6 +345,15 @@
             this.aPanel1.Size = new System.Drawing.Size(345, 41);
             this.aPanel1.TabIndex = 185;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(18, 9);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(23, 22);
+            this.pictureBox2.TabIndex = 16;
+            this.pictureBox2.TabStop = false;
+            // 
             // aPanel12
             // 
             this.aPanel12.BackColor = System.Drawing.SystemColors.Info;
@@ -374,15 +381,6 @@
             this.aLabel5.Size = new System.Drawing.Size(43, 15);
             this.aLabel5.TabIndex = 200;
             this.aLabel5.Text = "담당자";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(18, 9);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(23, 22);
-            this.pictureBox2.TabIndex = 16;
-            this.pictureBox2.TabStop = false;
             // 
             // QAM_SQC_002_1
             // 
@@ -426,9 +424,9 @@
             this.aPanel9.ResumeLayout(false);
             this.aPanel1.ResumeLayout(false);
             this.aPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.aPanel12.ResumeLayout(false);
             this.aPanel12.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

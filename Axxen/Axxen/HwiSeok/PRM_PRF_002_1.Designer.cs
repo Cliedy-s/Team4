@@ -73,7 +73,7 @@
             // 
             // aButton4
             // 
-            this.aButton4.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.aButton4.BackColor = System.Drawing.SystemColors.Info;
             this.aButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.aButton4.Location = new System.Drawing.Point(100, 171);
             this.aButton4.Name = "aButton4";

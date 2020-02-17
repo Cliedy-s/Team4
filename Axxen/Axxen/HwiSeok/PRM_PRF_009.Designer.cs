@@ -86,7 +86,7 @@
             // 
             // btnExecl
             // 
-            this.btnExecl.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnExecl.BackColor = System.Drawing.SystemColors.Info;
             this.btnExecl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExecl.Location = new System.Drawing.Point(874, 28);
             this.btnExecl.Name = "btnExecl";
