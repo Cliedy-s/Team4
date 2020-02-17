@@ -6,8 +6,10 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using VO;
 
 namespace AxxenClient.Forms
 {
@@ -27,8 +29,12 @@ namespace AxxenClient.Forms
         /// </summary>
         private void GetDatas()
         {
-            Wo_ReqService service = new Wo_ReqService();
-            dgvWoReq.DataSource = service.GetAllWoReqUnit("5");
+            GV_Current_StatusService service = new GV_Current_StatusService();
+            List<GVStatusVO> list  = service.GetGVCurrentStatus(gvGroup: "소성그룹", gvStatus: "적재");
+            dgvWoReq.DataSource = 
+                (from gv in list
+                 where gv.Unloading_Qty == null
+                 select gv).ToList();
         }
         /// <summary>
         /// 컨트롤 설정
@@ -37,14 +43,14 @@ namespace AxxenClient.Forms
         {
             InitControlUtil.SetPOPDGVDesign(dgvWoReq);
             InitControlUtil.AddNewColumnToDataGridView(dgvWoReq, "의뢰순번", "Req_Seq", false, 100, DataGridViewContentAlignment.MiddleLeft, false);
-            InitControlUtil.AddNewColumnToDataGridView(dgvWoReq, "생산의뢰번호", "Wo_Req_No", true, 160, DataGridViewContentAlignment.MiddleLeft, false);
-            InitControlUtil.AddNewColumnToDataGridView(dgvWoReq, "품목코드", "Item_Code", false, 100, DataGridViewContentAlignment.MiddleLeft, false);
+            InitControlUtil.AddNewColumnToDataGridView(dgvWoReq, "생산의뢰번호", "Wo_Req_No", false, 160, DataGridViewContentAlignment.MiddleLeft, false);
+            InitControlUtil.AddNewColumnToDataGridView(dgvWoReq, "생산수량단위", "Prd_Unit", false, 200, DataGridViewContentAlignment.MiddleLeft, true);
+            InitControlUtil.AddNewColumnToDataGridView(dgvWoReq, "소성대차", "GV_Name", true, 130, DataGridViewContentAlignment.MiddleLeft, false);
+            InitControlUtil.AddNewColumnToDataGridView(dgvWoReq, "품목코드", "Item_Code", true, 130, DataGridViewContentAlignment.MiddleLeft, false);
             InitControlUtil.AddNewColumnToDataGridView(dgvWoReq, "품목명", "Item_Name", true, 200, DataGridViewContentAlignment.MiddleLeft, true);
-            InitControlUtil.AddNewColumnToDataGridView(dgvWoReq, "수량", "Req_Qty", true, 80, DataGridViewContentAlignment.MiddleRight, false);
-            InitControlUtil.AddNewColumnToDataGridView(dgvWoReq, "날짜", "Prd_Plan_Date", true, 120, DataGridViewContentAlignment.MiddleLeft, false);
-            InitControlUtil.AddNewColumnToDataGridView(dgvWoReq, "거래처", "Cust_Name", true, 100, DataGridViewContentAlignment.MiddleLeft, false);
-            InitControlUtil.AddNewColumnToDataGridView(dgvWoReq, "상태", "Req_Status", true, 100, DataGridViewContentAlignment.MiddleCenter, false);
-            InitControlUtil.AddNewColumnToDataGridView(dgvWoReq, "품목 단위", "Item_Unit", false);
+            InitControlUtil.AddNewColumnToDataGridView(dgvWoReq, "수량", "Loading_Qty", true, 130, DataGridViewContentAlignment.MiddleRight, false);
+            InitControlUtil.AddNewColumnToDataGridView(dgvWoReq, "대차이력 순서", "Hist_Seq", false);
+            InitControlUtil.AddNewColumnToDataGridView(dgvWoReq, "박스당 수량", "Pcs_Qty", true);
         }
         private void btnCreateWorkOrder_Click(object sender, EventArgs e)
         {
@@ -66,7 +72,7 @@ namespace AxxenClient.Forms
                         Wo_Status = "생산대기",
                         Wo_Order = "5",
                         Prd_Unit = lblItem_Unit.Text
-                    });
+                    }, lblHistReq.Text);
                 if (IsSuccess)
                 {
                     Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 작업지시를 생성함");
@@ -87,12 +93,21 @@ namespace AxxenClient.Forms
         }// 작업지시생성버튼
         private void dgvWorkOrder_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtPlanQty.TextBoxText = dgvWoReq.SelectedRows[0].Cells[4].Value.ToString();
-            txtItemSearch.TextBoxText = dgvWoReq.SelectedRows[0].Cells[3].Value.ToString();
-            txtItemSearch.CodeText = dgvWoReq.SelectedRows[0].Cells[2].Value.ToString();
+            // TODO - 포장 기계 생성하기
+            int qty = Convert.ToInt32(dgvWoReq.SelectedRows[0].Cells[6].Value);
+            int boxqty = Convert.ToInt32(dgvWoReq.SelectedRows[0].Cells[8].Value);
+            int planqty = 0;
+
+            lblHistReq.Text = dgvWoReq.SelectedRows[0].Cells[7].Value.ToString();
+            if (qty % boxqty != 0)
+                planqty = qty / boxqty + 1;
+            else planqty = qty / boxqty;
+            txtPlanQty.TextBoxText = planqty.ToString();
+            txtItemSearch.TextBoxText = dgvWoReq.SelectedRows[0].Cells[5].Value.ToString();
+            txtItemSearch.CodeText = dgvWoReq.SelectedRows[0].Cells[4].Value.ToString();
             txtReqNo.TextBoxText = dgvWoReq.SelectedRows[0].Cells[1].Value.ToString();
             lblReq_Seq.Text = dgvWoReq.SelectedRows[0].Cells[0].Value.ToString();
-            lblItem_Unit.Text = dgvWoReq.SelectedRows[0].Cells[8].Value.ToString();
+            lblItem_Unit.Text = dgvWoReq.SelectedRows[0].Cells[2].Value.ToString();
             txtProcessSearch.TextBoxText = GlobalUsage.ProcessName;
             txtProcessSearch.CodeText = GlobalUsage.ProcessCode;
             txtWcSearch.TextBoxText = GlobalUsage.WcName;

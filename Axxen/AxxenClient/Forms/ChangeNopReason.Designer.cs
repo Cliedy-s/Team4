@@ -40,7 +40,8 @@
             // 
             this.cboNopMa.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.cboNopMa.FormattingEnabled = true;
-            this.cboNopMa.Location = new System.Drawing.Point(70, 65);
+            this.cboNopMa.Location = new System.Drawing.Point(71, 70);
+            this.cboNopMa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboNopMa.Name = "cboNopMa";
             this.cboNopMa.Size = new System.Drawing.Size(336, 38);
             this.cboNopMa.TabIndex = 0;
@@ -50,7 +51,8 @@
             // 
             this.cboNopMi.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.cboNopMi.FormattingEnabled = true;
-            this.cboNopMi.Location = new System.Drawing.Point(70, 109);
+            this.cboNopMi.Location = new System.Drawing.Point(71, 109);
+            this.cboNopMi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboNopMi.Name = "cboNopMi";
             this.cboNopMi.Size = new System.Drawing.Size(336, 38);
             this.cboNopMi.TabIndex = 1;
@@ -59,7 +61,7 @@
             // 
             this.aLabel1.AutoSize = true;
             this.aLabel1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aLabel1.Location = new System.Drawing.Point(12, 9);
+            this.aLabel1.Location = new System.Drawing.Point(12, 7);
             this.aLabel1.Name = "aLabel1";
             this.aLabel1.Size = new System.Drawing.Size(58, 21);
             this.aLabel1.TabIndex = 2;
@@ -69,7 +71,7 @@
             // 
             this.lblWcName.AutoSize = true;
             this.lblWcName.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblWcName.Location = new System.Drawing.Point(15, 30);
+            this.lblWcName.Location = new System.Drawing.Point(12, 28);
             this.lblWcName.Name = "lblWcName";
             this.lblWcName.Size = new System.Drawing.Size(139, 32);
             this.lblWcName.TabIndex = 3;
@@ -80,9 +82,10 @@
             this.btnSet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnSet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSet.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSet.Location = new System.Drawing.Point(184, 153);
+            this.btnSet.Location = new System.Drawing.Point(185, 151);
+            this.btnSet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSet.Name = "btnSet";
-            this.btnSet.Size = new System.Drawing.Size(109, 42);
+            this.btnSet.Size = new System.Drawing.Size(109, 39);
             this.btnSet.TabIndex = 4;
             this.btnSet.Text = "설정";
             this.btnSet.UseVisualStyleBackColor = false;
@@ -93,9 +96,10 @@
             this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnCancel.Location = new System.Drawing.Point(297, 153);
+            this.btnCancel.Location = new System.Drawing.Point(298, 151);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(109, 42);
+            this.btnCancel.Size = new System.Drawing.Size(109, 39);
             this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "취소";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -103,8 +107,8 @@
             // 
             // ChangeNopReason
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.ClientSize = new System.Drawing.Size(420, 207);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.ClientSize = new System.Drawing.Size(419, 208);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSet);
             this.Controls.Add(this.lblWcName);

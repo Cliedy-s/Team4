@@ -43,7 +43,7 @@ namespace Axxen
             gridbtn.Name = "btn";
             gridbtn.Width = 100;
             gridbtn.FlatStyle = FlatStyle.Popup;
-            gridbtn.DefaultCellStyle.BackColor = Color.LightYellow;
+            gridbtn.DefaultCellStyle.BackColor = Color.White;
             gridbtn.UseColumnTextForButtonValue = true;
             dgvGroup.Columns.Add(gridbtn);
             GetAllNopMa();

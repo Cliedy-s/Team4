@@ -35,6 +35,7 @@
             this.aPanel2 = new Axxen.CustomControls.APanel();
             this.lblTime = new Axxen.CustomControls.ALabel();
             this.aPanel3 = new Axxen.CustomControls.APanel();
+            this.progressMachine = new System.Windows.Forms.ProgressBar();
             this.aLabel2 = new Axxen.CustomControls.ALabel();
             this.lblUserName = new Axxen.CustomControls.ALabel();
             this.btnMachineRun = new Axxen.CustomControls.AButton();
@@ -68,6 +69,7 @@
             this.btnNoActive.TabIndex = 4;
             this.btnNoActive.Text = "비가동 등록";
             this.btnNoActive.UseVisualStyleBackColor = false;
+            this.btnNoActive.Click += new System.EventHandler(this.btnNoActive_Click);
             // 
             // txtPronounce
             // 
@@ -109,6 +111,7 @@
             // aPanel3
             // 
             this.aPanel3.BackColor = System.Drawing.Color.White;
+            this.aPanel3.Controls.Add(this.progressMachine);
             this.aPanel3.Controls.Add(this.aLabel2);
             this.aPanel3.Controls.Add(this.lblUserName);
             this.aPanel3.Controls.Add(this.btnMachineRun);
@@ -119,6 +122,14 @@
             this.aPanel3.Name = "aPanel3";
             this.aPanel3.Size = new System.Drawing.Size(1210, 97);
             this.aPanel3.TabIndex = 4;
+            // 
+            // progressMachine
+            // 
+            this.progressMachine.Location = new System.Drawing.Point(276, 70);
+            this.progressMachine.Name = "progressMachine";
+            this.progressMachine.Size = new System.Drawing.Size(100, 23);
+            this.progressMachine.TabIndex = 20;
+            this.progressMachine.Visible = false;
             // 
             // aLabel2
             // 
@@ -134,10 +145,10 @@
             // lblUserName
             // 
             this.lblUserName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblUserName.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblUserName.Location = new System.Drawing.Point(863, 40);
+            this.lblUserName.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblUserName.Location = new System.Drawing.Point(873, 30);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(172, 23);
+            this.lblUserName.Size = new System.Drawing.Size(172, 40);
             this.lblUserName.TabIndex = 18;
             this.lblUserName.Text = "lblUserName";
             this.lblUserName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -217,5 +228,6 @@
         protected Axxen.CustomControls.AButton btnMachineRun;
         private Axxen.CustomControls.ALabel aLabel2;
         private Axxen.CustomControls.ALabel lblUserName;
+        protected System.Windows.Forms.ProgressBar progressMachine;
     }
 }

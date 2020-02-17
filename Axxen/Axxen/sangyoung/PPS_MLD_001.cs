@@ -68,12 +68,12 @@ namespace Axxen
         {
             InitControlUtil.SetDGVDesign(dgvMainGrid);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형코드", "Mold_Code", true, 100, DataGridViewContentAlignment.MiddleCenter);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "금형명", "Mold_Name", true, 110, DataGridViewContentAlignment.MiddleRight, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형그룹", "Mold_Group", true, 100, DataGridViewContentAlignment.MiddleCenter);
+            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "금형명", "Mold_Name", true, 110, DataGridViewContentAlignment.MiddleCenter, true);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형그룹", "Mold_Group", true, 90, DataGridViewContentAlignment.MiddleCenter);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형상태", "Mold_Status", true, 80, DataGridViewContentAlignment.MiddleCenter);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형누적타수", "Cum_Shot_Cnt", true, 90, DataGridViewContentAlignment.MiddleRight);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형누적생산량", "Cum_Prd_Qty", true, 100, DataGridViewContentAlignment.MiddleRight);
-            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형누적사용시간", "Cum_Time", true, 110, DataGridViewContentAlignment.MiddleCenter);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형누적타수", "Cum_Shot_Cnt", true, 105, DataGridViewContentAlignment.MiddleRight);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형누적생산량", "Cum_Prd_Qty", true, 120, DataGridViewContentAlignment.MiddleRight);
+            DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "금형누적사용시간", "Cum_Time", true, 130, DataGridViewContentAlignment.MiddleCenter);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "보장타수", "Guar_Shot_Cnt", true, 90, DataGridViewContentAlignment.MiddleRight);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "구입금액", "Purchase_Amt", true, 90, DataGridViewContentAlignment.MiddleRight);
             DatagridviewDesigns.AddNewColumnToDataGridView(dgvMainGrid, "입고일자", "In_Date", true, 100, DataGridViewContentAlignment.MiddleCenter);

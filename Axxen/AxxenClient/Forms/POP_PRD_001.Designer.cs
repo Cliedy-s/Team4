@@ -75,7 +75,6 @@
             // btnNoActive
             // 
             this.btnNoActive.Tag = typeof(AxxenClient.Forms.POP_PRD_016);
-            this.btnNoActive.Click += new System.EventHandler(this.btnClick);
             // 
             // aLabel_Header1
             // 
@@ -226,7 +225,7 @@
             this.panLoad.Controls.Add(this.btnClearDryGV);
             this.panLoad.Controls.Add(this.btnSetPressCondition1);
             this.panLoad.Controls.Add(this.btnQualityMeasure2);
-            this.panLoad.Location = new System.Drawing.Point(12, 199);
+            this.panLoad.Location = new System.Drawing.Point(12, 202);
             this.panLoad.Name = "panLoad";
             this.panLoad.Size = new System.Drawing.Size(1186, 124);
             this.panLoad.TabIndex = 6;

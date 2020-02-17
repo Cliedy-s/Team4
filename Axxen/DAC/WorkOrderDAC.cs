@@ -238,61 +238,61 @@ namespace DAC
             int result = 0;
             using (SqlCommand cmd = new SqlCommand())
             {
-                //cmd.Connection = new SqlConnection(Connstr);
-                //cmd.CommandText = "InsertPPSWorkOrder";
-                //cmd.CommandType = CommandType.StoredProcedure;
-
-                //cmd.Parameters.AddWithValue("@Req_Seq", order.Req_Seq);
-                //cmd.Parameters.AddWithValue("@Wo_Req_No", order.Wo_Req_No);
-                //cmd.Parameters.AddWithValue("@Workorderno", "WK" + DateTime.Now.ToString("yyMMddHHmmss"));
-                //cmd.Parameters.AddWithValue("@Wo_Status", order.Wo_Status);
-                //cmd.Parameters.AddWithValue("@Wc_Code", order.Wc_Code);
-                //cmd.Parameters.AddWithValue("@Remark", order.Remark);
-                //cmd.Parameters.AddWithValue("@Plan_Qty", order.Plan_Qty);
-                //cmd.Parameters.AddWithValue("@Out_Qty_Main", order.Out_Qty_Main);
-                //cmd.Parameters.AddWithValue("@In_Qty_Main", order.In_Qty_Main);
-                //cmd.Parameters.AddWithValue("@Prd_Qty", order.Prd_Qty);
-                //cmd.Parameters.AddWithValue("@Plan_Date", order.Plan_Date);
-                //cmd.Parameters.AddWithValue("@Item_Code", order.Item_Code);
-                //cmd.Parameters.AddWithValue("@Plan_Unit", order.Plan_Unit);
-                //cmd.Parameters.AddWithValue("@User", user);
-                //cmd.Parameters.AddWithValue("@Wo_Order", 2);
-                //cmd.Parameters.AddWithValue("@Prd_Unit", order.Prd_Unit);
-
-                //cmd.Connection.Open();
-                //result = cmd.ExecuteNonQuery();
-                //cmd.Connection.Close();
-
-                //return result > 0;
                 cmd.Connection = new SqlConnection(Connstr);
-                for (int i = 2; i < 6; i++)
-                {
-                    cmd.CommandText = "InsertPPSWorkOrder";
-                    cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "InsertPPSWorkOrder";
+                cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.Clear();
-                    cmd.Parameters.AddWithValue("@Req_Seq", order.Req_Seq);
-                    cmd.Parameters.AddWithValue("@Wo_Req_No", order.Wo_Req_No);
-                    cmd.Parameters.AddWithValue("@Workorderno", "WK" + DateTime.Now.AddSeconds(i).ToString("yyMMddHHmmss"));
-                    cmd.Parameters.AddWithValue("@Wo_Status", order.Wo_Status);
-                    cmd.Parameters.AddWithValue("@Wc_Code", "WC" + i.ToString() + order.Wc_Code.Substring(3, 4));
-                    cmd.Parameters.AddWithValue("@Remark", order.Remark);
-                    cmd.Parameters.AddWithValue("@Plan_Qty", order.Plan_Qty);
-                    cmd.Parameters.AddWithValue("@Out_Qty_Main", order.Out_Qty_Main);
-                    cmd.Parameters.AddWithValue("@In_Qty_Main", order.In_Qty_Main);
-                    cmd.Parameters.AddWithValue("@Prd_Qty", order.Prd_Qty);
-                    cmd.Parameters.AddWithValue("@Plan_Date", order.Plan_Date);
-                    cmd.Parameters.AddWithValue("@Item_Code", order.Item_Code);
-                    cmd.Parameters.AddWithValue("@Plan_Unit", order.Plan_Unit);
-                    cmd.Parameters.AddWithValue("@User", user);
-                    cmd.Parameters.AddWithValue("@Wo_Order", i);
-                    cmd.Parameters.AddWithValue("@Prd_Unit", order.Prd_Unit);
+                cmd.Parameters.AddWithValue("@Req_Seq", order.Req_Seq);
+                cmd.Parameters.AddWithValue("@Wo_Req_No", order.Wo_Req_No);
+                cmd.Parameters.AddWithValue("@Workorderno", "WK" + DateTime.Now.ToString("yyMMddHHmmss"));
+                cmd.Parameters.AddWithValue("@Wo_Status", order.Wo_Status);
+                cmd.Parameters.AddWithValue("@Wc_Code", order.Wc_Code);
+                cmd.Parameters.AddWithValue("@Remark", order.Remark);
+                cmd.Parameters.AddWithValue("@Plan_Qty", order.Plan_Qty);
+                cmd.Parameters.AddWithValue("@Out_Qty_Main", order.Out_Qty_Main);
+                cmd.Parameters.AddWithValue("@In_Qty_Main", order.In_Qty_Main);
+                cmd.Parameters.AddWithValue("@Prd_Qty", order.Prd_Qty);
+                cmd.Parameters.AddWithValue("@Plan_Date", order.Plan_Date);
+                cmd.Parameters.AddWithValue("@Item_Code", order.Item_Code);
+                cmd.Parameters.AddWithValue("@Plan_Unit", order.Plan_Unit);
+                cmd.Parameters.AddWithValue("@User", user);
+                cmd.Parameters.AddWithValue("@Wo_Order", 2);
+                cmd.Parameters.AddWithValue("@Prd_Unit", order.Prd_Unit);
 
-                    cmd.Connection.Open();
-                    result = cmd.ExecuteNonQuery();
-                    cmd.Connection.Close();
-                }
+                cmd.Connection.Open();
+                result = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+
                 return result > 0;
+                //cmd.Connection = new SqlConnection(Connstr);
+                //for (int i = 2; i < 6; i++)
+                //{
+                //    cmd.CommandText = "InsertPPSWorkOrder";
+                //    cmd.CommandType = CommandType.StoredProcedure;
+
+                //    cmd.Parameters.Clear();
+                //    cmd.Parameters.AddWithValue("@Req_Seq", order.Req_Seq);
+                //    cmd.Parameters.AddWithValue("@Wo_Req_No", order.Wo_Req_No);
+                //    cmd.Parameters.AddWithValue("@Workorderno", "WK" + DateTime.Now.AddSeconds(i).ToString("yyMMddHHmmss"));
+                //    cmd.Parameters.AddWithValue("@Wo_Status", order.Wo_Status);
+                //    cmd.Parameters.AddWithValue("@Wc_Code", "WC" + i.ToString() + order.Wc_Code.Substring(3, 4));
+                //    cmd.Parameters.AddWithValue("@Remark", order.Remark);
+                //    cmd.Parameters.AddWithValue("@Plan_Qty", order.Plan_Qty);
+                //    cmd.Parameters.AddWithValue("@Out_Qty_Main", order.Out_Qty_Main);
+                //    cmd.Parameters.AddWithValue("@In_Qty_Main", order.In_Qty_Main);
+                //    cmd.Parameters.AddWithValue("@Prd_Qty", order.Prd_Qty);
+                //    cmd.Parameters.AddWithValue("@Plan_Date", order.Plan_Date);
+                //    cmd.Parameters.AddWithValue("@Item_Code", order.Item_Code);
+                //    cmd.Parameters.AddWithValue("@Plan_Unit", order.Plan_Unit);
+                //    cmd.Parameters.AddWithValue("@User", user);
+                //    cmd.Parameters.AddWithValue("@Wo_Order", i);
+                //    cmd.Parameters.AddWithValue("@Prd_Unit", order.Prd_Unit);
+
+                //    cmd.Connection.Open();
+                //    result = cmd.ExecuteNonQuery();
+                //    cmd.Connection.Close();
+                //}
+                //return result > 0;
             }
         }
 
@@ -385,7 +385,7 @@ namespace DAC
         /// </summary>
         /// <param name="woinichar"></param>
         /// <returns></returns>
-        public List<WorkOrderVO> GetAllWorkOrder_AlloHisDetail_Item_Wc(string wocode)
+        public List<WorkOrderVO> GetAllWorkOrder_AlloHisDetail_Item_Wc(string wccode)
         {
             using (SqlCommand comm = new SqlCommand())
             {
@@ -400,6 +400,7 @@ namespace DAC
 		,im.[Item_Code] 
 		,im.[Item_Name] 
 		,wo.[Prd_Unit] 
+		,wo.Out_Qty_Main
 		,wo.[Prd_Qty] 
 		,wo.[Prd_Starttime] 
 		,wo.[Prd_Endtime] 
@@ -407,12 +408,14 @@ namespace DAC
 		,wcm.Process_Code
 		,im.Line_Per_Qty 
         ,im.Shot_Per_Qty 
+		,im.Dry_GV_Qty
+        ,im.Heat_GV_Qty
   FROM [WorkOrder] wo 
     LEFT OUTER JOIN [WorkCenter_Master] as wcm ON wcm.[Wc_Code] = wo.[Wc_Code] AND wcm.Use_YN = 'Y' 
     LEFT OUTER JOIN [Item_Master] as im ON im.[Item_Code] = wo.[Item_Code] 
-   WHERE wo.[Wo_Status]  NOT IN ('현장마감','작업지시마감') AND wo.Wc_Code =@wocode; ";
+   WHERE wo.[Wo_Status]  NOT IN ('현장마감','작업지시마감') AND wo.Wc_Code =@wccode; ";
                 comm.CommandType = CommandType.Text;
-                comm.Parameters.AddWithValue("@wocode", wocode);
+                comm.Parameters.AddWithValue("@wccode", wccode);
                 comm.Connection.Open();
                 SqlDataReader reader = comm.ExecuteReader();
                 List<WorkOrderVO> list = Helper.DataReaderMapToList<WorkOrderVO>(reader);
@@ -426,55 +429,15 @@ namespace DAC
         /// </summary>
         /// <param name="item"></param>
         /// <returns></returns>
-        public bool InsertWorkOrder(WorkOrderNewVO item)
+        public bool InsertWorkOrder(WorkOrderNewVO item, string histcode = null)
         {
             using (SqlCommand comm = new SqlCommand())
             {
                 comm.Connection = new SqlConnection(Connstr);
-                comm.CommandText =
- @"   INSERT INTO [WorkOrder]
-           ([Workorderno]
-           ,[Item_Code]
-           ,[Wc_Code]
-           ,[In_Qty_Main]
-           ,[Plan_Qty]
-           ,[Plan_Unit]
-           ,[Plan_Date]
-           ,[Wo_Status]
-           ,[Wo_Order]
-           ,[Wo_Req_No]
-           ,[Req_Seq]
-           ,[Mat_LotNo]
-           ,[Ins_Date]
-           ,[Ins_Emp]
-           ,[Prd_Unit]
-           ,[Plan_Starttime]
-           ,[Plan_Endtime])
-     VALUES
-           ('WK' + format(getdate(),'yyMMddHHmmss')
-           ,@Item_Code 
-           ,@Wc_Code 
-           ,@Plan_Qty 
-           ,@Plan_Qty 
-           ,@Plan_Unit
-           ,getdate()
-           ,@Wo_Status
-           ,@Wo_Order
-           ,@Wo_Req_No
-           ,@Req_Seq
-           ,@Mat_LotNo
-           ,getdate()
-           ,@Ins_Emp
-           ,@Prd_Unit
-           ,getdate()
-           , dateadd(hour, 3, getdate())
-);
-       UPDATE Wo_Req
-        SET Req_Status = '진행중'
-        WHERE Wo_Req_No = @Wo_Req_No;
-";
+                comm.CommandText = "InsertWorkOrder";
+                comm.CommandType = CommandType.StoredProcedure;
 
-                comm.CommandType = CommandType.Text;
+                comm.Parameters.AddWithValue("@WokrOrderNo", "WK" + DateTime.Now.ToString("yyMMddHHmmss"));
                 comm.Parameters.AddWithValue("@Item_Code", item.Item_Code);
                 comm.Parameters.AddWithValue("@Wc_Code", item.Wc_Code);
                 comm.Parameters.AddWithValue("@Plan_Qty", item.Plan_Qty);
@@ -486,6 +449,10 @@ namespace DAC
                 comm.Parameters.AddWithValue("@Mat_LotNo", item.Mat_LotNo);
                 comm.Parameters.AddWithValue("@Ins_Emp", item.Ins_Emp);
                 comm.Parameters.AddWithValue("@Prd_Unit", item.Prd_Unit);
+                if(histcode == null)
+                    comm.Parameters.AddWithValue("@histSeq", DBNull.Value);
+                else
+                    comm.Parameters.AddWithValue("@histSeq", Convert.ToInt64(histcode));
 
                 comm.Connection.Open();
                 int result = comm.ExecuteNonQuery();
@@ -560,7 +527,7 @@ namespace DAC
                 using (SqlCommand comm = new SqlCommand())
                 {
                     comm.Connection = new SqlConnection(Connstr);
-                    comm.CommandText =@"UpdateEndWorkOrder";
+                    comm.CommandText =@"UpdateCloseWorkOrder";
 
                     comm.CommandType = CommandType.StoredProcedure;
                     comm.Parameters.AddWithValue("@username", userid);

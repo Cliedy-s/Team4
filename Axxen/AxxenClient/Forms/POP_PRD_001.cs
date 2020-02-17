@@ -22,6 +22,7 @@ namespace AxxenClient.Forms
         bool isMachineRun = false;
         string selectedrowwono { get; set; }
         int columnno { get; set; }
+        bool IsLoaded = false;
         public Color runningDefaultColor { get; set; }
         public MachineType machinet = MachineType.Molding;
         public POP_PRD_001()
@@ -87,20 +88,27 @@ namespace AxxenClient.Forms
             InitControlUtil.AddNewColumnToDataGridView(dgvMain, "성형 줄 수", "Line_Per_Qty", false);
             InitControlUtil.AddNewColumnToDataGridView(dgvMain, "포장 샷당 pcs수", "Shot_Per_Qty", false);
             InitControlUtil.AddNewColumnToDataGridView(dgvMain, "공정코드", "Process_Code", false);
+            InitControlUtil.AddNewColumnToDataGridView(dgvMain, "산출수량", "Out_Qty_Main", false);
 
             dgvMain.Columns[8].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm:ss";
             dgvMain.Columns[9].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm:ss";
         }
+        WorkOrder_Service wservice = new WorkOrder_Service();
         /// <summary>
         /// 데이터를 DB에서 가져온다
         /// </summary>
         public void GetDatas()
         {
+            // 작업지시번호(row) currentcell.Column(Column)
+            if (IsLoaded)
+            {
+                selectedrowwono = dgvMain.SelectedRows[0].Cells[1].Value.ToString();
+                columnno = dgvMain.CurrentCell.ColumnIndex;
+            }
             // 데이터를 가져온다.
-            WorkOrder_Service service = new WorkOrder_Service();
-            dgvMain.DataSource = service.GetAllWorkOrder_AlloHisDetail_Item_Wc(GlobalUsage.WcCode);
+            dgvMain.DataSource = wservice.GetAllWorkOrder_AlloHisDetail_Item_Wc(GlobalUsage.WcCode);
+            if (!IsLoaded) IsLoaded = true;
             SetRowsForTimer();
-
         }
         /// <summary>
         /// 폼이 닫힐 때
@@ -135,7 +143,6 @@ namespace AxxenClient.Forms
             btnSetWorker1.Tag = btnSetWorker2.Tag = btnSetWorker3.Tag = typeof(POP_PRD_013);
             btnSetPressCondition1.Tag = btnSetPressCondition2.Tag = typeof(POP_PRD_014);
             btnQualityMeasure1.Tag = btnQualityMeasure2.Tag = btnQualityMeasure3.Tag = typeof(POP_PRD_015);
-            btnNoActive.Tag = typeof(POP_PRD_016);
         }
         /// <summary>
         /// 폼을 여는 버튼 클릭
@@ -193,10 +200,9 @@ namespace AxxenClient.Forms
                 GlobalUsage.Prd_Qty = 0;
                 GlobalUsage.Out_Qty = 0;
                 GlobalUsage.Prd_Unit = row.Cells[5].Value.ToString();
-                GlobalUsage.ProcessCode = row.Cells[14].Value.ToString();
 
                 GetDatas();
-                SetColor(GlobalUsage.WorkOrderNo, true);
+                SetColorNSetGlobalUsage(GlobalUsage.WorkOrderNo, true);
                 Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 작업지시 {GlobalUsage.WorkOrderNo}를 실행함");
 
                 // 근무 정보 넣어주기
@@ -213,7 +219,7 @@ namespace AxxenClient.Forms
         /// 로우 배경색 변경
         /// </summary>
         /// <param name="wokrorderno"></param>
-        private void SetColor(string wokrorderno, bool IsRun)
+        private void SetColorNSetGlobalUsage(string wokrorderno, bool IsRun)
         {
             if (IsRun)
             { // 색상 변경 ( 실행 )
@@ -251,7 +257,7 @@ namespace AxxenClient.Forms
             if (service.UpdateWorkOrderEnd(GlobalUsage.WorkOrderNo, GlobalUsage.Out_Qty, GlobalUsage.Prd_Qty, GlobalUsage.UserID))
             { // 성공
                 // 색상 변경하기
-                SetColor(GlobalUsage.WorkOrderNo, false);
+                SetColorNSetGlobalUsage(GlobalUsage.WorkOrderNo, false);
 
                 // 근무 정보 넣어주기
                 WorkHistory_Center_UserMasterService wservice = new WorkHistory_Center_UserMasterService();
@@ -266,7 +272,6 @@ namespace AxxenClient.Forms
                 GlobalUsage.Prd_Qty = 0;
                 GlobalUsage.Out_Qty = 0;
                 GlobalUsage.Prd_Unit = "설정안됨";
-                GlobalUsage.ProcessCode = null;
 
                 // 전역 할당
                 selectedrowwono = "설정안됨";
@@ -277,9 +282,6 @@ namespace AxxenClient.Forms
                 Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 존재하지 않는 작업지시를 중지하려함");
                 MessageBox.Show("존재하지 않는 작업지시 입니다.");
             }
-
-            // 기계 종료
-            if(isMachineRun) MachineStop(machinet);
             return;
 
         }
@@ -304,7 +306,7 @@ namespace AxxenClient.Forms
             }
 
             WorkOrder_Service service = new WorkOrder_Service();
-            if (service.UpdateWorkOrderClose(GlobalUsage.UserID, dgvMain.SelectedRows[0].Cells[1].Value.ToString(), GlobalUsage.WorkType== WorkType.Boxing))
+            if (service.UpdateWorkOrderClose(GlobalUsage.UserID, dgvMain.SelectedRows[0].Cells[1].Value.ToString(), GlobalUsage.WorkType == WorkType.Boxing))
             { // 성공
                 GetDatas();
             }
@@ -319,12 +321,8 @@ namespace AxxenClient.Forms
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void timetimer_Tick(object sender, EventArgs e)
+        public void MainTimerTick(object sender, EventArgs e)
         {
-            // 작업지시번호(row) currentcell.Column(Column)
-            selectedrowwono = dgvMain.SelectedRows[0].Cells[1].Value.ToString();
-            columnno = dgvMain.CurrentCell.ColumnIndex;
-
             // 데이터 가져오기
             GetDatas();
         }
@@ -333,9 +331,11 @@ namespace AxxenClient.Forms
         /// </summary>
         private void SetRowsForTimer()
         {
-            // 작업이 실행중이면 색상을 변경해줌
+            // 작업이 실행중이면 색상 변경 및 실적 수량 업데이트
             if (!GlobalUsage.WorkOrderNo.Equals("설정안함"))
-                SetColor(GlobalUsage.WorkOrderNo, true);
+            {
+                SetColorNSetGlobalUsage(GlobalUsage.WorkOrderNo, true);
+            }
 
             // 선택 중이던 로우 재선택
             if (!string.IsNullOrEmpty(selectedrowwono))
@@ -363,34 +363,39 @@ namespace AxxenClient.Forms
         /// <summary>
         /// 기계 종료
         /// </summary>
+        Action<MachineType> machineStop;
         private void MachineStop(MachineType machinet)
         {
             if (isMachineRun)
             {
                 btnMachineRun.BackColor = Color.FromArgb(218, 239, 245);
                 isMachineRun = false;
-                machine0.MachineStop(machinet);
+                progressMachine.Visible = false;
             }
         }
         /// <summary>
         /// 기계 시작
         /// </summary>
         /// <param name="work"></param>
-        Machine machine0 = new Machine(0);
+        Machine machine0;
         private void MachineStart(MachineType machinet)
         {
+            setProcess += SetProgress;
+            machineStop += MachineStop;
+            machine0 = new Machine(0, GlobalUsage.WorkOrderNo, GlobalUsage.UserID, GlobalUsage.WcCode, (value) => btnMachineRun.Invoke(machineStop, value), (stackqty, totalqty, prdqty, outqty) => { progressMachine.Invoke(setProcess, stackqty, totalqty); SetGlobalUsage(prdqty, outqty); });
             if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
             {
                 if (!isMachineRun)
                 {
-                    // 공통
-                    btnMachineRun.BackColor = Color.FromArgb(188, 220, 244);
-                    isMachineRun = true;
-
                     WorkOrderVO workorder = (dgvMain.DataSource as List<WorkOrderVO>).Find(x => x.Workorderno == GlobalUsage.WorkOrderNo);
+                    InputBox input = new InputBox();
+                    input.StartPosition = FormStartPosition.CenterParent;
+                    input.ShowInTaskbar = false;
+                    if (input.ShowDialog() != DialogResult.OK) return;
                     switch (machinet)
                     {
                         case MachineType.Molding: // 성형일경우
+                            // 금형 설정
                             MoldService service = new MoldService();
                             List<MoldVO> moldlist = service.GetMoldList(wccode: GlobalUsage.WcCode);
                             if (moldlist.Count < 1)
@@ -401,14 +406,27 @@ namespace AxxenClient.Forms
                                 return;
                             }
                             MoldVO mold = moldlist[0];
+                            // 대차 확인
+                            GV_MasterService gvservice = new GV_MasterService();
+                            List<GVVO> gvlist = gvservice.GetAllByGV("성형그룹", "빈대차");
+                            if (input.Qty.Value > (workorder.Dry_GV_Qty * gvlist.Count))
+                            {
+                                MessageBox.Show("성형대차가 부족합니다.");
+                                return;
+                            }
+                            // 기계 실행
                             Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 작업({GlobalUsage.WorkOrderNo})의 성형기계로 금형({mold.Mold_Code})을 이용해 품목({workorder.Item_Code})을 생산함");
-                            machine0.MachineStart(GlobalUsage.WorkOrderNo, new Item_MoldPair(workorder.Item_Code, mold.Mold_Code, workorder.Line_Per_Qty));
+                            machine0.MachineStart(input.Qty.Value, new Item_MoldPair(workorder.Item_Code, mold.Mold_Code, workorder.Line_Per_Qty));
                             break;
                         case MachineType.Boxing: // 포장일경우
                             Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 작업({GlobalUsage.WorkOrderNo})의 포장기계로 품목({workorder.Item_Code})을 생산함");
-                            machine0.MachineStart(GlobalUsage.WorkOrderNo, workorder.Item_Code, workorder.Shot_Per_Qty);
+                            machine0.MachineStart(input.Qty.Value, workorder.Item_Code, workorder.Shot_Per_Qty);
                             break;
                     }
+                    // 공통
+                    btnMachineRun.BackColor = Color.FromArgb(188, 220, 244);
+                    isMachineRun = true;
+                    progressMachine.Visible = true;
                 }
             }
             else
@@ -417,6 +435,15 @@ namespace AxxenClient.Forms
                 MessageBox.Show("작업지시를 시작해주세요");
             }
         }
-
+        Action<int, int> setProcess;
+        private void SetProgress(int stackqty, int totalqty)
+        {
+            progressMachine.Value = (int)(((stackqty * 1.0 / totalqty) * 100) % 101);
+        }
+        private void SetGlobalUsage(int prdqty, int outqty)
+        {
+            GlobalUsage.Prd_Qty += prdqty;
+            GlobalUsage.Out_Qty += outqty;
+        }
     }
 }

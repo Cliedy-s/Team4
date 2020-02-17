@@ -68,10 +68,6 @@ namespace Axxen
             {
 
             };
-
-
-
-
             string[] s01 = UserInfo.S01.Split('/');
             string[] s02 = UserInfo.S02.Split('/');
             string[] s03 = UserInfo.S03.Split('/');
@@ -90,10 +86,7 @@ namespace Axxen
             cbbshortcutsub4.Text = s04[1];
 
             if (!UserInfo.Default_Screen_Code.Equals("0"))//사용자가 기본설정을 해놓지않았다면 콤보박스에 기본설정 값을 보여주지 않아도된다.
-            cbbscreen.Text = tagetscreen.Find(level => level.Screen_Code == UserInfo.Default_Screen_Code).Type;
-
-
-       
+            cbbscreen.Text = tagetscreen.Find(level => level.Screen_Code == UserInfo.Default_Screen_Code).Type;      
 
         }
 

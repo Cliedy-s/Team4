@@ -336,6 +336,7 @@ namespace Axxen
         /// <param name="e"></param>
         private void TsbtnSave_Click(object sender, EventArgs e)
         {
+            //error
             frm.Owner = this;
             WorkOrderAllVO order = new WorkOrderAllVO();
             order.Req_Seq = Convert.ToInt32(frm.txtSeq.Text);

@@ -18,13 +18,16 @@ namespace VO
         public string Item_Name { get; set; }            // 품목명
         public string Prd_Unit { get; set; }               // 단위
         public int Prd_Qty { get; set; }                     // 생산수량
+        public int Out_Qty_Main { get; set; }               // 산출수량
         public DateTime? Prd_Starttime { get; set; }     // 작업시작시간
         public DateTime? Prd_Endtime { get; set; }      // 작업종료시간
         public string Wo_Ini_Char { get; set; }           //  작업지시이니셜
         public string Process_Code { get; set; }        // 공정 코드
         public int Line_Per_Qty { get; set; }               // 성형 줄 수
         public int Shot_Per_Qty { get; set; }           // 포장 샷당 pcs수
-    }
+        public int Dry_GV_Qty { get; set; }             // 건조대차 기본수량
+        public int Heat_GV_Qty { get; set; }            // 성형대차 기본수량
+    }                
     public class WorkOrderNewVO
     { 
         public string Item_Code { get; set; }              // 품목번호

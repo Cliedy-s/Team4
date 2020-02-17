@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Service;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VO;
 
 namespace AxxenClient
 {
@@ -12,7 +14,35 @@ namespace AxxenClient
         static public string UserName { get; set; }
         static public string UserID { get; set; }
         static public WorkType WorkType { get; set; } = WorkType.Molding;
-        static public string WcCode { get; set; } = "설정안됨";
+        static string wccode;
+        static public string WcCode { get { return wccode; } set {
+                try
+                {
+                    wccode = value;
+                    WorkCenter_MasterService service = new WorkCenter_MasterService();
+                    WorkCenter_Master2VO item = service.GetAll_WorkCenter_Master(GlobalUsage.WcCode);
+
+                    GlobalUsage.WcName = item.Wc_Name;
+                    GlobalUsage.ProcessCode = item.Process_Code;
+                    GlobalUsage.ProcessName = item.Process_name;
+                    switch (item.Wc_Code.Substring(item.Wc_Code.Length-1))
+                    {
+                        case "2":
+                            GlobalUsage.WorkType = WorkType.Molding;
+                            break;
+                        case "4":
+                            GlobalUsage.WorkType = WorkType.Load;
+                            break;
+                        case "5":
+                            GlobalUsage.WorkType = WorkType.Boxing;
+                            break;
+                    }
+                }
+                catch
+                {
+                    Environment.Exit(0);
+                }
+            } }
         static public string WcName { get; set; } = null;
         static public string ProcessCode { get; set; } = null;
         static public string ProcessName { get; set; } = null;

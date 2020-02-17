@@ -30,7 +30,7 @@ namespace AxxenClient.Forms
             txtItemName.TextBoxText = GlobalUsage.ItemName;
             txtQty.TextBoxText = GlobalUsage.Prd_Qty.ToString();
             txtUnit.TextBoxText = GlobalUsage.Prd_Unit.ToString();
-            txtWcCode.TextBoxText = GlobalUsage.WcCode;
+            txtWcCode.TextBoxText = GlobalUsage.WcName;
             txtWorkOrderDate.TextBoxText = (GlobalUsage.WorkorderDate == null) ? "" : GlobalUsage.WorkorderDate.Value.ToString("yyyy-MM-dd HH:mm:ss");
         }
         private void InitControls()
@@ -92,11 +92,11 @@ namespace AxxenClient.Forms
                         MessageBox.Show("입력할 수 없는 항목입니다.");
                     }
                 }
-                else
-                {
-                    Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 작업시작을 하지않고 공정조건에 값을 등록 하려하였음");
-                    MessageBox.Show("작업을 시작해주세요");
-                }
+            }
+            else
+            {
+                Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 작업시작을 하지않고 공정조건에 값을 등록 하려하였음");
+                MessageBox.Show("작업을 시작해주세요");
             }
         }
 

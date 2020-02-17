@@ -11,7 +11,30 @@ namespace DAC
 {
     public class GV_MasterDAC : DACParent
     {
+        /// <summary>
+        /// 대차 검색
+        /// </summary>
+        /// <returns></returns>
+        public List<GVMasterVO> GetGVs(string gvStatus = null, string gvName = null, string gvGroup = null)
+        {
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText = @"GetGVs";
+                comm.CommandType = CommandType.StoredProcedure;
 
+                comm.Parameters.AddWithValue("@gvStatus", gvStatus);
+                comm.Parameters.AddWithValue("@gvName", gvName);
+                comm.Parameters.AddWithValue("@gvGroup", gvGroup);
+
+                comm.Connection.Open();
+                SqlDataReader reader = comm.ExecuteReader();
+                List<GVMasterVO> list = Helper.DataReaderMapToList<GVMasterVO>(reader);
+                comm.Connection.Close();
+
+                return list;
+            }
+        }
         /// <summary>
         /// 모든대차의 모든정보
         /// </summary>
@@ -43,7 +66,6 @@ namespace DAC
                 return list;
             }
         }
-
         /// <summary>
         /// 대차 INSERT UPDTAE
         /// </summary>
@@ -230,7 +252,6 @@ VALUES(@GV_Code,@GV_Name,@GV_GroupCode,@GV_Group,@GV_Status,GETDATE(),@Ins_Emp)
                 return list;
             }
         }
-
         public List<GVMasterVO> GetGV_Code()
         {
             using (SqlCommand comm = new SqlCommand())
@@ -249,7 +270,6 @@ VALUES(@GV_Code,@GV_Name,@GV_GroupCode,@GV_Group,@GV_Status,GETDATE(),@Ins_Emp)
                 return list;
             }
         }
-
         public List<GVMasterVO> GetGV_GroupCode()
         {
             using (SqlCommand comm = new SqlCommand())

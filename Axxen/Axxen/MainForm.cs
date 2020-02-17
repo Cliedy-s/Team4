@@ -117,7 +117,6 @@ namespace Axxen
                 toolStripButtoncencle.Alignment = ToolStripItemAlignment.Right; //즐겨찾기 툴스트립 버튼 오른쪽으로 배치
                 toolStripButtonSetting.Alignment = ToolStripItemAlignment.Right; //세팅버튼
                 toolStripButtonLogin.Alignment = ToolStripItemAlignment.Right;
-                toolStripLabel.Alignment = ToolStripItemAlignment.Right; //세팅버튼
                 toolStripSeparator3.Alignment = ToolStripItemAlignment.Right;
                 timer.Start();
                 timer.Interval = 1000;
@@ -853,8 +852,7 @@ namespace Axxen
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            toolStripLabel.Text = UserInfo.User_Name + "님 환영합니다.\n" + DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToLongTimeString();
-         
+            lblLogin.Text = UserInfo.User_Name + " 님";
         }
 
         private void Button9_Click(object sender, EventArgs e)

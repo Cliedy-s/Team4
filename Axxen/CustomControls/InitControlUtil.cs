@@ -18,6 +18,7 @@ namespace Axxen.CustomControls
         {
             DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
             col.HeaderText = headerText;
+            dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             col.DataPropertyName = dataPropertyName;
             col.Width = colWidth;
             col.Visible = visibility;
@@ -77,6 +78,8 @@ namespace Axxen.CustomControls
             dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(243, 228, 231); //홀수 행 색
             dgv.DefaultCellStyle.BackColor = Color.FromArgb(248, 241, 233);//Color.FromArgb(248, 241, 233); // 전체 행 색
             dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(145, 224, 244); // 선택 로우 색
+
+            dgv.DefaultCellStyle.SelectionForeColor = Color.Black; // 그리드뷰 안 글자색
 
             dgv.DefaultCellStyle.WrapMode = DataGridViewTriState.False;
             dgv.RowTemplate.Height = 30;

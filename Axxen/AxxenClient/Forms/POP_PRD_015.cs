@@ -24,6 +24,7 @@ namespace AxxenClient.Forms
             TopPanelSet();
             GetDatas();
             btnMachineRun.Visible = true;
+            dgvInspect_CellClick(dgvInspect, null);
         }
         private void TopPanelSet()
         {
@@ -31,7 +32,7 @@ namespace AxxenClient.Forms
             txtItemName.TextBoxText = GlobalUsage.ItemName;
             txtQty.TextBoxText = GlobalUsage.Prd_Qty.ToString();
             txtUnit.TextBoxText = GlobalUsage.Prd_Unit.ToString();
-            txtWcCode.TextBoxText = GlobalUsage.WcCode;
+            txtWcCode.TextBoxText =GlobalUsage.WcName;
             txtWorkOrderDate.TextBoxText = (GlobalUsage.WorkorderDate == null) ? "" : GlobalUsage.WorkorderDate.Value.ToString("yyyy-MM-dd HH:mm:ss");
         }
         private void InitControls()
@@ -71,24 +72,25 @@ namespace AxxenClient.Forms
             Inspect_Measure_HistoryService mservice = new Inspect_Measure_HistoryService();
             dgvInspectMeasure.DataSource = mservice.GetAll(lblItemCode.Text, lblProcesscode.Text, lblInspectcode.Text);
         }
-
         private void dgvInspect_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            lblItemCode.Text = dgvInspect.SelectedRows[0].Cells[4].Value.ToString();
-            lblProcesscode.Text = dgvInspect.SelectedRows[0].Cells[5].Value.ToString();
-            lblInspectcode.Text = dgvInspect.SelectedRows[0].Cells[6].Value.ToString();
+            if(dgvInspect.SelectedRows.Count > 0)
+            {
+                lblItemCode.Text = dgvInspect.SelectedRows[0].Cells[4].Value.ToString();
+                lblProcesscode.Text = dgvInspect.SelectedRows[0].Cells[5].Value.ToString();
+                lblInspectcode.Text = dgvInspect.SelectedRows[0].Cells[6].Value.ToString();
 
-            decimal usl, sl, lsl;
-            usl = Convert.ToDecimal(dgvInspect.SelectedRows[0].Cells[1].Value);
-            sl = Convert.ToDecimal(dgvInspect.SelectedRows[0].Cells[2].Value);
-            if (usl - sl <= 0) nudMeasure.Increment = 1;
-            else nudMeasure.Increment = (usl - sl) / 10m;
+                decimal usl, sl, lsl;
+                usl = Convert.ToDecimal(dgvInspect.SelectedRows[0].Cells[1].Value);
+                sl = Convert.ToDecimal(dgvInspect.SelectedRows[0].Cells[2].Value);
+                if (usl - sl <= 0) nudMeasure.Increment = 1;
+                else nudMeasure.Increment = (usl - sl) / 10m;
 
-            nudMeasure.Value = sl;
+                nudMeasure.Value = sl;
 
-            SearchData();
+                SearchData();
+            }
         }
-
         private void btnInsertMeasure_Click(object sender, EventArgs e)
         {
             if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
@@ -114,14 +116,13 @@ namespace AxxenClient.Forms
                         MessageBox.Show("입력할 수 없는 항목입니다.");
                     }
                 }
-                else
-                {
-                    Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 작업시작을 하지않고 품질측정값을 등록하려하였음");
-                    MessageBox.Show("작업을 시작해주세요");
-                }
+            }
+            else
+            {
+                Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 작업시작을 하지않고 품질측정값을 등록하려하였음");
+                MessageBox.Show("작업을 시작해주세요");
             }
         }
-
         private void btnDeleteMeasure_Click(object sender, EventArgs e)
         {
             if (dgvInspectMeasure.SelectedRows.Count > 0)
@@ -139,7 +140,6 @@ namespace AxxenClient.Forms
                 }
             }
         }
-
         bool isMachineRun = false;
         MachineType machinet = MachineType.Inspect_Measure;
         private void btnMachineRun_Click(object sender, EventArgs e)
@@ -147,31 +147,34 @@ namespace AxxenClient.Forms
             if (isMachineRun) MachineStop(machinet);
             else MachineStart(machinet);
         }
+
         /// <summary>
         /// 기계 종료
         /// </summary>
+        Action<MachineType> machineStop;
         private void MachineStop(MachineType machinet)
         {
             if (isMachineRun)
             {
                 btnMachineRun.BackColor = Color.FromArgb(218, 239, 245);
                 isMachineRun = false;
-                machine2.MachineStop(machinet);
+                progressMachine.Visible = false;
             }
         }
         /// <summary>
         /// 기계 시작
         /// </summary>
         /// <param name="work"></param>
-        Machine machine2 = new Machine(2);
+        Machine machine2;
         private void MachineStart(MachineType machinet)
         {
+            setProgress += SetProgress;
+            machineStop += MachineStop;
+            machine2 = new Machine(2, GlobalUsage.WorkOrderNo, GlobalUsage.UserID, GlobalUsage.WcCode, (value) => btnMachineRun.Invoke(machineStop, value), (stackqty, totalqty, prdqty, outqty) => progressMachine.Invoke(setProgress, stackqty, totalqty));
             if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
             {
                 if (!isMachineRun)
                 {
-                    btnMachineRun.BackColor = Color.FromArgb(188, 220, 244);
-                    isMachineRun = true;
                     List<InspectSpecVO> list = (new Inspect_Spec_MasterService()).GetAll(GlobalUsage.ItemCode, GlobalUsage.WcCode);
                     List<Item_inspectPair> pairlist = new List<Item_inspectPair>();
                     StringBuilder forlog = new StringBuilder();
@@ -190,9 +193,14 @@ namespace AxxenClient.Forms
                     {
                         case MachineType.Inspect_Measure:
                             Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 작업({GlobalUsage.WorkOrderNo})의 품질 측정기계로 품목({pairlist[0].Itemcode})에 대한 항목({forlog.ToString()})들을 측정함");
-                            machine2.MachineStart(GlobalUsage.WorkOrderNo, pairlist, MachineStop);
+                            machine2.MachineStart(GlobalUsage.ProcessCode, pairlist);
                             break;
                     }
+
+                    // 공통
+                    btnMachineRun.BackColor = Color.FromArgb(188, 220, 244);
+                    isMachineRun = true;
+                    progressMachine.Visible = true;
                 }
             }
             else
@@ -200,6 +208,11 @@ namespace AxxenClient.Forms
                 Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 작업지시를 시작하지 않고 기계를 시작하려함");
                 MessageBox.Show("작업지시를 시작해주세요");
             }
+        }
+        Action<int, int> setProgress;
+        private void SetProgress(int stackqty, int totalqty)
+        {
+            progressMachine.Value = (int)(((stackqty * 1.0 / totalqty) * 100) % 101);
         }
 
     }

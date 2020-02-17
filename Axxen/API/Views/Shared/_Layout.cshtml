@@ -50,53 +50,18 @@
                                 <i class="fa fa-envelope-o"></i>
                                 <span class="label label-success">4</span>
                             </a>
-                            <ul class="dropdown-menu">
-                                <li class="header">You have 4 messages</li>
-                                <li>
-                                    <!-- inner menu: contains the messages -->
-                                    <ul class="menu">
-                                        <li>
-                                            <!-- start message -->
-                                            <a href="#">
-                                        
-                                                <!-- Message title and timestamp -->
-                                                <h4>
-                                                    Support Team
-                                                    <small><i class="fa fa-clock-o"></i> 5 mins</small>
-                                                </h4>
-                                                <!-- The message -->
-                                                <p>Why not buy a new awesome theme?</p>
-                                            </a>
-                                        </li>
-                                        <!-- end message -->
-                                    </ul>
-                                    <!-- /.menu -->
-                                </li>
-                                <li class="footer"><a href="#">See All Messages</a></li>
-                            </ul>
+                            @Html.Action("Message", "Nav")
                         </li>
                         <!-- /.messages-menu -->
                         <!-- Notifications Menu -->
                         <li class="dropdown notifications-menu">
-                            @*@Html.Action("Summary", "Cart")*@
+                            @*@Html.Action("Message", "Nav")*@
 
-                            <script language="JavaScript">
-                                function setCookie(name, value, expiredays) {
-                                    var todayDate = new Date();
-                                    todayDate.setDate(todayDate.getDate() + expiredays);
-                                    document.cookie = name + "=" + escape(vale) + "; path=/;expires=" + todaydate."toGMTString()+"; "}
-                                    function closeWin() {
-                                        if (document.notice_from.chkbox.checked) {
-                                            setCookie("maindiv", "done", 1)
-                                        } document.all['divpop'].style.visibility = 'hidden";"'
-                                    }
-                            </script>
-                            
                         </li>
                         <!-- Tasks Menu -->
                         <li class="dropdown tasks-menu">
                             <!-- Menu Toggle Button -->
-                         
+
                             <ul class="dropdown-menu">
                                 <li class="header">You have 9 tasks</li>
                                 <li>
@@ -131,15 +96,18 @@
                         <!-- User Account Menu -->
                         <li class="dropdown user user-menu">
                             <!-- Menu Toggle Button -->
+                            <a href="/Login/Login" class="label" id="btnShowModal2">sigin</a>
+
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  
                                 <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                                <span class="hidden-xs">Alexander Pierce</span>
+                                @Html.Action("userbox", "Login")
+                                @*<span class="hidden-xs">시발</span>*@
                             </a>
+
                             <ul class="dropdown-menu">
                                 <!-- The user image in the menu -->
                                 <li class="user-header">
-                  
+
                                     <p>
                                         Alexander Pierce - Web Developer
                                         <small>Member since Nov. 2012</small>
@@ -171,7 +139,7 @@
                                 </li>
                             </ul>
                         </li>
-                        
+
                     </ul>
                 </div>
             </nav>
@@ -182,7 +150,7 @@
             <!-- sidebar: style can be found in sidebar.less -->
             <section class="sidebar">
 
-           
+
 
                 <!-- search form (Optional) -->
                 <form action="#" method="get" class="sidebar-form">
@@ -201,7 +169,7 @@
                     <li class="header"> 메뉴</li>
                     <!-- Optionally, you can add icons to the links -->
                     <li class="active"><a href="/HOME/Index"><i class="fa fa-link"></i> <span>홈</span></a></li>
-                    <li><a href="/HOME/Member"><i class="fa fa-link"></i> <span>제품</span></span></a></li>
+                    <li><a href="/HOME/Member"><i class="fa fa-link"></i> <span>제품</span></a></li>
                     <li><a href="/Sys_Notice/Index"><i class="fa fa-link"></i> <span>공지사항등록</span></a></li>
                     <li><a href="/DefHistory/DefectiveCreate"><i class="fa fa-link"></i> <span>불량문의</span></a></li>
 
@@ -225,14 +193,12 @@
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
-      
-
             <!-- Main content -->
             <section class="content container-fluid">
                 @RenderBody()
             </section>
-                </div>
- 
+        </div>
+
         <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
@@ -240,7 +206,7 @@
     <footer class="main-footer">
         <!-- To the right -->
         <div class="pull-right hidden-xs">
-          SPOK
+            SPOK
         </div>
 
     </footer>
@@ -324,16 +290,24 @@
     </div>
     <!-- ./wrapper -->
     <!-- REQUIRED JS SCRIPTS -->
+    <!-- ./wrapper -->
+    <!-- REQUIRED JS SCRIPTS -->
     <!-- jQuery 3 -->
-    <script src="~/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap 3.3.7 -->
-    <script src="~/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- AdminLTE App -->
-    <script src="~/dist/js/adminlte.min.js"></script>
-
+    <script src="/dist/js/adminlte.min.js"></script>
+    <!-- ChartJS -->
+    <script src="/bower_components/Chart.js/Chart.js"></script>
+    <!-- FastClick -->
+    <script src="/bower_components/fastclick/lib/fastclick.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="/dist/js/demo.js"></script>
     <!-- Optionally, you can add Slimscroll and FastClick plugins.
          Both of these plugins are recommended to enhance the
          user experience. -->
+    @RenderSection("scripts", required: false)
 </body>
 </html>
 

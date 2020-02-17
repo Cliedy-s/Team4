@@ -14,6 +14,8 @@ namespace VO
         public string GV_Status { get; set; }       // 대차상태
         public string Item_Code { get; set; }      // 품목코드
         public string Item_Name { get; set; }     // 품목명
+        public int Box_Qty { get; set; }            // 팔렛당 박스수
+        public int Pcs_Qty { get; set; }            // 박스당 pcs수
         public DateTime? Loading_time { get; set; }  // 적재시간
         public int Loading_Qty { get; set; }            // 적재수량
         public string Workorderno { get; set; }   // 작업지시번호
@@ -28,8 +30,10 @@ namespace VO
         public int Plan_Qty { get; set; }               // 계획수량
         public string Process_code { get; set; }    // 공정코드
         public string Process_name { get; set; }    // 공정이름
+        public long Hist_Seq { get; set; }               // 대차이력 순서
         public DateTime? In_Time { get; set; }       // 요입시간
         public DateTime? Out_Time { get; set; }      // 요출시간
         public int Center_Time { get; set; }            // 중간시간
+        public int? Unloading_Qty { get; set; }               // 언로딩 수량
     }
 }

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using VO;
@@ -43,6 +44,7 @@ namespace AxxenClient.Forms
             InitControlUtil.AddNewColumnToDataGridView(dgvGVList, "계획단위", "Prd_Unit", false, 100);
             InitControlUtil.AddNewColumnToDataGridView(dgvGVList, "생산의뢰번호", "Wo_Req_No", false, 100);
             InitControlUtil.AddNewColumnToDataGridView(dgvGVList, "생산의뢰순서", "Req_Seq", false, 100);
+            InitControlUtil.AddNewColumnToDataGridView(dgvGVList, "대차이력 순서", "Hist_Seq", false);
 
 
             dgvGVList.Columns[10].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm:ss";
@@ -50,12 +52,21 @@ namespace AxxenClient.Forms
         private void GetDatas()
         {
             GV_Current_StatusService service = new GV_Current_StatusService();
-            dgvGVList.DataSource = service.GetGVCurrentStatus(gvStatus: "적재");
+            List<GVStatusVO> list = service.GetGVCurrentStatus(gvStatus: "적재", gvGroup: "건조그룹");
+            dgvGVList.DataSource =
+                (from gv in list
+                 where gv.Unloading_Qty == null
+                 select gv).ToList();
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
             GV_Current_StatusService service = new GV_Current_StatusService();
-            dgvGVList.DataSource = service.GetGVCurrentStatus(gvStatus: "적재", gvName:txtGVSearch.TextBoxText);
+            List<GVStatusVO> list = service.GetGVCurrentStatus(gvStatus: "적재", gvGroup: "건조그룹", gvName: txtGVSearch.TextBoxText);
+            dgvGVList.DataSource =
+                (from gv in list
+                 where gv.Unloading_Qty == null
+                 select gv).ToList();
+            
         }
         private void dgvGVList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -66,10 +77,11 @@ namespace AxxenClient.Forms
             txtWcSearch.TextBoxText = (dgvGVList.SelectedRows[0].Cells[7].Value ?? "").ToString();
             txtWcSearch.CodeText = (dgvGVList.SelectedRows[0].Cells[6].Value ?? "").ToString();
             txtPlanDate.TextBoxText = (dgvGVList.SelectedRows[0].Cells[10].Value ?? "").ToString();
-            txtPlanQty.TextBoxText = (dgvGVList.SelectedRows[0].Cells[11].Value ?? "").ToString();
+            txtPlanQty.TextBoxText = (dgvGVList.SelectedRows[0].Cells[3].Value ?? "").ToString();
             lblUnit.Text = (dgvGVList.SelectedRows[0].Cells[12].Value ?? "").ToString();
             lblReqNo.Text = (dgvGVList.SelectedRows[0].Cells[13].Value ?? "").ToString();
             lblReqSeq.Text = (dgvGVList.SelectedRows[0].Cells[14].Value ?? "").ToString();
+            lblHistSeq.Text = (dgvGVList.SelectedRows[0].Cells[15].Value ?? "").ToString();
         }
         private void btnCreateWorkOrder_Click(object sender, EventArgs e)
         {   // 작업지시 생성
@@ -87,7 +99,7 @@ namespace AxxenClient.Forms
             item.Wo_Order = "4";
             item.Wo_Status = "생산대기";
             item.Prd_Unit = lblUnit.Text;
-            if (service.InsertWorkOrder(item))
+            if (service.InsertWorkOrder(item, lblHistSeq.Text))
             {
 
                 Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 생산지시({lblReqNo.Text})에 관한 작업장({GlobalUsage.WcCode})의 작업지시를 {now.ToString("yyyy-MM-dd HH:mm:ss")}에 생성하였음");

@@ -10,6 +10,15 @@ namespace Service
 {
     public class GV_MasterService
     {
+        /// <summary>
+        /// 대차 검색
+        /// </summary>
+        /// <returns></returns>
+        public List<GVMasterVO> GetGVs(string gvStatus = null, string gvName = null, string gvGroup = null)
+        {
+            GV_MasterDAC dac = new GV_MasterDAC();
+            return dac.GetGVs( gvStatus,  gvName ,  gvGroup  );
+        }
         public List<GVMasterVO> GetALLGVMaster()
         {
             GV_MasterDAC dac = new GV_MasterDAC();

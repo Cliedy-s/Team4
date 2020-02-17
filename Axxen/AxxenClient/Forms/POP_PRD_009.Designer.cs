@@ -33,6 +33,7 @@
             this.btnSearch = new Axxen.CustomControls.AButton();
             this.dgvGVList = new Axxen.CustomControls.ADataGridView();
             this.aPanel4 = new Axxen.CustomControls.APanel();
+            this.lblHistSeq = new Axxen.CustomControls.ALabel();
             this.txtPlanQty = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
             this.txtPlanDate = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
             this.txtWcSearch = new Axxen.CustomControls.ABigTextBox_Searchable();
@@ -50,14 +51,14 @@
             this.aPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
-            // aLabel_Header1
-            // 
-            this.aLabel_Header1.Text = "적재 작업지시 생성";
-            // 
-            // aPanel1
+            // panBottom
             // 
             this.panBottom.Location = new System.Drawing.Point(0, 593);
             this.panBottom.Margin = new System.Windows.Forms.Padding(2);
+            // 
+            // aLabel_Header1
+            // 
+            this.aLabel_Header1.Text = "적재 작업지시 생성";
             // 
             // aPanel5
             // 
@@ -118,6 +119,7 @@
             // 
             this.aPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.aPanel4.Controls.Add(this.lblHistSeq);
             this.aPanel4.Controls.Add(this.txtPlanQty);
             this.aPanel4.Controls.Add(this.txtPlanDate);
             this.aPanel4.Controls.Add(this.txtWcSearch);
@@ -131,6 +133,16 @@
             this.aPanel4.Name = "aPanel4";
             this.aPanel4.Size = new System.Drawing.Size(549, 482);
             this.aPanel4.TabIndex = 8;
+            // 
+            // lblHistSeq
+            // 
+            this.lblHistSeq.AutoSize = true;
+            this.lblHistSeq.Location = new System.Drawing.Point(236, 309);
+            this.lblHistSeq.Name = "lblHistSeq";
+            this.lblHistSeq.Size = new System.Drawing.Size(72, 15);
+            this.lblHistSeq.TabIndex = 35;
+            this.lblHistSeq.Text = "lblHistSeq";
+            this.lblHistSeq.Visible = false;
             // 
             // txtPlanQty
             // 
@@ -211,10 +223,10 @@
             // lblReqSeq
             // 
             this.lblReqSeq.AutoSize = true;
-            this.lblReqSeq.Location = new System.Drawing.Point(149, 306);
+            this.lblReqSeq.Location = new System.Drawing.Point(158, 306);
             this.lblReqSeq.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblReqSeq.Name = "lblReqSeq";
-            this.lblReqSeq.Size = new System.Drawing.Size(60, 15);
+            this.lblReqSeq.Size = new System.Drawing.Size(73, 15);
             this.lblReqSeq.TabIndex = 29;
             this.lblReqSeq.Text = "lblReqSeq";
             this.lblReqSeq.Visible = false;
@@ -225,7 +237,7 @@
             this.lblReqNo.Location = new System.Drawing.Point(89, 306);
             this.lblReqNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblReqNo.Name = "lblReqNo";
-            this.lblReqNo.Size = new System.Drawing.Size(56, 15);
+            this.lblReqNo.Size = new System.Drawing.Size(65, 15);
             this.lblReqNo.TabIndex = 28;
             this.lblReqNo.Text = "lblReqNo";
             this.lblReqNo.Visible = false;
@@ -236,7 +248,7 @@
             this.lblUnit.Location = new System.Drawing.Point(39, 306);
             this.lblUnit.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUnit.Name = "lblUnit";
-            this.lblUnit.Size = new System.Drawing.Size(42, 15);
+            this.lblUnit.Size = new System.Drawing.Size(46, 15);
             this.lblUnit.TabIndex = 27;
             this.lblUnit.Text = "lblUnit";
             this.lblUnit.Visible = false;
@@ -257,7 +269,6 @@
             // 
             // POP_PRD_009
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1210, 629);
             this.Controls.Add(this.dgvGVList);
             this.Controls.Add(this.aPanel4);
@@ -299,5 +310,6 @@
         private Axxen.CustomControls.ABigTextBox_Searchable txtItemSearch;
         private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox txtGVSearch;
         private Axxen.CustomControls.AButton btnSearch;
+        private Axxen.CustomControls.ALabel lblHistSeq;
     }
 }
