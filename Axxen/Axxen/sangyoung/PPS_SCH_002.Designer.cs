@@ -268,8 +268,8 @@
             // 
             // aDateTimePickerSearch1
             // 
-            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 2, 7, 12, 4, 25, 767);
-            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 2, 14, 12, 4, 25, 767);
+            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 2, 10, 11, 48, 19, 973);
+            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 2, 17, 11, 48, 19, 973);
             this.aDateTimePickerSearch1.ButtonText = "";
             this.aDateTimePickerSearch1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aDateTimePickerSearch1.Location = new System.Drawing.Point(107, 23);
@@ -304,7 +304,7 @@
             this.tsbtnSave.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.tsbtnSave.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             this.tsbtnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.tsbtnSave.ToolTipText = "조회";
+            this.tsbtnSave.ToolTipText = "저장";
             this.tsbtnSave.Click += new System.EventHandler(this.TsbtnSave_Click);
             // 
             // toolStripButton1
@@ -320,7 +320,8 @@
             this.toolStripButton1.Text = "다운로드";
             this.toolStripButton1.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton1.ToolTipText = "조회";
+            this.toolStripButton1.ToolTipText = "엑셀 다운로드";
+            this.toolStripButton1.Click += new System.EventHandler(this.ToolStripButton1_Click_1);
             // 
             // PPS_SCH_002
             // 

@@ -15,71 +15,36 @@ namespace API.Controllers
         public ActionResult Index(string name)
         {
             ChartDAC chartdac = new ChartDAC();
-            //name = "이형벽돌(계단Gray)";
             List<ChartOutputVO> outputList = chartdac.GetItemOutputChart(name);
 
-            //var mylist = from data in outputList
-            //             orderby data.Prd_Date
-            //             group data by data.Item_Name;
-
-            //List<string> keys = new List<string>();
             StringBuilder sb = new StringBuilder();
-            string data1 = string.Empty, data2 = string.Empty;//, data3 = string.Empty, data4 = string.Empty, data5 = string.Empty, data6 = string.Empty;
+            string data1 = string.Empty, data2 = string.Empty, data3 = string.Empty;
 
             List<int> planqtys = new List<int>();
             List<int> prdqtys = new List<int>();
+            List<decimal> attain = new List<decimal>();
 
-            //int k = 0;
             foreach (var group in outputList)
             {
-                //keys.Add(group.Key);
-                //foreach (var item in group)
-                //{
-                //if (k == 0)
-                //{
                 sb.Append(group.Prd_Date + ",");
-                //}
                 planqtys.Add(group.Plan_Qty);
                 prdqtys.Add(group.Prd_Qty);
-                //}
-                //if (k == 0)
-                //{
-                //data1 = "[" + string.Join(",", planqtys.ToArray()) + "]";
-                //data2 = "[" + string.Join(",", prdqtys.ToArray()) + "]";
-                //}
-                //k++;
-
-
-                //else if (k == 1)
-                //{
-                //    data3 = "[" + string.Join(",", planqtys.ToArray()) + "]";
-                //    data4 = "[" + string.Join(",", prdqtys.ToArray()) + "]";
-                //} 
-                //else if (k == 2)
-                //{
-                //    data5 = "[" + string.Join(",", planqtys.ToArray()) + "]";
-                //    data6 = "[" + string.Join(",", planqtys.ToArray()) + "]";
-                //}
-                //planqtys.Clear();
-                //prdqtys.Clear();
+                attain.Add(group.Attain);
             }
             data1 = "[" + string.Join(",", planqtys.ToArray()) + "]";
             data2 = "[" + string.Join(",", prdqtys.ToArray()) + "]";
+            data3 = "[" + string.Join(",", attain.ToArray()) + "]";
             planqtys.Clear();
             prdqtys.Clear();
+            attain.Clear();
 
             string labels = sb.ToString().TrimEnd(',');
-            //string label1 = keys[0];
-            //string label2 = keys[1];
-            //string label3 = keys[2];
 
             ViewBag.Labels = labels;
-            //ViewBag.Label1 = label1;
             ViewBag.Data1 = data1;
-            //ViewBag.Label2 = label2;
             ViewBag.Data2 = data2;
-            //ViewBag.Label3 = label3;
-            //ViewBag.Data3 = data3;
+            ViewBag.Data3 = data3;
+            ViewBag.Name = name;
 
             return View();
         }

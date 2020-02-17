@@ -176,6 +176,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ChartOutputVO.cs" />
     <Compile Include="Models\Def_HistoryVO.cs" />
     <Compile Include="Models\MainForm_VO.cs" />
     <Compile Include="Models\MoldVO.cs" />
