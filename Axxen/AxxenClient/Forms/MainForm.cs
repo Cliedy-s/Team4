@@ -52,6 +52,9 @@ namespace AxxenClient.Forms
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
+            // 초반 값 
+            GlobalUsage.WcCode = ConfigurationManager.AppSettings["WcCode"];
+
             LoginForm login = new LoginForm();
             if(login.ShowDialog() != DialogResult.OK)
             {
@@ -68,9 +71,6 @@ namespace AxxenClient.Forms
             aComboBox1.DataSource = dic;
             aComboBox1.DisplayMember = "value1";
             aComboBox1.ValueMember = "value2";
-
-            // 초반 값 
-            GlobalUsage.WcCode = ConfigurationManager.AppSettings["WcCode"];
 
             POP_PRD_001 childfrm = new POP_PRD_001();
             childfrm.WindowState = FormWindowState.Maximized;

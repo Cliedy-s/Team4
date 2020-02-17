@@ -2,6 +2,7 @@
 using API.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -28,12 +29,11 @@ namespace API.Controllers
             return View();
         }
 
-
         public ActionResult DefectiveCreate()
         {
             Def_HistoryDAC def = new Def_HistoryDAC();
 
-            ViewBag.WorkOrderno = new SelectList(def.GetDefHistoryWorkorderno());
+            ViewBag.Workorderno = new SelectList(def.GetDefHistoryWorkorderno());
             ViewBag.CodeName = def.GetDefMiMasterCodeName();
             //List<Def_HistoryVO> fruits = def.GetDefMiMasterCodeName();
 
@@ -42,15 +42,26 @@ namespace API.Controllers
 
         // POST: DefHistory/Create
         [HttpPost]
-        public ActionResult DefectiveCreate(Def_HistoryVO definfo)
+        public ActionResult DefectiveCreate(Def_HistoryVO definfo, HttpPostedFileBase files)
         {
             try
             {
+                //
+                // Verify that the user selected a file
+                if (files != null && files.ContentLength > 0)
+                {
+                    // extract only the filename
+                    var fileName = Path.GetFileName(files.FileName);
+                    // store the file inside ~/App_Data/uploads folder
+                    var path = Path.Combine(Server.MapPath("~/App_Start/uploads"), fileName);
+                    files.SaveAs(path);
+                }
+
                 // TODO: Add insert logic here
                 Def_HistoryDAC def = new Def_HistoryDAC();
                 if (def.SaveDef(definfo))
                 {
-                    return RedirectToAction("Index"); //인서트가 성공적으로 됐다면. 목록으로 가라 indexview가 목록임.
+                    return RedirectToAction("Index", "Home"); //인서트가 성공적으로 됐다면. 목록으로 가라 indexview가 목록임.
                 }
                 else
                 {

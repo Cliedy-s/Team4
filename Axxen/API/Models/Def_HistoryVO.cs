@@ -12,14 +12,14 @@ namespace API.Models
         public string Workorderno { get; set; } //작업지시
         public int Def_Seq { get; set; } //불량순번	
 
-        [DisplayName("불량현상 상세분류명")] //컬럼명변경
+        [DisplayName("불량명")] //컬럼명변경
         public string Def_Mi_Name { get; set; } //불량현상상세분류명
 
-        [DisplayName("불량현상 상세분류코드")] //컬럼명변경
+        [DisplayName("불량코드")] //컬럼명변경
         public string Def_Mi_Code { get; set; } //불량현상상세분류코드
 
-        [DisplayName("발생일시")] //컬럼명변경
-        public DateTime Def_Date { get; set; } //발생일시
+        [DisplayName("발생일")] //컬럼명변경
+        public string Def_Date { get; set; } //발생일
 
         [DisplayName("불량수량")] //컬럼명변경
         public int Def_Qty { get; set; } //불량수량	

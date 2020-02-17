@@ -4,10 +4,10 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+    <h2>@Model.Title</h2>
 
 <div>
-    <h4>Board</h4>
+    <h4>@Model.Ins_Emp</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -17,6 +17,16 @@
         <dd>
             @Html.DisplayFor(model => model.Seq)
         </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ins_Emp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ins_Emp)
+        </dd>
+
+
 
         <dt>
             @Html.DisplayNameFor(model => model.Notice_Date)
@@ -32,16 +42,6 @@
 
         <dd>
             @Html.DisplayFor(model => model.Notice_End)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-
-        <dd>
-            @*@Html.DisplayFor(model => model.Content)*@
-            @*@Html.Raw(Model.Content)*@
-            <span style="white-space: pre-wrap">@Model.Title</span>
         </dd>
 
         <dt>

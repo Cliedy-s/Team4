@@ -40,7 +40,7 @@ namespace AxxenClient.Forms
             InitControlUtil.AddNewColumnToDataGridView(dgvBoxing, "작업지시번호", "Workorderno", true, 200, DataGridViewContentAlignment.MiddleLeft, true);
             InitControlUtil.AddNewColumnToDataGridView(dgvBoxing, "품목코드", "Item_Code", true, 120);
             InitControlUtil.AddNewColumnToDataGridView(dgvBoxing, "품목명", "Item_Name", true, 200);
-            InitControlUtil.AddNewColumnToDataGridView(dgvBoxing, "수량", "Prd_Qty", true, 100, DataGridViewContentAlignment.MiddleRight);
+            InitControlUtil.AddNewColumnToDataGridView(dgvBoxing, "수량", "Loading_Qty", true, 100, DataGridViewContentAlignment.MiddleRight);
             InitControlUtil.AddNewColumnToDataGridView(dgvBoxing, "대차상태", "GV_Status", true, 110, DataGridViewContentAlignment.MiddleCenter);
         }
         private void GetDatas()
@@ -64,7 +64,7 @@ namespace AxxenClient.Forms
                     return;
                 }
                 GV_HistoryService service = new GV_HistoryService();
-                if (service.UpdateUnload(GlobalUsage.WorkOrderNo,GlobalUsage.UserID, dgvBoxing.SelectedRows[0].Cells[0].Value.ToString(), null, GlobalUsage.WcCode, Convert.ToInt32(dgvBoxing.SelectedRows[0].Cells[5].Value)))
+                if (service.UpdateUnload(GlobalUsage.WorkOrderNo, GlobalUsage.UserID, dgvBoxing.SelectedRows[0].Cells[0].Value.ToString(), null, GlobalUsage.WcCode, Convert.ToInt32(dgvBoxing.SelectedRows[0].Cells[5].Value)))
                 {
                     Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 대차({dgvBoxing.SelectedRows[0].Cells[0].Value.ToString()}) 언로딩에 성공함");
                     GetDatas();

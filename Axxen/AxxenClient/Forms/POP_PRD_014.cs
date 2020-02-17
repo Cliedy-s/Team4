@@ -69,34 +69,26 @@ namespace AxxenClient.Forms
         private void btnInsertMeasure_Click(object sender, EventArgs e)
         {
 
-            if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
+            if (!string.IsNullOrEmpty(lblConditionCode.Text))
             {
-                if (!string.IsNullOrEmpty(lblConditionCode.Text))
+                Condition_Measure_HistoryService service = new Condition_Measure_HistoryService();
+                ConditionMeasureVO item = new ConditionMeasureVO();
+                item.Item_code = lblItemCode.Text;
+                item.Wc_Code = lblWcCode.Text;
+                item.Condition_Code = lblConditionCode.Text;
+                item.Condition_Val = nudMeasure.Value;
+                item.Workorderno = GlobalUsage.WorkOrderNo;
+                if (service.InsertConditionMeasure(item, GlobalUsage.UserID))
                 {
-                    Condition_Measure_HistoryService service = new Condition_Measure_HistoryService();
-                    ConditionMeasureVO item = new ConditionMeasureVO();
-                    item.Item_code = lblItemCode.Text;
-                    item.Wc_Code = lblWcCode.Text;
-                    item.Condition_Code = lblConditionCode.Text;
-                    item.Condition_Val = nudMeasure.Value;
-                    item.Workorderno = GlobalUsage.WorkOrderNo;
-                    if (service.InsertConditionMeasure(item, GlobalUsage.UserID))
-                    {
-                        Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 공정조건({lblConditionCode.Text})에 값({nudMeasure.Value})을 넣는데에 성공하였음");
-                        SearchData();
-                        nudMeasure.Value = 0;
-                    }
-                    else
-                    {
-                        Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 공정조건({lblConditionCode.Text})에 값({nudMeasure.Value})을 넣으려 하였으나 실패하였음");
-                        MessageBox.Show("입력할 수 없는 항목입니다.");
-                    }
+                    Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 공정조건({lblConditionCode.Text})에 값({nudMeasure.Value})을 넣는데에 성공하였음");
+                    SearchData();
+                    nudMeasure.Value = 0;
                 }
-            }
-            else
-            {
-                Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 작업시작을 하지않고 공정조건에 값을 등록 하려하였음");
-                MessageBox.Show("작업을 시작해주세요");
+                else
+                {
+                    Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 공정조건({lblConditionCode.Text})에 값({nudMeasure.Value})을 넣으려 하였으나 실패하였음");
+                    MessageBox.Show("입력할 수 없는 항목입니다.");
+                }
             }
         }
 

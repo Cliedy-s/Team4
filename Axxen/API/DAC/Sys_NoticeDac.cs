@@ -13,7 +13,7 @@ namespace API.DAC
         {
 
 
-            string sql = "select Seq, Notice_Date, Notice_End, Title,Description from Sys_Notice";
+            string sql = "select Seq, Notice_Date, Notice_End, Title,Description, Ins_Emp from Sys_Notice";
             List<Sys_NoticeVO> list = new List<Sys_NoticeVO>();
             using (SqlConnection conn = new SqlConnection(Connstr))
             {
@@ -30,7 +30,7 @@ namespace API.DAC
 
         public bool InsertSys_Notice(Sys_NoticeVO notice)
         {
-            string sql = "Insert into Sys_Notice (Notice_Date, Notice_End, Title,Description) values(@Notice_Date, @Notice_End, @Title,@Description)";
+            string sql = "Insert into Sys_Notice (Notice_Date, Notice_End, Title,Description,Ins_Emp) values(@Notice_Date, @Notice_End, @Title,@Description,@Ins_Emp)";
         
             using (SqlConnection conn = new SqlConnection(Connstr))
             {
@@ -39,6 +39,7 @@ namespace API.DAC
                 cmd.Parameters.AddWithValue("@Notice_End", notice.Notice_End);
                 cmd.Parameters.AddWithValue("@Title", notice.Title);
                 cmd.Parameters.AddWithValue("@Description", notice.Description);
+                cmd.Parameters.AddWithValue("@Ins_Emp", UserInfo.User_Name);
      
                 conn.Open();
                 int iResult = cmd.ExecuteNonQuery();
@@ -59,7 +60,7 @@ namespace API.DAC
             else //수정일경우에는 조회수 + x
             {
 
-                sql = "select Seq, Notice_Date, Notice_End, Title,Description from Sys_Notice where Seq=@Seq";
+                sql = "select Seq, Notice_Date, Notice_End, Title,Description,Ins_Emp from Sys_Notice where Seq=@Seq";
             }
 
             using (SqlConnection conn = new SqlConnection(Connstr))
@@ -75,7 +76,8 @@ namespace API.DAC
                     list.Notice_Date = Convert.ToDateTime(reader["Notice_Date"]);
                     list.Notice_End = Convert.ToDateTime(reader["Notice_End"]);                 
                     list.Title = reader["Title"].ToString();
-                    list.Description = reader["Description"].ToString();             
+                    list.Description = reader["Description"].ToString();
+                    list.Ins_Emp = reader["Ins_Emp"].ToString();
                 }
                 reader.Close();
                 conn.Close();

@@ -46,7 +46,7 @@ namespace AxxenClient.Forms
         private void GetDatas()
         {
             Pallet_MasterService service = new Pallet_MasterService();
-            dgvPalletList.DataSource = service.GetAll();
+            dgvPalletList.DataSource = service.GetAll(GlobalUsage.WorkOrderNo);
         }
         private void btnPalletPrint_Click(object sender, EventArgs e)
         {
@@ -55,20 +55,20 @@ namespace AxxenClient.Forms
                 DateTime now = DateTime.Now;
                 Random rand = new Random(now.Millisecond);
                 Pallet_MasterService service = new Pallet_MasterService();
-                if (!service.IsExistPallet(txtPalletNo.TextBoxText))
+                if (!service.IsExistPallet(txtPalletNo.TextBoxText, GlobalUsage.WorkOrderNo))
                 { // 팔레트가 존재하지않으면
                     // insert 시도
                     bool IsSuccess = service.InsertPallet(
                         new VO.PalletVO()
                         {
                             Pallet_No = txtPalletNo.TextBoxText,
-                            Barcode_No = DateTime.Now.Date.ToString("yyyyMMddHHmmssffffff"),
+                            Barcode_No = DateTime.Now.ToString("yyyyMMddHHmmssff"),
                             WorkOrderNo = GlobalUsage.WorkOrderNo,
                             CurrentQty = Convert.ToInt32(txtPrintPallet.TextBoxText),
                             Grade_Detail_Code = txtBoxingGradeDetail.CodeText,
                             Boxing_Grade_Code = txtBoxingGrade.TextBoxText,
                             Size_Code = txtSizeCode.TextBoxText,
-                        });
+                        }, GlobalUsage.UserID);
                     if (IsSuccess)
                     { // 성공
                         Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 팔레트를 생성함");
@@ -84,7 +84,7 @@ namespace AxxenClient.Forms
                 }
                 else
                 { // 팔레트가 존재하면
-                    service.UpdatePallet(txtPalletNo.TextBoxText, Convert.ToInt32(txtPrintPallet.TextBoxText));
+                    service.UpdatePallet(txtPalletNo.TextBoxText, Convert.ToInt32(txtPrintPallet.TextBoxText), GlobalUsage.WorkOrderNo, txtSizeCode.TextBoxText, GlobalUsage.UserID);
                     GetDatas();
                 }
                 PrintPallet(txtPalletNo.TextBoxText, Convert.ToInt32(txtPrintPallet.TextBoxText));
@@ -104,19 +104,9 @@ namespace AxxenClient.Forms
         {
             Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 팔레트({palletno}) 바코드 {count}개를 인쇄함");
             Pallet_MasterService service = new Pallet_MasterService();
-            DataTable table = service.GetPalletToDT(palletno);
+            DataTable table = service.GetPalletToDT(palletno, GlobalUsage.WorkOrderNo, count);
             if (table != null)
             {
-                for (int i = 0; i < count; i++)
-                {
-                    DataRow dr = table.NewRow();
-                    for (int k = 0; k < table.Columns.Count; k++)
-                    {
-                        dr[k] = table.Rows[0][k];
-                    }
-                    table.Rows.Add(dr);
-                }
-
                 BarcodeReport rpt = new BarcodeReport();
                 rpt.DataSource = table;
 

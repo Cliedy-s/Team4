@@ -41,6 +41,25 @@ namespace DAC
                 return list;
             }
         }
+
+        public bool IsAllocated(string userid, string wccode)
+        {
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText = @"select count(*) from Emp_Wc_Allocation where Release_datetime is null and Wc_Code = @Wc_Code AND User_ID=@User_ID; ";
+                comm.CommandType = CommandType.Text;
+                comm.Parameters.AddWithValue("@Wc_Code", wccode);
+                comm.Parameters.AddWithValue("@User_ID", userid);
+
+                comm.Connection.Open();
+                int result = Convert.ToInt32(comm.ExecuteScalar());
+                comm.Connection.Close();
+
+                return result > 0;
+            }
+        }
+
         /// <summary>
         /// 작업장에 할당 가능한 작업자들 목록
         /// </summary>

@@ -50,7 +50,7 @@ namespace AxxenClient.Forms
             InitControlUtil.AddNewColumnToDataGridView(dgvWoReq, "품목명", "Item_Name", true, 200, DataGridViewContentAlignment.MiddleLeft, true);
             InitControlUtil.AddNewColumnToDataGridView(dgvWoReq, "수량", "Loading_Qty", true, 130, DataGridViewContentAlignment.MiddleRight, false);
             InitControlUtil.AddNewColumnToDataGridView(dgvWoReq, "대차이력 순서", "Hist_Seq", false);
-            InitControlUtil.AddNewColumnToDataGridView(dgvWoReq, "박스당 수량", "Pcs_Qty", true);
+            InitControlUtil.AddNewColumnToDataGridView(dgvWoReq, "박스당PCS", "Pcs_Qty", true, 120, DataGridViewContentAlignment.MiddleRight);
         }
         private void btnCreateWorkOrder_Click(object sender, EventArgs e)
         {
