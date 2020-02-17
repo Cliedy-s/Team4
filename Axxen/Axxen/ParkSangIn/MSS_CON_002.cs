@@ -69,7 +69,7 @@ namespace Axxen
             }
             catch(Exception err)
             {
-                MessageBox.Show(err.Message);
+                Program.Log.WriteError(err.Message);
             }
           
         }
@@ -86,7 +86,7 @@ namespace Axxen
             }
             catch (Exception err)
             {
-                MessageBox.Show(err.Message);
+             
                 Program.Log.WriteError(err.Message);
             }
 
@@ -109,7 +109,7 @@ namespace Axxen
             }
             catch (Exception err)
             {
-                MessageBox.Show(err.Message);
+                Program.Log.WriteError(err.Message);
             }
         }
 
@@ -130,9 +130,8 @@ namespace Axxen
             }
             catch (Exception err)
             {
-                MessageBox.Show(err.Message);
+                Program.Log.WriteError(err.Message);
             }
-        }
 
         /// <summary>
         /// 그리드뷰 버튼, 콤보박스세팅

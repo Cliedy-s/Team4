@@ -107,6 +107,7 @@
             this.dtpEnd.Name = "dtpEnd";
             this.dtpEnd.Size = new System.Drawing.Size(200, 23);
             this.dtpEnd.TabIndex = 18;
+            this.dtpEnd.Value = new System.DateTime(2020, 2, 17, 13, 56, 25, 0);
             // 
             // dtpstart
             // 
@@ -114,7 +115,7 @@
             this.dtpstart.Name = "dtpstart";
             this.dtpstart.Size = new System.Drawing.Size(200, 23);
             this.dtpstart.TabIndex = 17;
-            this.dtpstart.Value = new System.DateTime(2020, 2, 5, 0, 0, 0, 0);
+            this.dtpstart.Value = new System.DateTime(2020, 2, 17, 0, 0, 0, 0);
             // 
             // aLabel2
             // 

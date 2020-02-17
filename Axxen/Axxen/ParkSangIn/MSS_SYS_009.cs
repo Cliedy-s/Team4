@@ -22,7 +22,8 @@ namespace Axxen
 
         private void MSS_SYS_009_Load(object sender, EventArgs e)
         {
-            dtpstart.Value = DateTime.Now;
+           
+            dtpstart.MaxDate = DateTime.Now;
             dtpEnd.MaxDate = DateTime.Now;
 
        
@@ -37,6 +38,11 @@ namespace Axxen
             syslist = new List<Sys_NoticeVO>();
             syslist = sysservice.GetAllSys_notice();
             dgvsys.DataSource = syslist;
+        }
+
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
