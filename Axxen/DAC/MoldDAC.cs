@@ -147,7 +147,7 @@ namespace DAC
             using (SqlConnection conn = new SqlConnection(Connstr))
             {
                 conn.Open();
-                string sql = "select Wc_Code, Wc_Name from WorkCenter_Master";
+                string sql = "select Wc_Code, Wc_Name from WorkCenter_Master where Process_Code = 'PC10002'";
                 SqlDataAdapter da = new SqlDataAdapter(sql, conn);
                 da.Fill(ds, "Wc");
                 conn.Close();
