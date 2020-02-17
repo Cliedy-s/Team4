@@ -65,6 +65,7 @@
             this.aDateTimePicker2.Name = "aDateTimePicker2";
             this.aDateTimePicker2.Size = new System.Drawing.Size(105, 23);
             this.aDateTimePicker2.TabIndex = 1;
+            this.aDateTimePicker2.ValueChanged += new System.EventHandler(this.aDateTimePicker2_ValueChanged);
             // 
             // aDateTimePicker1
             // 
@@ -74,6 +75,7 @@
             this.aDateTimePicker1.Name = "aDateTimePicker1";
             this.aDateTimePicker1.Size = new System.Drawing.Size(103, 23);
             this.aDateTimePicker1.TabIndex = 0;
+            this.aDateTimePicker1.ValueChanged += new System.EventHandler(this.aDateTimePicker1_ValueChanged);
             // 
             // ADateTimePickerSearch
             // 
