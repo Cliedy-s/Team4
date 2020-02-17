@@ -148,9 +148,9 @@ namespace Axxen
                 }
             }
             if (result)
-                MessageBox.Show("의뢰가 마감되었습니다.", "생산의뢰관리", MessageBoxButtons.OK);
+                MessageBox.Show("의뢰가 마감되었습니다.", "작업지시관리", MessageBoxButtons.OK);
             else
-                MessageBox.Show("의뢰가 마감되지 않았습니다.\n마감할 의뢰를 선택해 주세요.", "생산의뢰관리", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("의뢰가 마감되지 않았습니다.\n마감할 의뢰를 선택해 주세요.", "작업지시관리", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             RefreshFormShow(null, null);
 
@@ -242,6 +242,7 @@ namespace Axxen
 
         private void BtnPrDown_Click(object sender, EventArgs e)
         {
+            bool bFlag = false;
             DataTable dt = new DataTable();
 
             List<Wo_Req_ItemVO> list = dgvMainGrid.DataSource as List<Wo_Req_ItemVO>;
@@ -249,8 +250,10 @@ namespace Axxen
             {
                 if (dgvMainGrid.Rows[i].Cells[0] is DataGridViewCheckBoxCell chk)
                 {
+                  
                     if (Convert.ToBoolean(chk.Value))
                     {
+                        bFlag = true;
                         reportList.Add(list[i]);
                     }
                     else
@@ -262,18 +265,25 @@ namespace Axxen
             dt = ListToDataTable.ToDataTable(reportList);
             ProductionRequest rpt = new ProductionRequest();
             rpt.DataSource = dt;
-            PPS_SCH_001_Report frm = new PPS_SCH_001_Report(dt);
-            frm.documentViewer1.DocumentSource = null;
-            frm.documentViewer1.DocumentSource = rpt;
-            frm.MdiParent = MdiParent;
-            frm.WindowState = FormWindowState.Maximized;
-            frm.Show();
+            if(bFlag)
+            {
+                PPS_SCH_001_Report frm = new PPS_SCH_001_Report(dt);
+                frm.documentViewer1.DocumentSource = null;
+                frm.documentViewer1.DocumentSource = rpt;
+                frm.MdiParent = MdiParent;
+                frm.WindowState = FormWindowState.Maximized;
+                frm.Show();
 
-            TabPage newTab = new TabPage();
-            newTab.Tag = frm.Name;
-            newTab.Text = "생산의뢰목록";
-            frm.Tag = frm.Name;
-            ((MainForm)this.MdiParent).tabControl2.TabPages.Add(newTab);
+                TabPage newTab = new TabPage();
+                newTab.Tag = frm.Name;
+                newTab.Text = "생산의뢰목록";
+                frm.Tag = frm.Name;
+                ((MainForm)this.MdiParent).tabControl2.TabPages.Add(newTab);
+            }
+            else
+            {
+                MessageBox.Show("목록을 선택해 주세요.","작업지시관리",MessageBoxButtons.OK);
+            }
         }
 
         private void PPS_SCH_001_Activated(object sender, EventArgs e)
@@ -311,20 +321,20 @@ namespace Axxen
                     dgvSubGrid.DataSource = null;
                 }
                 else
-                    MessageBox.Show("Fail");
+                    MessageBox.Show("생산의뢰가 삭제되지 않았습니다.","작업지시관리",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             else if(dgvSubGrid.Focused)
             {
                 string workno = dgvSubGrid[3, dgvSubGrid.CurrentRow.Index].Value.ToString();
                 bool result = workservice.DeletePPSWorkorder(workno);
                 if(result)
-                    MessageBox.Show("Success");
+                    MessageBox.Show("작업지시가 삭제되었습니다.", "작업지시관리", MessageBoxButtons.OK);
                 else
-                    MessageBox.Show("Fail");
+                    MessageBox.Show("작업지시가 삭제되지 않았습니다.", "작업지시관리", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show("삭제할 항목을 선택해 주세요.","생산의뢰관리",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                MessageBox.Show("삭제할 항목을 선택해 주세요.","작업지시관리",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
             }
         }
 
@@ -336,7 +346,6 @@ namespace Axxen
         /// <param name="e"></param>
         private void TsbtnSave_Click(object sender, EventArgs e)
         {
-            //error
             if (cFlag)
             {
                 frm.Owner = this;
@@ -368,7 +377,7 @@ namespace Axxen
                 }
                 catch (Exception err)
                 {
-                    MessageBox.Show(err.Message);
+                    Program.Log.WriteError(err.Message);
                 }
                 finally
                 {

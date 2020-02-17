@@ -186,9 +186,9 @@ namespace Axxen
                 WorkOrder_Service service = new WorkOrder_Service();
                 bool result = service.UpdatePPSWorkorder(order);
                 if (result)
-                    MessageBox.Show("Success");
+                    MessageBox.Show("작업지시 계획이 변경되었습니다.","작업지시관리",MessageBoxButtons.OK);
                 else
-                    MessageBox.Show("Fail");
+                    MessageBox.Show("작업지시 계획이 변경되지 않았습니다.","작업지시관리", MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             catch (Exception err)
             {

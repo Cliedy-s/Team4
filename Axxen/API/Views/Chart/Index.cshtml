@@ -22,6 +22,20 @@
     {
         date.Add("'" + item + "'");
     }
+
+    List<int> plandata = new List<int>();
+    foreach (var item in plan)
+    {
+        int pd = Convert.ToInt32(item.TrimEnd(']').TrimStart('['));
+        plandata.Add(pd);
+    }
+
+    List<int> prddata = new List<int>();
+    foreach (var item in prd)
+    {
+        int pd = Convert.ToInt32(item.TrimEnd(']').TrimStart('['));
+        prddata.Add(pd);
+    }
 }
 <section class="content">
     <div class="row">
@@ -293,13 +307,13 @@
          element: 'revenue-chart',
          resize: true,
          data: [
-          @*{y: @date[0], item1: @plan[0].TrimStart('['), item2: @prd[0].TrimStart('[')},
-          {y: @date[1], item1: @plan[1], item2: @prd[1]},
-          {y: @date[2], item1: @plan[2].TrimEnd(']'), item2: @prd[2].TrimEnd(']')}
-          {y: '2011 Q4', item1: 3767, item2: 3597},*@
-          {y: '2012 Q1', item1: 6810, item2: 1914},
+          {y: @date[0], item1: @plandata[0], item2: @prddata[0]},
+          {y: @date[1], item1: @plandata[1], item2: @prddata[1]},
+          {y: @date[2], item1: @plandata[2], item2: @prddata[2]}
+          @*{y: '2011 Q4', item1:@plandata[0], item2: @prddata[0]},
+          {y: '2012 Q1', item1: @plandata[1], item2:@prddata[1]},
           {y: '2012 Q2', item1: 5670, item2: 4293},
-          {y: '2012 Q3', item1: 4820, item2: 3795}
+          {y: '2012 Q3', item1: 4820, item2: 3795}*@
           ],
          xkey: 'y',
          ykeys: ['item1', 'item2'],
