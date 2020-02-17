@@ -98,12 +98,11 @@
             // 
             // toolStrip1
             // 
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Right;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbtnPrint});
-            this.toolStrip1.Location = new System.Drawing.Point(1073, 0);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(51, 74);
+            this.toolStrip1.Size = new System.Drawing.Size(1124, 60);
             this.toolStrip1.TabIndex = 16;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -121,7 +120,7 @@
             this.tsbtnPrint.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.tsbtnPrint.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             this.tsbtnPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.tsbtnPrint.ToolTipText = "조회";
+            this.tsbtnPrint.ToolTipText = "출력";
             this.tsbtnPrint.Click += new System.EventHandler(this.TsbtnPrint_Click);
             // 
             // PRM_RPT_001
