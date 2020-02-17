@@ -401,6 +401,7 @@
             this.Controls.Add(this.aPanel31);
             this.Controls.Add(this.aPanel18);
             this.Name = "QAM_SQC_003_1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "공정조건 측정추가";
             this.Load += new System.EventHandler(this.QAM_SQC_003_1_Load);
             this.aPanel4.ResumeLayout(false);

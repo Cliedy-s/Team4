@@ -522,6 +522,7 @@
             this.Controls.Add(this.aPanel4);
             this.Controls.Add(this.aPanel2);
             this.Name = "PRM_PRF_008_1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "비가동 등록";
             this.Load += new System.EventHandler(this.PRM_PRF_008_1_Load);
             this.aPanel10.ResumeLayout(false);
