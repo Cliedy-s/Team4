@@ -68,7 +68,7 @@
             this.tsbtnPrint.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.tsbtnPrint.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             this.tsbtnPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.tsbtnPrint.ToolTipText = "조회";
+            this.tsbtnPrint.ToolTipText = "출력";
             this.tsbtnPrint.Click += new System.EventHandler(this.TsbtnPrint_Click);
             // 
             // PPS_SCH_001_Report

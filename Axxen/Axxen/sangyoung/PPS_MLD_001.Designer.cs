@@ -310,7 +310,7 @@
             this.tsbtnSave.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.tsbtnSave.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             this.tsbtnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.tsbtnSave.ToolTipText = "조회";
+            this.tsbtnSave.ToolTipText = "저장";
             this.tsbtnSave.Click += new System.EventHandler(this.TsbtnSave_Click);
             // 
             // aLabel5
