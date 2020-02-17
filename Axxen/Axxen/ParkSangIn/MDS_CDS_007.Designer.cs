@@ -334,7 +334,7 @@
             this.Controls.Add(this.panelbox);
             this.Controls.Add(this.panTop);
             this.Name = "MDS_CDS_007";
-            this.Text = "포장등급 상세 정의";
+            this.Text = "";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MDS_CDS_007_FormClosing);
             this.Load += new System.EventHandler(this.MDS_CDS_007_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvbox)).EndInit();

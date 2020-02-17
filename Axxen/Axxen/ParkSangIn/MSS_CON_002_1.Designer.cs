@@ -492,7 +492,7 @@
             this.Controls.Add(this.aPanel1);
             this.Name = "MSS_CON_002_1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "화면조회";
+            this.Text = "";
             this.Load += new System.EventHandler(this.MSS_CON_002_1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.aPanel1.ResumeLayout(false);
