@@ -80,13 +80,8 @@ namespace Axxen.CustomControls
                     break;
                 case DataType.Pallet:
                     InitControls("Grade_Detail_Name", "Pallet_No");
-                    dgvSearchResult.DataSource = GetData<Pallet_MasterService, PalletVO>("GetAll");
+                    dgvSearchResult.DataSource = GetData<Pallet_MasterService, PalletVO>("GetAllPallet");
                     lblSearch.Text = "팔레트 목록";
-                    break;
-                case DataType.InablePallet:
-                    InitControls("Grade_Detail_Name", "포장등급상세", "Pallet_No", "팔레트번호");
-                    dgvSearchResult.DataSource = GetData<Pallet_MasterService, PalletTodayInVO>("GetInablePallet");
-                    lblSearch.Text = "입고 대상 팔레트 목록";
                     break;
                 case DataType.BoxingDetail:
                     InitControls("Grade_Detail_Code", "Grade_Detail_Name");

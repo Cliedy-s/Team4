@@ -24,7 +24,7 @@ namespace AxxenClient.Forms
         int columnno { get; set; }
         bool IsLoaded = false;
         public Color runningDefaultColor { get; set; }
-        public MachineType machinet = MachineType.Molding;
+        public MachineType machinet;
         public POP_PRD_001()
         {
             InitializeComponent();
@@ -84,11 +84,13 @@ namespace AxxenClient.Forms
             InitControlUtil.AddNewColumnToDataGridView(dgvMain, "생산시작시간", "Prd_Starttime", true, 200, DataGridViewContentAlignment.MiddleLeft, false);
             InitControlUtil.AddNewColumnToDataGridView(dgvMain, "생산종료시간", "Prd_Endtime", true, 200);
             InitControlUtil.AddNewColumnToDataGridView(dgvMain, "계획 날짜", "Plan_Date", false);
-            InitControlUtil.AddNewColumnToDataGridView(dgvMain, "계획수량", "Prd_Qty", false);
+            InitControlUtil.AddNewColumnToDataGridView(dgvMain, "실적수량", "Prd_Qty", false);
             InitControlUtil.AddNewColumnToDataGridView(dgvMain, "성형 줄 수", "Line_Per_Qty", false);
             InitControlUtil.AddNewColumnToDataGridView(dgvMain, "포장 샷당 pcs수", "Shot_Per_Qty", false);
             InitControlUtil.AddNewColumnToDataGridView(dgvMain, "공정코드", "Process_Code", false);
             InitControlUtil.AddNewColumnToDataGridView(dgvMain, "산출수량", "Out_Qty_Main", false);
+            InitControlUtil.AddNewColumnToDataGridView(dgvMain, "팔렛당 박스수", "Box_Qty", false);
+            InitControlUtil.AddNewColumnToDataGridView(dgvMain, "박스당 pcs수", "Pcs_Qty", false);
 
             dgvMain.Columns[8].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm:ss";
             dgvMain.Columns[9].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm:ss";
@@ -112,8 +114,11 @@ namespace AxxenClient.Forms
             }
             // 데이터를 가져온다.
             dgvMain.DataSource = wservice.GetAllWorkOrder_AlloHisDetail_Item_Wc(GlobalUsage.WcCode);
-            dgvMain.FirstDisplayedScrollingRowIndex = scrollPosition;  // 스크롤 문제
-
+            try
+            {
+                dgvMain.FirstDisplayedScrollingRowIndex = scrollPosition;  // 스크롤 문제
+            }
+            catch { }
             if (!IsLoaded) IsLoaded = true;
             SetRowsForTimer();
         }
@@ -387,11 +392,16 @@ namespace AxxenClient.Forms
         Machine machine0;
         private void MachineStart(MachineType machinet)
         {
-            setProcess += SetProgress;
-            machineStop += MachineStop;
-            machine0 = new Machine(0, GlobalUsage.WorkOrderNo, GlobalUsage.UserID, GlobalUsage.WcCode, (value) => btnMachineRun.Invoke(machineStop, value), (stackqty, totalqty, prdqty, outqty) => { progressMachine.Invoke(setProcess, stackqty, totalqty); SetGlobalUsage(prdqty, outqty); });
             if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
             {
+                //기계 설정
+                setProcess += SetProgress;
+                machineStop += MachineStop;
+                machine0 = new Machine
+                    (0, GlobalUsage.WorkOrderNo, GlobalUsage.UserID, GlobalUsage.WcCode,
+                    (value) => btnMachineRun.Invoke(machineStop, value),
+                    (stackqty, totalqty, prdqty, outqty) => { btnMachineRun.Invoke(setProcess, stackqty, totalqty); SetGlobalUsage(prdqty, outqty); });
+
                 if (!isMachineRun)
                 {
                     WorkOrderVO workorder = (dgvMain.DataSource as List<WorkOrderVO>).Find(x => x.Workorderno == GlobalUsage.WorkOrderNo);
@@ -426,8 +436,32 @@ namespace AxxenClient.Forms
                             machine0.MachineStart(input.Qty.Value, new Item_MoldPair(workorder.Item_Code, mold.Mold_Code, workorder.Line_Per_Qty));
                             break;
                         case MachineType.Boxing: // 포장일경우
-                            Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 작업({GlobalUsage.WorkOrderNo})의 포장기계로 품목({workorder.Item_Code})을 생산함");
-                            machine0.MachineStart(input.Qty.Value, workorder.Item_Code, workorder.Shot_Per_Qty);
+                            // 팔레트 수량 검사
+                            Pallet_MasterService pservice = new Pallet_MasterService();
+                            List<PalletGoodsVO> list = pservice.GetPalletGoods(GlobalUsage.WorkOrderNo);
+                            if(list != null)
+                            {
+                                int goodcnt = Convert.ToInt32(dgvMain.SelectedRows[0].Cells[16].Value) * Convert.ToInt32(dgvMain.SelectedRows[0].Cells[17].Value);
+                                int inablecnt = 0;
+                                int loadingqty = input.Qty.Value;
+
+                                list.ForEach((item) => { inablecnt += (goodcnt - item.Contain_Qty); });
+
+                                if (loadingqty > inablecnt)
+                                {
+                                    MessageBox.Show("팔래트 수가 부족합니다.");
+                                    return;
+                                }
+
+                                //기계 시작
+                                Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 작업({GlobalUsage.WorkOrderNo})의 포장기계로 품목({workorder.Item_Code})을 생산함");
+                                machine0.MachineStart(input.Qty.Value, workorder.Item_Code, workorder.Shot_Per_Qty);
+                            }
+                            else
+                            {
+                                MessageBox.Show("팔래트 수가 부족합니다.");
+                                return;
+                            }
                             break;
                     }
                     // 공통

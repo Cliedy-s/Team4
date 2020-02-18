@@ -78,8 +78,8 @@ namespace AxxenClient.Forms
                     return;
                 }
 
-                string barcodeno = DateTime.Now.Date.ToString("yyyyMMddHHmmssffffff");
-                if (!service.UpdateBarcodeNo(txtPalletNo.TextBoxText, barcodeno))
+                string barcodeno = DateTime.Now.ToString("yyyyMMddHHmmss") + "B";
+                if (!service.UpdateBarcodeNo(txtPalletNo.TextBoxText, GlobalUsage.WorkOrderNo, barcodeno))
                 {
                     Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 팔레트({txtPalletNo.TextBoxText})의 바코드를 {barcodeno}로재발행 하려했지만 실패함");
                     MessageBox.Show("바코드 재발행에 실패했습니다.");
@@ -87,7 +87,7 @@ namespace AxxenClient.Forms
                 }
 
                 GetDatas();
-                PrintPallet(barcodeno, Convert.ToInt32(txtCurrentQty.TextBoxText));
+                PrintPallet(txtPalletNo.TextBoxText, Convert.ToInt32(txtCurrentQty.TextBoxText));
             }
             else
             {
@@ -108,16 +108,6 @@ namespace AxxenClient.Forms
             DataTable table = service.GetPalletToDT(palletno, GlobalUsage.WorkOrderNo, count);
             if (table != null)
             {
-                //for (int i = 0; i < count; i++)
-                //{
-                //    DataRow dr = table.NewRow();
-                //    for (int k = 0; k < table.Columns.Count; k++)
-                //    {
-                //        dr[k] = table.Rows[0][k];
-                //    }
-                //    table.Rows.Add(dr);
-                //}
-
                 BarcodeReport rpt = new BarcodeReport();
                 rpt.DataSource = table;
 
@@ -131,7 +121,7 @@ namespace AxxenClient.Forms
         /// <param name="e"></param>
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("정말로 삭제하시겠습니까?", "팔레트삭제", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.OK)
+            if (MessageBox.Show("정말로 삭제하시겠습니까?", "팔레트삭제", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 Pallet_MasterService service = new Pallet_MasterService();
                 if (service.IsPalletInput(txtPalletNo.TextBoxText, GlobalUsage.WorkOrderNo))
@@ -141,7 +131,7 @@ namespace AxxenClient.Forms
                     return;
                 }
 
-                if (service.DeletePallet(txtPalletNo.TextBoxText))
+                if (service.DeletePallet(txtPalletNo.TextBoxText, GlobalUsage.WorkOrderNo))
                 {
                     Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 팔레트({txtPalletNo.TextBoxText}) 삭제에 성공함");
                     MessageBox.Show("팔레트 제거에 성공하였습니다.");
