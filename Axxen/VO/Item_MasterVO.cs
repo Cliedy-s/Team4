@@ -121,7 +121,7 @@ namespace VO
         /// <summary>
         /// 리드타임
         /// </summary>
-        public decimal Lead_Time { get; set; }
+        public string Lead_Time { get; set; }
         /// <summary>
         /// LotSize
         /// </summary>
