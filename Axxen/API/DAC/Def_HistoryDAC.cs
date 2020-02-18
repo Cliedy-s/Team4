@@ -75,7 +75,7 @@ namespace API.DAC
 
         public List<Def_History2VO> DefectiveDetails(string User) // 불량이력 찾아오는 쿼리
         {
-            string sql = @"select Def_Seq,Workorderno,defh.Def_Mi_Code as Def_Mi_Code,defm.Def_Mi_Name as Def_Mi_Name,Def_Date,Def_Qty,defh.Ins_Date as Ins_Date,defh.Ins_Emp as Ins_Emp
+            string sql = @"select Def_Seq,Workorderno,defh.Def_Mi_Code as Def_Mi_Code,defm.Def_Mi_Name as Def_Mi_Name,Def_Date,Def_Qty,Def_Image_Name,defh.Ins_Date as Ins_Date,defh.Ins_Emp as Ins_Emp
                         from Def_History defh INNER JOIN Def_Mi_Master defm ON defh.Def_Mi_Code = defm.Def_Mi_Code
 						where defh.Ins_Emp=@User
 						Order by Def_Seq ASC";
@@ -96,6 +96,7 @@ namespace API.DAC
                         Def_Mi_Name = reader["Def_Mi_Name"].ToString(),
                         Def_Date = reader["Def_Date"].ToString(),
                         Def_Qty = Convert.ToInt32(reader["Def_Qty"]),
+                        Def_Image_Name = reader["Def_Image_Name"].ToString(),
                         //FileUploadFilePath = reader["Def_Image_Name"].ToString(),
                         //FileUploadFile = (HttpPostedFileBase)reader["Def_Image_Path"],
                         Ins_Date = reader["Ins_Date"].ToString(),
@@ -111,7 +112,7 @@ namespace API.DAC
 
         public List<Def_History2VO> DefectiveAllDetails() //모든 불량이력 찾아오는 쿼리
         {
-            string sql = @"select Def_Seq,Workorderno,defh.Def_Mi_Code as Def_Mi_Code,defm.Def_Mi_Name as Def_Mi_Name,Def_Date,Def_Qty,defh.Ins_Date as Ins_Date,defh.Ins_Emp as Ins_Emp
+            string sql = @"select Def_Seq,Workorderno,defh.Def_Mi_Code as Def_Mi_Code,defm.Def_Mi_Name as Def_Mi_Name,Def_Date,Def_Qty,Def_Image_Name,defh.Ins_Date as Ins_Date,defh.Ins_Emp as Ins_Emp
                         from Def_History defh INNER JOIN Def_Mi_Master defm ON defh.Def_Mi_Code = defm.Def_Mi_Code
 						Order by Def_Seq ASC";
             List<Def_History2VO> list = new List<Def_History2VO>();
@@ -130,6 +131,7 @@ namespace API.DAC
                         Def_Mi_Name = reader["Def_Mi_Name"].ToString(),
                         Def_Date = reader["Def_Date"].ToString(),
                         Def_Qty = Convert.ToInt32(reader["Def_Qty"]),
+                        Def_Image_Name = reader["Def_Image_Name"].ToString(),
                         //FileUploadFilePath = reader["Def_Image_Name"].ToString(),
                         //FileUploadFile = (HttpPostedFileBase)reader["Def_Image_Path"],
                         Ins_Date = reader["Ins_Date"].ToString(),
