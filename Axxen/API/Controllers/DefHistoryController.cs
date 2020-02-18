@@ -75,10 +75,11 @@ namespace API.Controllers
             }
         }
 
-        // GET: DefHistory/Edit/5
-        public ActionResult Edit(int id)
+
+        public ActionResult DefectiveDetails()
         {
-            return View();
+            Def_HistoryDAC def = new Def_HistoryDAC();
+            return View(def.DefectiveDetails());
         }
 
         // POST: DefHistory/Edit/5
