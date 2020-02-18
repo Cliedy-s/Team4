@@ -178,6 +178,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ChartOutputVO.cs" />
+    <Compile Include="Models\Def_History2VO.cs" />
     <Compile Include="Models\Def_HistoryVO.cs" />
     <Compile Include="Models\Item_MasterVO.cs" />
     <Compile Include="Models\MainForm_VO.cs" />
@@ -7442,6 +7443,7 @@
     <Content Include="Views\Login\userbox.cshtml" />
     <Content Include="Views\Nav\Message.cshtml" />
     <Content Include="Views\Item\Index.cshtml" />
+    <Content Include="Views\DefHistory\DefectiveDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

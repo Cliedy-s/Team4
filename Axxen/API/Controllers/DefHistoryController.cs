@@ -45,10 +45,9 @@ namespace API.Controllers
         public ActionResult DefectiveCreate(Def_HistoryVO definfo)
         {           
             try
-            {
-                UserInfoVO user = new UserInfoVO();
-                definfo.Up_Emp = user.User_Name;
-                definfo.Ins_Emp = user.User_Name;
+            {               
+                definfo.Up_Emp = UserInfo.User_Name;
+                definfo.Ins_Emp = UserInfo.User_Name;
 
                 string filename = definfo.FileUploadFile.FileName;
 
@@ -76,10 +75,11 @@ namespace API.Controllers
             }
         }
 
-        // GET: DefHistory/Edit/5
-        public ActionResult Edit(int id)
+
+        public ActionResult DefectiveDetails()
         {
-            return View();
+            Def_HistoryDAC def = new Def_HistoryDAC();
+            return View(def.DefectiveDetails());
         }
 
         // POST: DefHistory/Edit/5

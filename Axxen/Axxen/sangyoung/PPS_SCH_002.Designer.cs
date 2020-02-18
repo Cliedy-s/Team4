@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PPS_SCH_002));
-            this.dotWorkCenter = new Axxen.CustomControls.ATextBox_FindNameByCode();
-            this.dotProcess = new Axxen.CustomControls.ATextBox_FindNameByCode();
             this.btnWorkCancle = new Axxen.CustomControls.AButton();
             this.btnWoFinish = new Axxen.CustomControls.AButton();
             this.aLabel1 = new Axxen.CustomControls.ALabel();
@@ -47,6 +45,8 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsbtnSave = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.dotProcess = new Axxen.CustomControls.ATextBox_FindNameByCode();
+            this.dotWorkCenter = new Axxen.CustomControls.ATextBox_FindNameByCode();
             this.aPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aSplitContainer1)).BeginInit();
             this.aSplitContainer1.Panel2.SuspendLayout();
@@ -58,8 +58,8 @@
             // 
             // aPanel2
             // 
-            this.aPanel2.Controls.Add(this.aDateTimePickerSearch1);
             this.aPanel2.Controls.Add(this.dotWorkCenter);
+            this.aPanel2.Controls.Add(this.aDateTimePickerSearch1);
             this.aPanel2.Controls.Add(this.dotProcess);
             this.aPanel2.Controls.Add(this.btnWorkCancle);
             this.aPanel2.Controls.Add(this.btnWoFinish);
@@ -98,42 +98,12 @@
             // 
             this.aHeaderBox2.HeaderBoxText = "입력정보";
             // 
-            // dotWorkCenter
-            // 
-            this.dotWorkCenter.allfont = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dotWorkCenter.CodeType = Axxen.CustomControls.DataType.WorkCenters;
-            this.dotWorkCenter.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dotWorkCenter.lblNameText = "작업장";
-            this.dotWorkCenter.Location = new System.Drawing.Point(702, 26);
-            this.dotWorkCenter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dotWorkCenter.Name = "dotWorkCenter";
-            this.dotWorkCenter.Size = new System.Drawing.Size(229, 27);
-            this.dotWorkCenter.TabIndex = 20;
-            this.dotWorkCenter.txtCodeText = "";
-            this.dotWorkCenter.txtNameText = "";
-            this.dotWorkCenter.DotDotDotFormClosing += new Axxen.CustomControls.ATextBox_FindNameByCode.SearchFormClosing(this.ATextBox_FindNameByCode1_DotDotDotFormClosing);
-            // 
-            // dotProcess
-            // 
-            this.dotProcess.allfont = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dotProcess.CodeType = Axxen.CustomControls.DataType.Processes;
-            this.dotProcess.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dotProcess.lblNameText = "공정";
-            this.dotProcess.Location = new System.Drawing.Point(454, 26);
-            this.dotProcess.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dotProcess.Name = "dotProcess";
-            this.dotProcess.Size = new System.Drawing.Size(221, 27);
-            this.dotProcess.TabIndex = 19;
-            this.dotProcess.txtCodeText = "";
-            this.dotProcess.txtNameText = "";
-            this.dotProcess.DotDotDotFormClosing += new Axxen.CustomControls.ATextBox_FindNameByCode.SearchFormClosing(this.ATextBox_FindNameByCode1_DotDotDotFormClosing);
-            // 
             // btnWorkCancle
             // 
             this.btnWorkCancle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnWorkCancle.BackColor = System.Drawing.SystemColors.Info;
             this.btnWorkCancle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnWorkCancle.Location = new System.Drawing.Point(963, 42);
+            this.btnWorkCancle.Location = new System.Drawing.Point(990, 42);
             this.btnWorkCancle.Name = "btnWorkCancle";
             this.btnWorkCancle.Size = new System.Drawing.Size(130, 23);
             this.btnWorkCancle.TabIndex = 16;
@@ -146,7 +116,7 @@
             this.btnWoFinish.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnWoFinish.BackColor = System.Drawing.SystemColors.Info;
             this.btnWoFinish.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnWoFinish.Location = new System.Drawing.Point(963, 13);
+            this.btnWoFinish.Location = new System.Drawing.Point(990, 13);
             this.btnWoFinish.Name = "btnWoFinish";
             this.btnWoFinish.Size = new System.Drawing.Size(130, 23);
             this.btnWoFinish.TabIndex = 17;
@@ -157,7 +127,7 @@
             // aLabel1
             // 
             this.aLabel1.AutoSize = true;
-            this.aLabel1.Location = new System.Drawing.Point(27, 32);
+            this.aLabel1.Location = new System.Drawing.Point(3, 33);
             this.aLabel1.Name = "aLabel1";
             this.aLabel1.Size = new System.Drawing.Size(79, 15);
             this.aLabel1.TabIndex = 12;
@@ -268,23 +238,24 @@
             // 
             // aDateTimePickerSearch1
             // 
-            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 2, 10, 0, 0, 0, 0);
-            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 2, 17, 0, 0, 0, 0);
+            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 2, 11, 0, 0, 0, 0);
+            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 2, 18, 0, 0, 0, 0);
             this.aDateTimePickerSearch1.ButtonText = "";
             this.aDateTimePickerSearch1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aDateTimePickerSearch1.Location = new System.Drawing.Point(107, 23);
+            this.aDateTimePickerSearch1.Location = new System.Drawing.Point(82, 23);
             this.aDateTimePickerSearch1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.aDateTimePickerSearch1.Name = "aDateTimePickerSearch1";
-            this.aDateTimePickerSearch1.Size = new System.Drawing.Size(324, 32);
+            this.aDateTimePickerSearch1.Size = new System.Drawing.Size(278, 32);
             this.aDateTimePickerSearch1.TabIndex = 21;
             this.aDateTimePickerSearch1.btnDateTimeSearch_Click += new Axxen.CustomControls.ADateTimePickerSearch.SearchButtonClick(this.ADateTimePickerSearch1_btnDateTimeSearch_Click);
             // 
             // toolStrip1
             // 
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbtnSave,
             this.toolStripButton1});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 637);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1148, 63);
             this.toolStrip1.TabIndex = 10;
@@ -323,6 +294,36 @@
             this.toolStripButton1.ToolTipText = "엑셀 다운로드";
             this.toolStripButton1.Click += new System.EventHandler(this.ToolStripButton1_Click_1);
             // 
+            // dotProcess
+            // 
+            this.dotProcess.allfont = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dotProcess.CodeType = Axxen.CustomControls.DataType.Processes;
+            this.dotProcess.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dotProcess.lblNameText = "공정";
+            this.dotProcess.Location = new System.Drawing.Point(364, 28);
+            this.dotProcess.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dotProcess.Name = "dotProcess";
+            this.dotProcess.Size = new System.Drawing.Size(310, 27);
+            this.dotProcess.TabIndex = 11;
+            this.dotProcess.txtCodeText = "";
+            this.dotProcess.txtNameText = "";
+            this.dotProcess.DotDotDotFormClosing += new Axxen.CustomControls.ATextBox_FindNameByCode.SearchFormClosing(this.ATextBox_FindNameByCode1_DotDotDotFormClosing);
+            // 
+            // dotWorkCenter
+            // 
+            this.dotWorkCenter.allfont = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dotWorkCenter.CodeType = Axxen.CustomControls.DataType.WorkCenters;
+            this.dotWorkCenter.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dotWorkCenter.lblNameText = "작업장";
+            this.dotWorkCenter.Location = new System.Drawing.Point(680, 28);
+            this.dotWorkCenter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dotWorkCenter.Name = "dotWorkCenter";
+            this.dotWorkCenter.Size = new System.Drawing.Size(322, 27);
+            this.dotWorkCenter.TabIndex = 7;
+            this.dotWorkCenter.txtCodeText = "";
+            this.dotWorkCenter.txtNameText = "";
+            this.dotWorkCenter.DotDotDotFormClosing += new Axxen.CustomControls.ATextBox_FindNameByCode.SearchFormClosing(this.ATextBox_FindNameByCode1_DotDotDotFormClosing);
+            // 
             // PPS_SCH_002
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -330,14 +331,14 @@
             this.ControlBox = false;
             this.Controls.Add(this.toolStrip1);
             this.Name = "PPS_SCH_002";
-            this.Text = "";
+            this.Text = "작업지시마감관리";
             this.Activated += new System.EventHandler(this.PPS_SCH_002_Activated);
             this.Deactivate += new System.EventHandler(this.PPS_SCH_002_Deactivate);
             this.Load += new System.EventHandler(this.PPS_SCH_002_Load);
+            this.Controls.SetChildIndex(this.toolStrip1, 0);
             this.Controls.SetChildIndex(this.aHeaderBox1, 0);
             this.Controls.SetChildIndex(this.aSplitContainer1, 0);
             this.Controls.SetChildIndex(this.aPanel2, 0);
-            this.Controls.SetChildIndex(this.toolStrip1, 0);
             this.aPanel2.ResumeLayout(false);
             this.aPanel2.PerformLayout();
             this.aSplitContainer1.Panel2.ResumeLayout(false);
@@ -354,9 +355,6 @@
         }
 
         #endregion
-
-        private CustomControls.ATextBox_FindNameByCode dotWorkCenter;
-        private CustomControls.ATextBox_FindNameByCode dotProcess;
         private CustomControls.AButton btnWorkCancle;
         private CustomControls.AButton btnWoFinish;
         private CustomControls.ALabel aLabel1;
@@ -373,5 +371,7 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton tsbtnSave;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private CustomControls.ATextBox_FindNameByCode dotProcess;
+        private CustomControls.ATextBox_FindNameByCode dotWorkCenter;
     }
 }

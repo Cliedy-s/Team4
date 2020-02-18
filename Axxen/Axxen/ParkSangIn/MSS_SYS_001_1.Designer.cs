@@ -676,7 +676,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "MSS_SYS_001_1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "";
+            this.Text = "메뉴등록";
             this.Load += new System.EventHandler(this.MSS_SYS_001_1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

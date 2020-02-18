@@ -15,7 +15,9 @@ namespace API.Controllers
         {
 
             Sys_NoticeDAC dac = new Sys_NoticeDAC();
+        
             return View(dac.Sys_noticeAll());
+            
         }
 
         // GET: Sys_Notice/Details/5

@@ -337,7 +337,7 @@
             this.Controls.Add(this.panelGVMaste);
             this.Controls.Add(this.panTop);
             this.Name = "MDS_CDS_008";
-            this.Text = "";
+            this.Text = "대차정보";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MDS_CDS_008_FormClosing);
             this.Load += new System.EventHandler(this.MDS_CDS_008_Load);
             this.panTop.ResumeLayout(false);

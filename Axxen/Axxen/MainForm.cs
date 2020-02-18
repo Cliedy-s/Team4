@@ -28,6 +28,8 @@ namespace Axxen
         bool open = true;
         //  int SegCnt =0; //화면 사용이력 순번
 
+        Form frm;
+
         Image CloseImage;
         UserGroupService UserGroupservice = new UserGroupService();
         List<MenuTree_Master_VO> menulist; //메뉴
@@ -118,8 +120,8 @@ namespace Axxen
                 toolStripButtonSetting.Alignment = ToolStripItemAlignment.Right; //세팅버튼
                 toolStripButtonLogin.Alignment = ToolStripItemAlignment.Right;
                 toolStripSeparator3.Alignment = ToolStripItemAlignment.Right;
-                timer.Start();
-                timer.Interval = 1000;
+
+                lblLogin.Text = UserInfo.User_Name + " 님";
 
                 tvMenu.Visible = false;
                 ImageList imgList = new ImageList();
@@ -367,7 +369,7 @@ namespace Axxen
                     Assembly cuasm = Assembly.GetExecutingAssembly();
                     //string Format 의 따옴표와 마침표 주의!!
                     string childFormName = string.Format("{0}.{1}", nameSpace, formName);
-                    Form frm = (Form)cuasm.CreateInstance(childFormName);
+                    frm = (Form)cuasm.CreateInstance(childFormName);
 
                     foreach (Form childForm in Application.OpenForms)
                     {
@@ -423,6 +425,8 @@ namespace Axxen
                     }
                     frm.MdiParent = this;
                     frm.WindowState = FormWindowState.Maximized;
+                    frm.SizeChanged += Frm_SizeChanged;
+                    //frm.Text = "";
                     frm.Tag = formName;
                     TabPage newTab = new TabPage();
                     newTab.Tag = formName;
@@ -498,6 +502,16 @@ namespace Axxen
                 throw;
             }
         }
+
+        private void Frm_SizeChanged(object sender, EventArgs e)
+        {
+            if (frm.WindowState == FormWindowState.Maximized)
+            { // checks Form's Window state and return true if it is maximized (mdi child's event btw)
+                this.Text = "SPOK"; // do what ever do you want in here
+            }
+        }
+
+
 
         /// <summary>
         /// 메뉴클릭시 폼생성
@@ -729,7 +743,7 @@ namespace Axxen
             }
         }
         /// <summary>
-        /// 씨발
+        /// 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -738,12 +752,15 @@ namespace Axxen
             foreach (Form children in this.MdiChildren)
             {
 
-                children.Dispose();
+   
                 children.Close();
+          
             }
 
             tabControl2.TabPages.Clear();
         }
+
+
 
         #endregion
 
@@ -847,10 +864,7 @@ namespace Axxen
             frm.ShowDialog();
         }
 
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-            lblLogin.Text = UserInfo.User_Name + " 님";
-        }
+   
 
         private void Button9_Click(object sender, EventArgs e)
         {
@@ -870,6 +884,10 @@ namespace Axxen
 
         protected override void WndProc(ref Message message)
         {
+            try
+            {
+
+           
             base.WndProc(ref message);
 
 
@@ -891,6 +909,12 @@ namespace Axxen
                 {
                     tsbtnRefresh.PerformClick();
                 }
+                }
+            }
+            catch (Exception err)
+            {
+
+                Program.Log.WriteError(err.Message);
             }
 
 
