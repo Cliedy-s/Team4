@@ -1,5 +1,9 @@
 ﻿@model IEnumerable<API.Models.Def_History2VO>
 
+    <p>
+        @Html.ActionLink("글 작성", "DefectiveCreate")
+    </p>
+
     <table class="table">
         <tr>
             <th>
@@ -55,6 +59,11 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Ins_Emp)
+        </td>
+        <td>
+            @Html.ActionLink("수정", "Edit", new { id = item.Def_Seq }) |
+            @Html.ActionLink("보기", "Details", new { id = item.Def_Seq }) |
+            @Html.ActionLink("삭제", "Delete", new { id = item.Def_Seq })
         </td>
     </tr>
         }
