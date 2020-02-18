@@ -15,16 +15,6 @@ namespace AxxenClient.Forms
 {
     public partial class POP_PRD_005 : AxxenClient.Templets.ClientBaseForm
     {
-        int palletqty;
-        int palletQty
-        {
-            get { return palletqty; }
-            set
-            {
-                palletqty = value;
-                txtPalletQty.TextBoxText = palletqty.ToString();
-            }
-        }
         public POP_PRD_005()
         {
             InitializeComponent();
@@ -58,6 +48,7 @@ namespace AxxenClient.Forms
         {
             if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
             {
+                //검사
                 Pallet_MasterService service = new Pallet_MasterService();
                 if (!service.IsExistPallet(txtPalletNo.TextBoxText, GlobalUsage.WorkOrderNo))
                 {
@@ -65,14 +56,22 @@ namespace AxxenClient.Forms
                     MessageBox.Show("팔레트 번호를 확인해주세요");
                     return;
                 }
-                bool isSuccess = service.InputPallet(GlobalUsage.UserID, GlobalUsage.WorkOrderNo, txtPalletNo.TextBoxText, Convert.ToInt32(txtPalletQty.TextBoxText));
+                if (string.IsNullOrEmpty(txtBFour.TextBoxText))
+                {
+                    MessageBox.Show("순서코드를 입력해주세요");
+                    return;
+                }
+
+                // 입고
+                List<string> seqs = new List<string>(txtBFour.TextBoxText.Split('/'));
+                bool isSuccess = service.InputPallet(GlobalUsage.UserID, GlobalUsage.WorkOrderNo, txtPalletNo.TextBoxText, seqs);
                 if (!isSuccess)
                 {
                     Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 팔레트를 입고하려했지만 작업지시번호({GlobalUsage.WorkOrderNo})와 팔레트번호({txtPalletNo.TextBoxText})가 일치하는 포장이력이 존재하지 않음");
                     MessageBox.Show("포장이력이 존재하지 않은 팔레트입니다.");
                     return;
                 }
-                Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 작업지시번호({GlobalUsage.WorkOrderNo})와 팔레트번호({txtPalletNo.TextBoxText})에 대해 팔레트 {txtPalletQty.TextBoxText}개를 입고함");
+                Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 작업지시번호({GlobalUsage.WorkOrderNo})와 팔레트번호({txtPalletNo.TextBoxText})에 대해 팔레트 {seqs.Count}개를 입고함");
                 GetDatas();
                 lblBarcodeNo.Text = "";
             }
@@ -89,10 +88,9 @@ namespace AxxenClient.Forms
             PalletTodayInVO item = service.GetPalletInfo(txtPalletNo.TextBoxText);
 
             txtPalletNo.TextBoxText = item.Pallet_No;
-            txtSize.TextBoxText = item.Plan_Date.ToString("yyyy-MM-dd HH:mm:ss");
+            txtSize.TextBoxText = item.Size_Code;
             txtBoxingGradeDatail.TextBoxText = item.Wc_Code;
             txtBoxingGrade.TextBoxText = item.Boxing_Grade_Code;
-            txtPalletQty.TextBoxText = 0.ToString();
         }
 
 
@@ -170,7 +168,7 @@ namespace AxxenClient.Forms
                     _Strings.Clear();
                 // 로그 추가 및 화면 표시
                 _Strings.AppendLine(value);
-                beforecode = lblBarcodeNo.Text;
+                beforecode = lblBarcodeNo.Text.Substring(0, 15); // TODO - ?
                 lblBarcodeNo.Text = "";
                 lblBarcodeNo.Text = _Strings.ToString().Replace("+", "").Replace("\n", "").Replace("\r", "");
             }
@@ -219,7 +217,7 @@ namespace AxxenClient.Forms
         string beforecode { get; set; }
         private void lblBarcodeNo_TextChanged(object sender, EventArgs e)
         {
-            if (lblBarcodeNo.Text.Length >= 8)
+            if (lblBarcodeNo.Text.Length >= 15)
             {
                 Pallet_MasterService service = new Pallet_MasterService();
                 PalletVO item = service.GetPalletByBarcode(lblBarcodeNo.Text);
@@ -229,13 +227,13 @@ namespace AxxenClient.Forms
                     txtBoxingGrade.TextBoxText = item.Boxing_Grade_Code;
                     txtBoxingGradeDatail.TextBoxText = item.Grade_Detail_Name;
                     txtSize.TextBoxText = item.Size_Code;
-                    if (beforecode.Equals(lblBarcodeNo.Text))
+                    if (beforecode.Equals(lblBarcodeNo.Text.Substring(0, 15)))
                     {
-                        palletQty++;
+                        txtBFour.TextBoxText += ( "/" + lblBarcodeNo.Text.Substring(15));
                     }
                     else
                     {
-                        palletQty = 1;
+                        txtBFour.TextBoxText = lblBarcodeNo.Text.Substring(15);
                     }
                 }
                 else

@@ -238,7 +238,7 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.aPanel2);
             this.Name = "MDS_SDS_007";
-            this.Text = "";
+            this.Text = "포장등급상세정의";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MDS_SDS_007_FormClosing);
             this.Load += new System.EventHandler(this.MDS_SDS_007_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

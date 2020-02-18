@@ -1,0 +1,62 @@
+﻿@model IEnumerable<API.Models.Def_History2VO>
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Def_Seq)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Workorderno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Def_Mi_Code)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Def_Mi_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Def_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Def_Qty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ins_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ins_Emp)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Def_Seq)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Workorderno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Def_Mi_Code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Def_Mi_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Def_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Def_Qty)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ins_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ins_Emp)
+        </td>
+    </tr>
+        }
+
+    </table>

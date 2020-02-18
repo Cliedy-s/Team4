@@ -71,5 +71,39 @@ namespace API.DAC
             }
             return list;
         }
+
+
+        public List<Def_History2VO> DefectiveDetails() // 불량이력 찾아오는 쿼리
+        {
+            string sql = @"select Def_Seq,Workorderno,defh.Def_Mi_Code as Def_Mi_Code,defm.Def_Mi_Name as Def_Mi_Name,Def_Date,Def_Qty,defm.Ins_Date as Ins_Date,defm.Ins_Emp as Ins_Emp
+                            from Def_History defh INNER JOIN Def_Mi_Master defm ON defh.Def_Mi_Code = defm.Def_Mi_Code Order by Def_Seq ASC";
+            List<Def_History2VO> list = new List<Def_History2VO>();
+            using (SqlConnection conn = new SqlConnection(Connstr))
+            {
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    list.Add(new Def_History2VO
+                    {
+                        Def_Seq = Convert.ToInt32(reader["Def_Seq"]),
+                        Workorderno = reader["Workorderno"].ToString(),
+                        Def_Mi_Code = reader["Def_Mi_Code"].ToString(),
+                        Def_Mi_Name = reader["Def_Mi_Name"].ToString(),
+                        Def_Date = reader["Def_Date"].ToString(),
+                        Def_Qty = Convert.ToInt32(reader["Def_Qty"]),
+                        //FileUploadFilePath = reader["Def_Image_Name"].ToString(),
+                        //FileUploadFile = (HttpPostedFileBase)reader["Def_Image_Path"],
+                        Ins_Date = reader["Ins_Date"].ToString(),
+                        Ins_Emp = reader["Ins_Emp"].ToString(),
+                    });
+                }
+                reader.Close();
+                conn.Close();
+            }
+            return list;
+        }
+        
     }
 }

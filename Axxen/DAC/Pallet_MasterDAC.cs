@@ -47,6 +47,55 @@ namespace DAC
                 return list;
             }
         }
+
+        public List<PalletGoodsVO> GetPalletGoods(string workOrderNo)
+        {
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText =
+ @" 
+SELECT pm.[Pallet_No]
+      ,pm.[Workorderno]
+      ,pm.[Barcode_No]
+      ,pm.[Barcode_PublishDate]
+      ,pm.[Grade_Code]
+      ,pm.[Grade_Detail_Code]
+      ,pm.[Size_Code]
+      ,pm.[In_Qty] as palin
+      ,pm.[CurrentQty]
+      ,pm.[Use_YN]
+      ,gih.[Pal_Seq]
+      ,gih.[In_Date]
+      ,gih.[Upload_Flag]
+      ,gih.[Update_YN]
+      ,gih.[Contain_Qty]
+      ,gih.[In_Qty] as goodsin
+      ,gih.[F_In_Qty]
+      ,gih.[Closed_Time]
+      ,gih.[Cancel_Time]
+      ,gih.[Print_Date]
+      ,gih.[In_YN]
+      ,gih.[Remark]
+      ,gih.[Ins_Date]
+      ,gih.[Ins_Emp]
+      ,gih.[Up_Date]
+      ,gih.[Up_Emp]
+  FROM [dbo].[Pallet_Master] AS pm
+  JOIN [dbo].[Goods_In_History] as gih ON gih.Pallet_No = pm.Pallet_No and gih.Workorderno = pm.Workorderno
+  where pm.Workorderno = @workorderno; ";
+                comm.CommandType = CommandType.Text;
+                comm.Parameters.AddWithValue("@workorderno", workOrderNo);
+
+                comm.Connection.Open();
+                SqlDataReader reader = comm.ExecuteReader();
+                List<PalletGoodsVO> list = Helper.DataReaderMapToList<PalletGoodsVO>(reader);
+                comm.Connection.Close();
+
+                return list;
+            }
+        }
+
         public List<PalletVO> GetAll(string workOrderNo)
         {
             using (SqlCommand comm = new SqlCommand())
@@ -183,6 +232,8 @@ namespace DAC
         public PalletVO GetPalletByBarcode(string barcodeNo)
         {
             PalletVO item = null;
+            string barcode = barcodeNo.Substring(0, 15);
+            string seq = barcodeNo.Substring(15);
             using (SqlCommand comm = new SqlCommand())
             {
                 comm.Connection = new SqlConnection(Connstr);
@@ -255,12 +306,12 @@ namespace DAC
       ,wo.[Item_Code]
       ,im.[Item_Name]
   FROM Goods_In_History as GIH
-		JOIN Pallet_Master AS pal ON GIH.Pallet_No = pal.Pallet_No
+		JOIN Pallet_Master AS pal ON GIH.Pallet_No = pal.Pallet_No AND pal.Workorderno = GIH.Workorderno
         LEFT OUTER JOIN  [WorkOrder] as wo ON pal.[WorkorderNo] = wo.[Workorderno]
         LEFT OUTER JOIN [Item_Master] as im ON im.[Item_Code] = wo.[Item_Code]
-		LEFT OUTER JOIN [BoxingGrade_Detail_Master] as bdm ON  bdm.[Use_YN] = 'Y' AND pal.Grade_Detail_Code = bdm.Boxing_Grade_Code
+		LEFT OUTER JOIN [BoxingGrade_Detail_Master] as bdm ON  bdm.[Use_YN] = 'Y' AND pal.Grade_Detail_Code = bdm.Grade_Detail_Code
   WHERE pal.[Use_YN] = 'Y' and pal.[Pallet_No] = @palletno and pal.Workorderno = @workorderno 
-  order by gih.pal_seq desc;";
+  order by gih.pal_seq desc; ";
 
                 comm.CommandType = CommandType.Text;
                 comm.Parameters.AddWithValue("@palletno", palletno);
@@ -329,7 +380,7 @@ namespace DAC
             {
                 comm.Connection = new SqlConnection(Connstr);
                 comm.CommandText =
- @" SELECT gih.[Workorderno]
+ @" 	SELECT gih.[Workorderno]
       ,wo.[Plan_Date]
       ,gih.[Pallet_No]
       ,pal.[Barcode_No]
@@ -338,13 +389,14 @@ namespace DAC
       ,bdm.[Boxing_Grade_Code]
       ,pal.[In_Qty]
       ,pal.[CurrentQty]
+	  ,pal.Size_Code
       ,gih.[In_Date]
       ,gih.[In_YN]
       ,wo.[Item_Code]
       ,wo.[Wc_Code]
   FROM [WorkOrder] as wo
   RIGHT OUTER JOIN [Goods_In_History] as gih ON gih.[Workorderno] = wo.[Workorderno]
-  LEFT OUTER JOIN [Pallet_Master] as pal ON pal.[Pallet_No] = gih.[Pallet_No] AND pal.[Use_YN] = 'Y'
+  LEFT OUTER JOIN [Pallet_Master] as pal ON pal.[Pallet_No] = gih.[Pallet_No] AND pal.Workorderno = gih.Workorderno AND pal.[Use_YN] = 'Y' 
   LEFT OUTER JOIN [BoxingGrade_Detail_Master] as bdm ON bdm.[Grade_Detail_Code] = pal.[Grade_Detail_Code] AND bdm.[Use_YN] = 'Y'
     WHERE gih.[Pallet_No] =@palletNo ; ";
                 comm.CommandType = CommandType.Text;
@@ -363,10 +415,10 @@ namespace DAC
                     item.Boxing_Grade_Code = reader[6].ToString();
                     item.In_Qty = Convert.ToInt32(reader[7].ToString());
                     item.CurrentQty = Convert.ToInt32(reader[8].ToString());
-                    item.In_Date = Convert.ToDateTime(reader[9].ToString());
-                    item.In_YN = reader[10].ToString();
-                    item.Item_Code = reader[11].ToString();
-                    item.Wc_Code = reader[12].ToString();
+                    item.Size_Code = reader[9].ToString();
+                    item.In_YN = reader[11].ToString();
+                    item.Item_Code = reader[12].ToString();
+                    item.Wc_Code = reader[13].ToString();
                 }
                 comm.Connection.Close();
 
@@ -397,8 +449,8 @@ namespace DAC
       ,wo.[Item_Code]
       ,wo.[Wc_Code]
   FROM [WorkOrder] as wo
-  RIGHT OUTER JOIN [Goods_In_History] as gih ON gih.[Workorderno] = wo.[Workorderno]
-  LEFT OUTER JOIN [Pallet_Master] as pal ON pal.[Pallet_No] = gih.[Pallet_No] AND pal.[Use_YN] = 'Y'
+  RIGHT OUTER JOIN [Goods_In_History] as gih ON gih.[Workorderno] = wo.[Workorderno] 
+  LEFT OUTER JOIN [Pallet_Master] as pal ON pal.[Pallet_No] = gih.[Pallet_No] and gih.Workorderno = pal.Workorderno AND pal.[Use_YN] = 'Y'
   LEFT OUTER JOIN [BoxingGrade_Detail_Master] as bdm ON bdm.[Grade_Detail_Code] = pal.[Grade_Detail_Code] AND bdm.[Use_YN] = 'Y'
     WHERE In_YN = 'N'; ";
                 comm.CommandType = CommandType.Text;
@@ -430,13 +482,14 @@ namespace DAC
       ,bdm.[Boxing_Grade_Code]
       ,pal.[In_Qty]
       ,pal.[CurrentQty]
+	  ,pal.Size_Code
       ,gih.[In_Date]
       ,gih.[In_YN]
       ,wo.[Item_Code]
       ,wo.[Wc_Code]
   FROM [WorkOrder] as wo
   RIGHT OUTER JOIN [Goods_In_History] as gih ON gih.[Workorderno] = wo.[Workorderno]
-  LEFT OUTER JOIN [Pallet_Master] as pal ON pal.[Pallet_No] = gih.[Pallet_No] AND pal.[Use_YN] = 'Y'
+  LEFT OUTER JOIN [Pallet_Master] as pal ON pal.[Pallet_No] = gih.[Pallet_No] AND pal.Workorderno = gih.Workorderno AND pal.[Use_YN] = 'Y' 
   LEFT OUTER JOIN [BoxingGrade_Detail_Master] as bdm ON bdm.[Grade_Detail_Code] = pal.[Grade_Detail_Code] AND bdm.[Use_YN] = 'Y'
     WHERE  gih.[In_Date] = CAST(GETDATE() AS DATE) ; ";
                 comm.CommandType = CommandType.Text;
@@ -454,17 +507,18 @@ namespace DAC
         /// </summary>
         /// <param name="palletNo"></param>
         /// <returns></returns>
-        public bool UpdateBarcodeNo(string palletNo, string barcodeno)
+        public bool UpdateBarcodeNo(string palletNo, string workorderno, string barcodeno)
         {
             using (SqlCommand comm = new SqlCommand())
             {
                 comm.Connection = new SqlConnection(Connstr);
                 comm.CommandText =
- @" UPDATE [Pallet_Master] SET [Barcode_No] = @BarcodeNo WHERE Pallet_No = @PalletNo; ";
+ @" UPDATE [Pallet_Master] SET [Barcode_No] = @BarcodeNo WHERE Pallet_No = @PalletNo AND Workorderno = @Workorderno; ";
 
                 comm.CommandType = CommandType.Text;
                 comm.Parameters.AddWithValue("@BarcodeNo", barcodeno);
                 comm.Parameters.AddWithValue("@PalletNo", palletNo);
+                comm.Parameters.AddWithValue("@Workorderno", workorderno);
 
                 comm.Connection.Open();
                 int result = Convert.ToInt32(comm.ExecuteNonQuery());
@@ -580,8 +634,14 @@ namespace DAC
         /// 팔레트입고
         /// </summary>
         /// <returns></returns>
-        public bool InputPallet(string userid, string workorderno, string palletno, int inqty)
+        public bool InputPallet(string userid, string workorderno, string palletno, List<string> seqs)
         {
+            StringBuilder sb = new StringBuilder();
+            foreach (string item in seqs)
+            {
+                sb.Append(item + "@");
+            }
+
             using (SqlCommand comm = new SqlCommand())
             {
                 comm.Connection = new SqlConnection(Connstr);
@@ -591,7 +651,9 @@ namespace DAC
                 comm.Parameters.AddWithValue("@username", userid);
                 comm.Parameters.AddWithValue("@workorderno", workorderno);
                 comm.Parameters.AddWithValue("@palletno", palletno);
-                comm.Parameters.AddWithValue("@In_Qty", inqty);
+                comm.Parameters.AddWithValue("@In_Qty", seqs.Count);
+                comm.Parameters.AddWithValue("@seqs", seqs.ToString().TrimEnd('@'));
+                comm.Parameters.AddWithValue("@seperator", "@");
 
                 comm.Connection.Open();
                 int result = comm.ExecuteNonQuery();
@@ -635,22 +697,23 @@ namespace DAC
         /// 팔레트 삭제
         /// </summary>
         /// <returns></returns>
-        public bool DeletePallet(string palletno)
+        public bool DeletePallet(string palletno, string workOrderNo)
         {
             using (SqlCommand comm = new SqlCommand())
             {
                 comm.Connection = new SqlConnection(Connstr);
                 comm.CommandText =
- @" DELETE FROM [Pallet_Master] WHERE [Pallet_No] =@palletno; ";
+ @"DELETE FROM [Pallet_Master] WHERE [Pallet_No] =@palletno AND Workorderno = @workOrderNo; ";
 
                 comm.CommandType = CommandType.Text;
                 comm.Parameters.AddWithValue("@palletno", palletno);
+                comm.Parameters.AddWithValue("@workOrderNo", workOrderNo);
 
                 comm.Connection.Open();
                 int result = comm.ExecuteNonQuery();
                 comm.Connection.Close();
 
-                Log.WriteError($"존재하지않는 팔레트({palletno})를 제거하려함");
+                if(result == 0) Log.WriteError($"존재하지않는 팔레트({palletno})를 제거하려함");
                 return result > 0;
             }
         }

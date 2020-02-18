@@ -325,7 +325,7 @@
             this.Controls.Add(this.aLabel1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "MDS_ODS_001";
-            this.Text = "";
+            this.Text = "공정정보";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MDS_ODS_001_FormClosing);
             this.Load += new System.EventHandler(this.MDS_ODS_001_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProcess)).EndInit();

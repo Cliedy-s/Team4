@@ -83,7 +83,7 @@
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.ControlBox = false;
             this.Name = "KPI_RPT_003";
-            this.Text = "";
+            this.Text = "월별포장실적현황";
             this.Activated += new System.EventHandler(this.KPI_RPT_003_Activated);
             this.Deactivate += new System.EventHandler(this.KPI_RPT_003_Deactivate);
             this.Load += new System.EventHandler(this.KPI_RPT_003_Load);

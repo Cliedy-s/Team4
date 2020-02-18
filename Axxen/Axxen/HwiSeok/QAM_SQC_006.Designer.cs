@@ -83,7 +83,7 @@
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.ControlBox = false;
             this.Name = "QAM_SQC_006";
-            this.Text = "";
+            this.Text = "원재료LOT관리";
             this.Load += new System.EventHandler(this.QAM_SQC_006_Load);
             this.panTop.ResumeLayout(false);
             this.panTop.PerformLayout();

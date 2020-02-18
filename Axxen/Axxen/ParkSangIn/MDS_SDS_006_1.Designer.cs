@@ -762,7 +762,7 @@
             this.Controls.Add(this.aPanel5);
             this.Name = "MDS_SDS_006_1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "";
+            this.Text = "품질규격등록";
             this.Load += new System.EventHandler(this.MDS_SDS_006_1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudsample)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudlsl)).EndInit();

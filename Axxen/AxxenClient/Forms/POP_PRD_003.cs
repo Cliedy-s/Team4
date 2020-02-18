@@ -62,7 +62,7 @@ namespace AxxenClient.Forms
                         new VO.PalletVO()
                         {
                             Pallet_No = txtPalletNo.TextBoxText,
-                            Barcode_No = DateTime.Now.ToString("yyyyMMddHHmmssff"),
+                            Barcode_No = DateTime.Now.ToString("yyyyMMddHHmmss")+ "B",
                             WorkOrderNo = GlobalUsage.WorkOrderNo,
                             CurrentQty = Convert.ToInt32(txtPrintPallet.TextBoxText),
                             Grade_Detail_Code = txtBoxingGradeDetail.CodeText,

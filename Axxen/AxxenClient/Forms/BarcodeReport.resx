@@ -121,20 +121,25 @@
     <value>17, 56</value>
   </metadata>
   <data name="customSqlQuery1.Sql" xml:space="preserve">
-    <value>SELECT [Pallet_No]
-      ,[Workorderno]
-      ,[Barcode_No]
-      ,[Barcode_PublishDate]
-      ,[Grade_Code]
-      ,[Grade_Detail_Code]
-      ,[Grade_Detail_Name]
-      ,[Size_Code]
-      ,[In_Qty]
-      ,[CurrentQty]
-      ,[Use_YN]
-  FROM [dbo].[Pallet_Master]</value>
+    <value> SELECT pal.[Pallet_No]
+      ,pal.[WorkOrderNo]
+      ,CONCAT(pal.[Barcode_No], GIH.PAL_SEQ) AS [Barcode_No]
+      ,pal.[Grade_Detail_Code]
+      ,bdm.[Grade_Detail_Name]
+      ,bdm.[Boxing_Grade_Code]
+      ,pal.[Size_Code]
+      ,pal.[In_Qty]
+      ,pal.[CurrentQty]
+      ,pal.[Use_YN]
+      ,wo.[Item_Code]
+      ,im.[Item_Name]
+  FROM Goods_In_History as GIH
+		JOIN Pallet_Master AS pal ON GIH.Pallet_No = pal.Pallet_No AND pal.Workorderno = GIH.Workorderno
+        LEFT OUTER JOIN  [WorkOrder] as wo ON pal.[WorkorderNo] = wo.[Workorderno]
+        LEFT OUTER JOIN [Item_Master] as im ON im.[Item_Code] = wo.[Item_Code]
+		LEFT OUTER JOIN [BoxingGrade_Detail_Master] as bdm ON  bdm.[Use_YN] = 'Y' AND pal.Grade_Detail_Code = bdm.Grade_Detail_Code</value>
   </data>
   <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
-    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlF1ZXJ5Ij48RmllbGQgTmFtZT0iUGFsbGV0X05vIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IldvcmtvcmRlcm5vIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkJhcmNvZGVfTm8iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQmFyY29kZV9QdWJsaXNoRGF0ZSIgVHlwZT0iRGF0ZVRpbWUiIC8+PEZpZWxkIE5hbWU9IkdyYWRlX0NvZGUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iR3JhZGVfRGV0YWlsX0NvZGUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iR3JhZGVfRGV0YWlsX05hbWUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iU2l6ZV9Db2RlIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkluX1F0eSIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IkN1cnJlbnRRdHkiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJVc2VfWU4iIFR5cGU9IlN0cmluZyIgLz48L1ZpZXc+PC9EYXRhU2V0Pg==</value>
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlF1ZXJ5Ij48RmllbGQgTmFtZT0iUGFsbGV0X05vIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IldvcmtPcmRlck5vIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkJhcmNvZGVfTm8iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iR3JhZGVfRGV0YWlsX0NvZGUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iR3JhZGVfRGV0YWlsX05hbWUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQm94aW5nX0dyYWRlX0NvZGUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iU2l6ZV9Db2RlIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkluX1F0eSIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IkN1cnJlbnRRdHkiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJVc2VfWU4iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iSXRlbV9Db2RlIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Ikl0ZW1fTmFtZSIgVHlwZT0iU3RyaW5nIiAvPjwvVmlldz48L0RhdGFTZXQ+</value>
   </data>
 </root>

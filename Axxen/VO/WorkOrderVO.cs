@@ -27,9 +27,11 @@ namespace VO
         public int Shot_Per_Qty { get; set; }           // 포장 샷당 pcs수
         public int Dry_GV_Qty { get; set; }             // 건조대차 기본수량
         public int Heat_GV_Qty { get; set; }            // 성형대차 기본수량
-    }                
+        public int Box_Qty { get; set; }                   // 팔렛당 박스수
+        public int Pcs_Qty { get; set; }                   // 박스당 pcs수 
+    }
     public class WorkOrderNewVO
-    { 
+    {
         public string Item_Code { get; set; }              // 품목번호
         public string Wc_Code { get; set; }                // 작업장코드
         public int Plan_Qty { get; set; }                // 계획수량

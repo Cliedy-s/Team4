@@ -42,6 +42,8 @@ namespace AxxenClient.Forms
             InitControlUtil.AddNewColumnToDataGridView(dgvBoxing, "품목명", "Item_Name", true, 200);
             InitControlUtil.AddNewColumnToDataGridView(dgvBoxing, "수량", "Loading_Qty", true, 100, DataGridViewContentAlignment.MiddleRight);
             InitControlUtil.AddNewColumnToDataGridView(dgvBoxing, "대차상태", "GV_Status", true, 110, DataGridViewContentAlignment.MiddleCenter);
+            InitControlUtil.AddNewColumnToDataGridView(dgvBoxing, "palinbox", "Box_Qty", false, 100);
+            InitControlUtil.AddNewColumnToDataGridView(dgvBoxing, "boxinpcs", "Pcs_Qty", false, 100);
         }
         private void GetDatas()
         {
@@ -57,12 +59,30 @@ namespace AxxenClient.Forms
         {
             if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
             {
+                // 검사
                 if (dgvBoxing.SelectedRows.Count < 1)
                 {
                     Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 언로딩하려 했지만 대차를 선택하지 않음");
                     MessageBox.Show("대차를 선택해주세요");
                     return;
                 }
+
+                // 팔레트 수량 검사
+                Pallet_MasterService pservice = new Pallet_MasterService();
+                List<PalletGoodsVO> list = pservice.GetPalletGoods(GlobalUsage.WorkOrderNo);
+                int goodcnt = Convert.ToInt32(dgvBoxing.SelectedRows[0].Cells[7].Value) * Convert.ToInt32(dgvBoxing.SelectedRows[0].Cells[8].Value);
+                int inablecnt = 0;
+                int loadingqty = Convert.ToInt32(dgvBoxing.SelectedRows[0].Cells[5].Value);
+
+                list.ForEach((item) => { inablecnt += (goodcnt - item.Contain_Qty); });
+
+                if(loadingqty > inablecnt)
+                {
+                    MessageBox.Show("팔래트 수가 부족합니다.");
+                    return;
+                }
+
+                // 포장
                 GV_HistoryService service = new GV_HistoryService();
                 if (service.UpdateUnload(GlobalUsage.WorkOrderNo, GlobalUsage.UserID, dgvBoxing.SelectedRows[0].Cells[0].Value.ToString(), null, GlobalUsage.WcCode, Convert.ToInt32(dgvBoxing.SelectedRows[0].Cells[5].Value)))
                 {
