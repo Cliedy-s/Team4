@@ -58,6 +58,7 @@
             this.txtValue.Size = new System.Drawing.Size(278, 29);
             this.txtValue.TabIndex = 2;
             this.txtValue.txtType = Axxen.CustomControls.TextType.Normal;
+            this.txtValue.TextChanged += new System.EventHandler(this.txtValue_TextChanged);
             // 
             // btnSearch
             // 

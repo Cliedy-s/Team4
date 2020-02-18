@@ -47,55 +47,6 @@ namespace DAC
                 return list;
             }
         }
-
-        public List<PalletGoodsVO> GetPalletGoods(string workOrderNo)
-        {
-            using (SqlCommand comm = new SqlCommand())
-            {
-                comm.Connection = new SqlConnection(Connstr);
-                comm.CommandText =
- @" 
-SELECT pm.[Pallet_No]
-      ,pm.[Workorderno]
-      ,pm.[Barcode_No]
-      ,pm.[Barcode_PublishDate]
-      ,pm.[Grade_Code]
-      ,pm.[Grade_Detail_Code]
-      ,pm.[Size_Code]
-      ,pm.[In_Qty] as palin
-      ,pm.[CurrentQty]
-      ,pm.[Use_YN]
-      ,gih.[Pal_Seq]
-      ,gih.[In_Date]
-      ,gih.[Upload_Flag]
-      ,gih.[Update_YN]
-      ,gih.[Contain_Qty]
-      ,gih.[In_Qty] as goodsin
-      ,gih.[F_In_Qty]
-      ,gih.[Closed_Time]
-      ,gih.[Cancel_Time]
-      ,gih.[Print_Date]
-      ,gih.[In_YN]
-      ,gih.[Remark]
-      ,gih.[Ins_Date]
-      ,gih.[Ins_Emp]
-      ,gih.[Up_Date]
-      ,gih.[Up_Emp]
-  FROM [dbo].[Pallet_Master] AS pm
-  JOIN [dbo].[Goods_In_History] as gih ON gih.Pallet_No = pm.Pallet_No and gih.Workorderno = pm.Workorderno
-  where pm.Workorderno = @workorderno; ";
-                comm.CommandType = CommandType.Text;
-                comm.Parameters.AddWithValue("@workorderno", workOrderNo);
-
-                comm.Connection.Open();
-                SqlDataReader reader = comm.ExecuteReader();
-                List<PalletGoodsVO> list = Helper.DataReaderMapToList<PalletGoodsVO>(reader);
-                comm.Connection.Close();
-
-                return list;
-            }
-        }
-
         public List<PalletVO> GetAll(string workOrderNo)
         {
             using (SqlCommand comm = new SqlCommand())
@@ -130,6 +81,173 @@ SELECT pm.[Pallet_No]
                 return list;
             }
         }
+        public List<PalletGoodsVO> GetPalletGoods(string workOrderNo)
+        {
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText =
+ @" 
+SELECT pm.[Pallet_No]
+      ,pm.[Workorderno]
+      ,pm.[Barcode_No]
+      ,pm.[Barcode_PublishDate]
+      ,pm.[Grade_Code]
+      ,pm.[Grade_Detail_Code]
+	  ,BGDM.Grade_Detail_Name
+	  ,BGDM.Boxing_Grade_Code
+      ,pm.[Size_Code]
+      ,pm.[In_Qty] as palin
+      ,pm.[CurrentQty]
+      ,pm.[Use_YN]
+      ,gih.[Pal_Seq]
+      ,gih.[In_Date]
+      ,gih.[Upload_Flag]
+      ,gih.[Update_YN]
+      ,gih.[Contain_Qty]
+      ,gih.[In_Qty] as goodsin
+      ,gih.[F_In_Qty]
+      ,gih.[Closed_Time]
+      ,gih.[Cancel_Time]
+      ,gih.[Print_Date]
+      ,gih.[In_YN]
+      ,gih.[Remark]
+      ,gih.[Ins_Date]
+      ,gih.[Ins_Emp]
+      ,gih.[Up_Date]
+      ,gih.[Up_Emp]
+  FROM [dbo].[Pallet_Master] AS pm
+  JOIN [dbo].[Goods_In_History] as gih ON gih.Pallet_No = pm.Pallet_No and gih.Workorderno = pm.Workorderno
+  JOIN BoxingGrade_Detail_Master AS BGDM ON PM.Grade_Detail_Code = BGDM.Grade_Detail_Code
+  where pm.Workorderno = @workorderno; ";
+                comm.CommandType = CommandType.Text;
+                comm.Parameters.AddWithValue("@workorderno", workOrderNo);
+
+                comm.Connection.Open();
+                SqlDataReader reader = comm.ExecuteReader();
+                List<PalletGoodsVO> list = Helper.DataReaderMapToList<PalletGoodsVO>(reader);
+                comm.Connection.Close();
+
+                return list;
+            }
+        }
+        /// <summary>
+        /// 바코드로 팔레트 검색
+        /// </summary>
+        /// <param name="workOrderNo"></param>
+        /// <returns></returns>
+        public PalletGoodsVO GetPalletGoods(string workOrderNo, string barcodeno, string palseq)
+        {
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText =
+ @" 
+SELECT pm.[Pallet_No]
+      ,pm.[Workorderno]
+      ,pm.[Barcode_No]
+      ,pm.[Barcode_PublishDate]
+      ,pm.[Grade_Code]
+      ,pm.[Grade_Detail_Code]
+	  ,BGDM.Grade_Detail_Name
+	  ,BGDM.Boxing_Grade_Code
+      ,pm.[Size_Code]
+      ,pm.[In_Qty] as palin
+      ,pm.[CurrentQty]
+      ,pm.[Use_YN]
+      ,gih.[Pal_Seq]
+      ,gih.[In_Date]
+      ,gih.[Upload_Flag]
+      ,gih.[Update_YN]
+      ,gih.[Contain_Qty]
+      ,gih.[In_Qty] as goodsin
+      ,gih.[F_In_Qty]
+      ,gih.[Closed_Time]
+      ,gih.[Cancel_Time]
+      ,gih.[Print_Date]
+      ,gih.[In_YN]
+      ,gih.[Remark]
+      ,gih.[Ins_Date]
+      ,gih.[Ins_Emp]
+      ,gih.[Up_Date]
+      ,gih.[Up_Emp]
+  FROM [dbo].[Pallet_Master] AS pm
+  JOIN [dbo].[Goods_In_History] as gih ON gih.Pallet_No = pm.Pallet_No and gih.Workorderno = pm.Workorderno
+  JOIN BoxingGrade_Detail_Master AS BGDM ON PM.Grade_Detail_Code = BGDM.Grade_Detail_Code
+  where pm.Workorderno = @workorderno AND Barcode_No = @barcodeno AND Pal_Seq = @palseq AND In_YN = 'N'; ";
+                comm.CommandType = CommandType.Text;
+                comm.Parameters.AddWithValue("@workorderno", workOrderNo);
+                comm.Parameters.AddWithValue("@barcodeno", barcodeno);
+                comm.Parameters.AddWithValue("@palseq", palseq);
+
+                comm.Connection.Open();
+                SqlDataReader reader = comm.ExecuteReader();
+                List<PalletGoodsVO> list = Helper.DataReaderMapToList<PalletGoodsVO>(reader);
+                comm.Connection.Close();
+
+                return list.Count == 0 ? null: list[0];
+            }
+        }
+        /// <summary>
+        /// 바코드 번호로 팔레트 검색
+        /// </summary>
+        /// <param name="barcodeNo"></param>
+        /// <returns></returns>
+        public PalletVO GetPalletByBarcode(string barcodeNo)
+        {
+            PalletVO item = null;
+            string barcode = barcodeNo.Substring(0, 15);
+            string seq = barcodeNo.Substring(15);
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText =
+ @"  SELECT TOP(1) pal.[Pallet_No]
+      ,pal.[WorkOrderNo]
+      ,pal.[Barcode_No]
+      ,pal.[Grade_Detail_Code]
+      ,bdm.[Grade_Detail_Name]
+      ,bdm.[Boxing_Grade_Code]
+      ,pal.[Size_Code]
+      ,pal.[In_Qty]
+      ,pal.[CurrentQty]
+      ,pal.[Use_YN]
+      ,wo.[Item_Code]
+      ,im.[Item_Name]
+  FROM [Pallet_Master] as pal
+        LEFT OUTER JOIN  [WorkOrder] as wo ON pal.[WorkorderNo] = wo.[Workorderno]
+        LEFT OUTER JOIN [Item_Master] as im ON im.[Item_Code] = wo.[Item_Code]
+		LEFT OUTER JOIN [BoxingGrade_Detail_Master] as bdm ON  bdm.[Use_YN] = 'Y' AND pal.Grade_Detail_Code = bdm.Boxing_Grade_Code
+  WHERE pal.[Use_YN] = 'Y' AND pal.[Barcode_No] = @barcodeNo ;  ";
+                comm.CommandType = CommandType.Text;
+                comm.Parameters.AddWithValue("@barcodeNo", barcodeNo);
+
+                comm.Connection.Open();
+                SqlDataReader reader = comm.ExecuteReader();
+                if (reader.Read())
+                {
+                    item = new PalletVO()
+                    {
+                        Pallet_No = reader[0].ToString(),
+                        WorkOrderNo = reader[1].ToString(),
+                        Barcode_No = reader[2].ToString(),
+                        Grade_Detail_Code = reader[3].ToString(),
+                        Grade_Detail_Name = reader[4].ToString(),
+                        Boxing_Grade_Code = reader[5].ToString(),
+                        Size_Code = reader[6].ToString(),
+                        In_Qty = Convert.ToInt32(reader[7]),
+                        CurrentQty = Convert.ToInt32(reader[8]),
+                        Use_YN = reader[9].ToString(),
+                        Item_Code = reader[10].ToString(),
+                        Item_Name = reader[11].ToString()
+                    };
+                }
+                comm.Connection.Close();
+
+                return item;
+            }
+        }
+
 
         /// <summary>
         /// 입고안된 팔레트목록 가져오기
@@ -198,65 +316,6 @@ SELECT pm.[Pallet_No]
   WHERE pal.[Use_YN] = 'Y' AND pal.[Pallet_No] = @palletno ;  ";
                 comm.CommandType = CommandType.Text;
                 comm.Parameters.AddWithValue("@palletno", palletno);
-
-                comm.Connection.Open();
-                SqlDataReader reader = comm.ExecuteReader();
-                if (reader.Read())
-                {
-                    item = new PalletVO()
-                    {
-                        Pallet_No = reader[0].ToString(),
-                        WorkOrderNo = reader[1].ToString(),
-                        Barcode_No = reader[2].ToString(),
-                        Grade_Detail_Code = reader[3].ToString(),
-                        Grade_Detail_Name = reader[4].ToString(),
-                        Boxing_Grade_Code = reader[5].ToString(),
-                        Size_Code = reader[6].ToString(),
-                        In_Qty = Convert.ToInt32(reader[7]),
-                        CurrentQty = Convert.ToInt32(reader[8]),
-                        Use_YN = reader[9].ToString(),
-                        Item_Code = reader[10].ToString(),
-                        Item_Name = reader[11].ToString()
-                    };
-                }
-                comm.Connection.Close();
-
-                return item;
-            }
-        }
-        /// <summary>
-        /// 바코드 번호로 팔레트 검색
-        /// </summary>
-        /// <param name="barcodeNo"></param>
-        /// <returns></returns>
-        public PalletVO GetPalletByBarcode(string barcodeNo)
-        {
-            PalletVO item = null;
-            string barcode = barcodeNo.Substring(0, 15);
-            string seq = barcodeNo.Substring(15);
-            using (SqlCommand comm = new SqlCommand())
-            {
-                comm.Connection = new SqlConnection(Connstr);
-                comm.CommandText =
- @"  SELECT TOP(1) pal.[Pallet_No]
-      ,pal.[WorkOrderNo]
-      ,pal.[Barcode_No]
-      ,pal.[Grade_Detail_Code]
-      ,bdm.[Grade_Detail_Name]
-      ,bdm.[Boxing_Grade_Code]
-      ,pal.[Size_Code]
-      ,pal.[In_Qty]
-      ,pal.[CurrentQty]
-      ,pal.[Use_YN]
-      ,wo.[Item_Code]
-      ,im.[Item_Name]
-  FROM [Pallet_Master] as pal
-        LEFT OUTER JOIN  [WorkOrder] as wo ON pal.[WorkorderNo] = wo.[Workorderno]
-        LEFT OUTER JOIN [Item_Master] as im ON im.[Item_Code] = wo.[Item_Code]
-		LEFT OUTER JOIN [BoxingGrade_Detail_Master] as bdm ON  bdm.[Use_YN] = 'Y' AND pal.Grade_Detail_Code = bdm.Boxing_Grade_Code
-  WHERE pal.[Use_YN] = 'Y' AND pal.[Barcode_No] = @barcodeNo ;  ";
-                comm.CommandType = CommandType.Text;
-                comm.Parameters.AddWithValue("@barcodeNo", barcodeNo);
 
                 comm.Connection.Open();
                 SqlDataReader reader = comm.ExecuteReader();
@@ -467,32 +526,36 @@ SELECT pm.[Pallet_No]
         /// 금일 입고 팔레트 목록
         /// </summary>
         /// <returns></returns>
-        public List<PalletTodayInVO> GetPalletTodayIn()
+        public List<PalletTodayInVO> GetPalletTodayIn(string workorderno)
         {
             using (SqlCommand comm = new SqlCommand())
             {
                 comm.Connection = new SqlConnection(Connstr);
                 comm.CommandText =
- @" SELECT gih.[Workorderno]
+ @"SELECT gih.[Workorderno]
       ,wo.[Plan_Date]
       ,gih.[Pallet_No]
       ,pal.[Barcode_No]
       ,pal.[Grade_Detail_Code]
       ,bdm.[Grade_Detail_Name]
       ,bdm.[Boxing_Grade_Code]
-      ,pal.[In_Qty]
+      ,gih.F_In_Qty as In_Qty
       ,pal.[CurrentQty]
 	  ,pal.Size_Code
       ,gih.[In_Date]
       ,gih.[In_YN]
       ,wo.[Item_Code]
       ,wo.[Wc_Code]
-  FROM [WorkOrder] as wo
-  RIGHT OUTER JOIN [Goods_In_History] as gih ON gih.[Workorderno] = wo.[Workorderno]
-  LEFT OUTER JOIN [Pallet_Master] as pal ON pal.[Pallet_No] = gih.[Pallet_No] AND pal.Workorderno = gih.Workorderno AND pal.[Use_YN] = 'Y' 
-  LEFT OUTER JOIN [BoxingGrade_Detail_Master] as bdm ON bdm.[Grade_Detail_Code] = pal.[Grade_Detail_Code] AND bdm.[Use_YN] = 'Y'
-    WHERE  gih.[In_Date] = CAST(GETDATE() AS DATE) ; ";
+	  ,im.Item_Name
+	  ,gih.Pal_Seq
+  FROM [dbo].[Pallet_Master] AS pal
+  JOIN WorkOrder AS WO ON pal.Workorderno = wo.Workorderno
+  JOIN Item_Master as im on im.Item_Code = wo.Item_Code
+  JOIN [dbo].[Goods_In_History] as gih ON gih.Pallet_No = pal.Pallet_No and gih.Workorderno = pal.Workorderno AND In_YN = 'Y'
+  JOIN BoxingGrade_Detail_Master AS bdm ON pal.Grade_Detail_Code = bdm.Grade_Detail_Code
+    WHERE  gih.[In_Date] = CAST(GETDATE() AS DATE) ;";
                 comm.CommandType = CommandType.Text;
+                comm.Parameters.AddWithValue("@workorderno", workorderno);
 
                 comm.Connection.Open();
                 SqlDataReader reader = comm.ExecuteReader();
@@ -652,7 +715,7 @@ SELECT pm.[Pallet_No]
                 comm.Parameters.AddWithValue("@workorderno", workorderno);
                 comm.Parameters.AddWithValue("@palletno", palletno);
                 comm.Parameters.AddWithValue("@In_Qty", seqs.Count);
-                comm.Parameters.AddWithValue("@seqs", seqs.ToString().TrimEnd('@'));
+                comm.Parameters.AddWithValue("@seqs", sb.ToString().TrimEnd('@'));
                 comm.Parameters.AddWithValue("@seperator", "@");
 
                 comm.Connection.Open();
@@ -663,7 +726,7 @@ SELECT pm.[Pallet_No]
                 {
                     Log.WriteInfo($"{userid}이(가) 팔레트를 입고하려했지만 작업지시번호({workorderno})와 팔레트번호({palletno})가 일치하는 포장이력이 존재하지 않음");
                 }
-                return result > 0;
+                return result > 1;
             }
         }
         /// <summary>

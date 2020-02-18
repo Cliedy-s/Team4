@@ -170,7 +170,7 @@ namespace AxxenClient.Forms
         {
             setProgress += SetProgress;
             machineStop += MachineStop;
-            machine2 = new Machine(2, GlobalUsage.WorkOrderNo, GlobalUsage.UserID, GlobalUsage.WcCode, (value) => btnMachineRun.Invoke(machineStop, value), (stackqty, totalqty, prdqty, outqty) => progressMachine.Invoke(setProgress, stackqty, totalqty));
+            machine2 = new Machine(2, GlobalUsage.WorkOrderNo, GlobalUsage.UserID, GlobalUsage.WcCode, (value) => btnMachineRun?.Invoke(machineStop, value), (stackqty, totalqty, prdqty, outqty) => progressMachine?.Invoke(setProgress, stackqty, totalqty));
             if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
             {
                 if (!isMachineRun)
@@ -215,5 +215,18 @@ namespace AxxenClient.Forms
             progressMachine.Value = (int)(((stackqty * 1.0 / totalqty) * 100) % 101);
         }
 
+        private void AButton2_Click(object sender, EventArgs e)
+        {
+            KeypadForm frm = new KeypadForm();
+            frm.FormSendEvent += new KeypadForm.FormSendDataHandler(DieaseUpdateEventMethod);
+
+            frm.Show();
+        }
+
+        private void DieaseUpdateEventMethod(object sender)
+        {
+            //폼2에서 델리게이트로 이벤트 발생하면 현재 함수 Call
+            nudMeasure.Text = sender.ToString();
+        }
     }
 }

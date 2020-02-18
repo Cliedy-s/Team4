@@ -56,11 +56,14 @@ namespace AxxenClient.Forms
                 case WorkType.Load:
                     panLoad.Visible = true;
                     btnMachineRun.Enabled = false;
+                    btnMachineRun.Visible = false;
                     btnMachineRun.BackColor = Color.FromArgb(188, 209, 215);
                     break;
                 case WorkType.Boxing:
-                    machinet = MachineType.Boxing;
                     panBoxing.Visible = true;
+                    btnMachineRun.Enabled = false;
+                    btnMachineRun.Visible = false;
+                    btnMachineRun.BackColor = Color.FromArgb(188, 209, 215); 
                     break;
             }
 
@@ -399,8 +402,8 @@ namespace AxxenClient.Forms
                 machineStop += MachineStop;
                 machine0 = new Machine
                     (0, GlobalUsage.WorkOrderNo, GlobalUsage.UserID, GlobalUsage.WcCode,
-                    (value) => btnMachineRun.Invoke(machineStop, value),
-                    (stackqty, totalqty, prdqty, outqty) => { btnMachineRun.Invoke(setProcess, stackqty, totalqty); SetGlobalUsage(prdqty, outqty); });
+                    (value) => btnMachineRun?.Invoke(machineStop, value),
+                    (stackqty, totalqty, prdqty, outqty) => { btnMachineRun?.Invoke(setProcess, stackqty, totalqty); SetGlobalUsage(prdqty, outqty); });
 
                 if (!isMachineRun)
                 {
@@ -434,34 +437,6 @@ namespace AxxenClient.Forms
                             // 기계 실행
                             Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 작업({GlobalUsage.WorkOrderNo})의 성형기계로 금형({mold.Mold_Code})을 이용해 품목({workorder.Item_Code})을 생산함");
                             machine0.MachineStart(input.Qty.Value, new Item_MoldPair(workorder.Item_Code, mold.Mold_Code, workorder.Line_Per_Qty));
-                            break;
-                        case MachineType.Boxing: // 포장일경우
-                            // 팔레트 수량 검사
-                            Pallet_MasterService pservice = new Pallet_MasterService();
-                            List<PalletGoodsVO> list = pservice.GetPalletGoods(GlobalUsage.WorkOrderNo);
-                            if(list != null)
-                            {
-                                int goodcnt = Convert.ToInt32(dgvMain.SelectedRows[0].Cells[16].Value) * Convert.ToInt32(dgvMain.SelectedRows[0].Cells[17].Value);
-                                int inablecnt = 0;
-                                int loadingqty = input.Qty.Value;
-
-                                list.ForEach((item) => { inablecnt += (goodcnt - item.Contain_Qty); });
-
-                                if (loadingqty > inablecnt)
-                                {
-                                    MessageBox.Show("팔래트 수가 부족합니다.");
-                                    return;
-                                }
-
-                                //기계 시작
-                                Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 작업({GlobalUsage.WorkOrderNo})의 포장기계로 품목({workorder.Item_Code})을 생산함");
-                                machine0.MachineStart(input.Qty.Value, workorder.Item_Code, workorder.Shot_Per_Qty);
-                            }
-                            else
-                            {
-                                MessageBox.Show("팔래트 수가 부족합니다.");
-                                return;
-                            }
                             break;
                     }
                     // 공통

@@ -73,6 +73,7 @@ namespace AxxenClient.Forms
                     if (Convert.ToInt32(txtMove.TextBoxText) == 0)
                     {
                         MessageBox.Show("0개를 로딩할 수는 없습니다.");
+                        return;
                     }
                     string loadinggvcode = dgvGVTo.SelectedRows[0].Cells[0].Value.ToString();
                     string unloadgvcode = dgvGVFrom.SelectedRows[0].Cells[0].Value.ToString();
@@ -155,6 +156,20 @@ namespace AxxenClient.Forms
                 (from item in list
                  where (item.GV_Status == "적재" || item.GV_Status == "언로딩")
                  select item).ToList();
+        }
+
+        private void AButton1_Click(object sender, EventArgs e)
+        {
+            KeypadForm frm = new KeypadForm();
+            frm.FormSendEvent += new KeypadForm.FormSendDataHandler(DieaseUpdateEventMethod);
+
+            frm.Show();
+        }
+
+        private void DieaseUpdateEventMethod(object sender)
+        {
+            //폼2에서 델리게이트로 이벤트 발생하면 현재 함수 Call
+            txtMove.TextBoxText = sender.ToString();
         }
     }
 }

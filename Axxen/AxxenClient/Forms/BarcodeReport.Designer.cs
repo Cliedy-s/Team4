@@ -56,12 +56,12 @@ namespace AxxenClient
             // 
             // TopMargin
             // 
-            this.TopMargin.HeightF = 22.50001F;
+            this.TopMargin.HeightF = 23F;
             this.TopMargin.Name = "TopMargin";
             // 
             // BottomMargin
             // 
-            this.BottomMargin.HeightF = 29.04189F;
+            this.BottomMargin.HeightF = 29F;
             this.BottomMargin.Name = "BottomMargin";
             // 
             // Detail
@@ -96,7 +96,7 @@ namespace AxxenClient
             this.xrBarCode1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 194.5416F);
             this.xrBarCode1.Name = "xrBarCode1";
             this.xrBarCode1.Padding = new DevExpress.XtraPrinting.PaddingInfo(10, 10, 0, 0, 100F);
-            this.xrBarCode1.SizeF = new System.Drawing.SizeF(395F, 111.4583F);
+            this.xrBarCode1.SizeF = new System.Drawing.SizeF(385F, 111.4583F);
             this.xrBarCode1.StylePriority.UseTextAlignment = false;
             code39ExtendedGenerator1.CalcCheckSum = false;
             code39ExtendedGenerator1.WideNarrowRatio = 3F;
@@ -114,7 +114,7 @@ namespace AxxenClient
             this.xrTableRow1,
             this.xrTableRow2,
             this.xrTableRow3});
-            this.xrTable1.SizeF = new System.Drawing.SizeF(394.9999F, 193.75F);
+            this.xrTable1.SizeF = new System.Drawing.SizeF(384.9999F, 193.75F);
             this.xrTable1.StylePriority.UseFont = false;
             this.xrTable1.StylePriority.UseTextAlignment = false;
             this.xrTable1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
@@ -148,7 +148,7 @@ namespace AxxenClient
             this.xrTableCell3.Name = "xrTableCell3";
             this.xrTableCell3.StylePriority.UseBorders = false;
             this.xrTableCell3.Text = "xrTableCell3";
-            this.xrTableCell3.Weight = 2.283116623201221D;
+            this.xrTableCell3.Weight = 2.1999994737470878D;
             // 
             // xrTableRow2
             // 
@@ -176,7 +176,7 @@ namespace AxxenClient
             this.xrTableCell4.Name = "xrTableCell4";
             this.xrTableCell4.StylePriority.UseBorders = false;
             this.xrTableCell4.Text = "xrTableCell4";
-            this.xrTableCell4.Weight = 2.283116623201221D;
+            this.xrTableCell4.Weight = 2.1999994737470878D;
             // 
             // xrTableRow3
             // 
@@ -207,7 +207,7 @@ namespace AxxenClient
             this.xrTableCell6.Name = "xrTableCell6";
             this.xrTableCell6.StylePriority.UseBorders = false;
             this.xrTableCell6.Text = "xrTableCell6";
-            this.xrTableCell6.Weight = 2.283116623201221D;
+            this.xrTableCell6.Weight = 2.1999994737470878D;
             // 
             // sqlDataSource1
             // 
