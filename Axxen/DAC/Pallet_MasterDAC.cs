@@ -553,7 +553,7 @@ SELECT pm.[Pallet_No]
   JOIN Item_Master as im on im.Item_Code = wo.Item_Code
   JOIN [dbo].[Goods_In_History] as gih ON gih.Pallet_No = pal.Pallet_No and gih.Workorderno = pal.Workorderno AND In_YN = 'Y'
   JOIN BoxingGrade_Detail_Master AS bdm ON pal.Grade_Detail_Code = bdm.Grade_Detail_Code
-    WHERE  gih.[In_Date] = CAST(GETDATE() AS DATE) ;";
+    WHERE  gih.[In_Date] = CAST(GETDATE() AS DATE) AND gih.Workorderno = @workorderno ;";
                 comm.CommandType = CommandType.Text;
                 comm.Parameters.AddWithValue("@workorderno", workorderno);
 

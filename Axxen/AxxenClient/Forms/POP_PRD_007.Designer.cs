@@ -43,7 +43,7 @@
             this.btnToSearch = new Axxen.CustomControls.AButton();
             this.txtFromGVSearch = new Axxen.CustomControls.ABigTextBox_Labeled();
             this.txtToGVSearch = new Axxen.CustomControls.ABigTextBox_Labeled();
-            this.aButton1 = new Axxen.CustomControls.AButton();
+            this.btnKeypad = new Axxen.CustomControls.AButton();
             this.panBottom.SuspendLayout();
             this.aPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
@@ -261,23 +261,24 @@
             this.txtToGVSearch.TextBoxText = "";
             this.txtToGVSearch.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
-            // aButton1
+            // btnKeypad
             // 
-            this.aButton1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.aButton1.BackColor = System.Drawing.SystemColors.Info;
-            this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton1.Location = new System.Drawing.Point(612, 235);
-            this.aButton1.Name = "aButton1";
-            this.aButton1.Size = new System.Drawing.Size(75, 29);
-            this.aButton1.TabIndex = 50;
-            this.aButton1.Text = "키패드";
-            this.aButton1.UseVisualStyleBackColor = false;
-            this.aButton1.Click += new System.EventHandler(this.AButton1_Click);
+            this.btnKeypad.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnKeypad.BackColor = System.Drawing.SystemColors.Info;
+            this.btnKeypad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKeypad.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnKeypad.Location = new System.Drawing.Point(618, 275);
+            this.btnKeypad.Name = "btnKeypad";
+            this.btnKeypad.Size = new System.Drawing.Size(70, 29);
+            this.btnKeypad.TabIndex = 53;
+            this.btnKeypad.Text = "키패드";
+            this.btnKeypad.UseVisualStyleBackColor = false;
+            this.btnKeypad.Click += new System.EventHandler(this.btnKeypad_Click);
             // 
             // POP_PRD_007
             // 
             this.ClientSize = new System.Drawing.Size(1210, 629);
-            this.Controls.Add(this.aButton1);
+            this.Controls.Add(this.btnKeypad);
             this.Controls.Add(this.btnFromSearch);
             this.Controls.Add(this.btnToSearch);
             this.Controls.Add(this.txtFromGVSearch);
@@ -301,7 +302,7 @@
             this.Controls.SetChildIndex(this.txtFromGVSearch, 0);
             this.Controls.SetChildIndex(this.btnToSearch, 0);
             this.Controls.SetChildIndex(this.btnFromSearch, 0);
-            this.Controls.SetChildIndex(this.aButton1, 0);
+            this.Controls.SetChildIndex(this.btnKeypad, 0);
             this.panBottom.ResumeLayout(false);
             this.panBottom.PerformLayout();
             this.aPanel2.ResumeLayout(false);
@@ -330,6 +331,6 @@
         private Axxen.CustomControls.AButton btnToSearch;
         private Axxen.CustomControls.ABigTextBox_Labeled txtFromGVSearch;
         private Axxen.CustomControls.ABigTextBox_Labeled txtToGVSearch;
-        private Axxen.CustomControls.AButton aButton1;
+        private Axxen.CustomControls.AButton btnKeypad;
     }
 }

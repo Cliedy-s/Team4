@@ -44,7 +44,8 @@ namespace AxxenClient
         internal static LoggingUtility Log { get { return _loggingUtility; } }
 
         System.Timers.Timer timer;
-        string writefolder = ConfigurationManager.AppSettings["WriteFolder"];
+        string writefolder = Environment.GetFolderPath(System.Environment.SpecialFolder.UserProfile)+ConfigurationManager.AppSettings["WriteFolder"];
+        
         int interval = int.Parse(ConfigurationManager.AppSettings["LogCreateMillisecond"]);
         int machineID = 0;
         int iCnt = 0;
@@ -62,6 +63,9 @@ namespace AxxenClient
 
         public Machine(int machineID, string workorderno, string userid, string wccode, Action<MachineType> stopevent = null, Action<int, int, int, int> runevent = null)
         {
+            if (!Directory.Exists(writefolder))
+                Directory.CreateDirectory(writefolder);
+
             this.stopevent = stopevent;
             this.runevent = runevent;
             this.workorderno = workorderno;

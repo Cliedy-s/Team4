@@ -112,5 +112,17 @@ namespace AxxenClient.Forms
             }
 
         }
+
+        private void btnKeypad_Click(object sender, EventArgs e)
+        {
+            KeypadForm frm = new KeypadForm();
+            frm.FormSendEvent += new KeypadForm.FormSendDataHandler(DieaseUpdateEventMethod);
+            frm.Show();
+        }
+        private void DieaseUpdateEventMethod(object sender)
+        {
+            //폼2에서 델리게이트로 이벤트 발생하면 현재 함수 Call
+            txtPlanQty.TextBoxText = sender.ToString();
+        }
     }
 }

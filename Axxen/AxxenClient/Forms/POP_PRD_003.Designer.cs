@@ -30,6 +30,7 @@
         {
             this.dgvPalletList = new Axxen.CustomControls.ADataGridView();
             this.aPanel4 = new Axxen.CustomControls.APanel();
+            this.btnKeypad = new Axxen.CustomControls.AButton();
             this.txtPrintPallet = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
             this.txtSizeCode = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
             this.txtPalletNo = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
@@ -78,6 +79,7 @@
             // 
             this.aPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.aPanel4.Controls.Add(this.btnKeypad);
             this.aPanel4.Controls.Add(this.txtPrintPallet);
             this.aPanel4.Controls.Add(this.txtSizeCode);
             this.aPanel4.Controls.Add(this.txtPalletNo);
@@ -88,6 +90,20 @@
             this.aPanel4.Name = "aPanel4";
             this.aPanel4.Size = new System.Drawing.Size(549, 373);
             this.aPanel4.TabIndex = 6;
+            // 
+            // btnKeypad
+            // 
+            this.btnKeypad.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnKeypad.BackColor = System.Drawing.SystemColors.Info;
+            this.btnKeypad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKeypad.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnKeypad.Location = new System.Drawing.Point(434, 211);
+            this.btnKeypad.Name = "btnKeypad";
+            this.btnKeypad.Size = new System.Drawing.Size(70, 29);
+            this.btnKeypad.TabIndex = 52;
+            this.btnKeypad.Text = "키패드";
+            this.btnKeypad.UseVisualStyleBackColor = false;
+            this.btnKeypad.Click += new System.EventHandler(this.btnKeypad_Click);
             // 
             // txtPrintPallet
             // 
@@ -310,5 +326,6 @@
         private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox txtBoxingGrade;
         private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox txtPalletNo;
         private Axxen.CustomControls.ABigTextBox_Searchable txtBoxingGradeDetail;
+        private Axxen.CustomControls.AButton btnKeypad;
     }
 }

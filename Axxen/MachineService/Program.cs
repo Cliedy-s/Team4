@@ -19,16 +19,16 @@ namespace MachineService
         /// </summary>
         static void Main()
         {
-            //ServiceBase[] ServicesToRun;
-            //ServicesToRun = new ServiceBase[]
-            //{
-            //    new Service1()
-            //};
-            //ServiceBase.Run(ServicesToRun);
+            ServiceBase[] ServicesToRun;
+            ServicesToRun = new ServiceBase[]
+            {
+                new Service1()
+            };
+            ServiceBase.Run(ServicesToRun);
             // 테스트용
-            Service1 service = new Service1();
-            service.OnStart();
-            Console.ReadKey();
+            //Service1 service = new Service1();
+            //service.OnStart();
+            //Console.ReadKey();
         }
     }
 }

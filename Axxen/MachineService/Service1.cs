@@ -27,11 +27,17 @@ namespace MachineService
         {
             InitializeComponent();
         }
-        //protected override void OnStart(string[] args)
-        //{
-        //}
-        public void OnStart()
+        protected override void OnStart(string[] args)
         {
+            string userpath = Environment.GetFolderPath(System.Environment.SpecialFolder.UserProfile);
+            orgfolder.Insert(0, userpath);
+            donefolder.Insert(0, userpath);
+
+            if (!Directory.Exists(orgfolder))
+                Directory.CreateDirectory(orgfolder);
+            if (!Directory.Exists(donefolder))
+                Directory.CreateDirectory(donefolder);
+            
             timer = new Timer(interval);
             timer.Enabled = true;
             timer.Elapsed += Timer_Elapsed;

@@ -152,7 +152,7 @@ namespace AxxenClient.Forms
         /// <param name="e"></param>
         private void btnSearchByDate_Click(object sender, EventArgs e)
         {
-            ProgressForm frm = new ProgressForm(() => { Thread.Sleep(500); GetSearch(); });
+            ProgressForm frm = new ProgressForm(() => { btnSearchByDate.Invoke(new Action(() => { Thread.Sleep(500); GetSearch(); })); });
             frm.ShowInTaskbar = false;
             frm.StartPosition = FormStartPosition.CenterParent;
             frm.ShowDialog();
@@ -169,6 +169,18 @@ namespace AxxenClient.Forms
             txtBoxingGradeDetail.TextBoxText = e.ResultName;
             BoxingGrade_Detail_MasterService service = new BoxingGrade_Detail_MasterService();
             txtBoxingGrade.TextBoxText = service.GellBoxing_Grade(e.ResultCode);
+        }
+
+        private void btnKeypad_Click(object sender, EventArgs e)
+        {
+            KeypadForm frm = new KeypadForm();
+            frm.FormSendEvent += new KeypadForm.FormSendDataHandler(DieaseUpdateEventMethod);
+            frm.Show();
+        }
+        private void DieaseUpdateEventMethod(object sender)
+        {
+            //폼2에서 델리게이트로 이벤트 발생하면 현재 함수 Call
+            txtCurrentQty.TextBoxText = sender.ToString();
         }
     }
 }
