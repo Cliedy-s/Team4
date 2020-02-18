@@ -50,7 +50,6 @@
             this.메모장ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.계산기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.그림판ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.timer = new System.Windows.Forms.Timer(this.components);
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbInsert = new System.Windows.Forms.ToolStripButton();
@@ -286,10 +285,6 @@
             this.그림판ToolStripMenuItem.Size = new System.Drawing.Size(55, 30);
             this.그림판ToolStripMenuItem.Text = "그림판";
             this.그림판ToolStripMenuItem.Click += new System.EventHandler(this.그림판ToolStripMenuItem_Click);
-            // 
-            // timer
-            // 
-            this.timer.Tick += new System.EventHandler(this.Timer_Tick);
             // 
             // toolStripButton1
             // 
@@ -565,7 +560,6 @@
         public System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.ToolStrip toolbook;
         private System.Windows.Forms.ToolStripButton toolStripButtoncencle;
-        private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
