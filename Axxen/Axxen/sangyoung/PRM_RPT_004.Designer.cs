@@ -113,6 +113,7 @@
             this.ControlBox = false;
             this.Controls.Add(this.toolStrip1);
             this.Name = "PRM_RPT_004";
+            this.Text = "";
             this.Activated += new System.EventHandler(this.PRM_RPT_004_Activated);
             this.Deactivate += new System.EventHandler(this.PRM_RPT_004_Deactivate);
             this.Load += new System.EventHandler(this.PRM_RPT_004_Load);

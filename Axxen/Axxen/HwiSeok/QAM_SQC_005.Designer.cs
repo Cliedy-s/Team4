@@ -104,7 +104,7 @@
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.ControlBox = false;
             this.Name = "QAM_SQC_005";
-            this.Text = "공정조건 조회";
+            this.Text = "";
             this.Load += new System.EventHandler(this.QAM_SQC_005_Load);
             this.panTop.ResumeLayout(false);
             this.panTop.PerformLayout();

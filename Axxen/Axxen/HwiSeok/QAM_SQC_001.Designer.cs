@@ -112,7 +112,7 @@
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.ControlBox = false;
             this.Name = "QAM_SQC_001";
-            this.Text = "불량이미지 등록";
+            this.Text = "";
             this.aPanel1.ResumeLayout(false);
             this.aPanel1.PerformLayout();
             this.aSplitContainer1.Panel1.ResumeLayout(false);

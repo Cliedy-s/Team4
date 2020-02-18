@@ -262,7 +262,7 @@
             this.Controls.Add(this.aLabel5);
             this.Name = "MSS_CON_003_1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "사용자등록";
+            this.Text = "";
             this.Load += new System.EventHandler(this.MSS_CON_003_1_Load);
             this.aPanel1.ResumeLayout(false);
             this.aPanel1.PerformLayout();

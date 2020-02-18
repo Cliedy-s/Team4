@@ -33,7 +33,7 @@ namespace API.Controllers
         {
             Def_HistoryDAC def = new Def_HistoryDAC();
 
-            ViewBag.WorkOrderno = new SelectList(def.GetDefHistoryWorkorderno());
+            ViewBag.Workorderno = new SelectList(def.GetDefHistoryWorkorderno());
             ViewBag.CodeName = def.GetDefMiMasterCodeName();
             //List<Def_HistoryVO> fruits = def.GetDefMiMasterCodeName();
 
@@ -42,26 +42,26 @@ namespace API.Controllers
 
         // POST: DefHistory/Create
         [HttpPost]
-        public ActionResult DefectiveCreate(Def_HistoryVO definfo, HttpPostedFileBase files)
-        {
+        public ActionResult DefectiveCreate(Def_HistoryVO definfo)
+        {           
             try
             {
-                //
-                // Verify that the user selected a file
-                if (files != null && files.ContentLength > 0)
-                {
-                    // extract only the filename
-                    var fileName = Path.GetFileName(files.FileName);
-                    // store the file inside ~/App_Data/uploads folder
-                    var path = Path.Combine(Server.MapPath("~/App_Start/uploads"), fileName);
-                    files.SaveAs(path);
-                }
+                UserInfoVO user = new UserInfoVO();
+                definfo.Up_Emp = user.User_Name;
+                definfo.Ins_Emp = user.User_Name;
 
+                string filename = definfo.FileUploadFile.FileName;
+
+                var fileName = Path.GetFileName(definfo.FileUploadFile.FileName);
+                var path = Path.Combine(Server.MapPath("~/uploads"), fileName);
+                definfo.FileUploadFilePath = path;
+                definfo.FileUploadFile.SaveAs(path);
+                
                 // TODO: Add insert logic here
                 Def_HistoryDAC def = new Def_HistoryDAC();
                 if (def.SaveDef(definfo))
                 {
-                    return RedirectToAction("Index"); //인서트가 성공적으로 됐다면. 목록으로 가라 indexview가 목록임.
+                    return RedirectToAction("Index", "Home"); //인서트가 성공적으로 됐다면. 목록으로 가라 indexview가 목록임.
                 }
                 else
                 {
@@ -69,8 +69,9 @@ namespace API.Controllers
                 }
 
             }
-            catch
+            catch(Exception err)
             {
+                string sss = err.Message;
                 return View();
             }
         }

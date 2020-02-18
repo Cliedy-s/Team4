@@ -88,7 +88,7 @@
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.ControlBox = false;
             this.Name = "PRM_PRF_003";
-            this.Text = "완제품 입고리스트";
+            this.Text = "";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PRM_PRF_003_FormClosing);
             this.Load += new System.EventHandler(this.PRM_PRF_003_Load);
             this.panTop.ResumeLayout(false);

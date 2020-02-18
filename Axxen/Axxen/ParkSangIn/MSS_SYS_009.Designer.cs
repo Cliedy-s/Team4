@@ -189,7 +189,7 @@
             this.Controls.Add(this.aLabel1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "MSS_SYS_009";
-            this.Text = "공지사항등록";
+            this.Text = "";
             this.Load += new System.EventHandler(this.MSS_SYS_009_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvsys)).EndInit();
             this.aPanel2.ResumeLayout(false);

@@ -104,7 +104,7 @@
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.ControlBox = false;
             this.Name = "QAM_SQC_004";
-            this.Text = "품질측정값 조회";
+            this.Text = "";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.QAM_SQC_004_FormClosing);
             this.Load += new System.EventHandler(this.QAM_SQC_004_Load);
             this.panTop.ResumeLayout(false);

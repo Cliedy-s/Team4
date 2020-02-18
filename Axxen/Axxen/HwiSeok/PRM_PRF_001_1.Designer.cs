@@ -361,7 +361,7 @@
             this.Controls.Add(this.aLabel1);
             this.Name = "PRM_PRF_001_1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "실적보정";
+            this.Text = "";
             this.Load += new System.EventHandler(this.PRM_PRF_001_1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

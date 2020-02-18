@@ -522,7 +522,7 @@
             this.Controls.Add(this.aLabel1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "MDS_SDS_002";
-            this.Text = "품목정보";
+            this.Text = "";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MDS_SDS_002_FormClosing);
             this.Load += new System.EventHandler(this.MDS_SDS_002_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvItem)).EndInit();

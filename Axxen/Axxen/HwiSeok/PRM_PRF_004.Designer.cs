@@ -88,7 +88,7 @@
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.ControlBox = false;
             this.Name = "PRM_PRF_004";
-            this.Text = "GAS 사용량 등록";
+            this.Text = "";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PRM_PRF_004_FormClosing);
             this.Load += new System.EventHandler(this.PRM_PRF_004_Load);
             this.panTop.ResumeLayout(false);

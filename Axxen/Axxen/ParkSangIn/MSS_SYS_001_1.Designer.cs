@@ -50,14 +50,14 @@
             this.aPanel26 = new Axxen.CustomControls.APanel();
             this.lblscreencode = new Axxen.CustomControls.ALabel();
             this.aPanel20 = new Axxen.CustomControls.APanel();
-            this.aLabel13 = new Axxen.CustomControls.ALabel();
+            this.aLabel15 = new Axxen.CustomControls.ALabel();
             this.aPanel21 = new Axxen.CustomControls.APanel();
             this.aPanel22 = new Axxen.CustomControls.APanel();
             this.lblParent = new Axxen.CustomControls.ALabel();
             this.aPanel23 = new Axxen.CustomControls.APanel();
             this.cbbParent = new Axxen.CustomControls.AComboBox();
             this.aPanel24 = new Axxen.CustomControls.APanel();
-            this.aLabel15 = new Axxen.CustomControls.ALabel();
+            this.aLabel13 = new Axxen.CustomControls.ALabel();
             this.aPanel25 = new Axxen.CustomControls.APanel();
             this.cbbScreenname = new Axxen.CustomControls.AComboBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -349,16 +349,16 @@
             this.aPanel20.Size = new System.Drawing.Size(120, 35);
             this.aPanel20.TabIndex = 220;
             // 
-            // aLabel13
+            // aLabel15
             // 
-            this.aLabel13.AutoSize = true;
-            this.aLabel13.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aLabel13.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aLabel13.Location = new System.Drawing.Point(23, 6);
-            this.aLabel13.Name = "aLabel13";
-            this.aLabel13.Size = new System.Drawing.Size(66, 17);
-            this.aLabel13.TabIndex = 55;
-            this.aLabel13.Text = "*부모이름";
+            this.aLabel15.AutoSize = true;
+            this.aLabel15.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aLabel15.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.aLabel15.Location = new System.Drawing.Point(23, 7);
+            this.aLabel15.Name = "aLabel15";
+            this.aLabel15.Size = new System.Drawing.Size(66, 17);
+            this.aLabel15.TabIndex = 54;
+            this.aLabel15.Text = "*부모코드";
             // 
             // aPanel21
             // 
@@ -415,16 +415,16 @@
             this.aPanel24.Size = new System.Drawing.Size(120, 35);
             this.aPanel24.TabIndex = 218;
             // 
-            // aLabel15
+            // aLabel13
             // 
-            this.aLabel15.AutoSize = true;
-            this.aLabel15.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aLabel15.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aLabel15.Location = new System.Drawing.Point(23, 7);
-            this.aLabel15.Name = "aLabel15";
-            this.aLabel15.Size = new System.Drawing.Size(66, 17);
-            this.aLabel15.TabIndex = 54;
-            this.aLabel15.Text = "*부모코드";
+            this.aLabel13.AutoSize = true;
+            this.aLabel13.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aLabel13.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.aLabel13.Location = new System.Drawing.Point(23, 6);
+            this.aLabel13.Name = "aLabel13";
+            this.aLabel13.Size = new System.Drawing.Size(66, 17);
+            this.aLabel13.TabIndex = 55;
+            this.aLabel13.Text = "*부모이름";
             // 
             // aPanel25
             // 
@@ -676,7 +676,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "MSS_SYS_001_1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "메뉴등록";
+            this.Text = "";
             this.Load += new System.EventHandler(this.MSS_SYS_001_1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

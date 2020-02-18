@@ -239,7 +239,7 @@
             this.Controls.Add(this.aLabel1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "MDS_SDS_006";
-            this.Text = "품질구격설정";
+            this.Text = "";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MDS_SDS_006_FormClosing);
             this.Load += new System.EventHandler(this.MDS_SDS_006_Load);
             this.aPanel2.ResumeLayout(false);

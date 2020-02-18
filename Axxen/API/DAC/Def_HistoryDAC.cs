@@ -24,8 +24,8 @@ namespace API.DAC
                     cmd.Parameters.AddWithValue("@Def_Mi_Code", definfo.Def_Mi_Code);
                     cmd.Parameters.AddWithValue("@Def_Date", definfo.Def_Date);
                     cmd.Parameters.AddWithValue("@Def_Qty", definfo.Def_Qty);
-                    cmd.Parameters.AddWithValue("@Def_Image_Name", definfo.Def_Image_Name);
-                    cmd.Parameters.AddWithValue("@Def_Image_Path", definfo.Def_Image_Path);
+                    cmd.Parameters.AddWithValue("@Def_Image_Name", definfo.FileUploadFile.FileName);
+                    cmd.Parameters.AddWithValue("@Def_Image_Path", definfo.FileUploadFilePath);
                     cmd.Parameters.AddWithValue("@Ins_Emp", definfo.Ins_Emp);
                     cmd.Parameters.AddWithValue("@Up_Emp", definfo.Up_Emp);
                     conn.Open();
