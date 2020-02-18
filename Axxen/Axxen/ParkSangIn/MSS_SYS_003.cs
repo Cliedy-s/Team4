@@ -95,5 +95,13 @@ namespace Axxen
                 MessageBox.Show(err.Message);
             }
         }
+
+        private void MSS_SYS_003_SizeChanged(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Maximized)
+            { // checks Form's Window state and return true if it is maximized (mdi child's event btw)
+                ((MainForm)this.MdiParent).Text = "SPOK "; // do what ever do you want in here
+            }
+        }
     }
 }
