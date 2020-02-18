@@ -1,4 +1,5 @@
-﻿using System;
+﻿using API.DAC;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,9 +11,9 @@ namespace API.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
+            Item_MasterDAC dac = new Item_MasterDAC();
 
-            return View();
+            return View(dac.GetAllItem_Master2());
         }
     }
 }
