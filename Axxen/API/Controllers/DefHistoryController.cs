@@ -79,40 +79,31 @@ namespace API.Controllers
         public ActionResult DefectiveDetails()
         {
             Def_HistoryDAC def = new Def_HistoryDAC();
-            return View(def.DefectiveDetails());
-        }
-
-        // POST: DefHistory/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
+            if (UserInfo.User_Name == "관리자")
             {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
+                return View(def.DefectiveAllDetails());               
             }
-            catch
+            else
             {
-                return View();
+                string User = UserInfo.User_Name;
+                return View(def.DefectiveDetails(User));
             }
         }
-
+     
         // GET: DefHistory/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
-        }
-
-        // POST: DefHistory/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
             try
             {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
+                Def_HistoryDAC def = new Def_HistoryDAC();
+                if (def.DefectiveDelete(id))
+                {
+                    return RedirectToAction("Index", "Home"); //인서트가 성공적으로 됐다면. 목록으로 가라 indexview가 목록임.
+                }
+                else
+                {
+                    return View(); //인서트가성공안되면 내가 써논 값을 가지고 Delete를 하기위해서
+                }
             }
             catch
             {

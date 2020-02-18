@@ -1,71 +1,68 @@
 ﻿@model IEnumerable<API.Models.Def_History2VO>
 
-
-
-<table class="table">
-    <tr>
-        <th>
+@{
+    ViewBag.Title = "Delete";
+}
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
             @Html.DisplayNameFor(model => model.Def_Seq)
-        </th>
-        <th>
+        </dt>
+        <dt>
             @Html.DisplayNameFor(model => model.Workorderno)
-        </th>
-        <th>
+        </dt>
+        <dt>
             @Html.DisplayNameFor(model => model.Def_Mi_Code)
-        </th>
-        <th>
+        </dt>
+        <dt>
             @Html.DisplayNameFor(model => model.Def_Mi_Name)
-        </th>
-        <th>
+        </dt>
+        <dt>
             @Html.DisplayNameFor(model => model.Def_Date)
-        </th>
-        <th>
+        </dt>
+        <dt>
             @Html.DisplayNameFor(model => model.Def_Qty)
-        </th>
-        <th>
+        </dt>
+        <dt>
             @Html.DisplayNameFor(model => model.Ins_Date)
-        </th>
-        <th>
+        </dt>
+        <dt>
             @Html.DisplayNameFor(model => model.Ins_Emp)
-        </th>
-        <th></th>
-    </tr>
+        </dt>
+        <dt></dt>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
+        @foreach (var item in Model)
+        {
+            <dd>
                 @Html.DisplayFor(modelItem => item.Def_Seq)
-            </td>
-            <td>
+            </dd>
+            <dd>
                 @Html.DisplayFor(modelItem => item.Workorderno)
-            </td>
-            <td>
+            </dd>
+            <dd>
                 @Html.DisplayFor(modelItem => item.Def_Mi_Code)
-            </td>
-            <td>
+            </dd>
+            <dd>
                 @Html.DisplayFor(modelItem => item.Def_Mi_Name)
-            </td>
-            <td>
+            </dd>
+            <dd>
                 @Html.DisplayFor(modelItem => item.Def_Date)
-            </td>
-            <td>
+            </dd>
+            <dd>
                 @Html.DisplayFor(modelItem => item.Def_Qty)
-            </td>
-            <td>
+            </dd>
+            <dd>
                 @Html.DisplayFor(modelItem => item.Ins_Date)
-            </td>
-            <td>
+            </dd>
+            <dd>
                 @Html.DisplayFor(modelItem => item.Ins_Emp)
-            </td>
-            <td>
-                @Html.ActionLink("보기", "Details", new { id = item.Def_Seq }) |
-                @Html.ActionLink("삭제", "Delete", new { id = item.Def_Seq })
-            </td>
-        </tr>
-    }
+            </dd>
+        }
+    </dl>
 
-</table>
-<p>
-    @Html.ActionLink("글 작성", "DefectiveCreate")
-</p>
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+    </div>
+    }
+</div>
