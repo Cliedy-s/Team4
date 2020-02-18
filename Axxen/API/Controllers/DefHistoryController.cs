@@ -75,6 +75,29 @@ namespace API.Controllers
             }
         }
 
+        public ActionResult Download()
+        {
+            string path = Server.MapPath("~/uploads/");
+            DirectoryInfo dirInfo = new DirectoryInfo(path);
+            FileInfo[] files = dirInfo.GetFiles("*.*");
+            List<string> lst = new List<string>(files.Length);
+            foreach(var item in files)
+            {
+                lst.Add(item.Name);
+            }
+            return View(lst);
+        }
+
+        public ActionResult DownloadFile(string filename)
+        {
+            if (Path.GetExtension(filename) == ".png")
+            {
+                string fullPath = Path.Combine(Server.MapPath("~/uploads/"), filename);
+                return File(fullPath, "Images/png", filename);
+            }
+            else
+                return new HttpStatusCodeResult(System.Net.HttpStatusCode.Forbidden);
+        }
 
         public ActionResult DefectiveDetails()
         {

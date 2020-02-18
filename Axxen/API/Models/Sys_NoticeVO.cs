@@ -20,5 +20,9 @@ namespace API.Models
         public string Description { get; set; }        
         [Display(Name ="입력자")]
         public string Ins_Emp { get; set; }
+
+        public string nextNum { get; set; }
+        public string notnext { get; set; }
+
     }
 }

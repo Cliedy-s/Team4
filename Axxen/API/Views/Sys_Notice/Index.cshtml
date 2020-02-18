@@ -47,7 +47,7 @@
                                         <td>
                                             @Html.DisplayFor(modelItem => item.Seq)
                                         </td>
-                                        <td class="mailbox-name"><a href="/Sys_Notice/Details/5">  @Html.DisplayFor(modelItem => item.Ins_Emp)</a></td>
+                                        <td class="mailbox-name"><a href="/Sys_Notice/Details/@Html.DisplayFor(modelItem => item.Seq)">  @Html.DisplayFor(modelItem => item.Ins_Emp)</a></td>
                                         <td class="mailbox-subject">
                                             <b> @Html.DisplayFor(modelItem => item.Title)</b> @Html.DisplayFor(modelItem => item.Description)
                                         </td>
