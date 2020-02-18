@@ -423,6 +423,7 @@ namespace Axxen
                     }
                     frm.MdiParent = this;
                     frm.WindowState = FormWindowState.Maximized;
+                    frm.Text = "";
                     frm.Tag = formName;
                     TabPage newTab = new TabPage();
                     newTab.Tag = formName;

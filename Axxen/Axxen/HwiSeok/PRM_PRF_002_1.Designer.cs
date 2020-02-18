@@ -93,7 +93,7 @@
             this.Controls.Add(this.aTextBox1);
             this.Name = "PRM_PRF_002_1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "";
+            this.Text = "등급상세수정";
             this.Load += new System.EventHandler(this.PRM_PRF_002_1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
