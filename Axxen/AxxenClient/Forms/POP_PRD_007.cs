@@ -115,5 +115,19 @@ namespace AxxenClient.Forms
                 txtLoading.TextBoxText = dgvGVFrom.SelectedRows[0].Cells[3].Value.ToString();
             }
         }
+
+        private void AButton1_Click(object sender, EventArgs e)
+        {
+            KeypadForm frm = new KeypadForm();
+            frm.FormSendEvent += new KeypadForm.FormSendDataHandler(DieaseUpdateEventMethod);
+
+            frm.Show();
+        }
+
+        private void DieaseUpdateEventMethod(object sender)
+        {
+            //폼2에서 델리게이트로 이벤트 발생하면 현재 함수 Call
+            txtLoading.TextBoxText = sender.ToString();
+        }
     }
 }

@@ -44,6 +44,7 @@
             this.txtFromGVSearch = new Axxen.CustomControls.ABigTextBox_Labeled();
             this.btnToSearch = new Axxen.CustomControls.AButton();
             this.btnFromSearch = new Axxen.CustomControls.AButton();
+            this.aButton1 = new Axxen.CustomControls.AButton();
             this.panBottom.SuspendLayout();
             this.aPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
@@ -275,9 +276,23 @@
             this.btnFromSearch.UseVisualStyleBackColor = false;
             this.btnFromSearch.Click += new System.EventHandler(this.btnFromSearch_Click);
             // 
+            // aButton1
+            // 
+            this.aButton1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.aButton1.BackColor = System.Drawing.SystemColors.Info;
+            this.aButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.aButton1.Location = new System.Drawing.Point(587, 214);
+            this.aButton1.Name = "aButton1";
+            this.aButton1.Size = new System.Drawing.Size(75, 29);
+            this.aButton1.TabIndex = 50;
+            this.aButton1.Text = "키패드";
+            this.aButton1.UseVisualStyleBackColor = false;
+            this.aButton1.Click += new System.EventHandler(this.AButton1_Click);
+            // 
             // POP_PRD_010
             // 
             this.ClientSize = new System.Drawing.Size(1210, 629);
+            this.Controls.Add(this.aButton1);
             this.Controls.Add(this.btnFromSearch);
             this.Controls.Add(this.btnToSearch);
             this.Controls.Add(this.txtFromGVSearch);
@@ -303,6 +318,7 @@
             this.Controls.SetChildIndex(this.txtFromGVSearch, 0);
             this.Controls.SetChildIndex(this.btnToSearch, 0);
             this.Controls.SetChildIndex(this.btnFromSearch, 0);
+            this.Controls.SetChildIndex(this.aButton1, 0);
             this.panBottom.ResumeLayout(false);
             this.panBottom.PerformLayout();
             this.aPanel2.ResumeLayout(false);
@@ -332,5 +348,6 @@
         private Axxen.CustomControls.ABigTextBox_Labeled txtFromGVSearch;
         private Axxen.CustomControls.AButton btnToSearch;
         private Axxen.CustomControls.AButton btnFromSearch;
+        private Axxen.CustomControls.AButton aButton1;
     }
 }
