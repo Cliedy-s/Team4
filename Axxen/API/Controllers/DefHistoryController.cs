@@ -45,10 +45,9 @@ namespace API.Controllers
         public ActionResult DefectiveCreate(Def_HistoryVO definfo)
         {           
             try
-            {
-                UserInfoVO user = new UserInfoVO();
-                definfo.Up_Emp = user.User_Name;
-                definfo.Ins_Emp = user.User_Name;
+            {               
+                definfo.Up_Emp = UserInfo.User_Name;
+                definfo.Ins_Emp = UserInfo.User_Name;
 
                 string filename = definfo.FileUploadFile.FileName;
 
