@@ -293,7 +293,8 @@
             this.aButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.aButton2.BackColor = System.Drawing.SystemColors.Info;
             this.aButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aButton2.Location = new System.Drawing.Point(1068, 435);
+            this.aButton2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aButton2.Location = new System.Drawing.Point(958, 436);
             this.aButton2.Name = "aButton2";
             this.aButton2.Size = new System.Drawing.Size(75, 29);
             this.aButton2.TabIndex = 50;

@@ -30,6 +30,7 @@
         {
             this.dgvInPallet = new Axxen.CustomControls.ADataGridView();
             this.aPanel4 = new Axxen.CustomControls.APanel();
+            this.btnKeypad = new Axxen.CustomControls.AButton();
             this.lblPalSeq = new Axxen.CustomControls.ALabel();
             this.btnSearch = new Axxen.CustomControls.AButton();
             this.lblBarcodeNo = new Axxen.CustomControls.ALabel();
@@ -73,6 +74,7 @@
             // 
             this.aPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.aPanel4.Controls.Add(this.btnKeypad);
             this.aPanel4.Controls.Add(this.lblPalSeq);
             this.aPanel4.Controls.Add(this.btnSearch);
             this.aPanel4.Controls.Add(this.lblBarcodeNo);
@@ -86,6 +88,20 @@
             this.aPanel4.Name = "aPanel4";
             this.aPanel4.Size = new System.Drawing.Size(549, 482);
             this.aPanel4.TabIndex = 5;
+            // 
+            // btnKeypad
+            // 
+            this.btnKeypad.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnKeypad.BackColor = System.Drawing.SystemColors.Info;
+            this.btnKeypad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKeypad.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnKeypad.Location = new System.Drawing.Point(437, 226);
+            this.btnKeypad.Name = "btnKeypad";
+            this.btnKeypad.Size = new System.Drawing.Size(70, 29);
+            this.btnKeypad.TabIndex = 53;
+            this.btnKeypad.Text = "키패드";
+            this.btnKeypad.UseVisualStyleBackColor = false;
+            this.btnKeypad.Click += new System.EventHandler(this.btnKeypad_Click);
             // 
             // lblPalSeq
             // 
@@ -261,5 +277,6 @@
         private Axxen.CustomControls.AButton btnSearch;
         private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox txtPalletNo;
         private Axxen.CustomControls.ALabel lblPalSeq;
+        private Axxen.CustomControls.AButton btnKeypad;
     }
 }

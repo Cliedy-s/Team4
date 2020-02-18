@@ -15,7 +15,9 @@ namespace API.Controllers
         {
 
             Sys_NoticeDAC dac = new Sys_NoticeDAC();
-        
+            List<Sys_NoticeVO> sys = dac.Sys_noticeAll();
+            ViewBag.Labels = (from item in sys
+                              select item.Title).ToList();
             return View(dac.Sys_noticeAll());
             
         }

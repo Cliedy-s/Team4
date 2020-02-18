@@ -161,7 +161,6 @@
     <Compile Include="Controllers\ChartController.cs" />
     <Compile Include="Controllers\DefHistoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ItemController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\NavController.cs" />
     <Compile Include="Controllers\NoticeShowController.cs" />
@@ -7442,7 +7441,6 @@
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Login\userbox.cshtml" />
     <Content Include="Views\Nav\Message.cshtml" />
-    <Content Include="Views\Item\Index.cshtml" />
     <Content Include="Views\DefHistory\DefectiveDetails.cshtml" />
     <Content Include="Views\DefHistory\Delete.cshtml" />
   </ItemGroup>
