@@ -180,6 +180,7 @@ namespace AxxenClient
         /// <param name="shotQty"></param>
         private void Boxing_Elapsed(string itemcode, int shotQty)
         {
+            // TODO - 포장하기
             iCnt++;
             Random rnd = new Random((int)DateTime.UtcNow.Ticks);
             int badcnt = rnd.Next(0, 3);
@@ -201,7 +202,7 @@ namespace AxxenClient
             {
                 Log.WriteError("오류 : ", ee);
             }
-            if (toqty < 0) { MachineStop(MachineType.Molding); }
+            if (toqty < 0) { MachineStop(MachineType.Boxing); }
         }
         int measurecnt = 0;
         /// <summary>

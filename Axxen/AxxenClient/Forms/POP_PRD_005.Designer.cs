@@ -31,12 +31,12 @@
             this.dgvInPallet = new Axxen.CustomControls.ADataGridView();
             this.aPanel4 = new Axxen.CustomControls.APanel();
             this.lblBarcodeNo = new Axxen.CustomControls.ALabel();
-            this.txtPalletQty = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
             this.txtBoxingGrade = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
             this.txtBoxingGradeDatail = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
             this.txtSize = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
             this.txtPalletNo = new Axxen.CustomControls.ABigTextBox_Searchable();
             this.btnIn = new Axxen.CustomControls.AButton();
+            this.txtBFour = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
             this.aLabel_SubHeader1 = new Axxen.CustomControls.ALabel_SubHeader();
             this.panBottom.SuspendLayout();
             this.aPanel2.SuspendLayout();
@@ -45,14 +45,14 @@
             this.aPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
-            // aLabel_Header1
-            // 
-            this.aLabel_Header1.Text = "포장 입고등록";
-            // 
             // panBottom
             // 
             this.panBottom.Location = new System.Drawing.Point(0, 593);
             this.panBottom.Margin = new System.Windows.Forms.Padding(2);
+            // 
+            // aLabel_Header1
+            // 
+            this.aLabel_Header1.Text = "포장 입고등록";
             // 
             // dgvInPallet
             // 
@@ -72,12 +72,12 @@
             this.aPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.aPanel4.Controls.Add(this.lblBarcodeNo);
-            this.aPanel4.Controls.Add(this.txtPalletQty);
             this.aPanel4.Controls.Add(this.txtBoxingGrade);
             this.aPanel4.Controls.Add(this.txtBoxingGradeDatail);
             this.aPanel4.Controls.Add(this.txtSize);
             this.aPanel4.Controls.Add(this.txtPalletNo);
             this.aPanel4.Controls.Add(this.btnIn);
+            this.aPanel4.Controls.Add(this.txtBFour);
             this.aPanel4.Location = new System.Drawing.Point(649, 105);
             this.aPanel4.Name = "aPanel4";
             this.aPanel4.Size = new System.Drawing.Size(549, 482);
@@ -94,27 +94,13 @@
             this.lblBarcodeNo.Visible = false;
             this.lblBarcodeNo.TextChanged += new System.EventHandler(this.lblBarcodeNo_TextChanged);
             // 
-            // txtPalletQty
-            // 
-            this.txtPalletQty.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtPalletQty.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtPalletQty.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtPalletQty.LabelText = "팔레트수량";
-            this.txtPalletQty.Location = new System.Drawing.Point(42, 220);
-            this.txtPalletQty.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.txtPalletQty.Name = "txtPalletQty";
-            this.txtPalletQty.Size = new System.Drawing.Size(469, 42);
-            this.txtPalletQty.TabIndex = 34;
-            this.txtPalletQty.TextBoxText = "";
-            this.txtPalletQty.TextBoxType = Axxen.CustomControls.TextType.Numeric;
-            // 
             // txtBoxingGrade
             // 
             this.txtBoxingGrade.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtBoxingGrade.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBoxingGrade.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtBoxingGrade.LabelText = "등급";
-            this.txtBoxingGrade.Location = new System.Drawing.Point(42, 126);
+            this.txtBoxingGrade.Location = new System.Drawing.Point(42, 174);
             this.txtBoxingGrade.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtBoxingGrade.Name = "txtBoxingGrade";
             this.txtBoxingGrade.Size = new System.Drawing.Size(469, 42);
@@ -128,7 +114,7 @@
             this.txtBoxingGradeDatail.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBoxingGradeDatail.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtBoxingGradeDatail.LabelText = "등급상세";
-            this.txtBoxingGradeDatail.Location = new System.Drawing.Point(42, 78);
+            this.txtBoxingGradeDatail.Location = new System.Drawing.Point(42, 126);
             this.txtBoxingGradeDatail.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtBoxingGradeDatail.Name = "txtBoxingGradeDatail";
             this.txtBoxingGradeDatail.Size = new System.Drawing.Size(469, 42);
@@ -142,7 +128,7 @@
             this.txtSize.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtSize.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtSize.LabelText = "사이즈";
-            this.txtSize.Location = new System.Drawing.Point(42, 172);
+            this.txtSize.Location = new System.Drawing.Point(42, 220);
             this.txtSize.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtSize.Name = "txtSize";
             this.txtSize.Size = new System.Drawing.Size(469, 42);
@@ -155,7 +141,7 @@
             this.txtPalletNo.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtPalletNo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtPalletNo.CodeText = null;
-            this.txtPalletNo.DataType = Axxen.CustomControls.DataType.InablePallet;
+            this.txtPalletNo.DataType = Axxen.CustomControls.DataType.Pallet;
             this.txtPalletNo.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtPalletNo.LabelText = "팔레트 번호";
             this.txtPalletNo.Location = new System.Drawing.Point(42, 30);
@@ -180,6 +166,20 @@
             this.btnIn.Text = "입고";
             this.btnIn.UseVisualStyleBackColor = false;
             this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
+            // 
+            // txtBFour
+            // 
+            this.txtBFour.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtBFour.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtBFour.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtBFour.LabelText = "B뒤 4자리";
+            this.txtBFour.Location = new System.Drawing.Point(42, 78);
+            this.txtBFour.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtBFour.Name = "txtBFour";
+            this.txtBFour.Size = new System.Drawing.Size(469, 42);
+            this.txtBFour.TabIndex = 36;
+            this.txtBFour.TextBoxText = "";
+            this.txtBFour.TextBoxType = Axxen.CustomControls.TextType.Numeric;
             // 
             // aLabel_SubHeader1
             // 
@@ -229,10 +229,10 @@
         private Axxen.CustomControls.AButton btnIn;
         private Axxen.CustomControls.ALabel_SubHeader aLabel_SubHeader1;
         private Axxen.CustomControls.ABigTextBox_Searchable txtPalletNo;
-        private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox txtPalletQty;
         private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox txtBoxingGrade;
         private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox txtBoxingGradeDatail;
         private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox txtSize;
         private Axxen.CustomControls.ALabel lblBarcodeNo;
+        private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox txtBFour;
     }
 }
