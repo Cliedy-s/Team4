@@ -33,6 +33,7 @@
             this.btnSearch = new Axxen.CustomControls.AButton();
             this.dgvGVList = new Axxen.CustomControls.ADataGridView();
             this.aPanel4 = new Axxen.CustomControls.APanel();
+            this.btnKeypad = new Axxen.CustomControls.AButton();
             this.lblHistSeq = new Axxen.CustomControls.ALabel();
             this.txtPlanQty = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
             this.txtPlanDate = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
@@ -119,6 +120,7 @@
             // 
             this.aPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.aPanel4.Controls.Add(this.btnKeypad);
             this.aPanel4.Controls.Add(this.lblHistSeq);
             this.aPanel4.Controls.Add(this.txtPlanQty);
             this.aPanel4.Controls.Add(this.txtPlanDate);
@@ -134,12 +136,26 @@
             this.aPanel4.Size = new System.Drawing.Size(549, 482);
             this.aPanel4.TabIndex = 8;
             // 
+            // btnKeypad
+            // 
+            this.btnKeypad.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnKeypad.BackColor = System.Drawing.SystemColors.Info;
+            this.btnKeypad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKeypad.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnKeypad.Location = new System.Drawing.Point(437, 273);
+            this.btnKeypad.Name = "btnKeypad";
+            this.btnKeypad.Size = new System.Drawing.Size(70, 29);
+            this.btnKeypad.TabIndex = 53;
+            this.btnKeypad.Text = "키패드";
+            this.btnKeypad.UseVisualStyleBackColor = false;
+            this.btnKeypad.Click += new System.EventHandler(this.btnKeypad_Click);
+            // 
             // lblHistSeq
             // 
             this.lblHistSeq.AutoSize = true;
             this.lblHistSeq.Location = new System.Drawing.Point(236, 309);
             this.lblHistSeq.Name = "lblHistSeq";
-            this.lblHistSeq.Size = new System.Drawing.Size(72, 15);
+            this.lblHistSeq.Size = new System.Drawing.Size(61, 12);
             this.lblHistSeq.TabIndex = 35;
             this.lblHistSeq.Text = "lblHistSeq";
             this.lblHistSeq.Visible = false;
@@ -226,7 +242,7 @@
             this.lblReqSeq.Location = new System.Drawing.Point(158, 306);
             this.lblReqSeq.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblReqSeq.Name = "lblReqSeq";
-            this.lblReqSeq.Size = new System.Drawing.Size(73, 15);
+            this.lblReqSeq.Size = new System.Drawing.Size(62, 12);
             this.lblReqSeq.TabIndex = 29;
             this.lblReqSeq.Text = "lblReqSeq";
             this.lblReqSeq.Visible = false;
@@ -237,7 +253,7 @@
             this.lblReqNo.Location = new System.Drawing.Point(89, 306);
             this.lblReqNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblReqNo.Name = "lblReqNo";
-            this.lblReqNo.Size = new System.Drawing.Size(65, 15);
+            this.lblReqNo.Size = new System.Drawing.Size(56, 12);
             this.lblReqNo.TabIndex = 28;
             this.lblReqNo.Text = "lblReqNo";
             this.lblReqNo.Visible = false;
@@ -248,7 +264,7 @@
             this.lblUnit.Location = new System.Drawing.Point(39, 306);
             this.lblUnit.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUnit.Name = "lblUnit";
-            this.lblUnit.Size = new System.Drawing.Size(46, 15);
+            this.lblUnit.Size = new System.Drawing.Size(39, 12);
             this.lblUnit.TabIndex = 27;
             this.lblUnit.Text = "lblUnit";
             this.lblUnit.Visible = false;
@@ -311,5 +327,6 @@
         private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox txtGVSearch;
         private Axxen.CustomControls.AButton btnSearch;
         private Axxen.CustomControls.ALabel lblHistSeq;
+        private Axxen.CustomControls.AButton btnKeypad;
     }
 }
