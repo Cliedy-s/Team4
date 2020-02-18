@@ -28,6 +28,9 @@ namespace Axxen
             MainGridLoad();
             molditemList = service.SelectMold_Item_Wc_Muse();
             DataLoad(molditemList);
+
+            this.Text = " ";
+            this.MdiParent.Text = "SPOK";
         }
 
         private void RefreshFormShow(object sender, EventArgs e)
