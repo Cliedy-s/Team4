@@ -350,7 +350,7 @@
             // 
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Location = new System.Drawing.Point(341, 19);
+            this.btnSearch.Location = new System.Drawing.Point(406, 19);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(83, 30);
             this.btnSearch.TabIndex = 14;
@@ -364,10 +364,10 @@
             this.aTextBox_FindNameByCode1.CodeType = Axxen.CustomControls.DataType.NonOperations;
             this.aTextBox_FindNameByCode1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aTextBox_FindNameByCode1.lblNameText = "비가동 대분류";
-            this.aTextBox_FindNameByCode1.Location = new System.Drawing.Point(23, 22);
+            this.aTextBox_FindNameByCode1.Location = new System.Drawing.Point(31, 22);
             this.aTextBox_FindNameByCode1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.aTextBox_FindNameByCode1.Name = "aTextBox_FindNameByCode1";
-            this.aTextBox_FindNameByCode1.Size = new System.Drawing.Size(293, 27);
+            this.aTextBox_FindNameByCode1.Size = new System.Drawing.Size(369, 27);
             this.aTextBox_FindNameByCode1.TabIndex = 9;
             this.aTextBox_FindNameByCode1.txtCodeText = "";
             this.aTextBox_FindNameByCode1.txtNameText = "";

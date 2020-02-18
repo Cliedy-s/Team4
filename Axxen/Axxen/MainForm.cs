@@ -118,8 +118,8 @@ namespace Axxen
                 toolStripButtonSetting.Alignment = ToolStripItemAlignment.Right; //세팅버튼
                 toolStripButtonLogin.Alignment = ToolStripItemAlignment.Right;
                 toolStripSeparator3.Alignment = ToolStripItemAlignment.Right;
-                timer.Start();
-                timer.Interval = 1000;
+
+                lblLogin.Text = UserInfo.User_Name + " 님";
 
                 tvMenu.Visible = false;
                 ImageList imgList = new ImageList();
@@ -729,7 +729,7 @@ namespace Axxen
             }
         }
         /// <summary>
-        /// 씨발
+        /// 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -738,12 +738,15 @@ namespace Axxen
             foreach (Form children in this.MdiChildren)
             {
 
-                children.Dispose();
+   
                 children.Close();
+          
             }
 
             tabControl2.TabPages.Clear();
         }
+
+
 
         #endregion
 
@@ -847,10 +850,7 @@ namespace Axxen
             frm.ShowDialog();
         }
 
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-            lblLogin.Text = UserInfo.User_Name + " 님";
-        }
+   
 
         private void Button9_Click(object sender, EventArgs e)
         {
@@ -870,6 +870,10 @@ namespace Axxen
 
         protected override void WndProc(ref Message message)
         {
+            try
+            {
+
+           
             base.WndProc(ref message);
 
 
@@ -891,6 +895,12 @@ namespace Axxen
                 {
                     tsbtnRefresh.PerformClick();
                 }
+                }
+            }
+            catch (Exception err)
+            {
+
+                Program.Log.WriteError(err.Message);
             }
 
 

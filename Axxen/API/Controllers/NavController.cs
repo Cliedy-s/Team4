@@ -13,14 +13,13 @@ namespace API.Controllers
         // GET: Nav
         public ActionResult Menu(string category = null)
         {
-            if (UserInfo.User_Name == null) { 
+        
                 ViewBag.SelectedCategory = category;
                 Item_MasterDAC dac = new Item_MasterDAC();
                 List<string> categories = dac.GetAllItem_Master();
 
                 return PartialView(categories);
-            }
-            return View();
+         
         }
 
         /// <summary>
