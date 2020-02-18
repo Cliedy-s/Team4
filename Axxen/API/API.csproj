@@ -7442,6 +7442,7 @@
     <Content Include="Views\Login\userbox.cshtml" />
     <Content Include="Views\Nav\Message.cshtml" />
     <Content Include="Views\DefHistory\DefectiveDetails.cshtml" />
+    <Content Include="Views\DefHistory\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

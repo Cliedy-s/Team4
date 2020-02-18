@@ -37,6 +37,8 @@ namespace VO
         public string In_YN { get; set; }                      // 입고여부
         public string Item_Code { get; set; }                // 품목코드
         public string Wc_Code { get; set; }                 // 작업장코드
+        public string Item_Name { get; set; }
+        public string Pal_Seq { get; set; }
     }
     public class PalletGoodsVO
     {
@@ -46,6 +48,8 @@ namespace VO
         public DateTime? Barcode_PublishDate { get; set; }
         public string Grade_Code { get; set; }
         public string Grade_Detail_Code { get; set; }
+        public string Grade_Detail_Name { get; set; }
+        public string Boxing_Grade_Code { get; set; }
         public string Size_Code { get; set; }
         public int palin { get; set; }
         public int CurrentQty { get; set; }

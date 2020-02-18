@@ -276,7 +276,6 @@
             this.Controls.Add(this.dgvPalletList);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "POP_PRD_003";
-            this.Text = "팔레트 생성";
             this.Load += new System.EventHandler(this.POP_PRD_003_Load);
             this.Controls.SetChildIndex(this.aPanel2, 0);
             this.Controls.SetChildIndex(this.panBottom, 0);

@@ -75,18 +75,22 @@ namespace AxxenClient.Forms
                 int loadingqty = Convert.ToInt32(dgvBoxing.SelectedRows[0].Cells[5].Value);
 
                 list.ForEach((item) => { inablecnt += (goodcnt - item.Contain_Qty); });
-
+                
                 if(loadingqty > inablecnt)
                 {
-                    MessageBox.Show("팔래트 수가 부족합니다.");
+                    int cnt = ((loadingqty - inablecnt) / goodcnt);
+                    if (((loadingqty - inablecnt) % goodcnt) != 0) cnt++;
+                        MessageBox.Show($"팔래트가 {cnt}개 부족합니다.");
                     return;
                 }
 
                 // 포장
                 GV_HistoryService service = new GV_HistoryService();
-                if (service.UpdateUnload(GlobalUsage.WorkOrderNo, GlobalUsage.UserID, dgvBoxing.SelectedRows[0].Cells[0].Value.ToString(), null, GlobalUsage.WcCode, Convert.ToInt32(dgvBoxing.SelectedRows[0].Cells[5].Value)))
+                if (service.UpdateUnload(GlobalUsage.WorkOrderNo, GlobalUsage.UserID, dgvBoxing.SelectedRows[0].Cells[0].Value.ToString(), null, GlobalUsage.WcCode, Convert.ToInt32(dgvBoxing.SelectedRows[0].Cells[5].Value), GlobalUsage.ItemCode))
                 {
                     Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 대차({dgvBoxing.SelectedRows[0].Cells[0].Value.ToString()}) 언로딩에 성공함");
+                    GlobalUsage.Prd_Qty = Convert.ToInt32(dgvBoxing.SelectedRows[0].Cells[5].Value);
+                    GlobalUsage.Out_Qty = Convert.ToInt32(dgvBoxing.SelectedRows[0].Cells[5].Value);
                     GetDatas();
                 }
                 else

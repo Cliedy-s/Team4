@@ -31,11 +31,11 @@
             this.aPanel4 = new Axxen.CustomControls.APanel();
             this.txtCurrentQty = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
             this.txtSizeCode = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
-            this.txtBoxingGrade = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
             this.txtPalletNo = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
             this.btnDelete = new Axxen.CustomControls.AButton();
             this.btnPalletPrint = new Axxen.CustomControls.AButton();
             this.txtBoxingGradeDetail = new Axxen.CustomControls.ABigTextBox_Searchable();
+            this.txtBoxingGrade = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
             this.dgvPalletList = new Axxen.CustomControls.ADataGridView();
             this.aPanel5 = new Axxen.CustomControls.APanel();
             this.btnSearchByDate = new Axxen.CustomControls.AButton();
@@ -104,20 +104,6 @@
             this.txtSizeCode.TextBoxText = "";
             this.txtSizeCode.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
-            // txtBoxingGrade
-            // 
-            this.txtBoxingGrade.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtBoxingGrade.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtBoxingGrade.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtBoxingGrade.LabelText = "등급";
-            this.txtBoxingGrade.Location = new System.Drawing.Point(40, 126);
-            this.txtBoxingGrade.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.txtBoxingGrade.Name = "txtBoxingGrade";
-            this.txtBoxingGrade.Size = new System.Drawing.Size(469, 42);
-            this.txtBoxingGrade.TabIndex = 37;
-            this.txtBoxingGrade.TextBoxText = "";
-            this.txtBoxingGrade.TextBoxType = Axxen.CustomControls.TextType.Normal;
-            // 
             // txtPalletNo
             // 
             this.txtPalletNo.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -174,6 +160,21 @@
             this.txtBoxingGradeDetail.TabIndex = 41;
             this.txtBoxingGradeDetail.TextBoxText = "";
             this.txtBoxingGradeDetail.TextBoxType = Axxen.CustomControls.TextType.Normal;
+            this.txtBoxingGradeDetail.searchclick += new Axxen.CustomControls.ABigTextBox_Searchable.SearchClick(this.txtBoxingGradeDetail_searchclick);
+            // 
+            // txtBoxingGrade
+            // 
+            this.txtBoxingGrade.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtBoxingGrade.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtBoxingGrade.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtBoxingGrade.LabelText = "등급";
+            this.txtBoxingGrade.Location = new System.Drawing.Point(40, 126);
+            this.txtBoxingGrade.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtBoxingGrade.Name = "txtBoxingGrade";
+            this.txtBoxingGrade.Size = new System.Drawing.Size(469, 42);
+            this.txtBoxingGrade.TabIndex = 37;
+            this.txtBoxingGrade.TextBoxText = "";
+            this.txtBoxingGrade.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
             // dgvPalletList
             // 
@@ -267,7 +268,6 @@
             this.Controls.Add(this.dgvPalletList);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "POP_PRD_004";
-            this.Text = "팔레트 바코드 재발행";
             this.Load += new System.EventHandler(this.POP_PRD_004_Load);
             this.Controls.SetChildIndex(this.aPanel2, 0);
             this.Controls.SetChildIndex(this.panBottom, 0);

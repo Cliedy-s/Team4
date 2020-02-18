@@ -50,6 +50,7 @@ namespace AxxenClient.Forms
                 txtPalletNo.TextBoxText = dgvPalletList.SelectedRows[0].Cells[1].Value.ToString();
                 txtBoxingGrade.TextBoxText = dgvPalletList.SelectedRows[0].Cells[3].Value == null ? "" : dgvPalletList.SelectedRows[0].Cells[3].Value.ToString();
                 txtBoxingGradeDetail.TextBoxText = dgvPalletList.SelectedRows[0].Cells[7].Value == null ? "" : dgvPalletList.SelectedRows[0].Cells[7].Value.ToString();
+                txtBoxingGradeDetail.CodeText = dgvPalletList.SelectedRows[0].Cells[5].Value == null ? "" : dgvPalletList.SelectedRows[0].Cells[5].Value.ToString();
                 txtSizeCode.TextBoxText = dgvPalletList.SelectedRows[0].Cells[6].Value == null ? "" : dgvPalletList.SelectedRows[0].Cells[6].Value.ToString();
                 txtCurrentQty.TextBoxText = dgvPalletList.SelectedRows[0].Cells[4].Value.ToString();
             }
@@ -160,6 +161,14 @@ namespace AxxenClient.Forms
         {
             Pallet_MasterService service = new Pallet_MasterService();
             dgvPalletList.DataSource = service.GetAllByDateTime(GlobalUsage.WorkOrderNo ,dtpFromdate.Value, dtpTodate.Value);
+        }
+
+        private void txtBoxingGradeDetail_searchclick(object sender, SearchFormClosingArgs e)
+        {
+            txtBoxingGradeDetail.CodeText = e.ResultCode;
+            txtBoxingGradeDetail.TextBoxText = e.ResultName;
+            BoxingGrade_Detail_MasterService service = new BoxingGrade_Detail_MasterService();
+            txtBoxingGrade.TextBoxText = service.GellBoxing_Grade(e.ResultCode);
         }
     }
 }

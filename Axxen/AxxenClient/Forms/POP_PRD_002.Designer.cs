@@ -80,7 +80,7 @@
             this.lblHistReq.AutoSize = true;
             this.lblHistReq.Location = new System.Drawing.Point(181, 314);
             this.lblHistReq.Name = "lblHistReq";
-            this.lblHistReq.Size = new System.Drawing.Size(72, 15);
+            this.lblHistReq.Size = new System.Drawing.Size(61, 12);
             this.lblHistReq.TabIndex = 29;
             this.lblHistReq.Text = "lblHistReq";
             this.lblHistReq.Visible = false;
@@ -90,7 +90,7 @@
             this.lblItem_Unit.AutoSize = true;
             this.lblItem_Unit.Location = new System.Drawing.Point(109, 314);
             this.lblItem_Unit.Name = "lblItem_Unit";
-            this.lblItem_Unit.Size = new System.Drawing.Size(66, 15);
+            this.lblItem_Unit.Size = new System.Drawing.Size(56, 12);
             this.lblItem_Unit.TabIndex = 28;
             this.lblItem_Unit.Text = "Item_Unit";
             this.lblItem_Unit.Visible = false;
@@ -100,7 +100,7 @@
             this.lblReq_Seq.AutoSize = true;
             this.lblReq_Seq.Location = new System.Drawing.Point(39, 314);
             this.lblReq_Seq.Name = "lblReq_Seq";
-            this.lblReq_Seq.Size = new System.Drawing.Size(67, 15);
+            this.lblReq_Seq.Size = new System.Drawing.Size(55, 12);
             this.lblReq_Seq.TabIndex = 27;
             this.lblReq_Seq.Text = "Req_Seq";
             this.lblReq_Seq.Visible = false;
@@ -216,7 +216,6 @@
             this.Controls.Add(this.dgvWoReq);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "POP_PRD_002";
-            this.Text = "작업지시생성";
             this.Load += new System.EventHandler(this.POP_PRD_002_Load);
             this.Controls.SetChildIndex(this.dgvWoReq, 0);
             this.Controls.SetChildIndex(this.aPanel4, 0);
