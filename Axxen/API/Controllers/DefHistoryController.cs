@@ -46,13 +46,17 @@ namespace API.Controllers
         {           
             try
             {
+                UserInfoVO user = new UserInfoVO();
+                definfo.Up_Emp = user.User_Name;
+                definfo.Ins_Emp = user.User_Name;
+
                 string filename = definfo.FileUploadFile.FileName;
 
                 var fileName = Path.GetFileName(definfo.FileUploadFile.FileName);
                 var path = Path.Combine(Server.MapPath("~/uploads"), fileName);
                 definfo.FileUploadFilePath = path;
                 definfo.FileUploadFile.SaveAs(path);
-
+                
                 // TODO: Add insert logic here
                 Def_HistoryDAC def = new Def_HistoryDAC();
                 if (def.SaveDef(definfo))
