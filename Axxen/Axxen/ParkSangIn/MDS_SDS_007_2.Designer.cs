@@ -229,7 +229,7 @@
             this.Controls.Add(this.dgvCondition);
             this.Name = "MDS_SDS_007_2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "";
+            this.Text = "품질규격설정";
             this.Load += new System.EventHandler(this.MDS_SDS_007_2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.aPanel4.ResumeLayout(false);

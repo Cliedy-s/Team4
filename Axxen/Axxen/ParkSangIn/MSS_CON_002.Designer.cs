@@ -218,7 +218,7 @@
             this.Controls.Add(this.dgvScreen);
             this.Controls.Add(this.dgvGroup);
             this.Name = "MSS_CON_002";
-            this.Text = "";
+            this.Text = "사용자그룹별권한설정";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MSS_CON_002_FormClosed);
             this.Load += new System.EventHandler(this.MSS_CON_002_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGroup)).EndInit();

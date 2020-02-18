@@ -276,7 +276,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "MSS_CON_001";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "";
+            this.Text = "사용자정보";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MSS_CON_001_FormClosing);
             this.Load += new System.EventHandler(this.MSS_CON_001_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

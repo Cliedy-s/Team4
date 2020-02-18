@@ -188,7 +188,7 @@
             this.Controls.Add(this.aLabel1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "MSS_SYS_003";
-            this.Text = "";
+            this.Text = "화면관리";
             this.Load += new System.EventHandler(this.MSS_SYS_003_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvScreen)).EndInit();
             this.aPanel1.ResumeLayout(false);
