@@ -45,6 +45,7 @@
             this.lblInspectcode = new Axxen.CustomControls.ALabel();
             this.nudMeasure = new System.Windows.Forms.NumericUpDown();
             this.aLabel1 = new Axxen.CustomControls.ALabel();
+            this.aButton2 = new Axxen.CustomControls.AButton();
             this.panBottom.SuspendLayout();
             this.aPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
@@ -259,7 +260,7 @@
             // nudMeasure
             // 
             this.nudMeasure.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudMeasure.DecimalPlaces = 5;
+            this.nudMeasure.DecimalPlaces = 4;
             this.nudMeasure.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.nudMeasure.Location = new System.Drawing.Point(711, 436);
             this.nudMeasure.Maximum = new decimal(new int[] {
@@ -287,9 +288,23 @@
             this.aLabel1.TabIndex = 46;
             this.aLabel1.Text = "측정값";
             // 
+            // aButton2
+            // 
+            this.aButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.aButton2.BackColor = System.Drawing.SystemColors.Info;
+            this.aButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.aButton2.Location = new System.Drawing.Point(1068, 435);
+            this.aButton2.Name = "aButton2";
+            this.aButton2.Size = new System.Drawing.Size(75, 29);
+            this.aButton2.TabIndex = 50;
+            this.aButton2.Text = "키패드";
+            this.aButton2.UseVisualStyleBackColor = false;
+            this.aButton2.Click += new System.EventHandler(this.AButton2_Click);
+            // 
             // POP_PRD_015
             // 
             this.ClientSize = new System.Drawing.Size(1210, 629);
+            this.Controls.Add(this.aButton2);
             this.Controls.Add(this.aLabel1);
             this.Controls.Add(this.nudMeasure);
             this.Controls.Add(this.lblProcesscode);
@@ -315,6 +330,7 @@
             this.Controls.SetChildIndex(this.lblProcesscode, 0);
             this.Controls.SetChildIndex(this.nudMeasure, 0);
             this.Controls.SetChildIndex(this.aLabel1, 0);
+            this.Controls.SetChildIndex(this.aButton2, 0);
             this.panBottom.ResumeLayout(false);
             this.panBottom.PerformLayout();
             this.aPanel2.ResumeLayout(false);
@@ -348,5 +364,6 @@
         private Axxen.CustomControls.AButton aButton1;
         private System.Windows.Forms.NumericUpDown nudMeasure;
         private Axxen.CustomControls.ALabel aLabel1;
+        private Axxen.CustomControls.AButton aButton2;
     }
 }
