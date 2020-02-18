@@ -26,13 +26,11 @@
      
             @foreach (var item in Model)
             {
-
                 <li>
                     <img src="@Html.DisplayFor(modelItem => item.Lead_Time)" alt="User Image">
-                    <a class="users-list-name" href="#">상세정보</a>
+                    <a class="users-list-name" href="/Sys_Notice/Details/@Html.DisplayFor(modelItem => item.Ins_Emp)">상세정보</a>
                     <span class="users-list-date">   @Html.DisplayFor(modelItem => item.Item_Name)</span>
                 </li>
-
             }
         </ul>
         <!-- /.users-list -->
