@@ -23,6 +23,7 @@ namespace VO
         public string Prd_Unit { get; set; }        // 생산수량단위
         public string Wo_Req_No { get; set; }   // 생산의뢰 번호
         public int Req_Seq { get; set; }         // 생산의뢰 순서
+        public DateTime? Prd_Endtime { get; set; }  // 작업지시종료날짜
         public string Wc_Code { get; set; }        // 작업장코드
         public string Wo_Ini_Char { get; set; }    // 작업지시이니셜
         public string Wc_Name { get; set; }         // 작업장명

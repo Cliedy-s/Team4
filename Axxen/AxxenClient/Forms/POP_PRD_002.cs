@@ -51,6 +51,7 @@ namespace AxxenClient.Forms
             InitControlUtil.AddNewColumnToDataGridView(dgvWoReq, "수량", "Loading_Qty", true, 130, DataGridViewContentAlignment.MiddleRight, false);
             InitControlUtil.AddNewColumnToDataGridView(dgvWoReq, "대차이력 순서", "Hist_Seq", false);
             InitControlUtil.AddNewColumnToDataGridView(dgvWoReq, "박스당PCS", "Pcs_Qty", true, 120, DataGridViewContentAlignment.MiddleRight);
+            InitControlUtil.AddNewColumnToDataGridView(dgvWoReq, "작업종료날짜", "Prd_Endtime", true, 120, DataGridViewContentAlignment.MiddleRight);
         }
         private void btnCreateWorkOrder_Click(object sender, EventArgs e)
         {
@@ -72,7 +73,7 @@ namespace AxxenClient.Forms
                         Wo_Status = "생산대기",
                         Wo_Order = "5",
                         Prd_Unit = lblItem_Unit.Text
-                    }, lblHistReq.Text);
+                    }, lblHistReq.Text, dtpEndTime.Value );
                 if (IsSuccess)
                 {
                     Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 작업지시를 생성함");
@@ -103,6 +104,7 @@ namespace AxxenClient.Forms
             txtReqNo.TextBoxText = dgvWoReq.SelectedRows[0].Cells[1].Value.ToString();
             lblReq_Seq.Text = dgvWoReq.SelectedRows[0].Cells[0].Value.ToString();
             lblItem_Unit.Text = dgvWoReq.SelectedRows[0].Cells[2].Value.ToString();
+            dtpEndTime.Value = Convert.ToDateTime(dgvWoReq.SelectedRows[0].Cells[9].Value);
             txtProcessSearch.TextBoxText = GlobalUsage.ProcessName;
             txtProcessSearch.CodeText = GlobalUsage.ProcessCode;
             txtWcSearch.TextBoxText = GlobalUsage.WcName;
