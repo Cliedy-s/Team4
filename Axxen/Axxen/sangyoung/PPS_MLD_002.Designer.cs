@@ -55,7 +55,7 @@
             this.dotWorkCenter.Location = new System.Drawing.Point(709, 26);
             this.dotWorkCenter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dotWorkCenter.Name = "dotWorkCenter";
-            this.dotWorkCenter.Size = new System.Drawing.Size(229, 27);
+            this.dotWorkCenter.Size = new System.Drawing.Size(323, 27);
             this.dotWorkCenter.TabIndex = 23;
             this.dotWorkCenter.txtCodeText = "";
             this.dotWorkCenter.txtNameText = "";
@@ -67,10 +67,10 @@
             this.dotItem.CodeType = Axxen.CustomControls.DataType.Items;
             this.dotItem.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dotItem.lblNameText = "품목";
-            this.dotItem.Location = new System.Drawing.Point(439, 26);
+            this.dotItem.Location = new System.Drawing.Point(393, 26);
             this.dotItem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dotItem.Name = "dotItem";
-            this.dotItem.Size = new System.Drawing.Size(221, 27);
+            this.dotItem.Size = new System.Drawing.Size(310, 27);
             this.dotItem.TabIndex = 22;
             this.dotItem.txtCodeText = "";
             this.dotItem.txtNameText = "";
@@ -87,14 +87,14 @@
             // 
             // aDateTimePickerSearch1
             // 
-            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 2, 10, 0, 0, 0, 0);
-            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 2, 17, 0, 0, 0, 0);
+            this.aDateTimePickerSearch1.ADateTimePickerValue1 = new System.DateTime(2020, 2, 11, 0, 0, 0, 0);
+            this.aDateTimePickerSearch1.ADateTimePickerValue2 = new System.DateTime(2020, 2, 18, 0, 0, 0, 0);
             this.aDateTimePickerSearch1.ButtonText = "";
             this.aDateTimePickerSearch1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aDateTimePickerSearch1.Location = new System.Drawing.Point(88, 23);
             this.aDateTimePickerSearch1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.aDateTimePickerSearch1.Name = "aDateTimePickerSearch1";
-            this.aDateTimePickerSearch1.Size = new System.Drawing.Size(324, 32);
+            this.aDateTimePickerSearch1.Size = new System.Drawing.Size(285, 32);
             this.aDateTimePickerSearch1.TabIndex = 24;
             this.aDateTimePickerSearch1.btnDateTimeSearch_Click += new Axxen.CustomControls.ADateTimePickerSearch.SearchButtonClick(this.ADateTimePickerSearch1_btnDateTimeSearch_Click);
             // 
@@ -104,7 +104,7 @@
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.ControlBox = false;
             this.Name = "PPS_MLD_002";
-            this.Text = "";
+            this.Text = "금형사용현황";
             this.Activated += new System.EventHandler(this.PPS_MLD_002_Activated);
             this.Deactivate += new System.EventHandler(this.PPS_MLD_002_Deactivate);
             this.Load += new System.EventHandler(this.PPS_MLD_002_Load);

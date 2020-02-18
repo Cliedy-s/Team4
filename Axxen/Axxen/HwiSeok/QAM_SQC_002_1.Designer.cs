@@ -402,7 +402,7 @@
             this.Controls.Add(this.aPanel12);
             this.Name = "QAM_SQC_002_1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "";
+            this.Text = "공정검사 측정추가";
             this.Load += new System.EventHandler(this.QAM_SQC_002_1_Load);
             this.aPanel31.ResumeLayout(false);
             this.aPanel31.PerformLayout();

@@ -232,7 +232,7 @@
             this.Controls.Add(this.aLabel1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "MDS_ODS_002";
-            this.Text = "";
+            this.Text = "작업장정보";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MDS_ODS_002_FormClosing);
             this.Load += new System.EventHandler(this.MDS_ODS_002_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

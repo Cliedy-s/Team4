@@ -301,7 +301,7 @@
             // 
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Location = new System.Drawing.Point(341, 19);
+            this.btnSearch.Location = new System.Drawing.Point(372, 21);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(83, 30);
             this.btnSearch.TabIndex = 14;
@@ -318,7 +318,7 @@
             this.aTextBox_FindNameByCode1.Location = new System.Drawing.Point(23, 22);
             this.aTextBox_FindNameByCode1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.aTextBox_FindNameByCode1.Name = "aTextBox_FindNameByCode1";
-            this.aTextBox_FindNameByCode1.Size = new System.Drawing.Size(293, 27);
+            this.aTextBox_FindNameByCode1.Size = new System.Drawing.Size(335, 27);
             this.aTextBox_FindNameByCode1.TabIndex = 9;
             this.aTextBox_FindNameByCode1.txtCodeText = "";
             this.aTextBox_FindNameByCode1.txtNameText = "";
@@ -334,7 +334,7 @@
             this.Controls.Add(this.panelbox);
             this.Controls.Add(this.panTop);
             this.Name = "MDS_CDS_007";
-            this.Text = "";
+            this.Text = "포장등급상세정의";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MDS_CDS_007_FormClosing);
             this.Load += new System.EventHandler(this.MDS_CDS_007_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvbox)).EndInit();
