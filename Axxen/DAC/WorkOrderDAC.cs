@@ -410,9 +410,12 @@ namespace DAC
         ,im.Shot_Per_Qty 
 		,im.Dry_GV_Qty
         ,im.Heat_GV_Qty
+		,ilm.Box_Qty
+		,ilm.Pcs_Qty
   FROM [WorkOrder] wo 
     LEFT OUTER JOIN [WorkCenter_Master] as wcm ON wcm.[Wc_Code] = wo.[Wc_Code] AND wcm.Use_YN = 'Y' 
     LEFT OUTER JOIN [Item_Master] as im ON im.[Item_Code] = wo.[Item_Code] 
+	JOIN Item_Level_Master as ilm on im.Level_5 = ilm.Level_Code
    WHERE wo.[Wo_Status]  NOT IN ('현장마감','작업지시마감') AND wo.Wc_Code =@wccode; ";
                 comm.CommandType = CommandType.Text;
                 comm.Parameters.AddWithValue("@wccode", wccode);

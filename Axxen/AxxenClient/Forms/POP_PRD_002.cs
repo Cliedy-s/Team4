@@ -93,16 +93,11 @@ namespace AxxenClient.Forms
         }// 작업지시생성버튼
         private void dgvWorkOrder_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            // TODO - 포장 기계 생성하기
             int qty = Convert.ToInt32(dgvWoReq.SelectedRows[0].Cells[6].Value);
             int boxqty = Convert.ToInt32(dgvWoReq.SelectedRows[0].Cells[8].Value);
-            int planqty = 0;
 
             lblHistReq.Text = dgvWoReq.SelectedRows[0].Cells[7].Value.ToString();
-            if (qty % boxqty != 0)
-                planqty = qty / boxqty + 1;
-            else planqty = qty / boxqty;
-            txtPlanQty.TextBoxText = planqty.ToString();
+            txtPlanQty.TextBoxText = dgvWoReq.SelectedRows[0].Cells[6].Value.ToString();
             txtItemSearch.TextBoxText = dgvWoReq.SelectedRows[0].Cells[5].Value.ToString();
             txtItemSearch.CodeText = dgvWoReq.SelectedRows[0].Cells[4].Value.ToString();
             txtReqNo.TextBoxText = dgvWoReq.SelectedRows[0].Cells[1].Value.ToString();
