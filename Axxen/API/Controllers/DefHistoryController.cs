@@ -42,20 +42,16 @@ namespace API.Controllers
 
         // POST: DefHistory/Create
         [HttpPost]
-        public ActionResult DefectiveCreate(Def_HistoryVO definfo, HttpPostedFileBase files)
-        {
+        public ActionResult DefectiveCreate(Def_HistoryVO definfo)
+        {           
             try
             {
-                //
-                // Verify that the user selected a file
-                if (files != null && files.ContentLength > 0)
-                {
-                    // extract only the filename
-                    var fileName = Path.GetFileName(files.FileName);
-                    // store the file inside ~/App_Data/uploads folder
-                    var path = Path.Combine(Server.MapPath("~/App_Start/uploads"), fileName);
-                    files.SaveAs(path);
-                }
+                string filename = definfo.FileUploadFile.FileName;
+
+                var fileName = Path.GetFileName(definfo.FileUploadFile.FileName);
+                var path = Path.Combine(Server.MapPath("~/uploads"), fileName);
+                definfo.FileUploadFilePath = path;
+                definfo.FileUploadFile.SaveAs(path);
 
                 // TODO: Add insert logic here
                 Def_HistoryDAC def = new Def_HistoryDAC();
@@ -69,8 +65,9 @@ namespace API.Controllers
                 }
 
             }
-            catch
+            catch(Exception err)
             {
+                string sss = err.Message;
                 return View();
             }
         }
