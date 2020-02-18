@@ -170,7 +170,7 @@ namespace AxxenClient.Forms
         {
             setProgress += SetProgress;
             machineStop += MachineStop;
-            machine2 = new Machine(2, GlobalUsage.WorkOrderNo, GlobalUsage.UserID, GlobalUsage.WcCode, (value) => btnMachineRun.Invoke(machineStop, value), (stackqty, totalqty, prdqty, outqty) => progressMachine.Invoke(setProgress, stackqty, totalqty));
+            machine2 = new Machine(2, GlobalUsage.WorkOrderNo, GlobalUsage.UserID, GlobalUsage.WcCode, (value) => btnMachineRun?.Invoke(machineStop, value), (stackqty, totalqty, prdqty, outqty) => progressMachine?.Invoke(setProgress, stackqty, totalqty));
             if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
             {
                 if (!isMachineRun)

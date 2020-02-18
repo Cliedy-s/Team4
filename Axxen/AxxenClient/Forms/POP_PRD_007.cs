@@ -85,6 +85,7 @@ namespace AxxenClient.Forms
                     if (Convert.ToInt32(txtLoading.TextBoxText) == 0)
                     {
                         MessageBox.Show("0개를 로딩할 수는 없습니다.");
+                        return;
                     }
                         GV_HistoryService service = new GV_HistoryService();
 

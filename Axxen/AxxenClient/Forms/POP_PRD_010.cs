@@ -73,6 +73,7 @@ namespace AxxenClient.Forms
                     if (Convert.ToInt32(txtMove.TextBoxText) == 0)
                     {
                         MessageBox.Show("0개를 로딩할 수는 없습니다.");
+                        return;
                     }
                     string loadinggvcode = dgvGVTo.SelectedRows[0].Cells[0].Value.ToString();
                     string unloadgvcode = dgvGVFrom.SelectedRows[0].Cells[0].Value.ToString();

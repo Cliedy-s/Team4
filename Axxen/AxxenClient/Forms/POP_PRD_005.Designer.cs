@@ -30,13 +30,15 @@
         {
             this.dgvInPallet = new Axxen.CustomControls.ADataGridView();
             this.aPanel4 = new Axxen.CustomControls.APanel();
+            this.lblPalSeq = new Axxen.CustomControls.ALabel();
+            this.btnSearch = new Axxen.CustomControls.AButton();
             this.lblBarcodeNo = new Axxen.CustomControls.ALabel();
             this.txtBoxingGrade = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
             this.txtBoxingGradeDatail = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
             this.txtSize = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
-            this.txtPalletNo = new Axxen.CustomControls.ABigTextBox_Searchable();
             this.btnIn = new Axxen.CustomControls.AButton();
             this.txtBFour = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
+            this.txtPalletNo = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
             this.aLabel_SubHeader1 = new Axxen.CustomControls.ALabel_SubHeader();
             this.panBottom.SuspendLayout();
             this.aPanel2.SuspendLayout();
@@ -71,17 +73,45 @@
             // 
             this.aPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.aPanel4.Controls.Add(this.lblPalSeq);
+            this.aPanel4.Controls.Add(this.btnSearch);
             this.aPanel4.Controls.Add(this.lblBarcodeNo);
             this.aPanel4.Controls.Add(this.txtBoxingGrade);
             this.aPanel4.Controls.Add(this.txtBoxingGradeDatail);
             this.aPanel4.Controls.Add(this.txtSize);
-            this.aPanel4.Controls.Add(this.txtPalletNo);
             this.aPanel4.Controls.Add(this.btnIn);
             this.aPanel4.Controls.Add(this.txtBFour);
+            this.aPanel4.Controls.Add(this.txtPalletNo);
             this.aPanel4.Location = new System.Drawing.Point(649, 105);
             this.aPanel4.Name = "aPanel4";
             this.aPanel4.Size = new System.Drawing.Size(549, 482);
             this.aPanel4.TabIndex = 5;
+            // 
+            // lblPalSeq
+            // 
+            this.lblPalSeq.AutoSize = true;
+            this.lblPalSeq.Location = new System.Drawing.Point(126, 21);
+            this.lblPalSeq.Name = "lblPalSeq";
+            this.lblPalSeq.Size = new System.Drawing.Size(58, 12);
+            this.lblPalSeq.TabIndex = 39;
+            this.lblPalSeq.Text = "lblPalSeq";
+            this.lblPalSeq.Visible = false;
+            this.lblPalSeq.TextChanged += new System.EventHandler(this.lblPalSeq_TextChanged);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSearch.Location = new System.Drawing.Point(439, 36);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(69, 29);
+            this.btnSearch.TabIndex = 37;
+            this.btnSearch.Text = "찾기";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // lblBarcodeNo
             // 
@@ -92,7 +122,6 @@
             this.lblBarcodeNo.TabIndex = 35;
             this.lblBarcodeNo.Text = "lblBarcodeNo";
             this.lblBarcodeNo.Visible = false;
-            this.lblBarcodeNo.TextChanged += new System.EventHandler(this.lblBarcodeNo_TextChanged);
             // 
             // txtBoxingGrade
             // 
@@ -136,23 +165,6 @@
             this.txtSize.TextBoxText = "";
             this.txtSize.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
-            // txtPalletNo
-            // 
-            this.txtPalletNo.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtPalletNo.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtPalletNo.CodeText = null;
-            this.txtPalletNo.DataType = Axxen.CustomControls.DataType.Pallet;
-            this.txtPalletNo.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtPalletNo.LabelText = "팔레트 번호";
-            this.txtPalletNo.Location = new System.Drawing.Point(42, 30);
-            this.txtPalletNo.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.txtPalletNo.Name = "txtPalletNo";
-            this.txtPalletNo.Size = new System.Drawing.Size(469, 42);
-            this.txtPalletNo.TabIndex = 28;
-            this.txtPalletNo.TextBoxText = "";
-            this.txtPalletNo.TextBoxType = Axxen.CustomControls.TextType.Normal;
-            this.txtPalletNo.searchclick += new Axxen.CustomControls.ABigTextBox_Searchable.SearchClick(this.txtPalletNo_searchclick);
-            // 
             // btnIn
             // 
             this.btnIn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -181,6 +193,20 @@
             this.txtBFour.TextBoxText = "";
             this.txtBFour.TextBoxType = Axxen.CustomControls.TextType.Numeric;
             // 
+            // txtPalletNo
+            // 
+            this.txtPalletNo.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtPalletNo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtPalletNo.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtPalletNo.LabelText = "팔레트 번호";
+            this.txtPalletNo.Location = new System.Drawing.Point(42, 30);
+            this.txtPalletNo.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtPalletNo.Name = "txtPalletNo";
+            this.txtPalletNo.Size = new System.Drawing.Size(469, 42);
+            this.txtPalletNo.TabIndex = 38;
+            this.txtPalletNo.TextBoxText = "";
+            this.txtPalletNo.TextBoxType = Axxen.CustomControls.TextType.Numeric;
+            // 
             // aLabel_SubHeader1
             // 
             this.aLabel_SubHeader1.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -200,7 +226,6 @@
             this.Controls.Add(this.dgvInPallet);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "POP_PRD_005";
-            this.Text = "포장 입고등록";
             this.Activated += new System.EventHandler(this.POP_PRD_005_Activated);
             this.Deactivate += new System.EventHandler(this.POP_PRD_005_Deactivate);
             this.Load += new System.EventHandler(this.POP_PRD_005_Load);
@@ -228,11 +253,13 @@
         private Axxen.CustomControls.APanel aPanel4;
         private Axxen.CustomControls.AButton btnIn;
         private Axxen.CustomControls.ALabel_SubHeader aLabel_SubHeader1;
-        private Axxen.CustomControls.ABigTextBox_Searchable txtPalletNo;
         private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox txtBoxingGrade;
         private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox txtBoxingGradeDatail;
         private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox txtSize;
         private Axxen.CustomControls.ALabel lblBarcodeNo;
         private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox txtBFour;
+        private Axxen.CustomControls.AButton btnSearch;
+        private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox txtPalletNo;
+        private Axxen.CustomControls.ALabel lblPalSeq;
     }
 }

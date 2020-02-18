@@ -525,7 +525,6 @@
             this.Controls.Add(this.dgvMain);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "POP_PRD_001";
-            this.Text = "작업지시현황";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.POP_PRD_001_FormClosing);
             this.Load += new System.EventHandler(this.WorkOrderForm_Load);
             this.Controls.SetChildIndex(this.dgvMain, 0);
