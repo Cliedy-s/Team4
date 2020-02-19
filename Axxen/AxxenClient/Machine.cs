@@ -12,7 +12,7 @@ using System.Timers;
 
 namespace AxxenClient
 {
-    public enum MachineType { Molding, Boxing, Inspect_Measure }
+    public enum MachineType { Molding, Inspect_Measure }
     public class Item_inspectPair {
         public string Itemcode { get; set; }
         public string Inspectcode { get; set; }
@@ -44,7 +44,8 @@ namespace AxxenClient
         internal static LoggingUtility Log { get { return _loggingUtility; } }
 
         System.Timers.Timer timer;
-        string writefolder = ConfigurationManager.AppSettings["WriteFolder"];
+        string writefolder = Environment.GetFolderPath(System.Environment.SpecialFolder.UserProfile)+ConfigurationManager.AppSettings["WriteFolder"];
+        
         int interval = int.Parse(ConfigurationManager.AppSettings["LogCreateMillisecond"]);
         int machineID = 0;
         int iCnt = 0;
@@ -62,6 +63,9 @@ namespace AxxenClient
 
         public Machine(int machineID, string workorderno, string userid, string wccode, Action<MachineType> stopevent = null, Action<int, int, int, int> runevent = null)
         {
+            if (!Directory.Exists(writefolder))
+                Directory.CreateDirectory(writefolder);
+
             this.stopevent = stopevent;
             this.runevent = runevent;
             this.workorderno = workorderno;
@@ -83,20 +87,6 @@ namespace AxxenClient
             timer = new System.Timers.Timer(interval);
             timer.Enabled = true;
             timer.Elapsed += (sender, eventargs) => { Mold_Elapsed(pair); };
-            timer.AutoReset = true;
-        }
-        /// <summary>
-        /// 포장 기계시작
-        /// </summary>
-        public void MachineStart(int toqty, string itemcode, int shotQty)
-        {
-            this.toqty = toqty;
-            this.totalqty = toqty;
-
-            Log.WriteInfo("포장 시작...");
-            timer = new System.Timers.Timer(interval);
-            timer.Enabled = true;
-            timer.Elapsed += (sender, eventargs) => { Boxing_Elapsed(itemcode, shotQty); };
             timer.AutoReset = true;
         }
         /// <summary>
@@ -126,14 +116,8 @@ namespace AxxenClient
                     MoldService service = new MoldService();
                     service.InsertUpdateEndMoldWork(userid, moldcode, workorderno, prdcnt, iCnt);
                     break;
-                case MachineType.Boxing:
-                    msg = "포장";
-                    break;
                 case MachineType.Inspect_Measure:
                     msg = "품질측정";
-                    break;
-                default:
-                    msg = "";
                     break;
             }
             Log.WriteInfo(msg+" 로그 기록 종료...");
@@ -172,37 +156,6 @@ namespace AxxenClient
                 Log.WriteError("오류 : ", ee);
             }
             if (toqty < 0) { MachineStop(MachineType.Molding, pair.Moldcode); }
-        }
-        /// <summary>
-        /// 포장기계
-        /// </summary>
-        /// <param name="itemcode"></param>
-        /// <param name="shotQty"></param>
-        private void Boxing_Elapsed(string itemcode, int shotQty)
-        {
-            // TODO - 포장하기
-            iCnt++;
-            Random rnd = new Random((int)DateTime.UtcNow.Ticks);
-            int badcnt = rnd.Next(0, 3);
-            int outqty = shotQty;
-            StreamWriter sw = null;
-
-            toqty = toqty - (outqty - badcnt);
-            if (toqty < 0) { outqty = outqty + toqty; }
-            try
-            {
-                DateTime now = DateTime.Now;
-                sw = new StreamWriter($"{writefolder}\\{now.ToString("yyyyMMddHHmmss")}BoxingLog_{machineID}_{iCnt}.log", false);
-                string msg = $"{DateTime.Now.ToString("yyyyMMdd HH:mm:ss")}/Machine_{machineID}/{workorderno}/{userid}/{wccode}/Blank/{itemcode}/{outqty}/{badcnt}";
-                sw.WriteLine(msg);
-                sw.Flush();
-                sw.Close();
-            }
-            catch (Exception ee)
-            {
-                Log.WriteError("오류 : ", ee);
-            }
-            if (toqty < 0) { MachineStop(MachineType.Boxing); }
         }
         int measurecnt = 0;
         /// <summary>

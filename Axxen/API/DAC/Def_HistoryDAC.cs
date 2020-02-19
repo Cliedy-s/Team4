@@ -73,10 +73,48 @@ namespace API.DAC
         }
 
 
-        public List<Def_History2VO> DefectiveDetails() // 불량이력 찾아오는 쿼리
+        public List<Def_History2VO> DefectiveDetails(string User) // 불량이력 찾아오는 쿼리
         {
-            string sql = @"select Def_Seq,Workorderno,defh.Def_Mi_Code as Def_Mi_Code,defm.Def_Mi_Name as Def_Mi_Name,Def_Date,Def_Qty,defm.Ins_Date as Ins_Date,defm.Ins_Emp as Ins_Emp
-                            from Def_History defh INNER JOIN Def_Mi_Master defm ON defh.Def_Mi_Code = defm.Def_Mi_Code Order by Def_Seq ASC";
+            string sql = @"select Def_Seq,Workorderno,defh.Def_Mi_Code as Def_Mi_Code,defm.Def_Mi_Name as Def_Mi_Name,Def_Date,Def_Qty,Def_Image_Name,defh.Ins_Date as Ins_Date,defh.Ins_Emp as Ins_Emp
+                        from Def_History defh INNER JOIN Def_Mi_Master defm ON defh.Def_Mi_Code = defm.Def_Mi_Code
+						where defh.Ins_Emp=@User
+						Order by Def_Seq ASC";
+            List<Def_History2VO> list = new List<Def_History2VO>();
+            using (SqlConnection conn = new SqlConnection(Connstr))
+            {
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                conn.Open();
+                cmd.Parameters.AddWithValue("@User", User);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    list.Add(new Def_History2VO
+                    {
+                        Def_Seq = Convert.ToInt32(reader["Def_Seq"]),
+                        Workorderno = reader["Workorderno"].ToString(),
+                        Def_Mi_Code = reader["Def_Mi_Code"].ToString(),
+                        Def_Mi_Name = reader["Def_Mi_Name"].ToString(),
+                        Def_Date = reader["Def_Date"].ToString(),
+                        Def_Qty = Convert.ToInt32(reader["Def_Qty"]),
+                        Def_Image_Name = reader["Def_Image_Name"].ToString(),
+                        //FileUploadFilePath = reader["Def_Image_Name"].ToString(),
+                        //FileUploadFile = (HttpPostedFileBase)reader["Def_Image_Path"],
+                        Ins_Date = reader["Ins_Date"].ToString(),
+                        Ins_Emp = reader["Ins_Emp"].ToString(),
+                    });
+                }
+                reader.Close();
+                conn.Close();
+            }
+            return list;
+        }
+
+
+        public List<Def_History2VO> DefectiveAllDetails() //모든 불량이력 찾아오는 쿼리
+        {
+            string sql = @"select Def_Seq,Workorderno,defh.Def_Mi_Code as Def_Mi_Code,defm.Def_Mi_Name as Def_Mi_Name,Def_Date,Def_Qty,Def_Image_Name,defh.Ins_Date as Ins_Date,defh.Ins_Emp as Ins_Emp
+                        from Def_History defh INNER JOIN Def_Mi_Master defm ON defh.Def_Mi_Code = defm.Def_Mi_Code
+						Order by Def_Seq ASC";
             List<Def_History2VO> list = new List<Def_History2VO>();
             using (SqlConnection conn = new SqlConnection(Connstr))
             {
@@ -93,6 +131,7 @@ namespace API.DAC
                         Def_Mi_Name = reader["Def_Mi_Name"].ToString(),
                         Def_Date = reader["Def_Date"].ToString(),
                         Def_Qty = Convert.ToInt32(reader["Def_Qty"]),
+                        Def_Image_Name = reader["Def_Image_Name"].ToString(),
                         //FileUploadFilePath = reader["Def_Image_Name"].ToString(),
                         //FileUploadFile = (HttpPostedFileBase)reader["Def_Image_Path"],
                         Ins_Date = reader["Ins_Date"].ToString(),
@@ -104,6 +143,24 @@ namespace API.DAC
             }
             return list;
         }
-        
+
+        public bool DefectiveDelete(int Seq)
+        {
+            {
+                string sql = "delete from Def_History where Def_Seq=@Def_Seq";
+
+                using (SqlConnection conn = new SqlConnection(Connstr))
+                {
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+
+                    cmd.Parameters.AddWithValue("@Def_Seq", Seq);
+
+                    conn.Open();
+                    int iResult = cmd.ExecuteNonQuery();
+                    conn.Close();
+                    return (iResult > 0);
+                }
+            }
+        }
     }
 }

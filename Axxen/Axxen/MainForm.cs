@@ -69,84 +69,98 @@ namespace Axxen
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            LoginForm frm = new LoginForm();
-
-            if (frm.ShowDialog() == DialogResult.OK)
+            tvMenu.Visible = false;
+            toolStripButtoncencle.Alignment = ToolStripItemAlignment.Right; //즐겨찾기 툴스트립 버튼 오른쪽으로 배치
+            toolStripButtonSetting.Alignment = ToolStripItemAlignment.Right; //세팅버튼
+            toolStripButtonLogin.Alignment = ToolStripItemAlignment.Right;
+            toolStripSeparator3.Alignment = ToolStripItemAlignment.Right;
+        }
+        private void ToolStripButtonLogin_Click(object sender, EventArgs e)
+        {
+            if (toolStripButtonLogin.Text.Equals("로그인"))
             {
-                toolStripButtonLogin.Text = "로그아웃";
 
+                LoginForm frm = new LoginForm();
 
-                List<UserDante> userDantelist = new List<UserDante>();
-                UserDante userdante1 = new UserDante();
-                UserDante userdante2 = new UserDante();
-                UserDante userdante3 = new UserDante();
-                UserDante userdante4 = new UserDante();
-
-                userdante1.Userkey = UserInfo.S01;
-                userDantelist.Add(userdante1);
-                userdante2.Userkey = UserInfo.S02;
-                userDantelist.Add(userdante2);
-                userdante3.Userkey = UserInfo.S03;
-                userDantelist.Add(userdante3);
-                userdante4.Userkey = UserInfo.S04;
-                userDantelist.Add(userdante4);
-
-                int firstkey=0;
-                for (int i = 0; i < userDantelist.Count; i++)
+                if (frm.ShowDialog() == DialogResult.OK)
                 {
-                    string[] chuserkey = userDantelist[i].Userkey.Split('/');
-                    if (chuserkey[0] == "Alt")
-                    {         
-                        firstkey = 0x1;
-                        RegisterHotKey(this.Handle, i, firstkey, Convert.ToChar(chuserkey[1]));
-                    }
-                    else if (chuserkey[0] == "Ctrl")
+                    toolStripButtonLogin.Text = "로그아웃";
+
+
+                    List<UserDante> userDantelist = new List<UserDante>();
+                    UserDante userdante1 = new UserDante();
+                    UserDante userdante2 = new UserDante();
+                    UserDante userdante3 = new UserDante();
+                    UserDante userdante4 = new UserDante();
+
+                    userdante1.Userkey = UserInfo.S01;
+                    userDantelist.Add(userdante1);
+                    userdante2.Userkey = UserInfo.S02;
+                    userDantelist.Add(userdante2);
+                    userdante3.Userkey = UserInfo.S03;
+                    userDantelist.Add(userdante3);
+                    userdante4.Userkey = UserInfo.S04;
+                    userDantelist.Add(userdante4);
+
+                    int firstkey = 0;
+                    for (int i = 0; i < userDantelist.Count; i++)
                     {
-                        firstkey = 0x2;
-                        RegisterHotKey(this.Handle, i, firstkey, Convert.ToChar(chuserkey[1]));
+                        string[] chuserkey = userDantelist[i].Userkey.Split('/');
+                        if (chuserkey[0] == "Alt")
+                        {
+                            firstkey = 0x1;
+                            RegisterHotKey(this.Handle, i, firstkey, Convert.ToChar(chuserkey[1]));
+                        }
+                        else if (chuserkey[0] == "Ctrl")
+                        {
+                            firstkey = 0x2;
+                            RegisterHotKey(this.Handle, i, firstkey, Convert.ToChar(chuserkey[1]));
+                        }
+                        else if (chuserkey[0] == "Shift")
+                        {
+                            firstkey = 0x3;
+                            RegisterHotKey(this.Handle, i, firstkey, Convert.ToChar(chuserkey[1]));
+                        }
+                        else
+                        {
+                            //  RegisterHotKey(this.Handle, i, 0x0, Convert.ToChar(chuserkey[1]));
+                        }
                     }
-                    else if (chuserkey[0] == "Shift")
+
+
+                    lblLogin.Text = UserInfo.User_Name + " 님";
+
+
+                    ImageList imgList = new ImageList();
+                    //imgList.Images.Add(Bitmap.FromFile("treeimg.png"));
+                    imgList.Images.Add(Properties.Resources.treeimg);
+                    tvMenu.ImageList = imgList;
+                    tvBookMark.ImageList = imgList;
+                    this.tabControl2.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
+                    CloseImage = Properties.Resources.x;
+                    this.tabControl2.Padding = new Point(10, 3);
+                    UserInformation();
+                    Setting();
+                    booklist = Mainservice.GetAll_BookMark(UserInfo.User_ID);
+
+                    if (!UserInfo.Default_Screen_Code.Equals("0")) //사용자의 디폴트 화면 가져오기
                     {
-                        firstkey = 0x3;
-                        RegisterHotKey(this.Handle, i, firstkey, Convert.ToChar(chuserkey[1]));
+                        newForm(UserInfo.Default_Screen_Code, screenitemlist.Find(item => item.Screen_Code == UserInfo.Default_Screen_Code).Type);
                     }
-                    else
-                    {
-                      //  RegisterHotKey(this.Handle, i, 0x0, Convert.ToChar(chuserkey[1]));
-                    }
-                }             
-
-                toolStripButtoncencle.Alignment = ToolStripItemAlignment.Right; //즐겨찾기 툴스트립 버튼 오른쪽으로 배치
-                toolStripButtonSetting.Alignment = ToolStripItemAlignment.Right; //세팅버튼
-                toolStripButtonLogin.Alignment = ToolStripItemAlignment.Right;
-                toolStripSeparator3.Alignment = ToolStripItemAlignment.Right;
-
-                lblLogin.Text = UserInfo.User_Name + " 님";
-
-                tvMenu.Visible = false;
-                ImageList imgList = new ImageList();
-                //imgList.Images.Add(Bitmap.FromFile("treeimg.png"));
-                imgList.Images.Add(Properties.Resources.treeimg);
-                tvMenu.ImageList = imgList;
-                tvBookMark.ImageList = imgList;
-                this.tabControl2.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-                CloseImage = Properties.Resources.x;
-                this.tabControl2.Padding = new Point(10, 3);
-                UserInformation();
-                Setting();
-                booklist = Mainservice.GetAll_BookMark(UserInfo.User_ID);
-
-                if (!UserInfo.Default_Screen_Code.Equals("0")) //사용자의 디폴트 화면 가져오기
+                }
+                else
                 {
-                    newForm(UserInfo.Default_Screen_Code, screenitemlist.Find(item => item.Screen_Code == UserInfo.Default_Screen_Code).Type);
+                    frm.Close();
                 }
             }
-            else
+            else //로그아웃
             {
-                this.Close();
+                if (MessageBox.Show("로그아웃을 정말 하시겠습니까?", "종료", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    this.Close();
+                }
             }
         }
-
         public void Setting()
         {
             // myButtons.Clear();
@@ -419,10 +433,13 @@ namespace Axxen
                                 }
 
                             }
+              
                             childForm.Activate();
+                       
                             return;
                         }
                     }
+          
                     frm.MdiParent = this;
                     frm.WindowState = FormWindowState.Maximized;
                     frm.SizeChanged += Frm_SizeChanged;
@@ -433,10 +450,10 @@ namespace Axxen
                     newTab.Text = formText;
 
                     tabControl2.TabPages.Add(newTab);
-                    
+
                     tabControl2.SelectedTab = newTab; //새로연 메뉴의 화면 텝페이지 눌릴 수 있도록
                     frm.Show();
-
+              
                     /////////////////// 메뉴클릭시 
                     foreach (Form childForm in Application.OpenForms)
                     {
@@ -541,26 +558,30 @@ namespace Axxen
         /// <param name="e"></param>
         private void BtnBookmark_Click(object sender, EventArgs e)
         {
-            if (BookmarkCheck)
+            if (booklist != null)
             {
-
-                pnBookmark.Visible = true;
-                BookmarkCheck = false;
-                tvBookMark.Nodes.Clear();
-                tvBookMark.Nodes.Add("즐겨찾기");
-
-                for (int i = 0; i < booklist.Count; i++)
+                if (BookmarkCheck)
                 {
-                    tvBookMark.TopNode.Nodes.Add(booklist[i].Type);
-                }
 
-                tvBookMark.ExpandAll();
+                    pnBookmark.Visible = true;
+                    BookmarkCheck = false;
+                    tvBookMark.Nodes.Clear();
+                    tvBookMark.Nodes.Add("즐겨찾기");
+
+                    for (int i = 0; i < booklist.Count; i++)
+                    {
+                        tvBookMark.TopNode.Nodes.Add(booklist[i].Type);
+                    }
+
+                    tvBookMark.ExpandAll();
+                }
+                else
+                {
+                    pnBookmark.Visible = false;
+                    BookmarkCheck = true;
+                }
             }
-            else
-            {
-                pnBookmark.Visible = false;
-                BookmarkCheck = true;
-            }
+
 
         }
 
@@ -638,7 +659,7 @@ namespace Axxen
                 }
                 else
                 {
-                   // e.Graphics.FillRectangle(Brushes.PaleTurquoise, e.Bounds); //텝페이지 색
+                    // e.Graphics.FillRectangle(Brushes.PaleTurquoise, e.Bounds); //텝페이지 색
                 }
 
 
@@ -732,7 +753,7 @@ namespace Axxen
                             }
                             //    tabControl2.SelectedTab. = Color.Red; //텝페이지 색
                             childForm.Activate();
-                        
+
                             lblSubtitle.Text = screenitemlist.Find(item => item.Screen_Code == tabControl2.SelectedTab.Tag.ToString()).Screen_Path.ToString();
 
                             break;
@@ -752,9 +773,9 @@ namespace Axxen
             foreach (Form children in this.MdiChildren)
             {
 
-   
+
                 children.Close();
-          
+
             }
 
             tabControl2.TabPages.Clear();
@@ -801,25 +822,25 @@ namespace Axxen
 
         private void TsbtnUpdate_Click_1(object sender, EventArgs e)
         {
-            
-                try
-                {
-                    if (this.MyUpdateEvent != null)
-                MyUpdateEvent(this, null);
-                }
-                catch (Exception err)
-                {
+
+            try
+            {
+                if (this.MyUpdateEvent != null)
+                    MyUpdateEvent(this, null);
+            }
+            catch (Exception err)
+            {
 
                 Program.Log.WriteError(err.Message);
             }
-            }
+        }
 
         private void TsbtnDelete_Click(object sender, EventArgs e)
         {
-                try
-                {
-                    if (this.MyDeleteEvent != null)
-                MyDeleteEvent(this, null);
+            try
+            {
+                if (this.MyDeleteEvent != null)
+                    MyDeleteEvent(this, null);
             }
             catch (Exception err)
             {
@@ -860,11 +881,14 @@ namespace Axxen
 
         private void ToolStripButtonSetting_Click(object sender, EventArgs e)
         {
-            UserSettingForm frm = new UserSettingForm();
-            frm.ShowDialog();
+            if (UserInfo.User_ID != null)
+            {
+                UserSettingForm frm = new UserSettingForm();
+                frm.ShowDialog();
+            }
         }
 
-   
+
 
         private void Button9_Click(object sender, EventArgs e)
         {
@@ -874,51 +898,55 @@ namespace Axxen
 
         private void BtnManuReflash_Click(object sender, EventArgs e) //메뉴세로고침
         {
-            Setting();
-            Setting();
-            Setting();
- 
-            btnManuReflash.Text = "메뉴";
+            if (UserInfo.User_ID != null)
+            {
+                Setting();
+                Setting();
+                Setting();
+
+                btnManuReflash.Text = "메뉴";
+            }
+
         }
 
 
-        protected override void WndProc(ref Message message)
-        {
-            try
-            {
-
-           
-            base.WndProc(ref message);
+        //protected override void WndProc(ref Message message)
+        //{
+        //    try
+        //    {
 
 
-            if (message.Msg == (int)0x312) //핫키가 눌러지면 312 정수 메세지를 받게됨
-            {
-                if (message.WParam == (IntPtr)0x0) // 0x0아이디 추가
-                {
-                    tsbInsert.PerformClick();
-                } 
-                else if (message.WParam == (IntPtr)0x1) // 수정
-                {
-                    tsbtnUpdate.PerformClick();
-                }
-                else if (message.WParam == (IntPtr)0x2) // 삭제
-                {
-                    tsbtnDelete.PerformClick();
-                }
-                else if (message.WParam == (IntPtr)0x3) //새로고침
-                {
-                    tsbtnRefresh.PerformClick();
-                }
-                }
-            }
-            catch (Exception err)
-            {
-
-                Program.Log.WriteError(err.Message);
-            }
+        //        base.WndProc(ref message);
 
 
-        }
+        //        if (message.Msg == (int)0x312) //핫키가 눌러지면 312 정수 메세지를 받게됨
+        //        {
+        //            if (message.WParam == (IntPtr)0x0) // 0x0아이디 추가
+        //            {
+        //                tsbInsert.PerformClick();
+        //            }
+        //            else if (message.WParam == (IntPtr)0x1) // 수정
+        //            {
+        //                tsbtnUpdate.PerformClick();
+        //            }
+        //            else if (message.WParam == (IntPtr)0x2) // 삭제
+        //            {
+        //                tsbtnDelete.PerformClick();
+        //            }
+        //            else if (message.WParam == (IntPtr)0x3) //새로고침
+        //            {
+        //                tsbtnRefresh.PerformClick();
+        //            }
+        //        }
+        //    }
+        //    catch (Exception err)
+        //    {
+
+        //        Program.Log.WriteError(err.Message);
+        //    }
+
+
+        //}
 
         private void 메모장ToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -932,8 +960,10 @@ namespace Axxen
 
         private void 그림판ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
-                 Process.Start("mspaint.exe");
+
+            Process.Start("mspaint.exe");
         }
+
+
     }
 }

@@ -41,7 +41,7 @@ namespace AxxenClient.Forms
             InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "수량", "CurrentQty", true, 100, DataGridViewContentAlignment.MiddleRight);
             InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "등급상세", "Grade_Detail_Code", false);
             InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "사이즈", "Size_Code", false);
-
+            InitControlUtil.AddNewColumnToDataGridView(dgvPalletList, "등급", "Boxing_Grade_Code", false);
         }
         private void GetDatas()
         {
@@ -55,6 +55,16 @@ namespace AxxenClient.Forms
                 DateTime now = DateTime.Now;
                 Random rand = new Random(now.Millisecond);
                 Pallet_MasterService service = new Pallet_MasterService();
+                if (string.IsNullOrEmpty(txtPalletNo.TextBoxText))
+                {
+                    MessageBox.Show("팔래트 번호를 입력해주세요");
+                    return;
+                }
+                if (string.IsNullOrEmpty(txtBoxingGradeDetail.CodeText))
+                {
+                    MessageBox.Show("등급을 찾기버튼으로 입력해주세요");
+                    return;
+                }
                 if (!service.IsExistPallet(txtPalletNo.TextBoxText, GlobalUsage.WorkOrderNo))
                 { // 팔레트가 존재하지않으면
                     // insert 시도
@@ -119,8 +129,9 @@ namespace AxxenClient.Forms
             if (e.RowIndex > -1)
             {
                 txtPalletNo.TextBoxText = dgvPalletList.SelectedRows[0].Cells[0].Value.ToString();
-                txtBoxingGrade.TextBoxText = dgvPalletList.SelectedRows[0].Cells[2].Value == null ? "" : dgvPalletList.SelectedRows[0].Cells[2].Value.ToString();
-                txtBoxingGradeDetail.TextBoxText = dgvPalletList.SelectedRows[0].Cells[4].Value == null ? "" : dgvPalletList.SelectedRows[0].Cells[4].Value.ToString();
+                txtBoxingGrade.TextBoxText = dgvPalletList.SelectedRows[0].Cells[6].Value == null ? "" : dgvPalletList.SelectedRows[0].Cells[6].Value.ToString();
+                txtBoxingGradeDetail.TextBoxText = dgvPalletList.SelectedRows[0].Cells[2].Value == null ? "" : dgvPalletList.SelectedRows[0].Cells[2].Value.ToString();
+                txtBoxingGradeDetail.CodeText = dgvPalletList.SelectedRows[0].Cells[4].Value == null ? "" : dgvPalletList.SelectedRows[0].Cells[4].Value.ToString();
                 txtSizeCode.TextBoxText = dgvPalletList.SelectedRows[0].Cells[5].Value == null ? "" : dgvPalletList.SelectedRows[0].Cells[5].Value.ToString();
                 txtPrintPallet.TextBoxText = dgvPalletList.SelectedRows[0].Cells[3].Value.ToString();
             }
@@ -137,6 +148,18 @@ namespace AxxenClient.Forms
         private void txtBoxingGrade_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnKeypad_Click(object sender, EventArgs e)
+        {
+            KeypadForm frm = new KeypadForm();
+            frm.FormSendEvent += new KeypadForm.FormSendDataHandler(DieaseUpdateEventMethod);
+            frm.Show();
+        }
+        private void DieaseUpdateEventMethod(object sender)
+        {
+            //폼2에서 델리게이트로 이벤트 발생하면 현재 함수 Call
+            txtPrintPallet.TextBoxText = sender.ToString();
         }
     }
 }

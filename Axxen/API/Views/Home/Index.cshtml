@@ -1,33 +1,44 @@
 ﻿
+@model IEnumerable<API.Models.Item_MasterVO>
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-    <h2>홈화면 입니다.</h2>
+<!-- USERS LIST -->
+<div class="box box-danger">
+    <div class="box-header with-border">
+        <h3 class="box-title">제품 목록</h3>
 
-@*<div class="jumbotron">
-        <h1>ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-        <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+        <div class="box-tools pull-right">
+            <span class="label label-danger">@Model.Count()</span>
+            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                <i class="fa fa-minus"></i>
+            </button>
+            <button type="button" class="btn btn-box-tool" data-widget="remove">
+                <i class="fa fa-times"></i>
+            </button>
+        </div>
     </div>
-    <div class="row">
-        <div class="col-md-4">
-            <h2>Getting started</h2>
-            <p>ASP.NET Web API is a framework that makes it easy to build HTTP services that reach
-            a broad range of clients, including browsers and mobile devices. ASP.NET Web API
-            is an ideal platform for building RESTful applications on the .NET Framework.</p>
-            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301870">Learn more &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-            <h2>Get more libraries</h2>
-            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301871">Learn more &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-            <h2>Web Hosting</h2>
-            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301872">Learn more &raquo;</a></p>
-        </div>
-    </div>*@
+    <!-- /.box-header -->
+    <div class="box-body no-padding">
+        <ul class="users-list clearfix">
+     
+            @foreach (var item in Model)
+            {
+            <li>      
+                <img src="@Html.DisplayFor(modelItem => item.Lead_Time)" alt="User Image">
+                <a class="users-list-name" href="/Home/Details/@Html.DisplayFor(modelItem => item.Item_Code)">상세정보</a>
+                <span class="users-list-date">   @Html.DisplayFor(modelItem => item.Item_Name)</span>
+            </li>
+            }
+        </ul>
+        <!-- /.users-list -->
+    </div>
+    <!-- /.box-body -->
+    <div class="box-footer text-center">
+        <a href="javascript:void(0)" class="uppercase"></a>
+    </div>
+    <!-- /.box-footer -->
+</div>
+

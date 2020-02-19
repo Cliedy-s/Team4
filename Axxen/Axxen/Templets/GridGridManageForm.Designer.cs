@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GridGridManageForm));
             this.aPanel1 = new Axxen.CustomControls.APanel();
             this.aSplitContainer1 = new Axxen.CustomControls.ASplitContainer();
             this.aDataGridView1 = new Axxen.CustomControls.ADataGridView();
@@ -183,6 +184,7 @@
             this.ClientSize = new System.Drawing.Size(1148, 700);
             this.Controls.Add(this.aSplitContainer1);
             this.Controls.Add(this.aPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "GridGridManageForm";
             this.Text = "GridGridManageForm";

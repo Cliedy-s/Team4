@@ -27,11 +27,17 @@ namespace MachineService
         {
             InitializeComponent();
         }
-        //protected override void OnStart(string[] args)
-        //{
-        //}
-        public void OnStart()
+        protected override void OnStart(string[] args)
         {
+            string userpath = Environment.GetFolderPath(System.Environment.SpecialFolder.UserProfile);
+            orgfolder.Insert(0, userpath);
+            donefolder.Insert(0, userpath);
+
+            if (!Directory.Exists(orgfolder))
+                Directory.CreateDirectory(orgfolder);
+            if (!Directory.Exists(donefolder))
+                Directory.CreateDirectory(donefolder);
+            
             timer = new Timer(interval);
             timer.Enabled = true;
             timer.Elapsed += Timer_Elapsed;
@@ -93,28 +99,6 @@ namespace MachineService
                                         int result = comm.ExecuteNonQuery();
                                         comm.Connection.Close();
                                     }
-                                }
-                                else if (filename.StartsWith("BoxingLog"))
-                                {
-                                    // 20200212 20:33:36/Machine_0/WK200212145551/master/WC50001/Blank/IC0001/10/4
-                                    //using (SqlCommand comm = new SqlCommand())
-                                    //{
-                                    //    comm.Connection = new SqlConnection(strconn);
-                                    //    comm.CommandType = CommandType.StoredProcedure;
-                                    //    comm.CommandText = "InsertUpdateMoldWork";
-                                    //    comm.Parameters.AddWithValue("@userid", arrData[3]);
-                                    //    comm.Parameters.AddWithValue("@moldcode", arrData[5]);
-                                    //    comm.Parameters.AddWithValue("@wccode", arrData[4]);
-                                    //    comm.Parameters.AddWithValue("@workorderno", arrData[2]);
-                                    //    comm.Parameters.AddWithValue("@itemcode", arrData[6]);
-                                    //    comm.Parameters.AddWithValue("@outqty", Convert.ToInt32(arrData[7]));
-                                    //    comm.Parameters.AddWithValue("@badqty", Convert.ToInt32(arrData[8]));
-
-                                    //    comm.CommandType = CommandType.StoredProcedure;
-                                    //    comm.Connection.Open();
-                                    //    int result = comm.ExecuteNonQuery();
-                                    //    comm.Connection.Close();
-                                    //}
                                 }
                                 else if (filename.StartsWith("Inspect_MeasureLog"))
                                 {

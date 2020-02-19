@@ -432,7 +432,7 @@ namespace DAC
         /// </summary>
         /// <param name="item"></param>
         /// <returns></returns>
-        public bool InsertWorkOrder(WorkOrderNewVO item, string histcode = null)
+        public bool InsertWorkOrder(WorkOrderNewVO item, string histcode = null, DateTime? endTime = null)
         {
             using (SqlCommand comm = new SqlCommand())
             {
@@ -456,6 +456,10 @@ namespace DAC
                     comm.Parameters.AddWithValue("@histSeq", DBNull.Value);
                 else
                     comm.Parameters.AddWithValue("@histSeq", Convert.ToInt64(histcode));
+                if (endTime == null)
+                    comm.Parameters.AddWithValue("@endTime", DBNull.Value);
+                else
+                    comm.Parameters.AddWithValue("@endTime", endTime);
 
                 comm.Connection.Open();
                 int result = comm.ExecuteNonQuery();

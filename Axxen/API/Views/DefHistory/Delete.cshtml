@@ -1,0 +1,68 @@
+﻿@model IEnumerable<API.Models.Def_History2VO>
+
+@{
+    ViewBag.Title = "Delete";
+}
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Def_Seq)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.Workorderno)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.Def_Mi_Code)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.Def_Mi_Name)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.Def_Date)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.Def_Qty)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.Ins_Date)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.Ins_Emp)
+        </dt>
+        <dt></dt>
+
+        @foreach (var item in Model)
+        {
+            <dd>
+                @Html.DisplayFor(modelItem => item.Def_Seq)
+            </dd>
+            <dd>
+                @Html.DisplayFor(modelItem => item.Workorderno)
+            </dd>
+            <dd>
+                @Html.DisplayFor(modelItem => item.Def_Mi_Code)
+            </dd>
+            <dd>
+                @Html.DisplayFor(modelItem => item.Def_Mi_Name)
+            </dd>
+            <dd>
+                @Html.DisplayFor(modelItem => item.Def_Date)
+            </dd>
+            <dd>
+                @Html.DisplayFor(modelItem => item.Def_Qty)
+            </dd>
+            <dd>
+                @Html.DisplayFor(modelItem => item.Ins_Date)
+            </dd>
+            <dd>
+                @Html.DisplayFor(modelItem => item.Ins_Emp)
+            </dd>
+        }
+    </dl>
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+    </div>
+    }
+</div>

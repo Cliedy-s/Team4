@@ -30,6 +30,11 @@ namespace Service
             Pallet_MasterDAC dac = new Pallet_MasterDAC();
             return dac.GetPalletGoods(workOrderNo);
         }
+        public PalletGoodsVO GetPalletGoods(string workOrderNo, string barcodeno, string palseq)
+        {
+            Pallet_MasterDAC dac = new Pallet_MasterDAC();
+            return dac.GetPalletGoods(workOrderNo, barcodeno, palseq);
+        }
         /// <summary>
         /// 입고안된 팔레트목록 가져오기
         /// </summary>
@@ -66,10 +71,10 @@ namespace Service
         /// 금일 입고 팔레트 목록
         /// </summary>
         /// <returns></returns>
-        public List<PalletTodayInVO> GetPalletTodayIn()
+        public List<PalletTodayInVO> GetPalletTodayIn(string workorderno)
         {
             Pallet_MasterDAC dac = new Pallet_MasterDAC();
-            return dac.GetPalletTodayIn();
+            return dac.GetPalletTodayIn(workorderno);
         }
         /// <summary>
         /// 팔레트 정보 가져오기

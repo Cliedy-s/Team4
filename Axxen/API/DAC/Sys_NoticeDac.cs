@@ -60,7 +60,7 @@ namespace API.DAC
             else //수정일경우에는 조회수 + x
             {
 
-                sql = "select Seq, Notice_Date, Notice_End, Title,Description,Ins_Emp from Sys_Notice where Seq=@Seq";
+                sql = @"select Seq, Notice_Date, Notice_End, Title,Description,Ins_Emp, (select min(Seq) from Sys_Notice where Seq >a.Seq) nextNum, (select max(Seq) from Sys_Notice where Seq<a.Seq) notnext from Sys_Notice a where Seq=@Seq";
             }
 
             using (SqlConnection conn = new SqlConnection(Connstr))
@@ -78,6 +78,8 @@ namespace API.DAC
                     list.Title = reader["Title"].ToString();
                     list.Description = reader["Description"].ToString();
                     list.Ins_Emp = reader["Ins_Emp"].ToString();
+                    list.nextNum = reader["nextNum"].ToString();
+                    list.notnext = reader["notnext"].ToString();
                 }
                 reader.Close();
                 conn.Close();

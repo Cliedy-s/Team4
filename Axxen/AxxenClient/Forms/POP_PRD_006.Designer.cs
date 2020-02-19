@@ -49,14 +49,14 @@
             this.aPanel6.SuspendLayout();
             this.SuspendLayout();
             // 
-            // aLabel_Header1
-            // 
-            this.aLabel_Header1.Text = "포장 언로딩";
-            // 
-            // aPanel1
+            // panBottom
             // 
             this.panBottom.Location = new System.Drawing.Point(0, 593);
             this.panBottom.Margin = new System.Windows.Forms.Padding(2);
+            // 
+            // aLabel_Header1
+            // 
+            this.aLabel_Header1.Text = "포장 언로딩";
             // 
             // dgvBoxing
             // 
@@ -234,7 +234,6 @@
             // 
             // POP_PRD_006
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1210, 629);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSearch);
@@ -243,7 +242,6 @@
             this.Controls.Add(this.aPanel6);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "POP_PRD_006";
-            this.Text = "포장언로딩";
             this.Load += new System.EventHandler(this.POP_PRD_006_Load);
             this.Controls.SetChildIndex(this.aPanel6, 0);
             this.Controls.SetChildIndex(this.dgvBoxing, 0);

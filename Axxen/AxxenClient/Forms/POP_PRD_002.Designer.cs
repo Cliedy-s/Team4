@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.aPanel4 = new Axxen.CustomControls.APanel();
+            this.btnKeypad = new Axxen.CustomControls.AButton();
             this.lblHistReq = new Axxen.CustomControls.ALabel();
             this.lblItem_Unit = new Axxen.CustomControls.ALabel();
             this.lblReq_Seq = new Axxen.CustomControls.ALabel();
@@ -39,6 +40,7 @@
             this.txtReqNo = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
             this.txtPlanQty = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
             this.dgvWoReq = new Axxen.CustomControls.ADataGridView();
+            this.dtpEndTime = new Axxen.CustomControls.ADateTimePicker();
             this.panBottom.SuspendLayout();
             this.aPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
@@ -61,6 +63,8 @@
             // 
             this.aPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.aPanel4.Controls.Add(this.dtpEndTime);
+            this.aPanel4.Controls.Add(this.btnKeypad);
             this.aPanel4.Controls.Add(this.lblHistReq);
             this.aPanel4.Controls.Add(this.lblItem_Unit);
             this.aPanel4.Controls.Add(this.lblReq_Seq);
@@ -75,12 +79,26 @@
             this.aPanel4.Size = new System.Drawing.Size(549, 482);
             this.aPanel4.TabIndex = 7;
             // 
+            // btnKeypad
+            // 
+            this.btnKeypad.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnKeypad.BackColor = System.Drawing.SystemColors.Info;
+            this.btnKeypad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKeypad.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnKeypad.Location = new System.Drawing.Point(437, 272);
+            this.btnKeypad.Name = "btnKeypad";
+            this.btnKeypad.Size = new System.Drawing.Size(70, 29);
+            this.btnKeypad.TabIndex = 51;
+            this.btnKeypad.Text = "키패드";
+            this.btnKeypad.UseVisualStyleBackColor = false;
+            this.btnKeypad.Click += new System.EventHandler(this.btnKeypad_Click);
+            // 
             // lblHistReq
             // 
             this.lblHistReq.AutoSize = true;
             this.lblHistReq.Location = new System.Drawing.Point(181, 314);
             this.lblHistReq.Name = "lblHistReq";
-            this.lblHistReq.Size = new System.Drawing.Size(72, 15);
+            this.lblHistReq.Size = new System.Drawing.Size(61, 12);
             this.lblHistReq.TabIndex = 29;
             this.lblHistReq.Text = "lblHistReq";
             this.lblHistReq.Visible = false;
@@ -90,7 +108,7 @@
             this.lblItem_Unit.AutoSize = true;
             this.lblItem_Unit.Location = new System.Drawing.Point(109, 314);
             this.lblItem_Unit.Name = "lblItem_Unit";
-            this.lblItem_Unit.Size = new System.Drawing.Size(66, 15);
+            this.lblItem_Unit.Size = new System.Drawing.Size(56, 12);
             this.lblItem_Unit.TabIndex = 28;
             this.lblItem_Unit.Text = "Item_Unit";
             this.lblItem_Unit.Visible = false;
@@ -100,7 +118,7 @@
             this.lblReq_Seq.AutoSize = true;
             this.lblReq_Seq.Location = new System.Drawing.Point(39, 314);
             this.lblReq_Seq.Name = "lblReq_Seq";
-            this.lblReq_Seq.Size = new System.Drawing.Size(67, 15);
+            this.lblReq_Seq.Size = new System.Drawing.Size(55, 12);
             this.lblReq_Seq.TabIndex = 27;
             this.lblReq_Seq.Text = "Req_Seq";
             this.lblReq_Seq.Visible = false;
@@ -209,6 +227,14 @@
             this.dgvWoReq.TabIndex = 6;
             this.dgvWoReq.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvWorkOrder_CellDoubleClick);
             // 
+            // dtpEndTime
+            // 
+            this.dtpEndTime.Location = new System.Drawing.Point(257, 308);
+            this.dtpEndTime.Name = "dtpEndTime";
+            this.dtpEndTime.Size = new System.Drawing.Size(200, 21);
+            this.dtpEndTime.TabIndex = 52;
+            this.dtpEndTime.Visible = false;
+            // 
             // POP_PRD_002
             // 
             this.ClientSize = new System.Drawing.Size(1210, 629);
@@ -216,7 +242,6 @@
             this.Controls.Add(this.dgvWoReq);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "POP_PRD_002";
-            this.Text = "작업지시생성";
             this.Load += new System.EventHandler(this.POP_PRD_002_Load);
             this.Controls.SetChildIndex(this.dgvWoReq, 0);
             this.Controls.SetChildIndex(this.aPanel4, 0);
@@ -247,5 +272,7 @@
         private Axxen.CustomControls.ALabel lblReq_Seq;
         private Axxen.CustomControls.ALabel lblItem_Unit;
         private Axxen.CustomControls.ALabel lblHistReq;
+        private Axxen.CustomControls.AButton btnKeypad;
+        private Axxen.CustomControls.ADateTimePicker dtpEndTime;
     }
 }

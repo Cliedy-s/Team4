@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportForm));
             this.aHeaderBox1 = new Axxen.CustomControls.AHeaderBox();
             this.aPanel1 = new Axxen.CustomControls.APanel();
             this.aPanel2 = new Axxen.CustomControls.APanel();
@@ -74,6 +75,7 @@
             this.Controls.Add(this.aHeaderBox1);
             this.Controls.Add(this.aPanel1);
             this.Controls.Add(this.aPanel2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ReportForm";
             this.Text = "ReportForm";
             this.ResumeLayout(false);

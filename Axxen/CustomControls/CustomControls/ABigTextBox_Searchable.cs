@@ -38,5 +38,10 @@ namespace Axxen.CustomControls
         }
         public delegate void SearchClick(object sender, SearchFormClosingArgs e);
         public event SearchClick searchclick;
+
+        private void txtValue_TextChanged(object sender, EventArgs e)
+        {
+            this.CodeText = "";
+        }
     }
 }

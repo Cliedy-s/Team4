@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.aPanel4 = new Axxen.CustomControls.APanel();
+            this.btnKeypad = new Axxen.CustomControls.AButton();
             this.txtCurrentQty = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
             this.txtSizeCode = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
-            this.txtBoxingGrade = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
             this.txtPalletNo = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
             this.btnDelete = new Axxen.CustomControls.AButton();
             this.btnPalletPrint = new Axxen.CustomControls.AButton();
             this.txtBoxingGradeDetail = new Axxen.CustomControls.ABigTextBox_Searchable();
+            this.txtBoxingGrade = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
             this.dgvPalletList = new Axxen.CustomControls.ADataGridView();
             this.aPanel5 = new Axxen.CustomControls.APanel();
             this.btnSearchByDate = new Axxen.CustomControls.AButton();
@@ -64,6 +65,7 @@
             // 
             this.aPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.aPanel4.Controls.Add(this.btnKeypad);
             this.aPanel4.Controls.Add(this.txtCurrentQty);
             this.aPanel4.Controls.Add(this.txtSizeCode);
             this.aPanel4.Controls.Add(this.txtPalletNo);
@@ -75,6 +77,20 @@
             this.aPanel4.Name = "aPanel4";
             this.aPanel4.Size = new System.Drawing.Size(549, 482);
             this.aPanel4.TabIndex = 7;
+            // 
+            // btnKeypad
+            // 
+            this.btnKeypad.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnKeypad.BackColor = System.Drawing.SystemColors.Info;
+            this.btnKeypad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKeypad.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnKeypad.Location = new System.Drawing.Point(435, 226);
+            this.btnKeypad.Name = "btnKeypad";
+            this.btnKeypad.Size = new System.Drawing.Size(70, 29);
+            this.btnKeypad.TabIndex = 53;
+            this.btnKeypad.Text = "키패드";
+            this.btnKeypad.UseVisualStyleBackColor = false;
+            this.btnKeypad.Click += new System.EventHandler(this.btnKeypad_Click);
             // 
             // txtCurrentQty
             // 
@@ -103,20 +119,6 @@
             this.txtSizeCode.TabIndex = 39;
             this.txtSizeCode.TextBoxText = "";
             this.txtSizeCode.TextBoxType = Axxen.CustomControls.TextType.Normal;
-            // 
-            // txtBoxingGrade
-            // 
-            this.txtBoxingGrade.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtBoxingGrade.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtBoxingGrade.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtBoxingGrade.LabelText = "등급";
-            this.txtBoxingGrade.Location = new System.Drawing.Point(40, 126);
-            this.txtBoxingGrade.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.txtBoxingGrade.Name = "txtBoxingGrade";
-            this.txtBoxingGrade.Size = new System.Drawing.Size(469, 42);
-            this.txtBoxingGrade.TabIndex = 37;
-            this.txtBoxingGrade.TextBoxText = "";
-            this.txtBoxingGrade.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
             // txtPalletNo
             // 
@@ -174,6 +176,21 @@
             this.txtBoxingGradeDetail.TabIndex = 41;
             this.txtBoxingGradeDetail.TextBoxText = "";
             this.txtBoxingGradeDetail.TextBoxType = Axxen.CustomControls.TextType.Normal;
+            this.txtBoxingGradeDetail.searchclick += new Axxen.CustomControls.ABigTextBox_Searchable.SearchClick(this.txtBoxingGradeDetail_searchclick);
+            // 
+            // txtBoxingGrade
+            // 
+            this.txtBoxingGrade.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtBoxingGrade.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtBoxingGrade.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtBoxingGrade.LabelText = "등급";
+            this.txtBoxingGrade.Location = new System.Drawing.Point(40, 126);
+            this.txtBoxingGrade.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtBoxingGrade.Name = "txtBoxingGrade";
+            this.txtBoxingGrade.Size = new System.Drawing.Size(469, 42);
+            this.txtBoxingGrade.TabIndex = 37;
+            this.txtBoxingGrade.TextBoxText = "";
+            this.txtBoxingGrade.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
             // dgvPalletList
             // 
@@ -267,7 +284,6 @@
             this.Controls.Add(this.dgvPalletList);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "POP_PRD_004";
-            this.Text = "팔레트 바코드 재발행";
             this.Load += new System.EventHandler(this.POP_PRD_004_Load);
             this.Controls.SetChildIndex(this.aPanel2, 0);
             this.Controls.SetChildIndex(this.panBottom, 0);
@@ -304,5 +320,6 @@
         private Axxen.CustomControls.ABigTextBox_LabeledBigTextBox txtPalletNo;
         private Axxen.CustomControls.AButton btnSearchByDate;
         private Axxen.CustomControls.ABigTextBox_Searchable txtBoxingGradeDetail;
+        private Axxen.CustomControls.AButton btnKeypad;
     }
 }

@@ -244,6 +244,7 @@
             this.Controls.Add(this.aButton5);
             this.Controls.Add(this.btnOK);
             this.Name = "KeypadForm";
+            this.Text = "";
             this.ResumeLayout(false);
             this.PerformLayout();
 

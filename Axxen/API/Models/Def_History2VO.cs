@@ -20,6 +20,8 @@ namespace API.Models
         public string Def_Date { get; set; } //발생일
         [DisplayName("불량수량")] //컬럼명변경
         public int Def_Qty { get; set; } //불량수량
+        [DisplayName("사진 업로드")] //컬럼명변경
+        public string Def_Image_Name { get; set; } //다운로드
         [DisplayName("작성날짜")] //컬럼명변경
         public string Ins_Date { get; set; } //최초생성날짜
         [DisplayName("작성자")] //컬럼명변경

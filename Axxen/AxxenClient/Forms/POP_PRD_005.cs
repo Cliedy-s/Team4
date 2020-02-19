@@ -21,6 +21,7 @@ namespace AxxenClient.Forms
         }
         private void POP_PRD_005_Load(object sender, EventArgs e)
         {
+            lblBarcodeNo.Text = lblPalSeq.Text = "";
             InitControls();
             GetDatas();
         }
@@ -29,10 +30,10 @@ namespace AxxenClient.Forms
             InitControlUtil.SetPOPDGVDesign(dgvInPallet);
             InitControlUtil.AddNewColumnToDataGridView(dgvInPallet, "작업지시번호", "WorkOrderNo", false);
             InitControlUtil.AddNewColumnToDataGridView(dgvInPallet, "팔레트번호", "Pallet_No", true, 100, DataGridViewContentAlignment.MiddleLeft, true);
-            InitControlUtil.AddNewColumnToDataGridView(dgvInPallet, "제품", "Item_Name", true);
-            InitControlUtil.AddNewColumnToDataGridView(dgvInPallet, "등급", "Boxing_Grade_Code", true, 100, DataGridViewContentAlignment.MiddleCenter);
-            InitControlUtil.AddNewColumnToDataGridView(dgvInPallet, "입고수", "In_Qty", true, 100, DataGridViewContentAlignment.MiddleRight);
-            InitControlUtil.AddNewColumnToDataGridView(dgvInPallet, "수량", "CurrentQty", true, 100, DataGridViewContentAlignment.MiddleRight);
+            InitControlUtil.AddNewColumnToDataGridView(dgvInPallet, "Seq", "Pal_Seq", true, 100);
+            InitControlUtil.AddNewColumnToDataGridView(dgvInPallet, "제품", "Item_Name", true, 250);
+            InitControlUtil.AddNewColumnToDataGridView(dgvInPallet, "등급", "Boxing_Grade_Code", true, 200, DataGridViewContentAlignment.MiddleCenter);
+            InitControlUtil.AddNewColumnToDataGridView(dgvInPallet, "수량", "In_Qty", true, 100, DataGridViewContentAlignment.MiddleRight);
             InitControlUtil.AddNewColumnToDataGridView(dgvInPallet, "등급상세", "Grade_Detail_Code", false);
             InitControlUtil.AddNewColumnToDataGridView(dgvInPallet, "사이즈", "Size_Code", false);
             InitControlUtil.AddNewColumnToDataGridView(dgvInPallet, "계획날짜", "Plan_Date", false);
@@ -42,7 +43,7 @@ namespace AxxenClient.Forms
         private void GetDatas()
         {
             Pallet_MasterService service = new Pallet_MasterService();
-            dgvInPallet.DataSource = service.GetPalletTodayIn();
+            dgvInPallet.DataSource = service.GetPalletTodayIn(GlobalUsage.WorkOrderNo);
         }
         private void btnIn_Click(object sender, EventArgs e)
         {
@@ -107,7 +108,7 @@ namespace AxxenClient.Forms
                 if (_Port == null)
                 {
                     _Port = new SerialPort();
-                    _Port.PortName = "COM5";
+                    _Port.PortName = "COM6";
                     _Port.BaudRate = 9600;
                     _Port.DataBits = 8;
                     _Port.Parity = Parity.None;
@@ -145,10 +146,14 @@ namespace AxxenClient.Forms
             Thread.Sleep(500);
             String msg = Port.ReadExisting();
 
-            this.Invoke(new EventHandler(delegate
+            try
             {
-                Strings = msg;
-            }));
+                this.Invoke(new EventHandler(delegate
+                {
+                    Strings = msg;
+                }));
+            }
+            catch { }
         }
 
         /* 입력값 설정 */
@@ -168,9 +173,11 @@ namespace AxxenClient.Forms
                     _Strings.Clear();
                 // 로그 추가 및 화면 표시
                 _Strings.AppendLine(value);
-                beforecode = lblBarcodeNo.Text.Substring(0, 15); // TODO - ?
+                if(!string.IsNullOrEmpty(lblBarcodeNo.Text))
+                    beforecode = lblBarcodeNo.Text;
                 lblBarcodeNo.Text = "";
-                lblBarcodeNo.Text = _Strings.ToString().Replace("+", "").Replace("\n", "").Replace("\r", "");
+                lblBarcodeNo.Text = _Strings.ToString().Substring(0,_Strings.ToString().IndexOf('B')+1);
+                lblPalSeq.Text = _Strings.ToString().Substring(_Strings.ToString().IndexOf('B')+1, 4);
             }
         }
         #endregion
@@ -180,7 +187,7 @@ namespace AxxenClient.Forms
             if (!Port.IsOpen)
             {
                 // 현재 시리얼이 연결된 상태가 아니면 연결.
-                Port.PortName = "COM5";
+                Port.PortName = "COM6";
                 Port.BaudRate = 9600;
                 Port.DataBits = 8;
                 Port.Parity = Parity.None;
@@ -214,26 +221,43 @@ namespace AxxenClient.Forms
             // Port.Close();
         }
 
-        string beforecode { get; set; }
-        private void lblBarcodeNo_TextChanged(object sender, EventArgs e)
+        string beforecode { get; set; } = string.Empty;
+        private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (lblBarcodeNo.Text.Length >= 15)
+            SearchForm search = new SearchForm();
+            if(search.ShowDialog() == DialogResult.OK)
             {
+                txtPalletNo.TextBoxText = search.ResultName;
+            }
+        }
+
+        private void lblPalSeq_TextChanged(object sender, EventArgs e)
+        {
+
+            if (lblPalSeq.Text.Length >= 4)
+            {
+                if (GlobalUsage.WorkOrderNo.Equals("설정안됨"))
+                {
+                    MessageBox.Show("작업을 시작해주세요");
+                    return;
+                }
                 Pallet_MasterService service = new Pallet_MasterService();
-                PalletVO item = service.GetPalletByBarcode(lblBarcodeNo.Text);
-                if(item != null)
+                PalletGoodsVO item = service.GetPalletGoods(GlobalUsage.WorkOrderNo, lblBarcodeNo.Text, lblPalSeq.Text);
+                if (item != null)
                 {
                     txtPalletNo.TextBoxText = item.Pallet_No;
                     txtBoxingGrade.TextBoxText = item.Boxing_Grade_Code;
                     txtBoxingGradeDatail.TextBoxText = item.Grade_Detail_Name;
                     txtSize.TextBoxText = item.Size_Code;
-                    if (beforecode.Equals(lblBarcodeNo.Text.Substring(0, 15)))
+                    if (beforecode.Equals(lblBarcodeNo.Text))
                     {
-                        txtBFour.TextBoxText += ( "/" + lblBarcodeNo.Text.Substring(15));
+                        if (!txtBFour.TextBoxText.Contains(lblPalSeq.Text))
+                             txtBFour.TextBoxText += ("/" + lblPalSeq.Text);
+
                     }
                     else
                     {
-                        txtBFour.TextBoxText = lblBarcodeNo.Text.Substring(15);
+                        txtBFour.TextBoxText = lblPalSeq.Text;
                     }
                 }
                 else
@@ -241,6 +265,18 @@ namespace AxxenClient.Forms
                     MessageBox.Show("존재하지 않는 팔레트 입니다.");
                 }
             }
+        }
+
+        private void btnKeypad_Click(object sender, EventArgs e)
+        {
+            KeypadForm frm = new KeypadForm();
+            frm.FormSendEvent += new KeypadForm.FormSendDataHandler(DieaseUpdateEventMethod);
+            frm.Show();
+        }
+        private void DieaseUpdateEventMethod(object sender)
+        {
+            //폼2에서 델리게이트로 이벤트 발생하면 현재 함수 Call
+            txtSize.TextBoxText = sender.ToString();
         }
     }
 }

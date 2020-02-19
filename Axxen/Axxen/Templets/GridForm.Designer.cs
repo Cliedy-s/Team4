@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GridForm));
             this.panTop = new Axxen.CustomControls.APanel();
             this.dgvMainGrid = new Axxen.CustomControls.ADataGridView();
             this.aHeaderBox1 = new Axxen.CustomControls.AHeaderBox();
@@ -71,7 +72,7 @@
             this.aHeaderBox1.Size = new System.Drawing.Size(243, 30);
             this.aHeaderBox1.TabIndex = 6;
             // 
-            // GridFormTemplet
+            // GridForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -79,8 +80,9 @@
             this.Controls.Add(this.aHeaderBox1);
             this.Controls.Add(this.panTop);
             this.Controls.Add(this.dgvMainGrid);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.Name = "GridFormTemplet";
+            this.Name = "GridForm";
             this.Text = "GridForm";
             this.Load += new System.EventHandler(this.GridForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMainGrid)).EndInit();
