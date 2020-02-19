@@ -1,6 +1,7 @@
 ﻿using DAC;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +15,7 @@ namespace Service
         /// PRM_RPT_004 포장작업일지
         /// </summary>
         /// <returns></returns>
-        public List<Goods_In_HistoryVO> GetBoxingHistory(string date)
+        public List<Goods_In_HistoryPackageVO> GetBoxingHistory(string date)
         {
             Goods_In_HistoryDAC dac = new Goods_In_HistoryDAC();
             return dac.GetBoxingHistory(date);
@@ -30,6 +31,16 @@ namespace Service
             return dac.GetFigurationHistory(date);
         }
 
+
+        /// <summary>
+        /// PRM_PRT_002 성형작업일지
+        /// </summary>
+        /// <returns></returns>
+        public List<string> GetFigurationOrders(string date)
+        {
+            Goods_In_HistoryDAC dac = new Goods_In_HistoryDAC();
+            return dac.GetFigurationOrders(date);
+        }
         /// <summary>
         /// PRM_RPT_001 건조작업일지
         /// </summary>

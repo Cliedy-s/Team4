@@ -48,7 +48,9 @@ namespace Axxen.sangyoung
             txtItemCode.Text = code;
             txtItemName.Text = name;
             txtPlanQty.Text = qty;
+            txtPlanUnit.Text = "EA";
 
+            txtPlanUnit.Enabled = false;
             txtSeq.Enabled = false;
             txtReqNo.Enabled = false;
             txtItemName.Enabled = false;

@@ -103,9 +103,10 @@
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlText;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSearch.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnSearch.Location = new System.Drawing.Point(472, 9);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
@@ -194,10 +195,10 @@
             // btnSearch2
             // 
             this.btnSearch2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.btnSearch2.FlatAppearance.BorderSize = 0;
+            this.btnSearch2.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlText;
             this.btnSearch2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch2.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSearch2.Location = new System.Drawing.Point(879, 8);
+            this.btnSearch2.Location = new System.Drawing.Point(879, 10);
             this.btnSearch2.Name = "btnSearch2";
             this.btnSearch2.Size = new System.Drawing.Size(75, 23);
             this.btnSearch2.TabIndex = 16;
