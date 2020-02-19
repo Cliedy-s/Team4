@@ -55,7 +55,7 @@ namespace AxxenClient.Forms
         {
             GV_Current_StatusService service = new GV_Current_StatusService();
             // 해당 작업지시에서 생성한 모든 대차
-            List<GVStatusVO> list = service.GetGVCurrentStatus(gvGroup: "건조그룹", workorderno: GlobalUsage.WorkOrderNo);
+            List<GVStatusVO> list = service.GetGVCurrentStatus(gvGroup: "건조그룹");
             dgvGVFrom.DataSource =
                 (from item in list
                  where (item.GV_Status == "적재" || item.GV_Status == "언로딩")
