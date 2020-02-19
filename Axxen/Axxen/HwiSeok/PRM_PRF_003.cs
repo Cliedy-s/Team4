@@ -34,7 +34,6 @@ namespace Axxen
             DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "팔레트번호", "Pallet_No", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
             DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "입고수량", "Plan_Qty", true, 100, DataGridViewContentAlignment.MiddleRight, true);
             DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "마감시각", "Closed_Time", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
-            DatagridviewDesigns.AddNewColumnToDataGridView_Autosize(dgvMainGrid, "취소시각", "Cancel_Time", true, 100, DataGridViewContentAlignment.MiddleCenter, true);
 
             igh = imservice.GetworkOrder_Item_Goods();
             dgvMainGrid.DataSource = igh;

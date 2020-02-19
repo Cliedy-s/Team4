@@ -15,6 +15,7 @@ namespace API.Controllers
         {
             if (!string.IsNullOrEmpty(User_ID)) {
                 UserInfoDAC dac = new UserInfoDAC();
+                
                 return View(dac.GetLoginInfo(User_ID, pwd));
             }
             else { 
