@@ -17,7 +17,7 @@ namespace Axxen
 {
     public partial class PRM_RPT_004 : Axxen.ReportForm
     {
-        List<Goods_In_HistoryVO> boxlist;
+        List<Goods_In_HistoryPackageVO> boxlist;
         DataTable dt = new DataTable();
         PackingLog rpt = new PackingLog();
         public PRM_RPT_004()

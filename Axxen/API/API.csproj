@@ -7443,6 +7443,7 @@
     <Content Include="Views\Nav\Message.cshtml" />
     <Content Include="Views\DefHistory\DefectiveDetails.cshtml" />
     <Content Include="Views\DefHistory\Delete.cshtml" />
+    <Content Include="Views\Home\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

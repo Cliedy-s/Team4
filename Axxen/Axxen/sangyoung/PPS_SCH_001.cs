@@ -58,7 +58,10 @@ namespace Axxen
             frm = new PPS_SCH_001_Insert(woitem.Req_Seq, woitem.Wo_Req_No, woitem.Item_Code, woitem.Item_Name, woitem.Req_Qty);
             frm.StartPosition = FormStartPosition.CenterScreen;
             cFlag = true;
-            frm.Show();
+            if(frm.ShowDialog() == DialogResult.OK)
+            {
+                RefreshFormShow(null, null);
+            }
         }
 
         private void RefreshFormShow(object sender, EventArgs e)
@@ -291,8 +294,6 @@ namespace Axxen
             ((MainForm)this.MdiParent).InsertFormEvent += new System.EventHandler(this.InsertFormShow); //추가
             ((MainForm)this.MdiParent).RefreshFormEvent += new EventHandler(this.RefreshFormShow); //새로고침
             ((MainForm)this.MdiParent).MyDeleteEvent += new EventHandler(this.DeleteFormShow); //삭제
-            ToolStripManager.Merge(toolStrip1, ((MainForm)this.MdiParent).toolStrip1); //저장버튼 추가
-            toolStrip1.Visible = false;
 
             dgvMainGrid.ClearSelection();
             dgvSubGrid.ClearSelection();
@@ -305,7 +306,6 @@ namespace Axxen
             ((MainForm)this.MdiParent).InsertFormEvent -= new System.EventHandler(this.InsertFormShow);
             ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow);
             ((MainForm)this.MdiParent).MyDeleteEvent -= new EventHandler(this.DeleteFormShow); 
-            ToolStripManager.RevertMerge(((MainForm)this.MdiParent).toolStrip1, toolStrip1); //저장버튼 제거
             reportList.Clear();
         }
 
@@ -335,58 +335,6 @@ namespace Axxen
             else
             {
                 MessageBox.Show("삭제할 항목을 선택해 주세요.","작업지시관리",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
-            }
-        }
-
-
-        /// <summary>
-        /// 작업지시생성 - 저장버튼클릭
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void TsbtnSave_Click(object sender, EventArgs e)
-        {
-            if (cFlag)
-            {
-                frm.Owner = this;
-                WorkOrderAllVO order = new WorkOrderAllVO();
-                order.Req_Seq = Convert.ToInt32(frm.txtSeq.Text);
-                order.Wo_Req_No = frm.txtReqNo.Text;
-                order.Wo_Status = "생산대기";
-                order.Wc_Code = frm.cboWorkCenter.SelectedValue.ToString();
-                order.Remark = frm.txtRemark.Text;
-                order.Plan_Qty = Convert.ToInt32(frm.txtPlanQty.Text);
-                order.Out_Qty_Main = 0;
-                order.In_Qty_Main = 0;
-                order.Prd_Qty = 0;
-                order.Plan_Date = frm.dtpDate.Value;
-                order.Item_Code = frm.txtItemCode.Text;
-                order.Plan_Unit = frm.txtPlanUnit.Text;
-                order.Prd_Unit = frm.txtPlanUnit.Text;
-                try
-                {
-
-                    bool result = workservice.InsertPPSWorkorder(order, UserInfo.User_ID);
-                    if (result)
-                    {
-                        MessageBox.Show("작업지시가 생성되었습니다.","작업지시관리",MessageBoxButtons.OK);
-                        frm.Close();
-                    }
-                    else
-                        MessageBox.Show("작업지시가 생성되지 않았습니다.", "작업지시관리", MessageBoxButtons.OK,MessageBoxIcon.Error);
-                }
-                catch (Exception err)
-                {
-                    Program.Log.WriteError(err.Message);
-                }
-                finally
-                {
-                    RefreshFormShow(null, null);
-                }
-            }
-            else
-            {
-                return;
             }
         }
     }

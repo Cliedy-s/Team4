@@ -69,6 +69,9 @@
             this.aPanel29 = new Axxen.CustomControls.APanel();
             this.aPanel31 = new Axxen.CustomControls.APanel();
             this.aLabel1 = new Axxen.CustomControls.ALabel();
+            this.aPanel8 = new Axxen.CustomControls.APanel();
+            this.btnOK = new System.Windows.Forms.Button();
+            this.btnCancle = new System.Windows.Forms.Button();
             this.aPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.aPanel19.SuspendLayout();
@@ -89,6 +92,7 @@
             this.aPanel17.SuspendLayout();
             this.aPanel29.SuspendLayout();
             this.aPanel31.SuspendLayout();
+            this.aPanel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtPlanUnit
@@ -197,7 +201,7 @@
             this.aPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.aPanel1.Location = new System.Drawing.Point(0, 0);
             this.aPanel1.Name = "aPanel1";
-            this.aPanel1.Size = new System.Drawing.Size(574, 39);
+            this.aPanel1.Size = new System.Drawing.Size(576, 39);
             this.aPanel1.TabIndex = 160;
             // 
             // aLabel2
@@ -500,12 +504,49 @@
             this.aLabel1.TabIndex = 82;
             this.aLabel1.Text = "비고";
             // 
+            // aPanel8
+            // 
+            this.aPanel8.BackColor = System.Drawing.SystemColors.Info;
+            this.aPanel8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.aPanel8.Controls.Add(this.btnCancle);
+            this.aPanel8.Controls.Add(this.btnOK);
+            this.aPanel8.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.aPanel8.Location = new System.Drawing.Point(0, 291);
+            this.aPanel8.Name = "aPanel8";
+            this.aPanel8.Size = new System.Drawing.Size(576, 39);
+            this.aPanel8.TabIndex = 201;
+            // 
+            // btnOK
+            // 
+            this.btnOK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOK.Location = new System.Drawing.Point(388, 7);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(75, 23);
+            this.btnOK.TabIndex = 0;
+            this.btnOK.Text = "확인";
+            this.btnOK.UseVisualStyleBackColor = false;
+            this.btnOK.Click += new System.EventHandler(this.BtnOK_Click);
+            // 
+            // btnCancle
+            // 
+            this.btnCancle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.btnCancle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancle.Location = new System.Drawing.Point(476, 7);
+            this.btnCancle.Name = "btnCancle";
+            this.btnCancle.Size = new System.Drawing.Size(75, 23);
+            this.btnCancle.TabIndex = 1;
+            this.btnCancle.Text = "취소";
+            this.btnCancle.UseVisualStyleBackColor = false;
+            this.btnCancle.Click += new System.EventHandler(this.Button2_Click);
+            // 
             // PPS_SCH_001_Insert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(574, 299);
+            this.ClientSize = new System.Drawing.Size(576, 330);
+            this.Controls.Add(this.aPanel8);
             this.Controls.Add(this.aPanel29);
             this.Controls.Add(this.aPanel31);
             this.Controls.Add(this.aPanel9);
@@ -566,6 +607,7 @@
             this.aPanel29.PerformLayout();
             this.aPanel31.ResumeLayout(false);
             this.aPanel31.PerformLayout();
+            this.aPanel8.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -611,5 +653,8 @@
         private CustomControls.APanel aPanel29;
         private CustomControls.APanel aPanel31;
         private CustomControls.ALabel aLabel1;
+        private CustomControls.APanel aPanel8;
+        private System.Windows.Forms.Button btnCancle;
+        private System.Windows.Forms.Button btnOK;
     }
 }

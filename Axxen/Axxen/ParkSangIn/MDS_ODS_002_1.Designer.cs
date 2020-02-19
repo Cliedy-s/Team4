@@ -359,9 +359,9 @@
             // 
             // btnCencle
             // 
-            this.btnCencle.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnCencle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.btnCencle.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCencle.FlatAppearance.BorderSize = 0;
+            this.btnCencle.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlText;
             this.btnCencle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCencle.Location = new System.Drawing.Point(413, 11);
             this.btnCencle.Name = "btnCencle";
@@ -372,8 +372,8 @@
             // 
             // btnSave
             // 
-            this.btnSave.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.btnSave.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlText;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Location = new System.Drawing.Point(332, 11);
             this.btnSave.Name = "btnSave";
