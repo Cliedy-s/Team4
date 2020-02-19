@@ -218,9 +218,9 @@
             this.lblLogin.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblLogin.Location = new System.Drawing.Point(1227, 12);
             this.lblLogin.Name = "lblLogin";
-            this.lblLogin.Size = new System.Drawing.Size(66, 21);
+            this.lblLogin.Size = new System.Drawing.Size(34, 21);
             this.lblLogin.TabIndex = 22;
-            this.lblLogin.Text = "aLabel1";
+            this.lblLogin.Text = "    ";
             // 
             // pictureBox1
             // 
@@ -234,10 +234,10 @@
             // aLabel2
             // 
             this.aLabel2.AutoSize = true;
-            this.aLabel2.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aLabel2.Location = new System.Drawing.Point(53, 18);
+            this.aLabel2.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.aLabel2.Location = new System.Drawing.Point(53, 12);
             this.aLabel2.Name = "aLabel2";
-            this.aLabel2.Size = new System.Drawing.Size(73, 17);
+            this.aLabel2.Size = new System.Drawing.Size(83, 20);
             this.aLabel2.TabIndex = 20;
             this.aLabel2.Text = "위치 정보 :";
             // 
@@ -434,6 +434,7 @@
             this.toolStripButtonLogin.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             this.toolStripButtonLogin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripButtonLogin.ToolTipText = "로그아웃";
+            this.toolStripButtonLogin.Click += new System.EventHandler(this.ToolStripButtonLogin_Click);
             // 
             // toolStripSeparator3
             // 
@@ -512,6 +513,7 @@
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
