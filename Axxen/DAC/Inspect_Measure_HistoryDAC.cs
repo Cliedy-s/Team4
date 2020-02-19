@@ -121,12 +121,12 @@ getdate() ,
             using (SqlCommand comm = new SqlCommand())
             {
                 comm.Connection = new SqlConnection(Connstr);
-                comm.CommandText = @" SELECT A.Workorderno, Adate, Aval, Bdate, Bval, Cdate, Cval, Ddate, Dval, Edate, Eval FROM 
-(select Workorderno,Convert(Varchar,inspect_DateTime,8) Adate,cast(Inspect_Val as numeric(12,2)) Aval from Inspect_Measure_history where Inspect_Code = 'ES20001' and workorderno = @Workorderno) AS A
-,(select Workorderno,Convert(Varchar,inspect_DateTime,8) Bdate,cast(Inspect_Val as numeric(12,2)) Bval from Inspect_Measure_history where Inspect_Code = 'ES20002' and workorderno = @Workorderno) AS B
-,(select Workorderno,Convert(Varchar,inspect_DateTime,8) Cdate,cast(Inspect_Val as numeric(12,2)) Cval from Inspect_Measure_history where Inspect_Code = 'ES20003' and workorderno = @Workorderno) AS C
-,(select Workorderno,Convert(Varchar,inspect_DateTime,8) Ddate,cast(Inspect_Val as numeric(12,2)) Dval from Inspect_Measure_history where Inspect_Code = 'ES20004' and workorderno = @Workorderno) AS D
-,(select Workorderno,Convert(Varchar,inspect_DateTime,8) Edate ,cast(Inspect_Val as numeric(12,2)) Eval from Inspect_Measure_history where Inspect_Code = 'ES20005' and workorderno = @Workorderno) AS E
+                comm.CommandText = @" 	SELECT A.Workorderno, Adate, Aval, Bdate, Bval, Cdate, Cval, Ddate, Dval, Edate, Eval FROM 
+(select Top 1 Workorderno,Convert(Varchar,inspect_DateTime,8) Adate,cast(Inspect_Val as numeric(12,2)) Aval from Inspect_Measure_history where Inspect_Code = 'ES20001' and workorderno = @Workorderno order by Inspect_datetime desc ) AS A
+,(select Top 1 Workorderno,Convert(Varchar,inspect_DateTime,8) Bdate,cast(Inspect_Val as numeric(12,2)) Bval from Inspect_Measure_history where Inspect_Code = 'ES20002' and workorderno = @Workorderno order by Inspect_datetime desc) AS B
+,(select Top 1 Workorderno,Convert(Varchar,inspect_DateTime,8) Cdate,cast(Inspect_Val as numeric(12,2)) Cval from Inspect_Measure_history where Inspect_Code = 'ES20003' and workorderno = @Workorderno order by Inspect_datetime desc) AS C
+,(select Top 1 Workorderno,Convert(Varchar,inspect_DateTime,8) Ddate,cast(Inspect_Val as numeric(12,2)) Dval from Inspect_Measure_history where Inspect_Code = 'ES20004' and workorderno = @Workorderno order by Inspect_datetime desc) AS D
+,(select Top 1 Workorderno,Convert(Varchar,inspect_DateTime,8) Edate ,cast(Inspect_Val as numeric(12,2)) Eval from Inspect_Measure_history where Inspect_Code = 'ES20005' and workorderno = @Workorderno order by Inspect_datetime desc) AS E
 where A.Workorderno=B.Workorderno and B.Workorderno=C.Workorderno and C.Workorderno=D.Workorderno and D.Workorderno=E.Workorderno";
                 comm.CommandType = CommandType.Text;
                 try
@@ -166,10 +166,10 @@ where A.Workorderno=B.Workorderno and B.Workorderno=C.Workorderno and C.Workorde
             {
                 comm.Connection = new SqlConnection(Connstr);
                 comm.CommandText = @" SELECT A.Workorderno, Adate, Aval, Bdate, Bval, Cdate, Cval FROM 
-(select Workorderno,Convert(Varchar,inspect_DateTime,8) Adate,cast(Inspect_Val as numeric(12,2)) Aval from Inspect_Measure_history where Inspect_Code = 'ES30001' and workorderno = @Workorderno) AS A
-,(select Workorderno,Convert(Varchar,inspect_DateTime,8) Bdate,cast(Inspect_Val as numeric(12,2)) Bval from Inspect_Measure_history where Inspect_Code = 'ES30002' and workorderno = @Workorderno) AS B
-,(select Workorderno,Convert(Varchar,inspect_DateTime,8) Cdate,cast(Inspect_Val as numeric(12,2)) Cval from Inspect_Measure_history where Inspect_Code = 'ES30003' and workorderno = @Workorderno) AS C
-where A.Workorderno=B.Workorderno and B.Workorderno=C.Workorderno";
+(select Top 1 Workorderno,Convert(Varchar,inspect_DateTime,8) Adate,cast(Inspect_Val as numeric(12,2)) Aval from Inspect_Measure_history where Inspect_Code = 'ES30001' and workorderno = @Workorderno order by Inspect_datetime desc) AS A
+,(select Top 1 Workorderno,Convert(Varchar,inspect_DateTime,8) Bdate,cast(Inspect_Val as numeric(12,2)) Bval from Inspect_Measure_history where Inspect_Code = 'ES30002' and workorderno = @Workorderno order by Inspect_datetime desc) AS B
+,(select Top 1 Workorderno,Convert(Varchar,inspect_DateTime,8) Cdate,cast(Inspect_Val as numeric(12,2)) Cval from Inspect_Measure_history where Inspect_Code = 'ES30003' and workorderno = @Workorderno order by Inspect_datetime desc) AS C
+where A.Workorderno=B.Workorderno and B.Workorderno=C.Workorderno ";
                 comm.CommandType = CommandType.Text;
                 try
                 {

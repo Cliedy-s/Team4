@@ -24,9 +24,13 @@ namespace Axxen.sangyoung {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class dsFiguration : global::System.Data.DataSet {
         
+        private dtDryingDataTable tabledtDrying;
+        
         private dtFigurationDataTable tabledtFiguration;
         
-        private dtDryingDataTable tabledtDrying;
+        private dtFigurHistoryDataTable tabledtFigurHistory;
+        
+        private global::System.Data.DataRelation relationdtFigurHistory_dtFiguration;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -56,11 +60,14 @@ namespace Axxen.sangyoung {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
+                if ((ds.Tables["dtDrying"] != null)) {
+                    base.Tables.Add(new dtDryingDataTable(ds.Tables["dtDrying"]));
+                }
                 if ((ds.Tables["dtFiguration"] != null)) {
                     base.Tables.Add(new dtFigurationDataTable(ds.Tables["dtFiguration"]));
                 }
-                if ((ds.Tables["dtDrying"] != null)) {
-                    base.Tables.Add(new dtDryingDataTable(ds.Tables["dtDrying"]));
+                if ((ds.Tables["dtFigurHistory"] != null)) {
+                    base.Tables.Add(new dtFigurHistoryDataTable(ds.Tables["dtFigurHistory"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -84,6 +91,16 @@ namespace Axxen.sangyoung {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public dtDryingDataTable dtDrying {
+            get {
+                return this.tabledtDrying;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
         public dtFigurationDataTable dtFiguration {
             get {
                 return this.tabledtFiguration;
@@ -94,9 +111,9 @@ namespace Axxen.sangyoung {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public dtDryingDataTable dtDrying {
+        public dtFigurHistoryDataTable dtFigurHistory {
             get {
-                return this.tabledtDrying;
+                return this.tabledtFigurHistory;
             }
         }
         
@@ -167,11 +184,14 @@ namespace Axxen.sangyoung {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
+                if ((ds.Tables["dtDrying"] != null)) {
+                    base.Tables.Add(new dtDryingDataTable(ds.Tables["dtDrying"]));
+                }
                 if ((ds.Tables["dtFiguration"] != null)) {
                     base.Tables.Add(new dtFigurationDataTable(ds.Tables["dtFiguration"]));
                 }
-                if ((ds.Tables["dtDrying"] != null)) {
-                    base.Tables.Add(new dtDryingDataTable(ds.Tables["dtDrying"]));
+                if ((ds.Tables["dtFigurHistory"] != null)) {
+                    base.Tables.Add(new dtFigurHistoryDataTable(ds.Tables["dtFigurHistory"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -206,18 +226,25 @@ namespace Axxen.sangyoung {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tabledtFiguration = ((dtFigurationDataTable)(base.Tables["dtFiguration"]));
-            if ((initTable == true)) {
-                if ((this.tabledtFiguration != null)) {
-                    this.tabledtFiguration.InitVars();
-                }
-            }
             this.tabledtDrying = ((dtDryingDataTable)(base.Tables["dtDrying"]));
             if ((initTable == true)) {
                 if ((this.tabledtDrying != null)) {
                     this.tabledtDrying.InitVars();
                 }
             }
+            this.tabledtFiguration = ((dtFigurationDataTable)(base.Tables["dtFiguration"]));
+            if ((initTable == true)) {
+                if ((this.tabledtFiguration != null)) {
+                    this.tabledtFiguration.InitVars();
+                }
+            }
+            this.tabledtFigurHistory = ((dtFigurHistoryDataTable)(base.Tables["dtFigurHistory"]));
+            if ((initTable == true)) {
+                if ((this.tabledtFigurHistory != null)) {
+                    this.tabledtFigurHistory.InitVars();
+                }
+            }
+            this.relationdtFigurHistory_dtFiguration = this.Relations["dtFigurHistory_dtFiguration"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -228,10 +255,22 @@ namespace Axxen.sangyoung {
             this.Namespace = "http://tempuri.org/dsFiguration.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tabledtFiguration = new dtFigurationDataTable();
-            base.Tables.Add(this.tabledtFiguration);
             this.tabledtDrying = new dtDryingDataTable();
             base.Tables.Add(this.tabledtDrying);
+            this.tabledtFiguration = new dtFigurationDataTable();
+            base.Tables.Add(this.tabledtFiguration);
+            this.tabledtFigurHistory = new dtFigurHistoryDataTable();
+            base.Tables.Add(this.tabledtFigurHistory);
+            this.relationdtFigurHistory_dtFiguration = new global::System.Data.DataRelation("dtFigurHistory_dtFiguration", new global::System.Data.DataColumn[] {
+                        this.tabledtFigurHistory.WorkordernoColumn}, new global::System.Data.DataColumn[] {
+                        this.tabledtFiguration.WorkordernoColumn}, false);
+            this.Relations.Add(this.relationdtFigurHistory_dtFiguration);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializedtDrying() {
+            return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -242,7 +281,7 @@ namespace Axxen.sangyoung {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializedtDrying() {
+        private bool ShouldSerializedtFigurHistory() {
             return false;
         }
         
@@ -302,453 +341,13 @@ namespace Axxen.sangyoung {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void dtDryingRowChangeEventHandler(object sender, dtDryingRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void dtFigurationRowChangeEventHandler(object sender, dtFigurationRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void dtDryingRowChangeEventHandler(object sender, dtDryingRowChangeEvent e);
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class dtFigurationDataTable : global::System.Data.TypedTableBase<dtFigurationRow> {
-            
-            private global::System.Data.DataColumn columnNum;
-            
-            private global::System.Data.DataColumn columnPallet_No;
-            
-            private global::System.Data.DataColumn columnItem_Name;
-            
-            private global::System.Data.DataColumn columnClosed_Time;
-            
-            private global::System.Data.DataColumn columnWorkorderno;
-            
-            private global::System.Data.DataColumn columnADate;
-            
-            private global::System.Data.DataColumn columnAVal;
-            
-            private global::System.Data.DataColumn columnBDate;
-            
-            private global::System.Data.DataColumn columnBVal;
-            
-            private global::System.Data.DataColumn columnCDate;
-            
-            private global::System.Data.DataColumn columnCVal;
-            
-            private global::System.Data.DataColumn columnDDate;
-            
-            private global::System.Data.DataColumn columnDVal;
-            
-            private global::System.Data.DataColumn columnEDate;
-            
-            private global::System.Data.DataColumn columnEVal;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public dtFigurationDataTable() {
-                this.TableName = "dtFiguration";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal dtFigurationDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected dtFigurationDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn NumColumn {
-                get {
-                    return this.columnNum;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Pallet_NoColumn {
-                get {
-                    return this.columnPallet_No;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Item_NameColumn {
-                get {
-                    return this.columnItem_Name;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Closed_TimeColumn {
-                get {
-                    return this.columnClosed_Time;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn WorkordernoColumn {
-                get {
-                    return this.columnWorkorderno;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn ADateColumn {
-                get {
-                    return this.columnADate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn AValColumn {
-                get {
-                    return this.columnAVal;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn BDateColumn {
-                get {
-                    return this.columnBDate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn BValColumn {
-                get {
-                    return this.columnBVal;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn CDateColumn {
-                get {
-                    return this.columnCDate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn CValColumn {
-                get {
-                    return this.columnCVal;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn DDateColumn {
-                get {
-                    return this.columnDDate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn DValColumn {
-                get {
-                    return this.columnDVal;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn EDateColumn {
-                get {
-                    return this.columnEDate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn EValColumn {
-                get {
-                    return this.columnEVal;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public dtFigurationRow this[int index] {
-                get {
-                    return ((dtFigurationRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event dtFigurationRowChangeEventHandler dtFigurationRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event dtFigurationRowChangeEventHandler dtFigurationRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event dtFigurationRowChangeEventHandler dtFigurationRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event dtFigurationRowChangeEventHandler dtFigurationRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AdddtFigurationRow(dtFigurationRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public dtFigurationRow AdddtFigurationRow(string Num, string Pallet_No, string Item_Name, string Closed_Time, string Workorderno, string ADate, string AVal, string BDate, string BVal, string CDate, string CVal, string DDate, string DVal, string EDate, string EVal) {
-                dtFigurationRow rowdtFigurationRow = ((dtFigurationRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        Num,
-                        Pallet_No,
-                        Item_Name,
-                        Closed_Time,
-                        Workorderno,
-                        ADate,
-                        AVal,
-                        BDate,
-                        BVal,
-                        CDate,
-                        CVal,
-                        DDate,
-                        DVal,
-                        EDate,
-                        EVal};
-                rowdtFigurationRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowdtFigurationRow);
-                return rowdtFigurationRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                dtFigurationDataTable cln = ((dtFigurationDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new dtFigurationDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal void InitVars() {
-                this.columnNum = base.Columns["Num"];
-                this.columnPallet_No = base.Columns["Pallet_No"];
-                this.columnItem_Name = base.Columns["Item_Name"];
-                this.columnClosed_Time = base.Columns["Closed_Time"];
-                this.columnWorkorderno = base.Columns["Workorderno"];
-                this.columnADate = base.Columns["ADate"];
-                this.columnAVal = base.Columns["AVal"];
-                this.columnBDate = base.Columns["BDate"];
-                this.columnBVal = base.Columns["BVal"];
-                this.columnCDate = base.Columns["CDate"];
-                this.columnCVal = base.Columns["CVal"];
-                this.columnDDate = base.Columns["DDate"];
-                this.columnDVal = base.Columns["DVal"];
-                this.columnEDate = base.Columns["EDate"];
-                this.columnEVal = base.Columns["EVal"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            private void InitClass() {
-                this.columnNum = new global::System.Data.DataColumn("Num", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNum);
-                this.columnPallet_No = new global::System.Data.DataColumn("Pallet_No", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPallet_No);
-                this.columnItem_Name = new global::System.Data.DataColumn("Item_Name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnItem_Name);
-                this.columnClosed_Time = new global::System.Data.DataColumn("Closed_Time", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnClosed_Time);
-                this.columnWorkorderno = new global::System.Data.DataColumn("Workorderno", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnWorkorderno);
-                this.columnADate = new global::System.Data.DataColumn("ADate", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnADate);
-                this.columnAVal = new global::System.Data.DataColumn("AVal", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAVal);
-                this.columnBDate = new global::System.Data.DataColumn("BDate", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBDate);
-                this.columnBVal = new global::System.Data.DataColumn("BVal", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBVal);
-                this.columnCDate = new global::System.Data.DataColumn("CDate", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCDate);
-                this.columnCVal = new global::System.Data.DataColumn("CVal", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCVal);
-                this.columnDDate = new global::System.Data.DataColumn("DDate", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDDate);
-                this.columnDVal = new global::System.Data.DataColumn("DVal", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDVal);
-                this.columnEDate = new global::System.Data.DataColumn("EDate", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEDate);
-                this.columnEVal = new global::System.Data.DataColumn("EVal", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEVal);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public dtFigurationRow NewdtFigurationRow() {
-                return ((dtFigurationRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new dtFigurationRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(dtFigurationRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.dtFigurationRowChanged != null)) {
-                    this.dtFigurationRowChanged(this, new dtFigurationRowChangeEvent(((dtFigurationRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.dtFigurationRowChanging != null)) {
-                    this.dtFigurationRowChanging(this, new dtFigurationRowChangeEvent(((dtFigurationRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.dtFigurationRowDeleted != null)) {
-                    this.dtFigurationRowDeleted(this, new dtFigurationRowChangeEvent(((dtFigurationRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.dtFigurationRowDeleting != null)) {
-                    this.dtFigurationRowDeleting(this, new dtFigurationRowChangeEvent(((dtFigurationRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemovedtFigurationRow(dtFigurationRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                dsFiguration ds = new dsFiguration();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "dtFigurationDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
+        public delegate void dtFigurHistoryRowChangeEventHandler(object sender, dtFigurHistoryRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -759,11 +358,11 @@ namespace Axxen.sangyoung {
             
             private global::System.Data.DataColumn columnNum;
             
-            private global::System.Data.DataColumn columnPallet_No;
+            private global::System.Data.DataColumn columnGV_Code;
             
             private global::System.Data.DataColumn columnItem_Name;
             
-            private global::System.Data.DataColumn columnClosed_Time;
+            private global::System.Data.DataColumn columnPrd_Endtime;
             
             private global::System.Data.DataColumn columnAVal;
             
@@ -814,9 +413,9 @@ namespace Axxen.sangyoung {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Pallet_NoColumn {
+            public global::System.Data.DataColumn GV_CodeColumn {
                 get {
-                    return this.columnPallet_No;
+                    return this.columnGV_Code;
                 }
             }
             
@@ -830,9 +429,9 @@ namespace Axxen.sangyoung {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Closed_TimeColumn {
+            public global::System.Data.DataColumn Prd_EndtimeColumn {
                 get {
-                    return this.columnClosed_Time;
+                    return this.columnPrd_Endtime;
                 }
             }
             
@@ -897,13 +496,13 @@ namespace Axxen.sangyoung {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public dtDryingRow AdddtDryingRow(string Num, string Pallet_No, string Item_Name, string Closed_Time, string AVal, string BVal, string CVal) {
+            public dtDryingRow AdddtDryingRow(string Num, string GV_Code, string Item_Name, string Prd_Endtime, string AVal, string BVal, string CVal) {
                 dtDryingRow rowdtDryingRow = ((dtDryingRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Num,
-                        Pallet_No,
+                        GV_Code,
                         Item_Name,
-                        Closed_Time,
+                        Prd_Endtime,
                         AVal,
                         BVal,
                         CVal};
@@ -930,9 +529,9 @@ namespace Axxen.sangyoung {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this.columnNum = base.Columns["Num"];
-                this.columnPallet_No = base.Columns["Pallet_No"];
+                this.columnGV_Code = base.Columns["GV_Code"];
                 this.columnItem_Name = base.Columns["Item_Name"];
-                this.columnClosed_Time = base.Columns["Closed_Time"];
+                this.columnPrd_Endtime = base.Columns["Prd_Endtime"];
                 this.columnAVal = base.Columns["AVal"];
                 this.columnBVal = base.Columns["BVal"];
                 this.columnCVal = base.Columns["CVal"];
@@ -943,12 +542,12 @@ namespace Axxen.sangyoung {
             private void InitClass() {
                 this.columnNum = new global::System.Data.DataColumn("Num", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNum);
-                this.columnPallet_No = new global::System.Data.DataColumn("Pallet_No", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPallet_No);
+                this.columnGV_Code = new global::System.Data.DataColumn("GV_Code", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGV_Code);
                 this.columnItem_Name = new global::System.Data.DataColumn("Item_Name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnItem_Name);
-                this.columnClosed_Time = new global::System.Data.DataColumn("Closed_Time", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnClosed_Time);
+                this.columnPrd_Endtime = new global::System.Data.DataColumn("Prd_Endtime", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrd_Endtime);
                 this.columnAVal = new global::System.Data.DataColumn("AVal", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAVal);
                 this.columnBVal = new global::System.Data.DataColumn("BVal", typeof(string), null, global::System.Data.MappingType.Element);
@@ -1082,437 +681,695 @@ namespace Axxen.sangyoung {
         }
         
         /// <summary>
-        ///Represents strongly named DataRow class.
+        ///Represents the strongly named DataTable class.
         ///</summary>
-        public partial class dtFigurationRow : global::System.Data.DataRow {
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class dtFigurationDataTable : global::System.Data.TypedTableBase<dtFigurationRow> {
             
-            private dtFigurationDataTable tabledtFiguration;
+            private global::System.Data.DataColumn columnWorkorderno;
+            
+            private global::System.Data.DataColumn columnNum;
+            
+            private global::System.Data.DataColumn columnGV_Code;
+            
+            private global::System.Data.DataColumn columnItem_Name;
+            
+            private global::System.Data.DataColumn columnPrd_Endtime;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal dtFigurationRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tabledtFiguration = ((dtFigurationDataTable)(this.Table));
+            public dtFigurationDataTable() {
+                this.TableName = "dtFiguration";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Num {
+            internal dtFigurationDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected dtFigurationDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn WorkordernoColumn {
                 get {
-                    try {
-                        return ((string)(this[this.tabledtFiguration.NumColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'dtFiguration\' 테이블의 \'Num\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtFiguration.NumColumn] = value;
+                    return this.columnWorkorderno;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Pallet_No {
+            public global::System.Data.DataColumn NumColumn {
                 get {
-                    try {
-                        return ((string)(this[this.tabledtFiguration.Pallet_NoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'dtFiguration\' 테이블의 \'Pallet_No\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtFiguration.Pallet_NoColumn] = value;
+                    return this.columnNum;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Item_Name {
+            public global::System.Data.DataColumn GV_CodeColumn {
                 get {
-                    try {
-                        return ((string)(this[this.tabledtFiguration.Item_NameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'dtFiguration\' 테이블의 \'Item_Name\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtFiguration.Item_NameColumn] = value;
+                    return this.columnGV_Code;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Closed_Time {
+            public global::System.Data.DataColumn Item_NameColumn {
                 get {
-                    try {
-                        return ((string)(this[this.tabledtFiguration.Closed_TimeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'dtFiguration\' 테이블의 \'Closed_Time\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtFiguration.Closed_TimeColumn] = value;
+                    return this.columnItem_Name;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Workorderno {
+            public global::System.Data.DataColumn Prd_EndtimeColumn {
                 get {
-                    try {
-                        return ((string)(this[this.tabledtFiguration.WorkordernoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'dtFiguration\' 테이블의 \'Workorderno\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtFiguration.WorkordernoColumn] = value;
+                    return this.columnPrd_Endtime;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string ADate {
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
                 get {
-                    try {
-                        return ((string)(this[this.tabledtFiguration.ADateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'dtFiguration\' 테이블의 \'ADate\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtFiguration.ADateColumn] = value;
+                    return this.Rows.Count;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string AVal {
+            public dtFigurationRow this[int index] {
                 get {
-                    try {
-                        return ((string)(this[this.tabledtFiguration.AValColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'dtFiguration\' 테이블의 \'AVal\' 열의 값이 DBNull입니다.", e);
-                    }
+                    return ((dtFigurationRow)(this.Rows[index]));
                 }
-                set {
-                    this[this.tabledtFiguration.AValColumn] = value;
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event dtFigurationRowChangeEventHandler dtFigurationRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event dtFigurationRowChangeEventHandler dtFigurationRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event dtFigurationRowChangeEventHandler dtFigurationRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event dtFigurationRowChangeEventHandler dtFigurationRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AdddtFigurationRow(dtFigurationRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public dtFigurationRow AdddtFigurationRow(dtFigurHistoryRow parentdtFigurHistoryRowBydtFigurHistory_dtFiguration, long Num, string GV_Code, string Item_Name, string Prd_Endtime) {
+                dtFigurationRow rowdtFigurationRow = ((dtFigurationRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        Num,
+                        GV_Code,
+                        Item_Name,
+                        Prd_Endtime};
+                if ((parentdtFigurHistoryRowBydtFigurHistory_dtFiguration != null)) {
+                    columnValuesArray[0] = parentdtFigurHistoryRowBydtFigurHistory_dtFiguration[0];
+                }
+                rowdtFigurationRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowdtFigurationRow);
+                return rowdtFigurationRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                dtFigurationDataTable cln = ((dtFigurationDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new dtFigurationDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnWorkorderno = base.Columns["Workorderno"];
+                this.columnNum = base.Columns["Num"];
+                this.columnGV_Code = base.Columns["GV_Code"];
+                this.columnItem_Name = base.Columns["Item_Name"];
+                this.columnPrd_Endtime = base.Columns["Prd_Endtime"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnWorkorderno = new global::System.Data.DataColumn("Workorderno", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnWorkorderno);
+                this.columnNum = new global::System.Data.DataColumn("Num", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNum);
+                this.columnGV_Code = new global::System.Data.DataColumn("GV_Code", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGV_Code);
+                this.columnItem_Name = new global::System.Data.DataColumn("Item_Name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnItem_Name);
+                this.columnPrd_Endtime = new global::System.Data.DataColumn("Prd_Endtime", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrd_Endtime);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public dtFigurationRow NewdtFigurationRow() {
+                return ((dtFigurationRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new dtFigurationRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(dtFigurationRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.dtFigurationRowChanged != null)) {
+                    this.dtFigurationRowChanged(this, new dtFigurationRowChangeEvent(((dtFigurationRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string BDate {
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.dtFigurationRowChanging != null)) {
+                    this.dtFigurationRowChanging(this, new dtFigurationRowChangeEvent(((dtFigurationRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.dtFigurationRowDeleted != null)) {
+                    this.dtFigurationRowDeleted(this, new dtFigurationRowChangeEvent(((dtFigurationRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.dtFigurationRowDeleting != null)) {
+                    this.dtFigurationRowDeleting(this, new dtFigurationRowChangeEvent(((dtFigurationRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemovedtFigurationRow(dtFigurationRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dsFiguration ds = new dsFiguration();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "dtFigurationDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class dtFigurHistoryDataTable : global::System.Data.TypedTableBase<dtFigurHistoryRow> {
+            
+            private global::System.Data.DataColumn columnWorkorderno;
+            
+            private global::System.Data.DataColumn columnADate;
+            
+            private global::System.Data.DataColumn columnAVal;
+            
+            private global::System.Data.DataColumn columnBDate;
+            
+            private global::System.Data.DataColumn columnBVal;
+            
+            private global::System.Data.DataColumn columnCDate;
+            
+            private global::System.Data.DataColumn columnCVal;
+            
+            private global::System.Data.DataColumn columnDDate;
+            
+            private global::System.Data.DataColumn columnDVal;
+            
+            private global::System.Data.DataColumn columnEDate;
+            
+            private global::System.Data.DataColumn columnEVal;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public dtFigurHistoryDataTable() {
+                this.TableName = "dtFigurHistory";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal dtFigurHistoryDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected dtFigurHistoryDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn WorkordernoColumn {
                 get {
-                    try {
-                        return ((string)(this[this.tabledtFiguration.BDateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'dtFiguration\' 테이블의 \'BDate\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtFiguration.BDateColumn] = value;
+                    return this.columnWorkorderno;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string BVal {
+            public global::System.Data.DataColumn ADateColumn {
                 get {
-                    try {
-                        return ((string)(this[this.tabledtFiguration.BValColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'dtFiguration\' 테이블의 \'BVal\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtFiguration.BValColumn] = value;
+                    return this.columnADate;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string CDate {
+            public global::System.Data.DataColumn AValColumn {
                 get {
-                    try {
-                        return ((string)(this[this.tabledtFiguration.CDateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'dtFiguration\' 테이블의 \'CDate\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtFiguration.CDateColumn] = value;
+                    return this.columnAVal;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string CVal {
+            public global::System.Data.DataColumn BDateColumn {
                 get {
-                    try {
-                        return ((string)(this[this.tabledtFiguration.CValColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'dtFiguration\' 테이블의 \'CVal\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtFiguration.CValColumn] = value;
+                    return this.columnBDate;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string DDate {
+            public global::System.Data.DataColumn BValColumn {
                 get {
-                    try {
-                        return ((string)(this[this.tabledtFiguration.DDateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'dtFiguration\' 테이블의 \'DDate\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtFiguration.DDateColumn] = value;
+                    return this.columnBVal;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string DVal {
+            public global::System.Data.DataColumn CDateColumn {
                 get {
-                    try {
-                        return ((string)(this[this.tabledtFiguration.DValColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'dtFiguration\' 테이블의 \'DVal\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtFiguration.DValColumn] = value;
+                    return this.columnCDate;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string EDate {
+            public global::System.Data.DataColumn CValColumn {
                 get {
-                    try {
-                        return ((string)(this[this.tabledtFiguration.EDateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'dtFiguration\' 테이블의 \'EDate\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtFiguration.EDateColumn] = value;
+                    return this.columnCVal;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string EVal {
+            public global::System.Data.DataColumn DDateColumn {
                 get {
+                    return this.columnDDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DValColumn {
+                get {
+                    return this.columnDVal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn EDateColumn {
+                get {
+                    return this.columnEDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn EValColumn {
+                get {
+                    return this.columnEVal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public dtFigurHistoryRow this[int index] {
+                get {
+                    return ((dtFigurHistoryRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event dtFigurHistoryRowChangeEventHandler dtFigurHistoryRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event dtFigurHistoryRowChangeEventHandler dtFigurHistoryRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event dtFigurHistoryRowChangeEventHandler dtFigurHistoryRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event dtFigurHistoryRowChangeEventHandler dtFigurHistoryRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AdddtFigurHistoryRow(dtFigurHistoryRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public dtFigurHistoryRow AdddtFigurHistoryRow(string Workorderno, string ADate, decimal AVal, string BDate, decimal BVal, string CDate, decimal CVal, string DDate, decimal DVal, string EDate, decimal EVal) {
+                dtFigurHistoryRow rowdtFigurHistoryRow = ((dtFigurHistoryRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        Workorderno,
+                        ADate,
+                        AVal,
+                        BDate,
+                        BVal,
+                        CDate,
+                        CVal,
+                        DDate,
+                        DVal,
+                        EDate,
+                        EVal};
+                rowdtFigurHistoryRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowdtFigurHistoryRow);
+                return rowdtFigurHistoryRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                dtFigurHistoryDataTable cln = ((dtFigurHistoryDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new dtFigurHistoryDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnWorkorderno = base.Columns["Workorderno"];
+                this.columnADate = base.Columns["ADate"];
+                this.columnAVal = base.Columns["AVal"];
+                this.columnBDate = base.Columns["BDate"];
+                this.columnBVal = base.Columns["BVal"];
+                this.columnCDate = base.Columns["CDate"];
+                this.columnCVal = base.Columns["CVal"];
+                this.columnDDate = base.Columns["DDate"];
+                this.columnDVal = base.Columns["DVal"];
+                this.columnEDate = base.Columns["EDate"];
+                this.columnEVal = base.Columns["EVal"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnWorkorderno = new global::System.Data.DataColumn("Workorderno", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnWorkorderno);
+                this.columnADate = new global::System.Data.DataColumn("ADate", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnADate);
+                this.columnAVal = new global::System.Data.DataColumn("AVal", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAVal);
+                this.columnBDate = new global::System.Data.DataColumn("BDate", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBDate);
+                this.columnBVal = new global::System.Data.DataColumn("BVal", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBVal);
+                this.columnCDate = new global::System.Data.DataColumn("CDate", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCDate);
+                this.columnCVal = new global::System.Data.DataColumn("CVal", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCVal);
+                this.columnDDate = new global::System.Data.DataColumn("DDate", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDDate);
+                this.columnDVal = new global::System.Data.DataColumn("DVal", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDVal);
+                this.columnEDate = new global::System.Data.DataColumn("EDate", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEDate);
+                this.columnEVal = new global::System.Data.DataColumn("EVal", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEVal);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public dtFigurHistoryRow NewdtFigurHistoryRow() {
+                return ((dtFigurHistoryRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new dtFigurHistoryRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(dtFigurHistoryRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.dtFigurHistoryRowChanged != null)) {
+                    this.dtFigurHistoryRowChanged(this, new dtFigurHistoryRowChangeEvent(((dtFigurHistoryRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.dtFigurHistoryRowChanging != null)) {
+                    this.dtFigurHistoryRowChanging(this, new dtFigurHistoryRowChangeEvent(((dtFigurHistoryRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.dtFigurHistoryRowDeleted != null)) {
+                    this.dtFigurHistoryRowDeleted(this, new dtFigurHistoryRowChangeEvent(((dtFigurHistoryRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.dtFigurHistoryRowDeleting != null)) {
+                    this.dtFigurHistoryRowDeleting(this, new dtFigurHistoryRowChangeEvent(((dtFigurHistoryRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemovedtFigurHistoryRow(dtFigurHistoryRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dsFiguration ds = new dsFiguration();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "dtFigurHistoryDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
                     try {
-                        return ((string)(this[this.tabledtFiguration.EValColumn]));
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'dtFiguration\' 테이블의 \'EVal\' 열의 값이 DBNull입니다.", e);
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
                     }
                 }
-                set {
-                    this[this.tabledtFiguration.EValColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsNumNull() {
-                return this.IsNull(this.tabledtFiguration.NumColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetNumNull() {
-                this[this.tabledtFiguration.NumColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsPallet_NoNull() {
-                return this.IsNull(this.tabledtFiguration.Pallet_NoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetPallet_NoNull() {
-                this[this.tabledtFiguration.Pallet_NoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsItem_NameNull() {
-                return this.IsNull(this.tabledtFiguration.Item_NameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetItem_NameNull() {
-                this[this.tabledtFiguration.Item_NameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsClosed_TimeNull() {
-                return this.IsNull(this.tabledtFiguration.Closed_TimeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetClosed_TimeNull() {
-                this[this.tabledtFiguration.Closed_TimeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsWorkordernoNull() {
-                return this.IsNull(this.tabledtFiguration.WorkordernoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetWorkordernoNull() {
-                this[this.tabledtFiguration.WorkordernoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsADateNull() {
-                return this.IsNull(this.tabledtFiguration.ADateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetADateNull() {
-                this[this.tabledtFiguration.ADateColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsAValNull() {
-                return this.IsNull(this.tabledtFiguration.AValColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetAValNull() {
-                this[this.tabledtFiguration.AValColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsBDateNull() {
-                return this.IsNull(this.tabledtFiguration.BDateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetBDateNull() {
-                this[this.tabledtFiguration.BDateColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsBValNull() {
-                return this.IsNull(this.tabledtFiguration.BValColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetBValNull() {
-                this[this.tabledtFiguration.BValColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsCDateNull() {
-                return this.IsNull(this.tabledtFiguration.CDateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetCDateNull() {
-                this[this.tabledtFiguration.CDateColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsCValNull() {
-                return this.IsNull(this.tabledtFiguration.CValColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetCValNull() {
-                this[this.tabledtFiguration.CValColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsDDateNull() {
-                return this.IsNull(this.tabledtFiguration.DDateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetDDateNull() {
-                this[this.tabledtFiguration.DDateColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsDValNull() {
-                return this.IsNull(this.tabledtFiguration.DValColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetDValNull() {
-                this[this.tabledtFiguration.DValColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsEDateNull() {
-                return this.IsNull(this.tabledtFiguration.EDateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetEDateNull() {
-                this[this.tabledtFiguration.EDateColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsEValNull() {
-                return this.IsNull(this.tabledtFiguration.EValColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetEValNull() {
-                this[this.tabledtFiguration.EValColumn] = global::System.Convert.DBNull;
+                xs.Add(dsSchema);
+                return type;
             }
         }
         
@@ -1548,17 +1405,17 @@ namespace Axxen.sangyoung {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Pallet_No {
+            public string GV_Code {
                 get {
                     try {
-                        return ((string)(this[this.tabledtDrying.Pallet_NoColumn]));
+                        return ((string)(this[this.tabledtDrying.GV_CodeColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'dtDrying\' 테이블의 \'Pallet_No\' 열의 값이 DBNull입니다.", e);
+                        throw new global::System.Data.StrongTypingException("\'dtDrying\' 테이블의 \'GV_Code\' 열의 값이 DBNull입니다.", e);
                     }
                 }
                 set {
-                    this[this.tabledtDrying.Pallet_NoColumn] = value;
+                    this[this.tabledtDrying.GV_CodeColumn] = value;
                 }
             }
             
@@ -1580,17 +1437,17 @@ namespace Axxen.sangyoung {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Closed_Time {
+            public string Prd_Endtime {
                 get {
                     try {
-                        return ((string)(this[this.tabledtDrying.Closed_TimeColumn]));
+                        return ((string)(this[this.tabledtDrying.Prd_EndtimeColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'dtDrying\' 테이블의 \'Closed_Time\' 열의 값이 DBNull입니다.", e);
+                        throw new global::System.Data.StrongTypingException("\'dtDrying\' 테이블의 \'Prd_Endtime\' 열의 값이 DBNull입니다.", e);
                     }
                 }
                 set {
-                    this[this.tabledtDrying.Closed_TimeColumn] = value;
+                    this[this.tabledtDrying.Prd_EndtimeColumn] = value;
                 }
             }
             
@@ -1656,14 +1513,14 @@ namespace Axxen.sangyoung {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsPallet_NoNull() {
-                return this.IsNull(this.tabledtDrying.Pallet_NoColumn);
+            public bool IsGV_CodeNull() {
+                return this.IsNull(this.tabledtDrying.GV_CodeColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetPallet_NoNull() {
-                this[this.tabledtDrying.Pallet_NoColumn] = global::System.Convert.DBNull;
+            public void SetGV_CodeNull() {
+                this[this.tabledtDrying.GV_CodeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1680,14 +1537,14 @@ namespace Axxen.sangyoung {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsClosed_TimeNull() {
-                return this.IsNull(this.tabledtDrying.Closed_TimeColumn);
+            public bool IsPrd_EndtimeNull() {
+                return this.IsNull(this.tabledtDrying.Prd_EndtimeColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetClosed_TimeNull() {
-                this[this.tabledtDrying.Closed_TimeColumn] = global::System.Convert.DBNull;
+            public void SetPrd_EndtimeNull() {
+                this[this.tabledtDrying.Prd_EndtimeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1724,6 +1581,540 @@ namespace Axxen.sangyoung {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetCValNull() {
                 this[this.tabledtDrying.CValColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class dtFigurationRow : global::System.Data.DataRow {
+            
+            private dtFigurationDataTable tabledtFiguration;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal dtFigurationRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tabledtFiguration = ((dtFigurationDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Workorderno {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtFiguration.WorkordernoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'dtFiguration\' 테이블의 \'Workorderno\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtFiguration.WorkordernoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long Num {
+                get {
+                    try {
+                        return ((long)(this[this.tabledtFiguration.NumColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'dtFiguration\' 테이블의 \'Num\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtFiguration.NumColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string GV_Code {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtFiguration.GV_CodeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'dtFiguration\' 테이블의 \'GV_Code\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtFiguration.GV_CodeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Item_Name {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtFiguration.Item_NameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'dtFiguration\' 테이블의 \'Item_Name\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtFiguration.Item_NameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Prd_Endtime {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtFiguration.Prd_EndtimeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'dtFiguration\' 테이블의 \'Prd_Endtime\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtFiguration.Prd_EndtimeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public dtFigurHistoryRow dtFigurHistoryRow {
+                get {
+                    return ((dtFigurHistoryRow)(this.GetParentRow(this.Table.ParentRelations["dtFigurHistory_dtFiguration"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["dtFigurHistory_dtFiguration"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsWorkordernoNull() {
+                return this.IsNull(this.tabledtFiguration.WorkordernoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetWorkordernoNull() {
+                this[this.tabledtFiguration.WorkordernoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsNumNull() {
+                return this.IsNull(this.tabledtFiguration.NumColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetNumNull() {
+                this[this.tabledtFiguration.NumColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsGV_CodeNull() {
+                return this.IsNull(this.tabledtFiguration.GV_CodeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetGV_CodeNull() {
+                this[this.tabledtFiguration.GV_CodeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsItem_NameNull() {
+                return this.IsNull(this.tabledtFiguration.Item_NameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetItem_NameNull() {
+                this[this.tabledtFiguration.Item_NameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsPrd_EndtimeNull() {
+                return this.IsNull(this.tabledtFiguration.Prd_EndtimeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetPrd_EndtimeNull() {
+                this[this.tabledtFiguration.Prd_EndtimeColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class dtFigurHistoryRow : global::System.Data.DataRow {
+            
+            private dtFigurHistoryDataTable tabledtFigurHistory;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal dtFigurHistoryRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tabledtFigurHistory = ((dtFigurHistoryDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Workorderno {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtFigurHistory.WorkordernoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'dtFigurHistory\' 테이블의 \'Workorderno\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtFigurHistory.WorkordernoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string ADate {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtFigurHistory.ADateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'dtFigurHistory\' 테이블의 \'ADate\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtFigurHistory.ADateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal AVal {
+                get {
+                    try {
+                        return ((decimal)(this[this.tabledtFigurHistory.AValColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'dtFigurHistory\' 테이블의 \'AVal\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtFigurHistory.AValColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string BDate {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtFigurHistory.BDateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'dtFigurHistory\' 테이블의 \'BDate\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtFigurHistory.BDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal BVal {
+                get {
+                    try {
+                        return ((decimal)(this[this.tabledtFigurHistory.BValColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'dtFigurHistory\' 테이블의 \'BVal\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtFigurHistory.BValColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string CDate {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtFigurHistory.CDateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'dtFigurHistory\' 테이블의 \'CDate\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtFigurHistory.CDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal CVal {
+                get {
+                    try {
+                        return ((decimal)(this[this.tabledtFigurHistory.CValColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'dtFigurHistory\' 테이블의 \'CVal\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtFigurHistory.CValColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string DDate {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtFigurHistory.DDateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'dtFigurHistory\' 테이블의 \'DDate\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtFigurHistory.DDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal DVal {
+                get {
+                    try {
+                        return ((decimal)(this[this.tabledtFigurHistory.DValColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'dtFigurHistory\' 테이블의 \'DVal\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtFigurHistory.DValColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string EDate {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtFigurHistory.EDateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'dtFigurHistory\' 테이블의 \'EDate\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtFigurHistory.EDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal EVal {
+                get {
+                    try {
+                        return ((decimal)(this[this.tabledtFigurHistory.EValColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'dtFigurHistory\' 테이블의 \'EVal\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtFigurHistory.EValColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsWorkordernoNull() {
+                return this.IsNull(this.tabledtFigurHistory.WorkordernoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetWorkordernoNull() {
+                this[this.tabledtFigurHistory.WorkordernoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsADateNull() {
+                return this.IsNull(this.tabledtFigurHistory.ADateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetADateNull() {
+                this[this.tabledtFigurHistory.ADateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsAValNull() {
+                return this.IsNull(this.tabledtFigurHistory.AValColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetAValNull() {
+                this[this.tabledtFigurHistory.AValColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsBDateNull() {
+                return this.IsNull(this.tabledtFigurHistory.BDateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetBDateNull() {
+                this[this.tabledtFigurHistory.BDateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsBValNull() {
+                return this.IsNull(this.tabledtFigurHistory.BValColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetBValNull() {
+                this[this.tabledtFigurHistory.BValColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsCDateNull() {
+                return this.IsNull(this.tabledtFigurHistory.CDateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetCDateNull() {
+                this[this.tabledtFigurHistory.CDateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsCValNull() {
+                return this.IsNull(this.tabledtFigurHistory.CValColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetCValNull() {
+                this[this.tabledtFigurHistory.CValColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDDateNull() {
+                return this.IsNull(this.tabledtFigurHistory.DDateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDDateNull() {
+                this[this.tabledtFigurHistory.DDateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDValNull() {
+                return this.IsNull(this.tabledtFigurHistory.DValColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDValNull() {
+                this[this.tabledtFigurHistory.DValColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsEDateNull() {
+                return this.IsNull(this.tabledtFigurHistory.EDateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetEDateNull() {
+                this[this.tabledtFigurHistory.EDateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsEValNull() {
+                return this.IsNull(this.tabledtFigurHistory.EValColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetEValNull() {
+                this[this.tabledtFigurHistory.EValColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public dtFigurationRow[] GetdtFigurationRows() {
+                if ((this.Table.ChildRelations["dtFigurHistory_dtFiguration"] == null)) {
+                    return new dtFigurationRow[0];
+                }
+                else {
+                    return ((dtFigurationRow[])(base.GetChildRows(this.Table.ChildRelations["dtFigurHistory_dtFiguration"])));
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class dtDryingRowChangeEvent : global::System.EventArgs {
+            
+            private dtDryingRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public dtDryingRowChangeEvent(dtDryingRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public dtDryingRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
             }
         }
         
@@ -1765,22 +2156,22 @@ namespace Axxen.sangyoung {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class dtDryingRowChangeEvent : global::System.EventArgs {
+        public class dtFigurHistoryRowChangeEvent : global::System.EventArgs {
             
-            private dtDryingRow eventRow;
+            private dtFigurHistoryRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public dtDryingRowChangeEvent(dtDryingRow row, global::System.Data.DataRowAction action) {
+            public dtFigurHistoryRowChangeEvent(dtFigurHistoryRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public dtDryingRow Row {
+            public dtFigurHistoryRow Row {
                 get {
                     return this.eventRow;
                 }

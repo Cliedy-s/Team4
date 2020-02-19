@@ -17,7 +17,7 @@ namespace Axxen
 {
     public partial class PRM_RPT_003 : Axxen.ReportForm
     {
-        List<Goods_In_HistoryVO> boxlist;
+        List<Goods_In_HistoryPackageVO> boxlist;
         Goods_In_HistorySercive service = new Goods_In_HistorySercive();
         DataTable dt = new DataTable();
         PackingLog rpt = new PackingLog();
@@ -51,7 +51,7 @@ namespace Axxen
         private void ReportBinding()
         {
             string date = dtpDate.Value.ToString("yyyy-MM-dd");
-            boxlist = service.GetFigurationHistory(date);
+            boxlist = service.GetBoxingHistory(date);
             
             dt = ListToDataTable.ToDataTable(boxlist);
             rpt.DataSource = dt;

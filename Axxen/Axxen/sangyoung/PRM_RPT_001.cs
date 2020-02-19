@@ -25,6 +25,7 @@ namespace Axxen
         DataTable dt = new DataTable();
         DryingLog rpt = new DryingLog();
         Goods_In_HistorySercive service = new Goods_In_HistorySercive();
+        dsFiguration ds = new dsFiguration();
 
         public PRM_RPT_001()
         {
@@ -57,9 +58,9 @@ namespace Axxen
                                   select new
                                   {
                                       Num = req.Num,
-                                      Pallet_No = req.Pallet_No,
+                                      GV_Code = req.GV_Code,
                                       Item_Name = req.Item_Name,
-                                      Closed_Time = req.Closed_Time.ToString("HH:mm"),
+                                      Prd_Endtime = req.Prd_Endtime,
                                       Workorderno = val.Workorderno,
                                       ADate = val.Adate,
                                       AVal = val.Aval,
@@ -69,12 +70,14 @@ namespace Axxen
                                       CVal = val.Cval
                                   }).ToList();
 
+            ds.Relations.Clear();
+            ds.Tables.Clear();
 
             dt = ListToDataTable.ToDataTable(figurationList);
-            dt.TableName = "datDrying";
-            dsFiguration ds = new dsFiguration();
             ds.Tables.Add(dt);
-            rpt.DataSource = ds.Tables["datDrying"];
+            ds.Tables[0].TableName = "dtDrying";
+
+            rpt.DataSource = ds.Tables["dtDrying"];
             rpt.Parameters["Ins_Date"].Value = dtpDate.Value.ToString("yyyy-MM-dd");
             rpt.Parameters["Ins_Date"].Visible = false; //파라미터 바로 넘기기
             documentViewer1.DocumentSource = rpt;
