@@ -48,6 +48,8 @@ namespace AxxenClient.Forms
             InitControlUtil.AddNewColumnToDataGridView(dgvGVFrom, "적재시각", "Loading_time", true, 200);
             InitControlUtil.AddNewColumnToDataGridView(dgvGVFrom, "수량", "Loading_Qty", true, 80, DataGridViewContentAlignment.MiddleRight);
             InitControlUtil.AddNewColumnToDataGridView(dgvGVFrom, "작업지시번호", "Workorderno", true, 200, DataGridViewContentAlignment.MiddleRight);
+            InitControlUtil.AddNewColumnToDataGridView(dgvGVFrom, "내역순서", "Hist_Seq", false, 200, DataGridViewContentAlignment.MiddleRight);
+            InitControlUtil.AddNewColumnToDataGridView(dgvGVFrom, "현황순서", "Status_Seq", false, 200, DataGridViewContentAlignment.MiddleRight);
             dgvGVFrom.Columns[2].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm:ss";
 
         }
@@ -90,7 +92,7 @@ namespace AxxenClient.Forms
                         GV_HistoryService service = new GV_HistoryService();
 
                     // 옮겨타기
-                    if (service.UpdateMoveGvItem(unloadgvcode, loadinggvcode, Convert.ToInt32(txtLoading.TextBoxText), GlobalUsage.UserID, GlobalUsage.WcCode, GlobalUsage.WorkOrderNo, dgvGVFrom.SelectedRows[0].Cells[4].Value.ToString()))
+                    if (service.UpdateMoveGvItem(unloadgvcode, loadinggvcode, Convert.ToInt32(txtLoading.TextBoxText), GlobalUsage.UserID, GlobalUsage.WcCode, GlobalUsage.WorkOrderNo, dgvGVFrom.SelectedRows[0].Cells[4].Value.ToString(), false, Convert.ToInt64(dgvGVFrom.SelectedRows[0].Cells[5].Value.ToString()), Convert.ToInt32(dgvGVFrom.SelectedRows[0].Cells[6].Value.ToString())))
                     {
                         GetDatas();
                         Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 대차({unloadgvcode})에서 대차({loadinggvcode})로 옮겨타기에 성공함");

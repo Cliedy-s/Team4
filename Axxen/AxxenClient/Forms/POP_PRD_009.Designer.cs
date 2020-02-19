@@ -33,6 +33,8 @@
             this.btnSearch = new Axxen.CustomControls.AButton();
             this.dgvGVList = new Axxen.CustomControls.ADataGridView();
             this.aPanel4 = new Axxen.CustomControls.APanel();
+            this.lblGvCode = new Axxen.CustomControls.ALabel();
+            this.lblWorkorderno = new Axxen.CustomControls.ALabel();
             this.btnKeypad = new Axxen.CustomControls.AButton();
             this.lblHistSeq = new Axxen.CustomControls.ALabel();
             this.txtPlanQty = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
@@ -44,6 +46,7 @@
             this.lblReqNo = new Axxen.CustomControls.ALabel();
             this.lblUnit = new Axxen.CustomControls.ALabel();
             this.btnCreateWorkOrder = new Axxen.CustomControls.AButton();
+            this.lblStatusSeq = new Axxen.CustomControls.ALabel();
             this.panBottom.SuspendLayout();
             this.aPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
@@ -120,6 +123,9 @@
             // 
             this.aPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.aPanel4.Controls.Add(this.lblStatusSeq);
+            this.aPanel4.Controls.Add(this.lblGvCode);
+            this.aPanel4.Controls.Add(this.lblWorkorderno);
             this.aPanel4.Controls.Add(this.btnKeypad);
             this.aPanel4.Controls.Add(this.lblHistSeq);
             this.aPanel4.Controls.Add(this.txtPlanQty);
@@ -135,6 +141,26 @@
             this.aPanel4.Name = "aPanel4";
             this.aPanel4.Size = new System.Drawing.Size(549, 482);
             this.aPanel4.TabIndex = 8;
+            // 
+            // lblGvCode
+            // 
+            this.lblGvCode.AutoSize = true;
+            this.lblGvCode.Location = new System.Drawing.Point(147, 329);
+            this.lblGvCode.Name = "lblGvCode";
+            this.lblGvCode.Size = new System.Drawing.Size(63, 12);
+            this.lblGvCode.TabIndex = 56;
+            this.lblGvCode.Text = "lblGvCode";
+            this.lblGvCode.Visible = false;
+            // 
+            // lblWorkorderno
+            // 
+            this.lblWorkorderno.AutoSize = true;
+            this.lblWorkorderno.Location = new System.Drawing.Point(40, 329);
+            this.lblWorkorderno.Name = "lblWorkorderno";
+            this.lblWorkorderno.Size = new System.Drawing.Size(88, 12);
+            this.lblWorkorderno.TabIndex = 55;
+            this.lblWorkorderno.Text = "lblWorkorderno";
+            this.lblWorkorderno.Visible = false;
             // 
             // btnKeypad
             // 
@@ -283,6 +309,16 @@
             this.btnCreateWorkOrder.UseVisualStyleBackColor = false;
             this.btnCreateWorkOrder.Click += new System.EventHandler(this.btnCreateWorkOrder_Click);
             // 
+            // lblStatusSeq
+            // 
+            this.lblStatusSeq.AutoSize = true;
+            this.lblStatusSeq.Location = new System.Drawing.Point(236, 329);
+            this.lblStatusSeq.Name = "lblStatusSeq";
+            this.lblStatusSeq.Size = new System.Drawing.Size(75, 12);
+            this.lblStatusSeq.TabIndex = 57;
+            this.lblStatusSeq.Text = "lblStatusSeq";
+            this.lblStatusSeq.Visible = false;
+            // 
             // POP_PRD_009
             // 
             this.ClientSize = new System.Drawing.Size(1210, 629);
@@ -328,5 +364,8 @@
         private Axxen.CustomControls.AButton btnSearch;
         private Axxen.CustomControls.ALabel lblHistSeq;
         private Axxen.CustomControls.AButton btnKeypad;
+        private Axxen.CustomControls.ALabel lblWorkorderno;
+        private Axxen.CustomControls.ALabel lblGvCode;
+        private Axxen.CustomControls.ALabel lblStatusSeq;
     }
 }

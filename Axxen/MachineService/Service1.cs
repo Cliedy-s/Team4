@@ -29,21 +29,39 @@ namespace MachineService
         }
         protected override void OnStart(string[] args)
         {
-            string userpath = Environment.GetFolderPath(System.Environment.SpecialFolder.UserProfile);
-            orgfolder.Insert(0, userpath);
-            donefolder.Insert(0, userpath);
+            //string userpath = Environment.GetFolderPath(System.Environment.SpecialFolder.UserProfile);
+            string userpath = @"C:";
+            orgfolder = orgfolder.Insert(0, userpath);
+            donefolder = donefolder.Insert(0, userpath);
 
             if (!Directory.Exists(orgfolder))
                 Directory.CreateDirectory(orgfolder);
             if (!Directory.Exists(donefolder))
                 Directory.CreateDirectory(donefolder);
-            
+
             timer = new Timer(interval);
             timer.Enabled = true;
             timer.Elapsed += Timer_Elapsed;
             timer.AutoReset = true;
             Program.Log.WriteInfo("Machine 서비스 프로그램 시작...");
         }
+        //public void OnStart()
+        //{
+        //    string userpath = Environment.GetFolderPath(System.Environment.SpecialFolder.UserProfile);
+        //    orgfolder = orgfolder.Insert(0, userpath);
+        //    donefolder = donefolder.Insert(0, userpath);
+
+        //    if (!Directory.Exists(orgfolder))
+        //        Directory.CreateDirectory(orgfolder);
+        //    if (!Directory.Exists(donefolder))
+        //        Directory.CreateDirectory(donefolder);
+
+        //    timer = new Timer(interval);
+        //    timer.Enabled = true;
+        //    timer.Elapsed += Timer_Elapsed;
+        //    timer.AutoReset = true;
+        //    Program.Log.WriteInfo("Machine 서비스 프로그램 시작...");
+        //}
         protected override void OnStop()
         {
             timer.Enabled = false;

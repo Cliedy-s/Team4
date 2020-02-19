@@ -121,10 +121,10 @@ namespace Service
         /// </summary>
         /// <param name="item"></param>
         /// <returns></returns>
-        public bool InsertWorkOrder(WorkOrderNewVO item, string histcode = null, DateTime? endTime = null)
+        public bool InsertWorkOrder(WorkOrderNewVO item, long? histcode = null, string fromworkorderno = null, string gvcode = null, int? statusseq = null)
         {
             WorkOrderDAC dac = new WorkOrderDAC();
-            return dac.InsertWorkOrder(item, histcode, endTime);
+            return dac.InsertWorkOrder(item, histcode, fromworkorderno, gvcode, statusseq);
         }
         /// <summary>
         /// 작업지시 시작
