@@ -44,10 +44,10 @@ namespace Service
         /// <param name="wccode"></param>
         /// <param name="workorderno"></param>
         /// <returns></returns>
-        public bool UpdateMoveGvItem(string unloadgvcode, string loadgvcode, int unloadqty, string userid, string wccode, string workorderno, string fromworkorderno, bool isLoading = false)
+        public bool UpdateMoveGvItem(string unloadgvcode, string loadgvcode, int unloadqty, string userid, string wccode, string workorderno, string fromworkorderno, bool isLoading = false, long? gvhistseq = null, int? statusseq = null)
         {
             GV_HistoryDAC dac = new GV_HistoryDAC();
-            return dac.UpdateMoveGvItem( unloadgvcode,  loadgvcode,  unloadqty,  userid,  wccode,  workorderno, fromworkorderno, isLoading);
+            return dac.UpdateMoveGvItem( unloadgvcode,  loadgvcode,  unloadqty,  userid,  wccode,  workorderno, fromworkorderno, isLoading, gvhistseq, statusseq);
         }
     }
 }

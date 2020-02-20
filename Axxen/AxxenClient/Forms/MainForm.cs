@@ -54,6 +54,11 @@ namespace AxxenClient.Forms
         {
             // 초반 값 
             GlobalUsage.WcCode = ConfigurationManager.AppSettings["WcCode"];
+            switch (GlobalUsage.WcCode)
+            {
+                default:
+                    break;
+            }
 
             LoginForm login = new LoginForm();
             if(login.ShowDialog() != DialogResult.OK)
@@ -61,16 +66,18 @@ namespace AxxenClient.Forms
                 this.Close();
                 return;
             }
-            
-            // 개발자용 콤보박스 설정
-            List<Typesss> dic = new List<Typesss>();
-            dic.Add(new Typesss("Molding", WorkType.Molding));
-            dic.Add(new Typesss("Load", WorkType.Load));
-            dic.Add(new Typesss("Boxing", WorkType.Boxing));
 
-            aComboBox1.DataSource = dic;
-            aComboBox1.DisplayMember = "value1";
-            aComboBox1.ValueMember = "value2";
+            aComboBox1.Visible= aButton1.Visible = false;
+
+            // 개발자용 콤보박스 설정
+            //List<Typesss> dic = new List<Typesss>();
+            //dic.Add(new Typesss("Molding", WorkType.Molding));
+            //dic.Add(new Typesss("Load", WorkType.Load));
+            //dic.Add(new Typesss("Boxing", WorkType.Boxing));
+
+            //aComboBox1.DataSource = dic;
+            //aComboBox1.DisplayMember = "value1";
+            //aComboBox1.ValueMember = "value2";
 
             POP_PRD_001 childfrm = new POP_PRD_001();
             childfrm.WindowState = FormWindowState.Maximized;
@@ -95,20 +102,20 @@ namespace AxxenClient.Forms
             GlobalUsage.WorkType = work;
 
             // 작업장 설정
-           switch (work)
-            {
-                case WorkType.Molding:
-                    GlobalUsage.WcCode = "WC20003";
-                    break;
-                case WorkType.Load:
-                    GlobalUsage.WcCode = "WC40003";
-                    break;
-                case WorkType.Boxing:
-                    GlobalUsage.WcCode = "WC50003";
-                    break;
-                default:
-                    break;
-            }
+           //switch (work)
+           // {
+           //     case WorkType.Molding:
+           //         GlobalUsage.WcCode = "WC20003";
+           //         break;
+           //     case WorkType.Load:
+           //         GlobalUsage.WcCode = "WC40003";
+           //         break;
+           //     case WorkType.Boxing:
+           //         GlobalUsage.WcCode = "WC50003";
+           //         break;
+           //     default:
+           //         break;
+           // }
 
             // 폼 열기
             POP_PRD_001 childfrm = new POP_PRD_001();
@@ -116,7 +123,6 @@ namespace AxxenClient.Forms
             childfrm.MdiParent = this;
             childfrm.Show();
         }
-
         private void timetimer_Tick(object sender, EventArgs e)
         {
             if (ActiveMdiChild is ClientBaseForm activatedchild)

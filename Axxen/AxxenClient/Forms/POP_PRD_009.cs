@@ -45,7 +45,9 @@ namespace AxxenClient.Forms
             InitControlUtil.AddNewColumnToDataGridView(dgvGVList, "생산의뢰번호", "Wo_Req_No", false, 100);
             InitControlUtil.AddNewColumnToDataGridView(dgvGVList, "생산의뢰순서", "Req_Seq", false, 100);
             InitControlUtil.AddNewColumnToDataGridView(dgvGVList, "대차이력 순서", "Hist_Seq", false);
-
+            InitControlUtil.AddNewColumnToDataGridView(dgvGVList, "작업지시번호", "Workorderno", false);
+            InitControlUtil.AddNewColumnToDataGridView(dgvGVList, "건조대차코드", "GV_Code", false);
+            InitControlUtil.AddNewColumnToDataGridView(dgvGVList, "대차현황순서", "Status_Seq", false);
 
             dgvGVList.Columns[10].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm:ss";
         }
@@ -55,7 +57,7 @@ namespace AxxenClient.Forms
             List<GVStatusVO> list = service.GetGVCurrentStatus(gvStatus: "적재", gvGroup: "건조그룹");
             dgvGVList.DataSource =
                 (from gv in list
-                 where gv.Unloading_Qty == null
+                 where gv.Unloading_Qty == null && gv.Loading_Qty != 0
                  select gv).ToList();
         }
         private void btnSearch_Click(object sender, EventArgs e)
@@ -64,7 +66,7 @@ namespace AxxenClient.Forms
             List<GVStatusVO> list = service.GetGVCurrentStatus(gvStatus: "적재", gvGroup: "건조그룹", gvName: txtGVSearch.TextBoxText);
             dgvGVList.DataSource =
                 (from gv in list
-                 where gv.Unloading_Qty == null
+                 where gv.Unloading_Qty == null && gv.Loading_Qty != 0
                  select gv).ToList();
             
         }
@@ -72,16 +74,19 @@ namespace AxxenClient.Forms
         {
             txtItemSearch.TextBoxText =(dgvGVList.SelectedRows[0].Cells[2].Value ?? "").ToString();
             txtItemSearch.CodeText = (dgvGVList.SelectedRows[0].Cells[1].Value ?? "").ToString();
-            txtProcessSearch.TextBoxText = (dgvGVList.SelectedRows[0].Cells[9].Value ?? "").ToString();
-            txtProcessSearch.CodeText = (dgvGVList.SelectedRows[0].Cells[8].Value ?? "").ToString();
-            txtWcSearch.TextBoxText = (dgvGVList.SelectedRows[0].Cells[7].Value ?? "").ToString();
-            txtWcSearch.CodeText = (dgvGVList.SelectedRows[0].Cells[6].Value ?? "").ToString();
+            txtProcessSearch.TextBoxText = GlobalUsage.ProcessName;
+            txtProcessSearch.CodeText = GlobalUsage.ProcessCode;
+            txtWcSearch.TextBoxText = GlobalUsage.WcName;
+            txtWcSearch.CodeText = GlobalUsage.WcCode;
             txtPlanDate.TextBoxText = (dgvGVList.SelectedRows[0].Cells[10].Value ?? "").ToString();
             txtPlanQty.TextBoxText = (dgvGVList.SelectedRows[0].Cells[3].Value ?? "").ToString();
             lblUnit.Text = (dgvGVList.SelectedRows[0].Cells[12].Value ?? "").ToString();
             lblReqNo.Text = (dgvGVList.SelectedRows[0].Cells[13].Value ?? "").ToString();
             lblReqSeq.Text = (dgvGVList.SelectedRows[0].Cells[14].Value ?? "").ToString();
             lblHistSeq.Text = (dgvGVList.SelectedRows[0].Cells[15].Value ?? "").ToString();
+            lblWorkorderno.Text = (dgvGVList.SelectedRows[0].Cells[16].Value ?? "").ToString();
+            lblGvCode.Text = (dgvGVList.SelectedRows[0].Cells[17].Value ?? "").ToString();
+            lblStatusSeq.Text = (dgvGVList.SelectedRows[0].Cells[18].Value ?? "").ToString();
         }
         private void btnCreateWorkOrder_Click(object sender, EventArgs e)
         {   // 작업지시 생성
@@ -99,7 +104,7 @@ namespace AxxenClient.Forms
             item.Wo_Order = "4";
             item.Wo_Status = "생산대기";
             item.Prd_Unit = lblUnit.Text;
-            if (service.InsertWorkOrder(item, lblHistSeq.Text))
+            if (service.InsertWorkOrder(item, Convert.ToInt64(lblHistSeq.Text), lblWorkorderno.Text, lblGvCode.Text, Convert.ToInt32(lblStatusSeq.Text)))
             {
 
                 Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 생산지시({lblReqNo.Text})에 관한 작업장({GlobalUsage.WcCode})의 작업지시를 {now.ToString("yyyy-MM-dd HH:mm:ss")}에 생성하였음");
@@ -116,6 +121,7 @@ namespace AxxenClient.Forms
         private void btnKeypad_Click(object sender, EventArgs e)
         {
             KeypadForm frm = new KeypadForm();
+            frm.StartPosition = FormStartPosition.CenterParent;
             frm.FormSendEvent += new KeypadForm.FormSendDataHandler(DieaseUpdateEventMethod);
             frm.Show();
         }

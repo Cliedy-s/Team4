@@ -245,7 +245,7 @@
             // 
             this.lblSubtitle.AutoSize = true;
             this.lblSubtitle.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblSubtitle.Location = new System.Drawing.Point(132, 18);
+            this.lblSubtitle.Location = new System.Drawing.Point(136, 14);
             this.lblSubtitle.Name = "lblSubtitle";
             this.lblSubtitle.Size = new System.Drawing.Size(0, 17);
             this.lblSubtitle.TabIndex = 0;

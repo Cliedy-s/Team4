@@ -44,8 +44,9 @@ namespace AxxenClient
         internal static LoggingUtility Log { get { return _loggingUtility; } }
 
         System.Timers.Timer timer;
-        string writefolder = Environment.GetFolderPath(System.Environment.SpecialFolder.UserProfile)+ConfigurationManager.AppSettings["WriteFolder"];
-        
+        //string writefolder = Environment.GetFolderPath(System.Environment.SpecialFolder.UserProfile)+ConfigurationManager.AppSettings["WriteFolder"];
+        string writefolder = @"C:" + ConfigurationManager.AppSettings["WriteFolder"];
+
         int interval = int.Parse(ConfigurationManager.AppSettings["LogCreateMillisecond"]);
         int machineID = 0;
         int iCnt = 0;

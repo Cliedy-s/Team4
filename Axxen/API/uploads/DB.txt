@@ -1,0 +1,91 @@
+37-WorkOrder DB
+38- 1번 그리드 WorkOrder, 2번 그리드 Goods_In_History
+39 : 생산일자/ 품목코드/품목명/  팔레트번호/입고수량/마감시각/취소시각/ERP 업로드여부/작업지시번호/작업지시상태
+        workOrder work  Item_Master Goods	  work    Goods    Goods      Goods	Goods	       workOrder
+ 	          itemM			(계획수량)  				 work
+40 : GasUse_History  
+41 : 대차코드  /대차명/    작업지시번호/          품목코드/      품목명    /대차상태/      대차수량/로딩일자/로딩시간/로딩작업장/언로딩일자/언로딩시간/언로딩작업장/요입시간/중간시간/요출시간
+     GV_Master GV_Master  GV_Current_Status  WorkOrder Item_Master  GV_Master   GV_Current_Status                                                        GV_Master		
+                                  WorkOrder           Item_Master
+
+42 : 대차코드/   대차명/  작업지시번호/  품목코드/     품목명/   로딩일자/   로딩수량/        로딩시간/           로딩작업장/    요입시간/중간시간/요출시간/
+   GV_History GV_Master GV_History    WorkOrder Item_Master  GV_History GV_History GV_Current_Status    GV_History                  GV_History 
+   GV_Master                WorkOrder  Item_Master  
+   GV_Current_Status
+언로딩수량/언로딩일자/언로딩일시/언로딩작업장/대상대차/ 대차비우기 일자/대차비우기일시/대차비우기수량/ 대차비우기원인/대상작업장/대상작업장품목
+GV_History GV_History  GV_History  GV_History  GV_History    GV_History       GV_History    GV_History         GV_History  GV_History  GV_History 
+
+
+
+45: 근무일/           작업장/                   작업자/            근무시작시간/근무종료시간/근무시간  		
+    Work_History  WorkCenter_Master    User_Name       Work_History Work_History Work_History
+
+46: GRID1 : 작업자               /                 근무일                 /          ~ 근무일                                     / 생산수량
+      Emp_Allocation_History_Detail  Emp_Allocation_History_Detail  Emp_Allocation_History_Detail    Emp_Allocation_History_Detail
+	User_Master
+GRID2 : 작업지시번호/              작업장코드/     작업장명/     품목코드/ 품목명/       작업시작일시/작업종료일시/            작업시간/              생산수량/                 할당작업자
+Emp_Allocation_History_Detail    WorkOrder    WorkOrder  WorkOrder Item_Master   Emp_Allocation_History_Detail  작업시작-작업종료  Emp_Allocation_History_Detail	  User_Master
+        User_Master                                                 Item_Master
+
+47 : 삭제
+
+공정검사측정이력 테이블
+48 :          테이블에서              두 키로           GRID1 : 작업지시번호/         생산일자/              공정명/            작업장/                  품목코드/              품목명
+   Condition_Spec_Master       Item_Code                      WorkOrder           WorkOrder   WorkCenter_Master   WorkOrder             WorkOrder        Item_Master
+                                      Wc_Code                                                                    Process_Master  WorkCenter_Master     Item_Master
+
+GRID2 :  측정항목/           기준값
+ Inspect_Spec_Master Condition_Spec_Master
+GRID3 : 측정일시/  품목코드/        품목명/        편차/            측정횟수 1~28
+    Inspect_Measure_History    Item_Master   측정값 - 기본값       ?
+                     Item_Master
+
+49 :GRID1 : 작업지시번호/                  생산일자/                     공정/                              작업장/                      품목코드/                           품목명
+               WorkOrder                    WorkOrder            WorkCenter_Master       Condition_Measure_History  Condition_Measure_History       Item_Master
+        Condition_Measure_History                                     Process_Master               WorkCenter_Master             Item_Master                  
+GRID2 : 측정항목 1~27(기준값) 
+	Condition_Spec_Master
+GRID3 : 측정값 1~27 입력
+	Condition_Measure_History
+
+50 : 품질측정값 조회
+＊Inspent_Measure_History = I    : 공정검사측정이력
+WorkOrder= wk :  작업지시
+Process_code = P  :  공정정보
+Item_Master = M  :  품목정보
+Inspect_Spec_Master = sp :   검사항목규격설정
+작업지시번호 /         생산일 /         공정 /               작업장 /           품목코드 /           품목명 /        측정항목 /        USL /    SL /     LSL /
+wk.Workorderno/wk. Prd_Date/P.Process_code  / P.Process_name  /  sp.Inspect_code / sp.Inspect_name/sp.Inspect_name / sp.USL / sp.SL / sp.LSL
+ 측정일시 / 상세품목코드 / 상세품목명 / 측정회차 / 측정순번 / 측정값
+ I.Inspect_datetime /M.Item_Code /M.Item_Name / I.Inspect_date / I.Inspect_measure_seq    /  I.Inspect_val
+
+
+51 : 공정조건 조회      ( 품목명 / 측정항목 )
+＊Inspent_Measure_History = I    : 공정검사측정이력
+Item_Master = M  :  품목정보 
+Process_code = P  :  공정정보
+Inspect_Spec_Master = sp :   검사항목규격설정
+WorkOrder= wk :  작업지시
+작업지시번호 /         생산일 /  	     공정 / 		작업장 /           품목코드 /        품목명 /           
+wk.Workorderno/wk. Prd_Date/ P.Process_code  / P.Process_name  /  sp.Inspect_code / sp.Inspect_name
+  측정항목           / USL      / SL   / LSL           / 측정일시 /          측정회차 /       측정값
+M.Item_Name/ sp.USL / sp.SL / sp.LSL / I.Inspect_datetime / I.Inspect_date /  I.Inspect_val
+
+52 : GRID :     생산년도/         레벨코드/         레벨명                 /차수/       원자재LOT 번호
+          Mat_Lot_Master/  Mat_Lot_Master/ Item_Level_Master/  Mat_Lot_Master /Mat_Lot_Master
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

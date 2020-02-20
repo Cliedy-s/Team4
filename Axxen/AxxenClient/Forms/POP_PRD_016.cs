@@ -49,6 +49,7 @@ namespace AxxenClient.Forms
             if(dgvNopList.SelectedRows.Count > 0)
             {
                 ChangeNopReason frm = new ChangeNopReason(dgvNopList.SelectedRows[0].Cells[0].Value.ToString());
+                frm.StartPosition = FormStartPosition.CenterParent;
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
                     if (!string.IsNullOrEmpty(frm.NopMiCode))

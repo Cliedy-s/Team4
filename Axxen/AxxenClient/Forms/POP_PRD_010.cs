@@ -55,10 +55,10 @@ namespace AxxenClient.Forms
         {
             GV_Current_StatusService service = new GV_Current_StatusService();
             // 해당 작업지시에서 생성한 모든 대차
-            List<GVStatusVO> list = service.GetGVCurrentStatus(gvGroup: "건조그룹", workorderno: GlobalUsage.WorkOrderNo);
+            List<GVStatusVO> list = service.GetGVCurrentStatus(gvGroup: "건조그룹");
             dgvGVFrom.DataSource =
                 (from item in list
-                 where (item.GV_Status == "적재" || item.GV_Status == "언로딩")
+                 where (item.GV_Status == "적재" || item.GV_Status == "언로딩") && item.Item_Code == GlobalUsage.ItemCode
                  select item).ToList();
             // 소성대차의 모든 빈대차를 가져온다.
             GV_MasterService mservice = new GV_MasterService();
@@ -151,15 +151,16 @@ namespace AxxenClient.Forms
         private void btnFromSearch_Click(object sender, EventArgs e)
         {   // 적재된 목록 검색
             GV_Current_StatusService service = new GV_Current_StatusService();
-            List<GVStatusVO> list = service.GetGVCurrentStatus(gvGroup: "건조그룹", workorderno: GlobalUsage.WorkOrderNo, gvName: txtFromGVSearch.TextBoxText);
+            List<GVStatusVO> list = service.GetGVCurrentStatus(gvGroup: "건조그룹", gvName: txtFromGVSearch.TextBoxText);
             dgvGVFrom.DataSource =
                 (from item in list
-                 where (item.GV_Status == "적재" || item.GV_Status == "언로딩")
+                 where (item.GV_Status == "적재" || item.GV_Status == "언로딩") && item.Item_Code == GlobalUsage.ItemCode
                  select item).ToList();
         }
         private void btnKeypad_Click(object sender, EventArgs e)
         {
             KeypadForm frm = new KeypadForm();
+            frm.StartPosition = FormStartPosition.CenterParent;
             frm.FormSendEvent += new KeypadForm.FormSendDataHandler(DieaseUpdateEventMethod);
 
             frm.Show();

@@ -3,6 +3,7 @@ using Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.IO.Ports;
@@ -108,7 +109,7 @@ namespace AxxenClient.Forms
                 if (_Port == null)
                 {
                     _Port = new SerialPort();
-                    _Port.PortName = "COM6";
+                    _Port.PortName = ConfigurationManager.AppSettings["Port"];
                     _Port.BaudRate = 9600;
                     _Port.DataBits = 8;
                     _Port.Parity = Parity.None;
@@ -187,7 +188,7 @@ namespace AxxenClient.Forms
             if (!Port.IsOpen)
             {
                 // 현재 시리얼이 연결된 상태가 아니면 연결.
-                Port.PortName = "COM6";
+                Port.PortName = ConfigurationManager.AppSettings["Port"];
                 Port.BaudRate = 9600;
                 Port.DataBits = 8;
                 Port.Parity = Parity.None;
@@ -270,6 +271,7 @@ namespace AxxenClient.Forms
         private void btnKeypad_Click(object sender, EventArgs e)
         {
             KeypadForm frm = new KeypadForm();
+            frm.StartPosition = FormStartPosition.CenterParent;
             frm.FormSendEvent += new KeypadForm.FormSendDataHandler(DieaseUpdateEventMethod);
             frm.Show();
         }
@@ -277,6 +279,11 @@ namespace AxxenClient.Forms
         {
             //폼2에서 델리게이트로 이벤트 발생하면 현재 함수 Call
             txtSize.TextBoxText = sender.ToString();
+        }
+
+        private void aPanel4_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

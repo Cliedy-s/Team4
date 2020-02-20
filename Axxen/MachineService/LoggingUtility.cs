@@ -20,7 +20,6 @@ namespace MachineService
         private ILog log;
         private RollingFileAppender roller;
         private string logFileName = "MachineService.log";
-        private string logFilePath = @"C:\Users\GD6\AxxenMachinesService";
         private int logSaveDays = 30; // 30일 기준
         private bool runAsConsole = false;
 
@@ -238,7 +237,8 @@ namespace MachineService
         /// <returns></returns>
         private string GetLoggingFolder()
         {
-            return Path.Combine(logFilePath ,@"\Logs"); // string.Format(@"\{0}\{1}\Logs", this.company, this.product);
+            //return Path.Combine(Environment.GetFolderPath(System.Environment.SpecialFolder.UserProfile), @"\Logs"); // string.Format(@"\{0}\{1}\Logs", this.company, this.product);
+            return Path.Combine(@"C:", @"\Logs"); // string.Format(@"\{0}\{1}\Logs", this.company, this.product);
         }
 
         /// <summary>

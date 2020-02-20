@@ -40,7 +40,6 @@
             this.txtReqNo = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
             this.txtPlanQty = new Axxen.CustomControls.ABigTextBox_LabeledBigTextBox();
             this.dgvWoReq = new Axxen.CustomControls.ADataGridView();
-            this.dtpEndTime = new Axxen.CustomControls.ADateTimePicker();
             this.panBottom.SuspendLayout();
             this.aPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
@@ -63,7 +62,6 @@
             // 
             this.aPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.aPanel4.Controls.Add(this.dtpEndTime);
             this.aPanel4.Controls.Add(this.btnKeypad);
             this.aPanel4.Controls.Add(this.lblHistReq);
             this.aPanel4.Controls.Add(this.lblItem_Unit);
@@ -227,14 +225,6 @@
             this.dgvWoReq.TabIndex = 6;
             this.dgvWoReq.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvWorkOrder_CellDoubleClick);
             // 
-            // dtpEndTime
-            // 
-            this.dtpEndTime.Location = new System.Drawing.Point(257, 308);
-            this.dtpEndTime.Name = "dtpEndTime";
-            this.dtpEndTime.Size = new System.Drawing.Size(200, 21);
-            this.dtpEndTime.TabIndex = 52;
-            this.dtpEndTime.Visible = false;
-            // 
             // POP_PRD_002
             // 
             this.ClientSize = new System.Drawing.Size(1210, 629);
@@ -273,6 +263,5 @@
         private Axxen.CustomControls.ALabel lblItem_Unit;
         private Axxen.CustomControls.ALabel lblHistReq;
         private Axxen.CustomControls.AButton btnKeypad;
-        private Axxen.CustomControls.ADateTimePicker dtpEndTime;
     }
 }

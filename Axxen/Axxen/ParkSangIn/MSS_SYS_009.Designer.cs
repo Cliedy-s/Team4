@@ -31,11 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MSS_SYS_009));
             this.dgvsys = new Axxen.CustomControls.ADataGridView();
             this.aPanel2 = new Axxen.CustomControls.APanel();
-            this.aTextBox1 = new Axxen.CustomControls.ATextBox();
             this.aLabel2 = new Axxen.CustomControls.ALabel();
             this.dtpEnd = new Axxen.CustomControls.ADateTimePicker();
             this.dtpstart = new Axxen.CustomControls.ADateTimePicker();
-            this.aLabel3 = new Axxen.CustomControls.ALabel();
             this.btnSearch = new Axxen.CustomControls.AButton();
             this.aLabel1 = new Axxen.CustomControls.ALabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -64,28 +62,15 @@
             // 
             this.aPanel2.BackColor = System.Drawing.SystemColors.Info;
             this.aPanel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.aPanel2.Controls.Add(this.aTextBox1);
             this.aPanel2.Controls.Add(this.aLabel2);
             this.aPanel2.Controls.Add(this.dtpEnd);
             this.aPanel2.Controls.Add(this.dtpstart);
-            this.aPanel2.Controls.Add(this.aLabel3);
             this.aPanel2.Controls.Add(this.btnSearch);
             this.aPanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.aPanel2.Location = new System.Drawing.Point(0, 0);
             this.aPanel2.Name = "aPanel2";
             this.aPanel2.Size = new System.Drawing.Size(1148, 39);
             this.aPanel2.TabIndex = 13;
-            // 
-            // aTextBox1
-            // 
-            this.aTextBox1.BackColor = System.Drawing.Color.White;
-            this.aTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.aTextBox1.errorp = null;
-            this.aTextBox1.Location = new System.Drawing.Point(555, 6);
-            this.aTextBox1.Name = "aTextBox1";
-            this.aTextBox1.Size = new System.Drawing.Size(167, 23);
-            this.aTextBox1.TabIndex = 27;
-            this.aTextBox1.txtType = Axxen.CustomControls.TextType.Normal;
             // 
             // aLabel2
             // 
@@ -114,16 +99,6 @@
             this.dtpstart.Size = new System.Drawing.Size(200, 23);
             this.dtpstart.TabIndex = 25;
             this.dtpstart.Value = new System.DateTime(2020, 2, 17, 0, 0, 0, 0);
-            // 
-            // aLabel3
-            // 
-            this.aLabel3.AutoSize = true;
-            this.aLabel3.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.aLabel3.Location = new System.Drawing.Point(502, 9);
-            this.aLabel3.Name = "aLabel3";
-            this.aLabel3.Size = new System.Drawing.Size(47, 17);
-            this.aLabel3.TabIndex = 23;
-            this.aLabel3.Text = "검색어";
             // 
             // btnSearch
             // 
@@ -207,11 +182,9 @@
         private CustomControls.APanel aPanel2;
         private CustomControls.ALabel aLabel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private CustomControls.ATextBox aTextBox1;
         private CustomControls.ALabel aLabel2;
         private CustomControls.ADateTimePicker dtpEnd;
         private CustomControls.ADateTimePicker dtpstart;
-        private CustomControls.ALabel aLabel3;
         private CustomControls.AButton btnSearch;
         private System.Windows.Forms.PictureBox pictureBox2;
         private CustomControls.ALabel aLabel4;

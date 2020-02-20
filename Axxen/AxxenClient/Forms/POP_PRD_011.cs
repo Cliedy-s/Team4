@@ -46,16 +46,19 @@ namespace AxxenClient.Forms
         {   // 요입
             if (!GlobalUsage.WorkOrderNo.Equals("설정안됨"))
             {
-                GV_Current_StatusService service = new GV_Current_StatusService();
-                if (service.UpdateGVIn(GlobalUsage.UserID, dgvGVList.SelectedRows[0].Cells[0].Value.ToString(), GlobalUsage.WorkOrderNo))
+                if(dgvGVList.SelectedRows.Count > 0)
                 {
-                    Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 작업지시({GlobalUsage.WorkOrderNo})에서 대차({dgvGVList.SelectedRows[0].Cells[0].Value.ToString()}) 요입에 성공하였음");
-                    GetDatas();
-                }
-                else
-                {
-                    Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 작업지시({GlobalUsage.WorkOrderNo})에서 대차({dgvGVList.SelectedRows[0].Cells[0].Value.ToString()}) 요입에 실패하였음");
-                    MessageBox.Show("요입할 수 없는 대차 입니다.");
+                    GV_Current_StatusService service = new GV_Current_StatusService();
+                    if (service.UpdateGVIn(GlobalUsage.UserID, dgvGVList.SelectedRows[0].Cells[0].Value.ToString(), GlobalUsage.WorkOrderNo))
+                    {
+                        Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 작업지시({GlobalUsage.WorkOrderNo})에서 대차({dgvGVList.SelectedRows[0].Cells[0].Value.ToString()}) 요입에 성공하였음");
+                        GetDatas();
+                    }
+                    else
+                    {
+                        Program.Log.WriteInfo($"{GlobalUsage.UserID}이(가) 작업지시({GlobalUsage.WorkOrderNo})에서 대차({dgvGVList.SelectedRows[0].Cells[0].Value.ToString()}) 요입에 실패하였음");
+                        MessageBox.Show("요입할 수 없는 대차 입니다.");
+                    }
                 }
             }
             else
