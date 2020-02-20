@@ -90,13 +90,30 @@ namespace API.Controllers
 
         public ActionResult DownloadFile(string filename)
         {
-            if (Path.GetExtension(filename) == ".png")
-            {
-                string fullPath = Path.Combine(Server.MapPath("~/uploads/"), filename);
-                return File(fullPath, "Images/png", filename);
-            }
-            else
-                return new HttpStatusCodeResult(System.Net.HttpStatusCode.Forbidden);
+            //if (Path.GetExtension(filename) == ".png")
+            //{
+            //    string fullPath = Path.Combine(Server.MapPath("~/uploads/"), filename);
+            //    return File(fullPath, "Images/png", filename);
+            //}
+            //else if(Path.GetExtension(filename) == ".jpg")
+            //{
+            //    string fullPath = Path.Combine(Server.MapPath("~/uploads/"), filename);
+            //    return File(fullPath, "Images/jpg", filename);
+            //}
+            //else if (Path.GetExtension(filename) == ".pdf")
+            //{
+            //    string fullPath = Path.Combine(Server.MapPath("~/uploads/"), filename);
+            //    return File(fullPath, "Images/pdf", filename);
+            //}
+            //else if (Path.GetExtension(filename) == ".xls")
+            //{
+            //    string fullPath = Path.Combine(Server.MapPath("~/uploads/"), filename);
+            //    return File(fullPath, "Images/xls", filename);
+            //}
+            //else
+            //    return new HttpStatusCodeResult(System.Net.HttpStatusCode.Forbidden);
+            string fullPath = Path.Combine(Server.MapPath("~/uploads/"), filename);
+            return File(fullPath, $"Images/{Path.GetExtension(filename).Replace(".","")}", filename);
         }
 
         public ActionResult DefectiveDetails()
