@@ -49,7 +49,7 @@ namespace AxxenClient.Forms
         private void GetDatas()
         {
             GV_Current_StatusService service = new GV_Current_StatusService();
-            List<GVStatusVO> list = service.GetGVCurrentStatus(gvStatus: "적재");
+            List<GVStatusVO> list = service.GetGVCurrentStatus(gvStatus: "적재", gvGroup:"소성그룹");
             dgvBoxing.DataSource = (from gv in list
                                             where gv.Item_Code == GlobalUsage.ItemCode
                                             select gv).ToList();
@@ -57,7 +57,7 @@ namespace AxxenClient.Forms
         private void btnSearch_Click(object sender, EventArgs e)
         {
             GV_Current_StatusService service = new GV_Current_StatusService();
-            List<GVStatusVO> list = service.GetGVCurrentStatus(gvStatus: "적재", gvName: txtSearch.TextBoxText);
+            List<GVStatusVO> list = service.GetGVCurrentStatus(gvStatus: "적재", gvGroup: "소성그룹", gvName: txtSearch.TextBoxText);
             dgvBoxing.DataSource = (from gv in list
                                     where gv.Item_Code == GlobalUsage.ItemCode
                                     select gv).ToList();
