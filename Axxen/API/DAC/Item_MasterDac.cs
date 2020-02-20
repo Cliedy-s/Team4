@@ -135,7 +135,11 @@ SELECT  [Item_Code]
             }
         }
 
-
+        /// <summary>
+        /// 생산의뢰 등록
+        /// </summary>
+        /// <param name="notice"></param>
+        /// <returns></returns>
         public bool InsertItem_Master_and_woreqtVO(Item_Master_and_woreqtVO notice)
         {
             string sql = "Insert into Wo_Req ( Wo_Req_No, Item_Code, Req_Qty, Prd_Plan_Date, Cust_Name, Project_Name, Sale_Emp, Req_Status, Ins_Date, Ins_Emp)" +
@@ -163,6 +167,7 @@ SELECT  [Item_Code]
             }
 
         }
+
 
 
     }

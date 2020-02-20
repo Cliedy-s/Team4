@@ -9,7 +9,7 @@
 </a>
 
 <ul class="dropdown-menu">
-    <li class="header">You have @Model.Count() messages</li>
+    <li class="header">공지사항 @Model.Count()개</li>
     @foreach (var item in Model)
     {
         <li>
@@ -18,13 +18,12 @@
                 <li>
                     <!-- start message -->
                     @*@Html.Action("Sys_Notice", "Index")*@
-                    <a href="/Sys_Notice/Details/@item.Seq" >
+                    <a href="/Sys_Notice/Details/@item.Seq">
 
                         <!-- Message title and timestamp -->
+                        <small><i class="fa fa-clock-o"></i> @Html.DisplayFor(modelItem => item.Notice_Date)</small>
                         <h4>
                             @Html.DisplayFor(modelItem => item.Title)
-
-                            <small><i class="fa fa-clock-o"></i> @Html.DisplayFor(modelItem => item.Notice_Date)</small>
                         </h4>
                         <!-- The message -->
                         <p> @Html.DisplayFor(modelItem => item.Description)</p>
