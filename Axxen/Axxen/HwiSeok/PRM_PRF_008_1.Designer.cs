@@ -137,11 +137,11 @@
             this.aLabel3.AutoSize = true;
             this.aLabel3.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aLabel3.Location = new System.Drawing.Point(41, 8);
+            this.aLabel3.Location = new System.Drawing.Point(32, 8);
             this.aLabel3.Name = "aLabel3";
-            this.aLabel3.Size = new System.Drawing.Size(60, 17);
+            this.aLabel3.Size = new System.Drawing.Size(71, 17);
             this.aLabel3.TabIndex = 55;
-            this.aLabel3.Text = "발생유형";
+            this.aLabel3.Text = "* 발생유형";
             // 
             // aPanel13
             // 
@@ -220,11 +220,11 @@
             this.aLabel12.AutoSize = true;
             this.aLabel12.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel12.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aLabel12.Location = new System.Drawing.Point(9, 8);
+            this.aLabel12.Location = new System.Drawing.Point(-1, 8);
             this.aLabel12.Name = "aLabel12";
-            this.aLabel12.Size = new System.Drawing.Size(125, 17);
+            this.aLabel12.Size = new System.Drawing.Size(136, 17);
             this.aLabel12.TabIndex = 54;
-            this.aLabel12.Text = "비가동상세분류코드";
+            this.aLabel12.Text = "* 비가동상세분류코드";
             // 
             // aPanel29
             // 
@@ -263,7 +263,7 @@
             this.aLabel16.AutoSize = true;
             this.aLabel16.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel16.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aLabel16.Location = new System.Drawing.Point(54, 8);
+            this.aLabel16.Location = new System.Drawing.Point(50, 8);
             this.aLabel16.Name = "aLabel16";
             this.aLabel16.Size = new System.Drawing.Size(34, 17);
             this.aLabel16.TabIndex = 82;
@@ -324,11 +324,11 @@
             this.aLabel6.AutoSize = true;
             this.aLabel6.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aLabel6.Location = new System.Drawing.Point(35, 8);
+            this.aLabel6.Location = new System.Drawing.Point(25, 8);
             this.aLabel6.Name = "aLabel6";
-            this.aLabel6.Size = new System.Drawing.Size(73, 17);
+            this.aLabel6.Size = new System.Drawing.Size(84, 17);
             this.aLabel6.TabIndex = 65;
-            this.aLabel6.Text = "비가동시간";
+            this.aLabel6.Text = "* 비가동시간";
             // 
             // aPanel9
             // 
@@ -401,11 +401,11 @@
             this.aLabel4.AutoSize = true;
             this.aLabel4.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aLabel4.Location = new System.Drawing.Point(41, 9);
+            this.aLabel4.Location = new System.Drawing.Point(32, 9);
             this.aLabel4.Name = "aLabel4";
-            this.aLabel4.Size = new System.Drawing.Size(60, 17);
+            this.aLabel4.Size = new System.Drawing.Size(71, 17);
             this.aLabel4.TabIndex = 55;
-            this.aLabel4.Text = "작업장명";
+            this.aLabel4.Text = "* 작업장명";
             // 
             // aPanel2
             // 
@@ -441,11 +441,11 @@
             this.aLabel10.AutoSize = true;
             this.aLabel10.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aLabel10.Location = new System.Drawing.Point(35, 9);
+            this.aLabel10.Location = new System.Drawing.Point(25, 9);
             this.aLabel10.Name = "aLabel10";
-            this.aLabel10.Size = new System.Drawing.Size(73, 17);
+            this.aLabel10.Size = new System.Drawing.Size(84, 17);
             this.aLabel10.TabIndex = 55;
-            this.aLabel10.Text = "작업장코드";
+            this.aLabel10.Text = "* 작업장코드";
             // 
             // aPanel17
             // 
@@ -484,11 +484,11 @@
             this.aLabel11.AutoSize = true;
             this.aLabel11.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aLabel11.Location = new System.Drawing.Point(15, 9);
+            this.aLabel11.Location = new System.Drawing.Point(6, 9);
             this.aLabel11.Name = "aLabel11";
-            this.aLabel11.Size = new System.Drawing.Size(112, 17);
+            this.aLabel11.Size = new System.Drawing.Size(123, 17);
             this.aLabel11.TabIndex = 55;
-            this.aLabel11.Text = "비가동상세분류명";
+            this.aLabel11.Text = "* 비가동상세분류명";
             // 
             // aPanel21
             // 
