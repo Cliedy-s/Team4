@@ -122,6 +122,7 @@ namespace AxxenClient.Forms
         {
 
             KeypadForm frm = new KeypadForm();
+            frm.StartPosition = FormStartPosition.CenterParent;
             frm.FormSendEvent += new KeypadForm.FormSendDataHandler(DieaseUpdateEventMethod);
             frm.Show();
         }

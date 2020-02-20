@@ -222,10 +222,10 @@
       <DependentUpon>XtraReport1.cs</DependentUpon>
     </Compile>
     <Compile Include="GlobalUsage.cs" />
-    <Compile Include="LoginForm.cs">
+    <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs">
+    <Compile Include="Forms\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Machine.cs" />
@@ -316,7 +316,7 @@
     <EmbeddedResource Include="Forms\XtraReport1.resx">
       <DependentUpon>XtraReport1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm.resx">
+    <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
@@ -370,6 +370,7 @@
     <None Include="Image\X.png" />
     <None Include="Image\MianLoGo.png" />
     <Content Include="Image\blankicon.ico" />
+    <Content Include="Image\mainicon.ico" />
     <Content Include="Image\progress.gif" />
     <Content Include="Team4Connect_DEV.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

@@ -270,12 +270,12 @@ SELECT pm.[Pallet_No]
       ,pal.[Use_YN]
       ,wo.[Item_Code]
       ,im.[Item_Name]
-  FROM [Pallet_Master] as pal
+    FROM [Pallet_Master] as pal
         LEFT OUTER JOIN  [WorkOrder] as wo ON pal.[WorkorderNo] = wo.[Workorderno]
         LEFT OUTER JOIN [Item_Master] as im ON im.[Item_Code] = wo.[Item_Code]
 		LEFT OUTER JOIN [BoxingGrade_Detail_Master] as bdm ON  bdm.[Use_YN] = 'Y' AND pal.Grade_Detail_Code = bdm.Grade_Detail_Code
   WHERE pal.[Use_YN] = 'Y' AND pal.Workorderno = @workorderno
-	AND pal.Pallet_No NOT IN (select distinct Pallet_No from Goods_In_History where In_YN = 'Y'); ";
+	AND concat(pal.Pallet_No, '&&', wo.[Workorderno]) NOT IN (select distinct concat(Pallet_No, '&&',[Workorderno]) from Goods_In_History where In_YN = 'Y');  ";
                 comm.CommandType = CommandType.Text;
                 comm.Parameters.AddWithValue("@workorderno", workOrderNo);
 

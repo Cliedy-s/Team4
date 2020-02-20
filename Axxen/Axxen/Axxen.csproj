@@ -890,6 +890,7 @@
     <None Include="Image\MainBar.png" />
     <None Include="Image\MianLoGo.png" />
     <None Include="Image\forsearch.png" />
+    <Content Include="Image\mainicon.ico" />
     <Content Include="Image\newlogo.png" />
     <Content Include="Image\treeimg.png" />
     <None Include="Image\winch.png" />

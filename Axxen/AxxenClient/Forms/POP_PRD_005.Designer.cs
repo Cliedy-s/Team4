@@ -88,6 +88,7 @@
             this.aPanel4.Name = "aPanel4";
             this.aPanel4.Size = new System.Drawing.Size(549, 482);
             this.aPanel4.TabIndex = 5;
+            this.aPanel4.Paint += new System.Windows.Forms.PaintEventHandler(this.aPanel4_Paint);
             // 
             // btnKeypad
             // 
@@ -207,7 +208,7 @@
             this.txtBFour.Size = new System.Drawing.Size(469, 42);
             this.txtBFour.TabIndex = 36;
             this.txtBFour.TextBoxText = "";
-            this.txtBFour.TextBoxType = Axxen.CustomControls.TextType.Numeric;
+            this.txtBFour.TextBoxType = Axxen.CustomControls.TextType.Normal;
             // 
             // txtPalletNo
             // 

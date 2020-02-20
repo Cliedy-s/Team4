@@ -23,7 +23,6 @@ namespace AxxenClient
         private void frmWaitForm_Load(object sender, EventArgs e)
         {
             Task.Factory.StartNew(Worker).ContinueWith((t) => { this.Close(); }, TaskScheduler.FromCurrentSynchronizationContext());
-
         }
     }
 }
