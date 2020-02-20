@@ -22,7 +22,7 @@ namespace DAC
             {
                 comm.Connection = new SqlConnection(Connstr);
                 comm.CommandText = @"
-SELECT TOP (1000) [Seq]
+SELECT TOP (1000) [Req]
       ,[Notice_Date]
       ,[Notice_End]
       ,[Title]
@@ -49,6 +49,43 @@ SELECT TOP (1000) [Seq]
             }
 
         }
+
+        public List<Sys_NoticeVO> GetDayAllSys_notice(string start, string end)
+        {
+            try
+            {
+
+           
+            using (SqlCommand comm = new SqlCommand())
+            {
+                comm.Connection = new SqlConnection(Connstr);
+                comm.CommandText = @"
+      SELECT Convert(nvarchar(10),[Seq]) Req
+      ,CONVERT(nvarchar(15),[Notice_Date]) Notice_Date
+      ,CONVERT(NVARCHAR(15),[Notice_End])  Notice_End
+      ,[Title]
+      ,[Description] 
+        FROM [TEAM4].[dbo].[Sys_Notice] where Notice_Date between @start and @end";
+                comm.CommandType = CommandType.Text;
+                comm.Parameters.AddWithValue("@start", start);
+                comm.Parameters.AddWithValue("@end", end);
+                comm.Connection.Open();
+                SqlDataReader reader = comm.ExecuteReader();
+                List<Sys_NoticeVO> list = Helper.DataReaderMapToList<Sys_NoticeVO>(reader);
+                comm.Connection.Close();
+
+                return list;
+            }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+    
+
 
 
             /// <summary>

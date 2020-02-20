@@ -15,15 +15,19 @@ namespace Service
             Sys_NoticeDAC dac = new Sys_NoticeDAC();
             return dac.GetAllSys_notice();
         }
+        public List<Sys_NoticeVO> GetDayAllSys_notice(string start, string end)
+        {
+            Sys_NoticeDAC dac = new Sys_NoticeDAC();
+            return dac.GetDayAllSys_notice(start,end);
+        }
 
 
-
-        /// <summary>
-        /// 현재 공지사항 가져오기
-        /// </summary>
-        /// <param name="Seq"></param>
-        /// <returns></returns>
-        public Sys_NoticeVO GetCurrentSysNotice(int Seq)
+            /// <summary>
+            /// 현재 공지사항 가져오기
+            /// </summary>
+            /// <param name="Seq"></param>
+            /// <returns></returns>
+            public Sys_NoticeVO GetCurrentSysNotice(int Seq)
         {
             Sys_NoticeDAC dac = new Sys_NoticeDAC();
             return dac.GetCurrentSysNotice(Seq);
