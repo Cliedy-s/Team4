@@ -43,7 +43,6 @@ namespace Axxen.sangyoung
             namelist = service.GetWorkCenterName();
             InitControl();
 
-            this.Icon = 
         }
 
         private void InitControl()
