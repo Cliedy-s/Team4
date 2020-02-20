@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using VO;
 
-namespace AxxenClient
+namespace AxxenClient.Forms
 {
     public partial class LoginForm : AxxenClient.Templets.ClientFreeForm
     {

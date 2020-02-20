@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using VO;
@@ -48,12 +49,18 @@ namespace AxxenClient.Forms
         private void GetDatas()
         {
             GV_Current_StatusService service = new GV_Current_StatusService();
-            dgvBoxing.DataSource = service.GetGVCurrentStatus(gvStatus: "적재", workorderno: GlobalUsage.WorkOrderNo);
+            List<GVStatusVO> list = service.GetGVCurrentStatus(gvStatus: "적재");
+            dgvBoxing.DataSource = (from gv in list
+                                            where gv.Item_Code == GlobalUsage.ItemCode
+                                            select gv).ToList();
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
             GV_Current_StatusService service = new GV_Current_StatusService();
-            dgvBoxing.DataSource = service.GetGVCurrentStatus(gvStatus: "적재", gvName: txtSearch.TextBoxText, workorderno: GlobalUsage.WorkOrderNo);
+            List<GVStatusVO> list = service.GetGVCurrentStatus(gvStatus: "적재", gvName: txtSearch.TextBoxText);
+            dgvBoxing.DataSource = (from gv in list
+                                    where gv.Item_Code == GlobalUsage.ItemCode
+                                    select gv).ToList();
         }
         private void btnUnload_Click(object sender, EventArgs e)
         {

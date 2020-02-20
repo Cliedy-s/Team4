@@ -17,8 +17,6 @@
                 <div class="box-body no-padding">
                     <div class="mailbox-controls">
                         <!-- Check all button -->
-
-
                         <div class="btn-group">
                             <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
                             <button type="button" class="btn btn-default btn-sm"><i class="fa fa-reply"></i></button>
@@ -66,6 +64,7 @@
                 <div class="box-footer no-padding">
                     <div class="mailbox-controls">
                         <!-- Check all button -->
+
 
                         <div class="btn-group">
                             <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
@@ -144,10 +143,8 @@
                 //    revert: true, // will cause the event to go back to its
                 //    revertDuration: 0  //  original position after the drag
                 //})
-
             })
         }
-
         @{ 
             List<string> labels = ViewBag.Labels;
         }
@@ -169,41 +166,75 @@
                 week: 'week',
                 day: 'day'
             },
-
-
-            events: [
-                {
-                    title: "zzz",
-                    start: new Date(y, m, 1),
-                    backgroundColor: '#f56954', //red
-                    borderColor: '#f56954' //red
-                }
-                ],
-
-           events: [
-                {
-                    title: "zzz",
-                    start: new Date(y, m, 1),
-                    backgroundColor: '#f56954', //red
-                    borderColor: '#f56954' //red
-                }
-            ],
-                             events: [
-                {
-                    title: "zzz",
-                    start: new Date(y, m, 1),
-                    backgroundColor: '#f56954', //red
-                    borderColor: '#f56954' //red
-                }
-            ],
-                                    events: [
-                {
-                    title: "zzz",
-                    start: new Date(y, m, 1),
-                    backgroundColor: '#f56954', //red
-                    borderColor: '#f56954' //red
-                }
-                ],
+  events    : [
+        {
+          title          : '우한 신종 코로나바이러스 안내문',
+          start: new Date(y, m, 1),
+          end: new Date(y, m, 29),
+                  url            : '/Sys_Notice/Details/5',
+          backgroundColor: '#f56954', //red
+          borderColor    : '#f56954' //red
+        },
+        {
+          title          : '소방시설 점검 실시 안내문',
+               start          : new Date(y, m, 10),
+            end: new Date(y, m, 13),
+                url            : '/Sys_Notice/Details/6',
+          backgroundColor: '#f39c12', //yellow
+          borderColor    : '#f39c12' //yellow
+        },
+        {
+          title          : '전기안전시설 점검 안내',
+            start          : new Date(y, m, 21),
+          end            : new Date(y, m, 24),
+            allDay: false,
+                url            : '/Sys_Notice/Details/7',
+          backgroundColor: '#0073b7', //Blue
+          borderColor    : '#0073b7' //Blue
+        },
+        {
+          title          : '품질 전문가 교육 안내',
+         start          : new Date(y, m, 25),
+          end            : new Date(y, m, 28),
+            allDay: false,
+                url            : '/Sys_Notice/Details/8',
+          backgroundColor: '#00c0ef', //Info (aqua)
+          borderColor    : '#00c0ef' //Info (aqua)
+        },
+        {
+          title          : '성과상여금 관련 진행사항 알림',
+       start          : new Date(y, m, 15),
+          end            : new Date(y, m, 20),
+            allDay: false,
+                url            : '/Sys_Notice/Details/9',
+          backgroundColor: '#00a65a', //Success (green)
+          borderColor    : '#00a65a' //Success (green)
+        },
+        {
+          title          : '개인정보 처리방침 변경 안내',
+          start          : new Date(y, m, 22),
+          end            : new Date(y, m, 23),
+             url            : '/Sys_Notice/Details/10',
+          backgroundColor: '#3c8dbc', //Primary (light-blue)
+          borderColor    : '#3c8dbc' //Primary (light-blue)
+      },
+           {
+          title          : '시스템 점검 공지안내',
+          start          : new Date(y, m, 13),
+          end            : new Date(y, m, 15),
+      url            : '/Sys_Notice/Details/11',
+          backgroundColor: '#3c8dbc', //Primary (light-blue)
+          borderColor    : '#3c8dbc' //Primary (light-blue)
+      },
+              {
+          title          : '신규서비스 오픈안내',
+          start          : new Date(y, m, 3),
+          end            : new Date(y, m, 7),
+          url            : '/Sys_Notice/Details/12',
+          backgroundColor: '#3c8dbc', //Primary (light-blue)
+          borderColor    : '#3c8dbc' //Primary (light-blue)
+        }
+      ],
        
 
 

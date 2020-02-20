@@ -1,4 +1,4 @@
-﻿namespace AxxenClient
+﻿namespace AxxenClient.Forms
 {
     partial class LoginForm
     {
@@ -74,7 +74,6 @@
             this.txtPwd.PasswordChar = '*';
             this.txtPwd.Size = new System.Drawing.Size(151, 21);
             this.txtPwd.TabIndex = 6;
-            this.txtPwd.Text = "1234";
             this.txtPwd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPwd_KeyDown);
             // 
             // txtID
@@ -83,7 +82,6 @@
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(151, 21);
             this.txtID.TabIndex = 5;
-            this.txtID.Text = "master";
             // 
             // pictureBox1
             // 
