@@ -44,11 +44,11 @@ and w.Item_Code=i.Item_Code and w.Wc_Code=wc.Wc_Code and wc.Process_Code ='PC100
             using (SqlCommand comm = new SqlCommand())
             {
                 comm.Connection = new SqlConnection(Connstr);
-                comm.CommandText = @"SELECT ROW_NUMBER() OVER(ORDER BY In_Date) AS Num, g.Workorderno,Item_Name,Pallet_No
-                                     ,In_Date,g.Remark,Closed_Time FROM Goods_In_History g, WorkOrder w, Item_Master i, WorkCenter_Master wc where g.Workorderno = w.Workorderno
-                                      and w.Item_Code = i.Item_Code and w.Wc_Code = wc.Wc_Code and wc.Process_Code = 'PC10003' and In_Date=@In_Date";
+                comm.CommandText = @"SELECT ROW_NUMBER() OVER(ORDER BY Prd_Date) AS Num, w.Workorderno,Item_Name,GV_Code
+,Prd_Date,w.Remark,Convert(Varchar,Prd_Endtime,8) Prd_Endtime FROM GV_History gv, WorkOrder w, Item_Master i, WorkCenter_Master wc where gv.Workorderno = w.Workorderno
+and w.Item_Code = i.Item_Code and w.Wc_Code = wc.Wc_Code and wc.Process_Code = 'PC10003' and Prd_Endtime is not null and Prd_Date=@Prd_Date";
                 comm.CommandType = CommandType.Text;
-                comm.Parameters.AddWithValue("@In_Date", date);
+                comm.Parameters.AddWithValue("@Prd_Date", date);
 
                 comm.Connection.Open();
                 SqlDataReader reader = comm.ExecuteReader();

@@ -41,6 +41,7 @@ namespace AxxenClient.Forms
         /// </summary>
         private void InitControls()
         {
+            lblHistReq.Text = "";
             InitControlUtil.SetPOPDGVDesign(dgvWoReq);
             InitControlUtil.AddNewColumnToDataGridView(dgvWoReq, "의뢰순번", "Req_Seq", false, 100, DataGridViewContentAlignment.MiddleLeft, false);
             InitControlUtil.AddNewColumnToDataGridView(dgvWoReq, "생산의뢰번호", "Wo_Req_No", false, 160, DataGridViewContentAlignment.MiddleLeft, false);
@@ -54,40 +55,43 @@ namespace AxxenClient.Forms
         }
         private void btnCreateWorkOrder_Click(object sender, EventArgs e)
         {
-            try
+            if (!string.IsNullOrEmpty(lblHistReq.Text))
             {
-                DateTime now = DateTime.Now;
-                WorkOrder_Service service = new WorkOrder_Service();
-                bool IsSuccess = service.InsertWorkOrder(
-                    new VO.WorkOrderNewVO()
+                try
+                {
+                    DateTime now = DateTime.Now;
+                    WorkOrder_Service service = new WorkOrder_Service();
+                    bool IsSuccess = service.InsertWorkOrder(
+                        new VO.WorkOrderNewVO()
+                        {
+                            Ins_Emp = GlobalUsage.UserID,
+                            Item_Code = txtItemSearch.CodeText,
+                            Mat_LotNo = "MAT" + now.ToString("yyyyMMddHHmmss"),
+                            Plan_Qty = Convert.ToInt32(txtPlanQty.TextBoxText),
+                            Plan_Unit = lblItem_Unit.Text,
+                            Wo_Req_No = txtReqNo.TextBoxText,
+                            Req_Seq = Convert.ToInt32(lblReq_Seq.Text),
+                            Wc_Code = txtWcSearch.CodeText,
+                            Wo_Status = "생산대기",
+                            Wo_Order = "5",
+                            Prd_Unit = lblItem_Unit.Text
+                        }, Convert.ToInt64(lblHistReq.Text));
+                    if (IsSuccess)
                     {
-                        Ins_Emp = GlobalUsage.UserID,
-                        Item_Code = txtItemSearch.CodeText,
-                        Mat_LotNo = "MAT"+now.ToString("yyyyMMddHHmmss"),
-                        Plan_Qty = Convert.ToInt32(txtPlanQty.TextBoxText),
-                        Plan_Unit = lblItem_Unit.Text,
-                        Wo_Req_No = txtReqNo.TextBoxText,
-                        Req_Seq = Convert.ToInt32(lblReq_Seq.Text),
-                        Wc_Code = txtWcSearch.CodeText,
-                        Wo_Status = "생산대기",
-                        Wo_Order = "5",
-                        Prd_Unit = lblItem_Unit.Text
-                    }, Convert.ToInt64(lblHistReq.Text));
-                if (IsSuccess)
-                {
-                    Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 작업지시를 생성함");
+                        Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 작업지시를 생성함");
+                    }
+                    else
+                    {
+                        MessageBox.Show("생성실패", "작업지시생성");
+                        Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 작업지시 생성에 실패함");
+                    }
+                    this.Close();
                 }
-                else
+                catch (Exception ee)
                 {
+                    Program.Log.WriteFatal($"{GlobalUsage.UserName}이(가) 작업지시 생성에 실패함", ee);
                     MessageBox.Show("생성실패", "작업지시생성");
-                    Program.Log.WriteInfo($"{GlobalUsage.UserName}이(가) 작업지시 생성에 실패함");
                 }
-                this.Close();
-            }
-            catch(Exception ee)
-            {
-                Program.Log.WriteFatal($"{GlobalUsage.UserName}이(가) 작업지시 생성에 실패함", ee);
-                MessageBox.Show("생성실패", "작업지시생성");
             }
 
         }// 작업지시생성버튼
