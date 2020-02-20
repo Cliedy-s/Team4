@@ -19,6 +19,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomControls", "CustomCon
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MachineService", "MachineService\MachineService.csproj", "{C85379F1-661B-4845-AFB6-BCA04487C5C5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{9D230982-20EC-4299-9AA3-6744A1172339}"
+	ProjectSection(SolutionItems) = preProject
+		AxxenClient\Team4Connect_DEV.xml = AxxenClient\Team4Connect_DEV.xml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
