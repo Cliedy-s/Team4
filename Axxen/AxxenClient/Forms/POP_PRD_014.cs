@@ -138,6 +138,7 @@ namespace AxxenClient.Forms
         private void AButton1_Click(object sender, EventArgs e)
         {
             KeypadForm frm = new KeypadForm();
+            frm.StartPosition = FormStartPosition.CenterParent;
             frm.FormSendEvent += new KeypadForm.FormSendDataHandler(DieaseUpdateEventMethod);
 
             frm.Show();

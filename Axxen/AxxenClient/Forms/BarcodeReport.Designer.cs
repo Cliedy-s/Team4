@@ -93,10 +93,10 @@ namespace AxxenClient
             this.xrBarCode1.AutoModule = true;
             this.xrBarCode1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Query].[Barcode_No]")});
-            this.xrBarCode1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 194.5416F);
+            this.xrBarCode1.LocationFloat = new DevExpress.Utils.PointFloat(43.12496F, 194.5416F);
             this.xrBarCode1.Name = "xrBarCode1";
             this.xrBarCode1.Padding = new DevExpress.XtraPrinting.PaddingInfo(10, 10, 0, 0, 100F);
-            this.xrBarCode1.SizeF = new System.Drawing.SizeF(385F, 111.4583F);
+            this.xrBarCode1.SizeF = new System.Drawing.SizeF(318.3333F, 111.4583F);
             this.xrBarCode1.StylePriority.UseTextAlignment = false;
             code39ExtendedGenerator1.CalcCheckSum = false;
             code39ExtendedGenerator1.WideNarrowRatio = 3F;

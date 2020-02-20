@@ -25,7 +25,7 @@ namespace AxxenClient
                     GlobalUsage.WcName = item.Wc_Name;
                     GlobalUsage.ProcessCode = item.Process_Code;
                     GlobalUsage.ProcessName = item.Process_name;
-                    switch (item.Wc_Code.Substring(item.Wc_Code.Length-1))
+                    switch (item.Wc_Code.Substring(2, 1))
                     {
                         case "2":
                             GlobalUsage.WorkType = WorkType.Molding;

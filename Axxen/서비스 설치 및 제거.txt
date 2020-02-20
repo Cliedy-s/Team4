@@ -1,0 +1,11 @@
+net stop MachineServiceInstallerDisplay
+taskkill -f -im mmc.exe
+sc delete MachineServiceInstallerDisplay
+net stop MachineServiceName
+sc delete MachineServiceName
+
+
+d:
+cd D:\Team4\Axxen\MachineService\bin\Debug
+installutil -u MachineService.exe
+installutil MachineService.exe

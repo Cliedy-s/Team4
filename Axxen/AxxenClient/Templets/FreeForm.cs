@@ -15,6 +15,7 @@ namespace AxxenClient.Templets
         public ClientFreeForm()
         {
             InitializeComponent();
+            this.Icon = AxxenClient.Properties.Resources.mainicon;
         }
     }
 }
