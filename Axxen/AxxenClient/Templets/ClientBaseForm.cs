@@ -36,7 +36,7 @@ namespace AxxenClient.Templets
             {
                 // 아래 패널 공지사항 설정
                 if (!txtPronounce.Visible) txtPronounce.Visible = true;
-                if (pronouncex <= 0)
+                if (pronouncex <= 0 - txtPronounce.Width)
                 {
                     MainForm parent = (this.MdiParent as MainForm);
                     txtPronounce.Text = parent.GetCurrentSysNotice();
