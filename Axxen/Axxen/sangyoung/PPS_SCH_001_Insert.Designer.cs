@@ -70,8 +70,8 @@
             this.aPanel31 = new Axxen.CustomControls.APanel();
             this.aLabel1 = new Axxen.CustomControls.ALabel();
             this.aPanel8 = new Axxen.CustomControls.APanel();
-            this.btnOK = new System.Windows.Forms.Button();
             this.btnCancle = new System.Windows.Forms.Button();
+            this.btnOK = new System.Windows.Forms.Button();
             this.aPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.aPanel19.SuspendLayout();
@@ -249,11 +249,11 @@
             this.aLabel8.AutoSize = true;
             this.aLabel8.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aLabel8.Location = new System.Drawing.Point(18, 7);
+            this.aLabel8.Location = new System.Drawing.Point(11, 7);
             this.aLabel8.Name = "aLabel8";
-            this.aLabel8.Size = new System.Drawing.Size(86, 17);
+            this.aLabel8.Size = new System.Drawing.Size(92, 17);
             this.aLabel8.TabIndex = 55;
-            this.aLabel8.Text = "생산의뢰순번";
+            this.aLabel8.Text = "*생산의뢰순번";
             // 
             // aPanel7
             // 
@@ -270,11 +270,11 @@
             this.aLabel10.AutoSize = true;
             this.aLabel10.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aLabel10.Location = new System.Drawing.Point(20, 7);
+            this.aLabel10.Location = new System.Drawing.Point(13, 7);
             this.aLabel10.Name = "aLabel10";
-            this.aLabel10.Size = new System.Drawing.Size(60, 17);
+            this.aLabel10.Size = new System.Drawing.Size(66, 17);
             this.aLabel10.TabIndex = 53;
-            this.aLabel10.Text = "품목코드";
+            this.aLabel10.Text = "*품목코드";
             // 
             // aPanel6
             // 
@@ -300,11 +300,11 @@
             this.aLabel14.AutoSize = true;
             this.aLabel14.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel14.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aLabel14.Location = new System.Drawing.Point(21, 7);
+            this.aLabel14.Location = new System.Drawing.Point(14, 7);
             this.aLabel14.Name = "aLabel14";
-            this.aLabel14.Size = new System.Drawing.Size(60, 17);
+            this.aLabel14.Size = new System.Drawing.Size(66, 17);
             this.aLabel14.TabIndex = 55;
-            this.aLabel14.Text = "계획수량";
+            this.aLabel14.Text = "*계획수량";
             // 
             // aPanel2
             // 
@@ -339,11 +339,11 @@
             this.aLabel15.AutoSize = true;
             this.aLabel15.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel15.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aLabel15.Location = new System.Drawing.Point(20, 7);
+            this.aLabel15.Location = new System.Drawing.Point(13, 7);
             this.aLabel15.Name = "aLabel15";
-            this.aLabel15.Size = new System.Drawing.Size(73, 17);
+            this.aLabel15.Size = new System.Drawing.Size(79, 17);
             this.aLabel15.TabIndex = 54;
-            this.aLabel15.Text = "작업지시일";
+            this.aLabel15.Text = "*작업지시일";
             // 
             // aPanel20
             // 
@@ -369,11 +369,11 @@
             this.aLabel16.AutoSize = true;
             this.aLabel16.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel16.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aLabel16.Location = new System.Drawing.Point(18, 7);
+            this.aLabel16.Location = new System.Drawing.Point(11, 7);
             this.aLabel16.Name = "aLabel16";
-            this.aLabel16.Size = new System.Drawing.Size(86, 17);
+            this.aLabel16.Size = new System.Drawing.Size(92, 17);
             this.aLabel16.TabIndex = 55;
-            this.aLabel16.Text = "생산의뢰번호";
+            this.aLabel16.Text = "*생산의뢰번호";
             // 
             // aPanel10
             // 
@@ -390,11 +390,11 @@
             this.aLabel17.AutoSize = true;
             this.aLabel17.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel17.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aLabel17.Location = new System.Drawing.Point(20, 7);
+            this.aLabel17.Location = new System.Drawing.Point(13, 7);
             this.aLabel17.Name = "aLabel17";
-            this.aLabel17.Size = new System.Drawing.Size(47, 17);
+            this.aLabel17.Size = new System.Drawing.Size(53, 17);
             this.aLabel17.TabIndex = 53;
-            this.aLabel17.Text = "품목명";
+            this.aLabel17.Text = "*품목명";
             // 
             // aPanel11
             // 
@@ -420,11 +420,11 @@
             this.aLabel18.AutoSize = true;
             this.aLabel18.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel18.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aLabel18.Location = new System.Drawing.Point(21, 7);
+            this.aLabel18.Location = new System.Drawing.Point(14, 7);
             this.aLabel18.Name = "aLabel18";
-            this.aLabel18.Size = new System.Drawing.Size(86, 17);
+            this.aLabel18.Size = new System.Drawing.Size(92, 17);
             this.aLabel18.TabIndex = 55;
-            this.aLabel18.Text = "계획수량단위";
+            this.aLabel18.Text = "*계획수량단위";
             // 
             // aPanel13
             // 
@@ -459,11 +459,11 @@
             this.aLabel20.AutoSize = true;
             this.aLabel20.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel20.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aLabel20.Location = new System.Drawing.Point(20, 7);
+            this.aLabel20.Location = new System.Drawing.Point(13, 7);
             this.aLabel20.Name = "aLabel20";
-            this.aLabel20.Size = new System.Drawing.Size(47, 17);
+            this.aLabel20.Size = new System.Drawing.Size(53, 17);
             this.aLabel20.TabIndex = 54;
-            this.aLabel20.Text = "작업장";
+            this.aLabel20.Text = "*작업장";
             // 
             // aPanel17
             // 
@@ -498,7 +498,7 @@
             this.aLabel1.AutoSize = true;
             this.aLabel1.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aLabel1.Location = new System.Drawing.Point(20, 6);
+            this.aLabel1.Location = new System.Drawing.Point(21, 7);
             this.aLabel1.Name = "aLabel1";
             this.aLabel1.Size = new System.Drawing.Size(34, 17);
             this.aLabel1.TabIndex = 82;
@@ -516,18 +516,6 @@
             this.aPanel8.Size = new System.Drawing.Size(576, 39);
             this.aPanel8.TabIndex = 201;
             // 
-            // btnOK
-            // 
-            this.btnOK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOK.Location = new System.Drawing.Point(388, 7);
-            this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(75, 23);
-            this.btnOK.TabIndex = 0;
-            this.btnOK.Text = "확인";
-            this.btnOK.UseVisualStyleBackColor = false;
-            this.btnOK.Click += new System.EventHandler(this.BtnOK_Click);
-            // 
             // btnCancle
             // 
             this.btnCancle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
@@ -539,6 +527,18 @@
             this.btnCancle.Text = "취소";
             this.btnCancle.UseVisualStyleBackColor = false;
             this.btnCancle.Click += new System.EventHandler(this.Button2_Click);
+            // 
+            // btnOK
+            // 
+            this.btnOK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOK.Location = new System.Drawing.Point(388, 7);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(75, 23);
+            this.btnOK.TabIndex = 0;
+            this.btnOK.Text = "확인";
+            this.btnOK.UseVisualStyleBackColor = false;
+            this.btnOK.Click += new System.EventHandler(this.BtnOK_Click);
             // 
             // PPS_SCH_001_Insert
             // 
