@@ -424,7 +424,6 @@
     <Content Include="bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.vi.js" />
     <Content Include="bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.zh-CN.js" />
     <Content Include="bower_components\bootstrap-datepicker\js\locales\bootstrap-datepicker.zh-TW.js" />
-    <Content Include="bower_components\bootstrap-datepicker\tests\assets\coverage.js" />
     <Content Include="bower_components\bootstrap-datepicker\tests\assets\jquery-1.7.1.min.js" />
     <Content Include="bower_components\bootstrap-datepicker\tests\assets\mock.js" />
     <Content Include="bower_components\bootstrap-datepicker\tests\assets\qunit-logging.js" />
@@ -6788,9 +6787,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="mainicon.ico" />
-    <Content Include="obj\Debug\API.csproj.FileListAbsolute.txt" />
-    <Content Include="obj\Debug\API.dll" />
-    <Content Include="obj\Debug\API.pdb" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
@@ -7405,11 +7401,6 @@
     <Content Include="bower_components\select2\src\scss\_dropdown.scss" />
     <Content Include="bower_components\select2\src\scss\_multiple.scss" />
     <Content Include="bower_components\select2\src\scss\_single.scss" />
-    <Content Include="obj\Debug\API.csproj.CopyComplete" />
-    <Content Include="obj\Debug\API.csproj.CoreCompileInputs.cache" />
-    <Content Include="obj\Debug\API.csprojAssemblyReference.cache" />
-    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <Content Include="obj\Debug\Tsc.out" />
     <None Include="Properties\PublishProfiles\TEAM4WEBSERVER - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\TEAM4WEBSERVER - ReadOnly - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\TEAM4WEBSERVER - Web Deploy.pubxml" />
@@ -7454,7 +7445,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
