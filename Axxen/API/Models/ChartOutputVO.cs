@@ -11,7 +11,7 @@ namespace API.Models
         public string Prd_Date { get; set; } //생산일자
         public int Plan_Qty { get; set; } //목표량
         public int Prd_Qty { get; set; } //생산량
-        public decimal Attain { get; set; } //달성율
+        public double Attain { get; set; } //달성율
     }
 
     public class ChartBoxPackageVO
