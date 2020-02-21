@@ -247,6 +247,7 @@
             this.txtRemark.Size = new System.Drawing.Size(338, 72);
             this.txtRemark.TabIndex = 151;
             this.txtRemark.Text = "비고.";
+            this.txtRemark.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtRemark_KeyUp);
             // 
             // aPanel31
             // 
@@ -308,6 +309,7 @@
             this.nudusl.Name = "nudusl";
             this.nudusl.Size = new System.Drawing.Size(160, 23);
             this.nudusl.TabIndex = 150;
+            this.nudusl.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nudusl_KeyPress);
             // 
             // aPanel12
             // 

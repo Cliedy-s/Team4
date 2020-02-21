@@ -188,7 +188,7 @@
             this.txtReqNo.allfont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtReqNo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtReqNo.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtReqNo.LabelText = "작업지시일";
+            this.txtReqNo.LabelText = "생산의뢰";
             this.txtReqNo.Location = new System.Drawing.Point(42, 212);
             this.txtReqNo.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtReqNo.Name = "txtReqNo";

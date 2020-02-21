@@ -70,14 +70,21 @@ namespace Axxen
                                       CVal = val.Cval
                                   }).ToList();
 
-            ds.Relations.Clear();
-            ds.Tables.Clear();
+            try
+            {
+                ds.Relations.Clear();
+                ds.Tables.Clear();
 
-            dt = ListToDataTable.ToDataTable(figurationList);
-            ds.Tables.Add(dt);
-            ds.Tables[0].TableName = "dtDrying";
+                dt = ListToDataTable.ToDataTable(figurationList);
+                ds.Tables.Add(dt);
+                ds.Tables[0].TableName = "dtDrying";
 
-            rpt.DataSource = ds.Tables["dtDrying"];
+                rpt.DataSource = ds.Tables["dtDrying"];
+            }
+            catch
+            {
+
+            }
             rpt.Parameters["Ins_Date"].Value = dtpDate.Value.ToString("yyyy-MM-dd");
             rpt.Parameters["Ins_Date"].Visible = false; //파라미터 바로 넘기기
             documentViewer1.DocumentSource = rpt;

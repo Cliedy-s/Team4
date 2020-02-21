@@ -57,6 +57,7 @@
             this.dgvsys.RowTemplate.Height = 23;
             this.dgvsys.Size = new System.Drawing.Size(1124, 652);
             this.dgvsys.TabIndex = 10;
+            this.dgvsys.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgvsys_CellDoubleClick);
             // 
             // aPanel2
             // 

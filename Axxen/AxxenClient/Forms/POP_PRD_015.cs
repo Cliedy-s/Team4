@@ -70,7 +70,7 @@ namespace AxxenClient.Forms
         private void SearchData()
         {
             Inspect_Measure_HistoryService mservice = new Inspect_Measure_HistoryService();
-            dgvInspectMeasure.DataSource = mservice.GetAll(lblItemCode.Text, lblProcesscode.Text, lblInspectcode.Text);
+            dgvInspectMeasure.DataSource = mservice.GetAll(lblItemCode.Text, lblProcesscode.Text, lblInspectcode.Text, GlobalUsage.WorkOrderNo);
         }
         private void dgvInspect_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -198,7 +198,7 @@ namespace AxxenClient.Forms
                     }
 
                     // 공통
-                    btnMachineRun.BackColor = Color.FromArgb(188, 220, 244);
+                    btnMachineRun.BackColor = Color.FromArgb(243, 228, 231);
                     isMachineRun = true;
                     progressMachine.Visible = true;
                 }

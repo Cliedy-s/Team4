@@ -14,28 +14,29 @@ namespace DAC
         /// <summary>
         /// Inspect_Measure_History 목록 가져오기
         /// </summary>
-        public List<InspectHistoryVO> GetAll(string itemcode, string processcode, string inspectcode)
+        public List<InspectHistoryVO> GetAll(string itemcode, string processcode, string inspectcode, string workorderno)
         {
             using (SqlCommand comm = new SqlCommand())
             {
                 comm.Connection = new SqlConnection(Connstr);
                 comm.CommandText =
  @" SELECT 
-  imh.Inspect_measure_seq 
- , imh.Item_code 
- , imh.Process_code 
- , imh.Inspect_code 
- , imh.Inspect_date 
- , imh.Inspect_datetime 
- , imh.Inspect_val 
- , imh.Workorderno 
- FROM Inspect_Measure_History AS imh
-    WHERE imh.Item_Code = @itemcode and imh.Process_code =@processcode and imh.Inspect_code = @inspectcode ; ";
+      imh.Inspect_measure_seq 
+     , imh.Item_code 
+     , imh.Process_code 
+     , imh.Inspect_code 
+     , imh.Inspect_date 
+     , imh.Inspect_datetime 
+     , imh.Inspect_val 
+     , imh.Workorderno 
+     FROM Inspect_Measure_History AS imh
+        WHERE imh.Item_Code = @itemcode and imh.Process_code =@processcode and imh.Inspect_code = @inspectcode and imh.Workorderno = @workorderno ; ";
                 comm.CommandType = CommandType.Text;
 
                 comm.Parameters.AddWithValue("@itemcode", itemcode);
                 comm.Parameters.AddWithValue("@processcode", processcode);
                 comm.Parameters.AddWithValue("@inspectcode", inspectcode);
+                comm.Parameters.AddWithValue("@workorderno", workorderno);
 
                 comm.Connection.Open();
                 SqlDataReader reader = comm.ExecuteReader();

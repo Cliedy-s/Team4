@@ -154,11 +154,11 @@
             // aLabel10
             // 
             this.aLabel10.AutoSize = true;
-            this.aLabel10.Location = new System.Drawing.Point(33, 459);
+            this.aLabel10.Location = new System.Drawing.Point(23, 459);
             this.aLabel10.Name = "aLabel10";
-            this.aLabel10.Size = new System.Drawing.Size(55, 15);
+            this.aLabel10.Size = new System.Drawing.Size(64, 15);
             this.aLabel10.TabIndex = 10;
-            this.aLabel10.Text = "생산수량";
+            this.aLabel10.Text = "* 생산수량";
             // 
             // txtWo_Status
             // 
@@ -254,6 +254,7 @@
             this.txtPrd_Qty.Size = new System.Drawing.Size(156, 23);
             this.txtPrd_Qty.TabIndex = 11;
             this.txtPrd_Qty.txtType = Axxen.CustomControls.TextType.Normal;
+            this.txtPrd_Qty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrd_Qty_KeyPress);
             // 
             // aLabel_Header1
             // 

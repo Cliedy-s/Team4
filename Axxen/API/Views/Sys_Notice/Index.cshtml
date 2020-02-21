@@ -1,9 +1,9 @@
 ﻿
 @model IEnumerable<API.Models.Sys_NoticeVO>
 
-<!-- Main content -->
+    <!-- Main content -->
 
-<div class="row">
+    <div class="row">
         <!-- /.col -->
         <div class="col-md-12">
             <div class="box box-primary">
@@ -85,42 +85,44 @@
                     </div>
                 </div>
 
-                <div class="pull-right">
-             
-                    @Html.ActionLink("글 작성", "Create")
+                <div class="btn-block ">
+
+                    <a href="/Sys_Notice/Create" class="btn btn-danger btn-flat">공지등록</a>
+
                 </div>
-              
+
             </div>
             <!-- /. box -->
         </div>
     </div>
-<div class="row">
-        <div class="col-md-12">
-            <div class="box box-primary">
-                <!-- Main content -->
-                <section class="content">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="box box-primary">
-                                <div class="box-body no-padding">
-                                    <!-- THE CALENDAR -->
-                                    <div id="calendar"></div>
+    <div class="row"></div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-primary">
+                    <!-- Main content -->
+                    <section class="content">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="box box-primary">
+                                    <div class="box-body no-padding">
+                                        <!-- THE CALENDAR -->
+                                        <div id="calendar"></div>
+                                    </div>
+                                    <!-- /.box-body -->
                                 </div>
-                                <!-- /.box-body -->
+                                <!-- /. box -->
                             </div>
-                            <!-- /. box -->
+                            <!-- /.col -->
                         </div>
-                        <!-- /.col -->
-                    </div>
-                    <!-- /.row -->
-                </section>
-                <!-- /.content -->
+                        <!-- /.row -->
+                    </section>
+                    <!-- /.content -->
+                </div>
             </div>
-      </div>
-</div>
+        </div>
 
-@section Scripts {
-<script>
+        @section Scripts {
+            <script>
     $(function () {
 
         /* initialize the external events
@@ -145,7 +147,7 @@
                 //})
             })
         }
-        @{ 
+        @{
             List<string> labels = ViewBag.Labels;
         }
         init_events($('#external-events div.external-event'))
@@ -235,7 +237,7 @@
           borderColor    : '#3c8dbc' //Primary (light-blue)
         }
       ],
-       
+
 
 
 
@@ -305,5 +307,5 @@
             $('#new-event').val('')
         })
     })
-</script>
-}
+            </script>
+        }

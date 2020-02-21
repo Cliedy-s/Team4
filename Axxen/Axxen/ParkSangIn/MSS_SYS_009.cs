@@ -43,5 +43,14 @@ namespace Axxen
             syslist = sysservice.GetDayAllSys_notice(dtpstart.Value.ToShortDateString(), dtpEnd.Value.ToShortDateString());
             dgvsys.DataSource = syslist;
         }
+
+        private void Dgvsys_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            MSS_SYS_009_1 frm = new MSS_SYS_009_1();
+
+           frm.notice = syslist.Find(item => item.Req == dgvsys.SelectedRows[0].Cells[0].Value.ToString());
+            frm.Show();
+          
+        }
     }
 }
