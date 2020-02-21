@@ -14,6 +14,9 @@ namespace API.Controllers
         {
             Item_MasterDAC dac = new Item_MasterDAC();
 
+            List<WO_WC_Time_ItemVO> timelist = dac.GetAllTime_Production_History_Day();
+        
+            ViewBag.timepro = timelist;
             return View(dac.GetAllItem_Master2());
         }
 

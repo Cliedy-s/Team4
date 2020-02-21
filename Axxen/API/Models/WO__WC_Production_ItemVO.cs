@@ -23,4 +23,23 @@ namespace API.Models
         public int Out_Qty_Main { get; set; } //산출수량
         public int Prd_Qty { get; set; } //생산수량
     }
+    //public class WO_WC_Time_ItemVO //PPS_SCH_003 시간대별 차트
+    //{
+    //    public string Workorderno { get; set; } //작업지시번호
+    //    public DateTime Prd_Date { get; set; } //생산일자
+    //    public int Start_Hour { get; set; } //시작시간
+    //    public int In_Qty_Main { get; set; } //투입수량
+    //    public int Out_Qty_Main { get; set; } //산출수량
+    //    public int Prd_Qty { get; set; } //생산수량
+
+    //    public string Item_Name { get; set; }
+    //    public string Wo_Req_No { get; set; }
+    //    public string Project_Name { get; set; }
+    //}
+    public class WO_WC_Time_ItemVO //PPS_SCH_003 시간대별 차트
+    {
+        public string Item_Name { get; set; }
+        public int sum { get; set; }
+        public int allsum { get; set; }
+    }
 }

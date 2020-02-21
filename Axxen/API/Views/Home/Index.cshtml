@@ -1,271 +1,143 @@
 ﻿
 @model IEnumerable<API.Models.Item_MasterVO>
 
-    @{
-        ViewBag.Title = "Index";
-    }
+@{
+    ViewBag.Title = "Index";
+}
 
 
-    <!-- callout -->
-    <div class="callout callout-info">
-        <h4>제품 목록</h4>
+<!-- callout -->
+<div class="callout callout-info">
+    <h4>제품 목록</h4>
+    <p>product list</p>
+</div>
+
+<!-- USERS LIST -->
+<div class="box box-danger">
+    <div class="box-header with-border">
+
+
+        <div class="box-tools pull-right">
+            <span class="label label-danger">@Model.Count()</span>
+            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                <i class="fa fa-minus"></i>
+            </button>
+            <button type="button" class="btn btn-box-tool" data-widget="remove">
+                <i class="fa fa-times"></i>
+            </button>
+        </div>
     </div>
+    <!-- /.box-header -->
+    <div class="box-body no-padding">
+        <ul class="users-list clearfix">
 
-    <!-- USERS LIST -->
-    <div class="box box-danger">
-        <div class="box-header with-border">
-
-
-            <div class="box-tools pull-right">
-                <span class="label label-danger">@Model.Count()</span>
-                <button type="button" class="btn btn-box-tool" data-widget="collapse">
-                    <i class="fa fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove">
-                    <i class="fa fa-times"></i>
-                </button>
-            </div>
-        </div>
-        <!-- /.box-header -->
-        <div class="box-body no-padding">
-            <ul class="users-list clearfix">
-
-                @foreach (var item in Model)
-                {
-                    <li>
-                        <img src="@Html.DisplayFor(modelItem => item.Lead_Time)" alt="User Image">
-                        <a class="users-list-name" href="/Home/Details/@Html.DisplayFor(modelItem => item.Item_Code)">상세정보</a>
-                        <span class="users-list-date">   @Html.DisplayFor(modelItem => item.Item_Name)</span>
-                    </li>
-                }
-            </ul>
-            <!-- /.users-list -->
-        </div>
-        <!-- /.box-body -->
-        <div class="box-footer text-center">
-            <a href="javascript:void(0)" class="uppercase"></a>
-        </div>
-        <!-- /.box-footer -->
+            @foreach (var item in Model)
+{
+                <li>
+                    <img src="@Html.DisplayFor(modelItem => item.Lead_Time)" alt="User Image">
+                    <a class="users-list-name" href="/Home/Details/@Html.DisplayFor(modelItem => item.Item_Code)">상세정보</a>
+                    <span class="users-list-date">   @Html.DisplayFor(modelItem => item.Item_Name)</span>
+                </li>
+}
+        </ul>
+        <!-- /.users-list -->
     </div>
-
-
-
-
-
-
-
-
-    <!-- callout -->
-    <div class="callout callout-danger">
-        <h4>제품별 생산현황.</h4>
-
-        <p>The following three inline (sparkline) chart have been initialized to read and interpret data tags</p>
+    <!-- /.box-body -->
+    <div class="box-footer text-center">
+        <a href="javascript:void(0)" class="uppercase"></a>
     </div>
+    <!-- /.box-footer -->
+</div>
 
 
-    <section class="content">
 
-        <!-- row -->
-        <div class="row">
-            <div class="col-xs-12">
-                <!-- jQuery Knob -->
-                <div class="box box-solid">
-                    <div class="box-header">
-                        <i class="fa fa-bar-chart-o"></i>
+<!-- callout -->
+<div class="callout callout-danger">
+    <h4>제품별 판매현황</h4>
+    <p>Production status by product</p>
+</div>
 
-                        <h3 class="box-title">jQuery Knob</h3>
 
-                        <div class="box-tools pull-right">
-                            <button type="button" class="btn btn-default btn-sm" data-widget="collapse">
-                                <i class="fa fa-minus"></i>
-                            </button>
-                            <button type="button" class="btn btn-default btn-sm" data-widget="remove">
-                                <i class="fa fa-times"></i>
-                            </button>
-                        </div>
+<section class="content">
+
+    <!-- row -->
+    <div class="row">
+        <div class="col-xs-12">
+            <!-- jQuery Knob -->
+            <div class="box box-solid">
+                <div class="box-header">
+                    <i class="fa fa-bar-chart-o"></i>
+
+                    <h3 class="box-title">단위 %</h3>
+
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-default btn-sm" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-default btn-sm" data-widget="remove">
+                            <i class="fa fa-times"></i>
+                        </button>
                     </div>
-                    <!-- /.box-header -->
-                    <div class="box-body">
-                        <div class="row">
-                            <div class="col-xs-6 col-md-3 text-center">
-                                <input type="text" class="knob" value="30" data-width="90" data-height="90" data-fgColor="#3c8dbc">
-
-                                <div class="knob-label">New Visitors</div>
-                            </div>
-                            <!-- ./col -->
-                            <div class="col-xs-6 col-md-3 text-center">
-                                <input type="text" class="knob" value="70" data-width="90" data-height="90" data-fgColor="#f56954">
-
-                                <div class="knob-label">Bounce Rate</div>
-                            </div>
-                            <!-- ./col -->
-                            <div class="col-xs-6 col-md-3 text-center">
-                                <input type="text" class="knob" value="-80" data-min="-150" data-max="150" data-width="90" data-height="90" data-fgColor="#00a65a">
-
-                                <div class="knob-label">Server Load</div>
-                            </div>
-                            <!-- ./col -->
-                            <div class="col-xs-6 col-md-3 text-center">
-                                <input type="text" class="knob" value="40" data-width="90" data-height="90" data-fgColor="#00c0ef">
-
-                                <div class="knob-label">Disk Space</div>
-                            </div>
-                            <!-- ./col -->
-                        </div>
-                        <!-- /.row -->
-
-                        <div class="row">
-                            <div class="col-xs-6 text-center">
-                                <input type="text" class="knob" value="90" data-width="90" data-height="90" data-fgColor="#932ab6">
-
-                                <div class="knob-label">Bandwidth</div>
-                            </div>
-                            <!-- ./col -->
-                            <div class="col-xs-6 text-center">
-                                <input type="text" class="knob" value="50" data-width="90" data-height="90" data-fgColor="#39CCCC">
-
-                                <div class="knob-label">CPU</div>
-                            </div>
-                            <!-- ./col -->
-                        </div>
-                        <!-- /.row -->
-                    </div>
-                    <!-- /.box-body -->
                 </div>
-                <!-- /.box -->
-            </div>
-            <!-- /.col -->
-        </div>
-        <!-- /.row -->
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div class="row">
 
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="box box-solid">
-                    <div class="box-header">
-                        <i class="fa fa-bar-chart-o"></i>
+                        @{
+                            var getlist = ViewBag.timepro as IEnumerable<API.Models.WO_WC_Time_ItemVO>;
+                            int count = 0;
+                            string[] mycolor = { "#39CCCC", "#932ab6", "#39CCCC", "#f56954", "#00a65a", "#00c0ef", "@3c8dbc" };
+                        }
+                        @foreach (var item in getlist)
+                        {
 
-                        <h3 class="box-title">jQuery Knob Different Sizes</h3>
+                            double a = (item.sum * 1.0 / item.allsum) * 100;
+                            @*<span class="label-dan5ger">@(a.ToString())</span>*@
 
-                        <div class="box-tools pull-right">
-                            <button type="button" class="btn btn-default btn-sm" data-widget="collapse">
-                                <i class="fa fa-minus"></i>
-                            </button>
-                            <button type="button" class="btn btn-default btn-sm" data-widget="remove">
-                                <i class="fa fa-times"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <!-- /.box-header -->
-                    <div class="box-body">
-                        <div class="row">
+
                             <div class="col-xs-6 col-md-3 text-center">
-                                <input type="text" class="knob" value="30" data-width="90" data-height="90" data-fgColor="#3c8dbc" data-readonly="true">
+                                <input type="text" class="knob" value="@(a.ToString())" data-skin="tron" data-thickness="0.2" data-width="120" data-height="120" data-fgColor= @mycolor[count]>
 
-                                <div class="knob-label">data-width="90"</div>
-                            </div>
-                            <!-- ./col -->
-                            <div class="col-xs-6 col-md-3 text-center">
-                                <input type="text" class="knob" value="30" data-width="120" data-height="120" data-fgColor="#f56954">
+                                <div class="knob-label">@Html.DisplayFor(modelItem => item.Item_Name)</div>
 
-                                <div class="knob-label">data-width="120"</div>
                             </div>
-                            <!-- ./col -->
-                            <div class="col-xs-6 col-md-3 text-center">
-                                <input type="text" class="knob" value="30" data-thickness="0.1" data-width="90" data-height="90" data-fgColor="#00a65a">
 
-                                <div class="knob-label">data-thickness="0.1"</div>
-                            </div>
-                            <!-- ./col -->
-                            <div class="col-xs-6 col-md-3 text-center">
-                                <input type="text" class="knob" data-thickness="0.2" data-angleArc="250" data-angleOffset="-125" value="30" data-width="120" data-height="120" data-fgColor="#00c0ef">
 
-                                <div class="knob-label">data-angleArc="250"</div>
-                            </div>
-                            <!-- ./col -->
+                            count++;
+                            }
+
+
+
                         </div>
                         <!-- /.row -->
-                    </div>
-                    <!-- /.box-body -->
-                </div>
-                <!-- /.box -->
-            </div>
-            <!-- /.col -->
-        </div>
-        <!-- /.row -->
-
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="box box-solid">
-                    <div class="box-header">
-                        <i class="fa fa-bar-chart-o"></i>
-
-                        <h3 class="box-title">jQuery Knob Tron Style</h3>
-
-                        <div class="box-tools pull-right">
-                            <button type="button" class="btn btn-default btn-sm" data-widget="collapse">
-                                <i class="fa fa-minus"></i>
-                            </button>
-                            <button type="button" class="btn btn-default btn-sm" data-widget="remove">
-                                <i class="fa fa-times"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <!-- /.box-header -->
-                    <div class="box-body">
-                        <div class="row">
-                            <div class="col-xs-6 col-md-3 text-center">
-                                <input type="text" class="knob" value="80" data-skin="tron" data-thickness="0.2" data-width="90" data-height="90" data-fgColor="#3c8dbc" data-readonly="true">
-
-                                <div class="knob-label">data-width="90"</div>
-                            </div>
-                            <!-- ./col -->
-                            <div class="col-xs-6 col-md-3 text-center">
-                                <input type="text" class="knob" value="60" data-skin="tron" data-thickness="0.2" data-width="120" data-height="120" data-fgColor="#f56954">
-
-                                <div class="knob-label">data-width="120"</div>
-                            </div>
-                            <!-- ./col -->
-                            <div class="col-xs-6 col-md-3 text-center">
-                                <input type="text" class="knob" value="10" data-skin="tron" data-thickness="0.1" data-width="90" data-height="90" data-fgColor="#00a65a">
-
-                                <div class="knob-label">data-thickness="0.1"</div>
-                            </div>
-                            <!-- ./col -->
-                            <div class="col-xs-6 col-md-3 text-center">
-                                <input type="text" class="knob" value="100" data-skin="tron" data-thickness="0.2" data-angleArc="250" data-angleOffset="-125" data-width="120" data-height="120" data-fgColor="#00c0ef">
-
-                                <div class="knob-label">data-angleArc="250"</div>
-                            </div>
-                            <!-- ./col -->
-                        </div>
                         <!-- /.row -->
                     </div>
-                    <!-- /.box-body -->
-                </div>
-                <!-- /.box -->
+                <!-- /.box-body -->
             </div>
-            <!-- /.col -->
+            <!-- /.box -->
         </div>
-        <!-- /.row -->
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
 
-    </section>
+   
 
-
-
-    <!-- jQuery 3 -->
-    <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
-    <!-- Bootstrap 3.3.7 -->
-
-    <!-- SlimScroll -->
-    <script src="../../bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-    <!-- FastClick -->
-
-    <!-- Sparkline -->
-    <script src="../../bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+</section>
 
 
-    <!-- page script -->
-    <script>
+
+<!-- jQuery 3 -->
+<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<!-- SlimScroll -->
+<script src="../../bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<!-- Sparkline -->
+<script src="../../bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+
+
+<!-- page script -->
+<script>
   $(function () {
     /* jQueryKnob */
 
@@ -471,4 +343,4 @@
     // We could use setInterval instead, but I prefer to do it this way
     setTimeout(mdraw, mrefreshinterval);
   }
-    </script>
+</script>

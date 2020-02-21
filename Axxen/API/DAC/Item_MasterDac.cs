@@ -169,6 +169,42 @@ SELECT  [Item_Code]
         }
 
 
+        public List<WO_WC_Time_ItemVO> GetAllTime_Production_History_Day()
+        {
+            try
+            {
+                List<WO_WC_Time_ItemVO> Itemlist = null;
+                using (SqlCommand com = new SqlCommand())
+                {
+                    com.Connection = new SqlConnection(Connstr);
+                    //                    com.CommandText = @"SELECT 
+                    //tp.Workorderno,tp.[Prd_Date],[Start_Hour],tp.[In_Qty_Main],tp.[Out_Qty_Main],tp.[Prd_Qty],tp.[Prd_Unit],Item_Name,wr.Wo_Req_No,wr.Project_Name
+
+                    //  FROM [dbo].[Time_Production_History_Day] tp, WorkOrder w, Item_Master i, Wo_Req wr
+                    //  where tp.Workorderno = w.Workorderno and w.Item_Code = i.Item_Code and wr.Item_Code = i.Item_Code and Req_Status<>'완료'";
+                    com.CommandText = @"SELECT  i.Item_Name,isnull (sum(w.Req_Qty),0) sum , (select sum(Req_Qty) from Wo_Req  ) allsum 
+FROM [dbo].[Wo_Req] w right OUTER JOIN Item_Master i on w.Item_Code  =  i.Item_Code
+
+group by i.Item_Name";
+
+                    com.CommandType = CommandType.Text;
+
+                    com.Connection.Open();
+                    SqlDataReader reader = com.ExecuteReader();
+                    Itemlist = Helper.DataReaderMapToList<WO_WC_Time_ItemVO>(reader);
+                    com.Connection.Close();
+
+                    return Itemlist;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+
 
     }
 }
