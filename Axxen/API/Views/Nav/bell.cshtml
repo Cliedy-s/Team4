@@ -1,0 +1,96 @@
+﻿
+@model IEnumerable<API.Models.Wo_ReqVO>
+
+
+
+    @if (Model != null)
+    {
+
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <i class="fa fa-bell-o"></i>
+            <span class="label label-warning">@Model.Count()</span>
+        </a>
+
+
+       
+
+        <ul class="dropdown-menu">
+            <li class="header">생산의뢰 @Model.Count()개의 현황</li>
+
+
+            @foreach (var item in Model)
+            {
+                <li>
+                    <!-- inner menu: contains the actual data -->
+                    <ul class="menu">
+                        @if (item.Req_Status == "완료")
+                        {
+                            <li>
+                                <a>
+                                    <i class="fa fa-users text-aqua"></i> @Html.DisplayFor(modelItem => item.Wo_Req_No)
+                                <p> @Html.DisplayFor(modelItem => item.Project_Name) @Html.DisplayFor(modelItem => item.Req_Status)</p>
+                                   
+                                </a>
+                            </li>
+
+
+
+                        }
+                        else if (item.Req_Status == "진행중")
+                        {
+                            <li>
+                                <a>
+                                    <i class="fa fa-users text-red"></i> @Html.DisplayFor(modelItem => item.Wo_Req_No)
+
+                                <p> @Html.DisplayFor(modelItem => item.Project_Name) @Html.DisplayFor(modelItem => item.Req_Status)</p>
+                                
+                                </a>
+                            </li>
+
+
+                        }
+                        else if (item.Req_Status == "대기")
+                        {
+
+                            <li>
+                                <a>
+                                    <i class="fa fa-users text-yellow"></i> @Html.DisplayFor(modelItem => item.Wo_Req_No)
+                                <p> @Html.DisplayFor(modelItem => item.Project_Name) @Html.DisplayFor(modelItem => item.Req_Status)</p>
+                                
+                                </a>
+                            </li>
+
+                        }
+
+                        else if (item.Req_Status == "마감")
+                        {
+                    <li>
+                        <a>
+                            <i class="fa fa-user text-yellow"></i>
+                            @Html.DisplayFor(modelItem => item.Wo_Req_No)
+                        <p> @Html.DisplayFor(modelItem => item.Project_Name) @Html.DisplayFor(modelItem => item.Req_Status)</p>
+                           
+                        </a>
+                    </li>
+                                    }
+
+                        </ul>
+                </li>
+            }
+
+
+
+
+        </ul>
+
+
+        
+
+
+    }
+
+
+
+
+
+

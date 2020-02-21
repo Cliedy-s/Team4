@@ -185,7 +185,7 @@ namespace API.Models
 
 
     /// <summary>
-    /// 품목정보
+    /// 생산의뢰 + 품목
     /// </summary>
     public class Item_Master_and_woreqtVO
     {
@@ -334,4 +334,5 @@ namespace API.Models
 
 
     }
-}
+
+    }

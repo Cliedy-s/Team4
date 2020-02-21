@@ -46,6 +46,7 @@
             this.aTextBox1.Size = new System.Drawing.Size(273, 71);
             this.aTextBox1.TabIndex = 0;
             this.aTextBox1.txtType = Axxen.CustomControls.TextType.Normal;
+            this.aTextBox1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.aTextBox1_KeyUp);
             // 
             // aBigHeaderBox1
             // 

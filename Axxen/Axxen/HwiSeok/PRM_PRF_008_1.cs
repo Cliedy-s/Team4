@@ -110,5 +110,30 @@ namespace Axxen
         {
             aTextBox2.Text = aComboBox2.SelectedValue.ToString();
         }
+
+        private void txtRemark_KeyUp(object sender, KeyEventArgs e)
+        {
+
+            if (Encoding.Default.GetBytes(txtRemark.Text).Length > 100 && (int)e.KeyCode != 8)
+            {
+                MessageBox.Show("100자 이내로 입력해주세요", "자리수 제한", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtRemark.Text = aTextBox1.Text.Remove(txtRemark.Text.Length - 1, 1);
+                txtRemark.SelectionStart = txtRemark.Text.Length;
+
+                e.SuppressKeyPress = true;
+                e.Handled = true;
+            }
+        }
+
+        private void nudusl_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //숫자만 입력되도록 필터링
+
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back)))    //숫자와 백스페이스를 제외한 나머지를 바로 처리
+
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
