@@ -70,7 +70,7 @@ namespace AxxenClient.Forms
         private void SearchData()
         {
             Inspect_Measure_HistoryService mservice = new Inspect_Measure_HistoryService();
-            dgvInspectMeasure.DataSource = mservice.GetAll(lblItemCode.Text, lblProcesscode.Text, lblInspectcode.Text);
+            dgvInspectMeasure.DataSource = mservice.GetAll(lblItemCode.Text, lblProcesscode.Text, lblInspectcode.Text, GlobalUsage.WorkOrderNo);
         }
         private void dgvInspect_CellClick(object sender, DataGridViewCellEventArgs e)
         {

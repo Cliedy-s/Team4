@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using VO;
 
@@ -89,8 +90,8 @@ namespace AxxenClient.Forms
                         MessageBox.Show("0개를 로딩할 수는 없습니다.");
                         return;
                     }
-                        GV_HistoryService service = new GV_HistoryService();
-
+                    GV_HistoryService service = new GV_HistoryService();
+                    Thread.Sleep(1000);
                     // 옮겨타기
                     if (service.UpdateMoveGvItem(unloadgvcode, loadinggvcode, Convert.ToInt32(txtLoading.TextBoxText), GlobalUsage.UserID, GlobalUsage.WcCode, GlobalUsage.WorkOrderNo, dgvGVFrom.SelectedRows[0].Cells[4].Value.ToString(), false, Convert.ToInt64(dgvGVFrom.SelectedRows[0].Cells[5].Value.ToString()), Convert.ToInt32(dgvGVFrom.SelectedRows[0].Cells[6].Value.ToString())))
                     {
