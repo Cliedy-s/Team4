@@ -964,6 +964,9 @@ namespace Axxen
             Process.Start("mspaint.exe");
         }
 
-
+        private void ToolStripButton1_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://team4webserver.azurewebsites.net/");
+        }
     }
 }
