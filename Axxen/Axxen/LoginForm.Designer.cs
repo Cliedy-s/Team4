@@ -52,7 +52,6 @@
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(303, 29);
             this.txtID.TabIndex = 0;
-            this.txtID.Text = "master";
             // 
             // txtPwd
             // 
@@ -64,7 +63,6 @@
             this.txtPwd.PasswordChar = '*';
             this.txtPwd.Size = new System.Drawing.Size(303, 29);
             this.txtPwd.TabIndex = 1;
-            this.txtPwd.Text = "1234";
             // 
             // panel1
             // 
