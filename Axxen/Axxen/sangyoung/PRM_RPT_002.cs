@@ -134,13 +134,20 @@ namespace Axxen
 
         private void PRM_RPT_002_Activated(object sender, EventArgs e)
         {
+            ((MainForm)this.MdiParent).RefreshFormEvent += new EventHandler(this.RefreshFormShow); //새로고침
             ToolStripManager.Merge(toolStrip1, ((MainForm)this.MdiParent).toolStrip1); //출력버튼추가
             toolStrip1.Visible = false;
         }
 
         private void PRM_RPT_002_Deactivate(object sender, EventArgs e)
         {
+            ((MainForm)this.MdiParent).RefreshFormEvent -= new EventHandler(this.RefreshFormShow); //새로고침
             ToolStripManager.RevertMerge(((MainForm)this.MdiParent).toolStrip1);
+        }
+
+        private void RefreshFormShow(object sender, EventArgs e)
+        {
+            documentViewer1.DocumentSource = null;
         }
     }
 }

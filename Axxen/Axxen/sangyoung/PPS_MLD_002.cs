@@ -135,7 +135,7 @@ namespace Axxen
                               Mold_Prd_Qty = list.Mold_Prd_Qty,
                               Use_Starttime = list.Use_Starttime,
                               Use_Endtime = list.Use_Endtime,
-                              Use_time = string.Format("{0}분", list.Use_Endtime.Subtract(list.Use_Starttime).Minutes)
+                              Use_time = list.Use_Endtime.Subtract(list.Use_Starttime).Minutes < 0 ? "작업중" : $"{list.Use_Endtime.Subtract(list.Use_Starttime).Minutes}분"
                           }).ToList();
             dgvMainGrid.DataSource = molist;
         }
