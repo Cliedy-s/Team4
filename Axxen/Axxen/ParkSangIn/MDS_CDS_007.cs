@@ -169,7 +169,7 @@ namespace Axxen
                 if (btnSave.Text == "저장")
                 {
 
-                    if (boxservice.GetInsertUpdateBoxingGrade_Detail_MasterVO(btnSave.Text, txtCode.Text, txtName.Text, rdbgroup.Text, UserInfo.User_Name))
+                    if (boxservice.GetInsertUpdateBoxingGrade_Detail_MasterVO(btnSave.Text, txtCode.Text, txtName.Text, rdbgroup.Tag.ToString(), UserInfo.User_Name))
                     {
                         MessageBox.Show("저장되었습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -183,7 +183,7 @@ namespace Axxen
 
                 else
                 {
-                    if (boxservice.GetInsertUpdateBoxingGrade_Detail_MasterVO(btnSave.Text, txtCode.Text, txtName.Text, rdbgroup.Text, UserInfo.User_Name))
+                    if (boxservice.GetInsertUpdateBoxingGrade_Detail_MasterVO(btnSave.Text, txtCode.Text, txtName.Text, rdbgroup.Tag.ToString(), UserInfo.User_Name))
                     {
                         MessageBox.Show("수정되었습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
