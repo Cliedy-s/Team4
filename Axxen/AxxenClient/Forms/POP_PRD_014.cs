@@ -63,7 +63,7 @@ namespace AxxenClient.Forms
         private void SearchData()
         {
             Condition_Measure_HistoryService mservice = new Condition_Measure_HistoryService();
-            dgvConditionMeasureList.DataSource = mservice.GetAll(lblConditionCode.Text, lblWcCode.Text, lblItemCode.Text);
+            dgvConditionMeasureList.DataSource = mservice.GetAll(lblConditionCode.Text, lblWcCode.Text, lblItemCode.Text, GlobalUsage.WorkOrderNo);
         }
 
         private void btnInsertMeasure_Click(object sender, EventArgs e)

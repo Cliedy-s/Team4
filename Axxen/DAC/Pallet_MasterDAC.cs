@@ -53,7 +53,7 @@ namespace DAC
             {
                 comm.Connection = new SqlConnection(Connstr);
                 comm.CommandText =
- @"  SELECT pal.[Pallet_No]
+ @" SELECT pal.[Pallet_No]
       ,pal.[WorkOrderNo]
       ,pal.[Barcode_No]
       ,pal.[Grade_Detail_Code]
@@ -68,7 +68,7 @@ namespace DAC
   FROM [Pallet_Master] as pal
         LEFT OUTER JOIN  [WorkOrder] as wo ON pal.[WorkorderNo] = wo.[Workorderno]
         LEFT OUTER JOIN [Item_Master] as im ON im.[Item_Code] = wo.[Item_Code]
-		LEFT OUTER JOIN [BoxingGrade_Detail_Master] as bdm ON  bdm.[Use_YN] = 'Y' AND pal.Grade_Detail_Code = bdm.Grade_Detail_Code
+		LEFT OUTER JOIN [BoxingGrade_Detail_Master] as bdm ON pal.Grade_Detail_Code = bdm.Grade_Detail_Code
   WHERE pal.[Use_YN] = 'Y' AND pal.Workorderno = @workorderno;  ";
                 comm.CommandType = CommandType.Text;
                 comm.Parameters.AddWithValue("@workorderno", workOrderNo);
