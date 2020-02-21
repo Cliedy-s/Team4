@@ -181,9 +181,9 @@
             this.aLabel7.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.aLabel7.Location = new System.Drawing.Point(37, 570);
             this.aLabel7.Name = "aLabel7";
-            this.aLabel7.Size = new System.Drawing.Size(128, 21);
+            this.aLabel7.Size = new System.Drawing.Size(80, 21);
             this.aLabel7.TabIndex = 17;
-            this.aLabel7.Text = "사용자 그룹설정";
+            this.aLabel7.Text = "공정 설정";
             // 
             // aPanel3
             // 

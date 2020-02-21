@@ -13,121 +13,124 @@
             <!-- Main content -->
             <section class="content">           
                    <div class="box-body no-padding">
-                        <ul class="users-list clearfix" >
+                       <ul class="center-block">
 
-                            <li>
-                                <img src="@Html.DisplayFor(model => model.Lead_Time)" alt="User Image" width="300px" height="300px">
-                                <span class="users-list-date">   @Html.DisplayFor(model => model.Item_Name)</span>
-                                <dl class="dl-horizontal">
+                           <li>
+                               <div class="col-md-4">
+                                   <img src="@Html.DisplayFor(model => model.Lead_Time)" alt="User Image" width="300px" height="300px">
+                                   <span class="users-list-date">   @Html.DisplayFor(model => model.Item_Name)</span>
+                               </div>
+                               <div class="col-md-8">
+                                   <dl class="dl-horizontal">
 
-                                    <dt>
-                                        @Html.DisplayNameFor(model => model.Item_Code)
+                                       <dt>
+                                           @Html.DisplayNameFor(model => model.Item_Code)
 
-                                    </dt>
-                                    @using (Html.BeginForm())
-                                    {
-                                <dd type="hidden">
-                                    @Html.DisplayFor(model => model.Item_Code)
-                                    
-                                
-                                </dd>
-
-                                    }
-                                        <dt>
-                                            @Html.DisplayNameFor(model => model.Item_Name_Eng)
-                                        </dt>
-
-                                        <dd>
-                                            @Html.DisplayFor(model => model.Item_Name_Eng)
-                                        </dd>
-
-                                        <dt>
-                                            @Html.DisplayNameFor(model => model.Item_Name_Eng_Alias)
-                                        </dt>
-
-                                        <dd>
-                                            @Html.DisplayFor(model => model.Item_Name_Eng_Alias)
-                                        </dd>
-
-                                        <dt>
-                                            @Html.DisplayNameFor(model => model.Item_Type)
-                                        </dt>
-
-                                        <dd>
-                                            @Html.DisplayFor(model => model.Item_Type)
-                                        </dd>
-
-                                        <dt>
-                                            @Html.DisplayNameFor(model => model.Item_Spec)
-                                        </dt>
-
-                                        <dd>
-                                            @Html.DisplayFor(model => model.Item_Spec)
-                                        </dd>
-
-                                        <dt>
-                                            @Html.DisplayNameFor(model => model.Item_Unit)
-                                        </dt>
-
-                                        <dd>
-                                            @Html.DisplayFor(model => model.Item_Unit)
-                                        </dd>
-
-                                        <dt>
-                                            @Html.DisplayNameFor(model => model.Level_1)
-                                        </dt>
-
-                                        <dd>
-                                            @Html.DisplayFor(model => model.Level_1)
-                                        </dd>
-
-                                        <dt>
-                                            @Html.DisplayNameFor(model => model.Level_2)
-                                        </dt>
-
-                                        <dd>
-                                            @Html.DisplayFor(model => model.Level_2)
-                                        </dd>
-
-                                        <dt>
-                                            @Html.DisplayNameFor(model => model.Level_3)
-                                        </dt>
-
-                                        <dd>
-                                            @Html.DisplayFor(model => model.Level_3)
-                                        </dd>
-
-                                        <dt>
-                                            @Html.DisplayNameFor(model => model.Level_4)
-                                        </dt>
-
-                                        <dd>
-                                            @Html.DisplayFor(model => model.Level_4)
-                                        </dd>
-
-                                        <dt>
-                                            @Html.DisplayNameFor(model => model.Level_5)
-                                        </dt>
-
-                                        <dd>
-                                            @Html.DisplayFor(model => model.Level_5)
-                                        </dd>
+                                       </dt>
+                                       @using (Html.BeginForm())
+                                       {
+                                           <dd type="hidden">
+                                               @Html.DisplayFor(model => model.Item_Code)
 
 
-                                        <dt>
-                                            @Html.DisplayNameFor(model => model.Remark)
-                                        </dt>
+                                           </dd>
 
-                                        <dd>
-                                            @Html.DisplayFor(model => model.Remark)
-                                        </dd>
+                                       }
+                                       <dt>
+                                           @Html.DisplayNameFor(model => model.Item_Name_Eng)
+                                       </dt>
 
-                                    </dl>
+                                       <dd>
+                                           @Html.DisplayFor(model => model.Item_Name_Eng)
+                                       </dd>
+
+                                       <dt>
+                                           @Html.DisplayNameFor(model => model.Item_Name_Eng_Alias)
+                                       </dt>
+
+                                       <dd>
+                                           @Html.DisplayFor(model => model.Item_Name_Eng_Alias)
+                                       </dd>
+
+                                       <dt>
+                                           @Html.DisplayNameFor(model => model.Item_Type)
+                                       </dt>
+
+                                       <dd>
+                                           @Html.DisplayFor(model => model.Item_Type)
+                                       </dd>
+
+                                       <dt>
+                                           @Html.DisplayNameFor(model => model.Item_Spec)
+                                       </dt>
+
+                                       <dd>
+                                           @Html.DisplayFor(model => model.Item_Spec)
+                                       </dd>
+
+                                       <dt>
+                                           @Html.DisplayNameFor(model => model.Item_Unit)
+                                       </dt>
+
+                                       <dd>
+                                           @Html.DisplayFor(model => model.Item_Unit)
+                                       </dd>
+
+                                       <dt>
+                                           @Html.DisplayNameFor(model => model.Level_1)
+                                       </dt>
+
+                                       <dd>
+                                           @Html.DisplayFor(model => model.Level_1)
+                                       </dd>
+
+                                       <dt>
+                                           @Html.DisplayNameFor(model => model.Level_2)
+                                       </dt>
+
+                                       <dd>
+                                           @Html.DisplayFor(model => model.Level_2)
+                                       </dd>
+
+                                       <dt>
+                                           @Html.DisplayNameFor(model => model.Level_3)
+                                       </dt>
+
+                                       <dd>
+                                           @Html.DisplayFor(model => model.Level_3)
+                                       </dd>
+
+                                       <dt>
+                                           @Html.DisplayNameFor(model => model.Level_4)
+                                       </dt>
+
+                                       <dd>
+                                           @Html.DisplayFor(model => model.Level_4)
+                                       </dd>
+
+                                       <dt>
+                                           @Html.DisplayNameFor(model => model.Level_5)
+                                       </dt>
+
+                                       <dd>
+                                           @Html.DisplayFor(model => model.Level_5)
+                                       </dd>
 
 
-                            </li>
+                                       <dt>
+                                           @Html.DisplayNameFor(model => model.Remark)
+                                       </dt>
 
-                        </ul>
+                                       <dd>
+                                           @Html.DisplayFor(model => model.Remark)
+                                       </dd>
+
+                                   </dl>
+                                   </div>
+
+</li>
+
+                       </ul>
                         <!-- /.users-list -->
                     </div>
                     <!-- /. box -->
@@ -145,75 +148,74 @@
         <div class="box box-primary">
             <!-- Main content -->
             <section class="content">
-                    <div class="box-body no-padding">
+                <div class="box-body no-padding">
+
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+
+
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(model => model.Item_Code)
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Wo_Req_No, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Wo_Req_No, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Wo_Req_No, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Req_Qty, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Req_Qty, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Req_Qty, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Prd_Plan_Date, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Prd_Plan_Date, new { htmlAttributes = new { @class = "form-control", type = "date" } })
+                                @Html.ValidationMessageFor(model => model.Prd_Plan_Date, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Cust_Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Cust_Name, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Cust_Name, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Project_Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Project_Name, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Project_Name, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="pull-right">
+
+
+                            <input type="submit" value="등록" class="btn btn-danger" />
+                            <a href="/Home/Index" class="btn btn-danger btn-flat">뒤로가기</a>
+
+                            
+</div>
                         
-                            @using (Html.BeginForm())
-                             {
-                                    @Html.AntiForgeryToken()
-
-                       
-
-                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })                          
-                                @Html.HiddenFor(model => model.Item_Code)
-
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.Wo_Req_No, htmlAttributes: new { @class = "control-label col-md-2" })
-                                    <div class="col-md-10">
-                                        @Html.EditorFor(model => model.Wo_Req_No, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.Wo_Req_No, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-
-
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.Req_Qty, htmlAttributes: new { @class = "control-label col-md-2" })
-                                    <div class="col-md-10">
-                                        @Html.EditorFor(model => model.Req_Qty, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.Req_Qty, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.Prd_Plan_Date, htmlAttributes: new { @class = "control-label col-md-2" })
-                                    <div class="col-md-10">
-                                        @Html.EditorFor(model => model.Prd_Plan_Date, new { htmlAttributes = new { @class = "form-control", type = "date" } })
-                                        @Html.ValidationMessageFor(model => model.Prd_Plan_Date, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.Cust_Name, htmlAttributes: new { @class = "control-label col-md-2" })
-                                    <div class="col-md-10">
-                                        @Html.EditorFor(model => model.Cust_Name, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.Cust_Name, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.Project_Name, htmlAttributes: new { @class = "control-label col-md-2" })
-                                    <div class="col-md-10">
-                                        @Html.EditorFor(model => model.Project_Name,new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.Project_Name, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-
-                                <div class="pull-right">
-                                    <div class="col-md-offset-2 col-md-10">
-                                        <div class="col-md-offset-2 col-md-10">
-
-                                            <input type="submit" value="등록" class="btn btn-default" />
-
-                                        </div>
-                                        @Html.ActionLink("뒤로가기", "Index")
-                                    </div>
-                                </div>
                         
 
-                             }
+                                     }
 
-                  
-                        <!-- /.users-list -->
-                    </div>
+
+                    <!-- /.users-list -->
+                </div>
                     <!-- /. box -->
                     <!-- /.col -->
 

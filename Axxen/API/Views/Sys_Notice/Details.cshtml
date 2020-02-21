@@ -75,8 +75,9 @@
     </div>
     <!-- /.row -->
     <p class="btn-default">
-        @Html.ActionLink("Edit", "Edit", new { id = Model.Seq }) |
-        @Html.ActionLink("Back to List", "Index")
+        <a href="/Sys_Notice/Edit/@Model.Seq" class="btn btn-danger btn-flat">수정</a>
+        <a href="/Sys_Notice/Index" class="btn btn-danger btn-flat">뒤로가기</a>
+    
     </p>
 
 
