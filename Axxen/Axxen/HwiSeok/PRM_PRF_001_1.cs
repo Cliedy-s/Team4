@@ -65,5 +65,16 @@ namespace Axxen.HwiSeok
                 MessageBox.Show("수정에 실패하였습니다.", "수정오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
             this.DialogResult=DialogResult.OK;
         }
+
+        private void txtPrd_Qty_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //숫자만 입력되도록 필터링
+
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back)))    //숫자와 백스페이스를 제외한 나머지를 바로 처리
+
+            {
+                e.Handled = true;
+            }           
+        }
     }
 }

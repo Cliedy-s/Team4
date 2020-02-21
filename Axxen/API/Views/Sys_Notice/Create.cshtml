@@ -72,17 +72,18 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        @Html.TextAreaFor(model => model.Description, new { @class = "form-control", style = "width: 700px; height: 300px;", rows = 10 })
+                        @Html.TextAreaFor(model => model.Description, new { @class = "form-control", style = "width: 750px; height: 300px;", rows = 10 })
                         @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
                     </div>
                 </div>
 
 
                 <div class="pull-right">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="등록" class="btn btn-default" />
-                        @Html.ActionLink("뒤로가기", "Index")
-                    </div>
+
+                    <input type="submit" value="등록" class="btn btn-danger btn-flat" />
+                    <a href="/Sys_Notice/Index" class="btn btn-danger btn-flat">뒤로가기</a>
+              
+
                 </div>
             </div>
             }

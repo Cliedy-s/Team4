@@ -40,5 +40,19 @@ namespace Axxen
                 MessageBox.Show("수정에 실패하였습니다.", "수정오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
             this.DialogResult = DialogResult.OK;
         }
+
+        private void aTextBox1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (Encoding.Default.GetBytes(aTextBox1.Text).Length > 50 && (int)e.KeyCode != 8)
+            {
+                MessageBox.Show("50자 이내로 입력해주세요","자리수 제한",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                aTextBox1.Text = aTextBox1.Text.Remove(aTextBox1.Text.Length - 1, 1);
+                aTextBox1.SelectionStart = aTextBox1.Text.Length;
+
+                e.SuppressKeyPress = true;
+                e.Handled = true;
+            }
+
+        }
     }
 }

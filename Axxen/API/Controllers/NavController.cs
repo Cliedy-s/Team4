@@ -34,5 +34,17 @@ namespace API.Controllers
            
         }
 
+        /// <summary>
+        /// 상단 메세지 상세목록
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult bell()
+        {
+
+            Wo_ReqDAC dac = new Wo_ReqDAC();
+            return PartialView(dac.GetAllWo_ReqVO());
+
+        }
+
     }
 }
