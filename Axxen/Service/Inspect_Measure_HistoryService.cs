@@ -14,10 +14,10 @@ namespace Service
         /// <summary>
         /// Inspect_Measure_History 목록 가져오기
         /// </summary>
-        public List<InspectHistoryVO> GetAll(string itemcode, string processcode, string inspectcode)
+        public List<InspectHistoryVO> GetAll(string itemcode, string processcode, string inspectcode, string workorderno)
         {
             Inspect_Measure_HistoryDAC dac = new Inspect_Measure_HistoryDAC();
-            return dac.GetAll(itemcode, processcode, inspectcode);
+            return dac.GetAll(itemcode, processcode, inspectcode, workorderno);
         }
         /// <summary>
         /// 품질측정값 등록

@@ -69,6 +69,7 @@ namespace Axxen
             reqList = service.GetAllWoReq();
             workList = service.GetWorkOrder();
             dgvMainGrid.DataSource = reqList;
+            dgvSubGrid.DataSource = null;
         }
 
         private void DgvMainGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -84,7 +85,8 @@ namespace Axxen
                 result = Convert.ToBoolean(dgvMainGrid.Rows[e.RowIndex].Cells[0].Value);
                 dgvMainGrid.Rows[e.RowIndex].Cells[0].Value = !result;
                 dgvMainGrid.EndEdit();
-                Check_Wo_Req(dgvMainGrid.Rows[e.RowIndex].Cells[2].Value.ToString(), e.ColumnIndex, Convert.ToBoolean(dgvMainGrid.CurrentRow.Cells[0].Value));
+                Check_Wo_Req(dgvMainGrid[2, dgvMainGrid.CurrentRow.Index].Value.ToString(), e.ColumnIndex, Convert.ToBoolean(dgvMainGrid.CurrentRow.Cells[0].Value));
+                //dgvMainGrid.Rows[e.RowIndex].Cells[2].Value.ToString()
             }
         }
 
