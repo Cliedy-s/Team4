@@ -21,10 +21,10 @@ namespace Service
         /// <summary>
         /// 언로딩
         /// </summary>
-        public bool UpdateUnload(string workorderno, string username, string gvcode, string targetgvcode, string wccode, int qty, string itemcode)
+        public bool UpdateUnload(string workorderno, string username, string gvcode, string targetgvcode, string wccode, int qty, string itemcode, long? histseq = null, int? statusseq = null)
         {
             GV_HistoryDAC dac = new GV_HistoryDAC();
-            return dac.UpdateUnload(workorderno, username, gvcode, targetgvcode, wccode, qty, itemcode);
+            return dac.UpdateUnload(workorderno, username, gvcode, targetgvcode, wccode, qty, itemcode, histseq, statusseq);
         }
         /// <summary>
         /// 대차비우기
