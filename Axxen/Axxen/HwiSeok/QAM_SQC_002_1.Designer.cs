@@ -79,11 +79,11 @@
             this.aLabel6.AutoSize = true;
             this.aLabel6.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.aLabel6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aLabel6.Location = new System.Drawing.Point(48, 8);
+            this.aLabel6.Location = new System.Drawing.Point(42, 8);
             this.aLabel6.Name = "aLabel6";
-            this.aLabel6.Size = new System.Drawing.Size(47, 17);
+            this.aLabel6.Size = new System.Drawing.Size(58, 17);
             this.aLabel6.TabIndex = 65;
-            this.aLabel6.Text = "측정값";
+            this.aLabel6.Text = "* 측정값";
             // 
             // aLabel7
             // 
@@ -264,6 +264,7 @@
             this.nudusl.Name = "nudusl";
             this.nudusl.Size = new System.Drawing.Size(160, 23);
             this.nudusl.TabIndex = 150;
+            this.nudusl.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nudusl_KeyPress);
             // 
             // btnCencle
             // 
