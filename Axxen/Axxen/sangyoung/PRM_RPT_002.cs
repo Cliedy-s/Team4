@@ -33,7 +33,6 @@ namespace Axxen
         private void ADateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             documentViewer1.DocumentSource = null;
-           
         }
         public delegate void threadDelegate();
         threadDelegate threadmethod;
@@ -77,7 +76,7 @@ namespace Axxen
             //                      }).ToList();
 
             
-            ds.Relations.Clear();
+           
             ds.Tables.Clear();
             try
             {
@@ -117,6 +116,7 @@ namespace Axxen
 
         private void BtnSearch_Click(object sender, EventArgs e)
         {
+            ds.Relations.Clear();
             threadmethod += ReportBinding;
             using (WaitForm waitfrm = new WaitForm(() => { /*Thread.Sleep(2000);*/ dtpDate.Invoke(threadmethod); }))
             {
