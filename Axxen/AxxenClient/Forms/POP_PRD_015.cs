@@ -198,7 +198,7 @@ namespace AxxenClient.Forms
                     }
 
                     // 공통
-                    btnMachineRun.BackColor = Color.FromArgb(188, 220, 244);
+                    btnMachineRun.BackColor = Color.FromArgb(243, 228, 231);
                     isMachineRun = true;
                     progressMachine.Visible = true;
                 }
