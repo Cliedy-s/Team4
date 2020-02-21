@@ -79,7 +79,10 @@ namespace Axxen
             
             ds.Relations.Clear();
             ds.Tables.Clear();
+            try
+            {
 
+            
             dt = ListToDataTable.ToDataTable(figList);
             ds.Tables.Add(dt);
             ds.Tables[0].TableName = "dtFiguration";
@@ -90,6 +93,11 @@ namespace Axxen
             ds.Tables[1].TableName = "dtFigurHistory";
 
             ds.Relations.Add("dtFigurHistory_dtFiguration", ds.Tables[1].Columns["Workorderno"], ds.Tables[0].Columns["Workorderno"]);
+            }
+            catch
+            {
+               
+            }
 
             //ds.Tables[0].TableName = "datFiguration";
             //ds.AcceptChanges();
@@ -103,8 +111,8 @@ namespace Axxen
             rpt.Parameters["Ins_Date"].Visible = false; //파라미터 바로 넘기기
             documentViewer1.DocumentSource = rpt;
             rpt.CreateDocument();
-           
-           
+            
+            
         }
 
         private void BtnSearch_Click(object sender, EventArgs e)

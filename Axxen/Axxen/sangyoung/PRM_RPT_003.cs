@@ -52,9 +52,15 @@ namespace Axxen
         {
             string date = dtpDate.Value.ToString("yyyy-MM-dd");
             boxlist = service.GetBoxingHistory(date);
-            
-            dt = ListToDataTable.ToDataTable(boxlist);
-            rpt.DataSource = dt;
+            try
+            {
+                dt = ListToDataTable.ToDataTable(boxlist);
+                rpt.DataSource = dt;
+            }
+            catch
+            {
+
+            }
             rpt.Parameters["Ins_Date"].Value = dtpDate.Value.ToString("yyyy-MM-dd");
             rpt.Parameters["Ins_Date"].Visible = false; //파라미터 바로 넘기기
             documentViewer1.DocumentSource = rpt;

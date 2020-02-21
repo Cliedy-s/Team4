@@ -219,7 +219,7 @@ namespace DAC
             using (SqlConnection conn = new SqlConnection(Connstr))
             {
                 conn.Open();
-                string sql = "select distinct Wo_Status from WorkOrder";
+                string sql = "select distinct Wo_Status from WorkOrder where Wo_Status = '현장마감' or Wo_Status ='작업지시마감' ";
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
                     list = Helper.DataReaderMapToList<WorkOrderVO>(cmd.ExecuteReader());
