@@ -237,7 +237,7 @@ namespace AxxenClient.Util
         /// <returns></returns>
         private string GetLoggingFolder()
         {
-            return @".\Logs"; // string.Format(@"\{0}\{1}\Logs", this.company, this.product);
+            return @"D:\AxxenLog\Logs"; // string.Format(@"\{0}\{1}\Logs", this.company, this.product);
         }
 
         /// <summary>
