@@ -40,6 +40,7 @@
             this.aHeaderBox1 = new Axxen.CustomControls.AHeaderBox();
             this.btnSave = new Axxen.CustomControls.AButton();
             this.panelGVMaste = new Axxen.CustomControls.APanel();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.rdogroup3 = new System.Windows.Forms.RadioButton();
             this.rdogroup2 = new System.Windows.Forms.RadioButton();
             this.rdogroup1 = new System.Windows.Forms.RadioButton();
@@ -191,6 +192,7 @@
             // panelGVMaste
             // 
             this.panelGVMaste.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelGVMaste.Controls.Add(this.radioButton1);
             this.panelGVMaste.Controls.Add(this.rdogroup3);
             this.panelGVMaste.Controls.Add(this.rdogroup2);
             this.panelGVMaste.Controls.Add(this.rdogroup1);
@@ -206,27 +208,39 @@
             this.panelGVMaste.Size = new System.Drawing.Size(1225, 76);
             this.panelGVMaste.TabIndex = 20;
             // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(825, 12);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(73, 19);
+            this.radioButton1.TabIndex = 218;
+            this.radioButton1.Tag = "GVGC40001";
+            this.radioButton1.Text = "포장그룹";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.Rdogroup1_CheckedChanged);
+            // 
             // rdogroup3
             // 
             this.rdogroup3.AutoSize = true;
-            this.rdogroup3.Location = new System.Drawing.Point(747, 12);
+            this.rdogroup3.Location = new System.Drawing.Point(757, 12);
             this.rdogroup3.Name = "rdogroup3";
-            this.rdogroup3.Size = new System.Drawing.Size(49, 19);
+            this.rdogroup3.Size = new System.Drawing.Size(73, 19);
             this.rdogroup3.TabIndex = 217;
-            this.rdogroup3.Tag = "GVGC3";
-            this.rdogroup3.Text = "성형";
+            this.rdogroup3.Tag = "GVGC30001";
+            this.rdogroup3.Text = "소성그룹";
             this.rdogroup3.UseVisualStyleBackColor = true;
             this.rdogroup3.CheckedChanged += new System.EventHandler(this.Rdogroup1_CheckedChanged);
             // 
             // rdogroup2
             // 
             this.rdogroup2.AutoSize = true;
-            this.rdogroup2.Location = new System.Drawing.Point(683, 12);
+            this.rdogroup2.Location = new System.Drawing.Point(689, 12);
             this.rdogroup2.Name = "rdogroup2";
-            this.rdogroup2.Size = new System.Drawing.Size(49, 19);
+            this.rdogroup2.Size = new System.Drawing.Size(73, 19);
             this.rdogroup2.TabIndex = 216;
-            this.rdogroup2.Tag = "GVGC2";
-            this.rdogroup2.Text = "건조";
+            this.rdogroup2.Tag = "GVGC20001";
+            this.rdogroup2.Text = "성형그룹";
             this.rdogroup2.UseVisualStyleBackColor = true;
             this.rdogroup2.CheckedChanged += new System.EventHandler(this.Rdogroup1_CheckedChanged);
             // 
@@ -236,11 +250,11 @@
             this.rdogroup1.Checked = true;
             this.rdogroup1.Location = new System.Drawing.Point(619, 12);
             this.rdogroup1.Name = "rdogroup1";
-            this.rdogroup1.Size = new System.Drawing.Size(49, 19);
+            this.rdogroup1.Size = new System.Drawing.Size(73, 19);
             this.rdogroup1.TabIndex = 215;
             this.rdogroup1.TabStop = true;
-            this.rdogroup1.Tag = "GVGC1";
-            this.rdogroup1.Text = "소성";
+            this.rdogroup1.Tag = "GVGC10001";
+            this.rdogroup1.Text = "건조그룹";
             this.rdogroup1.UseVisualStyleBackColor = true;
             this.rdogroup1.CheckedChanged += new System.EventHandler(this.Rdogroup1_CheckedChanged);
             // 
@@ -384,5 +398,6 @@
         private CustomControls.APanel aPanel4;
         private CustomControls.ALabel aLabel9;
         private System.Windows.Forms.RadioButton rdogroup3;
+        private System.Windows.Forms.RadioButton radioButton1;
     }
 }

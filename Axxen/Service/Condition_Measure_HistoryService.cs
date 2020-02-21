@@ -14,10 +14,10 @@ namespace Service
         /// 공정조건 측정그룹
         /// </summary>
         /// <returns></returns>
-        public List<ConditionMeasureVO> GetAll(string conditioncode, string wccode, string itemcode)
+        public List<ConditionMeasureVO> GetAll(string conditioncode, string wccode, string itemcode, string workorderno)
         {
             Condition_Measure_HistoryDAC dac = new Condition_Measure_HistoryDAC();
-            return dac.GetAll(conditioncode, wccode, itemcode);
+            return dac.GetAll(conditioncode, wccode, itemcode, workorderno);
         }
         /// <summary>
         /// 입력
