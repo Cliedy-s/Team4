@@ -238,7 +238,7 @@ namespace MachineService
         private string GetLoggingFolder()
         {
             //return Path.Combine(Environment.GetFolderPath(System.Environment.SpecialFolder.UserProfile), @"\Logs"); // string.Format(@"\{0}\{1}\Logs", this.company, this.product);
-            return Path.Combine(@"C:", @"\Logs"); // string.Format(@"\{0}\{1}\Logs", this.company, this.product);
+            return Path.Combine(@"D:\AxxenLog", @"\Logs"); // string.Format(@"\{0}\{1}\Logs", this.company, this.product);
         }
 
         /// <summary>

@@ -29,7 +29,8 @@ namespace DAC
           ,[Ins_Emp]
           ,[Up_Date]
           ,[Up_Emp]
-      FROM [dbo].[BoxingGrade_Detail_Master]; 
+      FROM [dbo].[BoxingGrade_Detail_Master]
+	  WHERE Use_YN = 'Y'; 
 ";
                 comm.CommandType = CommandType.Text;
 

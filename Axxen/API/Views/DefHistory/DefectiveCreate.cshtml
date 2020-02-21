@@ -4,24 +4,7 @@
     ViewBag.Title = "DefectiveCreate";
 }
 
-<!-- ./wrapper -->
-<!-- jQuery 3 -->
-<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
-<!-- Bootstrap 3.3.7 -->
-<script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- FastClick -->
-<script src="../../bower_components/fastclick/lib/fastclick.js"></script>
-<!-- AdminLTE App -->
-<script src="../../dist/js/adminlte.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="../../dist/js/demo.js"></script>
-<!-- CK Editor -->
-<script src="../../bower_components/ckeditor/ckeditor.js"></script>
-<!-- Bootstrap WYSIHTML5 -->
-<script src="../../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-
 <h2>불량품 문의등록</h2>
-
 
 <div class="col-md-12">
     <div class="box box-primary">
@@ -90,6 +73,13 @@
                     @Html.LabelFor(model => model.FileUploadFile, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-3">
                         @Html.TextBoxFor(model => model.FileUploadFile, new { type = "file" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    &nbsp;
+                    <div class="col-md-3">
+                       &nbsp;
                     </div>
                 </div>
 
