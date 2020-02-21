@@ -115,13 +115,7 @@
                             <!-- Menu Toggle Button -->
                             <a href="/Login/Login" class="label" id="btnShowModal2">sigin</a>
 
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                                @Html.Action("userbox", "Login")
-                                @*<span class="hidden-xs">시발</span>*@
-                            </a>
-
-
+                           
 
                             <ul class="dropdown-menu">
                                 <!-- The user image in the menu -->
@@ -157,6 +151,11 @@
                                     </div>
                                 </li>
                             </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                @Html.Action("userbox", "Login")
+                            </a>
                         </li>
 
                     </ul>
