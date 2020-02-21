@@ -22,7 +22,7 @@ namespace API.Controllers
 
             List<int> planqtys = new List<int>();
             List<int> prdqtys = new List<int>();
-            List<decimal> attain = new List<decimal>();
+            List<double> attain = new List<double>();
 
             foreach (var group in outputList)
             {
