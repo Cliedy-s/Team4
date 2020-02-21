@@ -50,6 +50,9 @@
             this.panTop = new Axxen.CustomControls.APanel();
             this.btnSearch = new Axxen.CustomControls.AButton();
             this.aTextBox_FindNameByCode1 = new Axxen.CustomControls.ATextBox_FindNameByCode();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.radioButton6 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvbox)).BeginInit();
             this.panelbox.SuspendLayout();
             this.aPanel1.SuspendLayout();
@@ -119,12 +122,15 @@
             // aPanel1
             // 
             this.aPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.aPanel1.Controls.Add(this.radioButton6);
+            this.aPanel1.Controls.Add(this.radioButton5);
+            this.aPanel1.Controls.Add(this.radioButton4);
             this.aPanel1.Controls.Add(this.radioButton3);
             this.aPanel1.Controls.Add(this.radioButton2);
             this.aPanel1.Controls.Add(this.radioButton1);
             this.aPanel1.Location = new System.Drawing.Point(726, 6);
             this.aPanel1.Name = "aPanel1";
-            this.aPanel1.Size = new System.Drawing.Size(371, 35);
+            this.aPanel1.Size = new System.Drawing.Size(371, 57);
             this.aPanel1.TabIndex = 2;
             this.aPanel1.Tag = "1";
             // 
@@ -136,6 +142,7 @@
             this.radioButton3.Size = new System.Drawing.Size(80, 19);
             this.radioButton3.TabIndex = 217;
             this.radioButton3.TabStop = true;
+            this.radioButton3.Tag = "BGC0003";
             this.radioButton3.Text = "포장등급3";
             this.radioButton3.UseVisualStyleBackColor = true;
             this.radioButton3.CheckedChanged += new System.EventHandler(this.RadioButton1_CheckedChanged);
@@ -148,6 +155,7 @@
             this.radioButton2.Size = new System.Drawing.Size(80, 19);
             this.radioButton2.TabIndex = 216;
             this.radioButton2.TabStop = true;
+            this.radioButton2.Tag = "BGC0002";
             this.radioButton2.Text = "포장등급2";
             this.radioButton2.UseVisualStyleBackColor = true;
             this.radioButton2.CheckedChanged += new System.EventHandler(this.RadioButton1_CheckedChanged);
@@ -160,6 +168,7 @@
             this.radioButton1.Size = new System.Drawing.Size(80, 19);
             this.radioButton1.TabIndex = 215;
             this.radioButton1.TabStop = true;
+            this.radioButton1.Tag = "BGC0001";
             this.radioButton1.Text = "포장등급1";
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.CheckedChanged += new System.EventHandler(this.RadioButton1_CheckedChanged);
@@ -323,6 +332,45 @@
             this.aTextBox_FindNameByCode1.txtCodeText = "";
             this.aTextBox_FindNameByCode1.txtNameText = "";
             // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Location = new System.Drawing.Point(10, 31);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(80, 19);
+            this.radioButton4.TabIndex = 218;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Tag = "BGC0004";
+            this.radioButton4.Text = "포장등급4";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioButton4.CheckedChanged += new System.EventHandler(this.RadioButton1_CheckedChanged);
+            // 
+            // radioButton5
+            // 
+            this.radioButton5.AutoSize = true;
+            this.radioButton5.Location = new System.Drawing.Point(98, 31);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(80, 19);
+            this.radioButton5.TabIndex = 219;
+            this.radioButton5.TabStop = true;
+            this.radioButton5.Tag = "BGC0005";
+            this.radioButton5.Text = "포장등급5";
+            this.radioButton5.UseVisualStyleBackColor = true;
+            this.radioButton5.CheckedChanged += new System.EventHandler(this.RadioButton1_CheckedChanged);
+            // 
+            // radioButton6
+            // 
+            this.radioButton6.AutoSize = true;
+            this.radioButton6.Location = new System.Drawing.Point(188, 29);
+            this.radioButton6.Name = "radioButton6";
+            this.radioButton6.Size = new System.Drawing.Size(80, 19);
+            this.radioButton6.TabIndex = 220;
+            this.radioButton6.TabStop = true;
+            this.radioButton6.Tag = "BGC0006";
+            this.radioButton6.Text = "포장등급6";
+            this.radioButton6.UseVisualStyleBackColor = true;
+            this.radioButton6.CheckedChanged += new System.EventHandler(this.RadioButton1_CheckedChanged);
+            // 
             // MDS_CDS_007
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -380,5 +428,8 @@
         private CustomControls.APanel aPanel1;
         private CustomControls.APanel aPanel2;
         private CustomControls.ALabel aLabel1;
+        private System.Windows.Forms.RadioButton radioButton6;
+        private System.Windows.Forms.RadioButton radioButton5;
+        private System.Windows.Forms.RadioButton radioButton4;
     }
 }
