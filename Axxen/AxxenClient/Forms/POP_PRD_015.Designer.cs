@@ -62,8 +62,8 @@
             // 
             // aLabel_Header1
             // 
-            this.aLabel_Header1.Location = new System.Drawing.Point(183, 30);
-            this.aLabel_Header1.Text = "품질 측정값 등록";
+            this.lblHeaderHeader.Location = new System.Drawing.Point(183, 30);
+            this.lblHeaderHeader.Text = "품질 측정값 등록";
             // 
             // btnMachineRun
             // 

@@ -60,7 +60,7 @@
             // 
             // aLabel_Header1
             // 
-            this.aLabel_Header1.Text = "적재 실적 등록";
+            this.lblHeaderHeader.Text = "적재 실적 등록";
             // 
             // dgvGVTo
             // 

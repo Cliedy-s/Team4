@@ -54,9 +54,9 @@
             // 
             // aLabel_Header1
             // 
-            this.aLabel_Header1.Location = new System.Drawing.Point(184, 29);
-            this.aLabel_Header1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.aLabel_Header1.Text = "작업지시 생성";
+            this.lblHeaderHeader.Location = new System.Drawing.Point(184, 29);
+            this.lblHeaderHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHeaderHeader.Text = "작업지시 생성";
             // 
             // aPanel4
             // 

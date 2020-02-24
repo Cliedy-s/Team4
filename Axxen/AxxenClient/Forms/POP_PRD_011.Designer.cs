@@ -41,7 +41,7 @@
             // 
             // aLabel_Header1
             // 
-            this.aLabel_Header1.Text = "요입/ 요출 관리";
+            this.lblHeaderHeader.Text = "요입/ 요출 관리";
             // 
             // aPanel1
             // 

@@ -55,7 +55,7 @@
             // 
             // aLabel_Header1
             // 
-            this.aLabel_Header1.Text = "포장 입고등록";
+            this.lblHeaderHeader.Text = "포장 입고등록";
             // 
             // dgvInPallet
             // 

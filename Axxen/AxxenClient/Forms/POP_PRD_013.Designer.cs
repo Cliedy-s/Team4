@@ -51,7 +51,7 @@
             // 
             // aLabel_Header1
             // 
-            this.aLabel_Header1.Text = "작업자 할당";
+            this.lblHeaderHeader.Text = "작업자 할당";
             // 
             // btnDeallocateAll
             // 

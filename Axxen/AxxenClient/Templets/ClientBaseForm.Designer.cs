@@ -39,7 +39,7 @@
             this.aLabel2 = new Axxen.CustomControls.ALabel();
             this.lblUserName = new Axxen.CustomControls.ALabel();
             this.btnMachineRun = new Axxen.CustomControls.AButton();
-            this.aLabel_Header1 = new Axxen.CustomControls.ALabel_Header();
+            this.lblHeaderHeader = new Axxen.CustomControls.ALabel_Header();
             this.btnClose = new System.Windows.Forms.PictureBox();
             this.panBottom.SuspendLayout();
             this.aPanel2.SuspendLayout();
@@ -115,7 +115,7 @@
             this.aPanel3.Controls.Add(this.aLabel2);
             this.aPanel3.Controls.Add(this.lblUserName);
             this.aPanel3.Controls.Add(this.btnMachineRun);
-            this.aPanel3.Controls.Add(this.aLabel_Header1);
+            this.aPanel3.Controls.Add(this.lblHeaderHeader);
             this.aPanel3.Controls.Add(this.btnClose);
             this.aPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.aPanel3.Location = new System.Drawing.Point(0, 0);
@@ -166,20 +166,20 @@
             this.btnMachineRun.UseVisualStyleBackColor = false;
             this.btnMachineRun.Visible = false;
             // 
-            // aLabel_Header1
+            // lblHeaderHeader
             // 
-            this.aLabel_Header1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lblHeaderHeader.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.aLabel_Header1.BackColor = System.Drawing.Color.White;
-            this.aLabel_Header1.Font = new System.Drawing.Font("나눔고딕", 25F, System.Drawing.FontStyle.Bold);
-            this.aLabel_Header1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.aLabel_Header1.Location = new System.Drawing.Point(169, 28);
-            this.aLabel_Header1.Name = "aLabel_Header1";
-            this.aLabel_Header1.Size = new System.Drawing.Size(946, 39);
-            this.aLabel_Header1.TabIndex = 1;
-            this.aLabel_Header1.Text = "aLabel_Header1";
-            this.aLabel_Header1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblHeaderHeader.BackColor = System.Drawing.Color.White;
+            this.lblHeaderHeader.Font = new System.Drawing.Font("나눔고딕", 25F, System.Drawing.FontStyle.Bold);
+            this.lblHeaderHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblHeaderHeader.Location = new System.Drawing.Point(169, 28);
+            this.lblHeaderHeader.Name = "lblHeaderHeader";
+            this.lblHeaderHeader.Size = new System.Drawing.Size(946, 39);
+            this.lblHeaderHeader.TabIndex = 1;
+            this.lblHeaderHeader.Text = "aLabel_Header1";
+            this.lblHeaderHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnClose
             // 
@@ -224,7 +224,7 @@
         private Axxen.CustomControls.APanel aPanel3;
         protected System.Windows.Forms.PictureBox btnClose;
         protected Axxen.CustomControls.ALabel lblTime;
-        protected Axxen.CustomControls.ALabel_Header aLabel_Header1;
+        protected Axxen.CustomControls.ALabel_Header lblHeaderHeader;
         protected Axxen.CustomControls.AButton btnMachineRun;
         private Axxen.CustomControls.ALabel aLabel2;
         private Axxen.CustomControls.ALabel lblUserName;

@@ -52,18 +52,21 @@ namespace AxxenClient.Forms
                 case WorkType.Molding:
                     panMolding.Visible = true;
                     machinet = MachineType.Molding;
+                    lblHeaderHeader.Text = lblHeaderHeader.Text + " (성형)";
                     break;
                 case WorkType.Load:
                     panLoad.Visible = true;
                     btnMachineRun.Enabled = false;
                     btnMachineRun.Visible = false;
                     btnMachineRun.BackColor = Color.FromArgb(188, 209, 215);
+                    lblHeaderHeader.Text = lblHeaderHeader.Text + " (적재/소성)";
                     break;
                 case WorkType.Boxing:
                     panBoxing.Visible = true;
                     btnMachineRun.Enabled = false;
                     btnMachineRun.Visible = false;
-                    btnMachineRun.BackColor = Color.FromArgb(188, 209, 215); 
+                    btnMachineRun.BackColor = Color.FromArgb(188, 209, 215);
+                    lblHeaderHeader.Text = lblHeaderHeader.Text + " (포장)";
                     break;
             }
 

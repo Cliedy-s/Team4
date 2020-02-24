@@ -59,7 +59,7 @@
             // 
             // aLabel_Header1
             // 
-            this.aLabel_Header1.Text = "팔레트 바코드 재발행";
+            this.lblHeaderHeader.Text = "팔레트 바코드 재발행";
             // 
             // aPanel4
             // 

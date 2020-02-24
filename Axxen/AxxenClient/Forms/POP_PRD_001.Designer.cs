@@ -78,7 +78,7 @@
             // 
             // aLabel_Header1
             // 
-            this.aLabel_Header1.Text = "작업지시 현황";
+            this.lblHeaderHeader.Text = "작업지시 현황";
             // 
             // btnMachineRun
             // 
