@@ -14,12 +14,12 @@ namespace VO
         public int laPlan_Oty { get; set; } //전월목표량
         public int laPrd_Qty { get; set; } //전월생산량
         public int laPrd_Time { get; set; } //전월생산시간
-        public decimal laAttain { get; set; } //전월달성율
+        public string laAttain { get; set; } //전월달성율
         public int Plan_Oty { get; set; } //당월목표량
         public int Prd_Qty { get; set; } //당월생산량
         public int Prd_Time { get; set; } //당월생산시간
-        public decimal Attain { get; set; } //당월달성율
-        public decimal Inde { get; set; } //증감율
+        public string Attain { get; set; } //당월달성율
+        public string Inde { get; set; } //증감율
     }
 
     public class BoxPackageVO
