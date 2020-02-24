@@ -43,6 +43,8 @@ namespace Axxen
         {
             wowclist = service.GetWO_WC_Production_Items();
             dgvMainGrid.DataSource = wowclist;
+            chartTime.Series.Clear();
+            chartDate.Series.Clear();
             cboStatus.SelectedIndex = 0;
             chartDate.Series.Clear();
             dotProcess.txtCodeText = "";
@@ -92,9 +94,16 @@ namespace Axxen
             chartDate.Series.Add("생산량");
             chartDate.Series["생산량"].ChartType = SeriesChartType.Column;
             chartDate.Series["생산량"].IsValueShownAsLabel = true;
+            int i = 0;
             foreach (var item in wowclist)
             {
-                chartDate.Series["생산량"].Points.AddXY(item.Prd_Date.ToString().Substring(0, 10), item.Prd_Qty);
+                if (i < 16)
+                {
+                    chartDate.Series["생산량"].Points.AddXY(item.Prd_Date.ToString().Substring(0, 10), item.Prd_Qty);
+                    i++;
+                }
+                else
+                    return;
             }
             chartDate.ChartAreas[0].AxisX.MajorGrid.Enabled = false;// 그래프선 보이기 안보이기
         }
