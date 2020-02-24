@@ -59,7 +59,7 @@
             // 
             // aLabel_Header1
             // 
-            this.aLabel_Header1.Text = "팔레트 생성";
+            this.lblHeaderHeader.Text = "팔레트 생성";
             // 
             // dgvPalletList
             // 

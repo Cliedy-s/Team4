@@ -61,7 +61,7 @@
             // 
             // aLabel_Header1
             // 
-            this.aLabel_Header1.Text = "공정조건 등록";
+            this.lblHeaderHeader.Text = "공정조건 등록";
             // 
             // btnInsertMeasure
             // 

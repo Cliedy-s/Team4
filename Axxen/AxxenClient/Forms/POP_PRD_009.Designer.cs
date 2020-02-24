@@ -62,7 +62,7 @@
             // 
             // aLabel_Header1
             // 
-            this.aLabel_Header1.Text = "적재 작업지시 생성";
+            this.lblHeaderHeader.Text = "적재 작업지시 생성";
             // 
             // aPanel5
             // 

@@ -897,8 +897,6 @@
     <EmbeddedResource Include="Templets\ReportForm.resx">
       <DependentUpon>ReportForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Axxen_1_TemporaryKey.pfx" />
-    <None Include="Axxen_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">

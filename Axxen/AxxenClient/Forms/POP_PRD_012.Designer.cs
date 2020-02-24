@@ -40,7 +40,7 @@
             // 
             // aLabel_Header1
             // 
-            this.aLabel_Header1.Text = "건조대차 비우기";
+            this.lblHeaderHeader.Text = "건조대차 비우기";
             // 
             // aPanel1
             // 

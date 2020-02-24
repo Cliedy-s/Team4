@@ -56,7 +56,7 @@
             // 
             // aLabel_Header1
             // 
-            this.aLabel_Header1.Text = "포장 언로딩";
+            this.lblHeaderHeader.Text = "포장 언로딩";
             // 
             // dgvBoxing
             // 

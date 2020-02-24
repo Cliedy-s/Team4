@@ -43,7 +43,7 @@
             // 
             // aLabel_Header1
             // 
-            this.aLabel_Header1.Text = "금형 장착/탈착 등록";
+            this.lblHeaderHeader.Text = "금형 장착/탈착 등록";
             // 
             // aPanel1
             // 

@@ -910,43 +910,43 @@ namespace Axxen
         }
 
 
-        //protected override void WndProc(ref Message message)
-        //{
-        //    try
-        //    {
+        protected override void WndProc(ref Message message)
+        {
+            try
+            {
 
 
-        //        base.WndProc(ref message);
+                base.WndProc(ref message);
 
 
-        //        if (message.Msg == (int)0x312) //핫키가 눌러지면 312 정수 메세지를 받게됨
-        //        {
-        //            if (message.WParam == (IntPtr)0x0) // 0x0아이디 추가
-        //            {
-        //                tsbInsert.PerformClick();
-        //            }
-        //            else if (message.WParam == (IntPtr)0x1) // 수정
-        //            {
-        //                tsbtnUpdate.PerformClick();
-        //            }
-        //            else if (message.WParam == (IntPtr)0x2) // 삭제
-        //            {
-        //                tsbtnDelete.PerformClick();
-        //            }
-        //            else if (message.WParam == (IntPtr)0x3) //새로고침
-        //            {
-        //                tsbtnRefresh.PerformClick();
-        //            }
-        //        }
-        //    }
-        //    catch (Exception err)
-        //    {
+                if (message.Msg == (int)0x312) //핫키가 눌러지면 312 정수 메세지를 받게됨
+                {
+                    if (message.WParam == (IntPtr)0x0) // 0x0아이디 추가
+                    {
+                        tsbInsert.PerformClick();
+                    }
+                    else if (message.WParam == (IntPtr)0x1) // 수정
+                    {
+                        tsbtnUpdate.PerformClick();
+                    }
+                    else if (message.WParam == (IntPtr)0x2) // 삭제
+                    {
+                        tsbtnDelete.PerformClick();
+                    }
+                    else if (message.WParam == (IntPtr)0x3) //새로고침
+                    {
+                        tsbtnRefresh.PerformClick();
+                    }
+                }
+            }
+            catch (Exception err)
+            {
 
-        //        Program.Log.WriteError(err.Message);
-        //    }
+                Program.Log.WriteError(err.Message);
+            }
 
 
-        //}
+        }
 
         private void 메모장ToolStripMenuItem_Click(object sender, EventArgs e)
         {

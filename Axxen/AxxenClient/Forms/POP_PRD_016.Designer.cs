@@ -47,7 +47,7 @@
             // 
             // aLabel_Header1
             // 
-            this.aLabel_Header1.Text = "비가동 등록";
+            this.lblHeaderHeader.Text = "비가동 등록";
             // 
             // dgvNopList
             // 

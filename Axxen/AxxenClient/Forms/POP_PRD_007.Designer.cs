@@ -59,7 +59,7 @@
             // 
             // aLabel_Header1
             // 
-            this.aLabel_Header1.Text = "성형 생산 대차 선택";
+            this.lblHeaderHeader.Text = "성형 생산 대차 선택";
             // 
             // btnLoading
             // 
