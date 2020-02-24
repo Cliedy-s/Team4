@@ -58,7 +58,6 @@ namespace API.DAC
                     com.Connection = new SqlConnection(Connstr);
                     com.CommandText = "GetAllItem_Master";
                     com.CommandType = CommandType.StoredProcedure;
-
                     com.Connection.Open();
                     SqlDataReader reader = com.ExecuteReader();
                     Itemlist = Helper.DataReaderMapToList<Item_MasterVO>(reader);
@@ -149,8 +148,7 @@ SELECT  [Item_Code]
             {
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.CommandType = CommandType.Text;
-                cmd.Parameters.AddWithValue("@Wo_Req_No", notice.Wo_Req_No);
-        
+                cmd.Parameters.AddWithValue("@Wo_Req_No", notice.Wo_Req_No);        
                 cmd.Parameters.AddWithValue("@Item_Code", notice.Item_Code);
                 cmd.Parameters.AddWithValue("@Req_Qty", notice.Req_Qty);
                 cmd.Parameters.AddWithValue("@Prd_Plan_Date", notice.Prd_Plan_Date);
@@ -158,14 +156,11 @@ SELECT  [Item_Code]
                 cmd.Parameters.AddWithValue("@Project_Name", notice.Project_Name);
                 cmd.Parameters.AddWithValue("@Ins_Date", DateTime.Now);
                 cmd.Parameters.AddWithValue("@Ins_Emp", UserInfo.User_Name);
-
-
                 conn.Open();
                 int iResult = cmd.ExecuteNonQuery();
                 conn.Close();
                 return (iResult > 0);
             }
-
         }
 
 
@@ -184,11 +179,8 @@ SELECT  [Item_Code]
                     //  where tp.Workorderno = w.Workorderno and w.Item_Code = i.Item_Code and wr.Item_Code = i.Item_Code and Req_Status<>'완료'";
                     com.CommandText = @"SELECT  i.Item_Name,isnull (sum(w.Req_Qty),0) sum , (select sum(Req_Qty) from Wo_Req  ) allsum 
 FROM [dbo].[Wo_Req] w right OUTER JOIN Item_Master i on w.Item_Code  =  i.Item_Code
-
 group by i.Item_Name";
-
                     com.CommandType = CommandType.Text;
-
                     com.Connection.Open();
                     SqlDataReader reader = com.ExecuteReader();
                     Itemlist = Helper.DataReaderMapToList<WO_WC_Time_ItemVO>(reader);

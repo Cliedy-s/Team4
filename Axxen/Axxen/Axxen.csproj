@@ -65,7 +65,7 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>F9DB95719765669C3D132F88A4EB54660AE8B4B6</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>5F24FDBE6E30507596BEFB18648D51BE5C31524B</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>Axxen_TemporaryKey.pfx</ManifestKeyFile>
