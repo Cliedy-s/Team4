@@ -20,6 +20,7 @@ namespace Axxen
         }
         private void PRM_PRF_007_Load(object sender, EventArgs e)
         {
+            flowLayoutPanel1.AutoScroll = true;
             ((MainForm)this.MdiParent).RefreshFormEvent += new System.EventHandler(this.RefreshFormShow); // 새로고침
             GV_Current_YesStatus(); // 사용중인 대차 현황
             GV_Current_NOStatus(); // 빈 현황 그리드뷰

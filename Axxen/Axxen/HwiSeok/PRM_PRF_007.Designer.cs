@@ -31,8 +31,8 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.aLabel_SubHeader1 = new Axxen.CustomControls.ALabel_SubHeader();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.aLabel_SubHeader2 = new Axxen.CustomControls.ALabel_SubHeader();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,13 +55,6 @@
             this.aLabel_SubHeader1.TabIndex = 3;
             this.aLabel_SubHeader1.Text = "빈 대차 현황";
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(22, 62);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(823, 576);
-            this.flowLayoutPanel1.TabIndex = 4;
-            // 
             // aLabel_SubHeader2
             // 
             this.aLabel_SubHeader2.AutoSize = true;
@@ -71,6 +64,13 @@
             this.aLabel_SubHeader2.Size = new System.Drawing.Size(174, 23);
             this.aLabel_SubHeader2.TabIndex = 5;
             this.aLabel_SubHeader2.Text = "사용중인 대차 현황";
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(22, 62);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(823, 576);
+            this.flowLayoutPanel1.TabIndex = 4;
             // 
             // PRM_PRF_007
             // 
@@ -93,7 +93,7 @@
         #endregion
         private System.Windows.Forms.DataGridView dataGridView1;
         private CustomControls.ALabel_SubHeader aLabel_SubHeader1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private CustomControls.ALabel_SubHeader aLabel_SubHeader2;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
