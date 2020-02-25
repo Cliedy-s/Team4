@@ -7403,6 +7403,7 @@
     <Content Include="bower_components\select2\src\scss\_dropdown.scss" />
     <Content Include="bower_components\select2\src\scss\_multiple.scss" />
     <Content Include="bower_components\select2\src\scss\_single.scss" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\TEAM4WEBSERVER - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\TEAM4WEBSERVER - ReadOnly - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\TEAM4WEBSERVER - Web Deploy.pubxml" />
